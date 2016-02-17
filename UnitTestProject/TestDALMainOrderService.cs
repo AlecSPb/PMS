@@ -23,6 +23,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestGetMainOrderById()
         {
+            //这个guid是从数据库里直接复制的第一个数据项的id
             var obj = mainOrderService.GetOneMainOrderById(
                 new Guid("9bfdcbb7-7fed-4dc0-a8bb-21842f58e659"));
             Assert.IsNotNull(obj);

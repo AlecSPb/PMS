@@ -22,8 +22,6 @@ namespace UnitTestProject
         {
             int dataCount = db.V_MainOrder.Count();
             Assert.IsTrue(dataCount>0);
-            string s=db.V_MainOrder.FirstOrDefault().Customer;
-            Assert.IsFalse(s.Length==0);
         }
 
     }
