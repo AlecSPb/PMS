@@ -19,6 +19,9 @@ namespace DataAccessLibrary
             return db.V_MainOrder.OrderByDescending(o => o.OrderDate).ToList();
         }
 
-
+        public V_MainOrder GetOneMainOrderById(Guid id)
+        {
+            return db.V_MainOrder.FirstOrDefault(o => o.MainOrderId == id);
+        }
     }
 }

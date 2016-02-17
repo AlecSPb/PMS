@@ -8,11 +8,11 @@ namespace UnitTestProject
     /// 直接测试DataAccessLibraryEF
     /// </summary>
     [TestClass]
-    public class TestDataAccessLibraryEFDirectly
+    public class TestDALEFDirectly
     {
         private ProductionManagementModel db;
 
-        public TestDataAccessLibraryEFDirectly()
+        public TestDALEFDirectly()
         {
             db = new ProductionManagementModel();
         }

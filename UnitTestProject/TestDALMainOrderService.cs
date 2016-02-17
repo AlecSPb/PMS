@@ -5,10 +5,10 @@ using DataAccessLibrary;
 namespace UnitTestProject
 {
     [TestClass]
-    public class TestDataAccessLibraryMainOrderService
+    public class TestDALMainOrderService
     {
         private IMainOrderService mainOrderService;
-        public TestDataAccessLibraryMainOrderService()
+        public TestDALMainOrderService()
         {
             mainOrderService = new MainOrderServcie();
         }
@@ -20,6 +20,13 @@ namespace UnitTestProject
             Assert.IsTrue(dataAccount > 0);
         }
 
+        [TestMethod]
+        public void TestGetMainOrderById()
+        {
+            var obj = mainOrderService.GetOneMainOrderById(
+                new Guid("9bfdcbb7-7fed-4dc0-a8bb-21842f58e659"));
+            Assert.IsNotNull(obj);
+        }
 
     }
 }

@@ -12,5 +12,6 @@ namespace DataAccessLibrary
     public interface IMainOrderService
     {
         List<V_MainOrder> GetAllMainOrders();
+        V_MainOrder GetOneMainOrderById(Guid id);
     }
 }
