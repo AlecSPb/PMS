@@ -51,9 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataService\IMainOrderService.cs" />
+    <Compile Include="DataService\MainOrderServcie.cs" />
     <Compile Include="ProductionManagementModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View_MainOrders.cs" />
+    <Compile Include="Model\V_MainOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

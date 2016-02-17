@@ -6,7 +6,7 @@ namespace DataAccessLibrary
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class View_MainOrders
+    public partial class V_MainOrder
     {
         [Key]
         [Column(Order = 0)]
