@@ -9,15 +9,12 @@ namespace DataAccessLibrary.Model
     public class V_MainOrder
     {
         [Key]
-        [Column(Order = 0)]
         public Guid MainOrderId { get; set; }
 
         public DateTime? OrderDate { get; set; }
 
-        public Guid? CustomerId { get; set; }
-
         [StringLength(500)]
-        public string Customer { get; set; }
+        public string CustomerName { get; set; }
 
         [StringLength(500)]
         public string ProductName { get; set; }
@@ -64,8 +61,5 @@ namespace DataAccessLibrary.Model
         [StringLength(500)]
         public string Remark { get; set; }
 
-        [Column(Order = 1)]
-        [StringLength(500)]
-        public string CustomerName { get; set; }
     }
 }
