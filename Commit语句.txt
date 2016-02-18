@@ -1,1 +1,2 @@
 添加并完成MainPlanService契约部分
+WCF的Model中添加Customer类

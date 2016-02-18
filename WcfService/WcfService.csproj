@@ -82,6 +82,7 @@
     <Compile Include="IMaterialOrderService.svc.cs">
       <DependentUpon>IMaterialOrderService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\MainPlan.cs" />
     <Compile Include="MainPlanService.svc.cs">
       <DependentUpon>MainPlanService.svc</DependentUpon>
