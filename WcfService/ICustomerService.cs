@@ -4,14 +4,41 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfService.Model;
 
 namespace WcfService
 {
-    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码和配置文件中的接口名“ICustomerService”。
     [ServiceContract]
     public interface ICustomerService
     {
+        /// <summary>
+        /// 得到所有客户
+        /// </summary>
+        /// <returns></returns>
         [OperationContract]
-        void DoWork();
+        List<Customer> GetAllCustomers();
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        [OperationContract]
+        bool AddCustomer(Customer customer);
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        [OperationContract]
+        bool UpdateCustomer(Customer customer);
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        [OperationContract]
+        bool DeleteCustomer(Customer customer);
+
     }
 }
