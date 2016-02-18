@@ -85,6 +85,9 @@
     <Compile Include="MainOrderService.svc.cs">
       <DependentUpon>MainOrderService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Model\MaterialOrder.cs" />
+    <Compile Include="Model\MaterialOrderItemReceiving.cs" />
+    <Compile Include="Model\MaterialOrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
