@@ -1,4 +1,4 @@
-namespace DataAccessLibrary
+namespace DataAccessLibrary.Model
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +6,7 @@ namespace DataAccessLibrary
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class V_MainOrder
+    public class V_MainOrder
     {
         [Key]
         [Column(Order = 0)]

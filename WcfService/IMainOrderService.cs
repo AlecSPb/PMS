@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfService.Model;
 
 namespace WcfService
 {
@@ -11,7 +12,11 @@ namespace WcfService
     [ServiceContract]
     public interface IMainOrderService
     {
+        /// <summary>
+        /// 返回全部的订单
+        /// </summary>
+        /// <returns></returns>
         [OperationContract]
-        void DoWork();
+        List<MainOrder> GetAllMainOrders();
     }
 }

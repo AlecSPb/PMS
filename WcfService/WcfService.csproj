@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMainOrderService.cs" />
+    <Compile Include="Model\MainOrder.cs" />
     <Compile Include="MainOrderService.svc.cs">
       <DependentUpon>MainOrderService.svc</DependentUpon>
     </Compile>
