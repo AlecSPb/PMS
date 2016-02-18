@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WcfService.Model
 {
-    public class MaterialOrderItemReceiving
+    public class MaterialOrderItemReceived
     {
     }
 }

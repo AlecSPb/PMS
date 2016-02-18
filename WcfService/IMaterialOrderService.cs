@@ -30,7 +30,7 @@ namespace WcfService
         /// <param name="id"></param>
         /// <returns></returns>
         [OperationContract]
-        List<MaterialOrderItemReceiving> GetMaterialOrdreItemReceivingByMOId(Guid id);
+        List<MaterialOrderItemReceived> GetMaterialOrdreItemReceivedByMOId(Guid id);
 
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace WcfService
         /// <param name="item"></param>
         /// <returns></returns>
         [OperationContract]
-        bool AddMaterialOrderItemReceiving(MaterialOrderItemReceiving item);
+        bool AddMaterialOrderItemReceived(MaterialOrderItemReceived item);
 
         /// <summary>
         /// 更新材料订单
@@ -75,7 +75,7 @@ namespace WcfService
         /// <param name="item"></param>
         /// <returns></returns>
         [OperationContract]
-        bool UpdateMaterialOrderItemReceiving(MaterialOrderItemReceiving item);
+        bool UpdateMaterialOrderItemReceivied(MaterialOrderItemReceived item);
 
         /// <summary>
         /// 删除材料订单
@@ -97,7 +97,7 @@ namespace WcfService
         /// <param name="item"></param>
         /// <returns></returns>
         [OperationContract]
-        bool DeleteMaterialOrderItemReceiving(MaterialOrderItemReceiving item);
+        bool DeleteMaterialOrderItemReceived(MaterialOrderItemReceived item);
 
     }
 }
