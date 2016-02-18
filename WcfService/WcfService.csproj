@@ -70,13 +70,18 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="IMaterialOrderService.svc" />
     <Content Include="MainOrderService.svc" />
     <Content Include="MainPlanService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IIMaterialOrderService.cs" />
     <Compile Include="IMainOrderService.cs" />
     <Compile Include="IMainPlanService.cs" />
+    <Compile Include="IMaterialOrderService.svc.cs">
+      <DependentUpon>IMaterialOrderService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Model\MainPlan.cs" />
     <Compile Include="MainPlanService.svc.cs">
       <DependentUpon>MainPlanService.svc</DependentUpon>
