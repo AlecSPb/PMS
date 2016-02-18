@@ -9,7 +9,7 @@ using WcfService.Model;
 namespace WcfService
 {
     [ServiceContract]
-    public interface IIMaterialOrderService
+    public interface IMaterialOrderService
     {
         /// <summary>
         /// 获取所有材料订单信息

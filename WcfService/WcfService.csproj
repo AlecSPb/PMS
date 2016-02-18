@@ -70,17 +70,22 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="IMaterialOrderService.svc" />
+    <Content Include="CustomerService.svc" />
+    <Content Include="MaterialOrderService.svc" />
     <Content Include="MainOrderService.svc" />
     <Content Include="MainPlanService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIMaterialOrderService.cs" />
+    <Compile Include="CustomerService.svc.cs">
+      <DependentUpon>CustomerService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ICustomerService.cs" />
+    <Compile Include="IMaterialOrderService.cs" />
     <Compile Include="IMainOrderService.cs" />
     <Compile Include="IMainPlanService.cs" />
-    <Compile Include="IMaterialOrderService.svc.cs">
-      <DependentUpon>IMaterialOrderService.svc</DependentUpon>
+    <Compile Include="MaterialOrderService.svc.cs">
+      <DependentUpon>MaterialOrderService.svc</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\MainPlan.cs" />
