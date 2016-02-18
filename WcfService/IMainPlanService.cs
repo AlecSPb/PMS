@@ -9,43 +9,40 @@ using WcfService.Model;
 namespace WcfService
 {
     [ServiceContract]
-    public interface IMainOrderService
+    public interface IMainPlanService
     {
         /// <summary>
-        /// 返回所有的订单列表
-        /// </summary>
-        /// <returns></returns>
-        [OperationContract]
-        List<MainOrder> GetAllMainOrders();
-        /// <summary>
-        /// 按照Id查找订单
+        /// 按照MainOrderId查找所有的MainPlan
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [OperationContract]
-        MainOrder GetMainOrderById(Guid id);
-
+        List<MainPlan> GetMainPlansByMainOrderId(Guid id);
         /// <summary>
         /// 添加
         /// </summary>
-        /// <param name="order"></param>
+        /// <param name="plan"></param>
         /// <returns></returns>
         [OperationContract]
-        bool AddMainOrder(MainOrder order);
+        bool AddMainPlan(MainPlan plan);
         /// <summary>
         /// 更新
         /// </summary>
-        /// <param name="order"></param>
+        /// <param name="plan"></param>
         /// <returns></returns>
         [OperationContract]
-        bool UpdateMainOrder(MainOrder order);
+        bool UpdateMainPlan(MainPlan plan);
         /// <summary>
         /// 删除
         /// </summary>
-        /// <param name="order"></param>
+        /// <param name="plan"></param>
         /// <returns></returns>
         [OperationContract]
-        bool DeleteMainOrder(MainOrder order);
+        bool DeleteMainPlan(MainPlan plan);
+
+
+
+
 
     }
 }

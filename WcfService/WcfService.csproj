@@ -71,10 +71,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MainOrderService.svc" />
+    <Content Include="MainPlanService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IMainOrderService.cs" />
+    <Compile Include="IMainPlanService.cs" />
+    <Compile Include="Model\MainPlan.cs" />
+    <Compile Include="MainPlanService.svc.cs">
+      <DependentUpon>MainPlanService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Model\MainOrder.cs" />
     <Compile Include="MainOrderService.svc.cs">
       <DependentUpon>MainOrderService.svc</DependentUpon>
