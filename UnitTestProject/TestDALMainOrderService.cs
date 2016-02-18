@@ -8,7 +8,9 @@ namespace UnitTestProject
     public class TestDALMainOrderService
     {
         private IMainOrderService mainOrderService;
-        public TestDALMainOrderService()
+
+        [TestInitialize]
+        public void InitialTest()
         {
             mainOrderService = new MainOrderServcie();
         }
