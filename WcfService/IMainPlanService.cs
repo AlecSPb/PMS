@@ -18,25 +18,11 @@ namespace WcfService
         /// <returns></returns>
         [OperationContract]
         List<MainPlan> GetMainPlansByMainOrderId(Guid id);
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="plan"></param>
-        /// <returns></returns>
+
         [OperationContract]
         bool AddMainPlan(MainPlan plan);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="plan"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateMainPlan(MainPlan plan);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="plan"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteMainPlan(MainPlan plan);
 

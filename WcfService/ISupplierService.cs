@@ -18,25 +18,10 @@ namespace WcfService
         /// <returns></returns>
         [OperationContract]
         List<Supplier> GetAllSuppliers();
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="supplier"></param>
-        /// <returns></returns>
         [OperationContract]
         bool AddSupplier(Supplier supplier);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="supplier"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateSupplier(Supplier supplier);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="supplier"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteSupplier(Supplier supplier);
 

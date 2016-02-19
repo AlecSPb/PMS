@@ -18,25 +18,10 @@ namespace WcfService
         [OperationContract]
         List<Customer> GetAllCustomers();
 
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="customer"></param>
-        /// <returns></returns>
         [OperationContract]
         bool AddCustomer(Customer customer);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="customer"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateCustomer(Customer customer);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="customer"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteCustomer(Customer customer);
 

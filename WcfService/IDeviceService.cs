@@ -18,25 +18,11 @@ namespace WcfService
         [OperationContract]
         List<Device> GetAllDevices();
 
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="device"></param>
-        /// <returns></returns>
+
         [OperationContract]
         bool AddDevice(Device device);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="device"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateDevice(Device device);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="device"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteDevice(Device device);
     }

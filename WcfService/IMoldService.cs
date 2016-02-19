@@ -18,25 +18,10 @@ namespace WcfService
         [OperationContract]
         List<Mold> GetAllMolds();
 
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="mold"></param>
-        /// <returns></returns>
         [OperationContract]
         bool AddMold(Mold mold);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="mold"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateMold(Mold mold);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="mold"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteMold(Mold mold);
 

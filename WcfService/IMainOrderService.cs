@@ -25,25 +25,11 @@ namespace WcfService
         [OperationContract]
         MainOrder GetMainOrderById(Guid id);
 
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="order"></param>
-        /// <returns></returns>
+
         [OperationContract]
         bool AddMainOrder(MainOrder order);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="order"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateMainOrder(MainOrder order);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="order"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteMainOrder(MainOrder order);
 

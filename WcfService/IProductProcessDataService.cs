@@ -24,25 +24,10 @@ namespace WcfService
         /// <returns></returns>
         [OperationContract]
         ProductProcessData GetProductProcessDataById(Guid id);
-        /// <summary>
-        /// 添加
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
         [OperationContract]
         bool AddProductProcessData(ProductProcessData data);
-        /// <summary>
-        /// 更新
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
         [OperationContract]
         bool UpdateProductProcessData(ProductProcessData data);
-        /// <summary>
-        /// 删除
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
         [OperationContract]
         bool DeleteProductProcessData(ProductProcessData data);
 
