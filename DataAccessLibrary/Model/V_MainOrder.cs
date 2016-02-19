@@ -42,6 +42,14 @@ namespace DataAccessLibrary.Model
         [StringLength(500)]
         public string Unit { get; set; }
 
+        public bool? IsPlanFinished { get; set; }
+
+        public int? Priority { get; set; }
+
+        [StringLength(500)]
+        public string SampleRequirement { get; set; }
+        [StringLength(50)]
+        public string OrderState { get; set; }
         public DateTime? DeliveryDateExpect { get; set; }
 
         [StringLength(500)]
@@ -50,13 +58,6 @@ namespace DataAccessLibrary.Model
         public bool? IsDeliveryFinished { get; set; }
 
         public DateTime? DeliveryDateFact { get; set; }
-
-        public bool? IsPlanFinished { get; set; }
-
-        public int? Priority { get; set; }
-
-        [StringLength(50)]
-        public string OrderState { get; set; }
 
         [StringLength(500)]
         public string Remark { get; set; }
