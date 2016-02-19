@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="CustomerService.svc" />
     <Content Include="DeviceService.svc" />
+    <Content Include="MaterialDataService.svc" />
     <Content Include="MaterialOrderService.svc" />
     <Content Include="MainOrderService.svc" />
     <Content Include="MainPlanService.svc" />
@@ -86,9 +87,13 @@
     </Compile>
     <Compile Include="ICustomerService.cs" />
     <Compile Include="IDeviceService.cs" />
+    <Compile Include="IMaterialDataService.cs" />
     <Compile Include="IMaterialOrderService.cs" />
     <Compile Include="IMainOrderService.cs" />
     <Compile Include="IMainPlanService.cs" />
+    <Compile Include="MaterialDataService.svc.cs">
+      <DependentUpon>MaterialDataService.svc</DependentUpon>
+    </Compile>
     <Compile Include="MaterialOrderService.svc.cs">
       <DependentUpon>MaterialOrderService.svc</DependentUpon>
     </Compile>
@@ -102,6 +107,7 @@
     <Compile Include="MainOrderService.svc.cs">
       <DependentUpon>MainOrderService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Model\MaterialData.cs" />
     <Compile Include="Model\MaterialOrder.cs" />
     <Compile Include="Model\MaterialOrderItemReceived.cs" />
     <Compile Include="Model\MaterialOrderItem.cs" />
