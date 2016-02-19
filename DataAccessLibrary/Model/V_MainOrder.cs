@@ -13,53 +13,42 @@ namespace DataAccessLibrary.Model
 
         public DateTime? OrderDate { get; set; }
 
-        [StringLength(500)]
         public string CustomerName { get; set; }
 
-        [StringLength(500)]
         public string ProductName { get; set; }
 
-        [StringLength(500)]
         public string PO { get; set; }
 
-        [StringLength(500)]
         public string PMIWorkNumber { get; set; }
 
-        [StringLength(500)]
         public string ProductType { get; set; }
 
-        [StringLength(500)]
         public string Purity { get; set; }
 
-        [StringLength(500)]
         public string Shape { get; set; }
 
-        [StringLength(500)]
         public string Dimension { get; set; }
 
-        public double? Quantity { get; set; }
+        public double Quantity { get; set; }
 
-        [StringLength(500)]
         public string Unit { get; set; }
 
-        public bool? IsPlanFinished { get; set; }
+        public int Priority { get; set; }
 
-        public int? Priority { get; set; }
-
-        [StringLength(500)]
         public string SampleRequirement { get; set; }
-        [StringLength(50)]
+
         public string OrderState { get; set; }
+
         public DateTime? DeliveryDateExpect { get; set; }
 
-        [StringLength(500)]
         public string Consignee { get; set; }
+
+        public bool? IsPlanFinished { get; set; }
 
         public bool? IsDeliveryFinished { get; set; }
 
         public DateTime? DeliveryDateFact { get; set; }
 
-        [StringLength(500)]
         public string Remark { get; set; }
 
     }

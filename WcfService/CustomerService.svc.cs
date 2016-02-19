@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfService.Model;
 
 namespace WcfService
 {
@@ -11,8 +12,24 @@ namespace WcfService
     // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 CustomerService.svc 或 CustomerService.svc.cs，然后开始调试。
     public class CustomerService : ICustomerService
     {
-        public void DoWork()
+        public bool AddCustomer(Customer customer)
         {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Customer> GetAllCustomers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

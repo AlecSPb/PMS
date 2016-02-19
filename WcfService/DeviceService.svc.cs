@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WcfService.Model;
 
 namespace WcfService
 {
@@ -11,8 +12,24 @@ namespace WcfService
     // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 DeviceService.svc 或 DeviceService.svc.cs，然后开始调试。
     public class DeviceService : IDeviceService
     {
-        public void DoWork()
+        public bool AddDevice(Device device)
         {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteDevice(Device device)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Device> GetAllDevices()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateDevice(Device device)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -30,13 +30,11 @@ namespace WcfService.Model
         [DataMember]
         public string Dimension { get; set; }
         [DataMember]
-        public double? Quantity { get; set; }
+        public double Quantity { get; set; }
         [DataMember]
         public string Unit { get; set; }
         [DataMember]
-        public bool? IsPlanFinished { get; set; }
-        [DataMember]
-        public int? Priority { get; set; }
+        public int Priority { get; set; }
         [DataMember]
         public string OrderState { get; set; }
         [DataMember]
@@ -45,6 +43,8 @@ namespace WcfService.Model
         public DateTime? DeliveryDateExpect { get; set; }
         [DataMember]
         public string Consignee { get; set; }
+        [DataMember]
+        public bool? IsPlanFinished { get; set; }
         [DataMember]
         public bool? IsDeliveryFinished { get; set; }
         [DataMember]

@@ -19,6 +19,16 @@ namespace WcfService
             dbcontext = new ProductionManagementModel();
         }
 
+        public bool AddMainOrder(MainOrder order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteMainOrder(MainOrder order)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<MainOrder> GetAllMainOrders()
         {
             var query = from mo in dbcontext.V_MainOrder
@@ -27,9 +37,37 @@ namespace WcfService
                             MainOrderId=mo.MainOrderId,
                             OrderDate=mo.OrderDate,
                             CustomerName=mo.CustomerName,
-                            ProductName=mo.ProductName
+                            ProductName=mo.ProductName,
+                            PO=mo.PO,
+                            PMIWorkNumber=mo.PMIWorkNumber,
+                            ProductType=mo.ProductType,
+                            Purity=mo.Purity,
+                            Shape=mo.Shape,
+                            Dimension=mo.Dimension,
+                            Quantity=mo.Quantity,
+                            Unit=mo.Unit,
+                            DeliveryDateExpect=mo.DeliveryDateExpect,
+                            Consignee=mo.Consignee,
+                            Priority=mo.Priority,
+                            IsPlanFinished=mo.IsPlanFinished,
+                            SampleRequirement=mo.SampleRequirement,
+                            OrderState=mo.OrderState,
+                            IsDeliveryFinished=mo.IsDeliveryFinished,
+                            DeliveryDateFact=mo.DeliveryDateFact,
+                            Remark=mo.Remark
+
                         };
             return query.ToList();
+        }
+
+        public MainOrder GetMainOrderById(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateMainOrder(MainOrder order)
+        {
+            throw new NotImplementedException();
         }
     }
 }
