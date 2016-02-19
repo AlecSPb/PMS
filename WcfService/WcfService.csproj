@@ -77,6 +77,7 @@
     <Content Include="MainOrderService.svc" />
     <Content Include="MainPlanService.svc" />
     <Content Include="MoldService.svc" />
+    <Content Include="ProcessCodeService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +94,7 @@
     <Compile Include="IMainOrderService.cs" />
     <Compile Include="IMainPlanService.cs" />
     <Compile Include="IMoldService.cs" />
+    <Compile Include="IProcessCodeService.cs" />
     <Compile Include="MaterialDataService.svc.cs">
       <DependentUpon>MaterialDataService.svc</DependentUpon>
     </Compile>
@@ -114,8 +116,12 @@
     <Compile Include="Model\MaterialOrderItemReceived.cs" />
     <Compile Include="Model\MaterialOrderItem.cs" />
     <Compile Include="Model\Mold.cs" />
+    <Compile Include="Model\ProcessCode.cs" />
     <Compile Include="MoldService.svc.cs">
       <DependentUpon>MoldService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessCodeService.svc.cs">
+      <DependentUpon>ProcessCodeService.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
