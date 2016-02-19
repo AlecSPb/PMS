@@ -81,6 +81,7 @@
     <Content Include="ProcessCodeService.svc" />
     <Content Include="ProductProcessDataService.svc" />
     <Content Include="SupplierService.svc" />
+    <Content Include="UserAccountService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,12 +105,16 @@
     <Compile Include="IProcessCodeService.cs" />
     <Compile Include="IProductProcessDataService.cs" />
     <Compile Include="ISupplierService.cs" />
+    <Compile Include="IUserAccountService.cs" />
     <Compile Include="MaterialDataService.svc.cs">
       <DependentUpon>MaterialDataService.svc</DependentUpon>
     </Compile>
     <Compile Include="MaterialOrderService.svc.cs">
       <DependentUpon>MaterialOrderService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Model\AppAccess.cs" />
+    <Compile Include="Model\AppRole.cs" />
+    <Compile Include="Model\AppUser.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Device.cs" />
     <Compile Include="Model\Employee.cs" />
@@ -141,6 +146,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierService.svc.cs">
       <DependentUpon>SupplierService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccountService.svc.cs">
+      <DependentUpon>UserAccountService.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
