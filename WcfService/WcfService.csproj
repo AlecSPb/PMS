@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="CustomerService.svc" />
     <Content Include="DeviceService.svc" />
+    <Content Include="EmployeeService.svc" />
     <Content Include="MaterialDataService.svc" />
     <Content Include="MaterialOrderService.svc" />
     <Content Include="MainOrderService.svc" />
@@ -88,8 +89,12 @@
     <Compile Include="DeviceService.svc.cs">
       <DependentUpon>DeviceService.svc</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeService.svc.cs">
+      <DependentUpon>EmployeeService.svc</DependentUpon>
+    </Compile>
     <Compile Include="ICustomerService.cs" />
     <Compile Include="IDeviceService.cs" />
+    <Compile Include="IEmployeeService.cs" />
     <Compile Include="IMaterialDataService.cs" />
     <Compile Include="IMaterialOrderService.cs" />
     <Compile Include="IMainOrderService.cs" />
@@ -105,6 +110,7 @@
     </Compile>
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\MainPlan.cs" />
     <Compile Include="MainPlanService.svc.cs">
       <DependentUpon>MainPlanService.svc</DependentUpon>
