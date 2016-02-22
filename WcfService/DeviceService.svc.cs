@@ -19,12 +19,45 @@ namespace WcfService
 
         public bool AddDevice(Device device)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DataAccessLibrary.Model.Device tmpdevice = new DataAccessLibrary.Model.Device()
+                {
+                    DeviceId=device.DeviceId,
+                    DeviceName=device.DeviceName,
+                    DeviceCode=device.DeviceCode,
+                    TopTemperature=device.TopTemperature,
+                    TopPressure=device.TopPressure,
+                    TopDiameter=device.TopDiameter,
+                    Remark=device.Remark
+                };
+                dbcontext.Devices.Add(tmpdevice);
+                dbcontext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         public bool DeleteDevice(Device device)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DataAccessLibrary.Model.Device deleteDevice = dbcontext.Devices.Find(device.DeviceId);
+                if (deleteDevice==null)
+                {
+                    return false;
+                }
+                dbcontext.Devices.Remove(deleteDevice);
+                dbcontext.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         public List<Device> GetAllDevices()
