@@ -16,7 +16,13 @@ namespace TempTest
         }
         public void GetAllMainOrders()
         {
-            service.GetAllMainOrders().ForEach(mo=>Console.WriteLine(mo.ProductName));
+            var query = from mo in service.GetAllMainOrders()
+                        where mo.CustomerName.Contains("Midsummer")
+                        select mo;
+            foreach (var item in query.Take(10))
+            {
+                Console.WriteLine(item.CustomerName+" "+item.ProductName);
+            }
         }
     }
 }
