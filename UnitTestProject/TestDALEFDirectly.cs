@@ -20,7 +20,7 @@ namespace UnitTestProject
         [TestMethod]
         public void TestDataEFWorking()
         {
-            int dataCount = db.V_MainOrder.Count();
+            int dataCount = db.MainOrder.Count();
             Assert.IsTrue(dataCount>0);
         }
 

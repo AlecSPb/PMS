@@ -31,7 +31,7 @@ namespace WcfService
 
         public List<MainOrder> GetAllMainOrders()
         {
-            var query = from mo in dbcontext.V_MainOrder
+            var query = from mo in dbcontext.MainOrder
                         select new MainOrder()
                         {
                             MainOrderId=mo.MainOrderId,

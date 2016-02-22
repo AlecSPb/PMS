@@ -12,7 +12,7 @@ namespace DataAccessLibrary
         {
         }
 
-        public virtual DbSet<V_MainOrder> V_MainOrder { get; set; }
+        public virtual DbSet<MainOrder> MainOrder { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

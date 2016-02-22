@@ -6,7 +6,8 @@ namespace DataAccessLibrary.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public class V_MainOrder
+    [Table("V_MainOrder")]
+    public class MainOrder
     {
         [Key]
         public Guid MainOrderId { get; set; }
