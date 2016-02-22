@@ -8,21 +8,27 @@ namespace UnitTestProject
     /// 直接测试DataAccessLibraryEF
     /// </summary>
     [TestClass]
-    public class TestDALEFDirectly
+    public class UTDALEFDirectly
     {
         private ProductionManagementModel db;
 
-        public TestDALEFDirectly()
+        public UTDALEFDirectly()
         {
             db = new ProductionManagementModel();
         }
 
         [TestMethod]
-        public void TestDataEFWorking()
+        public void TestEFMainOrder()
         {
-            int dataCount = db.MainOrder.Count();
+            int dataCount = db.MainOrders.Count();
             Assert.IsTrue(dataCount>0);
         }
 
+        [TestMethod]
+        public void TestEFMainPlan()
+        {
+            int dataCount = db.MainPlans.Count();
+            Assert.IsTrue(dataCount > 0);
+        }
     }
 }

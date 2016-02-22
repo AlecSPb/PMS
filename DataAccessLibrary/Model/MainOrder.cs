@@ -1,11 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
+
 namespace DataAccessLibrary.Model
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
     [Table("V_MainOrder")]
     public class MainOrder
     {
@@ -51,6 +51,8 @@ namespace DataAccessLibrary.Model
         public DateTime? DeliveryDateFact { get; set; }
 
         public string Remark { get; set; }
+
+        public virtual List<MainPlan> MainPlans { get; set; }
 
     }
 }

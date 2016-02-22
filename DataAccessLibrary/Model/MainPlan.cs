@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WcfService.Model
+namespace DataAccessLibrary.Model
 {
+    [Table("MainPlan")]
     public class MainPlan
     {
+        [Key]
         public Guid MainPlanId { get; set; }
 
         public Guid MainOrderId { get; set; }
 
-        public DateTime? VHPTime { get; set; }
+        public DateTime?  VHPTime { get; set; }
 
         public string VHPType { get; set; }
 
@@ -33,5 +41,8 @@ namespace WcfService.Model
         public string PersonInCharge { get; set; }
 
         public string Remark { get; set; }
+
+        [ForeignKey("MainOrderId")]
+        public virtual  MainOrder MainOrder { get; set; }
     }
 }

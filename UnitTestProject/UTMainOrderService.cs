@@ -5,7 +5,7 @@ using WcfService;
 namespace UnitTestProject
 {
     [TestClass]
-    public class TestMainOrderService
+    public class UTMainOrderService
     {
         private MainOrderService service;
 
@@ -22,5 +22,6 @@ namespace UnitTestProject
             Assert.IsNotNull(mainOrderList);
             Assert.IsTrue(mainOrderList.Count >0);
         }
+
     }
 }

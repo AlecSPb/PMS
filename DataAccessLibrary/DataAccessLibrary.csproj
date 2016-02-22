@@ -51,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AppAccess.cs" />
+    <Compile Include="Model\AppRole.cs" />
+    <Compile Include="Model\AppUser.cs" />
+    <Compile Include="Model\Compound.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\MainPlan.cs" />
+    <Compile Include="Model\Mold.cs" />
     <Compile Include="ProductionManagementModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\MainOrder.cs" />
