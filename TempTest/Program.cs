@@ -11,7 +11,8 @@ namespace TempTest
         static void Main(string[] args)
         {
             TestWCF test = new TestWCF();
-            test.GetAllMainOrders();
+            //test.GetAllMainOrders();
+            test.GetMainPlansByMainOrderId();
             Console.Read();
         }
     }

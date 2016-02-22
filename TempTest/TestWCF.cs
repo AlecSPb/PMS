@@ -9,19 +9,29 @@ namespace TempTest
 {
     class TestWCF
     {
-        private MainOrderService service;
+        private MainOrderService mainorderservice;
+        private MainPlanService mainplanservice;
         public TestWCF()
         {
-            service = new MainOrderService();
+            mainorderservice = new MainOrderService();
+            mainplanservice = new MainPlanService();
         }
         public void GetAllMainOrders()
         {
-            var query = from mo in service.GetAllMainOrders()
+            var query = from mo in mainorderservice.GetAllMainOrders()
                         where mo.CustomerName.Contains("Midsummer")
                         select mo;
             foreach (var item in query.Take(10))
             {
                 Console.WriteLine(item.CustomerName+" "+item.ProductName);
+            }
+        }
+        public void GetMainPlansByMainOrderId()
+        {
+            var mainplans = mainplanservice.GetMainPlansByMainOrderId(new Guid("d3a51f48-8979-40f1-a786-956896805a47"));
+            foreach (var item in mainplans)
+            {
+                Console.WriteLine(item.VHPTime.ToString());
             }
         }
     }
