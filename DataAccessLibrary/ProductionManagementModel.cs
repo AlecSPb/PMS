@@ -14,7 +14,7 @@ namespace DataAccessLibrary
 
         public virtual DbSet<MainOrder> MainOrders { get; set; }
         public DbSet<MainPlan> MainPlans { get; set; }
-
+        public DbSet<Device> Devices { get; set; }
 
 
 

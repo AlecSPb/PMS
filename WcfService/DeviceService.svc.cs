@@ -5,13 +5,18 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using WcfService.Model;
+using DataAccessLibrary;
 
 namespace WcfService
 {
-    // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码、svc 和配置文件中的类名“DeviceService”。
-    // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 DeviceService.svc 或 DeviceService.svc.cs，然后开始调试。
     public class DeviceService : IDeviceService
     {
+        private ProductionManagementModel dbcontext;
+        public DeviceService()
+        {
+            dbcontext = new ProductionManagementModel();
+        }
+
         public bool AddDevice(Device device)
         {
             throw new NotImplementedException();
@@ -24,7 +29,18 @@ namespace WcfService
 
         public List<Device> GetAllDevices()
         {
-            throw new NotImplementedException();
+            var query = from d in dbcontext.Devices
+                        select new Device()
+                        {
+                            DeviceId=d.DeviceId,
+                            DeviceName=d.DeviceName,
+                            DeviceCode=d.DeviceCode,
+                            TopTemperature=d.TopTemperature,
+                            TopPressure=d.TopPressure,
+                            TopDiameter=d.TopDiameter,
+                            Remark=d.Remark
+                        };
+            return query.ToList();
         }
 
         public bool UpdateDevice(Device device)
