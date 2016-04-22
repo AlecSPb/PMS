@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary.Model
 {
-    [Table("MainPlan")]
+    /// <summary>
+    /// 主热压计划
+    /// </summary>
     public class MainPlan
     {
         [Key]

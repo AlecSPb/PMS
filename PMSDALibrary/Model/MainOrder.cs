@@ -6,6 +6,9 @@ using System.Data.Entity.Spatial;
 
 namespace DataAccessLibrary.Model
 {
+    /// <summary>
+    /// Ö÷¶©µ¥
+    /// </summary>
     public class MainOrder
     {
         [Key]
