@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSDALibrary
+namespace PMSDAL
 {
     public class Class1
     {
