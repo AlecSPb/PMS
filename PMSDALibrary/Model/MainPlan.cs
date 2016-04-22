@@ -13,36 +13,37 @@ namespace DataAccessLibrary.Model
     {
         [Key]
         public Guid MainPlanId { get; set; }
-
+        [Required]
         public Guid MainOrderId { get; set; }
+        [Required]
+        public DateTime?  VHPTime { get; set; }//热压日期，手动制定，后期Lot号的重要参考
 
-        public DateTime?  VHPTime { get; set; }
+        public string VHPType { get; set; }//
 
-        public string VHPType { get; set; }
+        public string DeviceType { get; set; }//设备类型，用设备的编号代替
 
-        public string DeviceType { get; set; }
+        public string ProcessCode { get; set; }//热压工艺代码，W1，W2，F1等
 
-        public string ProcessCode { get; set; }
+        public double MoldDiameter { get; set; }//模具内径
 
-        public double MoldDiameter { get; set; }
+        public double Thickness { get; set; }//热压厚度
 
-        public double Thickness { get; set; }
+        public int Quantity { get; set; }//热压数量
 
-        public int VHPQuantity { get; set; }
+        public string Pressure { get; set; }//最高压力
 
-        public string Pressure { get; set; }
+        public string Temperature { get; set; }//最高温度
 
-        public string Temperature { get; set; }
+        public string Vaccum { get; set; }//要求真空度
 
-        public string Vaccum { get; set; }
+        public double DensityCal { get; set; }//计算用的密度
 
-        public double DensityCal { get; set; }
+        public string PersonInCharge { get; set; }//负责人
 
-        public string PersonInCharge { get; set; }
+        public string PlanState { get; set; }//计划状态，可以显示和隐藏当前计划，而不用删除它
 
-        public string Remark { get; set; }
+        public string Remark { get; set; }//备注信息
 
-        [ForeignKey("MainOrderId")]
-        public virtual  MainOrder MainOrder { get; set; }
+
     }
 }

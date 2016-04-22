@@ -59,7 +59,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\MainOrder.cs" />
     <Compile Include="Model\MainPlan.cs" />
-    <Compile Include="Model\MOld.cs" />
+    <Compile Include="Model\Mold.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
