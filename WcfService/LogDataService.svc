@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="WcfService.LogDataService" CodeBehind="LogDataService.svc.cs" %>
