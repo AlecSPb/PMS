@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLibrary.Model
+namespace PMSDAL.Model
 {
     /// <summary>
     /// 主热压计划
