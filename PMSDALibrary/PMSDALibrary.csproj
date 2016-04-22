@@ -60,6 +60,8 @@
     <Compile Include="Model\MainOrder.cs" />
     <Compile Include="Model\MainPlan.cs" />
     <Compile Include="Model\Mold.cs" />
+    <Compile Include="Model\Sample.cs" />
+    <Compile Include="Model\Target.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

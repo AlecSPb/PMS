@@ -13,7 +13,7 @@ namespace DataAccessLibrary.Model
     public class Mold
     {
         [Key]
-        public Guid MoldId { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string InnerDiameter { get; set; }//模具直径
         public string Height { get; set; }//模具高度

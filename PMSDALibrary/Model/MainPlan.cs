@@ -14,7 +14,7 @@ namespace DataAccessLibrary.Model
     public class MainPlan
     {
         [Key]
-        public Guid MainPlanId { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public Guid MainOrderId { get; set; }
         [Required]

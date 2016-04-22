@@ -12,7 +12,7 @@ namespace DataAccessLibrary.Model
     public class MainOrder
     {
         [Key]
-        public Guid MainOrderId { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public DateTime? OrderDate { get; set; }
         [Required]

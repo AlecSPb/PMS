@@ -12,7 +12,7 @@ namespace DataAccessLibrary.Model
     public class Compound
     {
         [Key]
-        public Guid CompoundId { get; set; }
+        public Guid Id { get; set; }
 
         public string CompoundName { get; set; }
 

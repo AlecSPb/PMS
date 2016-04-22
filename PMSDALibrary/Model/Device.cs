@@ -12,7 +12,7 @@ namespace DataAccessLibrary.Model
     public class Device
     {
         [Key]
-        public Guid DeviceId { get; set; }
+        public Guid Id { get; set; }
 
         public string DeviceName { get; set; }
 
