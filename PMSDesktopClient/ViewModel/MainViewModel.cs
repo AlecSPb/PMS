@@ -1,6 +1,6 @@
 using GalaSoft.MvvmLight;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     /// <summary>
     /// This class contains properties that the main View can data bind to.
