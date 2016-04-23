@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{496D2D18-34C4-4621-AECC-5FE6AE212DC6}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSCommon", "PMSCommon\PMSCommon.csproj", "{0BB4A729-AC1E-4973-A915-F857FD75740D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSDAL", "PMSDAL\PMSDAL.csproj", "{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSLargeScreen", "PMSLargeScreen\PMSLargeScreen.csproj", "{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +67,6 @@ Global
 		{A37CF2A6-B649-45BE-9496-9DB777DBD9B9} = {E5148DB6-B8BA-48C4-8DF0-B895997BB335}
 		{0BB4A729-AC1E-4973-A915-F857FD75740D} = {2CC69505-5683-44EA-8650-64046D2A967E}
 		{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF} = {496D2D18-34C4-4621-AECC-5FE6AE212DC6}
+		{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524} = {2CC69505-5683-44EA-8650-64046D2A967E}
 	EndGlobalSection
 EndGlobal
