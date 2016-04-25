@@ -115,6 +115,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Reports\COATempalteBridgeLine.docx" />
+    <None Include="Reports\COATemplate.docx" />
+    <None Include="Reports\GeAsSeElastomer440Blank.docx" />
+    <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
+    <None Include="Reports\ProductTemplate.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
