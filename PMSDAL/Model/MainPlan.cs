@@ -40,6 +40,9 @@ namespace PMSDAL.Model
 
         public double DensityCal { get; set; }//计算用的密度
 
+
+        public string FillRequirement { get; set; }//装模要求，要不要石墨纸，Al2O3纸等等
+
         public string PersonInCharge { get; set; }//负责人
 
         public string PlanState { get; set; }//计划状态，可以显示和隐藏当前计划，而不用删除它

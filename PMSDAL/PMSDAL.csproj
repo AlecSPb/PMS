@@ -54,8 +54,12 @@
     <Compile Include="Model\AppRole.cs" />
     <Compile Include="Model\AppRoleAcess.cs" />
     <Compile Include="Model\AppUser.cs" />
+    <Compile Include="Model\CalculationConditionItem.cs" />
     <Compile Include="Model\Material.cs" />
     <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\CalculationCondition.cs" />
+    <Compile Include="Model\RecordPowder.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\VHPDevice.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\MainOrder.cs" />
@@ -63,6 +67,7 @@
     <Compile Include="Model\Mold.cs" />
     <Compile Include="Model\Sample.cs" />
     <Compile Include="Model\Target.cs" />
+    <Compile Include="Model\RecordVHP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -19,15 +19,10 @@ namespace PMSDAL.Model
         public string DeviceName { get; set; }
         [Required]
         public string DeviceCode { get; set; }
-
         public int TopTemperature { get; set; }
-
         public int TopPressure { get; set; }
-
         public int TopDiameter { get; set; }
-
         public string State { get; set; }//可用状态
-
         public string Remark { get; set; }
 
     }

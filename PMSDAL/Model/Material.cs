@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PMSDAL.Model
 {
+    /// <summary>
+    /// 材料库
+    /// </summary>
     public class Material
     {
         [Key]
@@ -16,17 +19,11 @@ namespace PMSDAL.Model
         public string MaterialName { get; set; }
         [Required]
         public double Density { get; set; }
-
-        public double  MeltingPoint { get; set; }
-
+        public double MeltingPoint { get; set; }
         public double BoilingPoint { get; set; }
-
         public string SpecialProperty { get; set; }
-
         public DateTime UpdateTime { get; set; }
-
         public string InformationSource { get; set; }
-
         public string Remark { get; set; }
 
     }
