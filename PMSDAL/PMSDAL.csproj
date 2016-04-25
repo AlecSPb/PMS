@@ -52,6 +52,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Model\AppAccess.cs" />
     <Compile Include="Model\AppRole.cs" />
+    <Compile Include="Model\AppRoleAcess.cs" />
     <Compile Include="Model\AppUser.cs" />
     <Compile Include="Model\Compound.cs" />
     <Compile Include="Model\Customer.cs" />

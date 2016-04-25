@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PMSDAL.Model
 {
-    class AppAccess
+    public class AppAccess
     {
+        public Guid Id { get; set; }
+        public string AccessName { get; set; }
+        public string AccessCode { get; set; }
     }
 }
