@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace PMSDAL.Model
 {
-    public class Compound
+    public class Material
     {
         [Key]
         public Guid Id { get; set; }
-
-        public string CompoundName { get; set; }
-
+        [Required]
+        public string MaterialName { get; set; }
+        [Required]
         public double Density { get; set; }
 
         public double  MeltingPoint { get; set; }

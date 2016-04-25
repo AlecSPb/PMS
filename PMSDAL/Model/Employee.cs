@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace PMSDAL.Model
 {
-    class Employee
+    public class Employee
     {
+        public Guid Id { get; set; }
+        public string EmployeeName { get; set; }
+        public string State { get; set; }
     }
 }

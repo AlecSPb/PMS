@@ -54,7 +54,7 @@
     <Compile Include="Model\AppRole.cs" />
     <Compile Include="Model\AppRoleAcess.cs" />
     <Compile Include="Model\AppUser.cs" />
-    <Compile Include="Model\Compound.cs" />
+    <Compile Include="Model\Material.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Device.cs" />
     <Compile Include="Model\Employee.cs" />
