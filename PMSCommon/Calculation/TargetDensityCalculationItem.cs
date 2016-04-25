@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsefulPackage
+namespace UsefulPackage.Calculation
 {
     /// <summary>
     ///靶材密度计算法-计算项
@@ -22,7 +22,7 @@ namespace UsefulPackage
         {
             TheoryDensity = 5;
             PaperWeight = 0;
-            PaperThickness=0;
+            PaperThickness = 0;
         }
     }
 }

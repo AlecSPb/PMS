@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsefulPackage
+namespace UsefulPackage.Calculation
 {
     /// <summary>
     /// 靶材密度计算类
