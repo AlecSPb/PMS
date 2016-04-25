@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,15 @@ namespace PMSDAL.Model
     /// </summary>
     public class CalculationConditionItem
     {
+        [Key]
         public Guid Id { get; set; }
+        [Required]
         public string GroupName { get; set; }
+        [Required]
         public string MaterialName { get; set; }
+        [Required]
         public double MoleWeight { get; set; }
+        [Required]
         public double At { get; set; }
 
     }

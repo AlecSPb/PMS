@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,15 @@ namespace PMSDAL.Model
     /// </summary>
     public class CalculationCondition
     {
+        [Key]
         public Guid Id { get; set; }
+        [Required]
         public string Name { get; set; }
+        [Required]
         public DateTime UpdateDate { get; set; }
+        [Required]
         public string Creater { get; set; }
+        [Required]
         public int DownCount { get; set; }
 
     }

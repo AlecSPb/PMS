@@ -21,7 +21,7 @@ namespace PMSDAL.Model
         [Required]
         public Guid MainPlanId { get; set; }//要记录的热压计划Id
         public DateTime RecordTime { get; set; }//记录日期
-        public string RecordPerson { get; set; }
+        public string RecordPerson { get; set; }//记录人
 
         /// <summary>
         /// 温度

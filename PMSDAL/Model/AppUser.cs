@@ -14,6 +14,7 @@ namespace PMSDAL.Model
         public string UserName { get; set; }
         [Required]
         public string RealName { get; set; }
+
         public DateTime CreateDate { get; set; }
         [Required]
         public string Password { get; set; }

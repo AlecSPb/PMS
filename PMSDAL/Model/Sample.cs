@@ -15,11 +15,11 @@ namespace PMSDAL.Model
 
         public Guid Id { get; set; }
         [Required]
-        public string Material { get; set; }
+        public string Material { get; set; }//材料
         [Required]
-        public string Lot { get; set; }
+        public string Lot { get; set; }//Lot
 
-        public string Customer { get; set; }
+        public string Customer { get; set; }//客户名称
         public string PO { get; set; }
         public string Weight1 { get; set; }
         public string Weight2 { get; set; }
@@ -27,8 +27,9 @@ namespace PMSDAL.Model
         public string Weight4{ get; set; }
         public string ForTarget { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        public DateTime OrderDate { get; set; }//订单日期
+        public DateTime CreateDate { get; set; }//报告创建日期
         public string Remark { get; set; }
-        public DateTime OrderDate { get; set; }
+
     }
 }

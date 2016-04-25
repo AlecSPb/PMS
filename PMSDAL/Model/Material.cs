@@ -21,9 +21,9 @@ namespace PMSDAL.Model
         public double Density { get; set; }
         public double MeltingPoint { get; set; }
         public double BoilingPoint { get; set; }
-        public string SpecialProperty { get; set; }
-        public DateTime UpdateTime { get; set; }
-        public string InformationSource { get; set; }
+        public string SpecialProperty { get; set; }//特别性质
+        public DateTime UpdateTime { get; set; }//最后更新时间
+        public string InformationSource { get; set; }//信息来源
         public string Remark { get; set; }
 
     }

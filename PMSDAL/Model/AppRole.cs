@@ -9,7 +9,7 @@ namespace PMSDAL.Model
     public class AppRole
     {
         public Guid Id { get; set; }
-        public string RoleName { get; set; }
+        public string RoleDescrible { get; set; }
         public string Remark { get; set; }
     }
 }

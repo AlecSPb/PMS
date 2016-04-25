@@ -15,22 +15,22 @@ namespace PMSDAL.Model
         
         public Guid Id { get; set;}
         [Required]
-        public string Material { get; set; }
+        public string Material { get; set; }//材料名称
         [Required]
-        public string Lot { get; set; }
-        public string MaterialAbbr { get; set; }
+        public string Lot { get; set; }//Lot
+        public string MaterialAbbr { get; set; }//材料缩写
 
-        public string Size { get; set; }
-        public string Customer { get; set; }
-        public string PO { get; set; }
-        public string Density { get; set; }
-        public string Weight { get; set; }
-        public string Resistance { get; set; }
-        public string XRFComposition { get; set; }
+        public string Size { get; set; }//靶材要求尺寸
+        public string Customer { get; set; }//客户名称
+        public string PO { get; set; }//PO
+        public string Density { get; set; }//密度
+        public string Weight { get; set; }//靶材重量
+        public string Resistance { get; set; }//电阻率
+        public string XRFComposition { get; set; }//XRF成分
+        public string Dimension { get; set; }//尺寸
+        public DateTime CreateDate { get; set; }//创建日期
+        public DateTime OrderDate { get; set; }//订单日期
         public string Remark { get; set; }
-        public string Dimension { get; set; }
-        public DateTime CreateDate { get; set; }
-        public DateTime OrderDate { get; set; }
 
     }
 }

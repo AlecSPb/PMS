@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PMSDbContext.cs" />
     <Compile Include="Model\AppAccess.cs" />
     <Compile Include="Model\AppRole.cs" />
     <Compile Include="Model\AppRoleAcess.cs" />
@@ -61,7 +61,6 @@
     <Compile Include="Model\RecordPowder.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\VHPDevice.cs" />
-    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\MainOrder.cs" />
     <Compile Include="Model\MainPlan.cs" />
     <Compile Include="Model\Mold.cs" />

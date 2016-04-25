@@ -19,9 +19,9 @@ namespace PMSDAL.Model
         public string CellPhone { get; set; }
         public string Fax { get; set; }
         public string QQ { get; set; }
-        public string TheirProducts { get; set; }
+        public string TheirProducts { get; set; }//他们的产品
         public string Email { get; set; }
-        public string OtherContact { get; set; }
+        public string OtherContact { get; set; }//其他联系方式
         public string Remark { get; set; }
     }
 }

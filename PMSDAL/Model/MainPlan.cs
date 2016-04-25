@@ -32,14 +32,15 @@ namespace PMSDAL.Model
 
         public int Quantity { get; set; }//热压数量
 
+        public double DensityCal { get; set; }//计算用的密度
+
         public string Pressure { get; set; }//最高压力
 
         public string Temperature { get; set; }//最高温度
 
         public string Vaccum { get; set; }//要求真空度
 
-        public double DensityCal { get; set; }//计算用的密度
-
+        public string KeepTime { get; set; }//热压时间
 
         public string FillRequirement { get; set; }//装模要求，要不要石墨纸，Al2O3纸等等
 

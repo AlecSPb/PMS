@@ -34,7 +34,7 @@ namespace PMSDAL.Model
 
         public string Quantity { get; set; }//大部分是片，有时候是g或者kg
 
-        public int Priority { get; set; }//订单优先级
+        public int Priority { get; set; }//订单优先级,特别紧急，比较紧急，普通，不紧急
 
         public string SampleRequirement { get; set; }//样品需求
 
