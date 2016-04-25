@@ -20,9 +20,11 @@ namespace PMSDAL.Model
         [Required]
         public string MoldType { get; set; }//模具类型，高强石墨，超强石墨，CFC
         [Required]
-        public string ModelState { get; set; }//模具的可用状态
+        public string State { get; set; }//模具的可用状态
         public string MoldCode { get; set; }//给模具编的，符合人阅读规律的编号
 
+
+        public string Remark { get; set; }
 
 
     }

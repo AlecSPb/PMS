@@ -7,6 +7,9 @@ using System.Web;
 
 namespace PMSDAL.Model
 {
+    /// <summary>
+    /// 靶材产品
+    /// </summary>
     public class Target
     {
         

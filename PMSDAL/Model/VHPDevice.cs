@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace PMSDAL.Model
 {
-    [Table("Device")]
-    public class Device
+    /// <summary>
+    /// VHPDevice
+    /// </summary>
+    public class VHPDevice
     {
         [Key]
         public Guid Id { get; set; }
-
+        [Required]
         public string DeviceName { get; set; }
-
+        [Required]
         public string DeviceCode { get; set; }
 
         public int TopTemperature { get; set; }
@@ -23,6 +25,8 @@ namespace PMSDAL.Model
         public int TopPressure { get; set; }
 
         public int TopDiameter { get; set; }
+
+        public string State { get; set; }//可用状态
 
         public string Remark { get; set; }
 

@@ -7,6 +7,9 @@ using System.Web;
 
 namespace PMSDAL.Model
 {
+    /// <summary>
+    /// 样品产品
+    /// </summary>
     public class Sample
     {
 

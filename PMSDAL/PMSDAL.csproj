@@ -56,7 +56,7 @@
     <Compile Include="Model\AppUser.cs" />
     <Compile Include="Model\Material.cs" />
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\VHPDevice.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\MainOrder.cs" />
     <Compile Include="Model\MainPlan.cs" />
