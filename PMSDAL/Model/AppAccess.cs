@@ -10,6 +10,6 @@ namespace PMSDAL.Model
     {
         public Guid Id { get; set; }
         public string AccessDescrible { get; set; }//权限描述
-        public string AccessCode { get; set; }
+        public string AccessCode { get; set; }//权限代码
     }
 }

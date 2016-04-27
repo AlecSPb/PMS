@@ -46,7 +46,7 @@ namespace PMSDAL.Model
 
         public string PersonInCharge { get; set; }//负责人
 
-        public string PlanState { get; set; }//计划状态，可以显示和隐藏当前计划，而不用删除它
+        public string State { get; set; }//计划状态，可以显示和隐藏当前计划，而不用删除它
 
         public string Remark { get; set; }//备注信息
 

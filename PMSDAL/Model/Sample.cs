@@ -27,6 +27,8 @@ namespace PMSDAL.Model
         public string Weight4{ get; set; }
         public string ForTarget { get; set; }
 
+        public string State { get; set; }
+
         public DateTime OrderDate { get; set; }//订单日期
         public DateTime CreateDate { get; set; }//报告创建日期
         public string Remark { get; set; }
