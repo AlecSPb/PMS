@@ -18,6 +18,8 @@ namespace PMSDAL.Model
         [Required]
         public string MaterialName { get; set; }
         [Required]
+        public string MaterialType { get; set; }//材料类型，单质，化合物，混合物，其他
+        [Required]
         public double Density { get; set; }
         public double MeltingPoint { get; set; }
         public double BoilingPoint { get; set; }
