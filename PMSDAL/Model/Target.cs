@@ -12,8 +12,8 @@ namespace PMSDAL.Model
     /// </summary>
     public class Target
     {
-        
-        public Guid Id { get; set;}
+
+        public Guid Id { get; set; }
         [Required]
         public string Material { get; set; }//材料名称
         [Required]
@@ -30,6 +30,7 @@ namespace PMSDAL.Model
         public string Dimension { get; set; }//尺寸
         public DateTime CreateDate { get; set; }//创建日期
         public DateTime OrderDate { get; set; }//订单日期
+        public string State { get; set; }//订单状态，显示，隐藏，删除
         public string Remark { get; set; }
 
     }

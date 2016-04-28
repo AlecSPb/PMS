@@ -38,7 +38,7 @@ namespace PMSDAL.Model
 
         public string SampleRequirement { get; set; }//样品需求
 
-        public string OrderState { get; set; }//订单状态，有效，取消，订单数据不做真实删除，只标记，虚拟删除
+        public string State { get; set; }//订单状态，有效，取消，删除，订单数据不做真实删除，只标记，虚拟删除
 
         public DateTime? DeliveryDateExpect { get; set; }//预计发货日期，默认设置订单创建日期后的一个月
 

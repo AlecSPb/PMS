@@ -10,6 +10,11 @@ namespace WPFValidationRule
 {
     public class RequiredRule : ValidationRule
     {
+        public string ErrorMesage { get; set; }
+        public RequiredRule()
+        {
+            ErrorMesage = "The value is required!";
+        }
         /// <summary>
         /// 输入不能为空
         /// </summary>
@@ -25,7 +30,7 @@ namespace WPFValidationRule
             }
             else
             {
-                return new ValidationResult(false, "This Value must be not empty");
+                return new ValidationResult(false, ErrorMesage);
             }
         }
     }

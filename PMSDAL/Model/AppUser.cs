@@ -20,7 +20,7 @@ namespace PMSDAL.Model
         public string Password { get; set; }
         //设置用户账户状态，有效，无效
         [Required]
-        public string UserState { get; set; }
+        public string State { get; set; }
 
         //每个用户只能有一个角色
         [Required]
