@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{DC
 		Commit语句.txt = Commit语句.txt
 		ReadMe.txt = ReadMe.txt
 		关于自动更新.txt = 关于自动更新.txt
+		客户端的功能.txt = 客户端的功能.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSService", "PMSService\PMSService.csproj", "{20F03A60-BF20-4534-963F-B67CF68DE87D}"
