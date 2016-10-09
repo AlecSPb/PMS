@@ -11,6 +11,7 @@ namespace Model
     /// </summary>
     public class Order
     {
+        //基本信息
         public Guid ID { get; set; }
         public string CustomerName { get; set; }
         public string PO { get; set; }
@@ -36,7 +37,7 @@ namespace Model
         public string CurrentStateReason { get; set; }//当前状态的原因，主要给取消和暂停用
 
 
-        //创建和审核部分
+        //创建者和审核部分
         public DateTime CreateDate { get; set; }
         public string Creator { get; set; }
 
