@@ -41,7 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
-    <Compile Include="Mold.cs" />
+    <Compile Include="VHPDevice.cs" />
+    <Compile Include="VHPMold.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="PlanItem.cs" />

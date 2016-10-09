@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Mold
+    public class VHPDevice
     {
         public Guid ID { get; set; }
-        public string ModelType { get; set; }
-        public string MoldDetails { get; set; }
-        public double InnerDiameter { get; set; }
-        public double ModelHeight { get; set; }
+        public string CodeName { get; set; }
+        public string DeviceRemark { get; set; }
+        public double HighestTemperature { get; set; }
+        public double HighestPressure { get; set; }
+        public double HighestDiameter { get; set; }
         public int CurrentState { get; set; }
 
         public string Creator { get; set; }
         public DateTime CreateDate { get; set; }
 
-    }
 
+    }
 }
