@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{496D2D18-34C4-4621-AECC-5FE6AE212DC6}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFValidationRule", "WPFValidationRule\WPFValidationRule.csproj", "{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFSkin", "WPFSkin\WPFSkin.csproj", "{DE3A1FC9-D00D-4E0F-9346-15502342ED76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7CD5CB91-101F-4EEB-B87E-47BF6EB1C4F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE3A1FC9-D00D-4E0F-9346-15502342ED76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD5CB91-101F-4EEB-B87E-47BF6EB1C4F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD5CB91-101F-4EEB-B87E-47BF6EB1C4F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD5CB91-101F-4EEB-B87E-47BF6EB1C4F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD5CB91-101F-4EEB-B87E-47BF6EB1C4F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
