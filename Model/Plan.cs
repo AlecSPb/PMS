@@ -12,7 +12,7 @@ namespace Model
     /// </summary>
     public class Plan
     {
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
         public DateTime PlanDate { get; set; }
         //模具和装料要求
         public string MoldCode { get; set; }
