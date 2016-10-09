@@ -45,6 +45,7 @@
     <Compile Include="Plan.cs" />
     <Compile Include="PlanItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PMSUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="说明.txt" />
