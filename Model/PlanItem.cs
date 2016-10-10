@@ -8,6 +8,7 @@ namespace Model
 {
     /// <summary>
     /// 计划项
+    /// 属于Plan的子项，按照订单生成的
     /// </summary>
     public class PlanItem
     {

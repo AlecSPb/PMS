@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// 材料需求表，由生产经理根据订单表新建而成
+    /// </summary>
     public class MaterialRequirement
     {
         public Guid Id { get; set; }
