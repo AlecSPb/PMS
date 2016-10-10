@@ -7,14 +7,22 @@ using System.Threading.Tasks;
 namespace Model
 {
     /// <summary>
-    /// 热压工艺表
+    /// 发货单表
     /// </summary>
-    public class VHPProcess
+    public class Delivery
     {
         public Guid ID { get; set; }
-        public string CodeName { get; set; }
-        public string CodeMeaning { get; set; }
+        public string ShipSheetLot { get; set; }
+
+        public string ShipToAddress { get; set; }
+        public string PakcageRequirement { get; set; }
+
+
+
+
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
+
+
     }
 }
