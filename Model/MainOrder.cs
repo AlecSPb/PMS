@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// 订单
     /// </summary>
-    public class Order
+    public class MainOrder
     {
         //基本信息
         public Guid ID { get; set; }
@@ -29,7 +29,7 @@ namespace Model
         public string Dimension { get; set; }//尺寸标准表示
         public string DimensionRequirement { get; set; }//尺寸细节
         public string SampleRequirement { get; set; }//是否需要样品
-        public DateTime DeliveryDate { get; set; }
+        public DateTime ScheduleDeliveryDate { get; set; }
 
         //状态部分
         public int Priority { get; set; }//紧急，一般，不着急

@@ -10,7 +10,7 @@ namespace Model
     {
         public Guid ID { get; set; }
         public string CodeName { get; set; }
-        public string DeviceRemark { get; set; }
+        public string DeviceInformation { get; set; }
         public double HighestTemperature { get; set; }
         public double HighestPressure { get; set; }
         public double HighestDiameter { get; set; }

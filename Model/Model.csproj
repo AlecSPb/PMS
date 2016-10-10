@@ -48,9 +48,10 @@
     <Compile Include="MaterialOrderItem.cs" />
     <Compile Include="MaterialRequirement.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="SubContract.cs" />
     <Compile Include="VHPDevice.cs" />
     <Compile Include="VHPMold.cs" />
-    <Compile Include="Order.cs" />
+    <Compile Include="MainOrder.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="PlanItem.cs" />
     <Compile Include="VHPProcess.cs" />

@@ -21,7 +21,8 @@ namespace Model
         public string Density { get; set; }
         public string Weight { get; set; }
         public string XRFComposition { get; set; }
-        public string Remark { get; set; }
+        public string ExtraInformation { get; set; }
+
         public string Dimension { get; set; }
 
         //当前记录状态，有效，无效
