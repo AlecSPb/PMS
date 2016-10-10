@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="Material.cs" />
+    <Compile Include="MaterialRequirement.cs" />
     <Compile Include="VHPDevice.cs" />
     <Compile Include="VHPMold.cs" />
     <Compile Include="Order.cs" />
