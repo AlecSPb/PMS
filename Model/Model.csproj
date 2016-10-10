@@ -45,6 +45,7 @@
     <Compile Include="MaterialOrder.cs" />
     <Compile Include="MaterialOrderItem.cs" />
     <Compile Include="MaterialRequirement.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="VHPDevice.cs" />
     <Compile Include="VHPMold.cs" />
     <Compile Include="Order.cs" />
