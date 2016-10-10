@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Material
+    public class Compound
     {
         public Guid ID { get; set; }
         public string MaterialName { get; set; }

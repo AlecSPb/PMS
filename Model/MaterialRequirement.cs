@@ -17,8 +17,8 @@ namespace Model
         public double Weight { get; set; }
         public string Supplier { get; set; }
         public string SpecialNeeds { get; set; }
-        
-            
+        public string PMIWorkingNumber { get; set; }
+
 
         public int CurrentState { get; set; }
         public string Creator { get; set; }
