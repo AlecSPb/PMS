@@ -43,6 +43,7 @@
     <Compile Include="InventoryOut.cs" />
     <Compile Include="LogInformation.cs" />
     <Compile Include="InventoryIn.cs" />
+    <Compile Include="VHPCondition.cs" />
     <Compile Include="ViewModel\CurrentUser.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Compound.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="VHPProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PMSUser.cs" />
+    <Compile Include="ViewModel\VHPProcessRecordSheet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="说明.txt" />
