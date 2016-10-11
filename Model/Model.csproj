@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModel\CurrentUser.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Compound.cs" />
     <Compile Include="Delivery.cs" />
@@ -64,6 +65,7 @@
   <ItemGroup>
     <Content Include="说明.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
