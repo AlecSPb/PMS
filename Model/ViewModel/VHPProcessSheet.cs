@@ -11,7 +11,7 @@ namespace Model.ViewModel
     /// 每次热压，每个热压机对应一个记录单
     /// 生成Word格式的热压记录单的时候使用
     /// </summary>
-    public class VHPProcessRecordSheet
+    public class VHPProcessSheet
     {
         public Guid ID { get; set; }
         //热压机编号
@@ -20,6 +20,10 @@ namespace Model.ViewModel
         public VHPMold CurrentMold { get; set; }
         //当前热压条件
         public VHPCondition CurrentVHPCondition { get; set; }
+        //装料要求
+        public string FillRequirement { get; set; }
+
+
 
 
 

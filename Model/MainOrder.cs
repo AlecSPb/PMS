@@ -17,8 +17,8 @@ namespace Model
         public string PO { get; set; }
         public string PMIWorkingNumber { get; set; }
 
-        public string Composition { get; set; }//成分规范表示
-        public string CompositionOriginal { get; set; }//成分原始表示
+        public string StandardComposition { get; set; }//成分规范表示
+        public string OriginalComposition { get; set; }//成分原始表示
 
         public string ProductType { get; set; }
         public string Purity { get; set; }
