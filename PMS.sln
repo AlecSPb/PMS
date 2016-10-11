@@ -9,10 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{2CC695
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{DC0B74BE-6C71-426A-BDEC-E32ED2BC0D98}"
 	ProjectSection(SolutionItems) = preProject
-		Commit语句.txt = Commit语句.txt
+		Documents\Commit语句.txt = Documents\Commit语句.txt
 		ReadMe.txt = ReadMe.txt
-		关于自动更新.txt = 关于自动更新.txt
-		客户端的功能.txt = 客户端的功能.txt
+		Documents\关于自动更新.txt = Documents\关于自动更新.txt
+		Documents\客户端的功能.txt = Documents\客户端的功能.txt
+		Documents\用户权限控制.txt = Documents\用户权限控制.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSService", "PMSService\PMSService.csproj", "{20F03A60-BF20-4534-963F-B67CF68DE87D}"
