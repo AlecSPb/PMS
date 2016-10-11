@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// 用户组
     /// </summary>
-    public class PMSGroup
+    public class PMSRole
     {
         public Guid ID { get; set; }
         public string GroupName { get; set; }
