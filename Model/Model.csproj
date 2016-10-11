@@ -47,6 +47,9 @@
     <Compile Include="MaterialOrder.cs" />
     <Compile Include="MaterialOrderItem.cs" />
     <Compile Include="MaterialRequirement.cs" />
+    <Compile Include="PMSGroupAcess.cs" />
+    <Compile Include="PMSAccess.cs" />
+    <Compile Include="PMSGroup.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="SubContract.cs" />
     <Compile Include="VHPDevice.cs" />
