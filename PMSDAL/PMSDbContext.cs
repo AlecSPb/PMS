@@ -22,7 +22,7 @@ namespace PMSDAL
         public DbSet<CalculationConditionItem> CalculationConditionItem { get; set; }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Employee> Employee { get; set; }
-        public DbSet<MainOrder> MainOrder { get; sxet; }
+        public DbSet<MainOrder> MainOrder { get; set; }
         public DbSet<MainPlan> MainPlan { get; set; }
         public DbSet<Material> Material { get; set; }
         public DbSet<Mold> Mold { get; set; }
