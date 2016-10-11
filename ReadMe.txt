@@ -1,4 +1,4 @@
-所有的项目都基于.NET Framework 4.6.1
+All Solution is built  on .NET Framework 4.6.1 Platform.
 
 #document
 Projects lib=>software work=>new production management system
