@@ -25,6 +25,10 @@ namespace Model
 
         public string Dimension { get; set; }
 
+        public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
+        public string CurrentStatus { get; set; }//在库房，已发货，报废
+
+
         //当前记录状态，有效，无效
         public int CurrentState { get; set; }
         public string Creator { get; set; }

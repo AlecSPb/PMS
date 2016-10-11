@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryOut.cs" />
     <Compile Include="LogInformation.cs" />
+    <Compile Include="InventoryIn.cs" />
     <Compile Include="ViewModel\CurrentUser.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Compound.cs" />

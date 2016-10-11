@@ -19,5 +19,7 @@ namespace Model
         public string Size { get; set; }
         public string SpeicialRequirement { get; set; }
         public string CurrentState { get; set; }
+        public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
+
     }
 }
