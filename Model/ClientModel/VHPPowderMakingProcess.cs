@@ -11,7 +11,8 @@ namespace Model.ClientModel
     /// </summary>
     public class VHPPowderMakingProcess
     {
-
+        public Guid ID { get; set; }
+        public TargetData TargetInformation { get; set; }
 
     }
 }
