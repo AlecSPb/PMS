@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Model.ViewModel
 {
     /// <summary>
-    /// 热压过程的记录项目
+    /// 热压过程的记录-项目
     /// </summary>
     public class VHPRecordItem
     {

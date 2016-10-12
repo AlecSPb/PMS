@@ -24,10 +24,5 @@ namespace Model.ViewModel
         public string FillRequirement { get; set; }
 
 
-
-
-
-
-
     }
 }

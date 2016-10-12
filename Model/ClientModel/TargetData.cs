@@ -10,12 +10,14 @@ namespace Model
     /// 靶材
     /// 主要用于VHPProcessRecordSheet的生成
     /// </summary>
-    public class Target
+    public class TargetData
     {
         public Guid ID { get; set; }
-        public string StandardComposition { get; set; }
-        public string CustomerName { get; set; }
-        public string PO { get; set; }
+        public Guid OrderID { get; set; }
+        //public string StandardComposition { get; set; }
+        //public string CustomerName { get; set; }
+        //public string PO { get; set; }
+
         public double Thickness { get; set; }
         public double CalcualtionDensity { get; set; }
         public double Quantity { get; set; }
@@ -26,6 +28,8 @@ namespace Model
 
         public string MoveOutTemperature { get; set; }
         public string TakeOutTemperature { get; set; }
+        public string ExtraInformation { get; set; }
+
 
         public double RoughTargetWeight { get; set; }
         public double Diameter1 { get; set; }

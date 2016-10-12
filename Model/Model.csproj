@@ -40,10 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientModel\VHPPowderMakingProcess.cs" />
     <Compile Include="Database\InventoryOut.cs" />
     <Compile Include="Database\LogInformation.cs" />
     <Compile Include="Database\InventoryIn.cs" />
-    <Compile Include="Database\Target.cs" />
+    <Compile Include="ClientModel\TargetData.cs" />
     <Compile Include="Database\VHPCondition.cs" />
     <Compile Include="ClientModel\CurrentUser.cs" />
     <Compile Include="Database\Customer.cs" />
@@ -74,7 +75,9 @@
   <ItemGroup>
     <Content Include="说明.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interface\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
