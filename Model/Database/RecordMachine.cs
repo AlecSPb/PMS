@@ -12,7 +12,9 @@ namespace Model.ViewModel
     public class RecordMachine
     {
         public Guid ID { get; set; }
-        public TargetData CurrentTarget { get; set; }
+        //靶材信息
+
+
         //加工要求
         public string Dimension{ get; set; }
         public string ExtraRequirement { get; set; }

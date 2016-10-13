@@ -40,12 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientModel\RecordMilling.cs" />
+    <Compile Include="Database\RecordMilling.cs" />
     <Compile Include="Database\InventoryOut.cs" />
     <Compile Include="Database\LogInformation.cs" />
     <Compile Include="Database\InventoryIn.cs" />
     <Compile Include="ClientModel\TargetData.cs" />
-    <Compile Include="Database\VHPCondition.cs" />
     <Compile Include="ClientModel\CurrentUser.cs" />
     <Compile Include="Database\Customer.cs" />
     <Compile Include="Database\Compound.cs" />
@@ -57,7 +56,7 @@
     <Compile Include="Database\PMSRoleAcess.cs" />
     <Compile Include="Database\PMSAccess.cs" />
     <Compile Include="Database\PMSRole.cs" />
-    <Compile Include="Database\Product.cs" />
+    <Compile Include="Database\RecordProduct.cs" />
     <Compile Include="Database\SubContract.cs" />
     <Compile Include="Database\VHPDevice.cs" />
     <Compile Include="Database\VHPMold.cs" />
@@ -67,10 +66,9 @@
     <Compile Include="Database\VHPProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\PMSUser.cs" />
-    <Compile Include="ClientModel\VHPProcess.cs" />
-    <Compile Include="ClientModel\RecordVHPItem.cs" />
-    <Compile Include="ClientModel\RecordVHP.cs" />
-    <Compile Include="ClientModel\RecordMachine.cs" />
+    <Compile Include="Database\RecordVHPItem.cs" />
+    <Compile Include="Database\RecordVHP.cs" />
+    <Compile Include="Database\RecordMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="说明.txt" />

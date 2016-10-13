@@ -12,9 +12,9 @@ namespace Model
     public class Product
     {
         public Guid ID { get; set; }
+        public string Lot { get; set; }
         public string Composition { get; set; }
         public string CompositionAbbr { get; set; }
-        public string Lot { get; set; }
         public string Size { get; set; }
         public string Customer { get; set; }
         public string PO { get; set; }

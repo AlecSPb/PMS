@@ -12,6 +12,7 @@ namespace Model.ClientModel
     public class RecordMilling
     {
         public Guid ID { get; set; }
+        //靶材信息
         public TargetData TargetInformation { get; set; }
 
     }

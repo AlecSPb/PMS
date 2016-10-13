@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.ViewModel
+namespace Model
 {
     /// <summary>
     /// 热压过程的记录-项目
