@@ -9,7 +9,7 @@ namespace Model.ClientModel
     /// <summary>
     /// 制粉记录
     /// </summary>
-    public class VHPPowderMakingProcess
+    public class VHPPowderRecord
     {
         public Guid ID { get; set; }
         public TargetData TargetInformation { get; set; }

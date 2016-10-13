@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientModel\VHPPowderMakingProcess.cs" />
+    <Compile Include="ClientModel\VHPPowderRecord.cs" />
     <Compile Include="Database\InventoryOut.cs" />
     <Compile Include="Database\LogInformation.cs" />
     <Compile Include="Database\InventoryIn.cs" />
