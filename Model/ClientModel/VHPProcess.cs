@@ -11,7 +11,7 @@ namespace Model.ViewModel
     /// 每次热压，每个热压机对应一个记录单
     /// 生成Word格式的热压记录单的时候使用
     /// </summary>
-    public class VHPProcessSheet
+    public class VHPProcess
     {
         public Guid ID { get; set; }
         //热压机编号

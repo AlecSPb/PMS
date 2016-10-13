@@ -9,7 +9,7 @@ namespace Model.ViewModel
     /// <summary>
     /// 热压过程的记录-项目
     /// </summary>
-    public class VHPRecordItem
+    public class RecordVHPItem
     {
         public Guid ID { get; set; }
         public string Creator { get; set; }

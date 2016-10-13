@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientModel\VHPPowderRecord.cs" />
+    <Compile Include="ClientModel\RecordMilling.cs" />
     <Compile Include="Database\InventoryOut.cs" />
     <Compile Include="Database\LogInformation.cs" />
     <Compile Include="Database\InventoryIn.cs" />
@@ -67,10 +67,10 @@
     <Compile Include="Database\VHPProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\PMSUser.cs" />
-    <Compile Include="ClientModel\VHPProcessSheet.cs" />
-    <Compile Include="ClientModel\VHPRecordSheetItem.cs" />
-    <Compile Include="ClientModel\VHPRecordSheet.cs" />
-    <Compile Include="ClientModel\VHPMachineSheet.cs" />
+    <Compile Include="ClientModel\VHPProcess.cs" />
+    <Compile Include="ClientModel\RecordVHPItem.cs" />
+    <Compile Include="ClientModel\RecordVHP.cs" />
+    <Compile Include="ClientModel\RecordMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="说明.txt" />

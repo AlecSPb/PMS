@@ -9,7 +9,7 @@ namespace Model.ViewModel
     /// <summary>
     /// 机械加工记录
     /// </summary>
-    public class VHPMachineSheet
+    public class RecordMachine
     {
         public Guid ID { get; set; }
         public TargetData CurrentTarget { get; set; }
