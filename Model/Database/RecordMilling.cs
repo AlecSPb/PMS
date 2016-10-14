@@ -15,5 +15,20 @@ namespace Model.ClientModel
         //靶材信息
         public TargetData TargetInformation { get; set; }
 
+        //需要记录的信息
+        public string RawMaterial { get; set; }
+        public string FromWho { get; set; }
+        public string ExtraInformation { get; set; }
+        public string MillingTool{ get; set; }
+        public string GasProtection { get; set; }
+        public double MaterialIn { get; set; }
+        public double MaterialOut { get; set; }
+        public double MaterialRemain { get; set; }
+
+
+        public int CurrentState { get; set; }
+        public string Creator { get; set; }
+        public DateTime CreateDate { get; set; }
+
     }
 }
