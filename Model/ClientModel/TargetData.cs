@@ -26,19 +26,7 @@ namespace Model
         public string GrainSize { get; set; }
         public string PowderWeight { get; set; }
 
-        public string MoveOutTemperature { get; set; }
-        public string TakeOutTemperature { get; set; }
-        public string ExtraInformation { get; set; }
-
-
-        public double RoughTargetWeight { get; set; }
-        public double Diameter1 { get; set; }
-        public double Diameter2 { get; set; }
-
-        public double Thickness1 { get; set; }
-        public double Thickness2 { get; set; }
-        public double Thickness3 { get; set; }
-        public double Thickness4 { get; set; }
+       
 
         public bool NeedRecycled { get; set; }
 

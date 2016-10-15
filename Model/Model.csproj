@@ -57,6 +57,7 @@
     <Compile Include="Database\PMSAccess.cs" />
     <Compile Include="Database\PMSRole.cs" />
     <Compile Include="Database\RecordProduct.cs" />
+    <Compile Include="Database\RecordTakeOut.cs" />
     <Compile Include="Database\SubContract.cs" />
     <Compile Include="Database\VHPDevice.cs" />
     <Compile Include="Database\VHPMold.cs" />
