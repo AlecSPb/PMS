@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Bonding.cs" />
     <Compile Include="Database\RecordMilling.cs" />
     <Compile Include="Database\InventoryOut.cs" />
     <Compile Include="Database\LogInformation.cs" />
