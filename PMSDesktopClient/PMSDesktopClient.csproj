@@ -190,6 +190,8 @@
     <Resource Include="Update\更新说明.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resource\Files\" />
+    <Folder Include="Resource\Images\" />
     <Folder Include="Service\" />
     <Folder Include="Update\Package\" />
   </ItemGroup>
