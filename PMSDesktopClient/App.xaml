@@ -10,7 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Language/zh-cn.xaml"/>
                 <ResourceDictionary Source="Resource/BasicSkin.xaml"/>
-                <ResourceDictionary Source="Resource/CommonStyle.xaml"/>
+                <ResourceDictionary Source="Resource/MouseStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
