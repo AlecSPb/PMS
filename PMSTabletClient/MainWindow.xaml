@@ -13,9 +13,12 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Background="Wheat">
             <Button Content="订单" Style="{StaticResource btnSquare}"/>
+            <Button Content="计划" Style="{StaticResource btnSquare}"/>
             <Button Content="产品" Style="{StaticResource btnSquare}"/>
-            <Button Content="发货" Style="{StaticResource btnSquare}"/>
             <Button Content="库存" Style="{StaticResource btnSquare}"/>
+            <Button Content="绑定" Style="{StaticResource btnSquare}"/>
+            <Button Content="发货" Style="{StaticResource btnSquare}"/>
+            <Button Content="记录" Style="{StaticResource btnSquare}"/>
         </StackPanel>
         <ContentControl x:Name="contentPart" Grid.Column="1"/>
     </Grid>
