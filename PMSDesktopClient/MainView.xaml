@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSDesktopClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="{StaticResource Applicationtitle}" MinHeight="350" MinWidth="525" WindowState="Maximized">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" VerticalAlignment="Center">
+            <MenuItem Header="主菜单">
+                <MenuItem Header="订单"/>
+                <MenuItem Header="计划"/>
+            </MenuItem>
+            <MenuItem Header="帮助">
+                <MenuItem Header="关于"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"  Background="{StaticResource MenuBar}">
 
+            <Button Content="{StaticResource Orders}" Style="{StaticResource btnMainMenu}"/>
+            <Button Content="{StaticResource Plans}" Style="{StaticResource btnMainMenu}"/>
+            <Button Content="{StaticResource Products}" Style="{StaticResource btnMainMenu}"/>
+            <Button Content="{StaticResource Bondings}" Style="{StaticResource btnMainMenu}"/>
+            <Button Content="{StaticResource Deliveries}" Style="{StaticResource btnMainMenu}"/>
+        </StackPanel>
+        <ContentControl x:Name="contentPart" Grid.Row="2"/>
     </Grid>
 </Window>

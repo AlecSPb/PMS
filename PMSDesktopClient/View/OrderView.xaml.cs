@@ -1,5 +1,4 @@
-﻿using PMSDesktopClient.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSDesktopClient
+namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// OrderView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainView : Window
+    public partial class OrderView : UserControl
     {
-        public MainView()
+        public OrderView()
         {
             InitializeComponent();
-            this.contentPart.Content = new OrderView();
-
-
         }
     }
 }
