@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSTabletClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="Wheat">
+            <Button Content="订单" Style="{StaticResource btnSquare}"/>
+            <Button Content="产品" Style="{StaticResource btnSquare}"/>
+            <Button Content="发货" Style="{StaticResource btnSquare}"/>
+            <Button Content="库存" Style="{StaticResource btnSquare}"/>
+        </StackPanel>
     </Grid>
 </Window>
