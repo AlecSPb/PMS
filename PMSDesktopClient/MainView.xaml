@@ -19,6 +19,7 @@
                 <MenuItem Header="{StaticResource Products}"/>
                 <MenuItem Header="{StaticResource Bondings}"/>
                 <MenuItem Header="{StaticResource Deliveries}"/>
+                <MenuItem Header="{StaticResource RawMaterial}"/>
             </MenuItem>
             <MenuItem Header="记录">
                 <MenuItem Header="制粉记录"/>
@@ -35,6 +36,7 @@
             <Button Content="{StaticResource Products}" Style="{StaticResource btnMainMenu}"/>
             <Button Content="{StaticResource Bondings}" Style="{StaticResource btnMainMenu}"/>
             <Button Content="{StaticResource Deliveries}" Style="{StaticResource btnMainMenu}"/>
+            <Button Content="{StaticResource RawMaterial}" Style="{StaticResource btnMainMenu}"/>
         </StackPanel>
         <ContentControl x:Name="contentPart" Grid.Row="2"/>
     </Grid>
