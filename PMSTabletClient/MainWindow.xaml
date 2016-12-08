@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSTabletClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" WindowState="Maximized">
-    <Grid>
+    <Grid Background="Gray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition />
