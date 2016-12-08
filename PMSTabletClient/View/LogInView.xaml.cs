@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSTabletClient
+namespace PMSTabletClient.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// LogInView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogInView : UserControl
     {
-        public MainWindow()
+        public LogInView()
         {
             InitializeComponent();
-            contentPart.Content = new ProductView();
         }
     }
 }

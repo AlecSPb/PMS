@@ -7,6 +7,7 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="3"/>
+        <Setter Property="FontSize" Value="25"/>
     </Style>
     <Style x:Key="btnSmallSquare" TargetType="Button">
         <Setter Property="Height" Value="50"/>
@@ -14,15 +15,20 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="3"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="FontSize" Value="20"/>
     </Style>
     <Style x:Key="tbSquare" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="20"/>
     </Style>
     <Style x:Key="txtsquare" TargetType="TextBox">
         <Setter Property="Height" Value="50"/>
-        <Setter Property="MinWidth" Value="100"/>
+        <Setter Property="MinWidth" Value="150"/>
+        <Setter Property="MaxWidth" Value="200"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="30"/>
     </Style>
 </ResourceDictionary>
