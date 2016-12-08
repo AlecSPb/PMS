@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSTabletClient.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace PMSTabletClient
         public MainWindow()
         {
             InitializeComponent();
-            contentPart.Content = new ProductView();
+            contentPart.Content = new LogInView();
         }
     }
 }

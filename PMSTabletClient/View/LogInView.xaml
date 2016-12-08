@@ -5,8 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="600">
     <Grid>
-            
+        <Grid Width="300" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="欢迎" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="用户名" Style="{StaticResource txtLogIn}"/>
+            <TextBox Grid.Row="2" Text="口令" Style="{StaticResource txtLogIn}"/>
+            <Button Grid.Row="3" Content="登陆" Style="{StaticResource btnLogInBig}"/>
+        </Grid>
     </Grid>
 </UserControl>

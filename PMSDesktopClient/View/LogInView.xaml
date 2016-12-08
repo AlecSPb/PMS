@@ -7,6 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="登陆"/>
+        <TextBox Grid.Row="1" Text="用户名"/>
+        <TextBox Grid.Row="2" Text="密码"/>
+        <Button Grid.Row="3" Content="登陆"/>
     </Grid>
 </UserControl>
