@@ -32,9 +32,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSTabletClient", "PMSTable
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSDesktopClient", "PMSDesktopClient\PMSDesktopClient.csproj", "{B1FE45BF-FE59-4BFE-B2B3-1C30AD07ACA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFValidationRule", "WPFValidationRule\WPFValidationRule.csproj", "{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfValidationRule", "WPFValidationRule\WpfValidationRule.csproj", "{0332B1E1-BE6E-4CE7-BCC6-5045DE2AC223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFSkin", "WPFSkin\WPFSkin.csproj", "{DE3A1FC9-D00D-4E0F-9346-15502342ED76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSkin", "WPFSkin\WpfSkin.csproj", "{DE3A1FC9-D00D-4E0F-9346-15502342ED76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7CD5CB91-101F-4EEB-B87E-47BF6EB1C4F3}"
 EndProject
