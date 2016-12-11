@@ -66,6 +66,8 @@
     <Compile Include="Database\Plan.cs" />
     <Compile Include="Database\PlanItem.cs" />
     <Compile Include="Database\VHPProcess.cs" />
+    <Compile Include="Delivery\DeliveryRecord.cs" />
+    <Compile Include="Delivery\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\PMSUser.cs" />
     <Compile Include="Database\RecordVHPItem.cs" />
