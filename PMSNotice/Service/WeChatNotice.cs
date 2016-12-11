@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSNotice.Service
 {
-    public interface INotice
+    public class WeChatNotice
     {
-
     }
 }

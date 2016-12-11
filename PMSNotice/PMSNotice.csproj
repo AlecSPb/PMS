@@ -55,7 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service\INotice.cs" />
+    <Compile Include="Service\BigScreenNotice.cs" />
+    <Compile Include="Service\EmailNotice.cs" />
+    <Compile Include="Service\INotification.cs" />
+    <Compile Include="Service\WeChatNotice.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
