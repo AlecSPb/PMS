@@ -12,10 +12,13 @@ namespace PMSMeeting.Model
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime MeetingTime { get; set; }
+        public string MeetingPlace { get; set; }
         public string Holder { get; set; }
-        public string Title { get; set; }
-        public string MainTheme { get; set; }
+        public string Theme { get; set; }
+        public string MainContent{ get; set; }
+        public string Duration { get; set; }
         public string Persons { get; set; }
+
         public string Records{ get; set; }
         public bool State { get; set; }//On Cancel
 
