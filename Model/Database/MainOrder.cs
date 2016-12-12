@@ -31,6 +31,8 @@ namespace Model
         public string SampleRequirement { get; set; }//是否需要样品
         public DateTime ScheduleDeliveryDate { get; set; }
 
+        public string MinimumRequirement { get; set; }//密度要求，加工要求，表面洁净度，多大的缺口可以接受，多大的裂缝可以接受，表面有花纹是否可以接受，表面有坑是否可以接受
+
         //状态部分
         public int Priority { get; set; }//紧急，一般，不着急
         public int CurrentState { get; set; }//正在生产，生产完成，发货完成，取消，暂停

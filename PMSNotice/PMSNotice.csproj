@@ -59,6 +59,12 @@
     <Compile Include="Service\EmailNotice.cs" />
     <Compile Include="Service\INotification.cs" />
     <Compile Include="Service\WeChatNotice.cs" />
+    <Compile Include="View\NoticeDisplayView.xaml.cs">
+      <DependentUpon>NoticeDisplayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NoticeEditView.xaml.cs">
+      <DependentUpon>NoticeEditView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -71,6 +77,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\NoticeDisplayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NoticeEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Notice.cs" />
