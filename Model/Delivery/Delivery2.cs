@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Delivery
+namespace Model
 {
     //发货单
-    public class DeliveryRecord
+    public class Delivery2
     {
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }

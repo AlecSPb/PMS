@@ -40,45 +40,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\Bonding.cs" />
-    <Compile Include="Database\RecordMilling.cs" />
-    <Compile Include="Database\InventoryOut.cs" />
-    <Compile Include="Database\LogInformation.cs" />
-    <Compile Include="Database\InventoryIn.cs" />
-    <Compile Include="ClientModel\TargetData.cs" />
-    <Compile Include="ClientModel\CurrentUser.cs" />
-    <Compile Include="Database\Customer.cs" />
-    <Compile Include="Database\Compound.cs" />
-    <Compile Include="Database\Delivery.cs" />
-    <Compile Include="Database\DeliveryItem.cs" />
-    <Compile Include="Database\MaterialOrder.cs" />
-    <Compile Include="Database\MaterialOrderItem.cs" />
-    <Compile Include="Database\MaterialRequirement.cs" />
-    <Compile Include="Database\PMSRoleAcess.cs" />
-    <Compile Include="Database\PMSAccess.cs" />
-    <Compile Include="Database\PMSRole.cs" />
-    <Compile Include="Database\RecordProduct.cs" />
-    <Compile Include="Database\RecordTakeOut.cs" />
-    <Compile Include="Database\SubContract.cs" />
-    <Compile Include="Database\VHPDevice.cs" />
-    <Compile Include="Database\VHPMold.cs" />
-    <Compile Include="Database\MainOrder.cs" />
-    <Compile Include="Database\Plan.cs" />
-    <Compile Include="Database\PlanItem.cs" />
-    <Compile Include="Database\VHPProcess.cs" />
-    <Compile Include="Delivery\DeliveryRecord.cs" />
-    <Compile Include="Delivery\Product.cs" />
+    <Compile Include="Production\Bonding.cs" />
+    <Compile Include="ProductionRecord\RecordMilling.cs" />
+    <Compile Include="Inventory\InventoryMaterial\InventoryOut.cs" />
+    <Compile Include="Log\LogInformation.cs" />
+    <Compile Include="Inventory\InventoryMaterial\InventoryIn.cs" />
+    <Compile Include="BasicData\Customer.cs" />
+    <Compile Include="BasicData\Compound.cs" />
+    <Compile Include="Delivery\Delivery.cs" />
+    <Compile Include="Delivery\DeliveryItem.cs" />
+    <Compile Include="Product\Sample.cs" />
+    <Compile Include="Purchase\MaterialOrder.cs" />
+    <Compile Include="Purchase\MaterialOrderItem.cs" />
+    <Compile Include="Production\MaterialRequirement.cs" />
+    <Compile Include="UserAccess\PMSRoleAcess.cs" />
+    <Compile Include="UserAccess\PMSAccess.cs" />
+    <Compile Include="UserAccess\PMSRole.cs" />
+    <Compile Include="ProductionRecord\RecordProduct.cs" />
+    <Compile Include="ProductionRecord\RecordTakeOut.cs" />
+    <Compile Include="Purchase\SubContract.cs" />
+    <Compile Include="BasicData\VHPDevice.cs" />
+    <Compile Include="BasicData\VHPMold.cs" />
+    <Compile Include="Sales\MainOrder.cs" />
+    <Compile Include="Production\Plan.cs" />
+    <Compile Include="Production\PlanItem.cs" />
+    <Compile Include="BasicData\VHPProcess.cs" />
+    <Compile Include="Delivery\Delivery2.cs" />
+    <Compile Include="Product\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Database\PMSUser.cs" />
-    <Compile Include="Database\RecordVHPItem.cs" />
-    <Compile Include="Database\RecordVHP.cs" />
-    <Compile Include="Database\RecordMachine.cs" />
+    <Compile Include="UserAccess\PMSUser.cs" />
+    <Compile Include="ProductionRecord\RecordVHPItem.cs" />
+    <Compile Include="ProductionRecord\RecordVHP.cs" />
+    <Compile Include="ProductionRecord\RecordMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="说明.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interface\" />
+    <Folder Include="Inventory\InventoryExpendableTool\" />
+    <Folder Include="Inventory\InventoryHalfwayProduct\" />
+    <Folder Include="Inventory\InventoryProduct\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
