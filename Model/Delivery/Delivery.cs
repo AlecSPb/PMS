@@ -28,6 +28,7 @@ namespace Model
 
         public string Remark { get; set; }
 
+        public string PackageType { get; set; }//木箱 纸箱 塑料箱
         public string PackageInformation { get; set; }
 
         public int State { get; set; }//取消，未审核，审核通过
