@@ -12,7 +12,7 @@ namespace Model
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
-        public int State { get; set; }//取消，未审核，审核通过
+
 
         public string InvoiceNumber { get; set; }
         public string PackageStatus { get; set; }
@@ -28,8 +28,8 @@ namespace Model
 
         public string Remark { get; set; }
 
-        public string PackageWeightStatus { get; set; }
+        public string PackageInformation { get; set; }
 
-
+        public int State { get; set; }//取消，未审核，审核通过
     }
 }
