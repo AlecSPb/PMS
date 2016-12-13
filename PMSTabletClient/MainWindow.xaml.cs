@@ -24,7 +24,7 @@ namespace PMSTabletClient
         public MainWindow()
         {
             InitializeComponent();
-            contentPart.Content = new ProductView();
+            contentPart.Content = new DeliveryView();
         }
     }
 }

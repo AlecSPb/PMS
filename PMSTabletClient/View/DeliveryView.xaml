@@ -12,14 +12,31 @@
             <RowDefinition/>
             <!--<RowDefinition Height="Auto"/>-->
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Content="Add" Style="{StaticResource btnSmallSquare}"/>
-            <TextBlock Text="Product ID" Style="{StaticResource tbSquare}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Orange">
+            <Button Content="添加" Style="{StaticResource btnSmallSquare}"/>
+            <TextBlock Text="发货单ID" Style="{StaticResource tbSquare}"/>
             <TextBox Text="" Style="{StaticResource txtsquare}"/>
-            <Button Content="Search" Style="{StaticResource btnSmallSquare}"/>
+            <Button Content="搜索" Style="{StaticResource btnSmallSquare}"/>
+            <Button Content="全部发货单" Style="{StaticResource btnSmallSquare}"/>
         </StackPanel>
-        <DataGrid Grid.Row="1">
-            
-        </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Column="0">
+
+            </DataGrid>
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <ListBox Grid.Row="0"></ListBox>
+                    <TextBlock Grid.Row="1" Text="产品细节内容显示区域" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>
