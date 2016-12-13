@@ -17,7 +17,7 @@ namespace Model
         public string InvoiceNumber { get; set; }
         public string PackageStatus { get; set; }
 
-        public string Delivery { get; set; }
+        public string DeliveryName { get; set; }
         public string DeliveryNumber { get; set; }
 
         public string Country { get; set; }
