@@ -13,5 +13,11 @@ namespace Model.Misson
     /// </summary>
     public class Plan
     {
+        public Guid ID { get; set; }
+        public DateTime PlanDate { get; set; }
+
+        public int CurrentState { get; set; }
+        public string Creator { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }

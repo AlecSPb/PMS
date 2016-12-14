@@ -67,7 +67,6 @@
     <Compile Include="UserAccess\PMSRoleAcess.cs" />
     <Compile Include="UserAccess\PMSAccess.cs" />
     <Compile Include="UserAccess\PMSRole.cs" />
-    <Compile Include="ProductionRecord\RecordProduct.cs" />
     <Compile Include="ProductionRecord\RecordTakeOut.cs" />
     <Compile Include="Purchase\SubContract.cs" />
     <Compile Include="BasicData\VHPDevice.cs" />
@@ -87,9 +86,7 @@
   <ItemGroup>
     <Content Include="说明.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InventorySupply\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
