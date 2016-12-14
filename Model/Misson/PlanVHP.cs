@@ -13,7 +13,7 @@ namespace Model
     /// 这个热压计划只用来指导一次热压活动的唯一依据
     /// 其余所有步骤，制粉，装模具，热压，取模，还有加工的依据和要求都来自于计划表
     /// </summary>
-    public class Plan
+    public class PlanVHP
     {
         public Guid ID { get; set; }
         //热压日期和热压设备，模具，共同唯一决定一个Plan
