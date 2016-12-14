@@ -28,8 +28,8 @@ namespace PMSDAL.Model
         public string Resistance { get; set; }//电阻率
         public string XRFComposition { get; set; }//XRF成分
         public string Dimension { get; set; }//尺寸
-        public DateTime CreateDate { get; set; }//创建日期
-        public DateTime OrderDate { get; set; }//订单日期
+        public DateTime CreateTime { get; set; }//创建日期
+        public DateTime OrderTime { get; set; }//订单日期
         public string State { get; set; }//订单状态，显示，隐藏，删除
         public string Remark { get; set; }
 

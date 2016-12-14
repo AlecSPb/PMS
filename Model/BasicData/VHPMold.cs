@@ -16,7 +16,7 @@ namespace Model
         public int CurrentState { get; set; }
 
         public string Creator { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
 
     }
 

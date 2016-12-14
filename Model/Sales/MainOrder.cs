@@ -17,8 +17,8 @@ namespace Model
         public string PO { get; set; }
         public string PMIWorkingNumber { get; set; }
 
-        public string StandardComposition { get; set; }//成分规范表示
-        public string OriginalComposition { get; set; }//成分原始表示
+        public string CompositionStandard { get; set; }//成分规范表示
+        public string CompositionOriginal { get; set; }//成分原始表示
 
         public string ProductType { get; set; }
         public string Purity { get; set; }
@@ -40,7 +40,7 @@ namespace Model
 
 
         //创建者和审核部分
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
 
         public bool ReviewPassed { get; set; }//审核是否通过
@@ -48,9 +48,9 @@ namespace Model
         public DateTime ReviewDate { get; set; }
 
         //决策部分
-        public string PolicyType { get; set; }
-        public string PolicyContent { get; set; }
-        public string PolicyMaker { get; set; }
+        public string PolicyType { get; set; }//热压，代工，库存，其他
+        public string PolicyContent { get; set; }//决策内容
+        public string PolicyMaker { get; set; }//决策者
         public DateTime PolicyMakeDate { get; set; }
 
 

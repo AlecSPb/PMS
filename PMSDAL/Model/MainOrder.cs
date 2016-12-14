@@ -14,7 +14,7 @@ namespace PMSDAL.Model
         [Key]
         public Guid Id { get; set; }
         [Required]
-        public DateTime? OrderDate { get; set; }
+        public DateTime? OrderTime { get; set; }
         [Required]
         public string Customer { get; set; }
         [Required]

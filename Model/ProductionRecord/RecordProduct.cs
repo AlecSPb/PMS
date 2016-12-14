@@ -32,6 +32,6 @@ namespace Model
         //当前记录状态，有效，无效
         public int CurrentState { get; set; }
         public string Creator { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }

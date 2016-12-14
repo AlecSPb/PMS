@@ -15,7 +15,7 @@ namespace PMSDAL.Model
         [Required]
         public string RealName { get; set; }
 
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
         [Required]
         public string Password { get; set; }
         //设置用户账户状态，有效，无效

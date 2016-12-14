@@ -15,6 +15,6 @@ namespace Model
         public string GroupName { get; set; }
         public string ExtraInformation { get; set; }
         public int CurrentState { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }

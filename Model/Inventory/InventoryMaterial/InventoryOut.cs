@@ -22,6 +22,6 @@ namespace Model
         public string ExtraInformation { get; set; }
 
         public string Creator { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }

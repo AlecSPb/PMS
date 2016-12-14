@@ -14,7 +14,7 @@ namespace PMSDAL.Model
     {
         public Guid Id { get; set; }
 
-        public DateTime CreateDate { get; set; }//记录创建日期
+        public DateTime CreateTime { get; set; }//记录创建日期
         public string RecordPerson { get; set; }
         public string PowderTarget { get; set; }//制粉目标
 

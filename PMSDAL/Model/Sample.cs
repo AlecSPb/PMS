@@ -29,8 +29,8 @@ namespace PMSDAL.Model
 
         public string State { get; set; }
 
-        public DateTime OrderDate { get; set; }//订单日期
-        public DateTime CreateDate { get; set; }//报告创建日期
+        public DateTime OrderTime { get; set; }//订单日期
+        public DateTime CreateTime { get; set; }//报告创建日期
         public string Remark { get; set; }
 
     }

@@ -24,7 +24,7 @@ namespace Model.Product
         public string CompositionXRF { get; set; }
         public string DimensionActual { get; set; }
         public string Remark { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
         public int State { get; set; }//未审核，审核，作废
     }

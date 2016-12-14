@@ -32,7 +32,7 @@ namespace Model
         public string MachineRequirement { get; set; }//加工需求
 
         public string Creator { get; set; }
-        public DateTime CreateDate { get; set; }
+        public DateTime CreateTime { get; set; }
 
     }
 }
