@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicData\DeliveryAddress.cs" />
-    <Compile Include="Misson\Misson.cs" />
     <Compile Include="Misson\Plan.cs" />
     <Compile Include="Misson\PlanBonding.cs" />
     <Compile Include="Misson\PlanCustom.cs" />
@@ -59,6 +58,8 @@
     <Compile Include="Purchase\MaterialOrder.cs" />
     <Compile Include="Purchase\MaterialOrderItem.cs" />
     <Compile Include="Misson\MaterialRequirement.cs" />
+    <Compile Include="Sanjie\MaterialActual.cs" />
+    <Compile Include="Sanjie\MaterialNeed.cs" />
     <Compile Include="UserAccess\PMSRoleAcess.cs" />
     <Compile Include="UserAccess\PMSAccess.cs" />
     <Compile Include="UserAccess\PMSRole.cs" />
