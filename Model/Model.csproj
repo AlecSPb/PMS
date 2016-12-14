@@ -40,9 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicData\DeliveryAddress.cs" />
+    <Compile Include="Misson\Misson.cs" />
     <Compile Include="Misson\Plan.cs" />
     <Compile Include="Misson\PlanBonding.cs" />
     <Compile Include="Misson\PlanCustom.cs" />
+    <Compile Include="Misson\PlanMaitenance.cs" />
+    <Compile Include="ProductionRecord\RecordBonding.cs" />
     <Compile Include="ProductionRecord\RecordMilling.cs" />
     <Compile Include="Inventory\InventoryMaterial\InventoryOut.cs" />
     <Compile Include="Log\LogInformation.cs" />

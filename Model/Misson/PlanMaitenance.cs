@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Model.Misson
 {
     /// <summary>
-    /// 自定义计划
+    /// 维护计划
     /// </summary>
-    public class PlanCustom
+    public class PlanMaitenance
     {
     }
 }

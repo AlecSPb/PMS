@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model.Misson
+namespace Model.Misson.Record
 {
-    /// <summary>
-    /// 自定义计划
-    /// </summary>
-    public class PlanCustom
+    class RecordBonding
     {
     }
 }

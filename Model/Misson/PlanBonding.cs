@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model.Database
 {
+    /// <summary>
+    /// 绑定计划
+    /// </summary>
     public class Bonding
     {
         public Guid ID { get; set; }
