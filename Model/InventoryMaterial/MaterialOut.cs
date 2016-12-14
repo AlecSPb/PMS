@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Model
 {
     /// <summary>
-    /// 库存表In
-    /// 暂时只考虑简单的出入库流水账记录
+    /// 库存表Out
+    /// 创建出库表的时候基本信息可以来自入库表
     /// </summary>
-    public class InventoryIn
+    public class IMaterialOut
     {
         public Guid ID { get; set; }
         public string ItemName { get; set; }
@@ -18,11 +18,10 @@ namespace Model
         public string Unit { get; set; }
         public string Purity { get; set; }
 
-        public string ComeFrom { get; set; }
+        public string GoTo { get; set; }
         public string ExtraInformation { get; set; }
 
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
-
     }
 }
