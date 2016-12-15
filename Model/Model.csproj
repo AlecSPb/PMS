@@ -45,7 +45,6 @@
     <Compile Include="Inventory\HalfProductOut.cs" />
     <Compile Include="Inventory\SupplyIn.cs" />
     <Compile Include="Inventory\SupplyOut.cs" />
-    <Compile Include="Misson\Plan.cs" />
     <Compile Include="Misson\PlanBonding.cs" />
     <Compile Include="Misson\PlanCustom.cs" />
     <Compile Include="Misson\PlanMaitenance.cs" />
@@ -73,7 +72,6 @@
     <Compile Include="BasicData\VHPMold.cs" />
     <Compile Include="Sales\MainOrder.cs" />
     <Compile Include="Misson\PlanVHP.cs" />
-    <Compile Include="Misson\PlanVHPItem.cs" />
     <Compile Include="BasicData\VHPProcess.cs" />
     <Compile Include="Delivery\Delivery.cs" />
     <Compile Include="Product\ProductTarget.cs" />

@@ -11,5 +11,13 @@ namespace Model.Misson
     /// </summary>
     public class PlanCustom
     {
+        public Guid ID { get; set; }
+        public DateTime CreateTime { get; set; }
+        public string Creator { get; set; }
+        public int State { get; set; }
+
+
+
+        public string Remark { get; set; }
     }
 }

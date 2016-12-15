@@ -17,15 +17,28 @@ namespace Model
     {
         public Guid ID { get; set; }
         //热压日期和热压设备，模具，共同唯一决定一个Plan
+        public Guid OrderID { get; set; }//对应的订单
+
         public DateTime PlanDate { get; set; }
         //热压设备
         public string VHPDeviceCode { get; set; }
+        //制粉相关
+        public double CalculationDensity { get; set; }
+        public double Thickness { get; set; }
+        public int Quantity { get; set; }
+
+        //单片装料重量按照经验往往比上面计算得出的理论重量要多
+        public double PowderWeight { get; set; }
+        public double GrainSize { get; set; }
+        public string MillingRequirement { get; set; }
+
 
         //模具和装料要求
         public VHPMold CurrentMold { get; set; }
         public string FillRequirement { get; set; }
 
         //环境温度,湿度
+        //传感器读入
         public string RoomTemperature { get; set; }
         public string RoomHumidity { get; set; }
 
