@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Name="window"
         Title="MainWindow" Height="100" MaxHeight="100" Width="525" WindowStartupLocation="Manual" Top="0" Left="0"
-        WindowState="Maximized"
+        WindowState="Maximized" Loaded="window_Loaded" DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" Topmost="True">
     <Window.Resources>
@@ -15,21 +15,15 @@
         <local:MarginConverterTo x:Key="ConverterMarginTo"/>
         <Storyboard x:Key="InformationScrollAnimation">
             <ThicknessAnimation Storyboard.TargetName="txtInformation" Storyboard.TargetProperty="Margin"
-                                From="{Binding ElementName=window,Path=ActualWidth,Converter={StaticResource ConverterMarginFrom}}"
-                                To="{Binding ElementName=txtInformation,Path=ActualWidth,Converter={StaticResource ConverterMarginTo}}"
+                                From="{Binding Path=WindowWidth,Converter={StaticResource ConverterMarginFrom}}"
+                                To="{Binding Path=TextblockWidth,Converter={StaticResource ConverterMarginTo}}"
                                 Duration="0:0:20" AutoReverse="False" RepeatBehavior="Forever"/>
         </Storyboard>
     </Window.Resources>
-    <Window.Triggers>
-        <EventTrigger SourceName="window" RoutedEvent="Window.Loaded">
-            <BeginStoryboard Name="startAnimation" Storyboard="{StaticResource InformationScrollAnimation}">
-                
-            </BeginStoryboard>
-        </EventTrigger>
-    </Window.Triggers>
     <Grid>
         <TextBlock x:Name="txtInformation" Foreground="Orange"
                    Text="滚动信息测试滚动信息测试滚动信息测试滚动信息测试滚动信息测试滚动信息测试滚动信息测试"
-                   FontSize="30" VerticalAlignment="Center" Margin="0 0 0 0" HorizontalAlignment="Left"/>
+                   FontSize="30" VerticalAlignment="Center" Margin="0 0 0 0" HorizontalAlignment="Left">
+        </TextBlock>
     </Grid>
 </Window>
