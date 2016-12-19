@@ -54,11 +54,14 @@ namespace NotificationClient
 
         private void window_Loaded(object sender, RoutedEventArgs e)
         {
-            SetAndStart();
+            string msg = "会议通知：2016-12-19 13:30 在新会议室举行上一批产品问题解决方案相关的会议 参加人员:习近平 胡锦涛 江泽民 李鹏 邓小平";
+            SetAndStart(msg);
         }
 
-        private void SetAndStart()
+        private void SetAndStart(string content)
         {
+            txtInformation.Text = content;
+
             WindowWidth = window.ActualWidth;
             TextblockWidth = txtInformation.ActualWidth;
             var storyboard = (Storyboard)this.FindResource("InformationScrollAnimation");
