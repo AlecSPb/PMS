@@ -13,7 +13,7 @@ namespace NotificationCommon
         public string Creator { get; set; }
         public DateTime StartTime { get; set; }//通知开始时间，默认是Now
         public DateTime EndTime { get; set; }//通知停止时间，默认是开始时间+1天
-        public string Title { get; set; }
+        public string Type { get; set; }
         public string Content { get; set; }
         public string Comment { get; set; }
         public int Priority { get; set; }//1到5，默认是1，5为最高优先级

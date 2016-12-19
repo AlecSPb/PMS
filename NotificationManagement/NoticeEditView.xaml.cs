@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace NotificationManagement
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// NoticeEdit.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NoticeEditView : UserControl
     {
-        public MainWindow()
+        public NoticeEditView()
         {
             InitializeComponent();
-            this.main.Content = new NoticeDisplayView();
         }
     }
 }
