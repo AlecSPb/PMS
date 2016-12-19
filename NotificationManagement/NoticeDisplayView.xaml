@@ -29,6 +29,13 @@
         </Grid>
         <DataGrid Grid.Row="1" Style="{StaticResource DataGridBasic}">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Edit" Style="{StaticResource ButtonDataGrid}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Type">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

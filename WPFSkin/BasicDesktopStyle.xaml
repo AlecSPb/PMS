@@ -11,7 +11,12 @@
         <Setter Property="Padding" Value="3"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="ButtonLongNaivgation" TargetType="Button">
+    <Style x:Key="ButtonDataGrid" TargetType="Button">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="MinWidth" Value="80"/>
+    </Style>
+    <Style x:Key="ButtonBasicLong" TargetType="Button">
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Padding" Value="3"/>
         <Setter Property="MinWidth" Value="120"/>
@@ -37,6 +42,9 @@
         <Setter Property="GridLinesVisibility" Value="Horizontal"/>
     </Style>
     <Style x:Key="CheckBoxBasic" TargetType="CheckBox">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="RadioButtonBasic" TargetType="RadioButton">
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>
