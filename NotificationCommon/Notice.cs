@@ -15,7 +15,6 @@ namespace NotificationCommon
         public DateTime EndTime { get; set; }//通知停止时间，默认是开始时间+1天
         public string Type { get; set; }
         public string Content { get; set; }
-        public string Comment { get; set; }
         public int Priority { get; set; }//1到5，默认是1，5为最高优先级
         public int State { get; set; }//1=有效，2=无效
 

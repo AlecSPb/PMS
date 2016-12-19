@@ -10,7 +10,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{StaticResource ToolBarBackground}">
             <Grid.ColumnDefinitions>
@@ -19,8 +18,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
+                <TextBlock Text="Type" Style="{StaticResource TextblockBasic}"/>
+                <ComboBox  Style="{StaticResource ComboBoxBasic}"/>
                 <TextBlock Text="Content" Style="{StaticResource TextblockBasic}"/>
-                <TextBox Text="" Style="{StaticResource TextBoxBasic}" MinWidth="200"/>
+                <TextBox Text="" Style="{StaticResource TextBoxBasic}" MinWidth="150"/>
                 <CheckBox Content="Include Canceled Notices" Style="{StaticResource CheckBoxBasic}"/>
                 <Button Content="Search" Style="{StaticResource ButtonBasic}"/>
                 <Button Content="All" Style="{StaticResource ButtonBasic}"/>
@@ -50,13 +51,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Comment">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text=""/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Priority">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -73,14 +67,5 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="状态信息"/>
-            <TextBlock Grid.Column="2" Text="时间"/>
-        </Grid>
     </Grid>
 </UserControl>
