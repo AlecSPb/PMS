@@ -5,27 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotificationClient"
         mc:Ignorable="d"
-        Name="window" SizeChanged="window_SizeChanged"
-        Title="MainWindow" Height="100" MaxHeight="100" Width="525" WindowStartupLocation="Manual" Top="0" Left="0"
-        WindowState="Maximized" Loaded="window_Loaded" DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Name="window"
+        Title="MainWindow" Height="100" MaxHeight="100" Width="525"
+        WindowStartupLocation="Manual" Top="0" Left="0"
+        WindowState="Maximized" 
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" Topmost="True">
-    <Window.Resources>
-        <local:MarginConverterFrom x:Key="ConverterMarginFrom"/>
-        <local:MarginConverterTo x:Key="ConverterMarginTo"/>
-        <Storyboard x:Key="InformationScrollAnimation">
-            <DoubleAnimation Storyboard.TargetName="trans" Storyboard.TargetProperty="X"
-                                From="{Binding Path=StartPosition}"
-                                To="{Binding Path=EndPosition}"
-                                Duration="0:0:20" AutoReverse="False" RepeatBehavior="Forever"/>
-        </Storyboard>
-    </Window.Resources>
-    <StackPanel Name="stack" Orientation="Horizontal">
-        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="False" x:Name="myCanvas" Width="{Binding ElementName=stack,Path=ActualWidth}">
-            <TextBlock Text="滚动信息1" Foreground="Blue" FontSize="30" x:Name="txtInformation1" Canvas.Left="0"/>
-            <TextBlock x:Name="txtInformation" Foreground="Orange" Canvas.Left="{Binding ElementName=myCanvas,Path=Width}"
-                   Text="滚动信息2"
-                   FontSize="30" >
+    <StackPanel Name="myStack" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
+        <StackPanel.Resources>
+            <local:NegativeConverter x:Key="Negative"/>
+            <Storyboard x:Key="slide">
+                <DoubleAnimation From="100" 
+                                 To="{Binding ElementName=myCanvas,Path=Width,Converter={StaticResource Negative}}"
+                                 Storyboard.TargetName="trans"
+                                 Storyboard.TargetProperty="X"
+                                 Duration="0:0:15"
+                                 RepeatBehavior="Forever"/>
+            </Storyboard>
+        </StackPanel.Resources>
+        <StackPanel.Triggers>
+            <EventTrigger RoutedEvent="StackPanel.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource slide}"/>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="StackPanel.SizeChanged">
+                <BeginStoryboard Storyboard="{StaticResource slide}"/>
+            </EventTrigger>
+        </StackPanel.Triggers>
+        <StackPanel.RenderTransform>
+            <TranslateTransform x:Name="trans" X="0" />
+        </StackPanel.RenderTransform>
+        <Canvas x:Name="myCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="False" Width="{Binding ElementName=myStack,Path=ActualWidth}">
+            <TextBlock x:Name="txt1" Text="滚动信息1滚动信息1滚动信息1" Foreground="Blue" FontSize="30" Canvas.Left="0"/>
+            <TextBlock x:Name="txt2" Foreground="Orange" 
+                       Canvas.Left="{Binding ElementName=txt1,Path=ActualWidth}" Text="滚动信息2滚动信息2滚动信息2" FontSize="30" >
             </TextBlock>
         </Canvas>
     </StackPanel>

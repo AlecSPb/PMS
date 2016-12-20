@@ -69,9 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarginConverterTo.cs" />
-    <Compile Include="MarginConverterFrom.cs" />
-    <Compile Include="NegatingConverter.cs" />
+    <Compile Include="NegativeConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
