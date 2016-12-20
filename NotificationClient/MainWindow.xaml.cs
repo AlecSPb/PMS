@@ -20,25 +20,25 @@ namespace NotificationClient
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window,INotifyPropertyChanged
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public MainWindow()
         {
             InitializeComponent();
         }
         #region Properties
-        private double windowWidth;
-        public double WindowWidth
+        private double startPosition;
+        public double StartPosition
         {
-            get { return windowWidth; }
-            set { windowWidth = value; RaisePropertyChanged(nameof(WindowWidth)); }
+            get { return startPosition; }
+            set { startPosition = value; RaisePropertyChanged(nameof(StartPosition)); }
         }
 
-        private double textblockWidth;
-        public double TextblockWidth
+        private double endPosition;
+        public double EndPosition
         {
-            get { return textblockWidth; }
-            set { textblockWidth = value; RaisePropertyChanged(nameof(TextblockWidth)); }
+            get { return endPosition; }
+            set { endPosition = value; RaisePropertyChanged(nameof(EndPosition)); }
         }
 
 
@@ -62,10 +62,17 @@ namespace NotificationClient
         {
             txtInformation.Text = content;
 
-            WindowWidth = window.ActualWidth;
-            TextblockWidth = txtInformation.ActualWidth;
+            StartPosition = window.ActualWidth;
+            EndPosition = txtInformation.ActualWidth*-1;
+
             var storyboard = (Storyboard)this.FindResource("InformationScrollAnimation");
             storyboard.Begin();
+        }
+
+        private void window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            StartPosition = window.ActualWidth;
+            EndPosition = txtInformation.ActualWidth * -1;
         }
     }
 }

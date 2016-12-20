@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotificationClient"
         mc:Ignorable="d"
-        Name="window"
+        Name="window" SizeChanged="window_SizeChanged"
         Title="MainWindow" Height="100" MaxHeight="100" Width="525" WindowStartupLocation="Manual" Top="0" Left="0"
         WindowState="Maximized" Loaded="window_Loaded" DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Background="Transparent" AllowsTransparency="True"
@@ -14,16 +14,19 @@
         <local:MarginConverterFrom x:Key="ConverterMarginFrom"/>
         <local:MarginConverterTo x:Key="ConverterMarginTo"/>
         <Storyboard x:Key="InformationScrollAnimation">
-            <ThicknessAnimation Storyboard.TargetName="txtInformation" Storyboard.TargetProperty="Margin"
-                                From="{Binding Path=WindowWidth,Converter={StaticResource ConverterMarginFrom}}"
-                                To="{Binding Path=TextblockWidth,Converter={StaticResource ConverterMarginTo}}"
+            <DoubleAnimation Storyboard.TargetName="trans" Storyboard.TargetProperty="X"
+                                From="{Binding Path=StartPosition}"
+                                To="{Binding Path=EndPosition}"
                                 Duration="0:0:20" AutoReverse="False" RepeatBehavior="Forever"/>
         </Storyboard>
     </Window.Resources>
-    <Grid>
-        <TextBlock x:Name="txtInformation" Foreground="Orange"
-                   Text="滚动信息测试滚动信息测试滚动信息测试滚动信息测试滚动信息测试滚动信息测试滚动信息测试"
-                   FontSize="30" VerticalAlignment="Center" Margin="0 0 0 0" HorizontalAlignment="Left">
-        </TextBlock>
-    </Grid>
+    <StackPanel Name="stack" Orientation="Horizontal">
+        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="False" x:Name="myCanvas" Width="{Binding ElementName=stack,Path=ActualWidth}">
+            <TextBlock Text="滚动信息1" Foreground="Blue" FontSize="30" x:Name="txtInformation1" Canvas.Left="0"/>
+            <TextBlock x:Name="txtInformation" Foreground="Orange" Canvas.Left="{Binding ElementName=myCanvas,Path=Width}"
+                   Text="滚动信息2"
+                   FontSize="30" >
+            </TextBlock>
+        </Canvas>
+    </StackPanel>
 </Window>

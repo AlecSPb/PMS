@@ -1,7 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:WPFSkin">
-    <SolidColorBrush x:Key="ToolBarBackground" Color="Orange"/>
-    <SolidColorBrush x:Key="StatusBarBackground" Color="LightGreen"/>
-    <SolidColorBrush x:Key="CommonBackground" Color="Wheat"/>
-</ResourceDictionary>
