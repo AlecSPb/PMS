@@ -78,6 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Component\ViewToken.cs" />
+    <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="View\DeliveryCustomView.xaml.cs">
       <DependentUpon>DeliveryCustomView.xaml</DependentUpon>
     </Compile>
@@ -258,7 +261,6 @@
     <Folder Include="Models\" />
     <Folder Include="Resource\Images\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Documents\memo.txt" />

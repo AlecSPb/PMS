@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Messaging;
+using System.ComponentModel;
 
 namespace PMSTabletClient
 {
@@ -24,12 +27,38 @@ namespace PMSTabletClient
         public MainWindow()
         {
             InitializeComponent();
-            main.Content = new NavigationView();
+            StartFirstView();
+            RegisterTheNavigation();
         }
 
+        private void StartFirstView()
+        {
+            SetMainContent(new NavigationView());
+        }
+        private void SetMainContent(UserControl view)
+        {
+            main.Content = view;
+        }
+        private void RegisterTheNavigation()
+        {
+            Messenger.Default.Register<string>(this, ViewToken.MainNavigate, ActionMainNavigateView);
+            Messenger.Default.Register<string>(this, ViewToken.RecordVHP, ActionRecordVHP);
+        }
 
+        private void ActionRecordVHP(string obj)
+        {
+            SetMainContent(new RecordVHPView());
+        }
 
+        private void ActionMainNavigateView(string obj)
+        {
+            SetMainContent(new NavigationView());
+        }
 
-
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            Messenger.Default.Unregister(this);
+            base.OnClosing(e);
+        }
     }
 }

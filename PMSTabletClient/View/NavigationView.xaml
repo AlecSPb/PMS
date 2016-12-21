@@ -14,11 +14,12 @@
         <TextBlock Text="Production Management System - Tablet Edition" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 30"/>
         <Border Grid.Row="1" BorderBrush="{StaticResource BorderBrush}" Margin="5" Padding="5" BorderThickness="2">
             <WrapPanel  Orientation="Horizontal">
-                <Button Content="Plan" Style="{StaticResource ButtonNavigation}"/>
-                <Button Content="Record" Style="{StaticResource ButtonNavigation}"/>
-                <Button Content="Product" Style="{StaticResource ButtonNavigation}"/>
-                <Button Content="Inventory" Style="{StaticResource ButtonNavigation}"/>
-                <Button Content="Delivery" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Plan View" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Milling Record" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="VHP Record" Style="{StaticResource ButtonNavigation}" Command="{Binding CommandVHPRecord}"/>
+                <Button Content="Product Data" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Inventory Data" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Delivery Data" Style="{StaticResource ButtonNavigation}"/>
             </WrapPanel>
         </Border>
     </Grid>

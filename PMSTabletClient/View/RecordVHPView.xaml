@@ -17,7 +17,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
-                <Button Content="Back" Style="{StaticResource ButtonBasic}"/>
+                <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding CommandBackToMain}"/>
                 <TextBox Style="{StaticResource TextBoxBasic}" Text="Test Text" MinWidth="200"/>
                 <Button Content="Search" Style="{StaticResource ButtonBasic}"/>
                 <Button Content="All" Style="{StaticResource ButtonBasic}"/>
