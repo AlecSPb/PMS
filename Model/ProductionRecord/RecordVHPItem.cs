@@ -24,6 +24,9 @@ namespace Model
         public double Vaccum { get; set; }
         public double Shift1 { get; set; }
         public double Shift2 { get; set; }
+        public double Omega { get; set; }
+        public double WaterTemperatureOut { get; set; }
+        public double WaterTemperatureIn { get; set; }
 
         public string ExtraInformation { get; set; }
     }

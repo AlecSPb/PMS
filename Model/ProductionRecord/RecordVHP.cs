@@ -12,7 +12,8 @@ namespace Model
     public class RecordVHP
     {
         public Guid ID { get; set; }
-        public List<RecordVHPItem> VHPRecords { get; set; }
-        public string ExtraInformation { get; set; }
+        public string CreateTime { get; set; }
+        public string Creator { get; set; }
+        public string Remark { get; set; }
     }
 }
