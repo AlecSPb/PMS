@@ -6,8 +6,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resource\TouchStyle.xaml"/>
-                <ResourceDictionary Source="Resource\BasicSkin.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/BasicTabletStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/SkinWarm.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

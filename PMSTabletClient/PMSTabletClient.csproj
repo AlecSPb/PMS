@@ -49,6 +49,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFSkin">
+      <HintPath>..\..\WpfControls\WPFSkin\bin\Debug\WPFSkin.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -88,11 +91,20 @@
     <Compile Include="View\MainPlanView.xaml.cs">
       <DependentUpon>MainPlanView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NavigationView.xaml.cs">
+      <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductEditView.xaml.cs">
       <DependentUpon>ProductEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordSelectView.xaml.cs">
+      <DependentUpon>RecordSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPView.xaml.cs">
+      <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SampleEditView.xaml.cs">
       <DependentUpon>SampleEditView.xaml</DependentUpon>
@@ -164,11 +176,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ProductEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

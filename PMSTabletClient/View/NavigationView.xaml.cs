@@ -1,5 +1,4 @@
-﻿using PMSTabletClient.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSTabletClient
+namespace PMSTabletClient.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// NavigationView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NavigationView : UserControl
     {
-        public MainWindow()
+        public NavigationView()
         {
             InitializeComponent();
-            main.Content = new NavigationView();
         }
     }
 }
