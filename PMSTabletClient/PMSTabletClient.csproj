@@ -234,8 +234,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Lanugage\" />
-    <Folder Include="Service\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resource\Images\" />
+    <Folder Include="Services\" />
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documents\memo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

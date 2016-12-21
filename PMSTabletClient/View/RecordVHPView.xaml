@@ -5,8 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000">
+             d:DesignHeight="600" d:DesignWidth="1000">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Content="Back" Style="{StaticResource ButtonBasic}"/>
+                <TextBox Style="{StaticResource TextBoxBasic}" Text="Test Text" MinWidth="200"/>
+                <Button Content="Search" Style="{StaticResource ButtonBasic}"/>
+                <Button Content="All" Style="{StaticResource ButtonBasic}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                <Button Content="Start Today's Record" Style="{StaticResource ButtonBasic}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <ListBox Margin="5"/>
+                <TextBlock Text="Pager" Grid.Row="1"/>
+            </Grid>
+            <DataGrid Grid.Column="1" Style="{StaticResource DataGridBasic}" Margin="5">
+                
+            </DataGrid>
+        </Grid>
     </Grid>
 </UserControl>

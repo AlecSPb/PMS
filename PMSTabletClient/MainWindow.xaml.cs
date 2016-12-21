@@ -26,5 +26,10 @@ namespace PMSTabletClient
             InitializeComponent();
             main.Content = new NavigationView();
         }
+
+
+
+
+
     }
 }
