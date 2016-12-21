@@ -6,13 +6,20 @@
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1000">
-    <Grid Background="Gray">
-        <WrapPanel  Orientation="Horizontal">
-            <Button Content="计划" Style="{StaticResource ButtonNavigation}"/>
-            <Button Content="记录" Style="{StaticResource ButtonNavigation}"/>
-            <Button Content="产品" Style="{StaticResource ButtonNavigation}"/>
-            <Button Content="库存" Style="{StaticResource ButtonNavigation}"/>
-            <Button Content="发货" Style="{StaticResource ButtonNavigation}"/>
-        </WrapPanel>
+    <Grid  Background="{StaticResource CommonBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Production Management System - Tablet Edition" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 30"/>
+        <Border Grid.Row="1" BorderBrush="{StaticResource BorderBrush}" Margin="5" Padding="5" BorderThickness="2">
+            <WrapPanel  Orientation="Horizontal">
+                <Button Content="Plan" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Record" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Product" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Inventory" Style="{StaticResource ButtonNavigation}"/>
+                <Button Content="Delivery" Style="{StaticResource ButtonNavigation}"/>
+            </WrapPanel>
+        </Border>
     </Grid>
 </UserControl>

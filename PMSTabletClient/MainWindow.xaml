@@ -6,12 +6,7 @@
         xmlns:local="clr-namespace:PMSTabletClient"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1000" WindowState="Maximized">
-    <Grid Background="{StaticResource CommonBackground}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Production Management System - Tablet Edition" FontSize="30" HorizontalAlignment="Center" Margin="0 30"/>
+    <Grid>
         <ContentControl Name="main" Grid.Row="1"/>
     </Grid>
 </Window>
