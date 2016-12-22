@@ -1,5 +1,4 @@
-﻿using PMSDesktopClient.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,27 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSDesktopClient
+namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// NavigationView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainView : Window
+    public partial class NavigationView : UserControl
     {
-        public MainView()
+        public NavigationView()
         {
             InitializeComponent();
-            SetMainContent(new NavigationView());
         }
-
-        private void SetMainContent(UserControl view)
-        {
-            if (view !=null)
-            {
-                mainArea.Content = view;
-            }
-        }
-
-
     }
 }
