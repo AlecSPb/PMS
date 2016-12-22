@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSTabletClient.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace PMSTabletClient.View
         public RecordVHPEditView()
         {
             InitializeComponent();
+            this.DataContext = new RecordVHPEditVM();
         }
     }
 }

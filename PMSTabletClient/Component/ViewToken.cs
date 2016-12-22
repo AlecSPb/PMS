@@ -14,6 +14,7 @@ namespace PMSTabletClient
         Delete,
         MainNavigate,
         RecordVHP,
+        RecordVHPEdit,
         RecordMilling,
         RecordProduct,
         RecordSample,

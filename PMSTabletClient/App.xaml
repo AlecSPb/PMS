@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Language/us-en.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/BasicTabletStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/SkinWarm.xaml"/>
             </ResourceDictionary.MergedDictionaries>

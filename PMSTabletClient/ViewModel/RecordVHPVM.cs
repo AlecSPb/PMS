@@ -13,16 +13,23 @@ namespace PMSTabletClient.ViewModel
     {
         public RecordVHPVM()
         {
-            CommandBackToMain = new RelayCommand(ActionBackToMain);
+            BackToMain = new RelayCommand(ActionBackToMain);
+            GoToRecordVHPEdit = new RelayCommand(ActionGoToRecordVHPRecordEdit);
+        }
+
+        private void ActionGoToRecordVHPRecordEdit()
+        {
+            NavigationWizard.GoToVHPRecordEdit();
         }
 
         private void ActionBackToMain()
         {
-            Messenger.Default.Send<string>(null, ViewToken.MainNavigate);
+            NavigationWizard.GoToMainNavigation();
         }
 
         #region Commands
-        public RelayCommand CommandBackToMain { get; private set; }
+        public RelayCommand BackToMain { get; private set; }
+        public RelayCommand GoToRecordVHPEdit { get; private set; }
         #endregion
 
 

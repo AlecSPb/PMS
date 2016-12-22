@@ -43,6 +43,12 @@ namespace PMSTabletClient
         {
             Messenger.Default.Register<string>(this, ViewToken.MainNavigate, ActionMainNavigateView);
             Messenger.Default.Register<string>(this, ViewToken.RecordVHP, ActionRecordVHP);
+            Messenger.Default.Register<string>(this, ViewToken.RecordVHPEdit, ActionRecordVHPEdit);
+        }
+
+        private void ActionRecordVHPEdit(string obj)
+        {
+            SetMainContent(new RecordVHPEditView());
         }
 
         private void ActionRecordVHP(string obj)

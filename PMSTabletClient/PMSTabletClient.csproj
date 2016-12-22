@@ -69,6 +69,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFControls">
+      <HintPath>..\..\WpfControls\WPFControls\bin\Debug\WPFControls.dll</HintPath>
+    </Reference>
     <Reference Include="WPFSkin">
       <HintPath>..\..\WpfControls\WPFSkin\bin\Debug\WPFSkin.dll</HintPath>
     </Reference>
@@ -78,8 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Component\NavigationWizard.cs" />
     <Compile Include="Component\ViewToken.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\RecordVHPEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="View\DeliveryCustomView.xaml.cs">
       <DependentUpon>DeliveryCustomView.xaml</DependentUpon>
@@ -138,6 +143,10 @@
     <Compile Include="View\SampleView.xaml.cs">
       <DependentUpon>SampleView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Language\us-en.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -151,6 +160,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resource\BasicSkin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource\DataTemplateCollections.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,7 +277,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Lanugage\" />
     <Folder Include="Models\" />
     <Folder Include="Resource\Images\" />
     <Folder Include="Services\" />
