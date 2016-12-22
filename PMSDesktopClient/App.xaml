@@ -8,9 +8,9 @@
         <ResourceDictionary>
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Language/zh-cn.xaml"/>
-                <ResourceDictionary Source="Resource/BasicSkin.xaml"/>
-                <ResourceDictionary Source="Resource/MouseStyle.xaml"/>
+                <ResourceDictionary Source="Language/us-en.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/BasicDesktopStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/SkinWarm.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

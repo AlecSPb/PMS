@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSDesktopClient.View
+namespace PMSDesktopClient.View.Sales
 {
     /// <summary>
     /// OrderView.xaml 的交互逻辑

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// NavigationView.xaml 的交互逻辑
+    /// MissonView.xaml 的交互逻辑
     /// </summary>
-    public partial class NavigationView : UserControl
+    public partial class MissonView : UserControl
     {
-        public NavigationView()
+        public MissonView()
         {
             InitializeComponent();
         }

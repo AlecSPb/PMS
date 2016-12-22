@@ -1,4 +1,5 @@
 ﻿using PMSDesktopClient.View;
+using PMSDesktopClient.View.Sales;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace PMSDesktopClient
         public MainView()
         {
             InitializeComponent();
-            SetMainContent(new NavigationView());
+            SetMainContent(new OrderView());
         }
 
         private void SetMainContent(UserControl view)
