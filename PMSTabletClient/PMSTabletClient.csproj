@@ -126,6 +126,9 @@
     <Compile Include="View\RecordSelectView.xaml.cs">
       <DependentUpon>RecordSelectView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RecordVHPEditView.xaml.cs">
+      <DependentUpon>RecordVHPEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
@@ -212,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RecordSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
