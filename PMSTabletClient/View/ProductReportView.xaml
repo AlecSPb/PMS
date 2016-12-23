@@ -13,8 +13,46 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="Product Report" Grid.Row="0" Style="{StaticResource TextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}"/>
-        </StackPanel>
+        <Grid Grid.Row="1" Background="{StaticResource ToolBarBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel  Orientation="Horizontal" >
+                <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToProduct}"/>
+                <Button Content="Browse…" Style="{StaticResource ButtonBasic}"/>
+                <TextBlock Text="C:\161211" Style="{StaticResource TextBlockBasic}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="{StaticResource strOutput}" Style="{StaticResource ButtonBasic}" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" Style="{StaticResource ListBoxBasic}">
+                
+            </ListBox>
+            <DataGrid Grid.Column="1">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+            
     </Grid>
 </UserControl>

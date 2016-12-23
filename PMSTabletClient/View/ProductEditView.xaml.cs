@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSTabletClient.ViewModel;
 
 namespace PMSTabletClient.View
 {
@@ -23,6 +24,7 @@ namespace PMSTabletClient.View
         public ProductEditView()
         {
             InitializeComponent();
+            this.DataContext = new ProductReportVM();
         }
     }
 }

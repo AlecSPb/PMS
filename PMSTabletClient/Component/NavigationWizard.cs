@@ -31,5 +31,16 @@ namespace PMSTabletClient
         {
             Messenger.Default.Send<string>(null, ViewToken.RecordVHPQuickEdit);
         }
+
+        public static void GoToProductEdit()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.ProductEdit);
+        }
+
+        public static void GoToProductReport()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.ProductReport);
+        }
+
     }
 }

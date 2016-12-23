@@ -28,7 +28,7 @@ namespace PMSTabletClient
         {
             InitializeComponent();
             StartFirstView();
-            RegisterTheNavigation();
+            RegisterTheNavigationView();
         }
 
         private void StartFirstView()
@@ -39,44 +39,17 @@ namespace PMSTabletClient
         {
             main.Content = view;
         }
-        private void RegisterTheNavigation()
+        private void RegisterTheNavigationView()
         {
-            Messenger.Default.Register<string>(this, ViewToken.MainNavigate, ActionMainNavigateView);
-            Messenger.Default.Register<string>(this, ViewToken.RecordVHP, ActionRecordVHP);
-            Messenger.Default.Register<string>(this, ViewToken.RecordVHPEdit, ActionRecordVHPEdit);
-            Messenger.Default.Register<string>(this, ViewToken.RecordVHPQuickEdit, ActionRecordQuickVHPEdit);
-            Messenger.Default.Register<string>(this, ViewToken.Product, ActionProduct);
+            Messenger.Default.Register<string>(this, ViewToken.MainNavigate, arg => SetMainContent(new NavigationView()));
+            Messenger.Default.Register<string>(this, ViewToken.RecordVHP, arg => SetMainContent(new RecordVHPView()));
+            Messenger.Default.Register<string>(this, ViewToken.RecordVHPEdit, arg => SetMainContent(new RecordVHPEditView()));
+            Messenger.Default.Register<string>(this, ViewToken.RecordVHPQuickEdit, arg => SetMainContent(new RecordVHPQuickEditView()));
+            Messenger.Default.Register<string>(this, ViewToken.Product, arg => SetMainContent(new ProductView()));
+            Messenger.Default.Register<string>(this, ViewToken.ProductEdit, arg => SetMainContent(new ProductEditView()));
+            Messenger.Default.Register<string>(this, ViewToken.ProductReport, arg=> SetMainContent(new ProductReportView()));
         }
 
-        private void ActionRecordQuickVHPEdit(string obj)
-        {
-            SetMainContent(new RecordVHPQuickEditView());
-        }
 
-        private void ActionProduct(string obj)
-        {
-            SetMainContent(new ProductView());
-        }
-
-        private void ActionRecordVHPEdit(string obj)
-        {
-            SetMainContent(new RecordVHPEditView());
-        }
-
-        private void ActionRecordVHP(string obj)
-        {
-            SetMainContent(new RecordVHPView());
-        }
-
-        private void ActionMainNavigateView(string obj)
-        {
-            SetMainContent(new NavigationView());
-        }
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            Messenger.Default.Unregister(this);
-            base.OnClosing(e);
-        }
     }
 }

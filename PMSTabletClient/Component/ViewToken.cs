@@ -17,6 +17,8 @@ namespace PMSTabletClient
         RecordVHPEdit,
         RecordMilling,
         Product,
+        ProductEdit,
+        ProductReport,
         RecordSample,
         RecordDelivery,
         RecordVHPQuickEdit

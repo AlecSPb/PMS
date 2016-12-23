@@ -18,13 +18,13 @@
         <TextBlock Text="{StaticResource strProductPage}" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="Orange">
             <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToMain}"/>
-            <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}"/>
+            <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}" Command="{Binding GoToProductEdit}"/>
             <TextBlock Text="产品ID" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
             <CheckBox Style="{StaticResource CheckBoxBasic}" Content="Include Deleted One"/>
             <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}"/>
             <Button Content="{StaticResource strAll}" Style="{StaticResource    ButtonBasic}"/>
-            <Button Content="{StaticResource strProductReport}" Style="{StaticResource    ButtonBasic}"/>
+            <Button Content="{StaticResource strProductReport}" Style="{StaticResource  ButtonBasic}" Command="{Binding GoToProductReport}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}">
             <DataGrid.Columns>

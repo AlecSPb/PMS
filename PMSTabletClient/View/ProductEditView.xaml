@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Product Edit" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToProduct}"/>
             <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>
         <Grid Grid.Row="2">

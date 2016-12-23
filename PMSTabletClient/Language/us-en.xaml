@@ -11,6 +11,8 @@
     <sys:String x:Key="strStartNew">Start A New Record</sys:String>
     <sys:String x:Key="strEmpty">Create An Empty Record</sys:String>
     <sys:String x:Key="strQuick">Quick Edit</sys:String>
+    <sys:String x:Key="strOutput">Output</sys:String>
+    <sys:String x:Key="strPrint">Print</sys:String>
     <!--页面标题-->
     <sys:String x:Key="strRecordVHPPage">VHP Record Collections</sys:String>
     <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
