@@ -18,9 +18,14 @@ namespace PMSTabletClient
             Messenger.Default.Send<string>(null, ViewToken.RecordVHP);
         }
 
-        internal static void GoToVHPRecordEdit()
+        public static void GoToVHPRecordEdit()
         {
             Messenger.Default.Send<string>(null, ViewToken.RecordVHPEdit);
         }
+        public static void GoToProduct()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.Product);
+        }
+
     }
 }

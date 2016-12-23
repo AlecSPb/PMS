@@ -84,6 +84,7 @@
     <Compile Include="Component\NavigationWizard.cs" />
     <Compile Include="Component\ViewToken.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\ProductVM.cs" />
     <Compile Include="ViewModel\RecordVHPEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="View\DeliveryCustomView.xaml.cs">
@@ -107,17 +108,17 @@
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainOrderEditView.xaml.cs">
-      <DependentUpon>MainOrderEditView.xaml</DependentUpon>
+    <Compile Include="View\OrderEditView.xaml.cs">
+      <DependentUpon>OrderEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainOrderView.xaml.cs">
-      <DependentUpon>MainOrderView.xaml</DependentUpon>
+    <Compile Include="View\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainPlanEditView.xaml.cs">
-      <DependentUpon>MainPlanEditView.xaml</DependentUpon>
+    <Compile Include="View\PlanEditView.xaml.cs">
+      <DependentUpon>PlanEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainPlanView.xaml.cs">
-      <DependentUpon>MainPlanView.xaml</DependentUpon>
+    <Compile Include="View\PlanView.xaml.cs">
+      <DependentUpon>PlanView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
@@ -199,19 +200,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainOrderEditView.xaml">
+    <Page Include="View\OrderEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainOrderView.xaml">
+    <Page Include="View\OrderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPlanEditView.xaml">
+    <Page Include="View\PlanEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPlanView.xaml">
+    <Page Include="View\PlanView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

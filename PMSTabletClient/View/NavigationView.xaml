@@ -29,10 +29,10 @@
                 <Button Content="Misson View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="0"/>
                 <Button Content="Plan View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="1"/>
                 <Button Content="Milling Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="0"/>
-                <Button Content="VHP Record" Style="{StaticResource ButtonNavigation}" Command="{Binding CommandVHPRecord}" Grid.Row="1" Grid.Column="1"/>
+                <Button Content="VHP Record" Style="{StaticResource ButtonNavigation}" Command="{Binding GoToVHPRecord}" Grid.Row="1" Grid.Column="1"/>
                 <Button Content="Raw Blank Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="2"/>
                 <Button Content="Bonding Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="3"/>
-                <Button Content="Product Data" Style="{StaticResource ButtonNavigation}" Grid.Row="2" Grid.Column="0"/>
+                <Button Content="Product Data" Style="{StaticResource ButtonNavigation}" Command="{Binding GoToProduct}" Grid.Row="2" Grid.Column="0"/>
                 <Button Content="Inventory Data" Style="{StaticResource ButtonNavigation}" Grid.Row="2" Grid.Column="1"/>
                 <Button Content="Delivery Data" Style="{StaticResource ButtonNavigation}" Grid.Row="2" Grid.Column="2"/>
             </Grid>

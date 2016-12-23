@@ -18,9 +18,9 @@ namespace PMSTabletClient.View
     /// <summary>
     /// MainPlanEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainPlanEditView : UserControl
+    public partial class PlanEditView : UserControl
     {
-        public MainPlanEditView()
+        public PlanEditView()
         {
             InitializeComponent();
         }

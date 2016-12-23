@@ -13,7 +13,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strRecordVHPPageEdit}" Style="{StaticResource TextBlockPageTitle}"/>
+        <TextBlock Text="{StaticResource strRecordVHPPage}" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
                 <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToMain}"/>
                 <Button Content="{StaticResource strStartNew}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPEdit}" HorizontalAlignment="Right"/>

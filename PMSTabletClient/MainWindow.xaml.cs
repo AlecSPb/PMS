@@ -44,6 +44,12 @@ namespace PMSTabletClient
             Messenger.Default.Register<string>(this, ViewToken.MainNavigate, ActionMainNavigateView);
             Messenger.Default.Register<string>(this, ViewToken.RecordVHP, ActionRecordVHP);
             Messenger.Default.Register<string>(this, ViewToken.RecordVHPEdit, ActionRecordVHPEdit);
+            Messenger.Default.Register<string>(this, ViewToken.Product, ActionProduct);
+        }
+
+        private void ActionProduct(string obj)
+        {
+            SetMainContent(new ProductView());
         }
 
         private void ActionRecordVHPEdit(string obj)

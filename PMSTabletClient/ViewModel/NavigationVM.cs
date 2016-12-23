@@ -13,15 +13,22 @@ namespace PMSTabletClient.ViewModel
     {
         public NavigationVM()
         {
-            CommandVHPRecord = new RelayCommand(ActionVHPRecord);
+            GoToVHPRecord = new RelayCommand(ActionGoToVHPRecord);
+            GoToProduct = new RelayCommand(ActionGoToProduct);
         }
 
-        private void ActionVHPRecord()
+        private void ActionGoToProduct()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.Product);
+        }
+
+        private void ActionGoToVHPRecord()
         {
             Messenger.Default.Send<string>(null, ViewToken.RecordVHP);
         }
         #region Commands
-        public RelayCommand CommandVHPRecord { get; private set; }
+        public RelayCommand GoToVHPRecord { get; private set; }
+        public RelayCommand GoToProduct { get; private set; }
         #endregion
 
 

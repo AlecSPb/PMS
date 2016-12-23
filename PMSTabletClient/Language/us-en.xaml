@@ -12,4 +12,8 @@
     <!--页面标题-->
     <sys:String x:Key="strRecordVHPPage">VHP Record Collections</sys:String>
     <sys:String x:Key="strRecordVHPPageEdit">VHP Record Edit</sys:String>
+    <sys:String x:Key="strProductPage">Product Collections</sys:String>
+    <sys:String x:Key="strProductEditPageEdit">Product Edit</sys:String>
+
+    <sys:String x:Key="strProductReport">Report</sys:String>
 </ResourceDictionary>

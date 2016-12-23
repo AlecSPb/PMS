@@ -18,9 +18,9 @@ namespace PMSTabletClient.View
     /// <summary>
     /// MainOrderEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainOrderEditView : UserControl
+    public partial class OrderEditView : UserControl
     {
-        public MainOrderEditView()
+        public OrderEditView()
         {
             InitializeComponent();
         }
