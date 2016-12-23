@@ -9,11 +9,15 @@
     <sys:String x:Key="strSave">Save</sys:String>
     <sys:String x:Key="strAll">All</sys:String>
     <sys:String x:Key="strStartNew">Start A New Record</sys:String>
+    <sys:String x:Key="strEmpty">Create An Empty Record</sys:String>
     <!--页面标题-->
     <sys:String x:Key="strRecordVHPPage">VHP Record Collections</sys:String>
     <sys:String x:Key="strRecordVHPPageEdit">VHP Record Edit</sys:String>
     <sys:String x:Key="strProductPage">Product Collections</sys:String>
     <sys:String x:Key="strProductEditPageEdit">Product Edit</sys:String>
+    <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
 
+
+    <sys:String x:Key="strVHPID">VHP ID</sys:String>
     <sys:String x:Key="strProductReport">Report</sys:String>
 </ResourceDictionary>
