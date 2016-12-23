@@ -15,6 +15,12 @@ namespace PMSTabletClient.ViewModel
         {
             BackToMain = new RelayCommand(ActionBackToMain);
             GoToRecordVHPEdit = new RelayCommand(ActionGoToRecordVHPRecordEdit);
+            GoToRecordVHPQuickEdit = new RelayCommand(ActionGoToRecordVHPQuickEdit); 
+        }
+
+        private void ActionGoToRecordVHPQuickEdit()
+        {
+            NavigationWizard.GoToVHPRecordQuickEdit();
         }
 
         private void ActionGoToRecordVHPRecordEdit()
@@ -30,6 +36,7 @@ namespace PMSTabletClient.ViewModel
         #region Commands
         public RelayCommand BackToMain { get; private set; }
         public RelayCommand GoToRecordVHPEdit { get; private set; }
+        public RelayCommand GoToRecordVHPQuickEdit { get; private set; }
         #endregion
 
 

@@ -17,7 +17,7 @@
         <TextBlock Text="{StaticResource strPlanSelectPage}" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}"/>
-            <TextBlock Text="{StaticResource strVHPID}" Style="{StaticResource TextblockBasic}"/>
+            <TextBlock Text="{StaticResource strVHPID}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic}" MinWidth="200"/>
             <Button Content="{StaticResource strSearch}" Style="{StaticResource ButtonBasic}"/>
             <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}"/>

@@ -27,5 +27,9 @@ namespace PMSTabletClient
             Messenger.Default.Send<string>(null, ViewToken.Product);
         }
 
+        public static void GoToVHPRecordQuickEdit()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.RecordVHPQuickEdit);
+        }
     }
 }

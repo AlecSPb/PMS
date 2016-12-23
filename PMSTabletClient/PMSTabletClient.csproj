@@ -86,6 +86,7 @@
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />
     <Compile Include="ViewModel\RecordVHPEditVM.cs" />
+    <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="View\DeliveryCustomView.xaml.cs">
       <DependentUpon>DeliveryCustomView.xaml</DependentUpon>
@@ -126,6 +127,9 @@
     <Compile Include="View\ProductEditView.xaml.cs">
       <DependentUpon>ProductEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProductReportView.xaml.cs">
+      <DependentUpon>ProductReportView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
@@ -134,6 +138,9 @@
     </Compile>
     <Compile Include="View\RecordVHPEditView.xaml.cs">
       <DependentUpon>RecordVHPEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
+      <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
@@ -224,6 +231,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ProductReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ProductView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +244,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RecordVHPEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPQuickEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

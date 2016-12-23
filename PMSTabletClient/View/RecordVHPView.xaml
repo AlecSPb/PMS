@@ -15,14 +15,15 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strRecordVHPPage}" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
-                <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToMain}"/>
-                <Button Content="{StaticResource strStartNew}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPEdit}" HorizontalAlignment="Right"/>
-                <TextBlock Style="{StaticResource TextblockBasic}" Text="VHP ID"/>
-                <TextBox Style="{StaticResource TextBoxBasicBold}" Text="161226-A" MinWidth="200"/>
-                <Button Content="{StaticResource  strSearch}" Style="{StaticResource ButtonBasic}"/>
-                <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}"/>
-            </StackPanel>
-            <Grid Grid.Row="2">
+            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToMain}"/>
+            <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPEdit}"/>
+            <TextBlock Style="{StaticResource TextBlockBasic}" Text="VHP ID"/>
+            <TextBox Style="{StaticResource TextBoxBasicBold}" Text="161226-A" MinWidth="200"/>
+            <Button Content="{StaticResource  strSearch}" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="{StaticResource strQuick}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPQuickEdit}"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="auto"/>
@@ -30,6 +31,13 @@
             </Grid.RowDefinitions>
             <DataGrid Style="{StaticResource DataGridBasic}">
                 <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Edit">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Edit"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTemplateColumn Header="VHP ID">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

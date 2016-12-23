@@ -18,6 +18,7 @@ namespace PMSTabletClient
         RecordMilling,
         Product,
         RecordSample,
-        RecordDelivery
+        RecordDelivery,
+        RecordVHPQuickEdit
     }
 }

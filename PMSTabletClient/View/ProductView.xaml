@@ -19,7 +19,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="Orange">
             <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToMain}"/>
             <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}"/>
-            <TextBlock Text="产品ID" Style="{StaticResource TextblockBasic}"/>
+            <TextBlock Text="产品ID" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
             <CheckBox Style="{StaticResource CheckBoxBasic}" Content="Include Deleted One"/>
             <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}"/>

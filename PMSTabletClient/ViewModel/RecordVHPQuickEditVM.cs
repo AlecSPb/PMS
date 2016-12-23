@@ -9,9 +9,9 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSTabletClient.ViewModel
 {
-    public class RecordVHPEditVM : ViewModelBase
+    public class RecordVHPQuickEditVM:ViewModelBase
     {
-        public RecordVHPEditVM()
+        public RecordVHPQuickEditVM()
         {
             BackToRecordVHP = new RelayCommand(ActionBackToRecordVHP);
         }
@@ -24,6 +24,5 @@ namespace PMSTabletClient.ViewModel
         #region Commands
         public RelayCommand BackToRecordVHP { get; private set; }
         #endregion
-
     }
 }
