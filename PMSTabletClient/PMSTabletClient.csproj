@@ -85,6 +85,7 @@
     <Compile Include="Component\ViewToken.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\ProductEditVM.cs" />
     <Compile Include="ViewModel\ProductReportVM.cs" />

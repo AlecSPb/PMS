@@ -13,6 +13,18 @@ namespace PMSTabletClient
         {
             Messenger.Default.Send<string>(null, ViewToken.MainNavigate);
         }
+        public static void GoToOrder()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.Order);
+        }
+        public static void GoToMisson()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.Misson);
+        }
+        public static void GoToPlan()
+        {
+            Messenger.Default.Send<string>(null, ViewToken.Plan);
+        }
         public static void GoToRecordVHP()
         {
             Messenger.Default.Send<string>(null, ViewToken.RecordVHP);

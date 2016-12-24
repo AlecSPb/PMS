@@ -14,17 +14,18 @@
     <sys:String x:Key="strOutput">Output</sys:String>
     <sys:String x:Key="strPrint">Print</sys:String>
     <!--页面标题-->
-    <sys:String x:Key="strRecordVHPPage">VHP Record Collections</sys:String>
+    <sys:String x:Key="strRecordVHPPage">VHP Record Collection</sys:String>
     <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
     <sys:String x:Key="strRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
 
-    <sys:String x:Key="strProductPage">Product Collections</sys:String>
+    <sys:String x:Key="strProductPage">Product Collection</sys:String>
     <sys:String x:Key="strProductEditPage">Product Edit</sys:String>
     <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
 
     <sys:String x:Key="strOrderPage">Order Collection</sys:String>
     <sys:String x:Key="strMissonPage">Misson Collection</sys:String>
-
+    <sys:String x:Key="strPlanPage">Plan Collection</sys:String>
+    
     <sys:String x:Key="strVHPID">VHP ID</sys:String>
     <sys:String x:Key="strProductReport">Report</sys:String>
 </ResourceDictionary>

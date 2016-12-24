@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strOrderPage}" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToMain}"/>
+            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToNavigation}"/>
             <TextBlock Text="客户" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
             <TextBlock Text="订单" Style="{StaticResource TextBlockBasic}"/>

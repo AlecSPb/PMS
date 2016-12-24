@@ -48,6 +48,9 @@ namespace PMSTabletClient
             Messenger.Default.Register<string>(this, ViewToken.Product, arg => SetMainContent(new ProductView()));
             Messenger.Default.Register<string>(this, ViewToken.ProductEdit, arg => SetMainContent(new ProductEditView()));
             Messenger.Default.Register<string>(this, ViewToken.ProductReport, arg=> SetMainContent(new ProductReportView()));
+            Messenger.Default.Register<string>(this, ViewToken.Order, arg => SetMainContent(new OrderView()));
+            Messenger.Default.Register<string>(this, ViewToken.Misson, arg => SetMainContent(new MissonView()));
+            Messenger.Default.Register<string>(this, ViewToken.Plan, arg => SetMainContent(new PlanView()));
         }
 
 
