@@ -83,7 +83,9 @@
     </ApplicationDefinition>
     <Compile Include="Component\NavigationWizard.cs" />
     <Compile Include="Component\ViewToken.cs" />
+    <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\ProductEditVM.cs" />
     <Compile Include="ViewModel\ProductReportVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />
@@ -111,14 +113,11 @@
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderEditView.xaml.cs">
-      <DependentUpon>OrderEditView.xaml</DependentUpon>
+    <Compile Include="View\MissonView.xaml.cs">
+      <DependentUpon>MissonView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanEditView.xaml.cs">
-      <DependentUpon>PlanEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
@@ -209,15 +208,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OrderEditView.xaml">
+    <Page Include="View\MissonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OrderView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PlanEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

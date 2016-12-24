@@ -26,8 +26,9 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Content="Misson View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="0"/>
-                <Button Content="Plan View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="1"/>
+                <Button Content="Order View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="0"/>
+                <Button Content="Misson View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="1"/>
+                <Button Content="Plan View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="2"/>
                 <Button Content="Milling Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="0"/>
                 <Button Content="VHP Record" Style="{StaticResource ButtonNavigation}" Command="{Binding GoToVHPRecord}" Grid.Row="1" Grid.Column="1"/>
                 <Button Content="Raw Blank Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="2"/>

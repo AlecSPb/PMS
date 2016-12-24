@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSTabletClient.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,14 @@ using System.Windows.Shapes;
 namespace PMSTabletClient.View
 {
     /// <summary>
-    /// MainPlanEditView.xaml 的交互逻辑
+    /// MissonView.xaml 的交互逻辑
     /// </summary>
-    public partial class PlanEditView : UserControl
+    public partial class MissonView : UserControl
     {
-        public PlanEditView()
+        public MissonView()
         {
             InitializeComponent();
+            this.DataContext = new MissonVM();
         }
     }
 }

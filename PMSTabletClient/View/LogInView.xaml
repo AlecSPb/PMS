@@ -15,10 +15,10 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="欢迎" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Text="用户名" Style="{StaticResource txtLogIn}"/>
-            <TextBox Grid.Row="2" Text="口令" Style="{StaticResource txtLogIn}"/>
-            <Button Grid.Row="3" Content="登陆" Style="{StaticResource btnLogInBig}"/>
+            <TextBlock Grid.Row="0" Text="Welcome" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="User Name" Style="{StaticResource TextBoxBasic}"  HorizontalAlignment="Stretch"/>
+            <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"/>
+            <Button Grid.Row="3" Content="Log In" Style="{StaticResource ButtonBasic}"/>
         </Grid>
     </Grid>
 </UserControl>
