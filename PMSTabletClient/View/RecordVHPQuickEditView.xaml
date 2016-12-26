@@ -24,13 +24,13 @@
             </Grid.ColumnDefinitions>
             <ListBox Grid.Column="0" HorizontalContentAlignment="Stretch">
                 <ListBoxItem>
-                    <Button Content="A" Style="{StaticResource ButtonBasic}"/>
+                    <Button Content="161112-A" Style="{StaticResource ButtonBasic}"/>
                 </ListBoxItem>
                 <ListBoxItem>
-                    <Button Content="B" Style="{StaticResource ButtonBasic}"/>
+                    <Button Content="161112-B" Style="{StaticResource ButtonBasic}"/>
                 </ListBoxItem>
                 <ListBoxItem>
-                    <Button Content="C" Style="{StaticResource ButtonBasic}"/>
+                    <Button Content="161112-C" Style="{StaticResource ButtonBasic}"/>
                 </ListBoxItem>
             </ListBox>
             <Grid Grid.Column="1">

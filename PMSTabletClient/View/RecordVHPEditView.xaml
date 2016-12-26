@@ -16,6 +16,7 @@
         <TextBlock Grid.Row="0" Text="{StaticResource strRecordVHPEditPage}" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToRecordVHP}"/>
+            <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>
         <Grid Grid.Row="2">
          
