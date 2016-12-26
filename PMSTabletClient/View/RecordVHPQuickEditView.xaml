@@ -19,34 +19,102 @@
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <ListBox Grid.Column="0">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Border>
-                            <Button Content="A"/>
-                        </Border>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
+            <ListBox Grid.Column="0" HorizontalContentAlignment="Stretch">
+                <ListBoxItem>
+                    <Button Content="A" Style="{StaticResource ButtonBasic}"/>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <Button Content="B" Style="{StaticResource ButtonBasic}"/>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <Button Content="C" Style="{StaticResource ButtonBasic}"/>
+                </ListBoxItem>
             </ListBox>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="93*"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="101*"/>
-                    <RowDefinition Height="131*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid >
-                    <TextBlock Text="热压信息区域"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="VHP Device" Style="{StaticResource TextBlockBasic}" />
+                        <TextBlock Text="A" Style="{StaticResource TextBlockBasic}" />
+                        <TextBlock Text="Current Date" Style="{StaticResource TextBlockBasic}" />
+                        <TextBlock Text="2016-12-26" Style="{StaticResource TextBlockBasic}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"  Orientation="Horizontal">
+                        <TextBlock Text="Temperature:" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="800℃" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="Pressure:" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="300t" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="Vaccum:" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="1E-3Pa" Style="{StaticResource TextBlockBasic}"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2"  Text="Remark Content will be put here" Style="{StaticResource TextBlockBasic}"/>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Grid.Row="1">
                     <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}"/>
+                    <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
                 </StackPanel>
                 <Grid Grid.Row="2">
-                    <TextBlock Text="编辑区域"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="PV1:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="0"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock Text="PV2:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="2"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="3"/>
+                    <TextBlock Text="PV3:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="4"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="5"/>
+                    <TextBlock Text="SV:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="6"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="7"/>
+                    <TextBlock Text="Ton:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="8"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="9"/>
+                    <TextBlock Text="Vaccum:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="10"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="11"/>
+
+                    <TextBlock Text="Shift1:" Style="{StaticResource TextBlockBasic}"  Grid.Row="1" Grid.Column="0"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Text="Shift2:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="2"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="3"/>
+                    <TextBlock Text="Omega:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="4"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="5"/>
+                    <TextBlock Text="WaterIn:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="6"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="7"/>
+                    <TextBlock Text="WaterOut:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="8"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="9"/>
+
+                    <TextBlock Text="Remark:" Style="{StaticResource TextBlockBasic}"  Grid.Row="2" Grid.Column="0"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"
+                             Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="11"/>
                 </Grid>
                 <DataGrid Grid.Row="3" Style="{StaticResource DataGridBasic}">
                     <DataGrid.Columns>

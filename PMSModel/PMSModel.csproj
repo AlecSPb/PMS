@@ -48,11 +48,11 @@
     <Compile Include="BasicData\VHPProcess.cs" />
     <Compile Include="Delivery\Delivery.cs" />
     <Compile Include="Delivery\DeliveryItem.cs" />
-    <Compile Include="Misson\MaterialNeed.cs" />
-    <Compile Include="Misson\PlanBonding.cs" />
-    <Compile Include="Misson\PlanCustom.cs" />
-    <Compile Include="Misson\PlanMaitenance.cs" />
-    <Compile Include="Misson\PlanVHP.cs" />
+    <Compile Include="Production\MaterialNeed.cs" />
+    <Compile Include="Production\PlanBonding.cs" />
+    <Compile Include="Production\PlanCustom.cs" />
+    <Compile Include="Production\PlanMaitenance.cs" />
+    <Compile Include="Production\PlanVHP.cs" />
     <Compile Include="Product\ProductCustom.cs" />
     <Compile Include="Product\ProductSample.cs" />
     <Compile Include="Product\Product.cs" />
