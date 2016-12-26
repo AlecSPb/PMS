@@ -13,7 +13,7 @@ namespace Model.ClientModel
     {
         public Guid ID { get; set; }
         //靶材信息
-        public TargetData TargetInformation { get; set; }
+        //public TargetData TargetInformation { get; set; }
 
         //需要记录的信息
         public string RawMaterial { get; set; }

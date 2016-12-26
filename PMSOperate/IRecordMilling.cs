@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSOperate
 {
-    public class Class1
+    class IRecordMilling
     {
     }
 }

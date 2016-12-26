@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37B17FC1-5E32-4DB2-BFAD-8A535B568C1D}</ProjectGuid>
+    <ProjectGuid>{79CDC827-0FCA-4521-9C8A-F99B31290E8E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PMSOperate</RootNamespace>
-    <AssemblyName>PMSOperate</AssemblyName>
+    <RootNamespace>PMSModel</RootNamespace>
+    <AssemblyName>PMSModel</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,24 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBasicData.cs" />
-    <Compile Include="IDelivery.cs" />
-    <Compile Include="IRecordBlank.cs" />
-    <Compile Include="IRecordBonding.cs" />
-    <Compile Include="IRecordMachine.cs" />
-    <Compile Include="IRecordMilling.cs" />
-    <Compile Include="IMisson.cs" />
-    <Compile Include="IOrder.cs" />
-    <Compile Include="IPlan.cs" />
-    <Compile Include="IProduct.cs" />
-    <Compile Include="IRecordVHP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PMSModel\PMSModel.csproj">
-      <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
-      <Name>PMSModel</Name>
-    </ProjectReference>
+    <Compile Include="Sales\MainOrder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
