@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="IBasicData.cs" />
     <Compile Include="IDelivery.cs" />
+    <Compile Include="IDeliveryItem.cs" />
     <Compile Include="IRecordBlank.cs" />
     <Compile Include="IRecordBonding.cs" />
     <Compile Include="IRecordMachine.cs" />

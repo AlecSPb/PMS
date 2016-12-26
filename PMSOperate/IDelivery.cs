@@ -15,5 +15,6 @@ namespace PMSOperate
         int Add(Delivery delivery);
         int Update(Delivery delivery);
         int Disable(Delivery delivery);
+
     }
 }
