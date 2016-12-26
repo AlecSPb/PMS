@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSOperate
+namespace PMSModel
 {
-    public interface IPlan
+    class DeliveryAddress
     {
     }
 }

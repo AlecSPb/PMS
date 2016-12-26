@@ -48,7 +48,7 @@
     <Compile Include="IRecordMilling.cs" />
     <Compile Include="IMisson.cs" />
     <Compile Include="IOrder.cs" />
-    <Compile Include="IPlan.cs" />
+    <Compile Include="IPlanVHP.cs" />
     <Compile Include="IProduct.cs" />
     <Compile Include="IRecordVHP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
