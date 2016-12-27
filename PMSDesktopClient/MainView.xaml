@@ -14,9 +14,9 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strStart}">
-                <MenuItem Header="{StaticResource strOrder}"/>
-                <MenuItem Header="{StaticResource strMisson}"/>
-                <MenuItem Header="{StaticResource strPlan}"/>
+                <MenuItem Header="{StaticResource strOrder}" Command="{Binding GoToOrder}"/>
+                <MenuItem Header="{StaticResource strMisson}" Command="{Binding GoToMisson}"/>
+                <MenuItem Header="{StaticResource strPlan}" Command="{Binding GoToPlan}"/>
                 <MenuItem Header="{StaticResource strProduct}"/>
                 <MenuItem Header="{StaticResource strBonding}"/>
                 <MenuItem Header="{StaticResource strDelivery}"/>
@@ -25,7 +25,7 @@
                 <MenuItem Header="{StaticResource strBasicData}"/>
                 <Separator/>
                 <MenuItem Header="Log Out"/>
-                <MenuItem Header="Exit"/>
+                <MenuItem x:Name="MenuExit" Header="Exit" Click="MenuExit_Click"/>
             </MenuItem>
             <MenuItem Header="{StaticResource strAbout}">
                 <MenuItem Header="{StaticResource strInstruct}"/>

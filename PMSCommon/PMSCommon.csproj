@@ -47,6 +47,7 @@
     <Compile Include="Calculation\TargetDensity.cs" />
     <Compile Include="Calculation\TargetDensityCalculation.cs" />
     <Compile Include="Calculation\TargetDensityCalculationItem.cs" />
+    <Compile Include="ViewToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
