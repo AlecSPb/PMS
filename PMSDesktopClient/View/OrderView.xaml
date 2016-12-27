@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1000">
-    <Grid>
+    <Grid Background="{StaticResource CommonBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -17,11 +17,11 @@
         <TextBlock Text="Order List" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
             <Button Content="新建" Style="{StaticResource ButtonBasic}"/>
-            <TextBlock Text="客户" Style="{StaticResource TextblockBasic}"/>
+            <TextBlock Text="客户" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource  TextBoxBasic}"/>
-            <TextBlock Text="成分1" Style="{StaticResource  TextblockBasic}"/>
+            <TextBlock Text="成分1" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic}"/>
-            <TextBlock Text="成分2" Style="{StaticResource  TextblockBasic}"/>
+            <TextBlock Text="成分2" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic}"/>
             <CheckBox Content="包含作废订单" Style="{StaticResource CheckBoxBasic}"/>
             <Button Content="搜索" Style="{StaticResource  ButtonBasic}"/>

@@ -4,18 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSDesktopClient.View"
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid>
+          d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="{StaticResource CommonBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="{StaticResource TitleBar}">
-            <Button Content="新建" Style="{StaticResource btnSubMenu}"/>
+        <TextBlock Text="{StaticResource strMissonPage}" Style="{StaticResource TextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
+            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToNavigation}"/>
+            <TextBlock Text="成分" Style="{StaticResource TextBlockBasic}"/>
+            <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
+            <TextBlock Text="成分缩写" Style="{StaticResource TextBlockBasic}"/>
+            <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
+            <CheckBox Style="{StaticResource CheckBoxBasic}" Content="Include Deleted One"/>
+            <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}"/>
+            <Button Content="{StaticResource strAll}" Style="{StaticResource    ButtonBasic}"/>
         </StackPanel>
-        <DataGrid Grid.Row="1">
-            
-        </DataGrid>
+        <DataGrid Grid.Row="2"/>
+        <control:SimplePager Grid.Row="3"/>
     </Grid>
 </UserControl>

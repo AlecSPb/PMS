@@ -99,17 +99,38 @@
     <Compile Include="View\MissonView.xaml.cs">
       <DependentUpon>MissonView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Sales\OrderView.xaml.cs">
+    <Compile Include="View\OrderEditView.xaml.cs">
+      <DependentUpon>OrderEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderReviewView.xaml.cs">
+      <DependentUpon>OrderReviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductEditView.xaml.cs">
+      <DependentUpon>ProductEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductReportView.xaml.cs">
+      <DependentUpon>ProductReportView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RawMaterialView.xaml.cs">
       <DependentUpon>RawMaterialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPEditView.xaml.cs">
+      <DependentUpon>RecordVHPEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
+      <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPView.xaml.cs">
+      <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowManager.cs" />
     <Page Include="Language\us-en.xaml">
@@ -152,11 +173,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OrderEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderReviewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductReportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RawMaterialView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Sales\OrderView.xaml">
+    <Page Include="View\OrderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +202,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPQuickEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,9 +259,6 @@
     <Folder Include="Resource\Images\" />
     <Folder Include="Service\" />
     <Folder Include="Update\Package\" />
-    <Folder Include="View\Acess\" />
-    <Folder Include="View\Production\" />
-    <Folder Include="View\Product\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
