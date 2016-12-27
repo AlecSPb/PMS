@@ -31,7 +31,12 @@
             </Grid.RowDefinitions>
             <DataGrid Style="{StaticResource DataGridBasic}">
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Edit" Style="{StaticResource TextBlockBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Edit"/>

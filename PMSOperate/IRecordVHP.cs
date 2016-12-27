@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace PMSOperate
 {
     public interface IRecordVHP
     {
+        IList<RecordVHP> GetAll();
+        IList<RecordVHP> GetBySearch();
+        RecordVHP GetByID(Guid id);
+        int Add(RecordVHP recordVHP);
+        int Update(RecordVHP recordVHP);
+        int Disable(RecordVHP recordVHP);
     }
 }

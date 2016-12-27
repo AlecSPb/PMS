@@ -33,7 +33,7 @@ namespace PMSTabletClient
 
         private void StartFirstView()
         {
-            SetMainContent(new NavigationView());
+            SetMainContent(new LogInView());
         }
         private void SetMainContent(UserControl view)
         {

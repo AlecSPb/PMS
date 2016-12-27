@@ -57,6 +57,12 @@
     <Compile Include="Product\ProductSample.cs" />
     <Compile Include="Product\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Record\RecordBonding.cs" />
+    <Compile Include="Record\RecordMachine.cs" />
+    <Compile Include="Record\RecordMilling.cs" />
+    <Compile Include="Record\RecordTakeOut.cs" />
+    <Compile Include="Record\RecordVHP.cs" />
+    <Compile Include="Record\RecordVHPItem.cs" />
     <Compile Include="Sales\MainOrder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

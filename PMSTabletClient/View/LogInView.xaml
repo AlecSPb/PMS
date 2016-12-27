@@ -6,19 +6,21 @@
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="600">
-    <Grid>
+    <Grid Background="{StaticResource CommonBackground}">
         <Grid Width="300" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Welcome" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Text="User Name" Style="{StaticResource TextBoxBasic}"  HorizontalAlignment="Stretch"/>
-            <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"/>
-            <Button Grid.Row="3" Content="Log In" Style="{StaticResource ButtonBasic}"/>
+            <TextBlock Grid.Row="1" Text="Welcome" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Text="PMS- Tablet Edtion" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"/>
+            <TextBox Grid.Row="2" Text="User Name" Style="{StaticResource TextBoxBasic}"  HorizontalAlignment="Stretch"/>
+            <TextBox Grid.Row="3" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"/>
+            <Button Grid.Row="4" Content="Log In" Style="{StaticResource ButtonBasic}"/>
         </Grid>
     </Grid>
 </UserControl>
