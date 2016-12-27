@@ -3,15 +3,58 @@
                     xmlns:local="clr-namespace:PMSDesktopClient.Language"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="strAppName">Production Management System Desktop Edtion</sys:String>
+    <sys:String x:Key="strWelcome">Welcome to use PMS</sys:String>
     <!--PageOrderList-->
     <sys:String x:Key="strPageOrderList">Order List</sys:String>
     <!--menu items-->
     <sys:String x:Key="strStart">Start</sys:String>
-    <sys:String x:Key="strOrders">Orders</sys:String>
-    <sys:String x:Key="strMissons">Missons</sys:String>
-    <sys:String x:Key="strPlans">Plans</sys:String>
-    <sys:String x:Key="strProducts">Products</sys:String>
-    <sys:String x:Key="strBondings">Bondings</sys:String>
-    <sys:String x:Key="strDeliveries">Deliveries</sys:String>
-    <sys:String x:Key="strRawMaterials">Raw Materials</sys:String>
+    <sys:String x:Key="strOrder">Order</sys:String>
+    <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
+    <sys:String x:Key="strOrderReview">OrderReview</sys:String>
+    <sys:String x:Key="strMisson">Misson</sys:String>
+    <sys:String x:Key="strPlan">Plan</sys:String>
+    <sys:String x:Key="strPlanEdit">Plan Edit</sys:String>
+    <sys:String x:Key="strPlanCanlendar">Plan Canlendar</sys:String>
+    <sys:String x:Key="strProduct">Product</sys:String>
+    <sys:String x:Key="strProductEdit">Product Edit</sys:String>
+    <sys:String x:Key="strBonding">Bonding</sys:String>
+    <sys:String x:Key="strBondingEdit">Bonding Edit</sys:String>
+    <sys:String x:Key="strDelivery">Delivery</sys:String>
+    <sys:String x:Key="strDeliveryEdit">Delivery Edit</sys:String>
+    <sys:String x:Key="strRawMaterial">Raw Material</sys:String>
+    <sys:String x:Key="strRawMaterialEdit">Raw Material Edit</sys:String>
+    <sys:String x:Key="strRecord">Record</sys:String>
+    <sys:String x:Key="strBasicData">Basic Data</sys:String>
+
+    <sys:String x:Key="strHelp">Help</sys:String>
+    <sys:String x:Key="strAbout">About</sys:String>
+    <sys:String x:Key="strInstruct">Instruct</sys:String>
+    <!--ButtonItem-->
+    <sys:String x:Key="strLogin">Login In</sys:String>
+    <sys:String x:Key="strBack">Back</sys:String>
+    <sys:String x:Key="strSearch">Search</sys:String>
+    <sys:String x:Key="strAdd">Add</sys:String>
+    <sys:String x:Key="strSave">Save</sys:String>
+    <sys:String x:Key="strAll">All</sys:String>
+    <sys:String x:Key="strStartNew">Start A New Record</sys:String>
+    <sys:String x:Key="strEmpty">Create An Empty Record</sys:String>
+    <sys:String x:Key="strQuick">Quick Edit</sys:String>
+    <sys:String x:Key="strOutput">Output</sys:String>
+    <sys:String x:Key="strPrint">Print</sys:String>
+    
+    <!--PageTitle-->
+    <sys:String x:Key="strRecordVHPPage">VHP Record Collection</sys:String>
+    <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
+    <sys:String x:Key="strRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
+
+    <sys:String x:Key="strProductPage">Product Collection</sys:String>
+    <sys:String x:Key="strProductEditPage">Product Edit</sys:String>
+    <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
+
+    <sys:String x:Key="strOrderPage">Order Collection</sys:String>
+    <sys:String x:Key="strMissonPage">Misson Collection</sys:String>
+    <sys:String x:Key="strPlanPage">Plan Collection</sys:String>
+
+    <sys:String x:Key="strVHPID">VHP ID</sys:String>
+    <sys:String x:Key="strProductReport">Report</sys:String>
 </ResourceDictionary>

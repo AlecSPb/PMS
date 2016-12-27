@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="{StaticResource CommonBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="Auto"/>
@@ -14,9 +18,17 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="登陆"/>
-        <TextBox Grid.Row="1" Text="用户名"/>
-        <TextBox Grid.Row="2" Text="密码"/>
-        <Button Grid.Row="3" Content="登陆"/>
+        <TextBlock Grid.Row="0" Text="{StaticResource strWelcome}" Style="{StaticResource TextBlockBasic}" HorizontalAlignment="Center" FontSize="25"/>
+        <TextBox Grid.Row="1" Text="User Name" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10"/>
+        <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10"/>
+        <Button Grid.Row="3" Content="{StaticResource strLogin}" Style="{StaticResource  ButtonBasic}" FontSize="25" Padding="10 15"/>
+        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Margin="5"
+                BorderBrush="{StaticResource ToolBarBackground}" 
+                BorderThickness="1">
+            <TextBlock Text="详细内容详细内容详细内容详细内容详细内容详细内
+                       容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详
+                       细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容"
+                       TextWrapping="WrapWithOverflow"/>
+        </Border>
     </Grid>
 </UserControl>

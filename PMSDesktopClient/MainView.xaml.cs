@@ -25,12 +25,12 @@ namespace PMSDesktopClient
         public MainView()
         {
             InitializeComponent();
-            SetMainContent(new OrderView());
+            SetMainContent(new LogInView());
         }
 
         private void SetMainContent(UserControl view)
         {
-            if (view !=null)
+            if (view != null)
             {
                 mainArea.Content = view;
             }

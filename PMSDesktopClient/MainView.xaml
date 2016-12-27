@@ -14,18 +14,28 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strStart}">
-                <MenuItem Header="{StaticResource strOrders}"/>
-                <MenuItem Header="{StaticResource strMissons}"/>
-                <MenuItem Header="{StaticResource strPlans}"/>
-                <MenuItem Header="{StaticResource strProducts}"/>
-                <MenuItem Header="{StaticResource strBondings}"/>
-                <MenuItem Header="{StaticResource strDeliveries}"/>
-                <MenuItem Header="{StaticResource strRawMaterials}"/>
+                <MenuItem Header="{StaticResource strOrder}"/>
+                <MenuItem Header="{StaticResource strMisson}"/>
+                <MenuItem Header="{StaticResource strPlan}"/>
+                <MenuItem Header="{StaticResource strProduct}"/>
+                <MenuItem Header="{StaticResource strBonding}"/>
+                <MenuItem Header="{StaticResource strDelivery}"/>
+                <MenuItem Header="{StaticResource strRecord}"/>
+                <Separator/>
+                <MenuItem Header="{StaticResource strBasicData}"/>
+                <Separator/>
+                <MenuItem Header="Log Out"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <MenuItem Header="{StaticResource strAbout}">
+                <MenuItem Header="{StaticResource strInstruct}"/>
+                <MenuItem Header="{StaticResource strHelp}"/>
+                <MenuItem Header="{StaticResource strAbout}"/>
             </MenuItem>
         </Menu>
         <ContentControl x:Name="mainArea" Grid.Row="1"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
-            <TextBlock Text="状态栏" Style="{StaticResource TextblockBasic}"/>
+            <TextBlock Text="状态栏" Style="{StaticResource TextBlockBasic}"/>
         </StackPanel>
     </Grid>
 </Window>
