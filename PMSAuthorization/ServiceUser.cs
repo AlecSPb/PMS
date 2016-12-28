@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSAuthorization
 {
-    public class User
+    public class ServiceUser
     {
     }
 }

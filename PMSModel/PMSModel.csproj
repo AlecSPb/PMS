@@ -64,6 +64,9 @@
     <Compile Include="Record\RecordVHP.cs" />
     <Compile Include="Record\RecordVHPItem.cs" />
     <Compile Include="Sales\MainOrder.cs" />
+    <Compile Include="Users\PMSAccess.cs" />
+    <Compile Include="Users\PMSRole.cs" />
+    <Compile Include="Users\PMSUser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

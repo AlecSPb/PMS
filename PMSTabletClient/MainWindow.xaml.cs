@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 using System.ComponentModel;
+using PMSCommon;
 
 namespace PMSTabletClient
 {

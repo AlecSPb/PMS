@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSModel;
 
 namespace PMSAuthorization
 {
     public interface IUser
     {
-        bool IsExsit(User user);
-        User GetUserByUserName(string userName);
-        IList<User> GetAll();
+        bool IsExsit(PMSUser user);
+        PMSUser GetUserByUserName(string userName);
+        IList<PMSUser> GetAll();
 
-        Role GetRole(User user);
-        int Add(User user);
-        int Update(User user);
-        int Disable(User user);
+        PMSRole GetRole(PMSUser user);
+        int Add(PMSUser user);
+        int Update(PMSUser user);
+        int Disable(PMSUser user);
     }
 }
