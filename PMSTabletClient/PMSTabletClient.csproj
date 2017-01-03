@@ -82,6 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Component\NavigationWizard.cs" />
+    <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
@@ -278,7 +279,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Resource\Images\" />
     <Folder Include="Services\" />
   </ItemGroup>
@@ -289,6 +289,10 @@
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMSModel\PMSModel.csproj">
+      <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
+      <Name>PMSModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

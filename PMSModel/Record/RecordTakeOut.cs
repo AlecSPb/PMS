@@ -13,7 +13,7 @@ namespace PMSModel
     {
 
         public Guid ID { get; set; }
-        public TargetData CurrentTargetData { get; set; }
+        public string CurrentTargetData { get; set; }
 
         public string MoveOutTemperature { get; set; }
         public string TakeOutTemperature { get; set; }

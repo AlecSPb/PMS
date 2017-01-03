@@ -19,7 +19,7 @@ namespace PMSModel
 
         public string CompositionStandard { get; set; }//成分规范表示
         public string CompositionOriginal { get; set; }//成分原始表示
-
+        public string CompositoinAbbr { get; set; }
         public string ProductType { get; set; }
         public string Purity { get; set; }
 

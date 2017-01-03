@@ -24,7 +24,7 @@ namespace PMSTabletClient.View
         public OrderView()
         {
             InitializeComponent();
-            this.DataContext = new PlanVM();
+            this.DataContext = new OrderVM();
         }
     }
 }

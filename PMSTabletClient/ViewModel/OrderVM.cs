@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSModel;
+using System.Collections.ObjectModel;
+using PMSTabletClient.Models;
 
 namespace PMSTabletClient.ViewModel
 {
@@ -12,8 +15,9 @@ namespace PMSTabletClient.ViewModel
     {
         public OrderVM()
         {
-
-            BackToNavigation= new RelayCommand(ActionBackToNavigation);
+            MainOrders = new ObservableCollection<MainOrder>();
+            ModelFactory.FillOrder(MainOrders);
+            BackToNavigation = new RelayCommand(ActionBackToNavigation);
         }
 
         private void ActionBackToNavigation()
@@ -21,6 +25,9 @@ namespace PMSTabletClient.ViewModel
             NavigationWizard.GoToMainNavigation();
         }
 
+        #region Properties
+        public ObservableCollection<MainOrder> MainOrders { get; set; }
+        #endregion
 
         #region Commands
         public RelayCommand BackToNavigation { get; set; }
