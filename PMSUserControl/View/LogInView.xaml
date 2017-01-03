@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="PMSUserControl.View.LogInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSUserControl.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="{StaticResource CommonBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="Gray">
+            <TextBox Text="" FontSize="20" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"/>
+            <Button FontSize="20" Style="{StaticResource ButtonBasic}" Content="Log In"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

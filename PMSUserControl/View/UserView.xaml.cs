@@ -1,5 +1,4 @@
-﻿using PMSUserControl.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSUserControl
+namespace PMSUserControl.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// UserView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserView : UserControl
     {
-        public MainWindow()
+        public UserView()
         {
             InitializeComponent();
-            main.Content = new LogInView();
         }
     }
 }
