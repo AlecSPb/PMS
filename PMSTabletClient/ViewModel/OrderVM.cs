@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSModel;
+using System.Collections;
 using System.Collections.ObjectModel;
 using PMSTabletClient.Models;
+using PMSOperate;
+using PMSFakeService;
 
 namespace PMSTabletClient.ViewModel
 {
@@ -16,8 +19,18 @@ namespace PMSTabletClient.ViewModel
         public OrderVM()
         {
             MainOrders = new ObservableCollection<MainOrder>();
-            ModelFactory.FillOrder(MainOrders);
+            FillMainOrders();
             BackToNavigation = new RelayCommand(ActionBackToNavigation);
+        }
+
+        private void FillMainOrders()
+        {
+            IOrder orderService = new OrderService();
+            MainOrders.Clear();
+            orderService.GetAll().ToList<MainOrder>().ForEach(order =>
+            {              
+                MainOrders.Add(order);
+            });
         }
 
         private void ActionBackToNavigation()
