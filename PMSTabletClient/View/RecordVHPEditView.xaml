@@ -7,14 +7,14 @@
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000">
-    <Grid Background="{StaticResource CommonBackground}">
+    <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{StaticResource strRecordVHPEditPage}" Style="{StaticResource TextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
+        <TextBlock Grid.Row="0" Text="{StaticResource strRecordVHPEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToRecordVHP}"/>
             <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>

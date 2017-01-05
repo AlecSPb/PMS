@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="600">
-    <Grid Background="{StaticResource CommonBackground}">
+    <Grid Background="{StaticResource BackgroundWindow}">
         <Grid Width="300" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>

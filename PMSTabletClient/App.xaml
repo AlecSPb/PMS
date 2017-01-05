@@ -7,8 +7,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Language/us-en.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/BasicTabletStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WPFSkin;component/SkinWarm.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Skin/Warm.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Style/Tablet.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSTabletClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid  Background="{StaticResource CommonBackground}">
+    <Grid  Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -26,16 +26,16 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Content="Order View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="0" Command="{Binding GoToOrder}"/>
-                <Button Content="Misson View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="1"  Command="{Binding GoToMisson}"/>
-                <Button Content="Plan View" Style="{StaticResource ButtonNavigation}" Grid.Row="0" Grid.Column="2"  Command="{Binding GoToPlan}"/>
-                <Button Content="Milling Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="0"/>
-                <Button Content="VHP Record" Style="{StaticResource ButtonNavigation}" Command="{Binding GoToVHPRecord}" Grid.Row="1" Grid.Column="1"/>
-                <Button Content="Raw Blank Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="2"/>
-                <Button Content="Bonding Record" Style="{StaticResource ButtonNavigation}" Grid.Row="1" Grid.Column="3"/>
-                <Button Content="Product Data" Style="{StaticResource ButtonNavigation}" Command="{Binding GoToProduct}" Grid.Row="2" Grid.Column="0"/>
-                <Button Content="Inventory Data" Style="{StaticResource ButtonNavigation}" Grid.Row="2" Grid.Column="1"/>
-                <Button Content="Delivery Data" Style="{StaticResource ButtonNavigation}" Grid.Row="2" Grid.Column="2"/>
+                <Button Content="Order View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="0" Command="{Binding GoToOrder}"/>
+                <Button Content="Misson View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="1"  Command="{Binding GoToMisson}"/>
+                <Button Content="Plan View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="2"  Command="{Binding GoToPlan}"/>
+                <Button Content="Milling Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="0"/>
+                <Button Content="VHP Record" Style="{StaticResource ButtonNavigationBasic}" Command="{Binding GoToVHPRecord}" Grid.Row="1" Grid.Column="1"/>
+                <Button Content="Raw Blank Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="2"/>
+                <Button Content="Bonding Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="3"/>
+                <Button Content="Product Data" Style="{StaticResource ButtonNavigationBasic}" Command="{Binding GoToProduct}" Grid.Row="2" Grid.Column="0"/>
+                <Button Content="Inventory Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="1"/>
+                <Button Content="Delivery Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="2"/>
             </Grid>
 
         </Border>

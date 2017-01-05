@@ -72,8 +72,8 @@
     <Reference Include="WPFControls">
       <HintPath>..\..\WpfControls\WPFControls\bin\Debug\WPFControls.dll</HintPath>
     </Reference>
-    <Reference Include="WPFSkin">
-      <HintPath>..\..\WpfControls\WPFSkin\bin\Debug\WPFSkin.dll</HintPath>
+    <Reference Include="WPFStyle46">
+      <HintPath>..\..\WpfControls\WPFStyle46\bin\Debug\WPFStyle46.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
