@@ -9,7 +9,7 @@ using PMSModel;
 using System.Collections;
 using System.Collections.ObjectModel;
 using PMSTabletClient.Models;
-using PMSOperate;
+using PMSIService;
 using PMSFakeService;
 
 namespace PMSTabletClient.ViewModel
@@ -25,7 +25,8 @@ namespace PMSTabletClient.ViewModel
 
         private void FillMainOrders()
         {
-            IOrder orderService = new OrderService();
+            //这里
+            IOrder orderService = new FakeOrderService();
             MainOrders.Clear();
             orderService.GetAll().ToList<MainOrder>().ForEach(order =>
             {              

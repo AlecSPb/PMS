@@ -16,20 +16,90 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Order List" Style="{StaticResource TextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
-            <Button Content="新建" Style="{StaticResource ButtonBasic}"/>
-            <TextBlock Text="客户" Style="{StaticResource TextBlockBasic}"/>
+            <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
+            <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource  TextBoxBasic}"/>
-            <TextBlock Text="成分1" Style="{StaticResource  TextBlockBasic}"/>
+            <TextBlock Text="Composition" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic}"/>
-            <TextBlock Text="成分2" Style="{StaticResource  TextBlockBasic}"/>
+            <TextBlock Text="CompositionAbbr" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="" Style="{StaticResource TextBoxBasic}"/>
-            <CheckBox Content="包含作废订单" Style="{StaticResource CheckBoxBasic}"/>
-            <Button Content="搜索" Style="{StaticResource  ButtonBasic}"/>
-            <Button Content="全部" Style="{StaticResource ButtonBasic}"/>
+            <CheckBox Content="Include Deleted" Style="{StaticResource CheckBoxBasic}"/>
+            <Button Content="Search" Style="{StaticResource  ButtonBasic}"/>
+            <Button Content="All" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2">
+        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="测试列"/>
+                <DataGridTemplateColumn Header="Customer Name">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CustomerName}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="PO">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PO}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="WorkingNumber">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PMIWorkingNumber}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="CompositionStandard ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CompositionStandard }"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="CompositionOriginal">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CompositionOriginal}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="CompositoinAbbr">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding CompositoinAbbr}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header=" Purity">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding  Purity}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Quantity">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Quantity}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header=" QuantityUnit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding  QuantityUnit}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Dimension">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Dimension}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager  Grid.Row="3"/>

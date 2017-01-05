@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSModel;
-using PMSOperate;
+using PMSIService;
 
 namespace PMSFakeService
 {
-    public class OrderService : IOrder
+    public class FakeOrderService : IOrder
     {
         public int Add(MainOrder order)
         {
@@ -23,15 +23,15 @@ namespace PMSFakeService
         public IList<MainOrder> GetAll()
         {
             var orders = new List<MainOrder>();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 orders.Add(new MainOrder()
                 {
                     ID = Guid.NewGuid(),
-                    CustomerName = "Midsummer " + i,
+                    CustomerName = "Midsummer-" + i,
                     PO = "20123123123",
                     PMIWorkingNumber = "161112-A",
-                    CompositionStandard = "Cu22.8In20Ga7Se50.2 " + i,
+                    CompositionStandard = "Cu22.8In20Ga7Se50.2-" + i,
                     CompositionOriginal = "Cu22.8In20Ga7Se50.2+NaF",
                     CompositoinAbbr = "CIGS",
                     Purity = "99.999%",

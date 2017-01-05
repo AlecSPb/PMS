@@ -66,7 +66,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationCommon", "Notif
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSAuthorization", "PMSAuthorization\PMSAuthorization.csproj", "{B30F585B-37CC-4117-9480-A533B3AB40BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSOperate", "PMSOperate\PMSOperate.csproj", "{37B17FC1-5E32-4DB2-BFAD-8A535B568C1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSIService", "PMSOperate\PMSIService.csproj", "{37B17FC1-5E32-4DB2-BFAD-8A535B568C1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSModel", "PMSModel\PMSModel.csproj", "{79CDC827-0FCA-4521-9C8A-F99B31290E8E}"
 EndProject

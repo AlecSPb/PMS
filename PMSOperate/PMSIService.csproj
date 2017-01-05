@@ -7,8 +7,8 @@
     <ProjectGuid>{37B17FC1-5E32-4DB2-BFAD-8A535B568C1D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PMSOperate</RootNamespace>
-    <AssemblyName>PMSOperate</AssemblyName>
+    <RootNamespace>PMSIService</RootNamespace>
+    <AssemblyName>PMSIService</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

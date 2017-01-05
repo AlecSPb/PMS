@@ -87,6 +87,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\BondingView.xaml.cs">
       <DependentUpon>BondingView.xaml</DependentUpon>
@@ -275,6 +276,18 @@
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMSFakeService\PMSFakeService.csproj">
+      <Project>{8d74a4ea-7faf-4acc-b0bc-5b399e234b85}</Project>
+      <Name>PMSFakeService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMSModel\PMSModel.csproj">
+      <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
+      <Name>PMSModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PMSOperate\PMSIService.csproj">
+      <Project>{37b17fc1-5e32-4db2-bfad-8a535b568c1d}</Project>
+      <Name>PMSIService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
