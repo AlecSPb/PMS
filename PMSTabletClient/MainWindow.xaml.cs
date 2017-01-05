@@ -28,32 +28,30 @@ namespace PMSTabletClient
         public MainWindow()
         {
             InitializeComponent();
-            StartFirstView();
-            RegisterTheNavigationView();
+            NavigateTo(new NavigationView());
+            Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
         }
-
-        private void StartFirstView()
+        protected override void OnClosing(CancelEventArgs e)
         {
-            SetMainContent(new NavigationView());
+            Messenger.Default.Unregister(this);
+            base.OnClosing(e);
         }
-        private void SetMainContent(UserControl view)
+        private void NavigateTo(UserControl view)
         {
             main.Content = view;
         }
-        private void RegisterTheNavigationView()
+
+        private void ActionNavigate(string viewName)
         {
-            Messenger.Default.Register<string>(this, ViewToken.MainNavigate, arg => SetMainContent(new NavigationView()));
-            Messenger.Default.Register<string>(this, ViewToken.RecordVHP, arg => SetMainContent(new RecordVHPView()));
-            Messenger.Default.Register<string>(this, ViewToken.RecordVHPEdit, arg => SetMainContent(new RecordVHPEditView()));
-            Messenger.Default.Register<string>(this, ViewToken.RecordVHPQuickEdit, arg => SetMainContent(new RecordVHPQuickEditView()));
-            Messenger.Default.Register<string>(this, ViewToken.Product, arg => SetMainContent(new ProductView()));
-            Messenger.Default.Register<string>(this, ViewToken.ProductEdit, arg => SetMainContent(new ProductEditView()));
-            Messenger.Default.Register<string>(this, ViewToken.ProductReport, arg=> SetMainContent(new ProductReportView()));
-            Messenger.Default.Register<string>(this, ViewToken.Order, arg => SetMainContent(new OrderView()));
-            Messenger.Default.Register<string>(this, ViewToken.Misson, arg => SetMainContent(new MissonView()));
-            Messenger.Default.Register<string>(this, ViewToken.Plan, arg => SetMainContent(new PlanView()));
+            switch (viewName)
+            {
+                case "OrderView":
+                    NavigateTo(new OrderView());
+                    break;
+                default:
+                    NavigateTo(new OrderView());
+                    break;
+            }
         }
-
-
     }
 }

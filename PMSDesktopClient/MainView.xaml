@@ -14,9 +14,9 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strStart}">
-                <MenuItem Header="{StaticResource strOrder}" Command="{Binding GoToOrder}"/>
-                <MenuItem Header="{StaticResource strMisson}" Command="{Binding GoToMisson}"/>
-                <MenuItem Header="{StaticResource strPlan}" Command="{Binding GoToPlan}"/>
+                <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
+                <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}"/>
+                <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}"/>
                 <MenuItem Header="{StaticResource strProduct}"/>
                 <MenuItem Header="{StaticResource strBonding}"/>
                 <MenuItem Header="{StaticResource strDelivery}"/>

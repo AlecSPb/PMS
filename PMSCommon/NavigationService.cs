@@ -11,7 +11,7 @@ namespace PMSCommon
     {
         public static void NavigateTo(string viewName)
         {
-            Messenger.Default.Send<object>(viewName, NavigationToken.Navigate);
+            Messenger.Default.Send<string>(viewName, NavigationToken.Navigate);
         }
     }
 }
