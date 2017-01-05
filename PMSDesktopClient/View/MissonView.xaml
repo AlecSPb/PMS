@@ -7,14 +7,14 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
           d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid Background="{StaticResource CommonBackground}">
+    <Grid Background="{StaticResource BackgroundNavigateBar}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strMissonPage}" Style="{StaticResource TextBlockPageTitle}"/>
+        <TextBlock Text="{StaticResource strMissonPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource ToolBarBackground}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToNavigation}"/>
             <TextBlock Text="成分" Style="{StaticResource TextBlockBasic}"/>

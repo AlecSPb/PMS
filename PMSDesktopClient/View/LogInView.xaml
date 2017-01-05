@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid Background="{StaticResource CommonBackground}">
+    <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
@@ -23,7 +23,7 @@
         <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10"/>
         <Button Grid.Row="3" Content="{StaticResource strLogin}" Style="{StaticResource  ButtonBasic}" FontSize="25" Padding="10 15"/>
         <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Margin="5"
-                BorderBrush="{StaticResource ToolBarBackground}" 
+                BorderBrush="{StaticResource BorderBrush}" 
                 BorderThickness="1">
             <TextBlock Text="详细内容详细内容详细内容详细内容详细内容详细内
                        容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详
