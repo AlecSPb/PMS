@@ -27,11 +27,11 @@ namespace PMSModel
         public string QuantityUnit { get; set; }
 
         public string Dimension { get; set; }//尺寸标准表示
-        public string DimensionRequirement { get; set; }//尺寸细节
-        public string SampleRequirement { get; set; }//是否需要样品
+        public string DimensionNeed { get; set; }//尺寸细节
+        public string SampleNeed { get; set; }//是否需要样品
         public DateTime ScheduleDeliveryDate { get; set; }
 
-        public string MinimumRequirement { get; set; }//密度要求，加工要求，表面洁净度，多大的缺口可以接受，多大的裂缝可以接受，表面有花纹是否可以接受，表面有坑是否可以接受
+        public string DefectAccept { get; set; }//密度要求，加工要求，表面洁净度，多大的缺口可以接受，多大的裂缝可以接受，表面有花纹是否可以接受，表面有坑是否可以接受
 
         //状态部分
         public int Priority { get; set; }//紧急，一般，不着急
