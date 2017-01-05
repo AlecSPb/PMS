@@ -19,18 +19,10 @@ namespace PMSTabletClient.ViewModel
 
         private void InitialCommands()
         {
-            GoToVHPRecord = new RelayCommand(() => Messenger.Default.Send<string>(null, ViewToken.RecordVHP));
-            GoToProduct = new RelayCommand(() => Messenger.Default.Send<string>(null, ViewToken.Product));
-            GoToOrder = new RelayCommand(() => Messenger.Default.Send<string>(null, ViewToken.Order));
-            GoToMisson = new RelayCommand(() => Messenger.Default.Send<string>(null, ViewToken.Misson));
-            GoToPlan = new RelayCommand(() => Messenger.Default.Send<string>(null, ViewToken.Plan));
+            Navigate = new RelayCommand<string>(arg => NavigationService.NavigateTo(arg));
         }
         #region Commands
-        public RelayCommand GoToVHPRecord { get; private set; }
-        public RelayCommand GoToProduct { get; private set; }
-        public RelayCommand GoToOrder { get; private set; }
-        public RelayCommand GoToMisson { get; private set; }
-        public RelayCommand GoToPlan { get; private set; }
+        public RelayCommand<string> Navigate { get; private set; }
         #endregion
 
 

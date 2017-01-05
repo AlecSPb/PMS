@@ -6,14 +6,14 @@
              xmlns:local="clr-namespace:PMSDesktopClient.View"
             mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid Background="{StaticResource BackgroundNavigateBar}">
+    <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="Product Report" Grid.Row="0" Style="{StaticResource TextBlockPageTitleBasic}"/>
-        <Grid Grid.Row="1" Background="{StaticResource ToolBarBackground}">
+        <Grid Grid.Row="1" Background="{StaticResource BackgroundNavigateBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>

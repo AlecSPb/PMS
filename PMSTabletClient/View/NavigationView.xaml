@@ -26,14 +26,18 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Content="Order View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="0" Command="{Binding GoToOrder}"/>
-                <Button Content="Misson View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="1"  Command="{Binding GoToMisson}"/>
-                <Button Content="Plan View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="2"  Command="{Binding GoToPlan}"/>
+                <Button Content="Order View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="0"
+                        Command="{Binding Navigate}" CommandParameter="OrderView"/>
+                <Button Content="Misson View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="1"
+                         Command="{Binding Navigate}" CommandParameter="MissonView"/>
+                <Button Content="Plan View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="2"
+                         Command="{Binding Navigate}" CommandParameter="PlanView"/>
                 <Button Content="Milling Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="0"/>
-                <Button Content="VHP Record" Style="{StaticResource ButtonNavigationBasic}" Command="{Binding GoToVHPRecord}" Grid.Row="1" Grid.Column="1"/>
+                <Button Content="VHP Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="1"
+                         Command="{Binding Navigate}" CommandParameter="VHPView"/>
                 <Button Content="Raw Blank Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="2"/>
                 <Button Content="Bonding Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="3"/>
-                <Button Content="Product Data" Style="{StaticResource ButtonNavigationBasic}" Command="{Binding GoToProduct}" Grid.Row="2" Grid.Column="0"/>
+                <Button Content="Product Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="0"/>
                 <Button Content="Inventory Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="1"/>
                 <Button Content="Delivery Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="2"/>
             </Grid>

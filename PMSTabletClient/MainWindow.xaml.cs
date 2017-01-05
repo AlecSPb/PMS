@@ -48,8 +48,20 @@ namespace PMSTabletClient
                 case "OrderView":
                     NavigateTo(new OrderView());
                     break;
+                case "MissonView":
+                    NavigateTo(new MissonView());
+                    break;
+                case "PlanView":
+                    NavigateTo(new PlanView());
+                    break;
+                case "ProductView":
+                    NavigateTo(new ProductView());
+                    break;
+                case "ProductEditView":
+                    NavigateTo(new ProductEditView());
+                    break;
                 default:
-                    NavigateTo(new OrderView());
+                    NavigateTo(new NavigationView());
                     break;
             }
         }

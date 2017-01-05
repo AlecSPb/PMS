@@ -19,12 +19,12 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommands()
         {
-            Navigate = new RelayCommand(() =>NavigationService.NavigateTo("OrderView"));
+            Navigate = new RelayCommand<string>(arg=>NavigationService.NavigateTo(arg));
         }
 
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
+        public RelayCommand<string> Navigate { get; private set; }
         #endregion
     }
 }

@@ -84,6 +84,7 @@
     </ApplicationDefinition>
     <Compile Include="Component\NavigationWizard.cs" />
     <Compile Include="Models\ModelFactory.cs" />
+    <Compile Include="NavigationService.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />

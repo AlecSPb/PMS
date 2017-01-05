@@ -15,8 +15,8 @@
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strStart}">
                 <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
-                <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}"/>
-                <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}"/>
+                <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}" CommandParameter="MissonView"/>
+                <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}" CommandParameter="PlanView"/>
                 <MenuItem Header="{StaticResource strProduct}"/>
                 <MenuItem Header="{StaticResource strBonding}"/>
                 <MenuItem Header="{StaticResource strDelivery}"/>

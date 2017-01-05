@@ -28,27 +28,38 @@ namespace PMSDesktopClient
         public MainView()
         {
             InitializeComponent();
-            RegisterNavigation();
             DataContext = new ViewModel.MainWindowVM();
-            SetMainContent(new LogInView());
+            Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
+            NavigateTo(new LogInView());
         }
 
-        private void RegisterNavigation()
+        private void NavigateTo(UserControl view)
         {
-            Messenger.Default.Register<object>(this, ViewToken.LogIn, msg => SetMainContent(new LogInView()));
-            Messenger.Default.Register<object>(this, ViewToken.Order, msg => SetMainContent(new OrderView()));
-            Messenger.Default.Register<object>(this, ViewToken.OrderEdit, msg => SetMainContent(new OrderEditView()));
-            Messenger.Default.Register<object>(this, ViewToken.OrderReview, msg => SetMainContent(new OrderReviewView()));
-            Messenger.Default.Register<object>(this, ViewToken.Misson, msg => SetMainContent(new MissonView()));
-            Messenger.Default.Register<object>(this, ViewToken.Plan, msg => SetMainContent(new PlanView()));
-            Messenger.Default.Register<object>(this, ViewToken.PlanEdit, msg => SetMainContent(new PlanEditView()));
+            mainArea.Content = view;
         }
 
-        private void SetMainContent(UserControl view)
+        private void ActionNavigate(string viewName)
         {
-            if (view != null)
+            switch (viewName)
             {
-                mainArea.Content = view;
+                case "OrderView":
+                    NavigateTo(new OrderView());
+                    break;
+                case "OrderEditView":
+                    NavigateTo(new OrderEditView());
+                    break;
+                case "OrderReviewView":
+                    NavigateTo(new OrderReviewView());
+                    break;
+                case "MissonView":
+                    NavigateTo(new MissonView());
+                    break;
+                case "PlanView":
+                    NavigateTo(new PlanView());
+                    break;
+                default:
+                    NavigateTo(new OrderView());
+                    break;
             }
         }
 

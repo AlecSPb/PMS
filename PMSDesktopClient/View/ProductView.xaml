@@ -7,7 +7,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
-    <Grid Background="{StaticResource BackgroundNavigateBar}">
+    <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strProductPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="Orange">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToMain}"/>
             <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}" Command="{Binding GoToProductEdit}"/>
             <TextBlock Text="Product ID" Style="{StaticResource TextBlockBasic}"/>

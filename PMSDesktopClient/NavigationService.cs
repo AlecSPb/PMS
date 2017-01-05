@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Messaging;
+using PMSCommon;
 
-namespace PMSCommon
+namespace PMSDesktopClient
 {
-    public class NavigationService
+    public static class NavigationService
     {
         public static void NavigateTo(string viewName)
         {
