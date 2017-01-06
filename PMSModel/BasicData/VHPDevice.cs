@@ -15,7 +15,8 @@ namespace PMSModel
         public double HighestPressure { get; set; }
         public double HighestDiameter { get; set; }
         public int CurrentState { get; set; }
-
+        public string Manufacturer { get; set; }//制造商
+        public string ReceiveTime { get; set; }//接受时间
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
 

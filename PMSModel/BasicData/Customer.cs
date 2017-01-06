@@ -16,7 +16,6 @@ namespace PMSModel
         public string Phone2 { get; set; }
         public string Fax { get; set; }
         public string Email { get; set; }
-        public string MainProducts { get; set; }
         public string Memo { get; set; }
     }
 }
