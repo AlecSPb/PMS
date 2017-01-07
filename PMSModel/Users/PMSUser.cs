@@ -13,10 +13,11 @@ namespace PMSModel
         public string Password { get; set; }//密码必须MD5并加盐
         public DateTime CreateTime { get; set; }
         public int CurrentState { get; set; }//当前账户是否有效
-        public Guid RoleID { get; set; }//该用户的角色
 
         public string RealName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        //Navigation
+        public virtual PMSRole Role { get; set; }
     }
 }

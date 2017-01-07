@@ -16,5 +16,7 @@ namespace PMSModel
         public string ExtraInformation { get; set; }
         public int CurrentState { get; set; }
         public DateTime CreateTime { get; set; }
+        //Navigation
+        public virtual ICollection<PMSAccess> Accesses { get; set; }
     }
 }
