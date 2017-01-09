@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSModel;
 
-namespace PMSIService
+namespace PMSIRepository
 {
     public interface IProduct
     {

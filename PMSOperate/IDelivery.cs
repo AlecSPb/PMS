@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSIService
+namespace PMSIRepository
 {
     public interface IDelivery
     {
