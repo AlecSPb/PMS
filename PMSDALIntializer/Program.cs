@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSDAL;
 
 namespace PMSDALIntializer
 {
@@ -10,6 +11,12 @@ namespace PMSDALIntializer
     {
         static void Main(string[] args)
         {
+            using (var dc = new PMSDbContext())
+            {
+                Console.WriteLine(dc.Users.Count());
+            }
+
+            Console.Read();
         }
     }
 }
