@@ -53,6 +53,7 @@
     <Compile Include="IProduct.cs" />
     <Compile Include="IRecordVHP.cs" />
     <Compile Include="IRecordVHPItem.cs" />
+    <Compile Include="IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
