@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using PMSDAL;
 using System.ServiceModel;
 
-namespace PMSIRepository
+namespace PMSWCFService.Contracts
 {
     /// <summary>
     /// 通用的泛型类接口用于WCF服务
     /// </summary>
     /// <typeparam name="CommonModel"></typeparam>
-    [ServiceContract]
-    public interface IRepositoryBase<CommonModel>
+    [ServiceContract(Namespace ="http://www.newlifechou.com")]
+    public interface IServiceBase<CommonModel>
     {
         [OperationContract]
         IList<CommonModel> GetAll();
@@ -23,6 +23,9 @@ namespace PMSIRepository
 
         [OperationContract]
         IList<CommonModel> GetAllInPaging(int skip, int take);
+
+        [OperationContract]
+        int GetRecordCount();
 
         [OperationContract]
         int Add(CommonModel model);

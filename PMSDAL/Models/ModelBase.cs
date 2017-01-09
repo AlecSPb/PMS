@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSDAL.Models
+namespace PMSDAL
 {
     /// <summary>
     /// 所有模型的基类
