@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{37B17FC1-5E32-4DB2-BFAD-8A535B568C1D}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{35E44884-16E5-4A09-AF20-9448FA523D0D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PMSIService</RootNamespace>
-    <AssemblyName>PMSIService</AssemblyName>
+    <RootNamespace>PMSDALIntializer</RootNamespace>
+    <AssemblyName>PMSDALIntializer</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,25 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBasicData.cs" />
-    <Compile Include="IDelivery.cs" />
-    <Compile Include="IDeliveryItem.cs" />
-    <Compile Include="IRecordBlank.cs" />
-    <Compile Include="IRecordBonding.cs" />
-    <Compile Include="IRecordMachine.cs" />
-    <Compile Include="IRecordMilling.cs" />
-    <Compile Include="IMisson.cs" />
-    <Compile Include="IOrder.cs" />
-    <Compile Include="IPlanVHP.cs" />
-    <Compile Include="IProduct.cs" />
-    <Compile Include="IRecordVHP.cs" />
-    <Compile Include="IRecordVHPItem.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PMSModel\PMSModel.csproj">
-      <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
-      <Name>PMSModel</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMSDAL\PMSDAL.csproj">
+      <Project>{f75a9c93-ed94-4c69-82e4-bc069f4e9fef}</Project>
+      <Name>PMSDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

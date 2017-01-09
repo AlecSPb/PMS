@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8D74A4EA-7FAF-4ACC-B0BC-5B399E234B85}</ProjectGuid>
+    <ProjectGuid>{37B17FC1-5E32-4DB2-BFAD-8A535B568C1D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PMSFakeService</RootNamespace>
-    <AssemblyName>PMSFakeService</AssemblyName>
+    <RootNamespace>PMSIRepository</RootNamespace>
+    <AssemblyName>PMSIRepository</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FakeOrderService.cs" />
+    <Compile Include="IBasicData.cs" />
+    <Compile Include="IDelivery.cs" />
+    <Compile Include="IDeliveryItem.cs" />
+    <Compile Include="IRecordBlank.cs" />
+    <Compile Include="IRecordBonding.cs" />
+    <Compile Include="IRecordMachine.cs" />
+    <Compile Include="IRecordMilling.cs" />
+    <Compile Include="IMisson.cs" />
+    <Compile Include="IOrder.cs" />
+    <Compile Include="IPlanVHP.cs" />
+    <Compile Include="IProduct.cs" />
+    <Compile Include="IRecordVHP.cs" />
+    <Compile Include="IRecordVHPItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PMSModel\PMSModel.csproj">
       <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
       <Name>PMSModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PMSOperate\PMSIRepository.csproj">
-      <Project>{37b17fc1-5e32-4db2-bfad-8a535b568c1d}</Project>
-      <Name>PMSIRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

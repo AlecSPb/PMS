@@ -278,9 +278,9 @@
       <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
       <Name>PMSModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PMSOperate\PMSIService.csproj">
+    <ProjectReference Include="..\PMSOperate\PMSIRepository.csproj">
       <Project>{37b17fc1-5e32-4db2-bfad-8a535b568c1d}</Project>
-      <Name>PMSIService</Name>
+      <Name>PMSIRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

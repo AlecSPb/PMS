@@ -1,38 +1,44 @@
-﻿using PMSDAL.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace PMSDAL
 {
     public class PMSDbContext : DbContext
     {
-        public PMSDbContext() : base("PMSConStr")
+        public PMSDbContext() : base("name=PMSConStr")
         {
-
+            //数据库初始化器
+            Database.SetInitializer<PMSDbContext>(null);
         }
-
-        public DbSet<AppAccess> AppAccess { get; set; }
-        public DbSet<AppRole> AppRole { get; set; }
-        public DbSet<AppUser> AppUser { get; set; }
-        public DbSet<CalculationCondition> CalculationCondition { get; set; }
-        public DbSet<CalculationConditionItem> CalculationConditionItem { get; set; }
-        public DbSet<Customer> Customer { get; set; }
-        public DbSet<Employee> Employee { get; set; }
-        public DbSet<MainOrder> MainOrder { get; set; }
-        public DbSet<MainPlan> MainPlan { get; set; }
-        public DbSet<Material> Material { get; set; }
-        public DbSet<Mold> Mold { get; set; }
-        public DbSet<RecordPowder> RecordPowder { get; set; }
-        public DbSet<RecordVHP> RecordVHP { get; set; }
-        public DbSet<Sample> Sample { get; set; }
-        public DbSet<Target> Target { get; set; }
-        public DbSet<VHPDevice> VHPDevice { get; set; }
+        //BasicData
+        public DbSet<Compound> Comounds { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
+        public DbSet<VHPDevice> VHPDevices { get; set; }
+        public DbSet<VHPMold> VHPMolds { get; set; }
+        public DbSet<VHPProcess> VHPProcesses { get; set; }
 
 
+        //Sales
+        public DbSet<PMSOrder> Orders { get; set; }
+        //Production
+        public DbSet<PMSPlanVHP> VHPPlans { get; set; }
+        //Product
+        public DbSet<PMSProduct> Products { get; set; }
+        public DbSet<PMSSample> Samples { get; set; }
+
+        //Delivery
+
+        //UserAccess
+        public DbSet<PMSUser> Users { get; set; }
+        public DbSet<PMSRole> Roles { get; set; }
+        public DbSet<PMSAccess> Accesses { get; set; }
 
     }
 }

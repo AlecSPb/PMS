@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PMSDAL</RootNamespace>
     <AssemblyName>PMSDAL</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,30 +50,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Models\BasicData\Compound.cs" />
+    <Compile Include="Models\BasicData\Customer.cs" />
+    <Compile Include="Models\BasicData\DeliveryAddress.cs" />
+    <Compile Include="Models\BasicData\VHPDevice.cs" />
+    <Compile Include="Models\BasicData\VHPMold.cs" />
+    <Compile Include="Models\BasicData\VHPProcess.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\Production\PMSMaterialNeed.cs" />
+    <Compile Include="Models\Production\PMSPlanVHP.cs" />
+    <Compile Include="Models\Sales\PMSOrder.cs" />
+    <Compile Include="Models\Users\PMSAccess.cs" />
+    <Compile Include="Models\Users\PMSRole.cs" />
+    <Compile Include="Models\Users\PMSUser.cs" />
     <Compile Include="PMSDbContext.cs" />
-    <Compile Include="Model\AppAccess.cs" />
-    <Compile Include="Model\AppRole.cs" />
-    <Compile Include="Model\AppRoleAcess.cs" />
-    <Compile Include="Model\AppUser.cs" />
-    <Compile Include="Model\CalculationConditionItem.cs" />
-    <Compile Include="Model\Material.cs" />
-    <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\CalculationCondition.cs" />
-    <Compile Include="Model\RecordPowder.cs" />
-    <Compile Include="Model\Supplier.cs" />
-    <Compile Include="Model\VHPDevice.cs" />
-    <Compile Include="Model\MainOrder.cs" />
-    <Compile Include="Model\MainPlan.cs" />
-    <Compile Include="Model\Mold.cs" />
-    <Compile Include="Model\Sample.cs" />
-    <Compile Include="Model\Target.cs" />
-    <Compile Include="Model\RecordVHP.cs" />
+    <Compile Include="Models\Product\PMSProduct.cs" />
+    <Compile Include="Models\Product\PMSSample.cs" />
+    <Compile Include="Models\Product\PMSProductCustom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeedInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Delivery\" />
+    <Folder Include="Models\Inventory\" />
+    <Folder Include="Models\Record\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
