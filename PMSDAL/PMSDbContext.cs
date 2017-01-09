@@ -11,10 +11,10 @@ namespace PMSDAL
 {
     public class PMSDbContext : DbContext
     {
-        public PMSDbContext() : base("name=PMSConStr")
+        public PMSDbContext() : base("name=Default")
         {
             //数据库初始化器
-            Database.SetInitializer<PMSDbContext>(null);
+            //Database.SetInitializer<PMSDbContext>(null);
         }
         //BasicData
         public DbSet<Compound> Comounds { get; set; }
@@ -34,6 +34,16 @@ namespace PMSDAL
         public DbSet<PMSSample> Samples { get; set; }
 
         //Delivery
+        public DbSet<Delivery> Deliverys { get; set; }
+        public DbSet<DeliveryItem> DeliveryItems { get; set; }
+
+        //Record
+        //public DbSet<RecordBonding>  RecordBondings { get; set; }
+        public DbSet<RecordMachine> RecordMachines { get; set; }
+        public DbSet<RecordMilling> RecordMillings { get; set; }
+        public DbSet<RecordTakeOut> RecordTakeOuts { get; set; }
+        public DbSet<RecordVHP> RecordVHPs { get; set; }
+        public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
 
         //UserAccess
         public DbSet<PMSUser> Users { get; set; }

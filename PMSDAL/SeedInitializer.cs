@@ -12,7 +12,7 @@ namespace PMSDAL
         protected override void Seed(PMSDbContext context)
         {
             context.Users.Add(
-                new PMSUser() { ID=Guid.NewGuid(),UserName="xs.zhou",Password="",RealName="周新生",CreateTime=DateTime.Now,CurrentState=1,Email="xs.zhou@cdpmi.net",Phone="13540781789"});
+                new PMSUser() { ID=Guid.NewGuid(),UserName="xs.zhou",Password="",RealName="周新生",CreateTime=DateTime.Now,State=0,Email="xs.zhou@cdpmi.net",Phone="13540781789"});
             context.SaveChanges();
             base.Seed(context);
         }

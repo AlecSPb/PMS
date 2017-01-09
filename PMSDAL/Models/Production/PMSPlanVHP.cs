@@ -22,15 +22,17 @@ namespace PMSDAL
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
 
-
         public Guid OrderID { get; set; }//对应的订单
 
         public DateTime PlanDate { get; set; }
         //热压设备
         public string VHPDeviceCode { get; set; }
 
-        //制粉相关
+        //模具和装料要求
+        public string CurrentMold { get; set; }
+        public string FillRequirement { get; set; }
         public double CalculationDensity { get; set; }
+        public double MoldDiameter { get; set; }
         public double Thickness { get; set; }
         public int Quantity { get; set; }
 
@@ -39,13 +41,7 @@ namespace PMSDAL
         public double GrainSize { get; set; }
         public string MillingRequirement { get; set; }
 
-
-        //模具和装料要求
-        public string CurrentMold { get; set; }
-        public string FillRequirement { get; set; }
-
         //环境温度,湿度
-        //传感器读入
         public string RoomTemperature { get; set; }
         public string RoomHumidity { get; set; }
 
@@ -64,7 +60,6 @@ namespace PMSDAL
 
         //装料要求
         public string FillingRequirement { get; set; }
-
 
         //后续步骤，回收，加工，保留，其他等等
         public string LaterProcess { get; set; }

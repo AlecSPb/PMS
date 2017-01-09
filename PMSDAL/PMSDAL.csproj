@@ -50,15 +50,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201701090708208_new.cs" />
+    <Compile Include="Migrations\201701090708208_new.Designer.cs">
+      <DependentUpon>201701090708208_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicData\Compound.cs" />
     <Compile Include="Models\BasicData\Customer.cs" />
     <Compile Include="Models\BasicData\DeliveryAddress.cs" />
     <Compile Include="Models\BasicData\VHPDevice.cs" />
     <Compile Include="Models\BasicData\VHPMold.cs" />
     <Compile Include="Models\BasicData\VHPProcess.cs" />
+    <Compile Include="Models\Delivery\Delivery.cs" />
+    <Compile Include="Models\Delivery\DeliveryItem.cs" />
     <Compile Include="Models\ModelBase.cs" />
     <Compile Include="Models\Production\PMSMaterialNeed.cs" />
     <Compile Include="Models\Production\PMSPlanVHP.cs" />
+    <Compile Include="Models\Record\RecordBonding.cs" />
+    <Compile Include="Models\Record\RecordMachine.cs" />
+    <Compile Include="Models\Record\RecordMilling.cs" />
+    <Compile Include="Models\Record\RecordTakeOut.cs" />
+    <Compile Include="Models\Record\RecordVHP.cs" />
+    <Compile Include="Models\Record\RecordVHPItem.cs" />
     <Compile Include="Models\Sales\PMSOrder.cs" />
     <Compile Include="Models\Users\PMSAccess.cs" />
     <Compile Include="Models\Users\PMSRole.cs" />
@@ -75,9 +88,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Delivery\" />
     <Folder Include="Models\Inventory\" />
-    <Folder Include="Models\Record\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documents\记录.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201701090708208_new.resx">
+      <DependentUpon>201701090708208_new.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

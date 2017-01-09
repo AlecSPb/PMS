@@ -20,7 +20,7 @@ namespace PMSDAL
         public string PMIWorkingNumber { get; set; }
 
 
-        public int CurrentState { get; set; }
+        public int State { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
     }
