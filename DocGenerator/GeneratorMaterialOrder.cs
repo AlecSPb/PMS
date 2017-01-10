@@ -23,6 +23,8 @@ namespace DocGenerator
                 doc.ReplaceText("[SupplierEmail]", reportModel.SupplierEmail ?? "");
                 doc.ReplaceText("[SupplierAddress]", reportModel.SupplierAddress ?? "");
                 doc.ReplaceText("[OrderDate]", reportModel.CreateTime.ToString("MM/dd/yyyy"));
+
+                //插入成分表格
                 doc.Save();
             }
         }

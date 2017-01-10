@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DocGenerator;
-using gn=DocGenerator.DocModels;
+using gn = DocGenerator.DocModels;
 
 namespace DocGeneratorTest
 {
@@ -30,9 +30,27 @@ namespace DocGeneratorTest
             model.SupplierReceiver = "Mr. Wang";
             model.SupplierEmail = "sj_materials@163.com";
             model.SupplierAddress = "Chengdu,Sichuan CHINA";
-            model.OrderPO = DateTime.Now.ToString("yyMMdd") +"_"+ model.SupplierAbbr;
+            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
             model.Remark = "PMI to provide:lalalalalalalalala";
 
+            for (int i = 0; i < 3; i++)
+            {
+                var modelItem = new gn.MaterialOrderItem()
+                {
+                    ID = Guid.NewGuid(),
+                    CreateTime = DateTime.Now,
+                    Creator = "leon.chiu",
+                    State = 1,
+                    Composition = "Ge20As35Se45",
+                    Purity = "99.995%",
+                    Description = "",
+                    ProvideRawMaterial = "",
+                    DeliveryDate = DateTime.Now.AddDays(10),
+                    UnitPrice = 2300,
+                    Weight = 1.6
+                };
+                model.MaterialOrders.Add(modelItem);
+            }
 
             for (int i = 0; i < 100; i++)
             {

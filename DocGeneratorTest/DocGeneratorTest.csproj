@@ -58,6 +58,12 @@
   <ItemGroup>
     <Content Include="DocTemplate\Attention.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DocGenerator\DocGenerator.csproj">
+      <Project>{e6ceed5e-ba12-4cc0-a0d3-84746f3cace9}</Project>
+      <Name>DocGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
