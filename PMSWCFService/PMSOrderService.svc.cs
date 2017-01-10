@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -38,6 +39,14 @@ namespace PMSWCFService
         public IList<PMSOrderDc> GetAllInPaging(int skip, int take)
         {
             throw new NotImplementedException();
+        }
+
+        public IList<PMSOrderDc> GetAllInPaging(Expression<Func<PMSOrderDc, bool>> condition, int skip, int take)
+        {
+            using (var dc=new PMSDbContext())
+            {
+
+            }
         }
 
         public IList<PMSOrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state)

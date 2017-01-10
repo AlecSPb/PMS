@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSDAL;
 using System.ServiceModel;
+using System.Linq.Expressions;
 
 namespace PMSWCFService.Contracts
 {
@@ -22,7 +23,7 @@ namespace PMSWCFService.Contracts
         CommonModel FindById(Guid id);
 
         [OperationContract]
-        IList<CommonModel> GetAllInPaging(int skip, int take);
+        IList<CommonModel> GetAllInPaging(Expression<Func<CommonModel,bool>> condition,int skip, int take);
 
         [OperationContract]
         int GetRecordCount();
