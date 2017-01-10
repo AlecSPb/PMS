@@ -11,7 +11,13 @@ namespace PMSModel
     /// </summary>
     public class MaterialNeed
     {
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
+        public DateTime CreateTime { get; set; }
+        public string Creator { get; set; }
+        public int State { get; set; }
+
+
+
         public string Composition { get; set; }
         public string Purity { get; set; }
         public double Weight { get; set; }
@@ -20,8 +26,6 @@ namespace PMSModel
         public string PMIWorkingNumber { get; set; }
 
 
-        public int CurrentState { get; set; }
-        public string Creator { get; set; }
-        public DateTime CreateTime { get; set; }
+
     }
 }
