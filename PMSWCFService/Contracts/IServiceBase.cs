@@ -23,9 +23,6 @@ namespace PMSWCFService.Contracts
         CommonModel FindById(Guid id);
 
         [OperationContract]
-        IList<CommonModel> GetAllInPaging(Expression<Func<CommonModel,bool>> condition,int skip, int take);
-
-        [OperationContract]
         int GetRecordCount();
 
         [OperationContract]

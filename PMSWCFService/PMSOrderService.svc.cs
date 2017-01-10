@@ -8,6 +8,7 @@ using System.Text;
 using PMSDAL;
 using PMSWCFService.Contracts;
 using PMSWCFService.Models;
+using AutoMapper;
 
 namespace PMSWCFService
 {
@@ -30,9 +31,12 @@ namespace PMSWCFService
 
         public IList<PMSOrderDc> GetAll()
         {
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
-                //return dc.Orders.ToList<>
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, PMSOrderDc>());
+                var mapper = config.CreateMapper();
+                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<PMSOrderDc>>(dc.Orders.ToList());
+                return result;
             }
         }
 
@@ -41,17 +45,16 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public IList<PMSOrderDc> GetAllInPaging(Expression<Func<PMSOrderDc, bool>> condition, int skip, int take)
-        {
-            using (var dc=new PMSDbContext())
-            {
-
-            }
-        }
-
         public IList<PMSOrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, PMSOrderDc>());
+                var mapper = config.CreateMapper();
+                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<PMSOrderDc>>(
+                    dc.Orders.Where(o=>o.CustomerName.Contains(customer)&&o.State==state&&o.CompositionStandard==compostionstd).Skip(skip).Take(take).ToList());
+                return result;
+            }
         }
 
         public int GetRecordCount()
