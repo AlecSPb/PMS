@@ -8,6 +8,10 @@ namespace DocGenerator.DocModels
 {
     public class MaterialOrder
     {
+        public MaterialOrder()
+        {
+            MaterialOrderItems = new List<DocModels.MaterialOrderItem>();
+        }
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
@@ -23,8 +27,8 @@ namespace DocGenerator.DocModels
 
         public string Remark { get; set; }
 
+        public double ShipFee { get; set; }
 
-
-        public virtual List<MaterialOrderItem> MaterialOrders { get; set; }
+        public virtual List<MaterialOrderItem> MaterialOrderItems { get; set; }
     }
 }

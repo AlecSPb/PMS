@@ -13,7 +13,7 @@ namespace DocGenerator
         {
             //设定模板文件夹
             SourceFolder = Path.Combine(Environment.CurrentDirectory, "DocTemplate");
-            TargetFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), 
+            TargetFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory),
                 DateTime.Now.ToString("yyMMdd"));
         }
 
@@ -28,14 +28,22 @@ namespace DocGenerator
 
         public void Generate<T>(IDoc<T> generator, T docModel, string templateName, string targetFileName)
         {
-            string sourceFilePath = Path.Combine(SourceFolder, templateName + ".docx");
-            //创建目标文件夹
-            if (!Directory.Exists(TargetFolder))
+            try
             {
-                Directory.CreateDirectory(TargetFolder);
+                string sourceFilePath = Path.Combine(SourceFolder, templateName + ".docx");
+                //创建目标文件夹
+                if (!Directory.Exists(TargetFolder))
+                {
+                    Directory.CreateDirectory(TargetFolder);
+                }
+                string targetFilePath = Path.Combine(TargetFolder, targetFileName + ".docx");
+                generator.Generate(sourceFilePath, targetFilePath, docModel);
             }
-            string targetFilePath = Path.Combine(TargetFolder, targetFileName + ".docx");
-            generator.Generate(sourceFilePath, targetFilePath, docModel);
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
     }
