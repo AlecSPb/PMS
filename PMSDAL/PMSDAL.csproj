@@ -63,8 +63,10 @@
     <Compile Include="Models\BasicData\VHPProcess.cs" />
     <Compile Include="Models\Delivery\Delivery.cs" />
     <Compile Include="Models\Delivery\DeliveryItem.cs" />
+    <Compile Include="Models\Material\PMSMaterialOrder.cs" />
+    <Compile Include="Models\Material\PMSMaterialOrderItem.cs" />
     <Compile Include="Models\ModelBase.cs" />
-    <Compile Include="Models\Production\PMSMaterialNeed.cs" />
+    <Compile Include="Models\Material\PMSMaterialNeed.cs" />
     <Compile Include="Models\Production\PMSPlanVHP.cs" />
     <Compile Include="Models\Record\RecordBonding.cs" />
     <Compile Include="Models\Record\RecordMachine.cs" />

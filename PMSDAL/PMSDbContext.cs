@@ -24,6 +24,10 @@ namespace PMSDAL
         public DbSet<VHPMold> VHPMolds { get; set; }
         public DbSet<VHPProcess> VHPProcesses { get; set; }
 
+        //Material
+        public DbSet<PMSMaterialNeed> MaterialNeeds { get; set; }
+        public DbSet<PMSMaterialOrder> MaterialOrders { get; set; }
+        public DbSet<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
 
         //Sales
         public DbSet<PMSOrder> Orders { get; set; }
