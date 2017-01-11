@@ -13,8 +13,8 @@ namespace DocGeneratorTest
         static void Main(string[] args)
         {
             var mainGenerator = new GeneralGenerator();
-            //TestProdct(mainGenerator);
-            TestMaterialOrder(mainGenerator);
+            TestProdct(mainGenerator);
+            //TestMaterialOrder(mainGenerator);
             Console.WriteLine("文档在:" + mainGenerator.TargetFolder);
             Console.Read();
         }
@@ -22,6 +22,19 @@ namespace DocGeneratorTest
         private static void TestMaterialOrder(GeneralGenerator mainGenerator)
         {
             IDoc<gn.MaterialOrder> generator = new GeneratorMaterialOrder();
+            gn.MaterialOrder model = GetMaterialOrderModel();
+            string source = nameof(DocTemplateEnum.MaterialOrder);
+            string target = model.OrderPO;
+            for (int i = 0; i < 2; i++)
+            {
+
+                mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, target + "_" + i.ToString());
+            }
+
+        }
+
+        private static gn.MaterialOrder GetMaterialOrderModel()
+        {
             var model = new gn.MaterialOrder();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
@@ -48,26 +61,30 @@ namespace DocGeneratorTest
                     Description = "",
                     PMIWorkNumber = DateTime.Now.AddDays(i).ToString("yyMMdd") + "-A",
                     ProvideRawMaterial = "1.6kg Cu,2.48kg In,0.47kg Ga,4.754kg Se",
-                    DeliveryDate = DateTime.Now.AddDays(10+i),
+                    DeliveryDate = DateTime.Now.AddDays(10 + i),
                     UnitPrice = 2300,
                     Weight = 1.6 * (i + 1)
                 };
                 modelItem.Description = $"Processing fee to cast {modelItem.Purity} {modelItem.Composition} (atomic%;PMI to provide{modelItem.ProvideRawMaterial};please deliver by {modelItem.DeliveryDate.ToShortDateString()}";
                 model.MaterialOrderItems.Add(modelItem);
             }
-            string source = nameof(DocTemplateEnum.MaterialOrder);
-            string target = model.OrderPO;
-            for (int i = 0; i < 2; i++)
-            {
 
-                mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, target + "_" + i.ToString());
-            }
-
+            return model;
         }
 
         private static void TestProdct(GeneralGenerator mainGenerator)
         {
             IDoc<gn.Product> generator = new GeneratorProduct();
+            gn.Product model = GetProductModel();
+
+            string source = nameof(DocTemplateEnum.Product);
+            string target = model.CompositionAbbr + "-" + model.ProductID;
+            mainGenerator.Generate<gn.Product>(generator, model, source, target);
+
+        }
+
+        private static gn.Product GetProductModel()
+        {
             var model = new gn.Product();
             model.ID = Guid.NewGuid();
             model.ProductID = "170110-MA-1";
@@ -80,14 +97,24 @@ namespace DocGeneratorTest
             model.Weight = "954.0";
             model.Density = "5.75";
             model.Resistance = "50000";
-            model.CompositionXRF = "";
+            
+            if (true)
+            {
+                model.CompositionXRF = @"No.,Cu atm%,In atm%,Ga atm%,Se atm%
+1,23.21,20.19,7.16,49.44
+2,23.08,20.01,7.27,49.64
+3,22.41,19.86,6.92,50.82
+4,22.49,20.00,7.08,50.43
+5,22.29,19.97,7.30,50.45
+Average,22.69,20.01,7.14,50.15";
+            }
+            else
+            {
+                model.CompositionXRF = "含S，无法测试";
+            }
             model.CreateTime = DateTime.Now;
             model.Creator = "xs.zhou";
-
-            string source = nameof(DocTemplateEnum.Product);
-            string target = model.CompositionAbbr + "-" + model.ProductID;
-            mainGenerator.Generate<gn.Product>(generator, model, source, target);
-
+            return model;
         }
     }
 }
