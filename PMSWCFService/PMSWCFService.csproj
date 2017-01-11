@@ -80,6 +80,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IUserAccessService.cs" />
+    <Compile Include="Models\AccessDc.cs" />
+    <Compile Include="Models\RoleDc.cs" />
     <Compile Include="Models\UserDc.cs" />
     <Compile Include="OrderService.svc.cs">
       <DependentUpon>OrderService.svc</DependentUpon>
