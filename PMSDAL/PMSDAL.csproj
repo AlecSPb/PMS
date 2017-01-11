@@ -58,6 +58,14 @@
     <Compile Include="Migrations\201701110241347_AddMaterial.Designer.cs">
       <DependentUpon>201701110241347_AddMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701110602301_changePlan.cs" />
+    <Compile Include="Migrations\201701110602301_changePlan.Designer.cs">
+      <DependentUpon>201701110602301_changePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701110615408_nullorderplan.cs" />
+    <Compile Include="Migrations\201701110615408_nullorderplan.Designer.cs">
+      <DependentUpon>201701110615408_nullorderplan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicData\Compound.cs" />
     <Compile Include="Models\BasicData\Customer.cs" />
@@ -105,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701110241347_AddMaterial.resx">
       <DependentUpon>201701110241347_AddMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701110602301_changePlan.resx">
+      <DependentUpon>201701110602301_changePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701110615408_nullorderplan.resx">
+      <DependentUpon>201701110615408_nullorderplan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

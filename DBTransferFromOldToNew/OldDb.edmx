@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbnewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_Density">
+          <Key>
+            <PropertyRef Name="DensityID" />
+          </Key>
+          <Property Name="DensityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Material" Type="nvarchar" MaxLength="50" />
+          <Property Name="Density" Type="float" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tb_MolWeight">
+          <Key>
+            <PropertyRef Name="MolWeightID" />
+          </Key>
+          <Property Name="MolWeightID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Element" Type="nvarchar" MaxLength="30" />
+          <Property Name="MolWeight" Type="float" />
+          <Property Name="Memo" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tb_Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="Customer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PO" Type="nvarchar" MaxLength="30" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PMIWorkNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Purity" Type="nvarchar" MaxLength="15" />
+          <Property Name="Method" Type="nvarchar" MaxLength="15" />
+          <Property Name="Shape" Type="nvarchar" MaxLength="15" />
+          <Property Name="Number" Type="float" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="10" />
+          <Property Name="Dimension" Type="nvarchar" MaxLength="50" />
+          <Property Name="SendDateNeed" Type="datetime" />
+          <Property Name="Receiver" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsFinished" Type="bit" />
+          <Property Name="SendDateFact" Type="datetime" />
+          <Property Name="OrderMemo" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="tb_Plan">
+          <Key>
+            <PropertyRef Name="PlanID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="PlanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VHPTimePlan" Type="datetime" Nullable="false" />
+          <Property Name="MoldMD" Type="float" />
+          <Property Name="PressThick" Type="float" />
+          <Property Name="PressNum" Type="int" />
+          <Property Name="DeviceType" Type="nvarchar" MaxLength="50" />
+          <Property Name="PowderRequire" Type="nvarchar" MaxLength="300" />
+          <Property Name="FillRequire" Type="nvarchar" MaxLength="300" />
+          <Property Name="MachineRequire" Type="nvarchar" MaxLength="300" />
+          <Property Name="HighestPressure" Type="nvarchar" MaxLength="10" />
+          <Property Name="HighestTemp" Type="nvarchar" MaxLength="10" />
+          <Property Name="PlanMemo" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsOkToSend" Type="bit" />
+          <Property Name="DensityCal" Type="float" />
+          <Property Name="WeightS" Type="float" StoreGeneratedPattern="Computed" />
+          <Property Name="WeightAll" Type="float" StoreGeneratedPattern="Computed" />
+          <Property Name="PersonInCharge" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_RMachine">
+          <Key>
+            <PropertyRef Name="MachineID" />
+          </Key>
+          <Property Name="PlanID" Type="int" Nullable="false" />
+          <Property Name="MachineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WD_Ma" Type="datetime" />
+          <Property Name="WM_Ma" Type="nvarchar" MaxLength="30" />
+          <Property Name="MachineMemo" Type="nvarchar" MaxLength="300" />
+          <Property Name="WD_Mb" Type="datetime" />
+          <Property Name="WM_Mb" Type="nvarchar" MaxLength="30" />
+          <Property Name="D1" Type="nvarchar" MaxLength="10" />
+          <Property Name="D2" Type="nvarchar" MaxLength="10" />
+          <Property Name="D3" Type="nvarchar" MaxLength="10" />
+          <Property Name="D4" Type="nvarchar" MaxLength="10" />
+          <Property Name="H1" Type="nvarchar" MaxLength="10" />
+          <Property Name="H2" Type="nvarchar" MaxLength="10" />
+          <Property Name="H3" Type="nvarchar" MaxLength="10" />
+          <Property Name="H4" Type="nvarchar" MaxLength="10" />
+          <Property Name="H5" Type="nvarchar" MaxLength="10" />
+          <Property Name="H6" Type="nvarchar" MaxLength="10" />
+          <Property Name="H7" Type="nvarchar" MaxLength="10" />
+          <Property Name="H8" Type="nvarchar" MaxLength="10" />
+          <Property Name="PError" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tb_RPack">
+          <Key>
+            <PropertyRef Name="PackID" />
+          </Key>
+          <Property Name="PlanID" Type="int" Nullable="false" />
+          <Property Name="PackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WD_Dr" Type="datetime" />
+          <Property Name="WM_Dr" Type="nvarchar" MaxLength="30" />
+          <Property Name="WD_Ck" Type="datetime" />
+          <Property Name="WM_Ck" Type="nvarchar" MaxLength="30" />
+          <Property Name="CkStatus" Type="nvarchar" MaxLength="300" />
+          <Property Name="WD_P" Type="datetime" />
+          <Property Name="WM_P" Type="nvarchar" MaxLength="30" />
+          <Property Name="LabelNum" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="tb_RPowder">
+          <Key>
+            <PropertyRef Name="PowderID" />
+          </Key>
+          <Property Name="PlanID" Type="int" Nullable="false" />
+          <Property Name="PowderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WD_MK" Type="datetime" />
+          <Property Name="WM_MK" Type="nvarchar" MaxLength="30" />
+          <Property Name="MaterialPO" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaterialMemo" Type="nvarchar" MaxLength="250" />
+          <Property Name="WeightIn" Type="nvarchar" MaxLength="10" />
+          <Property Name="WeightOut" Type="nvarchar" MaxLength="10" />
+          <Property Name="WeightLeft" Type="nvarchar" MaxLength="10" />
+          <Property Name="WD_MT" Type="datetime" />
+          <Property Name="WM_MT" Type="nvarchar" MaxLength="50" />
+          <Property Name="PowderResistance" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_RVHP">
+          <Key>
+            <PropertyRef Name="VHPID" />
+          </Key>
+          <Property Name="PlanID" Type="int" Nullable="false" />
+          <Property Name="VHPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WD_FP" Type="datetime" />
+          <Property Name="WM_FP" Type="nvarchar" MaxLength="30" />
+          <Property Name="FillW1" Type="nvarchar" MaxLength="10" />
+          <Property Name="FillW2" Type="nvarchar" MaxLength="10" />
+          <Property Name="FillWP1" Type="nvarchar" MaxLength="10" />
+          <Property Name="FillWP2" Type="nvarchar" MaxLength="10" />
+          <Property Name="FPMemo" Type="nvarchar" MaxLength="300" />
+          <Property Name="WM_VHP" Type="nvarchar" MaxLength="30" />
+          <Property Name="VHPMemo" Type="nvarchar" MaxLength="250" />
+          <Property Name="WD_TM" Type="datetime" />
+          <Property Name="WM_TM" Type="nvarchar" MaxLength="30" />
+          <Property Name="TM_Temp" Type="nvarchar" MaxLength="30" />
+          <Property Name="TM_Method" Type="nvarchar" MaxLength="50" />
+          <Property Name="TM_Memo" Type="nvarchar" MaxLength="300" />
+          <Property Name="WD_M" Type="datetime" />
+          <Property Name="WM_M" Type="nvarchar" MaxLength="30" />
+          <Property Name="MW1" Type="nvarchar" MaxLength="10" />
+          <Property Name="MW2" Type="nvarchar" MaxLength="10" />
+          <Property Name="MWL1" Type="nvarchar" MaxLength="10" />
+          <Property Name="MWL2" Type="nvarchar" MaxLength="10" />
+          <Property Name="MD1" Type="nvarchar" MaxLength="10" />
+          <Property Name="MD2" Type="nvarchar" MaxLength="10" />
+          <Property Name="MD3" Type="nvarchar" MaxLength="10" />
+          <Property Name="MD4" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH1" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH2" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH3" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH4" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH5" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH6" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH7" Type="nvarchar" MaxLength="10" />
+          <Property Name="MH8" Type="nvarchar" MaxLength="10" />
+          <Property Name="WD_Left" Type="datetime" />
+          <Property Name="WM_Left" Type="nvarchar" MaxLength="30" />
+          <Property Name="Method_Left" Type="nvarchar" MaxLength="100" />
+          <Property Name="Method_Cold" Type="nvarchar" MaxLength="100" />
+          <Property Name="Memo_Left" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="tb_RWash">
+          <Key>
+            <PropertyRef Name="WashID" />
+          </Key>
+          <Property Name="PlanID" Type="int" Nullable="false" />
+          <Property Name="WashID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WD_W" Type="datetime" />
+          <Property Name="WM_W" Type="nvarchar" MaxLength="30" />
+          <Property Name="WD_MR" Type="datetime" />
+          <Property Name="WM_MR" Type="nvarchar" MaxLength="30" />
+          <Property Name="DR1" Type="nvarchar" MaxLength="10" />
+          <Property Name="DR2" Type="nvarchar" MaxLength="10" />
+          <Property Name="DR3" Type="nvarchar" MaxLength="10" />
+          <Property Name="DR4" Type="nvarchar" MaxLength="10" />
+          <Property Name="WM_D" Type="nvarchar" MaxLength="30" />
+          <Property Name="WD_D" Type="datetime" />
+          <Property Name="UW1" Type="nvarchar" MaxLength="10" />
+          <Property Name="UW2" Type="nvarchar" MaxLength="10" />
+          <Property Name="UDensityT" Type="nvarchar" MaxLength="10" />
+          <Property Name="DW1" Type="nvarchar" MaxLength="10" />
+          <Property Name="DW2" Type="nvarchar" MaxLength="10" />
+          <Property Name="DDensityT" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tb_User">
+          <Key>
+            <PropertyRef Name="UseID" />
+          </Key>
+          <Property Name="UseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Authority" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_Worker">
+          <Key>
+            <PropertyRef Name="WorkID" />
+          </Key>
+          <Property Name="WorkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkMan" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__tb_Plan__Order__44FF419A">
+          <End Role="tb_Order" Type="Self.tb_Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tb_Plan">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RMachine_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RMachine" Type="Self.tb_RMachine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RMachine">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RPack_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RPack" Type="Self.tb_RPack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RPack">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RPowder_tb_Plan1">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RPowder" Type="Self.tb_RPowder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RPowder">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RVHP_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RVHP" Type="Self.tb_RVHP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RVHP">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RWash_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RWash" Type="Self.tb_RWash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RWash">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbnewModelStoreContainer">
+          <EntitySet Name="tb_Density" EntityType="Self.tb_Density" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_MolWeight" EntityType="Self.tb_MolWeight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Order" EntityType="Self.tb_Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Plan" EntityType="Self.tb_Plan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_RMachine" EntityType="Self.tb_RMachine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_RPack" EntityType="Self.tb_RPack" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_RPowder" EntityType="Self.tb_RPowder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_RVHP" EntityType="Self.tb_RVHP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_RWash" EntityType="Self.tb_RWash" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_User" EntityType="Self.tb_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_Worker" EntityType="Self.tb_Worker" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tb_Plan__Order__44FF419A" Association="Self.FK__tb_Plan__Order__44FF419A">
+            <End Role="tb_Order" EntitySet="tb_Order" />
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RMachine_tb_Plan" Association="Self.FK_tb_RMachine_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RMachine" EntitySet="tb_RMachine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RPack_tb_Plan" Association="Self.FK_tb_RPack_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RPack" EntitySet="tb_RPack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RPowder_tb_Plan1" Association="Self.FK_tb_RPowder_tb_Plan1">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RPowder" EntitySet="tb_RPowder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RVHP_tb_Plan" Association="Self.FK_tb_RVHP_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RVHP" EntitySet="tb_RVHP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RWash_tb_Plan" Association="Self.FK_tb_RWash_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RWash" EntitySet="tb_RWash" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbnewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_Density">
+          <Key>
+            <PropertyRef Name="DensityID" />
+          </Key>
+          <Property Name="DensityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="Double" />
+          <Property Name="Memo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_MolWeight">
+          <Key>
+            <PropertyRef Name="MolWeightID" />
+          </Key>
+          <Property Name="MolWeightID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Element" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MolWeight" Type="Double" />
+          <Property Name="Memo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tb_Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Customer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PMIWorkNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Purity" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Method" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Shape" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Double" />
+          <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Dimension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SendDateNeed" Type="DateTime" Precision="3" />
+          <Property Name="Receiver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsFinished" Type="Boolean" />
+          <Property Name="SendDateFact" Type="DateTime" Precision="3" />
+          <Property Name="OrderMemo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Plan" Relationship="Self.FK__tb_Plan__Order__44FF419A" FromRole="tb_Order" ToRole="tb_Plan" />
+        </EntityType>
+        <EntityType Name="tb_Plan">
+          <Key>
+            <PropertyRef Name="PlanID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="PlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VHPTimePlan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MoldMD" Type="Double" />
+          <Property Name="PressThick" Type="Double" />
+          <Property Name="PressNum" Type="Int32" />
+          <Property Name="DeviceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PowderRequire" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="FillRequire" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MachineRequire" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="HighestPressure" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="HighestTemp" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PlanMemo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IsOkToSend" Type="Boolean" />
+          <Property Name="DensityCal" Type="Double" />
+          <Property Name="WeightS" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="WeightAll" Type="Double" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="PersonInCharge" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Order" Relationship="Self.FK__tb_Plan__Order__44FF419A" FromRole="tb_Plan" ToRole="tb_Order" />
+          <NavigationProperty Name="tb_RMachine" Relationship="Self.FK_tb_RMachine_tb_Plan" FromRole="tb_Plan" ToRole="tb_RMachine" />
+          <NavigationProperty Name="tb_RPack" Relationship="Self.FK_tb_RPack_tb_Plan" FromRole="tb_Plan" ToRole="tb_RPack" />
+          <NavigationProperty Name="tb_RPowder" Relationship="Self.FK_tb_RPowder_tb_Plan1" FromRole="tb_Plan" ToRole="tb_RPowder" />
+          <NavigationProperty Name="tb_RVHP" Relationship="Self.FK_tb_RVHP_tb_Plan" FromRole="tb_Plan" ToRole="tb_RVHP" />
+          <NavigationProperty Name="tb_RWash" Relationship="Self.FK_tb_RWash_tb_Plan" FromRole="tb_Plan" ToRole="tb_RWash" />
+        </EntityType>
+        <EntityType Name="tb_RMachine">
+          <Key>
+            <PropertyRef Name="MachineID" />
+          </Key>
+          <Property Name="PlanID" Type="Int32" Nullable="false" />
+          <Property Name="MachineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WD_Ma" Type="DateTime" Precision="3" />
+          <Property Name="WM_Ma" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MachineMemo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="WD_Mb" Type="DateTime" Precision="3" />
+          <Property Name="WM_Mb" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="D1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="D2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="D3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="D4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H5" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H6" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H7" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="H8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PError" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Plan" Relationship="Self.FK_tb_RMachine_tb_Plan" FromRole="tb_RMachine" ToRole="tb_Plan" />
+        </EntityType>
+        <EntityType Name="tb_RPack">
+          <Key>
+            <PropertyRef Name="PackID" />
+          </Key>
+          <Property Name="PlanID" Type="Int32" Nullable="false" />
+          <Property Name="PackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WD_Dr" Type="DateTime" Precision="3" />
+          <Property Name="WM_Dr" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="WD_Ck" Type="DateTime" Precision="3" />
+          <Property Name="WM_Ck" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CkStatus" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="WD_P" Type="DateTime" Precision="3" />
+          <Property Name="WM_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LabelNum" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Plan" Relationship="Self.FK_tb_RPack_tb_Plan" FromRole="tb_RPack" ToRole="tb_Plan" />
+        </EntityType>
+        <EntityType Name="tb_RPowder">
+          <Key>
+            <PropertyRef Name="PowderID" />
+          </Key>
+          <Property Name="PlanID" Type="Int32" Nullable="false" />
+          <Property Name="PowderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WD_MK" Type="DateTime" Precision="3" />
+          <Property Name="WM_MK" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialMemo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WeightIn" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WeightOut" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WeightLeft" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WD_MT" Type="DateTime" Precision="3" />
+          <Property Name="WM_MT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PowderResistance" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Plan" Relationship="Self.FK_tb_RPowder_tb_Plan1" FromRole="tb_RPowder" ToRole="tb_Plan" />
+        </EntityType>
+        <EntityType Name="tb_RVHP">
+          <Key>
+            <PropertyRef Name="VHPID" />
+          </Key>
+          <Property Name="PlanID" Type="Int32" Nullable="false" />
+          <Property Name="VHPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WD_FP" Type="DateTime" Precision="3" />
+          <Property Name="WM_FP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FillW1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FillW2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FillWP1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FillWP2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FPMemo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="WM_VHP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="VHPMemo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WD_TM" Type="DateTime" Precision="3" />
+          <Property Name="WM_TM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TM_Temp" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TM_Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TM_Memo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="WD_M" Type="DateTime" Precision="3" />
+          <Property Name="WM_M" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MW1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MW2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MWL1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MWL2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MD1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MD2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MD3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MD4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH5" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH6" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH7" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MH8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WD_Left" Type="DateTime" Precision="3" />
+          <Property Name="WM_Left" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Method_Left" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Method_Cold" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Memo_Left" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Plan" Relationship="Self.FK_tb_RVHP_tb_Plan" FromRole="tb_RVHP" ToRole="tb_Plan" />
+        </EntityType>
+        <EntityType Name="tb_RWash">
+          <Key>
+            <PropertyRef Name="WashID" />
+          </Key>
+          <Property Name="PlanID" Type="Int32" Nullable="false" />
+          <Property Name="WashID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WD_W" Type="DateTime" Precision="3" />
+          <Property Name="WM_W" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="WD_MR" Type="DateTime" Precision="3" />
+          <Property Name="WM_MR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DR1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DR2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DR3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DR4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="WM_D" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="WD_D" Type="DateTime" Precision="3" />
+          <Property Name="UW1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UW2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UDensityT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DW1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DW2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DDensityT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_Plan" Relationship="Self.FK_tb_RWash_tb_Plan" FromRole="tb_RWash" ToRole="tb_Plan" />
+        </EntityType>
+        <EntityType Name="tb_User">
+          <Key>
+            <PropertyRef Name="UseID" />
+          </Key>
+          <Property Name="UseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Authority" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tb_Worker">
+          <Key>
+            <PropertyRef Name="WorkID" />
+          </Key>
+          <Property Name="WorkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkMan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__tb_Plan__Order__44FF419A">
+          <End Role="tb_Order" Type="Self.tb_Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Order">
+              <PropertyRef Name="OrderID" />
+            </Principal>
+            <Dependent Role="tb_Plan">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RMachine_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RMachine" Type="Self.tb_RMachine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RMachine">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RPack_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RPack" Type="Self.tb_RPack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RPack">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RPowder_tb_Plan1">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RPowder" Type="Self.tb_RPowder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RPowder">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RVHP_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RVHP" Type="Self.tb_RVHP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RVHP">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_RWash_tb_Plan">
+          <End Role="tb_Plan" Type="Self.tb_Plan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_RWash" Type="Self.tb_RWash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_Plan">
+              <PropertyRef Name="PlanID" />
+            </Principal>
+            <Dependent Role="tb_RWash">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbnewEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_Density" EntityType="Self.tb_Density" />
+          <EntitySet Name="tb_MolWeight" EntityType="Self.tb_MolWeight" />
+          <EntitySet Name="tb_Order" EntityType="Self.tb_Order" />
+          <EntitySet Name="tb_Plan" EntityType="Self.tb_Plan" />
+          <EntitySet Name="tb_RMachine" EntityType="Self.tb_RMachine" />
+          <EntitySet Name="tb_RPack" EntityType="Self.tb_RPack" />
+          <EntitySet Name="tb_RPowder" EntityType="Self.tb_RPowder" />
+          <EntitySet Name="tb_RVHP" EntityType="Self.tb_RVHP" />
+          <EntitySet Name="tb_RWash" EntityType="Self.tb_RWash" />
+          <EntitySet Name="tb_User" EntityType="Self.tb_User" />
+          <EntitySet Name="tb_Worker" EntityType="Self.tb_Worker" />
+          <AssociationSet Name="FK__tb_Plan__Order__44FF419A" Association="Self.FK__tb_Plan__Order__44FF419A">
+            <End Role="tb_Order" EntitySet="tb_Order" />
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RMachine_tb_Plan" Association="Self.FK_tb_RMachine_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RMachine" EntitySet="tb_RMachine" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RPack_tb_Plan" Association="Self.FK_tb_RPack_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RPack" EntitySet="tb_RPack" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RPowder_tb_Plan1" Association="Self.FK_tb_RPowder_tb_Plan1">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RPowder" EntitySet="tb_RPowder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RVHP_tb_Plan" Association="Self.FK_tb_RVHP_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RVHP" EntitySet="tb_RVHP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_RWash_tb_Plan" Association="Self.FK_tb_RWash_tb_Plan">
+            <End Role="tb_Plan" EntitySet="tb_Plan" />
+            <End Role="tb_RWash" EntitySet="tb_RWash" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbnewModelStoreContainer" CdmEntityContainer="dbnewEntities">
+          <EntitySetMapping Name="tb_Density">
+            <EntityTypeMapping TypeName="dbnewModel.tb_Density">
+              <MappingFragment StoreEntitySet="tb_Density">
+                <ScalarProperty Name="DensityID" ColumnName="DensityID" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_MolWeight">
+            <EntityTypeMapping TypeName="dbnewModel.tb_MolWeight">
+              <MappingFragment StoreEntitySet="tb_MolWeight">
+                <ScalarProperty Name="MolWeightID" ColumnName="MolWeightID" />
+                <ScalarProperty Name="Element" ColumnName="Element" />
+                <ScalarProperty Name="MolWeight" ColumnName="MolWeight" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Order">
+            <EntityTypeMapping TypeName="dbnewModel.tb_Order">
+              <MappingFragment StoreEntitySet="tb_Order">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="PMIWorkNumber" ColumnName="PMIWorkNumber" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Purity" ColumnName="Purity" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Shape" ColumnName="Shape" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="SendDateNeed" ColumnName="SendDateNeed" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="SendDateFact" ColumnName="SendDateFact" />
+                <ScalarProperty Name="OrderMemo" ColumnName="OrderMemo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Plan">
+            <EntityTypeMapping TypeName="dbnewModel.tb_Plan">
+              <MappingFragment StoreEntitySet="tb_Plan">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="VHPTimePlan" ColumnName="VHPTimePlan" />
+                <ScalarProperty Name="MoldMD" ColumnName="MoldMD" />
+                <ScalarProperty Name="PressThick" ColumnName="PressThick" />
+                <ScalarProperty Name="PressNum" ColumnName="PressNum" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+                <ScalarProperty Name="PowderRequire" ColumnName="PowderRequire" />
+                <ScalarProperty Name="FillRequire" ColumnName="FillRequire" />
+                <ScalarProperty Name="MachineRequire" ColumnName="MachineRequire" />
+                <ScalarProperty Name="HighestPressure" ColumnName="HighestPressure" />
+                <ScalarProperty Name="HighestTemp" ColumnName="HighestTemp" />
+                <ScalarProperty Name="PlanMemo" ColumnName="PlanMemo" />
+                <ScalarProperty Name="IsOkToSend" ColumnName="IsOkToSend" />
+                <ScalarProperty Name="DensityCal" ColumnName="DensityCal" />
+                <ScalarProperty Name="WeightS" ColumnName="WeightS" />
+                <ScalarProperty Name="WeightAll" ColumnName="WeightAll" />
+                <ScalarProperty Name="PersonInCharge" ColumnName="PersonInCharge" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_RMachine">
+            <EntityTypeMapping TypeName="dbnewModel.tb_RMachine">
+              <MappingFragment StoreEntitySet="tb_RMachine">
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="WD_Ma" ColumnName="WD_Ma" />
+                <ScalarProperty Name="WM_Ma" ColumnName="WM_Ma" />
+                <ScalarProperty Name="MachineMemo" ColumnName="MachineMemo" />
+                <ScalarProperty Name="WD_Mb" ColumnName="WD_Mb" />
+                <ScalarProperty Name="WM_Mb" ColumnName="WM_Mb" />
+                <ScalarProperty Name="D1" ColumnName="D1" />
+                <ScalarProperty Name="D2" ColumnName="D2" />
+                <ScalarProperty Name="D3" ColumnName="D3" />
+                <ScalarProperty Name="D4" ColumnName="D4" />
+                <ScalarProperty Name="H1" ColumnName="H1" />
+                <ScalarProperty Name="H2" ColumnName="H2" />
+                <ScalarProperty Name="H3" ColumnName="H3" />
+                <ScalarProperty Name="H4" ColumnName="H4" />
+                <ScalarProperty Name="H5" ColumnName="H5" />
+                <ScalarProperty Name="H6" ColumnName="H6" />
+                <ScalarProperty Name="H7" ColumnName="H7" />
+                <ScalarProperty Name="H8" ColumnName="H8" />
+                <ScalarProperty Name="PError" ColumnName="PError" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_RPack">
+            <EntityTypeMapping TypeName="dbnewModel.tb_RPack">
+              <MappingFragment StoreEntitySet="tb_RPack">
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="PackID" ColumnName="PackID" />
+                <ScalarProperty Name="WD_Dr" ColumnName="WD_Dr" />
+                <ScalarProperty Name="WM_Dr" ColumnName="WM_Dr" />
+                <ScalarProperty Name="WD_Ck" ColumnName="WD_Ck" />
+                <ScalarProperty Name="WM_Ck" ColumnName="WM_Ck" />
+                <ScalarProperty Name="CkStatus" ColumnName="CkStatus" />
+                <ScalarProperty Name="WD_P" ColumnName="WD_P" />
+                <ScalarProperty Name="WM_P" ColumnName="WM_P" />
+                <ScalarProperty Name="LabelNum" ColumnName="LabelNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_RPowder">
+            <EntityTypeMapping TypeName="dbnewModel.tb_RPowder">
+              <MappingFragment StoreEntitySet="tb_RPowder">
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="PowderID" ColumnName="PowderID" />
+                <ScalarProperty Name="WD_MK" ColumnName="WD_MK" />
+                <ScalarProperty Name="WM_MK" ColumnName="WM_MK" />
+                <ScalarProperty Name="MaterialPO" ColumnName="MaterialPO" />
+                <ScalarProperty Name="MaterialMemo" ColumnName="MaterialMemo" />
+                <ScalarProperty Name="WeightIn" ColumnName="WeightIn" />
+                <ScalarProperty Name="WeightOut" ColumnName="WeightOut" />
+                <ScalarProperty Name="WeightLeft" ColumnName="WeightLeft" />
+                <ScalarProperty Name="WD_MT" ColumnName="WD_MT" />
+                <ScalarProperty Name="WM_MT" ColumnName="WM_MT" />
+                <ScalarProperty Name="PowderResistance" ColumnName="PowderResistance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_RVHP">
+            <EntityTypeMapping TypeName="dbnewModel.tb_RVHP">
+              <MappingFragment StoreEntitySet="tb_RVHP">
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="VHPID" ColumnName="VHPID" />
+                <ScalarProperty Name="WD_FP" ColumnName="WD_FP" />
+                <ScalarProperty Name="WM_FP" ColumnName="WM_FP" />
+                <ScalarProperty Name="FillW1" ColumnName="FillW1" />
+                <ScalarProperty Name="FillW2" ColumnName="FillW2" />
+                <ScalarProperty Name="FillWP1" ColumnName="FillWP1" />
+                <ScalarProperty Name="FillWP2" ColumnName="FillWP2" />
+                <ScalarProperty Name="FPMemo" ColumnName="FPMemo" />
+                <ScalarProperty Name="WM_VHP" ColumnName="WM_VHP" />
+                <ScalarProperty Name="VHPMemo" ColumnName="VHPMemo" />
+                <ScalarProperty Name="WD_TM" ColumnName="WD_TM" />
+                <ScalarProperty Name="WM_TM" ColumnName="WM_TM" />
+                <ScalarProperty Name="TM_Temp" ColumnName="TM_Temp" />
+                <ScalarProperty Name="TM_Method" ColumnName="TM_Method" />
+                <ScalarProperty Name="TM_Memo" ColumnName="TM_Memo" />
+                <ScalarProperty Name="WD_M" ColumnName="WD_M" />
+                <ScalarProperty Name="WM_M" ColumnName="WM_M" />
+                <ScalarProperty Name="MW1" ColumnName="MW1" />
+                <ScalarProperty Name="MW2" ColumnName="MW2" />
+                <ScalarProperty Name="MWL1" ColumnName="MWL1" />
+                <ScalarProperty Name="MWL2" ColumnName="MWL2" />
+                <ScalarProperty Name="MD1" ColumnName="MD1" />
+                <ScalarProperty Name="MD2" ColumnName="MD2" />
+                <ScalarProperty Name="MD3" ColumnName="MD3" />
+                <ScalarProperty Name="MD4" ColumnName="MD4" />
+                <ScalarProperty Name="MH1" ColumnName="MH1" />
+                <ScalarProperty Name="MH2" ColumnName="MH2" />
+                <ScalarProperty Name="MH3" ColumnName="MH3" />
+                <ScalarProperty Name="MH4" ColumnName="MH4" />
+                <ScalarProperty Name="MH5" ColumnName="MH5" />
+                <ScalarProperty Name="MH6" ColumnName="MH6" />
+                <ScalarProperty Name="MH7" ColumnName="MH7" />
+                <ScalarProperty Name="MH8" ColumnName="MH8" />
+                <ScalarProperty Name="WD_Left" ColumnName="WD_Left" />
+                <ScalarProperty Name="WM_Left" ColumnName="WM_Left" />
+                <ScalarProperty Name="Method_Left" ColumnName="Method_Left" />
+                <ScalarProperty Name="Method_Cold" ColumnName="Method_Cold" />
+                <ScalarProperty Name="Memo_Left" ColumnName="Memo_Left" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_RWash">
+            <EntityTypeMapping TypeName="dbnewModel.tb_RWash">
+              <MappingFragment StoreEntitySet="tb_RWash">
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="WashID" ColumnName="WashID" />
+                <ScalarProperty Name="WD_W" ColumnName="WD_W" />
+                <ScalarProperty Name="WM_W" ColumnName="WM_W" />
+                <ScalarProperty Name="WD_MR" ColumnName="WD_MR" />
+                <ScalarProperty Name="WM_MR" ColumnName="WM_MR" />
+                <ScalarProperty Name="DR1" ColumnName="DR1" />
+                <ScalarProperty Name="DR2" ColumnName="DR2" />
+                <ScalarProperty Name="DR3" ColumnName="DR3" />
+                <ScalarProperty Name="DR4" ColumnName="DR4" />
+                <ScalarProperty Name="WM_D" ColumnName="WM_D" />
+                <ScalarProperty Name="WD_D" ColumnName="WD_D" />
+                <ScalarProperty Name="UW1" ColumnName="UW1" />
+                <ScalarProperty Name="UW2" ColumnName="UW2" />
+                <ScalarProperty Name="UDensityT" ColumnName="UDensityT" />
+                <ScalarProperty Name="DW1" ColumnName="DW1" />
+                <ScalarProperty Name="DW2" ColumnName="DW2" />
+                <ScalarProperty Name="DDensityT" ColumnName="DDensityT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_User">
+            <EntityTypeMapping TypeName="dbnewModel.tb_User">
+              <MappingFragment StoreEntitySet="tb_User">
+                <ScalarProperty Name="UseID" ColumnName="UseID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Worker">
+            <EntityTypeMapping TypeName="dbnewModel.tb_Worker">
+              <MappingFragment StoreEntitySet="tb_Worker">
+                <ScalarProperty Name="WorkID" ColumnName="WorkID" />
+                <ScalarProperty Name="WorkMan" ColumnName="WorkMan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

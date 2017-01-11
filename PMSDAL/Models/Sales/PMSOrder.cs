@@ -25,7 +25,7 @@ namespace PMSDAL
         public string ProductType { get; set; }
         public string Purity { get; set; }
 
-        public double Quantity { get; set; }
+        public double? Quantity { get; set; }
         public string QuantityUnit { get; set; }
 
         public string Dimension { get; set; }//尺寸标准表示
