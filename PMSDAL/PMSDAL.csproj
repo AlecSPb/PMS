@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201701090708208_new.Designer.cs">
       <DependentUpon>201701090708208_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701110241347_AddMaterial.cs" />
+    <Compile Include="Migrations\201701110241347_AddMaterial.Designer.cs">
+      <DependentUpon>201701110241347_AddMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicData\Compound.cs" />
     <Compile Include="Models\BasicData\Customer.cs" />
@@ -98,6 +102,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701090708208_new.resx">
       <DependentUpon>201701090708208_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701110241347_AddMaterial.resx">
+      <DependentUpon>201701110241347_AddMaterial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

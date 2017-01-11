@@ -22,8 +22,8 @@ namespace PMSDAL
         public double UnitPrice { get; set; }
         public double Weight { get; set; }
 
-        [ForeignKey(nameof(MaterialOrderID))]
         public Guid? MaterialOrderID { get; set; }
+        [ForeignKey(nameof(MaterialOrderID))]
         public virtual PMSMaterialOrder MaterialOrder { get; set; }
     }
 }
