@@ -22,5 +22,7 @@ namespace PMSWCFService
         /// <returns></returns>
         [OperationContract]
         List<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state);
+        [OperationContract]
+        List<OrderDc> GetAllInPaging(int skip, int take, int state);
     }
 }

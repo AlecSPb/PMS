@@ -9,7 +9,7 @@ using PMSWCFService.Models;
 namespace PMSWCFService
 {
     [ServiceContract(Namespace = "http://www.newlifechou.com")]
-    public interface IUserAccessService:IServiceBase<UserDc>
+    public interface IUserService:IServiceBase<UserDc>
     {
         [OperationContract]
         void DoSomething();
