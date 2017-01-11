@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PMSWCFService.Models
 {
     [DataContract]
-    public class PMSOrderDc
+    public class OrderDc
     {
         //基本信息
         [DataMember]

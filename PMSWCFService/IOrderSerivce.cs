@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSWCFService.Models;
 
-namespace PMSWCFService.Contracts
+namespace PMSWCFService
 {
     [ServiceContract(Namespace = "http://www.newlifechou.com")]
-    public interface IPMSOrderSerivce:IServiceBase<PMSOrderDc>
+    public interface IOrderSerivce:IServiceBase<OrderDc>
     {
         /// <summary>
         /// Get PMSOrder By Search and Paging it.
@@ -21,6 +21,6 @@ namespace PMSWCFService.Contracts
         /// <param name="state"></param>
         /// <returns></returns>
         [OperationContract]
-        IList<PMSOrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state);
+        IList<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state);
     }
 }

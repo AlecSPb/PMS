@@ -7,7 +7,7 @@ using PMSDAL;
 using System.ServiceModel;
 using System.Linq.Expressions;
 
-namespace PMSWCFService.Contracts
+namespace PMSWCFService
 {
     /// <summary>
     /// 通用的泛型类接口用于WCF服务

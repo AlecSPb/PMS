@@ -6,15 +6,14 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using PMSDAL;
-using PMSWCFService.Contracts;
 using PMSWCFService.Models;
 using AutoMapper;
 
 namespace PMSWCFService
 {
-    public class PMSOrderService : IPMSOrderSerivce
+    public class OrderService : IOrderSerivce
     {
-        public int Add(PMSOrderDc model)
+        public int Add(OrderDc model)
         {
             throw new NotImplementedException();
         }
@@ -24,34 +23,34 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public PMSOrderDc FindById(Guid id)
+        public OrderDc FindById(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public IList<PMSOrderDc> GetAll()
+        public IList<OrderDc> GetAll()
         {
             using (var dc = new PMSDbContext())
             {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, PMSOrderDc>());
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, OrderDc>());
                 var mapper = config.CreateMapper();
-                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<PMSOrderDc>>(dc.Orders.ToList());
+                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<OrderDc>>(dc.Orders.ToList());
                 return result;
             }
         }
 
-        public IList<PMSOrderDc> GetAllInPaging(int skip, int take)
+        public IList<OrderDc> GetAllInPaging(int skip, int take)
         {
             throw new NotImplementedException();
         }
 
-        public IList<PMSOrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state)
+        public IList<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state)
         {
             using (var dc = new PMSDbContext())
             {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, PMSOrderDc>());
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, OrderDc>());
                 var mapper = config.CreateMapper();
-                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<PMSOrderDc>>(
+                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<OrderDc>>(
                     dc.Orders.Where(o=>o.CustomerName.Contains(customer)&&o.State==state&&o.CompositionStandard==compostionstd).Skip(skip).Take(take).ToList());
                 return result;
             }
@@ -65,7 +64,7 @@ namespace PMSWCFService
             }
         }
 
-        public int Update(PMSOrderDc model)
+        public int Update(OrderDc model)
         {
             throw new NotImplementedException();
         }
