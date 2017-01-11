@@ -52,6 +52,8 @@
     <Compile Include="DocTemplateEnum.cs" />
     <Compile Include="GeneratorBase.cs" />
     <Compile Include="GeneratorCOA.cs" />
+    <Compile Include="GeneratorCOABridgeLine.cs" />
+    <Compile Include="GeneratorGeAsSeElastomer440Blank.cs" />
     <Compile Include="GeneratorMaterialOrder.cs" />
     <Compile Include="GeneratorProduct.cs" />
     <Compile Include="IDoc.cs" />
