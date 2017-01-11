@@ -21,6 +21,6 @@ namespace PMSWCFService
         /// <param name="state"></param>
         /// <returns></returns>
         [OperationContract]
-        IList<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state);
+        List<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state);
     }
 }

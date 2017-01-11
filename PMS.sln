@@ -11,9 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 	ProjectSection(SolutionItems) = preProject
 		Documents\Commit语句.txt = Documents\Commit语句.txt
 		ReadMe.txt = ReadMe.txt
+		State规范.txt = State规范.txt
 		Documents\关于自动更新.txt = Documents\关于自动更新.txt
 		Documents\客户端的功能.txt = Documents\客户端的功能.txt
 		工艺和记录.txt = 工艺和记录.txt
+		权限控制层次.txt = 权限控制层次.txt
 		Documents\用户权限控制.txt = Documents\用户权限控制.txt
 		订单显示思路.txt = 订单显示思路.txt
 	EndProjectSection

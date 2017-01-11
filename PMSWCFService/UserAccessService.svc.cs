@@ -5,20 +5,49 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using PMSWCFService.Models;
+using PMSDAL;
+using AutoMapper;
 
 namespace PMSWCFService
 {
-    public class UserAccessService : IUserAccessService
+    public class UserAccessService : IUserAccessService, IDisposable
     {
+        private PMSDbContext dc;
+        public UserAccessService()
+        {
+            dc = new PMSDbContext();
+        }
+        public void Dispose()
+        {
+            dc.Dispose();
+        }
+
         public int Add(UserDc model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserDc, PMSDAL.PMSUser>());
+            var mapper = config.CreateMapper();
+            var user = mapper.Map<PMSDAL.PMSUser>(model);
+            dc.Users.Add(user);
+            result = dc.SaveChanges();
+            return result;
         }
+
 
         public int Delete(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            var user = dc.Users.Find(id);
+            if (user != null)
+            {
+                user.State = 0;
+                dc.Entry<PMSUser>(user).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+            return result;
         }
+
+
 
         public void DoSomething()
         {
@@ -27,22 +56,36 @@ namespace PMSWCFService
 
         public UserDc FindById(Guid id)
         {
-            throw new NotImplementedException();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSUser,UserDc>());
+            var mapper = config.CreateMapper();
+            return mapper.Map<UserDc>(dc.Users.Find(id));
         }
 
-        public IList<UserDc> GetAll()
+        public List<UserDc> GetAll()
         {
-            throw new NotImplementedException();
+            var users = dc.Users.ToList();
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSUser, UserDc>());
+            var mapper = config.CreateMapper();
+            var userDcs = new List<UserDc>();
+            userDcs = mapper.Map<List<PMSUser>,List<UserDc>>(users);
+            return userDcs;
         }
 
-        public int GetRecordCount()
+        public int GetCount()
         {
-            throw new NotImplementedException();
+            return dc.Users.Count();
         }
 
         public int Update(UserDc model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserDc, PMSUser>());
+            var mapper = config.CreateMapper();
+            var user = dc.Users.Find(model.ID);
+            user = mapper.Map<PMSUser>(model);
+            dc.Entry<PMSUser>(user).State = System.Data.Entity.EntityState.Modified;
+            result = dc.SaveChanges();
+            return result;
         }
     }
 }

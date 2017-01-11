@@ -17,13 +17,13 @@ namespace PMSWCFService
     public interface IServiceBase<CommonModel>
     {
         [OperationContract]
-        IList<CommonModel> GetAll();
+        List<CommonModel> GetAll();
 
         [OperationContract]
         CommonModel FindById(Guid id);
 
         [OperationContract]
-        int GetRecordCount();
+        int GetCount();
 
         [OperationContract]
         int Add(CommonModel model);

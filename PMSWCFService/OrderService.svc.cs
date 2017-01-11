@@ -28,37 +28,37 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public IList<OrderDc> GetAll()
+        public List<OrderDc> GetAll()
         {
             using (var dc = new PMSDbContext())
             {
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, OrderDc>());
                 var mapper = config.CreateMapper();
-                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<OrderDc>>(dc.Orders.ToList());
+                var result = mapper.Map<List<PMSDAL.PMSOrder>, List<OrderDc>>(dc.Orders.ToList());
                 return result;
             }
         }
 
-        public IList<OrderDc> GetAllInPaging(int skip, int take)
+        public List<OrderDc> GetAllInPaging(int skip, int take)
         {
             throw new NotImplementedException();
         }
 
-        public IList<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state)
+        public List<OrderDc> GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state)
         {
             using (var dc = new PMSDbContext())
             {
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSDAL.PMSOrder, OrderDc>());
                 var mapper = config.CreateMapper();
-                var result = mapper.Map<IList<PMSDAL.PMSOrder>, IList<OrderDc>>(
-                    dc.Orders.Where(o=>o.CustomerName.Contains(customer)&&o.State==state&&o.CompositionStandard==compostionstd).Skip(skip).Take(take).ToList());
+                var result = mapper.Map<List<PMSDAL.PMSOrder>, List<OrderDc>>(
+                    dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.State == state && o.CompositionStandard == compostionstd).Skip(skip).Take(take).ToList());
                 return result;
             }
         }
 
-        public int GetRecordCount()
+        public int GetCount()
         {
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 return dc.Orders.Count();
             }
