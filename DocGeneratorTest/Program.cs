@@ -13,10 +13,21 @@ namespace DocGeneratorTest
         static void Main(string[] args)
         {
             var mainGenerator = new GeneralGenerator();
-            TestProdct(mainGenerator);
+            //TestProdct(mainGenerator);
+            TestCOA(mainGenerator);
             //TestMaterialOrder(mainGenerator);
             Console.WriteLine("文档在:" + mainGenerator.TargetFolder);
             Console.Read();
+        }
+
+        private static void TestCOA(GeneralGenerator mainGenerator)
+        {
+            IDoc<gn.Product> generator = new GeneratorCOA();
+            var model = GetProductModel();
+            string source = nameof(DocTemplateEnum.COA);
+            string target = "COA-"+model.CompositionAbbr + "-" + model.ProductID;
+            mainGenerator.Generate<gn.Product>(generator, model, source, target);
+
         }
 
         private static void TestMaterialOrder(GeneralGenerator mainGenerator)
@@ -27,7 +38,6 @@ namespace DocGeneratorTest
             string target = model.OrderPO;
             for (int i = 0; i < 2; i++)
             {
-
                 mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, target + "_" + i.ToString());
             }
 
@@ -78,7 +88,7 @@ namespace DocGeneratorTest
             gn.Product model = GetProductModel();
 
             string source = nameof(DocTemplateEnum.Product);
-            string target = model.CompositionAbbr + "-" + model.ProductID;
+            string target ="Product-"+ model.CompositionAbbr + "-" + model.ProductID;
             mainGenerator.Generate<gn.Product>(generator, model, source, target);
 
         }

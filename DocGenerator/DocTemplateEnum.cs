@@ -9,6 +9,9 @@ namespace DocGenerator
     public enum DocTemplateEnum
     {
         Product,
-        MaterialOrder
+        MaterialOrder,
+        COA,
+        COABridgeLine,
+        GeAsSeElastomer440Blank
     }
 }
