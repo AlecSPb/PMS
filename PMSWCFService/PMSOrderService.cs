@@ -40,37 +40,36 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOrder> GetAllOrderInPage(int skip, int take, int state)
+        public List<DcOrder> GetAllOrderInPage(int skip, int take)
         {
             using (var dc = new PMSDbContext())
             {
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
                 var mapper = config.CreateMapper();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.Where(o => o.State == state).OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
+                    dc.Orders.OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
                 return result;
             }
         }
 
-        public List<DcOrder> GetOrderBySearchInPage(int skip, int take, int state, string customer, string compositionstd)
+        public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd)
         {
             using (var dc = new PMSDbContext())
             {
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
                 var mapper = config.CreateMapper();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.State == state && o.CompositionStandard.Contains(compositionstd))
+                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer)  && o.CompositionStandard.Contains(compositionstd))
                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
                 return result;
             }
         }
 
-        public int GetOrderCountBySearch(int state, string customer, string compositionstd)
+        public int GetOrderCountBySearch(string customer, string compositionstd)
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd)
-                && o.State == state).Count();
+                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd)).Count();
             }
         }
 

@@ -26,7 +26,6 @@ namespace PMSDesktopClient.ViewModel
         {
             SearchCustomer = "";
             SearchCompositoinStandard = "";
-            OrderState = true;
             MainOrders = new ObservableCollection<DcOrder>();
         }
         private void InitializeCommands()
@@ -37,9 +36,9 @@ namespace PMSDesktopClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             var orderService = new OrderServiceClient();
-            RecordCount = orderService.GetOrderCountBySearch(StateProcess.BoolToInt(OrderState), SearchCustomer, SearchCompositoinStandard);
+            RecordCount = orderService.GetOrderCountBySearch( SearchCustomer, SearchCompositoinStandard);
             ActionPaging();
         }
         /// <summary>
@@ -51,7 +50,7 @@ namespace PMSDesktopClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders=orderService.GetOrderBySearchInPage(skip, take, StateProcess.BoolToInt(OrderState), SearchCustomer, SearchCompositoinStandard);
+            var orders=orderService.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
             MainOrders.Clear();
             orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
         }
@@ -103,18 +102,6 @@ namespace PMSDesktopClient.ViewModel
                     return;
                 searchCompositionStandard = value;
                 RaisePropertyChanged(() => SearchCompositoinStandard);
-            }
-        }
-        private bool orderState;
-        public bool OrderState
-        {
-            get { return orderState; }
-            set
-            {
-                if (orderState == value)
-                    return;
-                orderState = value;
-                RaisePropertyChanged(() => OrderState);
             }
         }
 

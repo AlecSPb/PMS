@@ -1,3 +1,9 @@
 通用标准
-State=-1表示删除
-State=0表示正常
+State=-1表示作废
+State=0表示
+
+对于订单来说
+State=-1表示作废
+State=0表示暂停
+State=1表示未完成
+State=2表示完成

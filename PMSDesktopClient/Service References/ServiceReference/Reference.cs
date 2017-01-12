@@ -511,22 +511,22 @@ namespace PMSDesktopClient.ServiceReference {
     public interface IOrderService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrderInPage", ReplyAction="http://tempuri.org/IOrderService/GetAllOrderInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take, int state);
+        PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrderInPage", ReplyAction="http://tempuri.org/IOrderService/GetAllOrderInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take, int state);
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, int state, string customer, string compositionstd);
+        PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, int state, string customer, string compositionstd);
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
-        int GetOrderCountBySearch(int state, string customer, string compositionstd);
+        int GetOrderCountBySearch(string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(int state, string customer, string compositionstd);
+        System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
         int AddOrder(PMSDesktopClient.ServiceReference.DcOrder order);
@@ -574,28 +574,28 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take, int state) {
-            return base.Channel.GetAllOrderInPage(skip, take, state);
+        public PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take) {
+            return base.Channel.GetAllOrderInPage(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take, int state) {
-            return base.Channel.GetAllOrderInPageAsync(skip, take, state);
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take) {
+            return base.Channel.GetAllOrderInPageAsync(skip, take);
         }
         
-        public PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, int state, string customer, string compositionstd) {
-            return base.Channel.GetOrderBySearchInPage(skip, take, state, customer, compositionstd);
+        public PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderBySearchInPage(skip, take, customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, int state, string customer, string compositionstd) {
-            return base.Channel.GetOrderBySearchInPageAsync(skip, take, state, customer, compositionstd);
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderBySearchInPageAsync(skip, take, customer, compositionstd);
         }
         
-        public int GetOrderCountBySearch(int state, string customer, string compositionstd) {
-            return base.Channel.GetOrderCountBySearch(state, customer, compositionstd);
+        public int GetOrderCountBySearch(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountBySearch(customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(int state, string customer, string compositionstd) {
-            return base.Channel.GetOrderCountBySearchAsync(state, customer, compositionstd);
+        public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountBySearchAsync(customer, compositionstd);
         }
         
         public int AddOrder(PMSDesktopClient.ServiceReference.DcOrder order) {

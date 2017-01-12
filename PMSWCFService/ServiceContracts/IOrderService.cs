@@ -11,11 +11,11 @@ namespace PMSWCFService.ServiceContracts
     public interface IOrderService
     {
         [OperationContract]
-        List<DcOrder> GetAllOrderInPage(int skip, int take, int state);
+        List<DcOrder> GetAllOrderInPage(int skip, int take);
         [OperationContract]
-        List<DcOrder> GetOrderBySearchInPage(int skip, int take, int state, string customer, string compositionstd);
+        List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
         [OperationContract]
-        int GetOrderCountBySearch(int state,string customer, string compositionstd);
+        int GetOrderCountBySearch(string customer, string compositionstd);
         [OperationContract]
         int AddOrder(DcOrder order);
         [OperationContract]

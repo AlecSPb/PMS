@@ -19,15 +19,13 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{StaticResource strWelcome}" Style="{StaticResource TextBlockBasic}" HorizontalAlignment="Center" FontSize="25"/>
-        <TextBox Grid.Row="1" Text="User Name" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10"/>
-        <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10"/>
-        <Button Grid.Row="3" Content="{StaticResource strLogin}" Style="{StaticResource  ButtonBasic}" FontSize="25" Padding="10 15"/>
+        <TextBox Grid.Row="1" Text="User Name" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10" Foreground="Wheat"/>
+        <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10" Foreground="Wheat"/>
+        <Button Grid.Row="3" Content="{StaticResource strLogin}" Style="{StaticResource  ButtonBasic}" FontSize="25" Padding="10 15" HorizontalAlignment="Stretch"/>
         <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Margin="5"
                 BorderBrush="{StaticResource BorderBrush}" 
                 BorderThickness="1">
-            <TextBlock Text="详细内容详细内容详细内容详细内容详细内容详细内
-                       容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容详
-                       细内容详细内容详细内容详细内容详细内容详细内容详细内容详细内容"
+            <TextBlock Text="公告通知"
                        TextWrapping="WrapWithOverflow"/>
         </Border>
     </Grid>
