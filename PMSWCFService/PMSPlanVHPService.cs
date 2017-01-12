@@ -51,7 +51,7 @@ namespace PMSWCFService
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
                 var mapper = config.CreateMapper();
 
-                var plans = dc.VHPPlans.Where(p => p.OrderID == id).OrderBy(p => p.PlanDate).ToList();
+                var plans = dc.VHPPlans.Where(p => p.OrderID == id&&p.State!=(int)ModelState.Deleted).OrderBy(p => p.PlanDate).ToList();
 
                 return mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(plans);
             }
