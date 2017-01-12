@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PMSWCFService.Models
+namespace PMSWCFService.DataContracts
 {
-    public class RoleDc
+    public class DcRole
     {
         public Guid ID { get; set; }
         public string GroupName { get; set; }

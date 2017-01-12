@@ -8,8 +8,8 @@ using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSModel;
-using PMSFakeService;
-using PMSIService;
+using PMSDesktopClient.ServiceReference;
+
 using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
@@ -22,22 +22,24 @@ namespace PMSDesktopClient.ViewModel
             InitialCommands();
         }
 
-        private void InitialProperties()
+        private void FillOrders()
         {
-            MainOrders = new ObservableCollection<MainOrder>();
-            IOrder orderService = new FakeOrderService();
+            MainOrders = new ObservableCollection<OrderDc>();
             MainOrders.Clear();
-            orderService.GetAll().ToList<MainOrder>().ForEach(order => MainOrders.Add(order));
+
         }
 
         private void InitialCommands()
         {
             Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
+            PageCommand = new RelayCommand(() =>
+              {
 
+              });
         }
         #region Properties
-        private ObservableCollection<MainOrder> mainOrders;
-        public ObservableCollection<MainOrder> MainOrders
+        private ObservableCollection<OrderDc> mainOrders;
+        public ObservableCollection<OrderDc> MainOrders
         {
             get { return mainOrders; }
             set { mainOrders = value; RaisePropertyChanged(nameof(MainOrders)); }
@@ -47,6 +49,7 @@ namespace PMSDesktopClient.ViewModel
 
         #region Commands
         public RelayCommand Navigate { get; private set; }
+        public RelayCommand PageCommand { get; private set; }
         #endregion
     }
 }

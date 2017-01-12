@@ -5,10 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSWCFService.Models
+namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class OrderDc
+    public class DcOrder
     {
         //基本信息
         [DataMember]

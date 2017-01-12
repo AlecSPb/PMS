@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PMSWCFService.Models
+namespace PMSWCFService.DataContracts
 {
-    public class AccessDc
+    public class DcAccess
     {
         public Guid ID { get; set; }
         public string AccessName { get; set; }
