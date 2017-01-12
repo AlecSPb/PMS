@@ -92,6 +92,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CommonBrushes.cs" />
     <Compile Include="NavigationService.cs" />
     <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -281,9 +282,9 @@
     <Resource Include="Update\更新说明.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="LocalService\" />
     <Folder Include="Resource\Files\" />
     <Folder Include="Resource\Images\" />
-    <Folder Include="Service\" />
     <Folder Include="Update\Package\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSDesktopClient.ServiceReference;
+using PMSCommon;
 
 namespace PMSDesktopClient.View.Sales
 {
@@ -25,6 +27,31 @@ namespace PMSDesktopClient.View.Sales
         {
             InitializeComponent();
             this.DataContext = new OrderVM();
+        }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            DcOrder order = (DcOrder)e.Row.DataContext;
+            if (order != null)
+            {
+                var orderBrush = new CommonBrushes();
+                switch (order.State)
+                {
+                    case (int)ModelState.Stop:
+                        e.Row.Background = orderBrush.StopBrush;
+                        break;
+                    case (int)ModelState.UnCompleted:
+                        e.Row.Background = orderBrush.UnCompletedBrush;
+                        break;
+                    case (int)ModelState.Completed:
+                        e.Row.Background = orderBrush.CompletedBrush;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+
         }
     }
 }

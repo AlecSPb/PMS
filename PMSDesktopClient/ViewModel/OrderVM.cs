@@ -38,7 +38,7 @@ namespace PMSDesktopClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var orderService = new OrderServiceClient();
-            RecordCount = orderService.GetOrderCountBySearch( SearchCustomer, SearchCompositoinStandard);
+            RecordCount = orderService.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
             ActionPaging();
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace PMSDesktopClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders=orderService.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+            var orders = orderService.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
             MainOrders.Clear();
             orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
         }
@@ -61,21 +61,45 @@ namespace PMSDesktopClient.ViewModel
         public int PageIndex
         {
             get { return pageIndex; }
-            set { pageIndex = value;RaisePropertyChanged(nameof(PageIndex)); }
+            set
+            {
+                pageIndex = value;
+                if (pageIndex==value)
+                {
+                    return;
+                }
+                RaisePropertyChanged(nameof(PageIndex));
+            }
         }
 
         private int pageSize;
         public int PageSize
         {
             get { return pageSize; }
-            set { pageSize= value; RaisePropertyChanged(nameof(PageSize)); }
+            set
+            {
+                pageSize = value;
+                if (pageSize==value)
+                {
+                    return;
+                }
+                RaisePropertyChanged(nameof(PageSize));
+            }
         }
 
         private int recordCount;
         public int RecordCount
         {
             get { return recordCount; }
-            set { recordCount = value; RaisePropertyChanged(nameof(RecordCount)); }
+            set
+            {
+                recordCount = value;
+                if (recordCount==value)
+                {
+                    return;
+                }
+                RaisePropertyChanged(nameof(RecordCount));
+            }
         }
         #endregion
 

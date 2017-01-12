@@ -53,6 +53,14 @@ namespace PMSWCFService
             }
         }
 
+        /// <summary>
+        /// 返回不包含删除标记的其他记录
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="customer"></param>
+        /// <param name="compositionstd"></param>
+        /// <returns></returns>
         public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd)
         {
             using (var dc = new PMSDbContext())
@@ -60,17 +68,23 @@ namespace PMSWCFService
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
                 var mapper = config.CreateMapper();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer)  && o.CompositionStandard.Contains(compositionstd))
+                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted)
                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
                 return result;
             }
         }
 
+        /// <summary>
+        ///  返回不包含删除标记的其他记录
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="compositionstd"></param>
+        /// <returns></returns>
         public int GetOrderCountBySearch(string customer, string compositionstd)
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd)).Count();
+                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted).Count();
             }
         }
 
