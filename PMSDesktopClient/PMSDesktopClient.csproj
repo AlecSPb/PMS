@@ -260,19 +260,18 @@
     <None Include="Reports\GeAsSeElastomer440Blank.docx" />
     <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
     <None Include="Reports\ProductTemplate.docx" />
-    <None Include="Service References\ServiceReference\OrderService.wsdl" />
-    <None Include="Service References\ServiceReference\OrderService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference\OrderService1.wsdl" />
-    <None Include="Service References\ServiceReference\OrderService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference\OrderService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.OrderDc.datasource">
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSService.wsdl" />
+    <None Include="Service References\ServiceReference\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference\PMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference\PMSService2.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -294,18 +293,6 @@
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PMSFakeService\PMSFakeService.csproj">
-      <Project>{8d74a4ea-7faf-4acc-b0bc-5b399e234b85}</Project>
-      <Name>PMSFakeService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PMSModel\PMSModel.csproj">
-      <Project>{79cdc827-0fca-4521-9c8a-f99b31290e8e}</Project>
-      <Name>PMSModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PMSOperate\PMSIRepository.csproj">
-      <Project>{37b17fc1-5e32-4db2-bfad-8a535b568c1d}</Project>
-      <Name>PMSIRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

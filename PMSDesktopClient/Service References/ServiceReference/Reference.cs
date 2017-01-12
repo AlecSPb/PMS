@@ -15,9 +15,9 @@ namespace PMSDesktopClient.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="OrderDc", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcOrder", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class OrderDc : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DcOrder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -507,147 +507,119 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.newlifechou.com", ConfigurationName="ServiceReference.IOrderSerivce")]
-    public interface IOrderSerivce {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IOrderService")]
+    public interface IOrderService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetAll", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetAllResponse")]
-        PMSDesktopClient.ServiceReference.OrderDc[] GetAll();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrderInPage", ReplyAction="http://tempuri.org/IOrderService/GetAllOrderInPageResponse")]
+        PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take, int state);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetAll", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetAllResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc[]> GetAllAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrderInPage", ReplyAction="http://tempuri.org/IOrderService/GetAllOrderInPageResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take, int state);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/FindById", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/FindByIdResponse")]
-        PMSDesktopClient.ServiceReference.OrderDc FindById(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
+        PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, int state, string customer, string compositionstd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/FindById", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/FindByIdResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc> FindByIdAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, int state, string customer, string compositionstd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetCount", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetCountResponse")]
-        int GetCount();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
+        int GetOrderCountBySearch(int state, string customer, string compositionstd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetCount", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/GetCountResponse")]
-        System.Threading.Tasks.Task<int> GetCountAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
+        System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(int state, string customer, string compositionstd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/Add", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/AddResponse")]
-        int Add(PMSDesktopClient.ServiceReference.OrderDc model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
+        int AddOrder(PMSDesktopClient.ServiceReference.DcOrder order);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/Add", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/AddResponse")]
-        System.Threading.Tasks.Task<int> AddAsync(PMSDesktopClient.ServiceReference.OrderDc model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
+        System.Threading.Tasks.Task<int> AddOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/Update", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/UpdateResponse")]
-        int Update(PMSDesktopClient.ServiceReference.OrderDc model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
+        int UpdateOrder(PMSDesktopClient.ServiceReference.DcOrder order);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/Update", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/UpdateResponse")]
-        System.Threading.Tasks.Task<int> UpdateAsync(PMSDesktopClient.ServiceReference.OrderDc model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
+        System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/Delete", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/DeleteResponse")]
-        int Delete(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
+        int DeleteOrder(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IServiceBaseOf_OrderDc/Delete", ReplyAction="http://www.newlifechou.com/IServiceBaseOf_OrderDc/DeleteResponse")]
-        System.Threading.Tasks.Task<int> DeleteAsync(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IOrderSerivce/GetBySearchInPaging", ReplyAction="http://www.newlifechou.com/IOrderSerivce/GetBySearchInPagingResponse")]
-        PMSDesktopClient.ServiceReference.OrderDc[] GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IOrderSerivce/GetBySearchInPaging", ReplyAction="http://www.newlifechou.com/IOrderSerivce/GetBySearchInPagingResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc[]> GetBySearchInPagingAsync(int skip, int take, string compostionstd, string customer, int state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IOrderSerivce/GetAllInPaging", ReplyAction="http://www.newlifechou.com/IOrderSerivce/GetAllInPagingResponse")]
-        PMSDesktopClient.ServiceReference.OrderDc[] GetAllInPaging(int skip, int take, int state);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.newlifechou.com/IOrderSerivce/GetAllInPaging", ReplyAction="http://www.newlifechou.com/IOrderSerivce/GetAllInPagingResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc[]> GetAllInPagingAsync(int skip, int take, int state);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
+        System.Threading.Tasks.Task<int> DeleteOrderAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IOrderSerivceChannel : PMSDesktopClient.ServiceReference.IOrderSerivce, System.ServiceModel.IClientChannel {
+    public interface IOrderServiceChannel : PMSDesktopClient.ServiceReference.IOrderService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class OrderSerivceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IOrderSerivce>, PMSDesktopClient.ServiceReference.IOrderSerivce {
+    public partial class OrderServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IOrderService>, PMSDesktopClient.ServiceReference.IOrderService {
         
-        public OrderSerivceClient() {
+        public OrderServiceClient() {
         }
         
-        public OrderSerivceClient(string endpointConfigurationName) : 
+        public OrderServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public OrderSerivceClient(string endpointConfigurationName, string remoteAddress) : 
+        public OrderServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public OrderSerivceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public OrderServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public OrderSerivceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public OrderServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.OrderDc[] GetAll() {
-            return base.Channel.GetAll();
+        public PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take, int state) {
+            return base.Channel.GetAllOrderInPage(skip, take, state);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc[]> GetAllAsync() {
-            return base.Channel.GetAllAsync();
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take, int state) {
+            return base.Channel.GetAllOrderInPageAsync(skip, take, state);
         }
         
-        public PMSDesktopClient.ServiceReference.OrderDc FindById(System.Guid id) {
-            return base.Channel.FindById(id);
+        public PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, int state, string customer, string compositionstd) {
+            return base.Channel.GetOrderBySearchInPage(skip, take, state, customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc> FindByIdAsync(System.Guid id) {
-            return base.Channel.FindByIdAsync(id);
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, int state, string customer, string compositionstd) {
+            return base.Channel.GetOrderBySearchInPageAsync(skip, take, state, customer, compositionstd);
         }
         
-        public int GetCount() {
-            return base.Channel.GetCount();
+        public int GetOrderCountBySearch(int state, string customer, string compositionstd) {
+            return base.Channel.GetOrderCountBySearch(state, customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<int> GetCountAsync() {
-            return base.Channel.GetCountAsync();
+        public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(int state, string customer, string compositionstd) {
+            return base.Channel.GetOrderCountBySearchAsync(state, customer, compositionstd);
         }
         
-        public int Add(PMSDesktopClient.ServiceReference.OrderDc model) {
-            return base.Channel.Add(model);
+        public int AddOrder(PMSDesktopClient.ServiceReference.DcOrder order) {
+            return base.Channel.AddOrder(order);
         }
         
-        public System.Threading.Tasks.Task<int> AddAsync(PMSDesktopClient.ServiceReference.OrderDc model) {
-            return base.Channel.AddAsync(model);
+        public System.Threading.Tasks.Task<int> AddOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order) {
+            return base.Channel.AddOrderAsync(order);
         }
         
-        public int Update(PMSDesktopClient.ServiceReference.OrderDc model) {
-            return base.Channel.Update(model);
+        public int UpdateOrder(PMSDesktopClient.ServiceReference.DcOrder order) {
+            return base.Channel.UpdateOrder(order);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateAsync(PMSDesktopClient.ServiceReference.OrderDc model) {
-            return base.Channel.UpdateAsync(model);
+        public System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order) {
+            return base.Channel.UpdateOrderAsync(order);
         }
         
-        public int Delete(System.Guid id) {
-            return base.Channel.Delete(id);
+        public int DeleteOrder(System.Guid id) {
+            return base.Channel.DeleteOrder(id);
         }
         
-        public System.Threading.Tasks.Task<int> DeleteAsync(System.Guid id) {
-            return base.Channel.DeleteAsync(id);
-        }
-        
-        public PMSDesktopClient.ServiceReference.OrderDc[] GetBySearchInPaging(int skip, int take, string compostionstd, string customer, int state) {
-            return base.Channel.GetBySearchInPaging(skip, take, compostionstd, customer, state);
-        }
-        
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc[]> GetBySearchInPagingAsync(int skip, int take, string compostionstd, string customer, int state) {
-            return base.Channel.GetBySearchInPagingAsync(skip, take, compostionstd, customer, state);
-        }
-        
-        public PMSDesktopClient.ServiceReference.OrderDc[] GetAllInPaging(int skip, int take, int state) {
-            return base.Channel.GetAllInPaging(skip, take, state);
-        }
-        
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.OrderDc[]> GetAllInPagingAsync(int skip, int take, int state) {
-            return base.Channel.GetAllInPagingAsync(skip, take, state);
+        public System.Threading.Tasks.Task<int> DeleteOrderAsync(System.Guid id) {
+            return base.Channel.DeleteOrderAsync(id);
         }
     }
 }

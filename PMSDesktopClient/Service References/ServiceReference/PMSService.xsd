@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8002/OrderService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:complexType name="ArrayOfOrderDc">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDcOrder">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDc" nillable="true" type="tns:OrderDc" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOrder" nillable="true" type="tns:DcOrder" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfOrderDc" nillable="true" type="tns:ArrayOfOrderDc" />
-  <xs:complexType name="OrderDc">
+  <xs:element name="ArrayOfDcOrder" nillable="true" type="tns:ArrayOfDcOrder" />
+  <xs:complexType name="DcOrder">
     <xs:sequence>
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
@@ -40,5 +40,5 @@
       <xs:element minOccurs="0" name="StateRemark" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="OrderDc" nillable="true" type="tns:OrderDc" />
+  <xs:element name="DcOrder" nillable="true" type="tns:DcOrder" />
 </xs:schema>

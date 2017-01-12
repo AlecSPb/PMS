@@ -19,12 +19,10 @@
             <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
             <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
-            <TextBox Text="" Style="{StaticResource  TextBoxBasic}"/>
-            <TextBlock Text="Composition" Style="{StaticResource  TextBlockBasic}"/>
-            <TextBox Text="" Style="{StaticResource TextBoxBasic}"/>
-            <TextBlock Text="CompositionAbbr" Style="{StaticResource  TextBlockBasic}"/>
-            <TextBox Text="" Style="{StaticResource TextBoxBasic}"/>
-            <CheckBox Content="Include Deleted" Style="{StaticResource CheckBoxBasic}"/>
+            <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource  TextBoxBasic}"/>
+            <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
+            <TextBox Text="{Binding SearchCompositionStandard}" Style="{StaticResource TextBoxBasic}"/>
+            <CheckBox Content="Deleted Items" Style="{StaticResource CheckBoxBasic}"/>
             <Button Content="Search" Style="{StaticResource  ButtonBasic}"/>
             <Button Content="All" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>

@@ -1,14 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PMSWCFService;
+using PMSWCFService.DataContracts;
 
 namespace PMSWCFService.Test
 {
     [TestClass]
-    public class UnitTest1
+    public class TestPMSService
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestAddOrder()
         {
+
         }
     }
 }

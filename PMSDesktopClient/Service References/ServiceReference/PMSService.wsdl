@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IOrderService_GetAllOrderInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderInPage" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetAllOrderInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderInPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderBySearchInPage" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderBySearchInPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderCountBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderCountBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IOrderService">
+    <wsdl:operation name="GetAllOrderInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPageResponse" message="tns:IOrderService_GetAllOrderInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage" message="tns:IOrderService_GetOrderBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse" message="tns:IOrderService_GetOrderBySearchInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountBySearch" message="tns:IOrderService_GetOrderCountBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse" message="tns:IOrderService_GetOrderCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/AddOrder" message="tns:IOrderService_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/AddOrderResponse" message="tns:IOrderService_AddOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/UpdateOrder" message="tns:IOrderService_UpdateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/UpdateOrderResponse" message="tns:IOrderService_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/DeleteOrder" message="tns:IOrderService_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/DeleteOrderResponse" message="tns:IOrderService_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyOrderService" type="tns:IOrderService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllOrderInPage">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetAllOrderInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountBySearch">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/DeleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PMSService">
+    <wsdl:port name="MyOrderService" binding="tns:MyOrderService">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

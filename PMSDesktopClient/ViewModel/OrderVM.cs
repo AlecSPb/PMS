@@ -7,7 +7,6 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSModel;
 using PMSDesktopClient.ServiceReference;
 
 using System.Collections.ObjectModel;
@@ -18,28 +17,113 @@ namespace PMSDesktopClient.ViewModel
     {
         public OrderVM()
         {
-            InitialProperties();
-            InitialCommands();
+            InitializeProperties();
+            InitializeCommands();
+            SetPageParametersWhenConditionChange();
         }
 
-        private void FillOrders()
+        private void InitializeProperties()
         {
-            MainOrders = new ObservableCollection<OrderDc>();
-            MainOrders.Clear();
-
+            SearchCustomer = "";
+            SearchCompositoinStandard = "";
+            OrderState = true;
+            MainOrders = new ObservableCollection<DcOrder>();
         }
-
-        private void InitialCommands()
+        private void InitializeCommands()
         {
             Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
-            PageCommand = new RelayCommand(() =>
-              {
-
-              });
+            PageCommand = new RelayCommand(ActionPaging);
         }
-        #region Properties
-        private ObservableCollection<OrderDc> mainOrders;
-        public ObservableCollection<OrderDc> MainOrders
+        private void SetPageParametersWhenConditionChange()
+        {
+            PageIndex = 1;
+            PageSize = 10;
+            var orderService = new OrderServiceClient();
+            RecordCount = orderService.GetOrderCountBySearch(StateProcess.BoolToInt(OrderState), SearchCustomer, SearchCompositoinStandard);
+            ActionPaging();
+        }
+        /// <summary>
+        /// 分页动作的时候读入数据
+        /// </summary>
+        private void ActionPaging()
+        {
+            var orderService = new OrderServiceClient();
+            int skip, take = 0;
+            skip = (PageIndex - 1) * PageSize;
+            take = PageSize;
+            var orders=orderService.GetOrderBySearchInPage(skip, take, StateProcess.BoolToInt(OrderState), SearchCustomer, SearchCompositoinStandard);
+            MainOrders.Clear();
+            orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+        }
+
+
+        #region PagingProperties
+        private int pageIndex;
+        public int PageIndex
+        {
+            get { return pageIndex; }
+            set { pageIndex = value;RaisePropertyChanged(nameof(PageIndex)); }
+        }
+
+        private int pageSize;
+        public int PageSize
+        {
+            get { return pageSize; }
+            set { pageSize= value; RaisePropertyChanged(nameof(PageSize)); }
+        }
+
+        private int recordCount;
+        public int RecordCount
+        {
+            get { return recordCount; }
+            set { recordCount = value; RaisePropertyChanged(nameof(RecordCount)); }
+        }
+        #endregion
+
+        #region Proeperties
+        private string searchCustomer;
+        public string SearchCustomer
+        {
+            get { return searchCustomer; }
+            set
+            {
+                if (searchCustomer == value)
+                    return;
+                searchCustomer = value;
+                RaisePropertyChanged(() => SearchCustomer);
+            }
+        }
+        private string searchCompositionStandard;
+        public string SearchCompositoinStandard
+        {
+            get { return searchCompositionStandard; }
+            set
+            {
+                if (searchCompositionStandard == value)
+                    return;
+                searchCompositionStandard = value;
+                RaisePropertyChanged(() => SearchCompositoinStandard);
+            }
+        }
+        private bool orderState;
+        public bool OrderState
+        {
+            get { return orderState; }
+            set
+            {
+                if (orderState == value)
+                    return;
+                orderState = value;
+                RaisePropertyChanged(() => OrderState);
+            }
+        }
+
+
+
+
+
+        private ObservableCollection<DcOrder> mainOrders;
+        public ObservableCollection<DcOrder> MainOrders
         {
             get { return mainOrders; }
             set { mainOrders = value; RaisePropertyChanged(nameof(MainOrders)); }

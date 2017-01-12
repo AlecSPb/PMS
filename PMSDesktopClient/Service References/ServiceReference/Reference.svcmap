@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="225ac5c5-d880-4844-813f-2443d408bcbf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7cdc151e-a848-4ced-a6f7-5779c8faa646" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/OrderService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8002/PMSService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="OrderService.xsd" MetadataType="Schema" ID="f01ea368-e0d7-4fbf-88e4-16bebf062a94" SourceId="1" SourceUrl="http://localhost:8002/OrderService.svc?xsd=xsd1" />
-    <MetadataFile FileName="OrderService1.xsd" MetadataType="Schema" ID="31f25009-9cc5-4dee-a971-7ce8f7042fab" SourceId="1" SourceUrl="http://localhost:8002/OrderService.svc?xsd=xsd2" />
-    <MetadataFile FileName="OrderService2.xsd" MetadataType="Schema" ID="e3a964b3-53f6-46ac-a735-48551db5ad88" SourceId="1" SourceUrl="http://localhost:8002/OrderService.svc?xsd=xsd0" />
-    <MetadataFile FileName="OrderService.wsdl" MetadataType="Wsdl" ID="24cc1819-a12f-4b78-871e-22aecc936106" SourceId="1" SourceUrl="http://localhost:8002/OrderService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="OrderService1.wsdl" MetadataType="Wsdl" ID="1e61efc8-ea65-42d6-a5b0-381a7a1303b3" SourceId="1" SourceUrl="http://localhost:8002/OrderService.svc?wsdl" />
+    <MetadataFile FileName="PMSService.xsd" MetadataType="Schema" ID="deda64d0-bce1-40bf-875c-ea9088017e2a" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PMSService.wsdl" MetadataType="Wsdl" ID="2b63b936-6876-4d6b-b873-ece340c8fdb1" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?wsdl" />
+    <MetadataFile FileName="PMSService1.xsd" MetadataType="Schema" ID="319b5936-7c81-4890-a259-0b941a6ddf98" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMSService2.xsd" MetadataType="Schema" ID="617f5bce-b34e-4edf-9767-945110c72a4b" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
