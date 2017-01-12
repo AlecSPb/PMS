@@ -10,39 +10,40 @@ using PMSCommon;
 using PMSDesktopClient.ServiceReference;
 using System.Collections.ObjectModel;
 
+
+
 namespace PMSDesktopClient.ViewModel
 {
-    public class OrderVM : ViewModelBase
+    public class MaterialNeedVM : ViewModelBase
     {
-        public OrderVM()
+        public MaterialNeedVM()
         {
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+
         private void InitializeProperties()
         {
-            SearchCustomer = "";
             SearchCompositoinStandard = "";
-            MainOrders = new ObservableCollection<DcOrder>();
+            MainMaterialNeeds = new ObservableCollection<DcMaterialNeed>();
         }
         private void InitializeCommands()
         {
             Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
             PageChanged = new RelayCommand(ActionPaging);
-            Search = new RelayCommand(ActionSearch,CanSearch);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
         }
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositoinStandard));
+            return !(string.IsNullOrEmpty(SearchCompositoinStandard));
         }
 
         private void ActionAll()
         {
-            SearchCustomer = "";
             SearchCompositoinStandard = "";
             SetPageParametersWhenConditionChange();
         }
@@ -56,8 +57,8 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var orderService = new OrderServiceClient();
-            RecordCount = orderService.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
+            var service = new MaterialNeedServiceClient();
+            RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
             ActionPaging();
         }
         /// <summary>
@@ -65,13 +66,13 @@ namespace PMSDesktopClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var orderService = new OrderServiceClient();
+            var service = new MaterialNeedServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = orderService.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
-            MainOrders.Clear();
-            orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+            var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
+            MainMaterialNeeds.Clear();
+            result.ToList<DcMaterialNeed>().ForEach(o => MainMaterialNeeds.Add(o));
         }
 
 
@@ -111,18 +112,6 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Proeperties
-        private string searchCustomer;
-        public string SearchCustomer
-        {
-            get { return searchCustomer; }
-            set
-            {
-                if (searchCustomer == value)
-                    return;
-                searchCustomer = value;
-                RaisePropertyChanged(() => SearchCustomer);
-            }
-        }
         private string searchCompositionStandard;
         public string SearchCompositoinStandard
         {
@@ -140,11 +129,11 @@ namespace PMSDesktopClient.ViewModel
 
 
 
-        private ObservableCollection<DcOrder> mainOrders;
-        public ObservableCollection<DcOrder> MainOrders
+        private ObservableCollection<DcMaterialNeed> mainMaterialNeeds;
+        public ObservableCollection<DcMaterialNeed> MainMaterialNeeds
         {
-            get { return mainOrders; }
-            set { mainOrders = value; RaisePropertyChanged(nameof(MainOrders)); }
+            get { return mainMaterialNeeds; }
+            set { mainMaterialNeeds = value; RaisePropertyChanged(nameof(MainMaterialNeeds)); }
         }
 
         #endregion
@@ -156,5 +145,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Add { get; private set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
+
+
+
     }
 }

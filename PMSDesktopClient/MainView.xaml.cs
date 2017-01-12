@@ -57,6 +57,18 @@ namespace PMSDesktopClient
                 case "PlanView":
                     NavigateTo(new PlanView());
                     break;
+                case "MaterialNeedView":
+                    NavigateTo(new MaterialNeedView());
+                    break;
+                case "MaterialOrderView":
+                    NavigateTo(new MaterialOrderView());
+                    break;
+                case "MaterialNeedEditView":
+                    NavigateTo(new PlanView());
+                    break;
+                case "MaterialOrderEditView":
+                    NavigateTo(new MaterialOrderView());
+                    break;
                 default:
                     NavigateTo(new OrderView());
                     break;

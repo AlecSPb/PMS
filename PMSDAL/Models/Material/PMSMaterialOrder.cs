@@ -11,6 +11,8 @@ namespace PMSDAL
         public PMSMaterialOrder()
         {
             MaterialOrderItems = new List<PMSMaterialOrderItem>();
+            State = 1;
+            Priorty = 1;
         }
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
@@ -28,6 +30,9 @@ namespace PMSDAL
         public string Remark { get; set; }
 
         public double ShipFee { get; set; }
+
+        public int Priorty { get; set; }
+
 
         public virtual List<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
     }

@@ -28,5 +28,7 @@ namespace PMSWCFService.DataContracts
         public string Remark { get; set; }
 
         public double ShipFee { get; set; }
+        public int Priority { get; set; }
+
     }
 }

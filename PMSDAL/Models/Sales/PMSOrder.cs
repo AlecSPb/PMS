@@ -12,6 +12,11 @@ namespace PMSDAL
     /// </summary>
     public class PMSOrder
     {
+        public PMSOrder()
+        {
+            State = 1;
+            Priority = 1;
+        }
         //基本信息
         [Key]
         public Guid ID { get; set; }

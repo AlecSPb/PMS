@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201701121603148_changeuser.Designer.cs">
       <DependentUpon>201701121603148_changeuser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701122316199_addpriorittomaterialorder.cs" />
+    <Compile Include="Migrations\201701122316199_addpriorittomaterialorder.Designer.cs">
+      <DependentUpon>201701122316199_addpriorittomaterialorder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicData\Compound.cs" />
     <Compile Include="Models\BasicData\Customer.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701121603148_changeuser.resx">
       <DependentUpon>201701121603148_changeuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701122316199_addpriorittomaterialorder.resx">
+      <DependentUpon>201701122316199_addpriorittomaterialorder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

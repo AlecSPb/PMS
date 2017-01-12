@@ -99,6 +99,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
+    <Compile Include="ViewModel\MaterialNeedVM.cs" />
+    <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
+    <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\BondingView.xaml.cs">
@@ -109,6 +113,15 @@
     </Compile>
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialNeedEditView.xaml.cs">
+      <DependentUpon>MaterialNeedEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialOrderEditView.xaml.cs">
+      <DependentUpon>MaterialOrderEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialOrderView.xaml.cs">
+      <DependentUpon>MaterialOrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MissonView.xaml.cs">
       <DependentUpon>MissonView.xaml</DependentUpon>
@@ -137,8 +150,8 @@
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RawMaterialView.xaml.cs">
-      <DependentUpon>RawMaterialView.xaml</DependentUpon>
+    <Compile Include="View\MaterialNeedView.xaml.cs">
+      <DependentUpon>MaterialNeedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordVHPEditView.xaml.cs">
       <DependentUpon>RecordVHPEditView.xaml</DependentUpon>
@@ -178,6 +191,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MaterialNeedEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialOrderEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MissonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,7 +227,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RawMaterialView.xaml">
+    <Page Include="View\MaterialNeedView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,7 +285,19 @@
     <None Include="Reports\GeAsSeElastomer440Blank.docx" />
     <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
     <None Include="Reports\ProductTemplate.docx" />
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialNeed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialOrderItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference\PMSService.wsdl" />

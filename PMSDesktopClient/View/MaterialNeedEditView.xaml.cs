@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// InventoryView.xaml 的交互逻辑
+    /// MaterialNeedEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class RawMaterialView : UserControl
+    public partial class MaterialNeedEditView : UserControl
     {
-        public RawMaterialView()
+        public MaterialNeedEditView()
         {
             InitializeComponent();
         }

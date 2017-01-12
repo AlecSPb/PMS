@@ -43,6 +43,108 @@
   <wsdl:message name="IOrderService_DeleteOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlanVHPService_GetVHPPlansByOrderID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVHPPlansByOrderID" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_GetVHPPlansByOrderID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVHPPlansByOrderIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_AddVHPPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddVHPPlan" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_AddVHPPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddVHPPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_UpdateVHPPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVHPPlan" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_UpdateVHPPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVHPPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_DeleteVHPPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVHPPlan" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_DeleteVHPPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVHPPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_GetMaterialNeedBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialNeedBySearchInPage" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_GetMaterialNeedBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialNeedBySearchInPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_GetMaterialNeedCountBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialNeedCountBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_GetMaterialNeedCountBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialNeedCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_AddMaterialNeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialNeed" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_AddMaterialNeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialNeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_UpdateMaterialNeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialNeed" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_UpdateMaterialNeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialNeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_DeleteMaterialNeed_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialNeed" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialNeedService_DeleteMaterialNeed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialNeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderBySearchInPage" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderBySearchInPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_AddMaterialOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_AddMaterialOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_UpdateMaterialOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_UpdateMaterialOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_DeleteMaterialOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialOrder" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_DeleteMaterialOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItembyMaterialID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItembyMaterialID" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItembyMaterialID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItembyMaterialIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_AddMaterialOrderItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialOrderItem" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_AddMaterialOrderItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialOrderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_UpdateMaterialOrderItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialOrderItem" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_UpdateMaterialOrderItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialOrderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_DeleteMaterialOrderItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialOrderItem" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_DeleteMaterialOrderItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialOrderItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -69,7 +171,81 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/DeleteOrderResponse" message="tns:IOrderService_DeleteOrder_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="MyOrderService" type="tns:IOrderService">
+  <wsdl:portType name="IPlanVHPService">
+    <wsdl:operation name="GetVHPPlansByOrderID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderID" message="tns:IPlanVHPService_GetVHPPlansByOrderID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderIDResponse" message="tns:IPlanVHPService_GetVHPPlansByOrderID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddVHPPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlanVHPService/AddVHPPlan" message="tns:IPlanVHPService_AddVHPPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlanVHPService/AddVHPPlanResponse" message="tns:IPlanVHPService_AddVHPPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVHPPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan" message="tns:IPlanVHPService_UpdateVHPPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse" message="tns:IPlanVHPService_UpdateVHPPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVHPPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlan" message="tns:IPlanVHPService_DeleteVHPPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlanResponse" message="tns:IPlanVHPService_DeleteVHPPlan_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMaterialNeedService">
+    <wsdl:operation name="GetMaterialNeedBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage" message="tns:IMaterialNeedService_GetMaterialNeedBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPageResponse" message="tns:IMaterialNeedService_GetMaterialNeedBySearchInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialNeedCountBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearch" message="tns:IMaterialNeedService_GetMaterialNeedCountBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearchResponse" message="tns:IMaterialNeedService_GetMaterialNeedCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialNeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeed" message="tns:IMaterialNeedService_AddMaterialNeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeedResponse" message="tns:IMaterialNeedService_AddMaterialNeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialNeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeed" message="tns:IMaterialNeedService_UpdateMaterialNeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedResponse" message="tns:IMaterialNeedService_UpdateMaterialNeed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialNeed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeed" message="tns:IMaterialNeedService_DeleteMaterialNeed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeedResponse" message="tns:IMaterialNeedService_DeleteMaterialNeed_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMaterialOrderService">
+    <wsdl:operation name="GetMaterialOrderBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage" message="tns:IMaterialOrderService_GetMaterialOrderBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPageResponse" message="tns:IMaterialOrderService_GetMaterialOrderBySearchInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder" message="tns:IMaterialOrderService_AddMaterialOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse" message="tns:IMaterialOrderService_AddMaterialOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrder" message="tns:IMaterialOrderService_UpdateMaterialOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderResponse" message="tns:IMaterialOrderService_UpdateMaterialOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrder" message="tns:IMaterialOrderService_DeleteMaterialOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderResponse" message="tns:IMaterialOrderService_DeleteMaterialOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItembyMaterialID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialID" message="tns:IMaterialOrderService_GetMaterialOrderItembyMaterialID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialIDResponse" message="tns:IMaterialOrderService_GetMaterialOrderItembyMaterialID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialOrderItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItem" message="tns:IMaterialOrderService_AddMaterialOrderItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemResponse" message="tns:IMaterialOrderService_AddMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialOrderItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItem" message="tns:IMaterialOrderService_UpdateMaterialOrderItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemResponse" message="tns:IMaterialOrderService_UpdateMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialOrderItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem" message="tns:IMaterialOrderService_DeleteMaterialOrderItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse" message="tns:IMaterialOrderService_DeleteMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IOrderService" type="tns:IOrderService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllOrderInPage">
       <soap:operation soapAction="http://tempuri.org/IOrderService/GetAllOrderInPage" style="document" />
@@ -126,8 +302,179 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPlanVHPService" type="tns:IPlanVHPService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVHPPlansByOrderID">
+      <soap:operation soapAction="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddVHPPlan">
+      <soap:operation soapAction="http://tempuri.org/IPlanVHPService/AddVHPPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVHPPlan">
+      <soap:operation soapAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVHPPlan">
+      <soap:operation soapAction="http://tempuri.org/IPlanVHPService/DeleteVHPPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMaterialNeedService" type="tns:IMaterialNeedService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMaterialNeedBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialNeedCountBySearch">
+      <soap:operation soapAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialNeed">
+      <soap:operation soapAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialNeed">
+      <soap:operation soapAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialNeed">
+      <soap:operation soapAction="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMaterialOrderService" type="tns:IMaterialOrderService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMaterialOrderBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialOrder">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItembyMaterialID">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialOrderItem">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialOrderItem">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialOrderItem">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
-    <wsdl:port name="MyOrderService" binding="tns:MyOrderService">
+    <wsdl:port name="BasicHttpBinding_IOrderService" binding="tns:BasicHttpBinding_IOrderService">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPlanVHPService" binding="tns:BasicHttpBinding_IPlanVHPService">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMaterialNeedService" binding="tns:BasicHttpBinding_IMaterialNeedService">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMaterialOrderService" binding="tns:BasicHttpBinding_IMaterialOrderService">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>

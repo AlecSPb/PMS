@@ -17,6 +17,8 @@
                 <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
                 <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}" CommandParameter="MissonView"/>
                 <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}" CommandParameter="PlanView"/>
+                <MenuItem Header="Material Needs" Command="{Binding Navigate}" CommandParameter="MaterialNeedView"/>
+                <MenuItem Header="Material Orders" Command="{Binding Navigate}" CommandParameter="MaterialOrderView"/>
                 <MenuItem Header="{StaticResource strProduct}"/>
                 <MenuItem Header="{StaticResource strBonding}"/>
                 <MenuItem Header="{StaticResource strDelivery}"/>

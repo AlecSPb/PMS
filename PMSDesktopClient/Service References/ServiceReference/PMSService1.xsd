@@ -91,4 +91,247 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetVHPPlansByOrderID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVHPPlansByOrderIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetVHPPlansByOrderIDResult" nillable="true" type="q7:ArrayOfDcPlanVHP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddVHPPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q8:DcPlanVHP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddVHPPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddVHPPlanResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVHPPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q9:DcPlanVHP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVHPPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateVHPPlanResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteVHPPlan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q10:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteVHPPlanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteVHPPlanResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialNeedBySearchInPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialNeedBySearchInPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialNeedBySearchInPageResult" nillable="true" type="q11:ArrayOfDcMaterialNeed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialNeedCountBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialNeedCountBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMaterialNeedCountBySearchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMaterialNeed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q12:DcMaterialNeed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMaterialNeedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddMaterialNeedResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialNeed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q13:DcMaterialNeed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialNeedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMaterialNeedResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialNeed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q14:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialNeedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMaterialNeedResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialOrderBySearchInPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="orderPo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialOrderBySearchInPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialOrderBySearchInPageResult" nillable="true" type="q15:ArrayOfDcMaterialOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMaterialOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q16:DcMaterialOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMaterialOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddMaterialOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q17:DcMaterialOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMaterialOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q18:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMaterialOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialOrderItembyMaterialID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q19:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialOrderItembyMaterialIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialOrderItembyMaterialIDResult" nillable="true" type="q20:ArrayOfDcMaterialOrderItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMaterialOrderItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q21:DcMaterialOrderItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMaterialOrderItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddMaterialOrderItemResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialOrderItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q22:DcMaterialOrderItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMaterialOrderItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMaterialOrderItemResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialOrderItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q23:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMaterialOrderItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMaterialOrderItemResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
