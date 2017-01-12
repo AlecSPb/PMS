@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{DC0B74BE-6C71-426A-BDEC-E32ED2BC0D98}"
 	ProjectSection(SolutionItems) = preProject
 		Documents\Commit语句.txt = Documents\Commit语句.txt
+		Priority规范.txt = Priority规范.txt
 		ReadMe.txt = ReadMe.txt
 		State规范.txt = State规范.txt
 		Documents\关于自动更新.txt = Documents\关于自动更新.txt
@@ -575,7 +576,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0BB4A729-AC1E-4973-A915-F857FD75740D} = {52C2CA17-5CF8-4DF1-AEA4-66EC7363105D}
+		{0BB4A729-AC1E-4973-A915-F857FD75740D} = {496D2D18-34C4-4621-AECC-5FE6AE212DC6}
 		{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF} = {C8DC6BDF-3CA5-41CA-AFE8-99217BCADE39}
 		{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524} = {52C2CA17-5CF8-4DF1-AEA4-66EC7363105D}
 		{6F0CC519-5524-4D4D-B03D-0565B42ADB0F} = {52C2CA17-5CF8-4DF1-AEA4-66EC7363105D}

@@ -79,7 +79,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelState.cs" />
     <Compile Include="DataContracts\DcAccess.cs" />
     <Compile Include="DataContracts\DcRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
@@ -105,6 +104,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
+      <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
+      <Name>PMSCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PMSDAL\PMSDAL.csproj">
       <Project>{f75a9c93-ed94-4c69-82e4-bc069f4e9fef}</Project>
       <Name>PMSDAL</Name>

@@ -6,6 +6,7 @@ using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSDAL;
+using PMSCommon;
 
 namespace PMSWCFService
 {

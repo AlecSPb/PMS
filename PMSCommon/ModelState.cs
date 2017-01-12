@@ -8,6 +8,8 @@ namespace PMSCommon
     public enum ModelState
     {
         Deleted = -1,
-        Normal = 0
+        Stop = 0,
+        UnCompleted=1,
+        Completed=2
     }
 }
