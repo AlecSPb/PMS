@@ -16,5 +16,7 @@ namespace PMSDAL
         public string AccessCode { get; set; }
         public int State { get; set; }
         public string ExtraInformation { get; set; }
+
+        public virtual List<PMSRole> PMSRoles { get; set; }
     }
 }

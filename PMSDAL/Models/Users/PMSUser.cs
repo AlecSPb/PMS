@@ -17,7 +17,7 @@ namespace PMSDAL
         public string RealName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        //Navigation
-        public virtual PMSRole Role { get; set; }
+
+        public Guid RoleID { get; set; }
     }
 }

@@ -5,32 +5,60 @@ using System.Web;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
+using PMSDAL;
 
 namespace PMSWCFService
 {
     public class UserAccessService : IUserAccessService
     {
-        public int AddAccess(DcAccess access)
+        public int AddAccess(DcAccess model)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcAccess, PMSAccess>());
+                var mapper = config.CreateMapper();
+                var access = mapper.Map<PMSAccess>(model);
+                dc.Accesses.Add(access);
+                result = dc.SaveChanges();
+                return result;
+            }
+        }
+
+        public int AddRole(DcRole model)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRole, PMSRole>());
+                var mapper = config.CreateMapper();
+                var role = mapper.Map<PMSRole>(model);
+                dc.Roles.Add(role);
+                result = dc.SaveChanges();
+                return result;
+            }
+        }
+
+        public int AddUser(DcUser model)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcAccess, PMSAccess>());
+                var mapper = config.CreateMapper();
+                var access = mapper.Map<PMSAccess>(model);
+                dc.Accesses.Add(access);
+                result = dc.SaveChanges();
+                return result;
+            }
+        }
+
+        public bool CheckAccess(DcUser model, string AccessCode)
         {
             throw new NotImplementedException();
         }
 
-        public int AddRole(DcRole role)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int AddUser(DcUser user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool CheckAccess(DcUser user, string AccessCode)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool CheckLogIn(DcUser user)
+        public bool CheckLogIn(DcUser model)
         {
             throw new NotImplementedException();
         }
@@ -40,19 +68,37 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public int DeleteAccess(DcAccess access)
+        public int DeleteAccess(Guid id)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+
+
+                return result;
+            }
         }
 
-        public int DeleteRole(DcRole role)
+        public int DeleteRole(Guid id)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+
+
+                return result;
+            }
         }
 
-        public int DeleteUser(DcUser user)
+        public int DeleteUser(Guid id)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+
+
+                return result;
+            }
         }
 
         public List<DcAccess> GetAccessesByRoleId(Guid roleId)
@@ -80,19 +126,37 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public int UpdateAccess(DcAccess access)
+        public int UpdateAccess(DcAccess model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+
+
+                return result;
+            }
         }
 
-        public int UpdateRole(DcRole role)
+        public int UpdateRole(DcRole model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+
+
+                return result;
+            }
         }
 
-        public int UpdateUser(DcUser user)
+        public int UpdateUser(DcUser model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+
+
+                return result;
+            }
         }
     }
 }

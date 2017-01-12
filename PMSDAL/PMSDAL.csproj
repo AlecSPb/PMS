@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201701110615408_nullorderplan.Designer.cs">
       <DependentUpon>201701110615408_nullorderplan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701121603148_changeuser.cs" />
+    <Compile Include="Migrations\201701121603148_changeuser.Designer.cs">
+      <DependentUpon>201701121603148_changeuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicData\Compound.cs" />
     <Compile Include="Models\BasicData\Customer.cs" />
@@ -119,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701110615408_nullorderplan.resx">
       <DependentUpon>201701110615408_nullorderplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701121603148_changeuser.resx">
+      <DependentUpon>201701121603148_changeuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

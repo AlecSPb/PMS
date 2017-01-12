@@ -12,7 +12,7 @@ namespace PMSWCFService.ServiceContracts
     public interface IMaterialNeedService
     {
         [OperationContract]
-        IList<DcMaterialNeed> GetMaterialNeedBySearchInPage(int skip, int take, string composition);
+        List<DcMaterialNeed> GetMaterialNeedBySearchInPage(int skip, int take, string composition);
         [OperationContract]
         int GetMaterialNeedCountBySearch(string composition);
         [OperationContract]
@@ -20,6 +20,6 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateMaterialNeed(DcMaterialNeed model);
         [OperationContract]
-        int DeleteMaterialNeed(DcMaterialNeed model);
+        int DeleteMaterialNeed(Guid id);
     }
 }

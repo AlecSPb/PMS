@@ -11,7 +11,7 @@ namespace PMSWCFService.ServiceContracts
     public interface IMaterialOrderService
     {
         [OperationContract]
-        IList<DcMaterialOrder> GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string composition, string supplier);
+        List<DcMaterialOrder> GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier);
 
         [OperationContract]
         int AddMaterialOrder(DcMaterialOrder model);
@@ -25,11 +25,11 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialOrderItem> GetMaterialOrderItembyMaterialID(Guid id);
 
         [OperationContract]
-        int AddMaterialOrderItem(DcMaterialOrderItem item);
+        int AddMaterialOrderItem(DcMaterialOrderItem model);
         [OperationContract]
-        int UpdateMaterialOrderItem(DcMaterialOrderItem item);
+        int UpdateMaterialOrderItem(DcMaterialOrderItem model);
         [OperationContract]
-        int DeleteMaterialOrderItem(DcMaterialOrderItem item);
+        int DeleteMaterialOrderItem(Guid id);
 
 
     }

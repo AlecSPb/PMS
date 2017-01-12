@@ -86,6 +86,7 @@
     <Compile Include="DataContracts\DcMaterialNeed.cs" />
     <Compile Include="DataContracts\DcMaterialOrder.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItem.cs" />
+    <Compile Include="PMSMaterialService.cs" />
     <Compile Include="PMSOrderService.cs" />
     <Compile Include="PMSPlanVHPService.cs" />
     <Compile Include="ServiceContracts\IMaterialNeedService.cs" />
