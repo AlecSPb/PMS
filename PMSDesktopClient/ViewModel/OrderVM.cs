@@ -31,8 +31,28 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeCommands()
         {
             Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
-            PageCommand = new RelayCommand(ActionPaging);
+            PageChanged = new RelayCommand(ActionPaging);
+            Search = new RelayCommand(ActionSearch,CanSearch);
+            All = new RelayCommand(ActionAll);
         }
+
+        private bool CanSearch()
+        {
+            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositoinStandard));
+        }
+
+        private void ActionAll()
+        {
+            SearchCustomer = "";
+            SearchCompositoinStandard = "";
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
@@ -64,10 +84,6 @@ namespace PMSDesktopClient.ViewModel
             set
             {
                 pageIndex = value;
-                if (pageIndex==value)
-                {
-                    return;
-                }
                 RaisePropertyChanged(nameof(PageIndex));
             }
         }
@@ -79,10 +95,6 @@ namespace PMSDesktopClient.ViewModel
             set
             {
                 pageSize = value;
-                if (pageSize==value)
-                {
-                    return;
-                }
                 RaisePropertyChanged(nameof(PageSize));
             }
         }
@@ -94,10 +106,6 @@ namespace PMSDesktopClient.ViewModel
             set
             {
                 recordCount = value;
-                if (recordCount==value)
-                {
-                    return;
-                }
                 RaisePropertyChanged(nameof(RecordCount));
             }
         }
@@ -144,7 +152,10 @@ namespace PMSDesktopClient.ViewModel
 
         #region Commands
         public RelayCommand Navigate { get; private set; }
-        public RelayCommand PageCommand { get; private set; }
+        public RelayCommand Search { get; private set; }
+        public RelayCommand All { get; set; }
+        public RelayCommand Add { get; private set; }
+        public RelayCommand PageChanged { get; private set; }
         #endregion
     }
 }

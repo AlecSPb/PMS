@@ -25,11 +25,11 @@
             <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
             <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
-            <TextBox Text="{Binding SearchCustomer}" Style="{StaticResource  TextBoxBasic}"/>
+            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
-            <TextBox Text="{Binding SearchCompositionStandard}" Style="{StaticResource TextBoxBasic}"/>
-            <Button Content="Search" Style="{StaticResource  ButtonBasic}"/>
-            <Button Content="All" Style="{StaticResource ButtonBasic}"/>
+            <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
+            <Button Content="Search" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
+            <Button Content="All" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
@@ -155,7 +155,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageCommand}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
     </Grid>
