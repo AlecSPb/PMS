@@ -8,7 +8,7 @@ namespace PMSCommon
     public enum ModelState
     {
         Deleted = -1,
-        Stop = 0,
+        Paused = 0,
         UnCompleted=1,
         Completed=2
     }

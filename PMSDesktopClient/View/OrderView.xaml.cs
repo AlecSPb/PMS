@@ -34,20 +34,23 @@ namespace PMSDesktopClient.View.Sales
             DcOrder order = (DcOrder)e.Row.DataContext;
             if (order != null)
             {
-                var orderBrush = new CommonBrushes();
                 switch (order.State)
                 {
-                    case (int)ModelState.Stop:
-                        e.Row.Background = orderBrush.StopBrush;
+                    case (int)ModelState.Paused:
+                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                         break;
                     case (int)ModelState.UnCompleted:
-                        e.Row.Background = orderBrush.UnCompletedBrush;
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
                     case (int)ModelState.Completed:
-                        e.Row.Background = orderBrush.CompletedBrush;
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;
+                }
+                if (order.Priority==(int)OrderPriority.Emerygency)
+                {
+                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }
 
             }
