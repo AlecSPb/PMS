@@ -82,13 +82,21 @@
     <Compile Include="DataContracts\DcAccess.cs" />
     <Compile Include="DataContracts\DcRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
+    <Compile Include="DataContracts\DcPlanVHP.cs" />
+    <Compile Include="DataContracts\DcMaterialNeed.cs" />
+    <Compile Include="DataContracts\DcMaterialOrder.cs" />
+    <Compile Include="DataContracts\DcMaterialOrderItem.cs" />
     <Compile Include="PMSOrderService.cs" />
+    <Compile Include="PMSPlanVHPService.cs" />
+    <Compile Include="ServiceContracts\IMaterialNeedService.cs" />
+    <Compile Include="ServiceContracts\IMaterialOrderService.cs" />
+    <Compile Include="UserAccessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataContracts\DcOrder.cs" />
     <Compile Include="ServiceContracts\IOrderService.cs" />
-    <Compile Include="UserAccessService.svc.cs">
-      <DependentUpon>UserAccessService.svc</DependentUpon>
-    </Compile>
+    <Compile Include="ServiceContracts\IPlanVHPService.cs" />
+    <Compile Include="ServiceContracts\IProductService.cs" />
+    <Compile Include="ServiceContracts\IUserAccessService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
