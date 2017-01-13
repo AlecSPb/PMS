@@ -9,6 +9,10 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSDesktopClient.ServiceReference;
 using System.Collections.ObjectModel;
+using DocGenerator;
+using gn = DocGenerator.DocModels;
+using AutoMapper;
+using System.Windows;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -33,6 +37,31 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
+            GenerateDoc = new RelayCommand<ServiceReference.DcMaterialOrder>(ActionGenerateDoc);
+        }
+
+        private void ActionGenerateDoc(DcMaterialOrder args)
+        {
+            if (args != null)
+            {
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<DcMaterialOrder, gn.MaterialOrder>();
+                    cfg.CreateMap<DcMaterialOrderItem, gn.MaterialOrderItem>();
+                });
+                var mapper = config.CreateMapper();
+
+                var readyModel = mapper.Map<DcMaterialOrder, gn.MaterialOrder>(args);
+                gn.MaterialOrder model = readyModel;
+
+                var mainGenerator = new GeneralGenerator();
+                IDoc<gn.MaterialOrder> generator = new GeneratorMaterialOrder();
+                string source = nameof(DocTemplateEnum.MaterialOrder);
+                string target = model.OrderPO;
+                mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, "PO" + target);
+
+                MessageBox.Show("File At:" + mainGenerator.TargetFolder);
+            }
         }
 
         private bool CanSearch()

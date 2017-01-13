@@ -38,6 +38,7 @@ namespace DocGenerator
                 }
                 string targetFilePath = Path.Combine(TargetFolder, targetFileName + ".docx");
                 generator.Generate(sourceFilePath, targetFilePath, docModel);
+
             }
             catch (Exception ex)
             {

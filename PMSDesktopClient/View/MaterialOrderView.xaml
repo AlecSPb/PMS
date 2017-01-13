@@ -52,7 +52,8 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
                                         <Button Content="Del" Style="{StaticResource ButtonDGBasic}"/>
-                                        <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"/>
+                                        <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
+                                                Command="{Binding Path=DataContext.GenerateDoc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -138,7 +139,7 @@
                         <DataGridTemplateColumn Header="ShipFee">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Remark}" Style="{StaticResource TextBlockDGBasic}"/>
+                                    <TextBlock Text="{Binding ShipFee}" Style="{StaticResource TextBlockDGBasic}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -206,7 +207,7 @@
                         <DataGridTemplateColumn Header="Weight">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Purity}" Style="{StaticResource TextBlockDGBasic}"/>
+                                    <TextBlock Text="{Binding Weight}" Style="{StaticResource TextBlockDGBasic}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

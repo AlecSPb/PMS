@@ -13,9 +13,9 @@ namespace DocGeneratorTest
         static void Main(string[] args)
         {
             var mainGenerator = new GeneralGenerator();
-            //TestProdct(mainGenerator);
-            TestCOA(mainGenerator);
-            //TestMaterialOrder(mainGenerator);
+            ////TestProdct(mainGenerator);
+            //TestCOA(mainGenerator);
+            TestMaterialOrder(mainGenerator);
             Console.WriteLine("文档在:" + mainGenerator.TargetFolder);
             Console.Read();
         }
@@ -75,7 +75,7 @@ namespace DocGeneratorTest
                     UnitPrice = 2300,
                     Weight = 1.6 * (i + 1)
                 };
-                modelItem.Description = $"Processing fee to cast {modelItem.Purity} {modelItem.Composition} (atomic%;PMI to provide{modelItem.ProvideRawMaterial};please deliver by {modelItem.DeliveryDate.ToShortDateString()}";
+                //modelItem.Description = $"Processing fee to cast {modelItem.Purity} {modelItem.Composition} (atomic%;PMI to provide{modelItem.ProvideRawMaterial};please deliver by {modelItem.DeliveryDate.ToShortDateString()}";
                 model.MaterialOrderItems.Add(modelItem);
             }
 

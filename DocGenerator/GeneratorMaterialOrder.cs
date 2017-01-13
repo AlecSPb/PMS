@@ -24,7 +24,7 @@ namespace DocGenerator
                 doc.ReplaceText("[SupplierAddress]", reportModel.SupplierAddress ?? "");
                 doc.ReplaceText("[OrderDate]", reportModel.CreateTime.ToString("MM/dd/yyyy"));
 
-                //插入成分表格
+                //插入表格
 
                 var mainTable = doc.Tables[1];
                 double subTotalMoney = 0;
@@ -35,7 +35,7 @@ namespace DocGenerator
                         var item = reportModel.MaterialOrderItems[i];
                         Paragraph p;
                         p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
-                        p.Append((i+1).ToString());
+                        p.Append((i + 1).ToString());
 
                         p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
                         p.Append(item.Weight.ToString("N2") + "kgs");
@@ -44,24 +44,25 @@ namespace DocGenerator
                         p.Append(item.PMIWorkNumber);
 
                         p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
+                        item.Description = $"Processing fee to cast {item.Purity} {item.Composition} (atomic%;PMI to provide{item.ProvideRawMaterial};please deliver by {item.DeliveryDate.ToShortDateString()}";
                         p.Append(item.Description);
                         p.AppendLine();
 
                         p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
-                        p.Append(item.UnitPrice.ToString("N0")+"RMB");
+                        p.Append(item.UnitPrice.ToString("N0") + "RMB");
 
                         p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
                         double total = item.UnitPrice * item.Weight;
-                        p.Append(total.ToString("N0")+"RMB");
+                        p.Append(total.ToString("N0") + "RMB");
                         subTotalMoney += total;
                     }
                 }
 
-                doc.ReplaceText("[Remark]", reportModel.Remark??"");
+                doc.ReplaceText("[Remark]", reportModel.Remark ?? "");
                 doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0") + "RMB");
-                doc.ReplaceText("[ShipFee]", reportModel.ShipFee.ToString("N0")+"RMB");
-                double totalMoney =subTotalMoney+ reportModel.ShipFee;
-                doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0")+"RMB");
+                doc.ReplaceText("[ShipFee]", reportModel.ShipFee.ToString("N0") + "RMB");
+                double totalMoney = subTotalMoney + reportModel.ShipFee;
+                doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") + "RMB");
 
                 doc.Save();
             }

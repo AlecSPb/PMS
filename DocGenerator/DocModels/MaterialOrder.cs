@@ -28,7 +28,8 @@ namespace DocGenerator.DocModels
         public string Remark { get; set; }
 
         public double ShipFee { get; set; }
+        public int Priority { get; set; }
 
-        public virtual List<MaterialOrderItem> MaterialOrderItems { get; set; }
+        public List<MaterialOrderItem> MaterialOrderItems { get; set; }
     }
 }
