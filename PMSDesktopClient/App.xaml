@@ -9,7 +9,7 @@
             <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
             <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
             <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
-            <SolidColorBrush x:Key="EmergencyBrush" Color="Red"/>
+            <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
             
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>

@@ -57,7 +57,7 @@
                     <DataGridTemplateColumn Header="CreateTime">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource TextBlockDGBasic}"/>
+                                <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}" Style="{StaticResource TextBlockDGBasic}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -209,7 +209,7 @@
                 <DataGridTemplateColumn Header="DeliveryDate">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Purity}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

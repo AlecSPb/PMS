@@ -30,6 +30,7 @@
                 <MenuItem Header="{StaticResource strRecord}">
                     <MenuItem Header="Milling"/>
                     <MenuItem Header="VHP"/>
+                    <MenuItem Header="WorkBlank"/>
                     <MenuItem Header="Machine"/>
                     <MenuItem Header="{StaticResource strBonding}"/>
                     <MenuItem Header="{StaticResource strProduct}"/>
