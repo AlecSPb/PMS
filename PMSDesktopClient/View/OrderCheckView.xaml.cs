@@ -1,6 +1,4 @@
-﻿using PMSCommon;
-using PMSDesktopClient.ServiceReference;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,15 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSDesktopClient.ViewModel;
+using PMSDesktopClient.ServiceReference;
+using PMSCommon;
 
 namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// MissonView.xaml 的交互逻辑
+    /// OderCheckView.xaml 的交互逻辑
     /// </summary>
-    public partial class MissonView : UserControl
+    public partial class OrderCheckView : UserControl
     {
-        public MissonView()
+        public OrderCheckView()
         {
             InitializeComponent();
             this.DataContext = new OrderVM();
@@ -55,7 +55,5 @@ namespace PMSDesktopClient.View
             }
 
         }
-
-
     }
 }

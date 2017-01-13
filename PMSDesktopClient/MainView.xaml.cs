@@ -48,8 +48,8 @@ namespace PMSDesktopClient
                 case "OrderEditView":
                     NavigateTo(new OrderEditView());
                     break;
-                case "OrderReviewView":
-                    NavigateTo(new OrderReviewView());
+                case "OrderCheckView":
+                    NavigateTo(new OrderCheckView());
                     break;
                 case "MissonView":
                     NavigateTo(new MissonView());

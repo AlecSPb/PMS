@@ -14,17 +14,51 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strStart}">
-                <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
-                <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}" CommandParameter="MissonView"/>
-                <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}" CommandParameter="PlanView"/>
-                <MenuItem Header="Material Needs" Command="{Binding Navigate}" CommandParameter="MaterialNeedView"/>
-                <MenuItem Header="Material Orders" Command="{Binding Navigate}" CommandParameter="MaterialOrderView"/>
-                <MenuItem Header="{StaticResource strProduct}"/>
-                <MenuItem Header="{StaticResource strBonding}"/>
-                <MenuItem Header="{StaticResource strDelivery}"/>
-                <MenuItem Header="{StaticResource strRecord}"/>
+                <MenuItem Header="Sale">
+                    <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
+                    <MenuItem Header="Order Check" Command="{Binding Navigate}" CommandParameter="OrderCheckView"/>
+                </MenuItem>
+                <MenuItem Header="Material">
+                    <MenuItem Header="Material Need" Command="{Binding Navigate}" CommandParameter="MaterialNeedView"/>
+                    <MenuItem Header="Material Order" Command="{Binding Navigate}" CommandParameter="MaterialOrderView"/>
+                    <MenuItem Header="Material Inventory"/>
+                </MenuItem>
+                <MenuItem Header="Production">
+                    <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}" CommandParameter="MissonView"/>
+                    <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}" CommandParameter="PlanView"/>
+                </MenuItem>
+                <MenuItem Header="{StaticResource strRecord}">
+                    <MenuItem Header="Milling"/>
+                    <MenuItem Header="VHP"/>
+                    <MenuItem Header="Machine"/>
+                    <MenuItem Header="{StaticResource strBonding}"/>
+                    <MenuItem Header="{StaticResource strProduct}"/>
+                    <MenuItem Header="{StaticResource strDelivery}"/>
+                    <MenuItem Header="Maintenance"/>
+                </MenuItem>
+                <MenuItem Header="Statistic">
+                    <MenuItem Header="Sales Statistic"/>
+                    <MenuItem Header="Production Statistic"/>
+                </MenuItem>
                 <Separator/>
-                <MenuItem Header="{StaticResource strBasicData}"/>
+                <MenuItem Header="Data Bank">
+                    <MenuItem Header="Compound"/>
+                    <MenuItem Header="Element"/>
+                    <MenuItem Header="Mold"/>
+                    <MenuItem Header="VHP Device"/>
+                    <MenuItem Header="VHP Process"/>
+                    <MenuItem Header="Supplier Information"/>
+                    <MenuItem Header="Customer Information"/>
+                    <MenuItem Header="Delivery Address Collection"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Administrator">
+                    <MenuItem Header="User Access Control"/>
+                    <MenuItem Header="Log Information"/>
+                    <MenuItem Header="Debug Mode"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Settings"/>
                 <Separator/>
                 <MenuItem Header="Log Out"/>
                 <MenuItem x:Name="MenuExit" Header="Exit" Click="MenuExit_Click"/>

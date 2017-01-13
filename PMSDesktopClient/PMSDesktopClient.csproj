@@ -126,11 +126,11 @@
     <Compile Include="View\MissonView.xaml.cs">
       <DependentUpon>MissonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrderCheckView.xaml.cs">
+      <DependentUpon>OrderCheckView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderReviewView.xaml.cs">
-      <DependentUpon>OrderReviewView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
@@ -207,11 +207,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OrderEditView.xaml">
+    <Page Include="View\OrderCheckView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OrderReviewView.xaml">
+    <Page Include="View\OrderEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
