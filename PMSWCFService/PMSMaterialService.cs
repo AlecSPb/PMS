@@ -128,12 +128,24 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialOrder, DcMaterialOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<PMSMaterialOrder, DcMaterialOrder>();
+                    cfg.CreateMap<PMSMaterialOrderItem, DcMaterialOrderItem>();
+                });
                 var mapper = config.CreateMapper();
-                var result = dc.MaterialOrders.Where(m => m.OrderPO.Contains(orderPo) && m.Supplier.Contains(supplier) && m.State != (int)ModelState.Deleted)
+                var result = dc.MaterialOrders.Include("MaterialOrderItems").Where(m => m.OrderPO.Contains(orderPo) && m.Supplier.Contains(supplier) && m.State != (int)ModelState.Deleted)
                     .OrderByDescending(m => m.CreateTime).Skip(skip).Take(take).ToList();
                 return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(result);
 
+            }
+        }
+
+        public int GetMaterialOrderCountBySearch(string orderPo, string supplier)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != (int)ModelState.Deleted).Count();
             }
         }
 

@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201701122316199_addpriorittomaterialorder.Designer.cs">
       <DependentUpon>201701122316199_addpriorittomaterialorder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701130045282_fixspeelerro.cs" />
+    <Compile Include="Migrations\201701130045282_fixspeelerro.Designer.cs">
+      <DependentUpon>201701130045282_fixspeelerro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BasicData\Compound.cs" />
     <Compile Include="Models\BasicData\Customer.cs" />
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701122316199_addpriorittomaterialorder.resx">
       <DependentUpon>201701122316199_addpriorittomaterialorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701130045282_fixspeelerro.resx">
+      <DependentUpon>201701130045282_fixspeelerro.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

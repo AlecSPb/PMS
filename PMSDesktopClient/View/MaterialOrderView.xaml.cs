@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSDesktopClient.ServiceReference;
+using PMSCommon;
+using PMSDesktopClient.ViewModel;
 
 namespace PMSDesktopClient.View
 {
@@ -23,6 +26,38 @@ namespace PMSDesktopClient.View
         public MaterialOrderView()
         {
             InitializeComponent();
+            this.DataContext = new MaterialOrderVM();
         }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            DcMaterialOrder order = (DcMaterialOrder)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.State)
+                {
+                    case (int)ModelState.Paused:
+                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                        break;
+                    case (int)ModelState.UnCompleted:
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                        break;
+                    case (int)ModelState.Completed:
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+                if (order.Priority == (int)OrderPriority.Emerygency)
+                {
+                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
+                }
+
+            }
+        }
+
+
+
+
     }
 }

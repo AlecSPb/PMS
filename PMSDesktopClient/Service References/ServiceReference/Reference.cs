@@ -1207,6 +1207,9 @@ namespace PMSDesktopClient.ServiceReference {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSDesktopClient.ServiceReference.DcMaterialOrderItem[] MaterialOrderItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1281,6 +1284,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSDesktopClient.ServiceReference.DcMaterialOrderItem[] MaterialOrderItems {
+            get {
+                return this.MaterialOrderItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialOrderItemsField, value) != true)) {
+                    this.MaterialOrderItemsField = value;
+                    this.RaisePropertyChanged("MaterialOrderItems");
                 }
             }
         }
@@ -1965,6 +1981,12 @@ namespace PMSDesktopClient.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPageResponse")]
         System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse")]
+        int GetMaterialOrderCountBySearch(string orderPo, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse")]
         int AddMaterialOrder(PMSDesktopClient.ServiceReference.DcMaterialOrder model);
         
@@ -2043,6 +2065,14 @@ namespace PMSDesktopClient.ServiceReference {
         
         public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier) {
             return base.Channel.GetMaterialOrderBySearchInPageAsync(skip, take, orderPo, supplier);
+        }
+        
+        public int GetMaterialOrderCountBySearch(string orderPo, string supplier) {
+            return base.Channel.GetMaterialOrderCountBySearch(orderPo, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier) {
+            return base.Channel.GetMaterialOrderCountBySearchAsync(orderPo, supplier);
         }
         
         public int AddMaterialOrder(PMSDesktopClient.ServiceReference.DcMaterialOrder model) {

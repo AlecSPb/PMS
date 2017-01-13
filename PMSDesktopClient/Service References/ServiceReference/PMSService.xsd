@@ -113,6 +113,7 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaterialOrderItems" nillable="true" type="tns:ArrayOfDcMaterialOrderItem" />
       <xs:element minOccurs="0" name="OrderPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Priority" type="xs:int" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />

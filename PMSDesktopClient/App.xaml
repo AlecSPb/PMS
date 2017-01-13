@@ -6,6 +6,11 @@
              d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <Application.Resources>
         <ResourceDictionary>
+            <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
+            <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
+            <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
+            <SolidColorBrush x:Key="EmergencyBrush" Color="Red"/>
+            
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Language/us-en.xaml"/>
