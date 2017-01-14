@@ -23,7 +23,7 @@ namespace DBTransferFromOldToNew
             oldDb.Dispose();
         }
 
-        public void TransferOrder()
+        public void TransferOrderPlan()
         {
             var oldOrder = oldDb.tb_Order.ToList();
             foreach (var order in oldOrder)
@@ -122,7 +122,25 @@ namespace DBTransferFromOldToNew
             Console.WriteLine("Order And Plan Transfer Completed");
         }
 
+        public void TransferDensity()
+        {
+            var oldDensity = oldDb.tb_Density.ToList();
+            foreach (var item in oldDensity)
+            {
+                var compound = new Compound();
+                compound.ID = Guid.NewGuid();
+                compound.MaterialName = item.Material;
+                compound.Density = item.Density??0;
+                compound.InformationSource = item.Memo;
+                compound.Creator = "xs.zhou";
+                compound.CreateTime = DateTime.Now;
 
+
+                newDb.Comounds.Add(compound);
+            }
+            newDb.SaveChanges();
+
+        }
 
     }
 }

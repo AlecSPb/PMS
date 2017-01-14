@@ -13,9 +13,11 @@ namespace DBTransferFromOldToNew
 
             Console.WriteLine("Start Data Transfering");
             var transfer = new DBTransfer();
-            transfer.TransferOrder();
 
+            //注意选择自己所需的，小心操作
 
+            //transfer.TransferOrderPlan();
+            //transfer.TransferDensity();
 
 
 
