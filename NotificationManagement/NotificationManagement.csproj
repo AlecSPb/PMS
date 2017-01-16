@@ -112,6 +112,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NavigateToken.cs" />
     <Compile Include="NoticeDisplayView.xaml.cs">
       <DependentUpon>NoticeDisplayView.xaml</DependentUpon>
     </Compile>
@@ -119,6 +120,8 @@
     <Compile Include="NoticeEditView.xaml.cs">
       <DependentUpon>NoticeEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NoticeEditVM.cs" />
+    <Compile Include="NoticeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

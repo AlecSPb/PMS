@@ -20,13 +20,13 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
+                <Button Content="Add" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
                 <TextBlock Text="Type" Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox  Style="{StaticResource ComboBoxBasic}"/>
+                <ComboBox  Style="{StaticResource ComboBoxBasic}" ItemsSource="{Binding NoticeTypes}" SelectedIndex="0"/>
                 <TextBlock Text="Content" Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Text="" Style="{StaticResource TextBoxBasic}" MinWidth="150"/>
-                <Button Content="Search" Style="{StaticResource ButtonBasic}"/>
-                <Button Content="All" Style="{StaticResource ButtonBasic}"/>
+                <TextBox Text="{Binding SearchContent,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" MinWidth="150"/>
+                <Button Content="Search" Style="{StaticResource ButtonBasic}" Command="{Binding Search}"/>
+                <Button Content="All" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
             </StackPanel>
             <Button Grid.Column="1" Content="Preview" Style="{StaticResource ButtonBasic}"/>
         </Grid>
@@ -35,7 +35,8 @@
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
+                            <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                    Command="{Binding DataContext.Update,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

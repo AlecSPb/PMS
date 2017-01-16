@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace NotificationManagement
 {
@@ -23,7 +25,38 @@ namespace NotificationManagement
         public MainWindow()
         {
             InitializeComponent();
-            this.main.Content = new NoticeDisplayView();
+            SetMainContent(new NoticeDisplayView());
+
+            Messenger.Default.Register<string>(this,NavigateToken.Navigate, view =>
+            {
+                switch (view)
+                {
+                    case "NoticeDisplayView":
+                        SetMainContent(new NoticeDisplayView());
+                        break;
+                    case "NoticeEditView":
+                        SetMainContent(new NoticeEditView());
+                        break;
+                    default:
+                        SetMainContent(new NoticeDisplayView());
+                        break;
+                }
+            });
+
+        }
+
+        private void SetMainContent(UserControl view)
+        {
+            if (view!=null)
+            {
+                this.main.Content = view;
+            }
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            Messenger.Default.Unregister(this);
+            base.OnClosing(e);
         }
     }
 }
