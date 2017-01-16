@@ -14,16 +14,16 @@
                 From="2000" To="-3000"
                 Duration="0:0:20" RepeatBehavior="Forever"/>
         </Storyboard>
-        <Style TargetType="TextBlock">
+        <Style x:Key="InformationStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="40"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Orange"/>
             <Setter Property="Width" Value="3000"/>
-            <Setter Property="Background" Value="Orange"/>
         </Style>
     </Window.Resources>
-    <StackPanel Name="myStack" Orientation="Horizontal">
-        <TextBlock Name="txtInformation" MouseDown="txtInformation_MouseDown"
-                   Text="测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字">
+    <StackPanel Name="myStack">
+        <TextBlock Background="Blue" Height="10" HorizontalAlignment="Stretch"  Width="1908"/>
+        <TextBlock Name="txtInformation"  Style="{StaticResource InformationStyle}"
+                   Text="滚动消息即将开始……">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <TranslateTransform x:Name="trans" X="0"/>

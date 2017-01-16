@@ -14,6 +14,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using NotificationDAL;
+using System.Diagnostics;
 
 namespace NotificationClient
 {
@@ -25,15 +28,70 @@ namespace NotificationClient
         public MainWindow()
         {
             InitializeComponent();
+
+            now = DateTime.Now;
+            LoadNotices();
+
+            SetLoadNoticeTimer();
+
+            SetChangeNoticeTimer();
+
             (this.FindResource("story") as Storyboard).Begin();
         }
 
-        private void txtInformation_MouseDown(object sender, MouseButtonEventArgs e)
+        private DateTime now;
+
+
+        private void SetLoadNoticeTimer()
         {
-            txtInformation.Text = msg;
+            var timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 2, 0);
+            timer.Tick += (s, e) =>
+            {
+                LoadNotices();
+            };
+            timer.Start();
+
         }
 
-        string msg = "会议通知：2016-12-19 13:30 在新会议室举行上一批产品问题解决方案相关的会议 参加人员:习近平 胡锦涛 江泽民 李鹏 邓小平";
+
+
+        private void LoadNotices()
+        {
+            using (var dc = new NoticeDataContext())
+            {
+                noticeList = dc.Notices.Where(n => n.StartTime <= now && n.EndTime >= now && n.State == 1)
+                    .OrderByDescending(n => n.CreateTime).ToList();
+            }
+        }
+
+        /// <summary>
+        /// 消息列表
+        /// </summary>
+        private List<Notice> noticeList;
+
+        private int count = 0;
+        /// <summary>
+        /// 定时器，每60s更新TextBlock到下一个消息
+        /// </summary>
+        private void SetChangeNoticeTimer()
+        {
+            var timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 20);
+            timer.Tick += (s, e) =>
+            {
+                if (count >= noticeList.Count)
+                {
+                    count = 0;
+                }
+                txtInformation.Text = noticeList[count].Content;
+                Debug.Print(count.ToString());
+                Debug.Print(noticeList[count].Content);
+                count++;
+            };
+            timer.Start();
+        }
+
 
     }
 }
