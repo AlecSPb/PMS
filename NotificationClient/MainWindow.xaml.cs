@@ -25,9 +25,15 @@ namespace NotificationClient
         public MainWindow()
         {
             InitializeComponent();
+            (this.FindResource("story") as Storyboard).Begin();
         }
 
-       //string msg = "会议通知：2016-12-19 13:30 在新会议室举行上一批产品问题解决方案相关的会议 参加人员:习近平 胡锦涛 江泽民 李鹏 邓小平";
+        private void txtInformation_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtInformation.Text = msg;
+        }
+
+        string msg = "会议通知：2016-12-19 13:30 在新会议室举行上一批产品问题解决方案相关的会议 参加人员:习近平 胡锦涛 江泽民 李鹏 邓小平";
 
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotificationManagement"
         mc:Ignorable="d"
-        Style="{StaticResource WindowBasic}"
+        WindowState="Maximized"
         Icon="Resources/Image/notification_warning.png"
         Title="Notification Management System" Height="350" Width="825">
     <Grid>
@@ -14,14 +14,14 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <ContentControl x:Name="main"/>
-        <Grid Grid.Row="1" Background="{StaticResource StatusBarBackground}">
+        <Grid Grid.Row="1" Background="{StaticResource BackgroundStatusBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="状态信息"/>
-            <TextBlock Grid.Column="2" Text="时间"/>
+            <TextBlock Grid.Column="0" Text="状态信息" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Grid.Column="2" Text="时间" Style="{StaticResource TextBlockBasic}"/>
         </Grid>
     </Grid>
 </Window>

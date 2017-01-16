@@ -4,42 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotificationClient"
-        mc:Ignorable="d"
-        Name="window"
-        Title="MainWindow" Height="100" MaxHeight="100" Width="525"
-        WindowStartupLocation="Manual" Top="0" Left="0"
-        WindowState="Maximized" 
-        DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Background="Transparent" AllowsTransparency="True"
+        mc:Ignorable="d" Name="window" Title="MainWindow" MaxHeight="100" Width="525" Height="60"
+        WindowStartupLocation="Manual" Top="0" Left="0" WindowState="Maximized" 
+        DataContext="{Binding RelativeSource={RelativeSource Self}}" Background="Transparent" AllowsTransparency="True"
         WindowStyle="None" Topmost="True">
-    <StackPanel Name="myStack" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5">
-        <StackPanel.Resources>
-            <local:NegativeConverter x:Key="Negative"/>
-            <Storyboard x:Key="slide">
-                <DoubleAnimation From="100" 
-                                 To="{Binding ElementName=myCanvas,Path=Width,Converter={StaticResource Negative}}"
-                                 Storyboard.TargetName="trans"
-                                 Storyboard.TargetProperty="X"
-                                 Duration="0:0:15"
-                                 RepeatBehavior="Forever"/>
-            </Storyboard>
-        </StackPanel.Resources>
-        <StackPanel.Triggers>
-            <EventTrigger RoutedEvent="StackPanel.Loaded">
-                <BeginStoryboard Storyboard="{StaticResource slide}"/>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="StackPanel.SizeChanged">
-                <BeginStoryboard Storyboard="{StaticResource slide}"/>
-            </EventTrigger>
-        </StackPanel.Triggers>
-        <StackPanel.RenderTransform>
-            <TranslateTransform x:Name="trans" X="0" />
-        </StackPanel.RenderTransform>
-        <Canvas x:Name="myCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ClipToBounds="False" Width="{Binding ElementName=myStack,Path=ActualWidth}">
-            <TextBlock x:Name="txt1" Text="滚动信息1滚动信息1滚动信息1" Foreground="Blue" FontSize="30" Canvas.Left="0"   Width="2000"/>
-            <TextBlock x:Name="txt2" Foreground="Orange" 
-                       Canvas.Left="{Binding ElementName=txt1,Path=ActualWidth}" Text="滚动信息2滚动信息2滚动信息2" FontSize="30"  Width="2000">
-            </TextBlock>
-        </Canvas>
+    <Window.Resources>
+        <Storyboard x:Key="story">
+            <DoubleAnimation Storyboard.TargetName="trans" Storyboard.TargetProperty="X"
+                From="2000" To="-3000"
+                Duration="0:0:20" RepeatBehavior="Forever"/>
+        </Storyboard>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="3000"/>
+            <Setter Property="Background" Value="Orange"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Name="myStack" Orientation="Horizontal">
+        <TextBlock Name="txtInformation" MouseDown="txtInformation_MouseDown"
+                   Text="测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="trans" X="0"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
     </StackPanel>
 </Window>

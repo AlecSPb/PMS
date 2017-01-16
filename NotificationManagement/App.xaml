@@ -6,8 +6,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/WpfSkin;component/BasicDesktopStyle.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WpfSkin;component/SkinWarm.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Style/Desktop.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Skin/Warm.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

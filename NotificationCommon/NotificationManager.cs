@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSNotice.Service
+namespace NotificationClient
 {
-    public class WeChatNotice
+    public class NotificationManager
     {
+       
     }
 }

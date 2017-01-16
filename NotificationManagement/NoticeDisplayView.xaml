@@ -6,62 +6,85 @@
              xmlns:local="clr-namespace:NotificationManagement"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <local:NoticeDisplayVM/>
+    </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="{StaticResource ToolBarBackground}">
+        <Grid Grid.Row="0" Background="{StaticResource BackgroundNavigateBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
-                <TextBlock Text="Type" Style="{StaticResource TextblockBasic}"/>
+                <TextBlock Text="Type" Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox  Style="{StaticResource ComboBoxBasic}"/>
-                <TextBlock Text="Content" Style="{StaticResource TextblockBasic}"/>
+                <TextBlock Text="Content" Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Text="" Style="{StaticResource TextBoxBasic}" MinWidth="150"/>
-                <CheckBox Content="Include Canceled Notices" Style="{StaticResource CheckBoxBasic}"/>
                 <Button Content="Search" Style="{StaticResource ButtonBasic}"/>
                 <Button Content="All" Style="{StaticResource ButtonBasic}"/>
             </StackPanel>
             <Button Grid.Column="1" Content="Preview" Style="{StaticResource ButtonBasic}"/>
         </Grid>
-        <DataGrid Grid.Row="1" Style="{StaticResource DataGridBasic}">
+        <DataGrid Grid.Row="1" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding Notices}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Edit" Style="{StaticResource ButtonDataGrid}"/>
+                            <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Type">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Type}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Content">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Content}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="State">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding State}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Priority">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Priority}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Create Time">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding CreateTime}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Start Time">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding StartTime}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="EndTime">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding EndTime}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

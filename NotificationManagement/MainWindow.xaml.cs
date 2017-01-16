@@ -23,7 +23,7 @@ namespace NotificationManagement
         public MainWindow()
         {
             InitializeComponent();
-            this.main.Content = new NoticeEditView();
+            this.main.Content = new NoticeDisplayView();
         }
     }
 }
