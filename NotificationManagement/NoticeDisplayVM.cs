@@ -57,12 +57,12 @@ namespace NotificationManagement
 
         private void ActionAll()
         {
-            throw new NotImplementedException();
+            LoadNotices();
         }
 
         private void ActionSearch()
         {
-            throw new NotImplementedException();
+            LoadNotices();
         }
 
         private void LoadNotices()

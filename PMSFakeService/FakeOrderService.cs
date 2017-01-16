@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSModel;
-using PMSIService;
 
 namespace PMSFakeService
 {
-    public class FakeOrderService : IOrder
+    public class FakeOrderService 
     {
         public int Add(MainOrder order)
         {

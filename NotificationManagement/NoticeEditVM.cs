@@ -41,15 +41,16 @@ namespace NotificationManagement
             if (model != null)
             {
                 CurrentNotice = model;
-                IsNew = true;
+                IsNew = false;
             }
             else
             {
-                IsNew = false;
+
+                IsNew = true;
                 var notice = new Notice();
                 notice.ID = Guid.NewGuid();
                 notice.StartTime = DateTime.Now;
-                notice.StartTime = DateTime.Now.AddDays(1);
+                notice.EndTime = DateTime.Now.AddDays(7);
                 notice.Content = "";
                 notice.CreateTime = DateTime.Now;
                 notice.Creator = "xs.zhou";
@@ -77,12 +78,13 @@ namespace NotificationManagement
 
         private void ActionSave()
         {
+            int result = 0;
             if (IsNew)
             {
                 using (var dc = new NoticeDataContext())
                 {
                     dc.Notices.Add(CurrentNotice);
-                    dc.SaveChanges();
+                    result = dc.SaveChanges();
                 }
             }
             else
@@ -90,11 +92,14 @@ namespace NotificationManagement
                 using (var dc = new NoticeDataContext())
                 {
                     dc.Entry(CurrentNotice).State = System.Data.Entity.EntityState.Modified;
-                    dc.SaveChanges();
+                    result = dc.SaveChanges();
                 }
             }
 
-
+            if (result > 0)
+            {
+                Messenger.Default.Send<string>("NoticeDisplayView", NavigateToken.Navigate);
+            }
 
         }
 

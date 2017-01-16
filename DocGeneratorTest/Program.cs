@@ -107,7 +107,7 @@ namespace DocGeneratorTest
             model.Weight = "954.0";
             model.Density = "5.75";
             model.Resistance = "50000";
-            
+
             if (true)
             {
                 model.CompositionXRF = @"No.,Cu atm%,In atm%,Ga atm%,Se atm%
@@ -120,7 +120,7 @@ Average,22.69,20.01,7.14,50.15";
             }
             else
             {
-                model.CompositionXRF = "含S，无法测试";
+                //model.CompositionXRF = "含S，无法测试";
             }
             model.CreateTime = DateTime.Now;
             model.Creator = "xs.zhou";
