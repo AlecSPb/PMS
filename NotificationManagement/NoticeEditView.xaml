@@ -5,10 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NotificationManagement"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <local:NoticeEditVM/>
-    </UserControl.DataContext>
+             d:DesignHeight="400" d:DesignWidth="800">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,7 +15,7 @@
             <Button Content="Give Up" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <Button Content="Save" Style="{StaticResource ButtonBasic}" Command="{Binding Save}"/>
         </StackPanel>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" DataContext="{Binding CurrentNotice}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -40,20 +37,21 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Notice Type" Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ComboBoxBasic}" ItemsSource="{Binding NoticeTypes,Mode=TwoWay,
-                    UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ComboBoxBasic}" ItemsSource="{Binding DataContext.NoticeTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding Type}"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Notice Content" Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="2" Grid.Column="1"
+                <TextBox Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"
                          Height="100" Style="{StaticResource TextBoxMultilineBasic}" HorizontalAlignment="Stretch" Text="{Binding Content}"/>
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Start Time" Style="{StaticResource TextBlockBasic}"/>
                 <DatePicker Grid.Row="3" Grid.Column="1"  Style="{StaticResource DatePickerBasic}" SelectedDate="{Binding StartTime}"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="End Time" Style="{StaticResource TextBlockBasic}"/>
                 <DatePicker Grid.Row="4" Grid.Column="1"  Style="{StaticResource DatePickerBasic}" SelectedDate="{Binding EndTime}"/>
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Priority" Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"/>
+                <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBoxBasic}" SelectedItem="{Binding Priority}" 
+                          ItemsSource="{Binding DataContext.NoticePriority,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="State" Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"/>
-
+                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource ComboBoxBasic}" SelectedItem="{Binding State}"
+                          ItemsSource="{Binding DataContext.NoticeState,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"/>
 
             </Grid>
         </Grid>

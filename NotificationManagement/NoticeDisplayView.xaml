@@ -36,7 +36,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
-                                    Command="{Binding DataContext.Update,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                                    Command="{Binding DataContext.Update,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

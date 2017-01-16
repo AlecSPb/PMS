@@ -121,6 +121,8 @@
       <DependentUpon>NoticeEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="NoticeEditVM.cs" />
+    <Compile Include="NoticePriority.cs" />
+    <Compile Include="NoticeState.cs" />
     <Compile Include="NoticeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

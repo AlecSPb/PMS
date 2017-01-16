@@ -14,15 +14,51 @@ namespace NotificationManagement
 {
     public class NoticeEditVM : ViewModelBase
     {
-        public NoticeEditVM()
+        private bool IsNew;
+        public NoticeEditVM(Notice model)
         {
             NoticeTypes = new ObservableCollection<string>();
             NoticeTypes.Clear();
-            NoticeTypes.Add("All");
             var noticeTypes = Enum.GetNames(typeof(NoticeType));
-            NoticeTypes.ToList().ForEach(n => NoticeTypes.Add(n));
+            noticeTypes.ToList().ForEach(n => NoticeTypes.Add(n));
 
-            CurrentNotice = new Notice();
+            NoticeState = new ObservableCollection<int>();
+            NoticeState.Clear();
+            var states = Enum.GetValues(typeof(NoticeState));
+            foreach (var item in states)
+            {
+                NoticeState.Add((int)item);
+            }
+
+            NoticePriority = new ObservableCollection<int>();
+            NoticePriority.Clear();
+            var priority = Enum.GetValues(typeof(NoticePriority));
+            foreach (var item in priority)
+            {
+                NoticePriority.Add((int)item);
+            }
+
+            if (model != null)
+            {
+                CurrentNotice = model;
+                IsNew = true;
+            }
+            else
+            {
+                IsNew = false;
+                var notice = new Notice();
+                notice.ID = Guid.NewGuid();
+                notice.StartTime = DateTime.Now;
+                notice.StartTime = DateTime.Now.AddDays(1);
+                notice.Content = "";
+                notice.CreateTime = DateTime.Now;
+                notice.Creator = "xs.zhou";
+                notice.State = 1;
+                notice.Priority = 1;
+                notice.Type = Enum.GetName(typeof(NoticeType), 0);
+
+                CurrentNotice = notice;
+            }
 
 
             IntitialCommands();
@@ -41,7 +77,25 @@ namespace NotificationManagement
 
         private void ActionSave()
         {
-            throw new NotImplementedException();
+            if (IsNew)
+            {
+                using (var dc = new NoticeDataContext())
+                {
+                    dc.Notices.Add(CurrentNotice);
+                    dc.SaveChanges();
+                }
+            }
+            else
+            {
+                using (var dc = new NoticeDataContext())
+                {
+                    dc.Entry(CurrentNotice).State = System.Data.Entity.EntityState.Modified;
+                    dc.SaveChanges();
+                }
+            }
+
+
+
         }
 
         private void ActionGiveUp()
@@ -50,6 +104,8 @@ namespace NotificationManagement
         }
 
         public ObservableCollection<string> NoticeTypes { get; set; }
+        public ObservableCollection<int> NoticeState { get; set; }
+        public ObservableCollection<int> NoticePriority { get; set; }
         private Notice currentNotice;
         public Notice CurrentNotice
         {
@@ -62,7 +118,6 @@ namespace NotificationManagement
                 RaisePropertyChanged(() => CurrentNotice);
             }
         }
-
         #region Commands
         public RelayCommand GiveUp { get; set; }
         public RelayCommand Save { get; set; }

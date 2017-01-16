@@ -36,7 +36,7 @@ namespace NotificationManagement
         {
             Add = new RelayCommand<Notice>(ActionAdd);
             Update = new RelayCommand<Notice>(ActionUpdate);
-            Search = new RelayCommand(ActionSearch,CanSearch);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
         }
 
@@ -47,12 +47,12 @@ namespace NotificationManagement
 
         private void ActionUpdate(Notice obj)
         {
-            throw new NotImplementedException();
+            Messenger.Default.Send<Notice>(obj, NavigateToken.Navigate);
         }
 
         private void ActionAdd(Notice obj)
         {
-            Messenger.Default.Send<string>("NoticeEditView", NavigateToken.Navigate);
+            Messenger.Default.Send<Notice>(null, NavigateToken.Navigate);
         }
 
         private void ActionAll()

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GalaSoft.MvvmLight.Messaging;
+using NotificationDAL;
 
 namespace NotificationManagement
 {
@@ -27,27 +28,32 @@ namespace NotificationManagement
             InitializeComponent();
             SetMainContent(new NoticeDisplayView());
 
-            Messenger.Default.Register<string>(this,NavigateToken.Navigate, view =>
+            Messenger.Default.Register<string>(this, NavigateToken.Navigate, view =>
+             {
+                 switch (view)
+                 {
+                     case "NoticeDisplayView":
+                         SetMainContent(new NoticeDisplayView());
+                         break;
+                     default:
+                         SetMainContent(new NoticeDisplayView());
+                         break;
+                 }
+             });
+
+            Messenger.Default.Register<Notice>(this, NavigateToken.Navigate, model =>
             {
-                switch (view)
-                {
-                    case "NoticeDisplayView":
-                        SetMainContent(new NoticeDisplayView());
-                        break;
-                    case "NoticeEditView":
-                        SetMainContent(new NoticeEditView());
-                        break;
-                    default:
-                        SetMainContent(new NoticeDisplayView());
-                        break;
-                }
+                var vm = new NoticeEditVM(model);
+                var v = new NoticeEditView();
+                v.DataContext = vm;
+                SetMainContent(v);
             });
 
         }
 
         private void SetMainContent(UserControl view)
         {
-            if (view!=null)
+            if (view != null)
             {
                 this.main.Content = view;
             }
