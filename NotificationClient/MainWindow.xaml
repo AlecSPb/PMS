@@ -11,13 +11,13 @@
     <Window.Resources>
         <Storyboard x:Key="story">
             <DoubleAnimation Storyboard.TargetName="trans" Storyboard.TargetProperty="X"
-                From="2000" To="-3000"
+                From="2000" To="-4000"
                 Duration="0:0:20" RepeatBehavior="Forever"/>
         </Storyboard>
         <Style x:Key="InformationStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="Foreground" Value="Orange"/>
-            <Setter Property="Width" Value="3000"/>
+            <Setter Property="Width" Value="4000"/>
         </Style>
     </Window.Resources>
     <StackPanel Name="myStack">
