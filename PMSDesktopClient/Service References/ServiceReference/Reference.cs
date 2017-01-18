@@ -2131,4 +2131,65 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.DeleteMaterialOrderItemAsync(id);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IMissonService")]
+    public interface IMissonService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
+        PMSDesktopClient.ServiceReference.DcOrder[] GetMissonBySearchInPage(int skip, int take, string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take, string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
+        int GetMissonCountBySearch(string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
+        System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync(string customer, string compositionstd);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMissonServiceChannel : PMSDesktopClient.ServiceReference.IMissonService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MissonServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IMissonService>, PMSDesktopClient.ServiceReference.IMissonService {
+        
+        public MissonServiceClient() {
+        }
+        
+        public MissonServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MissonServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MissonServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MissonServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSDesktopClient.ServiceReference.DcOrder[] GetMissonBySearchInPage(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetMissonBySearchInPage(skip, take, customer, compositionstd);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetMissonBySearchInPageAsync(skip, take, customer, compositionstd);
+        }
+        
+        public int GetMissonCountBySearch(string customer, string compositionstd) {
+            return base.Channel.GetMissonCountBySearch(customer, compositionstd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync(string customer, string compositionstd) {
+            return base.Channel.GetMissonCountBySearchAsync(customer, compositionstd);
+        }
+    }
 }

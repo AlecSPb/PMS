@@ -12,9 +12,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class OrderVM : ViewModelBase
+    public class MissonVM : ViewModelBase
     {
-        public OrderVM()
+        public MissonVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -25,7 +25,7 @@ namespace PMSDesktopClient.ViewModel
         {
             SearchCustomer = "";
             SearchCompositoinStandard = "";
-            MainOrders = new ObservableCollection<DcOrder>();
+            MainMissons = new ObservableCollection<DcOrder>();
         }
         private void InitializeCommands()
         {
@@ -56,8 +56,8 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new OrderServiceClient();
-            RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
+            var service = new MissonServiceClient();
+            RecordCount = service.GetMissonCountBySearch(SearchCustomer, SearchCompositoinStandard);
             ActionPaging();
         }
         /// <summary>
@@ -65,13 +65,13 @@ namespace PMSDesktopClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new OrderServiceClient();
+            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
-            MainOrders.Clear();
-            orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+            var orders = service.GetMissonBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+            MainMissons.Clear();
+            orders.ToList<DcOrder>().ForEach(o => MainMissons.Add(o));
         }
 
 
@@ -140,11 +140,11 @@ namespace PMSDesktopClient.ViewModel
 
 
 
-        private ObservableCollection<DcOrder> mainOrders;
-        public ObservableCollection<DcOrder> MainOrders
+        private ObservableCollection<DcOrder> mainMissons;
+        public ObservableCollection<DcOrder> MainMissons
         {
-            get { return mainOrders; }
-            set { mainOrders = value; RaisePropertyChanged(nameof(MainOrders)); }
+            get { return mainMissons; }
+            set { mainMissons = value; RaisePropertyChanged(nameof(MainMissons)); }
         }
 
         #endregion

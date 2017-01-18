@@ -30,12 +30,11 @@ namespace PMSDAL
 
         //模具和装料要求
         public string CurrentMold { get; set; }
-        public string FillRequirement { get; set; }
         public double? CalculationDensity { get; set; }
         public double? MoldDiameter { get; set; }
         public double? Thickness { get; set; }
         public int Quantity { get; set; }
-
+        public string FillRequirement { get; set; }
         //单片装料重量按照经验往往比上面计算得出的理论重量要多
         public double? PowderWeight { get; set; }
         public string GrainSize { get; set; }

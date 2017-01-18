@@ -40,6 +40,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="mainDg" Grid.Row="0" Style="{StaticResource DataGridBasic}"
+                      SelectedIndex="0"
                           ItemsSource="{Binding MainMaterialOrders}" LoadingRow="DataGrid_LoadingRow">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Edit">

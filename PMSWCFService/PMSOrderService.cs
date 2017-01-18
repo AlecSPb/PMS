@@ -10,7 +10,7 @@ using PMSCommon;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IOrderService
+    public partial class PMSService : IOrderService, IMissonService
     {
         public int AddOrder(DcOrder order)
         {
@@ -50,6 +50,27 @@ namespace PMSWCFService
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
                     dc.Orders.OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
                 return result;
+            }
+        }
+
+        public List<DcOrder> GetMissonBySearchInPage(int skip, int take, string customer, string compositionstd)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
+                var mapper = config.CreateMapper();
+                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
+                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString())
+                    .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
+                return result;
+            }
+        }
+
+        public int GetMissonCountBySearch(string customer, string compositionstd)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString()).Count();
             }
         }
 

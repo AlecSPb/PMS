@@ -103,7 +103,9 @@
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
+    <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
+    <Compile Include="ViewModel\RecordProductVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\BondingView.xaml.cs">
       <DependentUpon>BondingView.xaml</DependentUpon>
