@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace PMSDAL
 {
     //发货单
-    public class Delivery
+    public class RecordDelivery
     {
-        public Delivery()
+        public RecordDelivery()
         {
-            DeliveryItems = new List<PMSDAL.DeliveryItem>();
+            DeliveryItems = new List<RecordDeliveryItem>();
         }
         [Key]
         public Guid ID { get; set; }
@@ -32,6 +32,6 @@ namespace PMSDAL
         public string PackageInformation { get; set; }//包装重量等细节信息
         public int State { get; set; }//取消，未审核，审核通过，已发货
         
-        public virtual List<DeliveryItem> DeliveryItems { get; set; }
+        public virtual List<RecordDeliveryItem> DeliveryItems { get; set; }
     }
 }

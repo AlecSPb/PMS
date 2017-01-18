@@ -89,8 +89,8 @@
     <Compile Include="Entities\VHPDevice.cs" />
     <Compile Include="Entities\VHPMold.cs" />
     <Compile Include="Entities\VHPProcess.cs" />
-    <Compile Include="Entities\Delivery.cs" />
-    <Compile Include="Entities\DeliveryItem.cs" />
+    <Compile Include="Entities\RecordDelivery.cs" />
+    <Compile Include="Entities\RecordDeliveryItem.cs" />
     <Compile Include="Entities\PMSMaterialOrder.cs" />
     <Compile Include="Entities\PMSMaterialOrderItem.cs" />
     <Compile Include="Entities\PMSMaterialNeed.cs" />

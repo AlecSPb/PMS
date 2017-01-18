@@ -12,7 +12,7 @@ namespace PMSDAL
     /// 送货单项目
     /// 不涉及过多产品具体信息，在所有产品和样品之间通用
     /// </summary>
-    public class DeliveryItem
+    public class RecordDeliveryItem
     {
         [Key]
         public Guid ID { get; set; }
