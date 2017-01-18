@@ -528,9 +528,6 @@ namespace PMSDesktopClient.ServiceReference {
         private string CurrentMoldField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FillRequirementField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FillingRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -543,10 +540,7 @@ namespace PMSDesktopClient.ServiceReference {
         private System.Nullable<double> KeepTempTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LaterProcessField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LaterProcessDetailsField;
+        private string MachineRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MillingRequirementField;
@@ -571,6 +565,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<double> PressureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProcessCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int QuantityField;
@@ -598,6 +595,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VHPDeviceCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<double> VaccumField;
@@ -665,19 +665,6 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FillRequirement {
-            get {
-                return this.FillRequirementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FillRequirementField, value) != true)) {
-                    this.FillRequirementField = value;
-                    this.RaisePropertyChanged("FillRequirement");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string FillingRequirement {
             get {
                 return this.FillingRequirementField;
@@ -730,27 +717,14 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LaterProcess {
+        public string MachineRequirement {
             get {
-                return this.LaterProcessField;
+                return this.MachineRequirementField;
             }
             set {
-                if ((object.ReferenceEquals(this.LaterProcessField, value) != true)) {
-                    this.LaterProcessField = value;
-                    this.RaisePropertyChanged("LaterProcess");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LaterProcessDetails {
-            get {
-                return this.LaterProcessDetailsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LaterProcessDetailsField, value) != true)) {
-                    this.LaterProcessDetailsField = value;
-                    this.RaisePropertyChanged("LaterProcessDetails");
+                if ((object.ReferenceEquals(this.MachineRequirementField, value) != true)) {
+                    this.MachineRequirementField = value;
+                    this.RaisePropertyChanged("MachineRequirement");
                 }
             }
         }
@@ -855,6 +829,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((this.PressureField.Equals(value) != true)) {
                     this.PressureField = value;
                     this.RaisePropertyChanged("Pressure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProcessCode {
+            get {
+                return this.ProcessCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProcessCodeField, value) != true)) {
+                    this.ProcessCodeField = value;
+                    this.RaisePropertyChanged("ProcessCode");
                 }
             }
         }
@@ -972,6 +959,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.VHPDeviceCodeField, value) != true)) {
                     this.VHPDeviceCodeField = value;
                     this.RaisePropertyChanged("VHPDeviceCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPRequirement {
+            get {
+                return this.VHPRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPRequirementField, value) != true)) {
+                    this.VHPRequirementField = value;
+                    this.RaisePropertyChanged("VHPRequirement");
                 }
             }
         }
@@ -1662,6 +1662,307 @@ namespace PMSDesktopClient.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordProduct", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcRecordProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionXRFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ResistanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionAbbr {
+            get {
+                return this.CompositionAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
+                    this.CompositionAbbrField = value;
+                    this.RaisePropertyChanged("CompositionAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionXRF {
+            get {
+                return this.CompositionXRFField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionXRFField, value) != true)) {
+                    this.CompositionXRFField = value;
+                    this.RaisePropertyChanged("CompositionXRF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Density {
+            get {
+                return this.DensityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DensityField, value) != true)) {
+                    this.DensityField = value;
+                    this.RaisePropertyChanged("Density");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionActual {
+            get {
+                return this.DimensionActualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
+                    this.DimensionActualField = value;
+                    this.RaisePropertyChanged("DimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PO {
+            get {
+                return this.POField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POField, value) != true)) {
+                    this.POField = value;
+                    this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Resistance {
+            get {
+                return this.ResistanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResistanceField, value) != true)) {
+                    this.ResistanceField = value;
+                    this.RaisePropertyChanged("Resistance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sample {
+            get {
+                return this.SampleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleField, value) != true)) {
+                    this.SampleField = value;
+                    this.RaisePropertyChanged("Sample");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((this.StateField.Equals(value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IOrderService")]
     public interface IOrderService {
@@ -2190,6 +2491,111 @@ namespace PMSDesktopClient.ServiceReference {
         
         public System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync(string customer, string compositionstd) {
             return base.Channel.GetMissonCountBySearchAsync(customer, compositionstd);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordProductService")]
+    public interface IRecordProductService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPageResponse")]
+        PMSDesktopClient.ServiceReference.DcRecordProduct[] GetRecordProductBySearchInPage(int skip, int take, string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPageResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordProduct[]> GetRecordProductBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPageRespo" +
+            "nse")]
+        int GetRecordProductCountBySearchInPage(string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPageRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<int> GetRecordProductCountBySearchInPageAsync(string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/AddRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/AddRecordProductResponse")]
+        int AddRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/AddRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/AddRecordProductResponse")]
+        System.Threading.Tasks.Task<int> AddRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/UpdateRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/UpdateRecordProductResponse")]
+        int UpdateRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/UpdateRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/UpdateRecordProductResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/DeleteRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/DeleteRecordProductResponse")]
+        int DeleteRecordProduct(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/DeleteRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/DeleteRecordProductResponse")]
+        System.Threading.Tasks.Task<int> DeleteRecordProductAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRecordProductServiceChannel : PMSDesktopClient.ServiceReference.IRecordProductService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RecordProductServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordProductService>, PMSDesktopClient.ServiceReference.IRecordProductService {
+        
+        public RecordProductServiceClient() {
+        }
+        
+        public RecordProductServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RecordProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecordProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecordProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSDesktopClient.ServiceReference.DcRecordProduct[] GetRecordProductBySearchInPage(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordProductBySearchInPage(skip, take, productId, compositionStd);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordProduct[]> GetRecordProductBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordProductBySearchInPageAsync(skip, take, productId, compositionStd);
+        }
+        
+        public int GetRecordProductCountBySearchInPage(string productId, string compositionStd) {
+            return base.Channel.GetRecordProductCountBySearchInPage(productId, compositionStd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordProductCountBySearchInPageAsync(string productId, string compositionStd) {
+            return base.Channel.GetRecordProductCountBySearchInPageAsync(productId, compositionStd);
+        }
+        
+        public int AddRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
+            return base.Channel.AddRecordProduct(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
+            return base.Channel.AddRecordProductAsync(model);
+        }
+        
+        public int UpdateRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
+            return base.Channel.UpdateRecordProduct(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
+            return base.Channel.UpdateRecordProductAsync(model);
+        }
+        
+        public int DeleteRecordProduct(System.Guid id) {
+            return base.Channel.DeleteRecordProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteRecordProductAsync(System.Guid id) {
+            return base.Channel.DeleteRecordProductAsync(id);
         }
     }
 }

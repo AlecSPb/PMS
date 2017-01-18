@@ -82,6 +82,14 @@
     <Compile Include="Migrations\201701180249014_changepmsdal.Designer.cs">
       <DependentUpon>201701180249014_changepmsdal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701180546234_changedeliveryentity.cs" />
+    <Compile Include="Migrations\201701180546234_changedeliveryentity.Designer.cs">
+      <DependentUpon>201701180546234_changedeliveryentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701180635485_changevhpplan.cs" />
+    <Compile Include="Migrations\201701180635485_changevhpplan.Designer.cs">
+      <DependentUpon>201701180635485_changevhpplan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Compound.cs" />
     <Compile Include="Entities\Customer.cs" />
@@ -142,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701180249014_changepmsdal.resx">
       <DependentUpon>201701180249014_changepmsdal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180546234_changedeliveryentity.resx">
+      <DependentUpon>201701180546234_changedeliveryentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180635485_changevhpplan.resx">
+      <DependentUpon>201701180635485_changevhpplan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

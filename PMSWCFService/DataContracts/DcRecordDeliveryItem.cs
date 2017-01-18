@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PMSDAL
+namespace PMSWCFService.DataContracts
 {
     /// <summary>
     /// 送货单项目
     /// 不涉及过多产品具体信息，在所有产品和样品之间通用
     /// </summary>
-    public class RecordDeliveryItem
+    public class DcRecordDeliveryItem
     {
         [Key]
         public Guid ID { get; set; }
@@ -24,9 +24,5 @@ namespace PMSDAL
         public string DetailRecord{ get; set; }//复杂的信息写在这里
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         public string Remark { get; set; }
-
-        public Guid? DeliveryID { get; set; }
-        [ForeignKey("DeliveryID")]
-        public virtual RecordDelivery RecordDelivery { get; set; }
     }
 }

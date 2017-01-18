@@ -44,7 +44,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Details" Style="{StaticResource ButtonDGBasic}"/>
+                                <Button Content="Details" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext. VHPDetails,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -166,13 +167,13 @@
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
-        <DataGrid Grid.Row="4" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding Source={x:Null}}">
+        <DataGrid Grid.Row="4" Style="{StaticResource DataGridBasic}"
+                  ItemsSource="{Binding PlanVHPItems}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Details" Style="{StaticResource ButtonDGBasic}"/>
                                 <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
                             </StackPanel>
                         </DataTemplate>
@@ -181,7 +182,7 @@
                 <DataGridTemplateColumn Header="Plan Date">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding PlanDate}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -195,62 +196,54 @@
                 <DataGridTemplateColumn Header="DeviceCode">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding VHPDeviceCode}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="MoldCode">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding CurrentMold}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="MoldDiameter">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding MoldDiameter}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Thickness">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding Thickness}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Cal Density">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding CalculationDensity}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Quantity">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding Quantity}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Fill Weight">
+                <DataGridTemplateColumn Header="Process Code">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Header="Process Code">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="" Style="{StaticResource TextBlockDGBasic}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-           
-                
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

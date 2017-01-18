@@ -37,8 +37,8 @@ namespace PMSDAL
 
 
         //Delivery
-        public DbSet<Delivery> Deliverys { get; set; }
-        public DbSet<DeliveryItem> DeliveryItems { get; set; }
+        public DbSet<RecordDelivery> Deliverys { get; set; }
+        public DbSet<RecordDeliveryItem> DeliveryItems { get; set; }
 
         //Record
         //public DbSet<RecordBonding>  RecordBondings { get; set; }

@@ -26,6 +26,7 @@ namespace PMSDesktopClient.ViewModel
             SearchCustomer = "";
             SearchCompositoinStandard = "";
             MainMissons = new ObservableCollection<DcOrder>();
+            PlanVHPItems = new ObservableCollection<DcPlanVHP>();
         }
         private void InitializeCommands()
         {
@@ -33,6 +34,18 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch,CanSearch);
             All = new RelayCommand(ActionAll);
+            VHPDetails = new RelayCommand<ServiceReference.DcOrder>(ActionVHPDetails);
+        }
+
+        private void ActionVHPDetails(DcOrder obj)
+        {
+            if (obj!=null)
+            {
+                var service = new PlanVHPServiceClient();
+                var plans = service.GetVHPPlansByOrderID(obj.ID).ToList();
+                PlanVHPItems.Clear();
+                plans.ForEach(p => PlanVHPItems.Add(p));
+            }
         }
 
         private bool CanSearch()
@@ -138,7 +151,7 @@ namespace PMSDesktopClient.ViewModel
 
 
 
-
+        public ObservableCollection<DcPlanVHP> PlanVHPItems { get; set; }
 
         private ObservableCollection<DcOrder> mainMissons;
         public ObservableCollection<DcOrder> MainMissons
@@ -155,6 +168,10 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand PageChanged { get; private set; }
+
+        public RelayCommand<DcOrder> VHPDetails { get; set; }
+
+
         #endregion
     }
 }

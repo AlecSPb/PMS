@@ -163,6 +163,36 @@
   <wsdl:message name="IMissonService_GetMissonCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonCountBySearchResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordProductService_GetRecordProductBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordProductBySearchInPage" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_GetRecordProductBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordProductBySearchInPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_GetRecordProductCountBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordProductCountBySearchInPage" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_GetRecordProductCountBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordProductCountBySearchInPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_AddRecordProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordProduct" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_AddRecordProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_UpdateRecordProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordProduct" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_UpdateRecordProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_DeleteRecordProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordProduct" />
+  </wsdl:message>
+  <wsdl:message name="IRecordProductService_DeleteRecordProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordProductResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -277,7 +307,29 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse" message="tns:IMissonService_GetMissonCountBySearch_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IOrderService" type="tns:IOrderService">
+  <wsdl:portType name="IRecordProductService">
+    <wsdl:operation name="GetRecordProductBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPage" message="tns:IRecordProductService_GetRecordProductBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPageResponse" message="tns:IRecordProductService_GetRecordProductBySearchInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordProductCountBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPage" message="tns:IRecordProductService_GetRecordProductCountBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPageResponse" message="tns:IRecordProductService_GetRecordProductCountBySearchInPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordProductService/AddRecordProduct" message="tns:IRecordProductService_AddRecordProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordProductService/AddRecordProductResponse" message="tns:IRecordProductService_AddRecordProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordProductService/UpdateRecordProduct" message="tns:IRecordProductService_UpdateRecordProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordProductService/UpdateRecordProductResponse" message="tns:IRecordProductService_UpdateRecordProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecordProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordProductService/DeleteRecordProduct" message="tns:IRecordProductService_DeleteRecordProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordProductService/DeleteRecordProductResponse" message="tns:IRecordProductService_DeleteRecordProduct_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="order" type="tns:IOrderService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllOrderInPage">
       <soap:operation soapAction="http://tempuri.org/IOrderService/GetAllOrderInPage" style="document" />
@@ -334,7 +386,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_IPlanVHPService" type="tns:IPlanVHPService">
+  <wsdl:binding name="planvhp" type="tns:IPlanVHPService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetVHPPlansByOrderID">
       <soap:operation soapAction="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderID" style="document" />
@@ -373,7 +425,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_IMaterialNeedService" type="tns:IMaterialNeedService">
+  <wsdl:binding name="materialneed" type="tns:IMaterialNeedService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetMaterialNeedBySearchInPage">
       <soap:operation soapAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage" style="document" />
@@ -421,7 +473,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_IMaterialOrderService" type="tns:IMaterialOrderService">
+  <wsdl:binding name="materialorder" type="tns:IMaterialOrderService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetMaterialOrderBySearchInPage">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage" style="document" />
@@ -505,7 +557,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_IMissonService" type="tns:IMissonService">
+  <wsdl:binding name="misson" type="tns:IMissonService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetMissonBySearchInPage">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonBySearchInPage" style="document" />
@@ -526,20 +578,71 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="recordproduct" type="tns:IRecordProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRecordProductBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordProductCountBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordProduct">
+      <soap:operation soapAction="http://tempuri.org/IRecordProductService/AddRecordProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordProduct">
+      <soap:operation soapAction="http://tempuri.org/IRecordProductService/UpdateRecordProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecordProduct">
+      <soap:operation soapAction="http://tempuri.org/IRecordProductService/DeleteRecordProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
-    <wsdl:port name="BasicHttpBinding_IOrderService" binding="tns:BasicHttpBinding_IOrderService">
+    <wsdl:port name="order" binding="tns:order">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_IPlanVHPService" binding="tns:BasicHttpBinding_IPlanVHPService">
+    <wsdl:port name="planvhp" binding="tns:planvhp">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_IMaterialNeedService" binding="tns:BasicHttpBinding_IMaterialNeedService">
+    <wsdl:port name="materialneed" binding="tns:materialneed">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_IMaterialOrderService" binding="tns:BasicHttpBinding_IMaterialOrderService">
+    <wsdl:port name="materialorder" binding="tns:materialorder">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_IMissonService" binding="tns:BasicHttpBinding_IMissonService">
+    <wsdl:port name="misson" binding="tns:misson">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="recordproduct" binding="tns:recordproduct">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>

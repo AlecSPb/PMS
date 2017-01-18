@@ -317,6 +317,9 @@
     <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\PMSService.wsdl" />
     <None Include="Service References\ServiceReference\PMSService.xsd">
       <SubType>Designer</SubType>
