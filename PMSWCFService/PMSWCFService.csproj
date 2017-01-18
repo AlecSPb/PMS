@@ -95,6 +95,8 @@
     <Compile Include="DataContracts\DcRecordProduct.cs" />
     <Compile Include="DataContracts\DcRecordDelivery.cs" />
     <Compile Include="DataContracts\DcRecordDeliveryItem.cs" />
+    <Compile Include="DataContracts\DcRecordVHP.cs" />
+    <Compile Include="DataContracts\DcRecordVHPItem.cs" />
     <Compile Include="PMSRecordProductService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />
     <Compile Include="ServiceContracts\IRecordBondingService.cs" />
@@ -107,7 +109,6 @@
     <Compile Include="PMSPlanVHPService.cs" />
     <Compile Include="ServiceContracts\ICompoundService.cs" />
     <Compile Include="ServiceContracts\ICustomerService.cs" />
-    <Compile Include="ServiceContracts\IDeliveryService.cs" />
     <Compile Include="ServiceContracts\IMaterialNeedService.cs" />
     <Compile Include="ServiceContracts\IMaterialOrderService.cs" />
     <Compile Include="ServiceContracts\IVHPDeviceService.cs" />
