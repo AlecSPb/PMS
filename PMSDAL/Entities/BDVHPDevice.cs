@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class VHPDevice
+    public class BDVHPDevice
     {
         public Guid ID { get; set; }
         public string CodeName { get; set; }

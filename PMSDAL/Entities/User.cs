@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class PMSUser
+    public class User
     {
         public Guid ID { get; set; }
         public string UserName { get; set; }

@@ -79,19 +79,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContracts\DcCustomer.cs" />
-    <Compile Include="DataContracts\DcCompound.cs" />
-    <Compile Include="DataContracts\DcAccess.cs" />
-    <Compile Include="DataContracts\DcRole.cs" />
+    <Compile Include="DataContracts\DcBDCustomer.cs" />
+    <Compile Include="DataContracts\DcBDCompound.cs" />
+    <Compile Include="DataContracts\DcUserAccess.cs" />
+    <Compile Include="DataContracts\DcUserRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
     <Compile Include="DataContracts\DcPlanVHP.cs" />
     <Compile Include="DataContracts\DcMaterialNeed.cs" />
     <Compile Include="DataContracts\DcMaterialOrder.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItem.cs" />
-    <Compile Include="DataContracts\DcDeliveryAddress.cs" />
-    <Compile Include="DataContracts\DcVHPDevice.cs" />
-    <Compile Include="DataContracts\DcVHPMold.cs" />
-    <Compile Include="DataContracts\DcVHPProcess.cs" />
+    <Compile Include="DataContracts\DcBDDeliveryAddress.cs" />
+    <Compile Include="DataContracts\DcBDVHPDevice.cs" />
+    <Compile Include="DataContracts\DcBDVHPMold.cs" />
+    <Compile Include="DataContracts\DcBDVHPProcess.cs" />
     <Compile Include="DataContracts\DcRecordProduct.cs" />
     <Compile Include="DataContracts\DcRecordDelivery.cs" />
     <Compile Include="DataContracts\DcRecordDeliveryItem.cs" />

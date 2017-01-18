@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class Customer
+    public class BDCustomer
     {
         public Guid ID { get; set; }
         public string CustomerName { get; set; }

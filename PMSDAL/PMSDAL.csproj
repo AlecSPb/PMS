@@ -90,13 +90,17 @@
     <Compile Include="Migrations\201701180635485_changevhpplan.Designer.cs">
       <DependentUpon>201701180635485_changevhpplan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701180754366_changetablenames.cs" />
+    <Compile Include="Migrations\201701180754366_changetablenames.Designer.cs">
+      <DependentUpon>201701180754366_changetablenames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Entities\Compound.cs" />
-    <Compile Include="Entities\Customer.cs" />
-    <Compile Include="Entities\DeliveryAddress.cs" />
-    <Compile Include="Entities\VHPDevice.cs" />
-    <Compile Include="Entities\VHPMold.cs" />
-    <Compile Include="Entities\VHPProcess.cs" />
+    <Compile Include="Entities\BDCompound.cs" />
+    <Compile Include="Entities\BDCustomer.cs" />
+    <Compile Include="Entities\BDeliveryAddress.cs" />
+    <Compile Include="Entities\BDVHPDevice.cs" />
+    <Compile Include="Entities\BDVHPMold.cs" />
+    <Compile Include="Entities\BDVHPProcess.cs" />
     <Compile Include="Entities\RecordDelivery.cs" />
     <Compile Include="Entities\RecordDeliveryItem.cs" />
     <Compile Include="Entities\PMSMaterialOrder.cs" />
@@ -110,9 +114,9 @@
     <Compile Include="Entities\RecordVHP.cs" />
     <Compile Include="Entities\RecordVHPItem.cs" />
     <Compile Include="Entities\PMSOrder.cs" />
-    <Compile Include="Entities\PMSAccess.cs" />
-    <Compile Include="Entities\PMSRole.cs" />
-    <Compile Include="Entities\PMSUser.cs" />
+    <Compile Include="Entities\UserAccess.cs" />
+    <Compile Include="Entities\UserRole.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="PMSDbContext.cs" />
     <Compile Include="Entities\RecordProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701180635485_changevhpplan.resx">
       <DependentUpon>201701180635485_changevhpplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701180754366_changetablenames.resx">
+      <DependentUpon>201701180754366_changetablenames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

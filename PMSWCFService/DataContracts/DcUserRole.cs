@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PMSWCFService.DataContracts
 {
-    public class DcRole
+    public class DcUserRole
     {
         public Guid ID { get; set; }
         public string GroupName { get; set; }

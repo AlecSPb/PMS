@@ -8,26 +8,31 @@ using System.Threading.Tasks;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class DcCompound
+    public class DcBDVHPDevice
     {
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public string MaterialName { get; set; }
+        public string CodeName { get; set; }
         [DataMember]
-        public double Density { get; set; }
+        public string DeviceInformation { get; set; }
         [DataMember]
-        public string MeltingPoint { get; set; }
+        public double HighestTemperature { get; set; }
         [DataMember]
-        public string BoilingPoint { get; set; }
+        public double HighestPressure { get; set; }
         [DataMember]
-        public string SpecialProperty { get; set; }
+        public double HighestDiameter { get; set; }
         [DataMember]
-        public string InformationSource { get; set; }
+        public int State { get; set; }
+        [DataMember]
+        public string Manufacturer { get; set; }//制造商
+        [DataMember]
+        public string ReceiveTime { get; set; }//接受时间
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
         public DateTime CreateTime { get; set; }
+
 
     }
 }

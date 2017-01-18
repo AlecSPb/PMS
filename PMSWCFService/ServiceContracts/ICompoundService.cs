@@ -7,11 +7,16 @@ using PMSWCFService.DataContracts;
 
 namespace PMSWCFService.ServiceContracts
 {
+    [ServiceContract]
     public interface ICompoundService
     {
-        List<DcCompound> GetAllCompounds();
-        int AddCompound(DcCompound model);
-        int UpdateCompound(DcCompound model);
-        int DeleteCompound(DcCompound model);
+        [OperationContract]
+        List<DcBDCompound> GetAllCompounds();
+        [OperationContract]
+        int AddCompound(DcBDCompound model);
+        [OperationContract]
+        int UpdateCompound(DcBDCompound model);
+        [OperationContract]
+        int DeleteCompound(DcBDCompound model);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class Compound
+    public class BDCompound
     {
         public Guid ID { get; set; }
         public string MaterialName { get; set; }

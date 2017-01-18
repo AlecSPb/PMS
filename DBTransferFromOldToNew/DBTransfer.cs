@@ -131,7 +131,7 @@ namespace DBTransferFromOldToNew
             var oldDensity = oldDb.tb_Density.ToList();
             foreach (var item in oldDensity)
             {
-                var compound = new Compound();
+                var compound = new BDCompound();
                 compound.ID = Guid.NewGuid();
                 compound.MaterialName = item.Material;
                 compound.Density = item.Density??0;

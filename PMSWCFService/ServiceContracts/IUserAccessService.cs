@@ -13,28 +13,28 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcUser> GetAllUsers();
         [OperationContract]
-        List<DcRole> GetAllRoles();
+        List<DcUserRole> GetAllRoles();
         [OperationContract]
-        List<DcAccess> GetAllAccesses();
+        List<DcUserAccess> GetAllAccesses();
 
         [OperationContract]
-        DcRole GetRoleByUserId(Guid userId);
+        DcUserRole GetRoleByUserId(Guid userId);
         [OperationContract]
-        List<DcAccess> GetAccessesByRoleId(Guid roleId);
+        List<DcUserAccess> GetAccessesByRoleId(Guid roleId);
 
         [OperationContract]
         int AddUser(DcUser model);
         [OperationContract]
-        int AddRole(DcRole model);
+        int AddRole(DcUserRole model);
         [OperationContract]
-        int AddAccess(DcAccess model);
+        int AddAccess(DcUserAccess model);
 
         [OperationContract]
         int UpdateUser(DcUser model);
         [OperationContract]
-        int UpdateRole(DcRole model);
+        int UpdateRole(DcUserRole model);
         [OperationContract]
-        int UpdateAccess(DcAccess model);
+        int UpdateAccess(DcUserAccess model);
 
         [OperationContract]
         int DeleteUser(Guid id);

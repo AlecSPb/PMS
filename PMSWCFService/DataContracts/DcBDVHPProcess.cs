@@ -11,7 +11,7 @@ namespace PMSWCFService.DataContracts
     /// 热压工艺表
     /// </summary>
     [DataContract]
-    public class DcVHPProcess
+    public class DcBDVHPProcess
     {
         [DataMember]
         public Guid ID { get; set; }

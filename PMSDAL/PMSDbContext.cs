@@ -17,31 +17,23 @@ namespace PMSDAL
             //Database.SetInitializer<PMSDbContext>(null);
         }
         //BasicData
-        public DbSet<Compound> Comounds { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
-        public DbSet<VHPDevice> VHPDevices { get; set; }
-        public DbSet<VHPMold> VHPMolds { get; set; }
-        public DbSet<VHPProcess> VHPProcesses { get; set; }
+        public DbSet<BDCompound> Comounds { get; set; }
+        public DbSet<BDCustomer> Customers { get; set; }
+        public DbSet<BDDeliveryAddress> DeliveryAddresses { get; set; }
+        public DbSet<BDVHPDevice> VHPDevices { get; set; }
+        public DbSet<BDVHPMold> VHPMolds { get; set; }
+        public DbSet<BDVHPProcess> VHPProcesses { get; set; }
 
         //Material
         public DbSet<PMSMaterialNeed> MaterialNeeds { get; set; }
         public DbSet<PMSMaterialOrder> MaterialOrders { get; set; }
         public DbSet<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
 
-        //Sales
         public DbSet<PMSOrder> Orders { get; set; }
-        //Production
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
-        //Product
 
-
-        //Delivery
         public DbSet<RecordDelivery> Deliverys { get; set; }
         public DbSet<RecordDeliveryItem> DeliveryItems { get; set; }
-
-        //Record
-        //public DbSet<RecordBonding>  RecordBondings { get; set; }
         public DbSet<RecordMachine> RecordMachines { get; set; }
         public DbSet<RecordMilling> RecordMillings { get; set; }
         public DbSet<RecordTakeOut> RecordTakeOuts { get; set; }
@@ -49,9 +41,9 @@ namespace PMSDAL
         public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
         public DbSet<RecordProduct> Products { get; set; }
         //UserAccess
-        public DbSet<PMSUser> Users { get; set; }
-        public DbSet<PMSRole> Roles { get; set; }
-        public DbSet<PMSAccess> Accesses { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserRole> Roles { get; set; }
+        public DbSet<UserAccess> Accesses { get; set; }
 
     }
 }

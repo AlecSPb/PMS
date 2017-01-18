@@ -10,7 +10,7 @@ namespace PMSDAL
     /// <summary>
     /// 用户组
     /// </summary>
-    public class PMSRole
+    public class UserRole
     {
         public Guid ID { get; set; }
         public string GroupName { get; set; }
@@ -18,6 +18,6 @@ namespace PMSDAL
         public int State { get; set; }
         public DateTime CreateTime { get; set; }
 
-        public virtual List<PMSAccess> PMSAccesses { get; set; }
+        public virtual List<UserAccess> UserAccesses { get; set; }
     }
 }

@@ -11,28 +11,28 @@ namespace PMSWCFService
 {
     public class UserAccessService : IUserAccessService
     {
-        public int AddAccess(DcAccess model)
+        public int AddAccess(DcUserAccess model)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcAccess, PMSAccess>());
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserAccess, UserAccess>());
                 var mapper = config.CreateMapper();
-                var access = mapper.Map<PMSAccess>(model);
+                var access = mapper.Map<UserAccess>(model);
                 dc.Accesses.Add(access);
                 result = dc.SaveChanges();
                 return result;
             }
         }
 
-        public int AddRole(DcRole model)
+        public int AddRole(DcUserRole model)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRole, PMSRole>());
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserRole, UserRole>());
                 var mapper = config.CreateMapper();
-                var role = mapper.Map<PMSRole>(model);
+                var role = mapper.Map<UserRole>(model);
                 dc.Roles.Add(role);
                 result = dc.SaveChanges();
                 return result;
@@ -44,9 +44,9 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcAccess, PMSAccess>());
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserAccess, UserAccess>());
                 var mapper = config.CreateMapper();
-                var access = mapper.Map<PMSAccess>(model);
+                var access = mapper.Map<UserAccess>(model);
                 dc.Accesses.Add(access);
                 result = dc.SaveChanges();
                 return result;
@@ -101,17 +101,17 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcAccess> GetAccessesByRoleId(Guid roleId)
+        public List<DcUserAccess> GetAccessesByRoleId(Guid roleId)
         {
             throw new NotImplementedException();
         }
 
-        public List<DcAccess> GetAllAccesses()
+        public List<DcUserAccess> GetAllAccesses()
         {
             throw new NotImplementedException();
         }
 
-        public List<DcRole> GetAllRoles()
+        public List<DcUserRole> GetAllRoles()
         {
             throw new NotImplementedException();
         }
@@ -121,12 +121,12 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public DcRole GetRoleByUserId(Guid userId)
+        public DcUserRole GetRoleByUserId(Guid userId)
         {
             throw new NotImplementedException();
         }
 
-        public int UpdateAccess(DcAccess model)
+        public int UpdateAccess(DcUserAccess model)
         {
             using (var dc = new PMSDbContext())
             {
@@ -137,7 +137,7 @@ namespace PMSWCFService
             }
         }
 
-        public int UpdateRole(DcRole model)
+        public int UpdateRole(DcUserRole model)
         {
             using (var dc = new PMSDbContext())
             {

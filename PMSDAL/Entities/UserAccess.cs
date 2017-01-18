@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PMSWCFService.DataContracts
+namespace PMSDAL
 {
-    [DataContract]
-    public class DcAccess
+    /// <summary>
+    /// 用户权限
+    /// </summary>
+    public class UserAccess
     {
-        [DataMember]
         public Guid ID { get; set; }
-        [DataMember]
         public string AccessName { get; set; }
-        [DataMember]
         public string AccessCode { get; set; }
-        [DataMember]
         public int State { get; set; }
-        [DataMember]
         public string ExtraInformation { get; set; }
+
+        public virtual List<UserRole> UserRoles { get; set; }
     }
 }
