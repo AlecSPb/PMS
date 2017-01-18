@@ -33,7 +33,7 @@
                     <MenuItem Header="WorkBlank"/>
                     <MenuItem Header="Machine"/>
                     <MenuItem Header="{StaticResource strBonding}"/>
-                    <MenuItem Header="{StaticResource strProduct}"/>
+                    <MenuItem Header="{StaticResource strProduct}" Command="{Binding Navigate}" CommandParameter="ProductView"/>
                     <MenuItem Header="{StaticResource strDelivery}"/>
                     <MenuItem Header="Maintenance"/>
                 </MenuItem>

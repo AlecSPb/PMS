@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
+    <UserControl.DataContext>
+        <vm:RecordProductVM/>
+    </UserControl.DataContext>
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,126 +21,118 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strProductPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToMain}"/>
-            <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}" Command="{Binding GoToProductEdit}"/>
+            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"
+                    Command="{Binding Navigate}" CommandParameter="OrderView"/>
+            <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}"
+                    Command="{Binding  Add}"/>
             <TextBlock Text="Product ID" Style="{StaticResource TextBlockBasic}"/>
-            <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <CheckBox Style="{StaticResource CheckBoxBasic}" Content="Include Deleted One"/>
-            <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}"/>
-            <Button Content="{StaticResource strAll}" Style="{StaticResource    ButtonBasic}"/>
-            <Button Content="{StaticResource strProductReport}" Style="{StaticResource  ButtonBasic}" Command="{Binding GoToProductReport}"/>
+            <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
+            <TextBlock Text="CompositionStd" Style="{StaticResource TextBlockBasic}"/>
+            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
+            <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource strAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="{StaticResource strProductReport}" Style="{StaticResource  ButtonBasic}"
+                    Command="{Binding Report}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}">
+        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Operation">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <Button Content="Edit"/>
+                            <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="ProductID">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding ProductID}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Composition">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Composition}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="CompositionAbbr">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding CompositionAbbr}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="PO">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding PO}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Customer">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Customer}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Dimension">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Dimension}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Density">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Density}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Weight">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Resistance">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="CompositionXRF">
+                <!--<DataGridTemplateColumn Header="CompositionXRF">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding CompositionXRF}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTemplateColumn Header="DimensionActual">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding DimensionActual}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Remark">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding Remark}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="CreateTime">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text=""/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Creator">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <TextBlock Text=""/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="State">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <TextBlock Text=""/>
+                            <TextBlock Text="{Binding CreateTime}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -144,7 +140,9 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3"/>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
+                             RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
+                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
         <Grid Grid.Row="4">
 
         </Grid>
