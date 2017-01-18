@@ -92,6 +92,8 @@
     <Compile Include="DataContracts\DcVHPDevice.cs" />
     <Compile Include="DataContracts\DcVHPMold.cs" />
     <Compile Include="DataContracts\DcVHPProcess.cs" />
+    <Compile Include="DataContracts\DcRecordProduct.cs" />
+    <Compile Include="PMSRecordProductService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />
     <Compile Include="ServiceContracts\IRecordBondingService.cs" />
     <Compile Include="ServiceContracts\IRecordDeMoldService.cs" />
@@ -113,7 +115,7 @@
     <Compile Include="DataContracts\DcOrder.cs" />
     <Compile Include="ServiceContracts\IOrderService.cs" />
     <Compile Include="ServiceContracts\IPlanVHPService.cs" />
-    <Compile Include="ServiceContracts\IProductService.cs" />
+    <Compile Include="ServiceContracts\IRecordProductService.cs" />
     <Compile Include="ServiceContracts\IUserAccessService.cs" />
   </ItemGroup>
   <ItemGroup>

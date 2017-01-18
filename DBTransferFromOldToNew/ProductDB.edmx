@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Samples">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Customer" Type="nvarchar(max)" />
+          <Property Name="Lot" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PO" Type="nvarchar(max)" />
+          <Property Name="Weight1" Type="nvarchar(max)" />
+          <Property Name="Weight2" Type="nvarchar(max)" />
+          <Property Name="Weight3" Type="nvarchar(max)" />
+          <Property Name="Weight4" Type="nvarchar(max)" />
+          <Property Name="ForTarget" Type="nvarchar(max)" />
+          <Property Name="Material" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Targets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Material" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Lot" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Size" Type="nvarchar(max)" />
+          <Property Name="Customer" Type="nvarchar(max)" />
+          <Property Name="PO" Type="nvarchar(max)" />
+          <Property Name="Density" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="Resistance" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="XRFComposition" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Dimension" Type="nvarchar(max)" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="MaterialAbbr" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="ProductsModelStoreContainer">
+          <EntitySet Name="Samples" EntityType="Self.Samples" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Targets" EntityType="Self.Targets" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Samples">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ForTarget" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Material" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Targets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Material" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resistance" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="XRFComposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MaterialAbbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ProductsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Samples" EntityType="Self.Samples" />
+          <EntitySet Name="Targets" EntityType="Self.Targets" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProductsModelStoreContainer" CdmEntityContainer="ProductsEntities">
+          <EntitySetMapping Name="Samples">
+            <EntityTypeMapping TypeName="ProductsModel.Samples">
+              <MappingFragment StoreEntitySet="Samples">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="Weight1" ColumnName="Weight1" />
+                <ScalarProperty Name="Weight2" ColumnName="Weight2" />
+                <ScalarProperty Name="Weight3" ColumnName="Weight3" />
+                <ScalarProperty Name="Weight4" ColumnName="Weight4" />
+                <ScalarProperty Name="ForTarget" ColumnName="ForTarget" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Targets">
+            <EntityTypeMapping TypeName="ProductsModel.Targets">
+              <MappingFragment StoreEntitySet="Targets">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Lot" ColumnName="Lot" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Resistance" ColumnName="Resistance" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="XRFComposition" ColumnName="XRFComposition" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="MaterialAbbr" ColumnName="MaterialAbbr" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

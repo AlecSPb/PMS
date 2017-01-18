@@ -34,8 +34,7 @@ namespace PMSDAL
         //Production
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
         //Product
-        public DbSet<PMSProduct> Products { get; set; }
-        public DbSet<PMSSample> Samples { get; set; }
+
 
         //Delivery
         public DbSet<Delivery> Deliverys { get; set; }
@@ -48,7 +47,7 @@ namespace PMSDAL
         public DbSet<RecordTakeOut> RecordTakeOuts { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
-
+        public DbSet<RecordProduct> Products { get; set; }
         //UserAccess
         public DbSet<PMSUser> Users { get; set; }
         public DbSet<PMSRole> Roles { get; set; }

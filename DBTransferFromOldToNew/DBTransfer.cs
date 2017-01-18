@@ -11,16 +11,20 @@ namespace DBTransferFromOldToNew
     {
         private PMSDbContext newDb;
         private dbnewEntities oldDb;
+        private ProductsEntities productDb;
+
         public DBTransfer()
         {
             newDb = new PMSDbContext();
             oldDb = new dbnewEntities();
+            productDb = new ProductsEntities();
         }
 
         public void Dispose()
         {
             newDb.Dispose();
             oldDb.Dispose();
+            productDb.Dispose();
         }
 
         public void TransferOrderPlan()
@@ -139,6 +143,41 @@ namespace DBTransferFromOldToNew
                 newDb.Comounds.Add(compound);
             }
             newDb.SaveChanges();
+
+        }
+
+        public void Product()
+        {
+            var targets = productDb.Targets.ToList();
+            targets.ForEach(t =>
+            {
+                var product = new PMSProduct()
+                {
+                    ID = t.Id,
+                    ProductID = t.Lot,
+                    Composition = t.Material,
+                    CompositionAbbr = t.MaterialAbbr,
+                    CompositionXRF = t.XRFComposition,
+                    Weight = t.Weight,
+                    Density = t.Density,
+                    Remark = t.Remark,
+                    CreateTime = t.CreateDate,
+                    Customer = t.Customer,
+                    PO = t.PO,
+                    Dimension = t.Dimension,
+                    DimensionActual = t.Size,
+                    State = 2,
+                    Creator="xs.zhou"
+                };
+
+
+
+                newDb.Products.Add(product);
+            });
+
+            newDb.SaveChanges();
+
+
 
         }
 
