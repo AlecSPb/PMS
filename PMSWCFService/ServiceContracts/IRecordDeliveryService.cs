@@ -12,13 +12,14 @@ namespace PMSWCFService.ServiceContracts
     public interface IRecordDeliveryService
     {
         [OperationContract]
-        List<DcRecordDelivery> GetDeliveryBySearchInPage(int skip, int take, string searchDeliveryID);
+        List<DcRecordDelivery> GetDelivery(int skip, int take, DateTime shipTime);
         [OperationContract]
         int AddRecordDelivery(DcRecordDelivery model);
         [OperationContract]
         int UpdateReocrdDelivery(DcRecordDelivery model);
         [OperationContract]
         int DeleteRecordDelivery(Guid id);
+
         [OperationContract]
         int AddRecordDeliveryItem(DcRecordDeliveryItem model);
         [OperationContract]
