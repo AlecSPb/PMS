@@ -108,6 +108,7 @@ namespace PMSDesktopClient.ViewModel
                 RaisePropertyChanged(nameof(RecordCount));
             }
         }
+        public RelayCommand PageChanged { get; private set; }
         #endregion
 
         #region Proeperties
@@ -154,7 +155,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
-        public RelayCommand PageChanged { get; private set; }
+
         #endregion
     }
 }

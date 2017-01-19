@@ -34,7 +34,7 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch,CanSearch);
             All = new RelayCommand(ActionAll);
-            VHPDetails = new RelayCommand<ServiceReference.DcOrder>(ActionVHPDetails);
+            GetPlans = new RelayCommand<ServiceReference.DcOrder>(ActionVHPDetails);
         }
 
         private void ActionVHPDetails(DcOrder obj)
@@ -169,7 +169,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Add { get; private set; }
         public RelayCommand PageChanged { get; private set; }
 
-        public RelayCommand<DcOrder> VHPDetails { get; set; }
+        public RelayCommand<DcOrder> GetPlans { get; set; }
 
 
         #endregion

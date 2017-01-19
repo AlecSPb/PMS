@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="DataContracts\DcBDCustomer.cs" />
     <Compile Include="DataContracts\DcBDCompound.cs" />
+    <Compile Include="DataContracts\DcMissonWithPlan.cs" />
     <Compile Include="DataContracts\DcUserAccess.cs" />
     <Compile Include="DataContracts\DcUserRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
@@ -98,8 +99,10 @@
     <Compile Include="DataContracts\DcRecordVHP.cs" />
     <Compile Include="DataContracts\DcRecordVHPItem.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
-    <Compile Include="ServiceImplements\BasicDataOne.cs" />
+    <Compile Include="ServiceContracts\IMissonWithPlanService.cs" />
+    <Compile Include="ServiceImplements\BasicDataOneService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />
+    <Compile Include="ServiceImplements\MissonWithPlanService.cs" />
     <Compile Include="ServiceImplements\RecordProductService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />
     <Compile Include="ServiceContracts\IRecordBondingService.cs" />
@@ -107,7 +110,7 @@
     <Compile Include="ServiceContracts\IRecordDeMoldService.cs" />
     <Compile Include="ServiceContracts\IRecordMillingService.cs" />
     <Compile Include="ServiceContracts\IRecordVHPService.cs" />
-    <Compile Include="ServiceImplements\SMaterialService.cs" />
+    <Compile Include="ServiceImplements\MaterialService.cs" />
     <Compile Include="ServiceImplements\OrderService.cs" />
     <Compile Include="ServiceImplements\PlanVHPService.cs" />
     <Compile Include="ServiceContracts\ICompoundService.cs" />

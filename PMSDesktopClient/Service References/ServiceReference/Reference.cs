@@ -1963,6 +1963,739 @@ namespace PMSDesktopClient.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMissonWithPlan", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMissonWithPlan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> CalculationDensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionOriginalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionStandardField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositoinAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrentMoldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeadLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FillingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GrainSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> KeepTempTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MachineRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MillingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MinimumAcceptDefectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> MoldDiameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid OrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMIWorkingNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime PlanDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid PlanIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> PowderWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> PrePressureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> PreTemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> PressureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProcessCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QuantityUnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RoomHumidityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RoomTemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SampleNeedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecialRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TargetQuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> TemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> ThicknessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPDeviceCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPPlanRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> VaccumField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> CalculationDensity {
+            get {
+                return this.CalculationDensityField;
+            }
+            set {
+                if ((this.CalculationDensityField.Equals(value) != true)) {
+                    this.CalculationDensityField = value;
+                    this.RaisePropertyChanged("CalculationDensity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionOriginal {
+            get {
+                return this.CompositionOriginalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionOriginalField, value) != true)) {
+                    this.CompositionOriginalField = value;
+                    this.RaisePropertyChanged("CompositionOriginal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionStandard {
+            get {
+                return this.CompositionStandardField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionStandardField, value) != true)) {
+                    this.CompositionStandardField = value;
+                    this.RaisePropertyChanged("CompositionStandard");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositoinAbbr {
+            get {
+                return this.CompositoinAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositoinAbbrField, value) != true)) {
+                    this.CompositoinAbbrField = value;
+                    this.RaisePropertyChanged("CompositoinAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrentMold {
+            get {
+                return this.CurrentMoldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentMoldField, value) != true)) {
+                    this.CurrentMoldField = value;
+                    this.RaisePropertyChanged("CurrentMold");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerName {
+            get {
+                return this.CustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
+                    this.CustomerNameField = value;
+                    this.RaisePropertyChanged("CustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeadLine {
+            get {
+                return this.DeadLineField;
+            }
+            set {
+                if ((this.DeadLineField.Equals(value) != true)) {
+                    this.DeadLineField = value;
+                    this.RaisePropertyChanged("DeadLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionDetails {
+            get {
+                return this.DimensionDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionDetailsField, value) != true)) {
+                    this.DimensionDetailsField = value;
+                    this.RaisePropertyChanged("DimensionDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FillingRequirement {
+            get {
+                return this.FillingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FillingRequirementField, value) != true)) {
+                    this.FillingRequirementField = value;
+                    this.RaisePropertyChanged("FillingRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GrainSize {
+            get {
+                return this.GrainSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GrainSizeField, value) != true)) {
+                    this.GrainSizeField = value;
+                    this.RaisePropertyChanged("GrainSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> KeepTempTime {
+            get {
+                return this.KeepTempTimeField;
+            }
+            set {
+                if ((this.KeepTempTimeField.Equals(value) != true)) {
+                    this.KeepTempTimeField = value;
+                    this.RaisePropertyChanged("KeepTempTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MachineRequirement {
+            get {
+                return this.MachineRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MachineRequirementField, value) != true)) {
+                    this.MachineRequirementField = value;
+                    this.RaisePropertyChanged("MachineRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MillingRequirement {
+            get {
+                return this.MillingRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MillingRequirementField, value) != true)) {
+                    this.MillingRequirementField = value;
+                    this.RaisePropertyChanged("MillingRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MinimumAcceptDefect {
+            get {
+                return this.MinimumAcceptDefectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MinimumAcceptDefectField, value) != true)) {
+                    this.MinimumAcceptDefectField = value;
+                    this.RaisePropertyChanged("MinimumAcceptDefect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> MoldDiameter {
+            get {
+                return this.MoldDiameterField;
+            }
+            set {
+                if ((this.MoldDiameterField.Equals(value) != true)) {
+                    this.MoldDiameterField = value;
+                    this.RaisePropertyChanged("MoldDiameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid OrderID {
+            get {
+                return this.OrderIDField;
+            }
+            set {
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderRemark {
+            get {
+                return this.OrderRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderRemarkField, value) != true)) {
+                    this.OrderRemarkField = value;
+                    this.RaisePropertyChanged("OrderRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMIWorkingNumber {
+            get {
+                return this.PMIWorkingNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMIWorkingNumberField, value) != true)) {
+                    this.PMIWorkingNumberField = value;
+                    this.RaisePropertyChanged("PMIWorkingNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PO {
+            get {
+                return this.POField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POField, value) != true)) {
+                    this.POField = value;
+                    this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime PlanDate {
+            get {
+                return this.PlanDateField;
+            }
+            set {
+                if ((this.PlanDateField.Equals(value) != true)) {
+                    this.PlanDateField = value;
+                    this.RaisePropertyChanged("PlanDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid PlanID {
+            get {
+                return this.PlanIDField;
+            }
+            set {
+                if ((this.PlanIDField.Equals(value) != true)) {
+                    this.PlanIDField = value;
+                    this.RaisePropertyChanged("PlanID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> PowderWeight {
+            get {
+                return this.PowderWeightField;
+            }
+            set {
+                if ((this.PowderWeightField.Equals(value) != true)) {
+                    this.PowderWeightField = value;
+                    this.RaisePropertyChanged("PowderWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> PrePressure {
+            get {
+                return this.PrePressureField;
+            }
+            set {
+                if ((this.PrePressureField.Equals(value) != true)) {
+                    this.PrePressureField = value;
+                    this.RaisePropertyChanged("PrePressure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> PreTemperature {
+            get {
+                return this.PreTemperatureField;
+            }
+            set {
+                if ((this.PreTemperatureField.Equals(value) != true)) {
+                    this.PreTemperatureField = value;
+                    this.RaisePropertyChanged("PreTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Pressure {
+            get {
+                return this.PressureField;
+            }
+            set {
+                if ((this.PressureField.Equals(value) != true)) {
+                    this.PressureField = value;
+                    this.RaisePropertyChanged("Pressure");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProcessCode {
+            get {
+                return this.ProcessCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProcessCodeField, value) != true)) {
+                    this.ProcessCodeField = value;
+                    this.RaisePropertyChanged("ProcessCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QuantityUnit {
+            get {
+                return this.QuantityUnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuantityUnitField, value) != true)) {
+                    this.QuantityUnitField = value;
+                    this.RaisePropertyChanged("QuantityUnit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RoomHumidity {
+            get {
+                return this.RoomHumidityField;
+            }
+            set {
+                if ((this.RoomHumidityField.Equals(value) != true)) {
+                    this.RoomHumidityField = value;
+                    this.RaisePropertyChanged("RoomHumidity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RoomTemperature {
+            get {
+                return this.RoomTemperatureField;
+            }
+            set {
+                if ((this.RoomTemperatureField.Equals(value) != true)) {
+                    this.RoomTemperatureField = value;
+                    this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SampleNeed {
+            get {
+                return this.SampleNeedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
+                    this.SampleNeedField = value;
+                    this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SpecialRequirement {
+            get {
+                return this.SpecialRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecialRequirementField, value) != true)) {
+                    this.SpecialRequirementField = value;
+                    this.RaisePropertyChanged("SpecialRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TargetQuantity {
+            get {
+                return this.TargetQuantityField;
+            }
+            set {
+                if ((this.TargetQuantityField.Equals(value) != true)) {
+                    this.TargetQuantityField = value;
+                    this.RaisePropertyChanged("TargetQuantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Temperature {
+            get {
+                return this.TemperatureField;
+            }
+            set {
+                if ((this.TemperatureField.Equals(value) != true)) {
+                    this.TemperatureField = value;
+                    this.RaisePropertyChanged("Temperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Thickness {
+            get {
+                return this.ThicknessField;
+            }
+            set {
+                if ((this.ThicknessField.Equals(value) != true)) {
+                    this.ThicknessField = value;
+                    this.RaisePropertyChanged("Thickness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPDeviceCode {
+            get {
+                return this.VHPDeviceCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPDeviceCodeField, value) != true)) {
+                    this.VHPDeviceCodeField = value;
+                    this.RaisePropertyChanged("VHPDeviceCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPPlanRemark {
+            get {
+                return this.VHPPlanRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPPlanRemarkField, value) != true)) {
+                    this.VHPPlanRemarkField = value;
+                    this.RaisePropertyChanged("VHPPlanRemark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPRequirement {
+            get {
+                return this.VHPRequirementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPRequirementField, value) != true)) {
+                    this.VHPRequirementField = value;
+                    this.RaisePropertyChanged("VHPRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Vaccum {
+            get {
+                return this.VaccumField;
+            }
+            set {
+                if ((this.VaccumField.Equals(value) != true)) {
+                    this.VaccumField = value;
+                    this.RaisePropertyChanged("Vaccum");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IOrderService")]
     public interface IOrderService {
@@ -2596,6 +3329,81 @@ namespace PMSDesktopClient.ServiceReference {
         
         public System.Threading.Tasks.Task<int> DeleteRecordProductAsync(System.Guid id) {
             return base.Channel.DeleteRecordProductAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IMissonWithPlanService")]
+    public interface IMissonWithPlanService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
+        PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
+        int GetMissonWithPlanCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
+        PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMissonWithPlanServiceChannel : PMSDesktopClient.ServiceReference.IMissonWithPlanService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MissonWithPlanServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IMissonWithPlanService>, PMSDesktopClient.ServiceReference.IMissonWithPlanService {
+        
+        public MissonWithPlanServiceClient() {
+        }
+        
+        public MissonWithPlanServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MissonWithPlanServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MissonWithPlanServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MissonWithPlanServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take) {
+            return base.Channel.GetMissonWithPlan(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take) {
+            return base.Channel.GetMissonWithPlanAsync(skip, take);
+        }
+        
+        public int GetMissonWithPlanCount() {
+            return base.Channel.GetMissonWithPlanCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync() {
+            return base.Channel.GetMissonWithPlanCountAsync();
+        }
+        
+        public PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date) {
+            return base.Channel.GetMissonWithPlanByDate(date);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date) {
+            return base.Channel.GetMissonWithPlanByDateAsync(date);
         }
     }
 }

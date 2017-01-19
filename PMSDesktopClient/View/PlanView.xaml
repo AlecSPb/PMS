@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSDesktopClient.View"
               xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
+    <UserControl.DataContext>
+        <vm:PlanVM/>
+    </UserControl.DataContext>
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,14 +20,24 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPlanPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding BackToNavigation}"/>
-            <TextBlock Text="Plan Date" Style="{StaticResource TextBlockBasic}"/>
-            <TextBox Text="" Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <CheckBox Style="{StaticResource CheckBoxBasic}" Content="Include Deleted One"/>
-            <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}"/>
-            <Button Content="{StaticResource strAll}" Style="{StaticResource    ButtonBasic}"/>
+            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Navigate}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2"/>
-        <control:SimplePager Grid.Row="3"/>
+        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MissonWithPlans}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Plan Date" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <DataGridTextColumn Header="OrderDeadLine" Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <DataGridTextColumn Header="Customer" Binding="{Binding CustomerName}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <DataGridTextColumn Header="Composition" Binding="{Binding CompositionStandard}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <DataGridTextColumn Header="Device" Binding="{Binding VHPDeviceCode}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
+                             RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
+                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
     </Grid>
 </UserControl>

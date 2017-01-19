@@ -60,7 +60,8 @@ namespace PMSWCFService
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
                 var mapper = config.CreateMapper();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString())
+                    dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd)
+                    && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString())
                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
                 return result;
             }
@@ -70,7 +71,8 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString()).Count();
+                return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd)
+                && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString()).Count();
             }
         }
 

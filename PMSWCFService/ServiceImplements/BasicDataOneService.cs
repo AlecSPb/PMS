@@ -5,9 +5,9 @@ using System.Web;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 
-namespace PMSWCFService.ServiceImplements
+namespace PMSWCFService
 {
-    public partial class PMSService : ICustomerService, IDeliveryAddressService
+    public partial class PMSService : ICustomerService, IDeliveryAddressService,
         IVHPDeviceService, IVHPMoldService, IVHPProcessService,
         ICompoundService
 

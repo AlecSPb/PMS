@@ -193,6 +193,24 @@
   <wsdl:message name="IRecordProductService_DeleteRecordProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IMissonWithPlanService_GetMissonWithPlan_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlan" />
+  </wsdl:message>
+  <wsdl:message name="IMissonWithPlanService_GetMissonWithPlan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonWithPlanService_GetMissonWithPlanCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanCount" />
+  </wsdl:message>
+  <wsdl:message name="IMissonWithPlanService_GetMissonWithPlanCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonWithPlanService_GetMissonWithPlanByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanByDate" />
+  </wsdl:message>
+  <wsdl:message name="IMissonWithPlanService_GetMissonWithPlanByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanByDateResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -327,6 +345,20 @@
     <wsdl:operation name="DeleteRecordProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordProductService/DeleteRecordProduct" message="tns:IRecordProductService_DeleteRecordProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordProductService/DeleteRecordProductResponse" message="tns:IRecordProductService_DeleteRecordProduct_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMissonWithPlanService">
+    <wsdl:operation name="GetMissonWithPlan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan" message="tns:IMissonWithPlanService_GetMissonWithPlan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse" message="tns:IMissonWithPlanService_GetMissonWithPlan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonWithPlanCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount" message="tns:IMissonWithPlanService_GetMissonWithPlanCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse" message="tns:IMissonWithPlanService_GetMissonWithPlanCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonWithPlanByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate" message="tns:IMissonWithPlanService_GetMissonWithPlanByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse" message="tns:IMissonWithPlanService_GetMissonWithPlanByDate_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="order" type="tns:IOrderService">
@@ -626,6 +658,36 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="missonwithplan" type="tns:IMissonWithPlanService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMissonWithPlan">
+      <soap:operation soapAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonWithPlanCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonWithPlanByDate">
+      <soap:operation soapAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
     <wsdl:port name="order" binding="tns:order">
       <soap:address location="http://localhost:8002/PMSService.svc" />
@@ -643,6 +705,9 @@
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordproduct" binding="tns:recordproduct">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="missonwithplan" binding="tns:missonwithplan">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>
