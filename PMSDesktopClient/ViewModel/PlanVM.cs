@@ -28,7 +28,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void IntitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.NavigateTo("OrderView"));
+            Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
             PageChanged = new RelayCommand(ActionPaging);
         }
 

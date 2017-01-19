@@ -42,6 +42,9 @@ namespace PMSDesktopClient
         {
             switch (viewName)
             {
+                case "NavigationView":
+                    NavigateTo(new NavigationView());
+                    break;
                 case "OrderView":
                     NavigateTo(new OrderView());
                     break;
@@ -76,7 +79,7 @@ namespace PMSDesktopClient
                     NavigateTo(new MaterialOrderView());
                     break;
                 default:
-                    NavigateTo(new OrderView());
+                    NavigateTo(new NavigationView());
                     break;
             }
         }
