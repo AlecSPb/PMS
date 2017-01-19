@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSDesktopClient.ServiceReference;
 
 namespace PMSDesktopClient.View
 {
@@ -23,6 +24,29 @@ namespace PMSDesktopClient.View
         public PlanView()
         {
             InitializeComponent();
+        }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var row = e.Row.DataContext as DcMissonWithPlan;
+            if (row != null)
+            {
+                var today = DateTime.Now.Date;
+                if (row.PlanDate.Date == today.Date)
+                {
+                    e.Row.Background = this.FindResource("TodayBrush") as SolidColorBrush;
+                }
+                else if (row.PlanDate.Date == today.Date.AddDays(-1))
+                {
+                    e.Row.Background = this.FindResource("YesterdayBrush") as SolidColorBrush;
+                }
+                else if (row.PlanDate.Date == today.Date.AddDays(1))
+                {
+                    e.Row.Background = this.FindResource("TomorrowBrush") as SolidColorBrush;
+                }
+            }
+
+
         }
     }
 }

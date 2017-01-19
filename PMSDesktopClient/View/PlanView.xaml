@@ -21,8 +21,14 @@
         <TextBlock Text="{StaticResource strPlanPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Navigate}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Yesterday" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="Today" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="Tomorrow" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
+            </StackPanel>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MissonWithPlans}">
+        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" LoadingRow="DataGrid_LoadingRow"
+                  ItemsSource="{Binding MissonWithPlans}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

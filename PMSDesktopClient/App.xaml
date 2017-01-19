@@ -10,7 +10,11 @@
             <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
             <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
             <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
-            
+            <SolidColorBrush x:Key="YesterdayBrush" Color="LightGray"/>
+            <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
+            <SolidColorBrush x:Key="TomorrowBrush" Color="LightCoral"/>
+
+
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Language/us-en.xaml"/>
