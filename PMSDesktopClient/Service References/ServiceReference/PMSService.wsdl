@@ -211,6 +211,54 @@
   <wsdl:message name="IMissonWithPlanService_GetMissonWithPlanByDate_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonWithPlanByDateResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_GetDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_GetDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_GetDeliveryCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryCount" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_GetDeliveryCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_AddRecordDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_AddRecordDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_UpdateReocrdDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReocrdDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_UpdateReocrdDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReocrdDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_DeleteRecordDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_DeleteRecordDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_AddRecordDeliveryItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordDeliveryItem" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_AddRecordDeliveryItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordDeliveryItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_UpdateReocrdDeliveryItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReocrdDeliveryItem" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_UpdateReocrdDeliveryItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateReocrdDeliveryItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_DeleteRecordDeliveryItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordDeliveryItem" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_DeleteRecordDeliveryItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordDeliveryItemResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -359,6 +407,40 @@
     <wsdl:operation name="GetMissonWithPlanByDate">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate" message="tns:IMissonWithPlanService_GetMissonWithPlanByDate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse" message="tns:IMissonWithPlanService_GetMissonWithPlanByDate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRecordDeliveryService">
+    <wsdl:operation name="GetDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/GetDelivery" message="tns:IRecordDeliveryService_GetDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/GetDeliveryResponse" message="tns:IRecordDeliveryService_GetDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/GetDeliveryCount" message="tns:IRecordDeliveryService_GetDeliveryCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/GetDeliveryCountResponse" message="tns:IRecordDeliveryService_GetDeliveryCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/AddRecordDelivery" message="tns:IRecordDeliveryService_AddRecordDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryResponse" message="tns:IRecordDeliveryService_AddRecordDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReocrdDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDelivery" message="tns:IRecordDeliveryService_UpdateReocrdDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryResponse" message="tns:IRecordDeliveryService_UpdateReocrdDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecordDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery" message="tns:IRecordDeliveryService_DeleteRecordDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryResponse" message="tns:IRecordDeliveryService_DeleteRecordDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordDeliveryItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem" message="tns:IRecordDeliveryService_AddRecordDeliveryItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItemResponse" message="tns:IRecordDeliveryService_AddRecordDeliveryItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReocrdDeliveryItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItem" message="tns:IRecordDeliveryService_UpdateReocrdDeliveryItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItemResponse" message="tns:IRecordDeliveryService_UpdateReocrdDeliveryItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecordDeliveryItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItem" message="tns:IRecordDeliveryService_DeleteRecordDeliveryItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItemResponse" message="tns:IRecordDeliveryService_DeleteRecordDeliveryItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="order" type="tns:IOrderService">
@@ -688,6 +770,81 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="delivery" type="tns:IRecordDeliveryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDelivery">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/GetDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryCount">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordDelivery">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/AddRecordDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReocrdDelivery">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecordDelivery">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordDeliveryItem">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateReocrdDeliveryItem">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecordDeliveryItem">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
     <wsdl:port name="order" binding="tns:order">
       <soap:address location="http://localhost:8002/PMSService.svc" />
@@ -708,6 +865,9 @@
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="missonwithplan" binding="tns:missonwithplan">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="delivery" binding="tns:delivery">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>

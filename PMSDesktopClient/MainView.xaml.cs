@@ -60,6 +60,9 @@ namespace PMSDesktopClient
                 case "ProductView":
                     NavigateTo(new ProductView());
                     break;
+                case "DeliveryView":
+                    NavigateTo(new DeliveryView());
+                    break;
                 case "MaterialNeedView":
                     NavigateTo(new MaterialNeedView());
                     break;

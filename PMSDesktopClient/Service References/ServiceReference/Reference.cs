@@ -2696,6 +2696,432 @@ namespace PMSDesktopClient.ServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordDelivery", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcRecordDelivery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CountryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSDesktopClient.ServiceReference.DcRecordDeliveryItem[] DeliveryItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeliveryNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InvoiceNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PackageInformationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PackageTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ShipTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Country {
+            get {
+                return this.CountryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CountryField, value) != true)) {
+                    this.CountryField = value;
+                    this.RaisePropertyChanged("Country");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSDesktopClient.ServiceReference.DcRecordDeliveryItem[] DeliveryItems {
+            get {
+                return this.DeliveryItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryItemsField, value) != true)) {
+                    this.DeliveryItemsField = value;
+                    this.RaisePropertyChanged("DeliveryItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryName {
+            get {
+                return this.DeliveryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryNameField, value) != true)) {
+                    this.DeliveryNameField = value;
+                    this.RaisePropertyChanged("DeliveryName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryNumber {
+            get {
+                return this.DeliveryNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryNumberField, value) != true)) {
+                    this.DeliveryNumberField = value;
+                    this.RaisePropertyChanged("DeliveryNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InvoiceNumber {
+            get {
+                return this.InvoiceNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceNumberField, value) != true)) {
+                    this.InvoiceNumberField = value;
+                    this.RaisePropertyChanged("InvoiceNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PackageInformation {
+            get {
+                return this.PackageInformationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PackageInformationField, value) != true)) {
+                    this.PackageInformationField = value;
+                    this.RaisePropertyChanged("PackageInformation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PackageType {
+            get {
+                return this.PackageTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PackageTypeField, value) != true)) {
+                    this.PackageTypeField = value;
+                    this.RaisePropertyChanged("PackageType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ShipTime {
+            get {
+                return this.ShipTimeField;
+            }
+            set {
+                if ((this.ShipTimeField.Equals(value) != true)) {
+                    this.ShipTimeField = value;
+                    this.RaisePropertyChanged("ShipTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((this.StateField.Equals(value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordDeliveryItem", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcRecordDeliveryItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailRecordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DetailRecord {
+            get {
+                return this.DetailRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailRecordField, value) != true)) {
+                    this.DetailRecordField = value;
+                    this.RaisePropertyChanged("DetailRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PO {
+            get {
+                return this.POField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POField, value) != true)) {
+                    this.POField = value;
+                    this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PositionField, value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IOrderService")]
     public interface IOrderService {
@@ -3404,6 +3830,151 @@ namespace PMSDesktopClient.ServiceReference {
         
         public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date) {
             return base.Channel.GetMissonWithPlanByDateAsync(date);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordDeliveryService")]
+    public interface IRecordDeliveryService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryResponse")]
+        PMSDesktopClient.ServiceReference.DcRecordDelivery[] GetDelivery(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordDelivery[]> GetDeliveryAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDeliveryCount", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryCountResponse")]
+        int GetDeliveryCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDeliveryCount", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryCountResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryResponse")]
+        int AddRecordDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryResponse")]
+        System.Threading.Tasks.Task<int> AddRecordDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryResponse")]
+        int UpdateReocrdDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryResponse")]
+        System.Threading.Tasks.Task<int> UpdateReocrdDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryResponse")]
+        int DeleteRecordDelivery(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryResponse")]
+        System.Threading.Tasks.Task<int> DeleteRecordDeliveryAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItemResponse")]
+        int AddRecordDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItemResponse")]
+        System.Threading.Tasks.Task<int> AddRecordDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItemResponse")]
+        int UpdateReocrdDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItemResponse")]
+        System.Threading.Tasks.Task<int> UpdateReocrdDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItemResponse")]
+        int DeleteRecordDeliveryItem(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItemResponse")]
+        System.Threading.Tasks.Task<int> DeleteRecordDeliveryItemAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRecordDeliveryServiceChannel : PMSDesktopClient.ServiceReference.IRecordDeliveryService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RecordDeliveryServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordDeliveryService>, PMSDesktopClient.ServiceReference.IRecordDeliveryService {
+        
+        public RecordDeliveryServiceClient() {
+        }
+        
+        public RecordDeliveryServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RecordDeliveryServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecordDeliveryServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecordDeliveryServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSDesktopClient.ServiceReference.DcRecordDelivery[] GetDelivery(int skip, int take) {
+            return base.Channel.GetDelivery(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordDelivery[]> GetDeliveryAsync(int skip, int take) {
+            return base.Channel.GetDeliveryAsync(skip, take);
+        }
+        
+        public int GetDeliveryCount() {
+            return base.Channel.GetDeliveryCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryCountAsync() {
+            return base.Channel.GetDeliveryCountAsync();
+        }
+        
+        public int AddRecordDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+            return base.Channel.AddRecordDelivery(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+            return base.Channel.AddRecordDeliveryAsync(model);
+        }
+        
+        public int UpdateReocrdDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+            return base.Channel.UpdateReocrdDelivery(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateReocrdDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+            return base.Channel.UpdateReocrdDeliveryAsync(model);
+        }
+        
+        public int DeleteRecordDelivery(System.Guid id) {
+            return base.Channel.DeleteRecordDelivery(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteRecordDeliveryAsync(System.Guid id) {
+            return base.Channel.DeleteRecordDeliveryAsync(id);
+        }
+        
+        public int AddRecordDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+            return base.Channel.AddRecordDeliveryItem(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+            return base.Channel.AddRecordDeliveryItemAsync(model);
+        }
+        
+        public int UpdateReocrdDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+            return base.Channel.UpdateReocrdDeliveryItem(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateReocrdDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+            return base.Channel.UpdateReocrdDeliveryItemAsync(model);
+        }
+        
+        public int DeleteRecordDeliveryItem(System.Guid id) {
+            return base.Channel.DeleteRecordDeliveryItem(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteRecordDeliveryItemAsync(System.Guid id) {
+            return base.Channel.DeleteRecordDeliveryItemAsync(id);
         }
     }
 }

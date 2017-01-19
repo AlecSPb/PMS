@@ -60,11 +60,11 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordDelivery> GetDelivery(int skip, int take, DateTime shipTime)
+        public List<DcRecordDelivery> GetDelivery(int skip, int take)
         {
             using (var dc = new PMSDAL.PMSDbContext())
             {
-                var result = dc.Deliverys.Include("RecordDeliveryItem").Where(d => d.ShipTime.Date == shipTime.Date)
+                var result = dc.Deliverys.Include("DeliveryItems")
                     .OrderByDescending(d => d.CreateTime)
                     .ToList();
                 Mapper.Initialize(cfg =>
@@ -79,6 +79,14 @@ namespace PMSWCFService
             }
         }
 
+        public int GetDeliveryCount()
+        {
+            using (var dc = new PMSDAL.PMSDbContext())
+            {
+                return dc.Deliverys.Count();
+            }
+        }
+
         public int UpdateReocrdDelivery(DcRecordDelivery model)
         {
             using (var dc = new PMSDAL.PMSDbContext())
@@ -87,7 +95,7 @@ namespace PMSWCFService
                 Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>());
                 var record = Mapper.Map<PMSDAL.RecordDelivery>(model);
                 dc.Entry(record).State = System.Data.Entity.EntityState.Modified;
-                result=dc.SaveChanges();
+                result = dc.SaveChanges();
                 return result;
             }
         }

@@ -233,4 +233,49 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMissonWithPlan" nillable="true" type="tns:DcMissonWithPlan" />
+  <xs:complexType name="ArrayOfDcRecordDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordDelivery" nillable="true" type="tns:DcRecordDelivery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordDelivery" nillable="true" type="tns:ArrayOfDcRecordDelivery" />
+  <xs:complexType name="DcRecordDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryItems" nillable="true" type="tns:ArrayOfDcRecordDeliveryItem" />
+      <xs:element minOccurs="0" name="DeliveryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackageInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShipTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="State" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordDelivery" nillable="true" type="tns:DcRecordDelivery" />
+  <xs:complexType name="ArrayOfDcRecordDeliveryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordDeliveryItem" nillable="true" type="tns:DcRecordDeliveryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordDeliveryItem" nillable="true" type="tns:ArrayOfDcRecordDeliveryItem" />
+  <xs:complexType name="DcRecordDeliveryItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordDeliveryItem" nillable="true" type="tns:DcRecordDeliveryItem" />
 </xs:schema>
