@@ -172,7 +172,7 @@ namespace DBTransferFromOldToNew
 
 
 
-                newDb.Products.Add(product);
+                newDb.RecordProducts.Add(product);
             });
 
             newDb.SaveChanges();

@@ -2985,6 +2985,9 @@ namespace PMSDesktopClient.ServiceReference {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeightField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -3108,6 +3111,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
                 }
             }
         }

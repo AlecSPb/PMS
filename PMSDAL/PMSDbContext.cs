@@ -32,14 +32,14 @@ namespace PMSDAL
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
 
-        public DbSet<RecordDelivery> Deliverys { get; set; }
-        public DbSet<RecordDeliveryItem> DeliveryItems { get; set; }
+        public DbSet<RecordDelivery> RecordDeliverys { get; set; }
+        public DbSet<RecordDeliveryItem> RecordDeliveryItems { get; set; }
         public DbSet<RecordMachine> RecordMachines { get; set; }
         public DbSet<RecordMilling> RecordMillings { get; set; }
         public DbSet<RecordTakeOut> RecordTakeOuts { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
-        public DbSet<RecordProduct> Products { get; set; }
+        public DbSet<RecordProduct> RecordProducts { get; set; }
         //UserAccess
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> Roles { get; set; }

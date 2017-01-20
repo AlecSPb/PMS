@@ -31,6 +31,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string DetailRecord{ get; set; }//复杂的信息写在这里
         [DataMember]
+        public string Weight { get; set; }
+        [DataMember]
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         [DataMember]
         public string Remark { get; set; }

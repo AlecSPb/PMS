@@ -17,7 +17,7 @@ namespace PMSWCFService
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>());
                 var record = Mapper.Map<PMSDAL.RecordDelivery>(model);
-                dc.Deliverys.Add(record);
+                dc.RecordDeliverys.Add(record);
                 result = dc.SaveChanges();
                 return result;
             }
@@ -30,7 +30,7 @@ namespace PMSWCFService
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>());
                 var record = Mapper.Map<PMSDAL.RecordDeliveryItem>(model);
-                dc.DeliveryItems.Add(record);
+                dc.RecordDeliveryItems.Add(record);
                 result = dc.SaveChanges();
                 return result;
             }
@@ -41,8 +41,8 @@ namespace PMSWCFService
             using (var dc = new PMSDAL.PMSDbContext())
             {
                 int result = 0;
-                var record = dc.Deliverys.Find(id);
-                dc.Deliverys.Remove(record);
+                var record = dc.RecordDeliverys.Find(id);
+                dc.RecordDeliverys.Remove(record);
                 result = dc.SaveChanges();
                 return result;
             }
@@ -53,8 +53,8 @@ namespace PMSWCFService
             using (var dc = new PMSDAL.PMSDbContext())
             {
                 int result = 0;
-                var record = dc.DeliveryItems.Find(id);
-                dc.DeliveryItems.Remove(record);
+                var record = dc.RecordDeliveryItems.Find(id);
+                dc.RecordDeliveryItems.Remove(record);
                 result = dc.SaveChanges();
                 return result;
             }
@@ -64,7 +64,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDAL.PMSDbContext())
             {
-                var result = dc.Deliverys.Include("DeliveryItems")
+                var result = dc.RecordDeliverys.Include("DeliveryItems")
                     .OrderByDescending(d => d.CreateTime)
                     .ToList();
                 Mapper.Initialize(cfg =>
@@ -83,7 +83,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDAL.PMSDbContext())
             {
-                return dc.Deliverys.Count();
+                return dc.RecordDeliverys.Count();
             }
         }
 

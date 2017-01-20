@@ -94,6 +94,26 @@
     <Compile Include="Migrations\201701180754366_changetablenames.Designer.cs">
       <DependentUpon>201701180754366_changetablenames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701191015480_delelefromrecorddeliveryitem.cs" />
+    <Compile Include="Migrations\201701191015480_delelefromrecorddeliveryitem.Designer.cs">
+      <DependentUpon>201701191015480_delelefromrecorddeliveryitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191024291_delelefromrecorddeliveryitem2.cs" />
+    <Compile Include="Migrations\201701191024291_delelefromrecorddeliveryitem2.Designer.cs">
+      <DependentUpon>201701191024291_delelefromrecorddeliveryitem2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701191050379_delelefromrecorddeliveryitem3.cs" />
+    <Compile Include="Migrations\201701191050379_delelefromrecorddeliveryitem3.Designer.cs">
+      <DependentUpon>201701191050379_delelefromrecorddeliveryitem3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201136060_newrecorddeliveryitem.cs" />
+    <Compile Include="Migrations\201701201136060_newrecorddeliveryitem.Designer.cs">
+      <DependentUpon>201701201136060_newrecorddeliveryitem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701201549256_170120New.cs" />
+    <Compile Include="Migrations\201701201549256_170120New.Designer.cs">
+      <DependentUpon>201701201549256_170120New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -163,6 +183,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701180754366_changetablenames.resx">
       <DependentUpon>201701180754366_changetablenames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191015480_delelefromrecorddeliveryitem.resx">
+      <DependentUpon>201701191015480_delelefromrecorddeliveryitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191024291_delelefromrecorddeliveryitem2.resx">
+      <DependentUpon>201701191024291_delelefromrecorddeliveryitem2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191050379_delelefromrecorddeliveryitem3.resx">
+      <DependentUpon>201701191050379_delelefromrecorddeliveryitem3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201136060_newrecorddeliveryitem.resx">
+      <DependentUpon>201701201136060_newrecorddeliveryitem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701201549256_170120New.resx">
+      <DependentUpon>201701201549256_170120New.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

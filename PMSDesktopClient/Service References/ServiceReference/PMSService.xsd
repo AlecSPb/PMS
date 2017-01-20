@@ -275,6 +275,7 @@
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordDeliveryItem" nillable="true" type="tns:DcRecordDeliveryItem" />

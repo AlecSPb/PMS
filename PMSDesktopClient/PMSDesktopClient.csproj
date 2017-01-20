@@ -92,6 +92,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EnumCollection.cs" />
     <Compile Include="NavigationService.cs" />
     <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -169,7 +170,6 @@
     <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowManager.cs" />
     <Page Include="Language\us-en.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

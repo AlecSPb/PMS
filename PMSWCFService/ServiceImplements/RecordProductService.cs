@@ -19,7 +19,7 @@ namespace PMSWCFService
                 int result = 0;
                 Mapper.Initialize(cfg => cfg.CreateMap<DcRecordProduct, RecordProduct>());
                 var product = Mapper.Map<RecordProduct>(model);
-                dc.Products.Add(product);
+                dc.RecordProducts.Add(product);
                 result = dc.SaveChanges();
                 return result;
             }
@@ -30,10 +30,10 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var product = dc.Products.Find(id);
+                var product = dc.RecordProducts.Find(id);
                 if (product != null)
                 {
-                    dc.Products.Remove(product);
+                    dc.RecordProducts.Remove(product);
                     result = dc.SaveChanges();
                 }
 
@@ -45,7 +45,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.Products.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
+                var result = dc.RecordProducts.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
                   && p.State != (int)ModelState.Deleted).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
                 Mapper.Initialize(cfg => cfg.CreateMap<RecordProduct, DcRecordProduct>());
                 var products = Mapper.Map<List<RecordProduct>, List<DcRecordProduct>>(result);
@@ -57,7 +57,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.Products.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
+                return dc.RecordProducts.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
                   && p.State != (int)ModelState.Deleted).Count();
             }
         }

@@ -21,7 +21,9 @@ namespace PMSDAL
         public string Composition { get; set; }
         public string Customer { get; set; }
         public string PO { get; set; }
-        public string DetailRecord{ get; set; }//复杂的信息写在这里
+        public string Weight { get; set; }
+        public string DetailRecord { get; set; }//复杂的信息写在这里
+
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         public string Remark { get; set; }
 
