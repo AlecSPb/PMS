@@ -19,6 +19,7 @@ namespace PMSWCFService.ServiceContracts
         int UpdateReocrdVHP(DcRecordVHP model);
         [OperationContract]
         int DeleteRecordVHP(Guid id);
+
         [OperationContract]
         int AddRecordVHPItem(DcRecordVHPItem model);
         [OperationContract]
