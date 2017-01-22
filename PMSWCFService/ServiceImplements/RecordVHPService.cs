@@ -13,37 +13,109 @@ namespace PMSWCFService.ServiceImplements
     {
         public int AddRecordVHP(DcRecordVHP model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHP, RecordVHP>());
+                var newModel = Mapper.Map<RecordVHP>(model);
+                dc.RecordVHPs.Add(newModel);
+                result = dc.SaveChanges();
+                return result;
+            }
         }
 
         public int AddRecordVHPItem(DcRecordVHPItem model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHPItem, RecordVHPItem>());
+                var newModel = Mapper.Map<RecordVHPItem>(model);
+                dc.RecordVHPItems.Add(newModel);
+                result = dc.SaveChanges();
+                return result;
+            }
         }
 
         public int DeleteRecordVHP(Guid id)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                var model = dc.RecordVHPs.Find(id);
+                dc.RecordVHPs.Remove(model);
+                result = dc.SaveChanges();
+                return result;
+            }
         }
 
         public int DeleteRecordVHPItem(Guid id)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                var model = dc.RecordVHPItems.Find(id);
+                dc.RecordVHPItems.Remove(model);
+                result = dc.SaveChanges();
+                return result;
+            }
         }
 
         public List<DcRecordVHP> GetRecordVHP(int skip, int take, string searchVHPID)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                var result = dc.RecordVHPs.Include("DcRecordVHPItems")
+                    .Where(v => v.VHPID.Contains(searchVHPID))
+                    .OrderByDescending(v => v.CreateTime)
+                    .Skip(skip).Take(take).ToList();
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<RecordVHP, DcRecordVHP>();
+                    cfg.CreateMap<RecordVHPItem, DcRecordVHPItem>();
+                });
+
+                var final = Mapper.Map<List<RecordVHP>, List<DcRecordVHP>>(result);
+                return final;
+            }
+        }
+
+        public int GetRecordVHPCount(int skip, int take, string searchVHPID)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                var result = dc.RecordVHPs
+                         .Where(v => v.VHPID.Contains(searchVHPID))
+                         .OrderByDescending(v => v.CreateTime)
+                         .Skip(skip).Take(take).Count();
+                return result;
+            }
         }
 
         public int UpdateReocrdVHP(DcRecordVHP model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHP, RecordVHP>());
+                var newModel = Mapper.Map<RecordVHP>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+                return result;
+            }
         }
 
         public int UpdateReocrdVHPItem(DcRecordVHPItem model)
         {
-            throw new NotImplementedException();
+            using (var dc = new PMSDbContext())
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHPItem, RecordVHPItem>());
+                var newModel = Mapper.Map<RecordVHPItem>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+                return result;
+            }
         }
     }
 }
