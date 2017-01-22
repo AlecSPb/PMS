@@ -4,9 +4,215 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSDesktopClient.View"
+     xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1000">
-    <Grid>
-            
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{StaticResource strRecordVHPQuickEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
+            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToRecordVHP}"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" HorizontalContentAlignment="Stretch">
+                <ListBoxItem>
+                    <Button Content="161112-A" Style="{StaticResource ButtonBasic}"/>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <Button Content="161112-B" Style="{StaticResource ButtonBasic}"/>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <Button Content="161112-C" Style="{StaticResource ButtonBasic}"/>
+                </ListBoxItem>
+            </ListBox>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock Text="VHP Device" Style="{StaticResource TextBlockBasic}" />
+                        <TextBlock Text="A" Style="{StaticResource TextBlockBasic}" />
+                        <TextBlock Text="Current Date" Style="{StaticResource TextBlockBasic}" />
+                        <TextBlock Text="2016-12-26" Style="{StaticResource TextBlockBasic}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"  Orientation="Horizontal">
+                        <TextBlock Text="Temperature:" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="800℃" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="Pressure:" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="300t" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="Vaccum:" Style="{StaticResource TextBlockBasic}"/>
+                        <TextBlock Text="1E-3Pa" Style="{StaticResource TextBlockBasic}"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="2"  Text="Remark Content will be put here" Style="{StaticResource TextBlockBasic}"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}"/>
+                    <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
+                </StackPanel>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="PV1:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="0"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock Text="PV2:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="2"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="3"/>
+                    <TextBlock Text="PV3:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="4"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="5"/>
+                    <TextBlock Text="SV:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="6"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="7"/>
+                    <TextBlock Text="Ton:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="8"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="9"/>
+                    <TextBlock Text="Vaccum:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="10"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="11"/>
+
+                    <TextBlock Text="Shift1:" Style="{StaticResource TextBlockBasic}"  Grid.Row="1" Grid.Column="0"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock Text="Shift2:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="2"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="3"/>
+                    <TextBlock Text="Omega:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="4"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="5"/>
+                    <TextBlock Text="WaterIn:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="6"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="7"/>
+                    <TextBlock Text="WaterOut:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="8"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="9"/>
+
+                    <TextBlock Text="Remark:" Style="{StaticResource TextBlockBasic}"  Grid.Row="2" Grid.Column="0"/>
+                    <TextBox Text="" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"
+                             Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="11"/>
+                </Grid>
+                <DataGrid Grid.Row="3" Style="{StaticResource DataGridBasic}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Edit">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Edit"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Time">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="PV1">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="PV2">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="PV3">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="SV">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Ton">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Vaccum">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Shift1">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Shift2">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Omega">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="WaterInTemp">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="WaterOutTemp">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text=""/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <control:SimplePager Grid.Row="4"/>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

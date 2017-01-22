@@ -7,9 +7,9 @@ using PMSWCFService.ServiceContracts;
 using PMSDAL;
 using AutoMapper;
 
-namespace PMSWCFService.ServiceImplements
+namespace PMSWCFService
 {
-    public class RecordVHPService : IRecordVHPService
+    public partial class PMSService : IRecordVHPService
     {
         public int AddRecordVHP(DcRecordVHP model)
         {
@@ -65,7 +65,7 @@ namespace PMSWCFService.ServiceImplements
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.RecordVHPs.Include("DcRecordVHPItems")
+                var result = dc.RecordVHPs.Include("RecordVHPItems")
                     .Where(v => v.VHPID.Contains(searchVHPID))
                     .OrderByDescending(v => v.CreateTime)
                     .Skip(skip).Take(take).ToList();
@@ -80,14 +80,14 @@ namespace PMSWCFService.ServiceImplements
             }
         }
 
-        public int GetRecordVHPCount(int skip, int take, string searchVHPID)
+        public int GetRecordVHPCount(string searchVHPID)
         {
             using (var dc = new PMSDbContext())
             {
                 var result = dc.RecordVHPs
                          .Where(v => v.VHPID.Contains(searchVHPID))
                          .OrderByDescending(v => v.CreateTime)
-                         .Skip(skip).Take(take).Count();
+                         .Count();
                 return result;
             }
         }

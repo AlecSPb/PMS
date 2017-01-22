@@ -19,7 +19,10 @@ namespace PMSDAL
         public string CreateTime { get; set; }
         public string Creator { get; set; }
         public string VHPID { get; set; }//161210-M
-        public string DeivceCode { get; set; }
+        public string Composition { get; set; }
+        public string MoldCode { get; set; }
+
+        public string DeviceCode { get; set; }
         //预压力和预压温度
         public double PreTemperature { get; set; }
         public double PrePressure { get; set; }

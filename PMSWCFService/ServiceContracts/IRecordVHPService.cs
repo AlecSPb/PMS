@@ -14,7 +14,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcRecordVHP> GetRecordVHP(int skip, int take, string searchVHPID);
         [OperationContract]
-        int GetRecordVHPCount(int skip, int take, string searchVHPID);
+        int GetRecordVHPCount(string searchVHPID);
 
         [OperationContract]
         int AddRecordVHP(DcRecordVHP model);

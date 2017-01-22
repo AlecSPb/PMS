@@ -18,7 +18,7 @@
             <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToMain}"/>
             <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPEdit}"/>
             <TextBlock Style="{StaticResource TextBlockBasic}" Text="VHP ID"/>
-            <TextBox Style="{StaticResource TextBoxBasicBold}" Text="161226-A" MinWidth="200"/>
+            <TextBox Style="{StaticResource TextBoxBasic}" Text="161226-A" MinWidth="200"/>
             <Button Content="{StaticResource  strSearch}" Style="{StaticResource ButtonBasic}"/>
             <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}"/>
             <Button Content="{StaticResource strQuick}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPQuickEdit}"/>

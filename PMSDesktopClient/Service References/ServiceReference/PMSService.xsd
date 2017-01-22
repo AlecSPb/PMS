@@ -279,4 +279,56 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordDeliveryItem" nillable="true" type="tns:DcRecordDeliveryItem" />
+  <xs:complexType name="ArrayOfDcRecordVHP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordVHP" nillable="true" type="tns:DcRecordVHP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordVHP" nillable="true" type="tns:ArrayOfDcRecordVHP" />
+  <xs:complexType name="DcRecordVHP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="KeepTempTime" type="xs:double" />
+      <xs:element minOccurs="0" name="MoldCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
+      <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="Pressure" type="xs:double" />
+      <xs:element minOccurs="0" name="RecordVHPItems" nillable="true" type="tns:ArrayOfDcRecordVHPItem" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="VHPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordVHP" nillable="true" type="tns:DcRecordVHP" />
+  <xs:complexType name="ArrayOfDcRecordVHPItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordVHPItem" nillable="true" type="tns:DcRecordVHPItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordVHPItem" nillable="true" type="tns:ArrayOfDcRecordVHPItem" />
+  <xs:complexType name="DcRecordVHPItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExtraInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Omega" type="xs:double" />
+      <xs:element minOccurs="0" name="PV1" type="xs:double" />
+      <xs:element minOccurs="0" name="PV2" type="xs:double" />
+      <xs:element minOccurs="0" name="PV3" type="xs:double" />
+      <xs:element minOccurs="0" name="SV" type="xs:double" />
+      <xs:element minOccurs="0" name="Shift1" type="xs:double" />
+      <xs:element minOccurs="0" name="Shift2" type="xs:double" />
+      <xs:element minOccurs="0" name="Ton" type="xs:double" />
+      <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
+      <xs:element minOccurs="0" name="WaterTemperatureIn" type="xs:double" />
+      <xs:element minOccurs="0" name="WaterTemperatureOut" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordVHPItem" nillable="true" type="tns:DcRecordVHPItem" />
 </xs:schema>

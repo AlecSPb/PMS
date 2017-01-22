@@ -29,7 +29,7 @@
                 </MenuItem>
                 <MenuItem Header="{StaticResource strRecord}">
                     <MenuItem Header="Milling"/>
-                    <MenuItem Header="VHP"/>
+                    <MenuItem Header="VHP" Command="{Binding Navigate}" CommandParameter="RecordVHPView"/>
                     <MenuItem Header="WorkBlank"/>
                     <MenuItem Header="Machine"/>
                     <MenuItem Header="{StaticResource strBonding}"/>

@@ -114,6 +114,18 @@
     <Compile Include="Migrations\201701201549256_170120New.Designer.cs">
       <DependentUpon>201701201549256_170120New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701220709472_addtorecordvhp.cs" />
+    <Compile Include="Migrations\201701220709472_addtorecordvhp.Designer.cs">
+      <DependentUpon>201701220709472_addtorecordvhp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701220801076_addtorecordvhp2.cs" />
+    <Compile Include="Migrations\201701220801076_addtorecordvhp2.Designer.cs">
+      <DependentUpon>201701220801076_addtorecordvhp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701220815340_addtorecordvhp3.cs" />
+    <Compile Include="Migrations\201701220815340_addtorecordvhp3.Designer.cs">
+      <DependentUpon>201701220815340_addtorecordvhp3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -198,6 +210,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701201549256_170120New.resx">
       <DependentUpon>201701201549256_170120New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701220709472_addtorecordvhp.resx">
+      <DependentUpon>201701220709472_addtorecordvhp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701220801076_addtorecordvhp2.resx">
+      <DependentUpon>201701220801076_addtorecordvhp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701220815340_addtorecordvhp3.resx">
+      <DependentUpon>201701220815340_addtorecordvhp3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
