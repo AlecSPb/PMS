@@ -93,6 +93,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EnumCollection.cs" />
+    <Compile Include="NavigationObject.cs" />
     <Compile Include="NavigationService.cs" />
     <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -106,6 +107,7 @@
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
+    <Compile Include="ViewModel\OrderEditVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\RecordProductVM.cs" />

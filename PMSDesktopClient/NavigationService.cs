@@ -14,5 +14,11 @@ namespace PMSDesktopClient
         {
             Messenger.Default.Send<string>(viewName, NavigationToken.Navigate);
         }
+
+        public static void EditWithParameter(NavigationObject obj)
+        {
+            Messenger.Default.Send<NavigationObject>(obj,NavigationToken.Edit);
+        }
+
     }
 }

@@ -1,4 +1,6 @@
 ﻿using PMSDesktopClient.View;
+using PMSDesktopClient.ViewModel;
+
 using PMSDesktopClient.View.Sales;
 using System;
 using System.Collections.Generic;
@@ -17,6 +19,9 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
+using PMSDesktopClient.ServiceReference;
+
+
 
 namespace PMSDesktopClient
 {
@@ -30,7 +35,24 @@ namespace PMSDesktopClient
             InitializeComponent();
             DataContext = new ViewModel.MainWindowVM();
             Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
+            Messenger.Default.Register<NavigationObject>(this, NavigationToken.Edit,ActionEdit);
+
             NavigateTo(new LogInView());
+        }
+
+        private void ActionEdit(NavigationObject obj)
+        {
+            switch (obj.ViewName)
+            {
+                case "OrderEditView":
+                    var view = new OrderEditView();
+                    var vm=new OrderEditVM(obj.ModelObject as DcOrder);
+                    view.DataContext = vm;
+                    NavigateTo(view);
+                    break;
+                default :
+                    break;
+            }
         }
 
         private void NavigateTo(UserControl view)

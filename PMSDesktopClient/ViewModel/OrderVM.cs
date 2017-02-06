@@ -31,8 +31,15 @@ namespace PMSDesktopClient.ViewModel
         {
             Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
             PageChanged = new RelayCommand(ActionPaging);
-            Search = new RelayCommand(ActionSearch,CanSearch);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
+            EditWithParameter = new RelayCommand<DcOrder>(order =>
+            {
+                NavigationObject obj = new NavigationObject();
+                obj.ViewName = "OrderEditView";
+                obj.ModelObject = order;
+                NavigationService.EditWithParameter(obj);
+            });
         }
 
         private bool CanSearch()
@@ -155,7 +162,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
-
+        public RelayCommand<DcOrder> EditWithParameter { get; private set; }
         #endregion
     }
 }

@@ -20,6 +20,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitialCommands()
         {
             Navigate = new RelayCommand<string>(arg=>NavigationService.NavigateTo(arg));
+
         }
 
 
