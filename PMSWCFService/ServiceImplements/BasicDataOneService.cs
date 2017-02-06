@@ -205,32 +205,81 @@ namespace PMSWCFService
 
         public int UpdateCompound(DcBDCompound model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
+                var newModel = Mapper.Map<BDCompound>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int UpdateCustomer(DcBDCustomer model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
+                var newModel = Mapper.Map<BDCustomer>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int UpdateDeliveryAddress(DcBDDeliveryAddress model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
+                var newModel = Mapper.Map<BDDeliveryAddress>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int UpdateVHPDevice(DcBDVHPDevice model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
+                var newModel = Mapper.Map<BDVHPDevice>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int UpdateVHPMold(DcBDVHPMold model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
+                var newModel = Mapper.Map<BDVHPMold>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int UpdateVHPProcess(DcBDVHPProcess model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
+                var newModel = Mapper.Map<BDVHPProcess>(model);
+                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+            return result;
         }
     }
 }
