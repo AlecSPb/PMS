@@ -35,6 +35,14 @@ namespace PMSDesktopClient.ViewModel
                 dcOrder.PolicyMakeDate = DateTime.Now;
                 dcOrder.State = 1;
                 dcOrder.Priority = 1;
+                dcOrder.CompositionOriginal = "CuGaSe2";
+                dcOrder.CompositionStandard = "Cu25Ga25Se50";
+                dcOrder.CompositoinAbbr = "CuGaSe";
+                dcOrder.Creator = "xs.zhou";
+                dcOrder.PolicyType = "Target";
+                dcOrder.ReviewPassed = true;
+                dcOrder.Quantity = 1;
+                dcOrder.QuantityUnit = "piece";
 
 
                 CurrentOrder = dcOrder;
@@ -68,6 +76,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateOrder(CurrentOrder);
             }
             NavigationService.NavigateTo("OrderView");
+            Messenger.Default.Send<Object>("","RefreshOrder");
         }
 
         private bool isNew;

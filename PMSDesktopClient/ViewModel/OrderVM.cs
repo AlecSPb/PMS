@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSDesktopClient.ServiceReference;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -16,10 +17,26 @@ namespace PMSDesktopClient.ViewModel
     {
         public OrderVM()
         {
+            Messenger.Default.Register<Object>(this,"RefreshOrder", ActionRefresh);
+
+
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
+
+        private void ActionRefresh(Object obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
+
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
+
 
         private void InitializeProperties()
         {
@@ -40,6 +57,21 @@ namespace PMSDesktopClient.ViewModel
                 obj.ModelObject = order;
                 NavigationService.EditWithParameter(obj);
             });
+
+            Delete = new RelayCommand<ServiceReference.DcOrder>(ActionDelete);
+        }
+
+        private void ActionDelete(DcOrder obj)
+        {
+            if (obj!=null)
+            {
+                if (MessageBox.Show("you want to delete it?","warning",MessageBoxButton.YesNo)==MessageBoxResult.Yes)
+                {
+                    var service = new OrderServiceClient();
+                    service.DeleteOrder(obj.ID);
+                    SetPageParametersWhenConditionChange();
+                }
+            }
         }
 
         private bool CanSearch()
@@ -163,6 +195,9 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcOrder> EditWithParameter { get; private set; }
+
+        public RelayCommand<DcOrder> Delete { get; private set; }
+
         #endregion
     }
 }

@@ -43,7 +43,10 @@
                                         Command="{Binding DataContext.EditWithParameter,
                                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="Del" Style="{StaticResource ButtonDGBasic}"/>
+                                <Button Content="Del" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.Delete,
+                                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
