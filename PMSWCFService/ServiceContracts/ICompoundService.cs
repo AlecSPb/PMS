@@ -17,6 +17,6 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateCompound(DcBDCompound model);
         [OperationContract]
-        int DeleteCompound(DcBDCompound model);
+        int DeleteCompound(Guid id);
     }
 }

@@ -101,34 +101,76 @@ namespace PMSWCFService
             return result;
         }
 
-        public int DeleteCompound(DcBDCompound model)
+        public int DeleteCompound(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                var model = dc.Comounds.Find(id);
+                dc.Comounds.Remove(model);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int DeleteCustomer(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                var model = dc.Customers.Find(id);
+                dc.Customers.Remove(model);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int DeleteDeliveryAddress(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                var model = dc.DeliveryAddresses.Find(id);
+                dc.DeliveryAddresses.Remove(model);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int DeleteVHPDevice(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                var model = dc.VHPDevices.Find(id);
+                dc.VHPDevices.Remove(model);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int DeleteVHPMold(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                var model = dc.VHPMolds.Find(id);
+                dc.VHPMolds.Remove(model);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int DeleteVHPProcess(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                var model = dc.VHPProcesses.Find(id);
+                dc.VHPProcesses.Remove(model);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public List<DcBDCompound> GetAllCompounds()
