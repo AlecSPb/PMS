@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
+using PMSDAL;
+using AutoMapper;
+
+
 
 namespace PMSWCFService
 {
@@ -14,7 +18,17 @@ namespace PMSWCFService
     {
         public int AddCompound(DcBDCompound model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
+                var newModel = Mapper.Map<BDCompound>(model);
+
+                dc.Comounds.Add(newModel);
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int AddCustomer(DcBDCustomer model)
