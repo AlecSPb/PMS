@@ -33,27 +33,72 @@ namespace PMSWCFService
 
         public int AddCustomer(DcBDCustomer model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
+                var newModel = Mapper.Map<BDCustomer>(model);
+
+                dc.Customers.Add(newModel);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int AddDeliveryAddress(DcBDDeliveryAddress model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
+                var newModel = Mapper.Map<BDDeliveryAddress>(model);
+
+                dc.DeliveryAddresses.Add(newModel);
+                result = dc.SaveChanges();
+            }
+            return result;
         }
 
         public int AddVHPDevice(DcBDVHPDevice model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
+                var newModel = Mapper.Map<BDVHPDevice>(model);
+                dc.VHPDevices.Add(newModel);
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int AddVHPMold(DcBDVHPProcess model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
+                var newModel = Mapper.Map<BDVHPProcess>(model);
+                dc.VHPProcesses.Add(newModel);
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int AddVHPMold(DcBDVHPMold model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
+                var newModel = Mapper.Map<BDVHPMold>(model);
+                dc.VHPMolds.Add(newModel);
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int DeleteCompound(DcBDCompound model)
