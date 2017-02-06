@@ -140,7 +140,7 @@ namespace DBTransferFromOldToNew
                 compound.CreateTime = DateTime.Now;
 
 
-                newDb.Comounds.Add(compound);
+                newDb.Compounds.Add(compound);
             }
             newDb.SaveChanges();
 

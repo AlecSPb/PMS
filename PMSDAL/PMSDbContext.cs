@@ -17,7 +17,7 @@ namespace PMSDAL
             //Database.SetInitializer<PMSDbContext>(null);
         }
         //BasicData
-        public DbSet<BDCompound> Comounds { get; set; }
+        public DbSet<BDCompound> Compounds { get; set; }
         public DbSet<BDCustomer> Customers { get; set; }
         public DbSet<BDDeliveryAddress> DeliveryAddresses { get; set; }
         public DbSet<BDVHPDevice> VHPDevices { get; set; }
