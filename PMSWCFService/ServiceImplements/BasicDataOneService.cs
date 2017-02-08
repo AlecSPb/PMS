@@ -73,20 +73,6 @@ namespace PMSWCFService
             return result;
         }
 
-        public int AddVHPMold(DcBDVHPProcess model)
-        {
-            int result = 0;
-            using (var dc=new PMSDbContext())
-            {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
-                var newModel = Mapper.Map<BDVHPProcess>(model);
-                dc.VHPProcesses.Add(newModel);
-                result = dc.SaveChanges();
-            }
-
-            return result;
-        }
-
         public int AddVHPMold(DcBDVHPMold model)
         {
             int result = 0;
@@ -95,6 +81,20 @@ namespace PMSWCFService
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
                 var newModel = Mapper.Map<BDVHPMold>(model);
                 dc.VHPMolds.Add(newModel);
+                result = dc.SaveChanges();
+            }
+
+            return result;
+        }
+
+        public int AddVHPProcess(DcBDVHPProcess model)
+        {
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
+                var newModel = Mapper.Map<BDVHPProcess>(model);
+                dc.VHPProcesses.Add(newModel);
                 result = dc.SaveChanges();
             }
 
