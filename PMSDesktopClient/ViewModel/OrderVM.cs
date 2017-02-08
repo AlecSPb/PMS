@@ -46,7 +46,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
+            Navigate = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -55,7 +55,7 @@ namespace PMSDesktopClient.ViewModel
                 NavigationObject obj = new NavigationObject();
                 obj.ViewName = "OrderEditView";
                 obj.ModelObject = order;
-                NavigationService.EditWithParameter(obj);
+                NavigationService.GoToWithParameter(obj);
             });
 
             Delete = new RelayCommand<ServiceReference.DcOrder>(ActionDelete);

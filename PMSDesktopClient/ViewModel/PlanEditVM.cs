@@ -31,7 +31,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGiveup()
         {
-            NavigationService.NavigateTo("PlanView");
+            NavigationService.GoTo("PlanView");
         }
 
         public DcPlanVHP CurrentPlan { get; set; }

@@ -83,7 +83,8 @@
     <Reference Include="WPFControls">
       <HintPath>..\..\WpfControls\WPFControls\bin\Debug\WPFControls.dll</HintPath>
     </Reference>
-    <Reference Include="WPFStyle46">
+    <Reference Include="WPFStyle46, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\WpfControls\WPFStyle46\bin\Debug\WPFStyle46.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -107,7 +108,9 @@
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
+    <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OrderEditVM.cs" />
+    <Compile Include="ViewModel\OrderSelectVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
@@ -143,6 +146,9 @@
     </Compile>
     <Compile Include="View\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderSelectView.xaml.cs">
+      <DependentUpon>OrderSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
@@ -227,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OrderEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderSelectView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

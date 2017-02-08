@@ -50,6 +50,12 @@ namespace PMSDesktopClient
                     view.DataContext = vm;
                     NavigateTo(view);
                     break;
+                case "PlanEditView":
+                    var planEditView = new PlanEditView();
+                    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP);
+                    planEditView.DataContext = planEditVM;
+                    NavigateTo(planEditView);
+                    break;
                 default :
                     break;
             }
@@ -102,6 +108,9 @@ namespace PMSDesktopClient
                     break;
                 case "MaterialOrderEditView":
                     NavigateTo(new MaterialOrderView());
+                    break;
+                case "OrderSelectView":
+                    NavigateTo(new OrderSelectView());
                     break;
                 default:
                     NavigateTo(new NavigationView());
