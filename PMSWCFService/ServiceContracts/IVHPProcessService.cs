@@ -14,7 +14,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcBDVHPProcess> GetVHPProcess();
         [OperationContract]
-        int AddVHPMold(DcBDVHPProcess model);
+        int AddVHPProcess(DcBDVHPProcess model);
         [OperationContract]
         int UpdateVHPProcess(DcBDVHPProcess model);
         [OperationContract]

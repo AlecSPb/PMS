@@ -4,8 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSDesktopClient.View"
+             xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
+    <UserControl.DataContext>
+        <vm:NavigationVM/>
+    </UserControl.DataContext>
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -35,10 +39,14 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Content="Order" Grid.Row="0" Grid.Column="0"/>
-        <Button Content="Order Check" Grid.Row="0" Grid.Column="1"/>
-        <Button Content="Misson" Grid.Row="1" Grid.Column="0"/>
-        <Button Content="Plan" Grid.Row="1" Grid.Column="1"/>
+        <Button Content="Order" Grid.Row="0" Grid.Column="0" Command="{Binding Navigate}"
+                CommandParameter="OrderView"/>
+        <Button Content="Order Check" Grid.Row="0" Grid.Column="1" Command="{Binding Navigate}"
+                CommandParameter="OrderCheckView"/>
+        <Button Content="Misson" Grid.Row="1" Grid.Column="0" Command="{Binding Navigate}"
+                CommandParameter="MissonView"/>
+        <Button Content="Plan" Grid.Row="1" Grid.Column="1" Command="{Binding Navigate}"
+                CommandParameter="PlanView"/>
         
         <Button Content="Material Need" Grid.Row="2" Grid.Column="0"/>
         <Button Content="Material Order" Grid.Row="2" Grid.Column="1"/>
@@ -50,7 +58,8 @@
         <Button Content="Machine Record" Grid.Row="3" Grid.Column="3"/>
         <Button Content="Product Record" Grid.Row="3" Grid.Column="4"/>
         <Button Content="Delivery Record" Grid.Row="3" Grid.Column="5"/>
-
+        
+        <Button Content="Bonding Record" Grid.Row="4" Grid.Column="0"/>
 
     </Grid>
 </UserControl>

@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/PMSService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/PMSService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PMSService.xsd" MetadataType="Schema" ID="deda64d0-bce1-40bf-875c-ea9088017e2a" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd2" />
-    <MetadataFile FileName="PMSService.wsdl" MetadataType="Wsdl" ID="2b63b936-6876-4d6b-b873-ece340c8fdb1" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?wsdl" />
-    <MetadataFile FileName="PMSService1.xsd" MetadataType="Schema" ID="319b5936-7c81-4890-a259-0b941a6ddf98" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PMSService2.xsd" MetadataType="Schema" ID="617f5bce-b34e-4edf-9767-945110c72a4b" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PMSService3.xsd" MetadataType="Schema" ID="41781a44-3dd8-4270-be98-1f99ce8ff0d5" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PMSService31.xsd" MetadataType="Schema" ID="14b2ce6b-51f0-43dc-8063-094b2a0f346f" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMSService32.xsd" MetadataType="Schema" ID="5281fb68-adc7-4c5d-8b6b-3e14ddd621f2" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PMSService1.wsdl" MetadataType="Wsdl" ID="b31527ae-e729-4d70-9550-d2e6ba44b9ab" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

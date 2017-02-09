@@ -83,7 +83,8 @@
     <Reference Include="WPFControls">
       <HintPath>..\..\WpfControls\WPFControls\bin\Debug\WPFControls.dll</HintPath>
     </Reference>
-    <Reference Include="WPFStyle46">
+    <Reference Include="WPFStyle46, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\WpfControls\WPFStyle46\bin\Debug\WPFStyle46.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -107,8 +108,11 @@
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
+    <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OrderEditVM.cs" />
+    <Compile Include="ViewModel\OrderSelectVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
+    <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\RecordProductVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
@@ -142,6 +146,9 @@
     </Compile>
     <Compile Include="View\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderSelectView.xaml.cs">
+      <DependentUpon>OrderSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
@@ -229,6 +236,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OrderSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PlanEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -288,6 +299,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App - 复制.config" />
     <None Include="DocTemplate\COA.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -314,6 +326,24 @@
     <None Include="Reports\GeAsSeElastomer440Blank.docx" />
     <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
     <None Include="Reports\ProductTemplate.docx" />
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDCompound.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDDeliveryAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDVHPDevice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDVHPMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDVHPProcess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialNeed.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -340,16 +370,6 @@
     </None>
     <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReference\PMSService.wsdl" />
-    <None Include="Service References\ServiceReference\PMSService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference\PMSService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference\PMSService2.xsd">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -387,6 +407,16 @@
     <None Include="Service References\ServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\ServiceReference\PMSService1.wsdl" />
+    <None Include="Service References\ServiceReference\PMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference\PMSService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference\PMSService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

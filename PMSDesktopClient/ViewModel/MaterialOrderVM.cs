@@ -33,7 +33,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
+            Navigate = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);

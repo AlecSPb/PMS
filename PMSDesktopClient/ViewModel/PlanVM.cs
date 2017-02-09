@@ -28,7 +28,8 @@ namespace PMSDesktopClient.ViewModel
 
         private void IntitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.NavigateTo("NavigationView"));
+            Navigate = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
+            AddNewPlan = new RelayCommand(() => NavigationService.GoTo("OrderSelectView"));
             PageChanged = new RelayCommand(ActionPaging);
         }
 
@@ -97,6 +98,7 @@ namespace PMSDesktopClient.ViewModel
 
         #region Commands
         public RelayCommand Navigate { get; set; }
+        public RelayCommand AddNewPlan { get; set; }
         #endregion
 
         #region Properties
