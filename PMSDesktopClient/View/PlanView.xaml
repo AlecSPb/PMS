@@ -31,7 +31,7 @@
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" LoadingRow="DataGrid_LoadingRow"
                   ItemsSource="{Binding MissonWithPlans}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn>
+                <!--<DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -39,7 +39,9 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
+                <DataGridTextColumn Header="Create Time" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="VHP Date" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd dddd}}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="Device" Binding="{Binding VHPDeviceCode}"
@@ -64,7 +66,7 @@
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="Vaccum" Binding="{Binding Vaccum}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
-                <DataGridTextColumn Header="KeepTime" Binding="{Binding KeepTime}"
+                <DataGridTextColumn Header="KeepTime" Binding="{Binding KeepTempTime}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="ProcessCode" Binding="{Binding ProcessCode}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>

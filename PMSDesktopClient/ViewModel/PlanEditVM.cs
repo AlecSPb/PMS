@@ -30,7 +30,10 @@ namespace PMSDesktopClient.ViewModel
                 plan1.Quantity = 1;
                 plan1.VHPDeviceCode = "A";
                 plan1.OrderID = Guid.Empty;
-
+                plan1.CreateTime = DateTime.Now;
+                plan1.Creator = "xs.zhou";
+                plan1.State = 1;
+                
                 CurrentPlan = plan1;
                 isNew = true;
             }

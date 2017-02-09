@@ -16,6 +16,7 @@
             <MenuItem Header="{StaticResource strStart}">
                 <MenuItem Header="Navigation Panel"
                           Command="{Binding Navigate}" CommandParameter="NavigationView"/>
+                <Separator/>
                 <MenuItem Header="Sale">
                     <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
                     <MenuItem Header="Order Check" Command="{Binding Navigate}" CommandParameter="OrderCheckView"/>

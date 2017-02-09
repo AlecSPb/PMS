@@ -14,10 +14,9 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Orders Select" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="Select a Misson Or Use Empty One" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="Give Up" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
-            <Button Content="Use Empty" Style="{StaticResource ButtonBasic}" Command="{Binding SelectEmpty}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
@@ -32,6 +31,7 @@
                 <TextBlock Text="Paused" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
+            <Button Content="Use Empty Order" Style="{StaticResource ButtonBasic}" Command="{Binding SelectEmpty}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}">
             <DataGrid.Columns>

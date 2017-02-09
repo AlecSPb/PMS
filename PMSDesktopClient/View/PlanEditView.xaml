@@ -153,77 +153,25 @@
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Create Time"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Creator"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="State"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding State}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+
             </Grid>
             
             
             <Grid Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
-                    
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Create Time"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Creator"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="ReviewPassed"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ReviewPassed}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Reviewer"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Reviewer}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="ReviewDate"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ReviewDate}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="PolicyType"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PolicyType}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="PolicyContent"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PolicyContent}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="PolicyMaker"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PolicyMaker}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="PolicyMakeDate"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PolicyMakeDate}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="State"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding State}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="Priority"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-
+           
             </Grid>
 
         </Grid>
