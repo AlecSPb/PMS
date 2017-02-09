@@ -42,9 +42,21 @@ namespace PMSDesktopClient.ViewModel
         {
             Navigate = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
             AddNewPlan = new RelayCommand(() => NavigationService.GoTo("OrderSelectView"));
+            EditPlan = new RelayCommand<ServiceReference.DcPlanVHP>(ActionEditPlan);
+
             PageChanged = new RelayCommand(ActionPaging);
         }
 
+        private void ActionEditPlan(DcPlanVHP obj)
+        {
+            if (obj!=null)
+            {
+                var nModel = new NavigationObject();
+                nModel.ViewName = "PlanEditView";
+                nModel.ModelObject = obj;
+                NavigationService.GoToWithParameter(nModel);
+            }
+        }
 
         private void SetPageParametersWhenConditionChange()
         {
@@ -111,6 +123,8 @@ namespace PMSDesktopClient.ViewModel
         #region Commands
         public RelayCommand Navigate { get; set; }
         public RelayCommand AddNewPlan { get; set; }
+
+        public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         #endregion
 
         #region Properties

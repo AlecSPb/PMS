@@ -17,6 +17,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="Missons" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
@@ -167,5 +169,11 @@
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Background="{StaticResource  BackgroundNavigateBar}">
+            <Button Content="Add New VHP Plan" Style="{StaticResource ButtonBasic}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="5">
+            
+        </DataGrid>
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PMSDAL
 {
@@ -63,6 +64,10 @@ namespace PMSDAL
         public string PolicyMaker { get; set; }//决策者
         public DateTime PolicyMakeDate { get; set; }
 
+        public Guid? PlanVHPID { get; set; }
 
+        [ForeignKey("PlanVHPID")]
+        public virtual ICollection<PMSPlanVHP> PlanVHPs { get; set; }
+         
     }
 }

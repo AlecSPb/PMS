@@ -31,7 +31,7 @@
                 <TextBlock Text="Paused" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
-            <Button Content="Use Empty Order" Style="{StaticResource ButtonBasic}" Command="{Binding SelectEmpty}"/>
+            <!--<Button Content="Use Empty Order" Style="{StaticResource ButtonBasic}" Command="{Binding SelectEmpty}"/>-->
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}">
             <DataGrid.Columns>

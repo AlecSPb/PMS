@@ -21,7 +21,8 @@
         <TextBlock Text="{StaticResource strPlanPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Navigate}"/>
-            <Button Content="Add New Plan" Style="{StaticResource  ButtonBasic}"  Command="{Binding AddNewPlan}" />
+            <Button Content="Misson" Style="{StaticResource  ButtonBasic}"  Command=""/>
+            <!--<Button Content="Add New Plan" Style="{StaticResource  ButtonBasic}"  Command="{Binding AddNewPlan}" />-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Yesterday" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="Today" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
@@ -35,7 +36,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource ButtonDGBasic}" Content="Details"/>
+                                <Button Style="{StaticResource ButtonDGBasic}" Content="Edit" 
+                                        Command="{Binding DataContext.EditPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

@@ -155,6 +155,7 @@
     <Compile Include="SeedInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App - 复制.config" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
