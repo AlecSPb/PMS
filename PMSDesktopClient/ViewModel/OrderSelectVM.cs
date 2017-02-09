@@ -10,7 +10,7 @@ using PMSDesktopClient.ServiceReference;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class OrderSelectVM:OrderVM
+    public class OrderSelectVM : OrderVM
     {
         public OrderSelectVM()
         {
@@ -20,7 +20,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionSelectOrder(DcOrder obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
                 var plan = new DcPlanVHP();
                 plan.ID = Guid.NewGuid();
@@ -31,26 +31,18 @@ namespace PMSDesktopClient.ViewModel
                 plan.VHPDeviceCode = "A";
                 plan.OrderID = obj.ID;
 
-                var nModel= new NavigationObject();
+                var nModel = new NavigationObject();
                 nModel.ViewName = "PlanEditView";
-                nModel.ModelObject =plan;
-                NavigationService.GoToWithParameter(nModel); 
+                nModel.ModelObject = plan;
+                NavigationService.GoToWithParameter(nModel);
             }
         }
 
         private void ActionSelectEmpty()
         {
-            var plan = new DcPlanVHP();
-            plan.ID = Guid.NewGuid();
-            plan.PlanDate = DateTime.Now;
-            plan.MoldDiameter = 230;
-            plan.CurrentMold = "GQ230";
-            plan.Quantity = 1;
-            plan.VHPDeviceCode = "A";
-            plan.OrderID = Guid.Empty;
             var nModel = new NavigationObject();
             nModel.ViewName = "PlanEditView";
-            nModel.ModelObject =plan;
+            nModel.ModelObject = null;
             NavigationService.GoToWithParameter(nModel);
         }
 

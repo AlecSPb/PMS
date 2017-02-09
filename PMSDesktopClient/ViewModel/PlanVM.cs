@@ -18,6 +18,18 @@ namespace PMSDesktopClient.ViewModel
             IntitializeCommands();
             IntitializeProperties();
             SetPageParametersWhenConditionChange();
+
+            Messenger.Default.Register<string>(this, "PlanVHPRefresh", ActionRefresh);
+        }
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
+
+        private void ActionRefresh(string obj)
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private void IntitializeProperties()

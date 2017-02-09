@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPlanPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Navigate}"/>
+            <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Navigate}"/>
             <Button Content="Add New Plan" Style="{StaticResource  ButtonBasic}"  Command="{Binding AddNewPlan}" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Yesterday" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>

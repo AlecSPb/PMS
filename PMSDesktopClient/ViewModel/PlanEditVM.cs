@@ -18,15 +18,40 @@ namespace PMSDesktopClient.ViewModel
             if (plan!=null)
             {
                 CurrentPlan = plan;
+                isNew = false;
             }
+            else
+            {
+                var plan1 = new DcPlanVHP();
+                plan1.ID = Guid.NewGuid();
+                plan1.PlanDate = DateTime.Now;
+                plan1.MoldDiameter = 230;
+                plan1.CurrentMold = "GQ230";
+                plan1.Quantity = 1;
+                plan1.VHPDeviceCode = "A";
+                plan1.OrderID = Guid.Empty;
 
+                CurrentPlan = plan1;
+                isNew = true;
+            }
             GiveUp = new RelayCommand(ActionGiveup);
             Save = new RelayCommand(CanSave);
         }
-
+        private bool isNew;
         private void CanSave()
         {
-            throw new NotImplementedException();
+            var service = new PlanVHPServiceClient();
+            if (isNew)
+            {
+                service.AddVHPPlan(CurrentPlan);
+            }
+            else
+            {
+                service.UpdateVHPPlan(CurrentPlan);
+            }
+
+            NavigationService.GoTo("PlanView");
+            Messenger.Default.Send<string>(null, "PlanVHPRefresh");
         }
 
         private void ActionGiveup()

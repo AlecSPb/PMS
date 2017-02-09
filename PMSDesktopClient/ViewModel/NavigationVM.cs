@@ -10,18 +10,47 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class NavigationVM:ViewModelBase
+    public class NavigationVM : ViewModelBase
     {
         public NavigationVM()
         {
-            Navigate = new RelayCommand<string>(ActionNavigate);
+            InitialCommands();
         }
 
-        private void ActionNavigate(string viewModelName)
+        private void InitialCommands()
         {
-            NavigationService.GoTo(viewModelName);
-        }
+            GoToOrder = new RelayCommand(() => NavigationService.GoTo("OrderView"));
+            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo("OrderCheckView"));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo("MissonView"));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo("PlanView"));
+            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo("MaterialNeedView"));
+            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo("MaterialOrderView"));
+            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo("MaterialInventoryView"));
+            GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo("MillingRecordView"));
+            GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo("VHPRecordView"));
+            GoToBlankRecord = new RelayCommand(() => NavigationService.GoTo("BlankRecordView"));
+            GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo("MachineRecordView"));
+            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo("DeliveryRecordView"));
+            GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo("BondingRecordView"));
+            GoToProduct = new RelayCommand(() => NavigationService.GoTo("ProductView"));
 
-        public RelayCommand<string> Navigate { get; set; }
+        }
+        public RelayCommand GoToOrder { get; private set; }
+        public RelayCommand GoToOrderCheck { get; private set; }
+        public RelayCommand GoToMisson { get; private set; }
+        public RelayCommand GoToPlan { get; private set; }
+
+        public RelayCommand GoToMaterialNeed { get; private set; }
+        public RelayCommand GoToMaterialOrder { get; private set; }
+        public RelayCommand GoToMaterialInventory { get; private set; }
+        public RelayCommand GoToMillingRecord{ get; private set; }
+        public RelayCommand GoToVHPRecord { get; private set; }
+        public RelayCommand GoToBlankRecord { get; private set; }
+        public RelayCommand GoToMachineRecord { get; private set; }
+        public RelayCommand GoToDeliveryRecord { get; private set; }
+        public RelayCommand GoToBondingRecord { get; private set; }
+
+
+        public RelayCommand GoToProduct { get; private set; }
     }
 }

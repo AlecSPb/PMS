@@ -31,6 +31,7 @@
     <!--ButtonItem-->
     <sys:String x:Key="strLogin">Login In</sys:String>
     <sys:String x:Key="strBack">Back</sys:String>
+    <sys:String x:Key="strNavigation">Navigation</sys:String>
     <sys:String x:Key="strSearch">Search</sys:String>
     <sys:String x:Key="strAdd">Add</sys:String>
     <sys:String x:Key="strSave">Save</sys:String>

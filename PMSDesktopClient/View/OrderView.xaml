@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Orders" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="{StaticResource  strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
             <Button Content="Add" Style="{StaticResource ButtonBasic}" Command="{Binding EditWithParameter}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
