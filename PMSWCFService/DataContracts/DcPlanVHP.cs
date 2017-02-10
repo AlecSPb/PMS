@@ -70,6 +70,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Remark { get; set; }
 
-
+        public  DcOrder Order { get; set; }
     }
 }
