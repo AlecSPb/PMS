@@ -126,6 +126,10 @@
     <Compile Include="Migrations\201701220815340_addtorecordvhp3.Designer.cs">
       <DependentUpon>201701220815340_addtorecordvhp3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702100310157_relationtoorderplan.cs" />
+    <Compile Include="Migrations\201702100310157_relationtoorderplan.Designer.cs">
+      <DependentUpon>201702100310157_relationtoorderplan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -220,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701220815340_addtorecordvhp3.resx">
       <DependentUpon>201701220815340_addtorecordvhp3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702100310157_relationtoorderplan.resx">
+      <DependentUpon>201702100310157_relationtoorderplan.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

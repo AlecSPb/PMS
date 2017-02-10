@@ -64,9 +64,6 @@ namespace PMSDAL
         public string PolicyMaker { get; set; }//决策者
         public DateTime PolicyMakeDate { get; set; }
 
-        public Guid? PlanVHPID { get; set; }
-
-        [ForeignKey("PlanVHPID")]
         public virtual ICollection<PMSPlanVHP> PlanVHPs { get; set; }
          
     }

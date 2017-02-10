@@ -41,17 +41,17 @@
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainMissons}" LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
-                <!--<DataGridTemplateColumn Header="Plans">
+                <DataGridTemplateColumn Header="Plans">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Plans" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="Add New Plan" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext. GetPlans,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
                                 <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="CreateTime">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -169,10 +169,7 @@
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
-        <StackPanel Grid.Row="4" Orientation="Horizontal" Background="{StaticResource  BackgroundNavigateBar}">
-            <Button Content="Add New VHP Plan" Style="{StaticResource ButtonBasic}"/>
-        </StackPanel>
-        <DataGrid Grid.Row="5">
+        <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}">
             
         </DataGrid>
     </Grid>

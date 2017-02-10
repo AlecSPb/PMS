@@ -57,7 +57,8 @@ namespace PMSDAL
 
         public string Remark { get; set; }
 
-        public virtual Guid? PMSOrderID { get; set; }
+        [ForeignKey("OrderID")]
+        public virtual PMSOrder Order{ get; set; }
 
     }
 }
