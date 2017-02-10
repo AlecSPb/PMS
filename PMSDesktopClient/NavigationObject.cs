@@ -6,18 +6,10 @@ using System.Threading.Tasks;
 
 namespace PMSDesktopClient
 {
-    public class NavigationObject
+    public class MessageObject
     {
         public string ViewName { get; set; }
         public object ModelObject { get; set; }
-    }
-    /// <summary>
-    /// 增加一个泛型版本
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class NavigationObject<T>
-    {
-        public string ViewName { get; set; }
-        public T ModelObject { get; set; }
+        public bool IsAdd { get; set; }//判定是否添加
     }
 }

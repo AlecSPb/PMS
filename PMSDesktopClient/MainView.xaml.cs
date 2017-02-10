@@ -35,12 +35,12 @@ namespace PMSDesktopClient
             InitializeComponent();
             DataContext = new ViewModel.MainWindowVM();
             Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
-            Messenger.Default.Register<NavigationObject>(this, NavigationToken.Edit,ActionEdit);
+            Messenger.Default.Register<MessageObject>(this, NavigationToken.Edit,ActionEdit);
 
             NavigateTo(new LogInView());
         }
 
-        private void ActionEdit(NavigationObject obj)
+        private void ActionEdit(MessageObject obj)
         {
             switch (obj.ViewName)
             {
@@ -52,7 +52,7 @@ namespace PMSDesktopClient
                     break;
                 case "PlanEditView":
                     var planEditView = new PlanEditView();
-                    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP);
+                    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP,obj.IsAdd);
                     planEditView.DataContext = planEditVM;
                     NavigateTo(planEditView);
                     break;

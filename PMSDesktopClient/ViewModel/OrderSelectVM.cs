@@ -31,7 +31,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.VHPDeviceCode = "A";
                 plan.OrderID = obj.ID;
 
-                var nModel = new NavigationObject();
+                var nModel = new MessageObject();
                 nModel.ViewName = "PlanEditView";
                 nModel.ModelObject = plan;
                 NavigationService.GoToWithParameter(nModel);
@@ -40,7 +40,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionSelectEmpty()
         {
-            var nModel = new NavigationObject();
+            var nModel = new MessageObject();
             nModel.ViewName = "PlanEditView";
             nModel.ModelObject = null;
             NavigationService.GoToWithParameter(nModel);

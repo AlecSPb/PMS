@@ -34,6 +34,7 @@
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource DataGridBasic}"
+                  SelectedIndex="0"
                   ItemsSource="{Binding MainMissons}" LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Plans">
@@ -41,7 +42,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="Add New Plan" Style="{StaticResource ButtonDGBasic}"
-                                        Command="{Binding DataContext. AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
+                                        Command="{Binding DataContext.AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -170,8 +171,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
-                                <Button Content="Check" Style="{StaticResource ButtonDGBasic}"/>
+                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.EditPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

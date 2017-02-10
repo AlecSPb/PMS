@@ -63,9 +63,9 @@
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CurrentMold}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="CaculationDensity"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="CalculationDensity"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CaculationDensity}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CalculationDensity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="MoldDiameter"
                            Style="{StaticResource TextBlockBasic}" />
@@ -137,7 +137,7 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="MIllingRequirement"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="MillingRequirement"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MillingRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>

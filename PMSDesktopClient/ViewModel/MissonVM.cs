@@ -32,12 +32,60 @@ namespace PMSDesktopClient.ViewModel
 
 
             PageChanged = new RelayCommand(ActionPaging);
-            AddNewPlan = new RelayCommand<ServiceReference.DcOrder>(ActionVHPDetails);
+            AddNewPlan = new RelayCommand<ServiceReference.DcOrder>(ActionAddNewPlan);
+            EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan);
         }
 
-        private void ActionVHPDetails(DcOrder obj)
+        private void ActionEditPlan(DcPlanVHP obj)
         {
+            if (obj!=null)
+            {
+                var nModel = new MessageObject();
+                nModel.ViewName = "PlanEditView";
+                nModel.ModelObject = obj;
+                nModel.IsAdd = false;
+                NavigationService.GoToWithParameter(nModel);
+            }
+        }
 
+        private void ActionAddNewPlan(DcOrder obj)
+        {
+            if (obj!=null)
+            {
+                DcPlanVHP plan = new DcPlanVHP();
+                plan.ID = Guid.NewGuid();
+                plan.OrderID = obj.ID;
+                plan.PlanDate = DateTime.Now.Date;
+                plan.CurrentMold = "GQ230";
+                plan.VHPDeviceCode = "A";
+                plan.Temperature=0;
+                plan.Pressure = 0;
+                plan.Vaccum = 0;
+                plan.PrePressure = 0;
+                plan.PreTemperature = 0;
+                plan.Quantity = 1;
+                plan.MoldDiameter = 230;
+                plan.Thickness = 5;
+                plan.CreateTime = DateTime.Now;
+                plan.State = 1;
+                plan.CalculationDensity = 5.75;
+                plan.PowderWeight = 2300;
+                plan.GrainSize = "-200";
+                plan.RoomHumidity = 80;
+                plan.RoomTemperature = 23;
+                plan.KeepTempTime = 120;
+                plan.MillingRequirement = "常规要求";
+                plan.MachineRequirement="常规要求";
+                plan.FillingRequirement = "常规要求";
+                plan.SpecialRequirement = "无";
+                plan.Creator = "xs.zhou";
+
+                var nModel = new MessageObject();
+                nModel.ViewName = "PlanEditView";
+                nModel.ModelObject = plan;
+                nModel.IsAdd = true;
+                NavigationService.GoToWithParameter(nModel);
+            }
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -117,6 +165,7 @@ namespace PMSDesktopClient.ViewModel
 
         public RelayCommand<DcOrder> AddNewPlan { get; set; }
 
+        public RelayCommand<DcPlanVHP> EditPlan { get; set; }
 
         #endregion
     }

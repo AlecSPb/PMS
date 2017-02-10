@@ -52,7 +52,7 @@ namespace PMSDesktopClient.ViewModel
             All = new RelayCommand(ActionAll);
             EditWithParameter = new RelayCommand<DcOrder>(order =>
             {
-                NavigationObject obj = new NavigationObject();
+                MessageObject obj = new MessageObject();
                 obj.ViewName = "OrderEditView";
                 obj.ModelObject = order;
                 NavigationService.GoToWithParameter(obj);

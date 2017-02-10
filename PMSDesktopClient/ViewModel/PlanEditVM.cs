@@ -11,37 +11,19 @@ using PMSDesktopClient.ServiceReference;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class PlanEditVM:ViewModelBase
+    public class PlanEditVM : ViewModelBase
     {
-        public PlanEditVM(DcPlanVHP plan)
+        public PlanEditVM(DcPlanVHP plan, bool isnew)
         {
-            if (plan!=null)
-            {
-                CurrentPlan = plan;
-                isNew = false;
-            }
-            else
-            {
-                var plan1 = new DcPlanVHP();
-                plan1.ID = Guid.NewGuid();
-                plan1.PlanDate = DateTime.Now;
-                plan1.MoldDiameter = 230;
-                plan1.CurrentMold = "GQ230";
-                plan1.Quantity = 1;
-                plan1.VHPDeviceCode = "A";
-                plan1.OrderID = Guid.Empty;
-                plan1.CreateTime = DateTime.Now;
-                plan1.Creator = "xs.zhou";
-                plan1.State = 1;
-                
-                CurrentPlan = plan1;
-                isNew = true;
-            }
-            GiveUp = new RelayCommand(ActionGiveup);
-            Save = new RelayCommand(CanSave);
+
+            CurrentPlan = plan;
+            isNew = isnew;
+
+            GiveUp = new RelayCommand(ActionGiveUp);
+            Save = new RelayCommand(ActionSave);
         }
         private bool isNew;
-        private void CanSave()
+        private void ActionSave()
         {
             var service = new PlanVHPServiceClient();
             if (isNew)
@@ -53,11 +35,11 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateVHPPlan(CurrentPlan);
             }
 
-            NavigationService.GoTo("PlanView");
-            Messenger.Default.Send<string>(null, "PlanVHPRefresh");
+            NavigationService.GoTo("MissonView");
+            //Messenger.Default.Send<string>(null, "PlanVHPRefresh");
         }
 
-        private void ActionGiveup()
+        private void ActionGiveUp()
         {
             NavigationService.GoTo("PlanView");
         }
