@@ -166,10 +166,28 @@
         
         <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding ElementName=dgMisson,Path=SelectedItem.PlanVHPs}">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
+                                <Button Content="Check" Style="{StaticResource ButtonDGBasic}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="PlanDate" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="Device" Binding="{Binding VHPDeviceCode}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="Mold" Binding="{Binding CurrentMold}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="Temp" Binding="{Binding Temperature}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="Pressure" Binding="{Binding Pressure}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="Vaccum" Binding="{Binding Vaccum}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
