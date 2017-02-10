@@ -62,6 +62,9 @@ namespace PMSDesktopClient.ServiceReference {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSDesktopClient.ServiceReference.DcPlanVHP[] PlanVHPsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyContentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -284,6 +287,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSDesktopClient.ServiceReference.DcPlanVHP[] PlanVHPs {
+            get {
+                return this.PlanVHPsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanVHPsField, value) != true)) {
+                    this.PlanVHPsField = value;
+                    this.RaisePropertyChanged("PlanVHPs");
                 }
             }
         }

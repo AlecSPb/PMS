@@ -33,7 +33,8 @@
                 <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainMissons}" LoadingRow="DataGrid_LoadingRow">
+        <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource DataGridBasic}"
+                  ItemsSource="{Binding MainMissons}" LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Plans">
                     <DataGridTemplateColumn.CellTemplate>
@@ -41,7 +42,6 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="Add New Plan" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext. AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
-                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -163,8 +163,14 @@
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
-        <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}">
-            
+        
+        <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding ElementName=dgMisson,Path=SelectedItem.PlanVHPs}">
+            <DataGrid.Columns>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="PlanDate" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="Device" Binding="{Binding VHPDeviceCode}"/>
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </UserControl>
