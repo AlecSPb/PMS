@@ -79,6 +79,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public DateTime PolicyMakeDate { get; set; }
 
-        public ICollection<DcPlanVHP> PlanVHPs { get; set; }
+        public List<DcPlanVHP> PlanVHPs { get; set; }
     }
 }

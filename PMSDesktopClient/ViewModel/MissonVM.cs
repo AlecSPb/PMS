@@ -23,10 +23,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCustomer = "";
-            SearchCompositoinStandard = "";
             MainMissons = new ObservableCollection<DcOrder>();
-            PlanVHPItems = new ObservableCollection<DcPlanVHP>();
         }
         private void InitializeCommands()
         {
@@ -35,45 +32,20 @@ namespace PMSDesktopClient.ViewModel
 
 
             PageChanged = new RelayCommand(ActionPaging);
-            Search = new RelayCommand(ActionSearch,CanSearch);
-            All = new RelayCommand(ActionAll);
-            GetPlans = new RelayCommand<ServiceReference.DcOrder>(ActionVHPDetails);
+            AddNewPlan = new RelayCommand<ServiceReference.DcOrder>(ActionVHPDetails);
         }
 
         private void ActionVHPDetails(DcOrder obj)
         {
-            if (obj!=null)
-            {
-                var service = new PlanVHPServiceClient();
-                var plans = service.GetVHPPlansByOrderID(obj.ID).ToList();
-                PlanVHPItems.Clear();
-                plans.ForEach(p => PlanVHPItems.Add(p));
-            }
-        }
 
-        private bool CanSearch()
-        {
-            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositoinStandard));
-        }
-
-        private void ActionAll()
-        {
-            SearchCustomer = "";
-            SearchCompositoinStandard = "";
-            SetPageParametersWhenConditionChange();
-        }
-
-        private void ActionSearch()
-        {
-            SetPageParametersWhenConditionChange();
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 10;
             var service = new MissonServiceClient();
-            RecordCount = service.GetMissonCountBySearch(SearchCustomer, SearchCompositoinStandard);
+            RecordCount = service.GetMissonCountBySearch();
             ActionPaging();
         }
         /// <summary>
@@ -85,7 +57,7 @@ namespace PMSDesktopClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+            var orders = service.GetMissonBySearchInPage(skip, take);
             MainMissons.Clear();
             orders.ToList<DcOrder>().ForEach(o => MainMissons.Add(o));
         }
@@ -127,34 +99,6 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Proeperties
-        private string searchCustomer;
-        public string SearchCustomer
-        {
-            get { return searchCustomer; }
-            set
-            {
-                if (searchCustomer == value)
-                    return;
-                searchCustomer = value;
-                RaisePropertyChanged(() => SearchCustomer);
-            }
-        }
-        private string searchCompositionStandard;
-        public string SearchCompositoinStandard
-        {
-            get { return searchCompositionStandard; }
-            set
-            {
-                if (searchCompositionStandard == value)
-                    return;
-                searchCompositionStandard = value;
-                RaisePropertyChanged(() => SearchCompositoinStandard);
-            }
-        }
-
-
-
-        public ObservableCollection<DcPlanVHP> PlanVHPItems { get; set; }
 
         private ObservableCollection<DcOrder> mainMissons;
         public ObservableCollection<DcOrder> MainMissons
@@ -168,12 +112,10 @@ namespace PMSDesktopClient.ViewModel
         #region Commands
         public RelayCommand Navigate { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
-        public RelayCommand Search { get; private set; }
-        public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand PageChanged { get; private set; }
 
-        public RelayCommand<DcOrder> GetPlans { get; set; }
+        public RelayCommand<DcOrder> AddNewPlan { get; set; }
 
 
         #endregion

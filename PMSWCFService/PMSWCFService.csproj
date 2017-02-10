@@ -102,6 +102,7 @@
     <Compile Include="ServiceContracts\IMissonWithPlanService.cs" />
     <Compile Include="ServiceImplements\BasicDataOneService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />
+    <Compile Include="ServiceImplements\MissonService.cs" />
     <Compile Include="ServiceImplements\MissonWithPlanService.cs" />
     <Compile Include="ServiceImplements\RecordProductService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />

@@ -10,7 +10,7 @@ using PMSCommon;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IOrderService, IMissonService
+    public partial class PMSService : IOrderService
     {
         public int AddOrder(DcOrder order)
         {
