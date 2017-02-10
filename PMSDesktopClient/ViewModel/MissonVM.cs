@@ -34,6 +34,18 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             AddNewPlan = new RelayCommand<ServiceReference.DcOrder>(ActionAddNewPlan);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan);
+            DuplicatePlan = new RelayCommand<ServiceReference.DcPlanVHP>(ActionDuplicatePlan);
+        }
+
+        private void ActionDuplicatePlan(DcPlanVHP obj)
+        {
+            if (obj!=null)
+            {
+                var service = new PlanVHPServiceClient();
+                obj.ID = Guid.NewGuid();
+                service.AddVHPPlan(obj);
+                SetPageParametersWhenConditionChange();
+            }
         }
 
         private void ActionEditPlan(DcPlanVHP obj)
@@ -167,6 +179,7 @@ namespace PMSDesktopClient.ViewModel
 
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
 
+        public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         #endregion
     }
 }
