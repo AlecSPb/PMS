@@ -12,8 +12,8 @@ namespace PMSWCFService.ServiceContracts
     public interface IMissonService
     {
         [OperationContract]
-        List<DcOrder> GetMissonBySearchInPage(int skip,int take,string customer, string compositionstd);
+        List<DcOrder> GetMissonBySearchInPage(int skip,int take);
         [OperationContract]
-        int GetMissonCountBySearch(string customer, string compositionstd);
+        int GetMissonCountBySearch();
     }
 }
