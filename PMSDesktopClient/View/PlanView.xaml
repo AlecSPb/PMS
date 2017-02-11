@@ -43,14 +43,14 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>-->
-                <DataGridTextColumn Header="Create Time" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
-                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="VHP Date" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd dddd}}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <DataGridTextColumn Header="VHPID" Binding="{Binding  PlanDate,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="Device" Binding="{Binding VHPDeviceCode}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
-                <DataGridTextColumn Header="OrderDeadLine" Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"
-                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <!--<DataGridTextColumn Header="OrderDeadLine" Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>-->
                 <DataGridTextColumn Header="Composition" Binding="{Binding CompositionStandard}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="Mold" Binding="{Binding CurrentMold}"
@@ -72,6 +72,8 @@
                 <DataGridTextColumn Header="KeepTime" Binding="{Binding KeepTempTime}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="ProcessCode" Binding="{Binding ProcessCode}"
+                                    ElementStyle="{StaticResource TextBlockDGBasic}"/>
+                <DataGridTextColumn Header="Create Time" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
             </DataGrid.Columns>
         </DataGrid>
