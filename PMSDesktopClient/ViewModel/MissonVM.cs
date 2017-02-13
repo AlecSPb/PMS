@@ -79,7 +79,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.MoldDiameter = 230;
                 plan.Thickness = 5;
                 plan.CreateTime = DateTime.Now;
-                plan.State = 1;
+                plan.State = "UnCompleted";
                 plan.CalculationDensity = 5.75;
                 plan.PowderWeight = 2300;
                 plan.GrainSize = "-200";

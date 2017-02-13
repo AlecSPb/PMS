@@ -27,7 +27,7 @@
       <xs:element minOccurs="0" name="PolicyMakeDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PolicyMaker" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PolicyType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
@@ -37,7 +37,7 @@
       <xs:element minOccurs="0" name="ReviewPassed" type="xs:boolean" />
       <xs:element minOccurs="0" name="Reviewer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="StateRemark" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -73,7 +73,7 @@
       <xs:element minOccurs="0" name="RoomHumidity" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="RoomTemperature" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Temperature" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="VHPDeviceCode" nillable="true" type="xs:string" />
@@ -97,7 +97,7 @@
       <xs:element minOccurs="0" name="PMIWorkingNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialNeeds" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />
     </xs:sequence>
@@ -116,10 +116,10 @@
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialOrderItems" nillable="true" type="tns:ArrayOfDcMaterialOrderItem" />
       <xs:element minOccurs="0" name="OrderPO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipFee" type="xs:double" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SupplierAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SupplierAddress" nillable="true" type="xs:string" />
@@ -145,7 +145,7 @@
       <xs:element minOccurs="0" name="PMIWorkNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />
     </xs:sequence>
@@ -174,7 +174,7 @@
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sample" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -255,7 +255,7 @@
       <xs:element minOccurs="0" name="PackageType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ShipTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordDelivery" nillable="true" type="tns:DcRecordDelivery" />
@@ -276,6 +276,7 @@
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -300,6 +301,7 @@
       <xs:element minOccurs="0" name="Pressure" type="xs:double" />
       <xs:element minOccurs="0" name="RecordVHPItems" nillable="true" type="tns:ArrayOfDcRecordVHPItem" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Temperature" type="xs:double" />
       <xs:element minOccurs="0" name="VHPID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
@@ -325,6 +327,7 @@
       <xs:element minOccurs="0" name="SV" type="xs:double" />
       <xs:element minOccurs="0" name="Shift1" type="xs:double" />
       <xs:element minOccurs="0" name="Shift2" type="xs:double" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ton" type="xs:double" />
       <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
       <xs:element minOccurs="0" name="WaterTemperatureIn" type="xs:double" />
@@ -349,6 +352,7 @@
       <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcBDCustomer" nillable="true" type="tns:DcBDCustomer" />
@@ -369,6 +373,7 @@
       <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PostCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Receiver" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Tax" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -391,7 +396,7 @@
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ReceiveTime" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcBDVHPDevice" nillable="true" type="tns:DcBDVHPDevice" />
@@ -410,7 +415,7 @@
       <xs:element minOccurs="0" name="ModelHeight" type="xs:double" />
       <xs:element minOccurs="0" name="ModelType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MoldDetails" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="State" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcBDVHPMold" nillable="true" type="tns:DcBDVHPMold" />
@@ -427,6 +432,7 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcBDVHPProcess" nillable="true" type="tns:DcBDVHPProcess" />
@@ -447,6 +453,7 @@
       <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MeltingPoint" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialProperty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcBDCompound" nillable="true" type="tns:DcBDCompound" />

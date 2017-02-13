@@ -36,19 +36,19 @@ namespace PMSDesktopClient.View.Sales
             {
                 switch (order.State)
                 {
-                    case (int)OrderState.Paused:
+                    case "Paused":
                         e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                         break;
-                    case (int)OrderState.UnCompleted:
+                    case "UnCompleted":
                         e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
-                    case (int)OrderState.Completed:
+                    case "Completed":
                         e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;
                 }
-                if (order.Priority==(int)OrderPriority.Emerygency)
+                if (order.Priority == "Emerygency")
                 {
                     e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }

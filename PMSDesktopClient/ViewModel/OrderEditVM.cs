@@ -33,8 +33,8 @@ namespace PMSDesktopClient.ViewModel
                 dcOrder.DeadLine = DateTime.Now.AddDays(30);
                 dcOrder.ReviewDate = DateTime.Now;
                 dcOrder.PolicyMakeDate = DateTime.Now;
-                dcOrder.State = 1;
-                dcOrder.Priority = 1;
+                dcOrder.State = "UnChecked";
+                dcOrder.Priority = "Normal";
                 dcOrder.CompositionOriginal = "CuGaSe2";
                 dcOrder.CompositionStandard = "Cu25Ga25Se50";
                 dcOrder.CompositoinAbbr = "CuGaSe";

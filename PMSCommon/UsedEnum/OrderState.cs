@@ -17,7 +17,7 @@ namespace PMSCommon
         Deleted = 0,
         Paused = 1,
         UnCompleted=2,
-        UnDetermined = 3,
+        UnChecked = 3,
         Completed =4
     }
 }

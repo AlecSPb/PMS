@@ -77,7 +77,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string PolicyTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PriorityField;
+        private string PriorityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductTypeField;
@@ -107,7 +107,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string SampleNeedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateRemarkField;
@@ -357,12 +357,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Priority {
+        public string Priority {
             get {
                 return this.PriorityField;
             }
             set {
-                if ((this.PriorityField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
                     this.PriorityField = value;
                     this.RaisePropertyChanged("Priority");
                 }
@@ -487,12 +487,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -601,7 +601,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string SpecialRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<double> TemperatureField;
@@ -928,12 +928,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -1046,7 +1046,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string SpecialNeedsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SupplierField;
@@ -1156,12 +1156,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -1229,7 +1229,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string OrderPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PriorityField;
+        private string PriorityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -1238,7 +1238,7 @@ namespace PMSDesktopClient.ServiceReference {
         private double ShipFeeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SupplierField;
@@ -1331,12 +1331,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Priority {
+        public string Priority {
             get {
                 return this.PriorityField;
             }
             set {
-                if ((this.PriorityField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
                     this.PriorityField = value;
                     this.RaisePropertyChanged("Priority");
                 }
@@ -1370,12 +1370,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -1494,7 +1494,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double UnitPriceField;
@@ -1630,12 +1630,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -1733,7 +1733,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string SampleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
@@ -1944,12 +1944,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -2761,7 +2761,7 @@ namespace PMSDesktopClient.ServiceReference {
         private System.DateTime ShipTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2943,12 +2943,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -3000,6 +3000,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
@@ -3132,6 +3135,19 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Weight {
             get {
                 return this.WeightField;
@@ -3198,6 +3214,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double TemperatureField;
@@ -3375,6 +3394,19 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Temperature {
             get {
                 return this.TemperatureField;
@@ -3464,6 +3496,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Shift2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double TonField;
@@ -3631,6 +3666,19 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Ton {
             get {
                 return this.TonField;
@@ -3727,6 +3775,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Phone2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3855,6 +3906,19 @@ namespace PMSDesktopClient.ServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -3900,6 +3964,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReceiverField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TaxField;
@@ -4032,6 +4099,19 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Tax {
             get {
                 return this.TaxField;
@@ -4094,7 +4174,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string ReceiveTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4237,12 +4317,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -4290,7 +4370,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string MoldDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StateField;
+        private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4394,12 +4474,12 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int State {
+        public string State {
             get {
                 return this.StateField;
             }
             set {
-                if ((this.StateField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
                 }
@@ -4439,6 +4519,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4515,6 +4598,19 @@ namespace PMSDesktopClient.ServiceReference {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -4560,6 +4656,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialPropertyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4684,6 +4783,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.SpecialPropertyField, value) != true)) {
                     this.SpecialPropertyField = value;
                     this.RaisePropertyChanged("SpecialProperty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
                 }
             }
         }
