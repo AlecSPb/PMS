@@ -22,6 +22,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public DateTime CurrentTime { get; set; }
         [DataMember]
+        public string State { get; set; }
+        [DataMember]
         public double PV1 { get; set; }
         [DataMember]
         public double PV2 { get; set; }

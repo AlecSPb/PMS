@@ -73,6 +73,7 @@
     <Compile Include="Calculation\TargetDensityCalculation.cs" />
     <Compile Include="Calculation\TargetDensityCalculationItem.cs" />
     <Compile Include="StateProcess.cs" />
+    <Compile Include="UsedEnum\UserState.cs" />
     <Compile Include="UsedEnum\ViewToken.cs" />
   </ItemGroup>
   <ItemGroup>

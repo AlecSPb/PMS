@@ -17,7 +17,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public int State { get; set; }//未审核，审核，作废
+        public string State { get; set; }//未审核，审核，作废
         [DataMember]
         public string ProductID { get; set; }
         [DataMember]

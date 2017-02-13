@@ -11,7 +11,7 @@ namespace PMSWCFService.DataContracts
         public string UserName { get; set; }
         public string Password { get; set; }//密码必须MD5并加盐
         public DateTime CreateTime { get; set; }
-        public int State { get; set; }//当前账户是否有效
+        public string State { get; set; }//当前账户是否有效
 
         public string RealName { get; set; }
         public string Phone { get; set; }

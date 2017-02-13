@@ -50,9 +50,9 @@ namespace PMSWCFService.DataContracts
 
         //状态部分
         [DataMember]
-        public int Priority { get; set; }
+        public string Priority { get; set; }
         [DataMember]
-        public int State { get; set; }
+        public string State { get; set; }
         [DataMember]
         public string StateRemark { get; set; }
 

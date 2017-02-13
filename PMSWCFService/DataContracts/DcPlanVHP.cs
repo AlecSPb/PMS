@@ -14,7 +14,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public int State { get; set; }
+        public string State { get; set; }
         [DataMember]
         public string Creator { get; set; }
         [DataMember]

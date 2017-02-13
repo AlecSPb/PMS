@@ -23,5 +23,7 @@ namespace PMSWCFService.DataContracts
         public string Creator { get; set; }
         [DataMember]
         public DateTime CreateTime { get; set; }
+        [DataMember]
+        public string State { get; set; }
     }
 }

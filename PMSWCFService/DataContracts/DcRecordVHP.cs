@@ -20,6 +20,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
+        public string State { get; set; }
+        [DataMember]
         public string VHPID { get; set; }//161210-M
         [DataMember]
         public string Composition { get; set; }

@@ -37,7 +37,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string PackageInformation { get; set; }//包装重量等细节信息
         [DataMember]
-        public int State { get; set; }//取消，未审核，审核通过，已发货
+        public string State { get; set; }//取消，未审核，审核通过，已发货
         [DataMember]
         public virtual List<DcRecordDeliveryItem> DeliveryItems { get; set; }
     }

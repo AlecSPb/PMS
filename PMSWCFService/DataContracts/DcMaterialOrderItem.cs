@@ -17,7 +17,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public int State { get; set; }
+        public string State { get; set; }
         [DataMember]
         public string PMIWorkNumber { get; set; }
         [DataMember]

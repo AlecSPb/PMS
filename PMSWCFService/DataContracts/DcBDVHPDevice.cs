@@ -23,7 +23,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public double HighestDiameter { get; set; }
         [DataMember]
-        public int State { get; set; }
+        public string State { get; set; }
         [DataMember]
         public string Manufacturer { get; set; }//制造商
         [DataMember]

@@ -36,5 +36,7 @@ namespace PMSWCFService.DataContracts
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         [DataMember]
         public string Remark { get; set; }
+        [DataMember]
+        public string State { get; set; }
     }
 }

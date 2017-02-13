@@ -30,5 +30,7 @@ namespace PMSWCFService.DataContracts
         public string CellPhone { get; set; }
         [DataMember]
         public string Address { get; set; }
+        [DataMember]
+        public string State { get; set; }
     }
 }

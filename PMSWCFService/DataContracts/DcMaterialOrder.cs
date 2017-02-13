@@ -21,7 +21,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public int State { get; set; }
+        public string State { get; set; }
 
         [DataMember]
         public string OrderPO { get; set; }
@@ -40,7 +40,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public double ShipFee { get; set; }
         [DataMember]
-        public int Priority { get; set; }
+        public string Priority { get; set; }
 
         [DataMember]
         public DcMaterialOrderItem[] MaterialOrderItems { get; set; }

@@ -13,6 +13,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
+        public string State { get; set; }
+        [DataMember]
         public string CustomerName { get; set; }
         [DataMember]
         public string Address { get; set; }
