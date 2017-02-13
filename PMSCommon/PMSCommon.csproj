@@ -63,8 +63,9 @@
   <ItemGroup>
     <Compile Include="Calculation\MaterialDensityCalculation.cs" />
     <Compile Include="Calculation\MaterialDensityCalculationItem.cs" />
-    <Compile Include="UsedEnum\ModelState.cs" />
+    <Compile Include="UsedEnum\OrderState.cs" />
     <Compile Include="UsedEnum\NavigationToken.cs" />
+    <Compile Include="UsedEnum\NonOrderState.cs" />
     <Compile Include="UsedEnum\OrderPolicy.cs" />
     <Compile Include="UsedEnum\OrderPriority.cs" />
     <Compile Include="PMTranslate.cs" />

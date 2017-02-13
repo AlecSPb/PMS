@@ -36,7 +36,7 @@ namespace PMSWCFService
                 var plan = dc.VHPPlans.Find(id);
                 if (plan!=null)
                 {
-                    plan.State = ModelState.Deleted.ToString();
+                    plan.State = OrderState.Deleted.ToString();
                     result = dc.SaveChanges();
                 }
 
@@ -52,7 +52,7 @@ namespace PMSWCFService
                 var mapper = config.CreateMapper();
 
                 var plans = dc.VHPPlans.Where(p => p.OrderID == id&&
-                p.State!=ModelState.Deleted.ToString()).OrderBy(p => p.PlanDate).ToList();
+                p.State!=OrderState.Deleted.ToString()).OrderBy(p => p.PlanDate).ToList();
 
                 return mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(plans);
             }

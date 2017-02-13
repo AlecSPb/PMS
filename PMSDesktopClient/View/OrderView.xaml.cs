@@ -36,13 +36,13 @@ namespace PMSDesktopClient.View.Sales
             {
                 switch (order.State)
                 {
-                    case (int)ModelState.Paused:
+                    case (int)OrderState.Paused:
                         e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                         break;
-                    case (int)ModelState.UnCompleted:
+                    case (int)OrderState.UnCompleted:
                         e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
-                    case (int)ModelState.Completed:
+                    case (int)OrderState.Completed:
                         e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:

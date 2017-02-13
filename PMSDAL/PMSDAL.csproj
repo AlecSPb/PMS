@@ -130,6 +130,10 @@
     <Compile Include="Migrations\201702100310157_relationtoorderplan.Designer.cs">
       <DependentUpon>201702100310157_relationtoorderplan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702130330006_changestatetype.cs" />
+    <Compile Include="Migrations\201702130330006_changestatetype.Designer.cs">
+      <DependentUpon>201702130330006_changestatetype.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -227,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702100310157_relationtoorderplan.resx">
       <DependentUpon>201702100310157_relationtoorderplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702130330006_changestatetype.resx">
+      <DependentUpon>201702130330006_changestatetype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

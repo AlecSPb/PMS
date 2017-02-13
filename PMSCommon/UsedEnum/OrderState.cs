@@ -12,7 +12,7 @@ namespace PMSCommon
     /// UnDetermined是未确定，所以暂不在除了管理端的其他地方显示
     /// completed是完成
     /// </summary>
-    public enum ModelState
+    public enum OrderState
     {
         Deleted = 0,
         Paused = 1,

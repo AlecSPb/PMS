@@ -46,7 +46,7 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 var result = dc.RecordProducts.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
-                  && p.State != ModelState.Deleted.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                  && p.State != OrderState.Deleted.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
                 Mapper.Initialize(cfg => cfg.CreateMap<RecordProduct, DcRecordProduct>());
                 var products = Mapper.Map<List<RecordProduct>, List<DcRecordProduct>>(result);
                 return products;
@@ -58,7 +58,7 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 return dc.RecordProducts.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
-                  && p.State != ModelState.Deleted.ToString()).Count();
+                  && p.State != OrderState.Deleted.ToString()).Count();
             }
         }
 

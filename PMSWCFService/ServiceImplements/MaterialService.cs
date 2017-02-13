@@ -64,7 +64,7 @@ namespace PMSWCFService
                 var model = dc.MaterialNeeds.Find(id);
                 if (model != null)
                 {
-                    model.State = ModelState.Deleted.ToString();
+                    model.State = OrderState.Deleted.ToString();
                     result = dc.SaveChanges();
                 }
 
@@ -80,7 +80,7 @@ namespace PMSWCFService
                 var model = dc.MaterialOrders.Find(id);
                 if (model != null)
                 {
-                    model.State = ModelState.Deleted.ToString();
+                    model.State = OrderState.Deleted.ToString();
                     result = dc.SaveChanges();
                 }
                 return result;
@@ -95,7 +95,7 @@ namespace PMSWCFService
                 var model = dc.MaterialOrderItems.Find(id);
                 if (model != null)
                 {
-                    model.State = ModelState.Deleted.ToString();
+                    model.State = OrderState.Deleted.ToString();
                     result = dc.SaveChanges();
                 }
                 return result;
@@ -108,7 +108,7 @@ namespace PMSWCFService
             {
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialNeed, DcMaterialNeed>());
                 var mapper = config.CreateMapper();
-                var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && !m.State.Contains(ModelState.Deleted.ToString()))
+                var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && !m.State.Contains(OrderState.Deleted.ToString()))
                     .OrderByDescending(m => m.CreateTime)
                     .Skip(skip).Take(take)
                     .ToList();
@@ -120,7 +120,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && !m.State.Contains(ModelState.Deleted.ToString())).Count();
+                return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && !m.State.Contains(OrderState.Deleted.ToString())).Count();
             }
         }
 
@@ -135,7 +135,7 @@ namespace PMSWCFService
                 });
                 var mapper = config.CreateMapper();
                 var result = dc.MaterialOrders.Include("MaterialOrderItems").Where(m => m.OrderPO.Contains(orderPo) && m.Supplier.Contains(supplier)
-                && !m.State.Contains(ModelState.Deleted.ToString()))
+                && !m.State.Contains(OrderState.Deleted.ToString()))
                     .OrderByDescending(m => m.CreateTime).Skip(skip).Take(take).ToList();
                 return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(result);
 
@@ -146,7 +146,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && !m.State.Contains(ModelState.Deleted.ToString())).Count();
+                return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && !m.State.Contains(OrderState.Deleted.ToString())).Count();
             }
         }
 
