@@ -27,6 +27,6 @@ namespace PMSDAL
         public string Sample { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
-        public int State { get; set; }//未审核，审核，作废
+        public string State { get; set; }//未审核，审核，作废
     }
 }

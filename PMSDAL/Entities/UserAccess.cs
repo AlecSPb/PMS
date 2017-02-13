@@ -14,7 +14,7 @@ namespace PMSDAL
         public Guid ID { get; set; }
         public string AccessName { get; set; }
         public string AccessCode { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
         public string ExtraInformation { get; set; }
 
         public virtual List<UserRole> UserRoles { get; set; }

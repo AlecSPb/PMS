@@ -16,5 +16,7 @@ namespace PMSDAL
         public string CodeMeaning { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
+
+        public string State { get; set; }
     }
 }

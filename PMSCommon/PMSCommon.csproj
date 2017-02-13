@@ -63,17 +63,17 @@
   <ItemGroup>
     <Compile Include="Calculation\MaterialDensityCalculation.cs" />
     <Compile Include="Calculation\MaterialDensityCalculationItem.cs" />
-    <Compile Include="ModelState.cs" />
-    <Compile Include="NavigationToken.cs" />
-    <Compile Include="OrderPolicy.cs" />
-    <Compile Include="OrderPriority.cs" />
+    <Compile Include="UsedEnum\ModelState.cs" />
+    <Compile Include="UsedEnum\NavigationToken.cs" />
+    <Compile Include="UsedEnum\OrderPolicy.cs" />
+    <Compile Include="UsedEnum\OrderPriority.cs" />
     <Compile Include="PMTranslate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Calculation\TargetDensity.cs" />
     <Compile Include="Calculation\TargetDensityCalculation.cs" />
     <Compile Include="Calculation\TargetDensityCalculationItem.cs" />
     <Compile Include="StateProcess.cs" />
-    <Compile Include="ViewToken.cs" />
+    <Compile Include="UsedEnum\ViewToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />

@@ -26,7 +26,7 @@ namespace PMSDAL
         public double MaterialRemain { get; set; }
 
 
-        public int CurrentState { get; set; }
+        public string State { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
 

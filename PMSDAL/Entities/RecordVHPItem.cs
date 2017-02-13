@@ -17,6 +17,8 @@ namespace PMSDAL
         public Guid ID { get; set; }
         public string Creator { get; set; }
         public DateTime CurrentTime { get; set; }
+        public string State { get; set; }
+
 
         public double PV1 { get; set; }
         public double PV2 { get; set; }

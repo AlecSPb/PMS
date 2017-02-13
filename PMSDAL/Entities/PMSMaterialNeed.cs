@@ -12,7 +12,7 @@ namespace PMSDAL
     public class PMSMaterialNeed
     {
         public Guid Id { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
 

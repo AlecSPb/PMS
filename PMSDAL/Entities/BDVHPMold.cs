@@ -13,8 +13,7 @@ namespace PMSDAL
         public string MoldDetails { get; set; }
         public double InnerDiameter { get; set; }
         public double ModelHeight { get; set; }
-        public int State { get; set; }
-
+        public string State { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
 

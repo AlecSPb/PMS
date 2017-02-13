@@ -18,6 +18,7 @@ namespace PMSDAL
         public Guid ID { get; set; }
         public string CreateTime { get; set; }
         public string Creator { get; set; }
+        public string State { get; set; }
         public string VHPID { get; set; }//161210-M
         public string Composition { get; set; }
         public string MoldCode { get; set; }

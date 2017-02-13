@@ -30,7 +30,7 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string PackageType { get; set; }//木箱 纸箱 塑料箱
         public string PackageInformation { get; set; }//包装重量等细节信息
-        public int State { get; set; }//取消，未审核，审核通过，已发货
+        public string State { get; set; }//取消，未审核，审核通过，已发货
         
         public virtual List<RecordDeliveryItem> DeliveryItems { get; set; }
     }

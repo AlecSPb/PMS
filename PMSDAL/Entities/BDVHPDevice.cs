@@ -14,7 +14,7 @@ namespace PMSDAL
         public double HighestTemperature { get; set; }
         public double HighestPressure { get; set; }
         public double HighestDiameter { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
         public string Manufacturer { get; set; }//制造商
         public string ReceiveTime { get; set; }//接受时间
         public string Creator { get; set; }

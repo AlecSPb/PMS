@@ -17,5 +17,6 @@ namespace PMSDAL
         public string Fax { get; set; }
         public string Email { get; set; }
         public string Memo { get; set; }
+        public string State { get; set; }
     }
 }

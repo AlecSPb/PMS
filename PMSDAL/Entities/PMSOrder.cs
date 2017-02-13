@@ -15,7 +15,7 @@ namespace PMSDAL
     {
         public PMSOrder()
         {
-
+            PlanVHPs = new List<PMSDAL.PMSPlanVHP>();
         }
         //基本信息
         [Key]
@@ -44,8 +44,8 @@ namespace PMSDAL
 
 
         //状态部分
-        public int Priority { get; set; }//紧急，一般，不着急
-        public int State { get; set; }//正在生产，生产完成，发货完成，取消，暂停
+        public string Priority { get; set; }//紧急，一般，不着急
+        public string State { get; set; }//正在生产，生产完成，发货完成，取消，暂停
         public string StateRemark { get; set; }//当前状态的原因，主要给取消和暂停用
 
 
