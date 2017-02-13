@@ -34,7 +34,7 @@ namespace PMSWCFService
                 var pmsOrder = dc.Orders.Find(id);
                 if (pmsOrder != null)
                 {
-                    pmsOrder.State = (int)ModelState.Deleted;
+                    pmsOrder.State = ModelState.Deleted.ToString();
                     dc.SaveChanges();
                 }
                 return result;
@@ -76,7 +76,8 @@ namespace PMSWCFService
                     cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
                 });
                 var mapper = config.CreateMapper();
-                var order = dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted)
+                var order = dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) 
+                && o.State != ModelState.Deleted.ToString())
                      .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order);
                 return result;
@@ -93,7 +94,8 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted).Count();
+                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) &&
+                o.State != ModelState.Deleted.ToString()).Count();
             }
         }
 
