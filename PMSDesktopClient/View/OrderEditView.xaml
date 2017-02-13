@@ -185,8 +185,13 @@
                           Style="{StaticResource ComboBoxBasic}"/>
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="Priority"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
+                <!--<TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>-->
+                <ComboBox Grid.Row="10" Grid.Column="1" ItemsSource="{Binding DataContext.OrderPriorities,
+                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                         SelectedItem="{Binding Priority,Mode=TwoWay}"
+                         Style="{StaticResource ComboBoxBasic}"/>
+
 
             </Grid>
 

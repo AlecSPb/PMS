@@ -36,6 +36,11 @@ namespace PMSDesktopClient.ViewModel
             OrderStates = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.OrderState));
             states.ToList().ForEach(s => OrderStates.Add(s));
+
+
+            OrderPriorities = new ObservableCollection<string>();
+            var priorities = Enum.GetNames(typeof(PMSCommon.OrderPriority));
+            priorities.ToList().ForEach(p => OrderPriorities.Add(p));
         }
 
 
@@ -80,7 +85,7 @@ namespace PMSDesktopClient.ViewModel
         }
 
         public ObservableCollection<string> OrderStates { get; set; }
-
+        public ObservableCollection<string> OrderPriorities { get; set; }
 
 
 
