@@ -177,8 +177,12 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding State}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
+                <!--<TextBox Grid.Row="9" Grid.Column="1" Text="{Binding State}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>-->
+                <ComboBox Grid.Row="9" Grid.Column="1" ItemsSource="{Binding DataContext.OrderStates,
+                    RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State,Mode=TwoWay}"
+                          Style="{StaticResource ComboBoxBasic}"/>
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="Priority"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource TextBoxBasic}"

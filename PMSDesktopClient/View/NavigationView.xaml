@@ -52,10 +52,10 @@
         <Button Content="VHP Record" Grid.Row="3" Grid.Column="1"/>
         <Button Content="Blank Record" Grid.Row="3" Grid.Column="2"/>
         <Button Content="Machine Record" Grid.Row="3" Grid.Column="3"/>
-        <Button Content="Product Record" Grid.Row="3" Grid.Column="4" Command="{Binding GoToProduct}"/>
-        <Button Content="Delivery Record" Grid.Row="3" Grid.Column="5"/>
+        <Button Content="Product Record" Grid.Row="4" Grid.Column="0" Command="{Binding GoToProduct}"/>
+        <Button Content="Delivery Record" Grid.Row="4" Grid.Column="1"/>
         
-        <Button Content="Bonding Record" Grid.Row="4" Grid.Column="0"/>
+        <Button Content="Bonding Record" Grid.Row="5" Grid.Column="0"/>
 
     </Grid>
 </UserControl>

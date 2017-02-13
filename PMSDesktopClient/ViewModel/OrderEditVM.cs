@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSDesktopClient.ServiceReference;
+using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -14,16 +15,29 @@ namespace PMSDesktopClient.ViewModel
     {
         public OrderEditVM()
         {
-
+            InitializeProperties();
         }
         public OrderEditVM(DcOrder order,bool isAdd)
         {
             CurrentOrder = order;
             isNew = isAdd;
+            InitializeCommands();
+            InitializeProperties();
+        }
+
+        private void InitializeCommands()
+        {
             Save = new RelayCommand(ActionSave, CanSave);
             GiveUp = new RelayCommand(ActionGiveUp);
-
         }
+
+        public void InitializeProperties()
+        {
+            OrderStates = new ObservableCollection<string>();
+            var states = Enum.GetNames(typeof(PMSCommon.OrderState));
+            states.ToList().ForEach(s => OrderStates.Add(s));
+        }
+
 
         private void ActionGiveUp()
         {
@@ -64,6 +78,11 @@ namespace PMSDesktopClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentOrder));
             }
         }
+
+        public ObservableCollection<string> OrderStates { get; set; }
+
+
+
 
 
         public RelayCommand Save { get; set; }

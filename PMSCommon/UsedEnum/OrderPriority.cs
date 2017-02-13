@@ -9,7 +9,7 @@ namespace PMSCommon
     public enum OrderPriority
     {
         Normal = 1,
-        Emerygency = 2,
+        Emergency = 2,
         Low=3
     }
 }

@@ -128,7 +128,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Quantity">
+                <DataGridTemplateColumn Header="Qty">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Quantity}" Style="{StaticResource TextBlockDGBasic}"/>

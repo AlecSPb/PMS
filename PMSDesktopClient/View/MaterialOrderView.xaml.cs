@@ -48,7 +48,7 @@ namespace PMSDesktopClient.View
                     default:
                         break;
                 }
-                if (order.Priority ==OrderPriority.Emerygency.ToString())
+                if (order.Priority ==OrderPriority.Emergency.ToString())
                 {
                     e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }
