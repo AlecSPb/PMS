@@ -45,7 +45,11 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<PMSOrder, DcOrder>();
+                    cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                });
                 var mapper = config.CreateMapper();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
                     dc.Orders.OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
@@ -53,28 +57,6 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOrder> GetMissonBySearchInPage(int skip, int take, string customer, string compositionstd)
-        {
-            using (var dc = new PMSDbContext())
-            {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
-                var mapper = config.CreateMapper();
-                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd)
-                    && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString())
-                    .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
-                return result;
-            }
-        }
-
-        public int GetMissonCountBySearch(string customer, string compositionstd)
-        {
-            using (var dc = new PMSDbContext())
-            {
-                return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd)
-                && o.State != (int)ModelState.Deleted && o.PolicyType == OrderPolicy.VHP.ToString()).Count();
-            }
-        }
 
         /// <summary>
         /// 返回不包含删除标记的其他记录
@@ -88,11 +70,15 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSOrder, DcOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<PMSOrder, DcOrder>();
+                    cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                });
                 var mapper = config.CreateMapper();
-                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted)
-                    .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
+                var order = dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != (int)ModelState.Deleted)
+                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
+                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order);
                 return result;
             }
         }
