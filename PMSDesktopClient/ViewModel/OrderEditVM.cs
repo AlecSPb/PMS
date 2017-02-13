@@ -16,39 +16,10 @@ namespace PMSDesktopClient.ViewModel
         {
 
         }
-        public OrderEditVM(DcOrder order)
+        public OrderEditVM(DcOrder order,bool isAdd)
         {
-            if (order != null)
-            {
-                CurrentOrder = order;
-                isNew = false;
-            }
-            else
-            {
-                var dcOrder = new DcOrder();
-                dcOrder.ID = Guid.NewGuid();
-                dcOrder.CustomerName = "Midsummer";
-                dcOrder.Purity = "99.99";
-                dcOrder.CreateTime = DateTime.Now;
-                dcOrder.DeadLine = DateTime.Now.AddDays(30);
-                dcOrder.ReviewDate = DateTime.Now;
-                dcOrder.PolicyMakeDate = DateTime.Now;
-                dcOrder.State = "UnChecked";
-                dcOrder.Priority = "Normal";
-                dcOrder.CompositionOriginal = "CuGaSe2";
-                dcOrder.CompositionStandard = "Cu25Ga25Se50";
-                dcOrder.CompositoinAbbr = "CuGaSe";
-                dcOrder.Creator = "xs.zhou";
-                dcOrder.PolicyType = "Target";
-                dcOrder.ReviewPassed = true;
-                dcOrder.Quantity = 1;
-                dcOrder.QuantityUnit = "piece";
-
-
-                CurrentOrder = dcOrder;
-                isNew = true;
-            }
-
+            CurrentOrder = order;
+            isNew = isAdd;
             Save = new RelayCommand(ActionSave, CanSave);
             GiveUp = new RelayCommand(ActionGiveUp);
 
@@ -76,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateOrder(CurrentOrder);
             }
             NavigationService.GoTo("OrderView");
-            Messenger.Default.Send<Object>("","RefreshOrder");
+            Messenger.Default.Send<Object>("", "RefreshOrder");
         }
 
         private bool isNew;

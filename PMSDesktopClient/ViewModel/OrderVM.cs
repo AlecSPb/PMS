@@ -50,15 +50,76 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
+
+            Add = new RelayCommand(ActionAdd);
+
             EditWithParameter = new RelayCommand<DcOrder>(order =>
             {
                 MessageObject obj = new MessageObject();
                 obj.ViewName = "OrderEditView";
+                obj.IsAdd = false;
                 obj.ModelObject = order;
                 NavigationService.GoToWithParameter(obj);
             });
 
             Delete = new RelayCommand<ServiceReference.DcOrder>(ActionDelete);
+
+
+            Duplicate = new RelayCommand<ServiceReference.DcOrder>(ActionDuplicate);
+        }
+
+        private void ActionDuplicate(DcOrder obj)
+        {
+            if (obj!=null)
+            {
+                obj.PlanVHPs = null;
+                obj.ID = Guid.NewGuid();
+                obj.CreateTime = DateTime.Now.Date;
+                var service = new OrderServiceClient();
+                service.AddOrder(obj);
+                SetPageParametersWhenConditionChange();
+            }
+        }
+
+        private void ActionAdd()
+        {
+            var dcOrder = new DcOrder();
+            dcOrder.ID = Guid.NewGuid();
+            dcOrder.CustomerName = "Midsummer";
+            dcOrder.PO = DateTime.Now.ToString("yyMMdd");
+            dcOrder.PMIWorkingNumber = DateTime.Now.ToString("yyMMdd");
+            dcOrder.ProductType = "Target";
+            dcOrder.Dimension = "230mm OD x  4mm";
+            dcOrder.DimensionDetails = "None";
+            dcOrder.SampleNeed = "无需样品";
+            dcOrder.MinimumAcceptDefect = "通常";
+            dcOrder.Reviewer = "xs.zhou";
+            dcOrder.PolicyContent = "";
+            dcOrder.PolicyType = "VHP";
+            dcOrder.PolicyMaker = "xs.zhou";
+
+            dcOrder.Purity = "99.99";
+            dcOrder.DeadLine = DateTime.Now.AddDays(30);
+            dcOrder.ReviewDate = DateTime.Now;
+            dcOrder.PolicyMakeDate = DateTime.Now;
+            dcOrder.State = "UnChecked";
+            dcOrder.Priority = "Normal";
+            dcOrder.CompositionOriginal = "CuGaSe2";
+            dcOrder.CompositionStandard = "Cu25Ga25Se50";
+            dcOrder.CompositoinAbbr = "CuGaSe";
+            dcOrder.Creator = "xs.zhou";
+            dcOrder.CreateTime = DateTime.Now;
+            dcOrder.ProductType = "Target";
+            dcOrder.ReviewPassed = true;
+            dcOrder.Quantity = 1;
+            dcOrder.QuantityUnit = "片";
+
+            MessageObject obj = new MessageObject();
+            obj.ViewName = "OrderEditView";
+            obj.IsAdd = true;
+            obj.ModelObject = dcOrder;
+            NavigationService.GoToWithParameter(obj);
+
         }
 
         private void ActionDelete(DcOrder obj)
@@ -197,6 +258,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand<DcOrder> EditWithParameter { get; private set; }
 
         public RelayCommand<DcOrder> Delete { get; private set; }
+
+        public RelayCommand<DcOrder> Duplicate { get; private set; }
 
         #endregion
     }

@@ -46,7 +46,7 @@ namespace PMSDesktopClient
             {
                 case "OrderEditView":
                     var view = new OrderEditView();
-                    var vm=new OrderEditVM(obj.ModelObject as DcOrder);
+                    var vm=new OrderEditVM(obj.ModelObject as DcOrder,obj.IsAdd);
                     view.DataContext = vm;
                     NavigateTo(view);
                     break;

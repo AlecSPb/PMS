@@ -17,7 +17,11 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcOrder, PMSOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<DcOrder, PMSOrder>();
+                    cfg.CreateMap<DcPlanVHP, PMSPlanVHP>();
+                });
                 var mapper = config.CreateMapper();
                 var pmsOrder = mapper.Map<PMSOrder>(order);
                 dc.Orders.Add(pmsOrder);
@@ -76,7 +80,7 @@ namespace PMSWCFService
                     cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
                 });
                 var mapper = config.CreateMapper();
-                var order = dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) 
+                var order = dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd)
                 && o.State != OrderState.Deleted.ToString())
                      .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order);
@@ -104,7 +108,11 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcOrder, PMSOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<DcOrder, PMSOrder>();
+                    cfg.CreateMap<DcPlanVHP, PMSPlanVHP>();
+                });
                 var mapper = config.CreateMapper();
                 PMSOrder pmsOrder = mapper.Map<PMSOrder>(order);
                 dc.Entry(pmsOrder).State = System.Data.Entity.EntityState.Modified;
