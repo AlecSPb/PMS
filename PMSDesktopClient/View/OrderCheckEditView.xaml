@@ -153,7 +153,7 @@
                 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="PolicyContent"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding PolicyContent}" Style="{StaticResource TextBlockBasic}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PolicyContent}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="PolicyMaker"
                            Style="{StaticResource TextBlockBasic}" />
