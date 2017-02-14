@@ -63,22 +63,22 @@
   <ItemGroup>
     <Compile Include="Calculation\MaterialDensityCalculation.cs" />
     <Compile Include="Calculation\MaterialDensityCalculationItem.cs" />
-    <Compile Include="UsedEnum\AccessState.cs" />
-    <Compile Include="UsedEnum\OrderState.cs" />
-    <Compile Include="UsedEnum\NavigationToken.cs" />
-    <Compile Include="UsedEnum\NonOrderState.cs" />
-    <Compile Include="UsedEnum\OrderPolicyType.cs" />
-    <Compile Include="UsedEnum\OrderPriority.cs" />
+    <Compile Include="UsefulEnum\AccessState.cs" />
+    <Compile Include="UsefulEnum\OrderState.cs" />
+    <Compile Include="UsefulEnum\NavigationToken.cs" />
+    <Compile Include="UsefulEnum\NonOrderState.cs" />
+    <Compile Include="UsefulEnum\OrderPolicyType.cs" />
+    <Compile Include="UsefulEnum\OrderPriority.cs" />
     <Compile Include="PMTranslate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Calculation\TargetDensity.cs" />
     <Compile Include="Calculation\TargetDensityCalculation.cs" />
     <Compile Include="Calculation\TargetDensityCalculationItem.cs" />
     <Compile Include="StateProcess.cs" />
-    <Compile Include="UsedEnum\OrderProductType.cs" />
-    <Compile Include="UsedEnum\TestType.cs" />
-    <Compile Include="UsedEnum\UserState.cs" />
-    <Compile Include="UsedEnum\ViewToken.cs" />
+    <Compile Include="UsefulEnum\OrderProductType.cs" />
+    <Compile Include="UsefulEnum\TestType.cs" />
+    <Compile Include="UsefulEnum\UserState.cs" />
+    <Compile Include="UsefulEnum\ViewToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />

@@ -114,7 +114,7 @@
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
-    <Compile Include="ViewModel\RecordProductVM.cs" />
+    <Compile Include="ViewModel\RecordTestResultVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\BondingView.xaml.cs">
@@ -168,8 +168,8 @@
     <Compile Include="View\ProductReportView.xaml.cs">
       <DependentUpon>ProductReportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductView.xaml.cs">
-      <DependentUpon>ProductView.xaml</DependentUpon>
+    <Compile Include="View\RecortTestResultView.xaml.cs">
+      <DependentUpon>RecortTestResultView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialNeedView.xaml.cs">
       <DependentUpon>MaterialNeedView.xaml</DependentUpon>
@@ -271,7 +271,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductView.xaml">
+    <Page Include="View\RecortTestResultView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -372,7 +372,7 @@
     <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordProduct.datasource">
+    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordTestResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordVHP.datasource">

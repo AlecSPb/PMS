@@ -1680,9 +1680,9 @@ namespace PMSDesktopClient.ServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordProduct", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordTestResult", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class DcRecordProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DcRecordTestResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -1734,6 +1734,9 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TestTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
@@ -1952,6 +1955,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TestType {
+            get {
+                return this.TestTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TestTypeField, value) != true)) {
+                    this.TestTypeField = value;
+                    this.RaisePropertyChanged("TestType");
                 }
             }
         }
@@ -5342,107 +5358,111 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordProductService")]
-    public interface IRecordProductService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordTestResultService")]
+    public interface IRecordTestResultService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcRecordProduct[] GetRecordProductBySearchInPage(int skip, int take, string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResp" +
+            "onse")]
+        PMSDesktopClient.ServiceReference.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordProduct[]> GetRecordProductBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResp" +
+            "onse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPageRespo" +
-            "nse")]
-        int GetRecordProductCountBySearchInPage(string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
+            "e", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
+            "eResponse")]
+        int GetRecordTestResultCountBySearchInPage(string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordProductService/GetRecordProductCountBySearchInPageRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<int> GetRecordProductCountBySearchInPageAsync(string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
+            "e", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
+            "eResponse")]
+        System.Threading.Tasks.Task<int> GetRecordTestResultCountBySearchInPageAsync(string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/AddRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/AddRecordProductResponse")]
-        int AddRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse")]
+        int AddRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/AddRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/AddRecordProductResponse")]
-        System.Threading.Tasks.Task<int> AddRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse")]
+        System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/UpdateRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/UpdateRecordProductResponse")]
-        int UpdateRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse")]
+        int UpdateRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/UpdateRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/UpdateRecordProductResponse")]
-        System.Threading.Tasks.Task<int> UpdateRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/DeleteRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/DeleteRecordProductResponse")]
-        int DeleteRecordProduct(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResultResponse")]
+        int DeleteRecordTestResult(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordProductService/DeleteRecordProduct", ReplyAction="http://tempuri.org/IRecordProductService/DeleteRecordProductResponse")]
-        System.Threading.Tasks.Task<int> DeleteRecordProductAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResultResponse")]
+        System.Threading.Tasks.Task<int> DeleteRecordTestResultAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRecordProductServiceChannel : PMSDesktopClient.ServiceReference.IRecordProductService, System.ServiceModel.IClientChannel {
+    public interface IRecordTestResultServiceChannel : PMSDesktopClient.ServiceReference.IRecordTestResultService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RecordProductServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordProductService>, PMSDesktopClient.ServiceReference.IRecordProductService {
+    public partial class RecordTestResultServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordTestResultService>, PMSDesktopClient.ServiceReference.IRecordTestResultService {
         
-        public RecordProductServiceClient() {
+        public RecordTestResultServiceClient() {
         }
         
-        public RecordProductServiceClient(string endpointConfigurationName) : 
+        public RecordTestResultServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public RecordProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public RecordTestResultServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RecordProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RecordTestResultServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RecordProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RecordTestResultServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcRecordProduct[] GetRecordProductBySearchInPage(int skip, int take, string productId, string compositionStd) {
-            return base.Channel.GetRecordProductBySearchInPage(skip, take, productId, compositionStd);
+        public PMSDesktopClient.ServiceReference.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestResultBySearchInPage(skip, take, productId, compositionStd);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordProduct[]> GetRecordProductBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
-            return base.Channel.GetRecordProductBySearchInPageAsync(skip, take, productId, compositionStd);
+        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestResultBySearchInPageAsync(skip, take, productId, compositionStd);
         }
         
-        public int GetRecordProductCountBySearchInPage(string productId, string compositionStd) {
-            return base.Channel.GetRecordProductCountBySearchInPage(productId, compositionStd);
+        public int GetRecordTestResultCountBySearchInPage(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestResultCountBySearchInPage(productId, compositionStd);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordProductCountBySearchInPageAsync(string productId, string compositionStd) {
-            return base.Channel.GetRecordProductCountBySearchInPageAsync(productId, compositionStd);
+        public System.Threading.Tasks.Task<int> GetRecordTestResultCountBySearchInPageAsync(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestResultCountBySearchInPageAsync(productId, compositionStd);
         }
         
-        public int AddRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
-            return base.Channel.AddRecordProduct(model);
+        public int AddRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+            return base.Channel.AddRecordTestResult(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
-            return base.Channel.AddRecordProductAsync(model);
+        public System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+            return base.Channel.AddRecordTestResultAsync(model);
         }
         
-        public int UpdateRecordProduct(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
-            return base.Channel.UpdateRecordProduct(model);
+        public int UpdateRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+            return base.Channel.UpdateRecordTestResult(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateRecordProductAsync(PMSDesktopClient.ServiceReference.DcRecordProduct model) {
-            return base.Channel.UpdateRecordProductAsync(model);
+        public System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+            return base.Channel.UpdateRecordTestResultAsync(model);
         }
         
-        public int DeleteRecordProduct(System.Guid id) {
-            return base.Channel.DeleteRecordProduct(id);
+        public int DeleteRecordTestResult(System.Guid id) {
+            return base.Channel.DeleteRecordTestResult(id);
         }
         
-        public System.Threading.Tasks.Task<int> DeleteRecordProductAsync(System.Guid id) {
-            return base.Channel.DeleteRecordProductAsync(id);
+        public System.Threading.Tasks.Task<int> DeleteRecordTestResultAsync(System.Guid id) {
+            return base.Channel.DeleteRecordTestResultAsync(id);
         }
     }
     

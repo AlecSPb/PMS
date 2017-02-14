@@ -151,13 +151,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
-  <xs:complexType name="ArrayOfDcRecordProduct">
+  <xs:complexType name="ArrayOfDcRecordTestResult">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordProduct" nillable="true" type="tns:DcRecordProduct" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordTestResult" nillable="true" type="tns:DcRecordTestResult" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfDcRecordProduct" nillable="true" type="tns:ArrayOfDcRecordProduct" />
-  <xs:complexType name="DcRecordProduct">
+  <xs:element name="ArrayOfDcRecordTestResult" nillable="true" type="tns:ArrayOfDcRecordTestResult" />
+  <xs:complexType name="DcRecordTestResult">
     <xs:sequence>
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
@@ -175,10 +175,11 @@
       <xs:element minOccurs="0" name="Resistance" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sample" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TestType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="DcRecordProduct" nillable="true" type="tns:DcRecordProduct" />
+  <xs:element name="DcRecordTestResult" nillable="true" type="tns:DcRecordTestResult" />
   <xs:complexType name="ArrayOfDcMissonWithPlan">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMissonWithPlan" nillable="true" type="tns:DcMissonWithPlan" />

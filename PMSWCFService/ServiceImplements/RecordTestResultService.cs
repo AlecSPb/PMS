@@ -10,30 +10,30 @@ using PMSCommon;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IRecordProductService
+    public partial class PMSService : IRecordTestResultService
     {
-        public int AddRecordProduct(DcRecordProduct model)
+        public int AddRecordTestResult(DcRecordTestResult model)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordProduct, RecordProduct>());
-                var product = Mapper.Map<RecordProduct>(model);
-                dc.RecordProducts.Add(product);
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTestResult, RecordTestResult>());
+                var product = Mapper.Map<RecordTestResult>(model);
+                dc.RecordTestResults.Add(product);
                 result = dc.SaveChanges();
                 return result;
             }
         }
 
-        public int DeleteRecordProduct(Guid id)
+        public int DeleteRecordTestResult(Guid id)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var product = dc.RecordProducts.Find(id);
+                var product = dc.RecordTestResults.Find(id);
                 if (product != null)
                 {
-                    dc.RecordProducts.Remove(product);
+                    dc.RecordTestResults.Remove(product);
                     result = dc.SaveChanges();
                 }
 
@@ -41,34 +41,34 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordProduct> GetRecordProductBySearchInPage(int skip, int take, string productId, string compositionStd)
+        public List<DcRecordTestResult> GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd)
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.RecordProducts.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
+                var result = dc.RecordTestResults.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
                   && p.State != OrderState.Deleted.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
-                Mapper.Initialize(cfg => cfg.CreateMap<RecordProduct, DcRecordProduct>());
-                var products = Mapper.Map<List<RecordProduct>, List<DcRecordProduct>>(result);
+                Mapper.Initialize(cfg => cfg.CreateMap<RecordTestResult, DcRecordTestResult>());
+                var products = Mapper.Map<List<RecordTestResult>, List<DcRecordTestResult>>(result);
                 return products;
             }
         }
 
-        public int GetRecordProductCountBySearchInPage(string productId, string compositionStd)
+        public int GetRecordTestResultCountBySearchInPage(string productId, string compositionStd)
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.RecordProducts.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
+                return dc.RecordTestResults.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
                   && p.State != OrderState.Deleted.ToString()).Count();
             }
         }
 
-        public int UpdateRecordProduct(DcRecordProduct model)
+        public int UpdateRecordTestResult(DcRecordTestResult model)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordProduct, RecordProduct>());
-                var product = Mapper.Map<RecordProduct>(model);
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTestResult, RecordTestResult>());
+                var product = Mapper.Map<RecordTestResult>(model);
                 dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
                 result = dc.SaveChanges();
                 return result;

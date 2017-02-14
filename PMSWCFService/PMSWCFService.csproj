@@ -93,7 +93,7 @@
     <Compile Include="DataContracts\DcBDVHPDevice.cs" />
     <Compile Include="DataContracts\DcBDVHPMold.cs" />
     <Compile Include="DataContracts\DcBDVHPProcess.cs" />
-    <Compile Include="DataContracts\DcRecordProduct.cs" />
+    <Compile Include="DataContracts\DcRecordTestResult.cs" />
     <Compile Include="DataContracts\DcRecordDelivery.cs" />
     <Compile Include="DataContracts\DcRecordDeliveryItem.cs" />
     <Compile Include="DataContracts\DcRecordVHP.cs" />
@@ -104,7 +104,7 @@
     <Compile Include="ServiceImplements\DeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />
     <Compile Include="ServiceImplements\MissonWithPlanService.cs" />
-    <Compile Include="ServiceImplements\RecordProductService.cs" />
+    <Compile Include="ServiceImplements\RecordTestResultService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />
     <Compile Include="ServiceContracts\IRecordBondingService.cs" />
     <Compile Include="ServiceContracts\IRecordDeliveryService.cs" />
@@ -127,7 +127,7 @@
     <Compile Include="DataContracts\DcOrder.cs" />
     <Compile Include="ServiceContracts\IOrderService.cs" />
     <Compile Include="ServiceContracts\IPlanVHPService.cs" />
-    <Compile Include="ServiceContracts\IRecordProductService.cs" />
+    <Compile Include="ServiceContracts\IRecordTestResultService.cs" />
     <Compile Include="ServiceContracts\IUserAccessService.cs" />
   </ItemGroup>
   <ItemGroup>

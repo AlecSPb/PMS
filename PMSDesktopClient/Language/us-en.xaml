@@ -47,8 +47,8 @@
     <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
     <sys:String x:Key="strRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
 
-    <sys:String x:Key="strProductPage">Product Collection</sys:String>
-    <sys:String x:Key="strProductEditPage">Product Edit</sys:String>
+    <sys:String x:Key="strProductPage">Record Test Results</sys:String>
+    <sys:String x:Key="strProductEditPage">Record Test Result Edit</sys:String>
     <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
 
     <sys:String x:Key="strOrderPage">Order Collection</sys:String>

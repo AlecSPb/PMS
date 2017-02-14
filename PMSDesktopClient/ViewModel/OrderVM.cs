@@ -89,7 +89,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 obj.PlanVHPs = null;
                 obj.ID = Guid.NewGuid();
-                obj.CreateTime = DateTime.Now.Date;
+                obj.CreateTime = DateTime.Now;
                 var service = new OrderServiceClient();
                 service.AddOrder(obj);
                 SetPageParametersWhenConditionChange();

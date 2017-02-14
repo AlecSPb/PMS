@@ -27,11 +27,11 @@
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="UnCheck" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
                 <TextBlock Text="Completed" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
                 <TextBlock Text="UnCompleted" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
                 <TextBlock Text="Paused" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
-                <TextBlock Text="UnCheck" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
             </StackPanel>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow">

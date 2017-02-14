@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class DcRecordProduct
+    public class DcRecordTestResult
     {
         [DataMember]
         public Guid ID { get; set; }
+        [DataMember]
+        public string TestType { get; set; }
         [DataMember]
         public DateTime CreateTime { get; set; }
         [DataMember]

@@ -134,6 +134,10 @@
     <Compile Include="Migrations\201702130330006_changestatetype.Designer.cs">
       <DependentUpon>201702130330006_changestatetype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702140743247_testresult.cs" />
+    <Compile Include="Migrations\201702140743247_testresult.Designer.cs">
+      <DependentUpon>201702140743247_testresult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -158,7 +162,7 @@
     <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="PMSDbContext.cs" />
-    <Compile Include="Entities\RecordProduct.cs" />
+    <Compile Include="Entities\RecordTestResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedInitializer.cs" />
   </ItemGroup>
@@ -234,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702130330006_changestatetype.resx">
       <DependentUpon>201702130330006_changestatetype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702140743247_testresult.resx">
+      <DependentUpon>201702140743247_testresult.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

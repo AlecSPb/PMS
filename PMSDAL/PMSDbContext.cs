@@ -39,7 +39,7 @@ namespace PMSDAL
         public DbSet<RecordTakeOut> RecordTakeOuts { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
-        public DbSet<RecordProduct> RecordProducts { get; set; }
+        public DbSet<RecordTestResult> RecordTestResults { get; set; }
         //UserAccess
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> Roles { get; set; }

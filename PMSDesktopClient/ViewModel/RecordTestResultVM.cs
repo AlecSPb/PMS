@@ -10,9 +10,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordProductVM : ViewModelBase
+    public class RecordTestResultVM : ViewModelBase
     {
-        public RecordProductVM()
+        public RecordTestResultVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -25,9 +25,9 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand<DcRecordProduct>(ActionAdd);
-            Update = new RelayCommand<DcRecordProduct>(ActionUpdate);
-            Delete = new RelayCommand<DcRecordProduct>(ActionDelete);
+            Add = new RelayCommand<DcRecordTestResult>(ActionAdd);
+            Update = new RelayCommand<DcRecordTestResult>(ActionUpdate);
+            Delete = new RelayCommand<DcRecordTestResult>(ActionDelete);
         }
 
         private bool CanSearch()
@@ -46,24 +46,24 @@ namespace PMSDesktopClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionUpdate(DcRecordProduct obj)
+        private void ActionUpdate(DcRecordTestResult obj)
         {
             throw new NotImplementedException();
         }
 
-        private void ActionDelete(DcRecordProduct obj)
+        private void ActionDelete(DcRecordTestResult obj)
         {
             throw new NotImplementedException();
         }
 
-        private void ActionAdd(DcRecordProduct obj)
+        private void ActionAdd(DcRecordTestResult obj)
         {
             throw new NotImplementedException();
         }
 
         private void InitializeProperties()
         {
-            RecordProducts = new ObservableCollection<DcRecordProduct>();
+            RecordProducts = new ObservableCollection<DcRecordTestResult>();
             SearchCompositonStd = searchProductID = "";
 
         }
@@ -71,28 +71,28 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new RecordProductServiceClient();
-            RecordCount = service.GetRecordProductCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            var service = new RecordTestResultServiceClient();
+            RecordCount = service.GetRecordTestResultCountBySearchInPage(SearchProductID, SearchCompositonStd);
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordProductServiceClient();
+            var service = new RecordTestResultServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordProductBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+            var orders = service.GetRecordTestResultBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
             RecordProducts.Clear();
-            orders.ToList<DcRecordProduct>().ForEach(o => RecordProducts.Add(o));
+            orders.ToList<DcRecordTestResult>().ForEach(o => RecordProducts.Add(o));
         }
         #region Commands
         public RelayCommand Navigate { get; set; }
         public RelayCommand Search { get; set; }
         public RelayCommand All { get; set; }
         public RelayCommand Report { get; set; }
-        public RelayCommand<DcRecordProduct> Add { get; set; }
-        public RelayCommand<DcRecordProduct> Update { get; set; }
-        public RelayCommand<DcRecordProduct> Delete { get; set; }
+        public RelayCommand<DcRecordTestResult> Add { get; set; }
+        public RelayCommand<DcRecordTestResult> Update { get; set; }
+        public RelayCommand<DcRecordTestResult> Delete { get; set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
         #region PagingProperties
@@ -155,7 +155,7 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcRecordProduct> RecordProducts { get; set; }
+        public ObservableCollection<DcRecordTestResult> RecordProducts { get; set; }
         #endregion
     }
 }
