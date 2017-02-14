@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSCommon
+namespace PMSCommon.UsedEnum
 {
     /// <summary>
-    /// 订单优先级
+    /// 订单产品类型
     /// </summary>
-    public enum OrderPriority
+    public enum OrderProductType
     {
-        Normal = 1,
-        Emergency = 2,
-        Low=3
+        Target,
+        Granule,
+        Powder,
+        Other
     }
 }

@@ -6,6 +6,7 @@ using System.Web;
 namespace PMSCommon
 {
     /// <summary>
+    /// 订单状态类型
     /// deleted不显示
     /// paused是暂停但是显示
     /// umcompleted是未完成

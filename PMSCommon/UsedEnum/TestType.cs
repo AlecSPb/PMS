@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSCommon
+namespace PMSCommon.UsedEnum
 {
     /// <summary>
-    /// 订单优先级
+    /// 测试结果类型
     /// </summary>
-    public enum OrderPriority
+    public enum TestType
     {
-        Normal = 1,
-        Emergency = 2,
-        Low=3
+        Product,
+        Experiement,
+        Other
     }
 }

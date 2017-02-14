@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSCommon.UsedEnum
 {
+    /// <summary>
+    /// 用户状态类型
+    /// </summary>
     public enum UserState
     {
         Hiring,

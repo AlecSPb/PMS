@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
+    /// <summary>
+    /// 订单策略类型
+    /// </summary>
     public enum OrderPolicyType
     {
         VHP,

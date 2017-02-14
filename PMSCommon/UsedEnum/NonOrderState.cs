@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSCommon.UsedEnum
 {
+    /// <summary>
+    /// 非订单类状态
+    /// </summary>
     public enum NonOrderState
     {
         Deleted,
