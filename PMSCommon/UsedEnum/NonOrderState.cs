@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSCommon.UsedEnum
+namespace PMSCommon
 {
     /// <summary>
     /// 非订单类状态

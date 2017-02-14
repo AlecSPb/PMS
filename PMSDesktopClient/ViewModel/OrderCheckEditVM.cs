@@ -51,7 +51,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo("OrderView");
+            NavigationService.GoTo("OrderCheckView");
         }
 
         private bool CanSave()

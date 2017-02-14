@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSCommon.UsedEnum
-{
+namespace PMSCommon
+{ 
     /// <summary>
     /// 订单产品类型
     /// </summary>

@@ -19,18 +19,26 @@
             <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"
                     Command="{Binding Save}"/>
         </StackPanel>
-        <Grid Grid.Row="2" DataContext="{Binding CurrentOrder}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+            <Grid DataContext="{Binding CurrentOrder}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -114,71 +122,46 @@
                 <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBlockBasic}"
                          HorizontalAlignment="Stretch"/>
 
-
-            </Grid>
-
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Create Time"
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="Create Time"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
+                <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Creator"
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="Creator"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
+                <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="PolicyType"
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="PolicyType"
                            Style="{StaticResource TextBlockBasic}" />
-                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                <ComboBox Grid.Row="18" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.PolicyTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PolicyType,Mode=TwoWay}"/>
-                
-                
-                
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="PolicyContent"
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="PolicyContent"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PolicyContent}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding PolicyContent}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="PolicyMaker"
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="PolicyMaker"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding PolicyMaker}" Style="{StaticResource TextBlockBasic}"
+                <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding PolicyMaker}" Style="{StaticResource TextBlockBasic}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="PolicyMakeDate"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="PolicyMakeDate"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding PolicyMakeDate}" Style="{StaticResource TextBlockBasic}" 
+                <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding PolicyMakeDate}" Style="{StaticResource TextBlockBasic}" 
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="State"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}" />
-                <ComboBox Grid.Row="6" Grid.Column="1" ItemsSource="{Binding DataContext.OrderStates,
+                <ComboBox Grid.Row="22" Grid.Column="1" ItemsSource="{Binding DataContext.OrderStates,
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State,Mode=TwoWay}"
                           Style="{StaticResource ComboBoxBasic}"/>
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Priority"
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="Priority"
                            Style="{StaticResource TextBlockBasic}" />
-                <ComboBox Grid.Row="7" Grid.Column="1" ItemsSource="{Binding DataContext.OrderPriorities,
+                <ComboBox Grid.Row="23" Grid.Column="1" ItemsSource="{Binding DataContext.OrderPriorities,
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                          SelectedItem="{Binding Priority,Mode=TwoWay}"
                          Style="{StaticResource ComboBoxBasic}"/>
 
 
             </Grid>
-
-        </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>
