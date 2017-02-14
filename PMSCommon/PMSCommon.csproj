@@ -67,7 +67,7 @@
     <Compile Include="UsedEnum\OrderState.cs" />
     <Compile Include="UsedEnum\NavigationToken.cs" />
     <Compile Include="UsedEnum\NonOrderState.cs" />
-    <Compile Include="UsedEnum\OrderPolicy.cs" />
+    <Compile Include="UsedEnum\OrderPolicyType.cs" />
     <Compile Include="UsedEnum\OrderPriority.cs" />
     <Compile Include="PMTranslate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

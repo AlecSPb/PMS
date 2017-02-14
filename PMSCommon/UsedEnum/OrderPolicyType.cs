@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum OrderPolicy
+    public enum OrderPolicyType
     {
         VHP,
         OutSource,

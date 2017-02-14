@@ -35,6 +35,9 @@ namespace PMSDesktopClient.View
             {
                 switch (order.State)
                 {
+                    case "UnChecked":
+                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                        break;
                     case "Paused":
                         e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                         break;

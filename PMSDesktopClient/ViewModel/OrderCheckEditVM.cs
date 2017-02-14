@@ -11,13 +11,13 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class OrderEditVM : ViewModelBase
+    public class OrderCheckEditVM : ViewModelBase
     {
-        public OrderEditVM()
+        public OrderCheckEditVM()
         {
             InitializeProperties();
         }
-        public OrderEditVM(DcOrder order,bool isAdd)
+        public OrderCheckEditVM(DcOrder order,bool isAdd)
         {
             CurrentOrder = order;
             isNew = isAdd;

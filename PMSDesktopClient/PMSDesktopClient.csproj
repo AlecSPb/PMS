@@ -108,6 +108,7 @@
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\OrderCheckEditVM.cs" />
     <Compile Include="ViewModel\OrderEditVM.cs" />
     <Compile Include="ViewModel\OrderSelectVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
@@ -142,6 +143,9 @@
     </Compile>
     <Compile Include="View\OrderCheckView.xaml.cs">
       <DependentUpon>OrderCheckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderCheckEditView.xaml.cs">
+      <DependentUpon>OrderCheckEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
@@ -230,6 +234,10 @@
     <Page Include="View\OrderCheckView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderCheckEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\OrderEditView.xaml">
       <SubType>Designer</SubType>
