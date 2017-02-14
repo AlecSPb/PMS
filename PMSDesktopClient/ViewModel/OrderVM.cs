@@ -90,6 +90,11 @@ namespace PMSDesktopClient.ViewModel
                 obj.PlanVHPs = null;
                 obj.ID = Guid.NewGuid();
                 obj.CreateTime = DateTime.Now;
+                obj.State = "UnChecked";
+                obj.Priority = "Normal";
+                obj.DeadLine = DateTime.Now.AddDays(30);
+
+
                 var service = new OrderServiceClient();
                 service.AddOrder(obj);
                 SetPageParametersWhenConditionChange();
