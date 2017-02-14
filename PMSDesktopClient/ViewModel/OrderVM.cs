@@ -66,6 +66,21 @@ namespace PMSDesktopClient.ViewModel
 
 
             Duplicate = new RelayCommand<ServiceReference.DcOrder>(ActionDuplicate);
+
+            Check = new RelayCommand<ServiceReference.DcOrder>(ActionCheck);
+
+        }
+
+        private void ActionCheck(DcOrder obj)
+        {
+            if (obj!=null)
+            {
+                MessageObject msg = new MessageObject();
+                msg.ViewName = "OrderCheckEditView";
+                msg.IsAdd = false;
+                msg.ModelObject = obj;
+                NavigationService.GoToWithParameter(msg);
+            }
         }
 
         private void ActionDuplicate(DcOrder obj)
@@ -260,6 +275,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand<DcOrder> Delete { get; private set; }
 
         public RelayCommand<DcOrder> Duplicate { get; private set; }
+
+        public RelayCommand<DcOrder> Check { get;private  set; }
 
         #endregion
     }

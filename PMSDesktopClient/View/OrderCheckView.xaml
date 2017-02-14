@@ -17,7 +17,6 @@
         <TextBlock Text="Orders Check" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
-            <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
@@ -31,6 +30,7 @@
                 <TextBlock Text="UnCompleted" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
                 <TextBlock Text="Paused" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
+                <TextBlock Text="UnCheck" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
             </StackPanel>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow">
@@ -39,7 +39,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Check" Style="{StaticResource ButtonDGBasic}"/>
+                                <Button Content="Check" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

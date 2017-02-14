@@ -70,7 +70,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateOrder(CurrentOrder);
             }
-            NavigationService.GoTo("OrderView");
+            NavigationService.GoTo("OrderCheckView");
             Messenger.Default.Send<Object>("", "RefreshOrder");
         }
 
