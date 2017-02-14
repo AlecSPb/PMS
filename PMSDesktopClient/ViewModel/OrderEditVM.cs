@@ -46,6 +46,12 @@ namespace PMSDesktopClient.ViewModel
             PolicyTypes = new ObservableCollection<string>();
             var policyTypes = Enum.GetNames(typeof(PMSCommon.OrderPolicyType));
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
+
+
+            CustomerNames = new ObservableCollection<string>();
+            var service = new CustomerServiceClient();
+            var customerNames = service.GetCustomer();
+            customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
         }
 
 
@@ -94,7 +100,7 @@ namespace PMSDesktopClient.ViewModel
 
         public ObservableCollection<string> PolicyTypes { get; set; }
 
-
+        public ObservableCollection<string> CustomerNames { get; set; }
 
         public RelayCommand Save { get; set; }
         public RelayCommand GiveUp { get; set; }
