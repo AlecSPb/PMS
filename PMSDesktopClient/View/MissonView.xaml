@@ -193,6 +193,8 @@
                                     Header="Pressure" Binding="{Binding Pressure}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="Vaccum" Binding="{Binding Vaccum}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="ProcessCode" Binding="{Binding ProcessCode}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

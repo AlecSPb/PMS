@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSDesktopClient.ServiceReference;
-
+using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -18,10 +18,28 @@ namespace PMSDesktopClient.ViewModel
 
             CurrentPlan = plan;
             isNew = isnew;
-
+            InitializeProperties();
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
         }
+
+        private void InitializeProperties()
+        {
+            Molds = new ObservableCollection<ServiceReference.DcBDVHPMold>();
+            var service = new VHPMoldServiceClient();
+            var molds = service.GetVHPMold();
+            molds.ToList().ForEach(m => Molds.Add(m));
+
+            States = new ObservableCollection<string>();
+            var states = Enum.GetNames(typeof(PMSCommon.NonOrderState));
+            states.ToList().ForEach(s => States.Add(s));
+
+            ProcessCodes = new ObservableCollection<string>();
+            var service2 = new VHPProcessServiceClient();
+            var processCodes = service2.GetVHPProcess();
+            processCodes.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
+        }
+
         private bool isNew;
         private void ActionSave()
         {
@@ -43,6 +61,9 @@ namespace PMSDesktopClient.ViewModel
         {
             NavigationService.GoTo("PlanView");
         }
+        public ObservableCollection<DcBDVHPMold> Molds { get; set; }
+        public ObservableCollection<string> States { get; set; }
+        public ObservableCollection<string> ProcessCodes { get; set; }
 
         public DcPlanVHP CurrentPlan { get; set; }
 

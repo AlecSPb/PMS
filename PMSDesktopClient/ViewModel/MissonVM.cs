@@ -73,6 +73,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.Temperature=0;
                 plan.Pressure = 0;
                 plan.Vaccum = 0;
+                plan.ProcessCode = "W1";
                 plan.PrePressure = 0;
                 plan.PreTemperature = 0;
                 plan.Quantity = 1;
