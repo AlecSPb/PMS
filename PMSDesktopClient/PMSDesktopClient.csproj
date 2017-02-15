@@ -168,8 +168,8 @@
     <Compile Include="View\ProductReportView.xaml.cs">
       <DependentUpon>ProductReportView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecortTestResultView.xaml.cs">
-      <DependentUpon>RecortTestResultView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestResultView.xaml.cs">
+      <DependentUpon>RecordTestResultView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialNeedView.xaml.cs">
       <DependentUpon>MaterialNeedView.xaml</DependentUpon>
@@ -271,7 +271,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RecortTestResultView.xaml">
+    <Page Include="View\RecordTestResultView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -97,7 +97,7 @@ namespace PMSDesktopClient
                 case "RecordVHPView":
                     NavigateTo(new RecordVHPView());
                     break;
-                case "ProductView":
+                case "RecordTestResultView":
                     NavigateTo(new RecordTestResultView());
                     break;
                 case "DeliveryView":

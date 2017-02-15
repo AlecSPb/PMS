@@ -32,7 +32,7 @@ namespace PMSDesktopClient.ViewModel
             GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo("MachineRecordView"));
             GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo("DeliveryRecordView"));
             GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo("BondingRecordView"));
-            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo("ProductView"));
+            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo("RecordTestResultView"));
 
         }
         public RelayCommand GoToOrder { get; private set; }
