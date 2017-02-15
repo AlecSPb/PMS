@@ -24,7 +24,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -69,17 +69,20 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="MoldType"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox x:Name="moldType" Grid.Row="2" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
+                         Background="Pink"
                          Style="{StaticResource TextBoxBasic}" IsReadOnly="True"
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="MoldDiameter"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox x:Name="moldDiameter" Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                         Background="Pink"
                          Style="{StaticResource TextBoxBasic}" IsReadOnly="True" 
                          HorizontalAlignment="Stretch"/>
                 <ComboBox x:Name="cboMolds" Grid.Row="2" Grid.Column="2"
+                          HorizontalAlignment="Stretch"
                         ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectionChanged="cboMolds_SelectionChanged"
+                        SelectionChanged="cboMolds_SelectionChanged"
                         Style="{StaticResource ComboBoxBasic}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -90,12 +93,28 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-
+                <TextBlock Grid.Row="2" Grid.Column="3" Text="请使用下拉菜单选择模具" Style="{StaticResource TextBlockTipBasic}"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="CalculationDensity"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CalculationDensity}" Style="{StaticResource TextBoxBasic}"
+                <TextBox x:Name="txtCalculationDensity" Grid.Row="4" Grid.Column="1" Text="{Binding CalculationDensity,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
+
+                <ComboBox x:Name="cboCompounds" Grid.Row="4" Grid.Column="2"
+                          HorizontalAlignment="Stretch"
+                        ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                        SelectionChanged="cboCompounds_SelectionChanged"
+                        Style="{StaticResource ComboBoxBasic}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding MaterialName}"/>
+                                <!--<TextBlock Text="{Binding Density}"/>-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Thickness"
                            Style="{StaticResource TextBlockBasic}" />
@@ -107,9 +126,9 @@
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="GrainSize"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="GrainSize"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="RoomTemperature"

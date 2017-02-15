@@ -44,6 +44,12 @@ namespace PMSDesktopClient.ViewModel
             var service3 = new VHPDeviceServiceClient();
             var devices = service3.GetVHPDevice();
             devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
+
+
+            Compounds = new ObservableCollection<ServiceReference.DcBDCompound>();
+            var service4 = new CompoundServiceClient();
+            var compounds = service4.GetAllCompounds();
+            compounds.ToList().ForEach(c => Compounds.Add(c));
         }
 
         private bool isNew;
@@ -71,6 +77,8 @@ namespace PMSDesktopClient.ViewModel
         public ObservableCollection<string> States { get; set; }
         public ObservableCollection<string> ProcessCodes { get; set; }
         public ObservableCollection<string> DeviceCodes { get; set; }
+        public ObservableCollection<DcBDCompound> Compounds { get; set; }
+
 
         public DcPlanVHP CurrentPlan { get; set; }
 

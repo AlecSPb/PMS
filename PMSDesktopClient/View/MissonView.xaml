@@ -190,6 +190,9 @@
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="MoldDiameter" Binding="{Binding MoldDiameter}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="Density" Binding="{Binding CalculationDensity}"/>
+
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="Temp" Binding="{Binding Temperature}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="Pressure" Binding="{Binding Pressure}"/>

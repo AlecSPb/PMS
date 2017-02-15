@@ -35,5 +35,14 @@ namespace PMSDesktopClient.View
                 this.moldType.Text = selectedMold.MoldType;
             }
         }
+
+        private void cboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedCompound = cboCompounds.SelectedItem as DcBDCompound;
+            if (selectedCompound!=null)
+            {
+                txtCalculationDensity.Text = selectedCompound.Density.ToString();
+            }
+        }
     }
 }
