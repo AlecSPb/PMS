@@ -13,7 +13,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public string ModelType { get; set; }
+        public string MoldType { get; set; }
         [DataMember]
         public string MoldDetails { get; set; }
         [DataMember]

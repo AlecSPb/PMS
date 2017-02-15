@@ -58,7 +58,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string VHPDeviceCode { get; set; }
         [DataMember]
-        public string CurrentMold { get; set; }
+        public string MoldType { get; set; }
         [DataMember]
         public double? CalculationDensity { get; set; }
         [DataMember]
@@ -67,8 +67,6 @@ namespace PMSWCFService.DataContracts
         public double? Thickness { get; set; }
         [DataMember]
         public int TargetQuantity { get; set; }
-        [DataMember]
-        public double? PowderWeight { get; set; }
         [DataMember]
         public string GrainSize { get; set; }
         [DataMember]

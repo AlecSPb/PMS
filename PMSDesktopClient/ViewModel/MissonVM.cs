@@ -68,7 +68,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.ID = Guid.NewGuid();
                 plan.OrderID = obj.ID;
                 plan.PlanDate = DateTime.Now.Date;
-                plan.CurrentMold = "GQ230";
+                plan.MoldType = "GQ";
                 plan.VHPDeviceCode = "A";
                 plan.Temperature=0;
                 plan.Pressure = 0;
@@ -80,9 +80,8 @@ namespace PMSDesktopClient.ViewModel
                 plan.MoldDiameter = 230;
                 plan.Thickness = 5;
                 plan.CreateTime = DateTime.Now;
-                plan.State = "UnCompleted";
+                plan.State = "UnChecked";
                 plan.CalculationDensity = 5.75;
-                plan.PowderWeight = 2300;
                 plan.GrainSize = "-200";
                 plan.RoomHumidity = 80;
                 plan.RoomTemperature = 23;

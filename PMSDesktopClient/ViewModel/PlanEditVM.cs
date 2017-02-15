@@ -31,13 +31,19 @@ namespace PMSDesktopClient.ViewModel
             molds.ToList().ForEach(m => Molds.Add(m));
 
             States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.NonOrderState));
+            var states = Enum.GetNames(typeof(PMSCommon.VHPPlanState));
             states.ToList().ForEach(s => States.Add(s));
 
             ProcessCodes = new ObservableCollection<string>();
             var service2 = new VHPProcessServiceClient();
             var processCodes = service2.GetVHPProcess();
             processCodes.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
+
+
+            DeviceCodes = new ObservableCollection<string>();
+            var service3 = new VHPDeviceServiceClient();
+            var devices = service3.GetVHPDevice();
+            devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
         }
 
         private bool isNew;
@@ -59,11 +65,12 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo("PlanView");
+            NavigationService.GoTo("MissonView");
         }
         public ObservableCollection<DcBDVHPMold> Molds { get; set; }
         public ObservableCollection<string> States { get; set; }
         public ObservableCollection<string> ProcessCodes { get; set; }
+        public ObservableCollection<string> DeviceCodes { get; set; }
 
         public DcPlanVHP CurrentPlan { get; set; }
 

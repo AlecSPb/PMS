@@ -26,25 +26,24 @@ namespace PMSDAL
         public DateTime PlanDate { get; set; }
         public string VHPDeviceCode { get; set; }
 
-        public string CurrentMold { get; set; }
-        public double? CalculationDensity { get; set; }
-        public double? MoldDiameter { get; set; }
-        public double? Thickness { get; set; }
+        public string MoldType { get; set; }
+        public double CalculationDensity { get; set; }
+        public double MoldDiameter { get; set; }
+        public double Thickness { get; set; }
         public int Quantity { get; set; }
 
-        public double? PowderWeight { get; set; }
         public string GrainSize { get; set; }
 
-        public double? RoomTemperature { get; set; }
-        public double? RoomHumidity { get; set; }
+        public double RoomTemperature { get; set; }
+        public double RoomHumidity { get; set; }
 
-        public double? PreTemperature { get; set; }
-        public double? PrePressure { get; set; }
+        public double PreTemperature { get; set; }
+        public double PrePressure { get; set; }
 
-        public double? Temperature { get; set; }
-        public double? Pressure { get; set; }
-        public double? Vaccum { get; set; }
-        public double? KeepTempTime { get; set; }
+        public double Temperature { get; set; }
+        public double Pressure { get; set; }
+        public double Vaccum { get; set; }
+        public double KeepTempTime { get; set; }
 
         public string ProcessCode { get; set; }
 

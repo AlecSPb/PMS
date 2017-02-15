@@ -53,7 +53,7 @@
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>-->
                 <DataGridTextColumn Header="Composition" Binding="{Binding CompositionStandard}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
-                <DataGridTextColumn Header="Mold" Binding="{Binding CurrentMold}"
+                <DataGridTextColumn Header="Mold" Binding="{Binding MoldType}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>
                 <DataGridTextColumn Header="MoldD" Binding="{Binding MoldDiameter}"
                                     ElementStyle="{StaticResource TextBlockDGBasic}"/>

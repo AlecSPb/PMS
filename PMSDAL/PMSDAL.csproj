@@ -138,6 +138,10 @@
     <Compile Include="Migrations\201702140743247_testresult.Designer.cs">
       <DependentUpon>201702140743247_testresult.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702150125481_changesomecolumns.cs" />
+    <Compile Include="Migrations\201702150125481_changesomecolumns.Designer.cs">
+      <DependentUpon>201702150125481_changesomecolumns.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -241,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702140743247_testresult.resx">
       <DependentUpon>201702140743247_testresult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702150125481_changesomecolumns.resx">
+      <DependentUpon>201702150125481_changesomecolumns.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

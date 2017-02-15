@@ -186,7 +186,9 @@
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="Device" Binding="{Binding VHPDeviceCode}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Header="Mold" Binding="{Binding CurrentMold}"/>
+                                    Header="MoldType" Binding="{Binding MoldType}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="MoldDiameter" Binding="{Binding MoldDiameter}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="Temp" Binding="{Binding Temperature}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"

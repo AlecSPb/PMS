@@ -57,52 +57,52 @@
                            Style="{StaticResource TextBlockBasic}"/>
                 <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding PlanDate,Mode=TwoWay}"
                             Style="{StaticResource DatePickerBasic}"/>
-                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="VHP Deivce Code"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding VHPDeviceCode}" Style="{StaticResource TextBoxBasic}"
-                            HorizontalAlignment="Stretch"/>
-                
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="CurrentMold"
+                <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                          ItemsSource="{Binding DataContext.DeviceCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding VHPDeviceCode,Mode=TwoWay}"/>
+
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="MoldType"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CurrentMold}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                            
+                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                           ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                           DisplayMemberPath="MoldType"
+                           SelectedValuePath="{Binding MoldType}"/>
+
+
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="MoldDiameter"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="CalculationDensity"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CalculationDensity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="Thickness"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="Quantity"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="PowderWeight"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PowderWeight}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="GrainSize"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="RoomTemperature"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="RoomHumidity"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource TextBoxBasic}"
@@ -118,67 +118,69 @@
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="PrePressure"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="Temperature"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="Pressure"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="Vaccum"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Vaccum}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="KeepTempTime"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="MillingRequirement"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding MillingRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="FillingRequirement"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding FillingRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="MachineRequirement"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding MachineRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
+
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="SpecialRequirement"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="Create Time"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
-                         HorizontalAlignment="Stretch"/>
-                
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="Creator"
-                           Style="{StaticResource TextBlockBasic}" />
-                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
-                         HorizontalAlignment="Stretch"/>
 
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="State"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}" />
-                <ComboBox Grid.Row="24" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                <ComboBox Grid.Row="22" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State,Mode=TwoWay}"/>
+
+
+
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="Create Time"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="Creator"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
+                         HorizontalAlignment="Stretch"/>
 
             </Grid>
         </ScrollViewer>

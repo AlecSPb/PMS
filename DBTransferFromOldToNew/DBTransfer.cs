@@ -79,7 +79,7 @@ namespace DBTransferFromOldToNew
                     newPlan.OrderID = orderId;
                     newPlan.PlanDate = plan.VHPTimePlan;
                     newPlan.VHPDeviceCode = plan.DeviceType;
-                    newPlan.CurrentMold = "GM";
+                    newPlan.MoldType = "GM";
                     newPlan.MoldDiameter = plan.MoldMD ?? 0;
                     newPlan.Thickness = plan.PressThick ?? 0;
                     newPlan.CalculationDensity = plan.DensityCal ?? 0;

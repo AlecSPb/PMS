@@ -9,7 +9,7 @@ namespace PMSDAL
     public class BDVHPMold
     {
         public Guid ID { get; set; }
-        public string ModelType { get; set; }
+        public string MoldType { get; set; }
         public string MoldDetails { get; set; }
         public double InnerDiameter { get; set; }
         public double ModelHeight { get; set; }

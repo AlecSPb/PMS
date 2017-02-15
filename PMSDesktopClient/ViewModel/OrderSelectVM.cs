@@ -26,7 +26,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.ID = Guid.NewGuid();
                 plan.PlanDate = DateTime.Now;
                 plan.MoldDiameter = 230;
-                plan.CurrentMold = "GQ230";
+                plan.MoldType = "GQ";
                 plan.Quantity = 1;
                 plan.VHPDeviceCode = "A";
                 plan.OrderID = obj.ID;

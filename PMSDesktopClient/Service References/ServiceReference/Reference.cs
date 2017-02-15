@@ -532,16 +532,13 @@ namespace PMSDesktopClient.ServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> CalculationDensityField;
+        private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CurrentMoldField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FillingRequirementField;
@@ -553,7 +550,7 @@ namespace PMSDesktopClient.ServiceReference {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> KeepTempTimeField;
+        private double KeepTempTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MachineRequirementField;
@@ -562,7 +559,10 @@ namespace PMSDesktopClient.ServiceReference {
         private string MillingRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> MoldDiameterField;
+        private double MoldDiameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoldTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid OrderIDField;
@@ -571,16 +571,13 @@ namespace PMSDesktopClient.ServiceReference {
         private System.DateTime PlanDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PowderWeightField;
+        private double PrePressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PrePressureField;
+        private double PreTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PreTemperatureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PressureField;
+        private double PressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProcessCodeField;
@@ -592,10 +589,10 @@ namespace PMSDesktopClient.ServiceReference {
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> RoomHumidityField;
+        private double RoomHumidityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> RoomTemperatureField;
+        private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialRequirementField;
@@ -604,10 +601,10 @@ namespace PMSDesktopClient.ServiceReference {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> TemperatureField;
+        private double TemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> ThicknessField;
+        private double ThicknessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VHPDeviceCodeField;
@@ -616,7 +613,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string VHPRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> VaccumField;
+        private double VaccumField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -629,7 +626,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> CalculationDensity {
+        public double CalculationDensity {
             get {
                 return this.CalculationDensityField;
             }
@@ -663,19 +660,6 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CurrentMold {
-            get {
-                return this.CurrentMoldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentMoldField, value) != true)) {
-                    this.CurrentMoldField = value;
-                    this.RaisePropertyChanged("CurrentMold");
                 }
             }
         }
@@ -720,7 +704,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> KeepTempTime {
+        public double KeepTempTime {
             get {
                 return this.KeepTempTimeField;
             }
@@ -759,7 +743,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> MoldDiameter {
+        public double MoldDiameter {
             get {
                 return this.MoldDiameterField;
             }
@@ -767,6 +751,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((this.MoldDiameterField.Equals(value) != true)) {
                     this.MoldDiameterField = value;
                     this.RaisePropertyChanged("MoldDiameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldType {
+            get {
+                return this.MoldTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldTypeField, value) != true)) {
+                    this.MoldTypeField = value;
+                    this.RaisePropertyChanged("MoldType");
                 }
             }
         }
@@ -798,20 +795,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> PowderWeight {
-            get {
-                return this.PowderWeightField;
-            }
-            set {
-                if ((this.PowderWeightField.Equals(value) != true)) {
-                    this.PowderWeightField = value;
-                    this.RaisePropertyChanged("PowderWeight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> PrePressure {
+        public double PrePressure {
             get {
                 return this.PrePressureField;
             }
@@ -824,7 +808,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> PreTemperature {
+        public double PreTemperature {
             get {
                 return this.PreTemperatureField;
             }
@@ -837,7 +821,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Pressure {
+        public double Pressure {
             get {
                 return this.PressureField;
             }
@@ -889,7 +873,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> RoomHumidity {
+        public double RoomHumidity {
             get {
                 return this.RoomHumidityField;
             }
@@ -902,7 +886,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> RoomTemperature {
+        public double RoomTemperature {
             get {
                 return this.RoomTemperatureField;
             }
@@ -941,7 +925,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Temperature {
+        public double Temperature {
             get {
                 return this.TemperatureField;
             }
@@ -954,7 +938,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Thickness {
+        public double Thickness {
             get {
                 return this.ThicknessField;
             }
@@ -993,7 +977,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Vaccum {
+        public double Vaccum {
             get {
                 return this.VaccumField;
             }
@@ -2023,9 +2007,6 @@ namespace PMSDesktopClient.ServiceReference {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CurrentMoldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CustomerNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2059,6 +2040,9 @@ namespace PMSDesktopClient.ServiceReference {
         private System.Nullable<double> MoldDiameterField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoldTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid OrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2075,9 +2059,6 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid PlanIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PowderWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<double> PrePressureField;
@@ -2220,19 +2201,6 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CurrentMold {
-            get {
-                return this.CurrentMoldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentMoldField, value) != true)) {
-                    this.CurrentMoldField = value;
-                    this.RaisePropertyChanged("CurrentMold");
                 }
             }
         }
@@ -2381,6 +2349,19 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldType {
+            get {
+                return this.MoldTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldTypeField, value) != true)) {
+                    this.MoldTypeField = value;
+                    this.RaisePropertyChanged("MoldType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid OrderID {
             get {
                 return this.OrderIDField;
@@ -2454,19 +2435,6 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((this.PlanIDField.Equals(value) != true)) {
                     this.PlanIDField = value;
                     this.RaisePropertyChanged("PlanID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> PowderWeight {
-            get {
-                return this.PowderWeightField;
-            }
-            set {
-                if ((this.PowderWeightField.Equals(value) != true)) {
-                    this.PowderWeightField = value;
-                    this.RaisePropertyChanged("PowderWeight");
                 }
             }
         }
@@ -4380,10 +4348,10 @@ namespace PMSDesktopClient.ServiceReference {
         private double ModelHeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ModelTypeField;
+        private string MoldDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MoldDetailsField;
+        private string MoldTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
@@ -4464,19 +4432,6 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ModelType {
-            get {
-                return this.ModelTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModelTypeField, value) != true)) {
-                    this.ModelTypeField = value;
-                    this.RaisePropertyChanged("ModelType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string MoldDetails {
             get {
                 return this.MoldDetailsField;
@@ -4485,6 +4440,19 @@ namespace PMSDesktopClient.ServiceReference {
                 if ((object.ReferenceEquals(this.MoldDetailsField, value) != true)) {
                     this.MoldDetailsField = value;
                     this.RaisePropertyChanged("MoldDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldType {
+            get {
+                return this.MoldTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldTypeField, value) != true)) {
+                    this.MoldTypeField = value;
+                    this.RaisePropertyChanged("MoldType");
                 }
             }
         }

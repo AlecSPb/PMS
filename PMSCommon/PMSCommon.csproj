@@ -78,6 +78,7 @@
     <Compile Include="UsefulEnum\OrderProductType.cs" />
     <Compile Include="UsefulEnum\TestType.cs" />
     <Compile Include="UsefulEnum\UserState.cs" />
+    <Compile Include="UsefulEnum\VHPPlanState.cs" />
     <Compile Include="UsefulEnum\ViewToken.cs" />
   </ItemGroup>
   <ItemGroup>
