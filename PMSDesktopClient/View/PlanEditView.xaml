@@ -24,6 +24,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -67,16 +68,29 @@
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="MoldType"
                            Style="{StaticResource TextBlockBasic}" />
-                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
-                           ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           DisplayMemberPath="MoldType"
-                           SelectedValuePath="{Binding MoldType}"/>
-
+                <TextBox x:Name="moldType" Grid.Row="2" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource TextBoxBasic}" IsReadOnly="True"
+                         HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="MoldDiameter"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter}" Style="{StaticResource TextBoxBasic}"
+                <TextBox x:Name="moldDiameter" Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource TextBoxBasic}" IsReadOnly="True" 
                          HorizontalAlignment="Stretch"/>
+                <ComboBox x:Name="cboMolds" Grid.Row="2" Grid.Column="2"
+                        ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectionChanged="cboMolds_SelectionChanged"
+                        Style="{StaticResource ComboBoxBasic}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding MoldType}"/>
+                                <TextBlock Text="{Binding InnerDiameter}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="CalculationDensity"
                            Style="{StaticResource TextBlockBasic}" />

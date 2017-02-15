@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSDesktopClient.ServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace PMSDesktopClient.View
         public PlanEditView()
         {
             InitializeComponent();
+        }
+
+        private void cboMolds_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedMold =cboMolds.SelectedItem as DcBDVHPMold;
+            if (selectedMold!=null)
+            {
+                this.moldDiameter.Text = selectedMold.InnerDiameter.ToString();
+                this.moldType.Text = selectedMold.MoldType;
+            }
         }
     }
 }
