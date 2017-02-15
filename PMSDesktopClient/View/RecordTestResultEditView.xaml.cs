@@ -18,9 +18,9 @@ namespace PMSDesktopClient.View
     /// <summary>
     /// ProductEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class ProductEditView : UserControl
+    public partial class RecordTestResultEditView : UserControl
     {
-        public ProductEditView()
+        public RecordTestResultEditView()
         {
             InitializeComponent();
         }
