@@ -194,6 +194,10 @@
     <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
+    <Page Include="CommonBrushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Language\us-en.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

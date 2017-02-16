@@ -69,14 +69,14 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="MoldType"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox x:Name="moldType" Grid.Row="2" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
-                         Background="Pink"
+                         Background="{StaticResource ReadOnlyTextBoxBrush}"
                          Style="{StaticResource TextBoxBasic}" IsReadOnly="True"
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="MoldDiameter"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox x:Name="moldDiameter" Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
-                         Background="Pink"
+                         Background="{StaticResource ReadOnlyTextBoxBrush}"
                          Style="{StaticResource TextBoxBasic}" IsReadOnly="True" 
                          HorizontalAlignment="Stretch"/>
                 <ComboBox x:Name="cboMolds" Grid.Row="2" Grid.Column="2"

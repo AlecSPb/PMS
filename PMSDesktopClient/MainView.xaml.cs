@@ -79,11 +79,6 @@ namespace PMSDesktopClient
             }
         }
 
-        private void NavigateTo(UserControl view)
-        {
-            mainArea.Content = view;
-        }
-
         private void ActionNavigate(string viewName)
         {
             switch (viewName)
@@ -136,6 +131,11 @@ namespace PMSDesktopClient
             }
         }
 
+        private void NavigateTo(UserControl view)
+        {
+            mainArea.Content = view;
+        }
+
         protected override void OnClosing(CancelEventArgs e)
         {
             Messenger.Default.Unregister(this);
@@ -144,6 +144,13 @@ namespace PMSDesktopClient
 
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
+            //if (MessageBox.Show("Are you sure to quit?","Quit",MessageBoxButton.YesNo,MessageBoxImage.Warning)==MessageBoxResult.Yes)
+            //{
+            //    this.Close();
+            //}
+
+
+
             this.Close();
         }
     }

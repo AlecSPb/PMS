@@ -26,6 +26,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -53,42 +54,44 @@
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="这是来自选择任务的成分，可以自行更改"/>
                 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="WorkNumber"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMIWorkingNumber}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="内部工作号"/>
                 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Purity"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="需订购原料纯度"/>
                 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Weight"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
+                <Button Grid.Row="3" Grid.Column="2" Content="重量计算器" Style="{StaticResource ButtonBasic}" HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="需订购原料重量，单位kg"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="其他特殊要求"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="需订购原料纯度"/>
+                
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="订单状态"/>
                 
                 

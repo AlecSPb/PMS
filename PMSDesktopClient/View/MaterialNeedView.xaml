@@ -36,23 +36,29 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding CreateTime}"/>
-                <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding Creator}"/>
-                <DataGridTextColumn Header="State" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding State}"/>
                 <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="WorkNumber" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding PMIWorkingNumber}"/>
                 <DataGridTextColumn Header="Purity" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Purity}"/>
-                <DataGridTextColumn Header="Weight" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding Weight}"/>
+                <DataGridTemplateColumn Header="Weight">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" HorizontalAlignment="Right"
+                                       Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
                 <DataGridTextColumn Header="Special Need" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding SpecialNeeds}"/>
-                
+                <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
+                <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Creator}"/>
+                <DataGridTextColumn Header="State" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"

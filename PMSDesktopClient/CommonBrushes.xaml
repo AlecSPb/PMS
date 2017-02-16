@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
+    <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="UnCheckedBrush" Color="DimGray"/>
+    <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
+
+    <SolidColorBrush x:Key="YesterdayBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="TomorrowBrush" Color="LightCoral"/>
+    
+    <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="Pink"/>
+</ResourceDictionary>

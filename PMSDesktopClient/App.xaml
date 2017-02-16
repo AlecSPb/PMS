@@ -6,19 +6,9 @@
              d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <Application.Resources>
         <ResourceDictionary>
-            <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
-            <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
-            <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
-            <SolidColorBrush x:Key="UnCheckedBrush" Color="DimGray"/>
-            <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
-            
-            <SolidColorBrush x:Key="YesterdayBrush" Color="LightGray"/>
-            <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
-            <SolidColorBrush x:Key="TomorrowBrush" Color="LightCoral"/>
-
-
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonBrushes.xaml"/>
                 <ResourceDictionary Source="Language/us-en.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Skin/Warm.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Style/Desktop.xaml"/>
