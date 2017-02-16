@@ -456,4 +456,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcBDCompound" nillable="true" type="tns:DcBDCompound" />
+  <xs:complexType name="DcBDSupplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CellPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplierName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcBDSupplier" nillable="true" type="tns:DcBDSupplier" />
+  <xs:complexType name="ArrayOfDcBDSupplier">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcBDSupplier" nillable="true" type="tns:DcBDSupplier" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcBDSupplier" nillable="true" type="tns:ArrayOfDcBDSupplier" />
 </xs:schema>

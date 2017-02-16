@@ -16,7 +16,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateSupplier(DcBDSupplier model);
         [OperationContract]
-        int DeleteSupplier(DcBDSupplier model);
+        int DeleteSupplier(Guid id);
 
         [OperationContract]
         List<DcBDSupplier> GetSuppliers();

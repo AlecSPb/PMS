@@ -4794,6 +4794,163 @@ namespace PMSDesktopClient.PMSMainService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcBDSupplier", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcBDSupplier : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CellPhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContactPersonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Abbr {
+            get {
+                return this.AbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AbbrField, value) != true)) {
+                    this.AbbrField = value;
+                    this.RaisePropertyChanged("Abbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CellPhone {
+            get {
+                return this.CellPhoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CellPhoneField, value) != true)) {
+                    this.CellPhoneField = value;
+                    this.RaisePropertyChanged("CellPhone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ContactPerson {
+            get {
+                return this.ContactPersonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactPersonField, value) != true)) {
+                    this.ContactPersonField = value;
+                    this.RaisePropertyChanged("ContactPerson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SupplierName {
+            get {
+                return this.SupplierNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierNameField, value) != true)) {
+                    this.SupplierNameField = value;
+                    this.RaisePropertyChanged("SupplierName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IOrderService")]
     public interface IOrderService {
@@ -6330,6 +6487,95 @@ namespace PMSDesktopClient.PMSMainService {
         
         public System.Threading.Tasks.Task<int> DeleteCompoundAsync(System.Guid id) {
             return base.Channel.DeleteCompoundAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.ISupplierService")]
+    public interface ISupplierService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/AddSupplier", ReplyAction="http://tempuri.org/ISupplierService/AddSupplierResponse")]
+        int AddSupplier(PMSDesktopClient.PMSMainService.DcBDSupplier model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/AddSupplier", ReplyAction="http://tempuri.org/ISupplierService/AddSupplierResponse")]
+        System.Threading.Tasks.Task<int> AddSupplierAsync(PMSDesktopClient.PMSMainService.DcBDSupplier model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/UpdateSupplier", ReplyAction="http://tempuri.org/ISupplierService/UpdateSupplierResponse")]
+        int UpdateSupplier(PMSDesktopClient.PMSMainService.DcBDSupplier model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/UpdateSupplier", ReplyAction="http://tempuri.org/ISupplierService/UpdateSupplierResponse")]
+        System.Threading.Tasks.Task<int> UpdateSupplierAsync(PMSDesktopClient.PMSMainService.DcBDSupplier model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/DeleteSupplier", ReplyAction="http://tempuri.org/ISupplierService/DeleteSupplierResponse")]
+        int DeleteSupplier(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/DeleteSupplier", ReplyAction="http://tempuri.org/ISupplierService/DeleteSupplierResponse")]
+        System.Threading.Tasks.Task<int> DeleteSupplierAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/GetSuppliers", ReplyAction="http://tempuri.org/ISupplierService/GetSuppliersResponse")]
+        PMSDesktopClient.PMSMainService.DcBDSupplier[] GetSuppliers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/GetSuppliers", ReplyAction="http://tempuri.org/ISupplierService/GetSuppliersResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDSupplier[]> GetSuppliersAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ISupplierServiceChannel : PMSDesktopClient.PMSMainService.ISupplierService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SupplierServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.ISupplierService>, PMSDesktopClient.PMSMainService.ISupplierService {
+        
+        public SupplierServiceClient() {
+        }
+        
+        public SupplierServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public SupplierServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public SupplierServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public SupplierServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public int AddSupplier(PMSDesktopClient.PMSMainService.DcBDSupplier model) {
+            return base.Channel.AddSupplier(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddSupplierAsync(PMSDesktopClient.PMSMainService.DcBDSupplier model) {
+            return base.Channel.AddSupplierAsync(model);
+        }
+        
+        public int UpdateSupplier(PMSDesktopClient.PMSMainService.DcBDSupplier model) {
+            return base.Channel.UpdateSupplier(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateSupplierAsync(PMSDesktopClient.PMSMainService.DcBDSupplier model) {
+            return base.Channel.UpdateSupplierAsync(model);
+        }
+        
+        public int DeleteSupplier(System.Guid id) {
+            return base.Channel.DeleteSupplier(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteSupplierAsync(System.Guid id) {
+            return base.Channel.DeleteSupplierAsync(id);
+        }
+        
+        public PMSDesktopClient.PMSMainService.DcBDSupplier[] GetSuppliers() {
+            return base.Channel.GetSuppliers();
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDSupplier[]> GetSuppliersAsync() {
+            return base.Channel.GetSuppliersAsync();
         }
     }
 }

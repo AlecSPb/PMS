@@ -451,6 +451,30 @@
   <wsdl:message name="ICompoundService_DeleteCompound_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCompoundResponse" />
   </wsdl:message>
+  <wsdl:message name="ISupplierService_AddSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_AddSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_UpdateSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_UpdateSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_DeleteSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_DeleteSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSuppliers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliers" />
+  </wsdl:message>
+  <wsdl:message name="ISupplierService_GetSuppliers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuppliersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -775,6 +799,24 @@
     <wsdl:operation name="DeleteCompound">
       <wsdl:input wsaw:Action="http://tempuri.org/ICompoundService/DeleteCompound" message="tns:ICompoundService_DeleteCompound_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICompoundService/DeleteCompoundResponse" message="tns:ICompoundService_DeleteCompound_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISupplierService">
+    <wsdl:operation name="AddSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/AddSupplier" message="tns:ISupplierService_AddSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/AddSupplierResponse" message="tns:ISupplierService_AddSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/UpdateSupplier" message="tns:ISupplierService_UpdateSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/UpdateSupplierResponse" message="tns:ISupplierService_UpdateSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/DeleteSupplier" message="tns:ISupplierService_DeleteSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/DeleteSupplierResponse" message="tns:ISupplierService_DeleteSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISupplierService/GetSuppliers" message="tns:ISupplierService_GetSuppliers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISupplierService/GetSuppliersResponse" message="tns:ISupplierService_GetSuppliers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="order" type="tns:IOrderService">
@@ -1488,6 +1530,45 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="supplier" type="tns:ISupplierService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/AddSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/UpdateSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuppliers">
+      <soap:operation soapAction="http://tempuri.org/ISupplierService/GetSuppliers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
     <wsdl:port name="order" binding="tns:order">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
@@ -1532,6 +1613,9 @@
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="compound" binding="tns:compound">
+      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="supplier" binding="tns:supplier">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>

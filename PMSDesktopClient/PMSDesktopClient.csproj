@@ -368,6 +368,9 @@
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDDeliveryAddress.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDSupplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDVHPDevice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -57,19 +57,21 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Supplier"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource TextBoxBasic}"
+                <TextBox x:Name="txtSupplier" Grid.Row="1" Grid.Column="1" Text="{Binding Supplier,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>
-                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"
+                <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          DisplayMemberPath="SupplierName"
+                          SelectionChanged="ComboBox_SelectionChanged"
                           Style="{StaticResource ComboBoxBasic}"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="供应商"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="SupplierAbbr"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource TextBoxBasic}"
+                <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>
@@ -78,7 +80,7 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="SupplierReceiver"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver}" Style="{StaticResource TextBoxBasic}"
+                <TextBox x:Name="txtReceiver" Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>
@@ -87,7 +89,7 @@
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="SupplierEmail"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail}" Style="{StaticResource TextBoxBasic}"
+                <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>
@@ -96,7 +98,7 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="SupplierAddress"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding SupplierAddress}" Style="{StaticResource TextBoxBasic}"
+                <TextBox x:Name="txtAddress" Grid.Row="5" Grid.Column="1" Text="{Binding SupplierAddress,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>

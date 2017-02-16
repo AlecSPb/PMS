@@ -61,7 +61,16 @@ namespace PMSWCFService
 
         public int AddSupplier(DcBDSupplier model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
+                var supplier = Mapper.Map<BDSupplier>(model);
+                dc.Suppliers.Add(supplier);
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int AddVHPDevice(DcBDVHPDevice model)
@@ -142,9 +151,17 @@ namespace PMSWCFService
             return result;
         }
 
-        public int DeleteSupplier(DcBDSupplier model)
+        public int DeleteSupplier(Guid id)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc=new PMSDbContext())
+            {
+                var model = dc.Suppliers.Find(id);
+                dc.Suppliers.Remove(model);
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int DeleteVHPDevice(Guid id)
@@ -215,7 +232,12 @@ namespace PMSWCFService
 
         public List<DcBDSupplier> GetSuppliers()
         {
-            throw new NotImplementedException();
+            using (var dc=new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<BDSupplier, DcBDSupplier>());
+                var model = dc.Suppliers.ToList();
+                return Mapper.Map<List<BDSupplier>, List<DcBDSupplier>>(model);
+            }
         }
 
         public List<DcBDVHPDevice> GetVHPDevice()
@@ -290,7 +312,16 @@ namespace PMSWCFService
 
         public int UpdateSupplier(DcBDSupplier model)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
+                var supplier = Mapper.Map<BDSupplier>(model);
+                dc.Entry(supplier).State = System.Data.Entity.EntityState.Modified;
+                result = dc.SaveChanges();
+            }
+
+            return result;
         }
 
         public int UpdateVHPDevice(DcBDVHPDevice model)

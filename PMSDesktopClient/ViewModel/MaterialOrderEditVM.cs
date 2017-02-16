@@ -26,7 +26,14 @@ namespace PMSDesktopClient.ViewModel
             OrderPriorities = new ObservableCollection<string>();
             var priorities = Enum.GetNames(typeof(PMSCommon.OrderPriority));
             priorities.ToList().ForEach(p => OrderPriorities.Add(p));
+
+            Suppliers = new ObservableCollection<DcBDSupplier>();
+            var service = new PMSMainService.SupplierServiceClient();
+            var suppliers = service.GetSuppliers();
+            suppliers.ToList().ForEach(s => Suppliers.Add(s));
+
             InitialCommmands();
+
         }
 
         private void InitialCommmands()
@@ -50,6 +57,8 @@ namespace PMSDesktopClient.ViewModel
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }
+        public ObservableCollection<DcBDSupplier> Suppliers { get; set; }
+
         public DcMaterialOrder CurrentMaterialOrder { get; set; }
 
         public RelayCommand GiveUp { get; private set; }
