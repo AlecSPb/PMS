@@ -141,6 +141,7 @@
       <xs:element minOccurs="0" name="DeliveryDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaterialOrderID" type="ser:guid" />
       <xs:element minOccurs="0" name="PMIWorkNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />

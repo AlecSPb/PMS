@@ -18,6 +18,14 @@ namespace PMSDesktopClient.ViewModel
             isNew = msg.IsAdd;
             CurrentMaterialOrder = msg.ModelObject as DcMaterialOrder;
 
+            InitializeProperties();
+
+            InitialCommmands();
+
+        }
+
+        private void InitializeProperties()
+        {
             OrderStates = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.OrderState));
             states.ToList().ForEach(s => OrderStates.Add(s));
@@ -31,9 +39,6 @@ namespace PMSDesktopClient.ViewModel
             var service = new PMSMainService.SupplierServiceClient();
             var suppliers = service.GetSuppliers();
             suppliers.ToList().ForEach(s => Suppliers.Add(s));
-
-            InitialCommmands();
-
         }
 
         private void InitialCommmands()

@@ -1469,6 +1469,9 @@ namespace PMSDesktopClient.PMSMainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid MaterialOrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMIWorkNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1570,6 +1573,19 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid MaterialOrderID {
+            get {
+                return this.MaterialOrderIDField;
+            }
+            set {
+                if ((this.MaterialOrderIDField.Equals(value) != true)) {
+                    this.MaterialOrderIDField = value;
+                    this.RaisePropertyChanged("MaterialOrderID");
                 }
             }
         }

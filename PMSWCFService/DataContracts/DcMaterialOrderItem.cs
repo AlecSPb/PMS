@@ -34,6 +34,7 @@ namespace PMSWCFService.DataContracts
         public double UnitPrice { get; set; }
         [DataMember]
         public double Weight { get; set; }
-
+        [DataMember]
+        public Guid MaterialOrderID { get; set; }
     }
 }
