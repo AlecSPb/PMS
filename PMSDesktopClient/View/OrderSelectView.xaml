@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Select a Misson Or Use Empty One" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="Give Up" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="Give Up" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>

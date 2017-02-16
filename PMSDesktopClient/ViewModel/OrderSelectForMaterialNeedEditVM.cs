@@ -18,6 +18,7 @@ namespace PMSDesktopClient.ViewModel
             goToViewName = msg.ModelObject.ToString();
 
             SelectOrder = new RelayCommand<PMSMainService.DcOrder>(ActionSelectOrder);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialNeed));
         }
         private void ActionSelectOrder(DcOrder obj)
         {
@@ -34,5 +35,6 @@ namespace PMSDesktopClient.ViewModel
             }
         }
         public RelayCommand<DcOrder> SelectOrder { get; set; }
+        public RelayCommand GiveUp { get; set; }
     }
 }

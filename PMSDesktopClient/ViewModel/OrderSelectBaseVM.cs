@@ -36,7 +36,6 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -158,7 +157,6 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         #endregion
