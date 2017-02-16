@@ -9,7 +9,7 @@ namespace PMSCommon
     /// <summary>
     /// 非订单类状态
     /// </summary>
-    public enum NonOrderState
+    public enum NoneOrderState
     {
         Deleted,
         UnDeleted

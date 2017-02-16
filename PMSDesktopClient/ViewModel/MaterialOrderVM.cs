@@ -42,6 +42,25 @@ namespace PMSDesktopClient.ViewModel
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionEdit);
 
+            AddItem = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionAddItem);
+            EditItem = new RelayCommand<PMSMainService.DcMaterialOrderItem>(ActionEditItem);
+
+        }
+
+        private void ActionEditItem(DcMaterialOrderItem obj)
+        {
+            if (obj!=null)
+            {
+
+            }
+        }
+
+        private void ActionAddItem(DcMaterialOrder obj)
+        {
+            if (obj!=null)
+            {
+
+            }
         }
 
         private void ActionEdit(DcMaterialOrder obj)
@@ -231,6 +250,10 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand<DcMaterialOrder> Edit { get; set; }
         public RelayCommand PageChanged { get; private set; }
         public RelayCommand<DcMaterialOrder> GenerateDoc { get; private set; }
+
+
+        public RelayCommand<DcMaterialOrder> AddItem { get; private set; }
+        public RelayCommand<DcMaterialOrderItem> EditItem { get; private set; }
         #endregion
     }
 }

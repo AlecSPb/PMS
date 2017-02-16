@@ -12,6 +12,15 @@ namespace PMSDesktopClient
     /// </summary>
     public static class VNCollection
     {
+
+        public static string MaterialOrderItemEdit
+        {
+            get
+            {
+                return "MaterialOrderItemEditView";
+            }
+        }
+
         public static string MaterialInventory
         {
             get

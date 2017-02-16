@@ -153,16 +153,17 @@
         <DataGrid Grid.Row="3" Style="{StaticResource DataGridBasic}"
                           ItemsSource="{Binding ElementName=mainDg,Path=SelectedItem.MaterialOrderItems}">
             <DataGrid.Columns>
-                <!--<DataGridTemplateColumn Header="Edit">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
-                                        <Button Content="Del" Style="{StaticResource ButtonDGBasic}"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>-->
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="CreateTime">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

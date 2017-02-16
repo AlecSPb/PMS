@@ -110,6 +110,7 @@
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
+    <Compile Include="ViewModel\MaterialOrderItemEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
@@ -126,6 +127,9 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MaterialInventoryView.xaml.cs">
       <DependentUpon>MaterialInventoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialOrderItemEditView.xaml.cs">
+      <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="VNCollection.cs" />
     <Compile Include="View\BondingView.xaml.cs">
@@ -229,6 +233,10 @@
     <Page Include="View\MaterialInventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialOrderItemEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MaterialNeedEditView.xaml">
       <SubType>Designer</SubType>

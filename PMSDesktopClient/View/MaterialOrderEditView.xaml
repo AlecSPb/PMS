@@ -61,6 +61,7 @@
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>
+                <Button Content="Supplier" Style="{StaticResource ButtonBasic}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="供应商"/>
 

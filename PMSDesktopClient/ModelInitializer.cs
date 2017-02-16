@@ -23,7 +23,7 @@ namespace PMSDesktopClient
         {
             var empty = new DcMaterialNeed();
             empty.Id = Guid.NewGuid();
-            empty.State = PMSCommon.NonOrderState.UnDeleted.ToString();
+            empty.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = (App.Current as App).CurrentUser.UserName;
             empty.Purity = "5N";
