@@ -13,7 +13,7 @@ namespace PMSWCFService
 {
     public partial class PMSService : ICustomerService, IDeliveryAddressService,
         IVHPDeviceService, IVHPMoldService, IVHPProcessService,
-        ICompoundService
+        ICompoundService,ISupplierService
 
     {
         public int AddCompound(DcBDCompound model)
@@ -57,6 +57,11 @@ namespace PMSWCFService
                 result = dc.SaveChanges();
             }
             return result;
+        }
+
+        public int AddSupplier(DcBDSupplier model)
+        {
+            throw new NotImplementedException();
         }
 
         public int AddVHPDevice(DcBDVHPDevice model)
@@ -137,6 +142,11 @@ namespace PMSWCFService
             return result;
         }
 
+        public int DeleteSupplier(DcBDSupplier model)
+        {
+            throw new NotImplementedException();
+        }
+
         public int DeleteVHPDevice(Guid id)
         {
             int result = 0;
@@ -201,6 +211,11 @@ namespace PMSWCFService
                 var model = dc.DeliveryAddresses.ToList();
                 return Mapper.Map<List<BDDeliveryAddress>, List<DcBDDeliveryAddress>>(model);
             }
+        }
+
+        public List<DcBDSupplier> GetSuppliers()
+        {
+            throw new NotImplementedException();
         }
 
         public List<DcBDVHPDevice> GetVHPDevice()
@@ -271,6 +286,11 @@ namespace PMSWCFService
                 result = dc.SaveChanges();
             }
             return result;
+        }
+
+        public int UpdateSupplier(DcBDSupplier model)
+        {
+            throw new NotImplementedException();
         }
 
         public int UpdateVHPDevice(DcBDVHPDevice model)

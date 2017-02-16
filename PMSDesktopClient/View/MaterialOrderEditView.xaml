@@ -54,14 +54,16 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="订单PO"/>
-                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Supplier"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource TextBoxBasic}"
                          IsReadOnly="True"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          HorizontalAlignment="Stretch"/>
-                <Button Content="Supplier" Style="{StaticResource ButtonBasic}" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"/>
+                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Style="{StaticResource ComboBoxBasic}"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="供应商"/>
 
@@ -73,7 +75,7 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}" 
                            Text="供应商缩写"/>
-                
+
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="SupplierReceiver"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver}" Style="{StaticResource TextBoxBasic}"
@@ -82,7 +84,7 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="供应商收货人"/>
-                
+
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="SupplierEmail"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail}" Style="{StaticResource TextBoxBasic}"
@@ -114,7 +116,7 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="运输费用，没有就写0"/>
-                
+
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
@@ -122,7 +124,7 @@
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="状态"/>
-                
+
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="Priority"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"

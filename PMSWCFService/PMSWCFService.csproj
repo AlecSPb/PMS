@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="DataContracts\DcBDCustomer.cs" />
     <Compile Include="DataContracts\DcBDCompound.cs" />
+    <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcMissonWithPlan.cs" />
     <Compile Include="DataContracts\DcUserAccess.cs" />
     <Compile Include="DataContracts\DcUserRole.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="DataContracts\DcRecordVHPItem.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
     <Compile Include="ServiceContracts\IMissonWithPlanService.cs" />
+    <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceImplements\BasicDataOneService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />

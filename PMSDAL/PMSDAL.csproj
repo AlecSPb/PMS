@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BDSupplier.cs" />
     <Compile Include="Migrations\201701090708208_new.cs" />
     <Compile Include="Migrations\201701090708208_new.Designer.cs">
       <DependentUpon>201701090708208_new.cs</DependentUpon>
