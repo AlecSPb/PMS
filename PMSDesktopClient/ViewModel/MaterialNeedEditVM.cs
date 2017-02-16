@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSDesktopClient.PMSMainService;
+using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -17,36 +18,42 @@ namespace PMSDesktopClient.ViewModel
         {
             isNew = msg.IsAdd;
             CurrentMaterialNeed = msg.ModelObject as DcMaterialNeed;
+            InitializeProperties();
             InitialCommands();
+        }
+
+        private void InitializeProperties()
+        {
+            States = new ObservableCollection<string>();
+            var states = Enum.GetNames(typeof(PMSCommon.NonOrderState));
+            states.ToList().ForEach(s => States.Add(s));
         }
 
         private void InitialCommands()
         {
             GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialNeed));
-            Save = new RelayCommand<DcMaterialNeed>(ActionSave);
+            Save = new RelayCommand(ActionSave);
         }
 
-        private void ActionSave(DcMaterialNeed obj)
+        private void ActionSave()
         {
-            if (obj!=null)
+
+            var service = new MaterialNeedServiceClient();
+            if (isNew)
             {
-                var service = new MaterialNeedServiceClient();
-                if (isNew)
-                {
-                    service.AddMaterialNeed(CurrentMaterialNeed);
-                }
-                else
-                {
-                    service.UpdateMaterialNeed(CurrentMaterialNeed);
-                }
-                NavigationService.GoTo(VNCollection.MaterialNeed);
-                    
+                service.AddMaterialNeed(CurrentMaterialNeed);
             }
+            else
+            {
+                service.UpdateMaterialNeed(CurrentMaterialNeed);
+            }
+            NavigationService.GoTo(VNCollection.MaterialNeed);
+
         }
 
         public DcMaterialNeed CurrentMaterialNeed { get; set; }
-
+        public ObservableCollection<string> States { get; set; }
         public RelayCommand GiveUp { get; private set; }
-        public RelayCommand<DcMaterialNeed> Save { get; private set; }
+        public RelayCommand Save { get; private set; }
     }
 }

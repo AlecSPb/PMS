@@ -4,75 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSCommon;
+using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
-using System.Collections.ObjectModel;
 using PMSDesktopClient.View;
+using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class MaterialNeedVM : ViewModelBase
+    public class OrderSelectBaseVM:ViewModelBase
     {
-        public MaterialNeedVM()
+        //要转到的页面
+
+        public OrderSelectBaseVM()
         {
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+        private void ActionRefresh(Object obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
 
         private void InitializeProperties()
         {
+            SearchCustomer = "";
             SearchCompositoinStandard = "";
-            MainMaterialNeeds = new ObservableCollection<DcMaterialNeed>();
+            MainOrders = new ObservableCollection<DcOrder>();
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<PMSMainService.DcMaterialNeed>(ActionEdit);
-
-
-
-        }
-
-        private void ActionEdit(DcMaterialNeed obj)
-        {
-            if (obj!=null)
-            {
-                MessageObject mo = new PMSDesktopClient.MessageObject();
-                mo.ViewName = VNCollection.MaterialNeedEdit;
-                mo.ModelObject = obj;
-                mo.IsAdd = false;
-
-                NavigationService.GoToWithParameter(mo);
-            }
-        }
-
-        private void ActionAdd()
-        {
-            //转向订单选择页面
-            MessageObject mo = new MessageObject();
-            mo.ViewName = VNCollection.OrderSelect;
-            mo.ModelObject = VNCollection.MaterialNeedEdit;
-
-            NavigationService.GoToWithParameter(mo);
-
         }
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCompositoinStandard));
+            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositoinStandard));
         }
 
         private void ActionAll()
         {
+            SearchCustomer = "";
             SearchCompositoinStandard = "";
             SetPageParametersWhenConditionChange();
         }
@@ -86,8 +63,8 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MaterialNeedServiceClient();
-            RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
+            var service = new OrderServiceClient();
+            RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
             ActionPaging();
         }
         /// <summary>
@@ -95,13 +72,13 @@ namespace PMSDesktopClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialNeedServiceClient();
+            var service = new OrderServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
-            MainMaterialNeeds.Clear();
-            result.ToList<DcMaterialNeed>().ForEach(o => MainMaterialNeeds.Add(o));
+            var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+            MainOrders.Clear();
+            orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
         }
 
 
@@ -138,9 +115,22 @@ namespace PMSDesktopClient.ViewModel
                 RaisePropertyChanged(nameof(RecordCount));
             }
         }
+        public RelayCommand PageChanged { get; private set; }
         #endregion
 
         #region Proeperties
+        private string searchCustomer;
+        public string SearchCustomer
+        {
+            get { return searchCustomer; }
+            set
+            {
+                if (searchCustomer == value)
+                    return;
+                searchCustomer = value;
+                RaisePropertyChanged(() => SearchCustomer);
+            }
+        }
         private string searchCompositionStandard;
         public string SearchCompositoinStandard
         {
@@ -158,25 +148,19 @@ namespace PMSDesktopClient.ViewModel
 
 
 
-        private ObservableCollection<DcMaterialNeed> mainMaterialNeeds;
-        public ObservableCollection<DcMaterialNeed> MainMaterialNeeds
+        private ObservableCollection<DcOrder> mainOrders;
+        public ObservableCollection<DcOrder> MainOrders
         {
-            get { return mainMaterialNeeds; }
-            set { mainMaterialNeeds = value; RaisePropertyChanged(nameof(MainMaterialNeeds)); }
+            get { return mainOrders; }
+            set { mainOrders = value; RaisePropertyChanged(nameof(MainOrders)); }
         }
 
         #endregion
 
         #region Commands
-        public RelayCommand GoToNavigation { get; private set; }
+        public RelayCommand Navigate { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
-        public RelayCommand Add { get; private set; }
-        public RelayCommand<DcMaterialNeed> Edit { get; private set; }
-        public RelayCommand PageChanged { get; private set; }
         #endregion
-
-
-
     }
 }
