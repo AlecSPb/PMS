@@ -19,20 +19,20 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommands()
         {
-            GoToOrder = new RelayCommand(() => NavigationService.GoTo("OrderView"));
-            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo("OrderCheckView"));
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo("MissonView"));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo("PlanView"));
-            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo("MaterialNeedView"));
-            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo("MaterialOrderView"));
-            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo("MaterialInventoryView"));
+            GoToOrder = new RelayCommand(() => NavigationService.GoTo(VNCollection.Order));
+            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(VNCollection.OrderCheck));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(VNCollection.Misson));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(VNCollection.Plan));
+            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialNeed));
+            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialOrder));
+            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialInventory));
             GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo("MillingRecordView"));
             GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo("VHPRecordView"));
             GoToBlankRecord = new RelayCommand(() => NavigationService.GoTo("BlankRecordView"));
             GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo("MachineRecordView"));
             GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo("DeliveryRecordView"));
             GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo("BondingRecordView"));
-            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo("RecordTestResultView"));
+            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(VNCollection.RecordTestResult));
 
         }
         public RelayCommand GoToOrder { get; private set; }

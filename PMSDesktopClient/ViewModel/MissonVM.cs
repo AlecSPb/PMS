@@ -27,8 +27,8 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo("PlanView"));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(VNCollection.Plan));
 
 
             PageChanged = new RelayCommand(ActionPaging);

@@ -65,13 +65,13 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateVHPPlan(CurrentPlan);
             }
 
-            NavigationService.GoTo("MissonView");
+            NavigationService.GoTo(VNCollection.Misson);
             //Messenger.Default.Send<string>(null, "PlanVHPRefresh");
         }
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo("MissonView");
+            NavigationService.GoTo(VNCollection.Misson);
         }
         public ObservableCollection<DcBDVHPMold> Molds { get; set; }
         public ObservableCollection<string> States { get; set; }

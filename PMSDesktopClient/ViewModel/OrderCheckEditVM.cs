@@ -51,7 +51,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo("OrderCheckView");
+            NavigationService.GoTo(VNCollection.OrderCheck);
         }
 
         private bool CanSave()
@@ -70,7 +70,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateOrder(CurrentOrder);
             }
-            NavigationService.GoTo("OrderCheckView");
+            NavigationService.GoTo(VNCollection.OrderCheck);
             Messenger.Default.Send<Object>("", "RefreshOrder");
         }
 

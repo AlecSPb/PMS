@@ -30,7 +30,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigation = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
+            Navigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -58,7 +58,7 @@ namespace PMSDesktopClient.ViewModel
         private void ActionAdd()
         {
             //转向订单选择页面
-            NavigationService.GoTo("OrderSelectView");
+            NavigationService.GoTo(VNCollection.OrderSelect);
         }
 
         private bool CanSearch()

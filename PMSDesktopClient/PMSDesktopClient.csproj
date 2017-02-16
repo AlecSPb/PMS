@@ -122,6 +122,9 @@
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\MaterialInventoryView.xaml.cs">
+      <DependentUpon>MaterialInventoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VNCollection.cs" />
     <Compile Include="View\BondingView.xaml.cs">
       <DependentUpon>BondingView.xaml</DependentUpon>
@@ -214,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LogInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialInventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
