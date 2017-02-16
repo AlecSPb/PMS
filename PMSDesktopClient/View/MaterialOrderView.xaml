@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Material Orders" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="Navigation" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
             <TextBlock Text="Order PO" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>

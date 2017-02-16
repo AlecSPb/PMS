@@ -55,7 +55,8 @@
         <Button Content="Test Result Record" Grid.Row="3" Grid.Column="4" Command="{Binding GoToTestResultRecord}"/>
         <Button Content="Delivery Record" Grid.Row="4" Grid.Column="0"/>
         
-        <Button Content="Bonding Record" Grid.Row="5" Grid.Column="0"/>
-
+        <Button Content="Bonding Record" Grid.Row="4" Grid.Column="1"/>
+        
+        <Button Content="Maintenance" Grid.Row="5" Grid.Column="0"/>
     </Grid>
 </UserControl>
