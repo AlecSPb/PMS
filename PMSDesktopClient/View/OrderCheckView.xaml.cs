@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSDesktopClient.ViewModel;
-using PMSDesktopClient.ServiceReference;
+using PMSDesktopClient.PMSMainService;
 using PMSCommon;
 
 namespace PMSDesktopClient.View

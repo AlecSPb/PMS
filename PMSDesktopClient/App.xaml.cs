@@ -16,14 +16,19 @@ namespace PMSDesktopClient
     {
         public App()
         {
+            this.Startup += App_Startup;
+        }
+
+        private void App_Startup(object sender, StartupEventArgs e)
+        {
             CurrentUser = new PMSUserAccessService.DcUser()
             {
                 ID = Guid.NewGuid(),
-                UserName="xs.zhou",
-                RealName="周新生",
-                CreateTime=DateTime.Now,
-                Email="xs.zhou@outlook.com",
-                Phone="13540781789"
+                UserName = "xs.zhou",
+                RealName = "周新生",
+                CreateTime = DateTime.Now,
+                Email = "xs.zhou@outlook.com",
+                Phone = "13540781789"
             };
         }
 

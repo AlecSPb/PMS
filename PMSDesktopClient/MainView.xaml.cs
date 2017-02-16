@@ -19,7 +19,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSDesktopClient.ServiceReference;
+using PMSDesktopClient.PMSMainService;
 
 
 
@@ -61,6 +61,10 @@ namespace PMSDesktopClient
                     var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP,obj.IsAdd);
                     planEditView.DataContext = planEditVM;
                     NavigateTo(planEditView);
+                    break;
+                case "MaterialNeedEditView":
+                    var materialNeedEditView = new MaterialNeedEditView();
+                    var materialNeedEditVM = new MaterialNeedEditVM();
                     break;
                 default :
                     break;

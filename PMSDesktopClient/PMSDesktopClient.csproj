@@ -122,6 +122,7 @@
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="VNCollection.cs" />
     <Compile Include="View\BondingView.xaml.cs">
       <DependentUpon>BondingView.xaml</DependentUpon>
     </Compile>

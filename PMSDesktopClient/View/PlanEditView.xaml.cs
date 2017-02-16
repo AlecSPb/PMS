@@ -1,4 +1,4 @@
-﻿using PMSDesktopClient.ServiceReference;
+﻿using PMSDesktopClient.PMSMainService;
 using System;
 using System.Collections.Generic;
 using System.Linq;

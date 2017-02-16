@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSDesktopClient.ServiceReference;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
@@ -32,9 +32,9 @@ namespace PMSDesktopClient.ViewModel
 
 
             PageChanged = new RelayCommand(ActionPaging);
-            AddNewPlan = new RelayCommand<ServiceReference.DcOrder>(ActionAddNewPlan);
+            AddNewPlan = new RelayCommand<PMSMainService.DcOrder>(ActionAddNewPlan);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan);
-            DuplicatePlan = new RelayCommand<ServiceReference.DcPlanVHP>(ActionDuplicatePlan);
+            DuplicatePlan = new RelayCommand<PMSMainService.DcPlanVHP>(ActionDuplicatePlan);
         }
 
         private void ActionDuplicatePlan(DcPlanVHP obj)

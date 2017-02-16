@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSDesktopClient.ServiceReference;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -62,12 +62,12 @@ namespace PMSDesktopClient.ViewModel
                 NavigationService.GoToWithParameter(obj);
             });
 
-            Delete = new RelayCommand<ServiceReference.DcOrder>(ActionDelete);
+            Delete = new RelayCommand<PMSMainService.DcOrder>(ActionDelete);
 
 
-            Duplicate = new RelayCommand<ServiceReference.DcOrder>(ActionDuplicate);
+            Duplicate = new RelayCommand<PMSMainService.DcOrder>(ActionDuplicate);
 
-            Check = new RelayCommand<ServiceReference.DcOrder>(ActionCheck);
+            Check = new RelayCommand<PMSMainService.DcOrder>(ActionCheck);
 
         }
 
