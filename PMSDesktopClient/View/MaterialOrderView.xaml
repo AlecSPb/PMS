@@ -28,6 +28,7 @@
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="UnChecked" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
                 <TextBlock Text="Completed" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
                 <TextBlock Text="UnCompleted" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
                 <TextBlock Text="Paused" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
@@ -52,6 +53,9 @@
                                             CommandParameter="{Binding}"/>
                                     <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
                                                 Command="{Binding Path=DataContext.GenerateDoc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                    <Button Content="Add Item" Style="{StaticResource ButtonDGBasic}"
+                                            Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
