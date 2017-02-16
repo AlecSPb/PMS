@@ -95,7 +95,12 @@
     </ApplicationDefinition>
     <Compile Include="MessageObject.cs" />
     <Compile Include="NavigationService.cs" />
-    <Compile Include="Service References\ServiceReference\Reference.cs">
+    <Compile Include="Service References\PMSMainService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PMSUserAccessService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -306,7 +311,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="App - 复制.config" />
     <None Include="DocTemplate\COA.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -333,50 +337,69 @@
     <None Include="Reports\GeAsSeElastomer440Blank.docx" />
     <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
     <None Include="Reports\ProductTemplate.docx" />
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDCompound.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDCustomer.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDCustomer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDDeliveryAddress.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDDeliveryAddress.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDVHPDevice.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDVHPDevice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDVHPMold.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDVHPMold.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcBDVHPProcess.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcBDVHPProcess.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialNeed.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcMaterialNeed.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialOrder.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcMaterialOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMaterialOrderItem.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcMaterialOrderItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcMissonWithPlan.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcMissonWithPlan.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcOrder.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcPlanVHP.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordDelivery.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordTestResult.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordTestResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference\PMSDesktopClient.ServiceReference.DcRecordVHP.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\PMSDesktopClient.PMSUserAccessService.DcUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\PMSDesktopClient.PMSUserAccessService.DcUserAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\PMSDesktopClient.PMSUserAccessService.DcUserRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\UserAccessService.wsdl" />
+    <None Include="Service References\PMSUserAccessService\UserAccessService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSUserAccessService\UserAccessService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSUserAccessService\UserAccessService2.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -405,32 +428,48 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference\" />
+    <WCFMetadataStorage Include="Service References\PMSMainService\" />
+    <WCFMetadataStorage Include="Service References\PMSUserAccessService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\PMSMainService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\PMSMainService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ServiceReference\PMSService1.wsdl" />
-    <None Include="Service References\ServiceReference\PMSService3.xsd">
+    <None Include="Service References\PMSMainService\PMSService1.wsdl" />
+    <None Include="Service References\PMSMainService\PMSService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\PMSService31.xsd">
+    <None Include="Service References\PMSMainService\PMSService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\PMSService32.xsd">
+    <None Include="Service References\PMSMainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference\Reference.svcmap">
+    <None Include="Service References\PMSMainService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DocTemplate\Attention.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\UserAccessService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

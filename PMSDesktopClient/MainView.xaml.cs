@@ -37,7 +37,7 @@ namespace PMSDesktopClient
             Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
             Messenger.Default.Register<MessageObject>(this, NavigationToken.Edit,ActionEdit);
 
-            NavigateTo(new LogInView());
+            NavigateTo(new NavigationView());
         }
 
         private void ActionEdit(MessageObject obj)

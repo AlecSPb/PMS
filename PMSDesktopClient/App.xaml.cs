@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using PMSDesktopClient.PMSUserAccessService;
 
 namespace PMSDesktopClient
 {
@@ -13,5 +14,22 @@ namespace PMSDesktopClient
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            CurrentUser = new PMSUserAccessService.DcUser()
+            {
+                ID = Guid.NewGuid(),
+                UserName="xs.zhou",
+                RealName="周新生",
+                CreateTime=DateTime.Now,
+                Email="xs.zhou@outlook.com",
+                Phone="13540781789"
+            };
+        }
+
+        public DcUser CurrentUser { get; set; }
+
+
     }
+
 }

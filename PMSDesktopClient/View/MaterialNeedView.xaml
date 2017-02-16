@@ -16,8 +16,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Material Needs" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="Back" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
-            <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="Navigation" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
+            <Button Content="Add" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
             <Button Content="Search" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
@@ -29,8 +29,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
-                                <Button Content="Del" Style="{StaticResource ButtonDGBasic}"/>
+                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -84,13 +85,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <!--<DataGridTemplateColumn Header="Supplier">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Supplier}" Style="{StaticResource TextBlockDGBasic}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
                 <DataGridTemplateColumn Header=" Purity">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

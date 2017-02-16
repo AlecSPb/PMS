@@ -7,10 +7,9 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSDesktopClient.ServiceReference;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
-
-
+using PMSDesktopClient.View;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -31,10 +30,35 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
+            Navigation = new RelayCommand(() => NavigationService.GoTo("NavigationView"));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
+
+            Add = new RelayCommand(ActionAdd);
+            Edit = new RelayCommand<PMSMainService.DcMaterialNeed>(ActionEdit);
+
+
+
+        }
+
+        private void ActionEdit(DcMaterialNeed obj)
+        {
+            if (obj!=null)
+            {
+                MessageObject mo = new PMSDesktopClient.MessageObject();
+                mo.ViewName = nameof(MaterialNeedView);
+                mo.ModelObject = obj;
+                mo.IsAdd = false;
+
+                NavigationService.GoToWithParameter(mo);
+            }
+        }
+
+        private void ActionAdd()
+        {
+            //转向订单选择页面
+            NavigationService.GoTo("OrderSelectView");
         }
 
         private bool CanSearch()
@@ -139,10 +163,11 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
+        public RelayCommand Navigation { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
+        public RelayCommand<DcMaterialNeed> Edit { get; private set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
 

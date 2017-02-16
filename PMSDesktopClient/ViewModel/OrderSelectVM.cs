@@ -20,30 +20,27 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionSelectOrder(DcOrder obj)
         {
-            if (obj != null)
+            if (obj!=null)
             {
-                var plan = new DcPlanVHP();
-                plan.ID = Guid.NewGuid();
-                plan.PlanDate = DateTime.Now;
-                plan.MoldDiameter = 230;
-                plan.MoldType = "GQ";
-                plan.Quantity = 1;
-                plan.VHPDeviceCode = "A";
-                plan.OrderID = obj.ID;
+                var materialNeed = new DcMaterialNeed();
+                materialNeed.Id = Guid.NewGuid();
+                materialNeed.State = PMSCommon.NonOrderState.UnDeleted.ToString();
+                materialNeed.CreateTime = DateTime.Now;
+                materialNeed.Creator=
 
-                var nModel = new MessageObject();
-                nModel.ViewName = "PlanEditView";
-                nModel.ModelObject = plan;
-                NavigationService.GoToWithParameter(nModel);
+                MessageObject mo = new PMSDesktopClient.MessageObject();
+                mo.ViewName = nameof(MaterialNeedView);
+                mo.ModelObject = obj;
+                mo.IsAdd = false;
+
+                NavigationService.GoToWithParameter(mo);
             }
         }
 
         private void ActionSelectEmpty()
         {
             var nModel = new MessageObject();
-            nModel.ViewName = "PlanEditView";
-            nModel.ModelObject = null;
-            NavigationService.GoToWithParameter(nModel);
+
         }
 
         public RelayCommand SelectEmpty { get; set; }

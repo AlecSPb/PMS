@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMSDesktopClient.ServiceReference {
+namespace PMSDesktopClient.PMSMainService {
     using System.Runtime.Serialization;
     using System;
     
@@ -62,7 +62,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.ServiceReference.DcPlanVHP[] PlanVHPsField;
+        private PMSDesktopClient.PMSMainService.DcPlanVHP[] PlanVHPsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyContentField;
@@ -292,7 +292,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSDesktopClient.ServiceReference.DcPlanVHP[] PlanVHPs {
+        public PMSDesktopClient.PMSMainService.DcPlanVHP[] PlanVHPs {
             get {
                 return this.PlanVHPsField;
             }
@@ -1207,7 +1207,7 @@ namespace PMSDesktopClient.ServiceReference {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.ServiceReference.DcMaterialOrderItem[] MaterialOrderItemsField;
+        private PMSDesktopClient.PMSMainService.DcMaterialOrderItem[] MaterialOrderItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderPOField;
@@ -1289,7 +1289,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSDesktopClient.ServiceReference.DcMaterialOrderItem[] MaterialOrderItems {
+        public PMSDesktopClient.PMSMainService.DcMaterialOrderItem[] MaterialOrderItems {
             get {
                 return this.MaterialOrderItemsField;
             }
@@ -2718,7 +2718,7 @@ namespace PMSDesktopClient.ServiceReference {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.ServiceReference.DcRecordDeliveryItem[] DeliveryItemsField;
+        private PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryNameField;
@@ -2810,7 +2810,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSDesktopClient.ServiceReference.DcRecordDeliveryItem[] DeliveryItems {
+        public PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItems {
             get {
                 return this.DeliveryItemsField;
             }
@@ -3194,7 +3194,7 @@ namespace PMSDesktopClient.ServiceReference {
         private double PressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.ServiceReference.DcRecordVHPItem[] RecordVHPItemsField;
+        private PMSDesktopClient.PMSMainService.DcRecordVHPItem[] RecordVHPItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -3352,7 +3352,7 @@ namespace PMSDesktopClient.ServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSDesktopClient.ServiceReference.DcRecordVHPItem[] RecordVHPItems {
+        public PMSDesktopClient.PMSMainService.DcRecordVHPItem[] RecordVHPItems {
             get {
                 return this.RecordVHPItemsField;
             }
@@ -4795,20 +4795,20 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IOrderService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IOrderService")]
     public interface IOrderService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrderInPage", ReplyAction="http://tempuri.org/IOrderService/GetAllOrderInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take);
+        PMSDesktopClient.PMSMainService.DcOrder[] GetAllOrderInPage(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetAllOrderInPage", ReplyAction="http://tempuri.org/IOrderService/GetAllOrderInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetAllOrderInPageAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
+        PMSDesktopClient.PMSMainService.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
         int GetOrderCountBySearch(string customer, string compositionstd);
@@ -4817,16 +4817,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
-        int AddOrder(PMSDesktopClient.ServiceReference.DcOrder order);
+        int AddOrder(PMSDesktopClient.PMSMainService.DcOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
-        System.Threading.Tasks.Task<int> AddOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order);
+        System.Threading.Tasks.Task<int> AddOrderAsync(PMSDesktopClient.PMSMainService.DcOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
-        int UpdateOrder(PMSDesktopClient.ServiceReference.DcOrder order);
+        int UpdateOrder(PMSDesktopClient.PMSMainService.DcOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
-        System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order);
+        System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSDesktopClient.PMSMainService.DcOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         int DeleteOrder(System.Guid id);
@@ -4836,12 +4836,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IOrderServiceChannel : PMSDesktopClient.ServiceReference.IOrderService, System.ServiceModel.IClientChannel {
+    public interface IOrderServiceChannel : PMSDesktopClient.PMSMainService.IOrderService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class OrderServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IOrderService>, PMSDesktopClient.ServiceReference.IOrderService {
+    public partial class OrderServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IOrderService>, PMSDesktopClient.PMSMainService.IOrderService {
         
         public OrderServiceClient() {
         }
@@ -4862,19 +4862,19 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcOrder[] GetAllOrderInPage(int skip, int take) {
+        public PMSDesktopClient.PMSMainService.DcOrder[] GetAllOrderInPage(int skip, int take) {
             return base.Channel.GetAllOrderInPage(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetAllOrderInPageAsync(int skip, int take) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetAllOrderInPageAsync(int skip, int take) {
             return base.Channel.GetAllOrderInPageAsync(skip, take);
         }
         
-        public PMSDesktopClient.ServiceReference.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd) {
+        public PMSDesktopClient.PMSMainService.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd) {
             return base.Channel.GetOrderBySearchInPage(skip, take, customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd) {
             return base.Channel.GetOrderBySearchInPageAsync(skip, take, customer, compositionstd);
         }
         
@@ -4886,19 +4886,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetOrderCountBySearchAsync(customer, compositionstd);
         }
         
-        public int AddOrder(PMSDesktopClient.ServiceReference.DcOrder order) {
+        public int AddOrder(PMSDesktopClient.PMSMainService.DcOrder order) {
             return base.Channel.AddOrder(order);
         }
         
-        public System.Threading.Tasks.Task<int> AddOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order) {
+        public System.Threading.Tasks.Task<int> AddOrderAsync(PMSDesktopClient.PMSMainService.DcOrder order) {
             return base.Channel.AddOrderAsync(order);
         }
         
-        public int UpdateOrder(PMSDesktopClient.ServiceReference.DcOrder order) {
+        public int UpdateOrder(PMSDesktopClient.PMSMainService.DcOrder order) {
             return base.Channel.UpdateOrder(order);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSDesktopClient.ServiceReference.DcOrder order) {
+        public System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSDesktopClient.PMSMainService.DcOrder order) {
             return base.Channel.UpdateOrderAsync(order);
         }
         
@@ -4912,26 +4912,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IPlanVHPService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IPlanVHPService")]
     public interface IPlanVHPService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderID", ReplyAction="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderIDResponse")]
-        PMSDesktopClient.ServiceReference.DcPlanVHP[] GetVHPPlansByOrderID(System.Guid id);
+        PMSDesktopClient.PMSMainService.DcPlanVHP[] GetVHPPlansByOrderID(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderID", ReplyAction="http://tempuri.org/IPlanVHPService/GetVHPPlansByOrderIDResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcPlanVHP[]> GetVHPPlansByOrderIDAsync(System.Guid id);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcPlanVHP[]> GetVHPPlansByOrderIDAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanResponse")]
-        int AddVHPPlan(PMSDesktopClient.ServiceReference.DcPlanVHP model);
+        int AddVHPPlan(PMSDesktopClient.PMSMainService.DcPlanVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanResponse")]
-        System.Threading.Tasks.Task<int> AddVHPPlanAsync(PMSDesktopClient.ServiceReference.DcPlanVHP model);
+        System.Threading.Tasks.Task<int> AddVHPPlanAsync(PMSDesktopClient.PMSMainService.DcPlanVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse")]
-        int UpdateVHPPlan(PMSDesktopClient.ServiceReference.DcPlanVHP model);
+        int UpdateVHPPlan(PMSDesktopClient.PMSMainService.DcPlanVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSDesktopClient.ServiceReference.DcPlanVHP model);
+        System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSDesktopClient.PMSMainService.DcPlanVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/DeleteVHPPlanResponse")]
         int DeleteVHPPlan(System.Guid id);
@@ -4941,12 +4941,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPlanVHPServiceChannel : PMSDesktopClient.ServiceReference.IPlanVHPService, System.ServiceModel.IClientChannel {
+    public interface IPlanVHPServiceChannel : PMSDesktopClient.PMSMainService.IPlanVHPService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PlanVHPServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IPlanVHPService>, PMSDesktopClient.ServiceReference.IPlanVHPService {
+    public partial class PlanVHPServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IPlanVHPService>, PMSDesktopClient.PMSMainService.IPlanVHPService {
         
         public PlanVHPServiceClient() {
         }
@@ -4967,27 +4967,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcPlanVHP[] GetVHPPlansByOrderID(System.Guid id) {
+        public PMSDesktopClient.PMSMainService.DcPlanVHP[] GetVHPPlansByOrderID(System.Guid id) {
             return base.Channel.GetVHPPlansByOrderID(id);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcPlanVHP[]> GetVHPPlansByOrderIDAsync(System.Guid id) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcPlanVHP[]> GetVHPPlansByOrderIDAsync(System.Guid id) {
             return base.Channel.GetVHPPlansByOrderIDAsync(id);
         }
         
-        public int AddVHPPlan(PMSDesktopClient.ServiceReference.DcPlanVHP model) {
+        public int AddVHPPlan(PMSDesktopClient.PMSMainService.DcPlanVHP model) {
             return base.Channel.AddVHPPlan(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPPlanAsync(PMSDesktopClient.ServiceReference.DcPlanVHP model) {
+        public System.Threading.Tasks.Task<int> AddVHPPlanAsync(PMSDesktopClient.PMSMainService.DcPlanVHP model) {
             return base.Channel.AddVHPPlanAsync(model);
         }
         
-        public int UpdateVHPPlan(PMSDesktopClient.ServiceReference.DcPlanVHP model) {
+        public int UpdateVHPPlan(PMSDesktopClient.PMSMainService.DcPlanVHP model) {
             return base.Channel.UpdateVHPPlan(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSDesktopClient.ServiceReference.DcPlanVHP model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSDesktopClient.PMSMainService.DcPlanVHP model) {
             return base.Channel.UpdateVHPPlanAsync(model);
         }
         
@@ -5001,14 +5001,14 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IMaterialNeedService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMaterialNeedService")]
     public interface IMaterialNeedService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition);
+        PMSDesktopClient.PMSMainService.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearch", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearchResponse")]
         int GetMaterialNeedCountBySearch(string composition);
@@ -5017,16 +5017,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetMaterialNeedCountBySearchAsync(string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedResponse")]
-        int AddMaterialNeed(PMSDesktopClient.ServiceReference.DcMaterialNeed model);
+        int AddMaterialNeed(PMSDesktopClient.PMSMainService.DcMaterialNeed model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedResponse")]
-        System.Threading.Tasks.Task<int> AddMaterialNeedAsync(PMSDesktopClient.ServiceReference.DcMaterialNeed model);
+        System.Threading.Tasks.Task<int> AddMaterialNeedAsync(PMSDesktopClient.PMSMainService.DcMaterialNeed model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedResponse")]
-        int UpdateMaterialNeed(PMSDesktopClient.ServiceReference.DcMaterialNeed model);
+        int UpdateMaterialNeed(PMSDesktopClient.PMSMainService.DcMaterialNeed model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedResponse")]
-        System.Threading.Tasks.Task<int> UpdateMaterialNeedAsync(PMSDesktopClient.ServiceReference.DcMaterialNeed model);
+        System.Threading.Tasks.Task<int> UpdateMaterialNeedAsync(PMSDesktopClient.PMSMainService.DcMaterialNeed model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeedResponse")]
         int DeleteMaterialNeed(System.Guid id);
@@ -5036,12 +5036,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMaterialNeedServiceChannel : PMSDesktopClient.ServiceReference.IMaterialNeedService, System.ServiceModel.IClientChannel {
+    public interface IMaterialNeedServiceChannel : PMSDesktopClient.PMSMainService.IMaterialNeedService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MaterialNeedServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IMaterialNeedService>, PMSDesktopClient.ServiceReference.IMaterialNeedService {
+    public partial class MaterialNeedServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IMaterialNeedService>, PMSDesktopClient.PMSMainService.IMaterialNeedService {
         
         public MaterialNeedServiceClient() {
         }
@@ -5062,11 +5062,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition) {
+        public PMSDesktopClient.PMSMainService.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition) {
             return base.Channel.GetMaterialNeedBySearchInPage(skip, take, composition);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition) {
             return base.Channel.GetMaterialNeedBySearchInPageAsync(skip, take, composition);
         }
         
@@ -5078,19 +5078,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetMaterialNeedCountBySearchAsync(composition);
         }
         
-        public int AddMaterialNeed(PMSDesktopClient.ServiceReference.DcMaterialNeed model) {
+        public int AddMaterialNeed(PMSDesktopClient.PMSMainService.DcMaterialNeed model) {
             return base.Channel.AddMaterialNeed(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddMaterialNeedAsync(PMSDesktopClient.ServiceReference.DcMaterialNeed model) {
+        public System.Threading.Tasks.Task<int> AddMaterialNeedAsync(PMSDesktopClient.PMSMainService.DcMaterialNeed model) {
             return base.Channel.AddMaterialNeedAsync(model);
         }
         
-        public int UpdateMaterialNeed(PMSDesktopClient.ServiceReference.DcMaterialNeed model) {
+        public int UpdateMaterialNeed(PMSDesktopClient.PMSMainService.DcMaterialNeed model) {
             return base.Channel.UpdateMaterialNeed(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateMaterialNeedAsync(PMSDesktopClient.ServiceReference.DcMaterialNeed model) {
+        public System.Threading.Tasks.Task<int> UpdateMaterialNeedAsync(PMSDesktopClient.PMSMainService.DcMaterialNeed model) {
             return base.Channel.UpdateMaterialNeedAsync(model);
         }
         
@@ -5104,14 +5104,14 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IMaterialOrderService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMaterialOrderService")]
     public interface IMaterialOrderService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcMaterialOrder[] GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier);
+        PMSDesktopClient.PMSMainService.DcMaterialOrder[] GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse")]
         int GetMaterialOrderCountBySearch(string orderPo, string supplier);
@@ -5120,16 +5120,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse")]
-        int AddMaterialOrder(PMSDesktopClient.ServiceReference.DcMaterialOrder model);
+        int AddMaterialOrder(PMSDesktopClient.PMSMainService.DcMaterialOrder model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse")]
-        System.Threading.Tasks.Task<int> AddMaterialOrderAsync(PMSDesktopClient.ServiceReference.DcMaterialOrder model);
+        System.Threading.Tasks.Task<int> AddMaterialOrderAsync(PMSDesktopClient.PMSMainService.DcMaterialOrder model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderResponse")]
-        int UpdateMaterialOrder(PMSDesktopClient.ServiceReference.DcMaterialOrder model);
+        int UpdateMaterialOrder(PMSDesktopClient.PMSMainService.DcMaterialOrder model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderResponse")]
-        System.Threading.Tasks.Task<int> UpdateMaterialOrderAsync(PMSDesktopClient.ServiceReference.DcMaterialOrder model);
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderAsync(PMSDesktopClient.PMSMainService.DcMaterialOrder model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderResponse")]
         int DeleteMaterialOrder(System.Guid id);
@@ -5139,23 +5139,23 @@ namespace PMSDesktopClient.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialID", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialIDResponse" +
             "")]
-        PMSDesktopClient.ServiceReference.DcMaterialOrderItem[] GetMaterialOrderItembyMaterialID(System.Guid id);
+        PMSDesktopClient.PMSMainService.DcMaterialOrderItem[] GetMaterialOrderItembyMaterialID(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialID", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialIDResponse" +
             "")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialOrderItem[]> GetMaterialOrderItembyMaterialIDAsync(System.Guid id);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMaterialOrderItem[]> GetMaterialOrderItembyMaterialIDAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemResponse")]
-        int AddMaterialOrderItem(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model);
+        int AddMaterialOrderItem(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemResponse")]
-        System.Threading.Tasks.Task<int> AddMaterialOrderItemAsync(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model);
+        System.Threading.Tasks.Task<int> AddMaterialOrderItemAsync(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemResponse")]
-        int UpdateMaterialOrderItem(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model);
+        int UpdateMaterialOrderItem(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemResponse")]
-        System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model);
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse")]
         int DeleteMaterialOrderItem(System.Guid id);
@@ -5165,12 +5165,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMaterialOrderServiceChannel : PMSDesktopClient.ServiceReference.IMaterialOrderService, System.ServiceModel.IClientChannel {
+    public interface IMaterialOrderServiceChannel : PMSDesktopClient.PMSMainService.IMaterialOrderService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MaterialOrderServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IMaterialOrderService>, PMSDesktopClient.ServiceReference.IMaterialOrderService {
+    public partial class MaterialOrderServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IMaterialOrderService>, PMSDesktopClient.PMSMainService.IMaterialOrderService {
         
         public MaterialOrderServiceClient() {
         }
@@ -5191,11 +5191,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcMaterialOrder[] GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier) {
+        public PMSDesktopClient.PMSMainService.DcMaterialOrder[] GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier) {
             return base.Channel.GetMaterialOrderBySearchInPage(skip, take, orderPo, supplier);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier) {
             return base.Channel.GetMaterialOrderBySearchInPageAsync(skip, take, orderPo, supplier);
         }
         
@@ -5207,19 +5207,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetMaterialOrderCountBySearchAsync(orderPo, supplier);
         }
         
-        public int AddMaterialOrder(PMSDesktopClient.ServiceReference.DcMaterialOrder model) {
+        public int AddMaterialOrder(PMSDesktopClient.PMSMainService.DcMaterialOrder model) {
             return base.Channel.AddMaterialOrder(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddMaterialOrderAsync(PMSDesktopClient.ServiceReference.DcMaterialOrder model) {
+        public System.Threading.Tasks.Task<int> AddMaterialOrderAsync(PMSDesktopClient.PMSMainService.DcMaterialOrder model) {
             return base.Channel.AddMaterialOrderAsync(model);
         }
         
-        public int UpdateMaterialOrder(PMSDesktopClient.ServiceReference.DcMaterialOrder model) {
+        public int UpdateMaterialOrder(PMSDesktopClient.PMSMainService.DcMaterialOrder model) {
             return base.Channel.UpdateMaterialOrder(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateMaterialOrderAsync(PMSDesktopClient.ServiceReference.DcMaterialOrder model) {
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderAsync(PMSDesktopClient.PMSMainService.DcMaterialOrder model) {
             return base.Channel.UpdateMaterialOrderAsync(model);
         }
         
@@ -5231,27 +5231,27 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.DeleteMaterialOrderAsync(id);
         }
         
-        public PMSDesktopClient.ServiceReference.DcMaterialOrderItem[] GetMaterialOrderItembyMaterialID(System.Guid id) {
+        public PMSDesktopClient.PMSMainService.DcMaterialOrderItem[] GetMaterialOrderItembyMaterialID(System.Guid id) {
             return base.Channel.GetMaterialOrderItembyMaterialID(id);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMaterialOrderItem[]> GetMaterialOrderItembyMaterialIDAsync(System.Guid id) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMaterialOrderItem[]> GetMaterialOrderItembyMaterialIDAsync(System.Guid id) {
             return base.Channel.GetMaterialOrderItembyMaterialIDAsync(id);
         }
         
-        public int AddMaterialOrderItem(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model) {
+        public int AddMaterialOrderItem(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model) {
             return base.Channel.AddMaterialOrderItem(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddMaterialOrderItemAsync(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model) {
+        public System.Threading.Tasks.Task<int> AddMaterialOrderItemAsync(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model) {
             return base.Channel.AddMaterialOrderItemAsync(model);
         }
         
-        public int UpdateMaterialOrderItem(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model) {
+        public int UpdateMaterialOrderItem(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model) {
             return base.Channel.UpdateMaterialOrderItem(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSDesktopClient.ServiceReference.DcMaterialOrderItem model) {
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSDesktopClient.PMSMainService.DcMaterialOrderItem model) {
             return base.Channel.UpdateMaterialOrderItemAsync(model);
         }
         
@@ -5265,14 +5265,14 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IMissonService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMissonService")]
     public interface IMissonService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
-        PMSDesktopClient.ServiceReference.DcOrder[] GetMissonBySearchInPage(int skip, int take);
+        PMSDesktopClient.PMSMainService.DcOrder[] GetMissonBySearchInPage(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
         int GetMissonCountBySearch();
@@ -5282,12 +5282,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMissonServiceChannel : PMSDesktopClient.ServiceReference.IMissonService, System.ServiceModel.IClientChannel {
+    public interface IMissonServiceChannel : PMSDesktopClient.PMSMainService.IMissonService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MissonServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IMissonService>, PMSDesktopClient.ServiceReference.IMissonService {
+    public partial class MissonServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IMissonService>, PMSDesktopClient.PMSMainService.IMissonService {
         
         public MissonServiceClient() {
         }
@@ -5308,11 +5308,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcOrder[] GetMissonBySearchInPage(int skip, int take) {
+        public PMSDesktopClient.PMSMainService.DcOrder[] GetMissonBySearchInPage(int skip, int take) {
             return base.Channel.GetMissonBySearchInPage(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take) {
             return base.Channel.GetMissonBySearchInPageAsync(skip, take);
         }
         
@@ -5326,16 +5326,16 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordTestResultService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordTestResultService")]
     public interface IRecordTestResultService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResp" +
             "onse")]
-        PMSDesktopClient.ServiceReference.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd);
+        PMSDesktopClient.PMSMainService.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResp" +
             "onse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
             "e", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
@@ -5348,16 +5348,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetRecordTestResultCountBySearchInPageAsync(string productId, string compositionStd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse")]
-        int AddRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
+        int AddRecordTestResult(PMSDesktopClient.PMSMainService.DcRecordTestResult model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse")]
-        System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
+        System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSDesktopClient.PMSMainService.DcRecordTestResult model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse")]
-        int UpdateRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
+        int UpdateRecordTestResult(PMSDesktopClient.PMSMainService.DcRecordTestResult model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse")]
-        System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model);
+        System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSDesktopClient.PMSMainService.DcRecordTestResult model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResultResponse")]
         int DeleteRecordTestResult(System.Guid id);
@@ -5367,12 +5367,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRecordTestResultServiceChannel : PMSDesktopClient.ServiceReference.IRecordTestResultService, System.ServiceModel.IClientChannel {
+    public interface IRecordTestResultServiceChannel : PMSDesktopClient.PMSMainService.IRecordTestResultService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RecordTestResultServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordTestResultService>, PMSDesktopClient.ServiceReference.IRecordTestResultService {
+    public partial class RecordTestResultServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IRecordTestResultService>, PMSDesktopClient.PMSMainService.IRecordTestResultService {
         
         public RecordTestResultServiceClient() {
         }
@@ -5393,11 +5393,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd) {
+        public PMSDesktopClient.PMSMainService.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd) {
             return base.Channel.GetRecordTestResultBySearchInPage(skip, take, productId, compositionStd);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
             return base.Channel.GetRecordTestResultBySearchInPageAsync(skip, take, productId, compositionStd);
         }
         
@@ -5409,19 +5409,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetRecordTestResultCountBySearchInPageAsync(productId, compositionStd);
         }
         
-        public int AddRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+        public int AddRecordTestResult(PMSDesktopClient.PMSMainService.DcRecordTestResult model) {
             return base.Channel.AddRecordTestResult(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+        public System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSDesktopClient.PMSMainService.DcRecordTestResult model) {
             return base.Channel.AddRecordTestResultAsync(model);
         }
         
-        public int UpdateRecordTestResult(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+        public int UpdateRecordTestResult(PMSDesktopClient.PMSMainService.DcRecordTestResult model) {
             return base.Channel.UpdateRecordTestResult(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSDesktopClient.ServiceReference.DcRecordTestResult model) {
+        public System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSDesktopClient.PMSMainService.DcRecordTestResult model) {
             return base.Channel.UpdateRecordTestResultAsync(model);
         }
         
@@ -5435,14 +5435,14 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IMissonWithPlanService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMissonWithPlanService")]
     public interface IMissonWithPlanService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
-        PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
+        PMSDesktopClient.PMSMainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
         int GetMissonWithPlanCount();
@@ -5451,19 +5451,19 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
-        PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
+        PMSDesktopClient.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMissonWithPlanServiceChannel : PMSDesktopClient.ServiceReference.IMissonWithPlanService, System.ServiceModel.IClientChannel {
+    public interface IMissonWithPlanServiceChannel : PMSDesktopClient.PMSMainService.IMissonWithPlanService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MissonWithPlanServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IMissonWithPlanService>, PMSDesktopClient.ServiceReference.IMissonWithPlanService {
+    public partial class MissonWithPlanServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IMissonWithPlanService>, PMSDesktopClient.PMSMainService.IMissonWithPlanService {
         
         public MissonWithPlanServiceClient() {
         }
@@ -5484,11 +5484,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take) {
+        public PMSDesktopClient.PMSMainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take) {
             return base.Channel.GetMissonWithPlan(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take) {
             return base.Channel.GetMissonWithPlanAsync(skip, take);
         }
         
@@ -5500,24 +5500,24 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetMissonWithPlanCountAsync();
         }
         
-        public PMSDesktopClient.ServiceReference.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date) {
+        public PMSDesktopClient.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date) {
             return base.Channel.GetMissonWithPlanByDate(date);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date) {
             return base.Channel.GetMissonWithPlanByDateAsync(date);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordDeliveryService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordDeliveryService")]
     public interface IRecordDeliveryService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryResponse")]
-        PMSDesktopClient.ServiceReference.DcRecordDelivery[] GetDelivery(int skip, int take);
+        PMSDesktopClient.PMSMainService.DcRecordDelivery[] GetDelivery(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordDelivery[]> GetDeliveryAsync(int skip, int take);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordDelivery[]> GetDeliveryAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetDeliveryCount", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetDeliveryCountResponse")]
         int GetDeliveryCount();
@@ -5526,16 +5526,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetDeliveryCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryResponse")]
-        int AddRecordDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        int AddRecordDelivery(PMSDesktopClient.PMSMainService.DcRecordDelivery model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryResponse")]
-        System.Threading.Tasks.Task<int> AddRecordDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        System.Threading.Tasks.Task<int> AddRecordDeliveryAsync(PMSDesktopClient.PMSMainService.DcRecordDelivery model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryResponse")]
-        int UpdateReocrdDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        int UpdateReocrdDelivery(PMSDesktopClient.PMSMainService.DcRecordDelivery model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryResponse")]
-        System.Threading.Tasks.Task<int> UpdateReocrdDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model);
+        System.Threading.Tasks.Task<int> UpdateReocrdDeliveryAsync(PMSDesktopClient.PMSMainService.DcRecordDelivery model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryResponse")]
         int DeleteRecordDelivery(System.Guid id);
@@ -5544,16 +5544,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> DeleteRecordDeliveryAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItemResponse")]
-        int AddRecordDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        int AddRecordDeliveryItem(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItemResponse")]
-        System.Threading.Tasks.Task<int> AddRecordDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        System.Threading.Tasks.Task<int> AddRecordDeliveryItemAsync(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItemResponse")]
-        int UpdateReocrdDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        int UpdateReocrdDeliveryItem(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/UpdateReocrdDeliveryItemResponse")]
-        System.Threading.Tasks.Task<int> UpdateReocrdDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model);
+        System.Threading.Tasks.Task<int> UpdateReocrdDeliveryItemAsync(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryItemResponse")]
         int DeleteRecordDeliveryItem(System.Guid id);
@@ -5563,12 +5563,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRecordDeliveryServiceChannel : PMSDesktopClient.ServiceReference.IRecordDeliveryService, System.ServiceModel.IClientChannel {
+    public interface IRecordDeliveryServiceChannel : PMSDesktopClient.PMSMainService.IRecordDeliveryService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RecordDeliveryServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordDeliveryService>, PMSDesktopClient.ServiceReference.IRecordDeliveryService {
+    public partial class RecordDeliveryServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IRecordDeliveryService>, PMSDesktopClient.PMSMainService.IRecordDeliveryService {
         
         public RecordDeliveryServiceClient() {
         }
@@ -5589,11 +5589,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcRecordDelivery[] GetDelivery(int skip, int take) {
+        public PMSDesktopClient.PMSMainService.DcRecordDelivery[] GetDelivery(int skip, int take) {
             return base.Channel.GetDelivery(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordDelivery[]> GetDeliveryAsync(int skip, int take) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordDelivery[]> GetDeliveryAsync(int skip, int take) {
             return base.Channel.GetDeliveryAsync(skip, take);
         }
         
@@ -5605,19 +5605,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetDeliveryCountAsync();
         }
         
-        public int AddRecordDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+        public int AddRecordDelivery(PMSDesktopClient.PMSMainService.DcRecordDelivery model) {
             return base.Channel.AddRecordDelivery(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+        public System.Threading.Tasks.Task<int> AddRecordDeliveryAsync(PMSDesktopClient.PMSMainService.DcRecordDelivery model) {
             return base.Channel.AddRecordDeliveryAsync(model);
         }
         
-        public int UpdateReocrdDelivery(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+        public int UpdateReocrdDelivery(PMSDesktopClient.PMSMainService.DcRecordDelivery model) {
             return base.Channel.UpdateReocrdDelivery(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateReocrdDeliveryAsync(PMSDesktopClient.ServiceReference.DcRecordDelivery model) {
+        public System.Threading.Tasks.Task<int> UpdateReocrdDeliveryAsync(PMSDesktopClient.PMSMainService.DcRecordDelivery model) {
             return base.Channel.UpdateReocrdDeliveryAsync(model);
         }
         
@@ -5629,19 +5629,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.DeleteRecordDeliveryAsync(id);
         }
         
-        public int AddRecordDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+        public int AddRecordDeliveryItem(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model) {
             return base.Channel.AddRecordDeliveryItem(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+        public System.Threading.Tasks.Task<int> AddRecordDeliveryItemAsync(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model) {
             return base.Channel.AddRecordDeliveryItemAsync(model);
         }
         
-        public int UpdateReocrdDeliveryItem(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+        public int UpdateReocrdDeliveryItem(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model) {
             return base.Channel.UpdateReocrdDeliveryItem(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateReocrdDeliveryItemAsync(PMSDesktopClient.ServiceReference.DcRecordDeliveryItem model) {
+        public System.Threading.Tasks.Task<int> UpdateReocrdDeliveryItemAsync(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model) {
             return base.Channel.UpdateReocrdDeliveryItemAsync(model);
         }
         
@@ -5655,14 +5655,14 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IRecordVHPService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordVHPService")]
     public interface IRecordVHPService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        PMSDesktopClient.ServiceReference.DcRecordVHP[] GetRecordVHP(int skip, int take, string searchVHPID);
+        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take, string searchVHPID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take, string searchVHPID);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take, string searchVHPID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
         int GetRecordVHPCount(string searchVHPID);
@@ -5671,16 +5671,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> GetRecordVHPCountAsync(string searchVHPID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPResponse")]
-        int AddRecordVHP(PMSDesktopClient.ServiceReference.DcRecordVHP model);
+        int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPResponse")]
-        System.Threading.Tasks.Task<int> AddRecordVHPAsync(PMSDesktopClient.ServiceReference.DcRecordVHP model);
+        System.Threading.Tasks.Task<int> AddRecordVHPAsync(PMSDesktopClient.PMSMainService.DcRecordVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHP", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPResponse")]
-        int UpdateReocrdVHP(PMSDesktopClient.ServiceReference.DcRecordVHP model);
+        int UpdateReocrdVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHP", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPResponse")]
-        System.Threading.Tasks.Task<int> UpdateReocrdVHPAsync(PMSDesktopClient.ServiceReference.DcRecordVHP model);
+        System.Threading.Tasks.Task<int> UpdateReocrdVHPAsync(PMSDesktopClient.PMSMainService.DcRecordVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPResponse")]
         int DeleteRecordVHP(System.Guid id);
@@ -5689,16 +5689,16 @@ namespace PMSDesktopClient.ServiceReference {
         System.Threading.Tasks.Task<int> DeleteRecordVHPAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPItemResponse")]
-        int AddRecordVHPItem(PMSDesktopClient.ServiceReference.DcRecordVHPItem model);
+        int AddRecordVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPItemResponse")]
-        System.Threading.Tasks.Task<int> AddRecordVHPItemAsync(PMSDesktopClient.ServiceReference.DcRecordVHPItem model);
+        System.Threading.Tasks.Task<int> AddRecordVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItemResponse")]
-        int UpdateReocrdVHPItem(PMSDesktopClient.ServiceReference.DcRecordVHPItem model);
+        int UpdateReocrdVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItemResponse")]
-        System.Threading.Tasks.Task<int> UpdateReocrdVHPItemAsync(PMSDesktopClient.ServiceReference.DcRecordVHPItem model);
+        System.Threading.Tasks.Task<int> UpdateReocrdVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItemResponse")]
         int DeleteRecordVHPItem(System.Guid id);
@@ -5708,12 +5708,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRecordVHPServiceChannel : PMSDesktopClient.ServiceReference.IRecordVHPService, System.ServiceModel.IClientChannel {
+    public interface IRecordVHPServiceChannel : PMSDesktopClient.PMSMainService.IRecordVHPService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RecordVHPServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IRecordVHPService>, PMSDesktopClient.ServiceReference.IRecordVHPService {
+    public partial class RecordVHPServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IRecordVHPService>, PMSDesktopClient.PMSMainService.IRecordVHPService {
         
         public RecordVHPServiceClient() {
         }
@@ -5734,11 +5734,11 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcRecordVHP[] GetRecordVHP(int skip, int take, string searchVHPID) {
+        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take, string searchVHPID) {
             return base.Channel.GetRecordVHP(skip, take, searchVHPID);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take, string searchVHPID) {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take, string searchVHPID) {
             return base.Channel.GetRecordVHPAsync(skip, take, searchVHPID);
         }
         
@@ -5750,19 +5750,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.GetRecordVHPCountAsync(searchVHPID);
         }
         
-        public int AddRecordVHP(PMSDesktopClient.ServiceReference.DcRecordVHP model) {
+        public int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
             return base.Channel.AddRecordVHP(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordVHPAsync(PMSDesktopClient.ServiceReference.DcRecordVHP model) {
+        public System.Threading.Tasks.Task<int> AddRecordVHPAsync(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
             return base.Channel.AddRecordVHPAsync(model);
         }
         
-        public int UpdateReocrdVHP(PMSDesktopClient.ServiceReference.DcRecordVHP model) {
+        public int UpdateReocrdVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
             return base.Channel.UpdateReocrdVHP(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateReocrdVHPAsync(PMSDesktopClient.ServiceReference.DcRecordVHP model) {
+        public System.Threading.Tasks.Task<int> UpdateReocrdVHPAsync(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
             return base.Channel.UpdateReocrdVHPAsync(model);
         }
         
@@ -5774,19 +5774,19 @@ namespace PMSDesktopClient.ServiceReference {
             return base.Channel.DeleteRecordVHPAsync(id);
         }
         
-        public int AddRecordVHPItem(PMSDesktopClient.ServiceReference.DcRecordVHPItem model) {
+        public int AddRecordVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
             return base.Channel.AddRecordVHPItem(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordVHPItemAsync(PMSDesktopClient.ServiceReference.DcRecordVHPItem model) {
+        public System.Threading.Tasks.Task<int> AddRecordVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
             return base.Channel.AddRecordVHPItemAsync(model);
         }
         
-        public int UpdateReocrdVHPItem(PMSDesktopClient.ServiceReference.DcRecordVHPItem model) {
+        public int UpdateReocrdVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
             return base.Channel.UpdateReocrdVHPItem(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateReocrdVHPItemAsync(PMSDesktopClient.ServiceReference.DcRecordVHPItem model) {
+        public System.Threading.Tasks.Task<int> UpdateReocrdVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
             return base.Channel.UpdateReocrdVHPItemAsync(model);
         }
         
@@ -5800,26 +5800,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.ICustomerService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.ICustomerService")]
     public interface ICustomerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
-        PMSDesktopClient.ServiceReference.DcBDCustomer[] GetCustomer();
+        PMSDesktopClient.PMSMainService.DcBDCustomer[] GetCustomer();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDCustomer[]> GetCustomerAsync();
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDCustomer[]> GetCustomerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/AddCustomer", ReplyAction="http://tempuri.org/ICustomerService/AddCustomerResponse")]
-        int AddCustomer(PMSDesktopClient.ServiceReference.DcBDCustomer model);
+        int AddCustomer(PMSDesktopClient.PMSMainService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/AddCustomer", ReplyAction="http://tempuri.org/ICustomerService/AddCustomerResponse")]
-        System.Threading.Tasks.Task<int> AddCustomerAsync(PMSDesktopClient.ServiceReference.DcBDCustomer model);
+        System.Threading.Tasks.Task<int> AddCustomerAsync(PMSDesktopClient.PMSMainService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
-        int UpdateCustomer(PMSDesktopClient.ServiceReference.DcBDCustomer model);
+        int UpdateCustomer(PMSDesktopClient.PMSMainService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
-        System.Threading.Tasks.Task<int> UpdateCustomerAsync(PMSDesktopClient.ServiceReference.DcBDCustomer model);
+        System.Threading.Tasks.Task<int> UpdateCustomerAsync(PMSDesktopClient.PMSMainService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteCustomer", ReplyAction="http://tempuri.org/ICustomerService/DeleteCustomerResponse")]
         int DeleteCustomer(System.Guid id);
@@ -5829,12 +5829,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICustomerServiceChannel : PMSDesktopClient.ServiceReference.ICustomerService, System.ServiceModel.IClientChannel {
+    public interface ICustomerServiceChannel : PMSDesktopClient.PMSMainService.ICustomerService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.ICustomerService>, PMSDesktopClient.ServiceReference.ICustomerService {
+    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.ICustomerService>, PMSDesktopClient.PMSMainService.ICustomerService {
         
         public CustomerServiceClient() {
         }
@@ -5855,27 +5855,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcBDCustomer[] GetCustomer() {
+        public PMSDesktopClient.PMSMainService.DcBDCustomer[] GetCustomer() {
             return base.Channel.GetCustomer();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDCustomer[]> GetCustomerAsync() {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDCustomer[]> GetCustomerAsync() {
             return base.Channel.GetCustomerAsync();
         }
         
-        public int AddCustomer(PMSDesktopClient.ServiceReference.DcBDCustomer model) {
+        public int AddCustomer(PMSDesktopClient.PMSMainService.DcBDCustomer model) {
             return base.Channel.AddCustomer(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddCustomerAsync(PMSDesktopClient.ServiceReference.DcBDCustomer model) {
+        public System.Threading.Tasks.Task<int> AddCustomerAsync(PMSDesktopClient.PMSMainService.DcBDCustomer model) {
             return base.Channel.AddCustomerAsync(model);
         }
         
-        public int UpdateCustomer(PMSDesktopClient.ServiceReference.DcBDCustomer model) {
+        public int UpdateCustomer(PMSDesktopClient.PMSMainService.DcBDCustomer model) {
             return base.Channel.UpdateCustomer(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateCustomerAsync(PMSDesktopClient.ServiceReference.DcBDCustomer model) {
+        public System.Threading.Tasks.Task<int> UpdateCustomerAsync(PMSDesktopClient.PMSMainService.DcBDCustomer model) {
             return base.Channel.UpdateCustomerAsync(model);
         }
         
@@ -5889,26 +5889,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IDeliveryAddressService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IDeliveryAddressService")]
     public interface IDeliveryAddressService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddressResponse")]
-        PMSDesktopClient.ServiceReference.DcBDDeliveryAddress[] GetDeliveryAddress();
+        PMSDesktopClient.PMSMainService.DcBDDeliveryAddress[] GetDeliveryAddress();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDDeliveryAddress[]> GetDeliveryAddressAsync();
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDDeliveryAddress[]> GetDeliveryAddressAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddressResponse")]
-        int AddDeliveryAddress(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model);
+        int AddDeliveryAddress(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model);
+        System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddressResponse")]
-        int UpdateDeliveryAddress(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model);
+        int UpdateDeliveryAddress(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model);
+        System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/DeleteDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/DeleteDeliveryAddressResponse")]
         int DeleteDeliveryAddress(System.Guid id);
@@ -5918,12 +5918,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IDeliveryAddressServiceChannel : PMSDesktopClient.ServiceReference.IDeliveryAddressService, System.ServiceModel.IClientChannel {
+    public interface IDeliveryAddressServiceChannel : PMSDesktopClient.PMSMainService.IDeliveryAddressService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DeliveryAddressServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IDeliveryAddressService>, PMSDesktopClient.ServiceReference.IDeliveryAddressService {
+    public partial class DeliveryAddressServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IDeliveryAddressService>, PMSDesktopClient.PMSMainService.IDeliveryAddressService {
         
         public DeliveryAddressServiceClient() {
         }
@@ -5944,27 +5944,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcBDDeliveryAddress[] GetDeliveryAddress() {
+        public PMSDesktopClient.PMSMainService.DcBDDeliveryAddress[] GetDeliveryAddress() {
             return base.Channel.GetDeliveryAddress();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDDeliveryAddress[]> GetDeliveryAddressAsync() {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDDeliveryAddress[]> GetDeliveryAddressAsync() {
             return base.Channel.GetDeliveryAddressAsync();
         }
         
-        public int AddDeliveryAddress(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model) {
+        public int AddDeliveryAddress(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model) {
             return base.Channel.AddDeliveryAddress(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model) {
+        public System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model) {
             return base.Channel.AddDeliveryAddressAsync(model);
         }
         
-        public int UpdateDeliveryAddress(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model) {
+        public int UpdateDeliveryAddress(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model) {
             return base.Channel.UpdateDeliveryAddress(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(PMSDesktopClient.ServiceReference.DcBDDeliveryAddress model) {
+        public System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(PMSDesktopClient.PMSMainService.DcBDDeliveryAddress model) {
             return base.Channel.UpdateDeliveryAddressAsync(model);
         }
         
@@ -5978,26 +5978,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IVHPDeviceService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IVHPDeviceService")]
     public interface IVHPDeviceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/GetVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/GetVHPDeviceResponse")]
-        PMSDesktopClient.ServiceReference.DcBDVHPDevice[] GetVHPDevice();
+        PMSDesktopClient.PMSMainService.DcBDVHPDevice[] GetVHPDevice();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/GetVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/GetVHPDeviceResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDVHPDevice[]> GetVHPDeviceAsync();
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDVHPDevice[]> GetVHPDeviceAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/AddVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/AddVHPDeviceResponse")]
-        int AddVHPDevice(PMSDesktopClient.ServiceReference.DcBDVHPDevice model);
+        int AddVHPDevice(PMSDesktopClient.PMSMainService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/AddVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/AddVHPDeviceResponse")]
-        System.Threading.Tasks.Task<int> AddVHPDeviceAsync(PMSDesktopClient.ServiceReference.DcBDVHPDevice model);
+        System.Threading.Tasks.Task<int> AddVHPDeviceAsync(PMSDesktopClient.PMSMainService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/UpdateVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/UpdateVHPDeviceResponse")]
-        int UpdateVHPDevice(PMSDesktopClient.ServiceReference.DcBDVHPDevice model);
+        int UpdateVHPDevice(PMSDesktopClient.PMSMainService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/UpdateVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/UpdateVHPDeviceResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(PMSDesktopClient.ServiceReference.DcBDVHPDevice model);
+        System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(PMSDesktopClient.PMSMainService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/DeleteVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/DeleteVHPDeviceResponse")]
         int DeleteVHPDevice(System.Guid id);
@@ -6007,12 +6007,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVHPDeviceServiceChannel : PMSDesktopClient.ServiceReference.IVHPDeviceService, System.ServiceModel.IClientChannel {
+    public interface IVHPDeviceServiceChannel : PMSDesktopClient.PMSMainService.IVHPDeviceService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VHPDeviceServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IVHPDeviceService>, PMSDesktopClient.ServiceReference.IVHPDeviceService {
+    public partial class VHPDeviceServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IVHPDeviceService>, PMSDesktopClient.PMSMainService.IVHPDeviceService {
         
         public VHPDeviceServiceClient() {
         }
@@ -6033,27 +6033,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcBDVHPDevice[] GetVHPDevice() {
+        public PMSDesktopClient.PMSMainService.DcBDVHPDevice[] GetVHPDevice() {
             return base.Channel.GetVHPDevice();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDVHPDevice[]> GetVHPDeviceAsync() {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDVHPDevice[]> GetVHPDeviceAsync() {
             return base.Channel.GetVHPDeviceAsync();
         }
         
-        public int AddVHPDevice(PMSDesktopClient.ServiceReference.DcBDVHPDevice model) {
+        public int AddVHPDevice(PMSDesktopClient.PMSMainService.DcBDVHPDevice model) {
             return base.Channel.AddVHPDevice(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPDeviceAsync(PMSDesktopClient.ServiceReference.DcBDVHPDevice model) {
+        public System.Threading.Tasks.Task<int> AddVHPDeviceAsync(PMSDesktopClient.PMSMainService.DcBDVHPDevice model) {
             return base.Channel.AddVHPDeviceAsync(model);
         }
         
-        public int UpdateVHPDevice(PMSDesktopClient.ServiceReference.DcBDVHPDevice model) {
+        public int UpdateVHPDevice(PMSDesktopClient.PMSMainService.DcBDVHPDevice model) {
             return base.Channel.UpdateVHPDevice(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(PMSDesktopClient.ServiceReference.DcBDVHPDevice model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(PMSDesktopClient.PMSMainService.DcBDVHPDevice model) {
             return base.Channel.UpdateVHPDeviceAsync(model);
         }
         
@@ -6067,26 +6067,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IVHPMoldService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IVHPMoldService")]
     public interface IVHPMoldService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/GetVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/GetVHPMoldResponse")]
-        PMSDesktopClient.ServiceReference.DcBDVHPMold[] GetVHPMold();
+        PMSDesktopClient.PMSMainService.DcBDVHPMold[] GetVHPMold();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/GetVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/GetVHPMoldResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDVHPMold[]> GetVHPMoldAsync();
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDVHPMold[]> GetVHPMoldAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/AddVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/AddVHPMoldResponse")]
-        int AddVHPMold(PMSDesktopClient.ServiceReference.DcBDVHPMold model);
+        int AddVHPMold(PMSDesktopClient.PMSMainService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/AddVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/AddVHPMoldResponse")]
-        System.Threading.Tasks.Task<int> AddVHPMoldAsync(PMSDesktopClient.ServiceReference.DcBDVHPMold model);
+        System.Threading.Tasks.Task<int> AddVHPMoldAsync(PMSDesktopClient.PMSMainService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/UpdateVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/UpdateVHPMoldResponse")]
-        int UpdateVHPMold(PMSDesktopClient.ServiceReference.DcBDVHPMold model);
+        int UpdateVHPMold(PMSDesktopClient.PMSMainService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/UpdateVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/UpdateVHPMoldResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(PMSDesktopClient.ServiceReference.DcBDVHPMold model);
+        System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(PMSDesktopClient.PMSMainService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/DeleteVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/DeleteVHPMoldResponse")]
         int DeleteVHPMold(System.Guid id);
@@ -6096,12 +6096,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVHPMoldServiceChannel : PMSDesktopClient.ServiceReference.IVHPMoldService, System.ServiceModel.IClientChannel {
+    public interface IVHPMoldServiceChannel : PMSDesktopClient.PMSMainService.IVHPMoldService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VHPMoldServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IVHPMoldService>, PMSDesktopClient.ServiceReference.IVHPMoldService {
+    public partial class VHPMoldServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IVHPMoldService>, PMSDesktopClient.PMSMainService.IVHPMoldService {
         
         public VHPMoldServiceClient() {
         }
@@ -6122,27 +6122,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcBDVHPMold[] GetVHPMold() {
+        public PMSDesktopClient.PMSMainService.DcBDVHPMold[] GetVHPMold() {
             return base.Channel.GetVHPMold();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDVHPMold[]> GetVHPMoldAsync() {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDVHPMold[]> GetVHPMoldAsync() {
             return base.Channel.GetVHPMoldAsync();
         }
         
-        public int AddVHPMold(PMSDesktopClient.ServiceReference.DcBDVHPMold model) {
+        public int AddVHPMold(PMSDesktopClient.PMSMainService.DcBDVHPMold model) {
             return base.Channel.AddVHPMold(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPMoldAsync(PMSDesktopClient.ServiceReference.DcBDVHPMold model) {
+        public System.Threading.Tasks.Task<int> AddVHPMoldAsync(PMSDesktopClient.PMSMainService.DcBDVHPMold model) {
             return base.Channel.AddVHPMoldAsync(model);
         }
         
-        public int UpdateVHPMold(PMSDesktopClient.ServiceReference.DcBDVHPMold model) {
+        public int UpdateVHPMold(PMSDesktopClient.PMSMainService.DcBDVHPMold model) {
             return base.Channel.UpdateVHPMold(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(PMSDesktopClient.ServiceReference.DcBDVHPMold model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(PMSDesktopClient.PMSMainService.DcBDVHPMold model) {
             return base.Channel.UpdateVHPMoldAsync(model);
         }
         
@@ -6156,26 +6156,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IVHPProcessService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IVHPProcessService")]
     public interface IVHPProcessService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/GetVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/GetVHPProcessResponse")]
-        PMSDesktopClient.ServiceReference.DcBDVHPProcess[] GetVHPProcess();
+        PMSDesktopClient.PMSMainService.DcBDVHPProcess[] GetVHPProcess();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/GetVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/GetVHPProcessResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDVHPProcess[]> GetVHPProcessAsync();
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDVHPProcess[]> GetVHPProcessAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/AddVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/AddVHPProcessResponse")]
-        int AddVHPProcess(PMSDesktopClient.ServiceReference.DcBDVHPProcess model);
+        int AddVHPProcess(PMSDesktopClient.PMSMainService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/AddVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/AddVHPProcessResponse")]
-        System.Threading.Tasks.Task<int> AddVHPProcessAsync(PMSDesktopClient.ServiceReference.DcBDVHPProcess model);
+        System.Threading.Tasks.Task<int> AddVHPProcessAsync(PMSDesktopClient.PMSMainService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/UpdateVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/UpdateVHPProcessResponse")]
-        int UpdateVHPProcess(PMSDesktopClient.ServiceReference.DcBDVHPProcess model);
+        int UpdateVHPProcess(PMSDesktopClient.PMSMainService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/UpdateVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/UpdateVHPProcessResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(PMSDesktopClient.ServiceReference.DcBDVHPProcess model);
+        System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(PMSDesktopClient.PMSMainService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/DeleteVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/DeleteVHPProcessResponse")]
         int DeleteVHPProcess(System.Guid id);
@@ -6185,12 +6185,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVHPProcessServiceChannel : PMSDesktopClient.ServiceReference.IVHPProcessService, System.ServiceModel.IClientChannel {
+    public interface IVHPProcessServiceChannel : PMSDesktopClient.PMSMainService.IVHPProcessService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VHPProcessServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.IVHPProcessService>, PMSDesktopClient.ServiceReference.IVHPProcessService {
+    public partial class VHPProcessServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.IVHPProcessService>, PMSDesktopClient.PMSMainService.IVHPProcessService {
         
         public VHPProcessServiceClient() {
         }
@@ -6211,27 +6211,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcBDVHPProcess[] GetVHPProcess() {
+        public PMSDesktopClient.PMSMainService.DcBDVHPProcess[] GetVHPProcess() {
             return base.Channel.GetVHPProcess();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDVHPProcess[]> GetVHPProcessAsync() {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDVHPProcess[]> GetVHPProcessAsync() {
             return base.Channel.GetVHPProcessAsync();
         }
         
-        public int AddVHPProcess(PMSDesktopClient.ServiceReference.DcBDVHPProcess model) {
+        public int AddVHPProcess(PMSDesktopClient.PMSMainService.DcBDVHPProcess model) {
             return base.Channel.AddVHPProcess(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPProcessAsync(PMSDesktopClient.ServiceReference.DcBDVHPProcess model) {
+        public System.Threading.Tasks.Task<int> AddVHPProcessAsync(PMSDesktopClient.PMSMainService.DcBDVHPProcess model) {
             return base.Channel.AddVHPProcessAsync(model);
         }
         
-        public int UpdateVHPProcess(PMSDesktopClient.ServiceReference.DcBDVHPProcess model) {
+        public int UpdateVHPProcess(PMSDesktopClient.PMSMainService.DcBDVHPProcess model) {
             return base.Channel.UpdateVHPProcess(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(PMSDesktopClient.ServiceReference.DcBDVHPProcess model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(PMSDesktopClient.PMSMainService.DcBDVHPProcess model) {
             return base.Channel.UpdateVHPProcessAsync(model);
         }
         
@@ -6245,26 +6245,26 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.ICompoundService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.ICompoundService")]
     public interface ICompoundService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetAllCompounds", ReplyAction="http://tempuri.org/ICompoundService/GetAllCompoundsResponse")]
-        PMSDesktopClient.ServiceReference.DcBDCompound[] GetAllCompounds();
+        PMSDesktopClient.PMSMainService.DcBDCompound[] GetAllCompounds();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetAllCompounds", ReplyAction="http://tempuri.org/ICompoundService/GetAllCompoundsResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDCompound[]> GetAllCompoundsAsync();
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDCompound[]> GetAllCompoundsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/AddCompound", ReplyAction="http://tempuri.org/ICompoundService/AddCompoundResponse")]
-        int AddCompound(PMSDesktopClient.ServiceReference.DcBDCompound model);
+        int AddCompound(PMSDesktopClient.PMSMainService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/AddCompound", ReplyAction="http://tempuri.org/ICompoundService/AddCompoundResponse")]
-        System.Threading.Tasks.Task<int> AddCompoundAsync(PMSDesktopClient.ServiceReference.DcBDCompound model);
+        System.Threading.Tasks.Task<int> AddCompoundAsync(PMSDesktopClient.PMSMainService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/UpdateCompound", ReplyAction="http://tempuri.org/ICompoundService/UpdateCompoundResponse")]
-        int UpdateCompound(PMSDesktopClient.ServiceReference.DcBDCompound model);
+        int UpdateCompound(PMSDesktopClient.PMSMainService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/UpdateCompound", ReplyAction="http://tempuri.org/ICompoundService/UpdateCompoundResponse")]
-        System.Threading.Tasks.Task<int> UpdateCompoundAsync(PMSDesktopClient.ServiceReference.DcBDCompound model);
+        System.Threading.Tasks.Task<int> UpdateCompoundAsync(PMSDesktopClient.PMSMainService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/DeleteCompound", ReplyAction="http://tempuri.org/ICompoundService/DeleteCompoundResponse")]
         int DeleteCompound(System.Guid id);
@@ -6274,12 +6274,12 @@ namespace PMSDesktopClient.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICompoundServiceChannel : PMSDesktopClient.ServiceReference.ICompoundService, System.ServiceModel.IClientChannel {
+    public interface ICompoundServiceChannel : PMSDesktopClient.PMSMainService.ICompoundService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CompoundServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.ServiceReference.ICompoundService>, PMSDesktopClient.ServiceReference.ICompoundService {
+    public partial class CompoundServiceClient : System.ServiceModel.ClientBase<PMSDesktopClient.PMSMainService.ICompoundService>, PMSDesktopClient.PMSMainService.ICompoundService {
         
         public CompoundServiceClient() {
         }
@@ -6300,27 +6300,27 @@ namespace PMSDesktopClient.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.ServiceReference.DcBDCompound[] GetAllCompounds() {
+        public PMSDesktopClient.PMSMainService.DcBDCompound[] GetAllCompounds() {
             return base.Channel.GetAllCompounds();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.ServiceReference.DcBDCompound[]> GetAllCompoundsAsync() {
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcBDCompound[]> GetAllCompoundsAsync() {
             return base.Channel.GetAllCompoundsAsync();
         }
         
-        public int AddCompound(PMSDesktopClient.ServiceReference.DcBDCompound model) {
+        public int AddCompound(PMSDesktopClient.PMSMainService.DcBDCompound model) {
             return base.Channel.AddCompound(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddCompoundAsync(PMSDesktopClient.ServiceReference.DcBDCompound model) {
+        public System.Threading.Tasks.Task<int> AddCompoundAsync(PMSDesktopClient.PMSMainService.DcBDCompound model) {
             return base.Channel.AddCompoundAsync(model);
         }
         
-        public int UpdateCompound(PMSDesktopClient.ServiceReference.DcBDCompound model) {
+        public int UpdateCompound(PMSDesktopClient.PMSMainService.DcBDCompound model) {
             return base.Channel.UpdateCompound(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateCompoundAsync(PMSDesktopClient.ServiceReference.DcBDCompound model) {
+        public System.Threading.Tasks.Task<int> UpdateCompoundAsync(PMSDesktopClient.PMSMainService.DcBDCompound model) {
             return base.Channel.UpdateCompoundAsync(model);
         }
         
