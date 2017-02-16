@@ -13,6 +13,10 @@ namespace PMSDesktopClient.ViewModel
 {
     public class OrderSelectVM : OrderVM
     {
+        public OrderSelectVM()
+        {
+
+        }
         //要转到的页面
         private string goToViewName;
 

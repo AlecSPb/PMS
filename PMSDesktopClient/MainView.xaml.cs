@@ -1,7 +1,7 @@
 ﻿using PMSDesktopClient.View;
 using PMSDesktopClient.ViewModel;
 
-using PMSDesktopClient.View.Sales;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +64,15 @@ namespace PMSDesktopClient
                     break;
                 case "MaterialNeedEditView":
                     var materialNeedEditView = new MaterialNeedEditView();
-                    var materialNeedEditVM = new MaterialNeedEditVM();
+                    var materialNeedEditVM = new MaterialNeedEditVM(obj);
+                    materialNeedEditView.DataContext = materialNeedEditVM;
+                    NavigateTo(materialNeedEditView);
+                    break;
+                case "OrderSelectView":
+                    var view5 = new OrderSelectView();
+                    var vm5 = new OrderSelectVM(obj.ModelObject.ToString());
+                    view5.DataContext = vm5;
+                    NavigateTo(view5);
                     break;
                 default :
                     break;

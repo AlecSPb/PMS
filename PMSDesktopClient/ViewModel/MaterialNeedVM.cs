@@ -30,7 +30,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -47,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
             if (obj!=null)
             {
                 MessageObject mo = new PMSDesktopClient.MessageObject();
-                mo.ViewName = nameof(MaterialNeedView);
+                mo.ViewName = VNCollection.MaterialNeed;
                 mo.ModelObject = obj;
                 mo.IsAdd = false;
 
@@ -58,7 +58,12 @@ namespace PMSDesktopClient.ViewModel
         private void ActionAdd()
         {
             //转向订单选择页面
-            NavigationService.GoTo(VNCollection.OrderSelect);
+            MessageObject mo = new MessageObject();
+            mo.ViewName = VNCollection.OrderSelect;
+            mo.ModelObject = VNCollection.MaterialNeedEdit;
+
+            NavigationService.GoToWithParameter(mo);
+
         }
 
         private bool CanSearch()
@@ -163,7 +168,7 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigation { get; private set; }
+        public RelayCommand GoToNavigation { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }

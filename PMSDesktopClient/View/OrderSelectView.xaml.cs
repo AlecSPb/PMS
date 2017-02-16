@@ -24,7 +24,6 @@ namespace PMSDesktopClient.View
         public OrderSelectView()
         {
             InitializeComponent();
-            this.DataContext = new OrderSelectVM();
         }
     }
 }
