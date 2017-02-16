@@ -11,7 +11,7 @@ namespace DocGenerator.DocModels
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
 
         public string PMIWorkNumber { get; set; }
         public string Composition { get; set; }

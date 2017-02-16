@@ -38,10 +38,56 @@ namespace PMSDesktopClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             GenerateDoc = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionGenerateDoc);
+
+            Add = new RelayCommand(ActionAdd);
+            Edit = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionEdit);
+
+        }
+
+        private void ActionEdit(DcMaterialOrder obj)
+        {
+            if (obj != null)
+            {
+                MessageObject msg = new PMSDesktopClient.MessageObject();
+                msg.ViewName = VNCollection.MaterialOrderEdit;
+                msg.IsAdd = false;
+                msg.ModelObject = obj;
+                NavigationService.GoToWithParameter(msg);
+            }
+        }
+
+        private void ActionAdd()
+        {
+            var model = new DcMaterialOrder();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.State = PMSCommon.OrderState.UnChecked.ToString();
+            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.Supplier = "Sanjie";
+            model.SupplierAbbr = "SJ";
+            model.SupplierEmail = "sj_materials@163.com";
+            model.SupplierReceiver = "Mr.Wang";
+            model.SupplierAddress = "Chengdu,Sichuan CHINA";
+            model.ShipFee = 0;
+            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
+            model.Remark = "";
+            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
+
+            MessageObject msg = new PMSDesktopClient.MessageObject();
+            msg.ViewName = VNCollection.MaterialOrderEdit;
+            msg.IsAdd = true;
+            msg.ModelObject = model;
+            NavigationService.GoToWithParameter(msg);
         }
 
         private void ActionGenerateDoc(DcMaterialOrder args)
         {
+            if (MessageBox.Show("Do you want to create doc in desktop?","Ask",MessageBoxButton.YesNo,MessageBoxImage.Information)
+                ==MessageBoxResult.No)
+            {
+                return;
+            }
+
             if (args != null)
             {
                 var config = new MapperConfiguration(cfg =>
@@ -60,7 +106,7 @@ namespace PMSDesktopClient.ViewModel
                 string target = model.OrderPO;
                 mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, "PO" + target);
 
-                MessageBox.Show("File At:" + mainGenerator.TargetFolder);
+                MessageBox.Show("File At:" + mainGenerator.TargetFolder,"Doc has been Created");
             }
         }
 
@@ -175,7 +221,6 @@ namespace PMSDesktopClient.ViewModel
             get { return mainMaterialOrders; }
             set { mainMaterialOrders = value; RaisePropertyChanged(nameof(MainMaterialOrders)); }
         }
-
         #endregion
 
         #region Commands
@@ -183,6 +228,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
+        public RelayCommand<DcMaterialOrder> Edit { get; set; }
         public RelayCommand PageChanged { get; private set; }
         public RelayCommand<DcMaterialOrder> GenerateDoc { get; private set; }
         #endregion

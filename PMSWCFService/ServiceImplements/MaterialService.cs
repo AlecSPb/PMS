@@ -32,7 +32,11 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialOrder, PMSMaterialOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<DcMaterialOrder, PMSMaterialOrder>();
+                    cfg.CreateMap<DcMaterialOrderItem, PMSMaterialOrderItem>();
+                });
                 var mapper = config.CreateMapper();
                 var materialOrder = mapper.Map<PMSMaterialOrder>(model);
                 dc.MaterialOrders.Add(materialOrder);
@@ -108,7 +112,7 @@ namespace PMSWCFService
             {
                 var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialNeed, DcMaterialNeed>());
                 var mapper = config.CreateMapper();
-                var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && m.State!=OrderState.Deleted.ToString())
+                var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && m.State != OrderState.Deleted.ToString())
                     .OrderByDescending(m => m.CreateTime)
                     .Skip(skip).Take(take)
                     .ToList();
@@ -120,7 +124,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && m.State!=OrderState.Deleted.ToString()).Count();
+                return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && m.State != OrderState.Deleted.ToString()).Count();
             }
         }
 
@@ -135,7 +139,7 @@ namespace PMSWCFService
                 });
                 var mapper = config.CreateMapper();
                 var result = dc.MaterialOrders.Include("MaterialOrderItems").Where(m => m.OrderPO.Contains(orderPo) && m.Supplier.Contains(supplier)
-                && m.State!=OrderState.Deleted.ToString())
+                && m.State != OrderState.Deleted.ToString())
                     .OrderByDescending(m => m.CreateTime).Skip(skip).Take(take).ToList();
                 return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(result);
 
@@ -146,7 +150,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State!=OrderState.Deleted.ToString()).Count();
+                return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != OrderState.Deleted.ToString()).Count();
             }
         }
 
@@ -180,7 +184,11 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialOrder, PMSMaterialOrder>());
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<DcMaterialOrder, PMSMaterialOrder>();
+                    cfg.CreateMap<DcMaterialOrderItem, PMSMaterialOrderItem>();
+                });
                 var mapper = config.CreateMapper();
                 var materialOrder = mapper.Map<PMSMaterialOrder>(model);
                 dc.Entry(materialOrder).State = System.Data.Entity.EntityState.Modified;

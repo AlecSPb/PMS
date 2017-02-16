@@ -18,7 +18,7 @@
         <TextBlock Text="Material Orders" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="Navigation" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
-            <Button Content="Add" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="Add" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <TextBlock Text="Order PO" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="Supplier" Style="{StaticResource  TextBlockBasic}"/>
@@ -47,8 +47,9 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
-                                    <Button Content="Del" Style="{StaticResource ButtonDGBasic}"/>
+                                    <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                            Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
                                     <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
                                                 Command="{Binding Path=DataContext.GenerateDoc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                 </StackPanel>
@@ -97,28 +98,28 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="SupplierAbbr">
+                    <DataGridTemplateColumn Header="Abbr">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding SupplierAbbr}" Style="{StaticResource TextBlockDGBasic}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="SupplierReceiver">
+                    <DataGridTemplateColumn Header="Receiver">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding SupplierReceiver}" Style="{StaticResource TextBlockDGBasic}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="SupplierEmail">
+                    <DataGridTemplateColumn Header="Email">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding SupplierEmail}" Style="{StaticResource TextBlockDGBasic}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="SupplierAddress">
+                    <DataGridTemplateColumn Header="Address">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding SupplierAddress}" Style="{StaticResource TextBlockDGBasic}"/>

@@ -68,6 +68,12 @@ namespace PMSDesktopClient
                     materialNeedEditView.DataContext = materialNeedEditVM;
                     NavigateTo(materialNeedEditView);
                     break;
+                case "MaterialOrderEditView":
+                    var view6 = new MaterialOrderEditView();
+                    var vm6 = new MaterialOrderEditVM(obj);
+                    view6.DataContext = vm6;
+                    NavigateTo(view6);
+                    break;
                 case "OrderSelectView":
                     var view5 = new OrderSelectView();
                     var vm5 = new OrderSelectForMaterialNeedEditVM(obj);

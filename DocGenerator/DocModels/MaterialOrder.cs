@@ -15,7 +15,7 @@ namespace DocGenerator.DocModels
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
-        public int State { get; set; }
+        public string State { get; set; }
 
 
         public string OrderPO { get; set; }
@@ -28,7 +28,7 @@ namespace DocGenerator.DocModels
         public string Remark { get; set; }
 
         public double ShipFee { get; set; }
-        public int Priority { get; set; }
+        public string Priority { get; set; }
 
         public List<MaterialOrderItem> MaterialOrderItems { get; set; }
     }
