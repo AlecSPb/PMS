@@ -21,6 +21,11 @@ namespace PMSDesktopClient.ViewModel
             var states = Enum.GetNames(typeof(PMSCommon.TestResultState));
             states.ToList().ForEach(s => States.Add(s));
 
+            TestTypes = new ObservableCollection<string>();
+            var testTypes = Enum.GetNames(typeof(PMSCommon.TestType));
+            testTypes.ToList().ForEach(t => TestTypes.Add(t));
+
+
             GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.RecordTestResult.ToString()));
 
             Save = new RelayCommand(ActionSave);
@@ -37,8 +42,10 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateRecordTestResult(CurrentRecordTestResult);
             }
-        }
 
+            NavigationService.GoTo(VT.RecordTestResult.ToString());
+        }
+        public ObservableCollection<string> TestTypes { get; set; }
         public ObservableCollection<string> States { get; set; }
         public DcRecordTestResult CurrentRecordTestResult { get; set; }
 

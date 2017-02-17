@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Record Test Result Edit" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToProduct}"/>
-            <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="GiveUp" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}" Command="{Binding Save}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentRecordTestResult}">
@@ -149,10 +149,11 @@
                 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="CompositonXRF"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding CompositionXRF}" Style="{StaticResource TextBoxBasic}"
-                         Height="100"
+                <TextBox  x:Name="txtCompositionXRF" Grid.Row="13" Grid.Column="1" Text="{Binding CompositionXRF}" Style="{StaticResource TextBoxBasic}"
+                         Height="120"
                          HorizontalAlignment="Stretch"/>
-                <Button Grid.Row="13" Grid.Column="2" Content="CSV File" Style="{StaticResource ButtonBasic}"
+                <Button x:Name="btnCsv" Grid.Row="13" Grid.Column="2" Content="CSV File" Style="{StaticResource ButtonBasic}"
+                        Click="btnCsv_Click"
                         VerticalAlignment="Top"
                         HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="13" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"

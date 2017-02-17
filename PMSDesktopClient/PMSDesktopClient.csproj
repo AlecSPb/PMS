@@ -80,8 +80,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="WPFControls">
-      <HintPath>..\..\WpfControls\WPFControls\bin\Debug\WPFControls.dll</HintPath>
+    <Reference Include="WPFControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\WpfControls\WpfControls\bin\Debug\WPFControls.dll</HintPath>
     </Reference>
     <Reference Include="WPFStyle46, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -122,6 +123,7 @@
     <Compile Include="ViewModel\OrderSelectForMaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
+    <Compile Include="ViewModel\PlanSelectVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\RecordTestResultEditVM.cs" />
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
@@ -179,6 +181,9 @@
     </Compile>
     <Compile Include="View\PlanEditView.xaml.cs">
       <DependentUpon>PlanEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanSelectView.xaml.cs">
+      <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
@@ -287,6 +292,10 @@
     <Page Include="View\PlanEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\RecordTestResultEditView.xaml">
       <SubType>Designer</SubType>

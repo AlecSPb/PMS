@@ -25,7 +25,7 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand<DcRecordTestResult>(ActionAdd);
+            Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<DcRecordTestResult>(ActionEdit);
             Doc = new RelayCommand<DcRecordTestResult>(ActionDoc);
         }
@@ -48,17 +48,21 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionEdit(DcRecordTestResult obj)
         {
-            throw new NotImplementedException();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.GoToToken = VT.RecordTestResultEdit.ToString();
+            msg.Model = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
+
+            NavigationService.GoToWithParameter(msg);
         }
 
         private void ActionDoc(DcRecordTestResult obj)
         {
-            throw new NotImplementedException();
+
         }
 
-        private void ActionAdd(DcRecordTestResult obj)
+        private void ActionAdd()
         {
-            throw new NotImplementedException();
+            NavigationService.GoTo(VT.PlanSelect.ToString());
         }
 
         private void InitializeProperties()
@@ -90,7 +94,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Search { get; set; }
         public RelayCommand All { get; set; }
         public RelayCommand Report { get; set; }
-        public RelayCommand<DcRecordTestResult> Add { get; set; }
+        public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordTestResult> Edit { get; set; }
         public RelayCommand<DcRecordTestResult> Doc { get; set; }
         public RelayCommand PageChanged { get; private set; }
