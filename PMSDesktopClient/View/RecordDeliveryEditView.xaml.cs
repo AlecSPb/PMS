@@ -28,15 +28,7 @@ namespace PMSDesktopClient.View
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectSupplier = cboSuppliers.SelectedItem as DcBDSupplier;
-            if (selectSupplier!=null)
-            {
-                txtSupplier.Text = selectSupplier.SupplierName;
-                txtAbbr.Text = selectSupplier.Abbr;
-                txtReceiver.Text = selectSupplier.ContactPerson;
-                txtEmail.Text = selectSupplier.Email;
-                txtAddress.Text = selectSupplier.Address;
-            }
+
         }
     }
 }

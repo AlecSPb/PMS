@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Record Delivery Edit" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}"
+            <Button Content="Give Up" Style="{StaticResource ButtonBasic}"
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"
                     Command="{Binding Save}"/>

@@ -10,9 +10,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordTestResultTestVM : ViewModelBase
+    public class RecordTestResultSelectVM : ViewModelBase
     {
-        public RecordTestResultTestVM()
+        public RecordTestResultSelectVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -26,6 +26,12 @@ namespace PMSDesktopClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Select = new RelayCommand<DcRecordTestResult>(ActionSelect);
+            Empty = new RelayCommand(ActionEmpty);
+        }
+
+        private void ActionEmpty()
+        {
+            throw new NotImplementedException();
         }
 
         private bool CanSearch()
@@ -82,6 +88,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Search { get; set; }
         public RelayCommand All { get; set; }
         public RelayCommand<DcRecordTestResult> Select { get; set; }
+
+        public RelayCommand Empty { get; set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
         #region PagingProperties
