@@ -52,7 +52,7 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VN.MaterialOrderItemEdit.ToString();
+                msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
                 msg.Model = new ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoToWithParameter(msg);
             }
@@ -66,7 +66,7 @@ namespace PMSDesktopClient.ViewModel
 
 
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VN.MaterialNeedSelect.ToString();
+                msg.GoToToken = VT.MaterialNeedSelect.ToString();
                 msg.Model = new ModelObject() { Model = obj };
                 NavigationService.GoToWithParameter(msg);
             }

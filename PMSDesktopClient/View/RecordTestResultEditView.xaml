@@ -12,13 +12,169 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Product Edit" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="Record Test Result Edit" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToProduct}"/>
             <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>
-        <Grid Grid.Row="2">
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <Grid  DataContext="{Binding CurrentRecordTestResult}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-        </Grid>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Test Type"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <ComboBox  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding DataContext.TestTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding TestType,Mode=TwoWay}"
+                          Style="{StaticResource ComboBoxBasic}"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text="测试类型"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="ProductID"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text="ProductID"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Composition"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text="Composition"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Composition"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text="Composition"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionAbbr"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="PO"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Customer"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Dimension"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="Density"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Weight"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Resistance"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="DimensionActual"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="10" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="Remark"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="11" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="Sample"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="12" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="CompositonXRF"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding CompositionXRF}" Style="{StaticResource TextBoxBasic}"
+                         Height="100"
+                         HorizontalAlignment="Stretch"/>
+                <Button Grid.Row="13" Grid.Column="2" Content="CSV File" Style="{StaticResource ButtonBasic}"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="13" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="State"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                <TextBlock Grid.Row="14" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text="订单状态"/>
+                
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="Creator"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
+                            HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="CreateTime"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
+                            HorizontalAlignment="Stretch"/>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

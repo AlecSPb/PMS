@@ -52,7 +52,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VN.MaterialOrder.ToString()));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.MaterialOrder.ToString()));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -72,7 +72,7 @@ namespace PMSDesktopClient.ViewModel
                 item.Weight = need.Weight;
 
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VN.MaterialOrderItemEdit.ToString();
+                msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
                 msg.Model = new ModelObject() { IsNew = true, Model = item };
                 NavigationService.GoToWithParameter(msg);
             }

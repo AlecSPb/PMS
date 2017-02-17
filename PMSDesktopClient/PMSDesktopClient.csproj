@@ -123,6 +123,7 @@
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
+    <Compile Include="ViewModel\RecordTestResultEditVM.cs" />
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -135,7 +136,7 @@
     <Compile Include="View\MaterialOrderItemEditView.xaml.cs">
       <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\VN.cs" />
+    <Compile Include="Helpers\VT.cs" />
     <Compile Include="Helpers\VNCollection.cs" />
     <Compile Include="View\BondingView.xaml.cs">
       <DependentUpon>BondingView.xaml</DependentUpon>

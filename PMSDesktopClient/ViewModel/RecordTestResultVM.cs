@@ -26,8 +26,8 @@ namespace PMSDesktopClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand<DcRecordTestResult>(ActionAdd);
-            Update = new RelayCommand<DcRecordTestResult>(ActionUpdate);
-            Delete = new RelayCommand<DcRecordTestResult>(ActionDelete);
+            Edit = new RelayCommand<DcRecordTestResult>(ActionEdit);
+            Doc = new RelayCommand<DcRecordTestResult>(ActionDoc);
         }
 
         private bool CanSearch()
@@ -46,12 +46,12 @@ namespace PMSDesktopClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionUpdate(DcRecordTestResult obj)
+        private void ActionEdit(DcRecordTestResult obj)
         {
             throw new NotImplementedException();
         }
 
-        private void ActionDelete(DcRecordTestResult obj)
+        private void ActionDoc(DcRecordTestResult obj)
         {
             throw new NotImplementedException();
         }
@@ -91,8 +91,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand All { get; set; }
         public RelayCommand Report { get; set; }
         public RelayCommand<DcRecordTestResult> Add { get; set; }
-        public RelayCommand<DcRecordTestResult> Update { get; set; }
-        public RelayCommand<DcRecordTestResult> Delete { get; set; }
+        public RelayCommand<DcRecordTestResult> Edit { get; set; }
+        public RelayCommand<DcRecordTestResult> Doc { get; set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
         #region PagingProperties

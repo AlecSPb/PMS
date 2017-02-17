@@ -9,7 +9,7 @@ namespace PMSDesktopClient
     /// <summary>
     /// 导航token
     /// </summary>
-    public enum VN
+    public enum VT
     {
         Navigation,
         LogIn,

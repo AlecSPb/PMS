@@ -76,6 +76,7 @@
     <Compile Include="Calculation\TargetDensityCalculationItem.cs" />
     <Compile Include="StateProcess.cs" />
     <Compile Include="UsefulEnum\OrderProductType.cs" />
+    <Compile Include="UsefulEnum\TestResultState.cs" />
     <Compile Include="UsefulEnum\TestType.cs" />
     <Compile Include="UsefulEnum\UserState.cs" />
     <Compile Include="UsefulEnum\VHPPlanState.cs" />

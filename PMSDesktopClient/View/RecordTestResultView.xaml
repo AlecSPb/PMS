@@ -33,15 +33,18 @@
                      Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
             <Button Content="{StaticResource strSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource strAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
-            <Button Content="{StaticResource strProductReport}" Style="{StaticResource  ButtonBasic}"
-                    Command="{Binding Report}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Operation">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                                <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
+                                    Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
