@@ -11,7 +11,9 @@ namespace PMSCommon.UsefulEnum
     /// </summary>
     public enum Country
     {
-        China,
-
+       美国USA,
+       瑞典Sweden,
+       韩国SouthKorea,
+       日本Japan
     }
 }
