@@ -44,7 +44,11 @@ namespace DocGenerator
                         p.Append(item.PMIWorkNumber);
 
                         p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                        item.Description = $"Processing fee to cast {item.Purity} {item.Composition} (atomic%;PMI to provide{item.ProvideRawMaterial};please deliver by {item.DeliveryDate.ToShortDateString()}";
+                        item.Description = $"Processing fee to cast {item.Purity} {item.Composition} atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
+                        if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
+                        {
+                            item.Description += $"(PMI to provide  { item.ProvideRawMaterial})";
+                        }
                         p.Append(item.Description);
                         p.AppendLine();
 
