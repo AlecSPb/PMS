@@ -238,5 +238,6 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock Grid.Row="5" Style="{StaticResource TextBlockBasic}" Text="每个原料订单的原料订单项不要超过5个，不然生成报告会超过一页"/>
     </Grid>
 </UserControl>

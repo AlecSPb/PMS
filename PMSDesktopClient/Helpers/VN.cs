@@ -11,6 +11,19 @@ namespace PMSDesktopClient
     /// </summary>
     public enum VN
     {
+        Navigation,
+        LogIn,
+        Order,
+        OrderEdit,
+        OrderSelect,
+        OrderCheck,
+        OrderCheckEdit,
+        Misson,
+        Plan,
+        PlanEdit,
+        PlanSelect,
+        RecordTestResult,
+        RecordTestResultEdit,
         MaterialOrder,
         MaterialOrderEdit,
         MaterialOrderItemEdit,

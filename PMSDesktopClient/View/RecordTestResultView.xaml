@@ -21,8 +21,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strProductPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource  ButtonBasic}"
-                    Command="{Binding Navigate}" CommandParameter="OrderView"/>
+            <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"
+                    Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
             <Button Content="{StaticResource strAdd}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding  Add}"/>
             <TextBlock Text="Product ID" Style="{StaticResource TextBlockBasic}"/>
