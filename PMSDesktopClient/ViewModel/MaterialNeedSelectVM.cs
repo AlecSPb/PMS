@@ -13,10 +13,32 @@ using PMSDesktopClient.View;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class MaterialNeedVM : ViewModelBase
+    public class MaterialNeedSelectVM : ViewModelBase
     {
-        public MaterialNeedVM()
+        private bool isNew;
+        private DcMaterialOrderItem item;
+        public MaterialNeedSelectVM(ModelObject materialOrder)
         {
+            isNew = materialOrder.IsNew;
+            var order = materialOrder.Model as DcMaterialOrder;
+            item = new PMSMainService.DcMaterialOrderItem();
+            item.ID = Guid.NewGuid();
+            item.MaterialOrderID = order.ID;
+            item.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
+            item.Creator = (App.Current as App).CurrentUser.UserName;
+            item.CreateTime = DateTime.Now;
+            item.Composition = "Composition";
+            item.PMIWorkNumber = "WorkNumber";
+            item.Purity = "Purity";
+            item.Description = "";
+            item.ProvideRawMaterial = "";
+            item.UnitPrice = 0;
+            item.Weight = 0;
+            item.DeliveryDate = DateTime.Now.AddDays(7);
+
+
+
+
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -30,40 +52,30 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(VN.MaterialOrder.ToString()));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<PMSMainService.DcMaterialNeed>(ActionEdit);
+            Select = new RelayCommand<PMSMainService.DcMaterialNeed>(ActionSelect);
 
 
 
         }
 
-        private void ActionEdit(DcMaterialNeed obj)
+        private void ActionSelect(DcMaterialNeed need)
         {
-            if (obj!=null)
+            if (need!=null)
             {
-                MsgObject mo = new PMSDesktopClient.MsgObject();
-                mo.GoToToken = VNCollection.MaterialNeedEdit;
-                mo.ModelObject = obj;
-                mo.IsAdd = false;
+                item.Composition = need.Composition;
+                item.PMIWorkNumber = need.PMIWorkingNumber;
+                item.Purity = need.Purity;
+                item.Weight = need.Weight;
 
-                NavigationService.GoToWithParameter(mo);
+                MsgObject msg = new MsgObject();
+                msg.GoToToken = VN.MaterialOrderItemEdit.ToString();
+                msg.Model = new ModelObject() { IsNew = true, Model = item };
+                NavigationService.GoToWithParameter(msg);
             }
-        }
-
-        private void ActionAdd()
-        {
-            //转向订单选择页面
-            MsgObject mo = new MsgObject();
-            mo.GoToToken = VNCollection.OrderSelect;
-            mo.ModelObject = VNCollection.MaterialNeedEdit;
-
-            NavigationService.GoToWithParameter(mo);
-
         }
 
         private bool CanSearch()
@@ -168,11 +180,10 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand GoToNavigation { get; private set; }
+        public RelayCommand GiveUp { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
-        public RelayCommand Add { get; private set; }
-        public RelayCommand<DcMaterialNeed> Edit { get; private set; }
+        public RelayCommand<DcMaterialNeed> Select { get; private set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
 

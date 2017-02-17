@@ -14,7 +14,7 @@ namespace PMSDesktopClient.ViewModel
     public class MaterialNeedEditVM : ViewModelBase
     {
         private bool isNew;
-        public MaterialNeedEditVM(MessageObject msg)
+        public MaterialNeedEditVM(MsgObject msg)
         {
             isNew = msg.IsAdd;
             CurrentMaterialNeed = msg.ModelObject as DcMaterialNeed;

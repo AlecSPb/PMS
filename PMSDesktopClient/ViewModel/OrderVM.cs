@@ -55,8 +55,8 @@ namespace PMSDesktopClient.ViewModel
 
             EditWithParameter = new RelayCommand<DcOrder>(order =>
             {
-                MessageObject obj = new MessageObject();
-                obj.ViewName = "OrderEditView";
+                MsgObject obj = new MsgObject();
+                obj.GoToToken = "OrderEditView";
                 obj.IsAdd = false;
                 obj.ModelObject = order;
                 NavigationService.GoToWithParameter(obj);
@@ -75,8 +75,8 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj!=null)
             {
-                MessageObject msg = new MessageObject();
-                msg.ViewName = "OrderCheckEditView";
+                MsgObject msg = new MsgObject();
+                msg.GoToToken = "OrderCheckEditView";
                 msg.IsAdd = false;
                 msg.ModelObject = obj;
                 NavigationService.GoToWithParameter(msg);
@@ -134,8 +134,8 @@ namespace PMSDesktopClient.ViewModel
             dcOrder.Quantity = 1;
             dcOrder.QuantityUnit = "片";
 
-            MessageObject obj = new MessageObject();
-            obj.ViewName = "OrderEditView";
+            MsgObject obj = new MsgObject();
+            obj.GoToToken = "OrderEditView";
             obj.IsAdd = true;
             obj.ModelObject = dcOrder;
             NavigationService.GoToWithParameter(obj);

@@ -12,19 +12,17 @@ namespace PMSDesktopClient.ViewModel
 {
     public class MaterialOrderItemEditVM : ViewModelBase
     {
-        public MaterialOrderItemEditVM()
-        {
-
-        }
         private bool isNew;
-        public MaterialOrderItemEditVM(MessageObject msg)
+        public MaterialOrderItemEditVM(ModelObject model)
         {
-            isNew = msg.IsAdd;
-            CurrentMaterialOrderItem = msg.ModelObject as DcMaterialOrderItem;
+            isNew = model.IsNew;
+            CurrentMaterialOrderItem = model.Model as DcMaterialOrderItem;
 
             OrderStates = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.NoneOrderState));
             states.ToList().ForEach(s => OrderStates.Add(s));
+
+            InitialCommmands();
         }
 
         private void InitialCommmands()

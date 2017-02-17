@@ -93,9 +93,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MessageObject.cs" />
-    <Compile Include="ModelInitializer.cs" />
-    <Compile Include="NavigationService.cs" />
+    <Compile Include="Helpers\MsgObject.cs" />
+    <Compile Include="Helpers\ModelInitializer.cs" />
+    <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Service References\PMSMainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +109,7 @@
     <Compile Include="ViewModel\DeliveryVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
+    <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
@@ -128,10 +129,14 @@
     <Compile Include="View\MaterialInventoryView.xaml.cs">
       <DependentUpon>MaterialInventoryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaterialNeedSelectView.xaml.cs">
+      <DependentUpon>MaterialNeedSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MaterialOrderItemEditView.xaml.cs">
       <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VNCollection.cs" />
+    <Compile Include="Helpers\VN.cs" />
+    <Compile Include="Helpers\VNCollection.cs" />
     <Compile Include="View\BondingView.xaml.cs">
       <DependentUpon>BondingView.xaml</DependentUpon>
     </Compile>
@@ -198,7 +203,7 @@
     <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
-    <Page Include="CommonBrushes.xaml">
+    <Page Include="Resource\CommonBrushes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,6 +238,10 @@
     <Page Include="View\MaterialInventoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialNeedSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MaterialOrderItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>

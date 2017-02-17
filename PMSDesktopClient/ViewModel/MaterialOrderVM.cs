@@ -49,17 +49,26 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionEditItem(DcMaterialOrderItem obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
-
+                MsgObject msg = new MsgObject();
+                msg.GoToToken = VN.MaterialOrderItemEdit.ToString();
+                msg.Model = new ModelObject() { IsNew = false, Model = obj };
+                NavigationService.GoToWithParameter(msg);
             }
         }
 
         private void ActionAddItem(DcMaterialOrder obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
 
+
+
+                MsgObject msg = new MsgObject();
+                msg.GoToToken = VN.MaterialNeedSelect.ToString();
+                msg.Model = new ModelObject() { Model = obj };
+                NavigationService.GoToWithParameter(msg);
             }
         }
 
@@ -67,8 +76,8 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj != null)
             {
-                MessageObject msg = new PMSDesktopClient.MessageObject();
-                msg.ViewName = VNCollection.MaterialOrderEdit;
+                MsgObject msg = new PMSDesktopClient.MsgObject();
+                msg.GoToToken = VNCollection.MaterialOrderEdit;
                 msg.IsAdd = false;
                 msg.ModelObject = obj;
                 NavigationService.GoToWithParameter(msg);
@@ -92,8 +101,8 @@ namespace PMSDesktopClient.ViewModel
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
 
-            MessageObject msg = new PMSDesktopClient.MessageObject();
-            msg.ViewName = VNCollection.MaterialOrderEdit;
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.GoToToken = VNCollection.MaterialOrderEdit;
             msg.IsAdd = true;
             msg.ModelObject = model;
             NavigationService.GoToWithParameter(msg);
@@ -101,8 +110,8 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGenerateDoc(DcMaterialOrder args)
         {
-            if (MessageBox.Show("Do you want to create doc in desktop?","Ask",MessageBoxButton.YesNo,MessageBoxImage.Information)
-                ==MessageBoxResult.No)
+            if (MessageBox.Show("Do you want to create doc in desktop?", "Ask", MessageBoxButton.YesNo, MessageBoxImage.Information)
+                == MessageBoxResult.No)
             {
                 return;
             }
@@ -125,7 +134,7 @@ namespace PMSDesktopClient.ViewModel
                 string target = model.OrderPO;
                 mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, "PO" + target);
 
-                MessageBox.Show("File At:" + mainGenerator.TargetFolder,"Doc has been Created");
+                MessageBox.Show("File At:" + mainGenerator.TargetFolder, "Doc has been Created");
             }
         }
 

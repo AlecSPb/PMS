@@ -59,7 +59,7 @@
                 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="WorkNumber"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMIWorkingNumber}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMIWorkNumber}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="内部工作号"/>
@@ -95,8 +95,8 @@
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="Delivery Date"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ProvideRawMaterial}" Style="{StaticResource TextBoxBasic}"
-                            HorizontalAlignment="Stretch"/>
+                <DatePicker Grid.Row="6" Grid.Column="1" SelectedDate="{Binding DeliveryDate,Mode=TwoWay}"
+                            Style="{StaticResource DatePickerBasic}"/>
                 <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="提供原料"/>
 
@@ -110,7 +110,7 @@
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
-                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="订单状态"/>

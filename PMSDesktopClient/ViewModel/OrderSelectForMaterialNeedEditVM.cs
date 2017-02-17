@@ -13,7 +13,7 @@ namespace PMSDesktopClient.ViewModel
     public class OrderSelectForMaterialNeedEditVM:OrderSelectBaseVM
     {
         private string goToViewName;
-        public OrderSelectForMaterialNeedEditVM(MessageObject msg)
+        public OrderSelectForMaterialNeedEditVM(MsgObject msg)
         {
             goToViewName = msg.ModelObject.ToString();
 
@@ -26,8 +26,8 @@ namespace PMSDesktopClient.ViewModel
             {
                 var materialNeed = ModelInitializer.GetMaterialNeedByOrder(obj);
 
-                MessageObject mo = new PMSDesktopClient.MessageObject();
-                mo.ViewName =goToViewName;
+                MsgObject mo = new PMSDesktopClient.MsgObject();
+                mo.GoToToken =goToViewName;
                 mo.ModelObject = materialNeed;
                 mo.IsAdd = true;
 

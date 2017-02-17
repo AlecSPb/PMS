@@ -35,14 +35,14 @@ namespace PMSDesktopClient
             InitializeComponent();
             DataContext = new ViewModel.MainWindowVM();
             Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
-            Messenger.Default.Register<MessageObject>(this, NavigationToken.Edit,ActionEdit);
+            Messenger.Default.Register<MsgObject>(this, NavigationToken.Edit,ActionEdit);
 
             NavigateTo(new NavigationView());
         }
 
-        private void ActionEdit(MessageObject obj)
+        private void ActionEdit(MsgObject obj)
         {
-            switch (obj.ViewName)
+            switch (obj.GoToToken)
             {
                 case "OrderEditView":
                     var view = new OrderEditView();
@@ -79,6 +79,20 @@ namespace PMSDesktopClient
                     var vm5 = new OrderSelectForMaterialNeedEditVM(obj);
                     view5.DataContext = vm5;
                     NavigateTo(view5);
+                    break;
+
+                case "MaterialOrderItemEdit":
+                    var view7 = new MaterialOrderItemEditView();
+                    var vm7 = new MaterialOrderItemEditVM(obj.Model);
+                    view7.DataContext = vm7;
+                    NavigateTo(view7);
+                    break;
+
+                case "MaterialNeedSelect":
+                    var selectView2 = new MaterialNeedSelectView();
+                    var selectVM2 = new MaterialNeedSelectVM(obj.Model);
+                    selectView2.DataContext = selectVM2;
+                    NavigateTo(selectView2);
                     break;
                 default :
                     break;

@@ -13,7 +13,7 @@ namespace PMSDesktopClient.ViewModel
     public class MaterialOrderEditVM : ViewModelBase
     {
         private bool isNew;
-        public MaterialOrderEditVM(MessageObject msg)
+        public MaterialOrderEditVM(MsgObject msg)
         {
             isNew = msg.IsAdd;
             CurrentMaterialOrder = msg.ModelObject as DcMaterialOrder;

@@ -1439,6 +1439,11 @@ namespace PMSDesktopClient.PMSMainService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public static explicit operator DcMaterialOrder(ModelObject v)
+        {
+            throw new NotImplementedException();
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]

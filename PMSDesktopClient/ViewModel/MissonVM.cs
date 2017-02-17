@@ -52,8 +52,8 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj!=null)
             {
-                var nModel = new MessageObject();
-                nModel.ViewName = "PlanEditView";
+                var nModel = new MsgObject();
+                nModel.GoToToken = "PlanEditView";
                 nModel.ModelObject = obj;
                 nModel.IsAdd = false;
                 NavigationService.GoToWithParameter(nModel);
@@ -92,8 +92,8 @@ namespace PMSDesktopClient.ViewModel
                 plan.SpecialRequirement = "无";
                 plan.Creator = "xs.zhou";
 
-                var nModel = new MessageObject();
-                nModel.ViewName = "PlanEditView";
+                var nModel = new MsgObject();
+                nModel.GoToToken = "PlanEditView";
                 nModel.ModelObject = plan;
                 nModel.IsAdd = true;
                 NavigationService.GoToWithParameter(nModel);
