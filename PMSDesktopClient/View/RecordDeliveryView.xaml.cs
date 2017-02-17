@@ -26,12 +26,12 @@ namespace PMSDesktopClient.View
         public RecordDeliveryView()
         {
             InitializeComponent();
-            this.DataContext = new MaterialOrderVM();
+            this.DataContext = new RecordDeliveryVM();
         }
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            DcMaterialOrder order = (DcMaterialOrder)e.Row.DataContext;
+            var order = (DcRecordDelivery)e.Row.DataContext;
             if (order != null)
             {
                 switch (order.State)
@@ -51,11 +51,7 @@ namespace PMSDesktopClient.View
                     default:
                         break;
                 }
-                if (order.State==OrderState.UnCompleted.ToString() && order.Priority ==OrderPriority.Emergency.ToString())
-                {
-                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
-                }
-
+          
             }
         }
 

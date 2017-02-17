@@ -19,9 +19,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public string InvoiceNumber { get; set; }
+        public string DeliveryID { get; set; }
         [DataMember]
-        public string DeliveryName { get; set; }
+        public string InvoiceNumber { get; set; }
         [DataMember]
         public string DeliveryNumber { get; set; }
         [DataMember]
@@ -39,6 +39,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }//取消，未审核，审核通过，已发货
         [DataMember]
-        public virtual List<DcRecordDeliveryItem> DeliveryItems { get; set; }
+        public List<DcRecordDeliveryItem> DeliveryItems { get; set; }
     }
 }

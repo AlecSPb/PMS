@@ -30,7 +30,7 @@ namespace PMSDesktopClient.ViewModel
             GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo("VHPRecordView"));
             GoToBlankRecord = new RelayCommand(() => NavigationService.GoTo("BlankRecordView"));
             GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo("MachineRecordView"));
-            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo("DeliveryRecordView"));
+            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo(VT.RecordDelivery.ToString()));
             GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo("BondingRecordView"));
             GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(VT.RecordTestResult.ToString()));
 

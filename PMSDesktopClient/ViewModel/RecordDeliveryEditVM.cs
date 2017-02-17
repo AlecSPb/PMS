@@ -8,9 +8,9 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordDeliveryVM:ViewModelBase
+    public class RecordDeliveryEditVM:ViewModelBase
     {
-        public RecordDeliveryVM()
+        public RecordDeliveryEditVM()
         {
 
         }

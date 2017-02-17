@@ -1439,11 +1439,6 @@ namespace PMSDesktopClient.PMSMainService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-
-        public static explicit operator DcMaterialOrder(ModelObject v)
-        {
-            throw new NotImplementedException();
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2739,10 +2734,10 @@ namespace PMSDesktopClient.PMSMainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItemsField;
+        private string DeliveryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryNameField;
+        private PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryNumberField;
@@ -2831,6 +2826,19 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryID {
+            get {
+                return this.DeliveryIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryIDField, value) != true)) {
+                    this.DeliveryIDField = value;
+                    this.RaisePropertyChanged("DeliveryID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItems {
             get {
                 return this.DeliveryItemsField;
@@ -2839,19 +2847,6 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((object.ReferenceEquals(this.DeliveryItemsField, value) != true)) {
                     this.DeliveryItemsField = value;
                     this.RaisePropertyChanged("DeliveryItems");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DeliveryName {
-            get {
-                return this.DeliveryNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryNameField, value) != true)) {
-                    this.DeliveryNameField = value;
-                    this.RaisePropertyChanged("DeliveryName");
                 }
             }
         }

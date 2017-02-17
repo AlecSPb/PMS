@@ -53,7 +53,7 @@
         <Button Content="Blank Record" Grid.Row="3" Grid.Column="2"/>
         <Button Content="Machine Record" Grid.Row="3" Grid.Column="3"/>
         <Button Content="Test Result Record" Grid.Row="3" Grid.Column="4" Command="{Binding GoToTestResultRecord}"/>
-        <Button Content="Delivery Record" Grid.Row="4" Grid.Column="0"/>
+        <Button Content="Delivery Record" Grid.Row="4" Grid.Column="0" Command="{Binding GoToDeliveryRecord}"/>
         
         <Button Content="Bonding Record" Grid.Row="4" Grid.Column="1"/>
         

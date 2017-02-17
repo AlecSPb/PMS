@@ -27,6 +27,8 @@ namespace PMSDAL
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         public string Remark { get; set; }
 
+        public string State { get; set; }
+
         public Guid? DeliveryID { get; set; }
         [ForeignKey("DeliveryID")]
         public virtual RecordDelivery RecordDelivery { get; set; }

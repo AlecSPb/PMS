@@ -19,9 +19,9 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
 
+        public string DeliveryID { get; set; }
         public string InvoiceNumber { get; set; }
 
-        public string DeliveryName { get; set; }
         public string DeliveryNumber { get; set; }
 
         public string Country { get; set; }

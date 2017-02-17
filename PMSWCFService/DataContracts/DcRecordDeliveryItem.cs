@@ -21,7 +21,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string ProductType { get; set; }//产品 or 样品 or其他
         [DataMember]
-        public string ProductID { get; set; }
+        public string ProductID { get; set; }//根据这个来查询具体信息
         [DataMember]
         public string Composition { get; set; }
         [DataMember]
@@ -38,5 +38,7 @@ namespace PMSWCFService.DataContracts
         public string Remark { get; set; }
         [DataMember]
         public string State { get; set; }
+
+        public Guid DeliveryID { get; set; }
     }
 }

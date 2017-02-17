@@ -110,8 +110,14 @@ namespace PMSDesktopClient
         {
             switch (viewName)
             {
+                case "RecordDelivery":
+                    NavigateTo(new RecordDeliveryView());
+                    break;
                 case "PlanSelect":
                     NavigateTo(new PlanSelectView());
+                    break;
+                case "Navigation":
+                    NavigateTo(new NavigationView());
                     break;
                 case "NavigationView":
                     NavigateTo(new NavigationView());

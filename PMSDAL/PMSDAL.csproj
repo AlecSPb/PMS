@@ -147,6 +147,18 @@
     <Compile Include="Migrations\201702160839080_addsuppliertable.Designer.cs">
       <DependentUpon>201702160839080_addsuppliertable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702171157076_changedeliveryid.cs" />
+    <Compile Include="Migrations\201702171157076_changedeliveryid.Designer.cs">
+      <DependentUpon>201702171157076_changedeliveryid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702171211265_changedeliveryitemcolumn.cs" />
+    <Compile Include="Migrations\201702171211265_changedeliveryitemcolumn.Designer.cs">
+      <DependentUpon>201702171211265_changedeliveryitemcolumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702171243435_ok.cs" />
+    <Compile Include="Migrations\201702171243435_ok.Designer.cs">
+      <DependentUpon>201702171243435_ok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -256,6 +268,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702160839080_addsuppliertable.resx">
       <DependentUpon>201702160839080_addsuppliertable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702171157076_changedeliveryid.resx">
+      <DependentUpon>201702171157076_changedeliveryid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702171211265_changedeliveryitemcolumn.resx">
+      <DependentUpon>201702171211265_changedeliveryitemcolumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702171243435_ok.resx">
+      <DependentUpon>201702171243435_ok.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
