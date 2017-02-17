@@ -16,10 +16,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strProductPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="Select a Test Result or an empty one" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"
-                    Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
+                    Command="{Binding GoToNavigation}"/>
+            <Button Content="Use An Empty" Style="{StaticResource  ButtonBasic}"
+                    Command="{Binding Empty}"/>
+
             <TextBlock Text="Product ID" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
