@@ -10,5 +10,5 @@
     <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
     <SolidColorBrush x:Key="TomorrowBrush" Color="LightCoral"/>
     
-    <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="Pink"/>
+    <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="LightSteelBlue"/>
 </ResourceDictionary>

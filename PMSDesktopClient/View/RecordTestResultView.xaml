@@ -149,7 +149,7 @@
             <Grid DataContext="{Binding ElementName=dg,Path=SelectedItem}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="700"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Grid.ColumnDefinitions>
@@ -185,7 +185,7 @@
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="Abbr"
                            Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Abbr}" Style="{StaticResource TextBoxBasic}"
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
@@ -212,7 +212,7 @@
                             HorizontalAlignment="Stretch"/>
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="Resistance"
                            Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resitance}" Style="{StaticResource TextBoxBasic}"
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
@@ -229,8 +229,9 @@
                             HorizontalAlignment="Stretch"/>
 
                 </Grid>
-                <!--<TextBox Grid.Column="1" Text="{Binding CompositionXRF}" AcceptsReturn="True"/>-->
-                <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding CompositionXRF}" Margin="5" Height="270" VerticalAlignment="Top"/>
+
+                <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding CompositionXRF}"
+                                          Margin="5" Height="280" VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
     </Grid>

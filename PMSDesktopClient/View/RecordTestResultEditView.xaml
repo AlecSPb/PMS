@@ -149,7 +149,10 @@
                 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="CompositonXRF"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox  x:Name="txtCompositionXRF" Grid.Row="13" Grid.Column="1" Text="{Binding CompositionXRF}" Style="{StaticResource TextBoxBasic}"
+                <TextBox  x:Name="txtCompositionXRF" Grid.Row="13" Grid.Column="1"
+                         Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"
+                          AcceptsReturn="True"
+                          VerticalScrollBarVisibility="Auto"
                          Height="120"
                          HorizontalAlignment="Stretch"/>
                 <Button x:Name="btnCsv" Grid.Row="13" Grid.Column="2" Content="CSV File" Style="{StaticResource ButtonBasic}"
