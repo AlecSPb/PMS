@@ -76,7 +76,7 @@ namespace PMSDesktopClient
                     break;
                 case "OrderSelectView":
                     var view5 = new OrderSelectView();
-                    var vm5 = new OrderSelectForMaterialNeedEditVM(obj);
+                    var vm5 = new OrderSelectMaterialNeed(obj);
                     view5.DataContext = vm5;
                     NavigateTo(view5);
                     break;

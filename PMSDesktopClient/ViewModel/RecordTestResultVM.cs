@@ -57,7 +57,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionDoc(DcRecordTestResult obj)
         {
-
+            //TODO:这里添加生成doc的代码
         }
 
         private void ActionAdd()

@@ -10,10 +10,10 @@ using PMSDesktopClient.PMSMainService;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class OrderSelectForMaterialNeedEditVM:OrderSelectBaseVM
+    public class OrderSelectMaterialNeed:OrderSelectBaseVM
     {
         private string goToViewName;
-        public OrderSelectForMaterialNeedEditVM(MsgObject msg)
+        public OrderSelectMaterialNeed(MsgObject msg)
         {
             goToViewName = msg.ModelObject.ToString();
 
