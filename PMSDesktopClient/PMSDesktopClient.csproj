@@ -35,6 +35,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
@@ -125,7 +130,11 @@
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanSelectVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
+    <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
+    <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
+    <Compile Include="ViewModel\RecordDeliveryVM.cs" />
     <Compile Include="ViewModel\RecordTestResultEditVM.cs" />
+    <Compile Include="ViewModel\RecordTestResultSelectVM.cs" />
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -134,6 +143,12 @@
     </Compile>
     <Compile Include="View\MaterialNeedSelectView.xaml.cs">
       <DependentUpon>MaterialNeedSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordDeliveryItemEditView.xaml.cs">
+      <DependentUpon>RecordDeliveryItemEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordDeliveryEditView.xaml.cs">
+      <DependentUpon>RecordDeliveryEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialOrderItemEditView.xaml.cs">
       <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
@@ -154,6 +169,9 @@
     </Compile>
     <Compile Include="View\MaterialOrderEditView.xaml.cs">
       <DependentUpon>MaterialOrderEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordDeliveryView.xaml.cs">
+      <DependentUpon>RecordDeliveryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialOrderView.xaml.cs">
       <DependentUpon>MaterialOrderView.xaml</DependentUpon>
@@ -191,8 +209,8 @@
     <Compile Include="View\RecordTestResultEditView.xaml.cs">
       <DependentUpon>RecordTestResultEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductReportView.xaml.cs">
-      <DependentUpon>ProductReportView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestResultSelectView.xaml.cs">
+      <DependentUpon>RecordTestResultSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordTestResultView.xaml.cs">
       <DependentUpon>RecordTestResultView.xaml</DependentUpon>
@@ -249,6 +267,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\RecordDeliveryItemEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordDeliveryEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MaterialOrderItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -260,6 +286,10 @@
     <Page Include="View\MaterialOrderEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordDeliveryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MaterialOrderView.xaml">
       <SubType>Designer</SubType>
@@ -301,10 +331,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductReportView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\MaterialNeedView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -316,6 +342,10 @@
     <Page Include="View\PlanView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordTestResultSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\RecordTestResultView.xaml">
       <SubType>Designer</SubType>
@@ -351,6 +381,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="DocTemplate\COA.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -455,7 +486,6 @@
   <ItemGroup>
     <Folder Include="LocalService\" />
     <Folder Include="Resource\Files\" />
-    <Folder Include="Resource\Images\" />
     <Folder Include="Update\Package\" />
   </ItemGroup>
   <ItemGroup>
@@ -514,6 +544,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="funnyface.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\funnyface.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\funnyface.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

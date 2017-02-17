@@ -10,9 +10,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordTestResultVM : ViewModelBase
+    public class RecordTestResultTestVM : ViewModelBase
     {
-        public RecordTestResultVM()
+        public RecordTestResultTestVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -21,13 +21,11 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.RecordDelivery.ToString()));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordTestResult>(ActionEdit);
-            Doc = new RelayCommand<DcRecordTestResult>(ActionDoc);
+            Select = new RelayCommand<DcRecordTestResult>(ActionSelect);
         }
 
         private bool CanSearch()
@@ -46,23 +44,13 @@ namespace PMSDesktopClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionEdit(DcRecordTestResult obj)
+        private void ActionSelect(DcRecordTestResult obj)
         {
             MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.GoToToken = VT.RecordTestResultEdit.ToString();
             msg.Model = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoToWithParameter(msg);
-        }
-
-        private void ActionDoc(DcRecordTestResult obj)
-        {
-
-        }
-
-        private void ActionAdd()
-        {
-            NavigationService.GoTo(VT.PlanSelect.ToString());
         }
 
         private void InitializeProperties()
@@ -90,13 +78,10 @@ namespace PMSDesktopClient.ViewModel
             orders.ToList<DcRecordTestResult>().ForEach(o => RecordProducts.Add(o));
         }
         #region Commands
-        public RelayCommand GoToNavigation { get; set; }
+        public RelayCommand GiveUp { get; set; }
         public RelayCommand Search { get; set; }
         public RelayCommand All { get; set; }
-        public RelayCommand Report { get; set; }
-        public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordTestResult> Edit { get; set; }
-        public RelayCommand<DcRecordTestResult> Doc { get; set; }
+        public RelayCommand<DcRecordTestResult> Select { get; set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
         #region PagingProperties

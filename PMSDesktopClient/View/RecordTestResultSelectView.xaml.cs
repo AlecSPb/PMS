@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// ProductReportView.xaml 的交互逻辑
+    /// ProductView.xaml 的交互逻辑
     /// </summary>
-    public partial class ProductReportView : UserControl
+    public partial class RecordTestResultSelectView : UserControl
     {
-        public ProductReportView()
+        public RecordTestResultSelectView()
         {
             InitializeComponent();
         }

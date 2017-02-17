@@ -26,7 +26,6 @@ namespace PMSDesktopClient.ViewModel
             testresult.Remark = "";
             testresult.Resistance = "";
             testresult.Sample = "";
-            testresult.DimensionActual = testresult.Dimension;
             testresult.CompositionXRF = "";
             testresult.Density = "0";
 
@@ -45,7 +44,7 @@ namespace PMSDesktopClient.ViewModel
             testresult.Dimension = obj.Dimension;
             testresult.ProductID = obj.PlanDate.ToString("yyMMdd") + "-" + obj.VHPDeviceCode + "-" + 1;
             testresult.PO = obj.PO;
-
+            testresult.DimensionActual = testresult.Dimension;
 
             MsgObject msg = new MsgObject();
             msg.GoToToken = VT.RecordTestResultEdit.ToString();
