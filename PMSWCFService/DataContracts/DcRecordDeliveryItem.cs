@@ -38,7 +38,7 @@ namespace PMSWCFService.DataContracts
         public string Remark { get; set; }
         [DataMember]
         public string State { get; set; }
-
+        [DataMember]
         public Guid DeliveryID { get; set; }
     }
 }

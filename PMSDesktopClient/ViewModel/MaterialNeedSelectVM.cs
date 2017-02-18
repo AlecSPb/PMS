@@ -74,7 +74,7 @@ namespace PMSDesktopClient.ViewModel
                 MsgObject msg = new MsgObject();
                 msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
                 msg.Model = new ModelObject() { IsNew = true, Model = item };
-                NavigationService.GoToWithParameter(msg);
+                NavigationService.GoToWithModel(msg);
             }
         }
 

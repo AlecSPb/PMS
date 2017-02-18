@@ -51,7 +51,7 @@ namespace PMSDesktopClient.ViewModel
                 mo.ModelObject = obj;
                 mo.IsAdd = false;
 
-                NavigationService.GoToWithParameter(mo);
+                NavigationService.GoToWithModel(mo);
             }
         }
 
@@ -62,7 +62,7 @@ namespace PMSDesktopClient.ViewModel
             mo.GoToToken = VNCollection.OrderSelect;
             mo.ModelObject = VNCollection.MaterialNeedEdit;
 
-            NavigationService.GoToWithParameter(mo);
+            NavigationService.GoToWithModel(mo);
 
         }
 

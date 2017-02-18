@@ -10,7 +10,7 @@ using PMSDesktopClient.PMSMainService;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordDeliveryVM:ViewModelBase
+    public class RecordDeliveryVM : ViewModelBase
     {
         public RecordDeliveryVM()
         {
@@ -40,22 +40,51 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionEditItem(DcRecordDeliveryItem obj)
         {
-            throw new NotImplementedException();
+            MsgObject msg = new MsgObject();
+            msg.GoToToken = VT.RecordDeliveryItemEdit.ToString();
+            msg.Model = new ModelObject() { IsNew = false, Model = obj };
+
+            NavigationService.GoToWithModel(msg);
         }
 
         private void ActionAddItem(DcRecordDelivery obj)
         {
-            throw new NotImplementedException();
+            //传递RecordDelivery到RecordTestSelect
+            MsgObject msg = new MsgObject();
+            msg.GoToToken = VT.RecordTestSelect.ToString();
+            msg.Model = new ModelObject() { IsNew = true, Model = obj };
+            NavigationService.GoToWithModel(msg);
         }
 
         private void ActionAdd()
         {
-            throw new NotImplementedException();
+            var model = new DcRecordDelivery();
+            model.ID = Guid.NewGuid();
+            model.InvoiceNumber = "InvoiceNumber";
+            model.DeliveryID = DateTime.Now.ToString("yyMMdd")+"A";
+            model.DeliveryNumber = "UPS";
+            model.CreateTime = DateTime.Now;
+            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.State = PMSCommon.CommonState.UnChecked.ToString();
+            model.PackageInformation = "50kg";
+            model.PackageType = "Wood";
+            model.Remark = "";
+            model.ShipTime = DateTime.Now;
+            model.Address = "Address Here";
+            model.Country = "USA";
+
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.GoToToken = VT.RecordDeliveryEdit.ToString();
+            msg.Model = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
+            NavigationService.GoToWithModel(msg);
         }
 
         private void ActionEdit(DcRecordDelivery obj)
         {
-            throw new NotImplementedException();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.GoToToken = VT.RecordDeliveryEdit.ToString();
+            msg.Model = new ModelObject() { IsNew = false, Model = obj };
+            NavigationService.GoToWithModel(msg);
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -77,7 +106,7 @@ namespace PMSDesktopClient.ViewModel
             models.ToList<DcRecordDelivery>().ForEach(o => RecordDeliveries.Add(o));
         }
         public RelayCommand GoToNavigation { get; set; }
-        public RelayCommand Add { get; set;       }
+        public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordDelivery> Edit { get; set; }
 
         public RelayCommand<DcRecordDelivery> Doc { get; set; }

@@ -23,6 +23,7 @@ namespace PMSDesktopClient.View
         public RecordTestResultSelectView()
         {
             InitializeComponent();
+            this.DataContext = new PMSDesktopClient.ViewModel.RecordTestResultSelectVM();
         }
     }
 }

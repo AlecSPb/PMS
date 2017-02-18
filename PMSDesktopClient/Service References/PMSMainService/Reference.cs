@@ -2981,6 +2981,9 @@ namespace PMSDesktopClient.PMSMainService {
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid DeliveryIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3039,6 +3042,19 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
                     this.CustomerField = value;
                     this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid DeliveryID {
+            get {
+                return this.DeliveryIDField;
+            }
+            set {
+                if ((this.DeliveryIDField.Equals(value) != true)) {
+                    this.DeliveryIDField = value;
+                    this.RaisePropertyChanged("DeliveryID");
                 }
             }
         }

@@ -49,7 +49,7 @@ namespace PMSDesktopClient.ViewModel
             MsgObject msg = new MsgObject();
             msg.GoToToken = VT.RecordTestResultEdit.ToString();
             msg.Model = new ModelObject() { IsNew = true, Model = testresult };
-            NavigationService.GoToWithParameter(msg);
+            NavigationService.GoToWithModel(msg);
         }
 
         private void IntitializeProperties()

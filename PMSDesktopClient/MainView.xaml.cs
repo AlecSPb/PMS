@@ -101,6 +101,12 @@ namespace PMSDesktopClient
                     view8.DataContext = vm8;
                     NavigateTo(view8);
                     break;
+                case "RecordDeliveryEdit":
+                    var view9 = new RecordDeliveryEditView();
+                    var vm9 = new RecordDeliveryEditVM(obj.Model);
+                    view9.DataContext = vm9;
+                    NavigateTo(view9);
+                    break;
                 default :
                     break;
             }
@@ -110,6 +116,9 @@ namespace PMSDesktopClient
         {
             switch (viewName)
             {
+                case "RecordTestResultSelect":
+                    NavigateTo(new RecordTestResultSelectView());
+                    break;
                 case "RecordDelivery":
                     NavigateTo(new RecordDeliveryView());
                     break;

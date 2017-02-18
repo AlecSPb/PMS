@@ -269,6 +269,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryID" type="ser:guid" />
       <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />

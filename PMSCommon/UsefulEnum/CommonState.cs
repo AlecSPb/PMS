@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 namespace PMSCommon
 {
     /// <summary>
-    /// 常见国家
+    /// 通用状态
     /// </summary>
-    public enum Country
+    public enum CommonState
     {
-       USA,
-       Sweden,
-       SouthKorea,
-       Japan
+        Deleted,
+        UnChecked,
+        Checked
     }
 }

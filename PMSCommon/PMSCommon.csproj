@@ -64,6 +64,7 @@
     <Compile Include="Calculation\MaterialDensityCalculation.cs" />
     <Compile Include="Calculation\MaterialDensityCalculationItem.cs" />
     <Compile Include="UsefulEnum\AccessState.cs" />
+    <Compile Include="UsefulEnum\CommonState.cs" />
     <Compile Include="UsefulEnum\Country.cs" />
     <Compile Include="UsefulEnum\OrderState.cs" />
     <Compile Include="UsefulEnum\NavigationToken.cs" />
