@@ -6,10 +6,8 @@
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000">
-    <UserControl.DataContext>
-        <vm:NavigationVM/>
-    </UserControl.DataContext>
+             d:DesignHeight="600" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>

@@ -15,7 +15,7 @@ namespace PMSDesktopClient
             Messenger.Default.Send<string>(viewName, NavigationToken.Navigate);
         }
 
-        public static void GoToWithModel(MsgObject obj)
+        public static void GoTo(MsgObject obj)
         {
             Messenger.Default.Send<MsgObject>(obj,NavigationToken.Edit);
         }

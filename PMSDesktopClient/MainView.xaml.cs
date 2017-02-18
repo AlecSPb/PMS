@@ -33,12 +33,13 @@ namespace PMSDesktopClient
         public MainView()
         {
             InitializeComponent();
-            DataContext = new ViewModel.MainWindowVM();
+
             Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
             Messenger.Default.Register<MsgObject>(this, NavigationToken.Edit,ActionEdit);
 
             NavigateTo(new NavigationView());
         }
+
 
         private void ActionEdit(MsgObject obj)
         {
@@ -46,7 +47,7 @@ namespace PMSDesktopClient
             {
                 case "OrderEditView":
                     var view = new OrderEditView();
-                    var vm=new OrderEditVM(obj.ModelObject as DcOrder,obj.IsAdd);
+                    var vm = new OrderEditVM(obj.ModelObject as DcOrder, obj.IsAdd);
                     view.DataContext = vm;
                     NavigateTo(view);
                     break;
@@ -58,7 +59,7 @@ namespace PMSDesktopClient
                     break;
                 case "PlanEditView":
                     var planEditView = new PlanEditView();
-                    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP,obj.IsAdd);
+                    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP, obj.IsAdd);
                     planEditView.DataContext = planEditVM;
                     NavigateTo(planEditView);
                     break;
@@ -107,7 +108,7 @@ namespace PMSDesktopClient
                     view9.DataContext = vm9;
                     NavigateTo(view9);
                     break;
-                default :
+                default:
                     break;
             }
         }
@@ -178,7 +179,10 @@ namespace PMSDesktopClient
 
         private void NavigateTo(UserControl view)
         {
-            mainArea.Content = view;
+            if (view!=null)
+            {
+                mainArea.Content = view;
+            }
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -186,7 +190,6 @@ namespace PMSDesktopClient
             Messenger.Default.Unregister(this);
             base.OnClosing(e);
         }
-
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
             //if (MessageBox.Show("Are you sure to quit?","Quit",MessageBoxButton.YesNo,MessageBoxImage.Warning)==MessageBoxResult.Yes)

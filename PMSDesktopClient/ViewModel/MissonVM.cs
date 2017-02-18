@@ -56,7 +56,7 @@ namespace PMSDesktopClient.ViewModel
                 nModel.GoToToken = "PlanEditView";
                 nModel.ModelObject = obj;
                 nModel.IsAdd = false;
-                NavigationService.GoToWithModel(nModel);
+                NavigationService.GoTo(nModel);
             }
         }
 
@@ -96,7 +96,7 @@ namespace PMSDesktopClient.ViewModel
                 nModel.GoToToken = "PlanEditView";
                 nModel.ModelObject = plan;
                 nModel.IsAdd = true;
-                NavigationService.GoToWithModel(nModel);
+                NavigationService.GoTo(nModel);
             }
         }
 

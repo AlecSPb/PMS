@@ -31,7 +31,7 @@ namespace PMSDesktopClient.ViewModel
                 mo.ModelObject = materialNeed;
                 mo.IsAdd = true;
 
-                NavigationService.GoToWithModel(mo);
+                NavigationService.GoTo(mo);
             }
         }
         public RelayCommand<DcOrder> SelectOrder { get; set; }

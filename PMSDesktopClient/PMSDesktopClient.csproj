@@ -64,10 +64,16 @@
     <ManifestKeyFile>PMSDesktopClient_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -131,6 +137,7 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\ModelInitializer.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="Helpers\PMSNavigation.cs" />
     <Compile Include="Service References\PMSMainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,8 +148,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewLocator.cs" />
     <Compile Include="ViewModel\DeliveryVM.cs" />
-    <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
@@ -428,7 +435,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="PMSDesktopClient_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

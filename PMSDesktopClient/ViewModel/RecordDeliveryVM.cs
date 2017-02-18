@@ -44,7 +44,7 @@ namespace PMSDesktopClient.ViewModel
             msg.GoToToken = VT.RecordDeliveryItemEdit.ToString();
             msg.Model = new ModelObject() { IsNew = false, Model = obj };
 
-            NavigationService.GoToWithModel(msg);
+            NavigationService.GoTo(msg);
         }
 
         private void ActionAddItem(DcRecordDelivery obj)
@@ -53,7 +53,7 @@ namespace PMSDesktopClient.ViewModel
             MsgObject msg = new MsgObject();
             msg.GoToToken = VT.RecordTestSelect.ToString();
             msg.Model = new ModelObject() { IsNew = true, Model = obj };
-            NavigationService.GoToWithModel(msg);
+            NavigationService.GoTo(msg);
         }
 
         private void ActionAdd()
@@ -76,7 +76,7 @@ namespace PMSDesktopClient.ViewModel
             MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.GoToToken = VT.RecordDeliveryEdit.ToString();
             msg.Model = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
-            NavigationService.GoToWithModel(msg);
+            NavigationService.GoTo(msg);
         }
 
         private void ActionEdit(DcRecordDelivery obj)
@@ -84,7 +84,7 @@ namespace PMSDesktopClient.ViewModel
             MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.GoToToken = VT.RecordDeliveryEdit.ToString();
             msg.Model = new ModelObject() { IsNew = false, Model = obj };
-            NavigationService.GoToWithModel(msg);
+            NavigationService.GoTo(msg);
         }
 
         private void SetPageParametersWhenConditionChange()

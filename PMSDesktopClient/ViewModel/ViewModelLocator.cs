@@ -14,6 +14,7 @@
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 
 namespace PMSDesktopClient.ViewModel
@@ -41,13 +42,23 @@ namespace PMSDesktopClient.ViewModel
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
-
+            SimpleIoc.Default.Register<NavigationVM>(true);
         }
 
-        
+        public NavigationVM Navigation
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<NavigationVM>();
+            }
+        }
+
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
         }
+
+
     }
 }

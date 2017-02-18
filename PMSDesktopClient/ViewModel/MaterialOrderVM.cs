@@ -54,7 +54,7 @@ namespace PMSDesktopClient.ViewModel
                 MsgObject msg = new MsgObject();
                 msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
                 msg.Model = new ModelObject() { IsNew = false, Model = obj };
-                NavigationService.GoToWithModel(msg);
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -68,7 +68,7 @@ namespace PMSDesktopClient.ViewModel
                 MsgObject msg = new MsgObject();
                 msg.GoToToken = VT.MaterialNeedSelect.ToString();
                 msg.Model = new ModelObject() { Model = obj };
-                NavigationService.GoToWithModel(msg);
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -80,7 +80,7 @@ namespace PMSDesktopClient.ViewModel
                 msg.GoToToken = VNCollection.MaterialOrderEdit;
                 msg.IsAdd = false;
                 msg.ModelObject = obj;
-                NavigationService.GoToWithModel(msg);
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -105,7 +105,7 @@ namespace PMSDesktopClient.ViewModel
             msg.GoToToken = VNCollection.MaterialOrderEdit;
             msg.IsAdd = true;
             msg.ModelObject = model;
-            NavigationService.GoToWithModel(msg);
+            NavigationService.GoTo(msg);
         }
 
         private void ActionGenerateDoc(DcMaterialOrder args)

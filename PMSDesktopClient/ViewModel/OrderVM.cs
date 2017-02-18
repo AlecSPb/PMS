@@ -59,7 +59,7 @@ namespace PMSDesktopClient.ViewModel
                 obj.GoToToken = "OrderEditView";
                 obj.IsAdd = false;
                 obj.ModelObject = order;
-                NavigationService.GoToWithModel(obj);
+                NavigationService.GoTo(obj);
             });
 
             Delete = new RelayCommand<PMSMainService.DcOrder>(ActionDelete);
@@ -79,7 +79,7 @@ namespace PMSDesktopClient.ViewModel
                 msg.GoToToken = "OrderCheckEditView";
                 msg.IsAdd = false;
                 msg.ModelObject = obj;
-                NavigationService.GoToWithModel(msg);
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -138,7 +138,7 @@ namespace PMSDesktopClient.ViewModel
             obj.GoToToken = "OrderEditView";
             obj.IsAdd = true;
             obj.ModelObject = dcOrder;
-            NavigationService.GoToWithModel(obj);
+            NavigationService.GoTo(obj);
 
         }
 

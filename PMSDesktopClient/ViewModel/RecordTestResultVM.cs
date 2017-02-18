@@ -52,7 +52,7 @@ namespace PMSDesktopClient.ViewModel
             msg.GoToToken = VT.RecordTestResultEdit.ToString();
             msg.Model = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
 
-            NavigationService.GoToWithModel(msg);
+            NavigationService.GoTo(msg);
         }
 
         private void ActionDoc(DcRecordTestResult obj)
