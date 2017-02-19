@@ -30,7 +30,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VT.Navigation}));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -46,24 +46,20 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj!=null)
             {
-                MsgObject mo = new PMSDesktopClient.MsgObject();
-                mo.GoToToken = VNCollection.MaterialNeedEdit;
-                mo.ModelObject = obj;
-                mo.IsAdd = false;
+                MsgObject msg = new PMSDesktopClient.MsgObject();
+                msg.MsgToken = VT.MaterialNeedEdit;
+                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
-                NavigationService.GoTo(mo);
+                NavigationService.GoTo(msg);
             }
         }
 
         private void ActionAdd()
         {
             //转向订单选择页面
-            MsgObject mo = new MsgObject();
-            mo.GoToToken = VNCollection.OrderSelect;
-            mo.ModelObject = VNCollection.MaterialNeedEdit;
-
-            NavigationService.GoTo(mo);
-
+            MsgObject msg = new MsgObject();
+            msg.MsgToken = VT.OrderSelect;        
+            NavigationService.GoTo(msg);
         }
 
         private bool CanSearch()

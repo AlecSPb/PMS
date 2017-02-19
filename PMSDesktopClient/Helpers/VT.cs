@@ -8,6 +8,7 @@ namespace PMSDesktopClient
 {
     /// <summary>
     /// 导航token
+    /// 用来表示要显示的视图的token
     /// </summary>
     public enum VT
     {
@@ -44,6 +45,8 @@ namespace PMSDesktopClient
         MaterialOrderItemEdit,
         MaterialNeed,
         MaterialNeedEdit,
-        MaterialNeedSelect
+        MaterialNeedSelect,
+        MaterialInventory,
+        MaterialInventoryEdit
     }
 }

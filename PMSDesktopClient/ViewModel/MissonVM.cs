@@ -27,8 +27,8 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(VNCollection.Plan));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
 
 
             PageChanged = new RelayCommand(ActionPaging);
@@ -39,7 +39,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionDuplicatePlan(DcPlanVHP obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
                 var service = new PlanVHPServiceClient();
                 obj.ID = Guid.NewGuid();
@@ -50,19 +50,18 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionEditPlan(DcPlanVHP obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
-                var nModel = new MsgObject();
-                nModel.GoToToken = "PlanEditView";
-                nModel.ModelObject = obj;
-                nModel.IsAdd = false;
-                NavigationService.GoTo(nModel);
+                var msg = new MsgObject();
+                msg.MsgToken = VT.PlanEdit;
+                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
+                NavigationService.GoTo(msg);
             }
         }
 
         private void ActionAddNewPlan(DcOrder obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
                 DcPlanVHP plan = new DcPlanVHP();
                 plan.ID = Guid.NewGuid();
@@ -70,7 +69,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.PlanDate = DateTime.Now.Date;
                 plan.MoldType = "GQ";
                 plan.VHPDeviceCode = "A";
-                plan.Temperature=0;
+                plan.Temperature = 0;
                 plan.Pressure = 0;
                 plan.Vaccum = 0;
                 plan.ProcessCode = "W1";
@@ -87,16 +86,15 @@ namespace PMSDesktopClient.ViewModel
                 plan.RoomTemperature = 23;
                 plan.KeepTempTime = 120;
                 plan.MillingRequirement = "常规要求";
-                plan.MachineRequirement="常规要求";
+                plan.MachineRequirement = "常规要求";
                 plan.FillingRequirement = "常规要求";
                 plan.SpecialRequirement = "无";
                 plan.Creator = "xs.zhou";
 
-                var nModel = new MsgObject();
-                nModel.GoToToken = "PlanEditView";
-                nModel.ModelObject = plan;
-                nModel.IsAdd = true;
-                NavigationService.GoTo(nModel);
+                var msg = new MsgObject();
+                msg.MsgToken = VT.PlanEdit;
+                msg.MsgModel = new ModelObject() { IsNew = false, Model = plan };
+                NavigationService.GoTo(msg);
             }
         }
 

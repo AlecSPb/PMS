@@ -16,8 +16,8 @@ namespace PMSDesktopClient.ViewModel
         private bool isNew;
         public MaterialNeedEditVM(MsgObject msg)
         {
-            isNew = msg.IsAdd;
-            CurrentMaterialNeed = msg.ModelObject as DcMaterialNeed;
+            isNew = msg.MsgModel.IsNew;
+            CurrentMaterialNeed = msg.MsgModel.Model as DcMaterialNeed;
             InitializeProperties();
             InitialCommands();
         }
@@ -31,7 +31,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialNeed));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialNeed }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -47,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateMaterialNeed(CurrentMaterialNeed);
             }
-            NavigationService.GoTo(VNCollection.MaterialNeed);
+            NavigationService.GoTo(new MsgObject() { MsgToken=VT.MaterialNeed});
 
         }
 

@@ -47,8 +47,8 @@ namespace PMSDesktopClient.ViewModel
             testresult.DimensionActual = testresult.Dimension;
 
             MsgObject msg = new MsgObject();
-            msg.GoToToken = VT.RecordTestResultEdit.ToString();
-            msg.Model = new ModelObject() { IsNew = true, Model = testresult };
+            msg.MsgToken = VT.RecordTestResultEdit;
+            msg.MsgModel = new ModelObject() { IsNew = true, Model = testresult };
             NavigationService.GoTo(msg);
         }
 

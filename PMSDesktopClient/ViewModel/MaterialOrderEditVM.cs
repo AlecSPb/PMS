@@ -15,8 +15,8 @@ namespace PMSDesktopClient.ViewModel
         private bool isNew;
         public MaterialOrderEditVM(MsgObject msg)
         {
-            isNew = msg.IsAdd;
-            CurrentMaterialOrder = msg.ModelObject as DcMaterialOrder;
+            isNew = msg.MsgModel.IsNew;
+            CurrentMaterialOrder = msg.MsgModel.Model as DcMaterialOrder;
 
             InitializeProperties();
 
@@ -43,7 +43,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialOrder));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialOrder }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -58,7 +58,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateMaterialOrder(CurrentMaterialOrder);
             }
-            NavigationService.GoTo(VNCollection.MaterialOrder);
+            NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialOrder });
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }

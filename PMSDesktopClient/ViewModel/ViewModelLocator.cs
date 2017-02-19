@@ -43,15 +43,51 @@ namespace PMSDesktopClient.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
             SimpleIoc.Default.Register<NavigationVM>(true);
+            SimpleIoc.Default.Register<OrderVM>();
+            SimpleIoc.Default.Register<OrderCheckVM>();
+            SimpleIoc.Default.Register<MissonVM>();
+            SimpleIoc.Default.Register<PlanVM>();
+
+            SimpleIoc.Default.Register<MaterialNeedVM>();
+            SimpleIoc.Default.Register<MaterialOrderVM>();
+
+
+            SimpleIoc.Default.Register<RecordVHPVM>();
+            SimpleIoc.Default.Register<RecordTestResultVM>();
+            SimpleIoc.Default.Register<RecordDeliveryVM>();
+
+
+
+
         }
 
         public NavigationVM Navigation
         {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<NavigationVM>();
-            }
+            get { return SimpleIoc.Default.GetInstance<NavigationVM>();}
         }
+
+        public OrderVM Order
+        {
+            get{ return SimpleIoc.Default.GetInstance<OrderVM>();}
+        }
+
+        public OrderCheckVM OrderCheck
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
+        }
+
+        public MissonVM Misson
+        {
+            get { return SimpleIoc.Default.GetInstance<MissonVM>(); }
+        }
+
+        public PlanVM Plan
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanVM>(); }
+        }
+
+
+
 
 
         public static void Cleanup()

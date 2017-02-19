@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class PlanVM:ViewModelBase
+    public class PlanVM : ViewModelBase
     {
         public PlanVM()
         {
@@ -28,13 +28,13 @@ namespace PMSDesktopClient.ViewModel
         private void IntitializeProperties()
         {
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
-        
+
         }
 
         private void IntitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(VNCollection.Misson));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Misson }));
             PageChanged = new RelayCommand(ActionPaging);
         }
 

@@ -6,7 +6,8 @@
             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200">
+             d:DesignHeight="300" d:DesignWidth="1200"
+             DataContext="{Binding Source={StaticResource Locator},Path=OrderCheck}">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

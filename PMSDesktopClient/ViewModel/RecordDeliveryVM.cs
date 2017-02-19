@@ -25,7 +25,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VT.Navigation.ToString()));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionEdit);
             Doc = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionDoc);
@@ -41,8 +41,8 @@ namespace PMSDesktopClient.ViewModel
         private void ActionEditItem(DcRecordDeliveryItem obj)
         {
             MsgObject msg = new MsgObject();
-            msg.GoToToken = VT.RecordDeliveryItemEdit.ToString();
-            msg.Model = new ModelObject() { IsNew = false, Model = obj };
+            msg.MsgToken = VT.RecordDeliveryItemEdit;
+            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
         }
@@ -51,8 +51,8 @@ namespace PMSDesktopClient.ViewModel
         {
             //传递RecordDelivery到RecordTestSelect
             MsgObject msg = new MsgObject();
-            msg.GoToToken = VT.RecordTestSelect.ToString();
-            msg.Model = new ModelObject() { IsNew = true, Model = obj };
+            msg.MsgToken = VT.RecordTestSelect;
+            msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
             NavigationService.GoTo(msg);
         }
 
@@ -61,7 +61,7 @@ namespace PMSDesktopClient.ViewModel
             var model = new DcRecordDelivery();
             model.ID = Guid.NewGuid();
             model.InvoiceNumber = "InvoiceNumber";
-            model.DeliveryID = DateTime.Now.ToString("yyMMdd")+"A";
+            model.DeliveryID = DateTime.Now.ToString("yyMMdd") + "A";
             model.DeliveryNumber = "UPS";
             model.CreateTime = DateTime.Now;
             model.Creator = (App.Current as App).CurrentUser.UserName;
@@ -74,16 +74,16 @@ namespace PMSDesktopClient.ViewModel
             model.Country = "USA";
 
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.GoToToken = VT.RecordDeliveryEdit.ToString();
-            msg.Model = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
+            msg.MsgToken = VT.RecordDeliveryEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
 
         private void ActionEdit(DcRecordDelivery obj)
         {
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.GoToToken = VT.RecordDeliveryEdit.ToString();
-            msg.Model = new ModelObject() { IsNew = false, Model = obj };
+            msg.MsgToken = VT.RecordDeliveryEdit;
+            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);
         }
 

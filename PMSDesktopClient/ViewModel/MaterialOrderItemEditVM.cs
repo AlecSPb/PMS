@@ -27,7 +27,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialOrderItemEdit));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialOrder }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -42,7 +42,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
             }
-            NavigationService.GoTo(VNCollection.MaterialOrder);
+            NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialOrder });
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public DcMaterialOrderItem CurrentMaterialOrderItem { get; set; }

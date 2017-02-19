@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordTestResultEditVM:ViewModelBase
+    public class RecordTestResultEditVM : ViewModelBase
     {
         private bool isNew;
         public RecordTestResultEditVM(ModelObject model)
@@ -26,7 +26,7 @@ namespace PMSDesktopClient.ViewModel
             testTypes.ToList().ForEach(t => TestTypes.Add(t));
 
 
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.RecordTestResult.ToString()));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.RecordTestResult }));
 
             Save = new RelayCommand(ActionSave);
         }
@@ -43,7 +43,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateRecordTestResult(CurrentRecordTestResult);
             }
 
-            NavigationService.GoTo(VT.RecordTestResult.ToString());
+            NavigationService.GoTo(new MsgObject() { MsgToken = VT.RecordTestResult });
         }
         public ObservableCollection<string> TestTypes { get; set; }
         public ObservableCollection<string> States { get; set; }

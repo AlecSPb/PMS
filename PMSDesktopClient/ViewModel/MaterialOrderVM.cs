@@ -33,7 +33,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -52,8 +52,8 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
-                msg.Model = new ModelObject() { IsNew = false, Model = obj };
+                msg.MsgToken = VT.MaterialOrderItemEdit;
+                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
         }
@@ -66,8 +66,8 @@ namespace PMSDesktopClient.ViewModel
 
 
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VT.MaterialNeedSelect.ToString();
-                msg.Model = new ModelObject() { Model = obj };
+                msg.MsgToken = VT.MaterialNeedSelect;
+                msg.MsgModel = new ModelObject() { Model = obj };
                 NavigationService.GoTo(msg);
             }
         }
@@ -77,9 +77,8 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new PMSDesktopClient.MsgObject();
-                msg.GoToToken = VNCollection.MaterialOrderEdit;
-                msg.IsAdd = false;
-                msg.ModelObject = obj;
+                msg.MsgToken = VT.MaterialOrderEdit;
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
         }
@@ -102,9 +101,8 @@ namespace PMSDesktopClient.ViewModel
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
 
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.GoToToken = VNCollection.MaterialOrderEdit;
-            msg.IsAdd = true;
-            msg.ModelObject = model;
+            msg.MsgToken = VT.MaterialOrderEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
 

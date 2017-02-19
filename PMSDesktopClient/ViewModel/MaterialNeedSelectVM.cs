@@ -52,7 +52,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.MaterialOrder.ToString()));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialOrder }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -64,7 +64,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionSelect(DcMaterialNeed need)
         {
-            if (need!=null)
+            if (need != null)
             {
                 item.Composition = need.Composition;
                 item.PMIWorkNumber = need.PMIWorkingNumber;
@@ -72,8 +72,8 @@ namespace PMSDesktopClient.ViewModel
                 item.Weight = need.Weight;
 
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
-                msg.Model = new ModelObject() { IsNew = true, Model = item };
+                msg.MsgToken = VT.MaterialOrderItemEdit;
+                msg.MsgModel = new ModelObject() { IsNew = true, Model = item };
                 NavigationService.GoTo(msg);
             }
         }

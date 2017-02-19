@@ -134,6 +134,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\BasicDataGenerator.cs" />
+    <Compile Include="Helpers\CommonDialogService.cs" />
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\ModelInitializer.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
@@ -148,7 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ViewLocator.cs" />
+    <Compile Include="Helpers\ViewInstance.cs" />
     <Compile Include="ViewModel\DeliveryVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
@@ -162,6 +164,7 @@
     <Compile Include="ViewModel\OrderEditVM.cs" />
     <Compile Include="ViewModel\OrderSelectBaseVM.cs" />
     <Compile Include="ViewModel\OrderSelectMaterialNeed.cs" />
+    <Compile Include="ViewModel\OrderCheckVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanSelectVM.cs" />

@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordDeliveryEditVM:ViewModelBase
+    public class RecordDeliveryEditVM : ViewModelBase
     {
         private bool isNew;
         public RecordDeliveryEditVM(ModelObject obj)
@@ -34,7 +34,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.RecordDelivery.ToString()));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.RecordDelivery }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -50,7 +50,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateReocrdDelivery(CurrentRecordDelivery);
             }
 
-            NavigationService.GoTo(VT.RecordDelivery.ToString());
+            NavigationService.GoTo(new MsgObject() { MsgToken = VT.RecordDelivery });
         }
 
 
