@@ -13,10 +13,10 @@ namespace PMSDesktopClient
     {
         public MsgObject()
         {
-            MsgToken = VT.Navigation;
+            MsgToken = VToken.Navigation;
             StringMessage = "";
         }
-        public VT MsgToken { get; set; }
+        public VToken MsgToken { get; set; }
         public ModelObject MsgModel { get; set; }
         public string StringMessage { get; set; }
 

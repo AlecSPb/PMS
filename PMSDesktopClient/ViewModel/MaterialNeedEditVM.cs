@@ -31,7 +31,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.MaterialNeed }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialNeed }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -47,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateMaterialNeed(CurrentMaterialNeed);
             }
-            NavigationService.GoTo(new MsgObject() { MsgToken=VT.MaterialNeed});
+            NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed});
 
         }
 

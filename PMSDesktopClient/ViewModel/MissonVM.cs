@@ -27,8 +27,8 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
 
 
             PageChanged = new RelayCommand(ActionPaging);
@@ -53,7 +53,7 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 var msg = new MsgObject();
-                msg.MsgToken = VT.PlanEdit;
+                msg.MsgToken = VToken.PlanEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -92,7 +92,7 @@ namespace PMSDesktopClient.ViewModel
                 plan.Creator = "xs.zhou";
 
                 var msg = new MsgObject();
-                msg.MsgToken = VT.PlanEdit;
+                msg.MsgToken = VToken.PlanEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = plan };
                 NavigationService.GoTo(msg);
             }

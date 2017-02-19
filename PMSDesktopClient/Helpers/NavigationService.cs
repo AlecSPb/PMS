@@ -10,14 +10,9 @@ namespace PMSDesktopClient
 {
     public static class NavigationService
     {
-        public static void GoTo(string viewName)
-        {
-            Messenger.Default.Send<string>(viewName, NavigationToken.Navigate);
-        }
-
         public static void GoTo(MsgObject obj)
         {
-            Messenger.Default.Send<MsgObject>(obj,NavigationToken.Edit);
+            Messenger.Default.Send<MsgObject>(obj,NavigationToken.Navigate);
         }
     }
 }

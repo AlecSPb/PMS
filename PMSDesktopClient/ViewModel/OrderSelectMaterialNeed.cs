@@ -12,19 +12,19 @@ namespace PMSDesktopClient.ViewModel
 {
     public class OrderSelectMaterialNeed:OrderSelectBaseVM
     {
-        private VT goToViewName;
+        private VToken goToViewName;
         public OrderSelectMaterialNeed(MsgObject msg)
         {
             goToViewName = msg.MsgToken;
 
             SelectOrder = new RelayCommand<PMSMainService.DcOrder>(ActionSelectOrder);
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VT.MaterialNeed}));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed}));
         }
         private void ActionSelectOrder(DcOrder obj)
         {
             if (obj != null)
             {
-                var materialNeed = ModelInitializer.GetMaterialNeedByOrder(obj);
+                var materialNeed = EmptyModel.GetMaterialNeedByOrder(obj);
 
                 MsgObject msg = new PMSDesktopClient.MsgObject();
                 msg.MsgToken =goToViewName;

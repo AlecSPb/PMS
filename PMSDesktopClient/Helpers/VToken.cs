@@ -10,7 +10,7 @@ namespace PMSDesktopClient
     /// 导航token
     /// 用来表示要显示的视图的token
     /// </summary>
-    public enum VT
+    public enum VToken
     {
         Navigation,
         LogIn,

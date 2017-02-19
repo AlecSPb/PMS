@@ -21,7 +21,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -49,7 +49,7 @@ namespace PMSDesktopClient.ViewModel
         private void ActionEdit(DcRecordTestResult obj)
         {
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.MsgToken = VT.RecordTestResultEdit;
+            msg.MsgToken = VToken.RecordTestResultEdit;
             msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
@@ -62,7 +62,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(VT.PlanSelect.ToString());
+            NavigationService.GoTo(new MsgObject() { MsgToken=VToken.OrderSelect});
         }
 
         private void InitializeProperties()

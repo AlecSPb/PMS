@@ -7,7 +7,7 @@ using PMSDesktopClient.PMSMainService;
 
 namespace PMSDesktopClient
 {
-    public static class ModelInitializer
+    public static class EmptyModel
     {
         public static  DcMaterialNeed EmptyMaterialNeed
         {

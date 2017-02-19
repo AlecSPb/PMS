@@ -33,7 +33,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -52,7 +52,7 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VT.MaterialOrderItemEdit;
+                msg.MsgToken = VToken.MaterialOrderItemEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -66,7 +66,7 @@ namespace PMSDesktopClient.ViewModel
 
 
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VT.MaterialNeedSelect;
+                msg.MsgToken = VToken.MaterialNeedSelect;
                 msg.MsgModel = new ModelObject() { Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -77,7 +77,7 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new PMSDesktopClient.MsgObject();
-                msg.MsgToken = VT.MaterialOrderEdit;
+                msg.MsgToken = VToken.MaterialOrderEdit;
                 msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -101,7 +101,7 @@ namespace PMSDesktopClient.ViewModel
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
 
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.MsgToken = VT.MaterialOrderEdit;
+            msg.MsgToken = VToken.MaterialOrderEdit;
             msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }

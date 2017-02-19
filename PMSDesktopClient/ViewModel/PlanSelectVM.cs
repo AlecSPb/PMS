@@ -47,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
             testresult.DimensionActual = testresult.Dimension;
 
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VT.RecordTestResultEdit;
+            msg.MsgToken = VToken.RecordTestResultEdit;
             msg.MsgModel = new ModelObject() { IsNew = true, Model = testresult };
             NavigationService.GoTo(msg);
         }
@@ -60,7 +60,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.RecordTestResult.ToString()));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.RecordTestResult}));
             PageChanged = new RelayCommand(ActionPaging);
             Select = new RelayCommand<PMSMainService.DcMissonWithPlan>(ActionSelect);
         }

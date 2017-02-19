@@ -63,7 +63,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VT.Order });
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
         }
 
         private bool CanSave()
@@ -82,7 +82,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateOrder(CurrentOrder);
             }
-            NavigationService.GoTo(new MsgObject() { MsgToken = VT.Order });
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
             Messenger.Default.Send<Object>("", "RefreshOrder");
         }
 

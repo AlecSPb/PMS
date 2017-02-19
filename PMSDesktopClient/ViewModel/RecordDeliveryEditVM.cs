@@ -34,7 +34,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.RecordDelivery }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -50,7 +50,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateReocrdDelivery(CurrentRecordDelivery);
             }
 
-            NavigationService.GoTo(new MsgObject() { MsgToken = VT.RecordDelivery });
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
         }
 
 

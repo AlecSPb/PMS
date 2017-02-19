@@ -25,7 +25,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionEdit);
             Doc = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionDoc);
@@ -41,7 +41,7 @@ namespace PMSDesktopClient.ViewModel
         private void ActionEditItem(DcRecordDeliveryItem obj)
         {
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VT.RecordDeliveryItemEdit;
+            msg.MsgToken = VToken.RecordDeliveryItemEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
@@ -51,7 +51,7 @@ namespace PMSDesktopClient.ViewModel
         {
             //传递RecordDelivery到RecordTestSelect
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VT.RecordTestSelect;
+            msg.MsgToken = VToken.RecordTestSelect;
             msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
             NavigationService.GoTo(msg);
         }
@@ -74,7 +74,7 @@ namespace PMSDesktopClient.ViewModel
             model.Country = "USA";
 
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.MsgToken = VT.RecordDeliveryEdit;
+            msg.MsgToken = VToken.RecordDeliveryEdit;
             msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
@@ -82,7 +82,7 @@ namespace PMSDesktopClient.ViewModel
         private void ActionEdit(DcRecordDelivery obj)
         {
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.MsgToken = VT.RecordDeliveryEdit;
+            msg.MsgToken = VToken.RecordDeliveryEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);
         }

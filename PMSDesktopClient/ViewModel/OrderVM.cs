@@ -43,7 +43,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
+            GoToNavigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -53,7 +53,7 @@ namespace PMSDesktopClient.ViewModel
             Edit = new RelayCommand<DcOrder>(order =>
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VT.OrderEdit;
+                msg.MsgToken = VToken.OrderEdit;
                 msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = order };
                 NavigationService.GoTo(msg);
             });
@@ -115,7 +115,7 @@ namespace PMSDesktopClient.ViewModel
             dcOrder.QuantityUnit = "片";
 
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VT.OrderEdit;
+            msg.MsgToken = VToken.OrderEdit;
             msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = dcOrder };
             NavigationService.GoTo(msg);
 
@@ -250,7 +250,7 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
+        public RelayCommand GoToNavigate { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }

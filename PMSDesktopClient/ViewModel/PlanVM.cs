@@ -33,8 +33,8 @@ namespace PMSDesktopClient.ViewModel
 
         private void IntitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Navigation }));
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VT.Misson }));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson }));
             PageChanged = new RelayCommand(ActionPaging);
         }
 

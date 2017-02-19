@@ -48,13 +48,13 @@ namespace PMSDesktopClient
         {
             switch (msg.MsgToken)
             {
-                case VT.Navigation:
+                case VToken.Navigation:
+                    NavigateTo(views.Navigation);
+                    break;
+                case VToken.Order:
                     NavigateTo(views.Order);
                     break;
-                case VT.Order:
-                    NavigateTo(views.Order);
-                    break;
-                case VT.OrderCheck:
+                case VToken.OrderCheck:
                     NavigateTo(views.OrderCheck);
                     break;
                 //case VT.PlanSelect:

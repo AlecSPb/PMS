@@ -30,7 +30,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VT.Navigation}));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.Navigation}));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -47,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
             if (obj!=null)
             {
                 MsgObject msg = new PMSDesktopClient.MsgObject();
-                msg.MsgToken = VT.MaterialNeedEdit;
+                msg.MsgToken = VToken.MaterialNeedEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
                 NavigationService.GoTo(msg);
@@ -58,7 +58,7 @@ namespace PMSDesktopClient.ViewModel
         {
             //转向订单选择页面
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VT.OrderSelect;        
+            msg.MsgToken = VToken.OrderSelect;        
             NavigationService.GoTo(msg);
         }
 

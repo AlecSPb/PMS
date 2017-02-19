@@ -46,7 +46,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VT.Navigation}));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.Navigation}));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -59,7 +59,7 @@ namespace PMSDesktopClient.ViewModel
             if (order!=null)
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken =VT.OrderCheckEdit;
+                msg.MsgToken =VToken.OrderCheckEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = order };
                 NavigationService.GoTo(msg);
             }
