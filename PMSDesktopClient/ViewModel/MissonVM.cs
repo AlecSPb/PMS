@@ -16,8 +16,14 @@ namespace PMSDesktopClient.ViewModel
     {
         public MissonVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.MissonRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionRefresh(MsgObject obj)
+        {
             SetPageParametersWhenConditionChange();
         }
 
@@ -28,7 +34,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeCommands()
         {
             Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Plan }));
 
 
             PageChanged = new RelayCommand(ActionPaging);
@@ -59,41 +65,15 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-        private void ActionAddNewPlan(DcOrder obj)
+        private void ActionAddNewPlan(DcOrder order)
         {
-            if (obj != null)
+            if (order != null)
             {
-                DcPlanVHP plan = new DcPlanVHP();
-                plan.ID = Guid.NewGuid();
-                plan.OrderID = obj.ID;
-                plan.PlanDate = DateTime.Now.Date;
-                plan.MoldType = "GQ";
-                plan.VHPDeviceCode = "A";
-                plan.Temperature = 0;
-                plan.Pressure = 0;
-                plan.Vaccum = 0;
-                plan.ProcessCode = "W1";
-                plan.PrePressure = 0;
-                plan.PreTemperature = 0;
-                plan.Quantity = 1;
-                plan.MoldDiameter = 230;
-                plan.Thickness = 5;
-                plan.CreateTime = DateTime.Now;
-                plan.State = "UnChecked";
-                plan.CalculationDensity = 5.75;
-                plan.GrainSize = "-200";
-                plan.RoomHumidity = 80;
-                plan.RoomTemperature = 23;
-                plan.KeepTempTime = 120;
-                plan.MillingRequirement = "常规要求";
-                plan.MachineRequirement = "常规要求";
-                plan.FillingRequirement = "常规要求";
-                plan.SpecialRequirement = "无";
-                plan.Creator = "xs.zhou";
 
+                var plan = EmptyModel.GetPlanVHP(order);
                 var msg = new MsgObject();
                 msg.MsgToken = VToken.PlanEdit;
-                msg.MsgModel = new ModelObject() { IsNew = false, Model = plan };
+                msg.MsgModel = new ModelObject() { IsNew = true, Model = plan };
                 NavigationService.GoTo(msg);
             }
         }

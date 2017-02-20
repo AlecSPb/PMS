@@ -16,9 +16,18 @@
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
     </UserControl.Resources>
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -37,24 +46,31 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Content="Order" Grid.Row="0" Grid.Column="0" Command="{Binding GoToOrder}"/>
-        <Button Content="Order Check" Grid.Row="0" Grid.Column="1" Command="{Binding GoToOrderCheck}"/>
-        <Button Content="Misson" Grid.Row="1" Grid.Column="0" Command="{Binding GoToMisson}"/>
-        <Button Content="Plan" Grid.Row="1" Grid.Column="1" Command="{Binding GoToPlan}"/>
-        
-        <Button Content="Material Need" Grid.Row="2" Grid.Column="0" Command="{Binding GoToMaterialNeed}"/>
-        <Button Content="Material Order" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialOrder}"/>
-        <Button Content="Material Inventory" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialInventory}"/>
-        
-        <Button Content="Milling Record" Grid.Row="3" Grid.Column="0"/>
-        <Button Content="VHP Record" Grid.Row="3" Grid.Column="1"/>
-        <Button Content="Blank Record" Grid.Row="3" Grid.Column="2"/>
-        <Button Content="Machine Record" Grid.Row="3" Grid.Column="3"/>
-        <Button Content="Test Result Record" Grid.Row="3" Grid.Column="4" Command="{Binding GoToTestResultRecord}"/>
-        <Button Content="Delivery Record" Grid.Row="4" Grid.Column="0" Command="{Binding GoToDeliveryRecord}"/>
-        
-        <Button Content="Bonding Record" Grid.Row="4" Grid.Column="1"/>
-        
-        <Button Content="Maintenance" Grid.Row="5" Grid.Column="0"/>
+        <TextBlock Text="Sales" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="Order" Grid.Row="0" Grid.Column="1" Command="{Binding GoToOrder}"/>
+        <Button Content="Order Check" Grid.Row="0" Grid.Column="2" Command="{Binding GoToOrderCheck}"/>
+
+        <TextBlock Text="Production" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="Misson" Grid.Row="1" Grid.Column="1" Command="{Binding GoToMisson}"/>
+        <Button Content="Plan" Grid.Row="1" Grid.Column="2" Command="{Binding GoToPlan}"/>
+
+        <TextBlock Text="Materials" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="Material Need" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialNeed}"/>
+        <Button Content="Material Order" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialOrder}"/>
+        <Button Content="Material Inventory" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}"/>
+
+        <TextBlock Text="Records" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="Milling Record" Grid.Row="3" Grid.Column="1"/>
+        <Button Content="VHP Record" Grid.Row="3" Grid.Column="2"/>
+        <Button Content="Blank Record" Grid.Row="3" Grid.Column="3"/>
+        <Button Content="Machine Record" Grid.Row="3" Grid.Column="4"/>
+        <Button Content="Test Result Record" Grid.Row="3" Grid.Column="5" Command="{Binding GoToTestResultRecord}"/>
+
+        <!--<TextBlock Text="Sales" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>-->
+        <Button Content="Delivery Record" Grid.Row="4" Grid.Column="1" Command="{Binding GoToDeliveryRecord}"/>
+        <Button Content="Bonding Record" Grid.Row="4" Grid.Column="2"/>
+
+        <TextBlock Text="Others" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="Maintenance" Grid.Row="5" Grid.Column="1"/>
     </Grid>
 </UserControl>

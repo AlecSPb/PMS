@@ -22,6 +22,7 @@ namespace PMSDesktopClient
         OrderCheckRefresh,
         OrderCheckEdit,
         Misson,
+        MissonRefresh,
         Plan,
         PlanEdit,
         PlanSelect,
@@ -49,6 +50,6 @@ namespace PMSDesktopClient
         MaterialNeedEdit,
         MaterialNeedSelect,
         MaterialInventory,
-        MaterialInventoryEdit
+        MaterialInventoryEdit,
     }
 }

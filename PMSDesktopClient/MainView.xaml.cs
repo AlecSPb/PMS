@@ -59,12 +59,12 @@ namespace PMSDesktopClient
                 //case VT.PlanSelect:
                 //    NavigateTo(new PlanSelectView());
                 //    break;
-                //case VT.Misson:
-                //    NavigateTo(new MissonView());
-                //    break;
-                //case VT.Plan:
-                //    NavigateTo(new PlanView());
-                //    break;
+                case VToken.Misson:
+                    NavigateTo(views.Misson);
+                    break;
+                case VToken.Plan:
+                    NavigateTo(views.Plan);
+                    break;
                 //case VT.RecordVHP:
                 //    NavigateTo(new RecordVHPView());
                 //    break;
@@ -101,12 +101,12 @@ namespace PMSDesktopClient
                     view2.DataContext = vm2;
                     NavigateTo(view2);
                     break;
-                //case "PlanEditView":
-                //    var planEditView = new PlanEditView();
-                //    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP, obj.IsAdd);
-                //    planEditView.DataContext = planEditVM;
-                //    NavigateTo(planEditView);
-                //    break;
+                case VToken.PlanEdit:
+                    var planEditView = new PlanEditView();
+                    var planEditVM = new PlanEditVM(msg.MsgModel);
+                    planEditView.DataContext = planEditVM;
+                    NavigateTo(planEditView);
+                    break;
                 //case "MaterialNeedEditView":
                 //    var materialNeedEditView = new MaterialNeedEditView();
                 //    var materialNeedEditVM = new MaterialNeedEditVM(obj);

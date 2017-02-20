@@ -55,6 +55,34 @@ namespace PMSDesktopClient
                 return orderCheck;
             }
         }
+
+        private MissonView misson;
+
+        public MissonView Misson
+        {
+            get
+            {
+                if (misson == null)
+                {
+                    misson = new MissonView();
+                }
+                return misson;
+            }
+        }
+
+        private PlanView plan;
+        public PlanView Plan
+        {
+            get
+            {
+                if (plan == null)
+                {
+                    plan = new PlanView();
+                }
+                return plan;
+            }
+        }
+
         #endregion
 
 

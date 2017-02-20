@@ -69,5 +69,38 @@ namespace PMSDesktopClient
 
             return dcOrder;
         }
+
+
+        public static DcPlanVHP GetPlanVHP(DcOrder order)
+        {
+            DcPlanVHP plan = new DcPlanVHP();
+            plan.ID = Guid.NewGuid();
+            plan.OrderID = order.ID;
+            plan.PlanDate = DateTime.Now.Date;
+            plan.MoldType = "GQ";
+            plan.VHPDeviceCode = "A";
+            plan.Temperature = 0;
+            plan.Pressure = 0;
+            plan.Vaccum = 0;
+            plan.ProcessCode = "W1";
+            plan.PrePressure = 0;
+            plan.PreTemperature = 0;
+            plan.Quantity = 1;
+            plan.MoldDiameter = 230;
+            plan.Thickness = 5;
+            plan.CreateTime = DateTime.Now;
+            plan.State = "UnChecked";
+            plan.CalculationDensity = 5.75;
+            plan.GrainSize = "-200";
+            plan.RoomHumidity = 80;
+            plan.RoomTemperature = 23;
+            plan.KeepTempTime = 120;
+            plan.MillingRequirement = "常规要求";
+            plan.MachineRequirement = "常规要求";
+            plan.FillingRequirement = "常规要求";
+            plan.SpecialRequirement = "无";
+            plan.Creator = "xs.zhou";
+            return plan;
+        }
     }
 }
