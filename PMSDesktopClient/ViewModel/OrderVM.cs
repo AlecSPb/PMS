@@ -17,13 +17,13 @@ namespace PMSDesktopClient.ViewModel
     {
         public OrderVM()
         {
-            Messenger.Default.Register<Object>(this, "RefreshOrder", ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.OrderRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionRefresh(Object obj)
+        private void ActionRefresh(MsgObject obj)
         {
             SetPageParametersWhenConditionChange();
         }
@@ -63,75 +63,33 @@ namespace PMSDesktopClient.ViewModel
         }
 
 
-        private void ActionDuplicate(DcOrder obj)
+        private void ActionDuplicate(DcOrder order)
         {
-            if (obj != null)
+            if (order != null)
             {
-                obj.PlanVHPs = null;
-                obj.ID = Guid.NewGuid();
-                obj.CreateTime = DateTime.Now;
-                obj.State = "UnChecked";
-                obj.Priority = "Normal";
-                obj.DeadLine = DateTime.Now.AddDays(30);
+                order.PlanVHPs = null;
+                order.ID = Guid.NewGuid();
+                order.CreateTime = DateTime.Now;
+                order.State = "UnChecked";
+                order.Priority = "Normal";
+                order.DeadLine = DateTime.Now.AddDays(30);
 
 
                 var service = new OrderServiceClient();
-                service.AddOrder(obj);
+                service.AddOrder(order);
                 SetPageParametersWhenConditionChange();
             }
         }
 
         private void ActionAdd()
         {
-            var dcOrder = new DcOrder();
-            dcOrder.ID = Guid.NewGuid();
-            dcOrder.CustomerName = "Midsummer";
-            dcOrder.PO = DateTime.Now.ToString("yyMMdd");
-            dcOrder.PMIWorkingNumber = DateTime.Now.ToString("yyMMdd");
-            dcOrder.ProductType = "Target";
-            dcOrder.Dimension = "230mm OD x  4mm";
-            dcOrder.DimensionDetails = "None";
-            dcOrder.SampleNeed = "无需样品";
-            dcOrder.MinimumAcceptDefect = "通常";
-            dcOrder.Reviewer = "xs.zhou";
-            dcOrder.PolicyContent = "";
-            dcOrder.PolicyType = "VHP";
-            dcOrder.PolicyMaker = "xs.zhou";
-
-            dcOrder.Purity = "99.99";
-            dcOrder.DeadLine = DateTime.Now.AddDays(30);
-            dcOrder.ReviewDate = DateTime.Now;
-            dcOrder.PolicyMakeDate = DateTime.Now;
-            dcOrder.State = "UnChecked";
-            dcOrder.Priority = "Normal";
-            dcOrder.CompositionOriginal = "CuGaSe2";
-            dcOrder.CompositionStandard = "Cu25Ga25Se50";
-            dcOrder.CompositoinAbbr = "CuGaSe";
-            dcOrder.Creator = "xs.zhou";
-            dcOrder.CreateTime = DateTime.Now;
-            dcOrder.ProductType = "Target";
-            dcOrder.ReviewPassed = true;
-            dcOrder.Quantity = 1;
-            dcOrder.QuantityUnit = "片";
+            var dcOrder = EmptyModel.GetOrder();
 
             MsgObject msg = new MsgObject();
             msg.MsgToken = VToken.OrderEdit;
             msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = dcOrder };
             NavigationService.GoTo(msg);
 
-        }
-
-        private void ActionDelete(DcOrder obj)
-        {
-            if (obj != null)
-            {
-                if (MessageBox.Show("you want to delete it?", "warning", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                {
-                    var service = new OrderServiceClient();
-                    service.DeleteOrder(obj.ID);
-                    SetPageParametersWhenConditionChange();
-                }
-            }
         }
 
         private bool CanSearch()

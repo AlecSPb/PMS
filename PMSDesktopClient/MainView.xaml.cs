@@ -35,8 +35,7 @@ namespace PMSDesktopClient
             InitializeComponent();
             views = new ViewInstance();
 
-
-            Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate,ActionNavigate);
+            Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigate);
             NavigateTo(views.Navigation);
         }
 
@@ -90,12 +89,12 @@ namespace PMSDesktopClient
 
 
 
-                //case "OrderEditView":
-                //    var view = new OrderEditView();
-                //    var vm = new OrderEditVM(obj.ModelObject as DcOrder, obj.IsAdd);
-                //    view.DataContext = vm;
-                //    NavigateTo(view);
-                //    break;
+                case VToken.OrderEdit:
+                    var view = new OrderEditView();
+                    var vm = new OrderEditVM(msg.MsgModel);
+                    view.DataContext = vm;
+                    NavigateTo(view);
+                    break;
                 //case "OrderCheckEditView":
                 //    var view2 = new OrderCheckEditView();
                 //    var vm2 = new OrderCheckEditVM(obj.ModelObject as DcOrder, obj.IsAdd);
@@ -161,7 +160,7 @@ namespace PMSDesktopClient
 
         private void NavigateTo(UserControl view)
         {
-            if (view!=null)
+            if (view != null)
             {
                 mainArea.Content = view;
             }

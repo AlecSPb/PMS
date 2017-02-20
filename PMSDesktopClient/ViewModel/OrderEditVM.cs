@@ -17,10 +17,12 @@ namespace PMSDesktopClient.ViewModel
         {
             InitializeProperties();
         }
-        public OrderEditVM(DcOrder order,bool isAdd)
+
+        public OrderEditVM(ModelObject model)
         {
-            CurrentOrder = order;
-            isNew = isAdd;
+            CurrentOrder = model.Model as DcOrder;
+            isNew = model.IsNew;
+
             InitializeCommands();
             InitializeProperties();
         }
@@ -34,28 +36,23 @@ namespace PMSDesktopClient.ViewModel
         public void InitializeProperties()
         {
             OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.OrderState));
+            var states = BDInstance.OrderStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
-
             OrderPriorities = new ObservableCollection<string>();
-            var priorities = Enum.GetNames(typeof(PMSCommon.OrderPriority));
+            var priorities = BDInstance.OrderPriorities;
             priorities.ToList().ForEach(p => OrderPriorities.Add(p));
 
-
             PolicyTypes = new ObservableCollection<string>();
-            var policyTypes = Enum.GetNames(typeof(PMSCommon.OrderPolicyType));
+            var policyTypes = BDInstance.OrderPolicyTypes;
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
 
-
             CustomerNames = new ObservableCollection<string>();
-            var service = new CustomerServiceClient();
-            var customerNames = service.GetCustomer();
+            var customerNames = BDInstance.CustomerNames;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
 
-
             ProductTypes = new ObservableCollection<string>();
-            var productTypes = Enum.GetNames(typeof(PMSCommon.OrderProductType));
+            var productTypes = BDInstance.ProductTypes;
             productTypes.ToList().ForEach(p => ProductTypes.Add(p));
 
         }
@@ -83,7 +80,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateOrder(CurrentOrder);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
-            Messenger.Default.Send<Object>("", "RefreshOrder");
+            Messenger.Default.Send<MsgObject>(null, VToken.OrderRefresh);
         }
 
         private bool isNew;
@@ -103,13 +100,9 @@ namespace PMSDesktopClient.ViewModel
 
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }
-
         public ObservableCollection<string> PolicyTypes { get; set; }
-
         public ObservableCollection<string> CustomerNames { get; set; }
-
         public ObservableCollection<string> ProductTypes { get; set; }
-
         public RelayCommand Save { get; set; }
         public RelayCommand GiveUp { get; set; }
 

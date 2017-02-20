@@ -81,7 +81,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBTransferFromOldToNew", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationDAL", "NotificationDAL\NotificationDAL.csproj", "{B46364F6-247C-44D5-8A20-09724A3482B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseBarTender", "UseBarTender\UseBarTender\UseBarTender.csproj", "{A949BF74-EDEE-4BA3-B853-9AAB2B811279}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseBarTender", "UseBarTender\UseBarTender.csproj", "{A949BF74-EDEE-4BA3-B853-9AAB2B811279}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

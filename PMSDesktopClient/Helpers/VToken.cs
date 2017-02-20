@@ -16,6 +16,7 @@ namespace PMSDesktopClient
         LogIn,
         Order,
         OrderEdit,
+        OrderRefresh,
         OrderSelect,
         OrderCheck,
         OrderCheckEdit,

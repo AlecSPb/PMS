@@ -9,7 +9,7 @@ namespace PMSDesktopClient
 {
     public static class EmptyModel
     {
-        public static  DcMaterialNeed EmptyMaterialNeed
+        public static DcMaterialNeed EmptyMaterialNeed
         {
             get
             {
@@ -17,8 +17,8 @@ namespace PMSDesktopClient
 
                 return empty;
             }
-        }     
-        
+        }
+
         public static DcMaterialNeed GetMaterialNeedByOrder(DcOrder order)
         {
             var empty = new DcMaterialNeed();
@@ -32,6 +32,42 @@ namespace PMSDesktopClient
             empty.Composition = order.CompositionStandard;
             return empty;
         }
-          
+
+
+        public static DcOrder GetOrder()
+        {
+            var dcOrder = new DcOrder();
+            dcOrder.ID = Guid.NewGuid();
+            dcOrder.CustomerName = "Midsummer";
+            dcOrder.PO = DateTime.Now.ToString("yyMMdd");
+            dcOrder.PMIWorkingNumber = DateTime.Now.ToString("yyMMdd");
+            dcOrder.ProductType = "Target";
+            dcOrder.Dimension = "230mm OD x  4mm";
+            dcOrder.DimensionDetails = "None";
+            dcOrder.SampleNeed = "无需样品";
+            dcOrder.MinimumAcceptDefect = "通常";
+            dcOrder.Reviewer = "xs.zhou";
+            dcOrder.PolicyContent = "";
+            dcOrder.PolicyType = "VHP";
+            dcOrder.PolicyMaker = "xs.zhou";
+
+            dcOrder.Purity = "99.99";
+            dcOrder.DeadLine = DateTime.Now.AddDays(30);
+            dcOrder.ReviewDate = DateTime.Now;
+            dcOrder.PolicyMakeDate = DateTime.Now;
+            dcOrder.State = "UnChecked";
+            dcOrder.Priority = "Normal";
+            dcOrder.CompositionOriginal = "CuGaSe2";
+            dcOrder.CompositionStandard = "Cu25Ga25Se50";
+            dcOrder.CompositoinAbbr = "CuGaSe";
+            dcOrder.Creator = "xs.zhou";
+            dcOrder.CreateTime = DateTime.Now;
+            dcOrder.ProductType = "Target";
+            dcOrder.ReviewPassed = true;
+            dcOrder.Quantity = 1;
+            dcOrder.QuantityUnit = "片";
+
+            return dcOrder;
+        }
     }
 }
