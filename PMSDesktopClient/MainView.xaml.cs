@@ -33,15 +33,18 @@ namespace PMSDesktopClient
         public MainView()
         {
             InitializeComponent();
-            views = new ViewInstance();
+            views = new ViewLocator();
+            viewmodels = new ViewModel.ViewModelLocator();
+
+
 
             Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigate);
             NavigateTo(views.Navigation);
         }
 
 
-        private ViewInstance views;
-
+        private ViewLocator views;//TODO:考虑将viewlocator化？
+        private ViewModelLocator viewmodels;
 
         private void ActionNavigate(MsgObject msg)
         {
@@ -55,9 +58,6 @@ namespace PMSDesktopClient
                     break;
                 case VToken.OrderCheck:
                     NavigateTo(views.OrderCheck);
-                    break;
-                case VToken.PlanSelect:
-                    NavigateTo(new PlanSelectView());
                     break;
                 case VToken.Misson:
                     NavigateTo(views.Misson);
@@ -83,9 +83,16 @@ namespace PMSDesktopClient
                     NavigateTo(viewRecordTestResultSelect);
                     break;
 
+                case VToken.PlanSelectForTestResult:
+                    var planselect1 = views.PlanSelect;
+                    planselect1.DataContext = viewmodels.PlanSelectForRecordTestResult;
+                    NavigateTo(planselect1);
+                    break;
+
+
 
                 case VToken.OrderEdit:
-                    var view = new OrderEditView();
+                    var view = views.OrderEdit;
                     var vm = new OrderEditVM(msg.MsgModel);
                     view.DataContext = vm;
                     NavigateTo(view);

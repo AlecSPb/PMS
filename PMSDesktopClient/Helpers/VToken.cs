@@ -25,7 +25,7 @@ namespace PMSDesktopClient
         MissonRefresh,
         Plan,
         PlanEdit,
-        PlanSelect,
+        PlanSelectForTestResult,
         RecordTestResult,
         RecordTestResultEdit,
         RecordTestResultSelect,

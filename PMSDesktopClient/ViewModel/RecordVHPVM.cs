@@ -100,5 +100,13 @@ namespace PMSDesktopClient.ViewModel
 
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
         #endregion
+
+        #region Commands
+        public RelayCommand GoToNavigation { get; set; }
+        public RelayCommand Add { get; set; }
+        public RelayCommand Edit { get; set; }
+        public RelayCommand AddItem { get; set; }
+        public RelayCommand EditItem { get; set; }
+        #endregion
     }
 }

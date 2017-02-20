@@ -56,7 +56,7 @@ namespace PMSDesktopClient.ViewModel
             SimpleIoc.Default.Register<RecordTestResultVM>();
             SimpleIoc.Default.Register<RecordDeliveryVM>();
 
-            SimpleIoc.Default.Register<PlanSelectVM>();
+            SimpleIoc.Default.Register<PlanSelectForRecordTestResultVM>();
 
 
         }
@@ -105,9 +105,9 @@ namespace PMSDesktopClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
         }
-        public PlanSelectVM PlanSelect
+        public PlanSelectForRecordTestResultVM PlanSelectForRecordTestResult
         {
-            get { return SimpleIoc.Default.GetInstance<PlanSelectVM>(); }
+            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestResultVM>(); }
         }
         #endregion
 

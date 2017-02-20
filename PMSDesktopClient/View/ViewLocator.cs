@@ -9,9 +9,9 @@ using PMSDesktopClient.ViewModel;
 
 namespace PMSDesktopClient
 {
-    public class ViewInstance
+    public class ViewLocator
     {
-        public ViewInstance()
+        public ViewLocator()
         {
 
         }
@@ -43,7 +43,18 @@ namespace PMSDesktopClient
                 return order;
             }
         }
-
+        private OrderEditView orderEdit;
+        public OrderEditView OrderEdit
+        {
+            get
+            {
+                if (orderEdit == null)
+                {
+                    orderEdit = new OrderEditView();
+                }
+                return orderEdit;
+            }
+        }
         private OrderCheckView orderCheck;
         public OrderCheckView OrderCheck
         {

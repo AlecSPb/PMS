@@ -150,7 +150,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\ViewInstance.cs" />
+    <Compile Include="View\RecordBlankEditView.xaml.cs">
+      <DependentUpon>RecordBlankEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordBlankView.xaml.cs">
+      <DependentUpon>RecordBlankView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordBondingEditView.xaml.cs">
+      <DependentUpon>RecordBondingEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordBondingView.xaml.cs">
+      <DependentUpon>RecordBondingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordMachineView.xaml.cs">
+      <DependentUpon>RecordMachineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordMillingEditView.xaml.cs">
+      <DependentUpon>RecordMillingEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordMillingView.xaml.cs">
+      <DependentUpon>RecordMillingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewLocator.cs" />
     <Compile Include="ViewModel\DeliveryVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
@@ -167,7 +188,13 @@
     <Compile Include="ViewModel\OrderCheckVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
-    <Compile Include="ViewModel\PlanSelectVM.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordBlankVM.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordBondingVM.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordMachineVM.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordMillingVM.cs" />
+    <Compile Include="ViewModel\PlanSelectBase.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordVHPVM.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordTestResultVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
@@ -175,6 +202,8 @@
     <Compile Include="ViewModel\RecordTestResultEditVM.cs" />
     <Compile Include="ViewModel\RecordTestResultSelectVM.cs" />
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
+    <Compile Include="ViewModel\RecordVHPEditVM.cs" />
+    <Compile Include="ViewModel\RecordVHPItemEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MaterialInventoryView.xaml.cs">
@@ -193,12 +222,6 @@
       <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\VToken.cs" />
-    <Compile Include="View\BondingView.xaml.cs">
-      <DependentUpon>BondingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryView.xaml.cs">
-      <DependentUpon>DeliveryView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
@@ -285,14 +308,6 @@
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\BondingView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DeliveryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\LogInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -304,6 +319,22 @@
     <Page Include="View\MaterialNeedSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordBlankEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordBlankView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordBondingEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordBondingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RecordDeliveryItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -364,6 +395,18 @@
     <Page Include="View\PlanSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordMachineView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordMillingEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordMillingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RecordTestResultEditView.xaml">
       <SubType>Designer</SubType>

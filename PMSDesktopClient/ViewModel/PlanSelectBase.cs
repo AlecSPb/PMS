@@ -11,45 +11,13 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class PlanSelectVM : ViewModelBase
+    public class PlanSelectBase : ViewModelBase
     {
-        private DcRecordTestResult testresult;
-        public PlanSelectVM()
+        public PlanSelectBase()
         {
-            testresult = new PMSMainService.DcRecordTestResult();
-            testresult.ID = Guid.NewGuid();
-            testresult.CreateTime = DateTime.Now;
-            testresult.Creator = (App.Current as App).CurrentUser.UserName;
-            testresult.TestType = PMSCommon.TestType.Product.ToString();
-            testresult.State = "Checked";
-            testresult.Weight = "0";
-            testresult.Remark = "";
-            testresult.Resistance = "";
-            testresult.Sample = "";
-            testresult.CompositionXRF = "";
-            testresult.Density = "0";
-
-
             IntitializeCommands();
             IntitializeProperties();
             SetPageParametersWhenConditionChange();
-        }
-
-
-        private void ActionSelect(DcMissonWithPlan obj)
-        {
-            testresult.Composition = obj.CompositionStandard;
-            testresult.CompositionAbbr = obj.CompositoinAbbr;
-            testresult.Customer = obj.CustomerName;
-            testresult.Dimension = obj.Dimension;
-            testresult.ProductID = obj.PlanDate.ToString("yyMMdd") + "-" + obj.VHPDeviceCode + "-" + 1;
-            testresult.PO = obj.PO;
-            testresult.DimensionActual = testresult.Dimension;
-
-            MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.RecordTestResultEdit;
-            msg.MsgModel = new ModelObject() { IsNew = true, Model = testresult };
-            NavigationService.GoTo(msg);
         }
 
         private void IntitializeProperties()
@@ -60,9 +28,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.RecordTestResult}));
             PageChanged = new RelayCommand(ActionPaging);
-            Select = new RelayCommand<PMSMainService.DcMissonWithPlan>(ActionSelect);
         }
 
         private void SetPageParametersWhenConditionChange()

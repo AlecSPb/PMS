@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// BondingView.xaml 的交互逻辑
+    /// RecordBlankView.xaml 的交互逻辑
     /// </summary>
-    public partial class BondingView : UserControl
+    public partial class RecordBlankView : UserControl
     {
-        public BondingView()
+        public RecordBlankView()
         {
             InitializeComponent();
         }

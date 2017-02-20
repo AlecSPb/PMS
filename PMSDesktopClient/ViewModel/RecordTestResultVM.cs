@@ -73,7 +73,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelect });
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelectForTestResult });
         }
 
         private void InitializeProperties()
