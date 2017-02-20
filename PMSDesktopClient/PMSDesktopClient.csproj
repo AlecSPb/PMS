@@ -421,6 +421,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="DocTemplate\10070.btw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="DocTemplate\COA.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -607,6 +610,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\funnyfacebig.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="BarTender">
+      <Guid>{D58562C1-E51B-11CF-8941-00A024A9083F}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,6 +8,9 @@ using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using PMSDesktopClient.PMSMainService;
 using GalaSoft.MvvmLight.Messaging;
+using bt = BarTender;
+
+
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -47,9 +50,47 @@ namespace PMSDesktopClient.ViewModel
             EditItem = new RelayCommand<PMSMainService.DcRecordDeliveryItem>(ActionEditItem);
         }
 
+        private bt.Application btApp;
+        private bt.Format btnFormat;
         private void ActionDoc(DcRecordDelivery obj)
         {
-            throw new NotImplementedException();
+
+            string title = obj.Country;
+
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in obj.DeliveryItems)
+            {
+                sb.Append(item.Composition);
+                sb.Append("-");
+                sb.AppendLine(item.ProductID);
+            }
+
+            string output = sb.ToString();
+
+            try
+            {
+                btApp = new bt.Application();
+                string templateAddress = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "10070.btw");
+                if (!System.IO.File.Exists(templateAddress))
+                {
+                    return;
+                }
+                btnFormat = btApp.Formats.Open(templateAddress, false, "");
+                btnFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+                btnFormat.PrintSetup.NumberSerializedLabels = 1;
+
+                btnFormat.SetNamedSubStringValue("Title", title);
+                btnFormat.SetNamedSubStringValue("Content", output);
+
+                btnFormat.PrintOut(true, true);
+                btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
+                btApp.Quit(bt.BtSaveOptions.btSaveChanges);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void ActionEditItem(DcRecordDeliveryItem obj)
