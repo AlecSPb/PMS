@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -14,11 +15,21 @@ namespace PMSDesktopClient.ViewModel
     {
         public RecordTestResultVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.RecordTestResultRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
         private void InitializeCommands()
         {
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
@@ -62,7 +73,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken=VToken.OrderSelect});
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelect });
         }
 
         private void InitializeProperties()

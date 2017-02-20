@@ -7,10 +7,8 @@
               xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000">
-    <UserControl.DataContext>
-        <vm:PlanVM/>
-    </UserControl.DataContext>
+             d:DesignHeight="600" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource Locator},Path=PlanSelect}">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

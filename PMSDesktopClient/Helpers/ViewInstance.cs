@@ -109,18 +109,6 @@ namespace PMSDesktopClient
             }
         }
 
-        private RecordTestResultView recordTestResult;
-        public RecordTestResultView RecordTestResult
-        {
-            get
-            {
-                if (recordTestResult == null)
-                {
-                    recordTestResult = new RecordTestResultView();
-                }
-                return recordTestResult;
-            }
-        }
 
         private MaterialNeedEditView materialNeedEdit;
         public MaterialNeedEditView MaterialNeedEdit
@@ -174,7 +162,44 @@ namespace PMSDesktopClient
             }
         }
 
+        private PlanSelectView planSelect;
 
+        public PlanSelectView PlanSelect
+        {
+            get
+            {
+                if (planSelect == null)
+                {
+                    planSelect = new PlanSelectView();
+                }
+                return planSelect;
+            }
+        }
+        private RecordTestResultView recordTestResult;
+        public RecordTestResultView RecordTestResult
+        {
+            get
+            {
+                if (recordTestResult == null)
+                {
+                    recordTestResult = new RecordTestResultView();
+                }
+                return recordTestResult;
+            }
+        }
+
+        private RecordTestResultEditView recordTestResultEdit;
+        public RecordTestResultEditView RecordTestResultEdit
+        {
+            get
+            {
+                if (recordTestResultEdit == null)
+                {
+                    recordTestResultEdit = new RecordTestResultEditView();
+                }
+                return recordTestResultEdit;
+            }
+        }
 
 
         #endregion

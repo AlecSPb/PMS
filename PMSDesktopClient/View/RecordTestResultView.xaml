@@ -7,10 +7,8 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000">
-    <UserControl.DataContext>
-        <vm:RecordTestResultVM/>
-    </UserControl.DataContext>
+             d:DesignHeight="800" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource Locator},Path=RecordTestResult}">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

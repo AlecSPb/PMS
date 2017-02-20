@@ -56,24 +56,24 @@ namespace PMSDesktopClient
                 case VToken.OrderCheck:
                     NavigateTo(views.OrderCheck);
                     break;
-                //case VT.PlanSelect:
-                //    NavigateTo(new PlanSelectView());
-                //    break;
+                case VToken.PlanSelect:
+                    NavigateTo(new PlanSelectView());
+                    break;
                 case VToken.Misson:
                     NavigateTo(views.Misson);
                     break;
                 case VToken.Plan:
                     NavigateTo(views.Plan);
                     break;
-                //case VT.RecordVHP:
-                //    NavigateTo(new RecordVHPView());
+                //case VToken.RecordVHP:
+                //    NavigateTo(views.rec);
                 //    break;
-                //case VT.RecordTestResult:
-                //    NavigateTo(new RecordTestResultView());
-                //    break;
-                //case VT.RecordDelivery:
-                //    NavigateTo(new DeliveryView());
-                //    break;
+                case VToken.RecordTestResult:
+                    NavigateTo(views.RecordTestResult);
+                    break;
+                case VToken.RecordDelivery:
+                    //NavigateTo(new DeliveryView());
+                    break;
                 case VToken.MaterialNeed:
                     NavigateTo(views.MaterialNeed);
                     break;
