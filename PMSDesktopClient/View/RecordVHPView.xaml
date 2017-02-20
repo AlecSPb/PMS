@@ -8,9 +8,6 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000">
-    <UserControl.DataContext>
-        <vm:RecordVHPVM/>
-    </UserControl.DataContext>
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,13 +16,17 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strRecordVHPPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToMain}"/>
-            <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPEdit}"/>
+            <Button Content="{StaticResource strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToNavigation}"/>
+            <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <TextBlock Style="{StaticResource TextBlockBasic}" Text="VHP ID"/>
             <TextBox Style="{StaticResource TextBoxBasic}" Text="{Binding SearchVHPID}" MinWidth="200"/>
             <Button Content="{StaticResource  strSearch}" Style="{StaticResource ButtonBasic}"/>
             <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}"/>
-            <Button Content="{StaticResource strQuick}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToRecordVHPQuickEdit}"/>
+            <!--图例-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="Today" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
+            </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
@@ -36,10 +37,17 @@
             <DataGrid x:Name="dg" SelectedIndex="0"
                 Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Create Time" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding CreateTime}"/>
-                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding Creator}"/>
+                    <DataGridTemplateColumn Header="Edit">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"/>
+                                    <Button Content="Add Item" Style="{StaticResource ButtonDGBasic}"/>
+                                    <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="VHPID" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding VHPID}"/>
                     <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
@@ -62,6 +70,10 @@
                                         Binding="{Binding KeepTempTime}"/>
                     <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Remark}"/>
+                    <DataGridTextColumn Header="Create Time" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding CreateTime}"/>
+                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"

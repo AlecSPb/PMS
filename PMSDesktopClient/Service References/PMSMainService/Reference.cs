@@ -2734,10 +2734,10 @@ namespace PMSDesktopClient.PMSMainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeliveryIDField;
+        private PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItemsField;
+        private string DeliveryNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DeliveryNumberField;
@@ -2826,19 +2826,6 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DeliveryID {
-            get {
-                return this.DeliveryIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeliveryIDField, value) != true)) {
-                    this.DeliveryIDField = value;
-                    this.RaisePropertyChanged("DeliveryID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] DeliveryItems {
             get {
                 return this.DeliveryItemsField;
@@ -2847,6 +2834,19 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((object.ReferenceEquals(this.DeliveryItemsField, value) != true)) {
                     this.DeliveryItemsField = value;
                     this.RaisePropertyChanged("DeliveryItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeliveryName {
+            get {
+                return this.DeliveryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryNameField, value) != true)) {
+                    this.DeliveryNameField = value;
+                    this.RaisePropertyChanged("DeliveryName");
                 }
             }
         }
@@ -2975,10 +2975,16 @@ namespace PMSDesktopClient.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid DeliveryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DetailRecordField;
@@ -3018,6 +3024,19 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Abbr {
+            get {
+                return this.AbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AbbrField, value) != true)) {
+                    this.AbbrField = value;
+                    this.RaisePropertyChanged("Abbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Composition {
             get {
                 return this.CompositionField;
@@ -3039,6 +3058,19 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
                     this.CustomerField = value;
                     this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid DeliveryID {
+            get {
+                return this.DeliveryIDField;
+            }
+            set {
+                if ((this.DeliveryIDField.Equals(value) != true)) {
+                    this.DeliveryIDField = value;
+                    this.RaisePropertyChanged("DeliveryID");
                 }
             }
         }

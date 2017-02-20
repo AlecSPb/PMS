@@ -8,23 +8,27 @@ namespace PMSDesktopClient
 {
     /// <summary>
     /// 导航token
+    /// 用来表示要显示的视图的token
     /// </summary>
-    public enum VT
+    public enum VToken
     {
         Navigation,
         LogIn,
         Order,
         OrderEdit,
+        OrderRefresh,
         OrderSelect,
         OrderCheck,
+        OrderCheckRefresh,
         OrderCheckEdit,
         Misson,
+        MissonRefresh,
         Plan,
         PlanEdit,
-        PlanSelect,
+        PlanSelectForTestResult,
         RecordTestResult,
         RecordTestResultEdit,
-        RecordTestSelect,
+        RecordTestResultSelect,
         RecordDelivery,
         RecordDeliveryEdit,
         RecordDeliveryItem,
@@ -44,6 +48,12 @@ namespace PMSDesktopClient
         MaterialOrderItemEdit,
         MaterialNeed,
         MaterialNeedEdit,
-        MaterialNeedSelect
+        MaterialNeedSelect,
+        MaterialInventory,
+        MaterialInventoryEdit,
+        MaterialNeedRefresh,
+        MaterialOrderRefresh,
+        RecordTestResultRefresh,
+        RecordDeliveryRefresh
     }
 }

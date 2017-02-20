@@ -20,11 +20,21 @@ namespace PMSDesktopClient.ViewModel
     {
         public MaterialOrderVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.MaterialOrderRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
         private void InitializeProperties()
         {
             SearchOrderPO = "";
@@ -33,7 +43,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -52,9 +62,9 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
-                msg.Model = new ModelObject() { IsNew = false, Model = obj };
-                NavigationService.GoToWithParameter(msg);
+                msg.MsgToken = VToken.MaterialOrderItemEdit;
+                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -62,13 +72,10 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj != null)
             {
-
-
-
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VT.MaterialNeedSelect.ToString();
-                msg.Model = new ModelObject() { Model = obj };
-                NavigationService.GoToWithParameter(msg);
+                msg.MsgToken = VToken.MaterialNeedSelect;
+                msg.MsgModel = new ModelObject() { Model = obj };
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -77,35 +84,20 @@ namespace PMSDesktopClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new PMSDesktopClient.MsgObject();
-                msg.GoToToken = VNCollection.MaterialOrderEdit;
-                msg.IsAdd = false;
-                msg.ModelObject = obj;
-                NavigationService.GoToWithParameter(msg);
+                msg.MsgToken = VToken.MaterialOrderEdit;
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
+                NavigationService.GoTo(msg);
             }
         }
 
         private void ActionAdd()
         {
-            var model = new DcMaterialOrder();
-            model.ID = Guid.NewGuid();
-            model.CreateTime = DateTime.Now;
-            model.State = PMSCommon.OrderState.UnChecked.ToString();
-            model.Creator = (App.Current as App).CurrentUser.UserName;
-            model.Supplier = "Sanjie";
-            model.SupplierAbbr = "SJ";
-            model.SupplierEmail = "sj_materials@163.com";
-            model.SupplierReceiver = "Mr.Wang";
-            model.SupplierAddress = "Chengdu,Sichuan CHINA";
-            model.ShipFee = 0;
-            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
-            model.Remark = "";
-            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
 
+            var model = EmptyModel.GetMaterialOrder();
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.GoToToken = VNCollection.MaterialOrderEdit;
-            msg.IsAdd = true;
-            msg.ModelObject = model;
-            NavigationService.GoToWithParameter(msg);
+            msg.MsgToken = VToken.MaterialOrderEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
+            NavigationService.GoTo(msg);
         }
 
         private void ActionGenerateDoc(DcMaterialOrder args)

@@ -1,11 +1,28 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--AppName-->
     <sys:String x:Key="strAppName">Production Management System Desktop Edtion</sys:String>
     <sys:String x:Key="strWelcome">Welcome</sys:String>
-    <!--PageOrderList-->
+    
+    <!--PageName-->
     <sys:String x:Key="strPageOrderList">Order List</sys:String>
-    <!--menu items-->
+    <sys:String x:Key="strRecordVHPPage">VHP Record Collection</sys:String>
+    <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
+    <sys:String x:Key="strRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
+
+    <sys:String x:Key="strProductPage">Record Test Results</sys:String>
+    <sys:String x:Key="strProductEditPage">Record Test Result Edit</sys:String>
+    <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
+
+    <sys:String x:Key="strOrderPage">Order Collection</sys:String>
+    <sys:String x:Key="strMissonPage">Misson Collection</sys:String>
+    <sys:String x:Key="strPlanPage">Plan Collection</sys:String>
+
+    <sys:String x:Key="strVHPID">VHP ID</sys:String>
+    <sys:String x:Key="strProductReport">Report</sys:String>
+    
+    <!--NavigationButton-->
     <sys:String x:Key="strStart">Start</sys:String>
     <sys:String x:Key="strOrder">Order</sys:String>
     <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
@@ -28,7 +45,7 @@
     <sys:String x:Key="strHelp">Help</sys:String>
     <sys:String x:Key="strAbout">About</sys:String>
     <sys:String x:Key="strInstruct">Instruct</sys:String>
-    <!--ButtonItem-->
+
     <sys:String x:Key="strLogin">Login In</sys:String>
     <sys:String x:Key="strBack">Back</sys:String>
     <sys:String x:Key="strNavigation">Navigation</sys:String>
@@ -42,19 +59,4 @@
     <sys:String x:Key="strOutput">Output</sys:String>
     <sys:String x:Key="strPrint">Print</sys:String>
     
-    <!--PageTitle-->
-    <sys:String x:Key="strRecordVHPPage">VHP Record Collection</sys:String>
-    <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
-    <sys:String x:Key="strRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
-
-    <sys:String x:Key="strProductPage">Record Test Results</sys:String>
-    <sys:String x:Key="strProductEditPage">Record Test Result Edit</sys:String>
-    <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
-
-    <sys:String x:Key="strOrderPage">Order Collection</sys:String>
-    <sys:String x:Key="strMissonPage">Misson Collection</sys:String>
-    <sys:String x:Key="strPlanPage">Plan Collection</sys:String>
-
-    <sys:String x:Key="strVHPID">VHP ID</sys:String>
-    <sys:String x:Key="strProductReport">Report</sys:String>
 </ResourceDictionary>

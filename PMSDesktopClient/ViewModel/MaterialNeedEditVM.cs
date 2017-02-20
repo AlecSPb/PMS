@@ -14,10 +14,10 @@ namespace PMSDesktopClient.ViewModel
     public class MaterialNeedEditVM : ViewModelBase
     {
         private bool isNew;
-        public MaterialNeedEditVM(MsgObject msg)
+        public MaterialNeedEditVM(ModelObject msg)
         {
-            isNew = msg.IsAdd;
-            CurrentMaterialNeed = msg.ModelObject as DcMaterialNeed;
+            isNew = msg.IsNew;
+            CurrentMaterialNeed = msg.Model as DcMaterialNeed;
             InitializeProperties();
             InitialCommands();
         }
@@ -25,13 +25,13 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeProperties()
         {
             States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.NoneOrderState));
+            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => States.Add(s));
         }
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialNeed));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialNeed }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -47,8 +47,8 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateMaterialNeed(CurrentMaterialNeed);
             }
-            NavigationService.GoTo(VNCollection.MaterialNeed);
-
+            NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed});
+            Messenger.Default.Send<MsgObject>(null, VToken.MaterialNeedRefresh);
         }
 
         public DcMaterialNeed CurrentMaterialNeed { get; set; }

@@ -33,143 +33,136 @@ namespace PMSDesktopClient
         public MainView()
         {
             InitializeComponent();
-            DataContext = new ViewModel.MainWindowVM();
-            Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
-            Messenger.Default.Register<MsgObject>(this, NavigationToken.Edit,ActionEdit);
+            views = new ViewLocator();
+            viewmodels = new ViewModel.ViewModelLocator();
 
-            NavigateTo(new NavigationView());
+
+
+            Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigate);
+            NavigateTo(views.Navigation);
         }
 
-        private void ActionEdit(MsgObject obj)
+
+        private ViewLocator views;//TODO:考虑将viewlocator化？
+        private ViewModelLocator viewmodels;
+
+        private void ActionNavigate(MsgObject msg)
         {
-            switch (obj.GoToToken)
+            switch (msg.MsgToken)
             {
-                case "OrderEditView":
-                    var view = new OrderEditView();
-                    var vm=new OrderEditVM(obj.ModelObject as DcOrder,obj.IsAdd);
+                case VToken.Navigation:
+                    NavigateTo(views.Navigation);
+                    break;
+                case VToken.Order:
+                    NavigateTo(views.Order);
+                    break;
+                case VToken.OrderCheck:
+                    NavigateTo(views.OrderCheck);
+                    break;
+                case VToken.Misson:
+                    NavigateTo(views.Misson);
+                    break;
+                case VToken.Plan:
+                    NavigateTo(views.Plan);
+                    break;
+                case VToken.RecordTestResult:
+                    NavigateTo(views.RecordTestResult);
+                    break;
+                case VToken.RecordDelivery:
+                    NavigateTo(views.RecordDelivery);
+                    break;
+                case VToken.MaterialNeed:
+                    NavigateTo(views.MaterialNeed);
+                    break;
+                case VToken.MaterialOrder:
+                    NavigateTo(views.MaterialOrder);
+                    break;
+                case VToken.RecordTestResultSelect:
+                    var viewRecordTestResultSelect = views.RecordTestResultSelect;
+                    viewRecordTestResultSelect.DataContext = new RecordTestResultSelectVM(msg.MsgModel);
+                    NavigateTo(viewRecordTestResultSelect);
+                    break;
+
+                case VToken.PlanSelectForTestResult:
+                    var planselect1 = views.PlanSelect;
+                    planselect1.DataContext = viewmodels.PlanSelectForRecordTestResult;
+                    NavigateTo(planselect1);
+                    break;
+
+
+
+                case VToken.OrderEdit:
+                    var view = views.OrderEdit;
+                    var vm = new OrderEditVM(msg.MsgModel);
                     view.DataContext = vm;
                     NavigateTo(view);
                     break;
-                case "OrderCheckEditView":
+                case VToken.OrderCheckEdit:
                     var view2 = new OrderCheckEditView();
-                    var vm2 = new OrderCheckEditVM(obj.ModelObject as DcOrder, obj.IsAdd);
+                    var vm2 = new OrderCheckEditVM(msg.MsgModel);
                     view2.DataContext = vm2;
                     NavigateTo(view2);
                     break;
-                case "PlanEditView":
+                case VToken.PlanEdit:
                     var planEditView = new PlanEditView();
-                    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP,obj.IsAdd);
+                    var planEditVM = new PlanEditVM(msg.MsgModel);
                     planEditView.DataContext = planEditVM;
                     NavigateTo(planEditView);
                     break;
-                case "MaterialNeedEditView":
-                    var materialNeedEditView = new MaterialNeedEditView();
-                    var materialNeedEditVM = new MaterialNeedEditVM(obj);
-                    materialNeedEditView.DataContext = materialNeedEditVM;
+                case VToken.MaterialNeedEdit:
+                    var materialNeedEditView = views.MaterialNeedEdit;
+                    materialNeedEditView.DataContext = new MaterialNeedEditVM(msg.MsgModel);
                     NavigateTo(materialNeedEditView);
                     break;
-                case "MaterialOrderEditView":
-                    var view6 = new MaterialOrderEditView();
-                    var vm6 = new MaterialOrderEditVM(obj);
-                    view6.DataContext = vm6;
+                case VToken.MaterialOrderEdit:
+                    var view6 = views.MaterialOrderEdit;
+                    view6.DataContext = new MaterialOrderEditVM(msg.MsgModel);
                     NavigateTo(view6);
                     break;
-                case "OrderSelectView":
-                    var view5 = new OrderSelectView();
-                    var vm5 = new OrderSelectMaterialNeed(obj);
-                    view5.DataContext = vm5;
-                    NavigateTo(view5);
+
+                case VToken.OrderSelect:  //TODO:这里考虑共用一个OrderSelectView
+                    NavigateTo(views.OrderSelect);
                     break;
 
-                case "MaterialOrderItemEdit":
-                    var view7 = new MaterialOrderItemEditView();
-                    var vm7 = new MaterialOrderItemEditVM(obj.Model);
-                    view7.DataContext = vm7;
+                case VToken.MaterialOrderItemEdit:
+                    var view7 = views.MaterialOrderItemEdit;
+                    view7.DataContext = new MaterialOrderItemEditVM(msg.MsgModel);
                     NavigateTo(view7);
                     break;
 
-                case "MaterialNeedSelect":
-                    var selectView2 = new MaterialNeedSelectView();
-                    var selectVM2 = new MaterialNeedSelectVM(obj.Model);
-                    selectView2.DataContext = selectVM2;
+                case VToken.MaterialNeedSelect:
+                    var selectView2 = views.MaterialNeedSelect;
+                    selectView2.DataContext = new MaterialNeedSelectVM(msg.MsgModel); ;
                     NavigateTo(selectView2);
                     break;
 
-                case "RecordTestResultEdit":
-                    var view8 = new RecordTestResultEditView();
-                    var vm8 = new RecordTestResultEditVM(obj.Model);
-                    view8.DataContext = vm8;
+                case VToken.RecordTestResultEdit:
+                    var view8 = views.RecordTestResultEdit;
+                    view8.DataContext = new RecordTestResultEditVM(msg.MsgModel);
                     NavigateTo(view8);
                     break;
-                default :
+                case VToken.RecordDeliveryEdit:
+                    var view9 = views.RecordDeliveryEdit;
+                    view9.DataContext = new RecordDeliveryEditVM(msg.MsgModel);
+                    NavigateTo(view9);
+                    break;
+                case VToken.RecordDeliveryItemEdit:
+                    var view10 = views.RecordDeliveryItemEdit;
+                    view10.DataContext = new RecordDeliveryItemEditVM(msg.MsgModel);
+                    NavigateTo(view10);
+                    break;
+                default:
                     break;
             }
         }
 
-        private void ActionNavigate(string viewName)
-        {
-            switch (viewName)
-            {
-                case "RecordDelivery":
-                    NavigateTo(new RecordDeliveryView());
-                    break;
-                case "PlanSelect":
-                    NavigateTo(new PlanSelectView());
-                    break;
-                case "Navigation":
-                    NavigateTo(new NavigationView());
-                    break;
-                case "NavigationView":
-                    NavigateTo(new NavigationView());
-                    break;
-                case "OrderView":
-                    NavigateTo(new OrderView());
-                    break;
-                case "OrderEditView":
-                    NavigateTo(new OrderEditView());
-                    break;
-                case "OrderCheckView":
-                    NavigateTo(new OrderCheckView());
-                    break;
-                case "MissonView":
-                    NavigateTo(new MissonView());
-                    break;
-                case "PlanView":
-                    NavigateTo(new PlanView());
-                    break;
-                case "RecordVHPView":
-                    NavigateTo(new RecordVHPView());
-                    break;
-                case "RecordTestResult":
-                    NavigateTo(new RecordTestResultView());
-                    break;
-                case "DeliveryView":
-                    NavigateTo(new DeliveryView());
-                    break;
-                case "MaterialNeedView":
-                    NavigateTo(new MaterialNeedView());
-                    break;
-                case "MaterialOrderView":
-                    NavigateTo(new MaterialOrderView());
-                    break;
-                case "MaterialNeedEditView":
-                    NavigateTo(new PlanView());
-                    break;
-                case "MaterialOrderEditView":
-                    NavigateTo(new MaterialOrderView());
-                    break;
-                case "OrderSelectView":
-                    NavigateTo(new OrderSelectView());
-                    break;
-                default:
-                    NavigateTo(new NavigationView());
-                    break;
-            }
-        }
 
         private void NavigateTo(UserControl view)
         {
-            mainArea.Content = view;
+            if (view != null)
+            {
+                mainArea.Content = view;
+            }
         }
 
         protected override void OnClosing(CancelEventArgs e)
@@ -177,16 +170,12 @@ namespace PMSDesktopClient
             Messenger.Default.Unregister(this);
             base.OnClosing(e);
         }
-
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
             //if (MessageBox.Show("Are you sure to quit?","Quit",MessageBoxButton.YesNo,MessageBoxImage.Warning)==MessageBoxResult.Yes)
             //{
             //    this.Close();
             //}
-
-
-
             this.Close();
         }
     }

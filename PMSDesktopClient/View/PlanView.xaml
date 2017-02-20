@@ -7,10 +7,7 @@
               xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000">
-    <UserControl.DataContext>
-        <vm:PlanVM/>
-    </UserControl.DataContext>
+             d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,9 +17,9 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPlanPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Navigate}"/>
+            <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToNavigation}"/>
             <Button Content="Misson" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToMisson}"/>
-            <!--<Button Content="Add New Plan" Style="{StaticResource  ButtonBasic}"  Command="{Binding AddNewPlan}" />-->
+            <Button Content="Refresh" Style="{StaticResource  ButtonBasic}"  Command="{Binding Refresh}" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Yesterday" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="Today" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>

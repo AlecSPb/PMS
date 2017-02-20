@@ -17,19 +17,16 @@ namespace PMSDesktopClient.ViewModel
     {
         public OrderVM()
         {
-            Messenger.Default.Register<Object>(this,"RefreshOrder", ActionRefresh);
-
-
+            Messenger.Default.Register<MsgObject>(this, VToken.OrderRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionRefresh(Object obj)
+        private void ActionRefresh(MsgObject obj)
         {
             SetPageParametersWhenConditionChange();
         }
-
 
         public override void Cleanup()
         {
@@ -46,113 +43,53 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToNavigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
             Add = new RelayCommand(ActionAdd);
 
-            EditWithParameter = new RelayCommand<DcOrder>(order =>
+            Edit = new RelayCommand<DcOrder>(order =>
             {
-                MsgObject obj = new MsgObject();
-                obj.GoToToken = "OrderEditView";
-                obj.IsAdd = false;
-                obj.ModelObject = order;
-                NavigationService.GoToWithParameter(obj);
+                MsgObject msg = new MsgObject();
+                msg.MsgToken = VToken.OrderEdit;
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = order };
+                NavigationService.GoTo(msg);
             });
-
-            Delete = new RelayCommand<PMSMainService.DcOrder>(ActionDelete);
-
 
             Duplicate = new RelayCommand<PMSMainService.DcOrder>(ActionDuplicate);
 
-            Check = new RelayCommand<PMSMainService.DcOrder>(ActionCheck);
-
         }
 
-        private void ActionCheck(DcOrder obj)
-        {
-            if (obj!=null)
-            {
-                MsgObject msg = new MsgObject();
-                msg.GoToToken = "OrderCheckEditView";
-                msg.IsAdd = false;
-                msg.ModelObject = obj;
-                NavigationService.GoToWithParameter(msg);
-            }
-        }
 
-        private void ActionDuplicate(DcOrder obj)
+        private void ActionDuplicate(DcOrder order)
         {
-            if (obj!=null)
+            if (order != null)
             {
-                obj.PlanVHPs = null;
-                obj.ID = Guid.NewGuid();
-                obj.CreateTime = DateTime.Now;
-                obj.State = "UnChecked";
-                obj.Priority = "Normal";
-                obj.DeadLine = DateTime.Now.AddDays(30);
+                order.PlanVHPs = null;
+                order.ID = Guid.NewGuid();
+                order.CreateTime = DateTime.Now;
+                order.State = "UnChecked";
+                order.Priority = "Normal";
+                order.DeadLine = DateTime.Now.AddDays(30);
 
 
                 var service = new OrderServiceClient();
-                service.AddOrder(obj);
+                service.AddOrder(order);
                 SetPageParametersWhenConditionChange();
             }
         }
 
         private void ActionAdd()
         {
-            var dcOrder = new DcOrder();
-            dcOrder.ID = Guid.NewGuid();
-            dcOrder.CustomerName = "Midsummer";
-            dcOrder.PO = DateTime.Now.ToString("yyMMdd");
-            dcOrder.PMIWorkingNumber = DateTime.Now.ToString("yyMMdd");
-            dcOrder.ProductType = "Target";
-            dcOrder.Dimension = "230mm OD x  4mm";
-            dcOrder.DimensionDetails = "None";
-            dcOrder.SampleNeed = "无需样品";
-            dcOrder.MinimumAcceptDefect = "通常";
-            dcOrder.Reviewer = "xs.zhou";
-            dcOrder.PolicyContent = "";
-            dcOrder.PolicyType = "VHP";
-            dcOrder.PolicyMaker = "xs.zhou";
+            var dcOrder = EmptyModel.GetOrder();
 
-            dcOrder.Purity = "99.99";
-            dcOrder.DeadLine = DateTime.Now.AddDays(30);
-            dcOrder.ReviewDate = DateTime.Now;
-            dcOrder.PolicyMakeDate = DateTime.Now;
-            dcOrder.State = "UnChecked";
-            dcOrder.Priority = "Normal";
-            dcOrder.CompositionOriginal = "CuGaSe2";
-            dcOrder.CompositionStandard = "Cu25Ga25Se50";
-            dcOrder.CompositoinAbbr = "CuGaSe";
-            dcOrder.Creator = "xs.zhou";
-            dcOrder.CreateTime = DateTime.Now;
-            dcOrder.ProductType = "Target";
-            dcOrder.ReviewPassed = true;
-            dcOrder.Quantity = 1;
-            dcOrder.QuantityUnit = "片";
+            MsgObject msg = new MsgObject();
+            msg.MsgToken = VToken.OrderEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = dcOrder };
+            NavigationService.GoTo(msg);
 
-            MsgObject obj = new MsgObject();
-            obj.GoToToken = "OrderEditView";
-            obj.IsAdd = true;
-            obj.ModelObject = dcOrder;
-            NavigationService.GoToWithParameter(obj);
-
-        }
-
-        private void ActionDelete(DcOrder obj)
-        {
-            if (obj!=null)
-            {
-                if (MessageBox.Show("you want to delete it?","warning",MessageBoxButton.YesNo)==MessageBoxResult.Yes)
-                {
-                    var service = new OrderServiceClient();
-                    service.DeleteOrder(obj.ID);
-                    SetPageParametersWhenConditionChange();
-                }
-            }
         }
 
         private bool CanSearch()
@@ -271,17 +208,13 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
+        public RelayCommand GoToNavigate { get; private set; }
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
-        public RelayCommand<DcOrder> EditWithParameter { get; private set; }
-
-        public RelayCommand<DcOrder> Delete { get; private set; }
+        public RelayCommand<DcOrder> Edit { get; private set; }
 
         public RelayCommand<DcOrder> Duplicate { get; private set; }
-
-        public RelayCommand<DcOrder> Check { get;private  set; }
 
         #endregion
     }

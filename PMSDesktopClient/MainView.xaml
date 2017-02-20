@@ -16,29 +16,29 @@
         <Menu Grid.Row="0" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strStart}">
                 <MenuItem Header="Navigation Panel"
-                          Command="{Binding Navigate}" CommandParameter="NavigationView"/>
+                          />
                 <Separator/>
                 <MenuItem Header="Sale">
-                    <MenuItem Header="{StaticResource strOrder}" Command="{Binding Navigate}" CommandParameter="OrderView"/>
-                    <MenuItem Header="Order Check" Command="{Binding Navigate}" CommandParameter="OrderCheckView"/>
+                    <MenuItem Header="{StaticResource strOrder}" />
+                    <MenuItem Header="Order Check" />
                 </MenuItem>
                 <MenuItem Header="Material">
-                    <MenuItem Header="Material Need" Command="{Binding Navigate}" CommandParameter="MaterialNeedView"/>
-                    <MenuItem Header="Material Order" Command="{Binding Navigate}" CommandParameter="MaterialOrderView"/>
+                    <MenuItem Header="Material Need" />
+                    <MenuItem Header="Material Order" />
                     <MenuItem Header="Material Inventory"/>
                 </MenuItem>
                 <MenuItem Header="Production">
-                    <MenuItem Header="{StaticResource strMisson}" Command="{Binding Navigate}" CommandParameter="MissonView"/>
-                    <MenuItem Header="{StaticResource strPlan}" Command="{Binding Navigate}" CommandParameter="PlanView"/>
+                    <MenuItem Header="{StaticResource strMisson}"/>
+                    <MenuItem Header="{StaticResource strPlan}" />
                 </MenuItem>
                 <MenuItem Header="{StaticResource strRecord}">
                     <MenuItem Header="Milling"/>
-                    <MenuItem Header="VHP" Command="{Binding Navigate}" CommandParameter="RecordVHPView"/>
+                    <MenuItem Header="VHP" />
                     <MenuItem Header="WorkBlank"/>
                     <MenuItem Header="Machine"/>
                     <MenuItem Header="{StaticResource strBonding}"/>
-                    <MenuItem Header="Test Result" Command="{Binding Navigate}" CommandParameter="ProductView"/>
-                    <MenuItem Header="{StaticResource strDelivery}"  Command="{Binding Navigate}" CommandParameter="DeliveryView"/>
+                    <MenuItem Header="Test Result"/>
+                    <MenuItem Header="{StaticResource strDelivery}"  />
                     <MenuItem Header="Maintenance"/>
                 </MenuItem>
                 <MenuItem Header="Statistic">

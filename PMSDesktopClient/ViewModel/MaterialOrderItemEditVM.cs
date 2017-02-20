@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -19,7 +20,7 @@ namespace PMSDesktopClient.ViewModel
             CurrentMaterialOrderItem = model.Model as DcMaterialOrderItem;
 
             OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.NoneOrderState));
+            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => OrderStates.Add(s));
 
             InitialCommmands();
@@ -27,7 +28,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VNCollection.MaterialOrderItemEdit));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -42,7 +43,8 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
             }
-            NavigationService.GoTo(VNCollection.MaterialOrder);
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder });
+            Messenger.Default.Send<MsgObject>(null, VToken.MaterialOrderRefresh);
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public DcMaterialOrderItem CurrentMaterialOrderItem { get; set; }

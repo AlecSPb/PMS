@@ -13,11 +13,11 @@ namespace PMSDesktopClient.ViewModel
 {
     public class PlanEditVM : ViewModelBase
     {
-        public PlanEditVM(DcPlanVHP plan, bool isnew)
+        public PlanEditVM(ModelObject msg)
         {
 
-            CurrentPlan = plan;
-            isNew = isnew;
+            CurrentPlan = msg.Model as DcPlanVHP;
+            isNew = msg.IsNew;
             InitializeProperties();
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
@@ -65,13 +65,13 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateVHPPlan(CurrentPlan);
             }
 
-            NavigationService.GoTo(VNCollection.Misson);
-            //Messenger.Default.Send<string>(null, "PlanVHPRefresh");
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
+            Messenger.Default.Send<MsgObject>(null, VToken.MissonRefresh);
         }
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(VNCollection.Misson);
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
         }
         public ObservableCollection<DcBDVHPMold> Molds { get; set; }
         public ObservableCollection<string> States { get; set; }

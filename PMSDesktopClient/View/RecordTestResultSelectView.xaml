@@ -18,8 +18,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Select a Test Result or an empty one" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"
-                    Command="{Binding GoToNavigation}"/>
+            <Button Content="Give Up" Style="{StaticResource  ButtonBasic}"
+                    Command="{Binding GiveUp}"/>
             <Button Content="Use An Empty" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding Empty}"/>
 

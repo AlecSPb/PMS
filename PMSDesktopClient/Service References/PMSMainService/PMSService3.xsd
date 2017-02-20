@@ -246,8 +246,8 @@
       <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DeliveryID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryItems" nillable="true" type="tns:ArrayOfDcRecordDeliveryItem" />
+      <xs:element minOccurs="0" name="DeliveryName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
@@ -267,8 +267,10 @@
   <xs:element name="ArrayOfDcRecordDeliveryItem" nillable="true" type="tns:ArrayOfDcRecordDeliveryItem" />
   <xs:complexType name="DcRecordDeliveryItem">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Abbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeliveryID" type="ser:guid" />
       <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />

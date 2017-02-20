@@ -15,7 +15,11 @@ namespace PMSWCFService
             using (var dc = new PMSDAL.PMSDbContext())
             {
                 int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>());
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>();
+                    cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>();
+                });
                 var record = Mapper.Map<PMSDAL.RecordDelivery>(model);
                 dc.RecordDeliverys.Add(record);
                 result = dc.SaveChanges();
@@ -92,7 +96,11 @@ namespace PMSWCFService
             using (var dc = new PMSDAL.PMSDbContext())
             {
                 int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>());
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>();
+                    cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>();
+                });
                 var record = Mapper.Map<PMSDAL.RecordDelivery>(model);
                 dc.Entry(record).State = System.Data.Entity.EntityState.Modified;
                 result = dc.SaveChanges();

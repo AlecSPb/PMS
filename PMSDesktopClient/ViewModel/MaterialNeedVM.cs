@@ -17,11 +17,21 @@ namespace PMSDesktopClient.ViewModel
     {
         public MaterialNeedVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.MaterialNeedRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
 
         private void InitializeProperties()
         {
@@ -30,7 +40,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VNCollection.Navigation));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.Navigation}));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -46,24 +56,20 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj!=null)
             {
-                MsgObject mo = new PMSDesktopClient.MsgObject();
-                mo.GoToToken = VNCollection.MaterialNeedEdit;
-                mo.ModelObject = obj;
-                mo.IsAdd = false;
+                MsgObject msg = new PMSDesktopClient.MsgObject();
+                msg.MsgToken = VToken.MaterialNeedEdit;
+                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
-                NavigationService.GoToWithParameter(mo);
+                NavigationService.GoTo(msg);
             }
         }
 
         private void ActionAdd()
         {
             //转向订单选择页面
-            MsgObject mo = new MsgObject();
-            mo.GoToToken = VNCollection.OrderSelect;
-            mo.ModelObject = VNCollection.MaterialNeedEdit;
-
-            NavigationService.GoToWithParameter(mo);
-
+            MsgObject msg = new MsgObject();
+            msg.MsgToken = VToken.OrderSelect;        
+            NavigationService.GoTo(msg);
         }
 
         private bool CanSearch()

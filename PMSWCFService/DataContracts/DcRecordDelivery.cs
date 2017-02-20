@@ -19,7 +19,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public string DeliveryID { get; set; }
+        public string DeliveryName { get; set; }
         [DataMember]
         public string InvoiceNumber { get; set; }
         [DataMember]

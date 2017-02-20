@@ -6,7 +6,8 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1300">
+             d:DesignHeight="300" d:DesignWidth="1300"
+             DataContext="{Binding Source={StaticResource Locator},Path=Order}">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -16,7 +17,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Orders" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource  strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="{StaticResource  strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigate}"/>
             <Button Content="Add" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
@@ -34,14 +35,15 @@
                 <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow">
+        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}"
+                  LoadingRow="DataGrid_LoadingRow" FrozenColumnCount="1">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
-                                        Command="{Binding DataContext.EditWithParameter,
+                                        Command="{Binding DataContext.Edit,
                                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                                 <Button Content="Duplicate" Style="{StaticResource ButtonDGBasic}"

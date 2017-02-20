@@ -24,7 +24,6 @@ namespace PMSDesktopClient.View
         public MaterialNeedView()
         {
             InitializeComponent();
-            this.DataContext = new MaterialNeedVM();
         }
     }
 }

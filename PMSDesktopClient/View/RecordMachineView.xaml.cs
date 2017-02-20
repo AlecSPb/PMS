@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PMSDesktopClient.View
 {
     /// <summary>
-    /// DeliveryView.xaml 的交互逻辑
+    /// RecordMachineView.xaml 的交互逻辑
     /// </summary>
-    public partial class DeliveryView : UserControl
+    public partial class RecordMachineView : UserControl
     {
-        public DeliveryView()
+        public RecordMachineView()
         {
             InitializeComponent();
         }

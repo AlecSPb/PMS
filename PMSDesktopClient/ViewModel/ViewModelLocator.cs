@@ -14,6 +14,7 @@
 
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 
 namespace PMSDesktopClient.ViewModel
@@ -41,13 +42,81 @@ namespace PMSDesktopClient.ViewModel
             ////    // Create run time view services and models
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
+            SimpleIoc.Default.Register<NavigationVM>(true);
+            SimpleIoc.Default.Register<OrderVM>();
+            SimpleIoc.Default.Register<OrderCheckVM>();
+            SimpleIoc.Default.Register<MissonVM>();
+            SimpleIoc.Default.Register<PlanVM>();
+
+            SimpleIoc.Default.Register<MaterialNeedVM>();
+            SimpleIoc.Default.Register<MaterialOrderVM>();
+            SimpleIoc.Default.Register<OrderSelectMaterialNeedVM>();
+
+            SimpleIoc.Default.Register<RecordVHPVM>();
+            SimpleIoc.Default.Register<RecordTestResultVM>();
+            SimpleIoc.Default.Register<RecordDeliveryVM>();
+
+            SimpleIoc.Default.Register<PlanSelectForRecordTestResultVM>();
+
 
         }
+        #region Properties
+        public NavigationVM Navigation
+        {
+            get { return SimpleIoc.Default.GetInstance<NavigationVM>(); }
+        }
+        public OrderVM Order
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderVM>(); }
+        }
+        public OrderCheckVM OrderCheck
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
+        }
+        public MissonVM Misson
+        {
+            get { return SimpleIoc.Default.GetInstance<MissonVM>(); }
+        }
+        public PlanVM Plan
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanVM>(); }
+        }
+        public MaterialNeedVM MaterialNeed
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialNeedVM>(); }
+        }
+        public MaterialOrderVM MaterialOrder
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderVM>(); }
+        }
+        public OrderSelectMaterialNeedVM OrderSelectMaterialNeed
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
+        }
+        public RecordTestResultVM RecordTestResult
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestResultVM>(); }
+        }
+        public RecordDeliveryVM RecordDelivery
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
+        }
+        public RecordVHPVM RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
+        }
+        public PlanSelectForRecordTestResultVM PlanSelectForRecordTestResult
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestResultVM>(); }
+        }
+        #endregion
 
-        
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
         }
+
+
     }
 }

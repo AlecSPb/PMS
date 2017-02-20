@@ -17,28 +17,11 @@ namespace PMSDesktopClient.ViewModel
     {
         private bool isNew;
         private DcMaterialOrderItem item;
-        public MaterialNeedSelectVM(ModelObject materialOrder)
+        public MaterialNeedSelectVM(ModelObject model)
         {
-            isNew = materialOrder.IsNew;
-            var order = materialOrder.Model as DcMaterialOrder;
-            item = new PMSMainService.DcMaterialOrderItem();
-            item.ID = Guid.NewGuid();
-            item.MaterialOrderID = order.ID;
-            item.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
-            item.Creator = (App.Current as App).CurrentUser.UserName;
-            item.CreateTime = DateTime.Now;
-            item.Composition = "Composition";
-            item.PMIWorkNumber = "WorkNumber";
-            item.Purity = "Purity";
-            item.Description = "";
-            item.ProvideRawMaterial = "";
-            item.UnitPrice = 0;
-            item.Weight = 0;
-            item.DeliveryDate = DateTime.Now.AddDays(7);
-
-
-
-
+            isNew = model.IsNew;
+            var order = model.Model as DcMaterialOrder;
+            item = EmptyModel.GetMaterialOrderItemBy(order);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -52,7 +35,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(VT.MaterialOrder.ToString()));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -64,7 +47,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionSelect(DcMaterialNeed need)
         {
-            if (need!=null)
+            if (need != null)
             {
                 item.Composition = need.Composition;
                 item.PMIWorkNumber = need.PMIWorkingNumber;
@@ -72,9 +55,9 @@ namespace PMSDesktopClient.ViewModel
                 item.Weight = need.Weight;
 
                 MsgObject msg = new MsgObject();
-                msg.GoToToken = VT.MaterialOrderItemEdit.ToString();
-                msg.Model = new ModelObject() { IsNew = true, Model = item };
-                NavigationService.GoToWithParameter(msg);
+                msg.MsgToken = VToken.MaterialOrderItemEdit;
+                msg.MsgModel = new ModelObject() { IsNew = true, Model = item };
+                NavigationService.GoTo(msg);
             }
         }
 

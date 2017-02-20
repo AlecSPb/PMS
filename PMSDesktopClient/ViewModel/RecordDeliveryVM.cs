@@ -7,17 +7,34 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using PMSDesktopClient.PMSMainService;
+using GalaSoft.MvvmLight.Messaging;
+using bt = BarTender;
+
+
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordDeliveryVM:ViewModelBase
+    public class RecordDeliveryVM : ViewModelBase
     {
         public RecordDeliveryVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.RecordDeliveryRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
+
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
+
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
         private void InitializeProperties()
         {
             RecordDeliveries = new ObservableCollection<DcRecordDelivery>();
@@ -25,7 +42,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(VT.Navigation.ToString()));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionEdit);
             Doc = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionDoc);
@@ -33,29 +50,96 @@ namespace PMSDesktopClient.ViewModel
             EditItem = new RelayCommand<PMSMainService.DcRecordDeliveryItem>(ActionEditItem);
         }
 
+        private bt.Application btApp;
+        private bt.Format btnFormat;
         private void ActionDoc(DcRecordDelivery obj)
         {
-            throw new NotImplementedException();
+
+            string title = obj.Country;
+
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in obj.DeliveryItems)
+            {
+                sb.Append(item.Composition);
+                sb.Append("-");
+                sb.AppendLine(item.ProductID);
+            }
+
+            string output = sb.ToString();
+
+            try
+            {
+                btApp = new bt.Application();
+                string templateAddress = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "10070.btw");
+                if (!System.IO.File.Exists(templateAddress))
+                {
+                    return;
+                }
+                btnFormat = btApp.Formats.Open(templateAddress, false, "");
+                btnFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+                btnFormat.PrintSetup.NumberSerializedLabels = 1;
+
+                btnFormat.SetNamedSubStringValue("Title", title);
+                btnFormat.SetNamedSubStringValue("Content", output);
+
+                btnFormat.PrintOut(true, true);
+                btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
+                btApp.Quit(bt.BtSaveOptions.btSaveChanges);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void ActionEditItem(DcRecordDeliveryItem obj)
         {
-            throw new NotImplementedException();
+            MsgObject msg = new MsgObject();
+            msg.MsgToken = VToken.RecordDeliveryItemEdit;
+            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
+
+            NavigationService.GoTo(msg);
         }
 
         private void ActionAddItem(DcRecordDelivery obj)
         {
-            throw new NotImplementedException();
+            //传递RecordDelivery到RecordTestSelect
+            MsgObject msg = new MsgObject();
+            msg.MsgToken = VToken.RecordTestResultSelect;
+            msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
+            NavigationService.GoTo(msg);
         }
 
         private void ActionAdd()
         {
-            throw new NotImplementedException();
+            var model = new DcRecordDelivery();
+            model.ID = Guid.NewGuid();
+            model.InvoiceNumber = "InvoiceNumber";
+            model.DeliveryName = DateTime.Now.ToString("yyMMdd") + "A";
+            model.DeliveryNumber = "UPS";
+            model.CreateTime = DateTime.Now;
+            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.State = PMSCommon.CommonState.UnChecked.ToString();
+            model.PackageInformation = "50kg";
+            model.PackageType = "Wood";
+            model.Remark = "";
+            model.ShipTime = DateTime.Now;
+            model.Address = "Address Here";
+            model.Country = "USA";
+
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.MsgToken = VToken.RecordDeliveryEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
+            NavigationService.GoTo(msg);
         }
 
         private void ActionEdit(DcRecordDelivery obj)
         {
-            throw new NotImplementedException();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.MsgToken = VToken.RecordDeliveryEdit;
+            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
+            NavigationService.GoTo(msg);
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -77,7 +161,7 @@ namespace PMSDesktopClient.ViewModel
             models.ToList<DcRecordDelivery>().ForEach(o => RecordDeliveries.Add(o));
         }
         public RelayCommand GoToNavigation { get; set; }
-        public RelayCommand Add { get; set;       }
+        public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordDelivery> Edit { get; set; }
 
         public RelayCommand<DcRecordDelivery> Doc { get; set; }

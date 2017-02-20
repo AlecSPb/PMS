@@ -17,10 +17,10 @@ namespace PMSDesktopClient.ViewModel
         {
             InitializeProperties();
         }
-        public OrderCheckEditVM(DcOrder order,bool isAdd)
+        public OrderCheckEditVM(ModelObject msg)
         {
-            CurrentOrder = order;
-            isNew = isAdd;
+            CurrentOrder = msg.Model as DcOrder;
+            isNew = msg.IsNew;
             InitializeCommands();
             InitializeProperties();
         }
@@ -51,7 +51,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(VNCollection.OrderCheck);
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck });
         }
 
         private bool CanSave()
@@ -70,8 +70,8 @@ namespace PMSDesktopClient.ViewModel
             {
                 service.UpdateOrder(CurrentOrder);
             }
-            NavigationService.GoTo(VNCollection.OrderCheck);
-            Messenger.Default.Send<Object>("", "RefreshOrder");
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck });
+            Messenger.Default.Send<MsgObject>(null, VToken.OrderCheckRefresh);
         }
 
         private bool isNew;
