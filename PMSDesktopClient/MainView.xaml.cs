@@ -65,14 +65,11 @@ namespace PMSDesktopClient
                 case VToken.Plan:
                     NavigateTo(views.Plan);
                     break;
-                //case VToken.RecordVHP:
-                //    NavigateTo(views.rec);
-                //    break;
                 case VToken.RecordTestResult:
                     NavigateTo(views.RecordTestResult);
                     break;
                 case VToken.RecordDelivery:
-                    //NavigateTo(new DeliveryView());
+                    NavigateTo(views.RecordDelivery);
                     break;
                 case VToken.MaterialNeed:
                     NavigateTo(views.MaterialNeed);
@@ -80,13 +77,11 @@ namespace PMSDesktopClient
                 case VToken.MaterialOrder:
                     NavigateTo(views.MaterialOrder);
                     break;
-                case VToken.RecordTestSelect:
-                    NavigateTo(views.RecordTestResult);
+                case VToken.RecordTestResultSelect:
+                    var viewRecordTestResultSelect = views.RecordTestResultSelect;
+                    viewRecordTestResultSelect.DataContext = new RecordTestResultSelectVM(msg.MsgModel);
+                    NavigateTo(viewRecordTestResultSelect);
                     break;
-
-
-
-
 
 
                 case VToken.OrderEdit:
@@ -123,9 +118,8 @@ namespace PMSDesktopClient
                     break;
 
                 case VToken.MaterialOrderItemEdit:
-                    var view7 = new MaterialOrderItemEditView();
-                    var vm7 = new MaterialOrderItemEditVM(msg.MsgModel);
-                    view7.DataContext = vm7;
+                    var view7 = views.MaterialOrderItemEdit;
+                    view7.DataContext = new MaterialOrderItemEditVM(msg.MsgModel);
                     NavigateTo(view7);
                     break;
 
@@ -136,16 +130,19 @@ namespace PMSDesktopClient
                     break;
 
                 case VToken.RecordTestResultEdit:
-                    var view8 = new RecordTestResultEditView();
-                    var vm8 = new RecordTestResultEditVM(msg.MsgModel);
-                    view8.DataContext = vm8;
+                    var view8 = views.RecordTestResultEdit;
+                    view8.DataContext = new RecordTestResultEditVM(msg.MsgModel);
                     NavigateTo(view8);
                     break;
                 case VToken.RecordDeliveryEdit:
-                    var view9 = new RecordDeliveryEditView();
-                    var vm9 = new RecordDeliveryEditVM(msg.MsgModel);
-                    view9.DataContext = vm9;
+                    var view9 = views.RecordDeliveryEdit;
+                    view9.DataContext = new RecordDeliveryEditVM(msg.MsgModel);
                     NavigateTo(view9);
+                    break;
+                case VToken.RecordDeliveryItemEdit:
+                    var view10 = views.RecordDeliveryItemEdit;
+                    view10.DataContext = new RecordDeliveryItemEditVM(msg.MsgModel);
+                    NavigateTo(view10);
                     break;
                 default:
                     break;

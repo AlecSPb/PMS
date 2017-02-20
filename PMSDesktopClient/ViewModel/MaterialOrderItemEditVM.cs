@@ -20,7 +20,7 @@ namespace PMSDesktopClient.ViewModel
             CurrentMaterialOrderItem = model.Model as DcMaterialOrderItem;
 
             OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.NoneOrderState));
+            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => OrderStates.Add(s));
 
             InitialCommmands();

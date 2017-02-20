@@ -163,7 +163,6 @@ namespace PMSDesktopClient
         }
 
         private PlanSelectView planSelect;
-
         public PlanSelectView PlanSelect
         {
             get
@@ -175,6 +174,7 @@ namespace PMSDesktopClient
                 return planSelect;
             }
         }
+
         private RecordTestResultView recordTestResult;
         public RecordTestResultView RecordTestResult
         {
@@ -201,7 +201,71 @@ namespace PMSDesktopClient
             }
         }
 
+        private RecordTestResultSelectView recordTestResultSelect;
+        public RecordTestResultSelectView RecordTestResultSelect
+        {
+            get
+            {
+                if (recordTestResultSelect == null)
+                {
+                    recordTestResultSelect = new RecordTestResultSelectView();
+                }
+                return recordTestResultSelect;
+            }
+        }
 
+        private MaterialOrderItemEditView materialOrderItemEdit;
+        public MaterialOrderItemEditView MaterialOrderItemEdit
+        {
+            get
+            {
+                if (materialOrderItemEdit == null)
+                {
+                    materialOrderItemEdit = new MaterialOrderItemEditView();
+                }
+                return materialOrderItemEdit;
+            }
+        }
+
+
+        private RecordDeliveryView recordDelivery;
+        public RecordDeliveryView RecordDelivery
+        {
+            get
+            {
+                if (recordDelivery == null)
+                {
+                    recordDelivery = new RecordDeliveryView();
+                }
+                return recordDelivery;
+            }
+        }
+
+        private RecordDeliveryEditView recordDeliveryEdit;
+        public RecordDeliveryEditView RecordDeliveryEdit
+        {
+            get
+            {
+                if (recordDeliveryEdit == null)
+                {
+                    recordDeliveryEdit = new RecordDeliveryEditView();
+                }
+                return recordDeliveryEdit;
+            }
+        }
+
+        private RecordDeliveryItemEditView recordDeliveryItemEdit;
+        public RecordDeliveryItemEditView RecordDeliveryItemEdit
+        {
+            get
+            {
+                if (recordDeliveryItemEdit == null)
+                {
+                    recordDeliveryItemEdit = new RecordDeliveryItemEditView();
+                }
+                return recordDeliveryItemEdit;
+            }
+        }
         #endregion
 
 

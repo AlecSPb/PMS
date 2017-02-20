@@ -28,7 +28,7 @@ namespace PMSDesktopClient
         PlanSelect,
         RecordTestResult,
         RecordTestResultEdit,
-        RecordTestSelect,
+        RecordTestResultSelect,
         RecordDelivery,
         RecordDeliveryEdit,
         RecordDeliveryItem,
@@ -54,5 +54,6 @@ namespace PMSDesktopClient
         MaterialNeedRefresh,
         MaterialOrderRefresh,
         RecordTestResultRefresh,
+        RecordDeliveryRefresh
     }
 }

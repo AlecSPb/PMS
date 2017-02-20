@@ -25,7 +25,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeProperties()
         {
             States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.NoneOrderState));
+            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => States.Add(s));
         }
 

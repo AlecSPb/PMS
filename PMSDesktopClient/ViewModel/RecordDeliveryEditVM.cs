@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -51,6 +52,7 @@ namespace PMSDesktopClient.ViewModel
             }
 
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
+            Messenger.Default.Send<MsgObject>(null, VToken.RecordDeliveryRefresh);
         }
 
 

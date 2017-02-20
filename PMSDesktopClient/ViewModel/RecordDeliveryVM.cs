@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using PMSDesktopClient.PMSMainService;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -14,10 +15,23 @@ namespace PMSDesktopClient.ViewModel
     {
         public RecordDeliveryVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.RecordDeliveryRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
+
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
+
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
         private void InitializeProperties()
         {
             RecordDeliveries = new ObservableCollection<DcRecordDelivery>();
@@ -51,7 +65,7 @@ namespace PMSDesktopClient.ViewModel
         {
             //传递RecordDelivery到RecordTestSelect
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.RecordTestSelect;
+            msg.MsgToken = VToken.RecordTestResultSelect;
             msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
             NavigationService.GoTo(msg);
         }
@@ -61,7 +75,7 @@ namespace PMSDesktopClient.ViewModel
             var model = new DcRecordDelivery();
             model.ID = Guid.NewGuid();
             model.InvoiceNumber = "InvoiceNumber";
-            model.DeliveryID = DateTime.Now.ToString("yyMMdd") + "A";
+            model.DeliveryName = DateTime.Now.ToString("yyMMdd") + "A";
             model.DeliveryNumber = "UPS";
             model.CreateTime = DateTime.Now;
             model.Creator = (App.Current as App).CurrentUser.UserName;

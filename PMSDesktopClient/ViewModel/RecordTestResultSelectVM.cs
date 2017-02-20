@@ -12,8 +12,16 @@ namespace PMSDesktopClient.ViewModel
 {
     public class RecordTestResultSelectVM : ViewModelBase
     {
-        public RecordTestResultSelectVM()
+        private DcRecordDeliveryItem item;
+        public RecordTestResultSelectVM(ModelObject model)
         {
+            item = new PMSMainService.DcRecordDeliveryItem();
+            item.ID = Guid.NewGuid();
+            item.DeliveryID = (model.Model as DcRecordDelivery).ID;
+            item.State = PMSCommon.SimpleState.UnDeleted.ToString();
+
+
+
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -53,9 +61,18 @@ namespace PMSDesktopClient.ViewModel
         private void ActionSelect(DcRecordTestResult obj)
         {
             MsgObject msg = new PMSDesktopClient.MsgObject();
-            msg.MsgToken = VToken.RecordTestResultEdit;
-            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
 
+            item.ProductType = PMSCommon.ProductType.Target.ToString();
+            item.Weight = "";
+            item.Composition = obj.Composition;
+            item.PO = obj.PO;
+            item.ProductID = obj.ProductID;
+            item.Customer = obj.Customer;
+            item.DetailRecord = "";
+            item.Remark = "";
+
+            msg.MsgToken = VToken.RecordDeliveryItemEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }
 

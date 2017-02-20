@@ -8,9 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
-    <UserControl.Background>
+    <!--<UserControl.Background>
         <ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/funnyfacebig.jpg" TileMode="FlipXY" Stretch="Uniform"/>
-    </UserControl.Background>
+    </UserControl.Background>-->
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>

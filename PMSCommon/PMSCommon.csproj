@@ -68,7 +68,7 @@
     <Compile Include="UsefulEnum\Country.cs" />
     <Compile Include="UsefulEnum\OrderState.cs" />
     <Compile Include="UsefulEnum\NavigationToken.cs" />
-    <Compile Include="UsefulEnum\NonOrderState.cs" />
+    <Compile Include="UsefulEnum\SimpleState.cs" />
     <Compile Include="UsefulEnum\OrderPolicyType.cs" />
     <Compile Include="UsefulEnum\OrderPriority.cs" />
     <Compile Include="PMTranslate.cs" />

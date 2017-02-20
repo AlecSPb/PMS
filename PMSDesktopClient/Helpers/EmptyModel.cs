@@ -23,7 +23,7 @@ namespace PMSDesktopClient
         {
             var empty = new DcMaterialNeed();
             empty.Id = Guid.NewGuid();
-            empty.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
+            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = (App.Current as App).CurrentUser.UserName;
             empty.Purity = "5N";
@@ -127,7 +127,7 @@ namespace PMSDesktopClient
             var item = new PMSMainService.DcMaterialOrderItem();
             item.ID = Guid.NewGuid();
             item.MaterialOrderID = order.ID;
-            item.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
+            item.State = PMSCommon.SimpleState.UnDeleted.ToString();
             item.Creator = (App.Current as App).CurrentUser.UserName;
             item.CreateTime = DateTime.Now;
             item.Composition = "Composition";
