@@ -17,7 +17,7 @@ namespace PMSDesktopClient.ViewModel
     {
         public OrderCheckVM()
         {
-            Messenger.Default.Register<Object>(this,"RefreshOrder", ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.OrderCheckRefresh, ActionRefresh);
 
 
             InitializeProperties();
@@ -25,7 +25,7 @@ namespace PMSDesktopClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionRefresh(Object obj)
+        private void ActionRefresh(MsgObject obj)
         {
             SetPageParametersWhenConditionChange();
         }
@@ -46,7 +46,7 @@ namespace PMSDesktopClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.Navigation}));
+            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -56,10 +56,10 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionCheck(DcOrder order)
         {
-            if (order!=null)
+            if (order != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken =VToken.OrderCheckEdit;
+                msg.MsgToken = VToken.OrderCheckEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = order };
                 NavigationService.GoTo(msg);
             }
@@ -185,7 +185,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Search { get; private set; }
         public RelayCommand All { get; set; }
 
-        public RelayCommand<DcOrder> Check { get;private  set; }
+        public RelayCommand<DcOrder> Check { get; private set; }
 
         #endregion
     }

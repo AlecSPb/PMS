@@ -95,12 +95,12 @@ namespace PMSDesktopClient
                     view.DataContext = vm;
                     NavigateTo(view);
                     break;
-                //case "OrderCheckEditView":
-                //    var view2 = new OrderCheckEditView();
-                //    var vm2 = new OrderCheckEditVM(obj.ModelObject as DcOrder, obj.IsAdd);
-                //    view2.DataContext = vm2;
-                //    NavigateTo(view2);
-                //    break;
+                case VToken.OrderCheckEdit:
+                    var view2 = new OrderCheckEditView();
+                    var vm2 = new OrderCheckEditVM(msg.MsgModel);
+                    view2.DataContext = vm2;
+                    NavigateTo(view2);
+                    break;
                 //case "PlanEditView":
                 //    var planEditView = new PlanEditView();
                 //    var planEditVM = new PlanEditVM(obj.ModelObject as DcPlanVHP, obj.IsAdd);

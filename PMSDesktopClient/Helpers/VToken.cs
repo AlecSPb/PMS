@@ -19,6 +19,7 @@ namespace PMSDesktopClient
         OrderRefresh,
         OrderSelect,
         OrderCheck,
+        OrderCheckRefresh,
         OrderCheckEdit,
         Misson,
         Plan,
