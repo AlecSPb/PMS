@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -29,7 +30,11 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery }));
+            GiveUp = new RelayCommand(() =>
+            {
+                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
+                Messenger.Default.Send<MsgObject>(null, VToken.RecordDeliveryRefresh);
+            });
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -39,7 +44,21 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionEmpty()
         {
-            throw new NotImplementedException();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+
+            item.ProductType = PMSCommon.ProductType.Target.ToString();
+            item.ProductID = "";
+            item.Composition = "";
+            item.Abbr = "";
+            item.PO = "";
+            item.Customer = "";
+            item.Weight = "";
+            item.DetailRecord = "";
+            item.Remark = "";
+
+            msg.MsgToken = VToken.RecordDeliveryItemEdit;
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = item };
+            NavigationService.GoTo(msg);
         }
 
         private bool CanSearch()
@@ -63,11 +82,12 @@ namespace PMSDesktopClient.ViewModel
             MsgObject msg = new PMSDesktopClient.MsgObject();
 
             item.ProductType = PMSCommon.ProductType.Target.ToString();
-            item.Weight = "";
-            item.Composition = obj.Composition;
-            item.PO = obj.PO;
             item.ProductID = obj.ProductID;
+            item.Composition = obj.Composition;
+            item.Abbr = obj.CompositionAbbr;
+            item.PO = obj.PO;
             item.Customer = obj.Customer;
+            item.Weight = obj.Weight;
             item.DetailRecord = "";
             item.Remark = "";
 

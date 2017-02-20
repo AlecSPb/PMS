@@ -19,6 +19,7 @@ namespace PMSDAL
         public string ProductType { get; set; }//产品 or 样品 or其他
         public string ProductID { get; set; }
         public string Composition { get; set; }
+        public string Abbr { get; set; }
         public string Customer { get; set; }
         public string PO { get; set; }
         public string Weight { get; set; }

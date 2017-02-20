@@ -48,9 +48,9 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="DeliveryID"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="DeliveryName"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryID}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryName}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="发货单ID"/>
