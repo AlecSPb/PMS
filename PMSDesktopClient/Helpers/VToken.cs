@@ -51,5 +51,7 @@ namespace PMSDesktopClient
         MaterialNeedSelect,
         MaterialInventory,
         MaterialInventoryEdit,
+        MaterialNeedRefresh,
+        MaterialOrderRefresh,
     }
 }

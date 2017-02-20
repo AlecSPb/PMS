@@ -17,28 +17,11 @@ namespace PMSDesktopClient.ViewModel
     {
         private bool isNew;
         private DcMaterialOrderItem item;
-        public MaterialNeedSelectVM(ModelObject materialOrder)
+        public MaterialNeedSelectVM(ModelObject model)
         {
-            isNew = materialOrder.IsNew;
-            var order = materialOrder.Model as DcMaterialOrder;
-            item = new PMSMainService.DcMaterialOrderItem();
-            item.ID = Guid.NewGuid();
-            item.MaterialOrderID = order.ID;
-            item.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
-            item.Creator = (App.Current as App).CurrentUser.UserName;
-            item.CreateTime = DateTime.Now;
-            item.Composition = "Composition";
-            item.PMIWorkNumber = "WorkNumber";
-            item.Purity = "Purity";
-            item.Description = "";
-            item.ProvideRawMaterial = "";
-            item.UnitPrice = 0;
-            item.Weight = 0;
-            item.DeliveryDate = DateTime.Now.AddDays(7);
-
-
-
-
+            isNew = model.IsNew;
+            var order = model.Model as DcMaterialOrder;
+            item = EmptyModel.GetMaterialOrderItemBy(order);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();

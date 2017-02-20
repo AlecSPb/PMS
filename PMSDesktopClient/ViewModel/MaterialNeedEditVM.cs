@@ -14,10 +14,10 @@ namespace PMSDesktopClient.ViewModel
     public class MaterialNeedEditVM : ViewModelBase
     {
         private bool isNew;
-        public MaterialNeedEditVM(MsgObject msg)
+        public MaterialNeedEditVM(ModelObject msg)
         {
-            isNew = msg.MsgModel.IsNew;
-            CurrentMaterialNeed = msg.MsgModel.Model as DcMaterialNeed;
+            isNew = msg.IsNew;
+            CurrentMaterialNeed = msg.Model as DcMaterialNeed;
             InitializeProperties();
             InitialCommands();
         }
@@ -48,7 +48,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateMaterialNeed(CurrentMaterialNeed);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed});
-
+            Messenger.Default.Send<MsgObject>(null, VToken.MaterialNeedRefresh);
         }
 
         public DcMaterialNeed CurrentMaterialNeed { get; set; }

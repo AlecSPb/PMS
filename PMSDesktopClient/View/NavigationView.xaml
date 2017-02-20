@@ -8,6 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
+    <UserControl.Background>
+        <ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/funnyfacebig.jpg" TileMode="FlipXY" Stretch="Uniform"/>
+    </UserControl.Background>
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -25,7 +28,7 @@
             <Setter Property="Foreground" Value="Blue"/>
         </Style>
     </UserControl.Resources>
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>

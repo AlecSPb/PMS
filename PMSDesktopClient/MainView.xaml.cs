@@ -74,15 +74,15 @@ namespace PMSDesktopClient
                 //case VT.RecordDelivery:
                 //    NavigateTo(new DeliveryView());
                 //    break;
-                //case VT.MaterialNeed:
-                //    NavigateTo(new MaterialNeedView());
-                //    break;
-                //case VT.MaterialOrder:
-                //    NavigateTo(new MaterialOrderView());
-                //    break;
-                //case VT.RecordTestSelect:
-                //    NavigateTo(new RecordTestResultSelectView());
-                //    break;
+                case VToken.MaterialNeed:
+                    NavigateTo(views.MaterialNeed);
+                    break;
+                case VToken.MaterialOrder:
+                    NavigateTo(views.MaterialOrder);
+                    break;
+                case VToken.RecordTestSelect:
+                    NavigateTo(views.RecordTestResult);
+                    break;
 
 
 
@@ -107,51 +107,46 @@ namespace PMSDesktopClient
                     planEditView.DataContext = planEditVM;
                     NavigateTo(planEditView);
                     break;
-                //case "MaterialNeedEditView":
-                //    var materialNeedEditView = new MaterialNeedEditView();
-                //    var materialNeedEditVM = new MaterialNeedEditVM(obj);
-                //    materialNeedEditView.DataContext = materialNeedEditVM;
-                //    NavigateTo(materialNeedEditView);
-                //    break;
-                //case "MaterialOrderEditView":
-                //    var view6 = new MaterialOrderEditView();
-                //    var vm6 = new MaterialOrderEditVM(obj);
-                //    view6.DataContext = vm6;
-                //    NavigateTo(view6);
-                //    break;
-                //case "OrderSelectView":
-                //    var view5 = new OrderSelectView();
-                //    var vm5 = new OrderSelectMaterialNeed(obj);
-                //    view5.DataContext = vm5;
-                //    NavigateTo(view5);
-                //    break;
+                case VToken.MaterialNeedEdit:
+                    var materialNeedEditView = views.MaterialNeedEdit;
+                    materialNeedEditView.DataContext = new MaterialNeedEditVM(msg.MsgModel);
+                    NavigateTo(materialNeedEditView);
+                    break;
+                case VToken.MaterialOrderEdit:
+                    var view6 = views.MaterialOrderEdit;
+                    view6.DataContext = new MaterialOrderEditVM(msg.MsgModel);
+                    NavigateTo(view6);
+                    break;
 
-                //case "MaterialOrderItemEdit":
-                //    var view7 = new MaterialOrderItemEditView();
-                //    var vm7 = new MaterialOrderItemEditVM(obj.Model);
-                //    view7.DataContext = vm7;
-                //    NavigateTo(view7);
-                //    break;
+                case VToken.OrderSelect:  //TODO:这里考虑共用一个OrderSelectView
+                    NavigateTo(views.OrderSelect);
+                    break;
 
-                //case "MaterialNeedSelect":
-                //    var selectView2 = new MaterialNeedSelectView();
-                //    var selectVM2 = new MaterialNeedSelectVM(obj.Model);
-                //    selectView2.DataContext = selectVM2;
-                //    NavigateTo(selectView2);
-                //    break;
+                case VToken.MaterialOrderItemEdit:
+                    var view7 = new MaterialOrderItemEditView();
+                    var vm7 = new MaterialOrderItemEditVM(msg.MsgModel);
+                    view7.DataContext = vm7;
+                    NavigateTo(view7);
+                    break;
 
-                //case "RecordTestResultEdit":
-                //    var view8 = new RecordTestResultEditView();
-                //    var vm8 = new RecordTestResultEditVM(obj.Model);
-                //    view8.DataContext = vm8;
-                //    NavigateTo(view8);
-                //    break;
-                //case "RecordDeliveryEdit":
-                //    var view9 = new RecordDeliveryEditView();
-                //    var vm9 = new RecordDeliveryEditVM(obj.Model);
-                //    view9.DataContext = vm9;
-                //    NavigateTo(view9);
-                //    break;
+                case VToken.MaterialNeedSelect:
+                    var selectView2 = views.MaterialNeedSelect;
+                    selectView2.DataContext = new MaterialNeedSelectVM(msg.MsgModel); ;
+                    NavigateTo(selectView2);
+                    break;
+
+                case VToken.RecordTestResultEdit:
+                    var view8 = new RecordTestResultEditView();
+                    var vm8 = new RecordTestResultEditVM(msg.MsgModel);
+                    view8.DataContext = vm8;
+                    NavigateTo(view8);
+                    break;
+                case VToken.RecordDeliveryEdit:
+                    var view9 = new RecordDeliveryEditView();
+                    var vm9 = new RecordDeliveryEditVM(msg.MsgModel);
+                    view9.DataContext = vm9;
+                    NavigateTo(view9);
+                    break;
                 default:
                     break;
             }

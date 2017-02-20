@@ -50,7 +50,7 @@ namespace PMSDesktopClient.ViewModel
 
             SimpleIoc.Default.Register<MaterialNeedVM>();
             SimpleIoc.Default.Register<MaterialOrderVM>();
-
+            SimpleIoc.Default.Register<OrderSelectMaterialNeedVM>();
 
             SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordTestResultVM>();
@@ -60,34 +60,40 @@ namespace PMSDesktopClient.ViewModel
 
 
         }
-
+        #region Properties
         public NavigationVM Navigation
         {
-            get { return SimpleIoc.Default.GetInstance<NavigationVM>();}
+            get { return SimpleIoc.Default.GetInstance<NavigationVM>(); }
         }
-
         public OrderVM Order
         {
-            get{ return SimpleIoc.Default.GetInstance<OrderVM>();}
+            get { return SimpleIoc.Default.GetInstance<OrderVM>(); }
         }
-
         public OrderCheckVM OrderCheck
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
         }
-
         public MissonVM Misson
         {
             get { return SimpleIoc.Default.GetInstance<MissonVM>(); }
         }
-
         public PlanVM Plan
         {
             get { return SimpleIoc.Default.GetInstance<PlanVM>(); }
         }
-
-
-
+        public OrderSelectMaterialNeedVM OrderSelectMaterialNeed
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
+        }
+        public MaterialNeedVM MaterialNeed
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialNeedVM>(); }
+        }
+        public MaterialOrderVM MaterialOrder
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderVM>(); }
+        }
+        #endregion
 
 
         public static void Cleanup()

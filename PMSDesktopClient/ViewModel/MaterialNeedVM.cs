@@ -17,11 +17,21 @@ namespace PMSDesktopClient.ViewModel
     {
         public MaterialNeedVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.MaterialNeedRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
 
         private void InitializeProperties()
         {

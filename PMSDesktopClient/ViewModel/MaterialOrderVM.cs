@@ -20,11 +20,21 @@ namespace PMSDesktopClient.ViewModel
     {
         public MaterialOrderVM()
         {
+            Messenger.Default.Register<MsgObject>(this, VToken.MaterialOrderRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
+        private void ActionRefresh(MsgObject obj)
+        {
+            SetPageParametersWhenConditionChange();
+        }
+        public override void Cleanup()
+        {
+            Messenger.Default.Unregister(this);
+            base.Cleanup();
+        }
         private void InitializeProperties()
         {
             SearchOrderPO = "";
@@ -62,9 +72,6 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj != null)
             {
-
-
-
                 MsgObject msg = new MsgObject();
                 msg.MsgToken = VToken.MaterialNeedSelect;
                 msg.MsgModel = new ModelObject() { Model = obj };
@@ -85,21 +92,8 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionAdd()
         {
-            var model = new DcMaterialOrder();
-            model.ID = Guid.NewGuid();
-            model.CreateTime = DateTime.Now;
-            model.State = PMSCommon.OrderState.UnChecked.ToString();
-            model.Creator = (App.Current as App).CurrentUser.UserName;
-            model.Supplier = "Sanjie";
-            model.SupplierAbbr = "SJ";
-            model.SupplierEmail = "sj_materials@163.com";
-            model.SupplierReceiver = "Mr.Wang";
-            model.SupplierAddress = "Chengdu,Sichuan CHINA";
-            model.ShipFee = 0;
-            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
-            model.Remark = "";
-            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
 
+            var model = EmptyModel.GetMaterialOrder();
             MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.MaterialOrderEdit;
             msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };

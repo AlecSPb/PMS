@@ -26,7 +26,6 @@ namespace PMSDesktopClient.View
         public MaterialOrderView()
         {
             InitializeComponent();
-            this.DataContext = new MaterialOrderVM();
         }
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)

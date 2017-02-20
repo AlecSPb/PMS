@@ -10,25 +10,24 @@ using PMSDesktopClient.PMSMainService;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class OrderSelectMaterialNeed:OrderSelectBaseVM
+    public class OrderSelectMaterialNeedVM : OrderSelectBaseVM
     {
-        private VToken goToViewName;
-        public OrderSelectMaterialNeed(MsgObject msg)
+        public OrderSelectMaterialNeedVM()
         {
-            goToViewName = msg.MsgToken;
 
             SelectOrder = new RelayCommand<PMSMainService.DcOrder>(ActionSelectOrder);
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed}));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialNeed }));
         }
-        private void ActionSelectOrder(DcOrder obj)
+        private void ActionSelectOrder(DcOrder order)
         {
-            if (obj != null)
+            if (order != null)
             {
-                var materialNeed = EmptyModel.GetMaterialNeedByOrder(obj);
+                var materialNeed = EmptyModel.GetMaterialNeedByOrder(order);
 
                 MsgObject msg = new PMSDesktopClient.MsgObject();
-                msg.MsgToken =goToViewName;
-                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = obj };
+                msg.MsgToken = VToken.MaterialNeedEdit;
+                var materialneed = EmptyModel.GetMaterialNeedByOrder(order);
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = materialNeed };
                 NavigationService.GoTo(msg);
             }
         }

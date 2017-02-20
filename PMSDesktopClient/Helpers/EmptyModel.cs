@@ -102,5 +102,44 @@ namespace PMSDesktopClient
             plan.Creator = "xs.zhou";
             return plan;
         }
+
+        public static DcMaterialOrder GetMaterialOrder()
+        {
+            var model = new DcMaterialOrder();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.State = PMSCommon.OrderState.UnChecked.ToString();
+            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.Supplier = "Sanjie";
+            model.SupplierAbbr = "SJ";
+            model.SupplierEmail = "sj_materials@163.com";
+            model.SupplierReceiver = "Mr.Wang";
+            model.SupplierAddress = "Chengdu,Sichuan CHINA";
+            model.ShipFee = 0;
+            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
+            model.Remark = "";
+            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
+            return model;
+        }
+
+        public static DcMaterialOrderItem GetMaterialOrderItemBy(DcMaterialOrder order)
+        {
+            var item = new PMSMainService.DcMaterialOrderItem();
+            item.ID = Guid.NewGuid();
+            item.MaterialOrderID = order.ID;
+            item.State = PMSCommon.NoneOrderState.UnDeleted.ToString();
+            item.Creator = (App.Current as App).CurrentUser.UserName;
+            item.CreateTime = DateTime.Now;
+            item.Composition = "Composition";
+            item.PMIWorkNumber = "WorkNumber";
+            item.Purity = "Purity";
+            item.Description = "";
+            item.ProvideRawMaterial = "";
+            item.UnitPrice = 0;
+            item.Weight = 0;
+            item.DeliveryDate = DateTime.Now.AddDays(7);
+            return item;
+        }
+
     }
 }
