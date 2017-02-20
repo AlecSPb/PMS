@@ -33,9 +33,16 @@ namespace PMSDesktopClient.ViewModel
 
         private void IntitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson }));
+            Refresh = new RelayCommand(ActionRefresh);
+
             PageChanged = new RelayCommand(ActionPaging);
+        }
+
+        private void ActionRefresh()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -101,8 +108,9 @@ namespace PMSDesktopClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; set; }
+        public RelayCommand GoToNavigation { get; set; }
         public RelayCommand GoToMisson { get; set; }
+        public RelayCommand Refresh { get; set; }
         #endregion
 
         #region Properties
