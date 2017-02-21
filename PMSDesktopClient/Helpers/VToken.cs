@@ -56,6 +56,7 @@ namespace PMSDesktopClient
         RecordTestResultRefresh,
         RecordDeliveryRefresh,
         PlanSelectForVHP,
-        RecordVHPRefresh
+        RecordVHPRefresh,
+        RecordVHPQuickEdit
     }
 }

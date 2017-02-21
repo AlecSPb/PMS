@@ -66,7 +66,7 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 var result = dc.RecordVHPs.Include("RecordVHPItems")
-                    .OrderByDescending(v => v.CreateTime)
+                    .OrderByDescending(v => v.PlanDate)
                     .Skip(skip).Take(take).ToList();
                 Mapper.Initialize(cfg =>
                 {
@@ -87,6 +87,24 @@ namespace PMSWCFService
                          .OrderByDescending(v => v.CreateTime)
                          .Count();
                 return result;
+            }
+        }
+
+        public List<DcRecordVHP> GetTopRecordVHP(int top)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                var tomorrow = DateTime.Now.AddDays(1);
+                var result = dc.RecordVHPs.Include("RecordVHPItems").Where(r => r.PlanDate <= tomorrow)
+                    .OrderByDescending(v => v.PlanDate).Take(top).ToList();
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<RecordVHP, DcRecordVHP>();
+                    cfg.CreateMap<RecordVHPItem, DcRecordVHPItem>();
+                });
+
+                var final = Mapper.Map<List<RecordVHP>, List<DcRecordVHP>>(result);
+                return final;
             }
         }
 

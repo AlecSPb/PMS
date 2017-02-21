@@ -27,6 +27,7 @@ namespace PMSDesktopClient.ViewModel
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEdit);
+            QuickEdit= new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
         }
 
         private void ActionEdit(DcRecordVHP obj)
@@ -129,6 +130,9 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordVHP> Edit { get; set; }
         public RelayCommand<DcRecordVHP> Doc { get; set; }
+
+
+        public RelayCommand QuickEdit { get; set; }
         #endregion
     }
 }

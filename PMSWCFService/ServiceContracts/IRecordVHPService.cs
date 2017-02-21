@@ -12,6 +12,8 @@ namespace PMSWCFService.ServiceContracts
     public interface IRecordVHPService
     {
         [OperationContract]
+        List<DcRecordVHP> GetTopRecordVHP(int top);
+        [OperationContract]
         List<DcRecordVHP> GetRecordVHP(int skip, int take);
         [OperationContract]
         int GetRecordVHPCount();

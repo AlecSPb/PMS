@@ -259,6 +259,12 @@
   <wsdl:message name="IRecordDeliveryService_DeleteRecordDeliveryItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordDeliveryItemResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordVHPService_GetTopRecordVHP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopRecordVHP" />
+  </wsdl:message>
+  <wsdl:message name="IRecordVHPService_GetTopRecordVHP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopRecordVHPResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
   </wsdl:message>
@@ -660,6 +666,10 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
+    <wsdl:operation name="GetTopRecordVHP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP" message="tns:IRecordVHPService_GetTopRecordVHP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse" message="tns:IRecordVHPService_GetTopRecordVHP_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetRecordVHP">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHP" message="tns:IRecordVHPService_GetRecordVHP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse" message="tns:IRecordVHPService_GetRecordVHP_OutputMessage" />
@@ -1223,6 +1233,15 @@
   </wsdl:binding>
   <wsdl:binding name="recordvhp" type="tns:IRecordVHPService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTopRecordVHP">
+      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetRecordVHP">
       <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetRecordVHP" style="document" />
       <wsdl:input>

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using PMSDesktopClient.View;
-using PMSDesktopClient.ViewModel;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Ioc;
 
@@ -22,10 +21,14 @@ namespace PMSDesktopClient
             SimpleIoc.Default.Register<RecordVHPItemEditView>();
 
             SimpleIoc.Default.Register<PlanSelectView>();
-
+            SimpleIoc.Default.Register<RecordVHPQuickEditView>();
 
         }
         #region Properties
+        public RecordVHPQuickEditView RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
+        }
         public RecordVHPView RecordVHP
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }

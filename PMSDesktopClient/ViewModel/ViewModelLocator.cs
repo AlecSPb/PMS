@@ -55,6 +55,7 @@ namespace PMSDesktopClient.ViewModel
             SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordTestResultVM>();
             SimpleIoc.Default.Register<RecordDeliveryVM>();
+            SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
 
             SimpleIoc.Default.Register<PlanSelectForRecordTestResultVM>();
             SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
@@ -66,9 +67,12 @@ namespace PMSDesktopClient.ViewModel
 
 
 
-
         }
         #region Properties
+        public RecordVHPQuickEditVM RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
+        }
         public RecordVHPVM RecordVHP
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }

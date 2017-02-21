@@ -18,10 +18,8 @@
         <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
-            <TextBlock Style="{StaticResource TextBlockBasic}" Text="VHP ID"/>
-            <TextBox Style="{StaticResource TextBoxBasic}" Text="{Binding SearchVHPID}" MinWidth="200"/>
-            <Button Content="{StaticResource  strSearch}" Style="{StaticResource ButtonBasic}"/>
             <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="Quick Edit" Style="{StaticResource ButtonBasic}" Command="{Binding QuickEdit}" Width="120"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
@@ -55,12 +53,14 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <DataGridTextColumn Header="DeviceCode" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding VHPDeviceCode}"/>
                     <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Composition}"/>
                     <DataGridTextColumn Header="MoldType" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding MoldType}"/>
-                    <DataGridTextColumn Header="DeviceCode" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding DeviceCode}"/>
+                    <DataGridTextColumn Header="MoldDiameter" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding MoldDiameter}"/>
                     <DataGridTextColumn Header="PreTemperature" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PreTemperature}"/>
                     <DataGridTextColumn Header="PrePressure" ElementStyle="{StaticResource TextBlockDGBasic}"

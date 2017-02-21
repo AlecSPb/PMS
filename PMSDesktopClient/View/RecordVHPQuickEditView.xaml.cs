@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSDesktopClient.PMSMainService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,30 @@ namespace PMSDesktopClient.View
         {
             InitializeComponent();
         }
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var row = e.Row.DataContext as DcRecordVHP;
+            if (row != null)
+            {
+                var today = DateTime.Now.Date;
+                if (row.PlanDate.Date == today.Date)
+                {
+                    e.Row.Background = this.FindResource("TodayBrush") as SolidColorBrush;
+                }
+                else if (row.PlanDate.Date == today.Date.AddDays(-1))
+                {
+                    e.Row.Background = this.FindResource("YesterdayBrush") as SolidColorBrush;
+                }
+                else if (row.PlanDate.Date == today.Date.AddDays(1))
+                {
+                    e.Row.Background = this.FindResource("TomorrowBrush") as SolidColorBrush;
+                }
+            }
+
+
+        }
+
+
+
     }
 }

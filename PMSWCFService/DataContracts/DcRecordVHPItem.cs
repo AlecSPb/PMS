@@ -18,6 +18,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
+        public Guid RecordVHPID { get; set; }
+        [DataMember]
         public string Creator { get; set; }
         [DataMember]
         public DateTime CurrentTime { get; set; }

@@ -150,6 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="View\RecordBlankEditView.xaml.cs">
       <DependentUpon>RecordBlankEditView.xaml</DependentUpon>
     </Compile>

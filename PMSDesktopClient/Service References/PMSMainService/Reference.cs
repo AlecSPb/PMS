@@ -3553,6 +3553,9 @@ namespace PMSDesktopClient.PMSMainService {
         private double PV3Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid RecordVHPIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double SVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3686,6 +3689,19 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((this.PV3Field.Equals(value) != true)) {
                     this.PV3Field = value;
                     this.RaisePropertyChanged("PV3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RecordVHPID {
+            get {
+                return this.RecordVHPIDField;
+            }
+            set {
+                if ((this.RecordVHPIDField.Equals(value) != true)) {
+                    this.RecordVHPIDField = value;
+                    this.RaisePropertyChanged("RecordVHPID");
                 }
             }
         }
@@ -5895,6 +5911,12 @@ namespace PMSDesktopClient.PMSMainService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordVHPService")]
     public interface IRecordVHPService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
+        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP(int top);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync(int top);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
         PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take);
         
@@ -5969,6 +5991,14 @@ namespace PMSDesktopClient.PMSMainService {
         
         public RecordVHPServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP(int top) {
+            return base.Channel.GetTopRecordVHP(top);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync(int top) {
+            return base.Channel.GetTopRecordVHPAsync(top);
         }
         
         public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take) {

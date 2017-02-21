@@ -104,6 +104,10 @@ namespace PMSDesktopClient
                     NavigateTo(recordvhpeditview);
                     break;
 
+                case VToken.RecordVHPQuickEdit:
+                    NavigateTo(views.RecordVHPQuickEdit);
+                    break;
+
 
                 case VToken.OrderEdit:
                     var view = views.OrderEdit;

@@ -328,6 +328,7 @@
       <xs:element minOccurs="0" name="PV1" type="xs:double" />
       <xs:element minOccurs="0" name="PV2" type="xs:double" />
       <xs:element minOccurs="0" name="PV3" type="xs:double" />
+      <xs:element minOccurs="0" name="RecordVHPID" type="ser:guid" />
       <xs:element minOccurs="0" name="SV" type="xs:double" />
       <xs:element minOccurs="0" name="Shift1" type="xs:double" />
       <xs:element minOccurs="0" name="Shift2" type="xs:double" />
