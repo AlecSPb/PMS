@@ -216,11 +216,11 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockBasic}"
+                <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Remark}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="5" Style="{StaticResource TextBlockBasic}"
+        <TextBlock Grid.Row="5" Style="{StaticResource TextBlockDGBasic}"
                    Text="装箱单"/>
     </Grid>
 </UserControl>

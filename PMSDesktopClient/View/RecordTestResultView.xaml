@@ -49,7 +49,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="TestType" ElementStyle="{StaticResource TextBlockBasic}"
+                <DataGridTextColumn Header="TestType" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding TestType}"/>
 
                 <DataGridTemplateColumn Header="ProductID">
