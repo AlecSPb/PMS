@@ -1,6 +1,8 @@
-﻿using PMSDesktopClient.PMSMainService;
+﻿using GalaSoft.MvvmLight.Messaging;
+using PMSDesktopClient.PMSMainService;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +26,14 @@ namespace PMSDesktopClient.View
         public RecordVHPQuickEditView()
         {
             InitializeComponent();
+            view = CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
+            view.SortDescriptions.Add(new SortDescription("CurrentTime", ListSortDirection.Descending));
         }
+
+        public ICollectionView view { get; set; }
+
+
+
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             var row = e.Row.DataContext as DcRecordVHP;
@@ -47,8 +56,6 @@ namespace PMSDesktopClient.View
 
 
         }
-
-
 
     }
 }
