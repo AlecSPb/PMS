@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using PMSDesktopClient.View;
 using PMSDesktopClient.ViewModel;
+using Microsoft.Practices.ServiceLocation;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace PMSDesktopClient
 {
@@ -13,10 +15,38 @@ namespace PMSDesktopClient
     {
         public ViewLocator()
         {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            SimpleIoc.Default.Register<RecordVHPView>();
+            SimpleIoc.Default.Register<RecordVHPEditView>();
+            SimpleIoc.Default.Register<RecordVHPItemEditView>();
+
+            SimpleIoc.Default.Register<PlanSelectView>();
+
 
         }
+        #region Properties
+        public RecordVHPView RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }
+        }
+        public RecordVHPEditView RecordVHPEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPEditView>(); }
+        }
+        public RecordVHPItemEditView RecordVHPItemEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPItemEditView>(); }
+        }
+
+        public PlanSelectView PlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
+        }
+        #endregion
 
         #region ViewProperties
+
         private NavigationView navigation;
         public NavigationView Navigation
         {
@@ -170,19 +200,6 @@ namespace PMSDesktopClient
                     materialNeedSelect = new MaterialNeedSelectView();
                 }
                 return materialNeedSelect;
-            }
-        }
-
-        private PlanSelectView planSelect;
-        public PlanSelectView PlanSelect
-        {
-            get
-            {
-                if (planSelect == null)
-                {
-                    planSelect = new PlanSelectView();
-                }
-                return planSelect;
             }
         }
 

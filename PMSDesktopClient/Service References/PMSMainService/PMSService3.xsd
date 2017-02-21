@@ -51,7 +51,7 @@
   <xs:complexType name="DcPlanVHP">
     <xs:sequence>
       <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
-      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FillingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
@@ -188,11 +188,11 @@
   <xs:element name="ArrayOfDcMissonWithPlan" nillable="true" type="tns:ArrayOfDcMissonWithPlan" />
   <xs:complexType name="DcMissonWithPlan">
     <xs:sequence>
-      <xs:element minOccurs="0" name="CalculationDensity" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositoinAbbr" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeadLine" type="xs:dateTime" />
@@ -200,11 +200,11 @@
       <xs:element minOccurs="0" name="DimensionDetails" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FillingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="KeepTempTime" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="KeepTempTime" type="xs:double" />
       <xs:element minOccurs="0" name="MachineRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MoldDiameter" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MoldDiameter" type="xs:double" />
       <xs:element minOccurs="0" name="MoldType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderID" type="ser:guid" />
       <xs:element minOccurs="0" name="OrderRemark" nillable="true" type="xs:string" />
@@ -212,25 +212,25 @@
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
-      <xs:element minOccurs="0" name="PrePressure" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="PreTemperature" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="Pressure" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
+      <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="Pressure" type="xs:double" />
       <xs:element minOccurs="0" name="ProcessCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoomHumidity" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="RoomTemperature" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
+      <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetQuantity" type="xs:int" />
-      <xs:element minOccurs="0" name="Temperature" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="Thickness" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness" type="xs:double" />
       <xs:element minOccurs="0" name="VHPDeviceCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VHPPlanRemark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VHPRequirement" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Vaccum" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMissonWithPlan" nillable="true" type="tns:DcMissonWithPlan" />
@@ -292,12 +292,14 @@
   <xs:complexType name="DcRecordVHP">
     <xs:sequence>
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DeviceCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="KeepTempTime" type="xs:double" />
-      <xs:element minOccurs="0" name="MoldCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoldDiameter" type="xs:double" />
+      <xs:element minOccurs="0" name="MoldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
       <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
       <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
       <xs:element minOccurs="0" name="Pressure" type="xs:double" />
@@ -305,7 +307,7 @@
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Temperature" type="xs:double" />
-      <xs:element minOccurs="0" name="VHPID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPDeviceCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Vaccum" type="xs:double" />
     </xs:sequence>
   </xs:complexType>

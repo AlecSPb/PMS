@@ -22,6 +22,14 @@ namespace PMSDesktopClient
                 return states;
             }
         }
+        public static string[] CommonStates
+        {
+            get
+            {
+                var states = Enum.GetNames(typeof(PMSCommon.CommonState));
+                return states;
+            }
+        }
 
         public static string[] OrderPriorities
         {

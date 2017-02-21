@@ -57,10 +57,22 @@ namespace PMSDesktopClient.ViewModel
             SimpleIoc.Default.Register<RecordDeliveryVM>();
 
             SimpleIoc.Default.Register<PlanSelectForRecordTestResultVM>();
+            SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
+
+
+
+
+
+
+
 
 
         }
         #region Properties
+        public RecordVHPVM RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
+        }
         public NavigationVM Navigation
         {
             get { return SimpleIoc.Default.GetInstance<NavigationVM>(); }
@@ -101,14 +113,17 @@ namespace PMSDesktopClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
         }
-        public RecordVHPVM RecordVHP
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
-        }
+
         public PlanSelectForRecordTestResultVM PlanSelectForRecordTestResult
         {
             get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestResultVM>(); }
         }
+
+        public PlanSelectForRecordVHPVM PlanSelectForRecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordVHPVM>(); }
+        }
+
         #endregion
 
 

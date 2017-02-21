@@ -10,18 +10,40 @@ using System.Collections.ObjectModel;
 
 namespace PMSDesktopClient.ViewModel
 {
-    public class RecordVHPVM:ViewModelBase
+    public class RecordVHPVM : ViewModelBase
     {
         public RecordVHPVM()
         {
             InitializeCommands();
             IntializeProperties();
+            SetPageParametersWhenConditionChange();
         }
 
         private void IntializeProperties()
         {
             SearchVHPID = "";
             RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            All = new RelayCommand(ActionAll);
+            Add = new RelayCommand(ActionAdd);
+            Edit = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEdit);
+        }
+
+        private void ActionEdit(DcRecordVHP obj)
+        {
+            MsgObject msg = new PMSDesktopClient.MsgObject();
+            msg.MsgToken = VToken.RecordVHPEdit;
+            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
+            NavigationService.GoTo(msg);
+        }
+
+        private void ActionAdd()
+        {
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelectForVHP });
+        }
+
+        private void ActionAll()
+        {
             SetPageParametersWhenConditionChange();
         }
 
@@ -33,9 +55,9 @@ namespace PMSDesktopClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 10;
             var service = new RecordVHPServiceClient();
-            RecordCount = service.GetRecordVHPCount(SearchVHPID);
+            RecordCount = service.GetRecordVHPCount();
             ActionPaging();
         }
         /// <summary>
@@ -47,7 +69,7 @@ namespace PMSDesktopClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordVHP(skip, take, SearchVHPID);
+            var orders = service.GetRecordVHP(skip, take);
             RecordVHPs.Clear();
             orders.ToList<DcRecordVHP>().ForEach(o => RecordVHPs.Add(o));
         }
@@ -95,7 +117,7 @@ namespace PMSDesktopClient.ViewModel
         public string SearchVHPID
         {
             get { return searchVHPID; }
-            set { searchVHPID = value;RaisePropertyChanged(nameof(SearchVHPID)); }
+            set { searchVHPID = value; RaisePropertyChanged(nameof(SearchVHPID)); }
         }
 
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
@@ -103,10 +125,10 @@ namespace PMSDesktopClient.ViewModel
 
         #region Commands
         public RelayCommand GoToNavigation { get; set; }
+        public RelayCommand All { get; set; }
         public RelayCommand Add { get; set; }
-        public RelayCommand Edit { get; set; }
-        public RelayCommand AddItem { get; set; }
-        public RelayCommand EditItem { get; set; }
+        public RelayCommand<DcRecordVHP> Edit { get; set; }
+        public RelayCommand<DcRecordVHP> Doc { get; set; }
         #endregion
     }
 }

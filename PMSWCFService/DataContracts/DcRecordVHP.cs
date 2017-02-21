@@ -16,20 +16,24 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
         public string State { get; set; }
         [DataMember]
-        public string VHPID { get; set; }//161210-M
+        public Guid PlanID { get; set; }
+        [DataMember]
+        public DateTime PlanDate { get; set; }//161210-M
         [DataMember]
         public string Composition { get; set; }
         [DataMember]
-        public string MoldCode { get; set; }
+        public string MoldType { get; set; }
 
         [DataMember]
-        public string DeviceCode { get; set; }
+        public string VHPDeviceCode { get; set; }
+        [DataMember]
+        public double MoldDiameter { get; set; }
         //预压力和预压温度
         [DataMember]
         public double PreTemperature { get; set; }

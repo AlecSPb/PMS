@@ -16,14 +16,18 @@ namespace PMSDAL
             RecordVHPItems = new List<RecordVHPItem>();
         }
         public Guid ID { get; set; }
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
         public string State { get; set; }
-        public string VHPID { get; set; }//161210-M
-        public string Composition { get; set; }
-        public string MoldCode { get; set; }
 
-        public string DeviceCode { get; set; }
+        public Guid PlanID { get; set; }
+        public DateTime PlanDate { get; set; }//161210-M
+        public string Composition { get; set; }
+        public string MoldType { get; set; }
+
+        public string VHPDeviceCode { get; set; }
+
+        public double MoldDiameter { get; set; }
         //预压力和预压温度
         public double PreTemperature { get; set; }
         public double PrePressure { get; set; }

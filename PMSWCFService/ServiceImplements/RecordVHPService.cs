@@ -61,12 +61,11 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordVHP> GetRecordVHP(int skip, int take, string searchVHPID)
+        public List<DcRecordVHP> GetRecordVHP(int skip, int take)
         {
             using (var dc = new PMSDbContext())
             {
                 var result = dc.RecordVHPs.Include("RecordVHPItems")
-                    .Where(v => v.VHPID.Contains(searchVHPID))
                     .OrderByDescending(v => v.CreateTime)
                     .Skip(skip).Take(take).ToList();
                 Mapper.Initialize(cfg =>
@@ -80,12 +79,11 @@ namespace PMSWCFService
             }
         }
 
-        public int GetRecordVHPCount(string searchVHPID)
+        public int GetRecordVHPCount()
         {
             using (var dc = new PMSDbContext())
             {
                 var result = dc.RecordVHPs
-                         .Where(v => v.VHPID.Contains(searchVHPID))
                          .OrderByDescending(v => v.CreateTime)
                          .Count();
                 return result;

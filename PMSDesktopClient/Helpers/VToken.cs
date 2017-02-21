@@ -54,6 +54,8 @@ namespace PMSDesktopClient
         MaterialNeedRefresh,
         MaterialOrderRefresh,
         RecordTestResultRefresh,
-        RecordDeliveryRefresh
+        RecordDeliveryRefresh,
+        PlanSelectForVHP,
+        RecordVHPRefresh
     }
 }

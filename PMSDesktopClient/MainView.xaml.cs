@@ -34,7 +34,7 @@ namespace PMSDesktopClient
         {
             InitializeComponent();
             views = new ViewLocator();
-            viewmodels = new ViewModel.ViewModelLocator();
+            viewmodels = new ViewModelLocator();
 
 
 
@@ -71,6 +71,10 @@ namespace PMSDesktopClient
                 case VToken.RecordDelivery:
                     NavigateTo(views.RecordDelivery);
                     break;
+                case VToken.RecordVHP:
+                    NavigateTo(views.RecordVHP);
+                    break;
+
                 case VToken.MaterialNeed:
                     NavigateTo(views.MaterialNeed);
                     break;
@@ -88,7 +92,17 @@ namespace PMSDesktopClient
                     planselect1.DataContext = viewmodels.PlanSelectForRecordTestResult;
                     NavigateTo(planselect1);
                     break;
+                case VToken.PlanSelectForVHP:
+                    var planselect2 = views.PlanSelect;
+                    planselect2.DataContext = viewmodels.PlanSelectForRecordVHP;
+                    NavigateTo(planselect2);
+                    break;
 
+                case VToken.RecordVHPEdit:
+                    var recordvhpeditview = views.RecordVHPEdit;
+                    recordvhpeditview.DataContext = new RecordVHPEditVM(msg.MsgModel);
+                    NavigateTo(recordvhpeditview);
+                    break;
 
 
                 case VToken.OrderEdit:

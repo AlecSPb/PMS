@@ -52,7 +52,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public DateTime? CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         [DataMember]
         public DateTime PlanDate { get; set; }
         [DataMember]
@@ -60,31 +60,31 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string MoldType { get; set; }
         [DataMember]
-        public double? CalculationDensity { get; set; }
+        public double CalculationDensity { get; set; }
         [DataMember]
-        public double? MoldDiameter { get; set; }
+        public double MoldDiameter { get; set; }
         [DataMember]
-        public double? Thickness { get; set; }
+        public double Thickness { get; set; }
         [DataMember]
         public int TargetQuantity { get; set; }
         [DataMember]
         public string GrainSize { get; set; }
         [DataMember]
-        public double? RoomTemperature { get; set; }
+        public double RoomTemperature { get; set; }
         [DataMember]
-        public double? RoomHumidity { get; set; }
+        public double RoomHumidity { get; set; }
         [DataMember]
-        public double? PreTemperature { get; set; }
+        public double PreTemperature { get; set; }
         [DataMember]
-        public double? PrePressure { get; set; }
+        public double PrePressure { get; set; }
         [DataMember]
-        public double? Temperature { get; set; }
+        public double Temperature { get; set; }
         [DataMember]
-        public double? Pressure { get; set; }
+        public double Pressure { get; set; }
         [DataMember]
-        public double? Vaccum { get; set; }
+        public double Vaccum { get; set; }
         [DataMember]
-        public double? KeepTempTime { get; set; }
+        public double KeepTempTime { get; set; }
         [DataMember]
         public string ProcessCode { get; set; }
         [DataMember]

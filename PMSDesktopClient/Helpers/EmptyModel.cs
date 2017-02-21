@@ -84,7 +84,7 @@ namespace PMSDesktopClient
             plan.Vaccum = 0;
             plan.ProcessCode = "W1";
             plan.PrePressure = 0;
-            plan.PreTemperature = 0;
+            plan.PreTemperature = 25;
             plan.Quantity = 1;
             plan.MoldDiameter = 230;
             plan.Thickness = 5;
@@ -92,7 +92,7 @@ namespace PMSDesktopClient
             plan.State = "UnChecked";
             plan.CalculationDensity = 5.75;
             plan.GrainSize = "-200";
-            plan.RoomHumidity = 80;
+            plan.RoomHumidity = 70;
             plan.RoomTemperature = 23;
             plan.KeepTempTime = 120;
             plan.MillingRequirement = "常规要求";

@@ -134,7 +134,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helpers\BasicDataInstance.cs" />
+    <Compile Include="Helpers\BDInstance.cs" />
     <Compile Include="Helpers\CommonDialogService.cs" />
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
@@ -170,6 +170,9 @@
     </Compile>
     <Compile Include="View\RecordMillingView.xaml.cs">
       <DependentUpon>RecordMillingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPItemEditView.xaml.cs">
+      <DependentUpon>RecordVHPItemEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLocator.cs" />
     <Compile Include="ViewModel\DeliveryVM.cs" />
@@ -431,6 +434,10 @@
     <Page Include="View\RecordTestResultView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordVHPItemEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\RecordVHPEditView.xaml">
       <SubType>Designer</SubType>

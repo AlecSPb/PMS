@@ -535,7 +535,7 @@ namespace PMSDesktopClient.PMSMainService {
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -639,7 +639,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
@@ -2005,7 +2005,7 @@ namespace PMSDesktopClient.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> CalculationDensityField;
+        private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionOriginalField;
@@ -2017,7 +2017,7 @@ namespace PMSDesktopClient.PMSMainService {
         private string CompositoinAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -2041,7 +2041,7 @@ namespace PMSDesktopClient.PMSMainService {
         private string GrainSizeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> KeepTempTimeField;
+        private double KeepTempTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MachineRequirementField;
@@ -2053,7 +2053,7 @@ namespace PMSDesktopClient.PMSMainService {
         private string MinimumAcceptDefectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> MoldDiameterField;
+        private double MoldDiameterField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MoldTypeField;
@@ -2077,13 +2077,13 @@ namespace PMSDesktopClient.PMSMainService {
         private System.Guid PlanIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PrePressureField;
+        private double PrePressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PreTemperatureField;
+        private double PreTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PressureField;
+        private double PressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProcessCodeField;
@@ -2101,10 +2101,10 @@ namespace PMSDesktopClient.PMSMainService {
         private string QuantityUnitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> RoomHumidityField;
+        private double RoomHumidityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> RoomTemperatureField;
+        private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
@@ -2116,10 +2116,10 @@ namespace PMSDesktopClient.PMSMainService {
         private int TargetQuantityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> TemperatureField;
+        private double TemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> ThicknessField;
+        private double ThicknessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VHPDeviceCodeField;
@@ -2131,7 +2131,7 @@ namespace PMSDesktopClient.PMSMainService {
         private string VHPRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> VaccumField;
+        private double VaccumField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2144,7 +2144,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> CalculationDensity {
+        public double CalculationDensity {
             get {
                 return this.CalculationDensityField;
             }
@@ -2196,7 +2196,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
@@ -2300,7 +2300,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> KeepTempTime {
+        public double KeepTempTime {
             get {
                 return this.KeepTempTimeField;
             }
@@ -2352,7 +2352,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> MoldDiameter {
+        public double MoldDiameter {
             get {
                 return this.MoldDiameterField;
             }
@@ -2456,7 +2456,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> PrePressure {
+        public double PrePressure {
             get {
                 return this.PrePressureField;
             }
@@ -2469,7 +2469,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> PreTemperature {
+        public double PreTemperature {
             get {
                 return this.PreTemperatureField;
             }
@@ -2482,7 +2482,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Pressure {
+        public double Pressure {
             get {
                 return this.PressureField;
             }
@@ -2560,7 +2560,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> RoomHumidity {
+        public double RoomHumidity {
             get {
                 return this.RoomHumidityField;
             }
@@ -2573,7 +2573,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> RoomTemperature {
+        public double RoomTemperature {
             get {
                 return this.RoomTemperatureField;
             }
@@ -2625,7 +2625,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Temperature {
+        public double Temperature {
             get {
                 return this.TemperatureField;
             }
@@ -2638,7 +2638,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Thickness {
+        public double Thickness {
             get {
                 return this.ThicknessField;
             }
@@ -2690,7 +2690,7 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Vaccum {
+        public double Vaccum {
             get {
                 return this.VaccumField;
             }
@@ -3215,13 +3215,10 @@ namespace PMSDesktopClient.PMSMainService {
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DeviceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -3230,7 +3227,16 @@ namespace PMSDesktopClient.PMSMainService {
         private double KeepTempTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MoldCodeField;
+        private double MoldDiameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoldTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime PlanDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid PlanIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PrePressureField;
@@ -3254,7 +3260,7 @@ namespace PMSDesktopClient.PMSMainService {
         private double TemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VHPIDField;
+        private string VHPDeviceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double VaccumField;
@@ -3283,12 +3289,12 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -3304,19 +3310,6 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DeviceCode {
-            get {
-                return this.DeviceCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeviceCodeField, value) != true)) {
-                    this.DeviceCodeField = value;
-                    this.RaisePropertyChanged("DeviceCode");
                 }
             }
         }
@@ -3348,14 +3341,53 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MoldCode {
+        public double MoldDiameter {
             get {
-                return this.MoldCodeField;
+                return this.MoldDiameterField;
             }
             set {
-                if ((object.ReferenceEquals(this.MoldCodeField, value) != true)) {
-                    this.MoldCodeField = value;
-                    this.RaisePropertyChanged("MoldCode");
+                if ((this.MoldDiameterField.Equals(value) != true)) {
+                    this.MoldDiameterField = value;
+                    this.RaisePropertyChanged("MoldDiameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldType {
+            get {
+                return this.MoldTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldTypeField, value) != true)) {
+                    this.MoldTypeField = value;
+                    this.RaisePropertyChanged("MoldType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime PlanDate {
+            get {
+                return this.PlanDateField;
+            }
+            set {
+                if ((this.PlanDateField.Equals(value) != true)) {
+                    this.PlanDateField = value;
+                    this.RaisePropertyChanged("PlanDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid PlanID {
+            get {
+                return this.PlanIDField;
+            }
+            set {
+                if ((this.PlanIDField.Equals(value) != true)) {
+                    this.PlanIDField = value;
+                    this.RaisePropertyChanged("PlanID");
                 }
             }
         }
@@ -3452,14 +3484,14 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string VHPID {
+        public string VHPDeviceCode {
             get {
-                return this.VHPIDField;
+                return this.VHPDeviceCodeField;
             }
             set {
-                if ((object.ReferenceEquals(this.VHPIDField, value) != true)) {
-                    this.VHPIDField = value;
-                    this.RaisePropertyChanged("VHPID");
+                if ((object.ReferenceEquals(this.VHPDeviceCodeField, value) != true)) {
+                    this.VHPDeviceCodeField = value;
+                    this.RaisePropertyChanged("VHPDeviceCode");
                 }
             }
         }
@@ -5864,16 +5896,16 @@ namespace PMSDesktopClient.PMSMainService {
     public interface IRecordVHPService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take, string searchVHPID);
+        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take, string searchVHPID);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
-        int GetRecordVHPCount(string searchVHPID);
+        int GetRecordVHPCount();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
-        System.Threading.Tasks.Task<int> GetRecordVHPCountAsync(string searchVHPID);
+        System.Threading.Tasks.Task<int> GetRecordVHPCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPResponse")]
         int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model);
@@ -5939,20 +5971,20 @@ namespace PMSDesktopClient.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take, string searchVHPID) {
-            return base.Channel.GetRecordVHP(skip, take, searchVHPID);
+        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take) {
+            return base.Channel.GetRecordVHP(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take, string searchVHPID) {
-            return base.Channel.GetRecordVHPAsync(skip, take, searchVHPID);
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take) {
+            return base.Channel.GetRecordVHPAsync(skip, take);
         }
         
-        public int GetRecordVHPCount(string searchVHPID) {
-            return base.Channel.GetRecordVHPCount(searchVHPID);
+        public int GetRecordVHPCount() {
+            return base.Channel.GetRecordVHPCount();
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordVHPCountAsync(string searchVHPID) {
-            return base.Channel.GetRecordVHPCountAsync(searchVHPID);
+        public System.Threading.Tasks.Task<int> GetRecordVHPCountAsync() {
+            return base.Channel.GetRecordVHPCountAsync();
         }
         
         public int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
