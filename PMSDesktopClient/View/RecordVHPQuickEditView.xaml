@@ -27,7 +27,7 @@
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" SelectedIndex="0"
-                  LoadingRow="DataGrid_LoadingRow"
+                LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource DataGridBasic}" ItemsSource="{Binding QuickRecordVHPs}" SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
             <DataGrid.Columns>
                 <!--<DataGridTemplateColumn Header="Edit">

@@ -87,7 +87,17 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionDuplicate(DcRecordVHPItem obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                obj.ID = Guid.NewGuid();
+                obj.CurrentTime = DateTime.Now;
+                obj.Creator = (App.Current as App).CurrentUser.UserName;
+                using (var service=new RecordVHPServiceClient())
+                {
+                    service.AddRecordVHPItem(obj);
+                    LoadData();
+                }
+            }
         }
 
         private void ActionRefresh()
