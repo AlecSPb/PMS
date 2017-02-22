@@ -151,6 +151,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
+    <Compile Include="View\MaintenanceEditView.xaml.cs">
+      <DependentUpon>MaintenanceEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintenanceItemEditView.xaml.cs">
+      <DependentUpon>MaintenanceItemEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaintenanceItemView.xaml.cs">
+      <DependentUpon>MaintenanceItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MaintenanceView.xaml.cs">
       <DependentUpon>MaintenanceView.xaml</DependentUpon>
     </Compile>
@@ -316,6 +325,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\LogInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintenanceEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintenanceItemEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaintenanceItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
