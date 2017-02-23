@@ -26,13 +26,17 @@ namespace PMSDesktopClient.View
         public RecordVHPQuickEditView()
         {
             InitializeComponent();
-            view = CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
+            Refresh();
+            view = (ListCollectionView)CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
             view.SortDescriptions.Add(new SortDescription("CurrentTime", ListSortDirection.Descending));
         }
 
         public ICollectionView view { get; set; }
 
+        public void Refresh()
+        {
 
+        }
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {

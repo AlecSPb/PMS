@@ -14,11 +14,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Material Need Edit" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageMaterialNeedEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}"
+            <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}"
                     Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"
+            <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}"
                     Command="{Binding Save}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">

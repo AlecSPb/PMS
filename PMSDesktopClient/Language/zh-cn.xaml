@@ -1,0 +1,126 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--AppName-->
+    <sys:String x:Key="strAppName">生产管理系统桌面版本</sys:String>
+    <sys:String x:Key="strWelcome">欢迎</sys:String>
+
+    <!--Navigation-->
+    <sys:String x:Key="strPageSales">订单</sys:String>
+    <sys:String x:Key="strPageMaterial">原材料</sys:String>
+    <sys:String x:Key="strPageProduction">生产</sys:String>
+    <sys:String x:Key="strPageRecord">记录</sys:String>
+    <sys:String x:Key="strPageOther">其他</sys:String>
+    <sys:String x:Key="strbtnOrder">订单</sys:String>
+    <sys:String x:Key="strbtnOrderCheck">订单核验</sys:String>
+    <sys:String x:Key="strbtnMisson">生产任务</sys:String>
+    <sys:String x:Key="strbtnPlan">生产计划</sys:String>
+    <sys:String x:Key="strbtnMaterialNeed">原料需求</sys:String>
+    <sys:String x:Key="strbtnMaterialOrder">原料订单</sys:String>
+    <sys:String x:Key="strbtnMaterialInventory">原料库存</sys:String>
+    <sys:String x:Key="strbtnRecordMilling">制粉记录</sys:String>
+    <sys:String x:Key="strbtnRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="strbtnRecordBlank">取模记录</sys:String>
+    <sys:String x:Key="strbtnRecordMachine">加工记录</sys:String>
+    <sys:String x:Key="strbtnRecordTestResult">测试记录</sys:String>
+    <sys:String x:Key="strbtnRecordDelivery">发货记录</sys:String>
+    <sys:String x:Key="strbtnRecordBonding">绑定记录</sys:String>
+    <sys:String x:Key="strbtnMaintenance">设备维护</sys:String>
+
+    <!--PageName-->
+    <sys:String x:Key="strPageOrder">订单记录</sys:String>
+    <sys:String x:Key="strPageOrderEdit">订单记录编辑</sys:String>
+    <sys:String x:Key="strPageOrderCheck">订单核验记录</sys:String>
+    <sys:String x:Key="strPageOrderCheckEdit">订单核验记录编辑</sys:String>
+
+    <sys:String x:Key="strPageMisson">任务记录</sys:String>
+    <sys:String x:Key="strPagePlan">计划记录</sys:String>
+    <sys:String x:Key="strPagePlanEdit">计划记录编辑</sys:String>
+    <sys:String x:Key="strPageMaterialNeed">材料需求记录</sys:String>
+    <sys:String x:Key="strPageMaterialNeedEdit">材料需求记录编辑</sys:String>
+    <sys:String x:Key="strPageMaterialOrder">材料订单记录</sys:String>
+    <sys:String x:Key="strPageMaterialOrderEdit">材料订单记录编辑</sys:String>
+    <sys:String x:Key="strPageMaterialOrderItemEdit">材料订单项记录编辑</sys:String>
+    <sys:String x:Key="strPageMaterialInventory">材料库存记录</sys:String>
+    <sys:String x:Key="strPageMaterialInventoryEdit">材料库存记录编辑</sys:String>
+
+
+
+    <sys:String x:Key="strPageRecordMilling">制粉记录</sys:String>
+    <sys:String x:Key="strPageRecordMillingEdit">制粉记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordMachine">加工记录</sys:String>
+    <sys:String x:Key="strPageRecordMachineEdit">加工记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="strPageRecordVHPEditPage">热压记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordVHPQuickEditPage">热压记录快速录入</sys:String>
+    <sys:String x:Key="strPageRecordBlank">取模记录</sys:String>
+    <sys:String x:Key="strPageRecordBlankEdit">取模记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordBonding">绑定记录</sys:String>
+    <sys:String x:Key="strPageRecordBondingEdit">绑定记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordTestResult">测试记录</sys:String>
+    <sys:String x:Key="strPageRecordTestResultEdit">测试记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordDelivery">发货记录</sys:String>
+    <sys:String x:Key="strPageRecordDeliveryEdit">发货记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordDeliveryItemEdit">发货项记录编辑</sys:String>
+
+
+    <sys:String x:Key="strPageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
+    <sys:String x:Key="strPageTestResultSelect">请选择一个测试结果项目</sys:String>
+    <sys:String x:Key="strPagePlanSelect">请选择一个生产计划项目</sys:String>
+
+    <sys:String x:Key="strVHPID">VHP ID</sys:String>
+    <sys:String x:Key="strProductReport">Report</sys:String>
+
+    <!--Button-->
+    <sys:String x:Key="strbtnNavigation">导航页面</sys:String>
+    <sys:String x:Key="strbtnGiveUp">放弃</sys:String>
+    <sys:String x:Key="strbtnLogin">登录</sys:String>
+    <sys:String x:Key="strbtnBack">返回</sys:String>
+    <sys:String x:Key="strbtnRefresh">刷新</sys:String>
+    <sys:String x:Key="strbtnSearch">搜索</sys:String>
+    <sys:String x:Key="strbtnAll">全部</sys:String>
+    <sys:String x:Key="strbtnSave">保存</sys:String>
+    <sys:String x:Key="strbtnAdd">添加</sys:String>
+    <sys:String x:Key="strbtnAddItem">添加项目</sys:String>
+    <sys:String x:Key="strbtnEdit">编辑</sys:String>
+    <sys:String x:Key="strbtnEditItem">编辑项目</sys:String>
+    <sys:String x:Key="strbtnEmpty">使用空记录</sys:String>
+    <sys:String x:Key="strbtnQuick">快速编辑</sys:String>
+    <sys:String x:Key="strbtnDoc">输出文档</sys:String>
+    <sys:String x:Key="strbtnPrint">打印</sys:String>
+
+
+    <sys:String x:Key="strStart">Start</sys:String>
+    <sys:String x:Key="strOrder">Order</sys:String>
+    <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
+    <sys:String x:Key="strOrderReview">OrderReview</sys:String>
+    <sys:String x:Key="strMisson">Misson</sys:String>
+    <sys:String x:Key="strPlan">Plan</sys:String>
+    <sys:String x:Key="strPlanEdit">Plan Edit</sys:String>
+    <sys:String x:Key="strPlanCanlendar">Plan Canlendar</sys:String>
+    <sys:String x:Key="strProduct">Product</sys:String>
+    <sys:String x:Key="strProductEdit">Product Edit</sys:String>
+    <sys:String x:Key="strBonding">Bonding</sys:String>
+    <sys:String x:Key="strBondingEdit">Bonding Edit</sys:String>
+    <sys:String x:Key="strDelivery">Delivery</sys:String>
+    <sys:String x:Key="strDeliveryEdit">Delivery Edit</sys:String>
+    <sys:String x:Key="strRawMaterial">Raw Material</sys:String>
+    <sys:String x:Key="strRawMaterialEdit">Raw Material Edit</sys:String>
+    <sys:String x:Key="strRecord">Record</sys:String>
+    <sys:String x:Key="strBasicData">Basic Data</sys:String>
+
+    <sys:String x:Key="strHelp">Help</sys:String>
+    <sys:String x:Key="strAbout">About</sys:String>
+    <sys:String x:Key="strInstruct">Instruct</sys:String>
+    <!--Indicator-->
+    <sys:String x:Key="strColorMeaning">颜色含义=></sys:String>
+    <sys:String x:Key="strYesterday">昨天</sys:String>
+    <sys:String x:Key="strToday">今天</sys:String>
+    <sys:String x:Key="strTomorrow">明天</sys:String>
+
+    <sys:String x:Key="strUnChecked">未核验</sys:String>
+    <sys:String x:Key="strUnCompleted">未完成</sys:String>
+    <sys:String x:Key="strCompleted">完成</sys:String>
+    <sys:String x:Key="strPaused">暂停</sys:String>
+    <sys:String x:Key="strEmergency">紧急</sys:String>
+</ResourceDictionary>

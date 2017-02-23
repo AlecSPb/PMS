@@ -8,9 +8,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
-    <!--<UserControl.Background>
+    <UserControl.Background>
         <ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/funnyfacebig.jpg" TileMode="FlipXY" Stretch="Uniform"/>
-    </UserControl.Background>-->
+    </UserControl.Background>
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -49,31 +49,31 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Text="Sales" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
-        <Button Content="Order" Grid.Row="0" Grid.Column="1" Command="{Binding GoToOrder}"/>
-        <Button Content="Order Check" Grid.Row="0" Grid.Column="2" Command="{Binding GoToOrderCheck}"/>
+        <TextBlock Text="{StaticResource strPageSales}" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="{StaticResource strbtnOrder}" Grid.Row="0" Grid.Column="1" Command="{Binding GoToOrder}"/>
+        <Button Content="{StaticResource strbtnOrderCheck}" Grid.Row="0" Grid.Column="2" Command="{Binding GoToOrderCheck}"/>
 
-        <TextBlock Text="Production" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
-        <Button Content="Misson" Grid.Row="1" Grid.Column="1" Command="{Binding GoToMisson}"/>
-        <Button Content="Plan" Grid.Row="1" Grid.Column="2" Command="{Binding GoToPlan}"/>
+        <TextBlock Text="{StaticResource strPageProduction}" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="{StaticResource strbtnMisson}" Grid.Row="1" Grid.Column="1" Command="{Binding GoToMisson}"/>
+        <Button Content="{StaticResource strbtnPlan}" Grid.Row="1" Grid.Column="2" Command="{Binding GoToPlan}"/>
 
-        <TextBlock Text="Materials" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
-        <Button Content="Material Need" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialNeed}"/>
-        <Button Content="Material Order" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialOrder}"/>
-        <Button Content="Material Inventory" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}"/>
+        <TextBlock Text="{StaticResource strPageMaterial}" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="{StaticResource strbtnMaterialNeed}" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialNeed}"/>
+        <Button Content="{StaticResource strbtnMaterialOrder}" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialOrder}"/>
+        <Button Content="{StaticResource strbtnMaterialInventory}" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}"/>
 
-        <TextBlock Text="Records" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
-        <Button Content="Milling Record" Grid.Row="3" Grid.Column="1"/>
-        <Button Content="VHP Record" Grid.Row="3" Grid.Column="2" Command="{Binding GoToVHPRecord}"/>
-        <Button Content="Blank Record" Grid.Row="3" Grid.Column="3"/>
-        <Button Content="Machine Record" Grid.Row="3" Grid.Column="4"/>
-        <Button Content="Test Result Record" Grid.Row="3" Grid.Column="5" Command="{Binding GoToTestResultRecord}"/>
+        <TextBlock Text="{StaticResource strPageRecord}" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="3" Grid.Column="1"/>
+        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="3" Grid.Column="2" Command="{Binding GoToVHPRecord}"/>
+        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="3" Grid.Column="3"/>
+        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="3" Grid.Column="4"/>
+        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="3" Grid.Column="5" Command="{Binding GoToTestResultRecord}"/>
 
         <!--<TextBlock Text="Sales" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>-->
-        <Button Content="Delivery Record" Grid.Row="4" Grid.Column="1" Command="{Binding GoToDeliveryRecord}"/>
-        <Button Content="Bonding Record" Grid.Row="4" Grid.Column="2"/>
+        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="4" Grid.Column="1" Command="{Binding GoToDeliveryRecord}"/>
+        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="4" Grid.Column="2"/>
 
-        <TextBlock Text="Others" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBlock Text="{StaticResource strPageOrder}" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
         <Button Content="Maintenance" Grid.Row="5" Grid.Column="1"/>
     </Grid>
 </UserControl>
