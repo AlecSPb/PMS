@@ -15,23 +15,23 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Orders Check" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageOrderCheck}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
-            <Button Content="Search" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
-            <Button Content="All" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="{StaticResource strbtnSearch}" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource strbtnAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="UnCheck" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
-                <TextBlock Text="Completed" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
-                <TextBlock Text="UnCompleted" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
-                <TextBlock Text="Paused" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
-                <TextBlock Text="Emergency" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
+                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strUnChecked}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
+                <TextBlock Text="{StaticResource strCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
+                <TextBlock Text="{StaticResource strUnCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
+                <TextBlock Text="{StaticResource strPaused}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
+                <TextBlock Text="{StaticResource strEmergency}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainOrders}" LoadingRow="DataGrid_LoadingRow">

@@ -12,10 +12,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{StaticResource strRecordVHPEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Grid.Row="0" Text="{StaticResource strPageRecordVHPEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strBack}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToRecordVHP}"/>
-            <Button Content="{StaticResource strSave}" Style="{StaticResource ButtonBasic}"/>
+            <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding BackToRecordVHP}"/>
+            <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}"/>
         </StackPanel>
         <Grid Grid.Row="2">
 

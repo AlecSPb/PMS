@@ -14,18 +14,17 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strRecordVHPPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordVHP}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource strAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
-            <Button Content="{StaticResource strAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
-            <Button Content="Quick Edit" Style="{StaticResource ButtonBasic}" Command="{Binding QuickEdit}" Width="120"/>
+            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
+            <Button Content="{StaticResource strbtnAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="{StaticResource strbtnQuick}" Style="{StaticResource ButtonBasic}" Command="{Binding QuickEdit}" Width="120"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Color Meaning=>" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="Yesterday" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="Today" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="Tomorrow" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2">

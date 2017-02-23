@@ -67,7 +67,9 @@
     <sys:String x:Key="strPageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
     <sys:String x:Key="strPageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="strPagePlanSelect">请选择一个生产计划项目</sys:String>
-
+    <sys:String x:Key="strPageOrderSelect">请选择一个订单项目</sys:String>
+    
+    
     <sys:String x:Key="strVHPID">VHP ID</sys:String>
     <sys:String x:Key="strProductReport">Report</sys:String>
 
@@ -88,9 +90,7 @@
     <sys:String x:Key="strbtnQuick">快速编辑</sys:String>
     <sys:String x:Key="strbtnDoc">输出文档</sys:String>
     <sys:String x:Key="strbtnPrint">打印</sys:String>
-
-
-    <sys:String x:Key="strStart">Start</sys:String>
+    <sys:String x:Key="strbtnSelectEmpty">使用空项目</sys:String>
     <sys:String x:Key="strOrder">Order</sys:String>
     <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
     <sys:String x:Key="strOrderReview">OrderReview</sys:String>

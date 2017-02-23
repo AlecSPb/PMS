@@ -15,15 +15,15 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPlanPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPagePlan}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToNavigation}"/>
-            <Button Content="Misson" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToMisson}"/>
-            <Button Content="Refresh" Style="{StaticResource  ButtonBasic}"  Command="{Binding Refresh}" />
+            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource strbtnMisson}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToMisson}"/>
+            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Refresh}" />
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Yesterday" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="Today" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="Tomorrow" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
             </StackPanel>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" LoadingRow="DataGrid_LoadingRow"
