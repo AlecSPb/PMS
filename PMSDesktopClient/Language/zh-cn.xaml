@@ -83,14 +83,18 @@
     <sys:String x:Key="strbtnAll">全部</sys:String>
     <sys:String x:Key="strbtnSave">保存</sys:String>
     <sys:String x:Key="strbtnAdd">添加</sys:String>
-    <sys:String x:Key="strbtnAddItem">添加项目</sys:String>
     <sys:String x:Key="strbtnEdit">编辑</sys:String>
+    <sys:String x:Key="strbtnDuplicate">复制</sys:String>
+    <sys:String x:Key="strbtnAddItem">添加项目</sys:String>
     <sys:String x:Key="strbtnEditItem">编辑项目</sys:String>
     <sys:String x:Key="strbtnEmpty">使用空记录</sys:String>
     <sys:String x:Key="strbtnQuick">快速编辑</sys:String>
     <sys:String x:Key="strbtnDoc">输出文档</sys:String>
     <sys:String x:Key="strbtnPrint">打印</sys:String>
     <sys:String x:Key="strbtnSelectEmpty">使用空项目</sys:String>
+
+
+
     <sys:String x:Key="strOrder">Order</sys:String>
     <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
     <sys:String x:Key="strOrderReview">OrderReview</sys:String>

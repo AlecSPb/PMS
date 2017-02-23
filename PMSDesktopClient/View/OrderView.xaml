@@ -18,7 +18,7 @@
         <TextBlock Text="{StaticResource strPageOrder}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource  strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigate}"/>
-            <Button Content="Add" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
+            <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
@@ -42,11 +42,11 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext.Edit,
                                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="Duplicate" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnDuplicate}" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext.Duplicate,
                                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
