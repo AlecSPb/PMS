@@ -188,7 +188,6 @@
       <DependentUpon>RecordVHPItemEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLocator.cs" />
-    <Compile Include="ViewModel\DeliveryVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
