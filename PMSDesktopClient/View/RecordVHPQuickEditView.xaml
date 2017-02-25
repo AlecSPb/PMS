@@ -31,7 +31,7 @@
         <DataGrid x:Name="dg" Grid.Row="2"
                 LoadingRow="DataGrid_LoadingRow"
                 SelectedIndex="{Binding CurrentDataGridSelectIndex,Mode=TwoWay}"
-                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding QuickRecordVHPs}"
+                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}"
                 SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">

@@ -16,7 +16,7 @@ namespace PMSDesktopClient.ViewModel
         public RecordVHPQuickEditVM()
         {
 
-            QuickRecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
+            RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
             CurrentRecordVHPItem = new PMSMainService.DcRecordVHPItem();
             RecordVHPItems = new ObservableCollection<DcRecordVHPItem>();
 
@@ -38,22 +38,27 @@ namespace PMSDesktopClient.ViewModel
             SelectionChanged = new RelayCommand<PMSMainService.DcRecordVHP>(ActionSelectionChanged);
 
 
-            LoadData();
-            LoadRecordVHPItems(QuickRecordVHPs.FirstOrDefault());
+            LoadRecordVHP();
+            LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
         }
 
         private void ActionSelectionChanged(DcRecordVHP obj)
         {
-            LoadRecordVHPItems(obj);
+            LoadRecordVHPItemsByRecordVHP(obj);
         }
 
-        public void LoadRecordVHPItems(DcRecordVHP model)
+        public void LoadRecordVHPItemsByRecordVHP(DcRecordVHP model)
         {
             if (model != null)
             {
-                var result = (new RecordVHPServiceClient()).GetRecordVHPItemsByRecrodVHPID(model.ID);
-                RecordVHPItems.Clear();
-                result.ToList().ForEach(i => RecordVHPItems.Add(i));
+                using (var service = new RecordVHPServiceClient())
+                {
+                    //这里使用异步操作
+                    var task = service.GetRecordVHPItemsByRecrodVHPIDAsync(model.ID);
+                    RecordVHPItems.Clear();
+                    var result = task.Result.ToList();
+                    result.ToList().ForEach(i => RecordVHPItems.Add(i));
+                }
             }
         }
 
@@ -78,13 +83,13 @@ namespace PMSDesktopClient.ViewModel
             CurrentRecordVHPItem.ExtraInformation = "";
         }
 
-        private void LoadData()
+        private void LoadRecordVHP()
         {
             using (var service = new RecordVHPServiceClient())
             {
                 var result = service.GetTopRecordVHP(5).ToList();
-                QuickRecordVHPs.Clear();
-                result.ToList().ForEach(r => QuickRecordVHPs.Add(r));
+                RecordVHPs.Clear();
+                result.ToList().ForEach(r => RecordVHPs.Add(r));
 
             }
         }
@@ -104,7 +109,7 @@ namespace PMSDesktopClient.ViewModel
                 {
                     service.AddRecordVHPItem(CurrentRecordVHPItem);
                 }
-                LoadData();
+                LoadRecordVHP();
                 EmptyCurrentRecordVHPItem();
             }
         }
@@ -119,14 +124,14 @@ namespace PMSDesktopClient.ViewModel
                 using (var service = new RecordVHPServiceClient())
                 {
                     service.AddRecordVHPItem(obj);
-                    LoadData();
-                    if (CurrentDataGridSelectIndex < QuickRecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
+                    LoadRecordVHP();
+                    if (CurrentDataGridSelectIndex < RecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
                     {
-                        LoadRecordVHPItems(QuickRecordVHPs[CurrentDataGridSelectIndex]);
+                        LoadRecordVHPItemsByRecordVHP(RecordVHPs[CurrentDataGridSelectIndex]);
                     }
                     else
                     {
-                        LoadRecordVHPItems(QuickRecordVHPs.FirstOrDefault());
+                        LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
                     }
 
                 }
@@ -135,10 +140,10 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionRefresh()
         {
-            LoadData();
+            LoadRecordVHP();
         }
 
-        public ObservableCollection<DcRecordVHP> QuickRecordVHPs { get; set; }
+        public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
         public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
 
         public DcRecordVHP CurrentRecordVHP { get; set; }

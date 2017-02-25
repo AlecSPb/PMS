@@ -12,8 +12,8 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml"/>
                 <ResourceDictionary Source="Language/zh-cn.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Skin/Warm.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Style/Desktop.xaml"/>
+                <ResourceDictionary Source="Resource/Skins/Warm.xaml"/>
+                <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

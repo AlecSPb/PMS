@@ -19,6 +19,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GiveUp}"/>
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
