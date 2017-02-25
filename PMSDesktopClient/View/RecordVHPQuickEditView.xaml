@@ -42,7 +42,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="DeviceCode" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="Device" ElementStyle="{StaticResource TextBlockDGCenter}"
                                         Binding="{Binding VHPDeviceCode}"/>
                 <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Composition}"/>
