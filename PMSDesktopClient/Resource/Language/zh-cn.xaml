@@ -91,10 +91,10 @@
     <sys:String x:Key="strbtnEditItem">编辑子项</sys:String>
     <sys:String x:Key="strbtnEmpty">使用空记录</sys:String>
     <sys:String x:Key="strbtnQuick">快速编辑</sys:String>
-    <sys:String x:Key="strbtnDoc">输出文档</sys:String>
+    <sys:String x:Key="strbtnDoc">文档</sys:String>
     <sys:String x:Key="strbtnPrint">打印</sys:String>
     <sys:String x:Key="strbtnSelectEmpty">使用空项目</sys:String>
-
+    <sys:String x:Key="stbtnFill">填写</sys:String>
 
 
     <sys:String x:Key="strbtnChart">曲线图</sys:String>

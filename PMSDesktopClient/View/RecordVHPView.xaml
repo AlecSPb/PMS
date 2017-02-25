@@ -48,10 +48,10 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                    <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
+                                    <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
                                             Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
                                 </StackPanel>
@@ -60,7 +60,7 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                    <DataGridTextColumn Header="DeviceCode" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="Device" ElementStyle="{StaticResource TextBlockDGCenter}"
                                         Binding="{Binding VHPDeviceCode}"/>
                     <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Composition}"/>
@@ -94,34 +94,34 @@
             <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}"
                       ItemsSource="{Binding RecordVHPItems}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding Creator}"/>
-                    <DataGridTextColumn Header="CurrentTime" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="CurrentTime" ElementStyle="{StaticResource TextBlockDGBasic}" Width="150"
                                         Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
-                    <DataGridTextColumn Header="PV1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="PV1" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding PV1}"/>
-                    <DataGridTextColumn Header="PV2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="PV2" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding PV2}"/>
-                    <DataGridTextColumn Header="PV3" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="PV3" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding PV3}"/>
-                    <DataGridTextColumn Header="SV" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="SV" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding SV}"/>
-                    <DataGridTextColumn Header="Ton" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="Ton" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Ton}"/>
-                    <DataGridTextColumn Header="Vaccum" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="Vaccum" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Vaccum}"/>
-                    <DataGridTextColumn Header="Shift1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="Shift1" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Shift1}"/>
-                    <DataGridTextColumn Header="Shift2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="Shift2" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Shift2}"/>
-                    <DataGridTextColumn Header="Omega" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="Omega" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Omega}"/>
-                    <DataGridTextColumn Header="WarterOut" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="WarterOut" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding WaterTemperatureOut}"/>
-                    <DataGridTextColumn Header="WarterIn" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="WarterIn" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding WaterTemperatureIn}"/>
                     <DataGridTextColumn Header="ExtraInformation" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding ExtraInformation}"/>
+                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

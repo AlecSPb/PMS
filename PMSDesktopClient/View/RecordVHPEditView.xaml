@@ -49,93 +49,92 @@
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="PlanDate"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlanDate}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlanDate}" Style="{StaticResource TextBoxReadOnly}"
+                         HorizontalAlignment="Stretch" />
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="PlanDate"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Composition"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
-                         HorizontalAlignment="Stretch"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxReadOnly}"
+                         HorizontalAlignment="Stretch" />
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="Composition"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="MoldType"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MoldType}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MoldType}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="Composition"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="MoldDiameter"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="VHPDeviceCode"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding VHPDeviceCode}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding VHPDeviceCode}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="PreTemperature"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PreTemperature}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="PrePressure"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PrePressure}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="Temperature"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Temperature}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="Pressure"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Pressure}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="Vaccum"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Vaccum}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Vaccum}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="KeepTempTime"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding KeepTempTime}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="10" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="Remark"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}"  Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="11" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
-                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding State}"/>
+                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding State}"  Style="{StaticResource TextBoxReadOnly}"
+                         HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="14" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="订单状态"/>
 

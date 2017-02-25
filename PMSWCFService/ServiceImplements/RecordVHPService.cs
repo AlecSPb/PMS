@@ -106,9 +106,11 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var tomorrow = DateTime.Now.AddDays(1);
-                var result = dc.RecordVHPs.Where(r => r.PlanDate <= tomorrow)
-                    .OrderByDescending(v => v.PlanDate).Take(top).ToList();
+                //获取24h前到24h后的热压记录
+                var timeStart = DateTime.Now.Date.AddDays(-1);
+                var timeEnd = DateTime.Now.Date.AddDays(1);
+                var result = dc.RecordVHPs.Where(r => r.PlanDate >= timeStart && r.PlanDate <= timeEnd)
+                    .OrderByDescending(v => v.PlanDate).ToList();
                 Mapper.Initialize(cfg =>
                 {
                     cfg.CreateMap<RecordVHP, DcRecordVHP>();

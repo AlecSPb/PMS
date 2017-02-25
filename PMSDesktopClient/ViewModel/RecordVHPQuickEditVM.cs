@@ -62,6 +62,7 @@ namespace PMSDesktopClient.ViewModel
         {
             EmptyCurrentRecordVHPItem();
             isNew = true;
+            NavigationService.ShowStateMessage("全新创建一个记录");
         }
 
         private void ActionEditItem(DcRecordVHPItem obj)
@@ -70,6 +71,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 CurrentRecordVHPItem = obj;
                 isNew = false;
+                NavigationService.ShowStateMessage("请修改上方数据，然后保存，取消修改请点新建");
             }
         }
 

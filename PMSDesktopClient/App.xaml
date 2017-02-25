@@ -11,7 +11,7 @@
             <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml"/>
-                <ResourceDictionary Source="Language/zh-cn.xaml"/>
+                <ResourceDictionary Source="Resource/Language/zh-cn.xaml"/>
                 <ResourceDictionary Source="Resource/Skins/Warm.xaml"/>
                 <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
             </ResourceDictionary.MergedDictionaries>
