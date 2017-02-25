@@ -277,6 +277,12 @@
   <wsdl:message name="IRecordVHPService_GetRecordVHPCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHPCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordVHPItemsByRecrodVHPID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordVHPItemsByRecrodVHPIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordVHPService_AddRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordVHP" />
   </wsdl:message>
@@ -677,6 +683,10 @@
     <wsdl:operation name="GetRecordVHPCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount" message="tns:IRecordVHPService_GetRecordVHPCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse" message="tns:IRecordVHPService_GetRecordVHPCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordVHPItemsByRecrodVHPID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID" message="tns:IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPIDResponse" message="tns:IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecordVHP">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/AddRecordVHP" message="tns:IRecordVHPService_AddRecordVHP_InputMessage" />
@@ -1253,6 +1263,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordVHPCount">
       <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordVHPItemsByRecrodVHPID">
+      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

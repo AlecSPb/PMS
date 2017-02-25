@@ -19,6 +19,9 @@ namespace PMSWCFService.ServiceContracts
         int GetRecordVHPCount();
 
         [OperationContract]
+        List<DcRecordVHPItem> GetRecordVHPItemsByRecrodVHPID(Guid id);
+
+        [OperationContract]
         int AddRecordVHP(DcRecordVHP model);
         [OperationContract]
         int UpdateReocrdVHP(DcRecordVHP model);

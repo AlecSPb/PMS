@@ -581,6 +581,9 @@
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordVHPItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSUserAccessService\PMSDesktopClient.PMSUserAccessService.DcUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -703,6 +706,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\qianyuqianxun.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

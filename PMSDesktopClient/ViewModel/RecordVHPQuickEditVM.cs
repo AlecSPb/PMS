@@ -18,6 +18,8 @@ namespace PMSDesktopClient.ViewModel
 
             QuickRecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
             CurrentRecordVHPItem = new PMSMainService.DcRecordVHPItem();
+            RecordVHPItems = new ObservableCollection<DcRecordVHPItem>();
+
 
             EmptyCurrentRecordVHPItem();
 
@@ -31,7 +33,20 @@ namespace PMSDesktopClient.ViewModel
             Duplicate = new RelayCommand<PMSMainService.DcRecordVHPItem>(ActionDuplicate);
             Save = new RelayCommand(ActionSave);
 
+            SelectionChanged = new RelayCommand<PMSMainService.DcRecordVHP>(ActionSelectionChanged);
+
+
             LoadData();
+        }
+
+        private void ActionSelectionChanged(DcRecordVHP obj)
+        {
+            if (obj != null)
+            {
+                var result = (new RecordVHPServiceClient()).GetRecordVHPItemsByRecrodVHPID(obj.ID);
+                RecordVHPItems.Clear();
+                result.ToList().ForEach(i => RecordVHPItems.Add(i));
+            }
         }
 
         private void EmptyCurrentRecordVHPItem()
@@ -92,7 +107,7 @@ namespace PMSDesktopClient.ViewModel
                 obj.ID = Guid.NewGuid();
                 obj.CurrentTime = DateTime.Now;
                 obj.Creator = (App.Current as App).CurrentUser.UserName;
-                using (var service=new RecordVHPServiceClient())
+                using (var service = new RecordVHPServiceClient())
                 {
                     service.AddRecordVHPItem(obj);
                     LoadData();
@@ -106,6 +121,7 @@ namespace PMSDesktopClient.ViewModel
         }
 
         public ObservableCollection<DcRecordVHP> QuickRecordVHPs { get; set; }
+        public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
 
         public DcRecordVHP CurrentRecordVHP { get; set; }
         public DcRecordVHPItem CurrentRecordVHPItem { get; set; }
@@ -115,5 +131,7 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Save { get; set; }
 
         public RelayCommand<DcRecordVHPItem> Duplicate { get; set; }
+
+        public RelayCommand<DcRecordVHP> SelectionChanged { get; set; }
     }
 }

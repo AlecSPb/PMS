@@ -90,6 +90,18 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcRecordVHPItem> GetRecordVHPItemsByRecrodVHPID(Guid id)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<RecordVHPItem, DcRecordVHPItem>());
+                var result = dc.RecordVHPItems.Where(i => i.RecordVHPID == id)
+                    .OrderByDescending(i => i.CurrentTime).ToList();
+                return Mapper.Map<List<RecordVHPItem>, List<DcRecordVHPItem>>(result);
+            }
+
+        }
+
         public List<DcRecordVHP> GetTopRecordVHP(int top)
         {
             using (var dc = new PMSDbContext())

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:PMSDesktopClient.View"
      xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
@@ -12,15 +13,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{StaticResource strPageRecordVHPQuickEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
+            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
@@ -29,6 +31,12 @@
         <DataGrid x:Name="dg" Grid.Row="2" SelectedIndex="0"
                 LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource DataGridBasic}" ItemsSource="{Binding QuickRecordVHPs}" SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
@@ -83,6 +91,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Content="{StaticResource strbtnAdd}" Grid.Row="0" Grid.Column="12" Grid.RowSpan="3" Margin="5"
+                    FontSize="20"
                     Command="{Binding DataContext.Save,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
             <TextBlock Text="PV1:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="0"/>
             <TextBox Text="{Binding PV1}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="1" />
@@ -113,13 +122,15 @@
                              Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="11"/>
         </Grid>
         <DataGrid Name="dgitem" Grid.Row="4" Style="{StaticResource DataGridBasic}"
-                  ItemsSource="{Binding ElementName=dg,Path=SelectedItem.RecordVHPItems}">
+                  ItemsSource="{Binding RecordVHPItems}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Duplicate" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Dupliate" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource strbtnDuplicate}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

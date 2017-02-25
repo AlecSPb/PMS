@@ -27,8 +27,8 @@ namespace PMSDesktopClient.View
         {
             InitializeComponent();
             Refresh();
-            view = (ListCollectionView)CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
-            view.SortDescriptions.Add(new SortDescription("CurrentTime", ListSortDirection.Descending));
+            //view = (ListCollectionView)CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
+            //view.SortDescriptions.Add(new SortDescription("CurrentTime", ListSortDirection.Descending));
         }
 
         public ICollectionView view { get; set; }

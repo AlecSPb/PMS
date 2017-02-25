@@ -40,7 +40,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Check" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnCheck}" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>

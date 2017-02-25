@@ -11,6 +11,7 @@
     <sys:String x:Key="strPageProduction">生产</sys:String>
     <sys:String x:Key="strPageRecord">记录</sys:String>
     <sys:String x:Key="strPageOther">其他</sys:String>
+    
     <sys:String x:Key="strbtnOrder">订单</sys:String>
     <sys:String x:Key="strbtnOrderCheck">订单核验</sys:String>
     <sys:String x:Key="strbtnMisson">生产任务</sys:String>
@@ -78,6 +79,7 @@
     <sys:String x:Key="strbtnGiveUp">放弃</sys:String>
     <sys:String x:Key="strbtnLogin">登录</sys:String>
     <sys:String x:Key="strbtnBack">返回</sys:String>
+    <sys:String x:Key="strbtnCheck">核验</sys:String>
     <sys:String x:Key="strbtnRefresh">刷新</sys:String>
     <sys:String x:Key="strbtnSearch">搜索</sys:String>
     <sys:String x:Key="strbtnAll">全部</sys:String>

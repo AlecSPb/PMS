@@ -9,7 +9,8 @@
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
     <UserControl.Background>
-        <ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/funnyfacebig.jpg" TileMode="FlipXY" Stretch="Uniform"/>
+        <ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/qianyuqianxun.jpg"
+         TileMode="FlipX"/>
     </UserControl.Background>
     <UserControl.Resources>
         <Style TargetType="Button">
@@ -70,10 +71,10 @@
         <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="3" Grid.Column="5" Command="{Binding GoToTestResultRecord}"/>
 
         <!--<TextBlock Text="Sales" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>-->
-        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="4" Grid.Column="1" Command="{Binding GoToDeliveryRecord}"/>
-        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="4" Grid.Column="2"/>
+        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToDeliveryRecord}"/>
+        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="4" Grid.Column="1"/>
 
-        <TextBlock Text="{StaticResource strPageOrder}" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
-        <Button Content="Maintenance" Grid.Row="5" Grid.Column="1"/>
+        <TextBlock Text="{StaticResource strPageOther}" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center"/>
+        <Button Content="{StaticResource strbtnMaintenance}" Grid.Row="5" Grid.Column="1"/>
     </Grid>
 </UserControl>

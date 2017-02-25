@@ -22,6 +22,7 @@
             <Button Content="{StaticResource strbtnQuick}" Style="{StaticResource ButtonBasic}" Command="{Binding QuickEdit}" Width="120"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>

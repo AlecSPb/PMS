@@ -5929,6 +5929,12 @@ namespace PMSDesktopClient.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordVHPCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPIDResponse")]
+        PMSDesktopClient.PMSMainService.DcRecordVHPItem[] GetRecordVHPItemsByRecrodVHPID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPIDResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHPItem[]> GetRecordVHPItemsByRecrodVHPIDAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPResponse")]
         int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model);
         
@@ -6015,6 +6021,14 @@ namespace PMSDesktopClient.PMSMainService {
         
         public System.Threading.Tasks.Task<int> GetRecordVHPCountAsync() {
             return base.Channel.GetRecordVHPCountAsync();
+        }
+        
+        public PMSDesktopClient.PMSMainService.DcRecordVHPItem[] GetRecordVHPItemsByRecrodVHPID(System.Guid id) {
+            return base.Channel.GetRecordVHPItemsByRecrodVHPID(id);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHPItem[]> GetRecordVHPItemsByRecrodVHPIDAsync(System.Guid id) {
+            return base.Channel.GetRecordVHPItemsByRecrodVHPIDAsync(id);
         }
         
         public int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
