@@ -21,6 +21,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
+            <Button Content="{StaticResource strbtnChart}" Style="{StaticResource ButtonBasic}" Command="{Binding Chart}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
@@ -31,8 +32,7 @@
         <DataGrid x:Name="dg" Grid.Row="2"
                 LoadingRow="DataGrid_LoadingRow"
                 SelectedIndex="{Binding CurrentDataGridSelectIndex,Mode=OneWayToSource}"
-                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}"
-                SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
+                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -92,7 +92,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Content="{StaticResource strbtnAdd}" Grid.Row="0" Grid.Column="12" Grid.RowSpan="3" Margin="5"
+            <Button Grid.Row="0" Grid.Column="12" Margin="5" Content="新建" 
+                   Command="{Binding DataContext.New,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+            <Button Content="{StaticResource strbtnSave}" Grid.Row="1" Grid.Column="12" Grid.RowSpan="3" Margin="5"
                     FontSize="20"
                     Command="{Binding DataContext.Save,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
             <TextBlock Text="PV1:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="0"/>
@@ -130,9 +132,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource strbtnDuplicate}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource strbtnDuplicate}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.CopyFill,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

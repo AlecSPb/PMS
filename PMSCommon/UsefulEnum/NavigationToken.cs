@@ -16,6 +16,7 @@ namespace PMSCommon
         Save,
         SaveAs,
         Print,
-        Exit
+        Exit,
+        StateMessage
     }
 }

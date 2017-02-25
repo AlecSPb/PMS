@@ -39,9 +39,14 @@ namespace PMSDesktopClient
 
 
             Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigate);
+            Messenger.Default.Register<string>(this, NavigationToken.StateMessage, ActionStateMessage);
             NavigateTo(views.Navigation);
         }
 
+        private void ActionStateMessage(string obj)
+        {
+            txtStateMessage.Text = obj;
+        }
 
         private ViewLocator views;//TODO:考虑将viewlocator化？
         private ViewModelLocator viewmodels;

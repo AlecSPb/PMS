@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
+using System.Windows.Input;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -15,42 +16,68 @@ namespace PMSDesktopClient.ViewModel
     {
         public RecordVHPQuickEditVM()
         {
+            InitializeProperties();
+            InitializeCommmands();
 
+            LoadRecordVHP();
+            LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
+            EmptyCurrentRecordVHPItem();
+        }
+        private bool isNew;
+
+        private void InitializeProperties()
+        {
+            isNew = true;
             RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
             CurrentRecordVHPItem = new PMSMainService.DcRecordVHPItem();
             RecordVHPItems = new ObservableCollection<DcRecordVHPItem>();
+        }
 
-
-            EmptyCurrentRecordVHPItem();
-
-            CurrentDataGridSelectIndex = 0;
-
+        private void InitializeCommmands()
+        {
             GiveUp = new RelayCommand(() =>
             {
                 NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP });
                 Messenger.Default.Send<MsgObject>(new MsgObject() { MsgToken = VToken.RecordVHPRefresh });
             });
 
-            Refresh = new RelayCommand(ActionRefresh);
-            Duplicate = new RelayCommand<PMSMainService.DcRecordVHPItem>(ActionDuplicate);
+            Refresh = new RelayCommand(() => LoadRecordVHP());
+            CopyFill = new RelayCommand<DcRecordVHPItem>(ActionCopyFill);
             Save = new RelayCommand(ActionSave);
 
-            SelectionChanged = new RelayCommand<PMSMainService.DcRecordVHP>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<DcRecordVHP>(obj => { LoadRecordVHPItemsByRecordVHP(obj); });
 
+            EditItem = new RelayCommand<PMSMainService.DcRecordVHPItem>(ActionEditItem);
+            New = new RelayCommand(ActionNew);
 
-            LoadRecordVHP();
-            LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
+            Chart = new RelayCommand(ActionChart);
         }
 
-        private void ActionSelectionChanged(DcRecordVHP obj)
+        private void ActionChart()
         {
-            LoadRecordVHPItemsByRecordVHP(obj);
+
+        }
+
+        private void ActionNew()
+        {
+            EmptyCurrentRecordVHPItem();
+            isNew = true;
+        }
+
+        private void ActionEditItem(DcRecordVHPItem obj)
+        {
+            if (obj != null)
+            {
+                CurrentRecordVHPItem = obj;
+                isNew = false;
+            }
         }
 
         public void LoadRecordVHPItemsByRecordVHP(DcRecordVHP model)
         {
             if (model != null)
             {
+                CurrentRecordVHP = model;
                 using (var service = new RecordVHPServiceClient())
                 {
                     //这里使用异步操作
@@ -65,22 +92,30 @@ namespace PMSDesktopClient.ViewModel
 
         private void EmptyCurrentRecordVHPItem()
         {
-            CurrentRecordVHPItem.ID = Guid.NewGuid();
-            CurrentRecordVHPItem.CurrentTime = DateTime.Now;
-            CurrentRecordVHPItem.Creator = (App.Current as App).CurrentUser.UserName;
-            CurrentRecordVHPItem.State = PMSCommon.CommonState.Show.ToString();
-            CurrentRecordVHPItem.PV1 = 0;
-            CurrentRecordVHPItem.PV2 = 0;
-            CurrentRecordVHPItem.PV3 = 0;
-            CurrentRecordVHPItem.SV = 0;
-            CurrentRecordVHPItem.Ton = 0;
-            CurrentRecordVHPItem.Vaccum = 1E-3;
-            CurrentRecordVHPItem.Shift1 = 0;
-            CurrentRecordVHPItem.Shift2 = 0;
-            CurrentRecordVHPItem.Omega = 0;
-            CurrentRecordVHPItem.WaterTemperatureIn = 0;
-            CurrentRecordVHPItem.WaterTemperatureOut = 0;
-            CurrentRecordVHPItem.ExtraInformation = "";
+            if (CurrentRecordVHP != null)
+            {
+                var model = new DcRecordVHPItem();
+                model.ID = Guid.NewGuid();
+                model.RecordVHPID = CurrentRecordVHP.ID;
+                model.CurrentTime = DateTime.Now;
+                model.Creator = (App.Current as App).CurrentUser.UserName;
+                model.State = PMSCommon.CommonState.Show.ToString();
+                model.PV1 = 0;
+                model.PV2 = 0;
+                model.PV3 = 0;
+                model.SV = 0;
+                model.Ton = 0;
+                model.Vaccum = 1E-3;
+                model.Shift1 = 0;
+                model.Shift2 = 0;
+                model.Omega = 0;
+                model.WaterTemperatureIn = 0;
+                model.WaterTemperatureOut = 0;
+                model.ExtraInformation = "";
+                isNew = true;
+                CurrentRecordVHPItem = model;
+
+            }
         }
 
         private void LoadRecordVHP()
@@ -90,8 +125,12 @@ namespace PMSDesktopClient.ViewModel
                 var result = service.GetTopRecordVHP(5).ToList();
                 RecordVHPs.Clear();
                 result.ToList().ForEach(r => RecordVHPs.Add(r));
+
+                CurrentDataGridSelectIndex = 0;
+                CurrentRecordVHP = RecordVHPs.FirstOrDefault();
             }
         }
+
 
         private void ActionSave()
         {
@@ -99,34 +138,74 @@ namespace PMSDesktopClient.ViewModel
             {
                 return;
             }
-
-            CurrentRecordVHPItem.RecordVHPID = CurrentRecordVHP.ID;
-
-            if (CurrentRecordVHPItem != null)
+            //CurrentRecordVHPItem.RecordVHPID = CurrentRecordVHP.ID;
+            try
             {
-                using (var service = new RecordVHPServiceClient())
+                if (CurrentRecordVHPItem != null)
                 {
-                    service.AddRecordVHPItem(CurrentRecordVHPItem);
+                    using (var service = new RecordVHPServiceClient())
+                    {
+                        if (isNew)
+                        {
+                            service.AddRecordVHPItem(CurrentRecordVHPItem);
+                        }
+                        else
+                        {
+                            service.UpdateReocrdVHPItem(CurrentRecordVHPItem);
+                        }
+
+                        ReLocateRecordVHPAndRefreshItems();
+                        EmptyCurrentRecordVHPItem();
+                        NavigationService.ShowStateMessage("保存完毕");
+                    }
                 }
-                EmptyCurrentRecordVHPItem();
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
-        private void ActionDuplicate(DcRecordVHPItem obj)
+        private void ActionCopyFill(DcRecordVHPItem obj)
         {
             if (obj != null)
             {
-                obj.ID = Guid.NewGuid();
-                obj.CurrentTime = DateTime.Now;
-                obj.Creator = (App.Current as App).CurrentUser.UserName;
-                using (var service = new RecordVHPServiceClient())
-                {
-                    service.AddRecordVHPItem(obj);
-                    ReLocateRecordVHPAndRefreshItems();
-                }
+                //using (var service = new RecordVHPServiceClient())
+                //{
+                //    service.AddRecordVHPItem(obj);
+                //    ReLocateRecordVHPAndRefreshItems();
+                //}
+                var model = new DcRecordVHPItem();
+
+                model.RecordVHPID = obj.RecordVHPID;
+
+                model.ID = Guid.NewGuid();
+                model.CurrentTime = DateTime.Now;
+                model.Creator = (App.Current as App).CurrentUser.UserName;
+                model.PV1 = obj.PV1;
+                model.PV2 = obj.PV2;
+                model.PV3 = obj.PV3;
+                model.SV = obj.SV;
+
+                model.Ton = obj.Ton;
+                model.Vaccum = obj.Vaccum;
+                model.Shift1 = obj.Shift1;
+                model.Shift2 = obj.Shift2;
+                model.Omega = obj.Omega;
+                model.WaterTemperatureIn = obj.WaterTemperatureIn;
+                model.WaterTemperatureOut = obj.WaterTemperatureOut;
+                model.ExtraInformation = obj.ExtraInformation;
+
+                isNew = true;
+                CurrentRecordVHPItem = model;
+                NavigationService.ShowStateMessage("填充选定项完毕");
             }
         }
 
+        /// <summary>
+        /// 重新定位RecordVHP并且刷新对应的Items
+        /// </summary>
         private void ReLocateRecordVHPAndRefreshItems()
         {
             if (CurrentDataGridSelectIndex < RecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
@@ -141,25 +220,36 @@ namespace PMSDesktopClient.ViewModel
             System.Diagnostics.Debug.Print(CurrentDataGridSelectIndex.ToString());
         }
 
-        private void ActionRefresh()
-        {
-            LoadRecordVHP();
-        }
-
+        #region Properties
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
         public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
-
         public DcRecordVHP CurrentRecordVHP { get; set; }
-        public DcRecordVHPItem CurrentRecordVHPItem { get; set; }
+
+        private DcRecordVHPItem currentRecordVHPItem;
+
+        public DcRecordVHPItem CurrentRecordVHPItem
+        {
+            get { return currentRecordVHPItem; }
+            set
+            {
+                currentRecordVHPItem = value;
+                RaisePropertyChanged(nameof(CurrentRecordVHPItem));
+            }
+        }
 
         public int CurrentDataGridSelectIndex { get; set; }
+        #endregion
 
+        #region Commands
         public RelayCommand Refresh { get; set; }
         public RelayCommand GiveUp { get; set; }
         public RelayCommand Save { get; set; }
-
-        public RelayCommand<DcRecordVHPItem> Duplicate { get; set; }
-
         public RelayCommand<DcRecordVHP> SelectionChanged { get; set; }
+        public RelayCommand New { get; set; }
+        public RelayCommand<DcRecordVHPItem> EditItem { get; set; }
+        public RelayCommand<DcRecordVHPItem> CopyFill { get; set; }
+
+        public RelayCommand Chart { get; set; }
+        #endregion
     }
 }

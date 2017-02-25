@@ -87,8 +87,8 @@
     <sys:String x:Key="strbtnAdd">添加</sys:String>
     <sys:String x:Key="strbtnEdit">编辑</sys:String>
     <sys:String x:Key="strbtnDuplicate">复制</sys:String>
-    <sys:String x:Key="strbtnAddItem">添加项目</sys:String>
-    <sys:String x:Key="strbtnEditItem">编辑项目</sys:String>
+    <sys:String x:Key="strbtnAddItem">添加子项</sys:String>
+    <sys:String x:Key="strbtnEditItem">编辑子项</sys:String>
     <sys:String x:Key="strbtnEmpty">使用空记录</sys:String>
     <sys:String x:Key="strbtnQuick">快速编辑</sys:String>
     <sys:String x:Key="strbtnDoc">输出文档</sys:String>
@@ -97,7 +97,7 @@
 
 
 
-    <sys:String x:Key="strOrder">Order</sys:String>
+    <sys:String x:Key="strbtnChart">曲线图</sys:String>
     <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
     <sys:String x:Key="strOrderReview">OrderReview</sys:String>
     <sys:String x:Key="strMisson">Misson</sys:String>
