@@ -30,7 +30,7 @@
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2"
                 LoadingRow="DataGrid_LoadingRow"
-                SelectedIndex="{Binding CurrentDataGridSelectIndex,Mode=TwoWay}"
+                SelectedIndex="{Binding CurrentDataGridSelectIndex,Mode=OneWayToSource}"
                 Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}"
                 SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
             <i:Interaction.Triggers>
@@ -130,7 +130,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource strbtnDuplicate}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>

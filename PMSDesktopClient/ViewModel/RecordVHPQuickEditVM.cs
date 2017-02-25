@@ -90,7 +90,6 @@ namespace PMSDesktopClient.ViewModel
                 var result = service.GetTopRecordVHP(5).ToList();
                 RecordVHPs.Clear();
                 result.ToList().ForEach(r => RecordVHPs.Add(r));
-
             }
         }
 
@@ -109,7 +108,6 @@ namespace PMSDesktopClient.ViewModel
                 {
                     service.AddRecordVHPItem(CurrentRecordVHPItem);
                 }
-                LoadRecordVHP();
                 EmptyCurrentRecordVHPItem();
             }
         }
@@ -124,18 +122,23 @@ namespace PMSDesktopClient.ViewModel
                 using (var service = new RecordVHPServiceClient())
                 {
                     service.AddRecordVHPItem(obj);
-                    LoadRecordVHP();
-                    if (CurrentDataGridSelectIndex < RecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
-                    {
-                        LoadRecordVHPItemsByRecordVHP(RecordVHPs[CurrentDataGridSelectIndex]);
-                    }
-                    else
-                    {
-                        LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
-                    }
-
+                    ReLocateRecordVHPAndRefreshItems();
                 }
             }
+        }
+
+        private void ReLocateRecordVHPAndRefreshItems()
+        {
+            if (CurrentDataGridSelectIndex < RecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
+            {
+                LoadRecordVHPItemsByRecordVHP(RecordVHPs[CurrentDataGridSelectIndex]);
+            }
+            else
+            {
+                LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
+            }
+
+            System.Diagnostics.Debug.Print(CurrentDataGridSelectIndex.ToString());
         }
 
         private void ActionRefresh()
