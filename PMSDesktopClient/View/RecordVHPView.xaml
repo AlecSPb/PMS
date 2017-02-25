@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordVHP}">
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
@@ -30,12 +31,18 @@
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition/>
+                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="dg" SelectedIndex="0" LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Edit">
                         <DataGridTemplateColumn.CellTemplate>
@@ -85,12 +92,12 @@
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
             <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}"
-                      ItemsSource="{Binding ElementName=dg,Path=SelectedItem.RecordVHPItems}">
+                      ItemsSource="{Binding RecordVHPItems}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Creator}"/>
                     <DataGridTextColumn Header="CurrentTime" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding CurrentTime}"/>
+                                        Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
                     <DataGridTextColumn Header="PV1" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PV1}"/>
                     <DataGridTextColumn Header="PV2" ElementStyle="{StaticResource TextBlockDGBasic}"

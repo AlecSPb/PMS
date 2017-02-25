@@ -65,7 +65,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.RecordVHPs.Include("RecordVHPItems")
+                var result = dc.RecordVHPs
                     .OrderByDescending(v => v.PlanDate)
                     .Skip(skip).Take(take).ToList();
                 Mapper.Initialize(cfg =>
@@ -107,7 +107,7 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 var tomorrow = DateTime.Now.AddDays(1);
-                var result = dc.RecordVHPs.Include("RecordVHPItems").Where(r => r.PlanDate <= tomorrow)
+                var result = dc.RecordVHPs.Where(r => r.PlanDate <= tomorrow)
                     .OrderByDescending(v => v.PlanDate).Take(top).ToList();
                 Mapper.Initialize(cfg =>
                 {

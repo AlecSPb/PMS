@@ -37,17 +37,24 @@ namespace PMSDesktopClient.ViewModel
 
 
             LoadData();
+            LoadRecordVHPItems(QuickRecordVHPs.FirstOrDefault());
         }
 
         private void ActionSelectionChanged(DcRecordVHP obj)
         {
-            if (obj != null)
+            LoadRecordVHPItems(obj);
+        }
+
+        public void LoadRecordVHPItems(DcRecordVHP model)
+        {
+            if (model != null)
             {
-                var result = (new RecordVHPServiceClient()).GetRecordVHPItemsByRecrodVHPID(obj.ID);
+                var result = (new RecordVHPServiceClient()).GetRecordVHPItemsByRecrodVHPID(model.ID);
                 RecordVHPItems.Clear();
                 result.ToList().ForEach(i => RecordVHPItems.Add(i));
             }
         }
+
 
         private void EmptyCurrentRecordVHPItem()
         {

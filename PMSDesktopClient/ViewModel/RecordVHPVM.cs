@@ -17,17 +17,37 @@ namespace PMSDesktopClient.ViewModel
             InitializeCommands();
             IntializeProperties();
             SetPageParametersWhenConditionChange();
+            LoadRecordVHPItemsByRecordVHPID(RecordVHPs.FirstOrDefault());
         }
 
         private void IntializeProperties()
         {
             SearchVHPID = "";
             RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
+            RecordVHPItems = new ObservableCollection<PMSMainService.DcRecordVHPItem>();
+
+
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEdit);
             QuickEdit= new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
+            SelectionChanged = new RelayCommand<PMSMainService.DcRecordVHP>(ActionSelectionChanged);
+        }
+
+        private void ActionSelectionChanged(DcRecordVHP obj)
+        {
+            if (obj!=null)
+            {
+                LoadRecordVHPItemsByRecordVHPID(obj);
+            }
+        }
+
+        public void LoadRecordVHPItemsByRecordVHPID(DcRecordVHP model)
+        {
+            var result = (new RecordVHPServiceClient()).GetRecordVHPItemsByRecrodVHPID(model.ID);
+            RecordVHPItems.Clear();
+            result.ToList().ForEach(i => RecordVHPItems.Add(i));
         }
 
         private void ActionEdit(DcRecordVHP obj)
@@ -122,12 +142,15 @@ namespace PMSDesktopClient.ViewModel
         }
 
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
+        public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
         #endregion
 
         #region Commands
         public RelayCommand GoToNavigation { get; set; }
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; set; }
+
+        public RelayCommand <DcRecordVHP> SelectionChanged { get; set; }
         public RelayCommand<DcRecordVHP> Edit { get; set; }
         public RelayCommand<DcRecordVHP> Doc { get; set; }
 

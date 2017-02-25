@@ -3248,9 +3248,6 @@ namespace PMSDesktopClient.PMSMainService {
         private double PressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.PMSMainService.DcRecordVHPItem[] RecordVHPItemsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3427,19 +3424,6 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((this.PressureField.Equals(value) != true)) {
                     this.PressureField = value;
                     this.RaisePropertyChanged("Pressure");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSDesktopClient.PMSMainService.DcRecordVHPItem[] RecordVHPItems {
-            get {
-                return this.RecordVHPItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordVHPItemsField, value) != true)) {
-                    this.RecordVHPItemsField = value;
-                    this.RaisePropertyChanged("RecordVHPItems");
                 }
             }
         }

@@ -51,7 +51,7 @@ namespace PMSWCFService.DataContracts
         public double KeepTempTime { get; set; }
         [DataMember]
         public string Remark { get; set; }
-        [DataMember]
-        public virtual List<DcRecordVHPItem> RecordVHPItems { get; set; }
+        //[DataMember]
+        //public virtual List<DcRecordVHPItem> RecordVHPItems { get; set; }
     }
 }

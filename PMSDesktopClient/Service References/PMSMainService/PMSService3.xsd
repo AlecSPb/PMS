@@ -303,7 +303,6 @@
       <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
       <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
       <xs:element minOccurs="0" name="Pressure" type="xs:double" />
-      <xs:element minOccurs="0" name="RecordVHPItems" nillable="true" type="tns:ArrayOfDcRecordVHPItem" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Temperature" type="xs:double" />
