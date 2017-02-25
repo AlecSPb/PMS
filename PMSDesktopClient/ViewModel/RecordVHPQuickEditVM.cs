@@ -23,6 +23,8 @@ namespace PMSDesktopClient.ViewModel
 
             EmptyCurrentRecordVHPItem();
 
+            CurrentDataGridSelectIndex = 0;
+
             GiveUp = new RelayCommand(() =>
             {
                 NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP });
@@ -118,6 +120,15 @@ namespace PMSDesktopClient.ViewModel
                 {
                     service.AddRecordVHPItem(obj);
                     LoadData();
+                    if (CurrentDataGridSelectIndex < QuickRecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
+                    {
+                        LoadRecordVHPItems(QuickRecordVHPs[CurrentDataGridSelectIndex]);
+                    }
+                    else
+                    {
+                        LoadRecordVHPItems(QuickRecordVHPs.FirstOrDefault());
+                    }
+
                 }
             }
         }
@@ -132,6 +143,8 @@ namespace PMSDesktopClient.ViewModel
 
         public DcRecordVHP CurrentRecordVHP { get; set; }
         public DcRecordVHPItem CurrentRecordVHPItem { get; set; }
+
+        public int CurrentDataGridSelectIndex { get; set; }
 
         public RelayCommand Refresh { get; set; }
         public RelayCommand GiveUp { get; set; }

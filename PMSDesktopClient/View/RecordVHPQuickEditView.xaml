@@ -13,7 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -28,9 +28,11 @@
                 <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" SelectedIndex="0"
+        <DataGrid x:Name="dg" Grid.Row="2"
                 LoadingRow="DataGrid_LoadingRow"
-                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding QuickRecordVHPs}" SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
+                SelectedIndex="{Binding CurrentDataGridSelectIndex,Mode=TwoWay}"
+                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding QuickRecordVHPs}"
+                SelectedItem="{Binding CurrentRecordVHP,Mode=OneWayToSource}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"

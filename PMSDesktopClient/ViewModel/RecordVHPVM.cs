@@ -66,6 +66,7 @@ namespace PMSDesktopClient.ViewModel
         private void ActionAll()
         {
             SetPageParametersWhenConditionChange();
+            LoadRecordVHPItemsByRecordVHPID(RecordVHPs.FirstOrDefault());
         }
 
         private void InitializeCommands()
