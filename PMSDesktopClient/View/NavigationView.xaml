@@ -14,14 +14,16 @@
         <StaticResource ResourceKey="BackgroundWindow"/>
     </UserControl.Background>
     <UserControl.Resources>
-        <Style TargetType="Button">
+        <Style x:Key="btnNavigation" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="VerticalAlignment" Value="Stretch"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
-
+        <Style x:Key="btnTitle" TargetType="Button" BasedOn="{StaticResource btnNavigation}">
+            <Setter Property="MinWidth" Value="80"/>
+        </Style>
         <Style TargetType="TextBlock">
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -33,7 +35,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -52,31 +54,31 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Content="{StaticResource strPageSales}" Grid.Row="0" Grid.Column="0"/>
-        <Button Content="{StaticResource strbtnOrder}" Grid.Row="0" Grid.Column="1" Command="{Binding GoToOrder}"/>
-        <Button Content="{StaticResource strbtnOrderCheck}" Grid.Row="0" Grid.Column="2" Command="{Binding GoToOrderCheck}"/>
+        <Button Content="{StaticResource strPageSales}" Grid.Row="0" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
+        <Button Content="{StaticResource strbtnOrder}" Grid.Row="0" Grid.Column="1" Command="{Binding GoToOrder}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnOrderCheck}" Grid.Row="0" Grid.Column="2" Command="{Binding GoToOrderCheck}" Style="{DynamicResource btnNavigation}"/>
 
-        <Button Content="{StaticResource strPageProduction}" Grid.Row="1" Grid.Column="0" />
-        <Button Content="{StaticResource strbtnMisson}" Grid.Row="1" Grid.Column="1" Command="{Binding GoToMisson}"/>
-        <Button Content="{StaticResource strbtnPlan}" Grid.Row="1" Grid.Column="2" Command="{Binding GoToPlan}"/>
+        <Button Content="{StaticResource strPageProduction}" Grid.Row="1" Grid.Column="0" Style="{DynamicResource btnTitle}" />
+        <Button Content="{StaticResource strbtnMisson}" Grid.Row="1" Grid.Column="1" Command="{Binding GoToMisson}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnPlan}" Grid.Row="1" Grid.Column="2" Command="{Binding GoToPlan}" Style="{DynamicResource btnNavigation}"/>
 
-        <Button Content="{StaticResource strPageMaterial}" Grid.Row="2" Grid.Column="0"/>
-        <Button Content="{StaticResource strbtnMaterialNeed}" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialNeed}"/>
-        <Button Content="{StaticResource strbtnMaterialOrder}" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialOrder}"/>
-        <Button Content="{StaticResource strbtnMaterialInventory}" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}"/>
+        <Button Content="{StaticResource strPageMaterial}" Grid.Row="2" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
+        <Button Content="{StaticResource strbtnMaterialNeed}" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialNeed}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnMaterialOrder}" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialOrder}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnMaterialInventory}" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}" Style="{DynamicResource btnNavigation}"/>
 
-        <Button Content="{StaticResource strPageRecord}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" />
-        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="3" Grid.Column="1"/>
-        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="3" Grid.Column="2" Command="{Binding GoToVHPRecord}"/>
-        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="3" Grid.Column="3"/>
-        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="3" Grid.Column="4"/>
-        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="3" Grid.Column="5" Command="{Binding GoToTestResultRecord}"/>
+        <Button Content="{StaticResource strPageRecord}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource btnTitle}" />
+        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="3" Grid.Column="2" Command="{Binding GoToVHPRecord}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="3" Grid.Column="3" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="3" Grid.Column="4" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="3" Grid.Column="5" Command="{Binding GoToTestResultRecord}" Style="{DynamicResource btnNavigation}"/>
 
         <!--<TextBlock Text="Sales" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>-->
-        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToDeliveryRecord}"/>
-        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="4" Grid.Column="1"/>
+        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToDeliveryRecord}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
 
-        <Button Content="{StaticResource strPageOther}" Grid.Row="5" Grid.Column="0"/>
-        <Button Content="{StaticResource strbtnMaintenance}" Grid.Row="5" Grid.Column="1"/>
+        <Button Content="{StaticResource strPageOther}" Grid.Row="5" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
+        <Button Content="{StaticResource strbtnMaintenance}" Grid.Row="5" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
     </Grid>
 </UserControl>
