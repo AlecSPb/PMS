@@ -6,12 +6,6 @@
     <sys:String x:Key="strWelcome">欢迎</sys:String>
 
     <!--Navigation-->
-    <sys:String x:Key="strPageSales">订单</sys:String>
-    <sys:String x:Key="strPageMaterial">原材料</sys:String>
-    <sys:String x:Key="strPageProduction">生产</sys:String>
-    <sys:String x:Key="strPageRecord">记录</sys:String>
-    <sys:String x:Key="strPageOther">其他</sys:String>
-    
     <sys:String x:Key="strbtnOrder">订单</sys:String>
     <sys:String x:Key="strbtnOrderCheck">订单核验</sys:String>
     <sys:String x:Key="strbtnMisson">生产任务</sys:String>
@@ -28,7 +22,24 @@
     <sys:String x:Key="strbtnRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="strbtnMaintenance">设备维护</sys:String>
 
-    <!--PageName-->
+    <!--PageAndNavigationName-->
+    <sys:String x:Key="strPageStart">开始</sys:String>
+    <sys:String x:Key="strPageSetting">设置</sys:String>
+    <sys:String x:Key="strPageBasicData">数据</sys:String>
+    <sys:String x:Key="strPageStatistic">统计</sys:String>
+    <sys:String x:Key="strPageExit">退出</sys:String>
+    <sys:String x:Key="strPageAbout">关于</sys:String>
+    <sys:String x:Key="strPageInstruct">指南</sys:String>
+    <sys:String x:Key="strPageHelp">帮助</sys:String>
+    <sys:String x:Key="strPageWebSite">网址</sys:String>
+    <sys:String x:Key="strPageAdmin">管理</sys:String>
+    <sys:String x:Key="strPageNaivgation">导航</sys:String>
+
+    <sys:String x:Key="strPageSales">订单</sys:String>
+    <sys:String x:Key="strPageMaterial">原料</sys:String>
+    <sys:String x:Key="strPageProduction">生产</sys:String>
+    <sys:String x:Key="strPageRecord">记录</sys:String>
+    <sys:String x:Key="strPageOther">其他</sys:String>
     <sys:String x:Key="strPageOrder">订单记录</sys:String>
     <sys:String x:Key="strPageOrderEdit">订单记录编辑</sys:String>
     <sys:String x:Key="strPageOrderCheck">订单核验记录</sys:String>
@@ -69,8 +80,8 @@
     <sys:String x:Key="strPageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="strPagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="strPageOrderSelect">请选择一个订单项目</sys:String>
-    
-    
+
+
     <sys:String x:Key="strVHPID">VHP ID</sys:String>
     <sys:String x:Key="strProductReport">Report</sys:String>
 

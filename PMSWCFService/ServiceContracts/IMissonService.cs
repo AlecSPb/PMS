@@ -13,6 +13,10 @@ namespace PMSWCFService.ServiceContracts
     {
         [OperationContract]
         List<DcOrder> GetMissonBySearchInPage(int skip,int take);
+
+        [OperationContract]
+        List<DcPlanVHP> GetPlansByOrderID(Guid id);
+
         [OperationContract]
         int GetMissonCountBySearch();
     }

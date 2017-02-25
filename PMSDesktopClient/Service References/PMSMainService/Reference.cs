@@ -62,9 +62,6 @@ namespace PMSDesktopClient.PMSMainService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSDesktopClient.PMSMainService.DcPlanVHP[] PlanVHPsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyContentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -287,19 +284,6 @@ namespace PMSDesktopClient.PMSMainService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSDesktopClient.PMSMainService.DcPlanVHP[] PlanVHPs {
-            get {
-                return this.PlanVHPsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlanVHPsField, value) != true)) {
-                    this.PlanVHPsField = value;
-                    this.RaisePropertyChanged("PlanVHPs");
                 }
             }
         }
@@ -5511,6 +5495,12 @@ namespace PMSDesktopClient.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
         System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlansByOrderID", ReplyAction="http://tempuri.org/IMissonService/GetPlansByOrderIDResponse")]
+        PMSDesktopClient.PMSMainService.DcPlanVHP[] GetPlansByOrderID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlansByOrderID", ReplyAction="http://tempuri.org/IMissonService/GetPlansByOrderIDResponse")]
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
         int GetMissonCountBySearch();
         
@@ -5551,6 +5541,14 @@ namespace PMSDesktopClient.PMSMainService {
         
         public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take) {
             return base.Channel.GetMissonBySearchInPageAsync(skip, take);
+        }
+        
+        public PMSDesktopClient.PMSMainService.DcPlanVHP[] GetPlansByOrderID(System.Guid id) {
+            return base.Channel.GetPlansByOrderID(id);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id) {
+            return base.Channel.GetPlansByOrderIDAsync(id);
         }
         
         public int GetMissonCountBySearch() {

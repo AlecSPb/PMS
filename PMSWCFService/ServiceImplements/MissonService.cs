@@ -22,8 +22,8 @@ namespace PMSWCFService
                     cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
                 });
 
-                var result = dc.Orders.Include("PlanVHPs").Where(o => o.PolicyType.Contains("VHP")
-                && o.State != OrderState.Deleted.ToString() && o.State != OrderState.UnChecked.ToString())
+                var result = dc.Orders.Where(o => o.PolicyType.Contains("VHP")
+                && o.State != OrderState.Deleted.ToString())
                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
                 var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result);
 
@@ -36,6 +36,18 @@ namespace PMSWCFService
             using (var dc = new PMSDbContext())
             {
                 return dc.Orders.Where(o => o.PolicyType.Contains("VHP") && o.State != OrderState.Deleted.ToString()).Count();
+            }
+        }
+
+        public List<DcPlanVHP> GetPlansByOrderID(Guid orderid)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
+                var result = dc.VHPPlans.Where(p => p.OrderID == orderid && p.State != OrderState.Deleted.ToString())
+                    .OrderByDescending(p => p.CreateTime).ToList();
+                var plans = Mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(result);
+                return plans;
             }
         }
     }

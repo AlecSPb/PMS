@@ -22,7 +22,6 @@
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMIWorkingNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlanVHPs" nillable="true" type="tns:ArrayOfDcPlanVHP" />
       <xs:element minOccurs="0" name="PolicyContent" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PolicyMakeDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PolicyMaker" nillable="true" type="xs:string" />

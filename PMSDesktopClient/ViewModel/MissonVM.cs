@@ -16,24 +16,25 @@ namespace PMSDesktopClient.ViewModel
     {
         public MissonVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.MissonRefresh, ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.MissonRefresh, ActionRefreshItems);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionRefresh(MsgObject obj)
+        private void ActionRefreshItems(MsgObject obj)
         {
-            SetPageParametersWhenConditionChange();
+            ActionSelectionChanged(CurrentSelectItem);
         }
 
         private void InitializeProperties()
         {
-            MainMissons = new ObservableCollection<DcOrder>();
+            Missons = new ObservableCollection<DcOrder>();
+            PlanVHPs = new ObservableCollection<DcPlanVHP>();
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Plan }));
 
 
@@ -41,6 +42,29 @@ namespace PMSDesktopClient.ViewModel
             AddNewPlan = new RelayCommand<PMSMainService.DcOrder>(ActionAddNewPlan);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan);
             DuplicatePlan = new RelayCommand<PMSMainService.DcPlanVHP>(ActionDuplicatePlan);
+
+            SelectionChanged = new RelayCommand<PMSMainService.DcOrder>(ActionSelectionChanged);
+            Refresh = new RelayCommand(ActionRefresh);
+        }
+
+        private void ActionRefresh()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionSelectionChanged(DcOrder obj)
+        {
+            if (obj != null)
+            {
+                using (var service = new MissonServiceClient())
+                {
+                    var result = service.GetPlansByOrderID(obj.ID);
+                    PlanVHPs.Clear();
+                    result.ToList().ForEach(i => PlanVHPs.Add(i));
+
+                    CurrentSelectItem = obj;
+                }
+            }
         }
 
         private void ActionDuplicatePlan(DcPlanVHP obj)
@@ -50,7 +74,7 @@ namespace PMSDesktopClient.ViewModel
                 var service = new PlanVHPServiceClient();
                 obj.ID = Guid.NewGuid();
                 service.AddVHPPlan(obj);
-                SetPageParametersWhenConditionChange();
+                ActionSelectionChanged(CurrentSelectItem);
             }
         }
 
@@ -96,8 +120,12 @@ namespace PMSDesktopClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var orders = service.GetMissonBySearchInPage(skip, take);
-            MainMissons.Clear();
-            orders.ToList<DcOrder>().ForEach(o => MainMissons.Add(o));
+            Missons.Clear();
+            orders.ToList<DcOrder>().ForEach(o => Missons.Add(o));
+
+            CurrentSelectIndex = 0;
+            CurrentSelectItem = orders.FirstOrDefault();
+            ActionSelectionChanged(CurrentSelectItem);
         }
 
 
@@ -138,26 +166,34 @@ namespace PMSDesktopClient.ViewModel
 
         #region Proeperties
 
-        private ObservableCollection<DcOrder> mainMissons;
-        public ObservableCollection<DcOrder> MainMissons
+        public ObservableCollection<DcOrder> Missons { get; set; }
+        public ObservableCollection<DcPlanVHP> PlanVHPs { get; set; }
+
+        private int currentSelectIndex;
+        public int CurrentSelectIndex
         {
-            get { return mainMissons; }
-            set { mainMissons = value; RaisePropertyChanged(nameof(MainMissons)); }
+            get { return currentSelectIndex; }
+            set { currentSelectIndex = value; RaisePropertyChanged(nameof(CurrentSelectIndex)); }
+        }
+        private DcOrder currentSelectItem;
+        public DcOrder CurrentSelectItem
+        {
+            get { return currentSelectItem; }
+            set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
 
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
+        public RelayCommand GoToNavigation { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
         public RelayCommand Add { get; private set; }
+        public RelayCommand Refresh { get; set; }
         public RelayCommand PageChanged { get; private set; }
-
         public RelayCommand<DcOrder> AddNewPlan { get; set; }
-
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
-
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
+        public RelayCommand<DcOrder> SelectionChanged { get; set; }
         #endregion
     }
 }

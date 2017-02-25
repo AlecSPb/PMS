@@ -6,6 +6,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200">
     <UserControl.DataContext>
@@ -22,7 +23,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPageMisson}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding Navigate}"/>
+            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
             <Button Content="{StaticResource strbtnPlan}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToPlan}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
@@ -34,15 +36,21 @@
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource DataGridBasic}"
-                  SelectedIndex="0"
-                  ItemsSource="{Binding MainMissons}" LoadingRow="DataGrid_LoadingRow">
+                  SelectedIndex="{Binding CurrentSelectIndex}"
+                  ItemsSource="{Binding Missons}" LoadingRow="DataGrid_LoadingRow">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dgMisson,Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Plans">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Add Plan" Style="{StaticResource ButtonDGBasic}"
-                                        Command="{Binding DataContext.AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource strbtnAddItem}" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" Width="100"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -165,7 +173,7 @@
                              RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
         
-        <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding ElementName=dgMisson,Path=SelectedItem.PlanVHPs}">
+        <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding PlanVHPs}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>

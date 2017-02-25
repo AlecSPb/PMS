@@ -67,7 +67,6 @@ namespace PMSDesktopClient.ViewModel
         {
             if (order != null)
             {
-                order.PlanVHPs = null;
                 order.ID = Guid.NewGuid();
                 order.CreateTime = DateTime.Now;
                 order.State = "UnChecked";
