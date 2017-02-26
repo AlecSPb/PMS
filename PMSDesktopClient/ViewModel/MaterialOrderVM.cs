@@ -21,6 +21,7 @@ namespace PMSDesktopClient.ViewModel
         public MaterialOrderVM()
         {
             Messenger.Default.Register<MsgObject>(this, VToken.MaterialOrderRefresh, ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.MaterialOrderItemRefresh, ActionRefreshItems);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -29,6 +30,11 @@ namespace PMSDesktopClient.ViewModel
         private void ActionRefresh(MsgObject obj)
         {
             SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionRefreshItems(MsgObject obj)
+        {
+            ActionSelectionChanged(CurrentSelectItem);
         }
         public override void Cleanup()
         {
@@ -39,7 +45,8 @@ namespace PMSDesktopClient.ViewModel
         {
             SearchOrderPO = "";
             SearchSupplier = "";
-            MainMaterialOrders = new ObservableCollection<DcMaterialOrder>();
+            MaterialOrders = new ObservableCollection<DcMaterialOrder>();
+            MaterialOrderItems = new ObservableCollection<DcMaterialOrderItem>();
         }
         private void InitializeCommands()
         {
@@ -47,7 +54,7 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            GenerateDoc = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionGenerateDoc);
+            Doc = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionGenerateDoc);
 
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionEdit);
@@ -55,6 +62,22 @@ namespace PMSDesktopClient.ViewModel
             AddItem = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionAddItem);
             EditItem = new RelayCommand<PMSMainService.DcMaterialOrderItem>(ActionEditItem);
 
+            SelectionChanged = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionSelectionChanged);
+
+        }
+
+        private void ActionSelectionChanged(DcMaterialOrder obj)
+        {
+            if (obj != null)
+            {
+                using (var service = new MaterialOrderServiceClient())
+                {
+                    var result = service.GetMaterialOrderItembyMaterialID(obj.ID);
+                    MaterialOrderItems.Clear();
+                    result.ToList().ForEach(i => MaterialOrderItems.Add(i));
+                    CurrentSelectItem = obj;
+                }
+            }
         }
 
         private void ActionEditItem(DcMaterialOrderItem obj)
@@ -165,8 +188,12 @@ namespace PMSDesktopClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
-            MainMaterialOrders.Clear();
-            orders.ToList<DcMaterialOrder>().ForEach(o => MainMaterialOrders.Add(o));
+            MaterialOrders.Clear();
+            orders.ToList<DcMaterialOrder>().ForEach(o => MaterialOrders.Add(o));
+
+            CurrentSelectIndex = 0;
+            CurrentSelectItem = MaterialOrders.FirstOrDefault();
+            ActionSelectionChanged(CurrentSelectItem);
         }
 
 
@@ -203,6 +230,7 @@ namespace PMSDesktopClient.ViewModel
                 RaisePropertyChanged(nameof(RecordCount));
             }
         }
+        public RelayCommand PageChanged { get; private set; }
         #endregion
 
         #region Proeperties
@@ -231,16 +259,23 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-
-
-
-
-        private ObservableCollection<DcMaterialOrder> mainMaterialOrders;
-        public ObservableCollection<DcMaterialOrder> MainMaterialOrders
+        public ObservableCollection<DcMaterialOrder> MaterialOrders { get; set; }
+        public ObservableCollection<DcMaterialOrderItem> MaterialOrderItems { get; set; }
+        private int currrentSelectIndex;
+        public int CurrentSelectIndex
         {
-            get { return mainMaterialOrders; }
-            set { mainMaterialOrders = value; RaisePropertyChanged(nameof(MainMaterialOrders)); }
+            get { return currrentSelectIndex; }
+            set { currrentSelectIndex = value; RaisePropertyChanged(nameof(CurrentSelectIndex)); }
         }
+
+        private DcMaterialOrder currentSelectItem;
+        public DcMaterialOrder CurrentSelectItem
+        {
+            get { return currentSelectItem; }
+            set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
+        }
+
+
         #endregion
 
         #region Commands
@@ -249,9 +284,9 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialOrder> Edit { get; set; }
-        public RelayCommand PageChanged { get; private set; }
-        public RelayCommand<DcMaterialOrder> GenerateDoc { get; private set; }
-
+        public RelayCommand<DcMaterialOrder> Doc { get; private set; }
+        public RelayCommand<DcMaterialOrder> Refresh { get; set; }
+        public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }
 
         public RelayCommand<DcMaterialOrder> AddItem { get; private set; }
         public RelayCommand<DcMaterialOrderItem> EditItem { get; private set; }

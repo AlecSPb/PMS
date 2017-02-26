@@ -71,7 +71,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateOrder(CurrentOrder);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck });
-            Messenger.Default.Send<MsgObject>(null, VToken.OrderCheckRefresh);
+            NavigationService.Refresh(VToken.OrderCheckRefresh);
         }
 
         private bool isNew;

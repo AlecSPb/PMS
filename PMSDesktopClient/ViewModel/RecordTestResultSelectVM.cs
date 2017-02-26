@@ -33,7 +33,7 @@ namespace PMSDesktopClient.ViewModel
             GiveUp = new RelayCommand(() =>
             {
                 NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
-                Messenger.Default.Send<MsgObject>(null, VToken.RecordDeliveryRefresh);
+                NavigationService.Refresh(VToken.RecordDeliveryRefresh);
             });
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);

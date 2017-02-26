@@ -80,7 +80,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateOrder(CurrentOrder);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
-            Messenger.Default.Send<MsgObject>(null, VToken.OrderRefresh);
+            NavigationService.Refresh(VToken.OrderRefresh);
         }
 
         private bool isNew;

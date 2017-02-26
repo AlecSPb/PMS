@@ -48,7 +48,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateMaterialNeed(CurrentMaterialNeed);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed});
-            Messenger.Default.Send<MsgObject>(null, VToken.MaterialNeedRefresh);
+            NavigationService.Refresh(VToken.MaterialNeedRefresh);
         }
 
         public DcMaterialNeed CurrentMaterialNeed { get; set; }

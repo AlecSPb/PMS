@@ -44,7 +44,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder });
-            Messenger.Default.Send<MsgObject>(null, VToken.MaterialOrderRefresh);
+            NavigationService.Refresh(VToken.MaterialOrderItemRefresh);
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public DcMaterialOrderItem CurrentMaterialOrderItem { get; set; }

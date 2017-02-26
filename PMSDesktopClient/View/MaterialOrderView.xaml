@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSDesktopClient.View"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MaterialOrder}">
     <Grid Background="{StaticResource BackgroundWindow}">
@@ -13,7 +14,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPageMaterialOrder}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
@@ -29,7 +29,8 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strUnChecked}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
-                <TextBlock Text="{StaticResource strCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
+                <TextBlock Text="{StaticResource strCompleted}" Style="{StaticResource TextBlockBasic}"
+                           Background="{StaticResource CompletedBrush}"/>
                 <TextBlock Text="{StaticResource strUnCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
                 <TextBlock Text="{StaticResource strPaused}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="{StaticResource strEmergency}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
@@ -41,21 +42,26 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="mainDg" Grid.Row="0" Style="{StaticResource DataGridBasic}"
-                      SelectedIndex="0"
-                          ItemsSource="{Binding MainMaterialOrders}" LoadingRow="DataGrid_LoadingRow">
+                      SelectedIndex="{Binding CurrentSelectIndex}" ItemsSource="{Binding MaterialOrders}" LoadingRow="DataGrid_LoadingRow">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=mainDg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Edit">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                    <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="Add Item" Style="{StaticResource ButtonDGBasic}"
+                                    <Button Content="{StaticResource strbtnAddItem}" Style="{StaticResource ButtonDGBasic}"
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
-                                                Command="{Binding Path=DataContext.GenerateDoc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
+                                                Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -64,20 +70,6 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}" Style="{StaticResource TextBlockDGBasic}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="State">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding State}" Style="{StaticResource TextBlockDGBasic}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="Priority">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Priority}" Style="{StaticResource TextBlockDGBasic}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -151,13 +143,13 @@
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
         </Grid>
         <DataGrid Grid.Row="3" Style="{StaticResource DataGridBasic}"
-                          ItemsSource="{Binding ElementName=mainDg,Path=SelectedItem.MaterialOrderItems}">
+                          ItemsSource="{Binding MaterialOrderItems}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
@@ -168,13 +160,6 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource TextBlockDGBasic}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="State">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding State}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -238,6 +223,5 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="5" Style="{StaticResource TextBlockBasic}" Text="每个原料订单的原料订单项不要超过5个，不然生成报告会超过一页"/>
     </Grid>
 </UserControl>

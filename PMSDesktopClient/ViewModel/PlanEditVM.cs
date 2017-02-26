@@ -66,7 +66,7 @@ namespace PMSDesktopClient.ViewModel
             }
 
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
-            Messenger.Default.Send<MsgObject>(null, VToken.MissonRefresh);
+            NavigationService.Refresh(VToken.MissonRefresh);
         }
 
         private void ActionGiveUp()

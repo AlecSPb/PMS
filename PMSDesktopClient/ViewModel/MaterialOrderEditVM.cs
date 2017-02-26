@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSDesktopClient.ViewModel
 {
@@ -59,6 +60,7 @@ namespace PMSDesktopClient.ViewModel
                 service.UpdateMaterialOrder(CurrentMaterialOrder);
             }
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder });
+            NavigationService.Refresh(VToken.MaterialOrderRefresh);
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }

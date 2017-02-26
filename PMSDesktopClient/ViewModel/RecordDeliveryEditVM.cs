@@ -38,7 +38,7 @@ namespace PMSDesktopClient.ViewModel
             GiveUp = new RelayCommand(() =>
             {
                 NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
-                Messenger.Default.Send<MsgObject>(null, VToken.RecordDeliveryRefresh);
+                NavigationService.Refresh(VToken.RecordDeliveryRefresh);
             });
             Save = new RelayCommand(ActionSave);
         }
@@ -56,7 +56,7 @@ namespace PMSDesktopClient.ViewModel
             }
 
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
-            Messenger.Default.Send<MsgObject>(null, VToken.RecordDeliveryRefresh);
+            NavigationService.Refresh(VToken.RecordDeliveryRefresh);
         }
 
 

@@ -24,8 +24,8 @@
         <TextBlock Text="{StaticResource strPageMisson}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
             <Button Content="{StaticResource strbtnPlan}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToPlan}"/>
+            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>

@@ -19,5 +19,11 @@ namespace PMSDesktopClient
         {
             Messenger.Default.Send<string>(msg, PMSCommon.NavigationToken.StateMessage);
         }
+
+        public static void Refresh(VToken refreshtoken)
+        {
+            Messenger.Default.Send<MsgObject>(null, refreshtoken);
+        }
+
     }
 }
