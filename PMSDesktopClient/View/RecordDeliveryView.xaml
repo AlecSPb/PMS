@@ -54,7 +54,7 @@
                                             CommandParameter="{Binding}"/>
                                     <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
                                                 Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
-                                    <Button Content="{StaticResource strbtnAddItem}" Style="{StaticResource ButtonDGBasic}"
+                                    <Button Content="{StaticResource strbtnAddItem}" Style="{StaticResource ButtonDGBasic}" Width="100"
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
                                 </StackPanel>
