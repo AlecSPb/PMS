@@ -7,7 +7,40 @@
         mc:Ignorable="d"
         WindowState="Maximized"
         Title="MainWindow" Height="800" Width="1200">
-    <Grid>
-        
+    <Window.Resources>
+        <Style x:Key="border" TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Orange"/>
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="Margin" Value="5 0"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="LightGreen">
+            <TextBlock  Text="今天日期：2017-2-26 星期天"
+                   HorizontalAlignment="Center" Padding="5" FontSize="30" />
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource border}">
+            <local:SinglePanel x:Name="first"/>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource border}">
+            <local:SinglePanel x:Name="second"/>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource border}">
+            <local:SinglePanel x:Name="third"/>
+        </Border>
+        <TextBlock x:Name="txtStatus" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  Padding="3" Background="Red"
+                   Foreground="White"
+                   Text="状态栏"/>
     </Grid>
 </Window>
