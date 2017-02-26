@@ -20,7 +20,6 @@ namespace PMSDesktopClient.ViewModel
             InitializeCommmands();
 
             LoadRecordVHP();
-            LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
             EmptyCurrentRecordVHPItem();
         }
         private bool isNew;
@@ -124,12 +123,13 @@ namespace PMSDesktopClient.ViewModel
         {
             using (var service = new RecordVHPServiceClient())
             {
-                var result = service.GetTopRecordVHP(5).ToList();
+                var result = service.GetTopRecordVHP(5);
                 RecordVHPs.Clear();
                 result.ToList().ForEach(r => RecordVHPs.Add(r));
 
                 CurrentDataGridSelectIndex = 0;
                 CurrentRecordVHP = RecordVHPs.FirstOrDefault();
+                LoadRecordVHPItemsByRecordVHP(CurrentRecordVHP);
             }
         }
 
@@ -140,7 +140,6 @@ namespace PMSDesktopClient.ViewModel
             {
                 return;
             }
-            //CurrentRecordVHPItem.RecordVHPID = CurrentRecordVHP.ID;
             try
             {
                 if (CurrentRecordVHPItem != null)
@@ -156,7 +155,7 @@ namespace PMSDesktopClient.ViewModel
                             service.UpdateReocrdVHPItem(CurrentRecordVHPItem);
                         }
 
-                        ReLocateRecordVHPAndRefreshItems();
+                        LoadRecordVHPItemsByRecordVHP(CurrentRecordVHP);
                         EmptyCurrentRecordVHPItem();
                         NavigationService.ShowStateMessage("保存完毕");
                     }
@@ -173,15 +172,9 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj != null)
             {
-                //using (var service = new RecordVHPServiceClient())
-                //{
-                //    service.AddRecordVHPItem(obj);
-                //    ReLocateRecordVHPAndRefreshItems();
-                //}
                 var model = new DcRecordVHPItem();
 
                 model.RecordVHPID = obj.RecordVHPID;
-
                 model.ID = Guid.NewGuid();
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
@@ -205,22 +198,6 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-        /// <summary>
-        /// 重新定位RecordVHP并且刷新对应的Items
-        /// </summary>
-        private void ReLocateRecordVHPAndRefreshItems()
-        {
-            if (CurrentDataGridSelectIndex < RecordVHPs.Count() && CurrentDataGridSelectIndex >= 0)
-            {
-                LoadRecordVHPItemsByRecordVHP(RecordVHPs[CurrentDataGridSelectIndex]);
-            }
-            else
-            {
-                LoadRecordVHPItemsByRecordVHP(RecordVHPs.FirstOrDefault());
-            }
-
-            System.Diagnostics.Debug.Print(CurrentDataGridSelectIndex.ToString());
-        }
 
         #region Properties
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }

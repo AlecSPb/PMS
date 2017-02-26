@@ -29,7 +29,7 @@ namespace PMSDesktopClient.ViewModel
             GiveUp = new RelayCommand(() =>
             {
                 NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
-                NavigationService.Refresh(VToken.RecordDeliveryRefresh);
+                NavigationService.Refresh(VToken.RecordDeliveryItemRefresh);
             });
             Save = new RelayCommand(ActionSave);
         }
@@ -48,7 +48,7 @@ namespace PMSDesktopClient.ViewModel
                     service.UpdateReocrdDeliveryItem(CurrentRecordDeliveryItem);
                 }
                 NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
-                NavigationService.Refresh(VToken.RecordDeliveryRefresh);
+                NavigationService.Refresh(VToken.RecordDeliveryItemRefresh);
             }
         }
         public ObservableCollection<string> States { get; set; }

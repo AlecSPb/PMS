@@ -19,9 +19,15 @@ namespace PMSDesktopClient.ViewModel
         public RecordDeliveryVM()
         {
             Messenger.Default.Register<MsgObject>(this, VToken.RecordDeliveryRefresh, ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.RecordDeliveryItemRefresh, ActionRefreshItems);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionRefreshItems(MsgObject obj)
+        {
+            ActionSelectionChanged(CurrentSelectItem);
         }
 
         public override void Cleanup()
@@ -38,6 +44,7 @@ namespace PMSDesktopClient.ViewModel
         private void InitializeProperties()
         {
             RecordDeliveries = new ObservableCollection<DcRecordDelivery>();
+            RecordDeliveryItems = new ObservableCollection<DcRecordDeliveryItem>();
         }
         private void InitializeCommands()
         {
@@ -48,6 +55,22 @@ namespace PMSDesktopClient.ViewModel
             Doc = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionDoc);
             AddItem = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionAddItem);
             EditItem = new RelayCommand<PMSMainService.DcRecordDeliveryItem>(ActionEditItem);
+            SelectionChanged = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionSelectionChanged);
+        }
+
+        private void ActionSelectionChanged(DcRecordDelivery obj)
+        {
+            if (obj != null)
+            {
+                using (var service = new RecordDeliveryServiceClient())
+                {
+                    var result = service.GetRecordDeliveryItemByRecordDeliveryID(obj.ID);
+                    RecordDeliveryItems.Clear();
+                    result.ToList().ForEach(i => RecordDeliveryItems.Add(i));
+
+                    CurrentSelectItem = obj;
+                }
+            }
         }
 
         private bt.Application btApp;
@@ -159,18 +182,40 @@ namespace PMSDesktopClient.ViewModel
             var models = service.GetDelivery(skip, take);
             RecordDeliveries.Clear();
             models.ToList<DcRecordDelivery>().ForEach(o => RecordDeliveries.Add(o));
+
+            CurrentSelectIndex = 0;
+            CurrentSelectItem = RecordDeliveries.FirstOrDefault();
+            ActionSelectionChanged(CurrentSelectItem);
         }
+        #region Properties
+        public ObservableCollection<DcRecordDelivery> RecordDeliveries { get; set; }
+        public ObservableCollection<DcRecordDeliveryItem> RecordDeliveryItems { get; set; }
+        private int currentSelectIndex;
+
+        public int CurrentSelectIndex
+        {
+            get { return currentSelectIndex; }
+            set { currentSelectIndex = value; RaisePropertyChanged(nameof(CurrentSelectIndex)); }
+        }
+        private DcRecordDelivery currentSelectItem;
+
+        public DcRecordDelivery CurrentSelectItem
+        {
+            get { return currentSelectItem; }
+            set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
+        }
+
+        #endregion
+        #region Commands
         public RelayCommand GoToNavigation { get; set; }
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordDelivery> Edit { get; set; }
-
         public RelayCommand<DcRecordDelivery> Doc { get; set; }
-
         public RelayCommand<DcRecordDelivery> AddItem { get; set; }
-
         public RelayCommand<DcRecordDeliveryItem> EditItem { get; set; }
+        public RelayCommand<DcRecordDelivery> SelectionChanged { get; set; }
+        #endregion
 
-        public ObservableCollection<DcRecordDelivery> RecordDeliveries { get; set; }
 
         #region PagingProperties
         public RelayCommand PageChanged { get; private set; }

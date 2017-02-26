@@ -59,6 +59,7 @@ namespace PMSDesktopClient
         RecordVHPRefresh,
         RecordVHPQuickEdit,
         SetRecordVHPQuickEditSelectIndex,
-        MaterialOrderItemRefresh
+        MaterialOrderItemRefresh,
+        RecordDeliveryItemRefresh
     }
 }

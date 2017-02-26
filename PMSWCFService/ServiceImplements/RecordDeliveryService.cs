@@ -5,6 +5,7 @@ using System.Web;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
+using PMSDAL;
 
 namespace PMSWCFService
 {
@@ -88,6 +89,19 @@ namespace PMSWCFService
             using (var dc = new PMSDAL.PMSDbContext())
             {
                 return dc.RecordDeliverys.Count();
+            }
+        }
+
+        public List<DcRecordDeliveryItem> GetRecordDeliveryItemByRecordDeliveryID(Guid id)
+        {
+            using (var dc = new PMSDAL.PMSDbContext())
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<RecordDeliveryItem, DcRecordDeliveryItem>());
+
+                var result = dc.RecordDeliveryItems
+                    .Where(i => i.DeliveryID == id && i.State != PMSCommon.CommonState.Deleted.ToString())
+                    .ToList();
+                return Mapper.Map<List<RecordDeliveryItem>, List<DcRecordDeliveryItem>>(result);
             }
         }
 

@@ -247,6 +247,12 @@
   <wsdl:message name="IRecordDeliveryService_DeleteRecordDelivery_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordDeliveryResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_GetRecordDeliveryItemByRecordDeliveryID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeliveryItemByRecordDeliveryID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeliveryService_GetRecordDeliveryItemByRecordDeliveryID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeliveryItemByRecordDeliveryIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordDeliveryService_AddRecordDeliveryItem_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordDeliveryItem" />
   </wsdl:message>
@@ -667,6 +673,10 @@
     <wsdl:operation name="DeleteRecordDelivery">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery" message="tns:IRecordDeliveryService_DeleteRecordDelivery_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryResponse" message="tns:IRecordDeliveryService_DeleteRecordDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeliveryItemByRecordDeliveryID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryID" message="tns:IRecordDeliveryService_GetRecordDeliveryItemByRecordDeliveryID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryIDResponse" message="tns:IRecordDeliveryService_GetRecordDeliveryItemByRecordDeliveryID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecordDeliveryItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem" message="tns:IRecordDeliveryService_AddRecordDeliveryItem_InputMessage" />
@@ -1225,6 +1235,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteRecordDelivery">
       <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeliveryItemByRecordDeliveryID">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

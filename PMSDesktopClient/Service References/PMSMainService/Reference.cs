@@ -5778,6 +5778,16 @@ namespace PMSDesktopClient.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/DeleteRecordDelivery", ReplyAction="http://tempuri.org/IRecordDeliveryService/DeleteRecordDeliveryResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordDeliveryAsync(System.Guid id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryID" +
+            "", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryID" +
+            "Response")]
+        PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] GetRecordDeliveryItemByRecordDeliveryID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryID" +
+            "", ReplyAction="http://tempuri.org/IRecordDeliveryService/GetRecordDeliveryItemByRecordDeliveryID" +
+            "Response")]
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[]> GetRecordDeliveryItemByRecordDeliveryIDAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItem", ReplyAction="http://tempuri.org/IRecordDeliveryService/AddRecordDeliveryItemResponse")]
         int AddRecordDeliveryItem(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model);
         
@@ -5862,6 +5872,14 @@ namespace PMSDesktopClient.PMSMainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordDeliveryAsync(System.Guid id) {
             return base.Channel.DeleteRecordDeliveryAsync(id);
+        }
+        
+        public PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[] GetRecordDeliveryItemByRecordDeliveryID(System.Guid id) {
+            return base.Channel.GetRecordDeliveryItemByRecordDeliveryID(id);
+        }
+        
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordDeliveryItem[]> GetRecordDeliveryItemByRecordDeliveryIDAsync(System.Guid id) {
+            return base.Channel.GetRecordDeliveryItemByRecordDeliveryIDAsync(id);
         }
         
         public int AddRecordDeliveryItem(PMSDesktopClient.PMSMainService.DcRecordDeliveryItem model) {

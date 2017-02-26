@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:PMSDesktopClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200">
@@ -35,8 +36,14 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="mainDg" Grid.Row="0" Style="{StaticResource DataGridBasic}"
-                      SelectedIndex="0"
+                      SelectedIndex="{Binding CurrentSelectIndex}"
                       ItemsSource="{Binding RecordDeliveries}" LoadingRow="DataGrid_LoadingRow">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=mainDg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Edit">
                         <DataGridTemplateColumn.CellTemplate>
@@ -145,7 +152,7 @@
                              LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
         </Grid>
         <DataGrid Grid.Row="3" Style="{StaticResource DataGridBasic}"
-                          ItemsSource="{Binding ElementName=mainDg,Path=SelectedItem.DeliveryItems}">
+                          ItemsSource="{Binding RecordDeliveryItems}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Edit">
                     <DataGridTemplateColumn.CellTemplate>

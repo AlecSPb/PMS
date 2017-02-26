@@ -20,7 +20,8 @@
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <Button Content="{StaticResource strbtnAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
-            <Button Content="{StaticResource strbtnQuick}" Style="{StaticResource ButtonBasic}" Command="{Binding QuickEdit}" Width="120"/>
+            <Button Content="{StaticResource strbtnQuick}" Style="{StaticResource ButtonBasic}" FontWeight="Bold" Foreground="Blue"
+                    Command="{Binding QuickEdit}" Width="120"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>

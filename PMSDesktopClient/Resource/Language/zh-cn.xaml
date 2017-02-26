@@ -109,26 +109,7 @@
 
 
     <sys:String x:Key="strbtnChart">曲线图</sys:String>
-    <sys:String x:Key="strOrderEdit">OrderEdit</sys:String>
-    <sys:String x:Key="strOrderReview">OrderReview</sys:String>
-    <sys:String x:Key="strMisson">Misson</sys:String>
-    <sys:String x:Key="strPlan">Plan</sys:String>
-    <sys:String x:Key="strPlanEdit">Plan Edit</sys:String>
-    <sys:String x:Key="strPlanCanlendar">Plan Canlendar</sys:String>
-    <sys:String x:Key="strProduct">Product</sys:String>
-    <sys:String x:Key="strProductEdit">Product Edit</sys:String>
-    <sys:String x:Key="strBonding">Bonding</sys:String>
-    <sys:String x:Key="strBondingEdit">Bonding Edit</sys:String>
-    <sys:String x:Key="strDelivery">Delivery</sys:String>
-    <sys:String x:Key="strDeliveryEdit">Delivery Edit</sys:String>
-    <sys:String x:Key="strRawMaterial">Raw Material</sys:String>
-    <sys:String x:Key="strRawMaterialEdit">Raw Material Edit</sys:String>
-    <sys:String x:Key="strRecord">Record</sys:String>
-    <sys:String x:Key="strBasicData">Basic Data</sys:String>
 
-    <sys:String x:Key="strHelp">Help</sys:String>
-    <sys:String x:Key="strAbout">About</sys:String>
-    <sys:String x:Key="strInstruct">Instruct</sys:String>
     <!--Indicator-->
     <sys:String x:Key="strColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="strYesterday">昨天</sys:String>

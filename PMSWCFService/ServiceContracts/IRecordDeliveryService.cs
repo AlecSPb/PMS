@@ -24,6 +24,8 @@ namespace PMSWCFService.ServiceContracts
         int DeleteRecordDelivery(Guid id);
 
         [OperationContract]
+        List<DcRecordDeliveryItem> GetRecordDeliveryItemByRecordDeliveryID(Guid id);
+        [OperationContract]
         int AddRecordDeliveryItem(DcRecordDeliveryItem model);
         [OperationContract]
         int UpdateReocrdDeliveryItem(DcRecordDeliveryItem model);
