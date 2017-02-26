@@ -57,11 +57,11 @@
                                     <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
+                                                Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                     <Button Content="{StaticResource strbtnAddItem}" Style="{StaticResource ButtonDGBasic}"
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
-                                                Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
