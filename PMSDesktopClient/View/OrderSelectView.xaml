@@ -39,7 +39,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Select" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnSelect}" Style="{StaticResource ButtonDGBasic}"
                                         Command="{Binding DataContext.SelectOrder,
                                             RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>

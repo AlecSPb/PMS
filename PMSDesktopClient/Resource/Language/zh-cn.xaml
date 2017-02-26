@@ -106,7 +106,7 @@
     <sys:String x:Key="strbtnPrint">打印</sys:String>
     <sys:String x:Key="strbtnSelectEmpty">使用空项目</sys:String>
     <sys:String x:Key="stbtnFill">填写</sys:String>
-
+    <sys:String x:Key="strbtnSelect">选择</sys:String>
 
     <sys:String x:Key="strbtnChart">曲线图</sys:String>
 

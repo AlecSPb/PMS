@@ -39,10 +39,10 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="Doc" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
