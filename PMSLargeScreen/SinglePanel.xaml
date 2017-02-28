@@ -41,7 +41,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="模具" HorizontalAlignment="Center" FontSize="20"/>
+                <TextBlock Grid.Column="0" Text="模具" HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
                 <TextBlock Grid.Column="1" Text="{Binding MoldType}" Style="{StaticResource Mold}"/>
                 <TextBlock Grid.Column="2" Text="{Binding MoldDiameter}" Style="{StaticResource Mold}"/>
             </Grid>
