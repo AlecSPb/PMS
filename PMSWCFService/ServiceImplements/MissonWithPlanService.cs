@@ -13,7 +13,7 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDAL.PMSDbContext())
             {
-                var result = dc.VHPPlans.OrderByDescending(p => p.PlanDate).Skip(skip).Take(take)
+                var result = dc.VHPPlans.OrderByDescending(p => p.PlanDate).OrderBy(p=>p.VHPDeviceCode).Skip(skip).Take(take)
                     .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan()
                     {
                         OrderID = o.ID,
