@@ -69,7 +69,10 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDAL.PMSDbContext())
             {
-                var result = dc.VHPPlans.Where(p => p.PlanDate.Date == date.Date).OrderByDescending(p => p.PlanDate)
+                var today = date.Date;
+                var tomorrow = date.Date.AddDays(1);
+                //此处直接在linq中使用date属性会出错
+                var result = dc.VHPPlans.Where(p => p.PlanDate >= today && p.PlanDate < tomorrow).OrderByDescending(p => p.PlanDate)
                     .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan
                     {
                         OrderID = o.ID,
@@ -124,7 +127,7 @@ namespace PMSWCFService
 
         public int GetMissonWithPlanCount()
         {
-            using (var dc=new PMSDAL.PMSDbContext())
+            using (var dc = new PMSDAL.PMSDbContext())
             {
                 return dc.VHPPlans.Count();
             }

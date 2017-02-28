@@ -24,11 +24,48 @@ namespace PMSLargeScreen
         public MainWindow()
         {
             InitializeComponent();
+            Models = new List<SinglePanelModel>();
             LoadDisplayData();
         }
 
+        private SinglePanelModel GetModel(List<DcMissonWithPlan> models)
+        {
+            var single = new SinglePanelModel();
+            if (models.Count > 0)
+            {
+                var commonState = models[0];
+                single.DeviceCode = commonState.VHPDeviceCode;
+                single.Temperature = commonState.Temperature;
+                single.Pressure = commonState.PrePressure;
+                single.Vaccum = commonState.Vaccum;
+                single.MoldType = commonState.MoldType;
+                single.MoldDiameter = commonState.MoldDiameter;
+                single.PrePressure = commonState.PrePressure;
+                single.PreTemperature = commonState.PreTemperature;
+                single.Compositions = new List<string>();
+                foreach (var item in models)
+                {
+                    single.Compositions.Add(item.CompositionStandard + " " + item.ProcessCode);
+                }
+
+            }
+            return single;
+        }
+
+        public void AddIntoModel(List<DcMissonWithPlan> todayList,string device)
+        {
+            if (todayList.Count>0)
+            {
+                var plans = todayList.Where(i => i.VHPDeviceCode.Contains(device)).ToList();
+                if (plans.Count>0)
+                {
+                    Models.Add(GetModel(plans));
+                }
+            }
+        }
         private void LoadDisplayData()
         {
+            #region TestData
             var firstModel = new SinglePanelModel();
             firstModel.DeviceCode = "A";
             firstModel.MoldType = "CFC";
@@ -70,11 +107,30 @@ namespace PMSLargeScreen
                 "Cu22.8In20Ga7.0Se50.2"+"共1片"+"W3",
                 "CuGaSe2"+"共2片"+" W3"
             };
+            #endregion
 
-            SetSinglePanel(first, firstModel);
-            SetSinglePanel(second, secondModel);
-            SetSinglePanel(third, thirdModel);
+            var todayList = LargeScreenService.GetTodayMissonWithPlan();
+
+            AddIntoModel(todayList, "A");
+            AddIntoModel(todayList, "B");
+            AddIntoModel(todayList, "C");
+
+            if (Models.Count>0)
+            {
+                SetSinglePanel(first, Models[0]);
+            }
+            if (Models.Count>1)
+            {
+                SetSinglePanel(second, Models[1]);
+            }
+            if (Models.Count>2)
+            {
+                SetSinglePanel(third, Models[2]);
+            }
+
         }
+
+        private List<SinglePanelModel> Models;
 
         private void SetSinglePanel(SinglePanel panel, SinglePanelModel model)
         {
