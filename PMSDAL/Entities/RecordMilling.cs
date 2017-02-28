@@ -12,14 +12,15 @@ namespace PMSDAL
     public class RecordMilling
     {
         public Guid ID { get; set; }
-        //靶材信息
-        //public TargetData TargetInformation { get; set; }
-
+        public string Creator { get; set; }
+        public string CreateTime { get; set; }
+        public string State { get; set; }
+        public Guid PlanID { get; set; }//Foreign Key
         //需要记录的信息
         public string RawMaterial { get; set; }
-        public string FromWho { get; set; }
+        public string FromWho { get; set; }//MaterialSource
         public string ExtraInformation { get; set; }
-        public string MillingTool{ get; set; }
+        public string MillingTool { get; set; }
         public string GasProtection { get; set; }
         public double MaterialIn { get; set; }
         public double MaterialOut { get; set; }

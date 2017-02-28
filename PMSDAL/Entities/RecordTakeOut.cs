@@ -13,8 +13,11 @@ namespace PMSDAL
     {
 
         public Guid ID { get; set; }
-        public string CurrentTargetData { get; set; }
+        public string Creator { get; set; }
+        public string CreateTime { get; set; }
+        public string State { get; set; }
 
+        public Guid PlanID { get; set; }//Foreign Key
         public string MoveOutTemperature { get; set; }
         public string TakeOutTemperature { get; set; }
         public string ExtraInformation { get; set; }

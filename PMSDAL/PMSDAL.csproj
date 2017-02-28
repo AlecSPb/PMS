@@ -53,6 +53,8 @@
     <Compile Include="Entities\PMSPlanMaintenance.cs" />
     <Compile Include="Entities\BDSupplier.cs" />
     <Compile Include="Entities\PMSPlanMaintenanceItem.cs" />
+    <Compile Include="Entities\RecordBondingTarget.cs" />
+    <Compile Include="Entities\RecordBondingPlate.cs" />
     <Compile Include="Migrations\201701090708208_new.cs" />
     <Compile Include="Migrations\201701090708208_new.Designer.cs">
       <DependentUpon>201701090708208_new.cs</DependentUpon>

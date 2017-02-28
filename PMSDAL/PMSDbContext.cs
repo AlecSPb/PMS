@@ -30,9 +30,11 @@ namespace PMSDAL
         public DbSet<PMSMaterialOrder> MaterialOrders { get; set; }
         public DbSet<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
 
+        //Core
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
 
+        //Records
         public DbSet<RecordDelivery> RecordDeliverys { get; set; }
         public DbSet<RecordDeliveryItem> RecordDeliveryItems { get; set; }
         public DbSet<RecordMachine> RecordMachines { get; set; }
@@ -41,6 +43,10 @@ namespace PMSDAL
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
         public DbSet<RecordTestResult> RecordTestResults { get; set; }
+
+        public DbSet<RecordBonding> RecordBondings { get; set; }
+        public DbSet<RecordBondingPlate> RecordBondingPlates { get; set; }
+        public DbSet<RecordBondingTarget> RecordBondingTargets { get; set; }
         //UserAccess
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> Roles { get; set; }

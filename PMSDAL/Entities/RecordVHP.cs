@@ -20,7 +20,7 @@ namespace PMSDAL
         public string Creator { get; set; }
         public string State { get; set; }
 
-        public Guid PlanID { get; set; }
+        public Guid PlanID { get; set; }//Foregin Key
         public DateTime PlanDate { get; set; }//161210-M
         public string Composition { get; set; }
         public string MoldType { get; set; }

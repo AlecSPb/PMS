@@ -13,10 +13,12 @@ namespace PMSDAL
     {
         public Guid ID { get; set; }
         //靶材信息
-
-
+        public string Creator { get; set; }
+        public string CreateTime { get; set; }
+        public string State { get; set; }
+        public Guid PlanID { get; set; }//Foreign Key
         //加工要求
-        public string Dimension{ get; set; }
+        public string Dimension { get; set; }
         public string ExtraRequirement { get; set; }
 
         //加工参数
