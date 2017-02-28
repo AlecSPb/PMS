@@ -52,5 +52,9 @@ namespace PMSDAL
         public DbSet<UserRole> Roles { get; set; }
         public DbSet<UserAccess> Accesses { get; set; }
 
+        //Maintenance
+        public DbSet<MaitenancePlan> MaintenancePlans { get; set; }
+        public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
+
     }
 }
