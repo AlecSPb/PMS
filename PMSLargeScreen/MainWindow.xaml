@@ -18,6 +18,8 @@
     <Grid Background="Wheat">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
@@ -30,16 +32,22 @@
             <TextBlock  Text="今天日期：2017-2-26 星期天"
                    HorizontalAlignment="Center" Padding="5" FontSize="30" />
         </Border>
-        <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource border}">
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="LightBlue">
+            <TextBlock  Text="滚动通知" Padding="5" FontSize="25" />
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Background="LightSalmon">
+            <TextBlock  Text="维护计划" Padding="5" FontSize="25" />
+        </Border>
+        <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource border}">
             <local:SinglePanel x:Name="first"/>
         </Border>
-        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource border}">
+        <Border Grid.Row="3" Grid.Column="1" Style="{StaticResource border}">
             <local:SinglePanel x:Name="second"/>
         </Border>
-        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource border}">
+        <Border Grid.Row="3" Grid.Column="2" Style="{StaticResource border}">
             <local:SinglePanel x:Name="third"/>
         </Border>
-        <TextBlock x:Name="txtStatus" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  Padding="3" Background="Red"
+        <TextBlock x:Name="txtStatus" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"  Padding="3" Background="Red"
                    Foreground="White"
                    Text="状态栏"/>
     </Grid>
