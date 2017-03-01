@@ -7,20 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PMS", "PMS", "{496D2D18-34C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{2CC69505-5683-44EA-8650-64046D2A967E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{DC0B74BE-6C71-426A-BDEC-E32ED2BC0D98}"
-	ProjectSection(SolutionItems) = preProject
-		Documents\Commit语句.txt = Documents\Commit语句.txt
-		Priority规范.txt = Priority规范.txt
-		ReadMe.txt = ReadMe.txt
-		State规范.txt = State规范.txt
-		Documents\关于自动更新.txt = Documents\关于自动更新.txt
-		Documents\客户端的功能.txt = Documents\客户端的功能.txt
-		工艺和记录.txt = 工艺和记录.txt
-		权限控制层次.txt = 权限控制层次.txt
-		Documents\用户权限控制.txt = Documents\用户权限控制.txt
-		订单显示思路.txt = 订单显示思路.txt
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSCommon", "PMSCommon\PMSCommon.csproj", "{0BB4A729-AC1E-4973-A915-F857FD75740D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSDAL", "PMSDAL\PMSDAL.csproj", "{F75A9C93-ED94-4C69-82E4-BC069F4E9FEF}"
