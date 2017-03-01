@@ -39,7 +39,7 @@ namespace PMSDAL
         public DbSet<RecordDeliveryItem> RecordDeliveryItems { get; set; }
         public DbSet<RecordMachine> RecordMachines { get; set; }
         public DbSet<RecordMilling> RecordMillings { get; set; }
-        public DbSet<RecordDeMold> RecordTakeOuts { get; set; }
+        public DbSet<RecordDeMold> RecordDeMolds { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
         public DbSet<RecordTestResult> RecordTestResults { get; set; }
@@ -53,7 +53,7 @@ namespace PMSDAL
         public DbSet<UserAccess> Accesses { get; set; }
 
         //Maintenance
-        public DbSet<MaitenancePlan> MaintenancePlans { get; set; }
+        public DbSet<MaintenancePlan> MaintenancePlans { get; set; }
         public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
 
     }

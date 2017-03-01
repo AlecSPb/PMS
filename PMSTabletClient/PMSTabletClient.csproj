@@ -292,10 +292,6 @@
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PMSFakeService\PMSFakeService.csproj">
-      <Project>{8d74a4ea-7faf-4acc-b0bc-5b399e234b85}</Project>
-      <Name>PMSFakeService</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
