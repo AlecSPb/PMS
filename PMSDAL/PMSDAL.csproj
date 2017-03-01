@@ -51,10 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\MaintenanceRecord.cs" />
-    <Compile Include="Entities\MaitenancePlan.cs" />
-    <Compile Include="Entities\PMSPlanMaintenance.cs" />
+    <Compile Include="Entities\MaintenancePlan.cs" />
     <Compile Include="Entities\BDSupplier.cs" />
-    <Compile Include="Entities\PMSPlanMaintenanceItem.cs" />
     <Compile Include="Entities\RecordBondingTarget.cs" />
     <Compile Include="Entities\RecordBondingPlate.cs" />
     <Compile Include="Migrations\201701090708208_new.cs" />

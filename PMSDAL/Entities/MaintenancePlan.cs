@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class MaitenancePlan
+    public class MaintenancePlan
     {
         public Guid ID { get; set; }
         public string Creator { get; set; }
