@@ -9,7 +9,7 @@ namespace PMSDAL
     /// <summary>
     /// 取模记录
     /// </summary>
-    public class RecordTakeOut
+    public class RecordDeMold
     {
 
         public Guid ID { get; set; }

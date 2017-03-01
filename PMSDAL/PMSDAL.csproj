@@ -213,7 +213,7 @@
     <Compile Include="Entities\RecordBonding.cs" />
     <Compile Include="Entities\RecordMachine.cs" />
     <Compile Include="Entities\RecordMilling.cs" />
-    <Compile Include="Entities\RecordTakeOut.cs" />
+    <Compile Include="Entities\RecordDeMold.cs" />
     <Compile Include="Entities\RecordVHP.cs" />
     <Compile Include="Entities\RecordVHPItem.cs" />
     <Compile Include="Entities\PMSOrder.cs" />

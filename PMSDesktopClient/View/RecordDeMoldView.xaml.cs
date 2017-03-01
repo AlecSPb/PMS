@@ -18,9 +18,9 @@ namespace PMSDesktopClient.View
     /// <summary>
     /// RecordBlankView.xaml 的交互逻辑
     /// </summary>
-    public partial class RecordBlankView : UserControl
+    public partial class RecordDeMoldView : UserControl
     {
-        public RecordBlankView()
+        public RecordDeMoldView()
         {
             InitializeComponent();
         }

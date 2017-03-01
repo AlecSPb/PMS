@@ -159,11 +159,11 @@
     <Compile Include="View\MaintenanceView.xaml.cs">
       <DependentUpon>MaintenanceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordBlankEditView.xaml.cs">
-      <DependentUpon>RecordBlankEditView.xaml</DependentUpon>
+    <Compile Include="View\RecordDeMoldEditView.xaml.cs">
+      <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordBlankView.xaml.cs">
-      <DependentUpon>RecordBlankView.xaml</DependentUpon>
+    <Compile Include="View\RecordDeMoldView.xaml.cs">
+      <DependentUpon>RecordDeMoldView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordBondingEditView.xaml.cs">
       <DependentUpon>RecordBondingEditView.xaml</DependentUpon>
@@ -363,11 +363,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\RecordBlankEditView.xaml">
+    <Page Include="View\RecordDeMoldEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RecordBlankView.xaml">
+    <Page Include="View\RecordDeMoldView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
