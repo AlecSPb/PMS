@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSWCFService.ServiceContracts
 {
-    interface IRecordMillingService
+    public interface IRecordMillingService
     {
     }
 }
