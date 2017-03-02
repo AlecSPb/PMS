@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Web;
 using PMSWCFService.DataContracts;
 
-namespace PMSWCFService
+namespace PMSWCFService.ServiceContracts
 {
     [ServiceContract]
     public interface IRecordMachineService

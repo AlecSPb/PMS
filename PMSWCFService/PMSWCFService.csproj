@@ -116,6 +116,7 @@
     <Compile Include="ServiceImplements\RecordDeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />
     <Compile Include="ServiceImplements\MissonWithPlanService.cs" />
+    <Compile Include="ServiceImplements\RecordMillingService.cs" />
     <Compile Include="ServiceImplements\RecordTestResultService.cs" />
     <Compile Include="ServiceContracts\IMissonService.cs" />
     <Compile Include="ServiceContracts\IRecordBondingService.cs" />
