@@ -13,7 +13,7 @@ namespace PMSWCFService.ServiceContracts
     public interface IRecordDeMoldService
     {
         [OperationContract]
-        List<DcRecordDeMold> GetRecordDeMold(int skip, int take);
+        List<DcRecordDeMold> GetRecordDeMolds(int skip, int take);
         [OperationContract]
         int AddRecordDeMold(DcRecordDeMold model);
         [OperationContract]

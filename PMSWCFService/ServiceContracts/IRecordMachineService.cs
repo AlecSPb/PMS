@@ -11,7 +11,7 @@ namespace PMSWCFService
     public interface IRecordMachineService
     {
         [OperationContract]
-        List<DcRecordMachine> GetRecordMachine(int skip, int take);
+        List<DcRecordMachine> GetRecordMachines(int skip, int take);
         [OperationContract]
         int GetRecordMachineCount();
         [OperationContract]
