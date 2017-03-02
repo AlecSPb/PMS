@@ -9,7 +9,16 @@ using PMSWCFService.DataContracts;
 
 namespace PMSWCFService.ServiceContracts
 {
-    interface IRecordDeMoldService
+    [ServiceContract]
+    public interface IRecordDeMoldService
     {
+        [OperationContract]
+        List<DcRecordDeMold> GetRecordDeMold(int skip, int take);
+        [OperationContract]
+        int AddRecordDeMold(DcRecordDeMold model);
+        [OperationContract]
+        int UpdateRecordDeMold(DcRecordDeMold model);
+        [OperationContract]
+        int DeleteRecordDeMold(Guid id);
     }
 }
