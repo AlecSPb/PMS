@@ -10,6 +10,15 @@ namespace PMSWCFService
     [ServiceContract]
     public interface IRecordMachineService
     {
-        List<dcre>
+        [OperationContract]
+        List<DcRecordMachine> GetRecordMachine(int skip, int take);
+        [OperationContract]
+        int GetRecordMachineCount();
+        [OperationContract]
+        int AddRecordMachine(DcRecordMachine model);
+        [OperationContract]
+        int UpdateRecordMachine(DcRecordMachine model);
+        [OperationContract]
+        int DeleteRecordMachine(Guid id);
     }
 }
