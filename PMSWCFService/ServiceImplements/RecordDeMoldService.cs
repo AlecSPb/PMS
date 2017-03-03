@@ -39,6 +39,14 @@ namespace PMSWCFService
             }
         }
 
+        public int GetRecordDeMoldsCount()
+        {
+            using (var dc=new PMSDbContext())
+            {
+                return dc.RecordDeMolds.Count();
+            }
+        }
+
         public int UpdateRecordDeMold(DcRecordDeMold model)
         {
             using (var dc = new PMSDbContext())

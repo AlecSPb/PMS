@@ -14,6 +14,9 @@ namespace PMSWCFService.ServiceContracts
     {
         [OperationContract]
         List<DcRecordDeMold> GetRecordDeMolds(int skip, int take);
+
+        [OperationContract]
+        int GetRecordDeMoldsCount();
         [OperationContract]
         int AddRecordDeMold(DcRecordDeMold model);
         [OperationContract]
