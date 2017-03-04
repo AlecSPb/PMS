@@ -58,7 +58,7 @@ namespace PMSWCFService
                 dc.Entry(temp).State = System.Data.Entity.EntityState.Modified;
                 result = dc.SaveChanges();
                 return result;
-            });
+            };
         }
     }
 }
