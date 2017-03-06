@@ -580,10 +580,28 @@
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordBonding.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordBondingPlate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordBondingTarget.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordDeliveryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordDeMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordMachine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordMilling.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordTestResult.datasource">

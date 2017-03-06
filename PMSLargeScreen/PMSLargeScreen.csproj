@@ -147,10 +147,28 @@
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBonding.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBondingPlate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBondingTarget.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDeliveryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDeMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordMachine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordMilling.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordTestResult.datasource">

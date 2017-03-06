@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="DcBDVHPDevice" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>PMSLargeScreen.PMSMainService.DcBDVHPDevice</TypeInfo>
+   <TypeInfo>PMSLargeScreen.PMSMainService.DcBDVHPDevice, Service References.PMSMainService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

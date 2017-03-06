@@ -20,7 +20,7 @@ namespace PMSWCFService.ServiceContracts
         List<DcRecordBondingPlate> GetRecordBondingPlates(int skip, int take);
 
         [OperationContract]
-        List<DcRecordBondingPlate> GetRecordBondingPlates(Guid bondingId);
+        List<DcRecordBondingPlate> GetRecordBondingPlatesByBondingID(Guid bondingId);
         [OperationContract]
         List<DcRecordBondingTarget> GetRecordBondingTargets(Guid bongdingId);
 

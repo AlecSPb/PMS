@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:63549/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ArrayOfDcOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOrder" nillable="true" type="tns:DcOrder" />
@@ -245,7 +245,6 @@
       <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DeliveryItems" nillable="true" type="tns:ArrayOfDcRecordDeliveryItem" />
       <xs:element minOccurs="0" name="DeliveryName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
@@ -479,4 +478,157 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDcBDSupplier" nillable="true" type="tns:ArrayOfDcBDSupplier" />
+  <xs:complexType name="ArrayOfDcRecordMilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordMilling" nillable="true" type="tns:DcRecordMilling" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordMilling" nillable="true" type="tns:ArrayOfDcRecordMilling" />
+  <xs:complexType name="DcRecordMilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromWho" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GasProtection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaterialIn" type="xs:double" />
+      <xs:element minOccurs="0" name="MaterialOut" type="xs:double" />
+      <xs:element minOccurs="0" name="MaterialRemain" type="xs:double" />
+      <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
+      <xs:element minOccurs="0" name="RawMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordMilling" nillable="true" type="tns:DcRecordMilling" />
+  <xs:complexType name="ArrayOfDcRecordMachine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordMachine" nillable="true" type="tns:DcRecordMachine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordMachine" nillable="true" type="tns:ArrayOfDcRecordMachine" />
+  <xs:complexType name="DcRecordMachine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Defects" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Diameter1" type="xs:double" />
+      <xs:element minOccurs="0" name="Diameter2" type="xs:double" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtraRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thickness1" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness2" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness3" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness4" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordMachine" nillable="true" type="tns:DcRecordMachine" />
+  <xs:complexType name="ArrayOfDcRecordDeMold">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordDeMold" nillable="true" type="tns:DcRecordDeMold" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordDeMold" nillable="true" type="tns:ArrayOfDcRecordDeMold" />
+  <xs:complexType name="DcRecordDeMold">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Diameter1" type="xs:double" />
+      <xs:element minOccurs="0" name="Diameter2" type="xs:double" />
+      <xs:element minOccurs="0" name="ExtraInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MoveOutTemperature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
+      <xs:element minOccurs="0" name="RoughTargetWeight" type="xs:double" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TakeOutTemperature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thickness1" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness2" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness3" type="xs:double" />
+      <xs:element minOccurs="0" name="Thickness4" type="xs:double" />
+      <xs:element minOccurs="0" name="WithExtraThickness" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordDeMold" nillable="true" type="tns:DcRecordDeMold" />
+  <xs:complexType name="ArrayOfDcRecordBonding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordBonding" nillable="true" type="tns:ArrayOfDcRecordBonding" />
+  <xs:complexType name="DcRecordBonding">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeatRecord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="InstructionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />
+  <xs:complexType name="ArrayOfDcRecordBondingPlate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordBondingPlate" nillable="true" type="tns:DcRecordBondingPlate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordBondingPlate" nillable="true" type="tns:ArrayOfDcRecordBondingPlate" />
+  <xs:complexType name="DcRecordBondingPlate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastWeldMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherRecord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateAppearance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateDimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateHardness" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateProcessRecord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateSuplier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateUseCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordBondingPlate" nillable="true" type="tns:DcRecordBondingPlate" />
+  <xs:complexType name="ArrayOfDcRecordBondingTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordBondingTarget" nillable="true" type="tns:DcRecordBondingTarget" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcRecordBondingTarget" nillable="true" type="tns:ArrayOfDcRecordBondingTarget" />
+  <xs:complexType name="DcRecordBondingTarget">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BondAppearanceCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondCleanCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondDimensionCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondWarpageCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondWarpageFix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BondingID" type="ser:guid" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuStringDiameter" type="xs:double" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlateID" type="ser:guid" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetAppearance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetComposition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDiameterCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetProcessRecord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetThicknessCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetWarpageCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeldMaterial" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordBondingTarget" nillable="true" type="tns:DcRecordBondingTarget" />
 </xs:schema>

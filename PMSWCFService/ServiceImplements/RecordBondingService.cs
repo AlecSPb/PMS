@@ -46,7 +46,7 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public List<DcRecordBondingPlate> GetRecordBondingPlates(Guid bondingId)
+        public List<DcRecordBondingPlate> GetRecordBondingPlatesByBondingID(Guid bondingId)
         {
             throw new NotImplementedException();
         }
