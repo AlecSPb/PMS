@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\BDSieve.cs" />
     <Compile Include="Entities\MaintenanceRecord.cs" />
     <Compile Include="Entities\MaintenancePlan.cs" />
     <Compile Include="Entities\BDSupplier.cs" />
