@@ -82,7 +82,12 @@ namespace PMSDesktopClient.ViewModel
 
 
             StringBuilder sb = new StringBuilder();
-            foreach (var item in obj.DeliveryItems)
+            DcRecordDeliveryItem[] items;
+            using (var service = new RecordDeliveryServiceClient())
+            {
+                items = service.GetRecordDeliveryItemByRecordDeliveryID(obj.ID);
+            }
+            foreach (var item in items)
             {
                 sb.Append(item.Composition);
                 sb.Append("-");
