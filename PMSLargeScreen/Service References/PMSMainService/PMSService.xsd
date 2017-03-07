@@ -412,11 +412,15 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentUsedCount" type="xs:int" />
+      <xs:element minOccurs="0" name="EstimateUsedCount" type="xs:int" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="InnerDiameter" type="xs:double" />
       <xs:element minOccurs="0" name="ModelHeight" type="xs:double" />
       <xs:element minOccurs="0" name="MoldDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MoldName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MoldType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

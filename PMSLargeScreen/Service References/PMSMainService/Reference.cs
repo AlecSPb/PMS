@@ -4387,6 +4387,12 @@ namespace PMSLargeScreen.PMSMainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CurrentUsedCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EstimateUsedCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4399,7 +4405,13 @@ namespace PMSLargeScreen.PMSMainService {
         private string MoldDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MoldNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MoldTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime StartTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
@@ -4436,6 +4448,32 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CurrentUsedCount {
+            get {
+                return this.CurrentUsedCountField;
+            }
+            set {
+                if ((this.CurrentUsedCountField.Equals(value) != true)) {
+                    this.CurrentUsedCountField = value;
+                    this.RaisePropertyChanged("CurrentUsedCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EstimateUsedCount {
+            get {
+                return this.EstimateUsedCountField;
+            }
+            set {
+                if ((this.EstimateUsedCountField.Equals(value) != true)) {
+                    this.EstimateUsedCountField = value;
+                    this.RaisePropertyChanged("EstimateUsedCount");
                 }
             }
         }
@@ -4493,6 +4531,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MoldName {
+            get {
+                return this.MoldNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MoldNameField, value) != true)) {
+                    this.MoldNameField = value;
+                    this.RaisePropertyChanged("MoldName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string MoldType {
             get {
                 return this.MoldTypeField;
@@ -4501,6 +4552,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.MoldTypeField, value) != true)) {
                     this.MoldTypeField = value;
                     this.RaisePropertyChanged("MoldType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime StartTime {
+            get {
+                return this.StartTimeField;
+            }
+            set {
+                if ((this.StartTimeField.Equals(value) != true)) {
+                    this.StartTimeField = value;
+                    this.RaisePropertyChanged("StartTime");
                 }
             }
         }

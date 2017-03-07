@@ -13,7 +13,9 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDAL.PMSDbContext())
             {
-                var result = dc.VHPPlans.OrderByDescending(p => p.PlanDate).OrderBy(p=>p.VHPDeviceCode).Skip(skip).Take(take)
+                var result = dc.VHPPlans.Where(p=>p.State!=PMSCommon.CommonState.Deleted.ToString())
+                    .OrderByDescending(p=>p.PlanDate)
+                    .Skip(skip).Take(take)
                     .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan()
                     {
                         OrderID = o.ID,
@@ -72,7 +74,8 @@ namespace PMSWCFService
                 var today = date.Date;
                 var tomorrow = date.Date.AddDays(1);
                 //此处直接在linq中使用date属性会出错
-                var result = dc.VHPPlans.Where(p => p.PlanDate >= today && p.PlanDate < tomorrow).OrderByDescending(p => p.PlanDate)
+                var result = dc.VHPPlans.Where(p => p.PlanDate >= today && p.PlanDate < tomorrow)
+                    .OrderByDescending(p => p.PlanDate)
                     .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan
                     {
                         OrderID = o.ID,

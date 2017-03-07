@@ -64,7 +64,7 @@ namespace PMSDesktopClient.ViewModel
             take = PageSize;
             var orders = service.GetMissonWithPlan(skip, take);
             MissonWithPlans.Clear();
-            orders.ToList<DcMissonWithPlan>().ForEach(o => MissonWithPlans.Add(o));
+            orders.ToList().ForEach(o => MissonWithPlans.Add(o));
         }
 
 

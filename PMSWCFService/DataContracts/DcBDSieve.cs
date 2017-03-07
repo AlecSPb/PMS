@@ -8,33 +8,27 @@ using System.Threading.Tasks;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class DcBDVHPMold
+    public class BDSieve
     {
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public string MoldName { get; set; }
+        public string SieveName { get; set; }
         [DataMember]
-        public string MoldType { get; set; }
-        [DataMember]
-        public string MoldDetails { get; set; }
-        [DataMember]
-        public double InnerDiameter { get; set; }
-        [DataMember]
-        public double ModelHeight { get; set; }
+        public string Mesh { get; set; }
         [DataMember]
         public DateTime StartTime { get; set; }
         [DataMember]
+        public string Manufacuture { get; set; }
+        [DataMember]
         public int EstimateUsedCount { get; set; }
         [DataMember]
-        public int CurrentUsedCount { get; set; }
+        public int CurrentCount { get; set; }
         [DataMember]
         public string State { get; set; }
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
         public DateTime CreateTime { get; set; }
-
     }
-
 }
