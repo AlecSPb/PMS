@@ -27,6 +27,8 @@ namespace PMSLargeScreen
             InitializeComponent();
             Models = new List<SinglePanelModel>();
 
+            LoadDisplayData();
+
             Timer timer = new Timer();
             timer.Interval = 2000;
             timer.Elapsed += Timer_Elapsed;

@@ -13,12 +13,14 @@ namespace PMSDAL
     {
         public Guid ID { get; set; }
         public string Creator { get; set; }
-        public string CreateTime { get;  set; }
+        public string CreateTime { get; set; }
         public string State { get; set; }
 
         //1.0背板检查
         public string PlateMaterial { get; set; }
-        public string PlateLot { get; set; }
+        public string PlateLot { get; set; }//铜板ID号
+        public string PlateSerialNumber { get; set; }//序列号
+        public string PlateBelong { get; set; }//铜板归属
         public string PlateDimension { get; set; }
         public string PlateUseCount { get; set; }//使用次数
         public string PlateHardness { get; set; }//硬度
