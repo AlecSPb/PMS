@@ -29,10 +29,10 @@ namespace PMSLargeScreen
 
             LoadDisplayData();
 
-            Timer timer = new Timer();
-            timer.Interval = 2000;
-            timer.Elapsed += Timer_Elapsed;
-            timer.Start();
+            //Timer timer = new Timer();
+            //timer.Interval = 2000;
+            //timer.Elapsed += Timer_Elapsed;
+            //timer.Start();
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)

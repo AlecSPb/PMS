@@ -31,9 +31,7 @@
             <TextBlock  Text="今天日期：2017-2-26 星期天"
                    HorizontalAlignment="Center" Padding="5" FontSize="30" />
         </Border>
-        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="LightBlue">
-            <TextBlock  Text="滚动通知" Padding="5" FontSize="25" />
-        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="LightBlue"/>
         <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Background="LightSalmon"/>
         <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource border}">
             <local:SinglePanel x:Name="first"/>
