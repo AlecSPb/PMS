@@ -27,7 +27,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="LightGreen">
-            <TextBlock  Text="今天日期：2017-2-26 星期天"
+            <TextBlock x:Name="txtTodayDate"  Text="今天日期：2017-2-26 星期天"
                    HorizontalAlignment="Center" Padding="5" FontSize="30" />
         </Border>
         <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource border}">

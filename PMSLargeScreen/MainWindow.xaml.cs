@@ -41,6 +41,7 @@ namespace PMSLargeScreen
             {
                 LoadDisplayData();
                 this.txtStatus.Text = $"更新于 {DateTime.Now}";
+                this.txtTodayDate.Text = $"今天日期:{DateTime.Now.ToString("yyyy-MM-dd dddd")}";
             });
         }
 
@@ -58,11 +59,9 @@ namespace PMSLargeScreen
                 single.MoldDiameter = commonState.MoldDiameter;
                 single.PrePressure = commonState.PrePressure;
                 single.PreTemperature = commonState.PreTemperature;
-                single.Compositions = new List<string>();
-                foreach (var item in models)
-                {
-                    single.Compositions.Add(item.CompositionStandard + " " + item.ProcessCode);
-                }
+                single.Compositions = new System.Collections.ObjectModel.ObservableCollection<string>();
+                single.Compositions.Clear();
+                models.ForEach(m => single.Compositions.Add(m.CompositionStandard));
 
             }
             return single;
@@ -135,7 +134,7 @@ namespace PMSLargeScreen
             AddIntoModel(todayList, "C");
 
 
-                                 
+
             if (Models.Count > 0)
             {
                 SetSinglePanel(first, Models[0]);
@@ -155,7 +154,8 @@ namespace PMSLargeScreen
 
         private void SetSinglePanel(SinglePanel panel, SinglePanelModel model)
         {
-            panel.SetDataContext(model);
+            var viewmodel = new SinglePanelViewModel() { Model = model };
+            panel.SetDataContext(viewmodel);
         }
 
     }

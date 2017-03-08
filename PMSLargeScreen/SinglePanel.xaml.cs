@@ -24,9 +24,9 @@ namespace PMSLargeScreen
         {
             InitializeComponent();
         }
-        public void SetDataContext(SinglePanelModel model)
+        public void SetDataContext(SinglePanelViewModel vm)
         {
-            this.DataContext = model;
+            this.DataContext = vm;
         }
     }
 }
