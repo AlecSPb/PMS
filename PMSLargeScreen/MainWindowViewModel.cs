@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSLargeScreen.PMSMainService;
 
 namespace PMSLargeScreen
 {
@@ -14,57 +15,107 @@ namespace PMSLargeScreen
             Today = DateTime.Now.Date;
 
             StatusMessage = "准备运行";
+            NoPlan = System.Windows.Visibility.Hidden;
+
             Models = new ObservableCollection<SinglePanelModel>();
 
             Models.Clear();
             #region TestData
-            var firstModel = new SinglePanelModel();
-            firstModel.DeviceCode = "A";
-            firstModel.MoldType = "CFC";
-            firstModel.MoldDiameter = 233;
-            firstModel.Temperature = 500;
-            firstModel.Pressure = 345;
-            firstModel.Vaccum = 1E-3;
-            firstModel.ProcessCode = "W1";
-            firstModel.Compositions = new ObservableCollection<string>()
-            {
-                "CuGaSe2"+"   共2片"+" W1",
-                "Cu22.8In20Ga7.0Se50.2"+"   共1片"+" W3"
-            };
+            //var firstModel = new SinglePanelModel();
+            //firstModel.DeviceCode = "A";
+            //firstModel.MoldType = "CFC";
+            //firstModel.MoldDiameter = 233;
+            //firstModel.Temperature = 500;
+            //firstModel.Pressure = 345;
+            //firstModel.Vaccum = 1E-3;
+            //firstModel.ProcessCode = "W1";
+            //firstModel.Compositions = new ObservableCollection<string>()
+            //{
+            //    "CuGaSe2"+"   共2片"+" W1",
+            //    "Cu22.8In20Ga7.0Se50.2"+"   共1片"+" W3"
+            //};
 
-            var secondModel = new SinglePanelModel();
-            secondModel.DeviceCode = "B";
-            secondModel.MoldType = "CFC";
-            secondModel.MoldDiameter = 233;
-            secondModel.Temperature = 500;
-            secondModel.Pressure = 345;
-            secondModel.Vaccum = 1E-3;
-            secondModel.ProcessCode = "W1";
-            secondModel.Compositions = new ObservableCollection<string>()
-            {
-                "Cu22.8In20Ga7.0Se50.2"+" 共1片"+" W2",
-                "CuGaSe2"+" 共2片"+" W2"
-            };
+            //var secondModel = new SinglePanelModel();
+            //secondModel.DeviceCode = "B";
+            //secondModel.MoldType = "CFC";
+            //secondModel.MoldDiameter = 233;
+            //secondModel.Temperature = 500;
+            //secondModel.Pressure = 345;
+            //secondModel.Vaccum = 1E-3;
+            //secondModel.ProcessCode = "W1";
+            //secondModel.Compositions = new ObservableCollection<string>()
+            //{
+            //    "Cu22.8In20Ga7.0Se50.2"+" 共1片"+" W2",
+            //    "CuGaSe2"+" 共2片"+" W2"
+            //};
 
-            var thirdModel = new SinglePanelModel();
-            thirdModel.DeviceCode = "C";
-            thirdModel.MoldType = "CFC";
-            thirdModel.MoldDiameter = 233;
-            thirdModel.Temperature = 500;
-            thirdModel.Pressure = 345;
-            thirdModel.Vaccum = 1E-3;
-            thirdModel.ProcessCode = "W3";
-            thirdModel.Compositions = new ObservableCollection<string>()
-            {
-                "Cu22.8In20Ga7.0Se50.2"+"共1片"+"W3",
-                "CuGaSe2"+"共2片"+" W3"
-            };
-            Models.Add(firstModel);
-            Models.Add(secondModel);
-            Models.Add(thirdModel);
+            //var thirdModel = new SinglePanelModel();
+            //thirdModel.DeviceCode = "C";
+            //thirdModel.MoldType = "CFC";
+            //thirdModel.MoldDiameter = 233;
+            //thirdModel.Temperature = 500;
+            //thirdModel.Pressure = 345;
+            //thirdModel.Vaccum = 1E-3;
+            //thirdModel.ProcessCode = "W3";
+            //thirdModel.Compositions = new ObservableCollection<string>()
+            //{
+            //    "Cu22.8In20Ga7.0Se50.2"+"共1片"+"W3",
+            //    "CuGaSe2"+"共2片"+" W3"
+            //};
+            //Models.Add(firstModel);
+            //Models.Add(secondModel);
+            //Models.Add(thirdModel);
             #endregion
+            var todayList = LargeScreenService.GetTodayMissonWithPlan();
+            if (todayList.Count>0)
+            {
+                AddIntoModel(todayList, "A");
+                AddIntoModel(todayList, "B");
+                AddIntoModel(todayList, "C");
+            }
+            else
+            {
+                NoPlan = System.Windows.Visibility.Visible;
+                StatusMessage = "今日暂时没有计划，请等待安排";
+            }
 
         }
+        #region Process
+        private SinglePanelModel GetSpecialModel(List<DcMissonWithPlan> models)
+        {
+            var single = new SinglePanelModel();
+            if (models.Count > 0)
+            {
+                var commonState = models[0];
+                single.DeviceCode = commonState.VHPDeviceCode;
+                single.Temperature = commonState.Temperature;
+                single.Pressure = commonState.Pressure;
+                single.Vaccum = commonState.Vaccum;
+                single.MoldType = commonState.MoldType;
+                single.MoldDiameter = commonState.MoldDiameter;
+                single.PrePressure = commonState.PrePressure;
+                single.PreTemperature = commonState.PreTemperature;
+                single.Compositions = new System.Collections.ObjectModel.ObservableCollection<string>();
+                single.Compositions.Clear();
+                models.ForEach(m => single.Compositions.Add(m.CompositionStandard));
+
+            }
+            return single;
+        }
+        private void AddIntoModel(List<DcMissonWithPlan> todayList, string device)
+        {
+            if (todayList.Count > 0)
+            {
+                var plans = todayList.Where(i => i.VHPDeviceCode.Contains(device)).ToList();
+                if (plans.Count > 0)
+                {
+                    Models.Add(GetSpecialModel(plans));
+                }
+            }
+        }
+        #endregion
+
+
 
         public ObservableCollection<SinglePanelModel> Models { get; set; }
 
@@ -75,6 +126,15 @@ namespace PMSLargeScreen
             set { today = value; RaisePropertyChanged(nameof(Today)); }
         }
 
+        private System.Windows.Visibility noPlan;
+        public  System.Windows.Visibility NoPlan
+        {
+            get { return noPlan; }
+            set
+            {
+                noPlan = value;RaisePropertyChanged(nameof(NoPlan));
+            }
+        }
 
         private string statusMessage;
         public string StatusMessage

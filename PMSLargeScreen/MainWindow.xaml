@@ -31,7 +31,10 @@
                    Text="{Binding Today,StringFormat=今天日期：{0:yyyy-MM-dd dddd}}"
                    HorizontalAlignment="Center" Padding="5" FontSize="30" />
         </Border>
-        <ListBox Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding Models}" VerticalContentAlignment="Stretch">
+        <ListBox Grid.Row="1" Grid.ColumnSpan="3" BorderThickness="0" Background="Wheat"
+                 HorizontalAlignment="Center"
+                 ItemsSource="{Binding Models}"
+                 VerticalContentAlignment="Stretch">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal"/>
@@ -45,6 +48,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Visibility="{Binding NoPlan}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="暂时没有计划" FontSize="60"/>
         <TextBlock x:Name="txtStatus" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  Padding="3" Background="Red"
                    Foreground="White"
                    Text="{Binding StatusMessage}"/>
