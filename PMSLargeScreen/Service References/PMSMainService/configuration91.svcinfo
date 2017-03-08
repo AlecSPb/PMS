@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8QrOAAjbSxJLHTyw/S09uLpgKH8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="qf2CK15B8oiD0Mcz2tSz70qWixw=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="order">
       <properties>
@@ -659,6 +659,115 @@
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>missonwithplan</serializedValue>
+        </property>
+        <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/openTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/receiveTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/sendTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/allowCookies" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/bypassProxyOnLocal" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/hostNameComparisonMode" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.HostNameComparisonMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>StrongWildcard</serializedValue>
+        </property>
+        <property path="/maxBufferPoolSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/maxBufferSize" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>65536</serializedValue>
+        </property>
+        <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/readerQuotas" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement</serializedValue>
+        </property>
+        <property path="/readerQuotas/maxDepth" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>0</serializedValue>
+        </property>
+        <property path="/readerQuotas/maxStringContentLength" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>0</serializedValue>
+        </property>
+        <property path="/readerQuotas/maxArrayLength" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>0</serializedValue>
+        </property>
+        <property path="/readerQuotas/maxBytesPerRead" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>0</serializedValue>
+        </property>
+        <property path="/readerQuotas/maxNameTableCharCount" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>0</serializedValue>
+        </property>
+        <property path="/textEncoding" isComplexType="false" isExplicitlyDefined="false" clrType="System.Text.Encoding, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.Text.UTF8Encoding</serializedValue>
+        </property>
+        <property path="/transferMode" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.TransferMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>Buffered</serializedValue>
+        </property>
+        <property path="/useDefaultWebProxy" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/messageEncoding" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.WSMessageEncoding, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>Text</serializedValue>
+        </property>
+        <property path="/security" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.BasicHttpSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.BasicHttpSecurityElement</serializedValue>
+        </property>
+        <property path="/security/mode" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.BasicHttpSecurityMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>None</serializedValue>
+        </property>
+        <property path="/security/transport" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.HttpTransportSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.HttpTransportSecurityElement</serializedValue>
+        </property>
+        <property path="/security/transport/clientCredentialType" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.HttpClientCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>None</serializedValue>
+        </property>
+        <property path="/security/transport/proxyCredentialType" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.HttpProxyCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>None</serializedValue>
+        </property>
+        <property path="/security/transport/extendedProtectionPolicy" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement</serializedValue>
+        </property>
+        <property path="/security/transport/extendedProtectionPolicy/policyEnforcement" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.PolicyEnforcement, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>Never</serializedValue>
+        </property>
+        <property path="/security/transport/extendedProtectionPolicy/protectionScenario" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.ProtectionScenario, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>TransportSelected</serializedValue>
+        </property>
+        <property path="/security/transport/extendedProtectionPolicy/customServiceNames" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>(集合)</serializedValue>
+        </property>
+        <property path="/security/transport/realm" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/security/message" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.BasicHttpMessageSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.BasicHttpMessageSecurityElement</serializedValue>
+        </property>
+        <property path="/security/message/clientCredentialType" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.BasicHttpMessageCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>UserName</serializedValue>
+        </property>
+        <property path="/security/message/algorithmSuite" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.Security.SecurityAlgorithmSuite, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>Default</serializedValue>
+        </property>
+      </properties>
+    </bindingConfiguration>
+    <bindingConfiguration bindingType="basicHttpBinding" name="recorddelivery">
+      <properties>
+        <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>recorddelivery</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1636,115 +1745,6 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="recorddelivery">
-      <properties>
-        <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>recorddelivery</serializedValue>
-        </property>
-        <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/openTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/receiveTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/sendTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/allowCookies" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/bypassProxyOnLocal" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/hostNameComparisonMode" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.HostNameComparisonMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>StrongWildcard</serializedValue>
-        </property>
-        <property path="/maxBufferPoolSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/maxBufferSize" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>65536</serializedValue>
-        </property>
-        <property path="/maxReceivedMessageSize" isComplexType="false" isExplicitlyDefined="true" clrType="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/proxyAddress" isComplexType="false" isExplicitlyDefined="false" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/readerQuotas" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement</serializedValue>
-        </property>
-        <property path="/readerQuotas/maxDepth" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>0</serializedValue>
-        </property>
-        <property path="/readerQuotas/maxStringContentLength" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>0</serializedValue>
-        </property>
-        <property path="/readerQuotas/maxArrayLength" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>0</serializedValue>
-        </property>
-        <property path="/readerQuotas/maxBytesPerRead" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>0</serializedValue>
-        </property>
-        <property path="/readerQuotas/maxNameTableCharCount" isComplexType="false" isExplicitlyDefined="false" clrType="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>0</serializedValue>
-        </property>
-        <property path="/textEncoding" isComplexType="false" isExplicitlyDefined="false" clrType="System.Text.Encoding, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.Text.UTF8Encoding</serializedValue>
-        </property>
-        <property path="/transferMode" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.TransferMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Buffered</serializedValue>
-        </property>
-        <property path="/useDefaultWebProxy" isComplexType="false" isExplicitlyDefined="true" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/messageEncoding" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.WSMessageEncoding, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Text</serializedValue>
-        </property>
-        <property path="/security" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.BasicHttpSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.BasicHttpSecurityElement</serializedValue>
-        </property>
-        <property path="/security/mode" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.BasicHttpSecurityMode, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>None</serializedValue>
-        </property>
-        <property path="/security/transport" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.HttpTransportSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.HttpTransportSecurityElement</serializedValue>
-        </property>
-        <property path="/security/transport/clientCredentialType" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.HttpClientCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>None</serializedValue>
-        </property>
-        <property path="/security/transport/proxyCredentialType" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.HttpProxyCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>None</serializedValue>
-        </property>
-        <property path="/security/transport/extendedProtectionPolicy" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.Security.Authentication.ExtendedProtection.Configuration.ExtendedProtectionPolicyElement</serializedValue>
-        </property>
-        <property path="/security/transport/extendedProtectionPolicy/policyEnforcement" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.PolicyEnforcement, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Never</serializedValue>
-        </property>
-        <property path="/security/transport/extendedProtectionPolicy/protectionScenario" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.ProtectionScenario, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>TransportSelected</serializedValue>
-        </property>
-        <property path="/security/transport/extendedProtectionPolicy/customServiceNames" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>(集合)</serializedValue>
-        </property>
-        <property path="/security/transport/realm" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/security/message" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.BasicHttpMessageSecurityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.BasicHttpMessageSecurityElement</serializedValue>
-        </property>
-        <property path="/security/message/clientCredentialType" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.BasicHttpMessageCredentialType, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>UserName</serializedValue>
-        </property>
-        <property path="/security/message/algorithmSuite" isComplexType="false" isExplicitlyDefined="false" clrType="System.ServiceModel.Security.SecurityAlgorithmSuite, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>Default</serializedValue>
-        </property>
-      </properties>
-    </bindingConfiguration>
     <bindingConfiguration bindingType="basicHttpBinding" name="recordmilling">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2183,7 +2183,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="order1" contract="PMSMainService.IOrderService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="order">
+    <endpoint name="order" contract="PMSMainService.IOrderService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="order">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2258,7 +2258,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>order1</serializedValue>
+          <serializedValue>order</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2268,7 +2268,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="planvhp1" contract="PMSMainService.IPlanVHPService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="planvhp">
+    <endpoint name="planvhp" contract="PMSMainService.IPlanVHPService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="planvhp">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2343,7 +2343,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>planvhp1</serializedValue>
+          <serializedValue>planvhp</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2353,7 +2353,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="materialneed1" contract="PMSMainService.IMaterialNeedService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialneed">
+    <endpoint name="materialneed" contract="PMSMainService.IMaterialNeedService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialneed">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2428,7 +2428,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>materialneed1</serializedValue>
+          <serializedValue>materialneed</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2438,7 +2438,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="materialorder1" contract="PMSMainService.IMaterialOrderService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialorder">
+    <endpoint name="materialorder" contract="PMSMainService.IMaterialOrderService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialorder">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2513,7 +2513,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>materialorder1</serializedValue>
+          <serializedValue>materialorder</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2523,7 +2523,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="misson1" contract="PMSMainService.IMissonService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="misson">
+    <endpoint name="misson" contract="PMSMainService.IMissonService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="misson">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2598,7 +2598,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>misson1</serializedValue>
+          <serializedValue>misson</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2608,7 +2608,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordtestresult1" contract="PMSMainService.IRecordTestResultService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordtestresult">
+    <endpoint name="recordtestresult" contract="PMSMainService.IRecordTestResultService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordtestresult">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2683,7 +2683,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>recordtestresult1</serializedValue>
+          <serializedValue>recordtestresult</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2693,7 +2693,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="missonwithplan1" contract="PMSMainService.IMissonWithPlanService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="missonwithplan">
+    <endpoint name="missonwithplan" contract="PMSMainService.IMissonWithPlanService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="missonwithplan">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2768,7 +2768,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>missonwithplan1</serializedValue>
+          <serializedValue>missonwithplan</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2863,7 +2863,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordvhp1" contract="PMSMainService.IRecordVHPService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordvhp">
+    <endpoint name="recordvhp" contract="PMSMainService.IRecordVHPService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordvhp">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -2938,7 +2938,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>recordvhp1</serializedValue>
+          <serializedValue>recordvhp</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2948,7 +2948,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="customer1" contract="PMSMainService.ICustomerService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="customer">
+    <endpoint name="customer" contract="PMSMainService.ICustomerService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="customer">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3023,7 +3023,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>customer1</serializedValue>
+          <serializedValue>customer</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3033,7 +3033,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="deliveryAddress1" contract="PMSMainService.IDeliveryAddressService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="deliveryAddress">
+    <endpoint name="deliveryAddress" contract="PMSMainService.IDeliveryAddressService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="deliveryAddress">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3108,7 +3108,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>deliveryAddress1</serializedValue>
+          <serializedValue>deliveryAddress</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3118,7 +3118,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpdevice1" contract="PMSMainService.IVHPDeviceService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="vhpdevice">
+    <endpoint name="vhpdevice" contract="PMSMainService.IVHPDeviceService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="vhpdevice">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3193,7 +3193,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpdevice1</serializedValue>
+          <serializedValue>vhpdevice</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3203,7 +3203,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpmold1" contract="PMSMainService.IVHPMoldService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="vhpmold">
+    <endpoint name="vhpmold" contract="PMSMainService.IVHPMoldService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="vhpmold">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3278,7 +3278,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpmold1</serializedValue>
+          <serializedValue>vhpmold</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3288,7 +3288,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpprocess1" contract="PMSMainService.IVHPProcessService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="vhpprocess">
+    <endpoint name="vhpprocess" contract="PMSMainService.IVHPProcessService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="vhpprocess">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3363,7 +3363,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpprocess1</serializedValue>
+          <serializedValue>vhpprocess</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3373,7 +3373,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="compound1" contract="PMSMainService.ICompoundService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="compound">
+    <endpoint name="compound" contract="PMSMainService.ICompoundService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="compound">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3448,7 +3448,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>compound1</serializedValue>
+          <serializedValue>compound</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3458,7 +3458,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="supplier1" contract="PMSMainService.ISupplierService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="supplier">
+    <endpoint name="supplier" contract="PMSMainService.ISupplierService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="supplier">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
@@ -3533,7 +3533,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>supplier1</serializedValue>
+          <serializedValue>supplier</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

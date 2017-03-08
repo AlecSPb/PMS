@@ -11,6 +11,7 @@ namespace PMSLargeScreen
     {
         public static List<DcMissonWithPlan> GetTodayMissonWithPlan()
         {
+                                                                                                                                                                                                                                                                                                                                                                                                                 
             var today = DateTime.Now;
             using (var service = new MissonWithPlanServiceClient())
             {
