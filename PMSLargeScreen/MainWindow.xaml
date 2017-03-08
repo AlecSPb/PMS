@@ -27,20 +27,26 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="LightGreen">
-            <TextBlock x:Name="txtTodayDate"  Text="今天日期：2017-2-26 星期天"
+            <TextBlock x:Name="txtTodayDate"
+                   Text="{Binding Today,StringFormat=今天日期：{0:yyyy-MM-dd dddd}}"
                    HorizontalAlignment="Center" Padding="5" FontSize="30" />
         </Border>
-        <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource border}">
-            <local:SinglePanel x:Name="first"/>
-        </Border>
-        <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource border}">
-            <local:SinglePanel x:Name="second"/>
-        </Border>
-        <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource border}">
-            <local:SinglePanel x:Name="third"/>
-        </Border>
+        <ListBox Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding Models}" VerticalContentAlignment="Stretch">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource border}">
+                        <local:SinglePanel/>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <TextBlock x:Name="txtStatus" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"  Padding="3" Background="Red"
                    Foreground="White"
-                   Text="状态栏"/>
+                   Text="{Binding StatusMessage}"/>
     </Grid>
 </Window>
