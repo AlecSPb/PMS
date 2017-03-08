@@ -15,6 +15,21 @@ namespace PMSDesktopClient.ViewModel
         public NavigationVM()
         {
             InitialCommands();
+            SetCurrentUserName();
+        }
+
+        private void SetCurrentUserName()
+        {
+            var username = (App.Current as App).CurrentUser.UserName;
+            LogInformation = $"当前用户:{username}";
+        }
+
+        private string logInformation;
+
+        public string LogInformation
+        {
+            get { return logInformation; }
+            set { logInformation = value; RaisePropertyChanged(nameof(LogInformation)); }
         }
 
         private void InitialCommands()
