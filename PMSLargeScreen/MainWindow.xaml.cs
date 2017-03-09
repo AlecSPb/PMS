@@ -24,7 +24,7 @@ namespace PMSLargeScreen
     {
         public MainWindow()
         {
-            this.DataContext = new MainWindowViewModel();
+            this.DataContext = new MainWindowViewModel(this.Dispatcher);
         }
 
     }

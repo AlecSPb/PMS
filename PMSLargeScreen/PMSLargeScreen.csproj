@@ -58,7 +58,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="LargeScreenService.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Service References\PMSMainService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -69,7 +68,6 @@
       <DependentUpon>SinglePanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="SinglePanelModel.cs" />
-    <Compile Include="SinglePanelViewModel.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
