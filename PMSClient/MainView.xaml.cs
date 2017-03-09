@@ -1,8 +1,4 @@
-﻿using PMSClient.View;
-using PMSClient.ViewModel;
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +15,10 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
 
+using PMSClient.PMSMainService;
+using PMSClient.View;
+using PMSClient.ViewModel;
 
 
 namespace PMSClient
@@ -35,8 +33,6 @@ namespace PMSClient
             InitializeComponent();
             views = new ViewLocator();
             viewmodels = new ViewModelLocator();
-
-
 
             Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigate);
             Messenger.Default.Register<string>(this, NavigationToken.StateMessage, ActionStateMessage);

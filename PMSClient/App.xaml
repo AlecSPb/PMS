@@ -8,12 +8,13 @@
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <Application.Resources>
         <ResourceDictionary>
-            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSClient.ViewModel" />
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSClient.ViewModel"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml"/>
                 <ResourceDictionary Source="Resource/Language/zh-cn.xaml"/>
                 <ResourceDictionary Source="Resource/Skins/Warm.xaml"/>
-                <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
+                <!--<ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>-->
+                <ResourceDictionary Source="Resource/Styles/Tablet.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

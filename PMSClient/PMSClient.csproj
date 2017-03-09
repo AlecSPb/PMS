@@ -606,6 +606,16 @@
     <None Include="Service References\PMSMainService\PMSClient.PMSMainService.DcRecordVHPItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSService.wsdl" />
+    <None Include="Service References\PMSMainService\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PMSUserAccessService\PMSClient.PMSUserAccessService.DcUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -655,44 +665,7 @@
     <WCFMetadataStorage Include="Service References\PMSUserAccessService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PMSMainService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSMainService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSMainService\PMSService1.wsdl" />
-    <None Include="Service References\PMSMainService\PMSService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\PMSService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\PMSService32.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="DocTemplate\Attention.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\UserAccessService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="funnyface.ico" />
@@ -731,6 +704,36 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\qianyuqianxun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\PMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\UserAccessService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

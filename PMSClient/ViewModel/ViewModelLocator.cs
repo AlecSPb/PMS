@@ -43,7 +43,7 @@ namespace PMSClient.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
             SimpleIoc.Default.Register<NavigationVM>(true);
-            SimpleIoc.Default.Register<OrderVM>();
+            SimpleIoc.Default.Register<OrderVM>(true);
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<MissonVM>();
             SimpleIoc.Default.Register<PlanVM>();
