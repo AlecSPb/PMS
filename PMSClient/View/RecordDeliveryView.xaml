@@ -1,0 +1,233 @@
+﻿<UserControl x:Class="PMSClient.View.RecordDeliveryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1200">
+    <Grid Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource strPageRecordDelivery}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
+            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
+            <!--图例-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strUnChecked}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCheckedBrush}"/>
+                <TextBlock Text="{StaticResource strCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
+                <TextBlock Text="{StaticResource strUnCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
+                <TextBlock Text="{StaticResource strPaused}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
+                <TextBlock Text="{StaticResource strEmergency}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="mainDg" Grid.Row="0" Style="{StaticResource DataGridBasic}"
+                      SelectedIndex="{Binding CurrentSelectIndex}"
+                      ItemsSource="{Binding RecordDeliveries}" LoadingRow="DataGrid_LoadingRow">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=mainDg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Edit">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
+                                            Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
+                                                Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                    <Button Content="{StaticResource strbtnAddItem}" Style="{StaticResource ButtonDGBasic}" Width="100"
+                                            Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+            
+                    <DataGridTemplateColumn Header="DeliveryName">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DeliveryName}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="InvoiceNumber">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding InvoiceNumber}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Delivery">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Supplier}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Country">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Country}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Address">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SupplierReceiver}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="ShipTime">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ShipTime}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="PackageType">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PackageType}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="PackageInformation">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PackageInformation}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Remark">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Remark}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="CreateTime">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Creator">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Creator}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="State">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding State}" Style="{StaticResource TextBlockDGBasic}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
+                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
+        </Grid>
+        <DataGrid Grid.Row="3" Style="{StaticResource DataGridBasic}"
+                          ItemsSource="{Binding RecordDeliveryItems}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
+                                        Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="ProductType">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ProductType}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="ProductID">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ProductID}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Composition">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Composition}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockBasic}" Header="Abbr"
+                                    Binding="{Binding Abbr}"/>
+                <DataGridTemplateColumn Header="Customer">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Customer}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="PO">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PO}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Weight">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="DetailRecord">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DetailRecord}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Position">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Position}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Remark}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="5" Style="{StaticResource TextBlockDGBasic}"
+                   Text="装箱单"/>
+    </Grid>
+</UserControl>
