@@ -7526,10 +7526,10 @@ namespace PMSDesktopClient.PMSMainService {
     public interface IRecordVHPService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
-        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP(int top);
+        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync(int top);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
         PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take);
@@ -7613,12 +7613,12 @@ namespace PMSDesktopClient.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP(int top) {
-            return base.Channel.GetTopRecordVHP(top);
+        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP() {
+            return base.Channel.GetTopRecordVHP();
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync(int top) {
-            return base.Channel.GetTopRecordVHPAsync(top);
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync() {
+            return base.Channel.GetTopRecordVHPAsync();
         }
         
         public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take) {
