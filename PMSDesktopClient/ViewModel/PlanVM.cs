@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class PlanVM : ViewModelBase
     {

@@ -5,15 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSLargeScreen.PMSMainService;
+using System.Timers;
+using System.Windows.Threading;
 
 namespace PMSLargeScreen
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public MainWindowViewModel()
+        private Dispatcher dispatcher;
+        public MainWindowViewModel( Dispatcher dis)
+        {
+            dispatcher = dis;
+            IntializeAll();
+        }
+
+        private void IntializeAll()
         {
             Today = DateTime.Now.Date;
-
             StatusMessage = "准备运行";
             NoPlan = System.Windows.Visibility.Hidden;
 
@@ -66,9 +74,31 @@ namespace PMSLargeScreen
             //Models.Add(secondModel);
             //Models.Add(thirdModel);
             #endregion
-            var todayList = LargeScreenService.GetTodayMissonWithPlan();
-            if (todayList.Count>0)
+
+            Timer timer = new Timer()
             {
+                Interval = 5000
+            };
+            timer.Elapsed += (s, e) =>
+            {
+                dispatcher.Invoke(() =>
+                {
+                    RefreshData();
+                    StatusMessage = $"刷新于{DateTime.Now.ToLongTimeString()}";
+                });
+            };
+
+            timer.Start();
+            StatusMessage = "正在初始化，请等待……";
+
+        }
+
+        private void RefreshData()
+        {
+            var todayList = GetTodayMissonWithPlan();
+            if (todayList.Count > 0)
+            {
+                Models.Clear();
                 AddIntoModel(todayList, "A");
                 AddIntoModel(todayList, "B");
                 AddIntoModel(todayList, "C");
@@ -78,9 +108,30 @@ namespace PMSLargeScreen
                 NoPlan = System.Windows.Visibility.Visible;
                 StatusMessage = "今日暂时没有计划，请等待安排";
             }
-
         }
-        #region Process
+        #region ProcessHelper
+        private List<DcMissonWithPlan> GetTodayMissonWithPlan()
+        {
+
+            var today = DateTime.Now;
+            using (var service = new MissonWithPlanServiceClient())
+            {
+                var result = service.GetMissonWithPlanByDate(today);
+                return result.ToList();
+            }
+        }
+        private void AddIntoModel(List<DcMissonWithPlan> todayList, string device)
+        {
+            if (todayList.Count > 0)
+            {
+                var plans = todayList.Where(i => i.VHPDeviceCode.Contains(device)).ToList();
+                if (plans.Count > 0)
+                {
+                    Models.Add(GetSpecialModel(plans));
+                }
+            }
+        }
+
         private SinglePanelModel GetSpecialModel(List<DcMissonWithPlan> models)
         {
             var single = new SinglePanelModel();
@@ -95,23 +146,12 @@ namespace PMSLargeScreen
                 single.MoldDiameter = commonState.MoldDiameter;
                 single.PrePressure = commonState.PrePressure;
                 single.PreTemperature = commonState.PreTemperature;
-                single.Compositions = new System.Collections.ObjectModel.ObservableCollection<string>();
+                single.Compositions = new List<string>();
                 single.Compositions.Clear();
                 models.ForEach(m => single.Compositions.Add(m.CompositionStandard));
 
             }
             return single;
-        }
-        private void AddIntoModel(List<DcMissonWithPlan> todayList, string device)
-        {
-            if (todayList.Count > 0)
-            {
-                var plans = todayList.Where(i => i.VHPDeviceCode.Contains(device)).ToList();
-                if (plans.Count > 0)
-                {
-                    Models.Add(GetSpecialModel(plans));
-                }
-            }
         }
         #endregion
 
@@ -127,14 +167,16 @@ namespace PMSLargeScreen
         }
 
         private System.Windows.Visibility noPlan;
-        public  System.Windows.Visibility NoPlan
+        public System.Windows.Visibility NoPlan
         {
             get { return noPlan; }
             set
             {
-                noPlan = value;RaisePropertyChanged(nameof(NoPlan));
+                noPlan = value; RaisePropertyChanged(nameof(NoPlan));
             }
         }
+
+
 
         private string statusMessage;
         public string StatusMessage

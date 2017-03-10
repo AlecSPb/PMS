@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSClient
+namespace PMSDesktopClient
 {
     public class PMSNavigation 
     {

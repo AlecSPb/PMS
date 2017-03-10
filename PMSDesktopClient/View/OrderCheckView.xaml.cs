@@ -12,11 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSClient.ViewModel;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.ViewModel;
+using PMSDesktopClient.PMSMainService;
 using PMSCommon;
 
-namespace PMSClient.View
+namespace PMSDesktopClient.View
 {
     /// <summary>
     /// OderCheckView.xaml 的交互逻辑

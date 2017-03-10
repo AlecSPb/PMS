@@ -7,11 +7,11 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using System.Windows;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class OrderVM : ViewModelBase
     {
@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
             {
                 MsgObject msg = new MsgObject();
                 msg.MsgToken = VToken.OrderEdit;
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = order };
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = order };
                 NavigationService.GoTo(msg);
             });
 
@@ -86,7 +86,7 @@ namespace PMSClient.ViewModel
 
             MsgObject msg = new MsgObject();
             msg.MsgToken = VToken.OrderEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = dcOrder };
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = dcOrder };
             NavigationService.GoTo(msg);
 
         }

@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSClient.ViewModel;
+using PMSDesktopClient.ViewModel;
 
-namespace PMSClient.View
+namespace PMSDesktopClient.View
 {
     /// <summary>
     /// InventoryView.xaml 的交互逻辑

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSClient.View
+namespace PMSDesktopClient.View
 {
     /// <summary>
     /// LogInView.xaml 的交互逻辑

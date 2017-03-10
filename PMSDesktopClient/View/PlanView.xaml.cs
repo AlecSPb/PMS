@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 
-namespace PMSClient.View
+namespace PMSDesktopClient.View
 {
     /// <summary>
     /// PlanView.xaml 的交互逻辑

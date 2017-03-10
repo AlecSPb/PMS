@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class RecordTestResultVM : ViewModelBase
     {
@@ -59,9 +59,9 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcRecordTestResult obj)
         {
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.RecordTestResultEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = obj };
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
         }

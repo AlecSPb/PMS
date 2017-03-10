@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using GalaSoft.MvvmLight.Messaging;
 using bt = BarTender;
 
 
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class RecordDeliveryVM : ViewModelBase
     {
@@ -156,15 +156,15 @@ namespace PMSClient.ViewModel
             model.Address = "Address Here";
             model.Country = "USA";
 
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.RecordDeliveryEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = model };
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
 
         private void ActionEdit(DcRecordDelivery obj)
         {
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.RecordDeliveryEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);

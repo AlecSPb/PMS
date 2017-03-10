@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class OrderSelectMaterialNeedVM : OrderSelectBaseVM
     {
@@ -24,10 +24,10 @@ namespace PMSClient.ViewModel
             {
                 var materialNeed = EmptyModel.GetMaterialNeedByOrder(order);
 
-                MsgObject msg = new PMSClient.MsgObject();
+                MsgObject msg = new PMSDesktopClient.MsgObject();
                 msg.MsgToken = VToken.MaterialNeedEdit;
                 var materialneed = EmptyModel.GetMaterialNeedByOrder(order);
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = materialNeed };
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = materialNeed };
                 NavigationService.GoTo(msg);
             }
         }

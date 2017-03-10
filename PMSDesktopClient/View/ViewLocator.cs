@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using PMSClient.View;
+using PMSDesktopClient.View;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Ioc;
 
-namespace PMSClient
+namespace PMSDesktopClient
 {
     public class ViewLocator
     {
@@ -18,6 +18,7 @@ namespace PMSClient
 
             SimpleIoc.Default.Register<RecordVHPView>();
             SimpleIoc.Default.Register<RecordVHPEditView>();
+            SimpleIoc.Default.Register<RecordVHPItemEditView>();
 
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
@@ -35,6 +36,10 @@ namespace PMSClient
         public RecordVHPEditView RecordVHPEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPEditView>(); }
+        }
+        public RecordVHPItemEditView RecordVHPItemEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPItemEditView>(); }
         }
 
         public PlanSelectView PlanSelect

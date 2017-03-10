@@ -7,11 +7,11 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
-using PMSClient.View;
+using PMSDesktopClient.View;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class MaterialNeedSelectVM : ViewModelBase
     {

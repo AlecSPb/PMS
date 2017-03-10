@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
-using PMSClient.View;
+using PMSDesktopClient.PMSMainService;
+using PMSDesktopClient.View;
 using System.Collections.ObjectModel;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class OrderSelectBaseVM:ViewModelBase
     {

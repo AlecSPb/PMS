@@ -5,9 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using PMSClient.PMSUserAccessService;
+using PMSDesktopClient.PMSUserAccessService;
 
-namespace PMSClient
+namespace PMSDesktopClient
 {
     /// <summary>
     /// App.xaml 的交互逻辑

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="PMSTabletClient.View.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSTabletClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid  Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Production Management System - Tablet Edition" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 30"/>
+        <Border Grid.Row="1" BorderBrush="{StaticResource BorderBrush}" Margin="5" Padding="5" BorderThickness="2">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Content="Order View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="0"
+                        Command="{Binding Navigate}" CommandParameter="OrderView"/>
+                <Button Content="Misson View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="1"
+                         Command="{Binding Navigate}" CommandParameter="MissonView"/>
+                <Button Content="Plan View" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="0" Grid.Column="2"
+                         Command="{Binding Navigate}" CommandParameter="PlanView"/>
+                <Button Content="Milling Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="0"/>
+                <Button Content="VHP Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="1"
+                         Command="{Binding Navigate}" CommandParameter="VHPView"/>
+                <Button Content="Raw Blank Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="2"/>
+                <Button Content="Bonding Record" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="1" Grid.Column="3"/>
+                <Button Content="Product Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="0"/>
+                <Button Content="Inventory Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="1"/>
+                <Button Content="Delivery Data" Style="{StaticResource ButtonNavigationBasic}" Grid.Row="2" Grid.Column="2"/>
+            </Grid>
+
+        </Border>
+    </Grid>
+</UserControl>

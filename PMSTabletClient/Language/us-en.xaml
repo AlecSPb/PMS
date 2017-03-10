@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--公共部分-->
+    <sys:String x:Key="strAppName">Production Management System Tablet Edition</sys:String>
+    <sys:String x:Key="strBack">Back</sys:String>
+    <sys:String x:Key="strSearch">Search</sys:String>
+    <sys:String x:Key="strAdd">Add</sys:String>
+    <sys:String x:Key="strSave">Save</sys:String>
+    <sys:String x:Key="strAll">All</sys:String>
+    <sys:String x:Key="strStartNew">Start A New Record</sys:String>
+    <sys:String x:Key="strEmpty">Create An Empty Record</sys:String>
+    <sys:String x:Key="strQuick">Quick Edit</sys:String>
+    <sys:String x:Key="strOutput">Output</sys:String>
+    <sys:String x:Key="strPrint">Print</sys:String>
+    <!--页面标题-->
+    <sys:String x:Key="strRecordVHPPage">VHP Record Collection</sys:String>
+    <sys:String x:Key="strRecordVHPEditPage">VHP Record Edit</sys:String>
+    <sys:String x:Key="strRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
+
+    <sys:String x:Key="strProductPage">Product Collection</sys:String>
+    <sys:String x:Key="strProductEditPage">Product Edit</sys:String>
+    <sys:String x:Key="strPlanSelectPage">Plan Select</sys:String>
+
+    <sys:String x:Key="strOrderPage">Order Collection</sys:String>
+    <sys:String x:Key="strMissonPage">Misson Collection</sys:String>
+    <sys:String x:Key="strPlanPage">Plan Collection</sys:String>
+    
+    <sys:String x:Key="strVHPID">VHP ID</sys:String>
+    <sys:String x:Key="strProductReport">Report</sys:String>
+</ResourceDictionary>

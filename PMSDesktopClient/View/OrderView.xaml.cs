@@ -1,4 +1,4 @@
-﻿using PMSClient.ViewModel;
+﻿using PMSDesktopClient.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +13,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using PMSCommon;
 
-namespace PMSClient.View
+namespace PMSDesktopClient.View
 {
     /// <summary>
     /// OrderView.xaml 的交互逻辑

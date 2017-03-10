@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class RecordVHPVM : ViewModelBase
     {
@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcRecordVHP obj)
         {
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.RecordVHPEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);

@@ -7,14 +7,14 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using DocGenerator;
 using gn = DocGenerator.DocModels;
 using AutoMapper;
 using System.Windows;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class MaterialOrderVM : ViewModelBase
     {
@@ -106,9 +106,9 @@ namespace PMSClient.ViewModel
         {
             if (obj != null)
             {
-                MsgObject msg = new PMSClient.MsgObject();
+                MsgObject msg = new PMSDesktopClient.MsgObject();
                 msg.MsgToken = VToken.MaterialOrderEdit;
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = obj };
+                msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
         }
@@ -117,9 +117,9 @@ namespace PMSClient.ViewModel
         {
 
             var model = EmptyModel.GetMaterialOrder();
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.MaterialOrderEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = model };
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
 

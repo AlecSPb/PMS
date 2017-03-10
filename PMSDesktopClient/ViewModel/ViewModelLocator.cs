@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:PMSClient"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:PMSDesktopClient"
                            x:Key="Locator" />
   </Application.Resources>
   
@@ -17,7 +17,7 @@ using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Views;
 using Microsoft.Practices.ServiceLocation;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -43,7 +43,7 @@ namespace PMSClient.ViewModel
             ////    SimpleIoc.Default.Register<IDataService, DataService>();
             ////}
             SimpleIoc.Default.Register<NavigationVM>(true);
-            SimpleIoc.Default.Register<OrderVM>(true);
+            SimpleIoc.Default.Register<OrderVM>();
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<MissonVM>();
             SimpleIoc.Default.Register<PlanVM>();

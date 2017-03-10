@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 using System.Windows.Input;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class RecordVHPQuickEditVM : ViewModelBase
     {
@@ -123,7 +123,7 @@ namespace PMSClient.ViewModel
         {
             using (var service = new RecordVHPServiceClient())
             {
-                var result = service.GetTopRecordVHP();
+                var result = service.GetTopRecordVHP(5);
                 RecordVHPs.Clear();
                 result.ToList().ForEach(r => RecordVHPs.Add(r));
 

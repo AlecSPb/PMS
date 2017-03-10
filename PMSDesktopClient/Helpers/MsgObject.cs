@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSClient
+namespace PMSDesktopClient
 {
     /// <summary>
     /// 用来消息传递的Object

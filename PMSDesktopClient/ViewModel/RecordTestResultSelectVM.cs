@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSDesktopClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
-namespace PMSClient.ViewModel
+namespace PMSDesktopClient.ViewModel
 {
     public class RecordTestResultSelectVM : ViewModelBase
     {
@@ -44,7 +44,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEmpty()
         {
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
 
             item.ProductType = PMSCommon.ProductType.Target.ToString();
             item.ProductID = "";
@@ -57,7 +57,7 @@ namespace PMSClient.ViewModel
             item.Remark = "";
 
             msg.MsgToken = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = item };
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }
 
@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect(DcRecordTestResult obj)
         {
-            MsgObject msg = new PMSClient.MsgObject();
+            MsgObject msg = new PMSDesktopClient.MsgObject();
 
             item.ProductType = PMSCommon.ProductType.Target.ToString();
             item.ProductID = obj.ProductID;
@@ -92,7 +92,7 @@ namespace PMSClient.ViewModel
             item.Remark = "";
 
             msg.MsgToken = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = item };
+            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }
 
