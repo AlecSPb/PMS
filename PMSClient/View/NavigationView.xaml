@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="PMSClient.View.NavigationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
+    <UserControl.Background>
+        <!--<ImageBrush ImageSource="/PMSClient;component/Resource/Images/qianyuqianxun.jpg"
+         TileMode="FlipX"/>-->
+        <StaticResource ResourceKey="BackgroundWindow"/>
+    </UserControl.Background>
+    <UserControl.Resources>
+        <Style x:Key="btnNavigation" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style x:Key="btnTitle" TargetType="Button" BasedOn="{StaticResource btnNavigation}">
+            <Setter Property="MinWidth" Value="80"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="auto"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="6" Background="Orange" HorizontalAlignment="Stretch"
+                   Style="{x:Null}"
+                   VerticalAlignment="Center" FontSize="25" Padding="5"
+                   Text="{Binding LogInformation}"/>
+        <Button Content="{StaticResource strPageSales}" Grid.Row="1" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
+        <Button Content="{StaticResource strbtnOrder}" Grid.Row="1" Grid.Column="1"
+                Command="{Binding GoToOrder}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnOrderCheck}" Grid.Row="1" Grid.Column="2"
+                Command="{Binding GoToOrderCheck}" Style="{DynamicResource btnNavigation}"/>
+
+        <Button Content="{StaticResource strPageMaterial}" Grid.Row="2" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
+        <Button Content="{StaticResource strbtnMaterialNeed}" Grid.Row="2" Grid.Column="1"
+                Command="{Binding GoToMaterialNeed}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnMaterialOrder}" Grid.Row="2" Grid.Column="2"
+                Command="{Binding GoToMaterialOrder}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnMaterialInventory}" Grid.Row="2" Grid.Column="3"
+                Command="{Binding GoToMaterialInventory}" Style="{DynamicResource btnNavigation}"/>
+        
+        <Button Content="{StaticResource strPageProduction}" Grid.Row="3" Grid.Column="0" Style="{DynamicResource btnTitle}" />
+        <Button Content="{StaticResource strbtnMisson}" Grid.Row="3" Grid.Column="1" Command="{Binding GoToMisson}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnPlan}" Grid.Row="3" Grid.Column="2"
+                Command="{Binding GoToPlan}" Style="{DynamicResource btnNavigation}"/>
+
+        <Button Content="{StaticResource strPageRecord}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource btnTitle}" />
+        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="4" Grid.Column="2"
+                Command="{Binding GoToVHPRecord}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="4" Grid.Column="3" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="4" Grid.Column="4" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="4" Grid.Column="5"
+                Command="{Binding GoToTestResultRecord}" Style="{DynamicResource btnNavigation}"/>
+
+        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="5" Grid.Column="2"
+                Command="{Binding GoToDeliveryRecord}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="5" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
+
+        <Button Content="{StaticResource strPageOther}" Grid.Row="6" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
+        <Button Content="{StaticResource strbtnMaintenance}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
+    </Grid>
+</UserControl>

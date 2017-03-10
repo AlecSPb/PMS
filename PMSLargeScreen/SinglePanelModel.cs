@@ -21,6 +21,6 @@ namespace PMSLargeScreen
         public double PreVaccum { get; set; }
         public string ProcessCode { get; set; }
 
-        public List<string> Compositions { get; set; }
+        public ObservableCollection<string> Compositions { get; set; }
     }
 }
