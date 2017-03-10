@@ -102,7 +102,7 @@ namespace PMSWCFService
 
         }
 
-        public List<DcRecordVHP> GetTopRecordVHP(int top)
+        public List<DcRecordVHP> GetTopRecordVHP()
         {
             using (var dc = new PMSDbContext())
             {

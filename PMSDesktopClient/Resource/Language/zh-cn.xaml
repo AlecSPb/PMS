@@ -86,7 +86,7 @@
     <sys:String x:Key="strProductReport">Report</sys:String>
 
     <!--Button-->
-    <sys:String x:Key="strbtnNavigation">导航页面</sys:String>
+    <sys:String x:Key="strbtnNavigation">导航</sys:String>
     <sys:String x:Key="strbtnGiveUp">放弃</sys:String>
     <sys:String x:Key="strbtnLogin">登录</sys:String>
     <sys:String x:Key="strbtnBack">返回</sys:String>

@@ -123,7 +123,7 @@ namespace PMSDesktopClient.ViewModel
         {
             using (var service = new RecordVHPServiceClient())
             {
-                var result = service.GetTopRecordVHP(5);
+                var result = service.GetTopRecordVHP();
                 RecordVHPs.Clear();
                 result.ToList().ForEach(r => RecordVHPs.Add(r));
 
