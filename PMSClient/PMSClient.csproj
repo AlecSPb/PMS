@@ -637,9 +637,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Update\更新说明.txt" />
@@ -708,21 +706,6 @@
     <Resource Include="Resource\Images\qianyuqianxun.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\UserAccessService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSUserAccessService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\PMSMainService\PMSService.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -733,6 +716,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\PMSMainService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\UserAccessService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

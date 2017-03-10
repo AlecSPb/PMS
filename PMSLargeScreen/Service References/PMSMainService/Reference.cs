@@ -7526,10 +7526,10 @@ namespace PMSLargeScreen.PMSMainService {
     public interface IRecordVHPService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
-        PMSLargeScreen.PMSMainService.DcRecordVHP[] GetTopRecordVHP(int top);
+        PMSLargeScreen.PMSMainService.DcRecordVHP[] GetTopRecordVHP();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync(int top);
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
         PMSLargeScreen.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take);
@@ -7613,12 +7613,12 @@ namespace PMSLargeScreen.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSLargeScreen.PMSMainService.DcRecordVHP[] GetTopRecordVHP(int top) {
-            return base.Channel.GetTopRecordVHP(top);
+        public PMSLargeScreen.PMSMainService.DcRecordVHP[] GetTopRecordVHP() {
+            return base.Channel.GetTopRecordVHP();
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync(int top) {
-            return base.Channel.GetTopRecordVHPAsync(top);
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync() {
+            return base.Channel.GetTopRecordVHPAsync();
         }
         
         public PMSLargeScreen.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take) {
