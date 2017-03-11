@@ -12,6 +12,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <ContentControl Name="main" Grid.Row="0"/>
-        <TextBlock x:Name="txtStatus" Grid.Row="1" Text="" Background="{StaticResource BackgroundStatusBar}" FontSize="20"/>
+        <TextBlock x:Name="txtStatus" Grid.Row="1" Padding="5"
+                   Text="状态栏" Background="{StaticResource BackgroundStatusBar}" FontSize="20"/>
     </Grid>
 </Window>

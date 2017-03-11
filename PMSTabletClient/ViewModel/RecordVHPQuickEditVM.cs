@@ -42,18 +42,16 @@ namespace PMSTabletClient.ViewModel
             });
 
             Refresh = new RelayCommand(() => SetPageParametersWhenConditionChange());
+
+            PageChanged = new RelayCommand(ActionPaging);
+            SelectionChanged = new RelayCommand<DcMissonWithPlan>(obj => { ActionSectionChanged(obj); });
+
             CopyFill = new RelayCommand<DcRecordVHP>(ActionCopyFill);
             Save = new RelayCommand(ActionSave);
 
-            SelectionChanged = new RelayCommand<DcMissonWithPlan>(obj => { ActionSectionChanged(obj); });
-
             EditItem = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEditItem);
             New = new RelayCommand(ActionNew);
-
             Chart = new RelayCommand(ActionChart);
-
-
-            PageChanged = new RelayCommand(ActionPaging);
         }
 
         private void ActionChart()
@@ -66,6 +64,35 @@ namespace PMSTabletClient.ViewModel
             EmptyCurrentRecordVHP();
             isNew = true;
             NavigationService.ShowStateMessage("全新创建一个记录");
+        }
+        private void ActionCopyFill(DcRecordVHP obj)
+        {
+            if (obj != null)
+            {
+                var model = new DcRecordVHP();
+
+                model.PlanVHPID = obj.PlanVHPID;
+                model.ID = Guid.NewGuid();
+                model.CurrentTime = DateTime.Now;
+                model.Creator = (App.Current as App).CurrentUser.UserName;
+                model.PV1 = obj.PV1;
+                model.PV2 = obj.PV2;
+                model.PV3 = obj.PV3;
+                model.SV = obj.SV;
+
+                model.Ton = obj.Ton;
+                model.Vaccum = obj.Vaccum;
+                model.Shift1 = obj.Shift1;
+                model.Shift2 = obj.Shift2;
+                model.Omega = obj.Omega;
+                model.WaterTemperatureIn = obj.WaterTemperatureIn;
+                model.WaterTemperatureOut = obj.WaterTemperatureOut;
+                model.ExtraInformation = obj.ExtraInformation;
+
+                isNew = true;
+                CurrentRecordVHP = model;
+                NavigationService.ShowStateMessage("填充选定项完毕");
+            }
         }
 
         private void ActionEditItem(DcRecordVHP obj)
@@ -111,11 +138,11 @@ namespace PMSTabletClient.ViewModel
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
                 model.State = PMSCommon.CommonState.Show.ToString();
-                model.PV1 = 10;
-                model.PV2 = 10;
-                model.PV3 = 10;
-                model.SV = 10;
-                model.Ton = 5;
+                model.PV1 = 0;
+                model.PV2 = 0;
+                model.PV3 = 0;
+                model.SV = 0;
+                model.Ton = 0;
                 model.Vaccum = 1E-3;
                 model.Shift1 = 0;
                 model.Shift2 = 0;
@@ -124,18 +151,14 @@ namespace PMSTabletClient.ViewModel
                 model.WaterTemperatureOut = 0;
                 model.ExtraInformation = "";
                 isNew = true;
-                CurrentRecordVHP = model;
 
+                CurrentRecordVHP = model;
             }
         }
 
 
         private void ActionSave()
         {
-            if (CurrentRecordVHP == null)
-            {
-                return;
-            }
             try
             {
                 if (CurrentRecordVHP != null)
@@ -152,7 +175,9 @@ namespace PMSTabletClient.ViewModel
                         }
 
                         ReLoadRecordVHPs();
+
                         EmptyCurrentRecordVHP();
+
                         NavigationService.ShowStateMessage("保存完毕");
                     }
                 }
@@ -162,36 +187,6 @@ namespace PMSTabletClient.ViewModel
                 throw ex;
             }
 
-        }
-
-        private void ActionCopyFill(DcRecordVHP obj)
-        {
-            if (obj != null)
-            {
-                var model = new DcRecordVHP();
-
-                model.PlanVHPID = obj.PlanVHPID;
-                model.ID = Guid.NewGuid();
-                model.CurrentTime = DateTime.Now;
-                model.Creator = (App.Current as App).CurrentUser.UserName;
-                model.PV1 = obj.PV1;
-                model.PV2 = obj.PV2;
-                model.PV3 = obj.PV3;
-                model.SV = obj.SV;
-
-                model.Ton = obj.Ton;
-                model.Vaccum = obj.Vaccum;
-                model.Shift1 = obj.Shift1;
-                model.Shift2 = obj.Shift2;
-                model.Omega = obj.Omega;
-                model.WaterTemperatureIn = obj.WaterTemperatureIn;
-                model.WaterTemperatureOut = obj.WaterTemperatureOut;
-                model.ExtraInformation = obj.ExtraInformation;
-
-                isNew = true;
-                CurrentRecordVHP = model;
-                NavigationService.ShowStateMessage("填充选定项完毕");
-            }
         }
 
 
@@ -222,6 +217,7 @@ namespace PMSTabletClient.ViewModel
             orders.ToList().ForEach(o => MissonWithPlans.Add(o));
 
             CurrentMissonWithPlan = MissonWithPlans.FirstOrDefault();
+            ActionSectionChanged(CurrentMissonWithPlan);
         }
 
 
@@ -264,7 +260,16 @@ namespace PMSTabletClient.ViewModel
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
         public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
 
-        public DcRecordVHP CurrentRecordVHP { get; set; }
+        private DcRecordVHP currentRecordVHP;
+        public DcRecordVHP CurrentRecordVHP
+        {
+            get { return currentRecordVHP; }
+            set
+            {
+                currentRecordVHP = value;
+                RaisePropertyChanged(nameof(CurrentRecordVHP));
+            }
+        }
 
         private DcMissonWithPlan currentMissonWithPlan;
 

@@ -29,18 +29,22 @@ namespace PMSTabletClient
         {
             InitializeComponent();
             Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigation);
-            Messenger.Default.Register<MsgObject>(this, NavigationToken.StateMessage, ActionStateMessage);
+            Messenger.Default.Register<string>(this, NavigationToken.StateMessage, ActionStateMessage);
 
             views = new ViewLocator();
             viewModels = new ViewModelLocator();
             NavigateTo(views.Navigation);
         }
 
-        private void ActionStateMessage(MsgObject obj)
+        private void ActionStateMessage(string msg)
         {
-            if (!string.IsNullOrEmpty(obj.StringMessage))
+            if (!string.IsNullOrEmpty(msg))
             {
-                txtStatus.Text = obj.StringMessage;
+                txtStatus.Text = msg;
+            }
+            else
+            {
+                txtStatus.Text = "状态栏";
             }
         }
 

@@ -100,31 +100,31 @@
                     FontSize="20"
                     Command="{Binding DataContext.Save,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
             <TextBlock Text="PV1:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="0"/>
-            <TextBox Text="{Binding PV1}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="1" />
+            <TextBox Text="{Binding PV1,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="1" />
             <TextBlock Text="PV2:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="2"/>
-            <TextBox Text="{Binding PV2}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="3"/>
+            <TextBox Text="{Binding PV2,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="3"/>
             <TextBlock Text="PV3:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="4"/>
-            <TextBox Text="{Binding PV3}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="5"/>
+            <TextBox Text="{Binding PV3,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="5"/>
             <TextBlock Text="SV:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="6"/>
-            <TextBox Text="{Binding SV}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="7"/>
+            <TextBox Text="{Binding SV,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="7"/>
             <TextBlock Text="Ton:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="8"/>
-            <TextBox Text="{Binding Ton}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="9"/>
+            <TextBox Text="{Binding Ton,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="9"/>
             <TextBlock Text="Vaccum:" Style="{StaticResource TextBlockBasic}" Grid.Row="0" Grid.Column="10"/>
-            <TextBox Text="{Binding Vaccum}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="11"/>
+            <TextBox Text="{Binding Vaccum,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="0" Grid.Column="11"/>
 
             <TextBlock Text="Shift1:" Style="{StaticResource TextBlockBasic}"  Grid.Row="1" Grid.Column="0"/>
-            <TextBox Text="{Binding Shift1}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="1"/>
+            <TextBox Text="{Binding Shift1,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="1"/>
             <TextBlock Text="Shift2:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="2"/>
-            <TextBox Text="{Binding Shift2}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="3"/>
+            <TextBox Text="{Binding Shift2,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="3"/>
             <TextBlock Text="Omega:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="4"/>
-            <TextBox Text="{Binding Omega}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="5"/>
+            <TextBox Text="{Binding Omega,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="5"/>
             <TextBlock Text="WaterIn:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="6"/>
-            <TextBox Text="{Binding WaterTemperatureIn}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="7"/>
+            <TextBox Text="{Binding WaterTemperatureIn,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="7"/>
             <TextBlock Text="WaterOut:" Style="{StaticResource TextBlockBasic}" Grid.Row="1" Grid.Column="8"/>
-            <TextBox Text="{Binding WaterTemperatureOut}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="9"/>
+            <TextBox Text="{Binding WaterTemperatureOut,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" Grid.Row="1" Grid.Column="9"/>
 
             <TextBlock Text="Extral:" Style="{StaticResource TextBlockBasic}"  Grid.Row="2" Grid.Column="0"/>
-            <TextBox Text="{Binding ExtraInformation}" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"
+            <TextBox Text="{Binding ExtraInformation,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"
                              Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="11"/>
         </Grid>
         <DataGrid Name="dgitem" Grid.Row="5" Style="{StaticResource DataGridBasic}"

@@ -222,6 +222,7 @@ namespace PMSDesktopClient.ViewModel
             orders.ToList().ForEach(o => MissonWithPlans.Add(o));
 
             CurrentMissonWithPlan = MissonWithPlans.FirstOrDefault();
+            ActionSectionChanged(CurrentMissonWithPlan);
         }
 
 
@@ -264,10 +265,18 @@ namespace PMSDesktopClient.ViewModel
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
         public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
 
-        public DcRecordVHP CurrentRecordVHP { get; set; }
+        private DcRecordVHP currentRecordVHP;
+        public DcRecordVHP CurrentRecordVHP
+        {
+            get { return currentRecordVHP; }
+            set
+            {
+                currentRecordVHP = value;
+                RaisePropertyChanged(nameof(CurrentRecordVHP));
+            }
+        }
 
         private DcMissonWithPlan currentMissonWithPlan;
-
         public DcMissonWithPlan CurrentMissonWithPlan
         {
             get { return currentMissonWithPlan; }

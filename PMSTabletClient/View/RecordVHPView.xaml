@@ -44,7 +44,7 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Edit">
+                    <!--<DataGridTemplateColumn Header="Edit">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -54,7 +54,7 @@
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                    </DataGridTemplateColumn>-->
                     <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="Device" ElementStyle="{StaticResource TextBlockDGCenter}"
@@ -80,7 +80,7 @@
                     <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Remark}"/>
                     <DataGridTextColumn Header="Create Time" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding CreateTime}"/>
+                                        Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
                     <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
