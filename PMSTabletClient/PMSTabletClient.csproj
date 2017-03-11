@@ -83,82 +83,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Component\NavigationWizard.cs" />
-    <Compile Include="Models\ModelFactory.cs" />
-    <Compile Include="NavigationService.cs" />
-    <Compile Include="ViewModel\MissonVM.cs" />
-    <Compile Include="ViewModel\NavigationVM.cs" />
-    <Compile Include="ViewModel\PlanVM.cs" />
-    <Compile Include="ViewModel\OrderVM.cs" />
-    <Compile Include="ViewModel\ProductEditVM.cs" />
-    <Compile Include="ViewModel\ProductReportVM.cs" />
-    <Compile Include="ViewModel\ProductVM.cs" />
-    <Compile Include="ViewModel\RecordVHPEditVM.cs" />
-    <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
-    <Compile Include="ViewModel\RecordVHPVM.cs" />
-    <Compile Include="View\DeliveryCustomView.xaml.cs">
-      <DependentUpon>DeliveryCustomView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryEditView.xaml.cs">
-      <DependentUpon>DeliveryEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryProductView.xaml.cs">
-      <DependentUpon>DeliveryProductView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliverySampleView.xaml.cs">
-      <DependentUpon>DeliverySampleView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryTypeChooseView.xaml.cs">
-      <DependentUpon>DeliveryTypeChooseView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryView.xaml.cs">
-      <DependentUpon>DeliveryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\LogInView.xaml.cs">
-      <DependentUpon>LogInView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MissonView.xaml.cs">
-      <DependentUpon>MissonView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderView.xaml.cs">
-      <DependentUpon>OrderView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanView.xaml.cs">
-      <DependentUpon>PlanView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\NavigationView.xaml.cs">
-      <DependentUpon>NavigationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductEditView.xaml.cs">
-      <DependentUpon>ProductEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductReportView.xaml.cs">
-      <DependentUpon>ProductReportView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductView.xaml.cs">
-      <DependentUpon>ProductView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordSelectView.xaml.cs">
-      <DependentUpon>RecordSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordVHPEditView.xaml.cs">
-      <DependentUpon>RecordVHPEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
-      <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordVHPView.xaml.cs">
-      <DependentUpon>RecordVHPView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SampleEditView.xaml.cs">
-      <DependentUpon>SampleEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SampleView.xaml.cs">
-      <DependentUpon>SampleView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Language\us-en.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -171,86 +95,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\DeliveryCustomView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DeliveryEditView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DeliveryProductView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DeliverySampleView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DeliveryTypeChooseView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\DeliveryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\LogInView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MissonView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\OrderView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PlanView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\NavigationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ProductEditView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ProductReportView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ProductView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordSelectView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordVHPEditView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordVHPQuickEditView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordVHPView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SampleEditView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SampleView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -281,8 +125,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Helpers\" />
     <Folder Include="Resource\Images\" />
+    <Folder Include="Resource\Language\" />
+    <Folder Include="Resource\Skins\" />
+    <Folder Include="Resource\Styles\" />
     <Folder Include="Services\" />
+    <Folder Include="ViewModel\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Documents\memo.txt" />

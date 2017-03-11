@@ -1,5 +1,4 @@
-﻿using PMSTabletClient.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,8 +27,7 @@ namespace PMSTabletClient
         public MainWindow()
         {
             InitializeComponent();
-            NavigateTo(new NavigationView());
-            Messenger.Default.Register<string>(this, NavigationToken.Navigate, ActionNavigate);
+
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -43,27 +41,7 @@ namespace PMSTabletClient
 
         private void ActionNavigate(string viewName)
         {
-            switch (viewName)
-            {
-                case "OrderView":
-                    NavigateTo(new OrderView());
-                    break;
-                case "MissonView":
-                    NavigateTo(new MissonView());
-                    break;
-                case "PlanView":
-                    NavigateTo(new PlanView());
-                    break;
-                case "ProductView":
-                    NavigateTo(new ProductView());
-                    break;
-                case "ProductEditView":
-                    NavigateTo(new ProductEditView());
-                    break;
-                default:
-                    NavigateTo(new NavigationView());
-                    break;
-            }
+
         }
     }
 }

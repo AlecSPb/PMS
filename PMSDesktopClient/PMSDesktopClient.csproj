@@ -135,7 +135,6 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
-    <Compile Include="Helpers\PMSNavigation.cs" />
     <Compile Include="Service References\PMSMainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
