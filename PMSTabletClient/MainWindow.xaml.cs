@@ -29,10 +29,19 @@ namespace PMSTabletClient
         {
             InitializeComponent();
             Messenger.Default.Register<MsgObject>(this, NavigationToken.Navigate, ActionNavigation);
+            Messenger.Default.Register<MsgObject>(this, NavigationToken.StateMessage, ActionStateMessage);
 
             views = new ViewLocator();
             viewModels = new ViewModelLocator();
             NavigateTo(views.Navigation);
+        }
+
+        private void ActionStateMessage(MsgObject obj)
+        {
+            if (!string.IsNullOrEmpty(obj.StringMessage))
+            {
+                txtStatus.Text = obj.StringMessage;
+            }
         }
 
         private void ActionNavigation(MsgObject obj)
