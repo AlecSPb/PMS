@@ -20,7 +20,13 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="FontSize" Value="25"/>
-            <Setter Property="Height" Value="80"/>
+            <Setter Property="MinHeight" Value="80"/>
+        </Style>
+        <Style x:Key="btnNavigationCan" BasedOn="{StaticResource btnNavigation}" TargetType="Button">
+            <Setter Property="IsEnabled" Value="True"/>
+        </Style>
+        <Style x:Key="btnNavigationCanNot" BasedOn="{StaticResource btnNavigation}" TargetType="Button">
+            <Setter Property="IsEnabled" Value="False"/>
         </Style>
         <Style x:Key="btnTitle" TargetType="Button" BasedOn="{StaticResource btnNavigation}">
             <Setter Property="MinWidth" Value="80"/>
@@ -65,17 +71,23 @@
         <Button Content="{StaticResource strbtnMisson}" Grid.Row="3" Grid.Column="1" Command="{Binding GoToMisson}" Style="{DynamicResource btnNavigation}"/>
         <Button Content="{StaticResource strbtnPlan}" Grid.Row="3" Grid.Column="2" Command="{Binding GoToPlan}" Style="{DynamicResource btnNavigation}"/>-->
 
-        <Button Content="{StaticResource strPageRecord}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource btnTitle}" />
-        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToVHPRecord}" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="4" Grid.Column="3" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="4" Grid.Column="4" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="4" Grid.Column="5" Command="{Binding GoToTestResultRecord}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strPageRecord}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" 
+                Style="{DynamicResource btnTitle}" />
+        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource btnNavigationCanNot}"/>
+        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="4" Grid.Column="2"
+                Command="{Binding GoToVHPRecord}"
+                Style="{DynamicResource btnNavigationCan}"/>
+        
+        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="4" Grid.Column="3" Style="{DynamicResource btnNavigationCanNot}"/>
+        <Button  Content="{StaticResource strbtnRecordMachine}" Grid.Row="4" Grid.Column="4" Style="{DynamicResource btnNavigationCanNot}"/>
+        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="4" Grid.Column="5" Command="{Binding GoToTestResultRecord}"
+                Style="{DynamicResource btnNavigationCan}"/>
 
-        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="5" Grid.Column="2" Command="{Binding GoToDeliveryRecord}" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordBonding}" Grid.Row="5" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="5" Grid.Column="2" Command="{Binding GoToDeliveryRecord}"
+                Style="{DynamicResource btnNavigationCan}"/>
+        <Button   Content="{StaticResource strbtnRecordBonding}" Grid.Row="5" Grid.Column="1" Style="{DynamicResource btnNavigationCanNot}"/>
 
         <Button Content="{StaticResource strPageOther}" Grid.Row="6" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
-        <Button Content="{StaticResource strbtnMaintenance}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnMaintenance}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource btnNavigationCanNot}"/>
     </Grid>
 </UserControl>

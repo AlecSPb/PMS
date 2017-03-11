@@ -17,21 +17,22 @@ namespace PMSTabletClient
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<NavigationView>(true);
-            //SimpleIoc.Default.Register<RecordVHPView>();
+            SimpleIoc.Default.Register<RecordVHPView>();
+            SimpleIoc.Default.Register<RecordVHPQuickEditView>();
 
             //SimpleIoc.Default.Register<PlanSelectView>();
-            //SimpleIoc.Default.Register<RecordVHPQuickEditView>();
+
 
         }
         #region Properties
-        //public RecordVHPQuickEditView RecordVHPQuickEdit
-        //{
-        //    get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
-        //}
-        //public RecordVHPView RecordVHP
-        //{
-        //    get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }
-        //}
+        public RecordVHPView RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }
+        }
+        public RecordVHPQuickEditView RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
+        }
 
         //public PlanSelectView PlanSelect
         //{

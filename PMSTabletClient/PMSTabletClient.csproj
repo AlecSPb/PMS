@@ -98,6 +98,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

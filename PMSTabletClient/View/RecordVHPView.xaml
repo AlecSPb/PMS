@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:PMSTabletClient.ViewModel"
-             xmlns:local="clr-namespace:PMSDesktopClient.View"
+             xmlns:local="clr-namespace:PMSTabletClient.View"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"

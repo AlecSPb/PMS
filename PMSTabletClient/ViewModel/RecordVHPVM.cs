@@ -50,7 +50,7 @@ namespace PMSTabletClient.ViewModel
 
         private void ActionEdit(DcMissonWithPlan obj)
         {
-            MsgObject msg = new PMSDesktopClient.MsgObject();
+            MsgObject msg = new MsgObject();
             msg.MsgToken = VToken.RecordVHPEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);

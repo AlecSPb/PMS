@@ -53,10 +53,10 @@ namespace PMSTabletClient.ViewModel
             //SimpleIoc.Default.Register<OrderSelectMaterialNeedVM>();
 
             SimpleIoc.Default.Register<RecordVHPVM>();
-            //SimpleIoc.Default.Register<RecordTestResultVM>();
-            //SimpleIoc.Default.Register<RecordDeliveryVM>();
             SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
 
+            //SimpleIoc.Default.Register<RecordTestResultVM>();
+            //SimpleIoc.Default.Register<RecordDeliveryVM>();
             //SimpleIoc.Default.Register<PlanSelectForRecordTestResultVM>();
             //SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
 
@@ -69,17 +69,17 @@ namespace PMSTabletClient.ViewModel
 
         }
         #region Properties
-        //public RecordVHPQuickEditVM RecordVHPQuickEdit
-        //{
-        //    get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
-        //}
-        //public RecordVHPVM RecordVHP
-        //{
-        //    get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
-        //}
         public NavigationVM Navigation
         {
             get { return SimpleIoc.Default.GetInstance<NavigationVM>(); }
+        }
+        public RecordVHPVM RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
+        }
+        public RecordVHPQuickEditVM RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
         }
         //public OrderVM Order
         //{

@@ -44,7 +44,7 @@
                 <DataGridTextColumn Header="Device" ElementStyle="{StaticResource TextBlockDGCenter}"
                                         Binding="{Binding VHPDeviceCode}"/>
                 <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding Composition}"/>
+                                        Binding="{Binding CompositionStandard}"/>
                 <DataGridTextColumn Header="MoldType" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding MoldType}"/>
                 <DataGridTextColumn Header="MoldDiameter" ElementStyle="{StaticResource TextBlockDGBasic}"
@@ -64,7 +64,7 @@
                 <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="Create Time" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                        Binding="{Binding CreateTime}"/>
+                                        Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
                 <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Creator}"/>
             </DataGrid.Columns>
