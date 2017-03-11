@@ -214,7 +214,6 @@
     <Compile Include="ViewModel\RecordTestResultSelectVM.cs" />
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
     <Compile Include="ViewModel\RecordVHPEditVM.cs" />
-    <Compile Include="ViewModel\RecordVHPItemEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MaterialInventoryView.xaml.cs">
@@ -608,9 +607,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordVHP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordVHPItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSUserAccessService\PMSDesktopClient.PMSUserAccessService.DcUser.datasource">

@@ -12,14 +12,9 @@ namespace PMSWCFService.ServiceContracts
     public interface IRecordVHPService
     {
         [OperationContract]
-        List<DcRecordVHP> GetTopRecordVHP();
-        [OperationContract]
-        List<DcRecordVHP> GetRecordVHP(int skip, int take);
+        List<DcRecordVHP> GetRecordVHP(Guid planVHPId);
         [OperationContract]
         int GetRecordVHPCount();
-
-        [OperationContract]
-        List<DcRecordVHPItem> GetRecordVHPItemsByRecrodVHPID(Guid id);
 
         [OperationContract]
         int AddRecordVHP(DcRecordVHP model);
@@ -27,12 +22,5 @@ namespace PMSWCFService.ServiceContracts
         int UpdateReocrdVHP(DcRecordVHP model);
         [OperationContract]
         int DeleteRecordVHP(Guid id);
-
-        [OperationContract]
-        int AddRecordVHPItem(DcRecordVHPItem model);
-        [OperationContract]
-        int UpdateReocrdVHPItem(DcRecordVHPItem model);
-        [OperationContract]
-        int DeleteRecordVHPItem(Guid id);
     }
 }

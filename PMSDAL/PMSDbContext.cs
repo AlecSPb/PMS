@@ -41,7 +41,6 @@ namespace PMSDAL
         public DbSet<RecordMilling> RecordMillings { get; set; }
         public DbSet<RecordDeMold> RecordDeMolds { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
-        public DbSet<RecordVHPItem> RecordVHPItems { get; set; }
         public DbSet<RecordTestResult> RecordTestResults { get; set; }
 
         public DbSet<RecordBonding> RecordBondings { get; set; }

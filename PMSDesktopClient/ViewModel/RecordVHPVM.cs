@@ -17,40 +17,40 @@ namespace PMSDesktopClient.ViewModel
             InitializeCommands();
             IntializeProperties();
             SetPageParametersWhenConditionChange();
-            LoadRecordVHPItemsByRecordVHPID(RecordVHPs.FirstOrDefault());
+            LoadRecordVHPsByRecordVHPID(MissonWithPlans.FirstOrDefault());
         }
 
         private void IntializeProperties()
         {
             SearchVHPID = "";
-            RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
-            RecordVHPItems = new ObservableCollection<PMSMainService.DcRecordVHPItem>();
+            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            RecordVHPs = new ObservableCollection<DcRecordVHP>();
 
 
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEdit);
-            QuickEdit= new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
-            SelectionChanged = new RelayCommand<PMSMainService.DcRecordVHP>(ActionSelectionChanged);
+            Edit = new RelayCommand<DcMissonWithPlan>(ActionEdit);
+            QuickEdit = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
+            SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
         }
 
-        private void ActionSelectionChanged(DcRecordVHP obj)
+        private void ActionSelectionChanged(DcMissonWithPlan obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
-                LoadRecordVHPItemsByRecordVHPID(obj);
+                LoadRecordVHPsByRecordVHPID(obj);
             }
         }
 
-        public void LoadRecordVHPItemsByRecordVHPID(DcRecordVHP model)
+        public void LoadRecordVHPsByRecordVHPID(DcMissonWithPlan model)
         {
-            var result = (new RecordVHPServiceClient()).GetRecordVHPItemsByRecrodVHPID(model.ID);
-            RecordVHPItems.Clear();
-            result.ToList().ForEach(i => RecordVHPItems.Add(i));
+            var result = (new RecordVHPServiceClient()).GetRecordVHP(model.PlanID);
+            RecordVHPs.Clear();
+            result.ToList().ForEach(i => RecordVHPs.Add(i));
         }
 
-        private void ActionEdit(DcRecordVHP obj)
+        private void ActionEdit(DcMissonWithPlan obj)
         {
             MsgObject msg = new PMSDesktopClient.MsgObject();
             msg.MsgToken = VToken.RecordVHPEdit;
@@ -66,7 +66,7 @@ namespace PMSDesktopClient.ViewModel
         private void ActionAll()
         {
             SetPageParametersWhenConditionChange();
-            LoadRecordVHPItemsByRecordVHPID(RecordVHPs.FirstOrDefault());
+            LoadRecordVHPsByRecordVHPID(MissonWithPlans.FirstOrDefault());
         }
 
         private void InitializeCommands()
@@ -78,8 +78,8 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new RecordVHPServiceClient();
-            RecordCount = service.GetRecordVHPCount();
+            var service = new MissonServiceClient();
+            RecordCount = service.GetMissonCountBySearch();
             ActionPaging();
         }
         /// <summary>
@@ -87,13 +87,13 @@ namespace PMSDesktopClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new RecordVHPServiceClient();
+            var service = new MissonWithPlanServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordVHP(skip, take);
-            RecordVHPs.Clear();
-            orders.ToList<DcRecordVHP>().ForEach(o => RecordVHPs.Add(o));
+            var orders = service.GetMissonWithPlan(skip, take);
+            MissonWithPlans.Clear();
+            orders.ToList().ForEach(o => MissonWithPlans.Add(o));
         }
 
 
@@ -142,8 +142,8 @@ namespace PMSDesktopClient.ViewModel
             set { searchVHPID = value; RaisePropertyChanged(nameof(SearchVHPID)); }
         }
 
+        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
-        public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
         #endregion
 
         #region Commands
@@ -151,9 +151,9 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand All { get; set; }
         public RelayCommand Add { get; set; }
 
-        public RelayCommand <DcRecordVHP> SelectionChanged { get; set; }
-        public RelayCommand<DcRecordVHP> Edit { get; set; }
-        public RelayCommand<DcRecordVHP> Doc { get; set; }
+        public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
+        public RelayCommand<DcMissonWithPlan> Edit { get; set; }
+        public RelayCommand<DcMissonWithPlan> Doc { get; set; }
 
 
         public RelayCommand QuickEdit { get; set; }

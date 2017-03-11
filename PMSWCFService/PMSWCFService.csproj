@@ -99,7 +99,6 @@
     <Compile Include="DataContracts\DcRecordDelivery.cs" />
     <Compile Include="DataContracts\DcRecordDeliveryItem.cs" />
     <Compile Include="DataContracts\DcRecordVHP.cs" />
-    <Compile Include="DataContracts\DcRecordVHPItem.cs" />
     <Compile Include="DataContracts\DcRecordMilling.cs" />
     <Compile Include="DataContracts\DcMaintenanceRecord.cs" />
     <Compile Include="DataContracts\DcMaitenancePlan.cs" />

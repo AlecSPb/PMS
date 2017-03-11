@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201703101155031_again.Designer.cs">
       <DependentUpon>201703101155031_again.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703102336580_deleterecordvhp.cs" />
+    <Compile Include="Migrations\201703102336580_deleterecordvhp.Designer.cs">
+      <DependentUpon>201703102336580_deleterecordvhp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -222,7 +226,6 @@
     <Compile Include="Entities\RecordMilling.cs" />
     <Compile Include="Entities\RecordDeMold.cs" />
     <Compile Include="Entities\RecordVHP.cs" />
-    <Compile Include="Entities\RecordVHPItem.cs" />
     <Compile Include="Entities\PMSOrder.cs" />
     <Compile Include="Entities\UserAccess.cs" />
     <Compile Include="Entities\UserRole.cs" />
@@ -352,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703101155031_again.resx">
       <DependentUpon>201703101155031_again.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703102336580_deleterecordvhp.resx">
+      <DependentUpon>201703102336580_deleterecordvhp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

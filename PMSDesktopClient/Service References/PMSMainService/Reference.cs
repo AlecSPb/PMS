@@ -3180,307 +3180,6 @@ namespace PMSDesktopClient.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double KeepTempTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MoldDiameterField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MoldTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PlanDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid PlanIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PrePressureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PreTemperatureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double PressureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double TemperatureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VHPDeviceCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double VaccumField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Composition {
-            get {
-                return this.CompositionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
-                    this.CompositionField = value;
-                    this.RaisePropertyChanged("Composition");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateTime {
-            get {
-                return this.CreateTimeField;
-            }
-            set {
-                if ((this.CreateTimeField.Equals(value) != true)) {
-                    this.CreateTimeField = value;
-                    this.RaisePropertyChanged("CreateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Creator {
-            get {
-                return this.CreatorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
-                    this.CreatorField = value;
-                    this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double KeepTempTime {
-            get {
-                return this.KeepTempTimeField;
-            }
-            set {
-                if ((this.KeepTempTimeField.Equals(value) != true)) {
-                    this.KeepTempTimeField = value;
-                    this.RaisePropertyChanged("KeepTempTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MoldDiameter {
-            get {
-                return this.MoldDiameterField;
-            }
-            set {
-                if ((this.MoldDiameterField.Equals(value) != true)) {
-                    this.MoldDiameterField = value;
-                    this.RaisePropertyChanged("MoldDiameter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MoldType {
-            get {
-                return this.MoldTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MoldTypeField, value) != true)) {
-                    this.MoldTypeField = value;
-                    this.RaisePropertyChanged("MoldType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PlanDate {
-            get {
-                return this.PlanDateField;
-            }
-            set {
-                if ((this.PlanDateField.Equals(value) != true)) {
-                    this.PlanDateField = value;
-                    this.RaisePropertyChanged("PlanDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid PlanID {
-            get {
-                return this.PlanIDField;
-            }
-            set {
-                if ((this.PlanIDField.Equals(value) != true)) {
-                    this.PlanIDField = value;
-                    this.RaisePropertyChanged("PlanID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PrePressure {
-            get {
-                return this.PrePressureField;
-            }
-            set {
-                if ((this.PrePressureField.Equals(value) != true)) {
-                    this.PrePressureField = value;
-                    this.RaisePropertyChanged("PrePressure");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double PreTemperature {
-            get {
-                return this.PreTemperatureField;
-            }
-            set {
-                if ((this.PreTemperatureField.Equals(value) != true)) {
-                    this.PreTemperatureField = value;
-                    this.RaisePropertyChanged("PreTemperature");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Pressure {
-            get {
-                return this.PressureField;
-            }
-            set {
-                if ((this.PressureField.Equals(value) != true)) {
-                    this.PressureField = value;
-                    this.RaisePropertyChanged("Pressure");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remark {
-            get {
-                return this.RemarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
-                    this.RemarkField = value;
-                    this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Temperature {
-            get {
-                return this.TemperatureField;
-            }
-            set {
-                if ((this.TemperatureField.Equals(value) != true)) {
-                    this.TemperatureField = value;
-                    this.RaisePropertyChanged("Temperature");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string VHPDeviceCode {
-            get {
-                return this.VHPDeviceCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VHPDeviceCodeField, value) != true)) {
-                    this.VHPDeviceCodeField = value;
-                    this.RaisePropertyChanged("VHPDeviceCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Vaccum {
-            get {
-                return this.VaccumField;
-            }
-            set {
-                if ((this.VaccumField.Equals(value) != true)) {
-                    this.VaccumField = value;
-                    this.RaisePropertyChanged("Vaccum");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordVHPItem", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
-    [System.SerializableAttribute()]
-    public partial class DcRecordVHPItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3505,7 +3204,7 @@ namespace PMSDesktopClient.PMSMainService {
         private double PV3Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid RecordVHPIDField;
+        private System.Guid PlanVHPIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double SVField;
@@ -3646,14 +3345,14 @@ namespace PMSDesktopClient.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid RecordVHPID {
+        public System.Guid PlanVHPID {
             get {
-                return this.RecordVHPIDField;
+                return this.PlanVHPIDField;
             }
             set {
-                if ((this.RecordVHPIDField.Equals(value) != true)) {
-                    this.RecordVHPIDField = value;
-                    this.RaisePropertyChanged("RecordVHPID");
+                if ((this.PlanVHPIDField.Equals(value) != true)) {
+                    this.PlanVHPIDField = value;
+                    this.RaisePropertyChanged("PlanVHPID");
                 }
             }
         }
@@ -7525,29 +7224,17 @@ namespace PMSDesktopClient.PMSMainService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordVHPService")]
     public interface IRecordVHPService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
-        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
+        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(System.Guid planVHPId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take);
+        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(System.Guid planVHPId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
         int GetRecordVHPCount();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordVHPCountAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPIDResponse")]
-        PMSDesktopClient.PMSMainService.DcRecordVHPItem[] GetRecordVHPItemsByRecrodVHPID(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPIDResponse")]
-        System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHPItem[]> GetRecordVHPItemsByRecrodVHPIDAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPResponse")]
         int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model);
@@ -7566,24 +7253,6 @@ namespace PMSDesktopClient.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordVHPAsync(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPItemResponse")]
-        int AddRecordVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPItemResponse")]
-        System.Threading.Tasks.Task<int> AddRecordVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItemResponse")]
-        int UpdateReocrdVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItemResponse")]
-        System.Threading.Tasks.Task<int> UpdateReocrdVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItemResponse")]
-        int DeleteRecordVHPItem(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItem", ReplyAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItemResponse")]
-        System.Threading.Tasks.Task<int> DeleteRecordVHPItemAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7613,20 +7282,12 @@ namespace PMSDesktopClient.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetTopRecordVHP() {
-            return base.Channel.GetTopRecordVHP();
+        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(System.Guid planVHPId) {
+            return base.Channel.GetRecordVHP(planVHPId);
         }
         
-        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetTopRecordVHPAsync() {
-            return base.Channel.GetTopRecordVHPAsync();
-        }
-        
-        public PMSDesktopClient.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take) {
-            return base.Channel.GetRecordVHP(skip, take);
-        }
-        
-        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take) {
-            return base.Channel.GetRecordVHPAsync(skip, take);
+        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(System.Guid planVHPId) {
+            return base.Channel.GetRecordVHPAsync(planVHPId);
         }
         
         public int GetRecordVHPCount() {
@@ -7635,14 +7296,6 @@ namespace PMSDesktopClient.PMSMainService {
         
         public System.Threading.Tasks.Task<int> GetRecordVHPCountAsync() {
             return base.Channel.GetRecordVHPCountAsync();
-        }
-        
-        public PMSDesktopClient.PMSMainService.DcRecordVHPItem[] GetRecordVHPItemsByRecrodVHPID(System.Guid id) {
-            return base.Channel.GetRecordVHPItemsByRecrodVHPID(id);
-        }
-        
-        public System.Threading.Tasks.Task<PMSDesktopClient.PMSMainService.DcRecordVHPItem[]> GetRecordVHPItemsByRecrodVHPIDAsync(System.Guid id) {
-            return base.Channel.GetRecordVHPItemsByRecrodVHPIDAsync(id);
         }
         
         public int AddRecordVHP(PMSDesktopClient.PMSMainService.DcRecordVHP model) {
@@ -7667,30 +7320,6 @@ namespace PMSDesktopClient.PMSMainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordVHPAsync(System.Guid id) {
             return base.Channel.DeleteRecordVHPAsync(id);
-        }
-        
-        public int AddRecordVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
-            return base.Channel.AddRecordVHPItem(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> AddRecordVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
-            return base.Channel.AddRecordVHPItemAsync(model);
-        }
-        
-        public int UpdateReocrdVHPItem(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
-            return base.Channel.UpdateReocrdVHPItem(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateReocrdVHPItemAsync(PMSDesktopClient.PMSMainService.DcRecordVHPItem model) {
-            return base.Channel.UpdateReocrdVHPItemAsync(model);
-        }
-        
-        public int DeleteRecordVHPItem(System.Guid id) {
-            return base.Channel.DeleteRecordVHPItem(id);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteRecordVHPItemAsync(System.Guid id) {
-            return base.Channel.DeleteRecordVHPItemAsync(id);
         }
     }
     

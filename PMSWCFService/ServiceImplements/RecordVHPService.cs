@@ -24,19 +24,6 @@ namespace PMSWCFService
             }
         }
 
-        public int AddRecordVHPItem(DcRecordVHPItem model)
-        {
-            using (var dc = new PMSDbContext())
-            {
-                int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHPItem, RecordVHPItem>());
-                var newModel = Mapper.Map<RecordVHPItem>(model);
-                dc.RecordVHPItems.Add(newModel);
-                result = dc.SaveChanges();
-                return result;
-            }
-        }
-
         public int DeleteRecordVHP(Guid id)
         {
             using (var dc = new PMSDbContext())
@@ -49,29 +36,16 @@ namespace PMSWCFService
             }
         }
 
-        public int DeleteRecordVHPItem(Guid id)
-        {
-            using (var dc = new PMSDbContext())
-            {
-                int result = 0;
-                var model = dc.RecordVHPItems.Find(id);
-                dc.RecordVHPItems.Remove(model);
-                result = dc.SaveChanges();
-                return result;
-            }
-        }
 
-        public List<DcRecordVHP> GetRecordVHP(int skip, int take)
+        public List<DcRecordVHP> GetRecordVHP(Guid planVHPId)
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.RecordVHPs
-                    .OrderByDescending(v => v.PlanDate)
-                    .Skip(skip).Take(take).ToList();
+                var result = dc.RecordVHPs.Where(p => p.PlanVHPID == planVHPId)
+                    .OrderByDescending(v => v.CurrentTime).ToList();
                 Mapper.Initialize(cfg =>
                 {
                     cfg.CreateMap<RecordVHP, DcRecordVHP>();
-                    cfg.CreateMap<RecordVHPItem, DcRecordVHPItem>();
                 });
 
                 var final = Mapper.Map<List<RecordVHP>, List<DcRecordVHP>>(result);
@@ -83,45 +57,10 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.RecordVHPs
-                         .OrderByDescending(v => v.CreateTime)
-                         .Count();
+                var result = dc.RecordVHPs.Count();
                 return result;
             }
         }
-
-        public List<DcRecordVHPItem> GetRecordVHPItemsByRecrodVHPID(Guid id)
-        {
-            using (var dc = new PMSDbContext())
-            {
-                Mapper.Initialize(cfg => cfg.CreateMap<RecordVHPItem, DcRecordVHPItem>());
-                var result = dc.RecordVHPItems.Where(i => i.RecordVHPID == id)
-                    .OrderByDescending(i => i.CurrentTime).ToList();
-                return Mapper.Map<List<RecordVHPItem>, List<DcRecordVHPItem>>(result);
-            }
-
-        }
-
-        public List<DcRecordVHP> GetTopRecordVHP()
-        {
-            using (var dc = new PMSDbContext())
-            {
-                //获取24h前到24h后的热压记录
-                var timeStart = DateTime.Now.Date.AddDays(-1);
-                var timeEnd = DateTime.Now.Date.AddDays(1);
-                var result = dc.RecordVHPs.Where(r => r.PlanDate >= timeStart && r.PlanDate <= timeEnd)
-                    .OrderByDescending(v => v.PlanDate).ToList();
-                Mapper.Initialize(cfg =>
-                {
-                    cfg.CreateMap<RecordVHP, DcRecordVHP>();
-                    cfg.CreateMap<RecordVHPItem, DcRecordVHPItem>();
-                });
-
-                var final = Mapper.Map<List<RecordVHP>, List<DcRecordVHP>>(result);
-                return final;
-            }
-        }
-
         public int UpdateReocrdVHP(DcRecordVHP model)
         {
             using (var dc = new PMSDbContext())
@@ -135,17 +74,6 @@ namespace PMSWCFService
             }
         }
 
-        public int UpdateReocrdVHPItem(DcRecordVHPItem model)
-        {
-            using (var dc = new PMSDbContext())
-            {
-                int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHPItem, RecordVHPItem>());
-                var newModel = Mapper.Map<RecordVHPItem>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
-                return result;
-            }
-        }
+
     }
 }

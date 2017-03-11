@@ -271,12 +271,6 @@
   <wsdl:message name="IRecordDeliveryService_DeleteRecordDeliveryItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordDeliveryItemResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordVHPService_GetTopRecordVHP_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTopRecordVHP" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_GetTopRecordVHP_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTopRecordVHPResponse" />
-  </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
   </wsdl:message>
@@ -288,12 +282,6 @@
   </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHPCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHPCountResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordVHPItemsByRecrodVHPID" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordVHPItemsByRecrodVHPIDResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordVHPService_AddRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordVHP" />
@@ -312,24 +300,6 @@
   </wsdl:message>
   <wsdl:message name="IRecordVHPService_DeleteRecordVHP_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordVHPResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_AddRecordVHPItem_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddRecordVHPItem" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_AddRecordVHPItem_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddRecordVHPItemResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_UpdateReocrdVHPItem_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateReocrdVHPItem" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_UpdateReocrdVHPItem_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateReocrdVHPItemResponse" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_DeleteRecordVHPItem_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRecordVHPItem" />
-  </wsdl:message>
-  <wsdl:message name="IRecordVHPService_DeleteRecordVHPItem_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRecordVHPItemResponse" />
   </wsdl:message>
   <wsdl:message name="ICustomerService_GetCustomer_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomer" />
@@ -866,10 +836,6 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
-    <wsdl:operation name="GetTopRecordVHP">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHP" message="tns:IRecordVHPService_GetTopRecordVHP_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetTopRecordVHPResponse" message="tns:IRecordVHPService_GetTopRecordVHP_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetRecordVHP">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHP" message="tns:IRecordVHPService_GetRecordVHP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse" message="tns:IRecordVHPService_GetRecordVHP_OutputMessage" />
@@ -877,10 +843,6 @@
     <wsdl:operation name="GetRecordVHPCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount" message="tns:IRecordVHPService_GetRecordVHPCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse" message="tns:IRecordVHPService_GetRecordVHPCount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordVHPItemsByRecrodVHPID">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID" message="tns:IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPIDResponse" message="tns:IRecordVHPService_GetRecordVHPItemsByRecrodVHPID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecordVHP">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/AddRecordVHP" message="tns:IRecordVHPService_AddRecordVHP_InputMessage" />
@@ -893,18 +855,6 @@
     <wsdl:operation name="DeleteRecordVHP">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHP" message="tns:IRecordVHPService_DeleteRecordVHP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPResponse" message="tns:IRecordVHPService_DeleteRecordVHP_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="AddRecordVHPItem">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/AddRecordVHPItem" message="tns:IRecordVHPService_AddRecordVHPItem_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/AddRecordVHPItemResponse" message="tns:IRecordVHPService_AddRecordVHPItem_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateReocrdVHPItem">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItem" message="tns:IRecordVHPService_UpdateReocrdVHPItem_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItemResponse" message="tns:IRecordVHPService_UpdateReocrdVHPItem_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteRecordVHPItem">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItem" message="tns:IRecordVHPService_DeleteRecordVHPItem_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItemResponse" message="tns:IRecordVHPService_DeleteRecordVHPItem_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ICustomerService">
@@ -1579,15 +1529,6 @@
   </wsdl:binding>
   <wsdl:binding name="recordvhp" type="tns:IRecordVHPService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetTopRecordVHP">
-      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetTopRecordVHP" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetRecordVHP">
       <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetRecordVHP" style="document" />
       <wsdl:input>
@@ -1599,15 +1540,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordVHPCount">
       <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRecordVHPItemsByRecrodVHPID">
-      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/GetRecordVHPItemsByRecrodVHPID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1635,33 +1567,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteRecordVHP">
       <soap:operation soapAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHP" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddRecordVHPItem">
-      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/AddRecordVHPItem" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateReocrdVHPItem">
-      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPItem" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteRecordVHPItem">
-      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPItem" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

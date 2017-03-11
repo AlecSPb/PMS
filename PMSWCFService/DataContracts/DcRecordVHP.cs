@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace PMSWCFService.DataContracts
 {
     /// <summary>
-    /// 热压过程当中的记录
+    /// 热压过程的记录-项目
     /// </summary>
     [DataContract]
     public class DcRecordVHP
@@ -16,42 +18,37 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public DateTime CreateTime { get; set; }
+        public Guid PlanVHPID { get; set; }
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
+        public DateTime CurrentTime { get; set; }
+        [DataMember]
         public string State { get; set; }
         [DataMember]
-        public Guid PlanID { get; set; }
+        public double PV1 { get; set; }
         [DataMember]
-        public DateTime PlanDate { get; set; }//161210-M
+        public double PV2 { get; set; }
         [DataMember]
-        public string Composition { get; set; }
+        public double PV3 { get; set; }
         [DataMember]
-        public string MoldType { get; set; }
-
+        public double SV { get; set; }
         [DataMember]
-        public string VHPDeviceCode { get; set; }
-        [DataMember]
-        public double MoldDiameter { get; set; }
-        //预压力和预压温度
-        [DataMember]
-        public double PreTemperature { get; set; }
-        [DataMember]
-        public double PrePressure { get; set; }
-
-        //实际压力，温度，真空度，保温时间
-        [DataMember]
-        public double Temperature { get; set; }
-        [DataMember]
-        public double Pressure { get; set; }
+        public double Ton { get; set; }
         [DataMember]
         public double Vaccum { get; set; }
         [DataMember]
-        public double KeepTempTime { get; set; }
+        public double Shift1 { get; set; }
         [DataMember]
-        public string Remark { get; set; }
-        //[DataMember]
-        //public virtual List<DcRecordVHPItem> RecordVHPItems { get; set; }
+        public double Shift2 { get; set; }
+        [DataMember]
+        public double Omega { get; set; }
+        [DataMember]
+        public double WaterTemperatureOut { get; set; }
+        [DataMember]
+        public double WaterTemperatureIn { get; set; }
+        [DataMember]
+        public string ExtraInformation { get; set; }
+
     }
 }

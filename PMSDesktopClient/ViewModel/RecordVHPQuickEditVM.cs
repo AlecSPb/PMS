@@ -20,7 +20,7 @@ namespace PMSDesktopClient.ViewModel
             InitializeCommmands();
 
             LoadRecordVHP();
-            EmptyCurrentRecordVHPItem();
+            EmptyCurrentRecordVHP();
         }
         private bool isNew;
 
@@ -28,8 +28,8 @@ namespace PMSDesktopClient.ViewModel
         {
             isNew = true;
             RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
-            CurrentRecordVHPItem = new PMSMainService.DcRecordVHPItem();
-            RecordVHPItems = new ObservableCollection<DcRecordVHPItem>();
+            //CurrentRecordVHPItem = new PMSMainService.DcRecordVHPItem();
+            //RecordVHPItems = new ObservableCollection<DcRecordVHPItem>();
         }
 
         private void InitializeCommmands()
@@ -41,12 +41,12 @@ namespace PMSDesktopClient.ViewModel
             });
 
             Refresh = new RelayCommand(() => LoadRecordVHP());
-            CopyFill = new RelayCommand<DcRecordVHPItem>(ActionCopyFill);
+            //CopyFill = new RelayCommand<DcRecordVHPItem>(ActionCopyFill);
             Save = new RelayCommand(ActionSave);
 
             SelectionChanged = new RelayCommand<DcRecordVHP>(obj => { LoadRecordVHPItemsByRecordVHP(obj); });
 
-            EditItem = new RelayCommand<PMSMainService.DcRecordVHPItem>(ActionEditItem);
+            //EditItem = new RelayCommand<PMSMainService.DcRecordVHPItem>(ActionEditItem);
             New = new RelayCommand(ActionNew);
 
             Chart = new RelayCommand(ActionChart);
@@ -59,12 +59,12 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionNew()
         {
-            EmptyCurrentRecordVHPItem();
+            EmptyCurrentRecordVHP();
             isNew = true;
             NavigationService.ShowStateMessage("全新创建一个记录");
         }
 
-        private void ActionEditItem(DcRecordVHPItem obj)
+        private void ActionEditItem(DcRecordVHP obj)
         {
             if (obj != null)
             {
@@ -82,22 +82,22 @@ namespace PMSDesktopClient.ViewModel
                 using (var service = new RecordVHPServiceClient())
                 {
                     //这里使用异步操作
-                    var task = service.GetRecordVHPItemsByRecrodVHPIDAsync(model.ID);
-                    RecordVHPItems.Clear();
-                    var result = task.Result.ToList();
-                    result.ToList().ForEach(i => RecordVHPItems.Add(i));
+                    //var task = service.GetRecordVHPItemsByRecrodVHPIDAsync(model.ID);
+                    //RecordVHPItems.Clear();
+                    //var result = task.Result.ToList();
+                    //result.ToList().ForEach(i => RecordVHPItems.Add(i));
                 }
             }
         }
 
 
-        private void EmptyCurrentRecordVHPItem()
+        private void EmptyCurrentRecordVHP()
         {
             if (CurrentRecordVHP != null)
             {
-                var model = new DcRecordVHPItem();
+                var model = new DcRecordVHP();
                 model.ID = Guid.NewGuid();
-                model.RecordVHPID = CurrentRecordVHP.ID;
+                model.PlanVHPID = CurrentRecordVHP.ID;
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
                 model.State = PMSCommon.CommonState.Show.ToString();
@@ -123,9 +123,9 @@ namespace PMSDesktopClient.ViewModel
         {
             using (var service = new RecordVHPServiceClient())
             {
-                var result = service.GetTopRecordVHP();
-                RecordVHPs.Clear();
-                result.ToList().ForEach(r => RecordVHPs.Add(r));
+                //var result = service.GetTopRecordVHP();
+                //RecordVHPs.Clear();
+                //result.ToList().ForEach(r => RecordVHPs.Add(r));
 
                 CurrentDataGridSelectIndex = 0;
                 CurrentRecordVHP = RecordVHPs.FirstOrDefault();
@@ -148,15 +148,15 @@ namespace PMSDesktopClient.ViewModel
                     {
                         if (isNew)
                         {
-                            service.AddRecordVHPItem(CurrentRecordVHPItem);
+                            //service.AddRecordVHPItem(CurrentRecordVHPItem);
                         }
                         else
                         {
-                            service.UpdateReocrdVHPItem(CurrentRecordVHPItem);
+                            //service.UpdateReocrdVHPItem(CurrentRecordVHPItem);
                         }
 
                         LoadRecordVHPItemsByRecordVHP(CurrentRecordVHP);
-                        EmptyCurrentRecordVHPItem();
+                        EmptyCurrentRecordVHP();
                         NavigationService.ShowStateMessage("保存完毕");
                     }
                 }
@@ -168,13 +168,13 @@ namespace PMSDesktopClient.ViewModel
 
         }
 
-        private void ActionCopyFill(DcRecordVHPItem obj)
+        private void ActionCopyFill(DcRecordVHP obj)
         {
             if (obj != null)
             {
-                var model = new DcRecordVHPItem();
+                var model = new DcRecordVHP();
 
-                model.RecordVHPID = obj.RecordVHPID;
+                //model.RecordVHPID = obj.RecordVHPID;
                 model.ID = Guid.NewGuid();
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
@@ -201,12 +201,12 @@ namespace PMSDesktopClient.ViewModel
 
         #region Properties
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
-        public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
+        //public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
         public DcRecordVHP CurrentRecordVHP { get; set; }
 
-        private DcRecordVHPItem currentRecordVHPItem;
+        private DcRecordVHP currentRecordVHPItem;
 
-        public DcRecordVHPItem CurrentRecordVHPItem
+        public DcRecordVHP CurrentRecordVHPItem
         {
             get { return currentRecordVHPItem; }
             set
@@ -225,8 +225,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand Save { get; set; }
         public RelayCommand<DcRecordVHP> SelectionChanged { get; set; }
         public RelayCommand New { get; set; }
-        public RelayCommand<DcRecordVHPItem> EditItem { get; set; }
-        public RelayCommand<DcRecordVHPItem> CopyFill { get; set; }
+        public RelayCommand<DcRecordVHP> EditItem { get; set; }
+        public RelayCommand<DcRecordVHP> CopyFill { get; set; }
 
         public RelayCommand Chart { get; set; }
         #endregion
