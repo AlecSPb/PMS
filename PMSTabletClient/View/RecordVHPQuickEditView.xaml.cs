@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -27,12 +28,19 @@ namespace PMSTabletClient.View
         {
             InitializeComponent();
             Refresh();
-            //view = (ListCollectionView)CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
-            //view.SortDescriptions.Add(new SortDescription("CurrentTime", ListSortDirection.Descending));
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Elapsed += (s, e) =>
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    txtNow.Text = $"现在时间 {DateTime.Now.ToString("hh:mm:ss")}";
+                });
+            };
+            timer.Start();
         }
 
         public ICollectionView view { get; set; }
-
         public void Refresh()
         {
 

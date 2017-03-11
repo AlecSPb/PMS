@@ -19,16 +19,25 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{StaticResource strPageRecordVHPQuickEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
+        <Grid Grid.Row="1"  Background="{StaticResource BackgroundNavigateBar}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel  Orientation="Horizontal">
+                <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
+                <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
+                    <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                    <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                    <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+            <TextBlock x:Name="txtNow" Grid.Column="1" FontSize="30"  Foreground="White"
+                       Text="现在时间" Style="{StaticResource TextBlockBasic}"/>
+        </Grid>
+
         <DataGrid x:Name="dg" Grid.Row="2"
                 LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MissonWithPlans}">
