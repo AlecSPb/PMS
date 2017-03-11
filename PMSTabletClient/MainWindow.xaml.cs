@@ -16,6 +16,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
 using System.ComponentModel;
 using PMSCommon;
+using PMSTabletClient.ViewModel;
 
 namespace PMSTabletClient
 {
@@ -27,8 +28,12 @@ namespace PMSTabletClient
         public MainWindow()
         {
             InitializeComponent();
-
+            viewLocator = new ViewLocator();
+            viewModelLocator = new ViewModelLocator();
+            NavigateTo(viewLocator.Navigation);
         }
+        private ViewModelLocator viewModelLocator;
+        private ViewLocator viewLocator;
         protected override void OnClosing(CancelEventArgs e)
         {
             Messenger.Default.Unregister(this);

@@ -54,6 +54,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -83,6 +85,33 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Component\NavigationWizard.cs" />
+    <Compile Include="Helpers\MsgObject.cs" />
+    <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="Helpers\VToken.cs" />
+    <Compile Include="Service References\PMSMainService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PMSUserAccessService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\NavigationView.xaml.cs">
+      <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
+      <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordVHPView.xaml.cs">
+      <DependentUpon>RecordVHPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\RecordVHPVM.cs" />
+    <Compile Include="View\ViewLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -95,6 +124,34 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resource\CommonBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\Language\zh-cn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\Skins\Warm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resource\Styles\Tablet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\NavigationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordVHPQuickEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordVHPView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -115,24 +172,119 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PMSDesktopClient.PMSUserAccessService.DcUser.datasource" />
+    <None Include="Properties\DataSources\PMSDesktopClient.PMSUserAccessService.DcUserAccess.datasource" />
+    <None Include="Properties\DataSources\PMSDesktopClient.PMSUserAccessService.DcUserRole.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\PMSMainService\PMSService.wsdl" />
+    <None Include="Service References\PMSMainService\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDCompound.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDDeliveryAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDSupplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDVHPDevice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDVHPMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcBDVHPProcess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcMaterialNeed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcMaterialOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcMaterialOrderItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcMissonWithPlan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcPlanVHP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordBonding.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordBondingPlate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordBondingTarget.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordDeliveryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordDeMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordMachine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordMilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordTestResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordVHP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\PMSTabletClient.PMSUserAccessService.DcUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\PMSTabletClient.PMSUserAccessService.DcUserAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\PMSTabletClient.PMSUserAccessService.DcUserRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSUserAccessService\UserAccessService.wsdl" />
+    <None Include="Service References\PMSUserAccessService\UserAccessService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSUserAccessService\UserAccessService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSUserAccessService\UserAccessService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="Resource\Images\" />
-    <Folder Include="Resource\Language\" />
-    <Folder Include="Resource\Skins\" />
-    <Folder Include="Resource\Styles\" />
     <Folder Include="Services\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Documents\memo.txt" />
@@ -142,6 +294,43 @@
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PMSMainService\" />
+    <WCFMetadataStorage Include="Service References\PMSUserAccessService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\PMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\UserAccessService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSUserAccessService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

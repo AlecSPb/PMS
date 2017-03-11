@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="PMSTabletClient.View.RecordVHPView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:PMSTabletClient.ViewModel"
+             xmlns:local="clr-namespace:PMSDesktopClient.View"
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordVHP}">
+    <Grid Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource strPageRecordVHP}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <StackPanel Grid.Row="1"  Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
+            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource strbtnAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="{StaticResource strbtnQuick}" Style="{StaticResource ButtonBasic}" FontWeight="Bold" Foreground="Blue"
+                    Command="{Binding QuickEdit}" Width="120"/>
+            <!--图例-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource TextBlockBasic}"/>
+                <TextBlock Text="{StaticResource strTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource TextBlockBasic}"/>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <DataGrid x:Name="dg" SelectedIndex="0" LoadingRow="DataGrid_LoadingRow"
+                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MissonWithPlans}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Edit">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
+                                            Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <DataGridTextColumn Header="Device" ElementStyle="{StaticResource TextBlockDGCenter}"
+                                        Binding="{Binding VHPDeviceCode}"/>
+                    <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding CompositionStandard}"/>
+                    <DataGridTextColumn Header="MoldType" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding MoldType}"/>
+                    <DataGridTextColumn Header="MoldDiameter" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding MoldDiameter}"/>
+                    <DataGridTextColumn Header="PreTemperature" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding PreTemperature}"/>
+                    <DataGridTextColumn Header="PrePressure" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding PrePressure}"/>
+                    <DataGridTextColumn Header="Temperature" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Temperature}"/>
+                    <DataGridTextColumn Header="Pressure" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Pressure}"/>
+                    <DataGridTextColumn Header="Vaccum" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Vaccum}"/>
+                    <DataGridTextColumn Header="KeepTempTime" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding KeepTempTime}"/>
+                    <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Remark}"/>
+                    <DataGridTextColumn Header="Create Time" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding CreateTime}"/>
+                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Creator}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
+                             RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
+                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
+            <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}"
+                      ItemsSource="{Binding RecordVHPs}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="CurrentTime" ElementStyle="{StaticResource TextBlockDGBasic}" Width="150"
+                                        Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
+                    <DataGridTextColumn Header="PV1" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding PV1}"/>
+                    <DataGridTextColumn Header="PV2" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding PV2}"/>
+                    <DataGridTextColumn Header="PV3" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding PV3}"/>
+                    <DataGridTextColumn Header="SV" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding SV}"/>
+                    <DataGridTextColumn Header="Ton" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding Ton}"/>
+                    <DataGridTextColumn Header="Vaccum" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding Vaccum}"/>
+                    <DataGridTextColumn Header="Shift1" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding Shift1}"/>
+                    <DataGridTextColumn Header="Shift2" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding Shift2}"/>
+                    <DataGridTextColumn Header="Omega" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding Omega}"/>
+                    <DataGridTextColumn Header="WarterOut" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding WaterTemperatureOut}"/>
+                    <DataGridTextColumn Header="WarterIn" ElementStyle="{StaticResource TextBlockDGRight}"
+                                        Binding="{Binding WaterTemperatureIn}"/>
+                    <DataGridTextColumn Header="ExtraInformation" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding ExtraInformation}"/>
+                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                        Binding="{Binding Creator}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

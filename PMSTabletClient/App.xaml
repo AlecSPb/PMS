@@ -5,10 +5,12 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator" xmlns:vm="clr-namespace:PMSTabletClient.ViewModel" />
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Language/us-en.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Skin/Warm.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/WPFStyle46;component/Style/Tablet.xaml"/>
+                <ResourceDictionary Source="Resource/CommonBrushes.xaml"/>
+                <ResourceDictionary Source="Resource/Language/zh-cn.xaml"/>
+                <ResourceDictionary Source="Resource/Skins/Warm.xaml"/>
+                <ResourceDictionary Source="Resource/Styles/Tablet.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
