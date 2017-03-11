@@ -180,9 +180,6 @@
     <Compile Include="View\RecordMillingView.xaml.cs">
       <DependentUpon>RecordMillingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordVHPItemEditView.xaml.cs">
-      <DependentUpon>RecordVHPItemEditView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ViewLocator.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
@@ -213,7 +210,6 @@
     <Compile Include="ViewModel\RecordTestResultEditVM.cs" />
     <Compile Include="ViewModel\RecordTestResultSelectVM.cs" />
     <Compile Include="ViewModel\RecordTestResultVM.cs" />
-    <Compile Include="ViewModel\RecordVHPEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MaterialInventoryView.xaml.cs">
@@ -288,9 +284,6 @@
     </Compile>
     <Compile Include="View\MaterialNeedView.xaml.cs">
       <DependentUpon>MaterialNeedView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordVHPEditView.xaml.cs">
-      <DependentUpon>RecordVHPEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
       <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
@@ -471,14 +464,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\RecordTestResultView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RecordVHPItemEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordVHPEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

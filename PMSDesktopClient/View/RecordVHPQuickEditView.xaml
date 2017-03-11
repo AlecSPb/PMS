@@ -15,13 +15,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="150"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{StaticResource strPageRecordVHPQuickEditPage}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
-            <Button Content="{StaticResource strbtnChart}" Style="{StaticResource ButtonBasic}" Command="{Binding Chart}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>
@@ -31,8 +31,7 @@
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2"
                 LoadingRow="DataGrid_LoadingRow"
-                SelectedIndex="{Binding CurrentDataGridSelectIndex,Mode=OneWayToSource}"
-                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordVHPs}">
+                Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MissonWithPlans}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -70,7 +69,10 @@
                                         Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="3" Margin="5" DataContext="{Binding CurrentRecordVHPItem,Mode=TwoWay}">
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
+                             RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
+                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
+        <Grid Grid.Row="4" Margin="5" DataContext="{Binding CurrentRecordVHP,Mode=TwoWay}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -125,8 +127,8 @@
             <TextBox Text="{Binding ExtraInformation}" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch"
                              Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="11"/>
         </Grid>
-        <DataGrid Name="dgitem" Grid.Row="4" Style="{StaticResource DataGridBasic}"
-                  ItemsSource="{Binding RecordVHPItems}">
+        <DataGrid Name="dgitem" Grid.Row="5" Style="{StaticResource DataGridBasic}"
+                  ItemsSource="{Binding RecordVHPs}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Duplicate" >
                     <DataGridTemplateColumn.CellTemplate>

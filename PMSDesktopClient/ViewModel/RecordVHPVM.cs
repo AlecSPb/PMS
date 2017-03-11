@@ -29,8 +29,6 @@ namespace PMSDesktopClient.ViewModel
 
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcMissonWithPlan>(ActionEdit);
             QuickEdit = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
             SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
         }
@@ -77,7 +75,7 @@ namespace PMSDesktopClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 6;
             var service = new MissonServiceClient();
             RecordCount = service.GetMissonCountBySearch();
             ActionPaging();
@@ -149,10 +147,8 @@ namespace PMSDesktopClient.ViewModel
         #region Commands
         public RelayCommand GoToNavigation { get; set; }
         public RelayCommand All { get; set; }
-        public RelayCommand Add { get; set; }
 
         public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
-        public RelayCommand<DcMissonWithPlan> Edit { get; set; }
         public RelayCommand<DcMissonWithPlan> Doc { get; set; }
 
 

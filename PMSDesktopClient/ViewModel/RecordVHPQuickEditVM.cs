@@ -19,7 +19,8 @@ namespace PMSDesktopClient.ViewModel
             InitializeProperties();
             InitializeCommmands();
 
-            LoadRecordVHP();
+            SetPageParametersWhenConditionChange();
+
             EmptyCurrentRecordVHP();
         }
         private bool isNew;
@@ -28,8 +29,8 @@ namespace PMSDesktopClient.ViewModel
         {
             isNew = true;
             RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
-            //CurrentRecordVHPItem = new PMSMainService.DcRecordVHPItem();
-            //RecordVHPItems = new ObservableCollection<DcRecordVHPItem>();
+            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            CurrentRecordVHP = new DcRecordVHP();
         }
 
         private void InitializeCommmands()
@@ -40,16 +41,19 @@ namespace PMSDesktopClient.ViewModel
                 NavigationService.Refresh(VToken.RecordVHPRefresh);
             });
 
-            Refresh = new RelayCommand(() => LoadRecordVHP());
-            //CopyFill = new RelayCommand<DcRecordVHPItem>(ActionCopyFill);
+            Refresh = new RelayCommand(() => SetPageParametersWhenConditionChange());
+            CopyFill = new RelayCommand<DcRecordVHP>(ActionCopyFill);
             Save = new RelayCommand(ActionSave);
 
-            SelectionChanged = new RelayCommand<DcRecordVHP>(obj => { LoadRecordVHPItemsByRecordVHP(obj); });
+            SelectionChanged = new RelayCommand<DcMissonWithPlan>(obj => { ActionSectionChanged(obj); });
 
-            //EditItem = new RelayCommand<PMSMainService.DcRecordVHPItem>(ActionEditItem);
+            EditItem = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEditItem);
             New = new RelayCommand(ActionNew);
 
             Chart = new RelayCommand(ActionChart);
+
+
+            PageChanged = new RelayCommand(ActionPaging);
         }
 
         private void ActionChart()
@@ -68,28 +72,34 @@ namespace PMSDesktopClient.ViewModel
         {
             if (obj != null)
             {
-                CurrentRecordVHPItem = obj;
+                CurrentRecordVHP = obj;
                 isNew = false;
                 NavigationService.ShowStateMessage("请修改上方数据，然后保存，取消修改请点新建");
             }
         }
 
-        public void LoadRecordVHPItemsByRecordVHP(DcRecordVHP model)
+        public void ActionSectionChanged(DcMissonWithPlan model)
         {
             if (model != null)
             {
-                CurrentRecordVHP = model;
-                using (var service = new RecordVHPServiceClient())
-                {
-                    //这里使用异步操作
-                    //var task = service.GetRecordVHPItemsByRecrodVHPIDAsync(model.ID);
-                    //RecordVHPItems.Clear();
-                    //var result = task.Result.ToList();
-                    //result.ToList().ForEach(i => RecordVHPItems.Add(i));
-                }
+                CurrentMissonWithPlan = model;
+                CurrentRecordVHP.PlanVHPID = CurrentMissonWithPlan.PlanID;
+
+                ReLoadRecordVHPs();
             }
         }
 
+        private void ReLoadRecordVHPs()
+        {
+            using (var service = new RecordVHPServiceClient())
+            {
+                //这里使用异步操作
+                var task = service.GetRecordVHP(CurrentMissonWithPlan.PlanID);
+                RecordVHPs.Clear();
+                var result = task.ToList();
+                result.ToList().ForEach(i => RecordVHPs.Add(i));
+            }
+        }
 
         private void EmptyCurrentRecordVHP()
         {
@@ -97,15 +107,15 @@ namespace PMSDesktopClient.ViewModel
             {
                 var model = new DcRecordVHP();
                 model.ID = Guid.NewGuid();
-                model.PlanVHPID = CurrentRecordVHP.ID;
+                model.PlanVHPID = CurrentMissonWithPlan.PlanID;
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
                 model.State = PMSCommon.CommonState.Show.ToString();
-                model.PV1 = 0;
-                model.PV2 = 0;
-                model.PV3 = 0;
-                model.SV = 0;
-                model.Ton = 0;
+                model.PV1 = 10;
+                model.PV2 = 10;
+                model.PV3 = 10;
+                model.SV = 10;
+                model.Ton = 5;
                 model.Vaccum = 1E-3;
                 model.Shift1 = 0;
                 model.Shift2 = 0;
@@ -114,22 +124,8 @@ namespace PMSDesktopClient.ViewModel
                 model.WaterTemperatureOut = 0;
                 model.ExtraInformation = "";
                 isNew = true;
-                CurrentRecordVHPItem = model;
+                CurrentRecordVHP = model;
 
-            }
-        }
-
-        private void LoadRecordVHP()
-        {
-            using (var service = new RecordVHPServiceClient())
-            {
-                //var result = service.GetTopRecordVHP();
-                //RecordVHPs.Clear();
-                //result.ToList().ForEach(r => RecordVHPs.Add(r));
-
-                CurrentDataGridSelectIndex = 0;
-                CurrentRecordVHP = RecordVHPs.FirstOrDefault();
-                LoadRecordVHPItemsByRecordVHP(CurrentRecordVHP);
             }
         }
 
@@ -142,20 +138,20 @@ namespace PMSDesktopClient.ViewModel
             }
             try
             {
-                if (CurrentRecordVHPItem != null)
+                if (CurrentRecordVHP != null)
                 {
                     using (var service = new RecordVHPServiceClient())
                     {
                         if (isNew)
                         {
-                            //service.AddRecordVHPItem(CurrentRecordVHPItem);
+                            service.AddRecordVHP(CurrentRecordVHP);
                         }
                         else
                         {
-                            //service.UpdateReocrdVHPItem(CurrentRecordVHPItem);
+                            service.UpdateReocrdVHP(CurrentRecordVHP);
                         }
 
-                        LoadRecordVHPItemsByRecordVHP(CurrentRecordVHP);
+                        ReLoadRecordVHPs();
                         EmptyCurrentRecordVHP();
                         NavigationService.ShowStateMessage("保存完毕");
                     }
@@ -174,7 +170,7 @@ namespace PMSDesktopClient.ViewModel
             {
                 var model = new DcRecordVHP();
 
-                //model.RecordVHPID = obj.RecordVHPID;
+                model.PlanVHPID = obj.PlanVHPID;
                 model.ID = Guid.NewGuid();
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
@@ -193,37 +189,101 @@ namespace PMSDesktopClient.ViewModel
                 model.ExtraInformation = obj.ExtraInformation;
 
                 isNew = true;
-                CurrentRecordVHPItem = model;
+                CurrentRecordVHP = model;
                 NavigationService.ShowStateMessage("填充选定项完毕");
             }
         }
 
 
-        #region Properties
-        public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
-        //public ObservableCollection<DcRecordVHPItem> RecordVHPItems { get; set; }
-        public DcRecordVHP CurrentRecordVHP { get; set; }
-
-        private DcRecordVHP currentRecordVHPItem;
-
-        public DcRecordVHP CurrentRecordVHPItem
+        private void InitializeCommands()
         {
-            get { return currentRecordVHPItem; }
+            PageChanged = new RelayCommand(ActionPaging);
+        }
+
+        private void SetPageParametersWhenConditionChange()
+        {
+            PageIndex = 1;
+            PageSize = 6;
+            var service = new MissonServiceClient();
+            RecordCount = service.GetMissonCountBySearch();
+            ActionPaging();
+        }
+        /// <summary>
+        /// 分页动作的时候读入数据
+        /// </summary>
+        private void ActionPaging()
+        {
+            var service = new MissonWithPlanServiceClient();
+            int skip, take = 0;
+            skip = (PageIndex - 1) * PageSize;
+            take = PageSize;
+            var orders = service.GetMissonWithPlan(skip, take);
+            MissonWithPlans.Clear();
+            orders.ToList().ForEach(o => MissonWithPlans.Add(o));
+
+            CurrentMissonWithPlan = MissonWithPlans.FirstOrDefault();
+        }
+
+
+        #region PagingProperties
+        private int pageIndex;
+        public int PageIndex
+        {
+            get { return pageIndex; }
             set
             {
-                currentRecordVHPItem = value;
-                RaisePropertyChanged(nameof(CurrentRecordVHPItem));
+                pageIndex = value;
+                RaisePropertyChanged(nameof(PageIndex));
             }
         }
 
-        public int CurrentDataGridSelectIndex { get; set; }
+        private int pageSize;
+        public int PageSize
+        {
+            get { return pageSize; }
+            set
+            {
+                pageSize = value;
+                RaisePropertyChanged(nameof(PageSize));
+            }
+        }
+
+        private int recordCount;
+        public int RecordCount
+        {
+            get { return recordCount; }
+            set
+            {
+                recordCount = value;
+                RaisePropertyChanged(nameof(RecordCount));
+            }
+        }
+        public RelayCommand PageChanged { get; private set; }
+        #endregion
+        #region Properties
+        public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
+        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
+
+        public DcRecordVHP CurrentRecordVHP { get; set; }
+
+        private DcMissonWithPlan currentMissonWithPlan;
+
+        public DcMissonWithPlan CurrentMissonWithPlan
+        {
+            get { return currentMissonWithPlan; }
+            set
+            {
+                currentMissonWithPlan = value;
+                RaisePropertyChanged(nameof(CurrentMissonWithPlan));
+            }
+        }
         #endregion
 
         #region Commands
         public RelayCommand Refresh { get; set; }
         public RelayCommand GiveUp { get; set; }
         public RelayCommand Save { get; set; }
-        public RelayCommand<DcRecordVHP> SelectionChanged { get; set; }
+        public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
         public RelayCommand New { get; set; }
         public RelayCommand<DcRecordVHP> EditItem { get; set; }
         public RelayCommand<DcRecordVHP> CopyFill { get; set; }

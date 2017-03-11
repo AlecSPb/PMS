@@ -17,8 +17,6 @@ namespace PMSDesktopClient
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<RecordVHPView>();
-            SimpleIoc.Default.Register<RecordVHPEditView>();
-            SimpleIoc.Default.Register<RecordVHPItemEditView>();
 
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
@@ -32,14 +30,6 @@ namespace PMSDesktopClient
         public RecordVHPView RecordVHP
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }
-        }
-        public RecordVHPEditView RecordVHPEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPEditView>(); }
-        }
-        public RecordVHPItemEditView RecordVHPItemEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPItemEditView>(); }
         }
 
         public PlanSelectView PlanSelect

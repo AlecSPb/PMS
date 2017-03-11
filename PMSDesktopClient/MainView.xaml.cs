@@ -103,12 +103,6 @@ namespace PMSDesktopClient
                     NavigateTo(planselect2);
                     break;
 
-                case VToken.RecordVHPEdit:
-                    var recordvhpeditview = views.RecordVHPEdit;
-                    recordvhpeditview.DataContext = new RecordVHPEditVM(msg.MsgModel);
-                    NavigateTo(recordvhpeditview);
-                    break;
-
                 case VToken.RecordVHPQuickEdit:
                     NavigateTo(views.RecordVHPQuickEdit);
                     break;
