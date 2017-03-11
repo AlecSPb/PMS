@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!--AppName-->
-    <sys:String x:Key="strAppName">生产管理系统平板版本</sys:String>
+    <sys:String x:Key="strAppName">生产管理系统平板版本-早期测试版</sys:String>
     <sys:String x:Key="strWelcome">欢迎</sys:String>
 
     <!--Navigation-->
@@ -121,4 +121,5 @@
     <sys:String x:Key="strCompleted">完成</sys:String>
     <sys:String x:Key="strPaused">暂停</sys:String>
     <sys:String x:Key="strEmergency">紧急</sys:String>
-</ResourceDictionary>
+    
+    </ResourceDictionary>

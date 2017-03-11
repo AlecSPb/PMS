@@ -55,33 +55,33 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>-->
-                    <DataGridTextColumn Header="PlanDate" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="计划日期" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                    <DataGridTextColumn Header="Device" ElementStyle="{StaticResource TextBlockDGCenter}"
+                    <DataGridTextColumn Header="设备" ElementStyle="{StaticResource TextBlockDGCenter}"
                                         Binding="{Binding VHPDeviceCode}"/>
-                    <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="成分" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding CompositionStandard}"/>
-                    <DataGridTextColumn Header="MoldType" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="模具类型" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding MoldType}"/>
-                    <DataGridTextColumn Header="MoldDiameter" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="模具直径" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding MoldDiameter}"/>
-                    <DataGridTextColumn Header="PreTemperature" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="预压温度" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PreTemperature}"/>
-                    <DataGridTextColumn Header="PrePressure" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="预压压力" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding PrePressure}"/>
-                    <DataGridTextColumn Header="Temperature" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="温度" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Temperature}"/>
-                    <DataGridTextColumn Header="Pressure" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="压力" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Pressure}"/>
-                    <DataGridTextColumn Header="Vaccum" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="真空" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Vaccum}"/>
-                    <DataGridTextColumn Header="KeepTempTime" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="保温保压时间" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding KeepTempTime}"/>
-                    <DataGridTextColumn Header="Remark" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="备注" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Remark}"/>
-                    <DataGridTextColumn Header="Create Time" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="创建时间" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
-                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="创建者" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
             </DataGrid>
@@ -91,7 +91,7 @@
             <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}"
                       ItemsSource="{Binding RecordVHPs}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="CurrentTime" ElementStyle="{StaticResource TextBlockDGBasic}" Width="150"
+                    <DataGridTextColumn Header="记录时间" ElementStyle="{StaticResource TextBlockDGBasic}" Width="150"
                                         Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
                     <DataGridTextColumn Header="PV1" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding PV1}"/>
@@ -101,23 +101,23 @@
                                         Binding="{Binding PV3}"/>
                     <DataGridTextColumn Header="SV" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding SV}"/>
-                    <DataGridTextColumn Header="Ton" ElementStyle="{StaticResource TextBlockDGRight}"
+                    <DataGridTextColumn Header="压力" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Ton}"/>
-                    <DataGridTextColumn Header="Vaccum" ElementStyle="{StaticResource TextBlockDGRight}"
+                    <DataGridTextColumn Header="真空" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Vaccum}"/>
-                    <DataGridTextColumn Header="Shift1" ElementStyle="{StaticResource TextBlockDGRight}"
+                    <DataGridTextColumn Header="位移1" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Shift1}"/>
-                    <DataGridTextColumn Header="Shift2" ElementStyle="{StaticResource TextBlockDGRight}"
+                    <DataGridTextColumn Header="位移2" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Shift2}"/>
                     <DataGridTextColumn Header="Omega" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding Omega}"/>
-                    <DataGridTextColumn Header="WarterOut" ElementStyle="{StaticResource TextBlockDGRight}"
+                    <DataGridTextColumn Header="出水温" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding WaterTemperatureOut}"/>
-                    <DataGridTextColumn Header="WarterIn" ElementStyle="{StaticResource TextBlockDGRight}"
+                    <DataGridTextColumn Header="入水温" ElementStyle="{StaticResource TextBlockDGRight}"
                                         Binding="{Binding WaterTemperatureIn}"/>
-                    <DataGridTextColumn Header="ExtraInformation" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="其他信息" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding ExtraInformation}"/>
-                    <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                    <DataGridTextColumn Header="创建者" ElementStyle="{StaticResource TextBlockDGBasic}"
                                         Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
             </DataGrid>
