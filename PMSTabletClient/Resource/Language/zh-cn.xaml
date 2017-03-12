@@ -62,7 +62,7 @@
     <sys:String x:Key="strPageRecordMillingEdit">制粉记录编辑</sys:String>
     <sys:String x:Key="strPageRecordMachine">加工记录</sys:String>
     <sys:String x:Key="strPageRecordMachineEdit">加工记录编辑</sys:String>
-    <sys:String x:Key="strPageRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="strPageRecordVHP">热压记录浏览</sys:String>
     <sys:String x:Key="strPageRecordVHPEditPage">热压记录编辑</sys:String>
     <sys:String x:Key="strPageRecordVHPQuickEditPage">热压记录快速录入</sys:String>
     <sys:String x:Key="strPageRecordBlank">取模记录</sys:String>
