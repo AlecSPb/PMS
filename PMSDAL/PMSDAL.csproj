@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201703102336580_deleterecordvhp.Designer.cs">
       <DependentUpon>201703102336580_deleterecordvhp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703120028015_changename.cs" />
+    <Compile Include="Migrations\201703120028015_changename.Designer.cs">
+      <DependentUpon>201703120028015_changename.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -231,7 +235,7 @@
     <Compile Include="Entities\UserRole.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="PMSDbContext.cs" />
-    <Compile Include="Entities\RecordTestResult.cs" />
+    <Compile Include="Entities\RecordTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedInitializer.cs" />
   </ItemGroup>
@@ -358,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703102336580_deleterecordvhp.resx">
       <DependentUpon>201703102336580_deleterecordvhp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703120028015_changename.resx">
+      <DependentUpon>201703120028015_changename.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

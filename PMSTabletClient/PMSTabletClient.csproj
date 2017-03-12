@@ -100,10 +100,36 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
+    <Compile Include="ViewModel\PlanSelectBase.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordTestVM.cs" />
+    <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
+    <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
+    <Compile Include="ViewModel\RecordDeliveryVM.cs" />
+    <Compile Include="ViewModel\RecordTestEditVM.cs" />
+    <Compile Include="ViewModel\RecordTestSelectVM.cs" />
+    <Compile Include="ViewModel\RecordTestVM.cs" />
     <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordDeliveryEditView.xaml.cs">
+      <DependentUpon>RecordDeliveryEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordDeliveryItemEditView.xaml.cs">
+      <DependentUpon>RecordDeliveryItemEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordDeliveryView.xaml.cs">
+      <DependentUpon>RecordDeliveryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordTestResultEditView.xaml.cs">
+      <DependentUpon>RecordTestResultEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordTestResultSelectView.xaml.cs">
+      <DependentUpon>RecordTestResultSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordTestResultView.xaml.cs">
+      <DependentUpon>RecordTestResultView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
       <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
@@ -142,6 +168,30 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\NavigationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordDeliveryEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordDeliveryItemEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordDeliveryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordTestResultEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordTestResultSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordTestResultView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

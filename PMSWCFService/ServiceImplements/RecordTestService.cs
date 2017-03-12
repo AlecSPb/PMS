@@ -10,30 +10,30 @@ using PMSCommon;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IRecordTestResultService
+    public partial class PMSService : IRecordTestService
     {
-        public int AddRecordTestResult(DcRecordTestResult model)
+        public int AddRecordTest(DcRecordTest model)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTestResult, RecordTestResult>());
-                var product = Mapper.Map<RecordTestResult>(model);
-                dc.RecordTestResults.Add(product);
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
+                var product = Mapper.Map<RecordTest>(model);
+                dc.RecordTests.Add(product);
                 result = dc.SaveChanges();
                 return result;
             }
         }
 
-        public int DeleteRecordTestResult(Guid id)
+        public int DeleteRecordTest(Guid id)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                var product = dc.RecordTestResults.Find(id);
+                var product = dc.RecordTests.Find(id);
                 if (product != null)
                 {
-                    dc.RecordTestResults.Remove(product);
+                    dc.RecordTests.Remove(product);
                     result = dc.SaveChanges();
                 }
 
@@ -41,14 +41,14 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordTestResult> GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd)
+        public List<DcRecordTest> GetRecordTestBySearchInPage(int skip, int take, string productId, string compositionStd)
         {
             using (var dc = new PMSDbContext())
             {
-                var result = dc.RecordTestResults.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
+                var result = dc.RecordTests.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
                   && p.State != OrderState.Deleted.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
-                Mapper.Initialize(cfg => cfg.CreateMap<RecordTestResult, DcRecordTestResult>());
-                var products = Mapper.Map<List<RecordTestResult>, List<DcRecordTestResult>>(result);
+                Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
+                var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(result);
                 return products;
             }
         }
@@ -57,18 +57,18 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.RecordTestResults.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
+                return dc.RecordTests.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
                   && p.State != OrderState.Deleted.ToString()).Count();
             }
         }
 
-        public int UpdateRecordTestResult(DcRecordTestResult model)
+        public int UpdateRecordTestResult(DcRecordTest model)
         {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTestResult, RecordTestResult>());
-                var product = Mapper.Map<RecordTestResult>(model);
+                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
+                var product = Mapper.Map<RecordTest>(model);
                 dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
                 result = dc.SaveChanges();
                 return result;

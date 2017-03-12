@@ -9,7 +9,7 @@ namespace PMSDAL
     /// <summary>
     /// 靶材产品
     /// </summary>
-    public class RecordTestResult
+    public class RecordTest
     {
         public Guid ID { get; set; }
         public string TestType { get; set; }
