@@ -134,7 +134,7 @@ namespace PMSDesktopClient.ViewModel
         {
             //传递RecordDelivery到RecordTestSelect
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.RecordTestResultSelect;
+            msg.MsgToken = VToken.RecordTestSelect;
             msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
             NavigationService.GoTo(msg);
         }

@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSDesktopClient.PMSMainService;
+using PMSTabletClient.PMSMainService;
 using System.Collections.ObjectModel;
 
-namespace PMSDesktopClient.ViewModel
+namespace PMSTabletClient.ViewModel
 {
     public class RecordTestResultEditVM : ViewModelBase
     {
         private bool isNew;
         public RecordTestResultEditVM(ModelObject model)
         {
-            CurrentRecordTestResult = model.Model as DcRecordTestResult;
+            CurrentRecordTestResult = model.Model as DcRecordTest;
             isNew = model.IsNew;
             States = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.TestResultState));
@@ -33,21 +33,21 @@ namespace PMSDesktopClient.ViewModel
 
         private void ActionSave()
         {
-            var service = new RecordTestResultServiceClient();
+            var service = new RecordTestServiceClient();
             if (isNew)
             {
-                service.AddRecordTestResult(CurrentRecordTestResult);
+                service.AddRecordTest(CurrentRecordTestResult);
             }
             else
             {
-                service.UpdateRecordTestResult(CurrentRecordTestResult);
+                service.UpdateRecordTest(CurrentRecordTestResult);
             }
 
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTestResult });
         }
         public ObservableCollection<string> TestTypes { get; set; }
         public ObservableCollection<string> States { get; set; }
-        public DcRecordTestResult CurrentRecordTestResult { get; set; }
+        public DcRecordTest CurrentRecordTestResult { get; set; }
 
         public RelayCommand GiveUp { get; private set; }
         public RelayCommand Save { get; private set; }

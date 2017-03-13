@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
-using PMSDesktopClient.PMSMainService;
+using PMSTabletClient.PMSMainService;
 using GalaSoft.MvvmLight.Messaging;
-using bt = BarTender;
+//using bt = BarTender;
 
 
 
-namespace PMSDesktopClient.ViewModel
+namespace PMSTabletClient.ViewModel
 {
     public class RecordDeliveryVM : ViewModelBase
     {
@@ -73,52 +73,52 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-        private bt.Application btApp;
-        private bt.Format btnFormat;
+        //private bt.Application btApp;
+        //private bt.Format btnFormat;
         private void ActionDoc(DcRecordDelivery obj)
         {
 
-            string title = obj.Country;
+            //string title = obj.Country;
 
 
-            StringBuilder sb = new StringBuilder();
-            DcRecordDeliveryItem[] items;
-            using (var service = new RecordDeliveryServiceClient())
-            {
-                items = service.GetRecordDeliveryItemByRecordDeliveryID(obj.ID);
-            }
-            foreach (var item in items)
-            {
-                sb.Append(item.Composition);
-                sb.Append("-");
-                sb.AppendLine(item.ProductID);
-            }
+            //StringBuilder sb = new StringBuilder();
+            //DcRecordDeliveryItem[] items;
+            //using (var service = new RecordDeliveryServiceClient())
+            //{
+            //    items = service.GetRecordDeliveryItemByRecordDeliveryID(obj.ID);
+            //}
+            //foreach (var item in items)
+            //{
+            //    sb.Append(item.Composition);
+            //    sb.Append("-");
+            //    sb.AppendLine(item.ProductID);
+            //}
 
-            string output = sb.ToString();
+            //string output = sb.ToString();
 
-            try
-            {
-                btApp = new bt.Application();
-                string templateAddress = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "10070.btw");
-                if (!System.IO.File.Exists(templateAddress))
-                {
-                    return;
-                }
-                btnFormat = btApp.Formats.Open(templateAddress, false, "");
-                btnFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
-                btnFormat.PrintSetup.NumberSerializedLabels = 1;
+            //try
+            //{
+            //    btApp = new bt.Application();
+            //    string templateAddress = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "10070.btw");
+            //    if (!System.IO.File.Exists(templateAddress))
+            //    {
+            //        return;
+            //    }
+            //    btnFormat = btApp.Formats.Open(templateAddress, false, "");
+            //    btnFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+            //    btnFormat.PrintSetup.NumberSerializedLabels = 1;
 
-                btnFormat.SetNamedSubStringValue("Title", title);
-                btnFormat.SetNamedSubStringValue("Content", output);
+            //    btnFormat.SetNamedSubStringValue("Title", title);
+            //    btnFormat.SetNamedSubStringValue("Content", output);
 
-                btnFormat.PrintOut(true, true);
-                btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
-                btApp.Quit(bt.BtSaveOptions.btSaveChanges);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //    btnFormat.PrintOut(true, true);
+            //    btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
+            //    btApp.Quit(bt.BtSaveOptions.btSaveChanges);
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
         }
 
         private void ActionEditItem(DcRecordDeliveryItem obj)
@@ -156,15 +156,15 @@ namespace PMSDesktopClient.ViewModel
             model.Address = "Address Here";
             model.Country = "USA";
 
-            MsgObject msg = new PMSDesktopClient.MsgObject();
+            MsgObject msg = new PMSTabletClient.MsgObject();
             msg.MsgToken = VToken.RecordDeliveryEdit;
-            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = model };
+            msg.MsgModel = new PMSTabletClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
 
         private void ActionEdit(DcRecordDelivery obj)
         {
-            MsgObject msg = new PMSDesktopClient.MsgObject();
+            MsgObject msg = new PMSTabletClient.MsgObject();
             msg.MsgToken = VToken.RecordDeliveryEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);

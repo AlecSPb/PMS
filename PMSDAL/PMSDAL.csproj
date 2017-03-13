@@ -212,6 +212,14 @@
     <Compile Include="Migrations\201703120028015_changename.Designer.cs">
       <DependentUpon>201703120028015_changename.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703130601345_how.cs" />
+    <Compile Include="Migrations\201703130601345_how.Designer.cs">
+      <DependentUpon>201703130601345_how.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703130606102_how1.cs" />
+    <Compile Include="Migrations\201703130606102_how1.Designer.cs">
+      <DependentUpon>201703130606102_how1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -365,6 +373,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703120028015_changename.resx">
       <DependentUpon>201703120028015_changename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703130601345_how.resx">
+      <DependentUpon>201703130601345_how.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703130606102_how1.resx">
+      <DependentUpon>201703130606102_how1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

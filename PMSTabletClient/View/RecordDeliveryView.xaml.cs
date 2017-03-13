@@ -12,11 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSDesktopClient.PMSMainService;
+using PMSTabletClient.PMSMainService;
 using PMSCommon;
-using PMSDesktopClient.ViewModel;
+using PMSTabletClient.ViewModel;
 
-namespace PMSDesktopClient.View
+namespace PMSTabletClient.View
 {
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑

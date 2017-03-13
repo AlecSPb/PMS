@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:PMSDesktopClient"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:PMSTabletClient"
                            x:Key="Locator" />
   </Application.Resources>
   

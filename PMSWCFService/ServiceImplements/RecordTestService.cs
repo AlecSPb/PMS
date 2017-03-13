@@ -53,7 +53,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetRecordTestResultCountBySearchInPage(string productId, string compositionStd)
+        public int GetRecordTestCountBySearchInPage(string productId, string compositionStd)
         {
             using (var dc = new PMSDbContext())
             {
@@ -62,7 +62,7 @@ namespace PMSWCFService
             }
         }
 
-        public int UpdateRecordTestResult(DcRecordTest model)
+        public int UpdateRecordTest(DcRecordTest model)
         {
             using (var dc = new PMSDbContext())
             {

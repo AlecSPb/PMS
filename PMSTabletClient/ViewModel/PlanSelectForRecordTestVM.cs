@@ -13,11 +13,11 @@ namespace PMSTabletClient.ViewModel
 {
     public class PlanSelectForRecordTestResultVM : PlanSelectBase
     {
-        private DcRecordTestResult testresult;
+        private DcRecordTest testresult;
 
         public PlanSelectForRecordTestResultVM()
         {
-            testresult = new PMSMainService.DcRecordTestResult();
+            testresult = new PMSMainService.DcRecordTest();
             testresult.ID = Guid.NewGuid();
             testresult.CreateTime = DateTime.Now;
             testresult.Creator = (App.Current as App).CurrentUser.UserName;

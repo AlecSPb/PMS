@@ -196,42 +196,42 @@ namespace PMSDesktopClient
             }
         }
 
-        private RecordTestResultView recordTestResult;
-        public RecordTestResultView RecordTestResult
+        private RecordTestView recordTest;
+        public RecordTestView RecordTest
         {
             get
             {
-                if (recordTestResult == null)
+                if (recordTest == null)
                 {
-                    recordTestResult = new RecordTestResultView();
+                    recordTest = new RecordTestView();
                 }
-                return recordTestResult;
+                return recordTest;
             }
         }
 
-        private RecordTestResultEditView recordTestResultEdit;
-        public RecordTestResultEditView RecordTestResultEdit
+        private RecordTestEditView recordTestEdit;
+        public RecordTestEditView RecordTestEdit
         {
             get
             {
-                if (recordTestResultEdit == null)
+                if (recordTestEdit == null)
                 {
-                    recordTestResultEdit = new RecordTestResultEditView();
+                    recordTestEdit = new RecordTestEditView();
                 }
-                return recordTestResultEdit;
+                return recordTestEdit;
             }
         }
 
-        private RecordTestResultSelectView recordTestResultSelect;
-        public RecordTestResultSelectView RecordTestResultSelect
+        private RecordTestSelectView recordTestSelect;
+        public RecordTestSelectView RecordTestSelect
         {
             get
             {
-                if (recordTestResultSelect == null)
+                if (recordTestSelect == null)
                 {
-                    recordTestResultSelect = new RecordTestResultSelectView();
+                    recordTestSelect = new RecordTestSelectView();
                 }
-                return recordTestResultSelect;
+                return recordTestSelect;
             }
         }
 

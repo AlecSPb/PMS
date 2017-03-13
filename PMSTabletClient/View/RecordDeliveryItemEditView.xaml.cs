@@ -1,4 +1,4 @@
-﻿using PMSDesktopClient.PMSMainService;
+﻿using PMSTabletClient.PMSMainService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSDesktopClient.View
+namespace PMSTabletClient.View
 {
     /// <summary>
     /// MaterialOrderEditView.xaml 的交互逻辑

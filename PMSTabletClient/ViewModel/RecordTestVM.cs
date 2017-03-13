@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSDesktopClient.PMSMainService;
+using PMSTabletClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
-namespace PMSDesktopClient.ViewModel
+namespace PMSTabletClient.ViewModel
 {
     public class RecordTestResultVM : ViewModelBase
     {
@@ -37,8 +37,8 @@ namespace PMSDesktopClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordTestResult>(ActionEdit);
-            Doc = new RelayCommand<DcRecordTestResult>(ActionDoc);
+            Edit = new RelayCommand<DcRecordTest>(ActionEdit);
+            Doc = new RelayCommand<DcRecordTest>(ActionDoc);
         }
 
         private bool CanSearch()
@@ -57,16 +57,16 @@ namespace PMSDesktopClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionEdit(DcRecordTestResult obj)
+        private void ActionEdit(DcRecordTest obj)
         {
-            MsgObject msg = new PMSDesktopClient.MsgObject();
+            MsgObject msg = new PMSTabletClient.MsgObject();
             msg.MsgToken = VToken.RecordTestResultEdit;
-            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = false, Model = obj };
+            msg.MsgModel = new PMSTabletClient.ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
         }
 
-        private void ActionDoc(DcRecordTestResult obj)
+        private void ActionDoc(DcRecordTest obj)
         {
             //TODO:这里添加生成doc的代码
         }
@@ -78,7 +78,7 @@ namespace PMSDesktopClient.ViewModel
 
         private void InitializeProperties()
         {
-            RecordProducts = new ObservableCollection<DcRecordTestResult>();
+            RecordProducts = new ObservableCollection<DcRecordTest>();
             SearchCompositonStd = searchProductID = "";
 
         }
@@ -86,19 +86,19 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new RecordTestResultServiceClient();
-            RecordCount = service.GetRecordTestResultCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            var service = new RecordTestServiceClient();
+            RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordTestResultServiceClient();
+            var service = new RecordTestServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordTestResultBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+            var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
             RecordProducts.Clear();
-            orders.ToList<DcRecordTestResult>().ForEach(o => RecordProducts.Add(o));
+            orders.ToList<DcRecordTest>().ForEach(o => RecordProducts.Add(o));
         }
         #region Commands
         public RelayCommand GoToNavigation { get; set; }
@@ -106,8 +106,8 @@ namespace PMSDesktopClient.ViewModel
         public RelayCommand All { get; set; }
         public RelayCommand Report { get; set; }
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordTestResult> Edit { get; set; }
-        public RelayCommand<DcRecordTestResult> Doc { get; set; }
+        public RelayCommand<DcRecordTest> Edit { get; set; }
+        public RelayCommand<DcRecordTest> Doc { get; set; }
         public RelayCommand PageChanged { get; private set; }
         #endregion
         #region PagingProperties
@@ -170,7 +170,7 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcRecordTestResult> RecordProducts { get; set; }
+        public ObservableCollection<DcRecordTest> RecordProducts { get; set; }
         #endregion
     }
 }

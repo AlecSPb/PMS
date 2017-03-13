@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSDesktopClient.PMSMainService;
+using PMSTabletClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
-namespace PMSDesktopClient.ViewModel
+namespace PMSTabletClient.ViewModel
 {
     public class RecordTestResultSelectVM : ViewModelBase
     {
@@ -38,13 +38,13 @@ namespace PMSDesktopClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Select = new RelayCommand<DcRecordTestResult>(ActionSelect);
+            Select = new RelayCommand<DcRecordTest>(ActionSelect);
             Empty = new RelayCommand(ActionEmpty);
         }
 
         private void ActionEmpty()
         {
-            MsgObject msg = new PMSDesktopClient.MsgObject();
+            MsgObject msg = new PMSTabletClient.MsgObject();
 
             item.ProductType = PMSCommon.ProductType.Target.ToString();
             item.ProductID = "";
@@ -57,7 +57,7 @@ namespace PMSDesktopClient.ViewModel
             item.Remark = "";
 
             msg.MsgToken = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = item };
+            msg.MsgModel = new ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }
 
@@ -77,9 +77,9 @@ namespace PMSDesktopClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionSelect(DcRecordTestResult obj)
+        private void ActionSelect(DcRecordTest obj)
         {
-            MsgObject msg = new PMSDesktopClient.MsgObject();
+            MsgObject msg = new PMSTabletClient.MsgObject();
 
             item.ProductType = PMSCommon.ProductType.Target.ToString();
             item.ProductID = obj.ProductID;
@@ -92,13 +92,13 @@ namespace PMSDesktopClient.ViewModel
             item.Remark = "";
 
             msg.MsgToken = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new PMSDesktopClient.ModelObject() { IsNew = true, Model = item };
+            msg.MsgModel = new PMSTabletClient.ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }
 
         private void InitializeProperties()
         {
-            RecordProducts = new ObservableCollection<DcRecordTestResult>();
+            RecordProducts = new ObservableCollection<DcRecordTest>();
             SearchCompositonStd = searchProductID = "";
 
         }
@@ -106,25 +106,25 @@ namespace PMSDesktopClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new RecordTestResultServiceClient();
-            RecordCount = service.GetRecordTestResultCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            var service = new RecordTestServiceClient();
+            RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordTestResultServiceClient();
+            var service = new RecordTestServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordTestResultBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+            var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
             RecordProducts.Clear();
-            orders.ToList<DcRecordTestResult>().ForEach(o => RecordProducts.Add(o));
+            orders.ToList<DcRecordTest>().ForEach(o => RecordProducts.Add(o));
         }
         #region Commands
         public RelayCommand GiveUp { get; set; }
         public RelayCommand Search { get; set; }
         public RelayCommand All { get; set; }
-        public RelayCommand<DcRecordTestResult> Select { get; set; }
+        public RelayCommand<DcRecordTest> Select { get; set; }
 
         public RelayCommand Empty { get; set; }
         public RelayCommand PageChanged { get; private set; }
@@ -189,7 +189,7 @@ namespace PMSDesktopClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcRecordTestResult> RecordProducts { get; set; }
+        public ObservableCollection<DcRecordTest> RecordProducts { get; set; }
         #endregion
     }
 }

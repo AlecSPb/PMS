@@ -390,7 +390,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordTestResultBySearchInPage">
+  <xs:element name="GetRecordTestBySearchInPage">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="skip" type="xs:int" />
@@ -400,14 +400,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordTestResultBySearchInPageResponse">
+  <xs:element name="GetRecordTestBySearchInPageResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordTestResultBySearchInPageResult" nillable="true" type="q27:ArrayOfDcRecordTestResult" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordTestBySearchInPageResult" nillable="true" type="q27:ArrayOfDcRecordTest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordTestResultCountBySearchInPage">
+  <xs:element name="GetRecordTestCountBySearchInPage">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="productId" nillable="true" type="xs:string" />
@@ -415,52 +415,52 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordTestResultCountBySearchInPageResponse">
+  <xs:element name="GetRecordTestCountBySearchInPageResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetRecordTestResultCountBySearchInPageResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetRecordTestCountBySearchInPageResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordTestResult">
+  <xs:element name="AddRecordTest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q28:DcRecordTestResult" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q28:DcRecordTest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordTestResultResponse">
+  <xs:element name="AddRecordTestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AddRecordTestResultResult" type="xs:int" />
+        <xs:element minOccurs="0" name="AddRecordTestResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateRecordTestResult">
+  <xs:element name="UpdateRecordTest">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q29:DcRecordTestResult" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q29:DcRecordTest" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateRecordTestResultResponse">
+  <xs:element name="UpdateRecordTestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateRecordTestResultResult" type="xs:int" />
+        <xs:element minOccurs="0" name="UpdateRecordTestResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordTestResult">
+  <xs:element name="DeleteRecordTest">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q30:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordTestResultResponse">
+  <xs:element name="DeleteRecordTestResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="DeleteRecordTestResultResult" type="xs:int" />
+        <xs:element minOccurs="0" name="DeleteRecordTestResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

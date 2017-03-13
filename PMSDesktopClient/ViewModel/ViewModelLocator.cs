@@ -53,11 +53,11 @@ namespace PMSDesktopClient.ViewModel
             SimpleIoc.Default.Register<OrderSelectMaterialNeedVM>();
 
             SimpleIoc.Default.Register<RecordVHPVM>();
-            SimpleIoc.Default.Register<RecordTestResultVM>();
+            SimpleIoc.Default.Register<RecordTestVM>();
             SimpleIoc.Default.Register<RecordDeliveryVM>();
             SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
 
-            SimpleIoc.Default.Register<PlanSelectForRecordTestResultVM>();
+            SimpleIoc.Default.Register<PlanSelectForRecordTestVM>();
             SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
 
 
@@ -109,18 +109,18 @@ namespace PMSDesktopClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
         }
-        public RecordTestResultVM RecordTestResult
+        public RecordTestVM RecordTestResult
         {
-            get { return SimpleIoc.Default.GetInstance<RecordTestResultVM>(); }
+            get { return SimpleIoc.Default.GetInstance<RecordTestVM>(); }
         }
         public RecordDeliveryVM RecordDelivery
         {
             get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
         }
 
-        public PlanSelectForRecordTestResultVM PlanSelectForRecordTestResult
+        public PlanSelectForRecordTestVM PlanSelectForRecordTestResult
         {
-            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestResultVM>(); }
+            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestVM>(); }
         }
 
         public PlanSelectForRecordVHPVM PlanSelectForRecordVHP

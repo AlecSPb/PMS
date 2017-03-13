@@ -71,7 +71,7 @@ namespace PMSDesktopClient
                     NavigateTo(views.Plan);
                     break;
                 case VToken.RecordTestResult:
-                    NavigateTo(views.RecordTestResult);
+                    NavigateTo(views.RecordTest);
                     break;
                 case VToken.RecordDelivery:
                     NavigateTo(views.RecordDelivery);
@@ -86,13 +86,13 @@ namespace PMSDesktopClient
                 case VToken.MaterialOrder:
                     NavigateTo(views.MaterialOrder);
                     break;
-                case VToken.RecordTestResultSelect:
-                    var viewRecordTestResultSelect = views.RecordTestResultSelect;
-                    viewRecordTestResultSelect.DataContext = new RecordTestResultSelectVM(msg.MsgModel);
-                    NavigateTo(viewRecordTestResultSelect);
+                case VToken.RecordTestSelect:
+                    var viewRecordTestSelect = views.RecordTestSelect;
+                    viewRecordTestSelect.DataContext = new RecordTestSelectVM(msg.MsgModel);
+                    NavigateTo(viewRecordTestSelect);
                     break;
 
-                case VToken.PlanSelectForTestResult:
+                case VToken.PlanSelectForTest:
                     var planselect1 = views.PlanSelect;
                     planselect1.DataContext = viewmodels.PlanSelectForRecordTestResult;
                     NavigateTo(planselect1);
@@ -153,9 +153,9 @@ namespace PMSDesktopClient
                     NavigateTo(selectView2);
                     break;
 
-                case VToken.RecordTestResultEdit:
-                    var view8 = views.RecordTestResultEdit;
-                    view8.DataContext = new RecordTestResultEditVM(msg.MsgModel);
+                case VToken.RecordTestEdit:
+                    var view8 = views.RecordTestEdit;
+                    view8.DataContext = new RecordTestEditVM(msg.MsgModel);
                     NavigateTo(view8);
                     break;
                 case VToken.RecordDeliveryEdit:

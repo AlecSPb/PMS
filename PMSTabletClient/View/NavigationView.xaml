@@ -9,7 +9,7 @@
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
     <UserControl.Background>
-        <!--<ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/qianyuqianxun.jpg"
+        <!--<ImageBrush ImageSource="/PMSTabletClient;component/Resource/Images/qianyuqianxun.jpg"
          TileMode="FlipX"/>-->
         <StaticResource ResourceKey="BackgroundWindow"/>
     </UserControl.Background>

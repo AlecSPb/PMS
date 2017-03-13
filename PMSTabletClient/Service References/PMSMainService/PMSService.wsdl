@@ -169,35 +169,35 @@
   <wsdl:message name="IMissonService_GetMissonCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonCountBySearchResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_GetRecordTestResultBySearchInPage_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestResultBySearchInPage" />
+  <wsdl:message name="IRecordTestService_GetRecordTestBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestBySearchInPage" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_GetRecordTestResultBySearchInPage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestResultBySearchInPageResponse" />
+  <wsdl:message name="IRecordTestService_GetRecordTestBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestBySearchInPageResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_GetRecordTestResultCountBySearchInPage_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestResultCountBySearchInPage" />
+  <wsdl:message name="IRecordTestService_GetRecordTestCountBySearchInPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearchInPage" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_GetRecordTestResultCountBySearchInPage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetRecordTestResultCountBySearchInPageResponse" />
+  <wsdl:message name="IRecordTestService_GetRecordTestCountBySearchInPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestCountBySearchInPageResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_AddRecordTestResult_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddRecordTestResult" />
+  <wsdl:message name="IRecordTestService_AddRecordTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordTest" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_AddRecordTestResult_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddRecordTestResultResponse" />
+  <wsdl:message name="IRecordTestService_AddRecordTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordTestResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_UpdateRecordTestResult_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateRecordTestResult" />
+  <wsdl:message name="IRecordTestService_UpdateRecordTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordTest" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_UpdateRecordTestResult_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateRecordTestResultResponse" />
+  <wsdl:message name="IRecordTestService_UpdateRecordTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordTestResponse" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_DeleteRecordTestResult_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRecordTestResult" />
+  <wsdl:message name="IRecordTestService_DeleteRecordTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordTest" />
   </wsdl:message>
-  <wsdl:message name="IRecordTestResultService_DeleteRecordTestResult_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRecordTestResultResponse" />
+  <wsdl:message name="IRecordTestService_DeleteRecordTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecordTestResponse" />
   </wsdl:message>
   <wsdl:message name="IMissonWithPlanService_GetMissonWithPlan_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonWithPlan" />
@@ -761,26 +761,26 @@
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse" message="tns:IMissonService_GetMissonCountBySearch_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:portType name="IRecordTestResultService">
-    <wsdl:operation name="GetRecordTestResultBySearchInPage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage" message="tns:IRecordTestResultService_GetRecordTestResultBySearchInPage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResponse" message="tns:IRecordTestResultService_GetRecordTestResultBySearchInPage_OutputMessage" />
+  <wsdl:portType name="IRecordTestService">
+    <wsdl:operation name="GetRecordTestBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPage" message="tns:IRecordTestService_GetRecordTestBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPageResponse" message="tns:IRecordTestService_GetRecordTestBySearchInPage_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetRecordTestResultCountBySearchInPage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPage" message="tns:IRecordTestResultService_GetRecordTestResultCountBySearchInPage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPageResponse" message="tns:IRecordTestResultService_GetRecordTestResultCountBySearchInPage_OutputMessage" />
+    <wsdl:operation name="GetRecordTestCountBySearchInPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage" message="tns:IRecordTestService_GetRecordTestCountBySearchInPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse" message="tns:IRecordTestService_GetRecordTestCountBySearchInPage_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddRecordTestResult">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult" message="tns:IRecordTestResultService_AddRecordTestResult_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse" message="tns:IRecordTestResultService_AddRecordTestResult_OutputMessage" />
+    <wsdl:operation name="AddRecordTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/AddRecordTest" message="tns:IRecordTestService_AddRecordTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/AddRecordTestResponse" message="tns:IRecordTestService_AddRecordTest_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="UpdateRecordTestResult">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult" message="tns:IRecordTestResultService_UpdateRecordTestResult_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse" message="tns:IRecordTestResultService_UpdateRecordTestResult_OutputMessage" />
+    <wsdl:operation name="UpdateRecordTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/UpdateRecordTest" message="tns:IRecordTestService_UpdateRecordTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse" message="tns:IRecordTestService_UpdateRecordTest_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteRecordTestResult">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult" message="tns:IRecordTestResultService_DeleteRecordTestResult_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResultResponse" message="tns:IRecordTestResultService_DeleteRecordTestResult_OutputMessage" />
+    <wsdl:operation name="DeleteRecordTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/DeleteRecordTest" message="tns:IRecordTestService_DeleteRecordTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse" message="tns:IRecordTestService_DeleteRecordTest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMissonWithPlanService">
@@ -1365,10 +1365,10 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="recordtestresult" type="tns:IRecordTestResultService">
+  <wsdl:binding name="recordtest" type="tns:IRecordTestService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetRecordTestResultBySearchInPage">
-      <soap:operation soapAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage" style="document" />
+    <wsdl:operation name="GetRecordTestBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1376,8 +1376,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetRecordTestResultCountBySearchInPage">
-      <soap:operation soapAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPage" style="document" />
+    <wsdl:operation name="GetRecordTestCountBySearchInPage">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1385,8 +1385,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddRecordTestResult">
-      <soap:operation soapAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResult" style="document" />
+    <wsdl:operation name="AddRecordTest">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/AddRecordTest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1394,8 +1394,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UpdateRecordTestResult">
-      <soap:operation soapAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult" style="document" />
+    <wsdl:operation name="UpdateRecordTest">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/UpdateRecordTest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1403,8 +1403,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteRecordTestResult">
-      <soap:operation soapAction="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult" style="document" />
+    <wsdl:operation name="DeleteRecordTest">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/DeleteRecordTest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2137,7 +2137,7 @@
     <wsdl:port name="misson" binding="tns:misson">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
-    <wsdl:port name="recordtestresult" binding="tns:recordtestresult">
+    <wsdl:port name="recordtest" binding="tns:recordtest">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="missonwithplan" binding="tns:missonwithplan">

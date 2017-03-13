@@ -201,14 +201,14 @@
     <Compile Include="ViewModel\PlanSelectForRecordMillingVM.cs" />
     <Compile Include="ViewModel\PlanSelectBase.cs" />
     <Compile Include="ViewModel\PlanSelectForRecordVHPVM.cs" />
-    <Compile Include="ViewModel\PlanSelectForRecordTestResultVM.cs" />
+    <Compile Include="ViewModel\PlanSelectForRecordTestVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryVM.cs" />
-    <Compile Include="ViewModel\RecordTestResultEditVM.cs" />
-    <Compile Include="ViewModel\RecordTestResultSelectVM.cs" />
-    <Compile Include="ViewModel\RecordTestResultVM.cs" />
+    <Compile Include="ViewModel\RecordTestEditVM.cs" />
+    <Compile Include="ViewModel\RecordTestSelectVM.cs" />
+    <Compile Include="ViewModel\RecordTestVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\MaterialInventoryView.xaml.cs">
@@ -272,14 +272,14 @@
     <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestResultEditView.xaml.cs">
-      <DependentUpon>RecordTestResultEditView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestEditView.xaml.cs">
+      <DependentUpon>RecordTestEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestResultSelectView.xaml.cs">
-      <DependentUpon>RecordTestResultSelectView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestSelectView.xaml.cs">
+      <DependentUpon>RecordTestSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestResultView.xaml.cs">
-      <DependentUpon>RecordTestResultView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestView.xaml.cs">
+      <DependentUpon>RecordTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialNeedView.xaml.cs">
       <DependentUpon>MaterialNeedView.xaml</DependentUpon>
@@ -442,7 +442,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RecordTestResultEditView.xaml">
+    <Page Include="View\RecordTestEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -458,11 +458,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RecordTestResultSelectView.xaml">
+    <Page Include="View\RecordTestSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\RecordTestResultView.xaml">
+    <Page Include="View\RecordTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -587,7 +587,7 @@
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordMilling.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordTestResult.datasource">
+    <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordTest.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSDesktopClient.PMSMainService.DcRecordVHP.datasource">

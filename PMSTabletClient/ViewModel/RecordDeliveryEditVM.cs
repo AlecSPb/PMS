@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSDesktopClient.PMSMainService;
+using PMSTabletClient.PMSMainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
-namespace PMSDesktopClient.ViewModel
+namespace PMSTabletClient.ViewModel
 {
     public class RecordDeliveryEditVM : ViewModelBase
     {

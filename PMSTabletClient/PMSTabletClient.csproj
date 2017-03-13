@@ -122,14 +122,14 @@
     <Compile Include="View\RecordDeliveryView.xaml.cs">
       <DependentUpon>RecordDeliveryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestResultEditView.xaml.cs">
-      <DependentUpon>RecordTestResultEditView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestEditView.xaml.cs">
+      <DependentUpon>RecordTestEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestResultSelectView.xaml.cs">
-      <DependentUpon>RecordTestResultSelectView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestSelectView.xaml.cs">
+      <DependentUpon>RecordTestSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestResultView.xaml.cs">
-      <DependentUpon>RecordTestResultView.xaml</DependentUpon>
+    <Compile Include="View\RecordTestView.xaml.cs">
+      <DependentUpon>RecordTestView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
       <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
@@ -183,15 +183,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\RecordTestResultEditView.xaml">
+    <Page Include="View\RecordTestEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\RecordTestResultSelectView.xaml">
+    <Page Include="View\RecordTestSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\RecordTestResultView.xaml">
+    <Page Include="View\RecordTestView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -304,7 +304,7 @@
     <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordMilling.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordTestResult.datasource">
+    <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordTest.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSTabletClient.PMSMainService.DcRecordVHP.datasource">
