@@ -21,6 +21,9 @@ namespace PMSTabletClient
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
 
             //SimpleIoc.Default.Register<PlanSelectView>();
+            SimpleIoc.Default.Register<RecordTestView>();
+            SimpleIoc.Default.Register<RecordTestSelectView>();
+            SimpleIoc.Default.Register<RecordTestEditView>();
 
 
         }
@@ -191,44 +194,32 @@ namespace PMSTabletClient
         //    }
         //}
 
-        //private RecordTestResultView recordTestResult;
-        //public RecordTestResultView RecordTestResult
-        //{
-        //    get
-        //    {
-        //        if (recordTestResult == null)
-        //        {
-        //            recordTestResult = new RecordTestResultView();
-        //        }
-        //        return recordTestResult;
-        //    }
-        //}
+        private RecordTestView recordTest;
+        public RecordTestView RecordTest
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordTestView>();
+            }
+        }
 
-        //private RecordTestResultEditView recordTestResultEdit;
-        //public RecordTestResultEditView RecordTestResultEdit
-        //{
-        //    get
-        //    {
-        //        if (recordTestResultEdit == null)
-        //        {
-        //            recordTestResultEdit = new RecordTestResultEditView();
-        //        }
-        //        return recordTestResultEdit;
-        //    }
-        //}
+        private RecordTestEditView recordTestEdit;
+        public RecordTestEditView RecordTestEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordTestEditView>();
+            }
+        }
 
-        //private RecordTestResultSelectView recordTestResultSelect;
-        //public RecordTestResultSelectView RecordTestResultSelect
-        //{
-        //    get
-        //    {
-        //        if (recordTestResultSelect == null)
-        //        {
-        //            recordTestResultSelect = new RecordTestResultSelectView();
-        //        }
-        //        return recordTestResultSelect;
-        //    }
-        //}
+        private RecordTestSelectView recordTestSelect;
+        public RecordTestSelectView RecordTestSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordTestSelectView>();
+            }
+        }
 
         //private MaterialOrderItemEditView materialOrderItemEdit;
         //public MaterialOrderItemEditView MaterialOrderItemEdit

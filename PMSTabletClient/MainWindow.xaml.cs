@@ -79,13 +79,17 @@ namespace PMSTabletClient
                     break;
                 case VToken.PlanEdit:
                     break;
-                case VToken.PlanSelectForTestResult:
+                case VToken.PlanSelectForTest:
                     break;
-                case VToken.RecordTestResult:
+                case VToken.RecordTest:
+                    NavigateTo(views.RecordTest);
                     break;
-                case VToken.RecordTestResultEdit:
+                case VToken.RecordTestEdit:
+                    var recordtesteditview = views.RecordTestEdit;
+                    recordtesteditview.DataContext = new RecordTestEditVM(obj.MsgModel);
+                    NavigateTo(views.RecordTestEdit);
                     break;
-                case VToken.RecordTestResultSelect:
+                case VToken.RecordTestSelect:
                     break;
                 case VToken.RecordDelivery:
                     break;
@@ -136,7 +140,7 @@ namespace PMSTabletClient
                     break;
                 case VToken.MaterialOrderRefresh:
                     break;
-                case VToken.RecordTestResultRefresh:
+                case VToken.RecordTestRefresh:
                     break;
                 case VToken.RecordDeliveryRefresh:
                     break;

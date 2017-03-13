@@ -11,10 +11,10 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSTabletClient.ViewModel
 {
-    public class RecordTestResultSelectVM : ViewModelBase
+    public class RecordTestSelectVM : ViewModelBase
     {
         private DcRecordDeliveryItem item;
-        public RecordTestResultSelectVM(ModelObject model)
+        public RecordTestSelectVM(ModelObject model)
         {
             item = new PMSMainService.DcRecordDeliveryItem();
             item.ID = Guid.NewGuid();

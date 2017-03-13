@@ -11,11 +11,11 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSTabletClient.ViewModel
 {
-    public class RecordTestResultVM : ViewModelBase
+    public class RecordTestVM : ViewModelBase
     {
-        public RecordTestResultVM()
+        public RecordTestVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.RecordTestResultRefresh, ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.RecordTestRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -60,7 +60,7 @@ namespace PMSTabletClient.ViewModel
         private void ActionEdit(DcRecordTest obj)
         {
             MsgObject msg = new PMSTabletClient.MsgObject();
-            msg.MsgToken = VToken.RecordTestResultEdit;
+            msg.MsgToken = VToken.RecordTestEdit;
             msg.MsgModel = new PMSTabletClient.ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
@@ -73,7 +73,7 @@ namespace PMSTabletClient.ViewModel
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelectForTestResult });
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelectForTest });
         }
 
         private void InitializeProperties()
