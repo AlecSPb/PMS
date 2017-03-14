@@ -1,4 +1,4 @@
-﻿#define IsDesktopEdtion
+﻿//#define IsDesktopEdtion
 
 
 

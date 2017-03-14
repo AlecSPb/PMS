@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="MainTablet" Height="300" Width="300">
+        Title="{StaticResource strAppNameTablet}" Loaded="Window_Loaded"
+        MinHeight="400" MinWidth="600" WindowState="Maximized">
+    <Window.Resources>
+        <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ContentControl x:Name="mainArea" Grid.Row="1"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BackgroundStatusBar}">
+            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource TextBlockBasic}"/>
+        </StackPanel>
     </Grid>
 </Window>

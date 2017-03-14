@@ -7,7 +7,6 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Locator.xaml"/>
-                
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml" />
                 <ResourceDictionary Source="Resource/Language/zh-cn.xaml" />
                 <ResourceDictionary Source="Resource/Skins/Warm.xaml" />

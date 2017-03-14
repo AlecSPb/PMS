@@ -59,10 +59,10 @@ namespace PMSClient
         /// <summary>
         /// Main Navigation Part
         /// </summary>
-        /// <param name="obj"></param>
-        private void ActionNavigate(MsgObject obj)
+        /// <param name="model"></param>
+        private void ActionNavigate(MsgObject model)
         {
-            switch (obj.MsgToken)
+            switch (model.MsgToken)
             {
                 case VToken.Navigation:
                     GoTo(_viewLocator.Navigation);
@@ -73,7 +73,7 @@ namespace PMSClient
                     GoTo(_viewLocator.Order);
                     break;
                 case VToken.OrderEdit:
-                    _viewLocator.OrderEdit.DataContext = new OrderEditVM(obj.MsgModel);
+                    _viewLocator.OrderEdit.DataContext = new OrderEditVM(model.MsgModel);
                     GoTo(_viewLocator.OrderEdit);
                     break;
                 case VToken.OrderRefresh:
@@ -86,6 +86,8 @@ namespace PMSClient
                 case VToken.OrderCheckRefresh:
                     break;
                 case VToken.OrderCheckEdit:
+                    _viewLocator.OrderCheckEdit.DataContext = new OrderCheckEditVM(model.MsgModel);
+                    GoTo(_viewLocator.OrderCheckEdit);
                     break;
                 case VToken.Misson:
                     GoTo(_viewLocator.Misson);
@@ -96,13 +98,17 @@ namespace PMSClient
                     GoTo(_viewLocator.Plan);
                     break;
                 case VToken.PlanEdit:
+                    _viewLocator.PlanEdit.DataContext = new PlanEditVM(model.MsgModel);
                     break;
                 case VToken.PlanSelectForTest:
+                    //GoTo(_viewLocator.PlanSelect);
                     break;
                 case VToken.RecordTest:
                     GoTo(_viewLocator.RecordTest);
                     break;
                 case VToken.RecordTestEdit:
+                    _viewLocator.RecordTestEdit.DataContext = new RecordTestEditVM(model.MsgModel);
+                    GoTo(_viewLocator.RecordTestEdit);
                     break;
                 case VToken.RecordTestSelect:
                     break;
@@ -110,10 +116,14 @@ namespace PMSClient
                     GoTo(_viewLocator.RecordDelivery);
                     break;
                 case VToken.RecordDeliveryEdit:
+                    _viewLocator.RecordDeliveryEdit.DataContext = new RecordDeliveryEditVM(model.MsgModel);
+                    GoTo(_viewLocator.RecordDeliveryEdit);
                     break;
                 case VToken.RecordDeliveryItem:
                     break;
                 case VToken.RecordDeliveryItemEdit:
+                    _viewLocator.RecordDeliveryItemEdit.DataContext = new RecordDeliveryItemEditVM(model.MsgModel);
+                    GoTo(_viewLocator.RecordDeliveryItemEdit);
                     break;
                 case VToken.RecordMilling:
                     break;
@@ -147,8 +157,11 @@ namespace PMSClient
                     GoTo(_viewLocator.MaterialNeed);
                     break;
                 case VToken.MaterialNeedEdit:
+                    _viewLocator.MaterialNeedEdit.DataContext = new MaterialNeedEditVM(model.MsgModel);
+                    GoTo(_viewLocator.MaterialNeedEdit);
                     break;
                 case VToken.MaterialNeedSelect:
+                    GoTo(_viewLocator.MaterialNeedSelect);
                     break;
                 case VToken.MaterialInventory:
                     break;

@@ -147,7 +147,7 @@ namespace PMSClient.ViewForDesktop
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestView>(); }
         }
-        public RecordTestEditView RecordEditTest
+        public RecordTestEditView RecordTestEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestEditView>(); }
         }

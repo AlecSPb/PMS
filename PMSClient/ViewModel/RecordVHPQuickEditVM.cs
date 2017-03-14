@@ -93,7 +93,7 @@ namespace PMSClient.ViewModel
         {
             using (var service = new RecordVHPServiceClient())
             {
-                //这里使用异步操作
+                //TODO:这里以后使用异步操作
                 var task = service.GetRecordVHP(CurrentMissonWithPlan.PlanID);
                 RecordVHPs.Clear();
                 var result = task.ToList();
@@ -111,10 +111,10 @@ namespace PMSClient.ViewModel
                 model.CurrentTime = DateTime.Now;
                 model.Creator = (App.Current as App).CurrentUser.UserName;
                 model.State = PMSCommon.CommonState.Show.ToString();
-                model.PV1 = 10;
-                model.PV2 = 10;
-                model.PV3 = 10;
-                model.SV = 10;
+                model.PV1 = 0;
+                model.PV2 = 0;
+                model.PV3 = 0;
+                model.SV = 0;
                 model.Ton = 5;
                 model.Vaccum = 1E-3;
                 model.Shift1 = 0;
@@ -132,10 +132,6 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (CurrentRecordVHP == null)
-            {
-                return;
-            }
             try
             {
                 if (CurrentRecordVHP != null)
