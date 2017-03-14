@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd119187-9893-443b-b51e-28bc039da86c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/UserAccessService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserAccessService.wsdl" MetadataType="Wsdl" ID="2c9e6df1-fc7b-4fbd-a030-4d2d746e18cd" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?wsdl" />
+    <MetadataFile FileName="UserAccessService.xsd" MetadataType="Schema" ID="4944c2d9-924d-4214-a316-f3d6a7166f1a" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserAccessService1.xsd" MetadataType="Schema" ID="cf005fb2-6171-462c-a7dd-b33f966d36bf" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserAccessService2.xsd" MetadataType="Schema" ID="04e5805d-6c93-40d3-a4c0-76eedb3b1897" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserAccessService.disco" MetadataType="Disco" ID="a5d23a06-d260-44b2-b1b3-36c8784eecaa" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
