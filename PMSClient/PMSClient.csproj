@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PMSClient.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
@@ -91,6 +94,7 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="LocalService\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Service References\MainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

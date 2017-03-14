@@ -194,32 +194,32 @@ namespace PMSClient.ViewForTablet
         //    }
         //}
 
-        private RecordTestView recordTest;
-        public RecordTestView RecordTest
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<RecordTestView>();
-            }
-        }
+        //private RecordTestView recordTest;
+        //public RecordTestView RecordTest
+        //{
+        //    get
+        //    {
+        //        return SimpleIoc.Default.GetInstance<RecordTestView>();
+        //    }
+        //}
 
-        private RecordTestEditView recordTestEdit;
-        public RecordTestEditView RecordTestEdit
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<RecordTestEditView>();
-            }
-        }
+        //private RecordTestEditView recordTestEdit;
+        //public RecordTestEditView RecordTestEdit
+        //{
+        //    get
+        //    {
+        //        return SimpleIoc.Default.GetInstance<RecordTestEditView>();
+        //    }
+        //}
 
-        private RecordTestSelectView recordTestSelect;
-        public RecordTestSelectView RecordTestSelect
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<RecordTestSelectView>();
-            }
-        }
+        //private RecordTestSelectView recordTestSelect;
+        //public RecordTestSelectView RecordTestSelect
+        //{
+        //    get
+        //    {
+        //        return SimpleIoc.Default.GetInstance<RecordTestSelectView>();
+        //    }
+        //}
 
         //private MaterialOrderItemEditView materialOrderItemEdit;
         //public MaterialOrderItemEditView MaterialOrderItemEdit

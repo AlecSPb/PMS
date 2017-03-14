@@ -71,12 +71,6 @@
     <Compile Include="ViewModel\ViewModelLocator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PMSClientService\PMSClientService.csproj">
-      <Project>{3ee7f261-a591-4722-b145-d470a6a2322e}</Project>
-      <Name>PMSClientService</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
