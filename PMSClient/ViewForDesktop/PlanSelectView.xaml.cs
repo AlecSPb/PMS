@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using PMSDesktopClient.PMSMainService;
 using PMSDesktopClient.ViewModel;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// PlanView.xaml 的交互逻辑

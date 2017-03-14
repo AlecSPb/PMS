@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 
-namespace PMSTabletClient.View
+namespace PMSClient.ViewForTablet
 {
     /// <summary>
     /// ProductEditView.xaml 的交互逻辑

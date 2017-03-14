@@ -16,7 +16,7 @@ using PMSDesktopClient.PMSMainService;
 using PMSCommon;
 using PMSDesktopClient.ViewModel;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑

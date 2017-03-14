@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// ProductEditView.xaml 的交互逻辑

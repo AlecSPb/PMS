@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using PMSTabletClient.View;
+using PMSClient.ViewForTablet;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Ioc;
 

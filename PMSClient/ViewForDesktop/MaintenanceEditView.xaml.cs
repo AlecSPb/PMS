@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// MaintenanceEditView.xaml 的交互逻辑

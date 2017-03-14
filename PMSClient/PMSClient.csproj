@@ -51,6 +51,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WPFControls">
+      <HintPath>..\..\WpfControls\WpfControls\bin\Debug\WPFControls.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -184,7 +187,7 @@
     <Compile Include="ViewForDesktop\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\ViewLocator.cs" />
+    <Compile Include="ViewForDesktop\DesktopViewLocator.cs" />
     <Compile Include="ViewForTablet\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
@@ -212,7 +215,7 @@
     <Compile Include="ViewForTablet\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForTablet\ViewLocator.cs" />
+    <Compile Include="ViewForTablet\TabletViewLocator.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
     <Compile Include="ViewModel\MaterialNeedVM.cs" />

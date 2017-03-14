@@ -16,7 +16,7 @@ using PMSTabletClient.PMSMainService;
 using PMSCommon;
 using PMSTabletClient.ViewModel;
 
-namespace PMSTabletClient.View
+namespace PMSClient.ViewForTablet
 {
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 using PMSDesktopClient.PMSMainService;
 using PMSCommon;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// OrderView.xaml 的交互逻辑

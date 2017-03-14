@@ -16,7 +16,7 @@ using PMSDesktopClient.ViewModel;
 using PMSDesktopClient.PMSMainService;
 using PMSCommon;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// OderCheckView.xaml 的交互逻辑

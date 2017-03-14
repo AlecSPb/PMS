@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSDesktopClient.ViewModel;
 
-namespace PMSDesktopClient.View
+namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// InventoryView.xaml 的交互逻辑

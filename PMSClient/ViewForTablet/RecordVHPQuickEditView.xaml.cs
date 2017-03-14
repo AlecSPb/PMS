@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSTabletClient.View
+namespace PMSClient.ViewForTablet
 {
     /// <summary>
     /// RecordVHPQuickEdit.xaml 的交互逻辑
