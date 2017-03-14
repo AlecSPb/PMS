@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSDesktopClient.PMSMainService;
-using PMSDesktopClient.ViewModel;
+using PMSClient.MainService;
+using PMSClient.ViewModel;
 
 namespace PMSClient.ViewForDesktop
 {

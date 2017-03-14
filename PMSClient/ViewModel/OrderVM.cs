@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using System.Windows;
 
@@ -58,7 +58,7 @@ namespace PMSClient.ViewModel
                 NavigationService.GoTo(msg);
             });
 
-            Duplicate = new RelayCommand<PMSMainService.DcOrder>(ActionDuplicate);
+            Duplicate = new RelayCommand<MainService.DcOrder>(ActionDuplicate);
 
         }
 

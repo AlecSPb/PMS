@@ -7,9 +7,8 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
-using PMSClient.View;
 
 namespace PMSClient.ViewModel
 {
@@ -46,7 +45,7 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
 
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<PMSMainService.DcMaterialNeed>(ActionEdit);
+            Edit = new RelayCommand<MainService.DcMaterialNeed>(ActionEdit);
 
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
@@ -20,7 +20,7 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP }));
-            Select = new RelayCommand<PMSMainService.DcMissonWithPlan>(ActionSelect);
+            Select = new RelayCommand<MainService.DcMissonWithPlan>(ActionSelect);
         }
 
         private void ActionSelect(DcMissonWithPlan obj)

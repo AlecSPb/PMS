@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
         public OrderSelectMaterialNeedVM()
         {
 
-            SelectOrder = new RelayCommand<PMSMainService.DcOrder>(ActionSelectOrder);
+            SelectOrder = new RelayCommand<MainService.DcOrder>(ActionSelectOrder);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialNeed }));
         }
         private void ActionSelectOrder(DcOrder order)

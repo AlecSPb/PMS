@@ -8,11 +8,11 @@ using PMSClient.ViewForTablet;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Ioc;
 
-namespace PMSTabletClient
+namespace PMSClient.ViewForTablet
 {
-    public class ViewLocator
+    public class TabletViewLocator
     {
-        public ViewLocator()
+        public TabletViewLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 

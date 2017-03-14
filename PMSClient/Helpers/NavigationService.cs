@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 
-namespace PMSDesktopClient
+namespace PMSClient
 {
     public static class NavigationService
     {

@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
@@ -39,11 +39,11 @@ namespace PMSClient.ViewModel
 
 
             PageChanged = new RelayCommand(ActionPaging);
-            AddNewPlan = new RelayCommand<PMSMainService.DcOrder>(ActionAddNewPlan);
+            AddNewPlan = new RelayCommand<MainService.DcOrder>(ActionAddNewPlan);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan);
-            DuplicatePlan = new RelayCommand<PMSMainService.DcPlanVHP>(ActionDuplicatePlan);
+            DuplicatePlan = new RelayCommand<MainService.DcPlanVHP>(ActionDuplicatePlan);
 
-            SelectionChanged = new RelayCommand<PMSMainService.DcOrder>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<MainService.DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
         }
 

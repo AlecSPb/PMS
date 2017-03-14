@@ -7,12 +7,13 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using DocGenerator;
 using gn = DocGenerator.DocModels;
 using AutoMapper;
 using System.Windows;
+using PMSClient;
 
 namespace PMSClient.ViewModel
 {
@@ -54,15 +55,15 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Doc = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionGenerateDoc);
+            Doc = new RelayCommand<MainService.DcMaterialOrder>(ActionGenerateDoc);
 
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionEdit);
+            Edit = new RelayCommand<MainService.DcMaterialOrder>(ActionEdit);
 
-            AddItem = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionAddItem);
-            EditItem = new RelayCommand<PMSMainService.DcMaterialOrderItem>(ActionEditItem);
+            AddItem = new RelayCommand<MainService.DcMaterialOrder>(ActionAddItem);
+            EditItem = new RelayCommand<MainService.DcMaterialOrderItem>(ActionEditItem);
 
-            SelectionChanged = new RelayCommand<PMSMainService.DcMaterialOrder>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<MainService.DcMaterialOrder>(ActionSelectionChanged);
 
         }
 

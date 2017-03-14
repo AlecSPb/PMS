@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PMSTabletClient.PMSMainService;
+using PMSClient.MainService;
 using PMSCommon;
-using PMSTabletClient.ViewModel;
+using PMSClient.ViewModel;
 
 namespace PMSClient.ViewForTablet
 {

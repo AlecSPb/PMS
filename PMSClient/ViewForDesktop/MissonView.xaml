@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
-             xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200">

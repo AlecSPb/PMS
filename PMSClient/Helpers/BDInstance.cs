@@ -1,11 +1,11 @@
-﻿using PMSDesktopClient.PMSMainService;
+﻿using PMSClient.MainService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSDesktopClient
+namespace PMSClient
 {
     /// <summary>
     /// 生成ComboBox用的基本数据源

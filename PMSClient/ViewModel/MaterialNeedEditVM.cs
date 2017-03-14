@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel

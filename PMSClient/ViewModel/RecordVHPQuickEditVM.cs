@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 using System.Windows.Input;
@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             isNew = true;
-            RecordVHPs = new ObservableCollection<PMSMainService.DcRecordVHP>();
+            RecordVHPs = new ObservableCollection<MainService.DcRecordVHP>();
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
             CurrentRecordVHP = new DcRecordVHP();
         }
@@ -47,7 +47,7 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcMissonWithPlan>(obj => { ActionSectionChanged(obj); });
 
-            EditItem = new RelayCommand<PMSMainService.DcRecordVHP>(ActionEditItem);
+            EditItem = new RelayCommand<MainService.DcRecordVHP>(ActionEditItem);
             New = new RelayCommand(ActionNew);
 
             Chart = new RelayCommand(ActionChart);

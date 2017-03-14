@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSDesktopClient.PMSMainService;
+using PMSClient.MainService;
+using PMSClient;
 
-namespace PMSDesktopClient
+namespace PMSClient
 {
     public static class EmptyModel
     {
@@ -124,7 +125,7 @@ namespace PMSDesktopClient
 
         public static DcMaterialOrderItem GetMaterialOrderItemBy(DcMaterialOrder order)
         {
-            var item = new PMSMainService.DcMaterialOrderItem();
+            var item = new MainService.DcMaterialOrderItem();
             item.ID = Guid.NewGuid();
             item.MaterialOrderID = order.ID;
             item.State = PMSCommon.SimpleState.UnDeleted.ToString();

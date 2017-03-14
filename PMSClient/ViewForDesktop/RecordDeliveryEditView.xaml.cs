@@ -1,4 +1,4 @@
-﻿using PMSDesktopClient.PMSMainService;
+﻿using PMSClient.MainService;
 using System;
 using System.Collections.Generic;
 using System.Linq;

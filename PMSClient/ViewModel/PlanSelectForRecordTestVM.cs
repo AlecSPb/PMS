@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
 
         public PlanSelectForRecordTestVM()
         {
-            testresult = new PMSMainService.DcRecordTest();
+            testresult = new MainService.DcRecordTest();
             testresult.ID = Guid.NewGuid();
             testresult.CreateTime = DateTime.Now;
             testresult.Creator = (App.Current as App).CurrentUser.UserName;
@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
         private void IntitializeCommands()
         {
             GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.RecordTestResult}));
-            Select = new RelayCommand<PMSMainService.DcMissonWithPlan>(ActionSelect);
+            Select = new RelayCommand<MainService.DcMissonWithPlan>(ActionSelect);
         }
 
     }

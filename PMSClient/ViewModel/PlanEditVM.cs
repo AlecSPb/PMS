@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
@@ -25,7 +25,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            Molds = new ObservableCollection<PMSMainService.DcBDVHPMold>();
+            Molds = new ObservableCollection<DcBDVHPMold>();
             var service = new VHPMoldServiceClient();
             var molds = service.GetVHPMold();
             molds.ToList().ForEach(m => Molds.Add(m));
@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
             devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 
-            Compounds = new ObservableCollection<PMSMainService.DcBDCompound>();
+            Compounds = new ObservableCollection<MainService.DcBDCompound>();
             var service4 = new CompoundServiceClient();
             var compounds = service4.GetAllCompounds();
             compounds.ToList().ForEach(c => Compounds.Add(c));

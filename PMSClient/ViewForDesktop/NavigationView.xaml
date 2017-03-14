@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
-             xmlns:vm="clr-namespace:PMSDesktopClient.ViewModel"
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
     <UserControl.Background>
-        <!--<ImageBrush ImageSource="/PMSDesktopClient;component/Resource/Images/qianyuqianxun.jpg"
+        <!--<ImageBrush ImageSource="/PMSClient;component/Resource/Images/qianyuqianxun.jpg"
          TileMode="FlipX"/>-->
         <StaticResource ResourceKey="BackgroundWindow"/>
     </UserControl.Background>

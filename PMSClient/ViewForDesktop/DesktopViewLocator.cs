@@ -8,11 +8,11 @@ using PMSClient.ViewForDesktop;
 using Microsoft.Practices.ServiceLocation;
 using GalaSoft.MvvmLight.Ioc;
 
-namespace PMSDesktopClient
+namespace PMSClient.ViewForDesktop
 {
-    public class ViewLocator
+    public class DesktopViewLocator
     {
-        public ViewLocator()
+        public DesktopViewLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 

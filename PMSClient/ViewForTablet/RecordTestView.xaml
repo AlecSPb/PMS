@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForTablet"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
-             xmlns:vm="clr-namespace:PMSTabletClient.ViewModel"
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordTest}">

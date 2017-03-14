@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -16,7 +16,7 @@ namespace PMSClient.ViewModel
         private DcRecordDeliveryItem item;
         public RecordTestSelectVM(ModelObject model)
         {
-            item = new PMSMainService.DcRecordDeliveryItem();
+            item = new MainService.DcRecordDeliveryItem();
             item.ID = Guid.NewGuid();
             item.DeliveryID = (model.Model as DcRecordDelivery).ID;
             item.State = PMSCommon.SimpleState.UnDeleted.ToString();

@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using PMSTabletClient.PMSMainService;
+using PMSClient.MainService;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

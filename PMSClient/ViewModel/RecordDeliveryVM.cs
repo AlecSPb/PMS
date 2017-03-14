@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using GalaSoft.MvvmLight.Messaging;
 using bt = BarTender;
 
@@ -51,11 +51,11 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionEdit);
-            Doc = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionDoc);
-            AddItem = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionAddItem);
-            EditItem = new RelayCommand<PMSMainService.DcRecordDeliveryItem>(ActionEditItem);
-            SelectionChanged = new RelayCommand<PMSMainService.DcRecordDelivery>(ActionSelectionChanged);
+            Edit = new RelayCommand<MainService.DcRecordDelivery>(ActionEdit);
+            Doc = new RelayCommand<MainService.DcRecordDelivery>(ActionDoc);
+            AddItem = new RelayCommand<MainService.DcRecordDelivery>(ActionAddItem);
+            EditItem = new RelayCommand<MainService.DcRecordDeliveryItem>(ActionEditItem);
+            SelectionChanged = new RelayCommand<MainService.DcRecordDelivery>(ActionSelectionChanged);
         }
 
         private void ActionSelectionChanged(DcRecordDelivery obj)

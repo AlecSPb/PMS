@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.PMSMainService;
+using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -37,7 +37,7 @@ namespace PMSClient.ViewModel
             priorities.ToList().ForEach(p => OrderPriorities.Add(p));
 
             Suppliers = new ObservableCollection<DcBDSupplier>();
-            var service = new PMSMainService.SupplierServiceClient();
+            var service = new SupplierServiceClient();
             var suppliers = service.GetSuppliers();
             suppliers.ToList().ForEach(s => Suppliers.Add(s));
         }
