@@ -16,6 +16,9 @@ namespace PMSClient.ViewForDesktop
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+
+            SimpleIoc.Default.Register<NavigationView>();
+
             SimpleIoc.Default.Register<RecordVHPView>();
 
             SimpleIoc.Default.Register<PlanSelectView>();
@@ -23,6 +26,15 @@ namespace PMSClient.ViewForDesktop
 
         }
         #region Properties
+
+        public NavigationView Navigation
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<NavigationView>();
+            }
+        }
+
         public RecordVHPQuickEditView RecordVHPQuickEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
@@ -40,19 +52,6 @@ namespace PMSClient.ViewForDesktop
 
         #region ViewProperties
 
-        private NavigationView navigation;
-        public NavigationView Navigation
-        {
-            get
-            {
-                if (navigation == null)
-                {
-                    navigation = new NavigationView();
-                }
-                return navigation;
-
-            }
-        }
 
         private OrderView order;
         public OrderView Order
