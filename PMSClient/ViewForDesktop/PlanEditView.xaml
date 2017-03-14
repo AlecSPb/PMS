@@ -1,0 +1,222 @@
+﻿<UserControl x:Class="PMSDesktopClient.View.PlanEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSDesktopClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1100">
+    <Grid Background="{StaticResource BackgroundWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource strPagePlanEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
+            <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}"
+                    Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}"
+                    Command="{Binding Save}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+            <Grid  DataContext="{Binding CurrentPlan}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Plan Date"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding PlanDate,Mode=TwoWay}"
+                            Style="{StaticResource DatePickerBasic}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="VHP Deivce Code"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                          ItemsSource="{Binding DataContext.DeviceCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding VHPDeviceCode,Mode=TwoWay}"/>
+
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="MoldType"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox x:Name="moldType" Grid.Row="2" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
+                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Style="{StaticResource TextBoxBasic}" IsReadOnly="True"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="MoldDiameter"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox x:Name="moldDiameter" Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Style="{StaticResource TextBoxBasic}" IsReadOnly="True" 
+                         HorizontalAlignment="Stretch"/>
+                <ComboBox x:Name="cboMolds" Grid.Row="2" Grid.Column="2"
+                          HorizontalAlignment="Stretch"
+                        ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                        SelectionChanged="cboMolds_SelectionChanged"
+                        Style="{StaticResource ComboBoxBasic}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding MoldType}"/>
+                                <TextBlock Text="{Binding InnerDiameter}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock Grid.Row="2" Grid.Column="3" Text="请使用下拉菜单选择模具" Style="{StaticResource TextBlockTipBasic}"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="CalculationDensity"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox x:Name="txtCalculationDensity" Grid.Row="4" Grid.Column="1" Text="{Binding CalculationDensity,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <ComboBox x:Name="cboCompounds" Grid.Row="4" Grid.Column="2"
+                          HorizontalAlignment="Stretch"
+                        ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                        SelectionChanged="cboCompounds_SelectionChanged"
+                        Style="{StaticResource ComboBoxBasic}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding MaterialName}"/>
+                                <!--<TextBlock Text="{Binding Density}"/>-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Thickness"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Quantity"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="GrainSize"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="RoomTemperature"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="RoomHumidity"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="ProcessCode"
+                           Style="{StaticResource TextBlockBasic}" />
+                <ComboBox Grid.Row="11" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                          ItemsSource="{Binding DataContext.ProcessCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding ProcessCode,Mode=TwoWay}"/>
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="PreTemperature"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="PrePressure"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="Temperature"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="Pressure"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="Vaccum"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Vaccum}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="KeepTempTime"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="MillingRequirement"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding MillingRequirement}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="FillingRequirement"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding FillingRequirement}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="MachineRequirement"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding MachineRequirement}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="SpecialRequirement"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="State"
+                           Style="{StaticResource TextBlockBasic}" />
+                <ComboBox Grid.Row="22" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State,Mode=TwoWay}"/>
+
+
+
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="Create Time"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="Creator"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
+                         HorizontalAlignment="Stretch"/>
+
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>
