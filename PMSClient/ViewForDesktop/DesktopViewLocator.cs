@@ -25,6 +25,11 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<MissonView>();
 
+            SimpleIoc.Default.Register<PlanView>();
+            SimpleIoc.Default.Register<PlanSelectView>();
+            SimpleIoc.Default.Register<PlanEditView>();
+
+
             SimpleIoc.Default.Register<MaterialNeedView>();
             SimpleIoc.Default.Register<MaterialNeedEditView>();
             SimpleIoc.Default.Register<MaterialNeedSelectView>();
@@ -34,11 +39,10 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<RecordVHPView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
-            SimpleIoc.Default.Register<PlanSelectView>();
 
-            SimpleIoc.Default.GetInstance<RecordTestView>();
-            SimpleIoc.Default.GetInstance<RecordTestEditView>();
-            SimpleIoc.Default.GetInstance<RecordTestSelectView>();
+            SimpleIoc.Default.Register<RecordTestView>();
+            SimpleIoc.Default.Register<RecordTestEditView>();
+            SimpleIoc.Default.Register<RecordTestSelectView>();
 
             SimpleIoc.Default.Register<RecordDeliveryView>();
             SimpleIoc.Default.Register<RecordDeliveryEditView>();
@@ -87,6 +91,18 @@ namespace PMSClient.ViewForDesktop
             get { return SimpleIoc.Default.GetInstance<MissonView>(); }
         }
 
+        public PlanView Plan
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanView>(); }
+        }
+        public PlanEditView PlanEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanEditView>(); }
+        }
+        public PlanSelectView PlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
+        }
         public MaterialNeedView MaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<MaterialNeedView>(); }
@@ -125,10 +141,6 @@ namespace PMSClient.ViewForDesktop
         public RecordVHPQuickEditView RecordVHPQuickEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
-        }
-        public PlanSelectView PlanSelect
-        {
-            get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
         }
 
         public RecordTestView RecordTest

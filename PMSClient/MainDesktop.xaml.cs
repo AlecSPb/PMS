@@ -30,8 +30,12 @@ namespace PMSClient
         public MainDesktop()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             _viewLocator = new DesktopViewLocator();
-            _viewModelLocator = new ViewModelLocator();
+            _viewModelLocator = this.FindResource("Locator") as ViewModelLocator;
 
             Messenger.Default.Register<MsgObject>(this, MainNavigationToken.Navigate, ActionNavigate);
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
@@ -52,6 +56,10 @@ namespace PMSClient
             }
         }
 
+        /// <summary>
+        /// Main Navigation Part
+        /// </summary>
+        /// <param name="obj"></param>
         private void ActionNavigate(MsgObject obj)
         {
             switch (obj.MsgToken)
@@ -80,22 +88,26 @@ namespace PMSClient
                 case VToken.OrderCheckEdit:
                     break;
                 case VToken.Misson:
+                    GoTo(_viewLocator.Misson);
                     break;
                 case VToken.MissonRefresh:
                     break;
                 case VToken.Plan:
+                    GoTo(_viewLocator.Plan);
                     break;
                 case VToken.PlanEdit:
                     break;
                 case VToken.PlanSelectForTest:
                     break;
                 case VToken.RecordTest:
+                    GoTo(_viewLocator.RecordTest);
                     break;
                 case VToken.RecordTestEdit:
                     break;
                 case VToken.RecordTestSelect:
                     break;
                 case VToken.RecordDelivery:
+                    GoTo(_viewLocator.RecordDelivery);
                     break;
                 case VToken.RecordDeliveryEdit:
                     break;
@@ -108,6 +120,7 @@ namespace PMSClient
                 case VToken.RecordMillingEdit:
                     break;
                 case VToken.RecordVHP:
+                    GoTo(_viewLocator.RecordVHP);
                     break;
                 case VToken.RecordVHPEdit:
                     break;
@@ -124,12 +137,14 @@ namespace PMSClient
                 case VToken.RecordBondingEdit:
                     break;
                 case VToken.MaterialOrder:
+                    GoTo(_viewLocator.MaterialOrder);
                     break;
                 case VToken.MaterialOrderEdit:
                     break;
                 case VToken.MaterialOrderItemEdit:
                     break;
                 case VToken.MaterialNeed:
+                    GoTo(_viewLocator.MaterialNeed);
                     break;
                 case VToken.MaterialNeedEdit:
                     break;
@@ -152,6 +167,7 @@ namespace PMSClient
                 case VToken.RecordVHPRefresh:
                     break;
                 case VToken.RecordVHPQuickEdit:
+                    GoTo(_viewLocator.RecordVHPQuickEdit);
                     break;
                 case VToken.SetRecordVHPQuickEditSelectIndex:
                     break;
@@ -177,7 +193,6 @@ namespace PMSClient
             Messenger.Default.Unregister(this);
             base.OnClosing(e);
         }
-
 
     }
 }

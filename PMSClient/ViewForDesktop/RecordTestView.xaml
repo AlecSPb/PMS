@@ -8,7 +8,7 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
-             DataContext="{Binding Source={StaticResource Locator},Path=RecordTestResult}">
+             DataContext="{Binding Source={StaticResource Locator},Path=RecordTest}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>

@@ -32,17 +32,8 @@ namespace PMSClient.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            ////if (ViewModelBase.IsInDesignModeStatic)
-            ////{
-            ////    // Create design time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DesignDataService>();
-            ////}
-            ////else
-            ////{
-            ////    // Create run time view services and models
-            ////    SimpleIoc.Default.Register<IDataService, DataService>();
-            ////}
-            SimpleIoc.Default.Register<NavigationVM>(true);
+            SimpleIoc.Default.Register<NavigationVM>();
+
             SimpleIoc.Default.Register<OrderVM>();
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<MissonVM>();
@@ -54,6 +45,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordTestVM>();
+
             SimpleIoc.Default.Register<RecordDeliveryVM>();
             SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
 
@@ -109,7 +101,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
         }
-        public RecordTestVM RecordTestResult
+        public RecordTestVM RecordTest
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestVM>(); }
         }
@@ -122,7 +114,6 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestVM>(); }
         }
-
         public PlanSelectForRecordVHPVM PlanSelectForRecordVHP
         {
             get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordVHPVM>(); }

@@ -8,7 +8,7 @@ using System.Windows;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("PMSClient")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("designed by xs.zhou")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PMSClient")]

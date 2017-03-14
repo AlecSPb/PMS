@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-       Title="{StaticResource strAppName}" MinHeight="400" MinWidth="600" WindowState="Maximized">
+        Title="{StaticResource strAppName}"
+        MinHeight="400" MinWidth="600" WindowState="Maximized" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
