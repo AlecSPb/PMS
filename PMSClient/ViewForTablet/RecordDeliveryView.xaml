@@ -8,6 +8,9 @@
              xmlns:local="clr-namespace:PMSClient.ViewForTablet"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resource/Styles/Tablet.xaml"/>
+    </UserControl.Resources>
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
