@@ -58,7 +58,7 @@ namespace PMSClient.ViewModel
                 NavigationService.GoTo(msg);
             });
 
-            Duplicate = new RelayCommand<MainService.DcOrder>(ActionDuplicate);
+            Duplicate = new RelayCommand<DcOrder>(ActionDuplicate);
 
         }
 

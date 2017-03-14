@@ -18,15 +18,17 @@ namespace PMSClient.ViewForDesktop
 
 
             SimpleIoc.Default.Register<NavigationView>();
+            SimpleIoc.Default.Register<OrderView>();
+            SimpleIoc.Default.Register<OrderCheckView>();
+            SimpleIoc.Default.Register<OrderEditView>();
 
             SimpleIoc.Default.Register<RecordVHPView>();
-
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
 
         }
-        #region Properties
 
+        #region NavigationProperties
         public NavigationView Navigation
         {
             get
@@ -34,6 +36,33 @@ namespace PMSClient.ViewForDesktop
                 return SimpleIoc.Default.GetInstance<NavigationView>();
             }
         }
+
+        public OrderView Order
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderView>();
+            }
+        }
+
+        public OrderCheckView OrderCheck
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderCheckView>();
+            }
+        }
+        public OrderEditView OrderEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderEditView>();
+            }
+        }
+        #endregion
+
+        #region Properties
+
 
         public RecordVHPQuickEditView RecordVHPQuickEdit
         {
@@ -52,43 +81,6 @@ namespace PMSClient.ViewForDesktop
 
         #region ViewProperties
 
-
-        private OrderView order;
-        public OrderView Order
-        {
-            get
-            {
-                if (order == null)
-                {
-                    order = new OrderView();
-                }
-                return order;
-            }
-        }
-        private OrderEditView orderEdit;
-        public OrderEditView OrderEdit
-        {
-            get
-            {
-                if (orderEdit == null)
-                {
-                    orderEdit = new OrderEditView();
-                }
-                return orderEdit;
-            }
-        }
-        private OrderCheckView orderCheck;
-        public OrderCheckView OrderCheck
-        {
-            get
-            {
-                if (orderCheck == null)
-                {
-                    orderCheck = new OrderCheckView();
-                }
-                return orderCheck;
-            }
-        }
 
         private MissonView misson;
 
