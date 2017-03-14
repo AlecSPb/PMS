@@ -658,6 +658,7 @@
   <ItemGroup>
     <Folder Include="Documents\" />
     <Folder Include="Resource\Files\" />
+    <Folder Include="ViewForSanjie\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\funnyface.ico" />

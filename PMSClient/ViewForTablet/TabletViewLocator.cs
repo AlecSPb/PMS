@@ -48,6 +48,28 @@ namespace PMSClient.ViewForTablet
         //{
         //    get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
         //}
+
+        public RecordTestView RecordTest
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordTestView>();
+            }
+        }
+        public RecordTestEditView RecordTestEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordTestEditView>();
+            }
+        }
+        public RecordTestSelectView RecordTestSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordTestSelectView>();
+            }
+        }
         #endregion
     }
 }
