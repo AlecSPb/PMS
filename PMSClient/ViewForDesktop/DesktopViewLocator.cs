@@ -19,12 +19,31 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<NavigationView>();
             SimpleIoc.Default.Register<OrderView>();
-            SimpleIoc.Default.Register<OrderCheckView>();
             SimpleIoc.Default.Register<OrderEditView>();
+            SimpleIoc.Default.Register<OrderCheckView>();
+            SimpleIoc.Default.Register<OrderCheckEditView>();
+
+            SimpleIoc.Default.Register<MissonView>();
+
+            SimpleIoc.Default.Register<MaterialNeedView>();
+            SimpleIoc.Default.Register<MaterialNeedEditView>();
+            SimpleIoc.Default.Register<MaterialNeedSelectView>();
+            SimpleIoc.Default.Register<MaterialOrderView>();
+            SimpleIoc.Default.Register<MaterialOrderEditView>();
+            SimpleIoc.Default.Register<MaterialOrderItemEditView>();
 
             SimpleIoc.Default.Register<RecordVHPView>();
-            SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
+            SimpleIoc.Default.Register<PlanSelectView>();
+
+            SimpleIoc.Default.GetInstance<RecordTestView>();
+            SimpleIoc.Default.GetInstance<RecordTestEditView>();
+            SimpleIoc.Default.GetInstance<RecordTestSelectView>();
+
+            SimpleIoc.Default.Register<RecordDeliveryView>();
+            SimpleIoc.Default.Register<RecordDeliveryEditView>();
+            SimpleIoc.Default.Register<RecordDeliveryItemEditView>();
+
 
         }
 
@@ -44,14 +63,6 @@ namespace PMSClient.ViewForDesktop
                 return SimpleIoc.Default.GetInstance<OrderView>();
             }
         }
-
-        public OrderCheckView OrderCheck
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<OrderCheckView>();
-            }
-        }
         public OrderEditView OrderEdit
         {
             get
@@ -59,227 +70,93 @@ namespace PMSClient.ViewForDesktop
                 return SimpleIoc.Default.GetInstance<OrderEditView>();
             }
         }
-        #endregion
-
-        #region Properties
-
-
-        public RecordVHPQuickEditView RecordVHPQuickEdit
+        public OrderCheckView OrderCheck
         {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderCheckView>();
+            }
         }
-        public RecordVHPView RecordVHP
+        public OrderCheckEditView OrderCheckEdit
         {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }
+            get { return SimpleIoc.Default.GetInstance<OrderCheckEditView>(); }
         }
-
-        public PlanSelectView PlanSelect
-        {
-            get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
-        }
-        #endregion
-
-        #region ViewProperties
-
-
-        private MissonView misson;
 
         public MissonView Misson
         {
-            get
-            {
-                if (misson == null)
-                {
-                    misson = new MissonView();
-                }
-                return misson;
-            }
+            get { return SimpleIoc.Default.GetInstance<MissonView>(); }
         }
 
-        private PlanView plan;
-        public PlanView Plan
-        {
-            get
-            {
-                if (plan == null)
-                {
-                    plan = new PlanView();
-                }
-                return plan;
-            }
-        }
-
-        private MaterialNeedView materialNeed;
         public MaterialNeedView MaterialNeed
         {
-            get
-            {
-                if (materialNeed == null)
-                {
-                    materialNeed = new MaterialNeedView();
-                }
-                return materialNeed;
-            }
+            get { return SimpleIoc.Default.GetInstance<MaterialNeedView>(); }
         }
-        private MaterialOrderView materialOrder;
-        public MaterialOrderView MaterialOrder
-        {
-            get
-            {
-                if (materialOrder == null)
-                {
-                    materialOrder = new MaterialOrderView();
-                }
-                return materialOrder;
-            }
-        }
-
-
-        private MaterialNeedEditView materialNeedEdit;
         public MaterialNeedEditView MaterialNeedEdit
         {
             get
             {
-                if (materialNeedEdit == null)
-                {
-                    materialNeedEdit = new MaterialNeedEditView();
-                }
-                return materialNeedEdit;
+                return SimpleIoc.Default.GetInstance<MaterialNeedEditView>();
             }
         }
-
-        private OrderSelectView orderSelect;
-        public OrderSelectView OrderSelect
-        {
-            get
-            {
-                if (orderSelect == null)
-                {
-                    orderSelect = new OrderSelectView();
-                }
-                return orderSelect;
-            }
-        }
-
-        private MaterialOrderEditView materialOrderEdit;
-        public MaterialOrderEditView MaterialOrderEdit
-        {
-            get
-            {
-                if (materialOrderEdit == null)
-                {
-                    materialOrderEdit = new MaterialOrderEditView();
-                }
-                return materialOrderEdit;
-            }
-        }
-
-        private MaterialNeedSelectView materialNeedSelect;
         public MaterialNeedSelectView MaterialNeedSelect
         {
-            get
-            {
-                if (materialNeedSelect == null)
-                {
-                    materialNeedSelect = new MaterialNeedSelectView();
-                }
-                return materialNeedSelect;
-            }
+            get { return SimpleIoc.Default.GetInstance<MaterialNeedSelectView>(); }
         }
 
-        private RecordTestView recordTest;
-        public RecordTestView RecordTest
+        public MaterialOrderView MaterialOrder
         {
-            get
-            {
-                if (recordTest == null)
-                {
-                    recordTest = new RecordTestView();
-                }
-                return recordTest;
-            }
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderView>(); }
         }
-
-        private RecordTestEditView recordTestEdit;
-        public RecordTestEditView RecordTestEdit
+        public MaterialOrderEditView MaterialOrderEdit
         {
-            get
-            {
-                if (recordTestEdit == null)
-                {
-                    recordTestEdit = new RecordTestEditView();
-                }
-                return recordTestEdit;
-            }
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderEditView>(); }
         }
-
-        private RecordTestSelectView recordTestSelect;
-        public RecordTestSelectView RecordTestSelect
-        {
-            get
-            {
-                if (recordTestSelect == null)
-                {
-                    recordTestSelect = new RecordTestSelectView();
-                }
-                return recordTestSelect;
-            }
-        }
-
-        private MaterialOrderItemEditView materialOrderItemEdit;
         public MaterialOrderItemEditView MaterialOrderItemEdit
         {
-            get
-            {
-                if (materialOrderItemEdit == null)
-                {
-                    materialOrderItemEdit = new MaterialOrderItemEditView();
-                }
-                return materialOrderItemEdit;
-            }
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditView>(); }
         }
 
 
-        private RecordDeliveryView recordDelivery;
+
+        public RecordVHPView RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }
+        }
+        public RecordVHPQuickEditView RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
+        }
+        public PlanSelectView PlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
+        }
+
+        public RecordTestView RecordTest
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestView>(); }
+        }
+        public RecordTestEditView RecordEditTest
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestEditView>(); }
+        }
+        public RecordTestSelectView RecordTestSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestSelectView>(); }
+        }
+
         public RecordDeliveryView RecordDelivery
         {
-            get
-            {
-                if (recordDelivery == null)
-                {
-                    recordDelivery = new RecordDeliveryView();
-                }
-                return recordDelivery;
-            }
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryView>(); }
         }
-
-        private RecordDeliveryEditView recordDeliveryEdit;
         public RecordDeliveryEditView RecordDeliveryEdit
         {
-            get
-            {
-                if (recordDeliveryEdit == null)
-                {
-                    recordDeliveryEdit = new RecordDeliveryEditView();
-                }
-                return recordDeliveryEdit;
-            }
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditView>(); }
         }
-
-        private RecordDeliveryItemEditView recordDeliveryItemEdit;
         public RecordDeliveryItemEditView RecordDeliveryItemEdit
         {
-            get
-            {
-                if (recordDeliveryItemEdit == null)
-                {
-                    recordDeliveryItemEdit = new RecordDeliveryItemEditView();
-                }
-                return recordDeliveryItemEdit;
-            }
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditView>(); }
         }
         #endregion
-
 
     }
 }
