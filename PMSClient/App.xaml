@@ -6,13 +6,14 @@
              StartupUri="MainDesktop.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml" />
                 <ResourceDictionary Source="Resource/Language/zh-cn.xaml" />
                 <ResourceDictionary Source="Resource/Skins/Warm.xaml" />
                 <ResourceDictionary Source="Resource/Styles/Desktop.xaml" />
+                <!--<ResourceDictionary Source="Resource/Styles/Tablet.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
-            <vm:ViewModelLocator x:Key="Locator"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

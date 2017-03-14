@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
     {
         public RecordTestVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.RecordTestResultRefresh, ActionRefresh);
+            Messenger.Default.Register<MsgObject>(this, VToken.RecordTestRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
