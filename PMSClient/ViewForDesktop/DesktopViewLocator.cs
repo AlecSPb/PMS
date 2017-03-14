@@ -17,7 +17,7 @@ namespace PMSClient.ViewForDesktop
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
 
-            SimpleIoc.Default.Register<NavigationView>();
+            SimpleIoc.Default.Register<NavigationView>(true);
             SimpleIoc.Default.Register<OrderView>();
             SimpleIoc.Default.Register<OrderEditView>();
             SimpleIoc.Default.Register<OrderCheckView>();

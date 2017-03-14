@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<NavigationVM>();
+            SimpleIoc.Default.Register<NavigationVM>(true);
 
             SimpleIoc.Default.Register<OrderVM>();
             SimpleIoc.Default.Register<OrderCheckVM>();
