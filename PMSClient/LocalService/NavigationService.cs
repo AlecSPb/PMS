@@ -15,7 +15,7 @@ namespace PMSClient
             Messenger.Default.Send<MsgObject>(obj,MainNavigationToken.Navigate);
         }
 
-        public static void ShowStateMessage(string msg = "状态信息")
+        public static void ShowStatusMessage(string msg = "状态信息")
         {
             Messenger.Default.Send<string>(msg,MainNavigationToken.StatusMessage);
         }

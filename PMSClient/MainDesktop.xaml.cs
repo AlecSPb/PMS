@@ -46,7 +46,7 @@ namespace PMSClient
 
         private void ActionStatusMessage(string obj)
         {
-            if (string.IsNullOrEmpty(obj))
+            if (!string.IsNullOrEmpty(obj))
             {
                 txtStateMessage.Text = obj;
             }

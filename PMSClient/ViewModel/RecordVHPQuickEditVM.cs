@@ -65,7 +65,7 @@ namespace PMSClient.ViewModel
         {
             EmptyCurrentRecordVHP();
             isNew = true;
-            NavigationService.ShowStateMessage("全新创建一个记录");
+            NavigationService.ShowStatusMessage("全新创建一个记录");
         }
 
         private void ActionEditItem(DcRecordVHP obj)
@@ -74,7 +74,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordVHP = obj;
                 isNew = false;
-                NavigationService.ShowStateMessage("请修改上方数据，然后保存，取消修改请点新建");
+                NavigationService.ShowStatusMessage("请修改上方数据，然后保存，取消修改请点新建");
             }
         }
 
@@ -149,7 +149,7 @@ namespace PMSClient.ViewModel
 
                         ReLoadRecordVHPs();
                         EmptyCurrentRecordVHP();
-                        NavigationService.ShowStateMessage("保存完毕");
+                        NavigationService.ShowStatusMessage("保存完毕");
                     }
                 }
             }
@@ -186,7 +186,7 @@ namespace PMSClient.ViewModel
 
                 isNew = true;
                 CurrentRecordVHP = model;
-                NavigationService.ShowStateMessage("填充选定项完毕");
+                NavigationService.ShowStatusMessage("填充选定项完毕");
             }
         }
 
