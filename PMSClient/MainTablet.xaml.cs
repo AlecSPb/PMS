@@ -101,14 +101,14 @@ namespace PMSClient
                     //_viewLocator.PlanEdit.DataContext = new PlanEditVM(model.MsgModel);
                     break;
                 case VToken.PlanSelectForTest:
-                    //GoTo(_viewLocator.PlanSelect);
+                    GoTo(_viewLocator.PlanSelect);
                     break;
                 case VToken.RecordTest:
-                    //GoTo(_viewLocator.RecordTest);
+                    GoTo(_viewLocator.RecordTest);
                     break;
                 case VToken.RecordTestEdit:
-                    //_viewLocator.RecordTestEdit.DataContext = new RecordTestEditVM(model.MsgModel);
-                    //GoTo(_viewLocator.RecordTestEdit);
+                    _viewLocator.RecordTestEdit.DataContext = new RecordTestEditVM(model.MsgModel);
+                    GoTo(_viewLocator.RecordTestEdit);
                     break;
                 case VToken.RecordTestSelect:
                     break;

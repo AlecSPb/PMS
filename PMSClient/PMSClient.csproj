@@ -168,6 +168,9 @@
     <Compile Include="ViewForDesktop\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForTablet\PlanSelectView.xaml.cs">
+      <DependentUpon>PlanSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
     </Compile>
@@ -395,6 +398,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\PlanSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForTablet\PlanSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

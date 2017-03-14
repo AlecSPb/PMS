@@ -20,7 +20,7 @@ namespace PMSClient.ViewForTablet
             SimpleIoc.Default.Register<RecordVHPView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
 
-            //SimpleIoc.Default.Register<PlanSelectView>();
+            SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<RecordTestView>();
             SimpleIoc.Default.Register<RecordTestSelectView>();
             SimpleIoc.Default.Register<RecordTestEditView>();
@@ -44,10 +44,10 @@ namespace PMSClient.ViewForTablet
             get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditView>(); }
         }
 
-        //public PlanSelectView PlanSelect
-        //{
-        //    get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
-        //}
+        public PlanSelectView PlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
+        }
 
         public RecordTestView RecordTest
         {
