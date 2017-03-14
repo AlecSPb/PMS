@@ -85,11 +85,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\BDInstance.cs" />
-    <Compile Include="Helpers\CommonDialogService.cs" />
+    <Compile Include="LocalService\CommonDialogService.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
     <Compile Include="Helpers\MainNavigationToken.cs" />
     <Compile Include="Helpers\MsgObject.cs" />
-    <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="LocalService\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="Service References\MainService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -652,6 +652,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Documents\" />
     <Folder Include="Resource\Files\" />
   </ItemGroup>
   <ItemGroup>

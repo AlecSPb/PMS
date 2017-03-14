@@ -34,10 +34,22 @@ namespace PMSClient
             _viewModelLocator = new ViewModelLocator();
 
             Messenger.Default.Register<MsgObject>(this, MainNavigationToken.Navigate, ActionNavigate);
-
+            Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
 
             //load the first page
             GoTo(_viewLocator.Navigation);
+        }
+
+        private void ActionStatusMessage(string obj)
+        {
+            if (string.IsNullOrEmpty(obj))
+            {
+                txtStateMessage.Text = obj;
+            }
+            else
+            {
+                txtStateMessage.Text = "状态栏";
+            }
         }
 
         private void ActionNavigate(MsgObject obj)

@@ -9,6 +9,6 @@ namespace PMSClient
     public enum MainNavigationToken
     {
         Navigate,
-        StateMessage
+        StatusMessage
     }
 }
