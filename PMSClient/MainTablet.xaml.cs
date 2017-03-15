@@ -113,17 +113,17 @@ namespace PMSClient
                 case VToken.RecordTestSelect:
                     break;
                 case VToken.RecordDelivery:
-                    //GoTo(_viewLocator.RecordDelivery);
+                    GoTo(_viewLocator.RecordDelivery);
                     break;
                 case VToken.RecordDeliveryEdit:
-                    //_viewLocator.RecordDeliveryEdit.DataContext = new RecordDeliveryEditVM(model.MsgModel);
-                    //GoTo(_viewLocator.RecordDeliveryEdit);
+                    _viewLocator.RecordDeliveryEdit.DataContext = new RecordDeliveryEditVM(model.MsgModel);
+                    GoTo(_viewLocator.RecordDeliveryEdit);
                     break;
                 case VToken.RecordDeliveryItem:
                     break;
                 case VToken.RecordDeliveryItemEdit:
-                    //_viewLocator.RecordDeliveryItemEdit.DataContext = new RecordDeliveryItemEditVM(model.MsgModel);
-                    //GoTo(_viewLocator.RecordDeliveryItemEdit);
+                    _viewLocator.RecordDeliveryItemEdit.DataContext = new RecordDeliveryItemEditVM(model.MsgModel);
+                    GoTo(_viewLocator.RecordDeliveryItemEdit);
                     break;
                 case VToken.RecordMilling:
                     break;

@@ -35,7 +35,7 @@
     </Style>
     <Style x:Key="TextBlockBasic" TargetType="TextBlock">
         <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
@@ -65,7 +65,7 @@
     </Style>
     <Style x:Key="TextBoxBasic" TargetType="TextBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>

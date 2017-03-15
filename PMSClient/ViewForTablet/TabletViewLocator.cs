@@ -25,6 +25,9 @@ namespace PMSClient.ViewForTablet
             SimpleIoc.Default.Register<RecordTestSelectView>();
             SimpleIoc.Default.Register<RecordTestEditView>();
 
+            SimpleIoc.Default.Register<RecordDeliveryView>();
+            SimpleIoc.Default.Register<RecordDeliveryEditView>();
+            SimpleIoc.Default.Register<RecordDeliveryItemEditView>();
 
         }
         #region ViewProperties
@@ -70,6 +73,20 @@ namespace PMSClient.ViewForTablet
                 return SimpleIoc.Default.GetInstance<RecordTestSelectView>();
             }
         }
+
+        public RecordDeliveryView RecordDelivery
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryView>(); }
+        }
+        public RecordDeliveryEditView RecordDeliveryEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditView>(); }
+        }
+        public RecordDeliveryItemEditView RecordDeliveryItemEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditView>(); }
+        }
+
         #endregion
     }
 }
