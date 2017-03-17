@@ -81,6 +81,7 @@ namespace PMSClient
                     case VToken.OrderRefresh:
                         break;
                     case VToken.OrderSelect:
+                        GoTo(_viewLocator.OrderSelect);
                         break;
                     case VToken.OrderCheck:
                         GoTo(_viewLocator.OrderCheck);
@@ -153,8 +154,12 @@ namespace PMSClient
                         GoTo(_viewLocator.MaterialOrder);
                         break;
                     case VToken.MaterialOrderEdit:
+                        _viewLocator.MaterialOrderEdit.DataContext = new MaterialOrderEditVM(model.MsgModel);
+                        GoTo(_viewLocator.MaterialOrderEdit);
                         break;
                     case VToken.MaterialOrderItemEdit:
+                        _viewLocator.MaterialOrderItemEdit.DataContext = new MaterialOrderItemEditVM(model.MsgModel);
+                        GoTo(_viewLocator.MaterialOrderItemEdit);
                         break;
                     case VToken.MaterialNeed:
                         GoTo(_viewLocator.MaterialNeed);
@@ -164,6 +169,7 @@ namespace PMSClient
                         GoTo(_viewLocator.MaterialNeedEdit);
                         break;
                     case VToken.MaterialNeedSelect:
+                        _viewLocator.MaterialNeedSelect.DataContext = new MaterialNeedSelectVM(model.MsgModel);
                         GoTo(_viewLocator.MaterialNeedSelect);
                         break;
                     case VToken.MaterialInventory:
@@ -199,7 +205,7 @@ namespace PMSClient
             {
                 throw ex;
             }
-         
+
         }
 
 

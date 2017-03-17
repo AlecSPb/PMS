@@ -22,6 +22,7 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<OrderEditView>();
             SimpleIoc.Default.Register<OrderCheckView>();
             SimpleIoc.Default.Register<OrderCheckEditView>();
+            SimpleIoc.Default.Register<OrderSelectView>();
 
             SimpleIoc.Default.Register<MissonView>();
 
@@ -84,6 +85,13 @@ namespace PMSClient.ViewForDesktop
         public OrderCheckEditView OrderCheckEdit
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckEditView>(); }
+        }
+        public OrderSelectView OrderSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderSelectView>();
+            }
         }
 
         public MissonView Misson

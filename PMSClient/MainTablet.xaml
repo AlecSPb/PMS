@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <ContentControl x:Name="mainArea" Grid.Row="1"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BackgroundStatusBar}">
-            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource TextBlockBasic}" Foreground="White"/>
         </StackPanel>
     </Grid>
 </Window>
