@@ -16,29 +16,39 @@ namespace PMSClient.ViewModel
     {
         public RecordMillingVM()
         {
-            InitializeProperties();
+            SetPageParametersWhenConditionChange();
+
             InitializeCommands();
         }
 
         private void InitializeCommands()
         {
-            PageChanged = new RelayCommand(ActionPageChanged);
+            PageChanged = new RelayCommand(ActionPaging);
         }
 
-        private void ActionPageChanged()
+        private void SetPageParametersWhenConditionChange()
         {
-            throw new NotImplementedException();
+            PageIndex = 1;
+            PageSize = 10;
+            var service = new RecordMillingServiceClient();
+            RecordCount = service.GetRecordMillingCount();
+            ActionPaging();
         }
-
-        private void InitializeProperties()
+        private void ActionPaging()
         {
-            throw new NotImplementedException();
+            var service = new RecordMillingServiceClient();
+            int skip, take = 0;
+            skip = (PageIndex - 1) * PageSize;
+            take = PageSize;
+            var models = service.GetRecordMillings(skip, take);
+            RecordMillings.Clear();
+            models.ToList<DcRecordMilling>().ForEach(o => RecordMillings.Add(o));
         }
 
+
+
+        #region DerivedPart
         public ObservableCollection<DcRecordMilling> RecordMillings { get; set; }
-
-        #region DerivedCommands
-
         #endregion
     }
 }

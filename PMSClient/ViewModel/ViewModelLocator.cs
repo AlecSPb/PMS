@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<PlanSelectForRecordTestVM>();
             SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
 
-
+            SimpleIoc.Default.Register<RecordMillingVM>();
 
 
 
@@ -118,6 +118,15 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordVHPVM>(); }
         }
+
+        public RecordMillingVM RecordMilling
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMillingVM>();
+            }
+        }
+
 
         #endregion
 
