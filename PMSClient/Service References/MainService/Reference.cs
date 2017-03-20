@@ -4772,16 +4772,13 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtraInformationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FromWhoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GasProtectionField;
@@ -4790,13 +4787,7 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaterialInField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaterialOutField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaterialRemainField;
+        private string MaterialSourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MillingToolField;
@@ -4805,10 +4796,19 @@ namespace PMSClient.MainService {
         private System.Guid PlanIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RawMaterialField;
+        private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightInField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightOutField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightRemainField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4821,12 +4821,25 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -4842,32 +4855,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExtraInformation {
-            get {
-                return this.ExtraInformationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExtraInformationField, value) != true)) {
-                    this.ExtraInformationField = value;
-                    this.RaisePropertyChanged("ExtraInformation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FromWho {
-            get {
-                return this.FromWhoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FromWhoField, value) != true)) {
-                    this.FromWhoField = value;
-                    this.RaisePropertyChanged("FromWho");
                 }
             }
         }
@@ -4899,40 +4886,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MaterialIn {
+        public string MaterialSource {
             get {
-                return this.MaterialInField;
+                return this.MaterialSourceField;
             }
             set {
-                if ((this.MaterialInField.Equals(value) != true)) {
-                    this.MaterialInField = value;
-                    this.RaisePropertyChanged("MaterialIn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MaterialOut {
-            get {
-                return this.MaterialOutField;
-            }
-            set {
-                if ((this.MaterialOutField.Equals(value) != true)) {
-                    this.MaterialOutField = value;
-                    this.RaisePropertyChanged("MaterialOut");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MaterialRemain {
-            get {
-                return this.MaterialRemainField;
-            }
-            set {
-                if ((this.MaterialRemainField.Equals(value) != true)) {
-                    this.MaterialRemainField = value;
-                    this.RaisePropertyChanged("MaterialRemain");
+                if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
+                    this.MaterialSourceField = value;
+                    this.RaisePropertyChanged("MaterialSource");
                 }
             }
         }
@@ -4964,14 +4925,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RawMaterial {
+        public string Remark {
             get {
-                return this.RawMaterialField;
+                return this.RemarkField;
             }
             set {
-                if ((object.ReferenceEquals(this.RawMaterialField, value) != true)) {
-                    this.RawMaterialField = value;
-                    this.RaisePropertyChanged("RawMaterial");
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -4985,6 +4946,45 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeightIn {
+            get {
+                return this.WeightInField;
+            }
+            set {
+                if ((this.WeightInField.Equals(value) != true)) {
+                    this.WeightInField = value;
+                    this.RaisePropertyChanged("WeightIn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeightOut {
+            get {
+                return this.WeightOutField;
+            }
+            set {
+                if ((this.WeightOutField.Equals(value) != true)) {
+                    this.WeightOutField = value;
+                    this.RaisePropertyChanged("WeightOut");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeightRemain {
+            get {
+                return this.WeightRemainField;
+            }
+            set {
+                if ((this.WeightRemainField.Equals(value) != true)) {
+                    this.WeightRemainField = value;
+                    this.RaisePropertyChanged("WeightRemain");
                 }
             }
         }

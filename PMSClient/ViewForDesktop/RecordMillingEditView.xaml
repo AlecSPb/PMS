@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTestResultEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordTestEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}" Command="{Binding Save}"/>
@@ -52,21 +52,21 @@
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="原材料"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RawMaterial}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="测试类型"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="来源"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FromWho}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="ProductID"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="额外信息"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ExtraInformation}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="Composition"/>
@@ -87,21 +87,21 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="进料"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding MaterialIn}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="出料"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding MaterialOut}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="余料"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding MaterialRemain}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>

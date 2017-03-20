@@ -18,28 +18,28 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         [DataMember]
         public string State { get; set; }
         [DataMember]
         public Guid PlanID { get; set; }//Foreign Key
+        [DataMember]
         //需要记录的信息
+        public string Composition { get; set; }
         [DataMember]
-        public string RawMaterial { get; set; }
+        public string MaterialSource { get; set; }//MaterialSource
         [DataMember]
-        public string FromWho { get; set; }//MaterialSource
-        [DataMember]
-        public string ExtraInformation { get; set; }
+        public string Remark { get; set; }
         [DataMember]
         public string MillingTool { get; set; }
         [DataMember]
         public string GasProtection { get; set; }
         [DataMember]
-        public double MaterialIn { get; set; }
+        public double WeightIn { get; set; }
         [DataMember]
-        public double MaterialOut { get; set; }
+        public double WeightOut { get; set; }
         [DataMember]
-        public double MaterialRemain { get; set; }
+        public double WeightRemain { get; set; }
 
     }
 }

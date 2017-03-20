@@ -88,6 +88,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\BDInstance.cs" />
+    <Compile Include="Helpers\CurrentUser.cs" />
     <Compile Include="LocalService\CommonDialogService.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
     <Compile Include="Helpers\MainNavigationToken.cs" />

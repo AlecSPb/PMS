@@ -13,18 +13,18 @@ namespace PMSDAL
     {
         public Guid ID { get; set; }
         public string Creator { get; set; }
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         public string State { get; set; }
         public Guid PlanID { get; set; }//Foreign Key
         //需要记录的信息
-        public string RawMaterial { get; set; }
-        public string FromWho { get; set; }//MaterialSource
-        public string ExtraInformation { get; set; }
+        public string Composition { get; set; }
+        public string MaterialSource { get; set; }//MaterialSource
+        public string Remark { get; set; }
         public string MillingTool { get; set; }
         public string GasProtection { get; set; }
-        public double MaterialIn { get; set; }
-        public double MaterialOut { get; set; }
-        public double MaterialRemain { get; set; }
+        public double WeightIn { get; set; }
+        public double WeightOut { get; set; }
+        public double WeightRemain { get; set; }
 
     }
 }

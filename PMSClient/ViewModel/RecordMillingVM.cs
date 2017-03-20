@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
         public RecordMillingVM()
         {
             SetPageParametersWhenConditionChange();
-            
+
             InitializeCommands();
         }
 
@@ -28,14 +28,28 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcRecordMilling>(ActionEdit);
         }
 
-        private void ActionEdit(DcRecordMilling obj)
+        private void ActionEdit(DcRecordMilling model)
         {
-            throw new NotImplementedException();
+            if (model != null)
+            {
+                NavigationService.GoTo(VToken.RecordMillingEdit, new ModelObject() { IsNew = false, Model = model });
+            }
         }
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(VToken.RecordMillingEdit);
+            var model = new DcRecordMilling();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = CurrentUserInformation.UserName;
+            model.Composition = "Cu22.8In20Ga7.0Se50.2";
+            model.GasProtection = "Ar";
+            model.MillingTool = "行星球磨机";
+            model.WeightIn = 0;
+            model.WeightOut = 0;
+            model.WeightRemain = 0;
+
+            NavigationService.GoTo(VToken.RecordMillingEdit, new ModelObject() { IsNew = true, Model = model });
         }
 
         private void SetPageParametersWhenConditionChange()

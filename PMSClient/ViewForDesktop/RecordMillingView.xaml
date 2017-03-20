@@ -52,21 +52,21 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="原材料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding RawMaterial}"/>
+                                    Binding="{Binding Compositon}"/>
                 <DataGridTextColumn Header="来源" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding FromWho}"/>
+                                    Binding="{Binding MaterialSrouce}"/>
                 <DataGridTextColumn Header="额外信息" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding ExtraInformation}"/>
+                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="制粉方式" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding MillingTool}"/>
                 <DataGridTextColumn Header="气体保护" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding GasProtection}"/>
                 <DataGridTextColumn Header="进料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MaterialIn}"/>
+                                    Binding="{Binding WeightIn}"/>
                 <DataGridTextColumn Header="出料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MaterialOut}"/>
+                                    Binding="{Binding WeightOut}"/>
                 <DataGridTextColumn Header="余料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MaterialRemain}"/>
+                                    Binding="{Binding WeightRemain}"/>
 
 
 
