@@ -277,6 +277,7 @@
     <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryVM.cs" />
+    <Compile Include="ViewModel\RecordMillingEditVM.cs" />
     <Compile Include="ViewModel\RecordMillingVM.cs" />
     <Compile Include="ViewModel\RecordTestEditVM.cs" />
     <Compile Include="ViewModel\RecordTestSelectVM.cs" />

@@ -8,9 +8,13 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSClient.ViewModel
 {
-    public class BaseViewModelEdit:ViewModelBase
+    public class BaseViewModelEdit : ViewModelBase
     {
-        #region Commands
+        public BaseViewModelEdit()
+        {
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMilling }));
+        }
+        #region Commands 
         public RelayCommand Save { get; set; }
         public RelayCommand GiveUp { get; set; }
         #endregion
