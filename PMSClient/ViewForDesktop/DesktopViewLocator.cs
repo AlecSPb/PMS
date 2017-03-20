@@ -50,6 +50,8 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<RecordDeliveryItemEditView>();
 
 
+            SimpleIoc.Default.Register<RecordMillingView>();
+            SimpleIoc.Default.Register<RecordMillingEditView>();
         }
 
         #region NavigationProperties
@@ -140,6 +142,20 @@ namespace PMSClient.ViewForDesktop
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditView>(); }
         }
 
+        public RecordMillingView RecordMilling
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMillingView>();
+            }
+        }
+        public RecordMillingEditView RecordMillingEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMillingEditView>();
+            }
+        }
 
 
         public RecordVHPView RecordVHP

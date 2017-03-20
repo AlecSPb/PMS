@@ -130,8 +130,11 @@ namespace PMSClient
                         GoTo(_viewLocator.RecordDeliveryItemEdit);
                         break;
                     case VToken.RecordMilling:
+                        GoTo(_viewLocator.RecordMilling);
                         break;
                     case VToken.RecordMillingEdit:
+                        _viewLocator.RecordMillingEdit.DataContext = new RecordMillingEditVM(model.MsgModel);
+                        GoTo(_viewLocator.RecordMillingEdit);
                         break;
                     case VToken.RecordVHP:
                         GoTo(_viewLocator.RecordVHP);

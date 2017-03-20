@@ -7,7 +7,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
-             DataContext="{Binding Source={StaticResource Locator},Path=RecordTest}">
+             DataContext="{Binding Source={StaticResource Locator},Path=RecordMilling}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTestResult}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordTest}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
