@@ -248,6 +248,7 @@
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForTablet\TabletViewLocator.cs" />
+    <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
@@ -263,6 +264,7 @@
     <Compile Include="ViewModel\OrderSelectBaseVM.cs" />
     <Compile Include="ViewModel\OrderSelectMaterialNeedVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
+    <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanSelectBase.cs" />
     <Compile Include="ViewModel\PlanSelectForRecordBlankVM.cs" />
@@ -275,6 +277,7 @@
     <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryVM.cs" />
+    <Compile Include="ViewModel\RecordMillingVM.cs" />
     <Compile Include="ViewModel\RecordTestEditVM.cs" />
     <Compile Include="ViewModel\RecordTestSelectVM.cs" />
     <Compile Include="ViewModel\RecordTestVM.cs" />
