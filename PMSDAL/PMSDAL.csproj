@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201703200202022_millingchange.Designer.cs">
       <DependentUpon>201703200202022_millingchange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703200213062_addplanlot.cs" />
+    <Compile Include="Migrations\201703200213062_addplanlot.Designer.cs">
+      <DependentUpon>201703200213062_addplanlot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -386,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703200202022_millingchange.resx">
       <DependentUpon>201703200202022_millingchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703200213062_addplanlot.resx">
+      <DependentUpon>201703200213062_addplanlot.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

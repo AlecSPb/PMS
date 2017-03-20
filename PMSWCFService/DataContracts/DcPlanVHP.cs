@@ -26,6 +26,10 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string VHPDeviceCode { get; set; }
         [DataMember]
+        public int PlanLot { get; set; }
+
+
+        [DataMember]
         public string MoldType { get; set; }
         [DataMember]
         public double CalculationDensity { get; set; }
