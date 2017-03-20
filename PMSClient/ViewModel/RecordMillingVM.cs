@@ -49,6 +49,9 @@ namespace PMSClient.ViewModel
 
         #region DerivedPart
         public ObservableCollection<DcRecordMilling> RecordMillings { get; set; }
+
+        public RelayCommand Add { get; set; }
+        public RelayCommand<DcRecordMilling> Edit { get; set; }
         #endregion
     }
 }

@@ -16,7 +16,7 @@ namespace PMSClient.ViewModel
 
         public BaseViewModelPage()
         {
-            Navigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
         }
 
         #region PageRelated
@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
         /// <summary>
         /// 返回导航页
         /// </summary>
-        public RelayCommand Navigation { get; private set; }
+        public RelayCommand GoToNavigation { get; private set; }
         #endregion
     }
 }

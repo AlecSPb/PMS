@@ -70,8 +70,8 @@
     <sys:String x:Key="strPageRecordBlankEdit">取模记录编辑</sys:String>
     <sys:String x:Key="strPageRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="strPageRecordBondingEdit">绑定记录编辑</sys:String>
-    <sys:String x:Key="strPageRecordTestResult">测试记录</sys:String>
-    <sys:String x:Key="strPageRecordTestResultEdit">测试记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordTest">测试记录</sys:String>
+    <sys:String x:Key="strPageRecordTestEdit">测试记录编辑</sys:String>
     <sys:String x:Key="strPageRecordDelivery">发货记录</sys:String>
     <sys:String x:Key="strPageRecordDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="strPageRecordDeliveryItemEdit">发货项记录编辑</sys:String>

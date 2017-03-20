@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
         private bool isNew;
         public RecordTestEditVM(ModelObject model)
         {
-            CurrentRecordTestResult = model.Model as DcRecordTest;
+            CurrentRecordTest = model.Model as DcRecordTest;
             isNew = model.IsNew;
             States = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.TestResultState));
@@ -36,18 +36,18 @@ namespace PMSClient.ViewModel
             var service = new RecordTestServiceClient();
             if (isNew)
             {
-                service.AddRecordTest(CurrentRecordTestResult);
+                service.AddRecordTest(CurrentRecordTest);
             }
             else
             {
-                service.UpdateRecordTest(CurrentRecordTestResult);
+                service.UpdateRecordTest(CurrentRecordTest);
             }
 
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTest });
         }
         public ObservableCollection<string> TestTypes { get; set; }
         public ObservableCollection<string> States { get; set; }
-        public DcRecordTest CurrentRecordTestResult { get; set; }
+        public DcRecordTest CurrentRecordTest { get; set; }
 
         public RelayCommand GiveUp { get; private set; }
         public RelayCommand Save { get; private set; }
