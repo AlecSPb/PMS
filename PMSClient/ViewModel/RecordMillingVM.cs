@@ -17,13 +17,25 @@ namespace PMSClient.ViewModel
         public RecordMillingVM()
         {
             SetPageParametersWhenConditionChange();
-
+            
             InitializeCommands();
         }
 
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
+            Add = new RelayCommand(ActionAdd);
+            Edit = new RelayCommand<DcRecordMilling>(ActionEdit);
+        }
+
+        private void ActionEdit(DcRecordMilling obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionAdd()
+        {
+            NavigationService.GoTo(VToken.RecordMillingEdit);
         }
 
         private void SetPageParametersWhenConditionChange()

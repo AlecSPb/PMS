@@ -12,12 +12,17 @@ namespace PMSClient
     {
         public static void GoTo(MsgObject obj)
         {
-            Messenger.Default.Send<MsgObject>(obj,MainNavigationToken.Navigate);
+            Messenger.Default.Send<MsgObject>(obj, MainNavigationToken.Navigate);
+        }
+
+        public static void GoTo(VToken token)
+        {
+            GoTo(new MsgObject() { MsgToken = token });
         }
 
         public static void ShowStatusMessage(string msg = "状态信息")
         {
-            Messenger.Default.Send<string>(msg,MainNavigationToken.StatusMessage);
+            Messenger.Default.Send<string>(msg, MainNavigationToken.StatusMessage);
         }
 
         public static void Refresh(VToken refreshtoken)
