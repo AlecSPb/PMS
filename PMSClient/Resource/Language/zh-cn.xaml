@@ -4,6 +4,7 @@
     <!--AppName-->
     <sys:String x:Key="strAppNameDesktop">生产管理系统Desktop版本</sys:String>
     <sys:String x:Key="strAppNameTablet">生产管理系统Tablet版本</sys:String>
+    <sys:String x:Key="strAppNameSanjie">生产管理系统 SanJie版本</sys:String>
     <sys:String x:Key="strWelcome">欢迎</sys:String>
 
     <!--Navigation-->
