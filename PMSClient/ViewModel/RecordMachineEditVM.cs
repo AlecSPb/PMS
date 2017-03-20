@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordMachineEditVM:BaseViewModelEdit
+    public class RecordMachineEditVM : BaseViewModelEdit
     {
-        public RecordMachineEditVM()
+        public RecordMachineEditVM(ModelObject model)
         {
 
         }

@@ -141,13 +141,19 @@ namespace PMSClient
                         break;
                     case VToken.RecordVHPEdit:
                         break;
-                    case VToken.RecordTakeOut:
+                    case VToken.RecordDeMold:
+                        GoTo(_viewLocator.RecordDeMold);
                         break;
-                    case VToken.RecordTakeOutEdit:
+                    case VToken.RecordDeMoldEdit:
+                        _viewLocator.RecordDeMoldEdit.DataContext = new RecordDeMoldEditVM(model.MsgModel);
+                        GoTo(_viewLocator.RecordDeMoldEdit);
                         break;
                     case VToken.RecordMachine:
+                        GoTo(_viewLocator.RecordMachine);
                         break;
                     case VToken.RecordMachineEdit:
+                        _viewLocator.RecordMachineEdit.DataContext = new RecordMachineEditVM(model.MsgModel);
+                        GoTo(_viewLocator.RecordMachineEdit);
                         break;
                     case VToken.RecordBonding:
                         break;

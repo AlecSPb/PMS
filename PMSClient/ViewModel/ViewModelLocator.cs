@@ -53,7 +53,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
 
             SimpleIoc.Default.Register<RecordMillingVM>();
-
+            SimpleIoc.Default.Register<RecordDeMoldVM>();
+            SimpleIoc.Default.Register<RecordMachineVM>();
 
 
 
@@ -127,7 +128,21 @@ namespace PMSClient.ViewModel
             }
         }
 
+        public RecordDeMoldVM RecordDeMold
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordDeMoldVM>();
+            }
+        }
 
+        public RecordMachineVM RecordMachine
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMachineVM>();
+            }
+        }
         #endregion
 
 

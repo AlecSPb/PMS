@@ -134,9 +134,9 @@ namespace PMSClient
                     break;
                 case VToken.RecordVHPEdit:
                     break;
-                case VToken.RecordTakeOut:
+                case VToken.RecordDeMold:
                     break;
-                case VToken.RecordTakeOutEdit:
+                case VToken.RecordDeMoldEdit:
                     break;
                 case VToken.RecordMachine:
                     break;

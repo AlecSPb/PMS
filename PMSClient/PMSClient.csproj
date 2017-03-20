@@ -172,6 +172,18 @@
     <Compile Include="ViewForDesktop\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\RecordDeMoldEditView.xaml.cs">
+      <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForDesktop\RecordMachineEditView.xaml.cs">
+      <DependentUpon>RecordMachineEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForDesktop\RecordDeMoldView.xaml.cs">
+      <DependentUpon>RecordDeMoldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForDesktop\RecordMachineView.xaml.cs">
+      <DependentUpon>RecordMachineView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForTablet\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
@@ -192,15 +204,6 @@
     </Compile>
     <Compile Include="ViewForDesktop\RecordDeliveryView.xaml.cs">
       <DependentUpon>RecordDeliveryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForDesktop\RecordDeMoldEditView.xaml.cs">
-      <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForDesktop\RecordDeMoldView.xaml.cs">
-      <DependentUpon>RecordDeMoldView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForDesktop\RecordMachineView.xaml.cs">
-      <DependentUpon>RecordMachineView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\RecordMillingEditView.xaml.cs">
       <DependentUpon>RecordMillingEditView.xaml</DependentUpon>
@@ -417,6 +420,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ViewForDesktop\RecordDeMoldEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\RecordMachineEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\RecordDeMoldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\RecordMachineView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="ViewForTablet\PlanSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -442,18 +461,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\RecordDeliveryView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForDesktop\RecordDeMoldEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForDesktop\RecordDeMoldView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForDesktop\RecordMachineView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

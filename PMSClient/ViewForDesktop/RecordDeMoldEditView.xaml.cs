@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace PMSClient.ViewForDesktop
 {
     /// <summary>
-    /// RecordBlankEditView.xaml 的交互逻辑
+    /// RecordMillingEdit.xaml 的交互逻辑
     /// </summary>
     public partial class RecordDeMoldEditView : UserControl
     {

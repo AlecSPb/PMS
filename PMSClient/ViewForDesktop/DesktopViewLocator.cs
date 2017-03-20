@@ -34,6 +34,7 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<MaterialNeedView>();
             SimpleIoc.Default.Register<MaterialNeedEditView>();
             SimpleIoc.Default.Register<MaterialNeedSelectView>();
+
             SimpleIoc.Default.Register<MaterialOrderView>();
             SimpleIoc.Default.Register<MaterialOrderEditView>();
             SimpleIoc.Default.Register<MaterialOrderItemEditView>();
@@ -52,6 +53,12 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<RecordMillingView>();
             SimpleIoc.Default.Register<RecordMillingEditView>();
+
+            SimpleIoc.Default.Register<RecordMachineView>();
+            SimpleIoc.Default.Register<RecordMachineEditView>();
+
+            SimpleIoc.Default.Register<RecordDeMoldView>();
+            SimpleIoc.Default.Register<RecordDeMoldEditView>();
         }
 
         #region NavigationProperties
@@ -157,6 +164,35 @@ namespace PMSClient.ViewForDesktop
             }
         }
 
+        public RecordMachineView RecordMachine
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMachineView>();
+            }
+        }
+        public RecordMachineEditView RecordMachineEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMachineEditView>();
+            }
+        }
+
+        public RecordDeMoldView RecordDeMold
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordDeMoldView>();
+            }
+        }
+        public RecordDeMoldEditView RecordDeMoldEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordDeMoldEditView>();
+            }
+        }
 
         public RecordVHPView RecordVHP
         {

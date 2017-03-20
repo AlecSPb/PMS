@@ -8,7 +8,7 @@ namespace PMSClient.ViewModel
 {
     public class RecordDeMoldEditVM:BaseViewModelEdit
     {
-        public RecordDeMoldEditVM()
+        public RecordDeMoldEditVM(ModelObject model)
         {
 
         }

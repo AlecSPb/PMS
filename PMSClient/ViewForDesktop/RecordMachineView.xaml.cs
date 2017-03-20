@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace PMSClient.ViewForDesktop
 {
     /// <summary>
-    /// RecordMachineView.xaml 的交互逻辑
+    /// RecordMillingView.xaml 的交互逻辑
     /// </summary>
     public partial class RecordMachineView : UserControl
     {
