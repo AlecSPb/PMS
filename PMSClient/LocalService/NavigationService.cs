@@ -20,6 +20,10 @@ namespace PMSClient
             GoTo(new MsgObject() { MsgToken = token });
         }
 
+        public static void GoTo(VToken token, ModelObject model)
+        {
+            GoTo(new MsgObject() { MsgToken = token, MsgModel = model });
+        }
         public static void ShowStatusMessage(string msg = "状态信息")
         {
             Messenger.Default.Send<string>(msg, MainNavigationToken.StatusMessage);
