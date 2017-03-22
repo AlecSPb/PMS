@@ -21,7 +21,7 @@
             <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}" Command="{Binding Save}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  DataContext="{Binding CurrentRecordMachine}">
+            <Grid  DataContext="{Binding CurrentRecordDeMold}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>

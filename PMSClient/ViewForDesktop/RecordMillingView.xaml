@@ -17,9 +17,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTest}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordMilling}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
@@ -52,9 +51,9 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="原材料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding Compositon}"/>
+                                    Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="来源" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MaterialSrouce}"/>
+                                    Binding="{Binding MaterialSource}"/>
                 <DataGridTextColumn Header="额外信息" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="制粉方式" ElementStyle="{StaticResource TextBlockDGBasic}"

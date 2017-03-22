@@ -71,11 +71,16 @@
         <Button Content="{StaticResource strbtnPlan}" Grid.Row="3" Grid.Column="2" Command="{Binding GoToPlan}" Style="{DynamicResource btnNavigation}"/>
 
         <Button Content="{StaticResource strPageRecord}" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2" Style="{DynamicResource btnTitle}" />
-        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToVHPRecord}" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="4" Grid.Column="3" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="4" Grid.Column="4" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="4" Grid.Column="5" Command="{Binding GoToTestResultRecord}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordMilling}" Grid.Row="4" Grid.Column="1" Style="{DynamicResource btnNavigation}"
+                Command="{Binding GoToMillingRecord}"/>
+        <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToVHPRecord}"
+                Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="4" Grid.Column="3" Style="{DynamicResource btnNavigation}"
+                Command="{Binding GoToBlankRecord}"/>
+        <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="4" Grid.Column="4" Style="{DynamicResource btnNavigation}"
+                Command="{Binding GoToMachineRecord}"/>
+        <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="4" Grid.Column="5" Command="{Binding GoToTestResultRecord}"
+                Style="{DynamicResource btnNavigation}"/>
 
         <!--<TextBlock Text="Sales" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>-->
         <Button Content="{StaticResource strbtnRecordDelivery}" Grid.Row="5" Grid.Column="2" Command="{Binding GoToDeliveryRecord}" Style="{DynamicResource btnNavigation}"/>

@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 isNew = model.IsNew;
-                CurrentRecordMiiling = model.Model as DcRecordMilling;
+                CurrentRecordMilling = model.Model as DcRecordMilling;
             }
 
             Save = new GalaSoft.MvvmLight.CommandWpf.RelayCommand(ActionSave);
@@ -23,31 +23,35 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (CurrentRecordMiiling != null)
+            if (CurrentRecordMilling != null)
             {
                 using (var dc = new RecordMillingServiceClient())
                 {
                     if (isNew)
                     {
-                        dc.AddRecordMilling(CurrentRecordMiiling);
+                        dc.AddRecordMilling(CurrentRecordMilling);
                     }
                     else
                     {
-                        dc.UpdateRecordMilling(CurrentRecordMiiling);
+                        dc.UpdateRecordMilling(CurrentRecordMilling);
                     }
 
                     //TODO:以后将这里的重复代替掉
-                    NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation });
+                    NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMilling });
                 }
             }
         }
 
         private DcRecordMilling currentRecordMilling;
 
-        public DcRecordMilling CurrentRecordMiiling
+        public DcRecordMilling CurrentRecordMilling
         {
             get { return currentRecordMilling; }
-            set { currentRecordMilling = value; RaisePropertyChanged(nameof(CurrentRecordMiiling)); }
+            set
+            {
+                currentRecordMilling = value;
+                RaisePropertyChanged(nameof(CurrentRecordMilling));
+            }
         }
 
     }

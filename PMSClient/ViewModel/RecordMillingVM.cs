@@ -16,8 +16,8 @@ namespace PMSClient.ViewModel
     {
         public RecordMillingVM()
         {
+            RecordMillings = new ObservableCollection<MainService.DcRecordMilling>();
             SetPageParametersWhenConditionChange();
-
             InitializeCommands();
         }
 
@@ -26,6 +26,18 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<DcRecordMilling>(ActionEdit);
+            Search = new RelayCommand(ActionSearch);
+            All = new RelayCommand(ActionAll);
+        }
+
+        private void ActionAll()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionEdit(DcRecordMilling model)

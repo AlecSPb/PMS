@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTestEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordMillingEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource strbtnSave}" Style="{StaticResource ButtonBasic}" Command="{Binding Save}"/>
@@ -55,7 +55,7 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
-                           Text="测试类型"/>
+                           Text="原材料"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="来源"
                            Style="{StaticResource TextBlockBasic}"/>

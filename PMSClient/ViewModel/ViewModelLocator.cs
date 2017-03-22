@@ -59,7 +59,6 @@ namespace PMSClient.ViewModel
 
 
 
-
         }
         #region Properties
         public RecordVHPQuickEditVM RecordVHPQuickEdit

@@ -36,7 +36,8 @@ namespace PMSClient.ViewModel
             var model = new DcRecordDeMold();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.Creator=
+            model.Creator = CurrentUserInformation.UserName;
+            model.State = PMSCommon.CommonState.UnChecked.ToString();
             NavigationService.GoTo(VToken.RecordBondingEdit, new ModelObject() { IsNew=true,Model=model});
         }
 
