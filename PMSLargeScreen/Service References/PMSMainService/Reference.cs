@@ -555,6 +555,9 @@ namespace PMSLargeScreen.PMSMainService {
         private System.DateTime PlanDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PrePressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -774,6 +777,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.PlanDateField.Equals(value) != true)) {
                     this.PlanDateField = value;
                     this.RaisePropertyChanged("PlanDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlanLot {
+            get {
+                return this.PlanLotField;
+            }
+            set {
+                if ((this.PlanLotField.Equals(value) != true)) {
+                    this.PlanLotField = value;
+                    this.RaisePropertyChanged("PlanLot");
                 }
             }
         }
@@ -1664,9 +1680,9 @@ namespace PMSLargeScreen.PMSMainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordTestResult", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordTest", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
-    public partial class DcRecordTestResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DcRecordTest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -4772,16 +4788,13 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtraInformationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FromWhoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GasProtectionField;
@@ -4790,13 +4803,7 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaterialInField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaterialOutField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double MaterialRemainField;
+        private string MaterialSourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MillingToolField;
@@ -4805,10 +4812,19 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Guid PlanIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RawMaterialField;
+        private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightInField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightOutField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightRemainField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -4821,12 +4837,25 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -4842,32 +4871,6 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExtraInformation {
-            get {
-                return this.ExtraInformationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExtraInformationField, value) != true)) {
-                    this.ExtraInformationField = value;
-                    this.RaisePropertyChanged("ExtraInformation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FromWho {
-            get {
-                return this.FromWhoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FromWhoField, value) != true)) {
-                    this.FromWhoField = value;
-                    this.RaisePropertyChanged("FromWho");
                 }
             }
         }
@@ -4899,40 +4902,14 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MaterialIn {
+        public string MaterialSource {
             get {
-                return this.MaterialInField;
+                return this.MaterialSourceField;
             }
             set {
-                if ((this.MaterialInField.Equals(value) != true)) {
-                    this.MaterialInField = value;
-                    this.RaisePropertyChanged("MaterialIn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MaterialOut {
-            get {
-                return this.MaterialOutField;
-            }
-            set {
-                if ((this.MaterialOutField.Equals(value) != true)) {
-                    this.MaterialOutField = value;
-                    this.RaisePropertyChanged("MaterialOut");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double MaterialRemain {
-            get {
-                return this.MaterialRemainField;
-            }
-            set {
-                if ((this.MaterialRemainField.Equals(value) != true)) {
-                    this.MaterialRemainField = value;
-                    this.RaisePropertyChanged("MaterialRemain");
+                if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
+                    this.MaterialSourceField = value;
+                    this.RaisePropertyChanged("MaterialSource");
                 }
             }
         }
@@ -4964,14 +4941,14 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RawMaterial {
+        public string Remark {
             get {
-                return this.RawMaterialField;
+                return this.RemarkField;
             }
             set {
-                if ((object.ReferenceEquals(this.RawMaterialField, value) != true)) {
-                    this.RawMaterialField = value;
-                    this.RaisePropertyChanged("RawMaterial");
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -4985,6 +4962,45 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeightIn {
+            get {
+                return this.WeightInField;
+            }
+            set {
+                if ((this.WeightInField.Equals(value) != true)) {
+                    this.WeightInField = value;
+                    this.RaisePropertyChanged("WeightIn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeightOut {
+            get {
+                return this.WeightOutField;
+            }
+            set {
+                if ((this.WeightOutField.Equals(value) != true)) {
+                    this.WeightOutField = value;
+                    this.RaisePropertyChanged("WeightOut");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeightRemain {
+            get {
+                return this.WeightRemainField;
+            }
+            set {
+                if ((this.WeightRemainField.Equals(value) != true)) {
+                    this.WeightRemainField = value;
+                    this.RaisePropertyChanged("WeightRemain");
                 }
             }
         }
@@ -5009,7 +5025,7 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5061,12 +5077,12 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5262,7 +5278,7 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5320,12 +5336,12 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5547,7 +5563,7 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5581,12 +5597,12 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5704,7 +5720,7 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5756,12 +5772,12 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5978,7 +5994,7 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Guid BondingIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -6124,12 +6140,12 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -6874,111 +6890,105 @@ namespace PMSLargeScreen.PMSMainService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordTestResultService")]
-    public interface IRecordTestResultService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IRecordTestService")]
+    public interface IRecordTestService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResp" +
-            "onse")]
-        PMSLargeScreen.PMSMainService.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPageResponse")]
+        PMSLargeScreen.PMSMainService.DcRecordTest[] GetRecordTestBySearchInPage(int skip, int take, string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultBySearchInPageResp" +
-            "onse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestBySearchInPageResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordTest[]> GetRecordTestBySearchInPageAsync(int skip, int take, string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
-            "e", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
-            "eResponse")]
-        int GetRecordTestResultCountBySearchInPage(string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse")]
+        int GetRecordTestCountBySearchInPage(string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
-            "e", ReplyAction="http://tempuri.org/IRecordTestResultService/GetRecordTestResultCountBySearchInPag" +
-            "eResponse")]
-        System.Threading.Tasks.Task<int> GetRecordTestResultCountBySearchInPageAsync(string productId, string compositionStd);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse")]
+        System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse")]
-        int AddRecordTestResult(PMSLargeScreen.PMSMainService.DcRecordTestResult model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestResponse")]
+        int AddRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/AddRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/AddRecordTestResultResponse")]
-        System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSLargeScreen.PMSMainService.DcRecordTestResult model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestResponse")]
+        System.Threading.Tasks.Task<int> AddRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse")]
-        int UpdateRecordTestResult(PMSLargeScreen.PMSMainService.DcRecordTestResult model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse")]
+        int UpdateRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/UpdateRecordTestResultResponse")]
-        System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSLargeScreen.PMSMainService.DcRecordTestResult model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResultResponse")]
-        int DeleteRecordTestResult(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/DeleteRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse")]
+        int DeleteRecordTest(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResult", ReplyAction="http://tempuri.org/IRecordTestResultService/DeleteRecordTestResultResponse")]
-        System.Threading.Tasks.Task<int> DeleteRecordTestResultAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/DeleteRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse")]
+        System.Threading.Tasks.Task<int> DeleteRecordTestAsync(System.Guid id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRecordTestResultServiceChannel : PMSLargeScreen.PMSMainService.IRecordTestResultService, System.ServiceModel.IClientChannel {
+    public interface IRecordTestServiceChannel : PMSLargeScreen.PMSMainService.IRecordTestService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RecordTestResultServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IRecordTestResultService>, PMSLargeScreen.PMSMainService.IRecordTestResultService {
+    public partial class RecordTestServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IRecordTestService>, PMSLargeScreen.PMSMainService.IRecordTestService {
         
-        public RecordTestResultServiceClient() {
+        public RecordTestServiceClient() {
         }
         
-        public RecordTestResultServiceClient(string endpointConfigurationName) : 
+        public RecordTestServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public RecordTestResultServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public RecordTestServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RecordTestResultServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RecordTestServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RecordTestResultServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RecordTestServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public PMSLargeScreen.PMSMainService.DcRecordTestResult[] GetRecordTestResultBySearchInPage(int skip, int take, string productId, string compositionStd) {
-            return base.Channel.GetRecordTestResultBySearchInPage(skip, take, productId, compositionStd);
+        public PMSLargeScreen.PMSMainService.DcRecordTest[] GetRecordTestBySearchInPage(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestBySearchInPage(skip, take, productId, compositionStd);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordTestResult[]> GetRecordTestResultBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
-            return base.Channel.GetRecordTestResultBySearchInPageAsync(skip, take, productId, compositionStd);
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordTest[]> GetRecordTestBySearchInPageAsync(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestBySearchInPageAsync(skip, take, productId, compositionStd);
         }
         
-        public int GetRecordTestResultCountBySearchInPage(string productId, string compositionStd) {
-            return base.Channel.GetRecordTestResultCountBySearchInPage(productId, compositionStd);
+        public int GetRecordTestCountBySearchInPage(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCountBySearchInPage(productId, compositionStd);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordTestResultCountBySearchInPageAsync(string productId, string compositionStd) {
-            return base.Channel.GetRecordTestResultCountBySearchInPageAsync(productId, compositionStd);
+        public System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCountBySearchInPageAsync(productId, compositionStd);
         }
         
-        public int AddRecordTestResult(PMSLargeScreen.PMSMainService.DcRecordTestResult model) {
-            return base.Channel.AddRecordTestResult(model);
+        public int AddRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model) {
+            return base.Channel.AddRecordTest(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddRecordTestResultAsync(PMSLargeScreen.PMSMainService.DcRecordTestResult model) {
-            return base.Channel.AddRecordTestResultAsync(model);
+        public System.Threading.Tasks.Task<int> AddRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model) {
+            return base.Channel.AddRecordTestAsync(model);
         }
         
-        public int UpdateRecordTestResult(PMSLargeScreen.PMSMainService.DcRecordTestResult model) {
-            return base.Channel.UpdateRecordTestResult(model);
+        public int UpdateRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model) {
+            return base.Channel.UpdateRecordTest(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateRecordTestResultAsync(PMSLargeScreen.PMSMainService.DcRecordTestResult model) {
-            return base.Channel.UpdateRecordTestResultAsync(model);
+        public System.Threading.Tasks.Task<int> UpdateRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model) {
+            return base.Channel.UpdateRecordTestAsync(model);
         }
         
-        public int DeleteRecordTestResult(System.Guid id) {
-            return base.Channel.DeleteRecordTestResult(id);
+        public int DeleteRecordTest(System.Guid id) {
+            return base.Channel.DeleteRecordTest(id);
         }
         
-        public System.Threading.Tasks.Task<int> DeleteRecordTestResultAsync(System.Guid id) {
-            return base.Channel.DeleteRecordTestResultAsync(id);
+        public System.Threading.Tasks.Task<int> DeleteRecordTestAsync(System.Guid id) {
+            return base.Channel.DeleteRecordTestAsync(id);
         }
     }
     
@@ -7225,10 +7235,10 @@ namespace PMSLargeScreen.PMSMainService {
     public interface IRecordVHPService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        PMSLargeScreen.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take);
+        PMSLargeScreen.PMSMainService.DcRecordVHP[] GetRecordVHP(System.Guid planVHPId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take);
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(System.Guid planVHPId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/GetRecordVHPCount", ReplyAction="http://tempuri.org/IRecordVHPService/GetRecordVHPCountResponse")]
         int GetRecordVHPCount();
@@ -7282,12 +7292,12 @@ namespace PMSLargeScreen.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSLargeScreen.PMSMainService.DcRecordVHP[] GetRecordVHP(int skip, int take) {
-            return base.Channel.GetRecordVHP(skip, take);
+        public PMSLargeScreen.PMSMainService.DcRecordVHP[] GetRecordVHP(System.Guid planVHPId) {
+            return base.Channel.GetRecordVHP(planVHPId);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(int skip, int take) {
-            return base.Channel.GetRecordVHPAsync(skip, take);
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordVHP[]> GetRecordVHPAsync(System.Guid planVHPId) {
+            return base.Channel.GetRecordVHPAsync(planVHPId);
         }
         
         public int GetRecordVHPCount() {

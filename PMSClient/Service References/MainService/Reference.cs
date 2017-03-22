@@ -555,6 +555,9 @@ namespace PMSClient.MainService {
         private System.DateTime PlanDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PrePressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -774,6 +777,19 @@ namespace PMSClient.MainService {
                 if ((this.PlanDateField.Equals(value) != true)) {
                     this.PlanDateField = value;
                     this.RaisePropertyChanged("PlanDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlanLot {
+            get {
+                return this.PlanLotField;
+            }
+            set {
+                if ((this.PlanLotField.Equals(value) != true)) {
+                    this.PlanLotField = value;
+                    this.RaisePropertyChanged("PlanLot");
                 }
             }
         }
@@ -5009,7 +5025,7 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5061,12 +5077,12 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5262,7 +5278,7 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5320,12 +5336,12 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5547,7 +5563,7 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5581,12 +5597,12 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5704,7 +5720,7 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -5756,12 +5772,12 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }
@@ -5978,7 +5994,7 @@ namespace PMSClient.MainService {
         private System.Guid BondingIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreateTimeField;
+        private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CreatorField;
@@ -6124,12 +6140,12 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreateTime {
+        public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.CreateTimeField, value) != true)) {
+                if ((this.CreateTimeField.Equals(value) != true)) {
                     this.CreateTimeField = value;
                     this.RaisePropertyChanged("CreateTime");
                 }

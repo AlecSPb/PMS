@@ -172,7 +172,7 @@
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordMilling.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordTestResult.datasource">
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordTest.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordVHP.datasource">
