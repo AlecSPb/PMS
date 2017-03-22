@@ -13,7 +13,7 @@ namespace PMSDAL
     {
         public Guid ID { get; set; }
         public string Creator { get; set; }
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         public string State { get; set; }
 
         //1.0背板检查

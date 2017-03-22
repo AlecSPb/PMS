@@ -19,7 +19,7 @@ namespace PMSWCFService.DataContracts
         //靶材信息
         public string Creator { get; set; }
         [DataMember]
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         [DataMember]
         public string State { get; set; }
         [DataMember]

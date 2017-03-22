@@ -10,12 +10,34 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeMoldVM:BaseViewModelPage
+    public class RecordDeMoldVM : BaseViewModelPage
     {
         public RecordDeMoldVM()
         {
 
             PageChanged = new RelayCommand(ActionPaging);
+
+            RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
+            Add = new RelayCommand(ActionAdd);
+            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit);
+            SetPageParametersWhenConditionChange();
+
+
+
+        }
+
+        private void ActionEdit(DcRecordDeMold obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionAdd()
+        {
+            var model = new DcRecordDeMold();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator=
+            NavigationService.GoTo(VToken.RecordBondingEdit, new ModelObject() { IsNew=true,Model=model});
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -41,7 +63,7 @@ namespace PMSClient.ViewModel
 
         public ObservableCollection<DcRecordDeMold> RecordDeMolds { get; set; }
 
-
-
+        public RelayCommand Add { get; set; }
+        public RelayCommand<DcRecordDeMold> Edit { get; set; }
     }
 }

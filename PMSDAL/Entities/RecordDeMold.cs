@@ -14,7 +14,7 @@ namespace PMSDAL
 
         public Guid ID { get; set; }
         public string Creator { get; set; }
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         public string State { get; set; }
 
         public Guid PlanID { get; set; }//Foreign Key
