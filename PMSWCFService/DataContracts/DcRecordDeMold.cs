@@ -26,14 +26,12 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Composition { get; set; }
         [DataMember]
-        public string MoveOutTemperature { get; set; }
+        public string Temperature1 { get; set; }
         [DataMember]
-        public string TakeOutTemperature { get; set; }
-        [DataMember]
-        public string ExtraInformation { get; set; }
+        public string Temperature2 { get; set; }
 
         [DataMember]
-        public double RoughTargetWeight { get; set; }
+        public double Weight { get; set; }
         [DataMember]
         public double Diameter1 { get; set; }
         [DataMember]
@@ -47,7 +45,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public double Thickness4 { get; set; }
         [DataMember]
-        public string WithExtraThickness { get; set; }//有额外的厚度
+        public string Remark { get; set; }
 
     }
 }

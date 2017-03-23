@@ -21,12 +21,12 @@ namespace PMSDAL
         public string Composition { get; set; }
 
 
-        public string MoveOutTemperature { get; set; }
-        public string TakeOutTemperature { get; set; }
-        public string ExtraInformation { get; set; }
+        public string Temperature1 { get; set; }
+        public string Temperature2 { get; set; }
+        public string Remark { get; set; }
 
 
-        public double RoughTargetWeight { get; set; }
+        public double Weight { get; set; }
         public double Diameter1 { get; set; }
         public double Diameter2 { get; set; }
 
@@ -34,8 +34,6 @@ namespace PMSDAL
         public double Thickness2 { get; set; }
         public double Thickness3 { get; set; }
         public double Thickness4 { get; set; }
-
-        public string WithExtraThickness { get; set; }//有额外的厚度
 
     }
 }

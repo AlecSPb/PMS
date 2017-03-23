@@ -45,8 +45,8 @@ namespace PMSClient.ViewModel
 
             GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMilling }));
             GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP }));
-            //GoToBlankRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = null })));
-            //GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken =null })));
+            GoToDeMoldRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDeMold }));
+            GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMachine }));
             GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery }));
             GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordBonding }));
             GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTest }));
@@ -62,7 +62,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMaterialInventory { get; private set; }
         public RelayCommand GoToMillingRecord { get; private set; }
         public RelayCommand GoToVHPRecord { get; private set; }
-        public RelayCommand GoToBlankRecord { get; private set; }
+        public RelayCommand GoToDeMoldRecord { get; private set; }
         public RelayCommand GoToMachineRecord { get; private set; }
         public RelayCommand GoToDeliveryRecord { get; private set; }
         public RelayCommand GoToBondingRecord { get; private set; }

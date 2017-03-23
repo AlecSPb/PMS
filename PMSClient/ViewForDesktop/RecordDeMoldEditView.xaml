@@ -50,60 +50,84 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="原材料"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="批号"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
-                           Text="测试类型"/>
+                           Text=""/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="来源"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="成分"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="ProductID"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="额外信息"
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="温度1"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Temperature1}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="Composition"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="制粉工具"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="温度2"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Temperature2}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="气体保护"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="重量"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="进料"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="直径1"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="出料"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="直径2"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Diameter2}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="余料"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="厚度1"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Thickness1}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="厚度2"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Thickness2}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="厚度3"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Thickness3}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="厚度4"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Thickness4}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="10" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                           Text=""/>
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="其他"
+                           Style="{StaticResource TextBlockBasic}"/>
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="11" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>
             </Grid>
         </ScrollViewer>

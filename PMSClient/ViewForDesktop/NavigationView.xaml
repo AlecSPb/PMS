@@ -76,7 +76,7 @@
         <Button Content="{StaticResource strbtnRecordVHP}" Grid.Row="4" Grid.Column="2" Command="{Binding GoToVHPRecord}"
                 Style="{DynamicResource btnNavigation}"/>
         <Button Content="{StaticResource strbtnRecordBlank}" Grid.Row="4" Grid.Column="3" Style="{DynamicResource btnNavigation}"
-                Command="{Binding GoToBlankRecord}"/>
+                Command="{Binding GoToDeMoldRecord}"/>
         <Button Content="{StaticResource strbtnRecordMachine}" Grid.Row="4" Grid.Column="4" Style="{DynamicResource btnNavigation}"
                 Command="{Binding GoToMachineRecord}"/>
         <Button Content="{StaticResource strbtnRecordTestResult}" Grid.Row="4" Grid.Column="5" Command="{Binding GoToTestResultRecord}"

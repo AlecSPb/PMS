@@ -7,7 +7,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
-             DataContext="{Binding Source={StaticResource Locator},Path=RecordMachine}">
+             DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMold}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -17,7 +17,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPageRecordBlank}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
@@ -51,24 +50,30 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="批号" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Compositon}"/>
-                <DataGridTextColumn Header="来源" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MaterialSrouce}"/>
-                <DataGridTextColumn Header="额外信息" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="取模温度" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Temperature1}"/>
+                <DataGridTextColumn Header="脱模温度" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Temperature2}"/>
+                <DataGridTextColumn Header="毛坯重量" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Weight}"/>
+                <DataGridTextColumn Header="直径1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Diameter1}"/>
+                <DataGridTextColumn Header="直径2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Diameter2}"/>
+                <DataGridTextColumn Header="厚度1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness1}"/>
+                <DataGridTextColumn Header="厚度2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness2}"/>
+                <DataGridTextColumn Header="厚度3" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness3}"/>
+                <DataGridTextColumn Header="厚度4" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness4}"/>
+                <DataGridTextColumn Header="其他" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="制粉方式" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MillingTool}"/>
-                <DataGridTextColumn Header="气体保护" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding GasProtection}"/>
-                <DataGridTextColumn Header="进料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding WeightIn}"/>
-                <DataGridTextColumn Header="出料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding WeightOut}"/>
-                <DataGridTextColumn Header="余料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding WeightRemain}"/>
-
-
 
 
 
