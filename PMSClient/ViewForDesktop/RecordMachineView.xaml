@@ -50,23 +50,29 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="原材料" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="批号" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Compositon}"/>
-                <DataGridTextColumn Header="来源" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MaterialSrouce}"/>
-                <DataGridTextColumn Header="额外信息" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="制粉方式" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding MillingTool}"/>
-                <DataGridTextColumn Header="气体保护" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding GasProtection}"/>
-                <DataGridTextColumn Header="进料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding WeightIn}"/>
-                <DataGridTextColumn Header="出料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding WeightOut}"/>
-                <DataGridTextColumn Header="余料" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding WeightRemain}"/>
+                <DataGridTextColumn Header="要求尺寸" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Dimension}"/>
+                <DataGridTextColumn Header="额外要求" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding ExtraRequirement}"/>
+                <DataGridTextColumn Header="直径1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Diameter1}"/>
+                <DataGridTextColumn Header="直径2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Diameter2}"/>
+                <DataGridTextColumn Header="厚度1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness1}"/>
+                <DataGridTextColumn Header="厚度2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness2}"/>
+                <DataGridTextColumn Header="厚度3" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness3}"/>
+                <DataGridTextColumn Header="厚度4" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Thickness4}"/>
 
+                <DataGridTextColumn Header="缺陷" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Defects}"/>
 
 
 
