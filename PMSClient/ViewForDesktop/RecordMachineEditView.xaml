@@ -73,7 +73,7 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="额外要求"
                            Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ExtraInformation}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ExtraRequirement}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text=""/>

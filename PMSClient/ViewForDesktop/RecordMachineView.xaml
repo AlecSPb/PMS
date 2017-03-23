@@ -53,7 +53,7 @@
                 <DataGridTextColumn Header="批号" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding VHPPlanLot}"/>
                 <DataGridTextColumn Header="成分" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding Compositon}"/>
+                                    Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="要求尺寸" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Dimension}"/>
                 <DataGridTextColumn Header="额外要求" ElementStyle="{StaticResource TextBlockDGBasic}"

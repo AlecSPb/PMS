@@ -14,12 +14,13 @@ namespace PMSClient.ViewModel
     {
         public RecordMachineVM()
         {
-
+            RecordMachines = new ObservableCollection<DcRecordMachine>();
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit);
+            Edit = new RelayCommand<DcRecordMachine>(ActionEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
+
             SetPageParametersWhenConditionChange();
         }
 
@@ -33,7 +34,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionEdit(DcRecordDeMold model)
+        private void ActionEdit(DcRecordMachine model)
         {
             NavigationService.GoTo(VToken.RecordMachineEdit, new ModelObject() { IsNew = false, Model = model });
         }
@@ -49,7 +50,7 @@ namespace PMSClient.ViewModel
             model.Composition = "成分";
             model.Diameter1 = 0;
             model.Diameter2 = 0;
-
+            model.Dimension = "230mm OD x 4mm";
             model.Thickness1 = 0;
             model.Thickness2 = 0;
             model.Thickness3 = 0;
@@ -83,6 +84,6 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcRecordMachine> RecordMachines { get; set; }
 
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordDeMold> Edit { get; set; }
+        public RelayCommand<DcRecordMachine> Edit { get; set; }
     }
 }
