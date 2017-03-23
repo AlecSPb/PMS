@@ -17,7 +17,10 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
 
-        public Guid PlanID { get; set; }//Foreign Key
+        public string VHPPlanLot { get; set; }
+        public string Composition { get; set; }
+
+
         public string MoveOutTemperature { get; set; }
         public string TakeOutTemperature { get; set; }
         public string ExtraInformation { get; set; }

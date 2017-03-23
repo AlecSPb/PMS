@@ -4809,9 +4809,6 @@ namespace PMSClient.MainService {
         private string MillingToolField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid PlanIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4928,19 +4925,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid PlanID {
-            get {
-                return this.PlanIDField;
-            }
-            set {
-                if ((this.PlanIDField.Equals(value) != true)) {
-                    this.PlanIDField = value;
-                    this.RaisePropertyChanged("PlanID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Remark {
             get {
                 return this.RemarkField;
@@ -5025,6 +5009,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5049,9 +5036,6 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid PlanIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5066,6 +5050,9 @@ namespace PMSClient.MainService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Thickness4Field;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPPlanLotField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -5073,6 +5060,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
             }
         }
         
@@ -5181,19 +5181,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid PlanID {
-            get {
-                return this.PlanIDField;
-            }
-            set {
-                if ((this.PlanIDField.Equals(value) != true)) {
-                    this.PlanIDField = value;
-                    this.RaisePropertyChanged("PlanID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string State {
             get {
                 return this.StateField;
@@ -5258,6 +5245,19 @@ namespace PMSClient.MainService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPPlanLot {
+            get {
+                return this.VHPPlanLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPPlanLotField, value) != true)) {
+                    this.VHPPlanLotField = value;
+                    this.RaisePropertyChanged("VHPPlanLot");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -5276,6 +5276,9 @@ namespace PMSClient.MainService {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
@@ -5299,9 +5302,6 @@ namespace PMSClient.MainService {
         private string MoveOutTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid PlanIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RoughTargetWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5323,6 +5323,9 @@ namespace PMSClient.MainService {
         private double Thickness4Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPPlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WithExtraThicknessField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -5332,6 +5335,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
             }
         }
         
@@ -5427,19 +5443,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid PlanID {
-            get {
-                return this.PlanIDField;
-            }
-            set {
-                if ((this.PlanIDField.Equals(value) != true)) {
-                    this.PlanIDField = value;
-                    this.RaisePropertyChanged("PlanID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public double RoughTargetWeight {
             get {
                 return this.RoughTargetWeightField;
@@ -5526,6 +5529,19 @@ namespace PMSClient.MainService {
                 if ((this.Thickness4Field.Equals(value) != true)) {
                     this.Thickness4Field = value;
                     this.RaisePropertyChanged("Thickness4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPPlanLot {
+            get {
+                return this.VHPPlanLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPPlanLotField, value) != true)) {
+                    this.VHPPlanLotField = value;
+                    this.RaisePropertyChanged("VHPPlanLot");
                 }
             }
         }

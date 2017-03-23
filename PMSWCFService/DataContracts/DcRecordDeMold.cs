@@ -22,7 +22,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }
         [DataMember]
-        public Guid PlanID { get; set; }//Foreign Key
+        public string VHPPlanLot { get; set; }
+        [DataMember]
+        public string Composition { get; set; }
         [DataMember]
         public string MoveOutTemperature { get; set; }
         [DataMember]

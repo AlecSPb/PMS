@@ -16,7 +16,8 @@ namespace PMSDAL
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
-        public Guid PlanID { get; set; }//Foreign Key
+        public string VHPPlanLot { get; set; }
+        public string Composition { get; set; }
         //加工要求
         public string Dimension { get; set; }
         public string ExtraRequirement { get; set; }

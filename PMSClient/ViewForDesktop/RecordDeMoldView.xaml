@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTest}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordBlank}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
@@ -51,7 +51,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="原材料" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Compositon}"/>
                 <DataGridTextColumn Header="来源" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding MaterialSrouce}"/>

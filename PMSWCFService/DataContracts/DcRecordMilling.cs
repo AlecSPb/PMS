@@ -22,8 +22,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }
         [DataMember]
-        public Guid PlanID { get; set; }//Foreign Key
-        [DataMember]
         //需要记录的信息
         public string Composition { get; set; }
         [DataMember]

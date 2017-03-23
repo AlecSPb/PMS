@@ -23,8 +23,9 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }
         [DataMember]
-        public Guid PlanID { get; set; }//Foreign Key
-                                        //加工要求
+        public string VHPPlanLot { get; set; }
+        [DataMember]
+        public string Composition { get; set; }
         [DataMember]
         public string Dimension { get; set; }
         [DataMember]

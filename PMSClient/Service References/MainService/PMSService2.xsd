@@ -470,7 +470,6 @@
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeightIn" type="xs:double" />
@@ -487,6 +486,7 @@
   <xs:element name="ArrayOfDcRecordMachine" nillable="true" type="tns:ArrayOfDcRecordMachine" />
   <xs:complexType name="DcRecordMachine">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Defects" nillable="true" type="xs:string" />
@@ -495,12 +495,12 @@
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ExtraRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
-      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Thickness1" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness2" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness3" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness4" type="xs:double" />
+      <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordMachine" nillable="true" type="tns:DcRecordMachine" />
@@ -512,6 +512,7 @@
   <xs:element name="ArrayOfDcRecordDeMold" nillable="true" type="tns:ArrayOfDcRecordDeMold" />
   <xs:complexType name="DcRecordDeMold">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Diameter1" type="xs:double" />
@@ -519,7 +520,6 @@
       <xs:element minOccurs="0" name="ExtraInformation" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MoveOutTemperature" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
       <xs:element minOccurs="0" name="RoughTargetWeight" type="xs:double" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TakeOutTemperature" nillable="true" type="xs:string" />
@@ -527,6 +527,7 @@
       <xs:element minOccurs="0" name="Thickness2" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness3" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness4" type="xs:double" />
+      <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WithExtraThickness" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
