@@ -21,14 +21,25 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<DcRecordDeMold>(ActionEdit);
             SetPageParametersWhenConditionChange();
-
+            Search = new RelayCommand(ActionSearch);
+            All = new RelayCommand(ActionAll);
 
 
         }
 
-        private void ActionEdit(DcRecordDeMold obj)
+        private void ActionAll()
         {
-            throw new NotImplementedException();
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionEdit(DcRecordDeMold model)
+        {
+            NavigationService.GoTo(VToken.RecordDeMoldEdit, new ModelObject() { IsNew = false, Model = model });
         }
 
         private void ActionAdd()
@@ -38,7 +49,18 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = CurrentUserInformation.UserName;
             model.State = PMSCommon.CommonState.UnChecked.ToString();
-            NavigationService.GoTo(VToken.RecordBondingEdit, new ModelObject() { IsNew=true,Model=model});
+            model.Temperature1 = "10";
+            model.Temperature2 = "20";
+            model.VHPPlanLot = DateTime.Now.ToString("yyMMdd");
+            model.Composition = "成分";
+            model.Weight = 0;
+            model.Diameter1 = 0;
+            model.Diameter2 = 0;
+            model.Thickness1 = 0;
+            model.Thickness2 = 0;
+            model.Thickness3 = 0;
+            model.Thickness4 = 0;
+            NavigationService.GoTo(VToken.RecordDeMoldEdit, new ModelObject() { IsNew = true, Model = model });
         }
 
         private void SetPageParametersWhenConditionChange()

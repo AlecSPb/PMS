@@ -5293,22 +5293,19 @@ namespace PMSLargeScreen.PMSMainService {
         private double Diameter2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExtraInformationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MoveOutTemperatureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double RoughTargetWeightField;
+        private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TakeOutTemperatureField;
+        private string Temperature1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Temperature2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Thickness1Field;
@@ -5326,7 +5323,7 @@ namespace PMSLargeScreen.PMSMainService {
         private string VHPPlanLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WithExtraThicknessField;
+        private double WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -5404,19 +5401,6 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExtraInformation {
-            get {
-                return this.ExtraInformationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExtraInformationField, value) != true)) {
-                    this.ExtraInformationField = value;
-                    this.RaisePropertyChanged("ExtraInformation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -5430,27 +5414,14 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MoveOutTemperature {
+        public string Remark {
             get {
-                return this.MoveOutTemperatureField;
+                return this.RemarkField;
             }
             set {
-                if ((object.ReferenceEquals(this.MoveOutTemperatureField, value) != true)) {
-                    this.MoveOutTemperatureField = value;
-                    this.RaisePropertyChanged("MoveOutTemperature");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double RoughTargetWeight {
-            get {
-                return this.RoughTargetWeightField;
-            }
-            set {
-                if ((this.RoughTargetWeightField.Equals(value) != true)) {
-                    this.RoughTargetWeightField = value;
-                    this.RaisePropertyChanged("RoughTargetWeight");
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -5469,14 +5440,27 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TakeOutTemperature {
+        public string Temperature1 {
             get {
-                return this.TakeOutTemperatureField;
+                return this.Temperature1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.TakeOutTemperatureField, value) != true)) {
-                    this.TakeOutTemperatureField = value;
-                    this.RaisePropertyChanged("TakeOutTemperature");
+                if ((object.ReferenceEquals(this.Temperature1Field, value) != true)) {
+                    this.Temperature1Field = value;
+                    this.RaisePropertyChanged("Temperature1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Temperature2 {
+            get {
+                return this.Temperature2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Temperature2Field, value) != true)) {
+                    this.Temperature2Field = value;
+                    this.RaisePropertyChanged("Temperature2");
                 }
             }
         }
@@ -5547,14 +5531,14 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WithExtraThickness {
+        public double Weight {
             get {
-                return this.WithExtraThicknessField;
+                return this.WeightField;
             }
             set {
-                if ((object.ReferenceEquals(this.WithExtraThicknessField, value) != true)) {
-                    this.WithExtraThicknessField = value;
-                    this.RaisePropertyChanged("WithExtraThickness");
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
                 }
             }
         }
