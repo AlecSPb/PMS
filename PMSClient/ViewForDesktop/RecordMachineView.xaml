@@ -18,7 +18,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTest}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource strPageRecordMachine}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
@@ -33,7 +33,7 @@
             <Button Content="{StaticResource strbtnSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource strbtnAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordMillings}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordMachines}"
                   SelectedIndex="0">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Operation">
