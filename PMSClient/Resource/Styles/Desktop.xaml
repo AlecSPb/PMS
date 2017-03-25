@@ -1,6 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!--Brush Resource-->
+    <SolidColorBrush x:Key="bg" Color="Wheat"/>
+    <SolidColorBrush x:Key="fg" Color="Black"/>
+    <!--control button-->
+    <Style x:Key="ControlButton" TargetType="Button">
+        <Setter Property="Margin" Value="0 2"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Width" Value="30"/>
+    </Style>
+    <Style x:Key="AppTitleTextBlock" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0 2"/>
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
     <!--Basic-->
     <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="LightSteelBlue"/>
 
@@ -132,5 +147,5 @@
         <Setter Property="CanUserSortColumns" Value="False"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
     </Style>
-    
+
 </ResourceDictionary>
