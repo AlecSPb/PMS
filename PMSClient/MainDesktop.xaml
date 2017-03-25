@@ -23,9 +23,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <TextBlock Text="{StaticResource strAppNameDesktop}" Style="{StaticResource AppTitleTextBlock}"/>
+                <TextBlock  Text="{StaticResource strAppNameDesktop}" Style="{StaticResource AppTitleTextBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Orange"/>
                 <Button Name="btnMiinimum" Content="-" Style="{StaticResource ControlButton}" Click="btnMiinimum_Click"/>
                 <Button Name="btnMaximum" Content="+" Style="{StaticResource ControlButton}" Click="btnMaximum_Click"/>
                 <Button Name="btnClose" Content="X" Style="{StaticResource ControlButton}" Click="btnClose_Click"/>
@@ -96,8 +97,13 @@
         <Border Grid.Row="2">
             <ContentControl x:Name="mainArea"/>
         </Border>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BackgroundStatusBar}">
+        <Grid Grid.Row="3"  Background="{StaticResource BackgroundStatusBar}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource TextBlockBasic}" Foreground="White"/>
-        </StackPanel>
+            <TextBlock Grid.Column="1" Text="designed by xs.zhou" Style="{StaticResource TextBlockBasic}" Foreground="White" HorizontalAlignment="Right"/>
+        </Grid>
     </Grid>
 </Window>

@@ -36,10 +36,6 @@
             <RowDefinition Height="auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="6" Background="Orange" HorizontalAlignment="Stretch"
-                   Style="{x:Null}"
-                   VerticalAlignment="Center" FontSize="25" Padding="5"
-                   Text="{Binding LogInformation}"/>
         <Button Content="{StaticResource strPageSales}" Grid.Row="1" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
         <Button Content="{StaticResource strbtnOrder}" Grid.Row="1" Grid.Column="1" Command="{Binding GoToOrder}" Style="{DynamicResource btnNavigation}"/>
         <Button Content="{StaticResource strbtnOrderCheck}" Grid.Row="1" Grid.Column="2" Command="{Binding GoToOrderCheck}" Style="{DynamicResource btnNavigation}"/>

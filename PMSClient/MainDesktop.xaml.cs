@@ -42,6 +42,9 @@ namespace PMSClient
 
             //load the first page
             GoTo(_viewLocator.Navigation);
+
+
+            txtCurrentUserName.Text = $"当前登录用户:{ CurrentUserInformation.UserName}";
         }
 
         private void ActionStatusMessage(string obj)
