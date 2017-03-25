@@ -17,14 +17,8 @@ namespace PMSClient.ViewModel
     {
         public OrderVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.OrderRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
-            SetPageParametersWhenConditionChange();
-        }
-
-        private void ActionRefresh(MsgObject obj)
-        {
             SetPageParametersWhenConditionChange();
         }
 
@@ -110,24 +104,39 @@ namespace PMSClient.ViewModel
 
         private void SetPageParametersWhenConditionChange()
         {
-            PageIndex = 1;
-            PageSize = 20;
-            var service = new OrderServiceClient();
-            RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
-            ActionPaging();
+            try
+            {
+                PageIndex = 1;
+                PageSize = 20;
+                var service = new OrderServiceClient();
+                RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
+                ActionPaging();
+            }
+            catch (Exception ex)
+            { 
+                throw ex;
+            }
         }
         /// <summary>
         /// 分页动作的时候读入数据
         /// </summary>
         private void ActionPaging()
         {
-            var service = new OrderServiceClient();
-            int skip, take = 0;
-            skip = (PageIndex - 1) * PageSize;
-            take = PageSize;
-            var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
-            MainOrders.Clear();
-            orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+            try
+            {
+                var service = new OrderServiceClient();
+                int skip, take = 0;
+                skip = (PageIndex - 1) * PageSize;
+                take = PageSize;
+                var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+                MainOrders.Clear();
+                orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
 
 
