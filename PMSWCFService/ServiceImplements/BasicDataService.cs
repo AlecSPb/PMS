@@ -11,7 +11,7 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : ICustomerService, IDeliveryAddressService,
+    public  class BasicDataService : ICustomerService, IDeliveryAddressService,
         IVHPDeviceService, IVHPMoldService, IVHPProcessService,
         ICompoundService,ISupplierService
 
