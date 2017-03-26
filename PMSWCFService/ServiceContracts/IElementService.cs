@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSWCFService.DataContracts;
 
-namespace PMSWCFService
+namespace PMSWCFService.ServiceContracts
 {
     [ServiceContract]
     public interface IElementService

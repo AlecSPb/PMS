@@ -608,6 +608,9 @@
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDDeliveryAddress.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDSupplier.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
