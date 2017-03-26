@@ -11,15 +11,15 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public  class BasicDataService : ICustomerService, IDeliveryAddressService,
+    public class BasicDataService : ICustomerService, IDeliveryAddressService,
         IVHPDeviceService, IVHPMoldService, IVHPProcessService,
-        ICompoundService,ISupplierService
+        ICompoundService, ISupplierService, IElementService
 
     {
         public int AddCompound(DcBDCompound model)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
                 var newModel = Mapper.Map<BDCompound>(model);
@@ -34,7 +34,7 @@ namespace PMSWCFService
         public int AddCustomer(DcBDCustomer model)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
                 var newModel = Mapper.Map<BDCustomer>(model);
@@ -48,7 +48,7 @@ namespace PMSWCFService
         public int AddDeliveryAddress(DcBDDeliveryAddress model)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
                 var newModel = Mapper.Map<BDDeliveryAddress>(model);
@@ -59,10 +59,32 @@ namespace PMSWCFService
             return result;
         }
 
+        public int AddElement(DcBDElement model)
+        {
+            int result = 0;
+            try
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDElement, BDElement>());
+                var item = Mapper.Map<BDElement>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    dc.Elements.Add(item);
+                    result = dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return result;
+        }
+
         public int AddSupplier(DcBDSupplier model)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
                 var supplier = Mapper.Map<BDSupplier>(model);
@@ -76,7 +98,7 @@ namespace PMSWCFService
         public int AddVHPDevice(DcBDVHPDevice model)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
                 var newModel = Mapper.Map<BDVHPDevice>(model);
@@ -118,7 +140,7 @@ namespace PMSWCFService
         public int DeleteCompound(Guid id)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 var model = dc.Compounds.Find(id);
                 dc.Compounds.Remove(model);
@@ -130,7 +152,7 @@ namespace PMSWCFService
         public int DeleteCustomer(Guid id)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 var model = dc.Customers.Find(id);
                 dc.Customers.Remove(model);
@@ -142,7 +164,7 @@ namespace PMSWCFService
         public int DeleteDeliveryAddress(Guid id)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 var model = dc.DeliveryAddresses.Find(id);
                 dc.DeliveryAddresses.Remove(model);
@@ -151,10 +173,15 @@ namespace PMSWCFService
             return result;
         }
 
+        public int DeleteElement(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public int DeleteSupplier(Guid id)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 var model = dc.Suppliers.Find(id);
                 dc.Suppliers.Remove(model);
@@ -167,7 +194,7 @@ namespace PMSWCFService
         public int DeleteVHPDevice(Guid id)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 var model = dc.VHPDevices.Find(id);
                 dc.VHPDevices.Remove(model);
@@ -202,7 +229,7 @@ namespace PMSWCFService
 
         public List<DcBDCompound> GetAllCompounds()
         {
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
                 var model = dc.Compounds.OrderBy(o => o.CreateTime).ToList();
@@ -230,9 +257,28 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcBDElement> GetElements()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDElement, DcBDElement>());
+                    var result = dc.Elements.OrderBy(i => i.AtomicNumber).ToList();
+
+                    return Mapper.Map<List<BDElement>, List<DcBDElement>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<DcBDSupplier> GetSuppliers()
         {
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<BDSupplier, DcBDSupplier>());
                 var model = dc.Suppliers.ToList();
@@ -273,7 +319,7 @@ namespace PMSWCFService
         public int UpdateCompound(DcBDCompound model)
         {
             int result = 0;
-            using (var dc=new PMSDbContext())
+            using (var dc = new PMSDbContext())
             {
                 Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
                 var newModel = Mapper.Map<BDCompound>(model);
@@ -307,6 +353,28 @@ namespace PMSWCFService
                 dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
                 result = dc.SaveChanges();
             }
+            return result;
+        }
+
+        public int UpdateElement(DcBDElement model)
+        {
+            int result = 0;
+            try
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<DcBDElement, BDElement>());
+                var item = Mapper.Map<BDElement>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    dc.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
             return result;
         }
 
