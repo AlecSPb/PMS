@@ -48,7 +48,9 @@ namespace PMSClient.ViewForDesktop
                     var user = service.CheckUser(uid, pwd);
                     if (user != null)
                     {
-                        CurrentUserInformation.SetCurrentUser(user);
+                        //CurrentUserInformation.SetCurrentUser(user);
+
+
                         NavigationService.GoTo(VToken.Navigation);
                     }
                     else

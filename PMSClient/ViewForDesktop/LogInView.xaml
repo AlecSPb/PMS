@@ -44,13 +44,13 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource txtUid}"/>
+            <TextBox Grid.Row="0" Name="txtUserName" Text="xs.zhou" Style="{StaticResource txtUid}"/>
             <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource txtPwd}"/>
             <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click" Style="{StaticResource btnLogin}"/>
             <TextBlock Name="txtLogInStatus" Grid.Row="3" Text="状态显示" Style="{StaticResource txtInformation}"/>
         </Grid>
         <Grid Grid.Column="1">
-            <TextBlock Name="txtInformation" Text="请在左边登录框里输入登录信息登录"/>
+            <TextBlock Name="txtInformation" Text="请在左边登录框里输入登录信息登录" Margin="5"/>
         </Grid>
     </Grid>
 </UserControl>

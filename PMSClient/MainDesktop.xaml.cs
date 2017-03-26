@@ -46,7 +46,19 @@ namespace PMSClient
 
             GoTo(_viewLocator.LogIn);
 
-            txtCurrentUserName.Text = $"当前登录用户:{ CurrentUserInformation.UserName}";
+            RefreshLogInformation();
+        }
+
+        private void RefreshLogInformation()
+        {
+            if (_logInformation.CurrentUser!=null)
+            {
+                txtCurrentUserName.Text = $"当前登录用户:{ _logInformation.CurrentUser.UserName}";
+            }
+            else
+            {
+                txtCurrentUserName.Text = "未登录";
+            }
         }
 
         private void ActionStatusMessage(string obj)
