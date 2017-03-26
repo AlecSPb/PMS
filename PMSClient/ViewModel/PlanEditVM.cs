@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
+using PMSClient.BasicService;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 
@@ -46,7 +47,7 @@ namespace PMSClient.ViewModel
             devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 
-            Compounds = new ObservableCollection<MainService.DcBDCompound>();
+            Compounds = new ObservableCollection<DcBDCompound>();
             var service4 = new CompoundServiceClient();
             var compounds = service4.GetAllCompounds();
             compounds.ToList().ForEach(c => Compounds.Add(c));

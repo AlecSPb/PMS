@@ -99,6 +99,11 @@
       <DependentUpon>MainSanJieClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Service References\BasicService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\MainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -583,25 +588,35 @@
     <None Include="Reports\GeAsSeElastomer440Blank.docx" />
     <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
     <None Include="Reports\ProductTemplate.docx" />
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDCompound.datasource">
+    <None Include="Service References\BasicService\BasicDataService.wsdl" />
+    <None Include="Service References\BasicService\BasicDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\BasicDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\BasicDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDCustomer.datasource">
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCustomer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDDeliveryAddress.datasource">
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDDeliveryAddress.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDSupplier.datasource">
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDSupplier.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDVHPDevice.datasource">
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPDevice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDVHPMold.datasource">
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPMold.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcBDVHPProcess.datasource">
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialNeed.datasource">
@@ -709,6 +724,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BasicService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
     <WCFMetadataStorage Include="Service References\UserService\" />
   </ItemGroup>
@@ -765,6 +781,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BasicService\BasicDataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BasicService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BasicService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BasicService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

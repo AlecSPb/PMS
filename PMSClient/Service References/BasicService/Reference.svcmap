@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5212651d-1658-4528-946d-342568b364a5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/BasicDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BasicDataService.disco" MetadataType="Disco" ID="9a08f8b9-debe-417f-b224-f307942ccce1" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?disco" />
+    <MetadataFile FileName="BasicDataService.xsd" MetadataType="Schema" ID="70bce73c-39ad-42f8-948a-190832b97dcd" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BasicDataService.wsdl" MetadataType="Wsdl" ID="c4e10146-99e4-4e3f-aa17-195c7d1f64a6" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?wsdl" />
+    <MetadataFile FileName="BasicDataService1.xsd" MetadataType="Schema" ID="57a42ead-3763-4153-b909-682237ddf251" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BasicDataService2.xsd" MetadataType="Schema" ID="7b353964-e417-4821-b5b2-b9044018a1b7" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

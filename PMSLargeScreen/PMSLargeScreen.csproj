@@ -109,27 +109,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDCompound.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDCustomer.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDDeliveryAddress.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDSupplier.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDVHPDevice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDVHPMold.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcBDVHPProcess.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialNeed.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
