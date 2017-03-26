@@ -26,7 +26,7 @@ namespace PMSClient
     {
         private DesktopViewLocator _viewLocator;
         private ViewModelLocator _viewModelLocator;
-
+        private LogInformation _logInformation;
         public MainDesktop()
         {
             InitializeComponent();
@@ -36,6 +36,7 @@ namespace PMSClient
         {
             _viewLocator = new DesktopViewLocator();
             _viewModelLocator = this.FindResource("Locator") as ViewModelLocator;
+            _logInformation = new LogInformation();
 
             Messenger.Default.Register<MsgObject>(this, MainNavigationToken.Navigate, ActionNavigate);
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);

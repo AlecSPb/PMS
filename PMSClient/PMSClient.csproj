@@ -92,7 +92,7 @@
     </ApplicationDefinition>
     <Compile Include="Helpers\BDInstance.cs" />
     <Compile Include="Helpers\UserAccess\CurrentUser.cs" />
-    <Compile Include="Helpers\UserAccess\UserControl.cs" />
+    <Compile Include="Helpers\UserAccess\LogInformation.cs" />
     <Compile Include="LocalService\CommonDialogService.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
     <Compile Include="Helpers\MainNavigationToken.cs" />
