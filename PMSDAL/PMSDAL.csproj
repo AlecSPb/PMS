@@ -241,6 +241,10 @@
     <Compile Include="Migrations\201703230249168_addcompostion2.Designer.cs">
       <DependentUpon>201703230249168_addcompostion2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703260046181_addelemententity.cs" />
+    <Compile Include="Migrations\201703260046181_addelemententity.Designer.cs">
+      <DependentUpon>201703260046181_addelemententity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -415,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703230249168_addcompostion2.resx">
       <DependentUpon>201703230249168_addcompostion2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703260046181_addelemententity.resx">
+      <DependentUpon>201703260046181_addelemententity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
