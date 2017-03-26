@@ -16,12 +16,14 @@ namespace PMSClient
         public List<DcUserAccess> CurrentAccesses { get; set; }
         public LogInformation()
         {
+            CurrentUser = null;
+            CurrentUserRole = null;
             CurrentAccesses = new List<DcUserAccess>();
         }
         public void ResetUserData()
         {
-            CurrentUser = new DcUser();
-            CurrentUserRole = new DcUserRole();
+            CurrentUser = null;
+            CurrentUserRole = null;
             CurrentAccesses.Clear();
         }
 
@@ -32,11 +34,11 @@ namespace PMSClient
                 using (var service = new UserAccessServiceClient())
                 {
                     CurrentUser = service.CheckUser(username, password);
-                    CurrentUserRole = service.GetRoleByUserId(CurrentUser.ID);
+                    //CurrentUserRole = service.GetRoleByUserId(CurrentUser.ID);
 
-                    var accesses = service.GetAccessesByRoleId(CurrentUserRole.ID);
-                    CurrentAccesses.Clear();
-                    accesses.ToList().ForEach(i => CurrentAccesses.Add(i));
+                    //var accesses = service.GetAccessesByRoleId(CurrentUserRole.ID);
+                    //CurrentAccesses.Clear();
+                    //accesses.ToList().ForEach(i => CurrentAccesses.Add(i));
                 }
             }
             catch (Exception ex)

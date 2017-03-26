@@ -49,6 +49,10 @@ namespace PMSClient
             RefreshLogInformation();
         }
 
+        public LogInformation CurrentLogInformation
+        {
+            get { return _logInformation; }
+        }
         private void RefreshLogInformation()
         {
             if (_logInformation.CurrentUser!=null)
@@ -85,6 +89,7 @@ namespace PMSClient
                 {
                     case VToken.Navigation:
                         GoTo(_viewLocator.Navigation);
+                        RefreshLogInformation();
                         break;
                     case VToken.LogIn:
                         break;

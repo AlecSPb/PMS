@@ -43,20 +43,18 @@ namespace PMSClient.ViewForDesktop
             }
             try
             {
-                using (var service = new UserAccessServiceClient())
+                //CurrentUserInformation.SetCurrentUser(user);
+                var main = App.Current.MainWindow as MainDesktop;
+                var logInformation = main.CurrentLogInformation;
+                logInformation.LoadUserData(uid, pwd);
+
+                if (logInformation.CurrentUser != null)
                 {
-                    var user = service.CheckUser(uid, pwd);
-                    if (user != null)
-                    {
-                        //CurrentUserInformation.SetCurrentUser(user);
-
-
-                        NavigationService.GoTo(VToken.Navigation);
-                    }
-                    else
-                    {
-                        txtLogInStatus.Text = "用户名或者密码错误";
-                    }
+                    NavigationService.GoTo(VToken.Navigation);
+                }
+                else
+                {
+                    txtLogInStatus.Text = "用户名或者密码错误";
                 }
             }
             catch (Exception ex)
