@@ -55,7 +55,7 @@ namespace PMSClient
         }
         private void RefreshLogInformation()
         {
-            if (_logInformation.CurrentUser!=null)
+            if (_logInformation.CurrentUser != null)
             {
                 txtCurrentUserName.Text = $"当前登录用户:{ _logInformation.CurrentUser.UserName}";
             }
