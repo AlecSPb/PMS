@@ -80,6 +80,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\DcBDElement.cs" />
     <Compile Include="DataContracts\DcBDSieve.cs" />
     <Compile Include="DataContracts\DcBDCustomer.cs" />
     <Compile Include="DataContracts\DcBDCompound.cs" />
@@ -109,6 +110,7 @@
     <Compile Include="DataContracts\DcRecordMachine.cs" />
     <Compile Include="DataContracts\DcRecordDeMold.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
+    <Compile Include="ServiceContracts\IElementService.cs" />
     <Compile Include="ServiceContracts\IMaintenanceService.cs" />
     <Compile Include="ServiceContracts\IMissonWithPlanService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
