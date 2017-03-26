@@ -46,9 +46,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         bool CheckUserName(string userName);
         [OperationContract]
-        bool CheckLogIn(DcUser model);
+        DcUser CheckUser(string username, string password);
         [OperationContract]
-        bool CheckAccess(DcUser model, string AccessCode);
+        List<DcUserAccess> CheckAccess(string username, string password, string accesscode);
 
     }
 }

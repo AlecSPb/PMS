@@ -15,19 +15,42 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid>
+            <Grid.Resources>
+                <Style x:Key="txtUid" TargetType="TextBox">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="FontSize" Value="25"/>
+                </Style>
+                <Style x:Key="txtPwd" TargetType="PasswordBox">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="FontSize" Value="25"/>
+                </Style>
+                <Style x:Key="txtInformation" TargetType="TextBlock">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="Foreground" Value="Blue"/>
+                </Style>
+                <Style x:Key="btnLogin" TargetType="Button">
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="FontSize" Value="25"/>
+                </Style>
+                
+            </Grid.Resources>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Name="txtUserName" Text=""/>
-            <TextBox Grid.Row="1" Name="txtPassword" Text=""/>
-            <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click"/>
-            <TextBlock Grid.Row="3" Text="状态显示"/>
+            <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource txtUid}"/>
+            <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource txtPwd}"/>
+            <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click" Style="{StaticResource btnLogin}"/>
+            <TextBlock Name="txtLogInStatus" Grid.Row="3" Text="状态显示" Style="{StaticResource txtInformation}"/>
         </Grid>
         <Grid Grid.Column="1">
-            <TextBlock Text="请在左边登录框里输入登录信息登录"/>
+            <TextBlock Name="txtInformation" Text="请在左边登录框里输入登录信息登录"/>
         </Grid>
     </Grid>
 </UserControl>

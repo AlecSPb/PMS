@@ -53,19 +53,55 @@ namespace PMSWCFService
             }
         }
 
-        public bool CheckAccess(DcUser model, string AccessCode)
+        public List<DcUserAccess> CheckAccess(string username, string password, string accesscode)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public bool CheckLogIn(DcUser model)
+
+        public DcUser CheckUser(string username, string password)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<User, DcUser>());
+                    var user = dc.Users.Where(i => i.UserName == username && i.Password == password).FirstOrDefault();
+                    return Mapper.Map<DcUser>(user);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public bool CheckUserName(string userName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public int DeleteAccess(Guid id)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSClient.UserService;
 
 namespace PMSClient
 {
@@ -14,5 +15,10 @@ namespace PMSClient
             get { return (App.Current as App).CurrentUser.UserName; }
         }
 
+        public static void SetCurrentUser(DcUser user)
+        {
+            var currentUser = (App.Current as App).CurrentUser;
+            currentUser = user;
+        }
     }
 }

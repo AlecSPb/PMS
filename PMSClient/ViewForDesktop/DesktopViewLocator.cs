@@ -16,6 +16,7 @@ namespace PMSClient.ViewForDesktop
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            SimpleIoc.Default.Register<LogInView>();
 
             SimpleIoc.Default.Register<NavigationView>(true);
             SimpleIoc.Default.Register<OrderView>();
@@ -62,6 +63,11 @@ namespace PMSClient.ViewForDesktop
         }
 
         #region NavigationProperties
+        public LogInView LogIn
+        {
+            get { return SimpleIoc.Default.GetInstance<LogInView>(); }
+        }
+
         public NavigationView Navigation
         {
             get

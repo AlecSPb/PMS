@@ -97,11 +97,11 @@
   <wsdl:message name="IUserAccessService_CheckUserName_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckUserNameResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserAccessService_CheckLogIn_InputMessage">
-    <wsdl:part name="parameters" element="tns:CheckLogIn" />
+  <wsdl:message name="IUserAccessService_CheckUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUser" />
   </wsdl:message>
-  <wsdl:message name="IUserAccessService_CheckLogIn_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CheckLogInResponse" />
+  <wsdl:message name="IUserAccessService_CheckUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserResponse" />
   </wsdl:message>
   <wsdl:message name="IUserAccessService_CheckAccess_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckAccess" />
@@ -170,9 +170,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserAccessService/CheckUserName" message="tns:IUserAccessService_CheckUserName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserAccessService/CheckUserNameResponse" message="tns:IUserAccessService_CheckUserName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CheckLogIn">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserAccessService/CheckLogIn" message="tns:IUserAccessService_CheckLogIn_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserAccessService/CheckLogInResponse" message="tns:IUserAccessService_CheckLogIn_OutputMessage" />
+    <wsdl:operation name="CheckUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserAccessService/CheckUser" message="tns:IUserAccessService_CheckUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserAccessService/CheckUserResponse" message="tns:IUserAccessService_CheckUser_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CheckAccess">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserAccessService/CheckAccess" message="tns:IUserAccessService_CheckAccess_InputMessage" />
@@ -316,8 +316,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CheckLogIn">
-      <soap:operation soapAction="http://tempuri.org/IUserAccessService/CheckLogIn" style="document" />
+    <wsdl:operation name="CheckUser">
+      <soap:operation soapAction="http://tempuri.org/IUserAccessService/CheckUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

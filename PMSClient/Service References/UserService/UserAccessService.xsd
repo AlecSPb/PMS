@@ -206,32 +206,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CheckLogIn">
+  <xs:element name="CheckUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q17:DcUser" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CheckLogInResponse">
+  <xs:element name="CheckUserResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CheckLogInResult" type="xs:boolean" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="CheckUserResult" nillable="true" type="q17:DcUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CheckAccess">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q18:DcUser" />
-        <xs:element minOccurs="0" name="AccessCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accesscode" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CheckAccessResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="CheckAccessResult" type="xs:boolean" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="CheckAccessResult" nillable="true" type="q18:ArrayOfDcUserAccess" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

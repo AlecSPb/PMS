@@ -28,16 +28,39 @@ namespace PMSClient.ViewForDesktop
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            var username = txtUserName.Text.Trim();
-            var password = txtPassword.Text.Trim();
-            if (string.IsNullOrEmpty(username))
+            var uid = txtUserName.Text.Trim();
+            var pwd = txtPassword.Password.Trim();
+            var userModel = new DcUser() { UserName = uid, Password = pwd };
+            if (string.IsNullOrEmpty(uid))
             {
-
+                txtLogInStatus.Text = "请输入用户名";
                 return;
             }
-            if (string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(pwd))
             {
+                txtLogInStatus.Text = "请输入密码";
                 return;
+            }
+            try
+            {
+                using (var service = new UserAccessServiceClient())
+                {
+                    var user = service.CheckUser(uid, pwd);
+                    if (user != null)
+                    {
+                        CurrentUserInformation.SetCurrentUser(user);
+                        NavigationService.GoTo(VToken.Navigation);
+                    }
+                    else
+                    {
+                        txtLogInStatus.Text = "用户名或者密码错误";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

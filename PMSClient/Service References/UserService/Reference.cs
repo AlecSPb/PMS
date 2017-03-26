@@ -482,17 +482,17 @@ namespace PMSClient.UserService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckUserName", ReplyAction="http://tempuri.org/IUserAccessService/CheckUserNameResponse")]
         System.Threading.Tasks.Task<bool> CheckUserNameAsync(string userName);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckLogIn", ReplyAction="http://tempuri.org/IUserAccessService/CheckLogInResponse")]
-        bool CheckLogIn(PMSClient.UserService.DcUser model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckUser", ReplyAction="http://tempuri.org/IUserAccessService/CheckUserResponse")]
+        PMSClient.UserService.DcUser CheckUser(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckLogIn", ReplyAction="http://tempuri.org/IUserAccessService/CheckLogInResponse")]
-        System.Threading.Tasks.Task<bool> CheckLogInAsync(PMSClient.UserService.DcUser model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckAccess", ReplyAction="http://tempuri.org/IUserAccessService/CheckAccessResponse")]
-        bool CheckAccess(PMSClient.UserService.DcUser model, string AccessCode);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckUser", ReplyAction="http://tempuri.org/IUserAccessService/CheckUserResponse")]
+        System.Threading.Tasks.Task<PMSClient.UserService.DcUser> CheckUserAsync(string username, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckAccess", ReplyAction="http://tempuri.org/IUserAccessService/CheckAccessResponse")]
-        System.Threading.Tasks.Task<bool> CheckAccessAsync(PMSClient.UserService.DcUser model, string AccessCode);
+        PMSClient.UserService.DcUserAccess[] CheckAccess(string username, string password, string accesscode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/CheckAccess", ReplyAction="http://tempuri.org/IUserAccessService/CheckAccessResponse")]
+        System.Threading.Tasks.Task<PMSClient.UserService.DcUserAccess[]> CheckAccessAsync(string username, string password, string accesscode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -642,20 +642,20 @@ namespace PMSClient.UserService {
             return base.Channel.CheckUserNameAsync(userName);
         }
         
-        public bool CheckLogIn(PMSClient.UserService.DcUser model) {
-            return base.Channel.CheckLogIn(model);
+        public PMSClient.UserService.DcUser CheckUser(string username, string password) {
+            return base.Channel.CheckUser(username, password);
         }
         
-        public System.Threading.Tasks.Task<bool> CheckLogInAsync(PMSClient.UserService.DcUser model) {
-            return base.Channel.CheckLogInAsync(model);
+        public System.Threading.Tasks.Task<PMSClient.UserService.DcUser> CheckUserAsync(string username, string password) {
+            return base.Channel.CheckUserAsync(username, password);
         }
         
-        public bool CheckAccess(PMSClient.UserService.DcUser model, string AccessCode) {
-            return base.Channel.CheckAccess(model, AccessCode);
+        public PMSClient.UserService.DcUserAccess[] CheckAccess(string username, string password, string accesscode) {
+            return base.Channel.CheckAccess(username, password, accesscode);
         }
         
-        public System.Threading.Tasks.Task<bool> CheckAccessAsync(PMSClient.UserService.DcUser model, string AccessCode) {
-            return base.Channel.CheckAccessAsync(model, AccessCode);
+        public System.Threading.Tasks.Task<PMSClient.UserService.DcUserAccess[]> CheckAccessAsync(string username, string password, string accesscode) {
+            return base.Channel.CheckAccessAsync(username, password, accesscode);
         }
     }
 }

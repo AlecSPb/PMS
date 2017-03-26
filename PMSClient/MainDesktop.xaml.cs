@@ -41,8 +41,9 @@ namespace PMSClient
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
 
             //load the first page
-            GoTo(_viewLocator.Navigation);
+            //GoTo(_viewLocator.Navigation);
 
+            GoTo(_viewLocator.LogIn);
 
             txtCurrentUserName.Text = $"当前登录用户:{ CurrentUserInformation.UserName}";
         }
