@@ -23,10 +23,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Image Height="15" Width="15" Source="Resource\Images\main.png" Margin="5 0 0 0"/>
                 <TextBlock  Text="{StaticResource strAppNameDesktop}" Style="{StaticResource AppTitleTextBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Orange"/>
+                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Orange" Margin="0 0 5 0"/>
                 <Button Name="btnMiinimum" Content="-" Style="{StaticResource ControlButton}" Click="btnMiinimum_Click"/>
                 <Button Name="btnMaximum" Content="+" Style="{StaticResource ControlButton}" Click="btnMaximum_Click"/>
                 <Button Name="btnClose" Content="X" Style="{StaticResource ControlButton}" Click="btnClose_Click"/>
@@ -35,35 +36,8 @@
 
         <Menu Grid.Row="1" VerticalAlignment="Center">
             <MenuItem Header="{StaticResource strPageStart}">
+                <MenuItem Header="登录"/>
                 <MenuItem Header="{StaticResource strPageNaivgation}"/>
-                <Separator/>
-                <MenuItem Header="{StaticResource strPageSales}">
-                    <MenuItem Header="{StaticResource strPageOrder}" />
-                    <MenuItem Header="{StaticResource strPageOrderCheck}" />
-                </MenuItem>
-                <MenuItem Header="{StaticResource strPageMaterial}">
-                    <MenuItem Header="{StaticResource strPageMaterialNeed}" />
-                    <MenuItem Header="{StaticResource strPageMaterialOrder}" />
-                    <MenuItem Header="{StaticResource strPageMaterialInventory}"/>
-                </MenuItem>
-                <MenuItem Header="{StaticResource strPageProduction}">
-                    <MenuItem Header="{StaticResource strPageMisson}"/>
-                    <MenuItem Header="{StaticResource strPagePlan}" />
-                </MenuItem>
-                <MenuItem Header="{StaticResource strPageRecord}">
-                    <MenuItem Header="Milling"/>
-                    <MenuItem Header="VHP" />
-                    <MenuItem Header="WorkBlank"/>
-                    <MenuItem Header="Machine"/>
-                    <MenuItem Header="{StaticResource strPageRecordBonding}"/>
-                    <MenuItem Header="Test Result"/>
-                    <MenuItem Header="{StaticResource strPageRecordDelivery}"  />
-                    <MenuItem Header="Maintenance"/>
-                </MenuItem>
-                <MenuItem Header="{StaticResource strPageStatistic}">
-                    <MenuItem Header="Sales Statistic"/>
-                    <MenuItem Header="Production Statistic"/>
-                </MenuItem>
                 <Separator/>
                 <MenuItem Header="{StaticResource strPageBasicData}">
                     <MenuItem Header="Compound"/>
