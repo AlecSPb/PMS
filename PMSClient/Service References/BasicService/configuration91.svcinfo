@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="yt8hYLKiCjABWgK1spITtsokJiE=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="wvMiUkz+TVl8Lht6t1BK0hqeQTA=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="customer1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="customer">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>customer1</serializedValue>
+          <serializedValue>customer</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -110,10 +110,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="deliveryAddress1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="deliveryAddress">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>deliveryAddress1</serializedValue>
+          <serializedValue>deliveryAddress</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -219,10 +219,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="vhpdevice1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="vhpdevice">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpdevice1</serializedValue>
+          <serializedValue>vhpdevice</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -328,10 +328,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="vhpmold1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="vhpmold">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpmold1</serializedValue>
+          <serializedValue>vhpmold</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -437,10 +437,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="vhpprocess1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="vhpprocess">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpprocess1</serializedValue>
+          <serializedValue>vhpprocess</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -546,10 +546,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="compound1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="compound">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>compound1</serializedValue>
+          <serializedValue>compound</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -655,10 +655,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="basicHttpBinding" name="supplier1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="supplier">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>supplier1</serializedValue>
+          <serializedValue>supplier</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -766,7 +766,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="customer1" contract="BasicService.ICustomerService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="customer1">
+    <endpoint name="customer" contract="BasicService.ICustomerService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="customer">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -778,7 +778,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>customer1</serializedValue>
+          <serializedValue>customer</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.ICustomerService</serializedValue>
@@ -841,7 +841,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>customer1</serializedValue>
+          <serializedValue>customer</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -851,7 +851,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="deliveryAddress1" contract="BasicService.IDeliveryAddressService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="deliveryAddress1">
+    <endpoint name="deliveryAddress" contract="BasicService.IDeliveryAddressService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="deliveryAddress">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -863,7 +863,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>deliveryAddress1</serializedValue>
+          <serializedValue>deliveryAddress</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.IDeliveryAddressService</serializedValue>
@@ -926,7 +926,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>deliveryAddress1</serializedValue>
+          <serializedValue>deliveryAddress</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -936,7 +936,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpdevice1" contract="BasicService.IVHPDeviceService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpdevice1">
+    <endpoint name="vhpdevice" contract="BasicService.IVHPDeviceService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpdevice">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -948,7 +948,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpdevice1</serializedValue>
+          <serializedValue>vhpdevice</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.IVHPDeviceService</serializedValue>
@@ -1011,7 +1011,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpdevice1</serializedValue>
+          <serializedValue>vhpdevice</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1021,7 +1021,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpmold1" contract="BasicService.IVHPMoldService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpmold1">
+    <endpoint name="vhpmold" contract="BasicService.IVHPMoldService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpmold">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -1033,7 +1033,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpmold1</serializedValue>
+          <serializedValue>vhpmold</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.IVHPMoldService</serializedValue>
@@ -1096,7 +1096,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpmold1</serializedValue>
+          <serializedValue>vhpmold</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1106,7 +1106,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpprocess1" contract="BasicService.IVHPProcessService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpprocess1">
+    <endpoint name="vhpprocess" contract="BasicService.IVHPProcessService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpprocess">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -1118,7 +1118,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpprocess1</serializedValue>
+          <serializedValue>vhpprocess</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.IVHPProcessService</serializedValue>
@@ -1181,7 +1181,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>vhpprocess1</serializedValue>
+          <serializedValue>vhpprocess</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1191,7 +1191,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="compound1" contract="BasicService.ICompoundService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="compound1">
+    <endpoint name="compound" contract="BasicService.ICompoundService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="compound">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -1203,7 +1203,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>compound1</serializedValue>
+          <serializedValue>compound</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.ICompoundService</serializedValue>
@@ -1266,7 +1266,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>compound1</serializedValue>
+          <serializedValue>compound</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1276,7 +1276,7 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="supplier1" contract="BasicService.ISupplierService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="supplier1">
+    <endpoint name="supplier" contract="BasicService.ISupplierService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="supplier">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
@@ -1288,7 +1288,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>supplier1</serializedValue>
+          <serializedValue>supplier</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>BasicService.ISupplierService</serializedValue>
@@ -1351,7 +1351,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>supplier1</serializedValue>
+          <serializedValue>supplier</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
