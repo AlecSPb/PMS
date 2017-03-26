@@ -14,22 +14,20 @@
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{StaticResource strWelcome}" Style="{StaticResource TextBlockBasic}" HorizontalAlignment="Center" FontSize="25"/>
-        <TextBox Grid.Row="1" Text="User Name" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10" Foreground="Wheat"/>
-        <TextBox Grid.Row="2" Text="Pass Code" Style="{StaticResource TextBoxBasic}" HorizontalAlignment="Stretch" FontSize="20" Padding="10" Foreground="Wheat"/>
-        <Button Grid.Row="3" Content="{StaticResource strbtnLogin}" Style="{StaticResource  ButtonBasic}" FontSize="25" Padding="10 15" HorizontalAlignment="Stretch"/>
-        <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="5" Margin="5"
-                BorderBrush="{StaticResource BorderBrush}" 
-                BorderThickness="1">
-            <TextBlock Text="Notice and Help"
-                       TextWrapping="WrapWithOverflow"/>
-        </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Name="txtUserName" Text=""/>
+            <TextBox Grid.Row="1" Name="txtPassword" Text=""/>
+            <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click"/>
+            <TextBlock Grid.Row="3" Text="状态显示"/>
+        </Grid>
+        <Grid Grid.Column="1">
+            <TextBlock Text="请在左边登录框里输入登录信息登录"/>
+        </Grid>
     </Grid>
 </UserControl>

@@ -3,7 +3,11 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!--Basic-->
     <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="LightSteelBlue"/>
-
+    <SolidColorBrush x:Key="BackgroundNavigateBar" Color="Orange"/>
+    <SolidColorBrush x:Key="BackgroundStatusBar" Color="#CA5100"/>
+    <SolidColorBrush x:Key="BackgroundWindow" Color="Wheat"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="Orange"/>
+    
     <sys:Double x:Key="Small">15</sys:Double>
     <sys:Double x:Key="Medium">20</sys:Double>
     <sys:Double x:Key="Big">25</sys:Double>

@@ -4,6 +4,11 @@
     <!--Brush Resource-->
     <SolidColorBrush x:Key="bg" Color="Wheat"/>
     <SolidColorBrush x:Key="fg" Color="Black"/>
+    
+    <SolidColorBrush x:Key="BackgroundNavigateBar" Color="Orange"/>
+    <SolidColorBrush x:Key="BackgroundStatusBar" Color="#CA5100"/>
+    <SolidColorBrush x:Key="BackgroundWindow" Color="Wheat"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="Orange"/>
     <!--control button-->
     <Style x:Key="ControlButton" TargetType="Button">
         <Setter Property="Margin" Value="0 2"/>

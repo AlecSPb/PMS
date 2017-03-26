@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.UserService;
 
 namespace PMSClient.ViewForDesktop
 {
@@ -23,6 +24,21 @@ namespace PMSClient.ViewForDesktop
         public LogInView()
         {
             InitializeComponent();
+        }
+
+        private void btnLogIn_Click(object sender, RoutedEventArgs e)
+        {
+            var username = txtUserName.Text.Trim();
+            var password = txtPassword.Text.Trim();
+            if (string.IsNullOrEmpty(username))
+            {
+
+                return;
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                return;
+            }
         }
     }
 }
