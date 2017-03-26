@@ -99,9 +99,10 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="LocalService\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
-    <Compile Include="MainSanJieClient.xaml.cs">
-      <DependentUpon>MainSanJieClient.xaml</DependentUpon>
+    <Compile Include="MainSanJie.xaml.cs">
+      <DependentUpon>MainSanJie.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindowBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -321,7 +322,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainSanJieClient.xaml">
+    <Page Include="MainSanJie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

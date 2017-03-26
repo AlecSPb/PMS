@@ -17,9 +17,9 @@ namespace PMSClient
     /// <summary>
     /// PMSSanJieClient.xaml 的交互逻辑
     /// </summary>
-    public partial class MainSanJieClient : Window
+    public partial class MainSanJie : Window
     {
-        public MainSanJieClient()
+        public MainSanJie()
         {
             InitializeComponent();
         }
