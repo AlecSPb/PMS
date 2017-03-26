@@ -19,11 +19,13 @@ namespace PMSDAL
         //BasicData
         public DbSet<BDCompound> Compounds { get; set; }
         public DbSet<BDCustomer> Customers { get; set; }
+        public DbSet<BDElement> Elements { get; set; }
         public DbSet<BDDeliveryAddress> DeliveryAddresses { get; set; }
+        public DbSet<BDSieve> Sieves { get; set; }
+        public DbSet<BDSupplier> Suppliers { get; set; }
         public DbSet<BDVHPDevice> VHPDevices { get; set; }
         public DbSet<BDVHPMold> VHPMolds { get; set; }
         public DbSet<BDVHPProcess> VHPProcesses { get; set; }
-        public DbSet<BDSupplier> Suppliers { get; set; }
 
         //Material
         public DbSet<PMSMaterialNeed> MaterialNeeds { get; set; }

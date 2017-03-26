@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSDAL.Entities
+namespace PMSDAL
 {
     public class BDSieve
     {
