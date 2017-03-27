@@ -22,5 +22,7 @@ namespace PMSWCFService.DataContracts
         public double MolWeight { get; set; }
         [DataMember]
         public double At { get; set; }
+        [DataMember]
+        public int OrderNumber { get; set; }
     }
 }

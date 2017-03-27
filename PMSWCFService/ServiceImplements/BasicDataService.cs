@@ -312,7 +312,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDElementGroupItem, DcBDElementGroupItem>());
-                    var result = dc.ElementGroupItems.Where(i => i.GroupElementID == id).ToList();
+                    var result = dc.ElementGroupItems.Where(i => i.GroupElementID == id).OrderBy(i => i.OrderNumber).ToList();
                     return Mapper.Map<List<BDElementGroupItem>, List<DcBDElementGroupItem>>(result);
                 }
             }

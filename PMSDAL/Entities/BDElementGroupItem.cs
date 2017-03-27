@@ -14,5 +14,6 @@ namespace PMSDAL
         public int GroupNumber { get; set; }
         public double MolWeight { get; set; }
         public double At { get; set; }
+        public int OrderNumber { get; set; }
     }
 }
