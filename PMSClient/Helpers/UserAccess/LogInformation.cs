@@ -20,14 +20,21 @@ namespace PMSClient
             CurrentUserRole = null;
             CurrentAccesses = new List<DcUserAccess>();
         }
-        public void ResetUserData()
+        /// <summary>
+        /// 注销
+        /// </summary>
+        public void LogOut()
         {
             CurrentUser = null;
             CurrentUserRole = null;
             CurrentAccesses.Clear();
         }
-
-        public void LoadUserData(string username, string password)
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        public void LogIn(string username, string password)
         {
             try
             {
@@ -47,5 +54,17 @@ namespace PMSClient
                 throw ex;
             }
         }
+
+        public bool IsAuthorized(string accessCode)
+        {
+            if (CurrentUser == null)
+            {
+                return false;
+            }
+            return CurrentAccesses.Where(i => i.AccessCode == accessCode).Count() > 0;
+        }
+
+
+
     }
 }

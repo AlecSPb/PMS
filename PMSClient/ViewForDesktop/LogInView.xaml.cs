@@ -46,7 +46,7 @@ namespace PMSClient.ViewForDesktop
                 //CurrentUserInformation.SetCurrentUser(user);
                 var main = App.Current.MainWindow as MainDesktop;
                 var logInformation = main.CurrentLogInformation;
-                logInformation.LoadUserData(uid, pwd);
+                logInformation.LogIn(uid, pwd);
 
                 if (logInformation.CurrentUser != null)
                 {
