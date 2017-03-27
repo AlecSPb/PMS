@@ -41,11 +41,14 @@ namespace PMSClient
                 using (var service = new UserAccessServiceClient())
                 {
                     CurrentUser = service.GetUser(username, password);
-                    CurrentUserRole = service.GetRole(CurrentUser.RoleID);
+                    if (CurrentUser != null)
+                    {
+                        CurrentUserRole = service.GetRole(CurrentUser.RoleID);
 
-                    var accesses = service.GetAccesses(CurrentUser.RoleID);
-                    CurrentAccesses.Clear();
-                    accesses.ToList().ForEach(i => CurrentAccesses.Add(i));
+                        var accesses = service.GetAccesses(CurrentUser.RoleID);
+                        CurrentAccesses.Clear();
+                        accesses.ToList().ForEach(i => CurrentAccesses.Add(i));
+                    }
                 }
             }
             catch (Exception ex)
