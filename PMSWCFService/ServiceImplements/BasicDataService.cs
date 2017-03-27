@@ -81,6 +81,36 @@ namespace PMSWCFService
             return result;
         }
 
+        public int AddElementGroupAndItems(string groupName, List<DcBDElementGroupItem> elements)
+        {
+            int result = 0;
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var group = new BDElementGroup()
+                    {
+                        ID = Guid.NewGuid(),
+                        GroupName = groupName,
+                        CreateTime = DateTime.Now
+                    };
+                    dc.ElementGroups.Add(group);
+
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDElementGroupItem, BDElementGroupItem>());
+                    var items = Mapper.Map<List<DcBDElementGroupItem>, List<BDElementGroupItem>>(elements);
+                    dc.ElementGroupItems.AddRange(items);
+
+                    result = dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return result;
+        }
+
         public int AddSupplier(DcBDSupplier model)
         {
             int result = 0;
@@ -254,6 +284,42 @@ namespace PMSWCFService
                 Mapper.Initialize(cfg => cfg.CreateMap<BDDeliveryAddress, DcBDDeliveryAddress>());
                 var model = dc.DeliveryAddresses.ToList();
                 return Mapper.Map<List<BDDeliveryAddress>, List<DcBDDeliveryAddress>>(model);
+            }
+        }
+
+        public List<DcBDElementGroup> GetElementGroup()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDElementGroup, DcBDElementGroup>());
+                    var result = dc.ElementGroups.OrderByDescending(i => i.CreateTime).ToList();
+                    return Mapper.Map<List<BDElementGroup>, List<DcBDElementGroup>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public List<DcBDElementGroupItem> GetElementGroupItem(Guid id)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDElementGroupItem, DcBDElementGroupItem>());
+                    var result = dc.ElementGroupItems.Where(i => i.GroupElementID == id).ToList();
+                    return Mapper.Map<List<BDElementGroupItem>, List<DcBDElementGroupItem>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 

@@ -10,6 +10,6 @@ namespace PMSDAL
     {
         public Guid ID { get; set; }
         public string GroupName { get; set; }
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }

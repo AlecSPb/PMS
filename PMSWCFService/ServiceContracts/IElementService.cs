@@ -19,5 +19,15 @@ namespace PMSWCFService.ServiceContracts
         int UpdateElement(DcBDElement model);
         [OperationContract]
         int DeleteElement(Guid id);
+
+        [OperationContract]
+        List<DcBDElementGroup> GetElementGroup();
+
+        [OperationContract]
+        List<DcBDElementGroupItem> GetElementGroupItem(Guid id);
+
+        [OperationContract]
+        int AddElementGroupAndItems(string groupName,List<DcBDElementGroupItem> elements);
+
     }
 }

@@ -8,13 +8,13 @@ using System.Runtime.Serialization;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class BDElementGroup
+    public class DcBDElementGroup
     {
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
         public string GroupName { get; set; }
         [DataMember]
-        public string CreateTime { get; set; }
+        public DateTime CreateTime { get; set; }
     }
 }

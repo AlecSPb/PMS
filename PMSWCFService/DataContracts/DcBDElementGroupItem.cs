@@ -8,7 +8,7 @@ using System.Runtime.Serialization;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class BDElementGroupItem
+    public class DcBDElementGroupItem
     {
         [DataMember]
         public Guid Id { get; set; }
