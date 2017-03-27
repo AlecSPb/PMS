@@ -22,9 +22,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         DcUser GetUser(string username, string password);
         [OperationContract]
-        DcUserRole GetRoleByUserId(Guid userId);
+        DcUserRole GetRole(Guid roleId);
         [OperationContract]
-        List<DcUserAccess> GetAccessesByRoleId(Guid roleId);
+        List<DcUserAccess> GetAccesses(Guid roleId);
 
         [OperationContract]
         int AddUser(DcUser model);

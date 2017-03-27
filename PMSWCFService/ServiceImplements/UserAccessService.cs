@@ -85,7 +85,12 @@ namespace PMSWCFService
                 return result;
             }
         }
-
+        /// <summary>
+        /// 获取用户信息
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public DcUser GetUser(string username, string password)
         {
             try
@@ -103,7 +108,11 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// 检查用户名是否存在
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
         public bool IsUserNameExsit(string userName)
         {
             try
@@ -121,8 +130,25 @@ namespace PMSWCFService
             }
         }
 
+        public DcUserRole GetRole(Guid roleId)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var role = dc.Roles.Where(i => i.ID == roleId).FirstOrDefault();
+                    Mapper.Initialize(cfg => cfg.CreateMap<UserRole, DcUserRole>());
+                    return Mapper.Map<DcUserRole>(role);
+                }
+            }
+            catch (Exception ex)
+            {
 
-        public List<DcUserAccess> GetAccessesByRoleId(Guid roleId)
+                throw ex;
+            }
+        }
+
+        public List<DcUserAccess> GetAccesses(Guid roleId)
         {
             throw new NotImplementedException();
         }
@@ -142,10 +168,7 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public DcUserRole GetRoleByUserId(Guid userId)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public int UpdateAccess(DcUserAccess model)
         {
