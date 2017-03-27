@@ -3,7 +3,7 @@
     <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
     <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
     <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
-    <SolidColorBrush x:Key="UnCheckedBrush" Color="DimGray"/>
+    <SolidColorBrush x:Key="UnCheckedBrush" Color="LightSalmon"/>
     <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
 
     <SolidColorBrush x:Key="YesterdayBrush" Color="LightGray"/>
