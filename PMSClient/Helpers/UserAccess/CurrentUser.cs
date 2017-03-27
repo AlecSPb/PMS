@@ -9,6 +9,9 @@ namespace PMSClient
 {
     public static class PMSUserHelper
     {
+        /// <summary>
+        ///MainDesktop版本
+        /// </summary>
         public static LogInformation CurrentLogInformation
         {
             get { return (App.Current.MainWindow as MainDesktop).CurrentLogInformation; }
