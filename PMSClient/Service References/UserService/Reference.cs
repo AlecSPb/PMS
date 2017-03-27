@@ -41,6 +41,9 @@ namespace PMSClient.UserService {
         private string RealNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid RoleIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -130,6 +133,19 @@ namespace PMSClient.UserService {
                 if ((object.ReferenceEquals(this.RealNameField, value) != true)) {
                     this.RealNameField = value;
                     this.RaisePropertyChanged("RealName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid RoleID {
+            get {
+                return this.RoleIDField;
+            }
+            set {
+                if ((this.RoleIDField.Equals(value) != true)) {
+                    this.RoleIDField = value;
+                    this.RaisePropertyChanged("RoleID");
                 }
             }
         }

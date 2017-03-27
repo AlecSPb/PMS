@@ -25,5 +25,7 @@ namespace PMSWCFService.DataContracts
         public string Phone { get; set; }
         [DataMember]
         public string Email { get; set; }
+        [DataMember]
+        public Guid RoleID { get; set; }
     }
 }
