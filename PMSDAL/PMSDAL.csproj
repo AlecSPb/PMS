@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BDElement.cs" />
+    <Compile Include="Entities\BDElementGroup.cs" />
+    <Compile Include="Entities\BDElementGroupItem.cs" />
     <Compile Include="Entities\BDSieve.cs" />
     <Compile Include="Entities\MaintenanceRecord.cs" />
     <Compile Include="Entities\MaintenancePlan.cs" />
@@ -245,6 +247,10 @@
     <Compile Include="Migrations\201703260046181_addelemententity.Designer.cs">
       <DependentUpon>201703260046181_addelemententity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703270413487_addgroupelement.cs" />
+    <Compile Include="Migrations\201703270413487_addgroupelement.Designer.cs">
+      <DependentUpon>201703270413487_addgroupelement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -422,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703260046181_addelemententity.resx">
       <DependentUpon>201703260046181_addelemententity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703270413487_addgroupelement.resx">
+      <DependentUpon>201703270413487_addgroupelement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
