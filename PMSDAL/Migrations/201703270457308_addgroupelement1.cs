@@ -1,0 +1,18 @@
+namespace PMSDAL.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class addgroupelement1 : DbMigration
+    {
+        public override void Up()
+        {
+            AlterColumn("dbo.BDElementGroups", "CreateTime", c => c.DateTime(nullable: false));
+        }
+        
+        public override void Down()
+        {
+            AlterColumn("dbo.BDElementGroups", "CreateTime", c => c.String());
+        }
+    }
+}
