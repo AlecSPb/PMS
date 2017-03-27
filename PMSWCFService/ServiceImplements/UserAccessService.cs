@@ -150,7 +150,27 @@ namespace PMSWCFService
 
         public List<DcUserAccess> GetAccesses(Guid roleId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var role = dc.Roles.Where(i => i.ID == roleId).FirstOrDefault();
+                    if (role != null)
+                    {
+                        Mapper.Initialize(cfg => cfg.CreateMap<UserAccess, DcUserAccess>());
+                        return Mapper.Map<List<UserAccess>, List<DcUserAccess>>(role.UserAccesses);
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public List<DcUserAccess> GetAllAccesses()
