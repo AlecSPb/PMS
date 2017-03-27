@@ -7,18 +7,11 @@ using PMSClient.UserService;
 
 namespace PMSClient
 {
-    public static class CurrentUserInformation
+    public static class PMSUserHelper
     {
-
-        public static string UserName
+        public static LogInformation CurrentLogInformation
         {
-            get { return (App.Current as App).CurrentUser.UserName; }
-        }
-
-        public static void SetCurrentUser(DcUser user)
-        {
-            var currentUser = (App.Current as App).CurrentUser;
-            currentUser = user;
+            get { return (App.Current.MainWindow as MainDesktop).CurrentLogInformation; }
         }
     }
 }

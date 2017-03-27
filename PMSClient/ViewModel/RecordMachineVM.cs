@@ -44,7 +44,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordMachine();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.Creator = CurrentUserInformation.UserName;
+            model.Creator = PMSUserHelper.CurrentLogInformation.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.Checked.ToString();
             model.VHPPlanLot = DateTime.Now.ToString("yyMMdd");
             model.Composition = "成分";
