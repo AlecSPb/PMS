@@ -53,57 +53,6 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcUserAccess> CheckAccess(string username, string password, string accesscode)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-
-        public DcUser CheckUser(string username, string password)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    Mapper.Initialize(cfg => cfg.CreateMap<User, DcUser>());
-                    var user = dc.Users.Where(i => i.UserName == username && i.Password == password).FirstOrDefault();
-                    return Mapper.Map<DcUser>(user);
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public bool CheckUserName(string userName)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         public int DeleteAccess(Guid id)
         {
             using (var dc = new PMSDbContext())
@@ -136,6 +85,42 @@ namespace PMSWCFService
                 return result;
             }
         }
+
+        public DcUser GetUser(string username, string password)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<User, DcUser>());
+                    var user = dc.Users.Where(i => i.UserName == username && i.Password == password).FirstOrDefault();
+                    return Mapper.Map<DcUser>(user);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool IsUserNameExsit(string userName)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var count = dc.Users.Where(i => i.UserName == userName).Count();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
         public List<DcUserAccess> GetAccessesByRoleId(Guid roleId)
         {

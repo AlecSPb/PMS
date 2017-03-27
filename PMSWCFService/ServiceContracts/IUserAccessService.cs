@@ -18,6 +18,10 @@ namespace PMSWCFService.ServiceContracts
         List<DcUserAccess> GetAllAccesses();
 
         [OperationContract]
+        bool IsUserNameExsit(string userName);
+        [OperationContract]
+        DcUser GetUser(string username, string password);
+        [OperationContract]
         DcUserRole GetRoleByUserId(Guid userId);
         [OperationContract]
         List<DcUserAccess> GetAccessesByRoleId(Guid roleId);
@@ -42,13 +46,6 @@ namespace PMSWCFService.ServiceContracts
         int DeleteRole(Guid id);
         [OperationContract]
         int DeleteAccess(Guid id);
-
-        [OperationContract]
-        bool CheckUserName(string userName);
-        [OperationContract]
-        DcUser CheckUser(string username, string password);
-        [OperationContract]
-        List<DcUserAccess> CheckAccess(string username, string password, string accesscode);
 
     }
 }
