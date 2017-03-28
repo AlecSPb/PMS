@@ -100,8 +100,8 @@
     <sys:String x:Key="strbtnAdd">添加</sys:String>
     <sys:String x:Key="strbtnEdit">编辑</sys:String>
     <sys:String x:Key="strbtnDuplicate">复制</sys:String>
-    <sys:String x:Key="strbtnAddItem">添加子项</sys:String>
-    <sys:String x:Key="strbtnEditItem">编辑子项</sys:String>
+    <sys:String x:Key="strbtnAddItem">安排</sys:String>
+    <sys:String x:Key="strbtnEditItem">编辑</sys:String>
     <sys:String x:Key="strbtnEmpty">使用空记录</sys:String>
     <sys:String x:Key="strbtnQuick">快速编辑</sys:String>
     <sys:String x:Key="strbtnDoc">文档</sys:String>
