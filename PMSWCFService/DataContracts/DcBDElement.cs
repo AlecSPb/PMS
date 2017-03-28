@@ -21,5 +21,11 @@ namespace PMSWCFService.DataContracts
         public int AtomicNumber { get; set; }
         [DataMember]
         public double MolWeight { get; set; }
+        [DataMember]
+        public double Density { get; set; }
+        [DataMember]
+        public string MeltingPoint { get; set; }
+        [DataMember]
+        public string BoilingPoint { get; set; }
     }
 }

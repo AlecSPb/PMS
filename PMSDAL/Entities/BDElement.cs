@@ -15,5 +15,8 @@ namespace PMSDAL
         public string Name { get; set; }
         public int AtomicNumber { get; set; }
         public double MolWeight { get; set; }
+        public double Density { get; set; }
+        public string MeltingPoint { get; set; }
+        public string BoilingPoint { get; set; }
     }
 }

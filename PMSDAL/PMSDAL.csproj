@@ -267,6 +267,10 @@
     <Compile Include="Migrations\201703280219213_changepminumber.Designer.cs">
       <DependentUpon>201703280219213_changepminumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703280419082_addmoreitemintoelement.cs" />
+    <Compile Include="Migrations\201703280419082_addmoreitemintoelement.Designer.cs">
+      <DependentUpon>201703280419082_addmoreitemintoelement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -459,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703280219213_changepminumber.resx">
       <DependentUpon>201703280219213_changepminumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280419082_addmoreitemintoelement.resx">
+      <DependentUpon>201703280419082_addmoreitemintoelement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
