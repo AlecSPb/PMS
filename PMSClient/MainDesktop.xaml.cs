@@ -57,7 +57,7 @@ namespace PMSClient
         {
             if (_logInformation.CurrentUser != null)
             {
-                txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.UserName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
+                txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
             }
             else
             {

@@ -23,7 +23,7 @@ namespace PMSWCFService
                 });
 
                 var result = dc.Orders.Where(o => o.PolicyType.Contains("VHP")
-                && o.State != OrderState.Deleted.ToString())
+                && o.State != OrderState.Deleted.ToString()&&o.State!=OrderState.UnChecked.ToString())
                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
                 var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result);
 

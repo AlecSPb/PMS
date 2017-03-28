@@ -17,7 +17,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Name="titleBar" Grid.Row="0" Background="#333333" MouseLeftButtonDown="titleBar_MouseLeftButtonDown">
+        <Grid Name="titleBar" Grid.Row="0" Background="{StaticResource BackgroundTitleBar}" MouseLeftButtonDown="titleBar_MouseLeftButtonDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -27,7 +27,7 @@
                 <TextBlock  Text="{StaticResource strAppNameDesktop}" Style="{StaticResource AppTitleTextBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Orange" Margin="0 0 5 0"/>
+                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Yellow" Margin="0 0 5 0"/>
                 <Button Name="btnMiinimum" Content="-" Style="{StaticResource ControlButton}" Click="btnMiinimum_Click"/>
                 <Button Name="btnMaximum" Content="+" Style="{StaticResource ControlButton}" Click="btnMaximum_Click"/>
                 <Button Name="btnClose" Content="X" Style="{StaticResource ControlButton}" Click="btnClose_Click"/>

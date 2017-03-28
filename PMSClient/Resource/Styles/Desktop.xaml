@@ -2,10 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!--Public Resouces-->
+    <SolidColorBrush x:Key="BackgroundTitleBar" Color="#135995"/>
     <SolidColorBrush x:Key="BackgroundNavigateBar" Color="Orange"/>
     <SolidColorBrush x:Key="BackgroundStatusBar" Color="#CA5100"/>
     <SolidColorBrush x:Key="BackgroundWindow" Color="Wheat"/>
+
+    <SolidColorBrush x:Key="ForegroundTitleBar" Color="White"/>
     <SolidColorBrush x:Key="ForegroundNavigateBar" Color="White"/>
+    <SolidColorBrush x:Key="ForegroundStatuBar" Color="White"/>
     <SolidColorBrush x:Key="ForegroundText" Color="Black"/>
 
     <SolidColorBrush x:Key="BorderBrush" Color="Orange"/>
@@ -31,7 +35,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0 2"/>
         <Setter Property="Padding" Value="2"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundNavigateBar}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundTitleBar}"/>
     </Style>
 
     <!--Navigation Styles-->
