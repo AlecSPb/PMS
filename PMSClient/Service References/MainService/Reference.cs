@@ -23,13 +23,13 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionOriginalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionStandardField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositoinAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
@@ -56,7 +56,7 @@ namespace PMSClient.MainService {
         private string MinimumAcceptDefectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PMIWorkingNumberField;
+        private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
@@ -120,6 +120,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionAbbr {
+            get {
+                return this.CompositionAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
+                    this.CompositionAbbrField = value;
+                    this.RaisePropertyChanged("CompositionAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string CompositionOriginal {
             get {
                 return this.CompositionOriginalField;
@@ -141,19 +154,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CompositionStandardField, value) != true)) {
                     this.CompositionStandardField = value;
                     this.RaisePropertyChanged("CompositionStandard");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CompositoinAbbr {
-            get {
-                return this.CompositoinAbbrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositoinAbbrField, value) != true)) {
-                    this.CompositoinAbbrField = value;
-                    this.RaisePropertyChanged("CompositoinAbbr");
                 }
             }
         }
@@ -263,14 +263,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PMIWorkingNumber {
+        public string PMINumber {
             get {
-                return this.PMIWorkingNumberField;
+                return this.PMINumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.PMIWorkingNumberField, value) != true)) {
-                    this.PMIWorkingNumberField = value;
-                    this.RaisePropertyChanged("PMIWorkingNumber");
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -1021,7 +1021,7 @@ namespace PMSClient.MainService {
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PMIWorkingNumberField;
+        private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PurityField;
@@ -1101,14 +1101,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PMIWorkingNumber {
+        public string PMINumber {
             get {
-                return this.PMIWorkingNumberField;
+                return this.PMINumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.PMIWorkingNumberField, value) != true)) {
-                    this.PMIWorkingNumberField = value;
-                    this.RaisePropertyChanged("PMIWorkingNumber");
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -1472,7 +1472,7 @@ namespace PMSClient.MainService {
         private System.Guid MaterialOrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PMIWorkNumberField;
+        private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProvideRawMaterialField;
@@ -1591,14 +1591,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PMIWorkNumber {
+        public string PMINumber {
             get {
-                return this.PMIWorkNumberField;
+                return this.PMINumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.PMIWorkNumberField, value) != true)) {
-                    this.PMIWorkNumberField = value;
-                    this.RaisePropertyChanged("PMIWorkNumber");
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -1691,13 +1691,13 @@ namespace PMSClient.MainService {
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionAbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionOriginalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionStandardField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositoinAbbrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
@@ -1748,7 +1748,7 @@ namespace PMSClient.MainService {
         private string OrderRemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PMIWorkingNumberField;
+        private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
@@ -1840,6 +1840,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CompositionAbbr {
+            get {
+                return this.CompositionAbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionAbbrField, value) != true)) {
+                    this.CompositionAbbrField = value;
+                    this.RaisePropertyChanged("CompositionAbbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string CompositionOriginal {
             get {
                 return this.CompositionOriginalField;
@@ -1861,19 +1874,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CompositionStandardField, value) != true)) {
                     this.CompositionStandardField = value;
                     this.RaisePropertyChanged("CompositionStandard");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CompositoinAbbr {
-            get {
-                return this.CompositoinAbbrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositoinAbbrField, value) != true)) {
-                    this.CompositoinAbbrField = value;
-                    this.RaisePropertyChanged("CompositoinAbbr");
                 }
             }
         }
@@ -2087,14 +2087,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PMIWorkingNumber {
+        public string PMINumber {
             get {
-                return this.PMIWorkingNumberField;
+                return this.PMINumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.PMIWorkingNumberField, value) != true)) {
-                    this.PMIWorkingNumberField = value;
-                    this.RaisePropertyChanged("PMIWorkingNumber");
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }

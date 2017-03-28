@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a51acf42-a42e-4fed-897c-9a4345625353" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c548cf45-4fe9-4484-b546-79fc22f8ae71" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://192.168.16.254:8002/PMSService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PMSService.xsd" MetadataType="Schema" ID="a0b1d335-b9b9-4927-897e-95bc1ee53d74" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PMSService1.xsd" MetadataType="Schema" ID="654c072a-fccd-4fe7-bd05-3ebc5bcabf77" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PMSService2.xsd" MetadataType="Schema" ID="03cd561c-d308-4619-84df-de805fe2e8e4" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" />
-    <MetadataFile FileName="PMSService.wsdl" MetadataType="Wsdl" ID="a5de374d-6806-4c28-8379-9b2a233264df" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?wsdl" />
-    <MetadataFile FileName="PMSService.disco" MetadataType="Disco" ID="c6cb1c06-03df-495e-82df-0a548c66bde4" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?disco" />
+    <MetadataFile FileName="PMSService.xsd" MetadataType="Schema" ID="f14cf020-82d8-4857-9995-8eb5d4c1f527" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PMSService1.xsd" MetadataType="Schema" ID="713e91ae-e5d5-4bd1-9c6d-6204e6f055db" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMSService2.xsd" MetadataType="Schema" ID="53a15675-8b25-4f42-8972-f922223fab35" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PMSService.wsdl" MetadataType="Wsdl" ID="081b2460-0949-486c-9a68-a8897fabfba4" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?wsdl" />
+    <MetadataFile FileName="PMSService.disco" MetadataType="Disco" ID="6a9af4ad-f94a-4e2e-93a5-b3ef66c62802" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

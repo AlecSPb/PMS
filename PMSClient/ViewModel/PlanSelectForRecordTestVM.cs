@@ -37,7 +37,7 @@ namespace PMSClient.ViewModel
         private void ActionSelect(DcMissonWithPlan obj)
         {
             testresult.Composition = obj.CompositionStandard;
-            testresult.CompositionAbbr = obj.CompositoinAbbr;
+            testresult.CompositionAbbr = obj.CompositionAbbr;
             testresult.Customer = obj.CustomerName;
             testresult.Dimension = obj.Dimension;
             testresult.ProductID = obj.PlanDate.ToString("yyMMdd") + "-" + obj.VHPDeviceCode + "-" + 1;

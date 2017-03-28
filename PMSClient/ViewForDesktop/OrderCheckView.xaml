@@ -102,7 +102,7 @@
                 <DataGridTemplateColumn Header="Order ID">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PMIWorkingNumber}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding PMINumber}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

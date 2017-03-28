@@ -29,7 +29,7 @@ namespace PMSClient
             empty.Creator = (App.Current as App).CurrentUser.UserName;
             empty.Purity = "5N";
             empty.Weight = 1.0;
-            empty.PMIWorkingNumber = order.PMIWorkingNumber;
+            empty.PMINumber = order.PMINumber;
             empty.Composition = order.CompositionStandard;
             return empty;
         }
@@ -41,7 +41,7 @@ namespace PMSClient
             dcOrder.ID = Guid.NewGuid();
             dcOrder.CustomerName = "Midsummer";
             dcOrder.PO = DateTime.Now.ToString("yyMMdd");
-            dcOrder.PMIWorkingNumber = DateTime.Now.ToString("yyMMdd");
+            dcOrder.PMINumber = DateTime.Now.ToString("yyMMdd");
             dcOrder.ProductType = "Target";
             dcOrder.Dimension = "230mm OD x  4mm";
             dcOrder.DimensionDetails = "None";
@@ -60,7 +60,7 @@ namespace PMSClient
             dcOrder.Priority = "Normal";
             dcOrder.CompositionOriginal = "CuGaSe2";
             dcOrder.CompositionStandard = "Cu25Ga25Se50";
-            dcOrder.CompositoinAbbr = "CuGaSe";
+            dcOrder.CompositionAbbr = "CuGaSe";
             dcOrder.Creator = "xs.zhou";
             dcOrder.CreateTime = DateTime.Now;
             dcOrder.ProductType = "Target";
@@ -132,7 +132,7 @@ namespace PMSClient
             item.Creator = (App.Current as App).CurrentUser.UserName;
             item.CreateTime = DateTime.Now;
             item.Composition = "Composition";
-            item.PMIWorkNumber = "WorkNumber";
+            item.PMINumber = "WorkNumber";
             item.Purity = "Purity";
             item.Description = "";
             item.ProvideRawMaterial = "";

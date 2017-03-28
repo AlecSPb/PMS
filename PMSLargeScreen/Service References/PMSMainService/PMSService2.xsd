@@ -9,9 +9,9 @@
   <xs:element name="ArrayOfDcOrder" nillable="true" type="tns:ArrayOfDcOrder" />
   <xs:complexType name="DcOrder">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CompositoinAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
@@ -20,7 +20,7 @@
       <xs:element minOccurs="0" name="DimensionDetails" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PMIWorkingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PolicyContent" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PolicyMakeDate" type="xs:dateTime" />
@@ -93,7 +93,7 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="PMIWorkingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialNeeds" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
@@ -142,7 +142,7 @@
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialOrderID" type="ser:guid" />
-      <xs:element minOccurs="0" name="PMIWorkNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
@@ -160,9 +160,9 @@
   <xs:complexType name="DcMissonWithPlan">
     <xs:sequence>
       <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
+      <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionStandard" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CompositoinAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
@@ -179,7 +179,7 @@
       <xs:element minOccurs="0" name="MoldType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderID" type="ser:guid" />
       <xs:element minOccurs="0" name="OrderRemark" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PMIWorkingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PlanID" type="ser:guid" />

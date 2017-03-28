@@ -18,13 +18,13 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string PO { get; set; }
         [DataMember]
-        public string PMIWorkingNumber { get; set; }
+        public string PMINumber { get; set; }
         [DataMember]
         public string CompositionStandard { get; set; }
         [DataMember]
         public string CompositionOriginal { get; set; }
         [DataMember]
-        public string CompositoinAbbr { get; set; }
+        public string CompositionAbbr { get; set; }
         [DataMember]
         public string ProductType { get; set; }
         [DataMember]

@@ -41,7 +41,7 @@
                 <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="WorkNumber" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding PMIWorkingNumber}"/>
+                                    Binding="{Binding PMINumber}"/>
                 <DataGridTextColumn Header="Purity" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Purity}"/>
                 <DataGridTemplateColumn Header="Weight">

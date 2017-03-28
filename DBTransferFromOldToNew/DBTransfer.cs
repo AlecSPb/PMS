@@ -38,7 +38,7 @@ namespace DBTransferFromOldToNew
                 newOrder.ID = orderId;
                 newOrder.CustomerName = order.Customer;
                 newOrder.PO = order.PO;
-                newOrder.PMIWorkingNumber = order.PMIWorkNumber;
+                newOrder.PMINumber = order.PMIWorkNumber;
                 newOrder.CompositionStandard = order.ProductName;
                 newOrder.CompositionOriginal = order.ProductName;
                 newOrder.CompositoinAbbr = "";

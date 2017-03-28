@@ -67,7 +67,7 @@
                 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="WorkNumber"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMIWorkingNumber}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="自动生成的工作号不一定唯一和合适，请自行修改"/>
@@ -88,7 +88,7 @@
                 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="CompositionAbbr"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositoinAbbr}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="请在这里填写成分的缩写"/>

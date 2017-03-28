@@ -29,6 +29,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string SpecialNeeds { get; set; }
         [DataMember]
-        public string PMIWorkingNumber { get; set; }
+        public string PMINumber { get; set; }
     }
 }

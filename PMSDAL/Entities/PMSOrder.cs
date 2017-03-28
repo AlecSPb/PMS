@@ -22,15 +22,15 @@ namespace PMSDAL
         public Guid ID { get; set; }
         public string CustomerName { get; set; }
         public string PO { get; set; }
-        public string PMIWorkingNumber { get; set; }
+        public string PMINumber { get; set; }
 
         public string CompositionStandard { get; set; }//成分规范表示
         public string CompositionOriginal { get; set; }//成分原始表示
-        public string CompositoinAbbr { get; set; }
+        public string CompositionAbbr { get; set; }
         public string ProductType { get; set; }
         public string Purity { get; set; }
 
-        public double? Quantity { get; set; }
+        public double Quantity { get; set; }
         public string QuantityUnit { get; set; }
 
         public string Dimension { get; set; }//尺寸标准表示

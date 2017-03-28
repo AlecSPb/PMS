@@ -13,7 +13,7 @@ namespace PMSDAL
         public string Creator { get; set; }
         public string State { get; set; }
 
-        public string PMIWorkNumber { get; set; }
+        public string PMINumber { get; set; }
         public string Composition { get; set; }
         public string Purity { get; set; }
         public string Description { get; set; }

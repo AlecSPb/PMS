@@ -21,6 +21,6 @@ namespace PMSDAL
         public double Weight { get; set; }
         public string Supplier { get; set; }
         public string SpecialNeeds { get; set; }
-        public string PMIWorkingNumber { get; set; }
+        public string PMINumber { get; set; }
     }
 }

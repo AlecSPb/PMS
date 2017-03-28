@@ -49,7 +49,7 @@ namespace PMSClient.ViewModel
             if (need != null)
             {
                 item.Composition = need.Composition;
-                item.PMIWorkNumber = need.PMIWorkingNumber;
+                item.PMINumber = need.PMINumber;
                 item.Purity = need.Purity;
                 item.Weight = need.Weight;
 

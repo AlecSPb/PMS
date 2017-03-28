@@ -259,6 +259,14 @@
     <Compile Include="Migrations\201703270559525_addgroupelement2.Designer.cs">
       <DependentUpon>201703270559525_addgroupelement2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703280158095_fixorder.cs" />
+    <Compile Include="Migrations\201703280158095_fixorder.Designer.cs">
+      <DependentUpon>201703280158095_fixorder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703280219213_changepminumber.cs" />
+    <Compile Include="Migrations\201703280219213_changepminumber.Designer.cs">
+      <DependentUpon>201703280219213_changepminumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -445,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703270559525_addgroupelement2.resx">
       <DependentUpon>201703270559525_addgroupelement2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280158095_fixorder.resx">
+      <DependentUpon>201703280158095_fixorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703280219213_changepminumber.resx">
+      <DependentUpon>201703280219213_changepminumber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

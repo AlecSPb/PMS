@@ -95,7 +95,7 @@
                 <DataGridTemplateColumn Header="内部编号">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PMIWorkingNumber}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding PMINumber}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -19,7 +19,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }
         [DataMember]
-        public string PMIWorkNumber { get; set; }
+        public string PMINumber { get; set; }
         [DataMember]
         public string Composition { get; set; }
         [DataMember]

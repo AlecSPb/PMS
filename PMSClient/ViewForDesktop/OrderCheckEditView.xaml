@@ -68,7 +68,7 @@
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="WorkNumber"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMIWorkingNumber}" Style="{StaticResource TextBoxReadOnly}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionStd"
                            Style="{StaticResource TextBlockBasic}" />
@@ -80,7 +80,7 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="CompositionAbbr"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositoinAbbr}" Style="{StaticResource TextBoxReadOnly}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="ProductType"
                            Style="{StaticResource TextBlockBasic}" />

@@ -169,7 +169,7 @@
                 <DataGridTemplateColumn Header="WorkNumber">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PMIWorkNumber}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding PMINumber}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
