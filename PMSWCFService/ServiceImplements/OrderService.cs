@@ -12,24 +12,41 @@ namespace PMSWCFService
 {
     public partial class PMSService : IOrderService
     {
+        /// <summary>
+        /// 添加订单
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public int AddOrder(DcOrder order)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg =>
+                using (var dc = new PMSDbContext())
                 {
-                    cfg.CreateMap<DcOrder, PMSOrder>();
-                    cfg.CreateMap<DcPlanVHP, PMSPlanVHP>();
-                });
-                var mapper = config.CreateMapper();
-                var pmsOrder = mapper.Map<PMSOrder>(order);
-                dc.Orders.Add(pmsOrder);
-                result = dc.SaveChanges();
-                return result;
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcOrder, PMSOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var pmsOrder = mapper.Map<PMSOrder>(order);
+                    dc.Orders.Add(pmsOrder);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
-        }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+
+        }
+        /// <summary>
+        /// 删除订单
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public int DeleteOrder(Guid id)
         {
             using (var dc = new PMSDbContext())
@@ -44,7 +61,12 @@ namespace PMSWCFService
                 return result;
             }
         }
-
+        /// <summary>
+        /// 获取全部订单
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <returns></returns>
         public List<DcOrder> GetAllOrderInPage(int skip, int take)
         {
             using (var dc = new PMSDbContext())
@@ -52,7 +74,6 @@ namespace PMSWCFService
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<PMSOrder, DcOrder>();
-                    cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
                 });
                 var mapper = config.CreateMapper();
                 var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
@@ -77,19 +98,20 @@ namespace PMSWCFService
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<PMSOrder, DcOrder>();
-                    cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
                 });
                 var mapper = config.CreateMapper();
-                var order = dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd)
-                && o.State != OrderState.Deleted.ToString())
-                     .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
-                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order);
+                var order = from o in dc.Orders
+                            where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.Deleted.ToString()
+                            orderby o.CreateTime descending
+                            select o;
+
+                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order.Skip(skip).Take(take).ToList());
                 return result;
             }
         }
 
         /// <summary>
-        ///  返回不包含删除标记的其他记录
+        ///  获取搜索结果数量
         /// </summary>
         /// <param name="customer"></param>
         /// <param name="compositionstd"></param>
@@ -98,11 +120,15 @@ namespace PMSWCFService
         {
             using (var dc = new PMSDbContext())
             {
-                return dc.Orders.Where(o => o.CustomerName.StartsWith(customer) && o.CompositionStandard.Contains(compositionstd) &&
+                return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) &&
                 o.State != OrderState.Deleted.ToString()).Count();
             }
         }
-
+        /// <summary>
+        /// 更新订单
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns></returns>
         public int UpdateOrder(DcOrder order)
         {
             using (var dc = new PMSDbContext())
@@ -111,7 +137,6 @@ namespace PMSWCFService
                 var config = new MapperConfiguration(cfg =>
                 {
                     cfg.CreateMap<DcOrder, PMSOrder>();
-                    cfg.CreateMap<DcPlanVHP, PMSPlanVHP>();
                 });
                 var mapper = config.CreateMapper();
                 PMSOrder pmsOrder = mapper.Map<PMSOrder>(order);
