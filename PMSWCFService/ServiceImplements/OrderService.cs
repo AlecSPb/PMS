@@ -49,16 +49,24 @@ namespace PMSWCFService
         /// <returns></returns>
         public int DeleteOrder(Guid id)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var pmsOrder = dc.Orders.Find(id);
-                if (pmsOrder != null)
+                using (var dc = new PMSDbContext())
                 {
-                    pmsOrder.State = OrderState.Deleted.ToString();
-                    dc.SaveChanges();
+                    int result = 0;
+                    var pmsOrder = dc.Orders.Find(id);
+                    if (pmsOrder != null)
+                    {
+                        pmsOrder.State = OrderState.Deleted.ToString();
+                        dc.SaveChanges();
+                    }
+                    return result;
                 }
-                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
         /// <summary>
@@ -69,16 +77,24 @@ namespace PMSWCFService
         /// <returns></returns>
         public List<DcOrder> GetAllOrderInPage(int skip, int take)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                var config = new MapperConfiguration(cfg =>
+                using (var dc = new PMSDbContext())
                 {
-                    cfg.CreateMap<PMSOrder, DcOrder>();
-                });
-                var mapper = config.CreateMapper();
-                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
-                    dc.Orders.OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
-                return result;
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(
+                        dc.Orders.OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
@@ -93,20 +109,27 @@ namespace PMSWCFService
         /// <returns></returns>
         public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                var config = new MapperConfiguration(cfg =>
+                using (var dc = new PMSDbContext())
                 {
-                    cfg.CreateMap<PMSOrder, DcOrder>();
-                });
-                var mapper = config.CreateMapper();
-                var order = from o in dc.Orders
-                            where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.Deleted.ToString()
-                            orderby o.CreateTime descending
-                            select o;
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var order = from o in dc.Orders
+                                where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.Deleted.ToString()
+                                orderby o.CreateTime descending
+                                select o;
 
-                var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order.Skip(skip).Take(take).ToList());
-                return result;
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order.Skip(skip).Take(take).ToList());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -118,11 +141,20 @@ namespace PMSWCFService
         /// <returns></returns>
         public int GetOrderCountBySearch(string customer, string compositionstd)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) &&
-                o.State != OrderState.Deleted.ToString()).Count();
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) &&
+                    o.State != OrderState.Deleted.ToString()).Count();
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
         /// <summary>
         /// 更新订单
@@ -131,19 +163,28 @@ namespace PMSWCFService
         /// <returns></returns>
         public int UpdateOrder(DcOrder order)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg =>
+                using (var dc = new PMSDbContext())
                 {
-                    cfg.CreateMap<DcOrder, PMSOrder>();
-                });
-                var mapper = config.CreateMapper();
-                PMSOrder pmsOrder = mapper.Map<PMSOrder>(order);
-                dc.Entry(pmsOrder).State = System.Data.Entity.EntityState.Modified;
-                dc.SaveChanges();
-                return result;
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcOrder, PMSOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    PMSOrder pmsOrder = mapper.Map<PMSOrder>(order);
+                    dc.Entry(pmsOrder).State = System.Data.Entity.EntityState.Modified;
+                    dc.SaveChanges();
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
 }
