@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="{StaticResource strAppNameDesktop}" WindowStyle="None"
+        Title="{StaticResource strAppNameDesktop}" WindowStyle="None" ResizeMode="CanMinimize"
         MinHeight="400" MinWidth="600" WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>

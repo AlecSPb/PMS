@@ -151,7 +151,7 @@
                 <DataGridTemplateColumn Header="DimensionNeed">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DimensionNeed}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding DimensionDetails}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

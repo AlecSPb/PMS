@@ -46,6 +46,7 @@ namespace PMSClient
             GoTo(_viewLocator.LogIn);
 
             RefreshLogInformation();
+            this.BringIntoView();
         }
 
         private void RefreshLogInformation()
