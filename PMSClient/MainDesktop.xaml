@@ -23,7 +23,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Image Height="15" Width="15" Source="Resource\Images\main.png" Margin="5 0 0 0"/>
+                <Image Height="15" Width="15" Source="Resource\Images\chart.png" Margin="5 0 0 0"/>
                 <TextBlock  Text="{StaticResource strAppNameDesktop}" Style="{StaticResource AppTitleTextBlock}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">

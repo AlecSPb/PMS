@@ -58,7 +58,7 @@
     <StartupObject>PMSClient.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resource\Images\main.ico</ApplicationIcon>
+    <ApplicationIcon>Resource\Images\chart.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>8D1F75900F389C4C833D9404620AC23C0AE19EDE</ManifestCertificateThumbprint>
@@ -856,6 +856,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\chart.ico" />
+    <Resource Include="Resource\Images\chart.png" />
+    <Resource Include="Resource\Images\crm.ico" />
+    <Resource Include="Resource\Images\crm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
