@@ -129,7 +129,7 @@
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="尺寸信息"/>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OrderAbbrComposition OrderDimensionDetails}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OrderDimensionDetails}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
