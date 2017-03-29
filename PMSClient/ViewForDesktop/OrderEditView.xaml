@@ -50,126 +50,126 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Customer"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderCustomer}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="这里选择客户名称，如果下拉列表没有该客户信息，请先添加客户信息"/>
-                
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="PO"
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OrderPO}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="添加的时候注意去掉首部的PO"/>
-                
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="WorkNumber"
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OrderPMINumber}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="自动生成的工作号不一定唯一和合适，请自行修改"/>
-                
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="CompositionStd"
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderStandardComposition}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="这里必须填写标准成分，即各组分At%和为100"/>
-                
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="CompositionOri"
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="这里填写订单上的原始成分"/>
-                
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="CompositionAbbr"
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OrderAbbrComposition}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="请在这里填写成分的缩写"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="ProductType"
-                           Style="{StaticResource TextBlockBasic}" /> 
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OrderProductType}"
+                           Style="{StaticResource TextBlockBasic}" />
                 <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.ProductTypes,RelativeSource={RelativeSource Mode=FindAncestor ,AncestorType=UserControl}}"
                           SelectedItem="{Binding ProductType}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="产品类型"/>
-                
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Purity"
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OrderPurity}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="纯度要求"/>
-                
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="Quantity"
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OrderQuantity}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="数量"/>
-                
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="QuantityUnit"
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantityUnit}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="数量单位"/>
-                
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="Dimension"
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OrderDimension}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="尺寸信息"/>
-                
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="DimensionDetails"
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OrderAbbrComposition OrderDimensionDetails}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding DimensionDetails}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="尺寸要求的细节"/>
-                
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="SampleNeed"
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource OrderSampleNeed}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding SampleNeed}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="是否需要样品以及样品的要求可以填写在这里"/>
-                
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="DeadLine"
+
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource TextBlockBasic}" />
                 <DatePicker Grid.Row="13" Grid.Column="1" SelectedDate="{Binding DeadLine,Mode=TwoWay}"
                             Style="{StaticResource DatePickerBasic}"/>
                 <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="选择最后期限，默认订单日期之后的1个月"/>
-                
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="DefectsAccept"
+
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderMIniummAcceptDefect}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="请在这里填写客户最低的要求，比如可以接受小缺口"/>
-                
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="Remark"
+
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
                            Text="如果有备注信息，请填写在这里"/>
-                
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="Create Time"
+
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
                          HorizontalAlignment="Stretch"/>
 
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="Creator"
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource OrderCreator}"
                            Style="{StaticResource TextBlockBasic}" />
                 <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
                          HorizontalAlignment="Stretch"/>

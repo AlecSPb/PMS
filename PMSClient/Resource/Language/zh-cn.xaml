@@ -129,11 +129,13 @@
     <sys:String x:Key="PagingPageSize">条/页</sys:String>
     <sys:String x:Key="PagingRecordCount">总记录</sys:String>
     <!--Order-->
+    <sys:String x:Key="OrderCreator">创建者</sys:String>
     <sys:String x:Key="OrderCreateTime">创建时间</sys:String>
     <sys:String x:Key="OrderDeadLine">交付日期</sys:String>
     <sys:String x:Key="OrderPolicy">策略</sys:String>
     <sys:String x:Key="OrderCustomer">客户</sys:String>
     <sys:String x:Key="OrderPO">PO</sys:String>
+    <sys:String x:Key="OrderProductType">产品类型</sys:String>
     <sys:String x:Key="OrderPMINumber">内部编号</sys:String>
     <sys:String x:Key="OrderStandardComposition">标准成分</sys:String>
     <sys:String x:Key="OrderOriginalComposition">原始成分</sys:String>
@@ -145,4 +147,5 @@
     <sys:String x:Key="OrderDimensionDetails">要求</sys:String>
     <sys:String x:Key="OrderSampleNeed">样品需求</sys:String>
     <sys:String x:Key="OrderMIniummAcceptDefect">可接受缺陷</sys:String>
+    <sys:String x:Key="OrderRemark">备注</sys:String>
 </ResourceDictionary>

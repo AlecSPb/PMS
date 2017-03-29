@@ -22,9 +22,9 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource  strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigate}"/>
             <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
-            <TextBlock Text="Customer" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
-            <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
             <Button Content="{StaticResource strbtnSearch}" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource strbtnAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
@@ -99,6 +99,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderProductType}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding ProductType}"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderStandardComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -164,6 +166,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderRemark}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Remark}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
