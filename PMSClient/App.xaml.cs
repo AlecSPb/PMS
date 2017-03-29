@@ -32,10 +32,14 @@ namespace PMSClient
                 Email = "xs.zhou@outlook.com",
                 Phone = "13540781789"
             };
+            _logInformation = new LogInformation();
         }
 
         public DcUser CurrentUser { get; set; }
-
-
+        private LogInformation _logInformation;
+        public LogInformation CurrentLogInformation
+        {
+            get { return _logInformation; }
+        }
     }
 }

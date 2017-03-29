@@ -67,10 +67,14 @@ namespace PMSClient.ViewModel
                 order.Priority = "Normal";
                 order.DeadLine = DateTime.Now.AddDays(30);
 
+                MsgObject msg = new MsgObject();
+                msg.MsgToken = VToken.OrderEdit;
+                msg.MsgModel = new PMSClient.ModelObject() { IsNew =true, Model = order };
+                NavigationService.GoTo(msg);
 
-                var service = new OrderServiceClient();
-                service.AddOrder(order);
-                SetPageParametersWhenConditionChange();
+                //var service = new OrderServiceClient();
+                //service.AddOrder(order);
+                //SetPageParametersWhenConditionChange();
             }
         }
 

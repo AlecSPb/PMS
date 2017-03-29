@@ -14,7 +14,7 @@ namespace PMSClient
         /// </summary>
         public static LogInformation CurrentLogInformation
         {
-            get { return (App.Current.MainWindow as MainDesktop).CurrentLogInformation; }
+            get { return (App.Current as App).CurrentLogInformation; }
         }
     }
 }

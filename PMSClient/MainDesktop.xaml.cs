@@ -26,7 +26,7 @@ namespace PMSClient
     {
         private DesktopViewLocator _viewLocator;
         private ViewModelLocator _viewModelLocator;
-        private LogInformation _logInformation;
+
         public MainDesktop()
         {
             InitializeComponent();
@@ -36,7 +36,6 @@ namespace PMSClient
         {
             _viewLocator = new DesktopViewLocator();
             _viewModelLocator = this.FindResource("Locator") as ViewModelLocator;
-            _logInformation = new LogInformation();
 
             Messenger.Default.Register<MsgObject>(this, MainNavigationToken.Navigate, ActionNavigate);
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
@@ -49,12 +48,9 @@ namespace PMSClient
             RefreshLogInformation();
         }
 
-        public LogInformation CurrentLogInformation
-        {
-            get { return _logInformation; }
-        }
         private void RefreshLogInformation()
         {
+            var _logInformation = PMSUserHelper.CurrentLogInformation;
             if (_logInformation.CurrentUser != null)
             {
                 txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";

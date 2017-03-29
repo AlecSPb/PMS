@@ -12,17 +12,13 @@ namespace PMSClient.ViewModel
 {
     public class NavigationVM : ViewModelBase
     {
+        private LogInformation _logIn;
         public NavigationVM()
         {
             InitialCommands();
-            SetCurrentUserName();
+            _logIn = PMSUserHelper.CurrentLogInformation;
         }
 
-        private void SetCurrentUserName()
-        {
-            var username = (App.Current as App).CurrentUser.UserName;
-            LogInformation = $"当前用户:{username}";
-        }
 
         private string logInformation;
 
@@ -34,7 +30,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GoToOrder = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order }));
+            GoToOrder = new RelayCommand(ActionOrder, CanOrder);
             GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck }));
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson }));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Plan }));
@@ -52,6 +48,17 @@ namespace PMSClient.ViewModel
             GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTest }));
 
         }
+
+        private void ActionOrder()
+        {
+            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
+        }
+
+        private bool CanOrder()
+        {
+            return _logIn.IsAuthorized("000001");
+        }
+
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
         public RelayCommand GoToMisson { get; private set; }
