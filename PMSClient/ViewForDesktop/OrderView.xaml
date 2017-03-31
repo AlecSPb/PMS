@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource strPageOrder}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource  strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigate}"/>
+            <Button Content="{StaticResource  strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
