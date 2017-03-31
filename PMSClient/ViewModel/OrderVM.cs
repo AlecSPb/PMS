@@ -1,4 +1,4 @@
-﻿using System;
+﻿-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderVM : ViewModelBase
+    public class OrderVM : BaseViewModelPage
     {
         public OrderVM()
         {
@@ -37,7 +37,6 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -71,10 +70,6 @@ namespace PMSClient.ViewModel
                 msg.MsgToken = VToken.OrderEdit;
                 msg.MsgModel = new PMSClient.ModelObject() { IsNew =true, Model = order };
                 NavigationService.GoTo(msg);
-
-                //var service = new OrderServiceClient();
-                //service.AddOrder(order);
-                //SetPageParametersWhenConditionChange();
             }
         }
 
@@ -144,42 +139,6 @@ namespace PMSClient.ViewModel
         }
 
 
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        public RelayCommand PageChanged { get; private set; }
-        #endregion
-
         #region Proeperties
         private string searchCustomer;
         public string SearchCustomer
@@ -220,9 +179,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand GoToNavigate { get; private set; }
-        public RelayCommand Search { get; private set; }
-        public RelayCommand All { get; set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcOrder> Edit { get; private set; }
 

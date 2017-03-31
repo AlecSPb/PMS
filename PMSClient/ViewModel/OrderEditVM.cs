@@ -28,23 +28,23 @@ namespace PMSClient.ViewModel
         public void InitializeProperties()
         {
             OrderStates = new ObservableCollection<string>();
-            var states = BDInstance.OrderStates;
+            var states = BasicDataInstance.OrderStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
             OrderPriorities = new ObservableCollection<string>();
-            var priorities = BDInstance.OrderPriorities;
+            var priorities = BasicDataInstance.OrderPriorities;
             priorities.ToList().ForEach(p => OrderPriorities.Add(p));
 
             PolicyTypes = new ObservableCollection<string>();
-            var policyTypes = BDInstance.OrderPolicyTypes;
+            var policyTypes = BasicDataInstance.OrderPolicyTypes;
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
 
             CustomerNames = new ObservableCollection<string>();
-            var customerNames = BDInstance.CustomerNames;
+            var customerNames = BasicDataInstance.CustomerNames;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
 
             ProductTypes = new ObservableCollection<string>();
-            var productTypes = BDInstance.ProductTypes;
+            var productTypes = BasicDataInstance.ProductTypes;
             productTypes.ToList().ForEach(p => ProductTypes.Add(p));
 
         }

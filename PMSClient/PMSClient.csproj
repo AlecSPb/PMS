@@ -123,7 +123,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helpers\BDInstance.cs" />
+    <Compile Include="Helpers\BasicDataInstance.cs" />
+    <Compile Include="Helpers\Log\ILog.cs" />
+    <Compile Include="Helpers\Log\LocalLog.cs" />
     <Compile Include="Helpers\UserAccess\CurrentUser.cs" />
     <Compile Include="Helpers\UserAccess\LogInformation.cs" />
     <Compile Include="LocalService\CommonDialogService.cs" />

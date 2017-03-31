@@ -12,7 +12,7 @@ namespace PMSClient
     /// 生成ComboBox用的基本数据源
     /// 来自枚举，来自数据库，来自文件
     /// </summary>
-    public static class BDInstance
+    public static class BasicDataInstance
     {
         //From Enums
         public static string[] OrderStates
