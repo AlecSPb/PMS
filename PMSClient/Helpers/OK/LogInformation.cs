@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.UserService;
-namespace PMSClient
+
+namespace PMSClient.Helper
 {
     /// <summary>
     /// 存储和处理客户端所需要的用户信息

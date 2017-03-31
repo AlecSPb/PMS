@@ -124,10 +124,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\BasicDataInstance.cs" />
-    <Compile Include="Helpers\Log\ILog.cs" />
-    <Compile Include="Helpers\Log\LocalLog.cs" />
+    <Compile Include="Helpers\OK\ILog.cs" />
+    <Compile Include="Helpers\OK\LocalLog.cs" />
     <Compile Include="PMSHelper.cs" />
-    <Compile Include="Helpers\UserAccess\LogInformation.cs" />
+    <Compile Include="Helpers\OK\LogInformation.cs" />
     <Compile Include="LocalService\CommonDialogService.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
     <Compile Include="Helpers\MainNavigationToken.cs" />
