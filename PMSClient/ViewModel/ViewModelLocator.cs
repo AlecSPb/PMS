@@ -35,6 +35,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<NavigationVM>(true);
 
             SimpleIoc.Default.Register<OrderVM>();
+            SimpleIoc.Default.Register<OrderEditVM>();
+
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<MissonVM>();
             SimpleIoc.Default.Register<PlanVM>();
@@ -61,14 +63,6 @@ namespace PMSClient.ViewModel
 
         }
         #region Properties
-        public RecordVHPQuickEditVM RecordVHPQuickEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
-        }
-        public RecordVHPVM RecordVHP
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
-        }
         public NavigationVM Navigation
         {
             get { return SimpleIoc.Default.GetInstance<NavigationVM>(); }
@@ -77,6 +71,20 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OrderVM>(); }
         }
+        public OrderEditVM OrderEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderEditVM>(); }
+        }
+
+        public RecordVHPQuickEditVM RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
+        }
+        public RecordVHPVM RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
+        }
+
         public OrderCheckVM OrderCheck
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }

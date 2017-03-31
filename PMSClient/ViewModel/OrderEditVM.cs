@@ -11,19 +11,10 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderEditVM : ViewModelBase
+    public class OrderEditVM : BaseViewModelEdit
     {
         public OrderEditVM()
         {
-            InitializeProperties();
-        }
-
-        public OrderEditVM(ModelObject model)
-        {
-            CurrentOrder = model.Model as DcOrder;
-            isNew = model.IsNew;
-            NewOrEdit = isNew ? "New" : "Edit";
-
             InitializeCommands();
             InitializeProperties();
         }
@@ -57,7 +48,16 @@ namespace PMSClient.ViewModel
             productTypes.ToList().ForEach(p => ProductTypes.Add(p));
 
         }
-
+        /// <summary>
+        /// 直接更改属性
+        /// </summary>
+        /// <param name="isnew"></param>
+        /// <param name="current"></param>
+        public void SetKeyProperties(ModelObject model)
+        {
+            IsNew = model.IsNew;
+            CurrentOrder = model.Model as DcOrder;
+        }
 
         private void ActionGiveUp()
         {
@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
         private void ActionSave()
         {
             var service = new OrderServiceClient();
-            if (isNew)
+            if (IsNew)
             {
                 service.AddOrder(CurrentOrder);
             }
@@ -85,8 +85,18 @@ namespace PMSClient.ViewModel
         }
 
         private bool isNew;
-
-
+        public bool IsNew
+        {
+            get
+            {
+                return isNew;
+            }
+            set
+            {
+                isNew = value;
+                NewOrEditIndicator = isNew ? "New" : "Edit";
+            }
+        }
         private DcOrder currentOrder;
 
         public DcOrder CurrentOrder
@@ -99,23 +109,11 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private string newOrEdit;
-
-        public string NewOrEdit
-        {
-            get { return newOrEdit; }
-            set { newOrEdit = value; RaisePropertyChanged(nameof(NewOrEdit)); }
-        }
-
-
-
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }
         public ObservableCollection<string> PolicyTypes { get; set; }
         public ObservableCollection<string> CustomerNames { get; set; }
         public ObservableCollection<string> ProductTypes { get; set; }
-        public RelayCommand Save { get; set; }
-        public RelayCommand GiveUp { get; set; }
 
     }
 }

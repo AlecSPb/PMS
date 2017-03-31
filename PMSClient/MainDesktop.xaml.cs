@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSClient.ViewModel;
 using PMSClient.ViewForDesktop;
+using PMSClient.MainService;
 
 namespace PMSClient
 {
@@ -94,7 +95,8 @@ namespace PMSClient
                         GoTo(_viewLocator.Order);
                         break;
                     case VToken.OrderEdit:
-                        _viewLocator.OrderEdit.DataContext = new OrderEditVM(model.MsgModel);
+                        _viewModelLocator.OrderEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.OrderEdit.DataContext = _viewModelLocator.OrderEdit;
                         GoTo(_viewLocator.OrderEdit);
                         break;
                     case VToken.OrderRefresh:
