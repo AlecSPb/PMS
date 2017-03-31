@@ -38,6 +38,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OrderEditVM>();
 
             SimpleIoc.Default.Register<OrderCheckVM>();
+            SimpleIoc.Default.Register<OrderCheckEditVM>();
+
             SimpleIoc.Default.Register<MissonVM>();
             SimpleIoc.Default.Register<PlanVM>();
 
@@ -75,6 +77,15 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OrderEditVM>(); }
         }
+        public OrderCheckVM OrderCheck
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
+        }
+        public OrderCheckEditVM OrderCheckEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderCheckEditVM>(); }
+        }
+
 
         public RecordVHPQuickEditVM RecordVHPQuickEdit
         {
@@ -85,10 +96,7 @@ namespace PMSClient.ViewModel
             get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
         }
 
-        public OrderCheckVM OrderCheck
-        {
-            get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
-        }
+
         public MissonVM Misson
         {
             get { return SimpleIoc.Default.GetInstance<MissonVM>(); }

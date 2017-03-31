@@ -84,21 +84,7 @@ namespace PMSClient.ViewModel
             NavigationService.Refresh(VToken.OrderRefresh);
         }
 
-        private bool isNew;
-        public bool IsNew
-        {
-            get
-            {
-                return isNew;
-            }
-            set
-            {
-                isNew = value;
-                NewOrEditIndicator = isNew ? "New" : "Edit";
-            }
-        }
         private DcOrder currentOrder;
-
         public DcOrder CurrentOrder
         {
             get { return currentOrder; }

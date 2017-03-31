@@ -28,6 +28,19 @@ namespace PMSClient.ViewModel
             set { newOrEdit = value; RaisePropertyChanged(nameof(NewOrEditIndicator)); }
         }
 
+        private bool isNew;
+        public bool IsNew
+        {
+            get
+            {
+                return isNew;
+            }
+            set
+            {
+                isNew = value;
+                NewOrEditIndicator = isNew ? "New" : "Edit";
+            }
+        }
         #endregion
 
         #region Commands 

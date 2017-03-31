@@ -114,7 +114,8 @@ namespace PMSClient
                     case VToken.OrderCheckRefresh:
                         break;
                     case VToken.OrderCheckEdit:
-                        _viewLocator.OrderCheckEdit.DataContext = new OrderCheckEditVM(model.MsgModel);
+                        _viewModelLocator.OrderCheckEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.OrderCheckEdit.DataContext = _viewModelLocator.OrderCheckEdit;
                         GoTo(_viewLocator.OrderCheckEdit);
                         break;
                     case VToken.Misson:

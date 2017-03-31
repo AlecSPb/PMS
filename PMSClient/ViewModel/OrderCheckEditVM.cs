@@ -11,18 +11,17 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderCheckEditVM : ViewModelBase
+    public class OrderCheckEditVM : BaseViewModelEdit
     {
         public OrderCheckEditVM()
         {
-            InitializeProperties();
-        }
-        public OrderCheckEditVM(ModelObject msg)
-        {
-            CurrentOrder = msg.Model as DcOrder;
-            isNew = msg.IsNew;
             InitializeCommands();
             InitializeProperties();
+        }
+        public void SetKeyProperties(ModelObject msg)
+        {
+            CurrentOrder = msg.Model as DcOrder;
+            IsNew = msg.IsNew;
         }
 
         private void InitializeCommands()
@@ -62,7 +61,7 @@ namespace PMSClient.ViewModel
         private void ActionSave()
         {
             var service = new OrderServiceClient();
-            if (isNew)
+            if (IsNew)
             {
                 service.AddOrder(CurrentOrder);
             }
@@ -73,10 +72,6 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck });
             NavigationService.Refresh(VToken.OrderCheckRefresh);
         }
-
-        private bool isNew;
-
-
         private DcOrder currentOrder;
 
         public DcOrder CurrentOrder
@@ -93,11 +88,6 @@ namespace PMSClient.ViewModel
         public ObservableCollection<string> OrderPriorities { get; set; }
 
         public ObservableCollection<string> PolicyTypes { get; set; }
-
-
-
-        public RelayCommand Save { get; set; }
-        public RelayCommand GiveUp { get; set; }
 
     }
 }
