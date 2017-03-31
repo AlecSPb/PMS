@@ -8,6 +8,7 @@ namespace PMSClient.Helpers
 {
     public interface ILog
     {
-        void LogIt(string message);
+        void Log(string message);
+        void Error(string error);
     }
 }

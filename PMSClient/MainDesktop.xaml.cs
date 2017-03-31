@@ -83,6 +83,9 @@ namespace PMSClient
         {
             try
             {
+                //log
+                PMSHelper.CurrentLog.Log(model.MsgToken.ToString());
+
                 switch (model.MsgToken)
                 {
                     case VToken.Navigation:
@@ -90,6 +93,7 @@ namespace PMSClient
                         RefreshLogInformation();
                         break;
                     case VToken.LogIn:
+                        GoTo(_viewLocator.LogIn);
                         break;
                     case VToken.Order:
                         GoTo(_viewLocator.Order);

@@ -43,13 +43,13 @@ namespace PMSClient.ViewForDesktop
             }
             try
             {
-                //CurrentUserInformation.SetCurrentUser(user);
                 var logInformation = PMSHelper.CurrentLogInformation;
                 logInformation.LogIn(uid, pwd);
 
                 if (logInformation.CurrentUser != null)
                 {
                     NavigationService.GoTo(VToken.Navigation);
+                    PMSHelper.CurrentLog.Log("登录成功");
                 }
                 else
                 {
@@ -58,8 +58,7 @@ namespace PMSClient.ViewForDesktop
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex.Message);
             }
         }
     }
