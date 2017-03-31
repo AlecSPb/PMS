@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderCheckVM : ViewModelBase
+    public class OrderCheckVM : BaseViewModelPage
     {
         public OrderCheckVM()
         {
@@ -46,7 +46,6 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            Navigate = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -103,44 +102,6 @@ namespace PMSClient.ViewModel
             MainOrders.Clear();
             orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
         }
-
-
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        public RelayCommand PageChanged { get; private set; }
-        #endregion
-
         #region Proeperties
         private string searchCustomer;
         public string SearchCustomer
@@ -181,10 +142,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Navigate { get; private set; }
-        public RelayCommand Search { get; private set; }
-        public RelayCommand All { get; set; }
-
         public RelayCommand<DcOrder> Check { get; private set; }
 
         #endregion

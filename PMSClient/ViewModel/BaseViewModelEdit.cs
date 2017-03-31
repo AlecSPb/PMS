@@ -8,6 +8,9 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSClient.ViewModel
 {
+    /// <summary>
+    /// 编辑视图的基类
+    /// </summary>
     public class BaseViewModelEdit : ViewModelBase
     {
         public BaseViewModelEdit()
