@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PMSClient;
 using System.IO;
 
-namespace PMSClient.Helpers
+namespace PMSClient.Helper
 {
     public class LocalLog : ILog
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSClient.Helpers
+namespace PMSClient.Helper
 {
     public interface ILog
     {
