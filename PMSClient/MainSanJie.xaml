@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="PMSSanJieClient" Height="300" Width="1000">
+        Title="PMSSanJieClient" Height="300" Width="1000" ResizeMode="CanResize">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
     </Window.Resources>

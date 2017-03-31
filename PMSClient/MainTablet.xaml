@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="{StaticResource strAppNameTablet}" Loaded="Window_Loaded"
+        Title="{StaticResource strAppNameTablet}" Loaded="Window_Loaded" ResizeMode="CanMinimize"
         MinHeight="400" MinWidth="600" WindowState="Maximized">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
