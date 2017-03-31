@@ -60,17 +60,24 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            var service = new OrderServiceClient();
-            if (IsNew)
+            try
             {
-                service.AddOrder(CurrentOrder);
+                var service = new OrderServiceClient();
+                if (IsNew)
+                {
+                    service.AddOrder(CurrentOrder);
+                }
+                else
+                {
+                    service.UpdateOrder(CurrentOrder);
+                }
+                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck });
+                NavigationService.Refresh(VToken.OrderCheckRefresh);
             }
-            else
+            catch (Exception ex)
             {
-                service.UpdateOrder(CurrentOrder);
+                PMSHelper.CurrentLog.Error(ex.Message);
             }
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck });
-            NavigationService.Refresh(VToken.OrderCheckRefresh);
         }
         private DcOrder currentOrder;
 
