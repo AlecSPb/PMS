@@ -22,6 +22,7 @@ namespace PMSClient.ViewModel
         {
             CurrentOrder = model.Model as DcOrder;
             isNew = model.IsNew;
+            NewOrEdit = isNew ? "New" : "Edit";
 
             InitializeCommands();
             InitializeProperties();
@@ -97,6 +98,16 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentOrder));
             }
         }
+
+        private string newOrEdit;
+
+        public string NewOrEdit
+        {
+            get { return newOrEdit; }
+            set { newOrEdit = value; RaisePropertyChanged(nameof(NewOrEdit)); }
+        }
+
+
 
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }

@@ -15,7 +15,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageOrderEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="{StaticResource strPageOrderEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+            <TextBlock Text="{Binding NewOrEdit}" Style="{StaticResource TextBlockPageTitleBasic}" Foreground="Blue"/>
+        </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnGiveUp}" Style="{StaticResource ButtonBasic}"
                     Command="{Binding GiveUp}"/>
