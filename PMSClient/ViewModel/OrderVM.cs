@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
 
                 MsgObject msg = new MsgObject();
                 msg.MsgToken = VToken.OrderEdit;
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew =true, Model = order };
+                msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = order };
                 NavigationService.GoTo(msg);
             }
         }
@@ -112,8 +112,8 @@ namespace PMSClient.ViewModel
                 ActionPaging();
             }
             catch (Exception ex)
-            { 
-                throw ex;
+            {
+                PMSHelper.CurrentLog.Error(ex.Message);
             }
         }
         /// <summary>
