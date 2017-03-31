@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordMilling();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.Creator = PMSUserHelper.CurrentLogInformation.CurrentUser.UserName;
+            model.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
             model.Composition = "Cu22.8In20Ga7.0Se50.2";
             model.GasProtection = "Ar";
             model.MillingTool = "行星球磨机";

@@ -44,7 +44,7 @@ namespace PMSClient.ViewForDesktop
             try
             {
                 //CurrentUserInformation.SetCurrentUser(user);
-                var logInformation = PMSUserHelper.CurrentLogInformation;
+                var logInformation = PMSHelper.CurrentLogInformation;
                 logInformation.LogIn(uid, pwd);
 
                 if (logInformation.CurrentUser != null)

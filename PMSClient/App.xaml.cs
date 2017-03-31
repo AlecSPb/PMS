@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using PMSClient.UserService;
-
+using PMSClient.Helpers;
 
 namespace PMSClient
 {
@@ -33,6 +33,7 @@ namespace PMSClient
                 Phone = "13540781789"
             };
             _logInformation = new LogInformation();
+            _log = new LocalLog();
         }
 
         public DcUser CurrentUser { get; set; }
@@ -40,6 +41,12 @@ namespace PMSClient
         public LogInformation CurrentLogInformation
         {
             get { return _logInformation; }
+        }
+
+        private ILog _log;
+        public ILog CurrentLog
+        {
+            get { return _log; }
         }
     }
 }

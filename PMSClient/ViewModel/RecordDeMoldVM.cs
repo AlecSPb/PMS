@@ -47,7 +47,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordDeMold();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.Creator = PMSUserHelper.CurrentLogInformation.CurrentUser.UserName;
+            model.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.UnChecked.ToString();
             model.Temperature1 = "10";
             model.Temperature2 = "20";

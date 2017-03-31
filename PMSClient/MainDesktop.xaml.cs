@@ -52,7 +52,7 @@ namespace PMSClient
 
         private void RefreshLogInformation()
         {
-            var _logInformation = PMSUserHelper.CurrentLogInformation;
+            var _logInformation = PMSHelper.CurrentLogInformation;
             if (_logInformation.CurrentUser != null)
             {
                 txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
