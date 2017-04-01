@@ -12,7 +12,7 @@ namespace PMSWCFService
 {
     public partial class PMSService : IMissonService
     {
-        public List<DcOrder> GetMissonBySearchInPage(int skip, int take)
+        public List<DcOrder> GetMissons( int skip, int take)
         {
             try
             {
@@ -25,7 +25,9 @@ namespace PMSWCFService
                     });
 
                     var result = from o in dc.Orders
-                                 where o.PolicyType.Contains("VHP") && o.State != OrderState.Deleted.ToString() && o.State != OrderState.UnChecked.ToString()
+                                 where o.PolicyType.Contains("VHP") 
+                                 && o.State != OrderState.Deleted.ToString() 
+                                 && o.State != OrderState.UnChecked.ToString() 
                                  orderby o.CreateTime descending
                                  select o;
 
@@ -41,13 +43,18 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMissonCountBySearch()
+        public int GetMissonsCount()
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.Orders.Where(o => o.PolicyType.Contains("VHP") && o.State != OrderState.Deleted.ToString()).Count();
+                    var query = from o in dc.Orders
+                                where o.PolicyType.Contains("VHP") 
+                                && o.State != OrderState.Deleted.ToString() 
+                                && o.State != OrderState.UnChecked.ToString() 
+                                select o;
+                    return query.Count();
                 }
             }
             catch (Exception ex)
@@ -56,7 +63,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcPlanVHP> GetPlansByOrderID(Guid orderid)
+        public List<DcPlanVHP> GetPlans(Guid orderid)
         {
             try
             {
@@ -64,7 +71,8 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
                     var result = from p in dc.VHPPlans
-                                  where p.OrderID == orderid && p.State != OrderState.Deleted.ToString()
+                                  where p.OrderID == orderid 
+                                  && p.State != OrderState.Deleted.ToString()
                                   orderby p.PlanDate descending
                                   select p;
                     var plans = Mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(result.ToList());

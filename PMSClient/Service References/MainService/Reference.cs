@@ -5543,23 +5543,23 @@ namespace PMSClient.MainService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IMissonService")]
     public interface IMissonService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
-        PMSClient.MainService.DcOrder[] GetMissonBySearchInPage(int skip, int take);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissons", ReplyAction="http://tempuri.org/IMissonService/GetMissonsResponse")]
+        PMSClient.MainService.DcOrder[] GetMissons(int skip, int take);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissons", ReplyAction="http://tempuri.org/IMissonService/GetMissonsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsAsync(int skip, int take);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlansByOrderID", ReplyAction="http://tempuri.org/IMissonService/GetPlansByOrderIDResponse")]
-        PMSClient.MainService.DcPlanVHP[] GetPlansByOrderID(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlans", ReplyAction="http://tempuri.org/IMissonService/GetPlansResponse")]
+        PMSClient.MainService.DcPlanVHP[] GetPlans(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlansByOrderID", ReplyAction="http://tempuri.org/IMissonService/GetPlansByOrderIDResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlans", ReplyAction="http://tempuri.org/IMissonService/GetPlansResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanVHP[]> GetPlansAsync(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
-        int GetMissonCountBySearch();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountResponse")]
+        int GetMissonsCount();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonsCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5589,28 +5589,28 @@ namespace PMSClient.MainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.MainService.DcOrder[] GetMissonBySearchInPage(int skip, int take) {
-            return base.Channel.GetMissonBySearchInPage(skip, take);
+        public PMSClient.MainService.DcOrder[] GetMissons(int skip, int take) {
+            return base.Channel.GetMissons(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take) {
-            return base.Channel.GetMissonBySearchInPageAsync(skip, take);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsAsync(int skip, int take) {
+            return base.Channel.GetMissonsAsync(skip, take);
         }
         
-        public PMSClient.MainService.DcPlanVHP[] GetPlansByOrderID(System.Guid id) {
-            return base.Channel.GetPlansByOrderID(id);
+        public PMSClient.MainService.DcPlanVHP[] GetPlans(System.Guid id) {
+            return base.Channel.GetPlans(id);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id) {
-            return base.Channel.GetPlansByOrderIDAsync(id);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanVHP[]> GetPlansAsync(System.Guid id) {
+            return base.Channel.GetPlansAsync(id);
         }
         
-        public int GetMissonCountBySearch() {
-            return base.Channel.GetMissonCountBySearch();
+        public int GetMissonsCount() {
+            return base.Channel.GetMissonsCount();
         }
         
-        public System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync() {
-            return base.Channel.GetMissonCountBySearchAsync();
+        public System.Threading.Tasks.Task<int> GetMissonsCountAsync() {
+            return base.Channel.GetMissonsCountAsync();
         }
     }
     

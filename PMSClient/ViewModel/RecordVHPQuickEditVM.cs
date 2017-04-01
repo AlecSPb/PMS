@@ -201,7 +201,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 6;
             var service = new MissonServiceClient();
-            RecordCount = service.GetMissonCountBySearch();
+            RecordCount = service.GetMissonsCount();
             ActionPaging();
         }
         /// <summary>

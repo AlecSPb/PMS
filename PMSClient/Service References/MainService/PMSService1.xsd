@@ -349,7 +349,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonBySearchInPage">
+  <xs:element name="GetMissons">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="skip" type="xs:int" />
@@ -357,36 +357,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonBySearchInPageResponse">
+  <xs:element name="GetMissonsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonBySearchInPageResult" nillable="true" type="q24:ArrayOfDcOrder" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonsResult" nillable="true" type="q24:ArrayOfDcOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlansByOrderID">
+  <xs:element name="GetPlans">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q25:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlansByOrderIDResponse">
+  <xs:element name="GetPlansResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlansByOrderIDResult" nillable="true" type="q26:ArrayOfDcPlanVHP" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlansResult" nillable="true" type="q26:ArrayOfDcPlanVHP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonCountBySearch">
+  <xs:element name="GetMissonsCount">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonCountBySearchResponse">
+  <xs:element name="GetMissonsCountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetMissonCountBySearchResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetMissonsCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

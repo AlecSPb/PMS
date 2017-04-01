@@ -57,7 +57,7 @@ namespace PMSClient.ViewModel
             {
                 using (var service = new MissonServiceClient())
                 {
-                    var result = service.GetPlansByOrderID(obj.ID);
+                    var result = service.GetPlans(obj.ID);
                     PlanVHPs.Clear();
                     result.ToList().ForEach(i => PlanVHPs.Add(i));
 
@@ -112,7 +112,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 10;
                 var service = new MissonServiceClient();
-                RecordCount = service.GetMissonCountBySearch();
+                RecordCount = service.GetMissonsCount();
                 ActionPaging();
             }
             catch (Exception ex)
@@ -129,7 +129,7 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonBySearchInPage(skip, take);
+            var orders = service.GetMissons(skip, take);
             Missons.Clear();
             orders.ToList<DcOrder>().ForEach(o => Missons.Add(o));
 
