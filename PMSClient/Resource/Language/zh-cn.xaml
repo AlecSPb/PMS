@@ -123,11 +123,141 @@
     <sys:String x:Key="strCompleted">完成</sys:String>
     <sys:String x:Key="strPaused">暂停</sys:String>
     <sys:String x:Key="strEmergency">紧急</sys:String>
+    
+    
+    
+    
+    
+    <!--规范化后的命名-->
+    <!--AppName-->
+    <sys:String x:Key="AppNameDesktop">生产管理系统Desktop版本</sys:String>
+    <sys:String x:Key="AppNameTablet">生产管理系统Tablet版本</sys:String>
+    <sys:String x:Key="AppNameSanjie">生产管理系统 SanJie版本</sys:String>
+
+
+    <!--Navigation-->
+    <sys:String x:Key="NavigationOrder">订单</sys:String>
+    <sys:String x:Key="NavigationOrderCheck">订单核验</sys:String>
+    <sys:String x:Key="NavigationMisson">生产任务</sys:String>
+    <sys:String x:Key="NavigationPlan">生产计划</sys:String>
+    <sys:String x:Key="NavigationMaterialNeed">原料需求</sys:String>
+    <sys:String x:Key="NavigationMaterialOrder">原料订单</sys:String>
+    <sys:String x:Key="NavigationMaterialInventory">原料库存</sys:String>
+    <sys:String x:Key="NavigationRecordMilling">制粉记录</sys:String>
+    <sys:String x:Key="NavigationRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="NavigationRecordBlank">取模记录</sys:String>
+    <sys:String x:Key="NavigationRecordMachine">加工记录</sys:String>
+    <sys:String x:Key="NavigationRecordTestResult">测试记录</sys:String>
+    <sys:String x:Key="NavigationRecordDelivery">发货记录</sys:String>
+    <sys:String x:Key="NavigationRecordBonding">绑定记录</sys:String>
+    <sys:String x:Key="NavigationMaintenance">设备维护</sys:String>
+
+
+    <!--PageAndNavigationName-->
+    <sys:String x:Key="PageStart">开始</sys:String>
+    <sys:String x:Key="PageSetting">设置</sys:String>
+    <sys:String x:Key="PageBasicData">数据</sys:String>
+    <sys:String x:Key="PageStatistic">统计</sys:String>
+    <sys:String x:Key="PageExit">退出</sys:String>
+    <sys:String x:Key="PageAbout">关于</sys:String>
+    <sys:String x:Key="PageInstruct">指南</sys:String>
+    <sys:String x:Key="PageHelp">帮助</sys:String>
+    <sys:String x:Key="PageWebSite">网址</sys:String>
+    <sys:String x:Key="PageAdmin">管理</sys:String>
+    <sys:String x:Key="PageNaivgation">导航</sys:String>
+
+    <sys:String x:Key="PageSales">销售</sys:String>
+    <sys:String x:Key="PageMaterial">原料</sys:String>
+    <sys:String x:Key="PageProduction">生产</sys:String>
+    <sys:String x:Key="PageRecord">记录</sys:String>
+    <sys:String x:Key="PageOther">其他</sys:String>
+    <sys:String x:Key="PageOrder">订单记录</sys:String>
+    <sys:String x:Key="PageOrderEdit">订单记录编辑</sys:String>
+    <sys:String x:Key="PageOrderCheck">订单核验记录</sys:String>
+    <sys:String x:Key="PageOrderCheckEdit">订单核验记录编辑</sys:String>
+
+    <sys:String x:Key="PageMisson">任务记录</sys:String>
+    <sys:String x:Key="PagePlan">计划记录</sys:String>
+    <sys:String x:Key="PagePlanEdit">计划记录编辑</sys:String>
+    <sys:String x:Key="PageMaterialNeed">材料需求记录</sys:String>
+    <sys:String x:Key="PageMaterialNeedEdit">材料需求记录编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrder">材料订单记录</sys:String>
+    <sys:String x:Key="PageMaterialOrderEdit">材料订单记录编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemEdit">材料订单项记录编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventory">材料库存记录</sys:String>
+    <sys:String x:Key="PageMaterialInventoryEdit">材料库存记录编辑</sys:String>
+
+
+
+    <sys:String x:Key="PageRecordMilling">制粉记录</sys:String>
+    <sys:String x:Key="PageRecordMillingEdit">制粉记录编辑</sys:String>
+    <sys:String x:Key="PageRecordMachine">加工记录</sys:String>
+    <sys:String x:Key="PageRecordMachineEdit">加工记录编辑</sys:String>
+    <sys:String x:Key="PageRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="PageRecordVHPEditPage">热压记录编辑</sys:String>
+    <sys:String x:Key="PageRecordVHPQuickEditPage">热压记录快速录入</sys:String>
+    <sys:String x:Key="PageRecordBlank">取模记录</sys:String>
+    <sys:String x:Key="PageRecordBlankEdit">取模记录编辑</sys:String>
+    <sys:String x:Key="PageRecordBonding">绑定记录</sys:String>
+    <sys:String x:Key="PageRecordBondingEdit">绑定记录编辑</sys:String>
+    <sys:String x:Key="PageRecordTest">测试记录</sys:String>
+    <sys:String x:Key="PageRecordTestEdit">测试记录编辑</sys:String>
+    <sys:String x:Key="PageRecordDelivery">发货记录</sys:String>
+    <sys:String x:Key="PageRecordDeliveryEdit">发货记录编辑</sys:String>
+    <sys:String x:Key="PageRecordDeliveryItemEdit">发货项记录编辑</sys:String>
+
+
+    <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
+    <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
+    <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
+    <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
+    <!--Button-->
+    <sys:String x:Key="ButtonNavigation">导航</sys:String>
+    <sys:String x:Key="ButtonGiveUp">放弃</sys:String>
+    <sys:String x:Key="ButtonLogin">登录</sys:String>
+    <sys:String x:Key="ButtonBack">返回</sys:String>
+    <sys:String x:Key="ButtonCheck">核验</sys:String>
+    <sys:String x:Key="ButtonRefresh">刷新</sys:String>
+    <sys:String x:Key="ButtonSearch">搜索</sys:String>
+    <sys:String x:Key="ButtonAll">全部</sys:String>
+    <sys:String x:Key="ButtonSave">保存</sys:String>
+    <sys:String x:Key="ButtonAdd">添加</sys:String>
+    <sys:String x:Key="ButtonEdit">编辑</sys:String>
+    <sys:String x:Key="ButtonDuplicate">复制</sys:String>
+    <sys:String x:Key="ButtonAddItem">安排</sys:String>
+    <sys:String x:Key="ButtonEditItem">编辑</sys:String>
+    <sys:String x:Key="ButtonEmpty">使用空记录</sys:String>
+    <sys:String x:Key="ButtonQuick">快速编辑</sys:String>
+    <sys:String x:Key="ButtonDoc">文档</sys:String>
+    <sys:String x:Key="ButtonPrint">打印</sys:String>
+    <sys:String x:Key="ButtonSelectEmpty">使用空项目</sys:String>
+    <sys:String x:Key="ButtonFill">填写</sys:String>
+    <sys:String x:Key="ButtonSelect">选择</sys:String>
+    <sys:String x:Key="ButtonChart">曲线图</sys:String>
+
+
+    <!--Indicator-->
+    <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
+    <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
+    <sys:String x:Key="IndicatorToday">今天</sys:String>
+    <sys:String x:Key="IndicatorTomorrow">明天</sys:String>
+
+    <sys:String x:Key="IndicatorUnChecked">未核验</sys:String>
+    <sys:String x:Key="IndicatorUnCompleted">未完成</sys:String>
+    <sys:String x:Key="IndicatorCompleted">完成</sys:String>
+    <sys:String x:Key="IndicatorPaused">暂停</sys:String>
+    <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
+
     <!--Paging-->
     <sys:String x:Key="PagingCurrentPageIndex">当前页码</sys:String>
     <sys:String x:Key="PagingPageCount">总页码</sys:String>
     <sys:String x:Key="PagingPageSize">条/页</sys:String>
     <sys:String x:Key="PagingRecordCount">总记录</sys:String>
+    
+    <!--LogIn-->
+    <sys:String x:Key="LogInWelcome">欢迎</sys:String>
+    <sys:String x:Key="LogInLogInButton">欢迎</sys:String>
+    
     <!--Order-->
     <sys:String x:Key="OrderCreator">创建者</sys:String>
     <sys:String x:Key="OrderCreateTime">创建时间</sys:String>
@@ -148,4 +278,9 @@
     <sys:String x:Key="OrderSampleNeed">样品需求</sys:String>
     <sys:String x:Key="OrderMIniummAcceptDefect">可接受缺陷</sys:String>
     <sys:String x:Key="OrderRemark">备注</sys:String>
+    <sys:String x:Key="OrderPriority">优先级</sys:String>
+    <sys:String x:Key="OrderState">订单状态</sys:String>
+    <sys:String x:Key="OrderChecker">核验者</sys:String>
+    <sys:String x:Key="OrderCheckContent">核验内容</sys:String>
+    <sys:String x:Key="OrderCheckDate">核验日期</sys:String>
 </ResourceDictionary>
