@@ -70,10 +70,10 @@ namespace PMSClient.ViewModel
         {
             if (obj != null)
             {
-                var service = new PlanVHPServiceClient();
-                obj.ID = Guid.NewGuid();
-                service.AddVHPPlan(obj);
-                ActionSelectionChanged(CurrentSelectItem);
+                var msg = new MsgObject();
+                msg.MsgToken = VToken.PlanEdit;
+                msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
+                NavigationService.GoTo(msg);
             }
         }
 
@@ -103,11 +103,18 @@ namespace PMSClient.ViewModel
 
         private void SetPageParametersWhenConditionChange()
         {
-            PageIndex = 1;
-            PageSize = 10;
-            var service = new MissonServiceClient();
-            RecordCount = service.GetMissonCountBySearch();
-            ActionPaging();
+            try
+            {
+                PageIndex = 1;
+                PageSize = 10;
+                var service = new MissonServiceClient();
+                RecordCount = service.GetMissonCountBySearch();
+                ActionPaging();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex.Message);
+            }
         }
         /// <summary>
         /// 分页动作的时候读入数据
