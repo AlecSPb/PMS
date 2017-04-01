@@ -9,6 +9,6 @@ namespace PMSClient.Helper
     public interface ILog
     {
         void Log(string message);
-        void Error(string error);
+        void Error(Exception ex);
     }
 }

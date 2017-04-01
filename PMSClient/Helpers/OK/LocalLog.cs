@@ -46,13 +46,19 @@ namespace PMSClient.Helper
             }
         }
 
-        public void Error(string error)
+        public void Error(Exception ex)
         {
             var date = DateTime.Now;
             var user = _currentUser.CurrentUser.UserName;
             if (!File.Exists(_errorfile))
             {
                 File.Create(_errorfile);
+            }
+
+            var error = "未知错误发生";
+            if (ex != null)
+            {
+                error = ex.Message;
             }
             using (var sw = new StreamWriter(_logfile, true))
             {
