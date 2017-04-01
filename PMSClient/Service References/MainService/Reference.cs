@@ -1760,6 +1760,9 @@ namespace PMSClient.MainService {
         private System.Guid PlanIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PrePressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2134,6 +2137,19 @@ namespace PMSClient.MainService {
                 if ((this.PlanIDField.Equals(value) != true)) {
                     this.PlanIDField = value;
                     this.RaisePropertyChanged("PlanID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlanLot {
+            get {
+                return this.PlanLotField;
+            }
+            set {
+                if ((this.PlanLotField.Equals(value) != true)) {
+                    this.PlanLotField = value;
+                    this.RaisePropertyChanged("PlanLot");
                 }
             }
         }

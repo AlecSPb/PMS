@@ -183,6 +183,7 @@
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PlanID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanLot" type="xs:int" />
       <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
       <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
       <xs:element minOccurs="0" name="Pressure" type="xs:double" />
