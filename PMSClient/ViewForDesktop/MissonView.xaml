@@ -183,12 +183,20 @@
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding VHPDeviceCode}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanPlanLot}" Binding="{Binding PlanLot}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanMoldType}" Binding="{Binding MoldType}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanMoldDiameter}" Binding="{Binding MoldDiameter}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanCalculationDensity}" Binding="{Binding CalculationDensity}"/>
-
+                
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanProcessCode}" Binding="{Binding ProcessCode}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanPreTemperature}" Binding="{Binding PreTemperature}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanPrePressure}" Binding="{Binding PrePressure}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanTemperature}" Binding="{Binding Temperature}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
@@ -196,7 +204,25 @@
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanVaccum}" Binding="{Binding Vaccum}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Header="{StaticResource PlanProcessCode}" Binding="{Binding ProcessCode}"/>
+                                    Header="{StaticResource PlanKeepTempTime}" Binding="{Binding KeepTempTime}"/>
+
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanRoomTemperature}" Binding="{Binding RoomTemperature}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanRoomHumidity}" Binding="{Binding RoomHumidity}"/>
+
+
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanMillingRequirement}" Binding="{Binding MillingRequirement}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanFillingRequirement}" Binding="{Binding FillingRequirement}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanMachineRequirement}" Binding="{Binding MachineRequirement}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding SpecialRequirement}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanRemark}" Binding="{Binding Remark}"/>
+                
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
