@@ -40,9 +40,10 @@ namespace PMSClient.Helper
             {
                 File.Create(_logfile);
             }
-            StreamWriter sw = new StreamWriter(_logfile,true);
-            sw.WriteLine($"{user}:{date.ToString()}:{message}");
-            sw.Close();
+            using (var sw = new StreamWriter(_logfile, true))
+            {
+                sw.WriteLine($"{user}:{date.ToString()}:{message}");
+            }
         }
 
         public void Error(string error)
@@ -53,9 +54,10 @@ namespace PMSClient.Helper
             {
                 File.Create(_errorfile);
             }
-            StreamWriter sw = new StreamWriter(_errorfile,true);
-            sw.WriteLine($"{user}:{date.ToString()}:{error}");
-            sw.Close();
+            using (var sw = new StreamWriter(_logfile, true))
+            {
+                sw.WriteLine($"{user}:{date.ToString()}:{error}");
+            }
         }
 
     }
