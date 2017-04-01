@@ -87,7 +87,7 @@ namespace PMSClient.ViewModel
             }
             catch (Exception ex)
             {
-                PMSHelper.CurrentLog.Error(ex.Message);
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
