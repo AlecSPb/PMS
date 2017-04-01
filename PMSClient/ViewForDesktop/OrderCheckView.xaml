@@ -22,9 +22,11 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource TextBlockBasic}"/>
-            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  TextBoxBasic}"/>
+            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Width="200"
+                     Style="{StaticResource  TextBoxBasic}"/>
             <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  TextBlockBasic}"/>
-            <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
+            <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}"  Width="200"
+                     Style="{StaticResource TextBoxBasic}"/>
             <Button Content="{StaticResource strbtnSearch}" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource strbtnAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
             <!--图例-->

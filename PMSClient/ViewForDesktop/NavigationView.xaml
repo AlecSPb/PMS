@@ -33,8 +33,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageNaivgation}" Grid.ColumnSpan="6" Background="Orange"
-                   Style="{StaticResource TextBlockPageTitleBasic}" HorizontalAlignment="Stretch"/>
+        <StackPanel Grid.ColumnSpan="6" Background="{StaticResource BackgroundNavigateBar}">
+            <TextBlock Text="{StaticResource strPageNaivgation}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        </StackPanel>
+
         <Button Content="{StaticResource strPageSales}" Grid.Row="1" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
         <Button Content="{StaticResource strbtnOrder}" Grid.Row="1" Grid.Column="1" Command="{Binding GoToOrder}" Style="{DynamicResource btnNavigation}"/>
         <Button Content="{StaticResource strbtnOrderCheck}" Grid.Row="1" Grid.Column="2" Command="{Binding GoToOrderCheck}" Style="{DynamicResource btnNavigation}"/>

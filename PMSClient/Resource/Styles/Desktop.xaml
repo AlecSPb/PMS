@@ -3,7 +3,6 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!--Public Resouces-->
     <SolidColorBrush x:Key="BackgroundTitleBar" Color="#135995"/>
-    <!--<SolidColorBrush x:Key="BackgroundTitleBar" Color="Orange"/>-->
     <SolidColorBrush x:Key="BackgroundNavigateBar" Color="Orange"/>
     <SolidColorBrush x:Key="BackgroundStatusBar" Color="#CA5100"/>
     <SolidColorBrush x:Key="BackgroundWindow" Color="Wheat"/>
