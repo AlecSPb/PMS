@@ -29,7 +29,7 @@ namespace PMSWCFService
                                  orderby o.CreateTime descending
                                  select o;
 
-                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.ToList());
+                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(skip).Take(take).ToList());
 
                     return missons;
                 }
