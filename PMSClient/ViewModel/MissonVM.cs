@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MissonVM : ViewModelBase
+    public class MissonVM : BaseViewModelPage
     {
         public MissonVM()
         {
@@ -34,7 +34,6 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Plan }));
 
 
@@ -128,42 +127,6 @@ namespace PMSClient.ViewModel
             ActionSelectionChanged(CurrentSelectItem);
         }
 
-
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        #endregion
-
         #region Proeperties
 
         public ObservableCollection<DcOrder> Missons { get; set; }
@@ -185,11 +148,9 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand GoToNavigation { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand Refresh { get; set; }
-        public RelayCommand PageChanged { get; private set; }
         public RelayCommand<DcOrder> AddNewPlan { get; set; }
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }

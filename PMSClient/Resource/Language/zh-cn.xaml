@@ -135,7 +135,7 @@
     <sys:String x:Key="AppNameSanjie">生产管理系统 SanJie版本</sys:String>
 
 
-    <!--Navigation-->
+    <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">订单</sys:String>
     <sys:String x:Key="NavigationOrderCheck">订单核验</sys:String>
     <sys:String x:Key="NavigationMisson">生产任务</sys:String>
@@ -176,9 +176,9 @@
     <sys:String x:Key="PageOrderCheck">订单核验记录</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验记录编辑</sys:String>
 
-    <sys:String x:Key="PageMisson">任务记录</sys:String>
-    <sys:String x:Key="PagePlan">计划记录</sys:String>
-    <sys:String x:Key="PagePlanEdit">计划记录编辑</sys:String>
+    <sys:String x:Key="PageMisson">任务</sys:String>
+    <sys:String x:Key="PagePlan">计划</sys:String>
+    <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
     <sys:String x:Key="PageMaterialNeed">材料需求记录</sys:String>
     <sys:String x:Key="PageMaterialNeedEdit">材料需求记录编辑</sys:String>
     <sys:String x:Key="PageMaterialOrder">材料订单记录</sys:String>
@@ -211,6 +211,7 @@
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
+    
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">放弃</sys:String>
@@ -283,4 +284,35 @@
     <sys:String x:Key="OrderChecker">核验者</sys:String>
     <sys:String x:Key="OrderCheckContent">核验内容</sys:String>
     <sys:String x:Key="OrderCheckDate">核验日期</sys:String>
+    
+    <!--Plan-->
+    <sys:String x:Key="PlanState">计划状态</sys:String>
+    <sys:String x:Key="PlanCreator">创建人</sys:String>
+    <sys:String x:Key="PlanCreateTime">创建时间</sys:String>
+    <sys:String x:Key="PlanPlanDate">计划日期</sys:String>
+    <sys:String x:Key="PlanVHPDeviceCode">设备代码</sys:String>
+    <sys:String x:Key="PlanPlanLot">计划批次</sys:String>
+    <sys:String x:Key="PlanMoldType">模具类型</sys:String>
+    <sys:String x:Key="PlanCalculationDensity">计算密度</sys:String>
+    <sys:String x:Key="PlanMoldDiameter">模具内径</sys:String>
+    <sys:String x:Key="PlanThickness">压坯厚度</sys:String>
+    <sys:String x:Key="PlanQuantity">压坯数量</sys:String>
+    <sys:String x:Key="PlanGrainSize">粉末粒度</sys:String>
+    <sys:String x:Key="PlanRoomTemperature">室内温度</sys:String>
+    <sys:String x:Key="PlanRoomHumidity">室内湿度</sys:String>
+    <sys:String x:Key="PlanPreTemperature">预压温度</sys:String>
+    <sys:String x:Key="PlanPrePressure">预压压力</sys:String>
+    <sys:String x:Key="PlanTemperature">温度</sys:String>
+    <sys:String x:Key="PlanPressure">压力</sys:String>
+    <sys:String x:Key="PlanVaccum">真空度</sys:String>
+    <sys:String x:Key="PlanKeepTempTime">保温时间</sys:String>
+    <sys:String x:Key="PlanProcessCode">工艺代码</sys:String>
+    <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
+    <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>
+    <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>
+    <sys:String x:Key="PlanSpecialRequirement">特殊要求</sys:String>
+    <sys:String x:Key="PlanRemark">备注信息</sys:String>
+
+    
+    
 </ResourceDictionary>
