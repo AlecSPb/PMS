@@ -70,6 +70,10 @@ namespace PMSClient.ViewModel
         {
             if (obj != null)
             {
+                obj.ID = Guid.NewGuid();
+                obj.CreateTime = DateTime.Now;
+                obj.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+                
                 var msg = new MsgObject();
                 msg.MsgToken = VToken.PlanEdit;
                 msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };

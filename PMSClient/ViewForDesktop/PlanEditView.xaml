@@ -62,7 +62,8 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource PlanPlanDate}"
                            Style="{StaticResource TextBlockBasic}"/>
-                <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding PlanDate,Mode=TwoWay}"
+                <DatePicker Grid.Row="0" Grid.Column="1"
+                            SelectedDate="{Binding PlanDate,Mode=TwoWay}"
                             Style="{StaticResource DatePickerBasic}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanVHPDeviceCode}"

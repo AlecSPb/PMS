@@ -20,7 +20,7 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
         }
-        public  void SetKeyProperties(ModelObject msg)
+        public void SetKeyProperties(ModelObject msg)
         {
             CurrentPlan = msg.Model as DcPlanVHP;
             IsNew = msg.IsNew;
@@ -90,7 +90,18 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcBDCompound> Compounds { get; set; }
 
 
-        public DcPlanVHP CurrentPlan { get; set; }
+        private DcPlanVHP currentPlan;
+        public DcPlanVHP CurrentPlan
+        {
+            get
+            {
+                return currentPlan;
+            }
+            set
+            {
+                Set<DcPlanVHP>(ref currentPlan, value);
+            }
+        }
 
     }
 }
