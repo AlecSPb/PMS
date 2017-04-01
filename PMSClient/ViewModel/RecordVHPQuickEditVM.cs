@@ -200,8 +200,8 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 6;
-            var service = new MissonServiceClient();
-            RecordCount = service.GetMissonsCount();
+            var service = new MissonWithPlanServiceClient();
+            RecordCount = service.GetMissonWithPlanCount();
             ActionPaging();
         }
         /// <summary>
