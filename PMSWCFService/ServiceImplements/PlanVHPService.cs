@@ -16,59 +16,90 @@ namespace PMSWCFService
     {
         public int AddVHPPlan(DcPlanVHP model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
-                var mapper = config.CreateMapper();
-                var plan = mapper.Map<PMSPlanVHP>(model);
-                dc.VHPPlans.Add(plan);
-                result = dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
+                    var mapper = config.CreateMapper();
+                    var plan = mapper.Map<PMSPlanVHP>(model);
+                    dc.VHPPlans.Add(plan);
+                    result = dc.SaveChanges();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
         public int DeleteVHPPlan(Guid id)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var plan = dc.VHPPlans.Find(id);
-                if (plan!=null)
+                using (var dc = new PMSDbContext())
                 {
-                    plan.State = OrderState.Deleted.ToString();
-                    result = dc.SaveChanges();
-                }
+                    int result = 0;
+                    var plan = dc.VHPPlans.Find(id);
+                    if (plan != null)
+                    {
+                        plan.State = OrderState.Deleted.ToString();
+                        result = dc.SaveChanges();
+                    }
 
-                return result;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
         public List<DcPlanVHP> GetVHPPlansByOrderID(Guid id)
         {
-            using (var dc=new PMSDbContext())
+            try
             {
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
-                var mapper = config.CreateMapper();
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
+                    var mapper = config.CreateMapper();
 
-                var plans = dc.VHPPlans.Where(p => p.OrderID == id&&
-                p.State!=OrderState.Deleted.ToString()).OrderByDescending(p => p.PlanDate).ToList();
+                    var plans = dc.VHPPlans.Where(p => p.OrderID == id &&
+                    p.State != OrderState.Deleted.ToString()).OrderByDescending(p => p.PlanDate).ToList();
 
-                return mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(plans);
+                    return mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(plans);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
         public int UpdateVHPPlan(DcPlanVHP model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
-                var mapper = config.CreateMapper();
-                var plan = mapper.Map<PMSPlanVHP>(model);
-                dc.Entry(plan).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
+                    var mapper = config.CreateMapper();
+                    var plan = mapper.Map<PMSPlanVHP>(model);
+                    dc.Entry(plan).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

@@ -127,7 +127,8 @@ namespace PMSClient
                         GoTo(_viewLocator.Plan);
                         break;
                     case VToken.PlanEdit:
-                        _viewLocator.PlanEdit.DataContext = new PlanEditVM(model.MsgModel);
+                        _viewModelLocator.PlanEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.PlanEdit.DataContext = _viewModelLocator.PlanEdit;
                         GoTo(_viewLocator.PlanEdit);
                         break;
                     case VToken.PlanSelectForTest:

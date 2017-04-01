@@ -14,40 +14,67 @@ namespace PMSWCFService
     {
         public List<DcOrder> GetMissonBySearchInPage(int skip, int take)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg =>
+                using (var dc = new PMSDbContext())
                 {
-                    cfg.CreateMap<PMSOrder, DcOrder>();
-                    cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
-                });
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
 
-                var result = dc.Orders.Where(o => o.PolicyType.Contains("VHP")
-                && o.State != OrderState.Deleted.ToString()&&o.State!=OrderState.UnChecked.ToString())
-                    .OrderByDescending(o => o.CreateTime).Skip(skip).Take(take).ToList();
-                var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result);
+                    var result = from o in dc.Orders
+                                 where o.PolicyType.Contains("VHP") && o.State != OrderState.Deleted.ToString() && o.State != OrderState.UnChecked.ToString()
+                                 orderby o.CreateTime descending
+                                 select o;
 
-                return missons;
+                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.ToList());
+
+                    return missons;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
         public int GetMissonCountBySearch()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                return dc.Orders.Where(o => o.PolicyType.Contains("VHP") && o.State != OrderState.Deleted.ToString()).Count();
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Orders.Where(o => o.PolicyType.Contains("VHP") && o.State != OrderState.Deleted.ToString()).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
         public List<DcPlanVHP> GetPlansByOrderID(Guid orderid)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
-                var result = dc.VHPPlans.Where(p => p.OrderID == orderid && p.State != OrderState.Deleted.ToString())
-                    .OrderByDescending(p => p.CreateTime).ToList();
-                var plans = Mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(result);
-                return plans;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
+                    var result = from p in dc.VHPPlans
+                                  where p.OrderID == orderid && p.State != OrderState.Deleted.ToString()
+                                  orderby p.PlanDate descending
+                                  select p;
+                    var plans = Mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(result.ToList());
+                    return plans;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

@@ -12,16 +12,18 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class PlanEditVM : ViewModelBase
+    public class PlanEditVM : BaseViewModelEdit
     {
-        public PlanEditVM(ModelObject msg)
+        public PlanEditVM()
         {
-
-            CurrentPlan = msg.Model as DcPlanVHP;
-            isNew = msg.IsNew;
             InitializeProperties();
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
+        }
+        public  void SetKeyProperties(ModelObject msg)
+        {
+            CurrentPlan = msg.Model as DcPlanVHP;
+            IsNew = msg.IsNew;
         }
 
         private void InitializeProperties()
@@ -53,21 +55,28 @@ namespace PMSClient.ViewModel
             compounds.ToList().ForEach(c => Compounds.Add(c));
         }
 
-        private bool isNew;
+
         private void ActionSave()
         {
-            var service = new PlanVHPServiceClient();
-            if (isNew)
+            try
             {
-                service.AddVHPPlan(CurrentPlan);
-            }
-            else
-            {
-                service.UpdateVHPPlan(CurrentPlan);
-            }
+                var service = new PlanVHPServiceClient();
+                if (IsNew)
+                {
+                    service.AddVHPPlan(CurrentPlan);
+                }
+                else
+                {
+                    service.UpdateVHPPlan(CurrentPlan);
+                }
 
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
-            NavigationService.Refresh(VToken.MissonRefresh);
+                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
+                NavigationService.Refresh(VToken.MissonRefresh);
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex.Message);
+            }
         }
 
         private void ActionGiveUp()
@@ -82,9 +91,6 @@ namespace PMSClient.ViewModel
 
 
         public DcPlanVHP CurrentPlan { get; set; }
-
-        public RelayCommand GiveUp { get; set; }
-        public RelayCommand Save { get; set; }
 
     }
 }
