@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSDAL;
 
-namespace PMSWCFService.Log
+namespace PMSWCFService
 {
     public class Log
     {

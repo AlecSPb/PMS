@@ -30,8 +30,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -56,8 +55,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
         public int AddMaterialOrderItem(DcMaterialOrderItem model)
@@ -78,8 +76,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -102,8 +99,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -125,8 +121,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -148,8 +143,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -170,8 +164,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -186,7 +179,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -210,8 +203,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -226,8 +218,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -245,8 +236,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -267,8 +257,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -292,7 +281,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
 
@@ -313,8 +302,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                LocalService.CurrentLog.Error(ex);
             }
         }
     }

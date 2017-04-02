@@ -111,6 +111,7 @@
     <Compile Include="DataContracts\DcRecordBondingTarget.cs" />
     <Compile Include="DataContracts\DcRecordMachine.cs" />
     <Compile Include="DataContracts\DcRecordDeMold.cs" />
+    <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
     <Compile Include="ServiceContracts\IElementService.cs" />
