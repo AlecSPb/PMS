@@ -51,14 +51,19 @@ namespace PMSDAL
         public DbSet<RecordBonding> RecordBondings { get; set; }
         public DbSet<RecordBondingPlate> RecordBondingPlates { get; set; }
         public DbSet<RecordBondingTarget> RecordBondingTargets { get; set; }
+
+        //Maintenance
+        public DbSet<MaintenancePlan> MaintenancePlans { get; set; }
+        public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
+
         //UserAccess
         public DbSet<User> Users { get; set; }
         public DbSet<UserRole> Roles { get; set; }
         public DbSet<UserAccess> Accesses { get; set; }
 
-        //Maintenance
-        public DbSet<MaintenancePlan> MaintenancePlans { get; set; }
-        public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }
+        //Log
+        public DbSet<LogError> LogErrors { get; set; }
+        public DbSet<LogInformation> LogInformations { get; set; }
 
     }
 }

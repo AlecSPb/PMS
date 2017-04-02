@@ -54,6 +54,8 @@
     <Compile Include="Entities\BDElementGroup.cs" />
     <Compile Include="Entities\BDElementGroupItem.cs" />
     <Compile Include="Entities\BDSieve.cs" />
+    <Compile Include="Entities\LogError.cs" />
+    <Compile Include="Entities\LogInformation.cs" />
     <Compile Include="Entities\MaintenanceRecord.cs" />
     <Compile Include="Entities\MaintenancePlan.cs" />
     <Compile Include="Entities\BDSupplier.cs" />

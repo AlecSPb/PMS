@@ -18,17 +18,25 @@ namespace PMSWCFService
     {
         public int AddCompound(DcBDCompound model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
-                var newModel = Mapper.Map<BDCompound>(model);
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
+                    var newModel = Mapper.Map<BDCompound>(model);
 
-                dc.Compounds.Add(newModel);
-                result = dc.SaveChanges();
+                    dc.Compounds.Add(newModel);
+                    result = dc.SaveChanges();
+                }
+
+                return result;
             }
+            catch (Exception ex)
+            {
 
-            return result;
+                throw ex;
+            }
         }
 
         public int AddCustomer(DcBDCustomer model)
