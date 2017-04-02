@@ -123,11 +123,11 @@
     <sys:String x:Key="strCompleted">完成</sys:String>
     <sys:String x:Key="strPaused">暂停</sys:String>
     <sys:String x:Key="strEmergency">紧急</sys:String>
-    
-    
-    
-    
-    
+
+
+
+
+
     <!--规范化后的命名-->
     <!--AppName-->
     <sys:String x:Key="AppNameDesktop">生产管理系统Desktop版本</sys:String>
@@ -211,7 +211,7 @@
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
-    
+
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">放弃</sys:String>
@@ -254,11 +254,11 @@
     <sys:String x:Key="PagingPageCount">总页码</sys:String>
     <sys:String x:Key="PagingPageSize">条/页</sys:String>
     <sys:String x:Key="PagingRecordCount">总记录</sys:String>
-    
+
     <!--LogIn-->
     <sys:String x:Key="LogInWelcome">欢迎</sys:String>
     <sys:String x:Key="LogInLogInButton">欢迎</sys:String>
-    
+
     <!--Order-->
     <sys:String x:Key="OrderCreator">创建者</sys:String>
     <sys:String x:Key="OrderCreateTime">创建时间</sys:String>
@@ -284,7 +284,7 @@
     <sys:String x:Key="OrderChecker">核验者</sys:String>
     <sys:String x:Key="OrderCheckContent">核验内容</sys:String>
     <sys:String x:Key="OrderCheckDate">核验日期</sys:String>
-    
+
     <!--Plan-->
     <sys:String x:Key="PlanState">计划状态</sys:String>
     <sys:String x:Key="PlanCreator">创建人</sys:String>
@@ -312,7 +312,27 @@
     <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>
     <sys:String x:Key="PlanSpecialRequirement">特殊要求</sys:String>
     <sys:String x:Key="PlanRemark">备注信息</sys:String>
+    <!--MaterialNeed-->
+    <sys:String x:Key="MNState">需求状态</sys:String>
+    <sys:String x:Key="MNCreator">创建者</sys:String>
+    <sys:String x:Key="MNCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MNComposition">原料成分</sys:String>
+    <sys:String x:Key="MNPurity">纯度</sys:String>
+    <sys:String x:Key="MNWeight">重量</sys:String>
+    <sys:String x:Key="MNSupplier">供应商</sys:String>
+    <sys:String x:Key="MNSpecialNeeds">特殊要求</sys:String>
+    <sys:String x:Key="MNPMINumber">工作号</sys:String>
 
-    
-    
+    <!--MaterialOrder-->
+
+
+
+
+
+
+
+
+
+
+
 </ResourceDictionary>
