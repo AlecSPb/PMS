@@ -324,11 +324,25 @@
     <sys:String x:Key="MNPMINumber">工作号</sys:String>
 
     <!--MaterialOrder-->
+    <sys:String x:Key="MOState">状态</sys:String>
+    <sys:String x:Key="MOCreator">创建者</sys:String>
+    <sys:String x:Key="MOCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MOOrderPO">订单PO</sys:String>
+    <sys:String x:Key="MOSupplier">供应商</sys:String>
+    <sys:String x:Key="MOSupplierAbbr">供应商缩写</sys:String>
+    <sys:String x:Key="MOSupplierReceiver">供应商联系人</sys:String>
+    <sys:String x:Key="MOSupplierEmail">供应商电子邮件</sys:String>
+    <sys:String x:Key="MOSupplierAddress">供应商号码</sys:String>
+    <sys:String x:Key="MORemark">备注</sys:String>
+    <sys:String x:Key="MOShipFee">运输费</sys:String>
+    <sys:String x:Key="MOPriority">优先级</sys:String>
 
 
 
-
-
+    <!--MaterialOrderItem-->
+    <sys:String x:Key="MOIState">工作号</sys:String>
+    <sys:String x:Key="MOICreator">工作号</sys:String>
+    <sys:String x:Key="MOICreateTime">工作号</sys:String>
 
 
 

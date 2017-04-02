@@ -42,8 +42,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Priority { get; set; }
 
-        [DataMember]
-        public DcMaterialOrderItem[] MaterialOrderItems { get; set; }
+        //[DataMember]
+        //public DcMaterialOrderItem[] MaterialOrderItems { get; set; }
 
     }
 }
