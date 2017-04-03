@@ -11,9 +11,14 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public class BasicDataService : ICustomerService, IDeliveryAddressService,
-        IVHPDeviceService, IVHPMoldService, IVHPProcessService,
-        ICompoundService, ISupplierService, IElementService
+    public class BasicDataService : ICustomerService, 
+        IDeliveryAddressService,
+        IVHPDeviceService, 
+        IVHPMoldService, 
+        IVHPProcessService,
+        ICompoundService, 
+        ISupplierService, 
+        IElementService
 
     {
         public int AddCompound(DcBDCompound model)

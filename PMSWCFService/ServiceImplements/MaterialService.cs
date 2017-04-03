@@ -10,7 +10,8 @@ using PMSCommon;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IMaterialNeedService, IMaterialOrderService
+    public partial class PMSService : IMaterialNeedService,
+        IMaterialOrderService
     {
         public int AddMaterialNeed(DcMaterialNeed model)
         {
