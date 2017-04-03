@@ -31,6 +31,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -56,6 +57,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
         public int AddMaterialOrderItem(DcMaterialOrderItem model)
@@ -77,6 +79,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -100,6 +103,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -122,6 +126,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -144,6 +149,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -165,6 +171,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -180,6 +187,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -204,6 +212,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -219,6 +228,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -237,14 +247,16 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
         public int UpdateMaterialNeed(DcMaterialNeed model)
         {
-            try
+
+            using (var dc = new PMSDbContext())
             {
-                using (var dc = new PMSDbContext())
+                try
                 {
                     int result = 0;
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialNeed, PMSMaterialNeed>());
@@ -254,11 +266,13 @@ namespace PMSWCFService
                     result = dc.SaveChanges();
                     return result;
                 }
+                catch (Exception ex)
+                {
+                    LocalService.CurrentLog.Error(ex);
+                    throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-            }
+
         }
 
         public int UpdateMaterialOrder(DcMaterialOrder model)
@@ -282,6 +296,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
@@ -303,6 +318,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
     }
