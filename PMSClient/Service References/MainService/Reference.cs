@@ -1207,9 +1207,6 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSClient.MainService.DcMaterialOrderItem[] MaterialOrderItemsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1284,19 +1281,6 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSClient.MainService.DcMaterialOrderItem[] MaterialOrderItems {
-            get {
-                return this.MaterialOrderItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialOrderItemsField, value) != true)) {
-                    this.MaterialOrderItemsField = value;
-                    this.RaisePropertyChanged("MaterialOrderItems");
                 }
             }
         }

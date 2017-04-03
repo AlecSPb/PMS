@@ -420,6 +420,7 @@ namespace PMSWCFService
         {
             try
             {
+                using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDCustomer, DcBDCustomer>());
                     var model = dc.Customers.ToList();
@@ -431,7 +432,7 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
-            using (var dc = new PMSDbContext())
+
 
         }
 

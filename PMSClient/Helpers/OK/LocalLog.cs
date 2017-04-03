@@ -35,7 +35,11 @@ namespace PMSClient.Helper
         public void Log(string message)
         {
             var date = DateTime.Now;
-            var user = _currentUser.CurrentUser.UserName;
+            var user = "none";
+            if (_currentUser.CurrentUser != null)
+            {
+                user = _currentUser.CurrentUser.UserName;
+            }
             if (!File.Exists(_logfile))
             {
                 File.Create(_logfile);
@@ -49,7 +53,12 @@ namespace PMSClient.Helper
         public void Error(Exception ex)
         {
             var date = DateTime.Now;
-            var user = _currentUser.CurrentUser.UserName;
+            var user = "none";
+            if (_currentUser.CurrentUser != null)
+            {
+                user = _currentUser.CurrentUser.UserName;
+            }
+
             if (!File.Exists(_errorfile))
             {
                 File.Create(_errorfile);
