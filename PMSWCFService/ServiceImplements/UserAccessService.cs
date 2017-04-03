@@ -13,70 +13,117 @@ namespace PMSWCFService
     {
         public int AddAccess(DcUserAccess model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserAccess, UserAccess>());
-                var mapper = config.CreateMapper();
-                var access = mapper.Map<UserAccess>(model);
-                dc.Accesses.Add(access);
-                result = dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserAccess, UserAccess>());
+                    var mapper = config.CreateMapper();
+                    var access = mapper.Map<UserAccess>(model);
+                    dc.Accesses.Add(access);
+                    result = dc.SaveChanges();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
 
         public int AddRole(DcUserRole model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserRole, UserRole>());
-                var mapper = config.CreateMapper();
-                var role = mapper.Map<UserRole>(model);
-                dc.Roles.Add(role);
-                result = dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserRole, UserRole>());
+                    var mapper = config.CreateMapper();
+                    var role = mapper.Map<UserRole>(model);
+                    dc.Roles.Add(role);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int AddUser(DcUser model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserAccess, UserAccess>());
-                var mapper = config.CreateMapper();
-                var access = mapper.Map<UserAccess>(model);
-                dc.Accesses.Add(access);
-                result = dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcUserAccess, UserAccess>());
+                    var mapper = config.CreateMapper();
+                    var access = mapper.Map<UserAccess>(model);
+                    dc.Accesses.Add(access);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteAccess(Guid id)
         {
-            using (var dc = new PMSDbContext())
+
+            try
             {
-                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
 
 
-                return result;
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteRole(Guid id)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
 
 
-                return result;
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteUser(Guid id)
         {
+            try
+            {
             using (var dc = new PMSDbContext())
             {
                 int result = 0;
@@ -84,6 +131,13 @@ namespace PMSWCFService
 
                 return result;
             }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
         /// <summary>
         /// 获取用户信息
@@ -104,7 +158,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
@@ -125,7 +179,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
@@ -143,7 +197,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
@@ -168,58 +222,111 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
 
         public List<DcUserAccess> GetAllAccesses()
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcUserRole> GetAllRoles()
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcUser> GetAllUsers()
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
 
 
         public int UpdateAccess(DcUserAccess model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
 
 
-                return result;
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateRole(DcUserRole model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
 
 
-                return result;
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateUser(DcUser model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
 
 
-                return result;
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
         }
     }
