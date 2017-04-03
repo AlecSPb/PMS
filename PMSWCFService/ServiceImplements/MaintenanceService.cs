@@ -13,47 +13,128 @@ namespace PMSWCFService
     {
         public int AddMainitenancePlan(DcMaintenancePlan model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int AddMainitenanceRecord(DcMaintenanceRecord model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int DeleteMainitenancePlan(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int DeleteMainitenanceRecord(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int GetMaintenancePlanCount()
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public List<DcMaintenancePlan> GetMaintenancePlans(int skip, int take)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public List<DcMaintenanceRecord> GetMaintenanceRecords(Guid planid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int UpdateMainitenancePlan(DcMaintenancePlan model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int UpdateMainitenanceRecord(DcMaintenanceRecord model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
     }
 }

@@ -13,51 +13,96 @@ namespace PMSWCFService
     {
         public int AddRecordDeMold(DcRecordDeMold model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeMold, RecordDeMold>());
-                var temp = Mapper.Map<RecordDeMold>(model);
-                dc.RecordDeMolds.Add(temp);
-                result=dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeMold, RecordDeMold>());
+                    var temp = Mapper.Map<RecordDeMold>(model);
+                    dc.RecordDeMolds.Add(temp);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int DeleteRecordDeMold(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public List<DcRecordDeMold> GetRecordDeMolds(int skip, int take)
         {
-            using (var dc=new PMSDbContext())
+            try
             {
-                var result = dc.RecordDeMolds.OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
-                Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
-                return Mapper.Map<List<RecordDeMold>, List<DcRecordDeMold>>(result);
+                using (var dc = new PMSDbContext())
+                {
+                    var result = dc.RecordDeMolds.OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
+                    return Mapper.Map<List<RecordDeMold>, List<DcRecordDeMold>>(result);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int GetRecordDeMoldsCount()
         {
-            using (var dc=new PMSDbContext())
+            try
             {
-                return dc.RecordDeMolds.Count();
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.RecordDeMolds.Count();
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
 
         public int UpdateRecordDeMold(DcRecordDeMold model)
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                int result = 0;
-                Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeMold, RecordDeMold>());
-                var temp = Mapper.Map<RecordDeMold>(model);
-                dc.Entry(temp).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
-                return result;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeMold, RecordDeMold>());
+                    var temp = Mapper.Map<RecordDeMold>(model);
+                    dc.Entry(temp).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
     }
 }

@@ -11,13 +11,13 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public class BasicDataService : ICustomerService, 
+    public class BasicDataService : ICustomerService,
         IDeliveryAddressService,
-        IVHPDeviceService, 
-        IVHPMoldService, 
+        IVHPDeviceService,
+        IVHPMoldService,
         IVHPProcessService,
-        ICompoundService, 
-        ISupplierService, 
+        ICompoundService,
+        ISupplierService,
         IElementService
 
     {
@@ -39,37 +39,56 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
 
         public int AddCustomer(DcBDCustomer model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
-                var newModel = Mapper.Map<BDCustomer>(model);
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
+                    var newModel = Mapper.Map<BDCustomer>(model);
 
-                dc.Customers.Add(newModel);
-                result = dc.SaveChanges();
+                    dc.Customers.Add(newModel);
+                    result = dc.SaveChanges();
+                }
+                return result;
+
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int AddDeliveryAddress(DcBDDeliveryAddress model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
-                var newModel = Mapper.Map<BDDeliveryAddress>(model);
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
+                    var newModel = Mapper.Map<BDDeliveryAddress>(model);
 
-                dc.DeliveryAddresses.Add(newModel);
-                result = dc.SaveChanges();
+                    dc.DeliveryAddresses.Add(newModel);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int AddElement(DcBDElement model)
@@ -87,7 +106,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
 
@@ -118,7 +137,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
             return result;
@@ -126,178 +145,313 @@ namespace PMSWCFService
 
         public int AddSupplier(DcBDSupplier model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
-                var supplier = Mapper.Map<BDSupplier>(model);
-                dc.Suppliers.Add(supplier);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
+                    var supplier = Mapper.Map<BDSupplier>(model);
+                    dc.Suppliers.Add(supplier);
+                    result = dc.SaveChanges();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
 
-            return result;
         }
 
         public int AddVHPDevice(DcBDVHPDevice model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
-                var newModel = Mapper.Map<BDVHPDevice>(model);
-                dc.VHPDevices.Add(newModel);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
+                    var newModel = Mapper.Map<BDVHPDevice>(model);
+                    dc.VHPDevices.Add(newModel);
+                    result = dc.SaveChanges();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
 
-            return result;
         }
 
         public int AddVHPMold(DcBDVHPMold model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
-                var newModel = Mapper.Map<BDVHPMold>(model);
-                dc.VHPMolds.Add(newModel);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
+                    var newModel = Mapper.Map<BDVHPMold>(model);
+                    dc.VHPMolds.Add(newModel);
+                    result = dc.SaveChanges();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
 
-            return result;
         }
 
         public int AddVHPProcess(DcBDVHPProcess model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
-                var newModel = Mapper.Map<BDVHPProcess>(model);
-                dc.VHPProcesses.Add(newModel);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
+                    var newModel = Mapper.Map<BDVHPProcess>(model);
+                    dc.VHPProcesses.Add(newModel);
+                    result = dc.SaveChanges();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
 
-            return result;
         }
 
         public int DeleteCompound(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.Compounds.Find(id);
-                dc.Compounds.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.Compounds.Find(id);
+                    dc.Compounds.Remove(model);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteCustomer(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.Customers.Find(id);
-                dc.Customers.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.Customers.Find(id);
+                    dc.Customers.Remove(model);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteDeliveryAddress(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.DeliveryAddresses.Find(id);
-                dc.DeliveryAddresses.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.DeliveryAddresses.Find(id);
+                    dc.DeliveryAddresses.Remove(model);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteElement(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteSupplier(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.Suppliers.Find(id);
-                dc.Suppliers.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.Suppliers.Find(id);
+                    dc.Suppliers.Remove(model);
+                    result = dc.SaveChanges();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
 
-            return result;
         }
 
         public int DeleteVHPDevice(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.VHPDevices.Find(id);
-                dc.VHPDevices.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.VHPDevices.Find(id);
+                    dc.VHPDevices.Remove(model);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteVHPMold(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.VHPMolds.Find(id);
-                dc.VHPMolds.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.VHPMolds.Find(id);
+                    dc.VHPMolds.Remove(model);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int DeleteVHPProcess(Guid id)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                var model = dc.VHPProcesses.Find(id);
-                dc.VHPProcesses.Remove(model);
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.VHPProcesses.Find(id);
+                    dc.VHPProcesses.Remove(model);
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcBDCompound> GetAllCompounds()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
-                var model = dc.Compounds.OrderBy(o => o.CreateTime).ToList();
-                return Mapper.Map<List<BDCompound>, List<DcBDCompound>>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
+                    var model = dc.Compounds.OrderBy(o => o.CreateTime).ToList();
+                    return Mapper.Map<List<BDCompound>, List<DcBDCompound>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcBDCustomer> GetCustomer()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDCustomer, DcBDCustomer>());
-                var model = dc.Customers.ToList();
-                return Mapper.Map<List<BDCustomer>, List<DcBDCustomer>>(model);
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDCustomer, DcBDCustomer>());
+                    var model = dc.Customers.ToList();
+                    return Mapper.Map<List<BDCustomer>, List<DcBDCustomer>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+            using (var dc = new PMSDbContext())
+
         }
 
         public List<DcBDDeliveryAddress> GetDeliveryAddress()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDDeliveryAddress, DcBDDeliveryAddress>());
-                var model = dc.DeliveryAddresses.ToList();
-                return Mapper.Map<List<BDDeliveryAddress>, List<DcBDDeliveryAddress>>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDDeliveryAddress, DcBDDeliveryAddress>());
+                    var model = dc.DeliveryAddresses.ToList();
+                    return Mapper.Map<List<BDDeliveryAddress>, List<DcBDDeliveryAddress>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcBDElementGroup> GetElementGroup()
@@ -313,7 +467,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
@@ -331,7 +485,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
@@ -350,89 +504,152 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
         }
 
         public List<DcBDSupplier> GetSuppliers()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDSupplier, DcBDSupplier>());
-                var model = dc.Suppliers.ToList();
-                return Mapper.Map<List<BDSupplier>, List<DcBDSupplier>>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDSupplier, DcBDSupplier>());
+                    var model = dc.Suppliers.ToList();
+                    return Mapper.Map<List<BDSupplier>, List<DcBDSupplier>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcBDVHPDevice> GetVHPDevice()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDVHPDevice, DcBDVHPDevice>());
-                var model = dc.VHPDevices.ToList();
-                return Mapper.Map<List<BDVHPDevice>, List<DcBDVHPDevice>>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDVHPDevice, DcBDVHPDevice>());
+                    var model = dc.VHPDevices.ToList();
+                    return Mapper.Map<List<BDVHPDevice>, List<DcBDVHPDevice>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcBDVHPMold> GetVHPMold()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDVHPMold, DcBDVHPMold>());
-                var model = dc.VHPMolds.ToList();
-                return Mapper.Map<List<BDVHPMold>, List<DcBDVHPMold>>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDVHPMold, DcBDVHPMold>());
+                    var model = dc.VHPMolds.ToList();
+                    return Mapper.Map<List<BDVHPMold>, List<DcBDVHPMold>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public List<DcBDVHPProcess> GetVHPProcess()
         {
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<BDVHPProcess, DcBDVHPProcess>());
-                var model = dc.VHPProcesses.ToList();
-                return Mapper.Map<List<BDVHPProcess>, List<DcBDVHPProcess>>(model);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDVHPProcess, DcBDVHPProcess>());
+                    var model = dc.VHPProcesses.ToList();
+                    return Mapper.Map<List<BDVHPProcess>, List<DcBDVHPProcess>>(model);
+                }
             }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateCompound(DcBDCompound model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
-                var newModel = Mapper.Map<BDCompound>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
+                    var newModel = Mapper.Map<BDCompound>(model);
+                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
 
-                result = dc.SaveChanges();
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateCustomer(DcBDCustomer model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
-                var newModel = Mapper.Map<BDCustomer>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDCustomer, BDCustomer>());
+                    var newModel = Mapper.Map<BDCustomer>(model);
+                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateDeliveryAddress(DcBDDeliveryAddress model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
-                var newModel = Mapper.Map<BDDeliveryAddress>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDDeliveryAddress, BDDeliveryAddress>());
+                    var newModel = Mapper.Map<BDDeliveryAddress>(model);
+                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateElement(DcBDElement model)
@@ -450,7 +667,7 @@ namespace PMSWCFService
             }
             catch (Exception ex)
             {
-
+                LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
 
@@ -459,55 +676,92 @@ namespace PMSWCFService
 
         public int UpdateSupplier(DcBDSupplier model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
-                var supplier = Mapper.Map<BDSupplier>(model);
-                dc.Entry(supplier).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDSupplier, BDSupplier>());
+                    var supplier = Mapper.Map<BDSupplier>(model);
+                    dc.Entry(supplier).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
             }
 
-            return result;
         }
 
         public int UpdateVHPDevice(DcBDVHPDevice model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
-                var newModel = Mapper.Map<BDVHPDevice>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPDevice, BDVHPDevice>());
+                    var newModel = Mapper.Map<BDVHPDevice>(model);
+                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateVHPMold(DcBDVHPMold model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
-                var newModel = Mapper.Map<BDVHPMold>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPMold, BDVHPMold>());
+                    var newModel = Mapper.Map<BDVHPMold>(model);
+                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+                return result;
+
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
 
         public int UpdateVHPProcess(DcBDVHPProcess model)
         {
-            int result = 0;
-            using (var dc = new PMSDbContext())
+            try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
-                var newModel = Mapper.Map<BDVHPProcess>(model);
-                dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
-                result = dc.SaveChanges();
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcBDVHPProcess, BDVHPProcess>());
+                    var newModel = Mapper.Map<BDVHPProcess>(model);
+                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                }
+                return result;
             }
-            return result;
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
     }
 }
