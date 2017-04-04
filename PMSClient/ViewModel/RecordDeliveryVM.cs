@@ -14,7 +14,7 @@ using bt = BarTender;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeliveryVM : ViewModelBase
+    public class RecordDeliveryVM : BaseViewModelPage
     {
         public RecordDeliveryVM()
         {
@@ -212,7 +212,6 @@ namespace PMSClient.ViewModel
 
         #endregion
         #region Commands
-        public RelayCommand GoToNavigation { get; set; }
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordDelivery> Edit { get; set; }
         public RelayCommand<DcRecordDelivery> Doc { get; set; }
@@ -222,41 +221,6 @@ namespace PMSClient.ViewModel
         #endregion
 
 
-        #region PagingProperties
-        public RelayCommand PageChanged { get; private set; }
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        #endregion
-
+    
     }
 }

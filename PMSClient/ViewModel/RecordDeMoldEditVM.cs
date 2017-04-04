@@ -12,13 +12,16 @@ namespace PMSClient.ViewModel
 {
     public class RecordDeMoldEditVM : BaseViewModelEdit
     {
-        private bool isNew;
-        public RecordDeMoldEditVM(ModelObject model)
+        public RecordDeMoldEditVM()
         {
-            isNew = model.IsNew;
-            CurrentRecordDeMold = model.Model as DcRecordDeMold;
             Save = new RelayCommand(ActionSave);
             GiveUp = new RelayCommand(ActionGiveUp);
+        }
+        public RecordDeMoldEditVM(ModelObject model)
+        {
+            IsNew = model.IsNew;
+            CurrentRecordDeMold = model.Model as DcRecordDeMold;
+
         }
 
         private void ActionGiveUp()
@@ -37,7 +40,7 @@ namespace PMSClient.ViewModel
             {
                 using (var service = new RecordDeMoldServiceClient())
                 {
-                    if (isNew)
+                    if (IsNew)
                     {
                         service.AddRecordDeMold(CurrentRecordDeMold);
                     }
