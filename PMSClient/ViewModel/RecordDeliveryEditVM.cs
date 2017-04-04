@@ -11,15 +11,18 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeliveryEditVM : ViewModelBase
+    public class RecordDeliveryEditVM : BaseViewModelEdit
     {
-        private bool isNew;
-        public RecordDeliveryEditVM(ModelObject obj)
+        public RecordDeliveryEditVM()
         {
-            isNew = obj.IsNew;
-            CurrentRecordDelivery = obj.Model as DcRecordDelivery;
             InitialCommands();
             InitialProperties();
+        }
+        public void  SetKeyProperties(ModelObject obj)
+        {
+            IsNew = obj.IsNew;
+            CurrentRecordDelivery = obj.Model as DcRecordDelivery;
+
         }
 
         private void InitialProperties()
@@ -46,7 +49,7 @@ namespace PMSClient.ViewModel
         private void ActionSave()
         {
             var service = new RecordDeliveryServiceClient();
-            if (isNew)
+            if (IsNew)
             {
                 service.AddRecordDelivery(CurrentRecordDelivery);
             }
@@ -66,9 +69,5 @@ namespace PMSClient.ViewModel
         public ObservableCollection<string> Countries { get; set; }
         #endregion
 
-        #region Commands
-        public RelayCommand GiveUp { get; set; }
-        public RelayCommand Save { get; set; }
-        #endregion
     }
 }
