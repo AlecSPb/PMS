@@ -171,21 +171,21 @@
     <sys:String x:Key="PageProduction">生产</sys:String>
     <sys:String x:Key="PageRecord">记录</sys:String>
     <sys:String x:Key="PageOther">其他</sys:String>
-    <sys:String x:Key="PageOrder">订单记录</sys:String>
-    <sys:String x:Key="PageOrderEdit">订单记录编辑</sys:String>
-    <sys:String x:Key="PageOrderCheck">订单核验记录</sys:String>
-    <sys:String x:Key="PageOrderCheckEdit">订单核验记录编辑</sys:String>
+    <sys:String x:Key="PageOrder">订单</sys:String>
+    <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
+    <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
+    <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
 
     <sys:String x:Key="PageMisson">任务</sys:String>
     <sys:String x:Key="PagePlan">计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
-    <sys:String x:Key="PageMaterialNeed">材料需求记录</sys:String>
-    <sys:String x:Key="PageMaterialNeedEdit">材料需求记录编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrder">材料订单记录</sys:String>
-    <sys:String x:Key="PageMaterialOrderEdit">材料订单记录编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemEdit">材料订单项记录编辑</sys:String>
-    <sys:String x:Key="PageMaterialInventory">材料库存记录</sys:String>
-    <sys:String x:Key="PageMaterialInventoryEdit">材料库存记录编辑</sys:String>
+    <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
+    <sys:String x:Key="PageMaterialNeedEdit">材料需求编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrder">材料订单</sys:String>
+    <sys:String x:Key="PageMaterialOrderEdit">材料订单编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemEdit">材料订单项编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventory">材料库存</sys:String>
+    <sys:String x:Key="PageMaterialInventoryEdit">材料库存编辑</sys:String>
 
 
 
@@ -211,7 +211,8 @@
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
-
+    
+    <sys:String x:Key="PageMaintenance">维护计划</sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">放弃</sys:String>
