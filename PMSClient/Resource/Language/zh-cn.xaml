@@ -385,21 +385,21 @@
     <sys:String x:Key="RVHPExtraInformation">其他信息</sys:String>
     
     <!--RecordDeMold-->
-    <sys:String x:Key="RDCreator">创建者</sys:String>
-    <sys:String x:Key="RDCreateTime">创建时间</sys:String>
-    <sys:String x:Key="RDState">状态</sys:String>
-    <sys:String x:Key="RDVHPPlanLot">热压编号</sys:String>
-    <sys:String x:Key="RDComposition">成分</sys:String>
-    <sys:String x:Key="RDTemperature1">取模温度</sys:String>
-    <sys:String x:Key="RDTemperature2">脱模温度</sys:String>
-    <sys:String x:Key="RDWeight">重量</sys:String>
-    <sys:String x:Key="RDDiameter1">直径1</sys:String>
-    <sys:String x:Key="RDDiameter2">直径2</sys:String>
-    <sys:String x:Key="RDThickness1">厚度1</sys:String>
-    <sys:String x:Key="RDThickness2">厚度2</sys:String>
-    <sys:String x:Key="RDThickness3">厚度3</sys:String>
-    <sys:String x:Key="RDThickness4">厚度4</sys:String>
-    <sys:String x:Key="RDRemark">备注</sys:String>
+    <sys:String x:Key="RDMCreator">创建者</sys:String>
+    <sys:String x:Key="RDMCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RDMState">状态</sys:String>
+    <sys:String x:Key="RDMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RDMComposition">成分</sys:String>
+    <sys:String x:Key="RDMTemperature1">取模温度</sys:String>
+    <sys:String x:Key="RDMTemperature2">脱模温度</sys:String>
+    <sys:String x:Key="RDMWeight">重量</sys:String>
+    <sys:String x:Key="RDMDiameter1">直径1</sys:String>
+    <sys:String x:Key="RDMDiameter2">直径2</sys:String>
+    <sys:String x:Key="RDMThickness1">厚度1</sys:String>
+    <sys:String x:Key="RDMThickness2">厚度2</sys:String>
+    <sys:String x:Key="RDMThickness3">厚度3</sys:String>
+    <sys:String x:Key="RDMThickness4">厚度4</sys:String>
+    <sys:String x:Key="RDMRemark">备注</sys:String>
 
     <!--RecordDeMachine-->
     <sys:String x:Key="RMMCreator">创建者</sys:String>
@@ -435,6 +435,30 @@
     <sys:String x:Key="RTDimensionActual">实际尺寸</sys:String>
     <sys:String x:Key="RTRemark">备注</sys:String>
     <sys:String x:Key="RTSample">样品</sys:String>
+
+    <!--RecordDelivery-->
+    <sys:String x:Key="RDCreator">状态</sys:String>
+    <sys:String x:Key="RDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RDState">状态</sys:String>
+    <sys:String x:Key="RDDeliveryName">状态</sys:String>
+    <sys:String x:Key="RDInvoiceNumber">状态</sys:String>
+    <sys:String x:Key="RDDeliveryNumber">状态</sys:String>
+    <sys:String x:Key="RDCountry">状态</sys:String>
+    <sys:String x:Key="RDAddress">状态</sys:String>
+    <sys:String x:Key="RDShipTime">状态</sys:String>
+    <sys:String x:Key="RDRemark">状态</sys:String>
+    <sys:String x:Key="RDPackageType">状态</sys:String>
+    <sys:String x:Key="RDPackageInformation">状态</sys:String>
     
+    <sys:String x:Key="RDProductType">状态</sys:String>
+    <sys:String x:Key="RDProductID">状态</sys:String>
+    <sys:String x:Key="RDComposition">状态</sys:String>
+    <sys:String x:Key="RDAbbr">状态</sys:String>
+    <sys:String x:Key="RDCustomer">状态</sys:String>
+    <sys:String x:Key="RDDetailRecord">状态</sys:String>
+    <sys:String x:Key="RDWeight">状态</sys:String>
+    <sys:String x:Key="RDPosition">状态</sys:String>
+    <sys:String x:Key="RDItemState">状态</sys:String>
+
 
 </ResourceDictionary>
