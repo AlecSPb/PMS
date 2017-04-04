@@ -366,4 +366,24 @@
     <sys:String x:Key="RMWeightOut">出料重量</sys:String>
     <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
     
+    <!--RecordVHP-->
+    <sys:String x:Key="RVHPState">状态</sys:String>
+    <sys:String x:Key="RVHPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RVHPCreator">创建者</sys:String>
+    <sys:String x:Key="RVHPCurrentTime">记录时间</sys:String>
+    <sys:String x:Key="RVHPPV1">PV1</sys:String>
+    <sys:String x:Key="RVHPPV2">PV2</sys:String>
+    <sys:String x:Key="RVHPPV3">PV3</sys:String>
+    <sys:String x:Key="RVHPSV">SV</sys:String>
+    <sys:String x:Key="RVHPTon">Ton</sys:String>
+    <sys:String x:Key="RVHPVaccum">Vaccum</sys:String>
+    <sys:String x:Key="RVHPShift1">Shift1</sys:String>
+    <sys:String x:Key="RVHPShift2">Shift2</sys:String>
+    <sys:String x:Key="RVHPOmega">Omega</sys:String>
+    <sys:String x:Key="RVHPWaterTemperatureOut">进水温度</sys:String>
+    <sys:String x:Key="RVHPWaterTemperatureIn">出水温度</sys:String>
+    <sys:String x:Key="RVHPExtraInformation">其他信息</sys:String>
+    
+    
+    
 </ResourceDictionary>
