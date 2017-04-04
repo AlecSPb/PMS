@@ -118,7 +118,8 @@ namespace PMSClient
                         GoTo(_viewLocator.RecordTest);
                         break;
                     case VToken.RecordTestEdit:
-                        _viewLocator.RecordTestEdit.DataContext = new RecordTestEditVM(model.MsgModel);
+                        _viewModelLocator.RecordTestEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.RecordTestEdit.DataContext = _viewModelLocator.RecordTestEdit;
                         GoTo(_viewLocator.RecordTestEdit);
                         break;
                     case VToken.RecordTestSelect:

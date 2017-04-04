@@ -27,7 +27,7 @@
         <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource NavigationPlan}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToPlan}"/>
+            <Button Content="{StaticResource ButtonPlan}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToPlan}"/>
             <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">

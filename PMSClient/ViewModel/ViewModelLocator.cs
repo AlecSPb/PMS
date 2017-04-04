@@ -94,6 +94,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OrderEditVM>(); }
         }
+
         public OrderCheckVM OrderCheck
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
@@ -149,10 +150,12 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditVM>(); }
         }
+
         public OrderSelectMaterialNeedVM OrderSelectMaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
         }
+
         public RecordTestVM RecordTest
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestVM>(); }
@@ -199,6 +202,7 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordMillingEditVM>();
             }
         }
+
         public RecordDeMoldVM RecordDeMold
         {
             get
@@ -213,6 +217,7 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordDeMoldEditVM>();
             }
         }
+
         public RecordMachineVM RecordMachine
         {
             get

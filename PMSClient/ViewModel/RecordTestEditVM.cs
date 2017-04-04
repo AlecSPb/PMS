@@ -27,7 +27,7 @@ namespace PMSClient.ViewModel
 
             Save = new RelayCommand(ActionSave);
         }
-        public RecordTestEditVM(ModelObject model)
+        public void SetKeyProperties(ModelObject model)
         {
             CurrentRecordTest = model.Model as DcRecordTest;
             IsNew = model.IsNew;
