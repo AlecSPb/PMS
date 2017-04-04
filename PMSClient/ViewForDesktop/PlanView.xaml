@@ -18,11 +18,11 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPagePlan}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource PagePlan}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource strbtnMisson}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToMisson}"/>
-            <Button Content="{StaticResource strbtnRefresh}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Refresh}" />
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  ButtonBasic}"  Command="{Binding GoToMisson}"/>
+            <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource  ButtonBasic}"  Command="{Binding Refresh}" />
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource strColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Text="{StaticResource strYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource TextBlockBasic}"/>

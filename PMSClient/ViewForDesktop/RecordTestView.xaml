@@ -20,11 +20,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageRecordTest}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource PageRecordTest}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource strbtnNavigation}" Style="{StaticResource  ButtonBasic}"
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
-            <Button Content="{StaticResource strbtnAdd}" Style="{StaticResource  ButtonBasic}"
+            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding  Add}"/>
             <TextBlock Text="Product ID" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
@@ -32,8 +32,8 @@
             <TextBlock Text="CompositionStd" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <Button Content="{StaticResource strbtnSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
-            <Button Content="{StaticResource strbtnAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}"
                   SelectedIndex="0">
@@ -42,10 +42,10 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource strbtnEdit}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource strbtnDoc}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
