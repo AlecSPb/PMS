@@ -12,18 +12,17 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialOrderEditVM : ViewModelBase
+    public class MaterialOrderEditVM : BaseViewModelEdit
     {
-        private bool isNew;
+        public MaterialOrderEditVM()
+        {
+            InitializeProperties();
+            InitialCommmands();
+        }
         public MaterialOrderEditVM(ModelObject model)
         {
-            isNew = model.IsNew;
+            IsNew = model.IsNew;
             CurrentMaterialOrder = model.Model as DcMaterialOrder;
-
-            InitializeProperties();
-
-            InitialCommmands();
-
         }
 
         private void InitializeProperties()
@@ -52,7 +51,7 @@ namespace PMSClient.ViewModel
         private void ActionSave()
         {
             var service = new MaterialOrderServiceClient();
-            if (isNew)
+            if (IsNew)
             {
                 service.AddMaterialOrder(CurrentMaterialOrder);
             }
@@ -68,8 +67,5 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcBDSupplier> Suppliers { get; set; }
 
         public DcMaterialOrder CurrentMaterialOrder { get; set; }
-
-        public RelayCommand GiveUp { get; private set; }
-        public RelayCommand Save { get; private set; }
     }
 }
