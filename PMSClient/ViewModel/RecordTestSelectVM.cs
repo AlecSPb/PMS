@@ -11,7 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordTestSelectVM : ViewModelBase
+    public class RecordTestSelectVM : BaseViewModelPage
     {
         private DcRecordDeliveryItem item;
         public RecordTestSelectVM(ModelObject model)
@@ -122,47 +122,11 @@ namespace PMSClient.ViewModel
         }
         #region Commands
         public RelayCommand GiveUp { get; set; }
-        public RelayCommand Search { get; set; }
-        public RelayCommand All { get; set; }
         public RelayCommand<DcRecordTest> Select { get; set; }
 
         public RelayCommand Empty { get; set; }
-        public RelayCommand PageChanged { get; private set; }
         #endregion
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        #endregion
+     
         #region Properties
         private string searchProductID;
         public string SearchProductID

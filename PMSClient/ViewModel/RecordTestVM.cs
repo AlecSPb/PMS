@@ -11,7 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordTestVM : ViewModelBase
+    public class RecordTestVM : BaseViewModelPage
     {
         public RecordTestVM()
         {
@@ -32,7 +32,6 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -101,50 +100,11 @@ namespace PMSClient.ViewModel
             orders.ToList<DcRecordTest>().ForEach(o => RecordProducts.Add(o));
         }
         #region Commands
-        public RelayCommand GoToNavigation { get; set; }
-        public RelayCommand Search { get; set; }
-        public RelayCommand All { get; set; }
         public RelayCommand Report { get; set; }
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordTest> Edit { get; set; }
         public RelayCommand<DcRecordTest> Doc { get; set; }
-        public RelayCommand PageChanged { get; private set; }
-        #endregion
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
 
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        #endregion
-        #region Properties
         private string searchProductID;
         public string SearchProductID
         {
