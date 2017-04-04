@@ -17,11 +17,11 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageMaterialNeed}" Style="{StaticResource TextBlockPageTitleBasic}"/>
+        <TextBlock Text="{StaticResource PageMaterialNeed}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
-            <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource MNComposition}" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
@@ -39,13 +39,13 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Composition" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="WorkNumber" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding PMINumber}"/>
-                <DataGridTextColumn Header="Purity" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Purity}"/>
-                <DataGridTemplateColumn Header="Weight">
+                <DataGridTemplateColumn Header="{StaticResource MNWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" HorizontalAlignment="Right"
@@ -54,18 +54,18 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 
-                <DataGridTextColumn Header="Special Need" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNSpecialNeeds}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding SpecialNeeds}"/>
-                <DataGridTextColumn Header="CreateTime" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
-                <DataGridTextColumn Header="Creator" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNCreator}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Creator}"/>
-                <DataGridTextColumn Header="State" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNState}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
-                             RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
-                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
+                             LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
     </Grid>
 </UserControl>

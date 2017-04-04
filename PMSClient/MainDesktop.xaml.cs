@@ -147,20 +147,23 @@ namespace PMSClient
                         GoTo(_viewLocator.RecordDelivery);
                         break;
                     case VToken.RecordDeliveryEdit:
-                        _viewLocator.RecordDeliveryEdit.DataContext = new RecordDeliveryEditVM(model.MsgModel);
+                        _viewModelLocator.RecordDeliveryEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.RecordDeliveryEdit.DataContext = _viewModelLocator.RecordDeliveryEdit;
                         GoTo(_viewLocator.RecordDeliveryEdit);
                         break;
                     case VToken.RecordDeliveryItem:
                         break;
                     case VToken.RecordDeliveryItemEdit:
-                        _viewLocator.RecordDeliveryItemEdit.DataContext = new RecordDeliveryItemEditVM(model.MsgModel);
+                        _viewModelLocator.RecordDeliveryItemEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.RecordDeliveryItemEdit.DataContext = _viewModelLocator.RecordDeliveryItemEdit;
                         GoTo(_viewLocator.RecordDeliveryItemEdit);
                         break;
                     case VToken.RecordMilling:
                         GoTo(_viewLocator.RecordMilling);
                         break;
                     case VToken.RecordMillingEdit:
-                        _viewLocator.RecordMillingEdit.DataContext = new RecordMillingEditVM(model.MsgModel);
+                        _viewModelLocator.RecordMillingEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.RecordMillingEdit.DataContext = _viewModelLocator.RecordMillingEdit;
                         GoTo(_viewLocator.RecordMillingEdit);
                         break;
                     case VToken.RecordVHP:
@@ -172,14 +175,16 @@ namespace PMSClient
                         GoTo(_viewLocator.RecordDeMold);
                         break;
                     case VToken.RecordDeMoldEdit:
-                        _viewLocator.RecordDeMoldEdit.DataContext = new RecordDeMoldEditVM(model.MsgModel);
+                        _viewModelLocator.RecordDeMoldEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.RecordDeMoldEdit.DataContext = _viewModelLocator.RecordDeMoldEdit;
                         GoTo(_viewLocator.RecordDeMoldEdit);
                         break;
                     case VToken.RecordMachine:
                         GoTo(_viewLocator.RecordMachine);
                         break;
                     case VToken.RecordMachineEdit:
-                        _viewLocator.RecordMachineEdit.DataContext = new RecordMachineEditVM(model.MsgModel);
+                        _viewModelLocator.RecordMachineEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.RecordMachineEdit.DataContext = _viewModelLocator.RecordMachineEdit;
                         GoTo(_viewLocator.RecordMachineEdit);
                         break;
                     case VToken.RecordBonding:
@@ -190,18 +195,21 @@ namespace PMSClient
                         GoTo(_viewLocator.MaterialOrder);
                         break;
                     case VToken.MaterialOrderEdit:
-                        _viewLocator.MaterialOrderEdit.DataContext = new MaterialOrderEditVM(model.MsgModel);
+                        _viewModelLocator.MaterialOrderEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.MaterialOrderEdit.DataContext = _viewModelLocator.MaterialOrderEdit;
                         GoTo(_viewLocator.MaterialOrderEdit);
                         break;
                     case VToken.MaterialOrderItemEdit:
-                        _viewLocator.MaterialOrderItemEdit.DataContext = new MaterialOrderItemEditVM(model.MsgModel);
+                        _viewModelLocator.MaterialOrderItemEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.MaterialOrderItemEdit.DataContext = _viewModelLocator.MaterialOrderItemEdit;
                         GoTo(_viewLocator.MaterialOrderItemEdit);
                         break;
                     case VToken.MaterialNeed:
                         GoTo(_viewLocator.MaterialNeed);
                         break;
                     case VToken.MaterialNeedEdit:
-                        _viewLocator.MaterialNeedEdit.DataContext = new MaterialNeedEditVM(model.MsgModel);
+                        _viewModelLocator.MaterialNeedEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.MaterialNeedEdit.DataContext = _viewModelLocator.MaterialNeedEdit;
                         GoTo(_viewLocator.MaterialNeedEdit);
                         break;
                     case VToken.MaterialNeedSelect:

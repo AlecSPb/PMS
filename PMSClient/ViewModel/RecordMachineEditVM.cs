@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
         }
-        public RecordMachineEditVM(ModelObject model) : this()
+        public void SetKeyProperties(ModelObject model) 
         {
             IsNew = model.IsNew;
             CurrentRecordMachine = model.Model as DcRecordMachine;

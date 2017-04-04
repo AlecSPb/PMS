@@ -145,7 +145,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderEditVM>(); }
         }
-
+        public MaterialOrderItemEditVM MaterialOrderItemEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditVM>(); }
+        }
         public OrderSelectMaterialNeedVM OrderSelectMaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
@@ -164,7 +167,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
         }
-        public RecordDeliveryEditVM RecordEditDelivery
+        public RecordDeliveryEditVM RecordDeliveryEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditVM>(); }
         }

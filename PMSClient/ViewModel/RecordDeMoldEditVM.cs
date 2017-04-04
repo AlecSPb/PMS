@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             GiveUp = new RelayCommand(ActionGiveUp);
         }
-        public RecordDeMoldEditVM(ModelObject model)
+        public void SetKeyProperties(ModelObject model)
         {
             IsNew = model.IsNew;
             CurrentRecordDeMold = model.Model as DcRecordDeMold;

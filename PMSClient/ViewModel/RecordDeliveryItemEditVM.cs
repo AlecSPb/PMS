@@ -20,7 +20,7 @@ namespace PMSClient.ViewModel
             states.ToList().ForEach(s => States.Add(s));
             InitialCommands();
         }
-        public RecordDeliveryItemEditVM(ModelObject model)
+        public void SetKeyProperties(ModelObject model)
         {
             IsNew = model.IsNew;
             CurrentRecordDeliveryItem = model.Model as DcRecordDeliveryItem;

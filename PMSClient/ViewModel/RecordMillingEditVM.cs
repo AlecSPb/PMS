@@ -9,7 +9,12 @@ namespace PMSClient.ViewModel
 {
     public class RecordMillingEditVM : BaseViewModelEdit
     {
-        public RecordMillingEditVM(ModelObject model)
+        public RecordMillingEditVM()
+        {
+
+            Save = new GalaSoft.MvvmLight.CommandWpf.RelayCommand(ActionSave);
+        }
+        public void SetKeyProperties(ModelObject model)
         {
             if (model != null)
             {
@@ -17,7 +22,6 @@ namespace PMSClient.ViewModel
                 CurrentRecordMilling = model.Model as DcRecordMilling;
             }
 
-            Save = new GalaSoft.MvvmLight.CommandWpf.RelayCommand(ActionSave);
         }
 
         private void ActionSave()
