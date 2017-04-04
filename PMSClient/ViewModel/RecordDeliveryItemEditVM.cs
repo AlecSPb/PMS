@@ -11,18 +11,19 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeliveryItemEditVM : ViewModelBase
+    public class RecordDeliveryItemEditVM : BaseViewModelEdit
     {
-        private bool isNew;
-        public RecordDeliveryItemEditVM(ModelObject model)
+        public RecordDeliveryItemEditVM()
         {
-            isNew = model.IsNew;
-            CurrentRecordDeliveryItem = model.Model as DcRecordDeliveryItem;
-
             States = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => States.Add(s));
             InitialCommands();
+        }
+        public RecordDeliveryItemEditVM(ModelObject model)
+        {
+            IsNew = model.IsNew;
+            CurrentRecordDeliveryItem = model.Model as DcRecordDeliveryItem;
         }
         private void InitialCommands()
         {
@@ -39,7 +40,7 @@ namespace PMSClient.ViewModel
             if (CurrentRecordDeliveryItem != null)
             {
                 var service = new RecordDeliveryServiceClient();
-                if (isNew)
+                if (IsNew)
                 {
                     service.AddRecordDeliveryItem(CurrentRecordDeliveryItem);
                 }
@@ -52,10 +53,6 @@ namespace PMSClient.ViewModel
             }
         }
         public ObservableCollection<string> States { get; set; }
-        #region Commands
-        public RelayCommand GiveUp { get; set; }
-        public RelayCommand Save { get; set; }
-        #endregion
         public DcRecordDeliveryItem CurrentRecordDeliveryItem { get; set; }
     }
 }
