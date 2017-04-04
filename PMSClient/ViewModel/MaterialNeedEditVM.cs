@@ -11,15 +11,17 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialNeedEditVM : ViewModelBase
+    public class MaterialNeedEditVM : BaseViewModelEdit
     {
-        private bool isNew;
-        public MaterialNeedEditVM(ModelObject msg)
+        public MaterialNeedEditVM()
         {
-            isNew = msg.IsNew;
-            CurrentMaterialNeed = msg.Model as DcMaterialNeed;
             InitializeProperties();
             InitialCommands();
+        }
+        public void  SetKeyProperties(ModelObject msg)
+        {
+            IsNew = msg.IsNew;
+            CurrentMaterialNeed = msg.Model as DcMaterialNeed;
         }
 
         private void InitializeProperties()
@@ -38,22 +40,27 @@ namespace PMSClient.ViewModel
         private void ActionSave()
         {
 
-            var service = new MaterialNeedServiceClient();
-            if (isNew)
+            try
             {
-                service.AddMaterialNeed(CurrentMaterialNeed);
+                var service = new MaterialNeedServiceClient();
+                if (IsNew)
+                {
+                    service.AddMaterialNeed(CurrentMaterialNeed);
+                }
+                else
+                {
+                    service.UpdateMaterialNeed(CurrentMaterialNeed);
+                }
+                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialNeed });
+                NavigationService.Refresh(VToken.MaterialNeedRefresh);
             }
-            else
+            catch (Exception ex)
             {
-                service.UpdateMaterialNeed(CurrentMaterialNeed);
+                PMSHelper.CurrentLog.Error(ex);
             }
-            NavigationService.GoTo(new MsgObject() { MsgToken=VToken.MaterialNeed});
-            NavigationService.Refresh(VToken.MaterialNeedRefresh);
         }
 
         public DcMaterialNeed CurrentMaterialNeed { get; set; }
         public ObservableCollection<string> States { get; set; }
-        public RelayCommand GiveUp { get; private set; }
-        public RelayCommand Save { get; private set; }
     }
 }
