@@ -384,6 +384,21 @@
     <sys:String x:Key="RVHPWaterTemperatureIn">出水温度</sys:String>
     <sys:String x:Key="RVHPExtraInformation">其他信息</sys:String>
     
-    
-    
+    <!--RecordDeMold-->
+    <sys:String x:Key="RDCreator">创建者</sys:String>
+    <sys:String x:Key="RDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RDState">状态</sys:String>
+    <sys:String x:Key="RDVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RDComposition">成分</sys:String>
+    <sys:String x:Key="RDTemperature1">取模温度</sys:String>
+    <sys:String x:Key="RDTemperature2">脱模温度</sys:String>
+    <sys:String x:Key="RDWeight">重量</sys:String>
+    <sys:String x:Key="RDDiameter1">直径1</sys:String>
+    <sys:String x:Key="RDDiameter2">直径2</sys:String>
+    <sys:String x:Key="RDThickness1">厚度1</sys:String>
+    <sys:String x:Key="RDThickness2">厚度2</sys:String>
+    <sys:String x:Key="RDThickness3">厚度3</sys:String>
+    <sys:String x:Key="RDThickness4">厚度4</sys:String>
+    <sys:String x:Key="RDRemark">备注</sys:String>
+
 </ResourceDictionary>
