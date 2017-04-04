@@ -19,7 +19,7 @@ namespace PMSClient.ViewModel
             InitializeProperties();
             InitialCommmands();
         }
-        public MaterialOrderEditVM(ModelObject model)
+        public void SetKeyProperties(ModelObject model)
         {
             IsNew = model.IsNew;
             CurrentMaterialOrder = model.Model as DcMaterialOrder;
