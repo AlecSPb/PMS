@@ -181,9 +181,9 @@
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanPlanDate}" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding VHPDeviceCode}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanPlanLot}" Binding="{Binding PlanLot}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding VHPDeviceCode}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Header="{StaticResource PlanMoldType}" Binding="{Binding MoldType}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"

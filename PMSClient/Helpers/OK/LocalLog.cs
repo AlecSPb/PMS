@@ -46,7 +46,7 @@ namespace PMSClient.Helper
             }
             using (var sw = new StreamWriter(_logfile, true))
             {
-                sw.WriteLine($"{user}:{date.ToString()}:{message}");
+                sw.WriteLine($"{user}+{date.ToString()}+{message}");
             }
         }
 
@@ -69,9 +69,9 @@ namespace PMSClient.Helper
             {
                 error = ex.Message;
             }
-            using (var sw = new StreamWriter(_logfile, true))
+            using (var sw = new StreamWriter(_errorfile, true))
             {
-                sw.WriteLine($"{user}:{date.ToString()}:{error}");
+                sw.WriteLine($"{user}+{date.ToString()}+{error}");
             }
         }
 
