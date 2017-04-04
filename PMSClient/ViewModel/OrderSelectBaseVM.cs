@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderSelectBaseVM:ViewModelBase
+    public class OrderSelectBaseVM:BaseViewModelPage
     {
         //要转到的页面
 
@@ -79,43 +79,6 @@ namespace PMSClient.ViewModel
             orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
         }
 
-
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        public RelayCommand PageChanged { get; private set; }
-        #endregion
-
         #region Proeperties
         private string searchCustomer;
         public string SearchCustomer
@@ -155,9 +118,5 @@ namespace PMSClient.ViewModel
 
         #endregion
 
-        #region Commands
-        public RelayCommand Search { get; private set; }
-        public RelayCommand All { get; set; }
-        #endregion
     }
 }
