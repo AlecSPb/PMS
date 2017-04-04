@@ -401,4 +401,25 @@
     <sys:String x:Key="RDThickness4">厚度4</sys:String>
     <sys:String x:Key="RDRemark">备注</sys:String>
 
+    <!--RecordDeMachine-->
+    <sys:String x:Key="RMMCreator">创建者</sys:String>
+    <sys:String x:Key="RMMCreateTime">创建者</sys:String>
+    <sys:String x:Key="RMMState">创建者</sys:String>
+    <sys:String x:Key="RMMVHPPlanLot">创建者</sys:String>
+    <sys:String x:Key="RMMComposition">创建者</sys:String>
+    <sys:String x:Key="RMMExtraRequirement">创建者</sys:String>
+    <sys:String x:Key="RMMDimension">创建者</sys:String>
+    <sys:String x:Key="RMMDiameter1">创建者</sys:String>
+    <sys:String x:Key="RMMDiameter2">创建者</sys:String>
+    <sys:String x:Key="RMMThickness1">创建者</sys:String>
+    <sys:String x:Key="RMMThickness2">创建者</sys:String>
+    <sys:String x:Key="RMMThickness3">创建者</sys:String>
+    <sys:String x:Key="RMMThickness4">创建者</sys:String>
+    <sys:String x:Key="RMMDefects">创建者</sys:String>
+    
+    
+    
+    
+    
+
 </ResourceDictionary>
