@@ -9,12 +9,11 @@ namespace PMSClient.ViewModel
 {
     public class RecordMillingEditVM : BaseViewModelEdit
     {
-        private bool isNew;
         public RecordMillingEditVM(ModelObject model)
         {
             if (model != null)
             {
-                isNew = model.IsNew;
+                IsNew = model.IsNew;
                 CurrentRecordMilling = model.Model as DcRecordMilling;
             }
 
@@ -27,7 +26,7 @@ namespace PMSClient.ViewModel
             {
                 using (var dc = new RecordMillingServiceClient())
                 {
-                    if (isNew)
+                    if (IsNew)
                     {
                         dc.AddRecordMilling(CurrentRecordMilling);
                     }

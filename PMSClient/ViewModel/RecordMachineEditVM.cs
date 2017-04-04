@@ -10,7 +10,6 @@ namespace PMSClient.ViewModel
 {
     public class RecordMachineEditVM : BaseViewModelEdit
     {
-        public bool isNew;
         public RecordMachineEditVM()
         {
             GiveUp = new RelayCommand(ActionGiveUp);
@@ -18,7 +17,7 @@ namespace PMSClient.ViewModel
         }
         public RecordMachineEditVM(ModelObject model) : this()
         {
-            isNew = model.IsNew;
+            IsNew = model.IsNew;
             CurrentRecordMachine = model.Model as DcRecordMachine;
         }
 
@@ -28,7 +27,7 @@ namespace PMSClient.ViewModel
             {
                 using (var service = new RecordMachineServiceClient())
                 {
-                    if (isNew)
+                    if (IsNew)
                     {
                         service.AddRecordMachine(CurrentRecordMachine);
                     }

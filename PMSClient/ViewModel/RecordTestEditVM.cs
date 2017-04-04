@@ -10,13 +10,10 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordTestEditVM : ViewModelBase
+    public class RecordTestEditVM : BaseViewModelEdit
     {
-        private bool isNew;
-        public RecordTestEditVM(ModelObject model)
+        public RecordTestEditVM()
         {
-            CurrentRecordTest = model.Model as DcRecordTest;
-            isNew = model.IsNew;
             States = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.TestResultState));
             states.ToList().ForEach(s => States.Add(s));
@@ -30,11 +27,16 @@ namespace PMSClient.ViewModel
 
             Save = new RelayCommand(ActionSave);
         }
+        public RecordTestEditVM(ModelObject model)
+        {
+            CurrentRecordTest = model.Model as DcRecordTest;
+            IsNew = model.IsNew;
+        }
 
         private void ActionSave()
         {
             var service = new RecordTestServiceClient();
-            if (isNew)
+            if (IsNew)
             {
                 service.AddRecordTest(CurrentRecordTest);
             }
@@ -49,8 +51,6 @@ namespace PMSClient.ViewModel
         public ObservableCollection<string> States { get; set; }
         public DcRecordTest CurrentRecordTest { get; set; }
 
-        public RelayCommand GiveUp { get; private set; }
-        public RelayCommand Save { get; private set; }
 
     }
 }
