@@ -47,7 +47,10 @@ namespace PMSClient.ViewModel
 
 
             SimpleIoc.Default.Register<MaterialNeedVM>();
+            SimpleIoc.Default.Register<MaterialNeedEditVM>();
             SimpleIoc.Default.Register<MaterialOrderVM>();
+            SimpleIoc.Default.Register<MaterialOrderEditVM>();
+            SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
             SimpleIoc.Default.Register<OrderSelectMaterialNeedVM>();
 
             SimpleIoc.Default.Register<RecordVHPVM>();

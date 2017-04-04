@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordVHPVM : ViewModelBase
+    public class RecordVHPVM : BaseViewModelPage
     {
         public RecordVHPVM()
         {
@@ -27,7 +27,6 @@ namespace PMSClient.ViewModel
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
 
 
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             All = new RelayCommand(ActionAll);
             QuickEdit = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
             SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
@@ -94,43 +93,6 @@ namespace PMSClient.ViewModel
             orders.ToList().ForEach(o => MissonWithPlans.Add(o));
         }
 
-
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        public RelayCommand PageChanged { get; private set; }
-        #endregion
-
         #region Properties
         private string searchVHPID;
 
@@ -145,8 +107,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand GoToNavigation { get; set; }
-        public RelayCommand All { get; set; }
 
         public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
         public RelayCommand<DcMissonWithPlan> Doc { get; set; }

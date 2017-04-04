@@ -49,7 +49,6 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Navigation }));
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<MainService.DcRecordDelivery>(ActionEdit);
             Doc = new RelayCommand<MainService.DcRecordDelivery>(ActionDoc);
