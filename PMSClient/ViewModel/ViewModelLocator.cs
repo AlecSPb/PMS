@@ -48,24 +48,35 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<MaterialNeedVM>();
             SimpleIoc.Default.Register<MaterialNeedEditVM>();
+
             SimpleIoc.Default.Register<MaterialOrderVM>();
             SimpleIoc.Default.Register<MaterialOrderEditVM>();
             SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
+
             SimpleIoc.Default.Register<OrderSelectMaterialNeedVM>();
 
-            SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordTestVM>();
+            SimpleIoc.Default.Register<RecordTestEditVM>();
+
 
             SimpleIoc.Default.Register<RecordDeliveryVM>();
+            SimpleIoc.Default.Register<RecordDeliveryEditVM>();
+            SimpleIoc.Default.Register<RecordDeliveryItemEditVM>();
+
+            SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
 
             SimpleIoc.Default.Register<PlanSelectForRecordTestVM>();
             SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
 
             SimpleIoc.Default.Register<RecordMillingVM>();
-            SimpleIoc.Default.Register<RecordDeMoldVM>();
-            SimpleIoc.Default.Register<RecordMachineVM>();
+            SimpleIoc.Default.Register<RecordMillingEditVM>();
 
+            SimpleIoc.Default.Register<RecordDeMoldVM>();
+            SimpleIoc.Default.Register<RecordDeMoldEditVM>();
+
+            SimpleIoc.Default.Register<RecordMachineVM>();
+            SimpleIoc.Default.Register<RecordMachineEditVM>();
 
 
 
@@ -106,25 +117,35 @@ namespace PMSClient.ViewModel
         }
 
 
-        public RecordVHPQuickEditVM RecordVHPQuickEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
-        }
+
         public RecordVHPVM RecordVHP
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
         }
-
+        public RecordVHPQuickEditVM RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
+        }
 
 
         public MaterialNeedVM MaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<MaterialNeedVM>(); }
         }
+        public MaterialNeedEditVM MaterialNeedEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialNeedEditVM>(); }
+        }
+
         public MaterialOrderVM MaterialOrder
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderVM>(); }
         }
+        public MaterialOrderEditVM MaterialOrderEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderEditVM>(); }
+        }
+
         public OrderSelectMaterialNeedVM OrderSelectMaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<OrderSelectMaterialNeedVM>(); }
@@ -133,9 +154,23 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestVM>(); }
         }
+        public RecordTestEditVM RecordTestEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestEditVM>(); }
+        }
+
+
         public RecordDeliveryVM RecordDelivery
         {
             get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
+        }
+        public RecordDeliveryEditVM RecordEditDelivery
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditVM>(); }
+        }
+        public RecordDeliveryItemEditVM RecordDeliveryItemEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditVM>(); }
         }
 
         public PlanSelectForRecordTestVM PlanSelectForRecordTestResult
@@ -154,7 +189,13 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordMillingVM>();
             }
         }
-
+        public RecordMillingEditVM RecordMillingEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMillingEditVM>();
+            }
+        }
         public RecordDeMoldVM RecordDeMold
         {
             get
@@ -162,12 +203,25 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordDeMoldVM>();
             }
         }
-
+        public RecordDeMoldEditVM RecordDeMoldEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordDeMoldEditVM>();
+            }
+        }
         public RecordMachineVM RecordMachine
         {
             get
             {
                 return SimpleIoc.Default.GetInstance<RecordMachineVM>();
+            }
+        }
+        public RecordMachineEditVM RecordMachineEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMachineEditVM>();
             }
         }
         #endregion
