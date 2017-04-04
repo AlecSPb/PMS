@@ -403,23 +403,38 @@
 
     <!--RecordDeMachine-->
     <sys:String x:Key="RMMCreator">创建者</sys:String>
-    <sys:String x:Key="RMMCreateTime">创建者</sys:String>
-    <sys:String x:Key="RMMState">创建者</sys:String>
-    <sys:String x:Key="RMMVHPPlanLot">创建者</sys:String>
-    <sys:String x:Key="RMMComposition">创建者</sys:String>
-    <sys:String x:Key="RMMExtraRequirement">创建者</sys:String>
-    <sys:String x:Key="RMMDimension">创建者</sys:String>
-    <sys:String x:Key="RMMDiameter1">创建者</sys:String>
-    <sys:String x:Key="RMMDiameter2">创建者</sys:String>
-    <sys:String x:Key="RMMThickness1">创建者</sys:String>
-    <sys:String x:Key="RMMThickness2">创建者</sys:String>
-    <sys:String x:Key="RMMThickness3">创建者</sys:String>
-    <sys:String x:Key="RMMThickness4">创建者</sys:String>
-    <sys:String x:Key="RMMDefects">创建者</sys:String>
+    <sys:String x:Key="RMMCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RMMState">状态</sys:String>
+    <sys:String x:Key="RMMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RMMComposition">成分</sys:String>
+    <sys:String x:Key="RMMExtraRequirement">额外要求</sys:String>
+    <sys:String x:Key="RMMDimension">尺寸要求</sys:String>
+    <sys:String x:Key="RMMDiameter1">直径1</sys:String>
+    <sys:String x:Key="RMMDiameter2">直径2</sys:String>
+    <sys:String x:Key="RMMThickness1">厚度2</sys:String>
+    <sys:String x:Key="RMMThickness2">厚度3</sys:String>
+    <sys:String x:Key="RMMThickness3">厚度4</sys:String>
+    <sys:String x:Key="RMMThickness4">厚度3</sys:String>
+    <sys:String x:Key="RMMDefects">缺陷</sys:String>
     
-    
-    
-    
+    <!--RecordTest-->
+    <sys:String x:Key="RTCreator">状态</sys:String>
+    <sys:String x:Key="RTCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RTState">状态</sys:String>
+    <sys:String x:Key="RTTestType">测试类型</sys:String>
+    <sys:String x:Key="RTProductID">产品ID</sys:String>
+    <sys:String x:Key="RTComposition">成分</sys:String>
+    <sys:String x:Key="RTCompositionAbbr">缩写</sys:String>
+    <sys:String x:Key="RTPO">PO</sys:String>
+    <sys:String x:Key="RTCustomer">客户</sys:String>
+    <sys:String x:Key="RTDimension">要求尺寸</sys:String>
+    <sys:String x:Key="RTDensity">密度</sys:String>
+    <sys:String x:Key="RTWeight">重量</sys:String>
+    <sys:String x:Key="RTResistance">电阻率</sys:String>
+    <sys:String x:Key="RTCompositionXRF">XRF成分</sys:String>
+    <sys:String x:Key="RTDimensionActual">实际尺寸</sys:String>
+    <sys:String x:Key="RTRemark">备注</sys:String>
+    <sys:String x:Key="RTSample">样品</sys:String>
     
 
 </ResourceDictionary>
