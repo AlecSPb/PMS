@@ -71,22 +71,29 @@
                 <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.DeviceCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding VHPDeviceCode,Mode=TwoWay}"/>
-
-
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanMoldType}"
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox x:Name="moldType" Grid.Row="2" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding  PlanLot}"
+                         Style="{StaticResource TextBoxBasic}"
+                         HorizontalAlignment="Stretch"/>
+                
+                
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanMoldType}"
+                           Style="{StaticResource TextBlockBasic}" />
+                <TextBox x:Name="moldType" Grid.Row="3" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          Style="{StaticResource TextBoxBasic}" IsReadOnly="True"
                          HorizontalAlignment="Stretch"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox x:Name="moldDiameter" Grid.Row="3" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                <TextBox x:Name="moldDiameter" Grid.Row="4" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
                          Background="{StaticResource ReadOnlyTextBoxBrush}"
                          Style="{StaticResource TextBoxBasic}" IsReadOnly="True" 
                          HorizontalAlignment="Stretch"/>
-                <ComboBox x:Name="cboMolds" Grid.Row="2" Grid.Column="2"
+                <ComboBox x:Name="cboMolds" Grid.Row="4" Grid.Column="2"
                           HorizontalAlignment="Stretch"
                         ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                         SelectionChanged="cboMolds_SelectionChanged"
@@ -100,15 +107,15 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <TextBlock Grid.Row="2" Grid.Column="3" Text="请使用下拉菜单选择模具" Style="{StaticResource TextBlockTipBasic}"/>
+                <TextBlock Grid.Row="4" Grid.Column="3" Text="请使用下拉菜单选择模具" Style="{StaticResource TextBlockTipBasic}"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanCalculationDensity}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlanCalculationDensity}"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox x:Name="txtCalculationDensity" Grid.Row="4" Grid.Column="1" Text="{Binding CalculationDensity,UpdateSourceTrigger=PropertyChanged}"
+                <TextBox x:Name="txtCalculationDensity" Grid.Row="5" Grid.Column="1" Text="{Binding CalculationDensity,UpdateSourceTrigger=PropertyChanged}"
                          Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
 
-                <ComboBox x:Name="cboCompounds" Grid.Row="4" Grid.Column="2"
+                <ComboBox x:Name="cboCompounds" Grid.Row="5" Grid.Column="2"
                           HorizontalAlignment="Stretch"
                         ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                         SelectionChanged="cboCompounds_SelectionChanged"
@@ -123,19 +130,19 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlanThickness}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanThickness}"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanQuantity}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanQuantity}"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
                            Style="{StaticResource TextBlockBasic}" />
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource TextBoxBasic}"
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanRoomTemperature}"
