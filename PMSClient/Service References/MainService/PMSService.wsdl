@@ -151,6 +151,54 @@
   <wsdl:message name="IMaterialOrderService_DeleteMaterialOrderItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteMaterialOrderItemResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryIns_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryIns" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryIns_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialInventoryIn" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialInventoryInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_UpdateMaterialInventoryIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialInventoryIn" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_UpdateMaterialInventoryIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialInventoryInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_DeleteMaterialInventoryIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialInventoryIn" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_DeleteMaterialInventoryIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialInventoryInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOuts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOuts" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOuts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialInventoryOut" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMaterialInventoryOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_UpdateMaterialInventoryOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialInventoryOut" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_UpdateMaterialInventoryOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialInventoryOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_DeleteMaterialInventoryOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialInventoryOut" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_DeleteMaterialInventoryOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMaterialInventoryOutResponse" />
+  </wsdl:message>
   <wsdl:message name="IMissonService_GetMissons_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMissons" />
   </wsdl:message>
@@ -577,6 +625,40 @@
     <wsdl:operation name="DeleteMaterialOrderItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem" message="tns:IMaterialOrderService_DeleteMaterialOrderItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse" message="tns:IMaterialOrderService_DeleteMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMaterialInventoryService">
+    <wsdl:operation name="GetMaterialInventoryIns">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns" message="tns:IMaterialInventoryService_GetMaterialInventoryIns_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryIns_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialInventoryIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn" message="tns:IMaterialInventoryService_AddMaterialInventoryIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse" message="tns:IMaterialInventoryService_AddMaterialInventoryIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialInventoryIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn" message="tns:IMaterialInventoryService_UpdateMaterialInventoryIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse" message="tns:IMaterialInventoryService_UpdateMaterialInventoryIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialInventoryIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn" message="tns:IMaterialInventoryService_DeleteMaterialInventoryIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse" message="tns:IMaterialInventoryService_DeleteMaterialInventoryIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOuts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts" message="tns:IMaterialInventoryService_GetMaterialInventoryOuts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryOuts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialInventoryOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut" message="tns:IMaterialInventoryService_AddMaterialInventoryOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse" message="tns:IMaterialInventoryService_AddMaterialInventoryOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialInventoryOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut" message="tns:IMaterialInventoryService_UpdateMaterialInventoryOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse" message="tns:IMaterialInventoryService_UpdateMaterialInventoryOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialInventoryOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut" message="tns:IMaterialInventoryService_DeleteMaterialInventoryOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse" message="tns:IMaterialInventoryService_DeleteMaterialInventoryOut_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMissonService">
@@ -1033,6 +1115,81 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteMaterialOrderItem">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="materialinventory" type="tns:IMaterialInventoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMaterialInventoryIns">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialInventoryIn">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialInventoryIn">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialInventoryIn">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOuts">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMaterialInventoryOut">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialInventoryOut">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMaterialInventoryOut">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1565,6 +1722,9 @@
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="materialorder" binding="tns:materialorder">
+      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="materialinventory" binding="tns:materialinventory">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="misson" binding="tns:misson">

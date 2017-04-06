@@ -1033,9 +1033,6 @@ namespace PMSClient.MainService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SupplierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1148,19 +1145,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Supplier {
-            get {
-                return this.SupplierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
-                    this.SupplierField = value;
-                    this.RaisePropertyChanged("Supplier");
                 }
             }
         }
@@ -1635,6 +1619,352 @@ namespace PMSClient.MainService {
                 if ((this.UnitPriceField.Equals(value) != true)) {
                     this.UnitPriceField = value;
                     this.RaisePropertyChanged("UnitPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryIn", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialInventoryIn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceiverField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Receiver {
+            get {
+                return this.ReceiverField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceiverField, value) != true)) {
+                    this.ReceiverField = value;
+                    this.RaisePropertyChanged("Receiver");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryOut", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialInventoryOut : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Supplier {
+            get {
+                return this.SupplierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
+                    this.SupplierField = value;
+                    this.RaisePropertyChanged("Supplier");
                 }
             }
         }
@@ -5520,6 +5850,151 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteMaterialOrderItemAsync(System.Guid id) {
             return base.Channel.DeleteMaterialOrderItemAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IMaterialInventoryService")]
+    public interface IMaterialInventoryService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse")]
+        PMSClient.MainService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
+        int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryInAsync(PMSClient.MainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse")]
+        int UpdateMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSClient.MainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse")]
+        int DeleteMaterialInventoryIn(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse")]
+        System.Threading.Tasks.Task<int> DeleteMaterialInventoryInAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse")]
+        PMSClient.MainService.DcMaterialInventoryOut[] GetMaterialInventoryOuts(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
+        int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryOutAsync(PMSClient.MainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse")]
+        int UpdateMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSClient.MainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse")]
+        int DeleteMaterialInventoryOut(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse")]
+        System.Threading.Tasks.Task<int> DeleteMaterialInventoryOutAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMaterialInventoryServiceChannel : PMSClient.MainService.IMaterialInventoryService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MaterialInventoryServiceClient : System.ServiceModel.ClientBase<PMSClient.MainService.IMaterialInventoryService>, PMSClient.MainService.IMaterialInventoryService {
+        
+        public MaterialInventoryServiceClient() {
+        }
+        
+        public MaterialInventoryServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MaterialInventoryServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MaterialInventoryServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MaterialInventoryServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSClient.MainService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take) {
+            return base.Channel.GetMaterialInventoryIns(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsAsync(int skip, int take) {
+            return base.Channel.GetMaterialInventoryInsAsync(skip, take);
+        }
+        
+        public int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model) {
+            return base.Channel.AddMaterialInventoryIn(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryInAsync(PMSClient.MainService.DcMaterialInventoryIn model) {
+            return base.Channel.AddMaterialInventoryInAsync(model);
+        }
+        
+        public int UpdateMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model) {
+            return base.Channel.UpdateMaterialInventoryIn(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSClient.MainService.DcMaterialInventoryIn model) {
+            return base.Channel.UpdateMaterialInventoryInAsync(model);
+        }
+        
+        public int DeleteMaterialInventoryIn(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryIn(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteMaterialInventoryInAsync(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryInAsync(id);
+        }
+        
+        public PMSClient.MainService.DcMaterialInventoryOut[] GetMaterialInventoryOuts(int skip, int take) {
+            return base.Channel.GetMaterialInventoryOuts(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsAsync(int skip, int take) {
+            return base.Channel.GetMaterialInventoryOutsAsync(skip, take);
+        }
+        
+        public int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model) {
+            return base.Channel.AddMaterialInventoryOut(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryOutAsync(PMSClient.MainService.DcMaterialInventoryOut model) {
+            return base.Channel.AddMaterialInventoryOutAsync(model);
+        }
+        
+        public int UpdateMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model) {
+            return base.Channel.UpdateMaterialInventoryOut(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSClient.MainService.DcMaterialInventoryOut model) {
+            return base.Channel.UpdateMaterialInventoryOutAsync(model);
+        }
+        
+        public int DeleteMaterialInventoryOut(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryOut(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteMaterialInventoryOutAsync(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryOutAsync(id);
         }
     }
     

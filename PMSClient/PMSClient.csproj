@@ -666,6 +666,12 @@
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryIn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialNeed.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

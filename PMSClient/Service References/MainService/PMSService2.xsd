@@ -97,7 +97,6 @@
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialNeeds" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
@@ -150,6 +149,46 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
+  <xs:complexType name="ArrayOfDcMaterialInventoryIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaterialInventoryIn" nillable="true" type="tns:ArrayOfDcMaterialInventoryIn" />
+  <xs:complexType name="DcMaterialInventoryIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />
+  <xs:complexType name="ArrayOfDcMaterialInventoryOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryOut" nillable="true" type="tns:DcMaterialInventoryOut" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaterialInventoryOut" nillable="true" type="tns:ArrayOfDcMaterialInventoryOut" />
+  <xs:complexType name="DcMaterialInventoryOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcMaterialInventoryOut" nillable="true" type="tns:DcMaterialInventoryOut" />
   <xs:complexType name="ArrayOfDcMissonWithPlan">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMissonWithPlan" nillable="true" type="tns:DcMissonWithPlan" />
