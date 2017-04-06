@@ -283,6 +283,10 @@
     <Compile Include="Migrations\201704060913092_materialinventory.Designer.cs">
       <DependentUpon>201704060913092_materialinventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704062337417_editmi.cs" />
+    <Compile Include="Migrations\201704062337417_editmi.Designer.cs">
+      <DependentUpon>201704062337417_editmi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -484,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704060913092_materialinventory.resx">
       <DependentUpon>201704060913092_materialinventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704062337417_editmi.resx">
+      <DependentUpon>201704062337417_editmi.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

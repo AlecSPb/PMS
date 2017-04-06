@@ -212,8 +212,8 @@
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
     <sys:String x:Key="PageMissonSelect">请选择一个生产任务项目</sys:String>
-    
-    
+
+
     <sys:String x:Key="PageMaintenance">维护计划</sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
@@ -240,7 +240,7 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
-    
+
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">选择计划安排</sys:String>
@@ -264,10 +264,10 @@
     <sys:String x:Key="PagingPageSize">条/页</sys:String>
     <sys:String x:Key="PagingRecordCount">总记录</sys:String>
 
-    
+
     <!--公共-->
     <sys:String x:Key="DGOperate">操作</sys:String>
-    
+
     <!--LogIn-->
     <sys:String x:Key="LogInWelcome">欢迎</sys:String>
     <sys:String x:Key="LogInLogInButton">欢迎</sys:String>
@@ -378,7 +378,7 @@
     <sys:String x:Key="RMWeightIn">进料重量</sys:String>
     <sys:String x:Key="RMWeightOut">出料重量</sys:String>
     <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
-    
+
     <!--RecordVHP-->
     <sys:String x:Key="RVHPState">状态</sys:String>
     <sys:String x:Key="RVHPCreateTime">创建时间</sys:String>
@@ -396,7 +396,7 @@
     <sys:String x:Key="RVHPWaterTemperatureOut">进水温度</sys:String>
     <sys:String x:Key="RVHPWaterTemperatureIn">出水温度</sys:String>
     <sys:String x:Key="RVHPExtraInformation">其他信息</sys:String>
-    
+
     <!--RecordDeMold-->
     <sys:String x:Key="RDMCreator">创建者</sys:String>
     <sys:String x:Key="RDMCreateTime">创建时间</sys:String>
@@ -429,7 +429,7 @@
     <sys:String x:Key="RMMThickness3">厚度4</sys:String>
     <sys:String x:Key="RMMThickness4">厚度3</sys:String>
     <sys:String x:Key="RMMDefects">缺陷</sys:String>
-    
+
     <!--RecordTest-->
     <sys:String x:Key="RTCreator">状态</sys:String>
     <sys:String x:Key="RTCreateTime">创建时间</sys:String>
@@ -462,7 +462,7 @@
     <sys:String x:Key="RDRemark">状态</sys:String>
     <sys:String x:Key="RDPackageType">状态</sys:String>
     <sys:String x:Key="RDPackageInformation">状态</sys:String>
-    
+
     <sys:String x:Key="RDProductType">状态</sys:String>
     <sys:String x:Key="RDProductID">状态</sys:String>
     <sys:String x:Key="RDComposition">状态</sys:String>
@@ -472,6 +472,29 @@
     <sys:String x:Key="RDWeight">状态</sys:String>
     <sys:String x:Key="RDPosition">状态</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
+    <!--MaterialInventoryInAndOut-->
+    <sys:String x:Key="MIIState">状态</sys:String>
+    <sys:String x:Key="MIICreator">创建者</sys:String>
+    <sys:String x:Key="MIICreateTime">创建时间</sys:String>
+    <sys:String x:Key="MIIMaterialLot">材料批号</sys:String>
+    <sys:String x:Key="MIIComposition">成分</sys:String>
+    <sys:String x:Key="MIIPurity">纯度</sys:String>
+    <sys:String x:Key="MIISupplier">供应商</sys:String>
+    <sys:String x:Key="MIIWeight">重量</sys:String>
+    <sys:String x:Key="MIIRemark">备注</sys:String>
+
+    <sys:String x:Key="MIOState">状态</sys:String>
+    <sys:String x:Key="MIOCreator">创建者</sys:String>
+    <sys:String x:Key="MIOCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MIOMaterialLot">材料批号</sys:String>
+    <sys:String x:Key="MIOComposition">成分</sys:String>
+    <sys:String x:Key="MIOPurity">纯度</sys:String>
+    <sys:String x:Key="MIOReceiver">接受者</sys:String>
+    <sys:String x:Key="MIOWeight">重量</sys:String>
+    <sys:String x:Key="MIORemark">备注</sys:String>
+
+
+
 
 
 </ResourceDictionary>
