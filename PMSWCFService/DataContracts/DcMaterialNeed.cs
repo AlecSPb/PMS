@@ -25,8 +25,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public double Weight { get; set; }
         [DataMember]
-        public string Supplier { get; set; }
-        [DataMember]
         public string SpecialNeeds { get; set; }
         [DataMember]
         public string PMINumber { get; set; }

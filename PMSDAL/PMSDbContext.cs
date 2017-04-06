@@ -35,6 +35,8 @@ namespace PMSDAL
         public DbSet<PMSMaterialOrder> MaterialOrders { get; set; }
         public DbSet<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
 
+        public DbSet<PMSMaterialInventoryIn> MaterialInventoryIns { get; set; }
+        public DbSet<PMSMaterialInventoryOut> MaterialInventoryOuts { get; set; }
         //Core
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
