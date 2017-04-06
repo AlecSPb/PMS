@@ -53,15 +53,61 @@ namespace PMSClient.ViewModel
         /// </summary>
         /// <param name="isnew"></param>
         /// <param name="current"></param>
-        public void SetKeyProperties(ModelObject model)
+        public void SetNew()
         {
-            IsNew = model.IsNew;
-            CurrentOrder = model.Model as DcOrder;
+            IsNew = true;
+            var order = new DcOrder();
+            order.ID = Guid.NewGuid();
+            order.CustomerName = "Midsummer";
+            order.PO = DateTime.Now.ToString("yyMMdd");
+            order.PMINumber = DateTime.Now.ToString("yyMMdd");
+            order.ProductType = "Target";
+            order.Dimension = "230mm OD x  4mm";
+            order.DimensionDetails = "None";
+            order.SampleNeed = "无需样品";
+            order.MinimumAcceptDefect = "通常";
+            order.Reviewer = "xs.zhou";
+            order.PolicyContent = "";
+            order.PolicyType = "VHP";
+            order.PolicyMaker = "xs.zhou";
+
+            order.Purity = "99.99";
+            order.DeadLine = DateTime.Now.AddDays(30);
+            order.ReviewDate = DateTime.Now;
+            order.PolicyMakeDate = DateTime.Now;
+            order.State = "UnChecked";
+            order.Priority = "Normal";
+            order.CompositionOriginal = "CuGaSe2";
+            order.CompositionStandard = "Cu25Ga25Se50";
+            order.CompositionAbbr = "CuGaSe";
+            order.Creator = "xs.zhou";
+            order.CreateTime = DateTime.Now;
+            order.ProductType = "Target";
+            order.ReviewPassed = true;
+            order.Quantity = 1;
+            order.QuantityUnit = "片";
+            CurrentOrder = order;
+        }
+        public void SetEdit(DcOrder order)
+        {
+            if (order!=null)
+            {
+                IsNew = false;
+                CurrentOrder = order;
+            }
         }
 
+        public void SetDuplicate(DcOrder order)
+        {
+            if (order!=null)
+            {
+                IsNew = true;
+                CurrentOrder = order;
+            }
+        }
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Order });
+            NavigationService.GoTo(PMSViews.Order);
         }
 
         private bool CanSave()
@@ -82,8 +128,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Order });
-                NavigationService.Refresh(VToken.OrderRefresh);
+                NavigationService.GoTo(PMSViews.Order);
             }
             catch (Exception ex)
             {

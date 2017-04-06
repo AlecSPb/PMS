@@ -8,9 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
-    <UserControl.Background>
-        <StaticResource ResourceKey="BackgroundWindow"/>
-    </UserControl.Background>
     <UserControl.Resources>
         <Style x:Key="btnNavigation" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>

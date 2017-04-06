@@ -45,10 +45,8 @@ namespace PMSClient.ViewModel
 
             Edit = new RelayCommand<DcOrder>(order =>
             {
-                MsgObject msg = new MsgObject();
-                msg.NavigateTo = VToken.OrderEdit;
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = order };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.OrderEdit.SetEdit(order);
+                NavigationService.GoTo(PMSViews.OrderEdit);
             });
 
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate);
@@ -66,22 +64,15 @@ namespace PMSClient.ViewModel
                 order.Priority = "Normal";
                 order.DeadLine = DateTime.Now.AddDays(30);
 
-                MsgObject msg = new MsgObject();
-                msg.NavigateTo = VToken.OrderEdit;
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = order };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.OrderEdit.SetDuplicate(order);
+                NavigationService.GoTo(PMSViews.OrderEdit);
             }
         }
 
         private void ActionAdd()
         {
-            var dcOrder = EmptyModel.GetOrder();
-
-            MsgObject msg = new MsgObject();
-            msg.NavigateTo = VToken.OrderEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = dcOrder };
-            NavigationService.GoTo(msg);
-
+            PMSHelper.ViewModels.OrderEdit.SetNew();
+            NavigationService.GoTo(PMSViews.OrderEdit);
         }
 
         private bool CanSearch()

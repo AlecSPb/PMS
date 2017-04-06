@@ -10,6 +10,10 @@ namespace PMSClient
 {
     public static class NavigationService
     {
+        public static void GoTo(PMSViews viewToken)
+        {
+            Messenger.Default.Send<PMSViews>(viewToken, MainNavigationToken.Navigate);
+        }
         public static void GoTo(MsgObject obj)
         {
             Messenger.Default.Send<MsgObject>(obj, MainNavigationToken.Navigate);

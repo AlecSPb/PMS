@@ -49,7 +49,7 @@ namespace PMSClient.ViewForDesktop
                 if (logInformation.CurrentUser != null)
                 {
                     PMSHelper.CurrentLog.Log("登录成功");
-                    NavigationService.GoTo(VToken.Navigation);
+                    NavigationService.GoTo(PMSViews.Navigation);
                 }
                 else
                 {

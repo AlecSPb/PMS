@@ -16,7 +16,7 @@ namespace PMSClient.ViewModel
 
         public BaseViewModelPage()
         {
-            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Navigation }));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
         }
 
         #region PageRelated

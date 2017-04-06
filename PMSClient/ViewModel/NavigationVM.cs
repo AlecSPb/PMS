@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
 
         private void ActionOrder()
         {
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Order });
+            NavigationService.GoTo(PMSViews.Order);
         }
 
         private bool CanOrder()

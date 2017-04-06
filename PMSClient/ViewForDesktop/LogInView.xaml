@@ -46,7 +46,7 @@
             </Grid.RowDefinitions>
             <TextBox Grid.Row="0" Name="txtUserName" Text="xs.zhou" Style="{StaticResource txtUid}"/>
             <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource txtPwd}"/>
-            <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click" Style="{StaticResource btnLogin}"/>
+            <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click" Style="{StaticResource btnLogin}" IsDefault="True"/>
             <TextBlock Name="txtLogInStatus" Grid.Row="3" Text="状态显示" Style="{StaticResource txtInformation}"/>
         </Grid>
         <Grid Grid.Column="1" Background="LightGray">

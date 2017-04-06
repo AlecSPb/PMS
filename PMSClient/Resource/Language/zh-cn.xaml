@@ -225,7 +225,7 @@
     <sys:String x:Key="ButtonSave">保存</sys:String>
     <sys:String x:Key="ButtonAdd">添加</sys:String>
     <sys:String x:Key="ButtonEdit">编辑</sys:String>
-    <sys:String x:Key="ButtonDuplicate">复制</sys:String>
+    <sys:String x:Key="ButtonDuplicate">复用</sys:String>
     <sys:String x:Key="ButtonAddItem">安排</sys:String>
     <sys:String x:Key="ButtonEditItem">编辑</sys:String>
     <sys:String x:Key="ButtonEmpty">使用空记录</sys:String>
