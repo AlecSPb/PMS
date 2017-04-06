@@ -31,7 +31,7 @@ namespace PMSClient.ViewModel
         private void InitialCommands()
         {
             GoToOrder = new RelayCommand(ActionOrder, CanOrder);
-            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.OrderCheck }));
+            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck));
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson }));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Plan }));
 
