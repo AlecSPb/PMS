@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="{StaticResource strAppNameDesktop}" WindowStyle="None" ResizeMode="CanResize"
+        Title="{StaticResource strAppNameDesktop}"  ResizeMode="CanResize" Icon="Resource\Images\chart.png"
         MinHeight="400" MinWidth="600" WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
@@ -13,65 +13,60 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Name="titleBar" Grid.Row="0" Background="{StaticResource BackgroundTitleBar}" MouseLeftButtonDown="titleBar_MouseLeftButtonDown">
+        <Grid Name="titleBar" Grid.Row="0" Background="{x:Static SystemColors.MenuBarBrush}" MouseLeftButtonDown="titleBar_MouseLeftButtonDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Image Height="15" Width="15" Source="Resource\Images\chart.png" Margin="5 0 0 0"/>
-                <TextBlock  Text="{StaticResource strAppNameDesktop}" Style="{StaticResource AppTitleTextBlock}"/>
+                <Menu>
+                    <MenuItem Header="{StaticResource strPageStart}">
+                        <MenuItem Header="登录"/>
+                        <MenuItem Header="{StaticResource strPageNaivgation}"/>
+                        <Separator/>
+                        <MenuItem Header="{StaticResource strPageBasicData}">
+                            <MenuItem Header="Compound"/>
+                            <MenuItem Header="Element"/>
+                            <MenuItem Header="Mold"/>
+                            <MenuItem Header="VHP Device"/>
+                            <MenuItem Header="VHP Process"/>
+                            <MenuItem Header="Supplier Information"/>
+                            <MenuItem Header="Customer Information"/>
+                            <MenuItem Header="Delivery Address Collection"/>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="{StaticResource strPageAdmin}">
+                            <MenuItem Header="User Access Control"/>
+                            <MenuItem Header="Log Information"/>
+                            <MenuItem Header="Debug Mode"/>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="{StaticResource strPageSetting}"/>
+                        <Separator/>
+                        <MenuItem Header="{StaticResource strPageAbout}">
+                            <MenuItem Header="{StaticResource strPageInstruct}"/>
+                            <MenuItem Header="{StaticResource strPageHelp}"/>
+                            <MenuItem Header="{StaticResource strPageWebSite}"/>
+                            <MenuItem Header="{StaticResource strPageAbout}"/>
+                        </MenuItem>
+                        <Separator/>
+                        <!--<MenuItem Header="Log Out"/>-->
+                        <MenuItem x:Name="MenuExit" Header="{StaticResource strPageExit}"/>
+                    </MenuItem>
+
+                </Menu>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Yellow" Margin="0 0 5 0"/>
-                <Button Name="btnMiinimum" Content="-" Style="{StaticResource ControlButton}" Click="btnMiinimum_Click"/>
-                <Button Name="btnMaximum" Content="+" Style="{StaticResource ControlButton}" Click="btnMaximum_Click"/>
-                <Button Name="btnClose" Content="X" Style="{StaticResource ControlButton}" Click="btnClose_Click"/>
+                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Blue" Margin="0 0 5 0"/>
             </StackPanel>
         </Grid>
-
-        <Menu Grid.Row="1" VerticalAlignment="Center">
-            <MenuItem Header="{StaticResource strPageStart}">
-                <MenuItem Header="登录"/>
-                <MenuItem Header="{StaticResource strPageNaivgation}"/>
-                <Separator/>
-                <MenuItem Header="{StaticResource strPageBasicData}">
-                    <MenuItem Header="Compound"/>
-                    <MenuItem Header="Element"/>
-                    <MenuItem Header="Mold"/>
-                    <MenuItem Header="VHP Device"/>
-                    <MenuItem Header="VHP Process"/>
-                    <MenuItem Header="Supplier Information"/>
-                    <MenuItem Header="Customer Information"/>
-                    <MenuItem Header="Delivery Address Collection"/>
-                </MenuItem>
-                <Separator/>
-                <MenuItem Header="{StaticResource strPageAdmin}">
-                    <MenuItem Header="User Access Control"/>
-                    <MenuItem Header="Log Information"/>
-                    <MenuItem Header="Debug Mode"/>
-                </MenuItem>
-                <Separator/>
-                <MenuItem Header="{StaticResource strPageSetting}"/>
-                <Separator/>
-                <!--<MenuItem Header="Log Out"/>-->
-                <MenuItem x:Name="MenuExit" Header="{StaticResource strPageExit}"/>
-            </MenuItem>
-            <MenuItem Header="{StaticResource strPageAbout}">
-                <MenuItem Header="{StaticResource strPageInstruct}"/>
-                <MenuItem Header="{StaticResource strPageHelp}"/>
-                <MenuItem Header="{StaticResource strPageWebSite}"/>
-                <MenuItem Header="{StaticResource strPageAbout}"/>
-            </MenuItem>
-        </Menu>
-        <Border Grid.Row="2">
+        <Border Grid.Row="1">
             <ContentControl x:Name="mainArea"/>
         </Border>
-        <Grid Grid.Row="3"  Background="{StaticResource BackgroundStatusBar}">
+        <Grid Grid.Row="2"  Background="{StaticResource BackgroundStatusBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>

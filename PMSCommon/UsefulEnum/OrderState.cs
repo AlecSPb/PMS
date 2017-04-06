@@ -16,9 +16,9 @@ namespace PMSCommon
     public enum OrderState
     {
         Deleted = 0,
-        Paused = 1,
-        UnChecked = 2,
-        UnCompleted = 3,
+        UnChecked = 1,
+        UnCompleted = 2,
+        Paused = 3,
         Completed = 4
     }
 }
