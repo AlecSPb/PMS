@@ -37,7 +37,7 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(() =>
             {
-                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP });
+                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordVHP });
                 NavigationService.Refresh(VToken.RecordVHPRefresh);
             });
 

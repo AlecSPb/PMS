@@ -70,7 +70,7 @@ namespace PMSClient.ViewModel
                     service.UpdateVHPPlan(CurrentPlan);
                 }
 
-                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
+                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson });
                 NavigationService.Refresh(VToken.MissonRefresh);
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace PMSClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson });
         }
         public ObservableCollection<DcBDVHPMold> Molds { get; set; }
         public ObservableCollection<string> States { get; set; }

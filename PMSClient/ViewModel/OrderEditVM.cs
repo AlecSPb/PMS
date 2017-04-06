@@ -61,7 +61,7 @@ namespace PMSClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Order });
         }
 
         private bool CanSave()
@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
+                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Order });
                 NavigationService.Refresh(VToken.OrderRefresh);
             }
             catch (Exception ex)

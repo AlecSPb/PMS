@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
             testresult.DimensionActual = testresult.Dimension;
 
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.RecordTestEdit;
+            msg.NavigateTo = VToken.RecordTestEdit;
             msg.MsgModel = new ModelObject() { IsNew = true, Model = testresult };
             NavigationService.GoTo(msg);
         }
@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken=VToken.RecordTest}));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo=VToken.RecordTest}));
             Select = new RelayCommand<MainService.DcMissonWithPlan>(ActionSelect);
         }
 

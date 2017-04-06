@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
                     }
 
                     //TODO:以后将这里的重复代替掉
-                    NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMilling });
+                    NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordMilling });
                 }
             }
         }

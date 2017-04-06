@@ -19,7 +19,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordVHP }));
             Select = new RelayCommand<MainService.DcMissonWithPlan>(ActionSelect);
         }
 

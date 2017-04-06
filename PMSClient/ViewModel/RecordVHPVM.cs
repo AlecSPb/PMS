@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
 
 
             All = new RelayCommand(ActionAll);
-            QuickEdit = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHPQuickEdit }));
+            QuickEdit = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordVHPQuickEdit }));
             SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
         }
 
@@ -50,14 +50,14 @@ namespace PMSClient.ViewModel
         private void ActionEdit(DcMissonWithPlan obj)
         {
             MsgObject msg = new PMSClient.MsgObject();
-            msg.MsgToken = VToken.RecordVHPEdit;
+            msg.NavigateTo = VToken.RecordVHPEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);
         }
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelectForVHP });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.PlanSelectForVHP });
         }
 
         private void ActionAll()

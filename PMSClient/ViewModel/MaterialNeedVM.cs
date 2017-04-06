@@ -52,10 +52,10 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcMaterialNeed obj)
         {
-            if (obj!=null)
+            if (obj != null)
             {
                 MsgObject msg = new PMSClient.MsgObject();
-                msg.MsgToken = VToken.MaterialNeedEdit;
+                msg.NavigateTo = VToken.MaterialNeedEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
                 NavigationService.GoTo(msg);
@@ -64,9 +64,19 @@ namespace PMSClient.ViewModel
 
         private void ActionAdd()
         {
-            //转向订单选择页面
+
+            var empty = new DcMaterialNeed();
+            empty.Id = Guid.NewGuid();
+            empty.CreateTime = DateTime.Now;
+            empty.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            empty.Composition = "";
+            empty.PMINumber = "";
+            empty.Purity = "5N";
+
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.OrderSelect;        
+            msg.NavigateTo = VToken.MaterialNeedEdit;
+            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = empty };
             NavigationService.GoTo(msg);
         }
 

@@ -31,27 +31,27 @@ namespace PMSClient.ViewModel
         private void InitialCommands()
         {
             GoToOrder = new RelayCommand(ActionOrder, CanOrder);
-            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.OrderCheck }));
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Misson }));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Plan }));
+            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.OrderCheck }));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson }));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Plan }));
 
-            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialNeed }));
-            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder }));
-            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialInventory }));
+            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialNeed }));
+            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
+            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialInventory }));
 
-            GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMilling }));
-            GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordVHP }));
-            GoToDeMoldRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDeMold }));
-            GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordMachine }));
-            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery }));
-            GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordBonding }));
-            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTest }));
+            GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordMilling }));
+            GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordVHP }));
+            GoToDeMoldRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDeMold }));
+            GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordMachine }));
+            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery }));
+            GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordBonding }));
+            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordTest }));
 
         }
 
         private void ActionOrder()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Order });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Order });
         }
 
         private bool CanOrder()

@@ -11,17 +11,42 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderSelectBaseVM:BaseViewModelPage
+    public class OrderSelectVM : BaseViewModelPage
     {
         //要转到的页面
 
-        public OrderSelectBaseVM()
+        public OrderSelectVM()
         {
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
+            SelectOrder = new RelayCommand<DcOrder>(ActionSelectOrder);
+
+        }
+        private VToken sendTo;
+        /// <summary>
+        /// 设置关键值
+        /// </summary>
+        /// <param name="sendTo">发送选择后的对象到</param>
+        /// <param name="giveUp">放弃后回到</param>
+        public void SetKeyProeprties(VToken sendTo, VToken giveUp)
+        {
+            this.sendTo = sendTo;
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = giveUp }));
         }
 
+        private void ActionSelectOrder(DcOrder order)
+        {
+            if (order != null)
+            {
+                var model = new MsgObject();
+                model.NavigateTo = sendTo;
+                model.MsgModel = new ModelObject() { Model = order };
+                NavigationService.GoTo(model);
+            }
+        }
+        public RelayCommand<DcOrder> SelectOrder { get; set; }
+        public RelayCommand GiveUp { get; set; }
         private void ActionRefresh(Object obj)
         {
             SetPageParametersWhenConditionChange();

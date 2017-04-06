@@ -44,7 +44,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -59,7 +59,7 @@ namespace PMSClient.ViewModel
             {
                 service.UpdateMaterialOrder(CurrentMaterialOrder);
             }
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder });
             NavigationService.Refresh(VToken.MaterialOrderRefresh);
         }
         public ObservableCollection<string> OrderStates { get; set; }

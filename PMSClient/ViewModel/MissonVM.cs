@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.Plan }));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Plan }));
 
 
             PageChanged = new RelayCommand(ActionPaging);
@@ -75,7 +75,7 @@ namespace PMSClient.ViewModel
                 obj.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
                 
                 var msg = new MsgObject();
-                msg.MsgToken = VToken.PlanEdit;
+                msg.NavigateTo = VToken.PlanEdit;
                 msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -86,7 +86,7 @@ namespace PMSClient.ViewModel
             if (obj != null)
             {
                 var msg = new MsgObject();
-                msg.MsgToken = VToken.PlanEdit;
+                msg.NavigateTo = VToken.PlanEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -99,7 +99,7 @@ namespace PMSClient.ViewModel
 
                 var plan = EmptyModel.GetPlanVHP(order);
                 var msg = new MsgObject();
-                msg.MsgToken = VToken.PlanEdit;
+                msg.NavigateTo = VToken.PlanEdit;
                 msg.MsgModel = new ModelObject() { IsNew = true, Model = plan };
                 NavigationService.GoTo(msg);
             }

@@ -84,9 +84,9 @@ namespace PMSClient
             try
             {
                 //log
-                PMSHelper.CurrentLog.Log(model.MsgToken.ToString());
+                PMSHelper.CurrentLog.Log(model.NavigateTo.ToString());
 
-                switch (model.MsgToken)
+                switch (model.NavigateTo)
                 {
                     case VToken.Navigation:
                         GoTo(_viewLocator.Navigation);
@@ -106,6 +106,8 @@ namespace PMSClient
                     case VToken.OrderRefresh:
                         break;
                     case VToken.OrderSelect:
+                        _viewModelLocator.OrderSelect.SetKeyProeprties(model.NavigateFrom, model.NavigateFrom);
+                        _viewLocator.OrderSelect.DataContext = _viewModelLocator.OrderSelect;
                         GoTo(_viewLocator.OrderSelect);
                         break;
                     case VToken.OrderCheck:
@@ -210,6 +212,12 @@ namespace PMSClient
                         break;
                     case VToken.MaterialNeedEdit:
                         _viewModelLocator.MaterialNeedEdit.SetKeyProperties(model.MsgModel);
+                        _viewLocator.MaterialNeedEdit.DataContext = _viewModelLocator.MaterialNeedEdit;
+                        GoTo(_viewLocator.MaterialNeedEdit);
+                        break;
+                    case VToken.MaterialNeedEdit2:
+                        //选择Order后，更改现有VM
+                        _viewModelLocator.MaterialNeedEdit.SetKeyProperties(model.MsgModel.Model as DcOrder);
                         _viewLocator.MaterialNeedEdit.DataContext = _viewModelLocator.MaterialNeedEdit;
                         GoTo(_viewLocator.MaterialNeedEdit);
                         break;

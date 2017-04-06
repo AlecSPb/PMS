@@ -123,7 +123,7 @@ namespace PMSClient.ViewModel
         private void ActionEditItem(DcRecordDeliveryItem obj)
         {
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.RecordDeliveryItemEdit;
+            msg.NavigateTo = VToken.RecordDeliveryItemEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
@@ -133,7 +133,7 @@ namespace PMSClient.ViewModel
         {
             //传递RecordDelivery到RecordTestSelect
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.RecordTestSelect;
+            msg.NavigateTo = VToken.RecordTestSelect;
             msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
             NavigationService.GoTo(msg);
         }
@@ -156,7 +156,7 @@ namespace PMSClient.ViewModel
             model.Country = "USA";
 
             MsgObject msg = new PMSClient.MsgObject();
-            msg.MsgToken = VToken.RecordDeliveryEdit;
+            msg.NavigateTo = VToken.RecordDeliveryEdit;
             msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }
@@ -164,7 +164,7 @@ namespace PMSClient.ViewModel
         private void ActionEdit(DcRecordDelivery obj)
         {
             MsgObject msg = new PMSClient.MsgObject();
-            msg.MsgToken = VToken.RecordDeliveryEdit;
+            msg.NavigateTo = VToken.RecordDeliveryEdit;
             msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
             NavigationService.GoTo(msg);
         }

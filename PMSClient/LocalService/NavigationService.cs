@@ -17,12 +17,12 @@ namespace PMSClient
 
         public static void GoTo(VToken token)
         {
-            GoTo(new MsgObject() { MsgToken = token });
+            GoTo(new MsgObject() { NavigateTo = token });
         }
 
         public static void GoTo(VToken token, ModelObject model)
         {
-            GoTo(new MsgObject() { MsgToken = token, MsgModel = model });
+            GoTo(new MsgObject() { NavigateTo = token, MsgModel = model });
         }
         public static void ShowStatusMessage(string msg = "状态信息")
         {

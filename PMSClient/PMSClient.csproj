@@ -313,8 +313,7 @@
     <Compile Include="ViewModel\OrderCheckEditVM.cs" />
     <Compile Include="ViewModel\OrderCheckVM.cs" />
     <Compile Include="ViewModel\OrderEditVM.cs" />
-    <Compile Include="ViewModel\OrderSelectBaseVM.cs" />
-    <Compile Include="ViewModel\OrderSelectMaterialNeedVM.cs" />
+    <Compile Include="ViewModel\OrderSelectVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />

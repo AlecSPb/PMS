@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.MaterialOrder }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
                 item.Weight = need.Weight;
 
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VToken.MaterialOrderItemEdit;
+                msg.NavigateTo = VToken.MaterialOrderItemEdit;
                 msg.MsgModel = new ModelObject() { IsNew = true, Model = item };
                 NavigationService.GoTo(msg);
             }

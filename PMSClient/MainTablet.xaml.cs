@@ -65,9 +65,9 @@ namespace PMSClient
             try
             {
                 //log
-                PMSHelper.CurrentLog.Log(model.MsgToken.ToString());
+                PMSHelper.CurrentLog.Log(model.NavigateTo.ToString());
 
-                switch (model.MsgToken)
+                switch (model.NavigateTo)
                 {
                     case VToken.Navigation:
                         GoTo(_viewLocator.Navigation);

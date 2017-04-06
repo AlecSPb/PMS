@@ -59,7 +59,7 @@ namespace PMSClient.ViewModel
         private void ActionEdit(DcRecordTest obj)
         {
             MsgObject msg = new PMSClient.MsgObject();
-            msg.MsgToken = VToken.RecordTestEdit;
+            msg.NavigateTo = VToken.RecordTestEdit;
             msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = obj };
 
             NavigationService.GoTo(msg);
@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.PlanSelectForTest });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.PlanSelectForTest });
         }
 
         private void InitializeProperties()

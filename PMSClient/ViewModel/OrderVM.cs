@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcOrder>(order =>
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VToken.OrderEdit;
+                msg.NavigateTo = VToken.OrderEdit;
                 msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = order };
                 NavigationService.GoTo(msg);
             });
@@ -67,7 +67,7 @@ namespace PMSClient.ViewModel
                 order.DeadLine = DateTime.Now.AddDays(30);
 
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VToken.OrderEdit;
+                msg.NavigateTo = VToken.OrderEdit;
                 msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = order };
                 NavigationService.GoTo(msg);
             }
@@ -78,7 +78,7 @@ namespace PMSClient.ViewModel
             var dcOrder = EmptyModel.GetOrder();
 
             MsgObject msg = new MsgObject();
-            msg.MsgToken = VToken.OrderEdit;
+            msg.NavigateTo = VToken.OrderEdit;
             msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = dcOrder };
             NavigationService.GoTo(msg);
 

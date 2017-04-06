@@ -23,7 +23,7 @@ namespace PMSClient.ViewModel
             testTypes.ToList().ForEach(t => TestTypes.Add(t));
 
 
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTest }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordTest }));
 
             Save = new RelayCommand(ActionSave);
         }
@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
                 service.UpdateRecordTest(CurrentRecordTest);
             }
 
-            NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordTest });
+            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordTest });
         }
         public ObservableCollection<string> TestTypes { get; set; }
         public ObservableCollection<string> States { get; set; }

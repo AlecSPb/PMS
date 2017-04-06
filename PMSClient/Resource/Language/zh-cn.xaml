@@ -238,6 +238,9 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
+    <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
+    <sys:String x:Key="ButtonSelectVHPPlan">选择计划安排</sys:String>
+    <sys:String x:Key="ButtonSelectTest">选择测试结果</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>

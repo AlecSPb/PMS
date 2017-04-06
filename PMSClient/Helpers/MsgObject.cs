@@ -13,12 +13,14 @@ namespace PMSClient
     {
         public MsgObject()
         {
-            MsgToken = VToken.Navigation;
+            NavigateTo = VToken.Navigation;
             StringMessage = "";
         }
-        public VToken MsgToken { get; set; }
+        public VToken NavigateTo { get; set; }
+        public VToken NavigateFrom { get; set; }
         public ModelObject MsgModel { get; set; }
         public string StringMessage { get; set; }
+
 
         ////后期去除
         //public object ModelObject { get; set; }
@@ -33,7 +35,7 @@ namespace PMSClient
         {
 
         }
-        public ModelObject(bool isNew,object model)
+        public ModelObject(bool isNew, object model)
         {
             IsNew = isNew;
             Model = model;

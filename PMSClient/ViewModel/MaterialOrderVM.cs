@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VToken.MaterialOrderItemEdit;
+                msg.NavigateTo = VToken.MaterialOrderItemEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -96,7 +96,7 @@ namespace PMSClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VToken.MaterialNeedSelect;
+                msg.NavigateTo = VToken.MaterialNeedSelect;
                 msg.MsgModel = new ModelObject() { Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -107,7 +107,7 @@ namespace PMSClient.ViewModel
             if (obj != null)
             {
                 MsgObject msg = new PMSClient.MsgObject();
-                msg.MsgToken = VToken.MaterialOrderEdit;
+                msg.NavigateTo = VToken.MaterialOrderEdit;
                 msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = obj };
                 NavigationService.GoTo(msg);
             }
@@ -118,7 +118,7 @@ namespace PMSClient.ViewModel
 
             var model = EmptyModel.GetMaterialOrder();
             MsgObject msg = new PMSClient.MsgObject();
-            msg.MsgToken = VToken.MaterialOrderEdit;
+            msg.NavigateTo = VToken.MaterialOrderEdit;
             msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = model };
             NavigationService.GoTo(msg);
         }

@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(() =>
             {
-                NavigationService.GoTo(new MsgObject() { MsgToken = VToken.RecordDelivery });
+                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery });
                 NavigationService.Refresh(VToken.RecordDeliveryRefresh);
             });
             PageChanged = new RelayCommand(ActionPaging);
@@ -56,7 +56,7 @@ namespace PMSClient.ViewModel
             item.DetailRecord = "";
             item.Remark = "";
 
-            msg.MsgToken = VToken.RecordDeliveryItemEdit;
+            msg.NavigateTo = VToken.RecordDeliveryItemEdit;
             msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }
@@ -91,7 +91,7 @@ namespace PMSClient.ViewModel
             item.DetailRecord = "";
             item.Remark = "";
 
-            msg.MsgToken = VToken.RecordDeliveryItemEdit;
+            msg.NavigateTo = VToken.RecordDeliveryItemEdit;
             msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = item };
             NavigationService.GoTo(msg);
         }

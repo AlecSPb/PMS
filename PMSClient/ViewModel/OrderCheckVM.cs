@@ -58,7 +58,7 @@ namespace PMSClient.ViewModel
             if (order != null)
             {
                 MsgObject msg = new MsgObject();
-                msg.MsgToken = VToken.OrderCheckEdit;
+                msg.NavigateTo = VToken.OrderCheckEdit;
                 msg.MsgModel = new ModelObject() { IsNew = false, Model = order };
                 NavigationService.GoTo(msg);
             }
