@@ -42,7 +42,7 @@ namespace PMSClient
             NavigateTo(_views.LogIn);
 
             RefreshLogInformation();
-            this.BringIntoView();
+            //this.BringIntoView();
         }
 
         private void ActionNavigation(PMSViews token)
@@ -89,6 +89,15 @@ namespace PMSClient
                     break;
                 case PMSViews.MaterialOrderItemEdit:
                     NavigateTo(_views.MaterialOrderItemEdit);
+                    break;
+                case PMSViews.Misson:
+                    NavigateTo(_views.Misson);
+                    break;
+                case PMSViews.Plan:
+                    NavigateTo(_views.Plan);
+                    break;
+                case PMSViews.PlanEdit:
+                    NavigateTo(_views.PlanEdit);
                     break;
                 default:
                     break;

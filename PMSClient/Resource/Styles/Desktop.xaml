@@ -150,6 +150,8 @@
     <Style x:Key="ListBoxBasic" TargetType="ListBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
     </Style>
+    
+    <!--DG-->
     <Style x:Key="DataGridBasic" TargetType="DataGrid">
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="IsReadOnly" Value="True"/>
@@ -159,5 +161,17 @@
         <Setter Property="CanUserSortColumns" Value="False"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
     </Style>
-
+    <Style x:Key="DGTextBlockBasic" TargetType="TextBlock">
+        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="DGTextBlockLeft" TargetType="TextBlock" BasedOn="{StaticResource TDGextBlockBasic}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="DGTextBlockCenter" TargetType="TextBlock" BasedOn="{StaticResource DGextBlockBasic}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="DGTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource DGTextBlockBasic}">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
 </ResourceDictionary>

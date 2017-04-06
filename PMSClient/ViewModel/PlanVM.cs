@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson }));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
             Refresh = new RelayCommand(ActionRefresh);
 
             PageChanged = new RelayCommand(ActionPaging);

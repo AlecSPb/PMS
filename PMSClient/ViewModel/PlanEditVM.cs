@@ -25,6 +25,61 @@ namespace PMSClient.ViewModel
             CurrentPlan = msg.Model as DcPlanVHP;
             IsNew = msg.IsNew;
         }
+        public void SetNew(DcOrder order)
+        {
+            if (order==null)
+            {
+                return;
+            }
+            IsNew = true;
+            #region 新建初始化
+            var plan = new DcPlanVHP();
+            plan.ID = Guid.NewGuid();
+            plan.OrderID = order.ID;
+            plan.PlanDate = DateTime.Now.Date;
+            plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            plan.MoldType = "GQ";
+            plan.VHPDeviceCode = "A";
+            plan.Temperature = 0;
+            plan.Pressure = 0;
+            plan.Vaccum = 0;
+            plan.ProcessCode = "W1";
+            plan.PrePressure = 0;
+            plan.PreTemperature = 25;
+            plan.Quantity = 1;
+            plan.MoldDiameter = 230;
+            plan.Thickness = 5;
+            plan.CreateTime = DateTime.Now;
+            plan.State = PMSCommon.CommonState.UnChecked.ToString();
+            plan.CalculationDensity = 5.75;
+            plan.GrainSize = "-200";
+            plan.RoomHumidity = 70;
+            plan.RoomTemperature = 23;
+            plan.KeepTempTime = 120;
+            plan.MillingRequirement = "常规要求";
+            plan.MachineRequirement = "常规要求";
+            plan.FillingRequirement = "常规要求";
+            plan.SpecialRequirement = "无";
+            #endregion
+            CurrentPlan = plan;
+        }
+        public void SetEdit(DcPlanVHP plan)
+        {
+            if (plan != null)
+            {
+                IsNew = false;
+                CurrentPlan = plan;
+            }
+        }
+
+        public void SetDuplicate(DcPlanVHP plan)
+        {
+            if (plan != null)
+            {
+                IsNew = true;
+                CurrentPlan = plan;
+            }
+        }
 
         private void InitializeProperties()
         {
@@ -70,8 +125,7 @@ namespace PMSClient.ViewModel
                     service.UpdateVHPPlan(CurrentPlan);
                 }
 
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson });
-                NavigationService.Refresh(VToken.MissonRefresh);
+                NavigationService.GoTo(PMSViews.Misson);
             }
             catch (Exception ex)
             {
@@ -81,7 +135,7 @@ namespace PMSClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson });
+            NavigationService.GoTo(PMSViews.Misson);
         }
         public ObservableCollection<DcBDVHPMold> Molds { get; set; }
         public ObservableCollection<string> States { get; set; }

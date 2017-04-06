@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1100">
+             d:DesignHeight="800" d:DesignWidth="1100" DataContext="{Binding Source={StaticResource Locator},Path=PlanEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>

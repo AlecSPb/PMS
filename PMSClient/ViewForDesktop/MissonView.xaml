@@ -8,13 +8,10 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200">
+             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=Misson}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <UserControl.DataContext>
-        <vm:MissonVM/>
-    </UserControl.DataContext>
     <Grid Background="{StaticResource BackgroundWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -48,7 +45,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Plans">
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -157,7 +154,7 @@
 
         <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding PlanVHPs}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Edit">
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

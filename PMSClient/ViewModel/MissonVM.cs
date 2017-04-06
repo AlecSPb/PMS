@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Plan }));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
 
 
             PageChanged = new RelayCommand(ActionPaging);
@@ -66,29 +66,25 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionDuplicatePlan(DcPlanVHP obj)
+        private void ActionDuplicatePlan(DcPlanVHP plan)
         {
-            if (obj != null)
+            if (plan != null)
             {
-                obj.ID = Guid.NewGuid();
-                obj.CreateTime = DateTime.Now;
-                obj.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                
-                var msg = new MsgObject();
-                msg.NavigateTo = VToken.PlanEdit;
-                msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
-                NavigationService.GoTo(msg);
+                plan.ID = Guid.NewGuid();
+                plan.CreateTime = DateTime.Now;
+                plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+
+                PMSHelper.ViewModels.PlanEdit.SetDuplicate(plan);
+                NavigationService.GoTo(PMSViews.PlanEdit);
             }
         }
 
-        private void ActionEditPlan(DcPlanVHP obj)
+        private void ActionEditPlan(DcPlanVHP plan)
         {
-            if (obj != null)
+            if (plan != null)
             {
-                var msg = new MsgObject();
-                msg.NavigateTo = VToken.PlanEdit;
-                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.PlanEdit.SetEdit(plan);
+                NavigationService.GoTo(PMSViews.PlanEdit);
             }
         }
 
@@ -96,12 +92,8 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-
-                var plan = EmptyModel.GetPlanVHP(order);
-                var msg = new MsgObject();
-                msg.NavigateTo = VToken.PlanEdit;
-                msg.MsgModel = new ModelObject() { IsNew = true, Model = plan };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.PlanEdit.SetNew(order);
+                NavigationService.GoTo(PMSViews.PlanEdit);
             }
         }
 

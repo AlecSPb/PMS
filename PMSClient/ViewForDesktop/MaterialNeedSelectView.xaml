@@ -20,7 +20,7 @@
         <TextBlock Text="{StaticResource strPageMaterialNeedSelect}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
-            <TextBlock Text="CompositionStd" Style="{StaticResource  TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource MNComposition}" Style="{StaticResource  TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
