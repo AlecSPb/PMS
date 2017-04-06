@@ -122,11 +122,11 @@
                 
                 
                 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="Creator"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOICreator}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="CreateTime"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOICreateTime}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
                             HorizontalAlignment="Stretch"/>

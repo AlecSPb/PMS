@@ -23,11 +23,11 @@ namespace PMSClient
             _tabletViews = new TabletViewLocator();
             _viewModels = (App.Current as App).FindResource("Locator") as ViewModelLocator;
         }
-        public static LogInformation CurrentLogInformation
+        public static LogInformation CurrentSession
         {
             get
             {
-                return _currentApp.CurrentLogInformation;
+                return _currentApp.CurrentSession;
             }
         }
         public static ILog CurrentLog

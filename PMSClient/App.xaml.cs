@@ -38,7 +38,7 @@ namespace PMSClient
 
         public DcUser CurrentUser { get; set; }
         private LogInformation _logInformation;
-        public LogInformation CurrentLogInformation
+        public LogInformation CurrentSession
         {
             get { return _logInformation; }
         }

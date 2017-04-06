@@ -43,7 +43,7 @@ namespace PMSClient.ViewForDesktop
             }
             try
             {
-                var logInformation = PMSHelper.CurrentLogInformation;
+                var logInformation = PMSHelper.CurrentSession;
                 logInformation.LogIn(uid, pwd);
 
                 if (logInformation.CurrentUser != null)

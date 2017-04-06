@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
             {
                 obj.ID = Guid.NewGuid();
                 obj.CreateTime = DateTime.Now;
-                obj.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+                obj.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 
                 var msg = new MsgObject();
                 msg.NavigateTo = VToken.PlanEdit;

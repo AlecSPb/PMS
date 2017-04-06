@@ -16,7 +16,7 @@ namespace PMSClient.ViewModel
         public NavigationVM()
         {
             InitialCommands();
-            _session = PMSHelper.CurrentLogInformation;
+            _session = PMSHelper.CurrentSession;
         }
 
 

@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             var empty = new DcMaterialNeed();
             empty.Id = Guid.NewGuid();
             empty.CreateTime = DateTime.Now;
-            empty.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+            empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
             empty.Composition = "需求原料成分";
             empty.PMINumber = DateTime.Now.ToString("yyMMdd");

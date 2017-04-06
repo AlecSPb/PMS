@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.State = PMSCommon.OrderState.UnChecked.ToString();
-            model.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.Supplier = "Sanjie";
             model.SupplierAbbr = "SJ";
             model.SupplierEmail = "sj_materials@163.com";

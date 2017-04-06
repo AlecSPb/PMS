@@ -30,7 +30,7 @@ namespace PMSClient.Helper
             _logfile = Path.Combine(_logdir, $"mainlog{DateTime.Now.ToString("yyMMdd")}.txt");
             _errorfile = Path.Combine(_errordir, $"mainerror{ DateTime.Now.ToString("yyMMdd")}.txt");
 
-            _currentUser = PMSHelper.CurrentLogInformation;
+            _currentUser = PMSHelper.CurrentSession;
         }
         public void Log(string message)
         {
