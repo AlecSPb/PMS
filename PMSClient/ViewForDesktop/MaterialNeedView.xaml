@@ -28,7 +28,7 @@
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainMaterialNeeds}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Edit">
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

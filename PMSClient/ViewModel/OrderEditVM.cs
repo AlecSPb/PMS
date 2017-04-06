@@ -57,6 +57,7 @@ namespace PMSClient.ViewModel
         {
             IsNew = true;
             var order = new DcOrder();
+            #region 初始化order
             order.ID = Guid.NewGuid();
             order.CustomerName = "Midsummer";
             order.PO = DateTime.Now.ToString("yyMMdd");
@@ -86,6 +87,7 @@ namespace PMSClient.ViewModel
             order.ReviewPassed = true;
             order.Quantity = 1;
             order.QuantityUnit = "片";
+            #endregion
             CurrentOrder = order;
         }
         public void SetEdit(DcOrder order)

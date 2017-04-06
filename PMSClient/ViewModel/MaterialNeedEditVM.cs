@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetFillBySelect(DcOrder order)
+        public void SetBySelect(DcOrder order)
         {
             if (order != null)
             {

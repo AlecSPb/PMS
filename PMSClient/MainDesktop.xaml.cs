@@ -77,6 +77,9 @@ namespace PMSClient
                 case PMSViews.MaterialNeedEdit:
                     NavigateTo(_views.MaterialNeedEdit);
                     break;
+                case PMSViews.MaterialNeedSelect:
+                    NavigateTo(_views.MaterialNeedSelect);
+                    break;
                 case PMSViews.MaterialOrder:
                     NavigateTo(_views.MaterialOrder);
                     break;

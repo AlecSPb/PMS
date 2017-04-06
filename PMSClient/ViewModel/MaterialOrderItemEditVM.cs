@@ -26,10 +26,64 @@ namespace PMSClient.ViewModel
             CurrentMaterialOrderItem = model.Model as DcMaterialOrderItem;
         }
 
+        public void SetNew(DcMaterialOrder order)
+        {
+            if (order != null)
+            {
+                IsNew = true;
+
+                var item = new DcMaterialOrderItem();
+                item.ID = Guid.NewGuid();
+                item.MaterialOrderID = order.ID;
+                item.State = PMSCommon.SimpleState.UnDeleted.ToString();
+                item.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+                item.CreateTime = DateTime.Now;
+                item.Composition = "需求成分";
+                item.PMINumber = DateTime.Now.ToString("yyMMdd");
+                item.Purity = "5N";
+                item.Description = "";
+                item.ProvideRawMaterial = "";
+                item.UnitPrice = 0;
+                item.Weight = 0;
+                item.DeliveryDate = DateTime.Now.AddDays(7);
+
+                CurrentMaterialOrderItem = item;
+            }
+
+        }
+
+        public void SetEdit(DcMaterialOrderItem item)
+        {
+            if (item != null)
+            {
+                IsNew = false;
+                CurrentMaterialOrderItem = item;
+            }
+        }
+
+        public void SetBySelect(DcMaterialNeed need)
+        {
+            if (need != null)
+            {
+                CurrentMaterialOrderItem.Composition = need.Composition;
+                CurrentMaterialOrderItem.PMINumber = need.PMINumber;
+                CurrentMaterialOrderItem.Weight = need.Weight;
+                RaisePropertyChanged(nameof(CurrentMaterialOrderItem));
+            }
+        }
+
+
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder));
             Save = new RelayCommand(ActionSave);
+            Select = new RelayCommand(ActionSelect);
+        }
+
+        private void ActionSelect()
+        {
+            PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialOrderItemEdit);
+            NavigationService.GoTo(PMSViews.MaterialNeedSelect);
         }
 
         private void ActionSave()
@@ -43,10 +97,23 @@ namespace PMSClient.ViewModel
             {
                 service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
             }
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder });
-            NavigationService.Refresh(VToken.MaterialOrderItemRefresh);
+            NavigationService.GoTo(PMSViews.MaterialOrder);
         }
         public ObservableCollection<string> OrderStates { get; set; }
-        public DcMaterialOrderItem CurrentMaterialOrderItem { get; set; }
+
+        private DcMaterialOrderItem currentMaterialOrderItem;
+        public DcMaterialOrderItem CurrentMaterialOrderItem
+        {
+            get { return currentMaterialOrderItem; }
+            set
+            {
+                Set(ref currentMaterialOrderItem, value);
+            }
+        }
+
+        public RelayCommand Select { get; set; }
+
+
+
     }
 }

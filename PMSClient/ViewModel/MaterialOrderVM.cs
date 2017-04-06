@@ -21,21 +21,9 @@ namespace PMSClient.ViewModel
     {
         public MaterialOrderVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.MaterialOrderRefresh, ActionRefresh);
-            Messenger.Default.Register<MsgObject>(this, VToken.MaterialOrderItemRefresh, ActionRefreshItems);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
-        }
-
-        private void ActionRefresh(MsgObject obj)
-        {
-            SetPageParametersWhenConditionChange();
-        }
-
-        private void ActionRefreshItems(MsgObject obj)
-        {
-            ActionSelectionChanged(CurrentSelectItem);
         }
         public override void Cleanup()
         {
@@ -80,52 +68,43 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionEditItem(DcMaterialOrderItem obj)
+        private void ActionEditItem(DcMaterialOrderItem item)
         {
-            if (obj != null)
+            if (item != null)
             {
-                MsgObject msg = new MsgObject();
-                msg.NavigateTo = VToken.MaterialOrderItemEdit;
-                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.MaterialOrderItemEdit.SetEdit(item);
+                NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
             }
         }
 
-        private void ActionAddItem(DcMaterialOrder obj)
+        private void ActionAddItem(DcMaterialOrder order)
         {
-            if (obj != null)
+            if (order != null)
             {
-                MsgObject msg = new MsgObject();
-                msg.NavigateTo = VToken.MaterialNeedSelect;
-                msg.MsgModel = new ModelObject() { Model = obj };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.MaterialOrderItemEdit.SetNew(order);
+                NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
             }
         }
 
-        private void ActionEdit(DcMaterialOrder obj)
+        private void ActionEdit(DcMaterialOrder order)
         {
-            if (obj != null)
+            if (order != null)
             {
-                MsgObject msg = new PMSClient.MsgObject();
-                msg.NavigateTo = VToken.MaterialOrderEdit;
-                msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = obj };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.MaterialOrderEdit.SetEdit(order);
+                NavigationService.GoTo(PMSViews.MaterialOrderEdit);
             }
         }
 
         private void ActionAdd()
         {
-
-            var model = EmptyModel.GetMaterialOrder();
-            MsgObject msg = new PMSClient.MsgObject();
-            msg.NavigateTo = VToken.MaterialOrderEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = model };
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.MaterialOrderEdit.SetNew();
+            NavigationService.GoTo(PMSViews.MaterialOrderEdit);
         }
 
         private void ActionGenerateDoc(DcMaterialOrder args)
         {
-            if (MessageBox.Show("Do you want to create doc in desktop?", "Ask", MessageBoxButton.YesNo, MessageBoxImage.Information)
+            if (MessageBox.Show("Do you want to create doc in desktop?", "Ask",
+                MessageBoxButton.YesNo, MessageBoxImage.Information)
                 == MessageBoxResult.No)
             {
                 return;

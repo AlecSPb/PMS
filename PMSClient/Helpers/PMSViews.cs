@@ -19,6 +19,7 @@ namespace PMSClient
         OrderCheckEdit,
         MaterialNeed,
         MaterialNeedEdit,
+        MaterialNeedSelect,
         MaterialOrder,
         MaterialOrderEdit,
         MaterialOrderItemEdit,

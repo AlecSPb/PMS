@@ -41,7 +41,7 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.MaterialNeedEdit:
-                        PMSHelper.ViewModels.MaterialNeedEdit.SetFillBySelect(order);
+                        PMSHelper.ViewModels.MaterialNeedEdit.SetBySelect(order);
                         break;
                     default:
                         break;

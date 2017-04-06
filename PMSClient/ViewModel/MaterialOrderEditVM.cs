@@ -19,10 +19,34 @@ namespace PMSClient.ViewModel
             InitializeProperties();
             InitialCommmands();
         }
-        public void SetKeyProperties(ModelObject model)
+
+        public void SetNew()
         {
-            IsNew = model.IsNew;
-            CurrentMaterialOrder = model.Model as DcMaterialOrder;
+            var model = new DcMaterialOrder();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.State = PMSCommon.OrderState.UnChecked.ToString();
+            model.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+            model.Supplier = "Sanjie";
+            model.SupplierAbbr = "SJ";
+            model.SupplierEmail = "sj_materials@163.com";
+            model.SupplierReceiver = "Mr.Wang";
+            model.SupplierAddress = "Chengdu,Sichuan CHINA";
+            model.ShipFee = 0;
+            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
+            model.Remark = "";
+            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
+
+            IsNew = true;
+            CurrentMaterialOrder = model;
+        }
+        public void SetEdit(DcMaterialOrder model)
+        {
+            if (model != null)
+            {
+                IsNew = false;
+                CurrentMaterialOrder = model;
+            }
         }
 
         private void InitializeProperties()
@@ -44,7 +68,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder));
             Save = new RelayCommand(ActionSave);
         }
 
@@ -59,13 +83,21 @@ namespace PMSClient.ViewModel
             {
                 service.UpdateMaterialOrder(CurrentMaterialOrder);
             }
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder });
-            NavigationService.Refresh(VToken.MaterialOrderRefresh);
+            NavigationService.GoTo(PMSViews.MaterialOrder);
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }
         public ObservableCollection<DcBDSupplier> Suppliers { get; set; }
 
-        public DcMaterialOrder CurrentMaterialOrder { get; set; }
+        private DcMaterialOrder currentMaterialOrder;
+        public DcMaterialOrder CurrentMaterialOrder
+        {
+            get { return currentMaterialOrder; }
+            set
+            {
+                currentMaterialOrder = value;
+                RaisePropertyChanged(nameof(CurrentMaterialOrder));
+            }
+        }
     }
 }

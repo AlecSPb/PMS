@@ -240,7 +240,9 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
+    
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">选择计划安排</sys:String>
     <sys:String x:Key="ButtonSelectTest">选择测试结果</sys:String>
 
@@ -333,7 +335,7 @@
     <sys:String x:Key="MNWeight">重量</sys:String>
     <sys:String x:Key="MNSupplier">供应商</sys:String>
     <sys:String x:Key="MNSpecialNeeds">特殊要求</sys:String>
-    <sys:String x:Key="MNPMINumber">工作号</sys:String>
+    <sys:String x:Key="MNPMINumber">内部编号</sys:String>
 
     <!--MaterialOrder-->
     <sys:String x:Key="MOState">状态</sys:String>
@@ -341,10 +343,10 @@
     <sys:String x:Key="MOCreateTime">创建时间</sys:String>
     <sys:String x:Key="MOOrderPO">订单PO</sys:String>
     <sys:String x:Key="MOSupplier">供应商</sys:String>
-    <sys:String x:Key="MOSupplierAbbr">供应商缩写</sys:String>
-    <sys:String x:Key="MOSupplierReceiver">供应商联系人</sys:String>
-    <sys:String x:Key="MOSupplierEmail">供应商电子邮件</sys:String>
-    <sys:String x:Key="MOSupplierAddress">供应商号码</sys:String>
+    <sys:String x:Key="MOSupplierAbbr">缩写</sys:String>
+    <sys:String x:Key="MOSupplierReceiver">联系人</sys:String>
+    <sys:String x:Key="MOSupplierEmail">电子邮件</sys:String>
+    <sys:String x:Key="MOSupplierAddress">地址</sys:String>
     <sys:String x:Key="MORemark">备注</sys:String>
     <sys:String x:Key="MOShipFee">运输费</sys:String>
     <sys:String x:Key="MOPriority">优先级</sys:String>
@@ -355,7 +357,7 @@
     <sys:String x:Key="MOIState">状态</sys:String>
     <sys:String x:Key="MOICreator">创建者</sys:String>
     <sys:String x:Key="MOICreateTime">创建时间</sys:String>
-    <sys:String x:Key="MOIPMINumber">工作牌</sys:String>
+    <sys:String x:Key="MOIPMINumber">内部编号</sys:String>
     <sys:String x:Key="MOIComposition">成分</sys:String>
     <sys:String x:Key="MOIPurity">纯度</sys:String>
     <sys:String x:Key="MOIDescription">描述</sys:String>

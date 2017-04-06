@@ -12,20 +12,20 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialNeedSelectVM : ViewModelBase
+    public class MaterialNeedSelectVM : BaseViewModelPage
     {
-        private bool isNew;
-        private DcMaterialOrderItem item;
-        public MaterialNeedSelectVM(ModelObject model)
+
+        public MaterialNeedSelectVM()
         {
-            isNew = model.IsNew;
-            var order = model.Model as DcMaterialOrder;
-            item = EmptyModel.GetMaterialOrderItemBy(order);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
-
+        private PMSViews requestView;
+        public void SetRequestView(PMSViews viewToken)
+        {
+            requestView = viewToken;
+        }
 
         private void InitializeProperties()
         {
@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
@@ -48,15 +48,15 @@ namespace PMSClient.ViewModel
         {
             if (need != null)
             {
-                item.Composition = need.Composition;
-                item.PMINumber = need.PMINumber;
-                item.Purity = need.Purity;
-                item.Weight = need.Weight;
-
-                MsgObject msg = new MsgObject();
-                msg.NavigateTo = VToken.MaterialOrderItemEdit;
-                msg.MsgModel = new ModelObject() { IsNew = true, Model = item };
-                NavigationService.GoTo(msg);
+                switch (requestView)
+                {
+                    case PMSViews.MaterialOrderItemEdit:
+                        PMSHelper.ViewModels.MaterialOrderItemEdit.SetBySelect(need);
+                        break;
+                    default:
+                        break;
+                }       
+                NavigationService.GoTo(requestView);
             }
         }
 
@@ -99,41 +99,6 @@ namespace PMSClient.ViewModel
         }
 
 
-        #region PagingProperties
-        private int pageIndex;
-        public int PageIndex
-        {
-            get { return pageIndex; }
-            set
-            {
-                pageIndex = value;
-                RaisePropertyChanged(nameof(PageIndex));
-            }
-        }
-
-        private int pageSize;
-        public int PageSize
-        {
-            get { return pageSize; }
-            set
-            {
-                pageSize = value;
-                RaisePropertyChanged(nameof(PageSize));
-            }
-        }
-
-        private int recordCount;
-        public int RecordCount
-        {
-            get { return recordCount; }
-            set
-            {
-                recordCount = value;
-                RaisePropertyChanged(nameof(RecordCount));
-            }
-        }
-        #endregion
-
         #region Proeperties
         private string searchCompositionStandard;
         public string SearchCompositoinStandard
@@ -163,10 +128,7 @@ namespace PMSClient.ViewModel
 
         #region Commands
         public RelayCommand GiveUp { get; private set; }
-        public RelayCommand Search { get; private set; }
-        public RelayCommand All { get; set; }
         public RelayCommand<DcMaterialNeed> Select { get; private set; }
-        public RelayCommand PageChanged { get; private set; }
         #endregion
 
 
