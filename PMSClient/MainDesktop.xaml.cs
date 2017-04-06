@@ -68,6 +68,21 @@ namespace PMSClient
                 case PMSViews.OrderCheckEdit:
                     NavigateTo(_views.OrderCheckEdit);
                     break;
+                case PMSViews.MaterialNeed:
+                    NavigateTo(_views.MaterialNeed);
+                    break;
+                case PMSViews.MaterialNeedEdit:
+                    NavigateTo(_views.MaterialNeedEdit);
+                    break;
+                case PMSViews.MaterialOrder:
+                    NavigateTo(_views.MaterialOrder);
+                    break;
+                case PMSViews.MaterialOrderEdit:
+                    NavigateTo(_views.MaterialOrderEdit);
+                    break;
+                case PMSViews.MaterialOrderItemEdit:
+                    NavigateTo(_views.MaterialOrderItemEdit);
+                    break;
                 default:
                     break;
             }
@@ -300,27 +315,27 @@ namespace PMSClient
             base.OnClosing(e);
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+        //private void btnClose_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
 
-        private void btnMaximum_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == WindowState.Maximized)
-            {
-                this.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = WindowState.Maximized;
-            }
-        }
+        //private void btnMaximum_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (this.WindowState == WindowState.Maximized)
+        //    {
+        //        this.WindowState = WindowState.Normal;
+        //    }
+        //    else
+        //    {
+        //        this.WindowState = WindowState.Maximized;
+        //    }
+        //}
 
-        private void btnMiinimum_Click(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = WindowState.Minimized;
-        }
+        //private void btnMiinimum_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.WindowState = WindowState.Minimized;
+        //}
 
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

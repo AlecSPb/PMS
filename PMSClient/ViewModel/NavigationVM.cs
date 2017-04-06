@@ -12,11 +12,11 @@ namespace PMSClient.ViewModel
 {
     public class NavigationVM : ViewModelBase
     {
-        private LogInformation _logIn;
+        private LogInformation _session;
         public NavigationVM()
         {
             InitialCommands();
-            _logIn = PMSHelper.CurrentLogInformation;
+            _session = PMSHelper.CurrentLogInformation;
         }
 
 
@@ -30,35 +30,24 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GoToOrder = new RelayCommand(ActionOrder, CanOrder);
-            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck));
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Misson }));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.Plan }));
+            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized("000001"));
+            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck), () => _session.IsAuthorized("000003"));
 
-            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialNeed }));
-            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialOrder }));
-            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialInventory }));
+            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed), () => _session.IsAuthorized("000004"));
+            GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized("000006"));
+            GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventory), () => _session.IsAuthorized("000008"));
 
-            GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordMilling }));
-            GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordVHP }));
-            GoToDeMoldRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDeMold }));
-            GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordMachine }));
-            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery }));
-            GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordBonding }));
-            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordTest }));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), () => _session.IsAuthorized("000010"));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), () => _session.IsAuthorized("000012"));
 
+            GoToMillingRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling), () => _session.IsAuthorized("000013"));
+            GoToVHPRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHP), () => _session.IsAuthorized("000015"));
+            GoToDeMoldRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordDeMold), () => _session.IsAuthorized("000017"));
+            GoToMachineRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMachine), () => _session.IsAuthorized("000019"));
+            GoToTestResultRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordTest), () => _session.IsAuthorized("000021"));
+            GoToDeliveryRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordDelivery), () => _session.IsAuthorized("000023"));
+            GoToBondingRecord = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordBonding), () => _session.IsAuthorized("000025"));
         }
-
-        private void ActionOrder()
-        {
-            NavigationService.GoTo(PMSViews.Order);
-        }
-
-        private bool CanOrder()
-        {
-            return _logIn.IsAuthorized("000001");
-        }
-
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
         public RelayCommand GoToMisson { get; private set; }
