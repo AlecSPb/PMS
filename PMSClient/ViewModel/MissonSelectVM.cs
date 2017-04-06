@@ -11,11 +11,11 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderSelectVM : BaseViewModelPage
+    public class MissonSelectVM : BaseViewModelPage
     {
         //要转到的页面
 
-        public OrderSelectVM()
+        public MissonSelectVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -23,26 +23,30 @@ namespace PMSClient.ViewModel
             SelectOrder = new RelayCommand<DcOrder>(ActionSelectOrder);
 
         }
-        private VToken sendTo;
+        private PMSViews requestView;
         /// <summary>
-        /// 设置关键值
+        /// 设置请求视图的token，返回或者选择后返回用
         /// </summary>
-        /// <param name="sendTo">发送选择后的对象到</param>
-        /// <param name="giveUp">放弃后回到</param>
-        public void SetKeyProeprties(VToken sendTo, VToken giveUp)
+        /// <param name="request">请求视图的token</param>
+        public void SetRequestView(PMSViews request)
         {
-            this.sendTo = sendTo;
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = giveUp }));
+            requestView = request;
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
         }
 
         private void ActionSelectOrder(DcOrder order)
         {
             if (order != null)
             {
-                var model = new MsgObject();
-                model.NavigateTo = sendTo;
-                model.MsgModel = new ModelObject() { Model = order };
-                NavigationService.GoTo(model);
+                switch (requestView)
+                {
+                    case PMSViews.MaterialNeedEdit:
+                        PMSHelper.ViewModels.MaterialNeedEdit.SetFillBySelect(order);
+                        break;
+                    default:
+                        break;
+                }
+                NavigationService.GoTo(requestView);
             }
         }
         public RelayCommand<DcOrder> SelectOrder { get; set; }
@@ -86,8 +90,8 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new OrderServiceClient();
-            RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
+            var service = new MissonServiceClient();
+            RecordCount = service.GetMissonsCount();
             ActionPaging();
         }
         /// <summary>
@@ -95,11 +99,11 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new OrderServiceClient();
+            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+            var orders = service.GetMissons(skip, take);
             MainOrders.Clear();
             orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
         }

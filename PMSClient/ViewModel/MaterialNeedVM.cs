@@ -16,7 +16,6 @@ namespace PMSClient.ViewModel
     {
         public MaterialNeedVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.MaterialNeedRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -44,40 +43,25 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
 
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<MainService.DcMaterialNeed>(ActionEdit);
+            Edit = new RelayCommand<DcMaterialNeed>(ActionEdit);
 
 
 
         }
 
-        private void ActionEdit(DcMaterialNeed obj)
+        private void ActionEdit(DcMaterialNeed model)
         {
-            if (obj != null)
+            if (model != null)
             {
-                MsgObject msg = new PMSClient.MsgObject();
-                msg.NavigateTo = VToken.MaterialNeedEdit;
-                msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
-
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.MaterialNeedEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.MaterialNeedEdit);
             }
         }
 
         private void ActionAdd()
         {
-
-            var empty = new DcMaterialNeed();
-            empty.Id = Guid.NewGuid();
-            empty.CreateTime = DateTime.Now;
-            empty.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
-            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
-            empty.Composition = "";
-            empty.PMINumber = "";
-            empty.Purity = "5N";
-
-            MsgObject msg = new MsgObject();
-            msg.NavigateTo = VToken.MaterialNeedEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = empty };
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.MaterialNeedEdit.SetNew();
+            NavigationService.GoTo(PMSViews.MaterialNeedEdit);
         }
 
         private bool CanSearch()

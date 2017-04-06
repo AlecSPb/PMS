@@ -207,8 +207,8 @@
     <Compile Include="ViewForDesktop\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\OrderSelectView.xaml.cs">
-      <DependentUpon>OrderSelectView.xaml</DependentUpon>
+    <Compile Include="ViewForDesktop\MissonSelectView.xaml.cs">
+      <DependentUpon>MissonSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
@@ -315,7 +315,7 @@
     <Compile Include="ViewModel\OrderCheckEditVM.cs" />
     <Compile Include="ViewModel\OrderCheckVM.cs" />
     <Compile Include="ViewModel\OrderEditVM.cs" />
-    <Compile Include="ViewModel\OrderSelectVM.cs" />
+    <Compile Include="ViewModel\MissonSelectVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
@@ -446,7 +446,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\OrderSelectView.xaml">
+    <Page Include="ViewForDesktop\MissonSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

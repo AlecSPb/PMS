@@ -176,7 +176,7 @@
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
 
-    <sys:String x:Key="PageMisson">任务</sys:String>
+    <sys:String x:Key="PageMisson">生产任务</sys:String>
     <sys:String x:Key="PagePlan">计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
     <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
@@ -211,6 +211,8 @@
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
+    <sys:String x:Key="PageMissonSelect">请选择一个生产任务项目</sys:String>
+    
     
     <sys:String x:Key="PageMaintenance">维护计划</sys:String>
     <!--Button-->

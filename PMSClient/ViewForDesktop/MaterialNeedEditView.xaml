@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MaterialNeedEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -61,21 +61,21 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="这是来自选择任务的成分，可以自行更改"/>
-                
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="WorkNumber"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="内部工作号"/>
-                
+
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="Purity"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource TextBoxBasic}"
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="需订购原料纯度"/>
-                
+
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Weight"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource TextBoxBasic}"
@@ -90,7 +90,7 @@
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="需订购原料纯度"/>
-                
+
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="State"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
@@ -98,9 +98,9 @@
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="订单状态"/>
-                
-                
-                
+
+
+
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="Creator"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
@@ -109,8 +109,8 @@
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
                             HorizontalAlignment="Stretch"/>
-                
-                
+
+
 
             </Grid>
         </ScrollViewer>

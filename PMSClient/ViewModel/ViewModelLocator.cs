@@ -41,6 +41,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OrderCheckEditVM>();
 
             SimpleIoc.Default.Register<MissonVM>();
+            SimpleIoc.Default.Register<MissonSelectVM>();
+
             SimpleIoc.Default.Register<PlanVM>();
             SimpleIoc.Default.Register<PlanEditVM>();
 
@@ -52,8 +54,6 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MaterialOrderVM>();
             SimpleIoc.Default.Register<MaterialOrderEditVM>();
             SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
-
-            SimpleIoc.Default.Register<OrderSelectVM>();
 
             SimpleIoc.Default.Register<RecordTestVM>();
             SimpleIoc.Default.Register<RecordTestEditVM>();
@@ -94,7 +94,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OrderEditVM>(); }
         }
-
+        public MissonSelectVM MissonSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<MissonSelectVM>(); }
+        }
         public OrderCheckVM OrderCheck
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckVM>(); }
@@ -149,11 +152,6 @@ namespace PMSClient.ViewModel
         public MaterialOrderItemEditVM MaterialOrderItemEdit
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditVM>(); }
-        }
-
-        public OrderSelectVM OrderSelect
-        {
-            get { return SimpleIoc.Default.GetInstance<OrderSelectVM>(); }
         }
 
         public RecordTestVM RecordTest

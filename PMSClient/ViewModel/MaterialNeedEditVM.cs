@@ -9,37 +9,56 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 
+
 namespace PMSClient.ViewModel
 {
     public class MaterialNeedEditVM : BaseViewModelEdit
     {
         public MaterialNeedEditVM()
         {
-            CurrentMaterialNeed = new MainService.DcMaterialNeed() { Id = Guid.NewGuid() };
             InitializeProperties();
             InitialCommands();
         }
-        public void SetKeyProperties(ModelObject msg)
+
+        public void SetNew()
         {
-            IsNew = msg.IsNew;
-            CurrentMaterialNeed = msg.Model as DcMaterialNeed;
+
+            var empty = new DcMaterialNeed();
+            empty.Id = Guid.NewGuid();
+            empty.CreateTime = DateTime.Now;
+            empty.Creator = PMSHelper.CurrentLogInformation.CurrentUser.UserName;
+            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            empty.Composition = "需求原料成分";
+            empty.PMINumber = DateTime.Now.ToString("yyMMdd");
+            empty.Purity = "5N";
+            empty.Weight = 1;
+
+            IsNew = true;
+            CurrentMaterialNeed = empty;
         }
 
-        public void SetKeyProperties(DcOrder selectOrder)
+        public void SetEdit(DcMaterialNeed model)
         {
-            if (selectOrder != null)
+            if (model != null)
             {
-                CurrentMaterialNeed.Composition = selectOrder.CompositionStandard;
-                CurrentMaterialNeed.PMINumber = selectOrder.PMINumber;
-                CurrentMaterialNeed.Purity = selectOrder.Purity;
+                IsNew = false;
+                CurrentMaterialNeed = model;
+            }
+        }
 
+        public void SetFillBySelect(DcOrder order)
+        {
+            if (order != null)
+            {
+                CurrentMaterialNeed.Composition = order.CompositionStandard;
+                CurrentMaterialNeed.PMINumber = order.PMINumber;
                 RaisePropertyChanged(nameof(CurrentMaterialNeed));
             }
-
         }
+
+
         private void InitializeProperties()
         {
-
             States = new ObservableCollection<string>();
             var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => States.Add(s));
@@ -47,17 +66,15 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialNeed }));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }
 
         private void ActionSelect()
         {
-            var msg = new MsgObject();
-            msg.NavigateTo = VToken.OrderSelect;
-            msg.NavigateFrom = VToken.MaterialNeedEdit2;
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.MissonSelect.SetRequestView(PMSViews.MaterialNeedEdit);
+            NavigationService.GoTo(PMSViews.MissonSelect);
         }
 
         private void ActionSave()
@@ -89,7 +106,7 @@ namespace PMSClient.ViewModel
             get { return currentMaterialNeed; }
             set
             {
-                value = currentMaterialNeed;
+                currentMaterialNeed = value;
                 RaisePropertyChanged(nameof(CurrentMaterialNeed));
             }
         }
