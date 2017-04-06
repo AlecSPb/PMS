@@ -101,6 +101,10 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.MaterialOrderEdit);
         }
 
+        /// <summary>
+        /// 生成报告部分
+        /// </summary>
+        /// <param name="args"></param>
         private void ActionGenerateDoc(DcMaterialOrder args)
         {
             if (MessageBox.Show("Do you want to create doc in desktop?", "Ask",
