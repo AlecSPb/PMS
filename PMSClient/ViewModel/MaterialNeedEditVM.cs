@@ -91,8 +91,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialNeed(CurrentMaterialNeed);
                 }
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.MaterialNeed });
-                NavigationService.Refresh(VToken.MaterialNeedRefresh);
+                NavigationService.GoTo(PMSViews.MaterialNeed);
             }
             catch (Exception ex)
             {
