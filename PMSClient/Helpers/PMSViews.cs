@@ -14,6 +14,8 @@ namespace PMSClient
         LogIn,
         Navigation,
         Order,
-        OrderEdit
+        OrderEdit,
+        OrderCheck,
+        OrderCheckEdit
     }
 }

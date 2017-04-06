@@ -17,9 +17,6 @@ namespace PMSClient.ViewModel
     {
         public OrderCheckVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.OrderCheckRefresh, ActionRefresh);
-
-
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -57,10 +54,8 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-                MsgObject msg = new MsgObject();
-                msg.NavigateTo = VToken.OrderCheckEdit;
-                msg.MsgModel = new ModelObject() { IsNew = false, Model = order };
-                NavigationService.GoTo(msg);
+                PMSHelper.ViewModels.OrderCheckEdit.SetEdit(order);
+                NavigationService.GoTo(PMSViews.OrderCheckEdit);
             }
         }
 

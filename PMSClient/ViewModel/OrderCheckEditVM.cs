@@ -18,11 +18,17 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             InitializeProperties();
         }
-        public void SetKeyProperties(ModelObject msg)
+
+        public void SetEdit(DcOrder order)
         {
-            CurrentOrder = msg.Model as DcOrder;
-            IsNew = msg.IsNew;
+            if (order != null)
+            {
+                IsNew = false;
+                CurrentOrder = order;
+            }
         }
+
+
 
         private void InitializeCommands()
         {
@@ -50,7 +56,7 @@ namespace PMSClient.ViewModel
 
         private void ActionGiveUp()
         {
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.OrderCheck });
+            NavigationService.GoTo(PMSViews.OrderCheck);
         }
 
         private bool CanSave()
@@ -71,8 +77,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.OrderCheck });
-                NavigationService.Refresh(VToken.OrderCheckRefresh);
+                NavigationService.GoTo(PMSViews.OrderCheck);
             }
             catch (Exception ex)
             {
