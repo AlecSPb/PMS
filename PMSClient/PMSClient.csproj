@@ -126,6 +126,7 @@
     <Compile Include="Helpers\BasicDataInstance.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
     <Compile Include="Helpers\OK\LocalLog.cs" />
+    <Compile Include="Helpers\PMSViews.cs" />
     <Compile Include="NavigationCollection.cs" />
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
