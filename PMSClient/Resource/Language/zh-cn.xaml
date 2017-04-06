@@ -260,6 +260,10 @@
     <sys:String x:Key="PagingPageSize">条/页</sys:String>
     <sys:String x:Key="PagingRecordCount">总记录</sys:String>
 
+    
+    <!--公共-->
+    <sys:String x:Key="DGOperate">操作</sys:String>
+    
     <!--LogIn-->
     <sys:String x:Key="LogInWelcome">欢迎</sys:String>
     <sys:String x:Key="LogInLogInButton">欢迎</sys:String>
