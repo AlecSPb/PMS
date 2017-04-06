@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class PMSMaterialInventoryOut
+    public class DcMaterialInventoryOut
     {
         [DataMember]
         public Guid Id { get; set; }
