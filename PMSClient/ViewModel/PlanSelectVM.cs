@@ -11,19 +11,58 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class PlanSelect : BaseViewModelPage
+    public class PlanSelectVM : BaseViewModelPage
     {
-        public PlanSelect()
+        public PlanSelectVM()
         {
             IntitializeCommands();
             IntitializeProperties();
             SetPageParametersWhenConditionChange();
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
+            Select = new RelayCommand<DcMissonWithPlan>(ActionSelect);
         }
+
+        private void ActionSelect(DcMissonWithPlan plan)
+        {
+            if (plan!=null)
+            {
+                switch (requestView)
+                {
+                    case PMSViews.RecordMillingEdit:
+                        PMSHelper.ViewModels.RecordMillingEdit.SetBySelect(plan);
+                        break;
+                    case PMSViews.RecordVHPQuickEdit:
+                        break;
+                    case PMSViews.RecordDeMoldEdit:
+                        break;
+                    case PMSViews.RecordMachineEdit:
+                        break;
+                    case PMSViews.RecordTestEdit:
+                        break;
+                    default:
+                        break;
+                }
+
+                NavigationService.GoTo(requestView);
+            }
+        }
+
+        private PMSViews requestView;
+        /// <summary>
+        /// 设置请求视图的token，返回或者选择后返回用
+        /// </summary>
+        /// <param name="request">请求视图的token</param>
+        public void SetRequestView(PMSViews request)
+        {
+            requestView = request;
+        }
+
+
+
 
         private void IntitializeProperties()
         {
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
-
         }
 
         private void IntitializeCommands()

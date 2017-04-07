@@ -71,7 +71,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
-                    var result = dc.RecordMillings.OrderBy(i => i.CreateTime).Skip(skip).Take(take).ToList();
+                    var result = dc.RecordMillings.OrderBy(i => i.CreateTime).OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
                     return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(result);
                 }
             }

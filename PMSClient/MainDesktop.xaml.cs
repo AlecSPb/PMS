@@ -111,6 +111,9 @@ namespace PMSClient
                 case PMSViews.PlanEdit:
                     NavigateTo(_views.PlanEdit);
                     break;
+                case PMSViews.PlanSelect:
+                    NavigateTo(_views.PlanSelect);
+                    break;
                 case PMSViews.RecordMilling:
                     NavigateTo(_views.RecordMilling);
                     break;

@@ -24,10 +24,7 @@
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding  Add}"/>
-            <TextBlock Text="Milling ID" Style="{StaticResource TextBlockBasic}"/>
-            <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <TextBlock Text="CompositionStd" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource RMComposition}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
@@ -36,7 +33,7 @@
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordMillings}"
                   SelectedIndex="0">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operation">
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
@@ -50,21 +47,23 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="原材料" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="来源" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding MaterialSource}"/>
-                <DataGridTextColumn Header="额外信息" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="制粉方式" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMMillingTool}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding MillingTool}"/>
-                <DataGridTextColumn Header="气体保护" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding GasProtection}"/>
-                <DataGridTextColumn Header="进料" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMWeightIn}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding WeightIn}"/>
-                <DataGridTextColumn Header="出料" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMWeightOut}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding WeightOut}"/>
-                <DataGridTextColumn Header="余料" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding WeightRemain}"/>
 
 

@@ -45,6 +45,9 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<PlanVM>();
             SimpleIoc.Default.Register<PlanEditVM>();
+            SimpleIoc.Default.Register<PlanSelectVM>();
+
+
 
             SimpleIoc.Default.Register<MaterialNeedEditVM>();
             SimpleIoc.Default.Register<MaterialNeedSelectVM>();
@@ -122,7 +125,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlanEditVM>(); }
         }
-
+        public PlanSelectVM PlanSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSelectVM>(); }
+        }
 
 
         public RecordVHPVM RecordVHP
@@ -225,6 +231,7 @@ namespace PMSClient.ViewModel
             }
         }
 
+
         public RecordDeMoldVM RecordDeMold
         {
             get
@@ -239,6 +246,7 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordDeMoldEditVM>();
             }
         }
+
 
         public RecordMachineVM RecordMachine
         {

@@ -20,7 +20,8 @@ namespace PMSClient.ViewModel
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
-            SelectOrder = new RelayCommand<DcOrder>(ActionSelectOrder);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
+            Select = new RelayCommand<DcOrder>(ActionSelect);
 
         }
         private PMSViews requestView;
@@ -31,10 +32,9 @@ namespace PMSClient.ViewModel
         public void SetRequestView(PMSViews request)
         {
             requestView = request;
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
         }
 
-        private void ActionSelectOrder(DcOrder order)
+        private void ActionSelect(DcOrder order)
         {
             if (order != null)
             {
@@ -49,7 +49,7 @@ namespace PMSClient.ViewModel
                 NavigationService.GoTo(requestView);
             }
         }
-        public RelayCommand<DcOrder> SelectOrder { get; set; }
+        public RelayCommand<DcOrder> Select { get; set; }
         public RelayCommand GiveUp { get; set; }
         private void ActionRefresh(Object obj)
         {

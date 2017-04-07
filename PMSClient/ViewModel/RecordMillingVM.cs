@@ -44,24 +44,15 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                NavigationService.GoTo(VToken.RecordMillingEdit, new ModelObject() { IsNew = false, Model = model });
+                PMSHelper.ViewModels.RecordMillingEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.RecordMillingEdit);
             }
         }
 
         private void ActionAdd()
         {
-            var model = new DcRecordMilling();
-            model.ID = Guid.NewGuid();
-            model.CreateTime = DateTime.Now;
-            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.Composition = "Cu22.8In20Ga7.0Se50.2";
-            model.GasProtection = "Ar";
-            model.MillingTool = "行星球磨机";
-            model.WeightIn = 0;
-            model.WeightOut = 0;
-            model.WeightRemain = 0;
-
-            NavigationService.GoTo(VToken.RecordMillingEdit, new ModelObject() { IsNew = true, Model = model });
+            PMSHelper.ViewModels.RecordMillingEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RecordMillingEdit);
         }
 
         private void SetPageParametersWhenConditionChange()

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
+using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSClient.ViewModel
 {
@@ -11,18 +12,56 @@ namespace PMSClient.ViewModel
     {
         public RecordMillingEditVM()
         {
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling));
+            Save = new RelayCommand(ActionSave);
 
-            Save = new GalaSoft.MvvmLight.CommandWpf.RelayCommand(ActionSave);
+            Select = new RelayCommand(() =>
+            {
+                PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMillingEdit);
+                NavigationService.GoTo(PMSViews.PlanSelect);
+            });
         }
-        public void SetKeyProperties(ModelObject model)
+
+        public void SetNew()
+        {
+            IsNew = true;
+            #region 数据初始化
+            var model = new DcRecordMilling();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.Composition = "填入成分";
+            model.GasProtection = "Ar";
+            model.MaterialSource = "Sanjie";
+            model.MillingTool = "球磨";
+            model.Remark = "";
+            model.WeightIn = 0;
+            model.WeightOut = 0;
+            model.WeightRemain = 0;
+            #endregion
+            CurrentRecordMilling = model;
+        }
+
+        public void SetEdit(DcRecordMilling model)
         {
             if (model != null)
             {
-                IsNew = model.IsNew;
-                CurrentRecordMilling = model.Model as DcRecordMilling;
+                IsNew = false;
+                CurrentRecordMilling = model;
             }
-
         }
+
+        public void SetBySelect(DcMissonWithPlan plan)
+        {
+            if (plan!=null)
+            {
+                CurrentRecordMilling.Composition = plan.CompositionStandard;
+                RaisePropertyChanged(nameof(CurrentRecordMilling));
+            }
+        }
+
+
 
         private void ActionSave()
         {
@@ -40,7 +79,7 @@ namespace PMSClient.ViewModel
                     }
 
                     //TODO:以后将这里的重复代替掉
-                    NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordMilling });
+                    NavigationService.GoTo(PMSViews.RecordMilling);
                 }
             }
         }
@@ -57,5 +96,8 @@ namespace PMSClient.ViewModel
             }
         }
 
+
+
+        public RelayCommand Select { get; set; }
     }
 }

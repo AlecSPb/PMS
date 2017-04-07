@@ -332,7 +332,7 @@
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
-    <Compile Include="ViewModel\PlanSelect.cs" />
+    <Compile Include="ViewModel\PlanSelectVM.cs" />
     <Compile Include="ViewModel\PlanSelectBase.cs" />
     <Compile Include="ViewModel\PlanSelectForRecordTestVM.cs" />
     <Compile Include="ViewModel\PlanSelectForRecordVHPVM.cs" />
