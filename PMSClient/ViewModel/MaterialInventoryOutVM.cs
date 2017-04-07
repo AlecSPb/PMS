@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             SearchCompositoinStandard = "";
-            MainMaterialNeeds = new ObservableCollection<DcMaterialInventoryIn>();
+            MaterialInventoryOuts = new ObservableCollection<DcMaterialInventoryOut>();
         }
         private void InitializeCommands()
         {
@@ -43,25 +43,25 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
 
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcMaterialInventoryIn>(ActionEdit);
+            Edit = new RelayCommand<DcMaterialInventoryOut>(ActionEdit);
 
 
 
         }
 
-        private void ActionEdit(DcMaterialInventoryIn model)
+        private void ActionEdit(DcMaterialInventoryOut model)
         {
             if (model != null)
             {
-                PMSHelper.ViewModels.MaterialInventoryInEdit.SetEdit(model);
-                NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+                PMSHelper.ViewModels.MaterialInventoryOutEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.MaterialInventoryOutEdit);
             }
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.MaterialInventoryInEdit.SetNew();
-            NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+            PMSHelper.ViewModels.MaterialInventoryOutEdit.SetNew();
+            NavigationService.GoTo(PMSViews.MaterialInventoryOutEdit);
         }
 
         private bool CanSearch()
@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
-            RecordCount = service.GetMaterialInventoryCountBySearch(SearchCompositoinStandard);
+            RecordCount = service.GetMaterialInventoryOutCount();
             ActionPaging();
         }
         /// <summary>
@@ -97,9 +97,9 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var result = service.GetMaterialInventoryIns(skip, take);
-            MainMaterialNeeds.Clear();
-            result.ToList<DcMaterialInventoryIn>().ForEach(o => MainMaterialNeeds.Add(o));
+            var result = service.GetMaterialInventoryOuts(skip, take);
+            MaterialInventoryOuts.Clear();
+            result.ToList().ForEach(o => MaterialInventoryOuts.Add(o));
         }
 
         #region Proeperties
@@ -120,18 +120,18 @@ namespace PMSClient.ViewModel
 
 
 
-        private ObservableCollection<DcMaterialInventoryIn> mainMaterialNeeds;
-        public ObservableCollection<DcMaterialInventoryIn> MainMaterialNeeds
+        private ObservableCollection<DcMaterialInventoryOut> materialInventoryOuts;
+        public ObservableCollection<DcMaterialInventoryOut> MaterialInventoryOuts
         {
-            get { return mainMaterialNeeds; }
-            set { mainMaterialNeeds = value; RaisePropertyChanged(nameof(MainMaterialNeeds)); }
+            get { return materialInventoryOuts; }
+            set { materialInventoryOuts = value; RaisePropertyChanged(nameof(MaterialInventoryOuts)); }
         }
 
         #endregion
 
         #region Commands
         public RelayCommand Add { get; private set; }
-        public RelayCommand<DcMaterialInventoryIn> Edit { get; private set; }
+        public RelayCommand<DcMaterialInventoryOut> Edit { get; private set; }
         #endregion
 
 
