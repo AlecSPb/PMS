@@ -63,7 +63,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<RecordTestVM>();
             SimpleIoc.Default.Register<RecordTestEditVM>();
-
+            SimpleIoc.Default.Register<RecordTestSelectVM>();
 
             SimpleIoc.Default.Register<RecordDeliveryVM>();
             SimpleIoc.Default.Register<RecordDeliveryEditVM>();
@@ -189,7 +189,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestEditVM>(); }
         }
-
+        public RecordTestSelectVM RecordTestSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestSelectVM>(); }
+        }
 
         public RecordDeliveryVM RecordDelivery
         {
