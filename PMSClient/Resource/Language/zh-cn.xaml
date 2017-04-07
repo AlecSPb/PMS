@@ -184,6 +184,8 @@
     <sys:String x:Key="PageMaterialOrder">材料订单</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">材料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">材料订单项编辑</sys:String>
+    
+    <sys:String x:Key="PageMaterialInventory">材料出入库</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">材料库存入库</sys:String>
     <sys:String x:Key="PageMaterialInventoryOut">材料库存出库</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">材料库存入库编辑</sys:String>
