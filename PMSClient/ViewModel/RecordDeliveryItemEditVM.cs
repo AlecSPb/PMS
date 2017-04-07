@@ -20,39 +20,113 @@ namespace PMSClient.ViewModel
             states.ToList().ForEach(s => States.Add(s));
             InitialCommands();
         }
-        public void SetKeyProperties(ModelObject model)
+        public void SetNew(DcRecordDelivery delivery)
         {
-            IsNew = model.IsNew;
-            CurrentRecordDeliveryItem = model.Model as DcRecordDeliveryItem;
+            IsNew = true;
+            var model = new DcRecordDeliveryItem();
+            #region 初始化
+            model.ID = Guid.NewGuid();
+            model.DeliveryID = delivery.ID;
+            model.ProductType = PMSCommon.ProductType.Target.ToString();
+            model.ProductID = DateTime.Now.ToString("yyMMdd");
+            model.Composition = "填写成分";
+            model.Abbr = "缩写";
+            model.PO = "PO";
+            model.Customer = "客户";
+            model.Weight = "重量";
+            model.DetailRecord = "细节";
+            model.Remark = "无";
+            model.Position = "A2";
+            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            #endregion
+            CurrentRecordDeliveryItem = model;
         }
+
+        public void SetEdit(DcRecordDeliveryItem model)
+        {
+            if (model != null)
+            {
+                IsNew = false;
+                CurrentRecordDeliveryItem = model;
+            }
+        }
+
+        public void SetBySelect(DcRecordTest test)
+        {
+            if (test != null)
+            {
+                CurrentRecordDeliveryItem.Composition = test.Composition;
+                CurrentRecordDeliveryItem.Abbr = test.CompositionAbbr;
+                CurrentRecordDeliveryItem.Customer = test.Customer;
+                CurrentRecordDeliveryItem.Weight = test.Weight;
+                CurrentRecordDeliveryItem.ProductType = test.TestType;
+                CurrentRecordDeliveryItem.PO = test.PO;
+
+                RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
+            }
+        }
+
+
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() =>
-            {
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery });
-                NavigationService.Refresh(VToken.RecordDeliveryItemRefresh);
-            });
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+            Select = new RelayCommand(ActionSelect);
+        }
+
+        private void ActionSelect()
+        {
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordDeliveryItemEdit);
+            NavigationService.GoTo(PMSViews.RecordTestSelect);
+        }
+
+        private void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.RecordDelivery);
         }
 
         private void ActionSave()
         {
-            if (CurrentRecordDeliveryItem != null)
+            try
             {
-                var service = new RecordDeliveryServiceClient();
-                if (IsNew)
+                if (CurrentRecordDeliveryItem != null)
                 {
-                    service.AddRecordDeliveryItem(CurrentRecordDeliveryItem);
+                    var service = new RecordDeliveryServiceClient();
+                    if (IsNew)
+                    {
+                        service.AddRecordDeliveryItem(CurrentRecordDeliveryItem);
+                    }
+                    else
+                    {
+                        service.UpdateReocrdDeliveryItem(CurrentRecordDeliveryItem);
+                    }
                 }
-                else
-                {
-                    service.UpdateReocrdDeliveryItem(CurrentRecordDeliveryItem);
-                }
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery });
-                NavigationService.Refresh(VToken.RecordDeliveryItemRefresh);
+
+                GoBack();
             }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
         public ObservableCollection<string> States { get; set; }
-        public DcRecordDeliveryItem CurrentRecordDeliveryItem { get; set; }
+
+        private DcRecordDeliveryItem currentRecordDeliveryItem;
+        public DcRecordDeliveryItem CurrentRecordDeliveryItem
+        {
+            get
+            {
+                return currentRecordDeliveryItem;
+            }
+            set
+            {
+                currentRecordDeliveryItem = value;
+                RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
+            }
+        }
+
+        public RelayCommand Select { get; set; }
+
     }
 }

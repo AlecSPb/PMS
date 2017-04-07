@@ -17,14 +17,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageTestResultSelect}" Style="{StaticResource TextBlockPageTitleBasic}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource ButtonSelectEmpty}" Style="{StaticResource  ButtonBasic}"
-                    Command="{Binding Empty}"/>
 
             <TextBlock Text="{StaticResource RTProductID}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
@@ -35,8 +32,7 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}"
-                  SelectedIndex="0">
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}" SelectedIndex="0">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -49,9 +45,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource TextBlockBasic}"
+                <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding TestType}"/>
-
                 <DataGridTemplateColumn Header="{StaticResource RTProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
@@ -148,99 +143,5 @@
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid DataContext="{Binding ElementName=dg,Path=SelectedItem}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="700"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTComposition}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTPO}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTDimension}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTDensity}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDensity}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTResistance}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTRemark}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-                    
-                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTSample}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource TextBoxBasic}"
-                            Background="{StaticResource ReadOnlyTextBoxBrush}"
-                            HorizontalAlignment="Stretch"/>
-                </Grid>
-
-                <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding CompositionXRF}"
-                                          Margin="5" Height="280" VerticalAlignment="Top"/>
-            </Grid>
-        </ScrollViewer>
     </Grid>
 </UserControl>

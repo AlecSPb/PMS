@@ -194,19 +194,6 @@ namespace PMSClient.ViewModel
             get { return SimpleIoc.Default.GetInstance<RecordTestSelectVM>(); }
         }
 
-        public RecordDeliveryVM RecordDelivery
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
-        }
-        public RecordDeliveryEditVM RecordDeliveryEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditVM>(); }
-        }
-        public RecordDeliveryItemEditVM RecordDeliveryItemEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditVM>(); }
-        }
-
         public RecordMillingVM RecordMilling
         {
             get
@@ -252,6 +239,20 @@ namespace PMSClient.ViewModel
             {
                 return SimpleIoc.Default.GetInstance<RecordMachineEditVM>();
             }
+        }
+
+
+        public RecordDeliveryVM RecordDelivery
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryVM>(); }
+        }
+        public RecordDeliveryEditVM RecordDeliveryEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditVM>(); }
+        }
+        public RecordDeliveryItemEditVM RecordDeliveryItemEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditVM>(); }
         }
         #endregion
 

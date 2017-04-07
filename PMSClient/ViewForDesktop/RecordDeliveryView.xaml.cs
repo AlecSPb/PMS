@@ -26,37 +26,7 @@ namespace PMSClient.ViewForDesktop
         public RecordDeliveryView()
         {
             InitializeComponent();
-            this.DataContext = new RecordDeliveryVM();
         }
-
-        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
-        {
-            var order = (DcRecordDelivery)e.Row.DataContext;
-            if (order != null)
-            {
-                switch (order.State)
-                {
-                    case "UnChecked":
-                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
-                        break;
-                    case "Paused":
-                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
-                        break;
-                    case "UnCompleted":
-                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
-                        break;
-                    case "Completed":
-                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
-                        break;
-                    default:
-                        break;
-                }
-          
-            }
-        }
-
-
-
 
     }
 }

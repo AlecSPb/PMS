@@ -18,12 +18,40 @@ namespace PMSClient.ViewModel
             InitialCommands();
             InitialProperties();
         }
-        public void  SetKeyProperties(ModelObject obj)
-        {
-            IsNew = obj.IsNew;
-            CurrentRecordDelivery = obj.Model as DcRecordDelivery;
 
+        public void SetNew()
+        {
+            IsNew = true;
+            #region 初始化
+            var model = new DcRecordDelivery();
+            model.ID = Guid.NewGuid();
+            model.InvoiceNumber = "InvoiceNumber";
+            model.DeliveryName = DateTime.Now.ToString("yyMMdd") + "A";
+            model.DeliveryNumber = "UPS";
+            model.CreateTime = DateTime.Now;
+            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.State = PMSCommon.CommonState.UnChecked.ToString();
+            model.PackageInformation = "50kg";
+            model.PackageType = "Wood";
+            model.Remark = "";
+            model.ShipTime = DateTime.Now;
+            model.Address = "Address Here";
+            model.Country = "USA";
+            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            #endregion
+            CurrentRecordDelivery = model;
         }
+        public void SetEdit(DcRecordDelivery model)
+        {
+            if (model!=null)
+            {
+                IsNew = false;
+                CurrentRecordDelivery = model;
+            }
+        }
+
+
+
 
         private void InitialProperties()
         {
@@ -38,28 +66,36 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() =>
-            {
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery });
-                NavigationService.Refresh(VToken.RecordDeliveryRefresh);
-            });
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+        }
+
+        private static void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.RecordDelivery);
         }
 
         private void ActionSave()
         {
-            var service = new RecordDeliveryServiceClient();
-            if (IsNew)
+            try
             {
-                service.AddRecordDelivery(CurrentRecordDelivery);
+                var service = new RecordDeliveryServiceClient();
+                if (IsNew)
+                {
+                    service.AddRecordDelivery(CurrentRecordDelivery);
+                }
+                else
+                {
+                    service.UpdateReocrdDelivery(CurrentRecordDelivery);
+                }
+
+                GoBack();
             }
-            else
+            catch (Exception ex)
             {
-                service.UpdateReocrdDelivery(CurrentRecordDelivery);
+                PMSHelper.CurrentLog.Error(ex);
             }
 
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery });
-            NavigationService.Refresh(VToken.RecordDeliveryRefresh);
         }
 
 

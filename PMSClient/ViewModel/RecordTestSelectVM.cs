@@ -13,52 +13,30 @@ namespace PMSClient.ViewModel
 {
     public class RecordTestSelectVM : BaseViewModelPage
     {
-        private DcRecordDeliveryItem item;
-        public RecordTestSelectVM(ModelObject model)
+
+        public RecordTestSelectVM()
         {
-            item = new MainService.DcRecordDeliveryItem();
-            item.ID = Guid.NewGuid();
-            item.DeliveryID = (model.Model as DcRecordDelivery).ID;
-            item.State = PMSCommon.SimpleState.UnDeleted.ToString();
-
-
-
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
-
+        private PMSViews requestView;
+        public void SetRequestView(PMSViews view)
+        {
+            requestView = view;
+        }
         private void InitializeCommands()
         {
-            GiveUp = new RelayCommand(() =>
-            {
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordDelivery });
-                NavigationService.Refresh(VToken.RecordDeliveryRefresh);
-            });
+            GiveUp = new RelayCommand(GoBack);
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Select = new RelayCommand<DcRecordTest>(ActionSelect);
-            Empty = new RelayCommand(ActionEmpty);
         }
 
-        private void ActionEmpty()
+        private void GoBack()
         {
-            MsgObject msg = new PMSClient.MsgObject();
-
-            item.ProductType = PMSCommon.ProductType.Target.ToString();
-            item.ProductID = "";
-            item.Composition = "";
-            item.Abbr = "";
-            item.PO = "";
-            item.Customer = "";
-            item.Weight = "";
-            item.DetailRecord = "";
-            item.Remark = "";
-
-            msg.NavigateTo = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = item };
-            NavigationService.GoTo(msg);
+            NavigationService.GoTo(requestView);
         }
 
         private bool CanSearch()
@@ -77,23 +55,22 @@ namespace PMSClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionSelect(DcRecordTest obj)
+        private void ActionSelect(DcRecordTest model)
         {
-            MsgObject msg = new PMSClient.MsgObject();
-
-            item.ProductType = PMSCommon.ProductType.Target.ToString();
-            item.ProductID = obj.ProductID;
-            item.Composition = obj.Composition;
-            item.Abbr = obj.CompositionAbbr;
-            item.PO = obj.PO;
-            item.Customer = obj.Customer;
-            item.Weight = obj.Weight;
-            item.DetailRecord = "";
-            item.Remark = "";
-
-            msg.NavigateTo = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = item };
-            NavigationService.GoTo(msg);
+            if (model!=null)
+            {
+                switch (requestView)
+                {
+                    case PMSViews.RecordDeliveryItemEdit:
+                        PMSHelper.ViewModels.RecordDeliveryItemEdit.SetBySelect(model);
+                        break;
+                    case PMSViews.RecordBondingTargetEdit:
+                        break;
+                    default:
+                        break;
+                }
+                GoBack();
+            }
         }
 
         private void InitializeProperties()
@@ -105,7 +82,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             var service = new RecordTestServiceClient();
             RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
             ActionPaging();
@@ -124,9 +101,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcRecordTest> Select { get; set; }
 
-        public RelayCommand Empty { get; set; }
         #endregion
-     
+
         #region Properties
         private string searchProductID;
         public string SearchProductID

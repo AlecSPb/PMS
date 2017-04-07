@@ -463,24 +463,25 @@
     <sys:String x:Key="RDCreator">状态</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>
     <sys:String x:Key="RDState">状态</sys:String>
-    <sys:String x:Key="RDDeliveryName">状态</sys:String>
-    <sys:String x:Key="RDInvoiceNumber">状态</sys:String>
-    <sys:String x:Key="RDDeliveryNumber">状态</sys:String>
-    <sys:String x:Key="RDCountry">状态</sys:String>
-    <sys:String x:Key="RDAddress">状态</sys:String>
-    <sys:String x:Key="RDShipTime">状态</sys:String>
-    <sys:String x:Key="RDRemark">状态</sys:String>
-    <sys:String x:Key="RDPackageType">状态</sys:String>
-    <sys:String x:Key="RDPackageInformation">状态</sys:String>
+    <sys:String x:Key="RDDeliveryName">发货名</sys:String>
+    <sys:String x:Key="RDInvoiceNumber">发票号</sys:String>
+    <sys:String x:Key="RDDeliveryNumber">发货编码</sys:String>
+    <sys:String x:Key="RDCountry">国家</sys:String>
+    <sys:String x:Key="RDAddress">地址</sys:String>
+    <sys:String x:Key="RDShipTime">发货时间</sys:String>
+    <sys:String x:Key="RDRemark">备注</sys:String>
+    <sys:String x:Key="RDPackageType">包装类型</sys:String>
+    <sys:String x:Key="RDPackageInformation">包装信息</sys:String>
 
-    <sys:String x:Key="RDProductType">状态</sys:String>
-    <sys:String x:Key="RDProductID">状态</sys:String>
-    <sys:String x:Key="RDComposition">状态</sys:String>
-    <sys:String x:Key="RDAbbr">状态</sys:String>
-    <sys:String x:Key="RDCustomer">状态</sys:String>
-    <sys:String x:Key="RDDetailRecord">状态</sys:String>
-    <sys:String x:Key="RDWeight">状态</sys:String>
-    <sys:String x:Key="RDPosition">状态</sys:String>
+    <sys:String x:Key="RDProductType">产品类型</sys:String>
+    <sys:String x:Key="RDProductID">产品ID</sys:String>
+    <sys:String x:Key="RDComposition">成分</sys:String>
+    <sys:String x:Key="RDPO">PO</sys:String>
+    <sys:String x:Key="RDAbbr">缩写</sys:String>
+    <sys:String x:Key="RDCustomer">客户</sys:String>
+    <sys:String x:Key="RDDetailRecord">记录细节</sys:String>
+    <sys:String x:Key="RDWeight">重量</sys:String>
+    <sys:String x:Key="RDPosition">货架位置</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
     <!--MaterialInventoryInAndOut-->
     <sys:String x:Key="MIIState">状态</sys:String>
@@ -502,9 +503,6 @@
     <sys:String x:Key="MIOReceiver">接受者</sys:String>
     <sys:String x:Key="MIOWeight">重量</sys:String>
     <sys:String x:Key="MIORemark">备注</sys:String>
-
-
-
 
 
 </ResourceDictionary>

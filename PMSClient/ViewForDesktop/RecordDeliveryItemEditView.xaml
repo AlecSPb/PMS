@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              mc:Ignorable="d" 
-           d:DesignHeight="800" d:DesignWidth="1200">
+           d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=RecordDeliveryItemEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -21,6 +21,8 @@
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource ButtonBasic}"
                     Command="{Binding Save}"/>
+            <Button Content="{StaticResource ButtonSelectTest}" Style="{StaticResource ButtonBasic}"
+                    Command="{Binding Select}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentRecordDeliveryItem}">
@@ -51,70 +53,70 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="ProductType"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDProductType}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProductType}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="产品类型"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="ProductID"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDProductID}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="产品ID，唯一"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="Composition"
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDComposition}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}" 
                            Text="成分"/>
                 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Abbr"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDAbbr}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Abbr}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}" 
                            Text="成分Abbr"/>
                 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="Customer"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDCustomer}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="客户"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="PO"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDPO}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="PO"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="DetailRecord"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDDetailRecord}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding DetailRecord}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="细节"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="Remark"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDRemark}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="备注信息"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="Weight"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDWeight}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="重量"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="State"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDState}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -122,7 +124,7 @@
                 <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
                            Text="状态"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="Position"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDPosition}"
                            Style="{StaticResource TextBlockBasic}"/>
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Position}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>

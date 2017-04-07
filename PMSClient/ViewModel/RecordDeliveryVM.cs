@@ -18,16 +18,9 @@ namespace PMSClient.ViewModel
     {
         public RecordDeliveryVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.RecordDeliveryRefresh, ActionRefresh);
-            Messenger.Default.Register<MsgObject>(this, VToken.RecordDeliveryItemRefresh, ActionRefreshItems);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
-        }
-
-        private void ActionRefreshItems(MsgObject obj)
-        {
-            ActionSelectionChanged(CurrentSelectItem);
         }
 
         public override void Cleanup()
@@ -36,10 +29,6 @@ namespace PMSClient.ViewModel
             base.Cleanup();
         }
 
-        private void ActionRefresh(MsgObject obj)
-        {
-            SetPageParametersWhenConditionChange();
-        }
 
         private void InitializeProperties()
         {
@@ -48,26 +37,32 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
+            All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<MainService.DcRecordDelivery>(ActionEdit);
-            Doc = new RelayCommand<MainService.DcRecordDelivery>(ActionDoc);
-            AddItem = new RelayCommand<MainService.DcRecordDelivery>(ActionAddItem);
-            EditItem = new RelayCommand<MainService.DcRecordDeliveryItem>(ActionEditItem);
-            SelectionChanged = new RelayCommand<MainService.DcRecordDelivery>(ActionSelectionChanged);
+            Edit = new RelayCommand<DcRecordDelivery>(ActionEdit);
+            Doc = new RelayCommand<DcRecordDelivery>(ActionDoc);
+            AddItem = new RelayCommand<DcRecordDelivery>(ActionAddItem);
+            EditItem = new RelayCommand<DcRecordDeliveryItem>(ActionEditItem);
+            SelectionChanged = new RelayCommand<DcRecordDelivery>(ActionSelectionChanged);
         }
 
-        private void ActionSelectionChanged(DcRecordDelivery obj)
+        private void ActionAll()
         {
-            if (obj != null)
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionSelectionChanged(DcRecordDelivery model)
+        {
+            if (model != null)
             {
                 using (var service = new RecordDeliveryServiceClient())
                 {
-                    var result = service.GetRecordDeliveryItemByRecordDeliveryID(obj.ID);
+                    var result = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
                     RecordDeliveryItems.Clear();
                     result.ToList().ForEach(i => RecordDeliveryItems.Add(i));
 
-                    CurrentSelectItem = obj;
+                    CurrentSelectItem = model;
                 }
             }
         }
@@ -120,53 +115,29 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionEditItem(DcRecordDeliveryItem obj)
+        private void ActionEditItem(DcRecordDeliveryItem model)
         {
-            MsgObject msg = new MsgObject();
-            msg.NavigateTo = VToken.RecordDeliveryItemEdit;
-            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
-
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.RecordDeliveryItemEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.RecordDeliveryItemEdit);
         }
 
-        private void ActionAddItem(DcRecordDelivery obj)
+        private void ActionAddItem(DcRecordDelivery model)
         {
-            //传递RecordDelivery到RecordTestSelect
-            MsgObject msg = new MsgObject();
-            msg.NavigateTo = VToken.RecordTestSelect;
-            msg.MsgModel = new ModelObject() { IsNew = true, Model = obj };
-            NavigationService.GoTo(msg);
+            //传递RecordDelivery
+            PMSHelper.ViewModels.RecordDeliveryItemEdit.SetNew(model);
+            NavigationService.GoTo(PMSViews.RecordDeliveryItemEdit);
         }
 
         private void ActionAdd()
         {
-            var model = new DcRecordDelivery();
-            model.ID = Guid.NewGuid();
-            model.InvoiceNumber = "InvoiceNumber";
-            model.DeliveryName = DateTime.Now.ToString("yyMMdd") + "A";
-            model.DeliveryNumber = "UPS";
-            model.CreateTime = DateTime.Now;
-            model.Creator = (App.Current as App).CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.UnChecked.ToString();
-            model.PackageInformation = "50kg";
-            model.PackageType = "Wood";
-            model.Remark = "";
-            model.ShipTime = DateTime.Now;
-            model.Address = "Address Here";
-            model.Country = "USA";
-
-            MsgObject msg = new PMSClient.MsgObject();
-            msg.NavigateTo = VToken.RecordDeliveryEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = true, Model = model };
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.RecordDeliveryEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RecordDeliveryEdit);
         }
 
-        private void ActionEdit(DcRecordDelivery obj)
+        private void ActionEdit(DcRecordDelivery model)
         {
-            MsgObject msg = new PMSClient.MsgObject();
-            msg.NavigateTo = VToken.RecordDeliveryEdit;
-            msg.MsgModel = new ModelObject() { IsNew = false, Model = obj };
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.RecordDeliveryEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.RecordDeliveryEdit);
         }
 
         private void SetPageParametersWhenConditionChange()
