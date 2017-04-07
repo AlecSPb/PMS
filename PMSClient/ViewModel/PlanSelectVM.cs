@@ -34,6 +34,7 @@ namespace PMSClient.ViewModel
                     case PMSViews.RecordVHPQuickEdit:
                         break;
                     case PMSViews.RecordDeMoldEdit:
+                        PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan);
                         break;
                     case PMSViews.RecordMachineEdit:
                         break;

@@ -39,28 +39,14 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcRecordDeMold model)
         {
-            NavigationService.GoTo(VToken.RecordDeMoldEdit, new ModelObject() { IsNew = false, Model = model });
+            PMSHelper.ViewModels.RecordDeMoldEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.RecordDeMoldEdit);
         }
 
         private void ActionAdd()
         {
-            var model = new DcRecordDeMold();
-            model.ID = Guid.NewGuid();
-            model.CreateTime = DateTime.Now;
-            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.UnChecked.ToString();
-            model.Temperature1 = "10";
-            model.Temperature2 = "20";
-            model.VHPPlanLot = DateTime.Now.ToString("yyMMdd");
-            model.Composition = "成分";
-            model.Weight = 0;
-            model.Diameter1 = 0;
-            model.Diameter2 = 0;
-            model.Thickness1 = 0;
-            model.Thickness2 = 0;
-            model.Thickness3 = 0;
-            model.Thickness4 = 0;
-            NavigationService.GoTo(VToken.RecordDeMoldEdit, new ModelObject() { IsNew = true, Model = model });
+            PMSHelper.ViewModels.RecordDeMoldEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RecordDeMoldEdit);
         }
 
         private void SetPageParametersWhenConditionChange()
