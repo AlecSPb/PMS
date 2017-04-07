@@ -119,9 +119,9 @@ namespace PMSClient.ViewModel
                 model.Shift1 = 0;
                 model.Shift2 = 0;
                 model.Omega = 0;
-                model.WaterTemperatureIn = 0;
-                model.WaterTemperatureOut = 0;
-                model.ExtraInformation = "";
+                model.WaterTemperatureIn = 25;
+                model.WaterTemperatureOut =25;
+                model.ExtraInformation = "无";
                 isNew = true;
                 CurrentRecordVHP = model;
 
