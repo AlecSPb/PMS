@@ -108,8 +108,8 @@ namespace PMSClient.ViewModel
                 model.ID = Guid.NewGuid();
                 model.PlanVHPID = CurrentMissonWithPlan.PlanID;
                 model.CurrentTime = DateTime.Now;
-                model.Creator = (App.Current as App).CurrentUser.UserName;
-                model.State = PMSCommon.CommonState.Show.ToString();
+                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                model.State = PMSCommon.SimpleState.UnDeleted.ToString();
                 model.PV1 = 0;
                 model.PV2 = 0;
                 model.PV3 = 0;
@@ -168,7 +168,8 @@ namespace PMSClient.ViewModel
                 model.PlanVHPID = obj.PlanVHPID;
                 model.ID = Guid.NewGuid();
                 model.CurrentTime = DateTime.Now;
-                model.Creator = (App.Current as App).CurrentUser.UserName;
+                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                model.State = PMSCommon.SimpleState.UnDeleted.ToString();
                 model.PV1 = obj.PV1;
                 model.PV2 = obj.PV2;
                 model.PV3 = obj.PV3;
@@ -184,6 +185,7 @@ namespace PMSClient.ViewModel
                 model.ExtraInformation = obj.ExtraInformation;
 
                 isNew = true;
+
                 CurrentRecordVHP = model;
                 NavigationService.ShowStatusMessage("填充选定项完毕");
             }

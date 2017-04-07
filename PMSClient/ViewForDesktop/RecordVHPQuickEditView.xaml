@@ -139,7 +139,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource stbtnFill}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.CopyFill,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource ButtonDGBasic}" Command="{Binding DataContext.CopyFill,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

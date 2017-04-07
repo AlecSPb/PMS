@@ -61,7 +61,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.RecordVHPs.Where(p => p.PlanVHPID == planVHPId)
+                    var result = dc.RecordVHPs.Where(p => p.PlanVHPID == planVHPId&&p.State!=PMSCommon.SimpleState.Deleted.ToString())
                         .OrderByDescending(v => v.CurrentTime).ToList();
                     Mapper.Initialize(cfg =>
                     {
