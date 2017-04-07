@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             isNew = true;
-            RecordVHPs = new ObservableCollection<MainService.DcRecordVHP>();
+            RecordVHPs = new ObservableCollection<DcRecordVHP>();
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
             CurrentRecordVHP = new DcRecordVHP();
         }
@@ -37,8 +37,7 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(() =>
             {
-                NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.RecordVHP });
-                NavigationService.Refresh(VToken.RecordVHPRefresh);
+                NavigationService.GoTo(PMSViews.RecordVHP);
             });
 
             Refresh = new RelayCommand(() => SetPageParametersWhenConditionChange());
