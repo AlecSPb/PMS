@@ -332,11 +332,8 @@
     <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
+    <Compile Include="ViewModel\PlanSelect.cs" />
     <Compile Include="ViewModel\PlanSelectBase.cs" />
-    <Compile Include="ViewModel\PlanSelectForRecordBlankVM.cs" />
-    <Compile Include="ViewModel\PlanSelectForRecordBondingVM.cs" />
-    <Compile Include="ViewModel\PlanSelectForRecordMachineVM.cs" />
-    <Compile Include="ViewModel\PlanSelectForRecordMillingVM.cs" />
     <Compile Include="ViewModel\PlanSelectForRecordTestVM.cs" />
     <Compile Include="ViewModel\PlanSelectForRecordVHPVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />

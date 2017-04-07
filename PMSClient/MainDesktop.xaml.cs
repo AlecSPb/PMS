@@ -111,6 +111,49 @@ namespace PMSClient
                 case PMSViews.PlanEdit:
                     NavigateTo(_views.PlanEdit);
                     break;
+                case PMSViews.RecordMilling:
+                    NavigateTo(_views.RecordMilling);
+                    break;
+                case PMSViews.RecordMillingEdit:
+                    NavigateTo(_views.RecordMillingEdit);
+                    break;
+                case PMSViews.RecordVHP:
+                    NavigateTo(_views.RecordVHP);
+                    break;
+                case PMSViews.RecordVHPQuickEdit:
+                    NavigateTo(_views.RecordVHPQuickEdit);
+                    break;
+                case PMSViews.RecordDeMold:
+                    NavigateTo(_views.RecordDeMold);
+                    break;
+                case PMSViews.RecordDeMoldEdit:
+                    NavigateTo(_views.RecordDeMoldEdit);
+                    break;
+                case PMSViews.RecordMachine:
+                    NavigateTo(_views.RecordMachine);
+                    break;
+                case PMSViews.RecordMachineEdit:
+                    NavigateTo(_views.RecordMachineEdit);
+                    break;
+                case PMSViews.RecordTest:
+                    NavigateTo(_views.RecordTest);
+                    break;
+                case PMSViews.RecordTestEdit:
+                    NavigateTo(_views.RecordTestEdit);
+                    break;
+                case PMSViews.RecordDelivery:
+                    NavigateTo(_views.RecordDelivery);
+                    break;
+                case PMSViews.RecordDeliveryEdit:
+                    NavigateTo(_views.RecordDeliveryEdit);
+                    break;
+                case PMSViews.RecordDeliveryItemEdit:
+                    NavigateTo(_views.RecordDeliveryItemEdit);
+                    break;
+
+
+
+
                 default:
                     break;
             }
@@ -140,192 +183,6 @@ namespace PMSClient
                 txtStateMessage.Text = "状态栏";
             }
         }
-
-        /// <summary>
-        /// Main Navigation Part
-        /// </summary>
-        /// <param name="model"></param>
-        //private void ActionNavigate(MsgObject model)
-        //{
-        //    try
-        //    {
-        //        //log
-        //        PMSHelper.CurrentLog.Log(model.NavigateTo.ToString());
-
-        //        switch (model.NavigateTo)
-        //        {
-        //            case VToken.Navigation:
-        //                NavigateTo(_viewLocator.Navigation);
-        //                RefreshLogInformation();
-        //                break;
-        //            case VToken.LogIn:
-        //                NavigateTo(_viewLocator.LogIn);
-        //                break;
-        //            case VToken.Order:
-        //                NavigateTo(_viewLocator.Order);
-        //                break;
-        //            case VToken.OrderEdit:
-        //                _viewModelLocator.OrderEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.OrderEdit.DataContext = _viewModelLocator.OrderEdit;
-        //                NavigateTo(_viewLocator.OrderEdit);
-        //                break;
-        //            case VToken.OrderRefresh:
-        //                break;
-        //            case VToken.OrderSelect:
-        //                _viewModelLocator.OrderSelect.SetKeyProeprties(model.NavigateFrom, model.NavigateFrom);
-        //                _viewLocator.OrderSelect.DataContext = _viewModelLocator.OrderSelect;
-        //                NavigateTo(_viewLocator.OrderSelect);
-        //                break;
-        //            case VToken.OrderCheck:
-        //                NavigateTo(_viewLocator.OrderCheck);
-        //                break;
-        //            case VToken.OrderCheckRefresh:
-        //                break;
-        //            case VToken.OrderCheckEdit:
-        //                _viewModelLocator.OrderCheckEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.OrderCheckEdit.DataContext = _viewModelLocator.OrderCheckEdit;
-        //                NavigateTo(_viewLocator.OrderCheckEdit);
-        //                break;
-        //            case VToken.Misson:
-        //                NavigateTo(_viewLocator.Misson);
-        //                break;
-        //            case VToken.MissonRefresh:
-        //                break;
-        //            case VToken.Plan:
-        //                NavigateTo(_viewLocator.Plan);
-        //                break;
-        //            case VToken.PlanEdit:
-        //                _viewModelLocator.PlanEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.PlanEdit.DataContext = _viewModelLocator.PlanEdit;
-        //                NavigateTo(_viewLocator.PlanEdit);
-        //                break;
-        //            case VToken.PlanSelectForTest:
-        //                NavigateTo(_viewLocator.PlanSelect);
-        //                break;
-        //            case VToken.RecordTest:
-        //                NavigateTo(_viewLocator.RecordTest);
-        //                break;
-        //            case VToken.RecordTestEdit:
-        //                _viewModelLocator.RecordTestEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.RecordTestEdit.DataContext = _viewModelLocator.RecordTestEdit;
-        //                NavigateTo(_viewLocator.RecordTestEdit);
-        //                break;
-        //            case VToken.RecordTestSelect:
-        //                break;
-        //            case VToken.RecordDelivery:
-        //                NavigateTo(_viewLocator.RecordDelivery);
-        //                break;
-        //            case VToken.RecordDeliveryEdit:
-        //                _viewModelLocator.RecordDeliveryEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.RecordDeliveryEdit.DataContext = _viewModelLocator.RecordDeliveryEdit;
-        //                NavigateTo(_viewLocator.RecordDeliveryEdit);
-        //                break;
-        //            case VToken.RecordDeliveryItem:
-        //                break;
-        //            case VToken.RecordDeliveryItemEdit:
-        //                _viewModelLocator.RecordDeliveryItemEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.RecordDeliveryItemEdit.DataContext = _viewModelLocator.RecordDeliveryItemEdit;
-        //                NavigateTo(_viewLocator.RecordDeliveryItemEdit);
-        //                break;
-        //            case VToken.RecordMilling:
-        //                NavigateTo(_viewLocator.RecordMilling);
-        //                break;
-        //            case VToken.RecordMillingEdit:
-        //                _viewModelLocator.RecordMillingEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.RecordMillingEdit.DataContext = _viewModelLocator.RecordMillingEdit;
-        //                NavigateTo(_viewLocator.RecordMillingEdit);
-        //                break;
-        //            case VToken.RecordVHP:
-        //                NavigateTo(_viewLocator.RecordVHP);
-        //                break;
-        //            case VToken.RecordVHPEdit:
-        //                break;
-        //            case VToken.RecordDeMold:
-        //                NavigateTo(_viewLocator.RecordDeMold);
-        //                break;
-        //            case VToken.RecordDeMoldEdit:
-        //                _viewModelLocator.RecordDeMoldEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.RecordDeMoldEdit.DataContext = _viewModelLocator.RecordDeMoldEdit;
-        //                NavigateTo(_viewLocator.RecordDeMoldEdit);
-        //                break;
-        //            case VToken.RecordMachine:
-        //                NavigateTo(_viewLocator.RecordMachine);
-        //                break;
-        //            case VToken.RecordMachineEdit:
-        //                _viewModelLocator.RecordMachineEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.RecordMachineEdit.DataContext = _viewModelLocator.RecordMachineEdit;
-        //                NavigateTo(_viewLocator.RecordMachineEdit);
-        //                break;
-        //            case VToken.RecordBonding:
-        //                break;
-        //            case VToken.RecordBondingEdit:
-        //                break;
-        //            case VToken.MaterialOrder:
-        //                NavigateTo(_viewLocator.MaterialOrder);
-        //                break;
-        //            case VToken.MaterialOrderEdit:
-        //                _viewModelLocator.MaterialOrderEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.MaterialOrderEdit.DataContext = _viewModelLocator.MaterialOrderEdit;
-        //                NavigateTo(_viewLocator.MaterialOrderEdit);
-        //                break;
-        //            case VToken.MaterialOrderItemEdit:
-        //                _viewModelLocator.MaterialOrderItemEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.MaterialOrderItemEdit.DataContext = _viewModelLocator.MaterialOrderItemEdit;
-        //                NavigateTo(_viewLocator.MaterialOrderItemEdit);
-        //                break;
-        //            case VToken.MaterialNeed:
-        //                NavigateTo(_viewLocator.MaterialNeed);
-        //                break;
-        //            case VToken.MaterialNeedEdit:
-        //                _viewModelLocator.MaterialNeedEdit.SetKeyProperties(model.MsgModel);
-        //                _viewLocator.MaterialNeedEdit.DataContext = _viewModelLocator.MaterialNeedEdit;
-        //                NavigateTo(_viewLocator.MaterialNeedEdit);
-        //                break;
-        //            case VToken.MaterialNeedEdit2:
-        //                //选择Order后，更改现有VM
-        //                _viewModelLocator.MaterialNeedEdit.SetKeyProperties(model.MsgModel.Model as DcOrder);
-        //                _viewLocator.MaterialNeedEdit.DataContext = _viewModelLocator.MaterialNeedEdit;
-        //                NavigateTo(_viewLocator.MaterialNeedEdit);
-        //                break;
-        //            case VToken.MaterialNeedSelect:
-        //                _viewLocator.MaterialNeedSelect.DataContext = new MaterialNeedSelectVM(model.MsgModel);
-        //                NavigateTo(_viewLocator.MaterialNeedSelect);
-        //                break;
-        //            case VToken.MaterialInventory:
-        //                break;
-        //            case VToken.MaterialInventoryEdit:
-        //                break;
-        //            case VToken.MaterialNeedRefresh:
-        //                break;
-        //            case VToken.MaterialOrderRefresh:
-        //                break;
-        //            case VToken.RecordTestRefresh:
-        //                break;
-        //            case VToken.RecordDeliveryRefresh:
-        //                break;
-        //            case VToken.PlanSelectForVHP:
-        //                break;
-        //            case VToken.RecordVHPRefresh:
-        //                break;
-        //            case VToken.RecordVHPQuickEdit:
-        //                NavigateTo(_viewLocator.RecordVHPQuickEdit);
-        //                break;
-        //            case VToken.SetRecordVHPQuickEditSelectIndex:
-        //                break;
-        //            case VToken.MaterialOrderItemRefresh:
-        //                break;
-        //            case VToken.RecordDeliveryItemRefresh:
-        //                break;
-        //            default:
-        //                break;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-
-        //}
 
 
 

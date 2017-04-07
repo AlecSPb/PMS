@@ -52,6 +52,7 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
+                //TODO:完成选择填充
                 //CurrentMaterialInventoryOut.Composition = order.CompositionStandard;
                 //CurrentMaterialInventoryOut.PMINumber = order.PMINumber;
                 //RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
