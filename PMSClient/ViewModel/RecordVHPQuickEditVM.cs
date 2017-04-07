@@ -82,8 +82,7 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 CurrentMissonWithPlan = model;
-                CurrentRecordVHP.PlanVHPID = CurrentMissonWithPlan.PlanID;
-
+                CurrentRecordVHP.PlanVHPID = CurrentMissonWithPlan.PlanID;           
                 ReLoadRecordVHPs();
             }
         }
