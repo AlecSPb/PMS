@@ -18,9 +18,9 @@ namespace PMSClient.ViewForDesktop
     /// <summary>
     /// MaterialInventory.xaml 的交互逻辑
     /// </summary>
-    public partial class MaterialInventoryView : UserControl
+    public partial class MaterialInventoryOutView : UserControl
     {
-        public MaterialInventoryView()
+        public MaterialInventoryOutView()
         {
             InitializeComponent();
         }

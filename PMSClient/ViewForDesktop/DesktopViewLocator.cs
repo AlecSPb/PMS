@@ -40,6 +40,12 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<MaterialOrderEditView>();
             SimpleIoc.Default.Register<MaterialOrderItemEditView>();
 
+            SimpleIoc.Default.Register<MaterialInventoryInView>();
+            SimpleIoc.Default.Register<MaterialInventoryInEditView>();
+            SimpleIoc.Default.Register<MaterialInventoryOutView>();
+            SimpleIoc.Default.Register<MaterialInventoryOutEditView>();
+
+
             SimpleIoc.Default.Register<RecordVHPView>();
             SimpleIoc.Default.Register<RecordVHPQuickEditView>();
 
@@ -154,6 +160,25 @@ namespace PMSClient.ViewForDesktop
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditView>(); }
         }
+        public MaterialInventoryInView MaterialInventoryIn
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInView>(); }
+        }
+        public MaterialInventoryInEditView MaterialInventoryInEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInEditView>(); }
+        }
+        public MaterialInventoryOutView MaterialInventoryOut
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutView>(); }
+        }
+        public MaterialInventoryOutEditView MaterialInventoryOutEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutEditView>(); }
+
+        }
+
+
 
         public RecordMillingView RecordMilling
         {
