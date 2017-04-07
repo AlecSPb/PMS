@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut));
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }

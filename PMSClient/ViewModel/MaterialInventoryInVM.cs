@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<DcMaterialInventoryIn>(ActionEdit);
 
-
+            GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut));
 
         }
 
@@ -132,6 +132,9 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialInventoryIn> Edit { get; private set; }
+
+
+        public RelayCommand GoToMaterialInventoryOut { get; set; }
         #endregion
 
 

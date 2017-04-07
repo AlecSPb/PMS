@@ -44,7 +44,7 @@
         <Button Content="{StaticResource PageMaterial}" Grid.Row="2" Grid.Column="0" Style="{DynamicResource btnTitle}"/>
         <Button Content="{StaticResource PageMaterialNeed}" Grid.Row="2" Grid.Column="1" Command="{Binding GoToMaterialNeed}" Style="{DynamicResource btnNavigation}"/>
         <Button Content="{StaticResource PageMaterialOrder}" Grid.Row="2" Grid.Column="2" Command="{Binding GoToMaterialOrder}" Style="{DynamicResource btnNavigation}"/>
-        <Button Content="{StaticResource PageMaterialInventoryIn}" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}" Style="{DynamicResource btnNavigation}"/>
+        <Button Content="{StaticResource PageMaterialInventory}" Grid.Row="2" Grid.Column="3" Command="{Binding GoToMaterialInventory}" Style="{DynamicResource btnNavigation}"/>
 
         <Button Content="{StaticResource PageProduction}" Grid.Row="3" Grid.Column="0" Style="{DynamicResource btnTitle}" />
         <Button Content="{StaticResource PageMisson}" Grid.Row="3" Grid.Column="1" Command="{Binding GoToMisson}" Style="{DynamicResource btnNavigation}"/>

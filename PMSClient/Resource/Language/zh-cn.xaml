@@ -186,10 +186,10 @@
     <sys:String x:Key="PageMaterialOrderItemEdit">材料订单项编辑</sys:String>
     
     <sys:String x:Key="PageMaterialInventory">材料出入库</sys:String>
-    <sys:String x:Key="PageMaterialInventoryIn">材料库存入库</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOut">材料库存出库</sys:String>
-    <sys:String x:Key="PageMaterialInventoryInEdit">材料库存入库编辑</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOutEdit">材料库存出库编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">材料库存[入库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">材料库存[出库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInEdit">材料库存[入库]编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOutEdit">材料库存[出库]编辑</sys:String>
 
 
     <sys:String x:Key="PageRecordMilling">制粉记录</sys:String>
@@ -244,7 +244,7 @@
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
-    <sys:String x:Key="ButtonMaterialInventoryOut">材料入库</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>
 
 
 
@@ -252,6 +252,9 @@
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">选择计划安排</sys:String>
     <sys:String x:Key="ButtonSelectTest">选择测试结果</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialOrderItem">选择原料订单项目</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
+
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
