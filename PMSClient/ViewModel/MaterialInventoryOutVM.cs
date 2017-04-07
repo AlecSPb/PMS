@@ -12,9 +12,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialInventoryInVM : BaseViewModelPage
+    public class MaterialInventoryOutVM : BaseViewModelPage
     {
-        public MaterialInventoryInVM()
+        public MaterialInventoryOutVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             SearchCompositoinStandard = "";
-            MaterialInventoryIns = new ObservableCollection<DcMaterialInventoryIn>();
+            MainMaterialNeeds = new ObservableCollection<DcMaterialInventoryIn>();
         }
         private void InitializeCommands()
         {
@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
-            RecordCount = service.GetMaterialInventoryInCount();
+            RecordCount = service.GetMaterialInventoryCountBySearch(SearchCompositoinStandard);
             ActionPaging();
         }
         /// <summary>
@@ -98,8 +98,8 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var result = service.GetMaterialInventoryIns(skip, take);
-            MaterialInventoryIns.Clear();
-            result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
+            MainMaterialNeeds.Clear();
+            result.ToList<DcMaterialInventoryIn>().ForEach(o => MainMaterialNeeds.Add(o));
         }
 
         #region Proeperties
@@ -120,11 +120,11 @@ namespace PMSClient.ViewModel
 
 
 
-        private ObservableCollection<DcMaterialInventoryIn> materialInventoryIns;
-        public ObservableCollection<DcMaterialInventoryIn> MaterialInventoryIns
+        private ObservableCollection<DcMaterialInventoryIn> mainMaterialNeeds;
+        public ObservableCollection<DcMaterialInventoryIn> MainMaterialNeeds
         {
-            get { return materialInventoryIns; }
-            set { materialInventoryIns = value; RaisePropertyChanged(nameof(MaterialInventoryIns)); }
+            get { return mainMaterialNeeds; }
+            set { mainMaterialNeeds = value; RaisePropertyChanged(nameof(MainMaterialNeeds)); }
         }
 
         #endregion

@@ -5895,6 +5895,12 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsAsync(int skip, int take);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse")]
+        int GetMaterialInventoryInCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryInCountAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
         int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model);
         
@@ -5918,6 +5924,14 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountResponse" +
+            "")]
+        int GetMaterialInventoryOutCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountResponse" +
+            "")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
         int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model);
@@ -5973,6 +5987,14 @@ namespace PMSClient.MainService {
             return base.Channel.GetMaterialInventoryInsAsync(skip, take);
         }
         
+        public int GetMaterialInventoryInCount() {
+            return base.Channel.GetMaterialInventoryInCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountAsync() {
+            return base.Channel.GetMaterialInventoryInCountAsync();
+        }
+        
         public int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model) {
             return base.Channel.AddMaterialInventoryIn(model);
         }
@@ -6003,6 +6025,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsAsync(int skip, int take) {
             return base.Channel.GetMaterialInventoryOutsAsync(skip, take);
+        }
+        
+        public int GetMaterialInventoryOutCount() {
+            return base.Channel.GetMaterialInventoryOutCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountAsync() {
+            return base.Channel.GetMaterialInventoryOutCountAsync();
         }
         
         public int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model) {

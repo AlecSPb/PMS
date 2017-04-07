@@ -157,6 +157,12 @@
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryIns_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryInsResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCount" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryIn_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialInventoryIn" />
   </wsdl:message>
@@ -180,6 +186,12 @@
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOuts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCount" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCountResponse" />
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryOut_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialInventoryOut" />
@@ -632,6 +644,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns" message="tns:IMaterialInventoryService_GetMaterialInventoryIns_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryIns_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount" message="tns:IMaterialInventoryService_GetMaterialInventoryInCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInCount_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddMaterialInventoryIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn" message="tns:IMaterialInventoryService_AddMaterialInventoryIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse" message="tns:IMaterialInventoryService_AddMaterialInventoryIn_OutputMessage" />
@@ -647,6 +663,10 @@
     <wsdl:operation name="GetMaterialInventoryOuts">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts" message="tns:IMaterialInventoryService_GetMaterialInventoryOuts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryOuts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCount" message="tns:IMaterialInventoryService_GetMaterialInventoryOutCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryOutCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddMaterialInventoryOut">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut" message="tns:IMaterialInventoryService_AddMaterialInventoryOut_InputMessage" />
@@ -1134,6 +1154,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCount">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddMaterialInventoryIn">
       <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn" style="document" />
       <wsdl:input>
@@ -1163,6 +1192,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryOuts">
       <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutCount">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

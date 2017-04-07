@@ -96,6 +96,22 @@ namespace PMSWCFService
             }
         }
 
+        public int GetMaterialInventoryInCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.MaterialInventoryIns.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take)
         {
             try
@@ -132,6 +148,22 @@ namespace PMSWCFService
                                 orderby o.CreateTime descending
                                 select o;
                     return Mapper.Map<List<PMSMaterialInventoryOut>, List<DcMaterialInventoryOut>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMaterialInventoryOutCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.MaterialInventoryOuts.Count();
                 }
             }
             catch (Exception ex)

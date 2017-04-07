@@ -313,6 +313,9 @@
     <Compile Include="ViewForTablet\TabletViewLocator.cs" />
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MaterialInventoryOutEditVM.cs" />
+    <Compile Include="ViewModel\MaterialInventoryInEditVM.cs" />
+    <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInVM.cs" />

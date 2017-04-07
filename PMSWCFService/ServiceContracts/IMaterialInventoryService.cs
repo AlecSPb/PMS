@@ -14,6 +14,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take);
         [OperationContract]
+        int GetMaterialInventoryInCount();
+        [OperationContract]
         int AddMaterialInventoryIn(DcMaterialInventoryIn model);
         [OperationContract]
         int UpdateMaterialInventoryIn(DcMaterialInventoryIn model);
@@ -23,6 +25,8 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcMaterialInventoryOut> GetMaterialInventoryOuts(int skip, int take);
+        [OperationContract]
+        int GetMaterialInventoryOutCount();
         [OperationContract]
         int AddMaterialInventoryOut(DcMaterialInventoryOut model);
         [OperationContract]
