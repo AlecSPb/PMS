@@ -15,7 +15,6 @@ namespace PMSClient.ViewModel
     {
         public RecordTestVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.RecordTestRefresh, ActionRefresh);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
@@ -56,13 +55,10 @@ namespace PMSClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionEdit(DcRecordTest obj)
+        private void ActionEdit(DcRecordTest model)
         {
-            MsgObject msg = new PMSClient.MsgObject();
-            msg.NavigateTo = VToken.RecordTestEdit;
-            msg.MsgModel = new PMSClient.ModelObject() { IsNew = false, Model = obj };
-
-            NavigationService.GoTo(msg);
+            PMSHelper.ViewModels.RecordTestEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.RecordTestEdit);
         }
 
         private void ActionDoc(DcRecordTest obj)
@@ -72,7 +68,8 @@ namespace PMSClient.ViewModel
 
         private void ActionAdd()
         {
-            NavigationService.GoTo(new MsgObject() { NavigateTo = VToken.PlanSelectForTest });
+            PMSHelper.ViewModels.RecordTestEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RecordTestEdit);
         }
 
         private void InitializeProperties()

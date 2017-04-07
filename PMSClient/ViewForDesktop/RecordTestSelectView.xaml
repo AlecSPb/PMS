@@ -26,10 +26,10 @@
             <Button Content="{StaticResource ButtonSelectEmpty}" Style="{StaticResource  ButtonBasic}"
                     Command="{Binding Empty}"/>
 
-            <TextBlock Text="Product ID" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource RTProductID}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <TextBlock Text="CompositionStd" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource TextBlockBasic}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
@@ -38,7 +38,7 @@
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}"
                   SelectedIndex="0">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operation">
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
@@ -49,100 +49,105 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="TestType" ElementStyle="{StaticResource TextBlockBasic}"
+                <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource TextBlockBasic}"
                                     Binding="{Binding TestType}"/>
 
-                <DataGridTemplateColumn Header="ProductID">
+                <DataGridTemplateColumn Header="{StaticResource RTProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding ProductID}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Composition">
+                <DataGridTemplateColumn Header="{StaticResource RTComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Composition}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="CompositionAbbr">
+                <DataGridTemplateColumn Header="{StaticResource RTCompositionAbbr}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding CompositionAbbr}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="PO">
+                <DataGridTemplateColumn Header="{StaticResource RTPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding PO}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Customer">
+                <DataGridTemplateColumn Header="{StaticResource RTCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Customer}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Dimension">
+                <DataGridTemplateColumn Header="{StaticResource RTDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Dimension}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Density">
+                <DataGridTemplateColumn Header="{StaticResource RTDensity}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Density}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Weight">
+                <DataGridTemplateColumn Header="{StaticResource RTWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Weight}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Resistance">
+                <DataGridTemplateColumn Header="{StaticResource RTWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Weight}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="DimensionActual">
+                <DataGridTemplateColumn Header="{StaticResource RTDimensionActual}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding DimensionActual}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Remark">
+                <DataGridTemplateColumn Header="{StaticResource RTRemark}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <TextBlock Text="{Binding Remark}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="CreateTime">
+                <DataGridTemplateColumn Header="{StaticResource RTCreateTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding CreateTime}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource TextBlockDGBasic}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTCreator}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Creator}" Style="{StaticResource TextBlockDGBasic}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"
-                             RecordCount="{Binding RecordCount}" LabelPageIndex="Current Page" LabelPageCount="Total Page"
-                             LabelPageSize="Records/Page" LabelRecordCount="Total Record"/>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
         <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid DataContext="{Binding ElementName=dg,Path=SelectedItem}">
                 <Grid.ColumnDefinitions>
@@ -169,63 +174,68 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="ProductID"
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Composition"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Abbr"
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="PO"
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTPO}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Dimension"
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Density"
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Weight"
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Resistance"
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="DimensionActual"
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="Remark"
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource TextBlockBasic}"/>
                     <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
                             Background="{StaticResource ReadOnlyTextBoxBrush}"
                             HorizontalAlignment="Stretch"/>
-
+                    
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTSample}"
+                           Style="{StaticResource TextBlockBasic}"/>
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource TextBoxBasic}"
+                            Background="{StaticResource ReadOnlyTextBoxBrush}"
+                            HorizontalAlignment="Stretch"/>
                 </Grid>
 
                 <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding CompositionXRF}"
