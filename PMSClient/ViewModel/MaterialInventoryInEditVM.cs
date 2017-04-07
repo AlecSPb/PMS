@@ -52,8 +52,8 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-                CurrentMaterialInventoryIn.Composition = order.CompositionStandard;
-                CurrentMaterialInventoryIn.PMINumber = order.PMINumber;
+                //CurrentMaterialInventoryIn.Composition = order.CompositionStandard;
+                //CurrentMaterialInventoryIn.PMINumber = order.PMINumber;
                 RaisePropertyChanged(nameof(CurrentMaterialInventoryIn));
             }
         }
@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn));
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }

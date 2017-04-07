@@ -23,26 +23,28 @@ namespace PMSClient.ViewModel
         public void SetNew()
         {
 
-            var empty = new DcMaterialNeed();
+            var empty = new DcMaterialInventoryOut();
             empty.Id = Guid.NewGuid();
+            empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
+            empty.Composition = "成分";
+            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
-            empty.Composition = "需求原料成分";
-            empty.PMINumber = DateTime.Now.ToString("yyMMdd");
-            empty.Purity = "5N";
+            empty.Receiver = "B.Lu";
             empty.Weight = 1;
+            empty.Purity = "5N";
+            empty.Remark = "无";
 
             IsNew = true;
-            CurrentMaterialNeed = empty;
+            CurrentMaterialInventoryOut = empty;
         }
 
-        public void SetEdit(DcMaterialNeed model)
+        public void SetEdit(DcMaterialInventoryOut model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentMaterialNeed = model;
+                CurrentMaterialInventoryOut = model;
             }
         }
 
@@ -50,9 +52,9 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-                CurrentMaterialNeed.Composition = order.CompositionStandard;
-                CurrentMaterialNeed.PMINumber = order.PMINumber;
-                RaisePropertyChanged(nameof(CurrentMaterialNeed));
+                //CurrentMaterialInventoryOut.Composition = order.CompositionStandard;
+                //CurrentMaterialInventoryOut.PMINumber = order.PMINumber;
+                //RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
             }
         }
 
@@ -66,15 +68,15 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.MissonSelect.SetRequestView(PMSViews.MaterialNeedEdit);
-            NavigationService.GoTo(PMSViews.MissonSelect);
+            //PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialNeedEdit);
+            //NavigationService.GoTo(PMSViews.MaterialNeedSelect);
         }
 
         private void ActionSave()
@@ -82,16 +84,16 @@ namespace PMSClient.ViewModel
 
             try
             {
-                var service = new MaterialNeedServiceClient();
+                var service = new MaterialInventoryServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialNeed(CurrentMaterialNeed);
+                    service.AddMaterialInventoryOut(CurrentMaterialInventoryOut);
                 }
                 else
                 {
-                    service.UpdateMaterialNeed(CurrentMaterialNeed);
+                    service.UpdateMaterialInventoryOut(CurrentMaterialInventoryOut);
                 }
-                NavigationService.GoTo(PMSViews.MaterialNeed);
+                NavigationService.GoTo(PMSViews.MaterialInventoryOut);
             }
             catch (Exception ex)
             {
@@ -99,14 +101,14 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private DcMaterialNeed currentMaterialNeed;
-        public DcMaterialNeed CurrentMaterialNeed
+        private DcMaterialInventoryOut currentMaterialInventoryOut;
+        public DcMaterialInventoryOut CurrentMaterialInventoryOut
         {
-            get { return currentMaterialNeed; }
+            get { return currentMaterialInventoryOut; }
             set
             {
-                currentMaterialNeed = value;
-                RaisePropertyChanged(nameof(CurrentMaterialNeed));
+                currentMaterialInventoryOut = value;
+                RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
             }
         }
         public ObservableCollection<string> States { get; set; }
