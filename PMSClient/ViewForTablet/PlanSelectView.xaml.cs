@@ -25,7 +25,6 @@ namespace PMSClient.ViewForTablet
         public PlanSelectView()
         {
             InitializeComponent();
-            this.DataContext = new PlanSelectForRecordTestVM();
         }
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)

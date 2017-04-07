@@ -72,9 +72,6 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
 
-            SimpleIoc.Default.Register<PlanSelectForRecordTestVM>();
-            SimpleIoc.Default.Register<PlanSelectForRecordVHPVM>();
-
             SimpleIoc.Default.Register<RecordMillingVM>();
             SimpleIoc.Default.Register<RecordMillingEditVM>();
 
@@ -205,15 +202,6 @@ namespace PMSClient.ViewModel
         public RecordDeliveryItemEditVM RecordDeliveryItemEdit
         {
             get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditVM>(); }
-        }
-
-        public PlanSelectForRecordTestVM PlanSelectForRecordTestResult
-        {
-            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordTestVM>(); }
-        }
-        public PlanSelectForRecordVHPVM PlanSelectForRecordVHP
-        {
-            get { return SimpleIoc.Default.GetInstance<PlanSelectForRecordVHPVM>(); }
         }
 
         public RecordMillingVM RecordMilling

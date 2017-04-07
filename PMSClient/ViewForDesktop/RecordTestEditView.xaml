@@ -19,6 +19,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource ButtonBasic}" Command="{Binding Save}"/>
+            <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource ButtonBasic}" Command="{Binding Select}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentRecordTest}">

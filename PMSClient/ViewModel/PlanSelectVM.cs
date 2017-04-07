@@ -18,8 +18,6 @@ namespace PMSClient.ViewModel
             IntitializeCommands();
             IntitializeProperties();
             SetPageParametersWhenConditionChange();
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
-            Select = new RelayCommand<DcMissonWithPlan>(ActionSelect);
         }
 
         private void ActionSelect(DcMissonWithPlan plan)
@@ -37,6 +35,7 @@ namespace PMSClient.ViewModel
                         PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan);
                         break;
                     case PMSViews.RecordMachineEdit:
+                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan);
                         break;
                     case PMSViews.RecordTestEdit:
                         break;
@@ -58,9 +57,6 @@ namespace PMSClient.ViewModel
             requestView = request;
         }
 
-
-
-
         private void IntitializeProperties()
         {
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
@@ -69,6 +65,8 @@ namespace PMSClient.ViewModel
         private void IntitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
+            Select = new RelayCommand<DcMissonWithPlan>(ActionSelect);
         }
 
         private void SetPageParametersWhenConditionChange()

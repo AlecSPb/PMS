@@ -67,19 +67,25 @@ namespace PMSClient.ViewModel
         {
             if (CurrentRecordMilling != null)
             {
-                using (var dc = new RecordMillingServiceClient())
+                try
                 {
-                    if (IsNew)
+                    using (var dc = new RecordMillingServiceClient())
                     {
-                        dc.AddRecordMilling(CurrentRecordMilling);
+                        if (IsNew)
+                        {
+                            dc.AddRecordMilling(CurrentRecordMilling);
+                        }
+                        else
+                        {
+                            dc.UpdateRecordMilling(CurrentRecordMilling);
+                        }
+                        //TODO:以后将这里的重复代替掉
+                        NavigationService.GoTo(PMSViews.RecordMilling);
                     }
-                    else
-                    {
-                        dc.UpdateRecordMilling(CurrentRecordMilling);
-                    }
-
-                    //TODO:以后将这里的重复代替掉
-                    NavigationService.GoTo(PMSViews.RecordMilling);
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
                 }
             }
         }

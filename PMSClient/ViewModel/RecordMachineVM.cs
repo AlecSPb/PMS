@@ -36,28 +36,14 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcRecordMachine model)
         {
-            NavigationService.GoTo(VToken.RecordMachineEdit, new ModelObject() { IsNew = false, Model = model });
+            PMSHelper.ViewModels.RecordMachineEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.RecordMachineEdit);
         }
 
         private void ActionAdd()
         {
-            var model = new DcRecordMachine();
-            model.ID = Guid.NewGuid();
-            model.CreateTime = DateTime.Now;
-            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.Checked.ToString();
-            model.VHPPlanLot = DateTime.Now.ToString("yyMMdd");
-            model.Composition = "成分";
-            model.Diameter1 = 0;
-            model.Diameter2 = 0;
-            model.Dimension = "230mm OD x 4mm";
-            model.Thickness1 = 0;
-            model.Thickness2 = 0;
-            model.Thickness3 = 0;
-            model.Thickness4 = 0;
-            model.ExtraRequirement = "无缺口无划痕";
-
-            NavigationService.GoTo(VToken.RecordMachineEdit, new ModelObject() { IsNew = true, Model = model });
+            PMSHelper.ViewModels.RecordMachineEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RecordMachineEdit);
         }
 
         private void SetPageParametersWhenConditionChange()

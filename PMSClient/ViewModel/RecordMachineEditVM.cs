@@ -14,12 +14,59 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
+            Select = new RelayCommand(ActionSelect);
         }
-        public void SetKeyProperties(ModelObject model) 
+
+        private void ActionSelect()
         {
-            IsNew = model.IsNew;
-            CurrentRecordMachine = model.Model as DcRecordMachine;
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMachineEdit);
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
+
+        public void SetNew()
+        {
+            IsNew = true;
+            #region 初始化
+            var model = new DcRecordMachine();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.State = PMSCommon.CommonState.Checked.ToString();
+            model.VHPPlanLot = DateTime.Now.ToString("yyMMdd");
+            model.Composition = "成分";
+            model.Diameter1 = 0;
+            model.Diameter2 = 0;
+            model.Dimension = "230mm OD x 4mm";
+            model.Thickness1 = 0;
+            model.Thickness2 = 0;
+            model.Thickness3 = 0;
+            model.Thickness4 = 0;
+            model.ExtraRequirement = "无缺口无划痕";
+            #endregion
+
+            CurrentRecordMachine = model;
+        }
+
+        public void SetEdit(DcRecordMachine model)
+        {
+            if (model != null)
+            {
+                IsNew = false;
+                CurrentRecordMachine = model;
+            }
+        }
+
+        public void SetBySelect(DcMissonWithPlan plan)
+        {
+            if (plan != null)
+            {
+                CurrentRecordMachine.Composition = plan.CompositionStandard;
+                CurrentRecordMachine.Dimension = plan.Dimension;
+                RaisePropertyChanged(nameof(CurrentRecordMachine));
+            }
+        }
+
+
 
         private void ActionSave()
         {
@@ -41,8 +88,7 @@ namespace PMSClient.ViewModel
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 
@@ -53,7 +99,7 @@ namespace PMSClient.ViewModel
 
         private static void GoBack()
         {
-            NavigationService.GoTo(VToken.RecordMachine);
+            NavigationService.GoTo(PMSViews.RecordMachine);
         }
 
         private DcRecordMachine currentRecordMachine;
@@ -64,6 +110,6 @@ namespace PMSClient.ViewModel
             set { currentRecordMachine = value; RaisePropertyChanged(nameof(CurrentRecordMachine)); }
         }
 
-
+        public RelayCommand Select { get; set; }
     }
 }
