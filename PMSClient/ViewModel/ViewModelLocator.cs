@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
 
 
 
-            SimpleIoc.Default.Register<MaterialNeedVM>();
+            SimpleIoc.Default.Register<MaterialInventoryInVM>();
             SimpleIoc.Default.Register<MaterialNeedEditVM>();
             SimpleIoc.Default.Register<MaterialNeedSelectVM>();
 
@@ -133,9 +133,9 @@ namespace PMSClient.ViewModel
         }
 
 
-        public MaterialNeedVM MaterialNeed
+        public MaterialInventoryInVM MaterialNeed
         {
-            get { return SimpleIoc.Default.GetInstance<MaterialNeedVM>(); }
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInVM>(); }
         }
         public MaterialNeedEditVM MaterialNeedEdit
         {

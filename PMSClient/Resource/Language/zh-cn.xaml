@@ -241,6 +241,10 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryOut">材料入库</sys:String>
+
+
 
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>

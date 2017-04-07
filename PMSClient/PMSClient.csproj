@@ -315,6 +315,7 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
     <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
+    <Compile Include="ViewModel\MaterialInventoryInVM.cs" />
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemEditVM.cs" />

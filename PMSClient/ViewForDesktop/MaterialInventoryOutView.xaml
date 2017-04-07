@@ -22,6 +22,7 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource ButtonBasic}" Command="{Binding Add}"/>
             <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonMaterialInventoryIn}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToMaterialInventoryIn}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MaterialInventoryOuts}">
             <DataGrid.Columns>
@@ -36,15 +37,17 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource MNCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MIOCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MIOMaterialLot}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding MaterialLot}"/>
+                <DataGridTextColumn Header="{StaticResource MIOComposition}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding PMINumber}"/>
-                <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MIOPurity}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Purity}"/>
-                <DataGridTemplateColumn Header="{StaticResource MNWeight}">
+                <DataGridTextColumn Header="{StaticResource MIOReceiver}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Receiver}"/>
+                <DataGridTemplateColumn Header="{StaticResource MIOWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" HorizontalAlignment="Right"
@@ -53,12 +56,10 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="{StaticResource MNSpecialNeeds}" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding SpecialNeeds}"/>
-                <DataGridTextColumn Header="{StaticResource MNCreator}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MIORemark}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource MIOCreator}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Creator}"/>
-                <!--<DataGridTextColumn Header="{StaticResource MNState}" ElementStyle="{StaticResource TextBlockDGBasic}"
-                                    Binding="{Binding State}"/>-->
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
