@@ -20,8 +20,15 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcRecordMachine>(ActionEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
+            Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate);
 
             SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionDuplicate(DcRecordMachine model)
+        {
+            PMSHelper.ViewModels.RecordMachineEdit.SetByDuplicate(model);
+            GoToEditView();
         }
 
         private void ActionAll()
@@ -37,13 +44,18 @@ namespace PMSClient.ViewModel
         private void ActionEdit(DcRecordMachine model)
         {
             PMSHelper.ViewModels.RecordMachineEdit.SetEdit(model);
+            GoToEditView();
+        }
+
+        private static void GoToEditView()
+        {
             NavigationService.GoTo(PMSViews.RecordMachineEdit);
         }
 
         private void ActionAdd()
         {
             PMSHelper.ViewModels.RecordMachineEdit.SetNew();
-            NavigationService.GoTo(PMSViews.RecordMachineEdit);
+            GoToEditView();
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -71,5 +83,6 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordMachine> Edit { get; set; }
+        public RelayCommand<DcRecordMachine> Duplicate { get; set; }
     }
 }

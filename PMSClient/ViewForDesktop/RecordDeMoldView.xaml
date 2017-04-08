@@ -36,6 +36,9 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource ButtonDGBasic}"
+                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>-->
@@ -43,6 +46,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDMCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMVHPPlanLot}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding VHPPlanLot}"/>
                 <DataGridTextColumn Header="{StaticResource RDMComposition}" ElementStyle="{StaticResource TextBlockDGBasic}"
@@ -67,7 +72,8 @@
                                     Binding="{Binding Thickness4}"/>
                 <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource TextBlockDGBasic}"
                                     Binding="{Binding Remark}"/>
-
+                <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                                    Binding="{Binding Creator}"/>
 
 
             </DataGrid.Columns>

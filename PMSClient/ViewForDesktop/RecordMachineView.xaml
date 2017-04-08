@@ -43,6 +43,9 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource ButtonDGBasic}"
+                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource ButtonDGBasic}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>-->
