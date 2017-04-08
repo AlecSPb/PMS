@@ -10,7 +10,7 @@ namespace PMSClient.Helper
 {
     public class LocalLog : ILog
     {
-        private LogInformation _currentUser;
+        private LogInformation _currentSession;
         private string _logfile;
         private string _errorfile;
         public LocalLog()
@@ -30,15 +30,15 @@ namespace PMSClient.Helper
             _logfile = Path.Combine(_logdir, $"mainlog{DateTime.Now.ToString("yyMMdd")}.txt");
             _errorfile = Path.Combine(_errordir, $"mainerror{ DateTime.Now.ToString("yyMMdd")}.txt");
 
-            _currentUser = PMSHelper.CurrentSession;
+            _currentSession = PMSHelper.CurrentSession;
         }
         public void Log(string message)
         {
             var date = DateTime.Now;
             var user = "none";
-            if (_currentUser.CurrentUser != null)
+            if (_currentSession.CurrentUser != null)
             {
-                user = _currentUser.CurrentUser.UserName;
+                user = _currentSession.CurrentUser.UserName;
             }
             if (!File.Exists(_logfile))
             {
@@ -54,9 +54,9 @@ namespace PMSClient.Helper
         {
             var date = DateTime.Now;
             var user = "none";
-            if (_currentUser.CurrentUser != null)
+            if (_currentSession.CurrentUser != null)
             {
-                user = _currentUser.CurrentUser.UserName;
+                user = _currentSession.CurrentUser.UserName;
             }
 
             if (!File.Exists(_errorfile))

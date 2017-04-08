@@ -29,7 +29,7 @@ namespace PMSClient.ViewModel
             model.DeliveryName = DateTime.Now.ToString("yyMMdd") + "A";
             model.DeliveryNumber = "UPS";
             model.CreateTime = DateTime.Now;
-            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.UnChecked.ToString();
             model.PackageInformation = "50kg";
             model.PackageType = "Wood";

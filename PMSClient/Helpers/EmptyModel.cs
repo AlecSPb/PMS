@@ -26,7 +26,7 @@ namespace PMSClient
             empty.Id = Guid.NewGuid();
             empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
             empty.CreateTime = DateTime.Now;
-            empty.Creator = (App.Current as App).CurrentUser.UserName;
+            //empty.Creator = (App.Current as App).CurrentUser.UserName;
             empty.Purity = "5N";
             empty.Weight = 1.0;
             empty.PMINumber = order.PMINumber;
@@ -110,7 +110,7 @@ namespace PMSClient
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.State = PMSCommon.OrderState.UnChecked.ToString();
-            model.Creator = (App.Current as App).CurrentUser.UserName;
+            //model.Creator = (App.Current as App).CurrentUser.UserName;
             model.Supplier = "Sanjie";
             model.SupplierAbbr = "SJ";
             model.SupplierEmail = "sj_materials@163.com";
@@ -129,7 +129,7 @@ namespace PMSClient
             item.ID = Guid.NewGuid();
             item.MaterialOrderID = order.ID;
             item.State = PMSCommon.SimpleState.UnDeleted.ToString();
-            item.Creator = (App.Current as App).CurrentUser.UserName;
+            //item.Creator = (App.Current as App).CurrentUser.UserName;
             item.CreateTime = DateTime.Now;
             item.Composition = "Composition";
             item.PMINumber = "WorkNumber";

@@ -23,30 +23,8 @@ namespace PMSClient
 
         private void App_Startup(object sender, StartupEventArgs e)
         {
-            CurrentUser = new UserService.DcUser()
-            {
-                ID = Guid.NewGuid(),
-                UserName = "xs.zhou",
-                RealName = "周新生",
-                CreateTime = DateTime.Now,
-                Email = "xs.zhou@outlook.com",
-                Phone = "13540781789"
-            };
-            _logInformation = new LogInformation();
-            _log = new LocalLog();
+
         }
 
-        public DcUser CurrentUser { get; set; }
-        private LogInformation _logInformation;
-        public LogInformation CurrentSession
-        {
-            get { return _logInformation; }
-        }
-
-        private ILog _log;
-        public ILog CurrentLog
-        {
-            get { return _log; }
-        }
     }
 }

@@ -14,10 +14,10 @@ namespace PMSClient
     public static class PMSHelper
     {
 
-        private static App _currentApp;
         static PMSHelper()
         {
-            _currentApp = App.Current as App;
+            _currentSession = new LogInformation();
+            _currentLog = new LocalLog();
 
             _desktopViews = new DesktopViewLocator();
             _tabletViews = new TabletViewLocator();
@@ -25,18 +25,20 @@ namespace PMSClient
         }
         public static LogInformation CurrentSession
         {
-            get
-            {
-                return _currentApp.CurrentSession;
-            }
+            get { return _currentSession; }
         }
         public static ILog CurrentLog
         {
-            get
-            {
-                return _currentApp.CurrentLog;
-            }
+            get { return _currentLog; }
         }
+
+        #region 当前用户
+        private static LogInformation _currentSession;
+        private static ILog _currentLog;
+        #endregion
+        #region 日志组件
+
+        #endregion
 
         #region 视图和视图模型
         private static DesktopViewLocator _desktopViews;
