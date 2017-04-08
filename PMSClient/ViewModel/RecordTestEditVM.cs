@@ -30,18 +30,26 @@ namespace PMSClient.ViewModel
 
         public void SetNew()
         {
-            IsNew = true;           
+            IsNew = true;
             var model = new DcRecordTest();
             #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.Creator = (App.Current as App).CurrentUser.UserName;
+            model.Composition = "成分";
+            model.ProductID = DateTime.Now.ToString("yyMMdd") + "-M-1";
+            model.CompositionXRF = "暂无";
+            model.Dimension = "要求尺寸";
+            model.DimensionActual = "实际尺寸";
+            model.PO = "PO";
+            model.CompositionAbbr = "成分缩写";
+            model.Customer = "客户信息";
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.TestType = PMSCommon.TestType.Product.ToString();
-            model.State = "Checked";
-            model.Weight = "0";
+            model.State = PMSCommon.CommonState.UnChecked.ToString();
+            model.Weight = "100";
             model.Remark = "";
-            model.Resistance = "";
-            model.Sample = "";
+            model.Resistance = "OutOfRange";
+            model.Sample = "无需样品";
             model.CompositionXRF = "暂无";
             model.Density = "0";
             #endregion
@@ -49,16 +57,26 @@ namespace PMSClient.ViewModel
         }
         public void SetEdit(DcRecordTest model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 IsNew = false;
                 CurrentRecordTest = model;
             }
         }
-
+        public void SetNew(DcRecordTest model)
+        {
+            if (model != null)
+            {
+                IsNew = true;
+                model.ID = Guid.NewGuid();
+                model.CreateTime = DateTime.Now;
+                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentRecordTest = model;
+            }
+        }
         public void SetBySelect(DcMissonWithPlan plan)
         {
-            if (plan!=null)
+            if (plan != null)
             {
                 CurrentRecordTest.Composition = plan.CompositionStandard;
                 CurrentRecordTest.CompositionAbbr = plan.CompositionAbbr;
@@ -81,12 +99,6 @@ namespace PMSClient.ViewModel
         private static void GoBack()
         {
             NavigationService.GoTo(PMSViews.RecordTest);
-        }
-
-        public void SetKeyProperties(ModelObject model)
-        {
-            CurrentRecordTest = model.Model as DcRecordTest;
-            IsNew = model.IsNew;
         }
 
         private void ActionSave()

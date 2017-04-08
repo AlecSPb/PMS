@@ -441,7 +441,7 @@
     <sys:String x:Key="RMMDefects">缺陷</sys:String>
 
     <!--RecordTest-->
-    <sys:String x:Key="RTCreator">状态</sys:String>
+    <sys:String x:Key="RTCreator">创建者</sys:String>
     <sys:String x:Key="RTCreateTime">创建时间</sys:String>
     <sys:String x:Key="RTState">状态</sys:String>
     <sys:String x:Key="RTTestType">测试类型</sys:String>

@@ -38,6 +38,7 @@ namespace PMSClient.ViewModel
                         PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan);
                         break;
                     case PMSViews.RecordTestEdit:
+                        PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan);
                         break;
                     default:
                         break;

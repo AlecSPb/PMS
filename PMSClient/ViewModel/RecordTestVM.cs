@@ -38,6 +38,7 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcRecordTest>(ActionEdit);
             Doc = new RelayCommand<DcRecordTest>(ActionDoc);
             SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
+            Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate);
         }
 
         private void ActionSelectionChanged(DcRecordTest model)
@@ -59,6 +60,12 @@ namespace PMSClient.ViewModel
         private void ActionSearch()
         {
             ActionPaging();
+        }
+
+        private void ActionDuplicate(DcRecordTest model)
+        {
+            PMSHelper.ViewModels.RecordTestEdit.SetNew(model);
+            NavigationService.GoTo(PMSViews.RecordTestEdit);
         }
 
         private void ActionEdit(DcRecordTest model)
@@ -145,6 +152,7 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand<DcRecordTest> SelectionChanged { get; set; }
+        public RelayCommand<DcRecordTest> Duplicate { get; set; }
         #endregion
     }
 }

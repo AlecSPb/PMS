@@ -12,8 +12,6 @@ namespace PMSCommon
     public enum CommonState
     {
         Deleted,
-        Hide,
-        Show,
         UnChecked,
         Checked
     }
