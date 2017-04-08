@@ -174,4 +174,33 @@
     <Style x:Key="DGTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource DGTextBlockBasic}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
+    
+    
+    
+    <!--规范化后的样式-->
+    
+    <!--基本资源-->
+    <SolidColorBrush x:Key="BGBrushTitleBar" Color="#135995"/>
+    <SolidColorBrush x:Key="BGBrushNavigateBar" Color="Orange"/>
+    <SolidColorBrush x:Key="BGBrushStatusBar" Color="#CA5100"/>
+    <SolidColorBrush x:Key="BGBrushWindowBody" Color="Wheat"/>
+
+    <SolidColorBrush x:Key="FGTitleBar" Color="White"/>
+    <SolidColorBrush x:Key="FGNavigateBar" Color="White"/>
+    <SolidColorBrush x:Key="FGStatuBar" Color="White"/>
+    <SolidColorBrush x:Key="FGText" Color="Black"/>
+
+    <SolidColorBrush x:Key="BGReadOnlyTextBox" Color="LightSteelBlue"/>
+    <SolidColorBrush x:Key="BGRequiredTextBox" Color="LimeGreen"/>
+
+    <sys:Double x:Key="FontSM">15</sys:Double>
+    <sys:Double x:Key="FontMD">20</sys:Double>
+    <sys:Double x:Key="FontLG">25</sys:Double>
+
+    <Thickness x:Key="ThicknessSM">2</Thickness>
+    <Thickness x:Key="ThicknessMD">4</Thickness>
+    <Thickness x:Key="ThicknessLG">10</Thickness>
+    
+    
+    
 </ResourceDictionary>
