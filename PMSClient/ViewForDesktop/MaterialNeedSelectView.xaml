@@ -10,54 +10,54 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource strPageMaterialNeedSelect}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource ButtonBasic}" Command="{Binding GiveUp}"/>
-            <TextBlock Text="{StaticResource MNComposition}" Style="{StaticResource  TextBlockBasic}"/>
-            <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource TextBoxBasic}"/>
-            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  ButtonBasic}" Command="{Binding Search}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource ButtonBasic}" Command="{Binding All}"/>
+        <TextBlock Text="{StaticResource strPageMaterialNeedSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <TextBlock Text="{StaticResource MNComposition}" Style="{StaticResource  StyleTextBlockCommon}"/>
+            <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding MainMaterialNeeds}">
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainMaterialNeeds}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource MNCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PMINumber}"/>
-                <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Purity}"/>
                 <DataGridTemplateColumn Header="{StaticResource MNWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" HorizontalAlignment="Right"
-                                       Style="{StaticResource TextBlockDGBasic}"/>
+                                       Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="{StaticResource MNSpecialNeeds}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNSpecialNeeds}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding SpecialNeeds}"/>
-                <DataGridTextColumn Header="{StaticResource MNCreator}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource MNCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>

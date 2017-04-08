@@ -1,31 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <!--Public Resouces-->
-    <SolidColorBrush x:Key="BackgroundTitleBar" Color="#135995"/>
-    <SolidColorBrush x:Key="BackgroundNavigateBar" Color="Orange"/>
-    <SolidColorBrush x:Key="BackgroundStatusBar" Color="#CA5100"/>
-    <SolidColorBrush x:Key="BackgroundWindow" Color="Wheat"/>
-
-    <SolidColorBrush x:Key="ForegroundTitleBar" Color="White"/>
-    <SolidColorBrush x:Key="ForegroundNavigateBar" Color="White"/>
-    <SolidColorBrush x:Key="ForegroundStatuBar" Color="White"/>
-    <SolidColorBrush x:Key="ForegroundText" Color="Black"/>
-
-    <SolidColorBrush x:Key="BorderBrush" Color="Orange"/>
-    <SolidColorBrush x:Key="ReadOnlyTextBoxBrush" Color="LightSteelBlue"/>
-
-    <sys:Double x:Key="Small">15</sys:Double>
-    <sys:Double x:Key="Medium">20</sys:Double>
-    <sys:Double x:Key="Big">25</sys:Double>
-
-    <Thickness x:Key="ThicknessSmall">2</Thickness>
-    <Thickness x:Key="ThicknessMedium">4</Thickness>
-    <Thickness x:Key="ThicknessBig">10</Thickness>
-
-
-    <!--Styles-->
-    <!--Control Button-->
+    <!--规范化后的样式-->
     <Style x:Key="ControlButton" TargetType="Button">
         <Setter Property="Margin" Value="0 2"/>
         <Setter Property="Padding" Value="2"/>
@@ -35,148 +11,20 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0 2"/>
         <Setter Property="Padding" Value="2"/>
-        <Setter Property="Foreground" Value="{StaticResource ForegroundTitleBar}"/>
+        <Setter Property="Foreground" Value="{StaticResource FGTitleBar}"/>
     </Style>
-
-    <!--Navigation Styles-->
-    <Style x:Key="btnNavigation" TargetType="Button">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="5"/>
-        <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Height" Value="50"/>
-    </Style>
-    <Style x:Key="btnTitle" TargetType="Button">
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="Padding" Value="5"/>
-        <Setter Property="FontSize" Value="20"/>
-        <Setter Property="MinWidth" Value="80"/>
-        <Setter Property="VerticalAlignment" Value="Stretch"/>
-        <Setter Property="Foreground" Value="Blue"/>
-    </Style>
-    <!--Control Styles-->
-    <Style x:Key="CommonBasic" TargetType="FrameworkElement">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-    </Style>
-    <Style x:Key="ButtonBasic" TargetType="Button">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
-    </Style>
-    <Style x:Key="ButtonDGBasic" TargetType="Button">
-        <Setter Property="Margin" Value="0 0 2 0"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="50"/>
-    </Style>
-    <Style x:Key="TextBlockBasic" TargetType="TextBlock">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="TextBlockTipBasic" TargetType="TextBlock">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="Blue"/>
-    </Style>
-    <Style x:Key="TextBlockDGBasic" TargetType="TextBlock">
-        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="TextBlockDGLeft" TargetType="TextBlock" BasedOn="{StaticResource TextBlockDGBasic}">
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-    </Style>
-    <Style x:Key="TextBlockDGCenter" TargetType="TextBlock" BasedOn="{StaticResource TextBlockDGBasic}">
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="TextBlockDGRight" TargetType="TextBlock" BasedOn="{StaticResource TextBlockDGBasic}">
-        <Setter Property="HorizontalAlignment" Value="Right"/>
-    </Style>
-
-    <Style x:Key="TextBlockPageTitleBasic" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBasic}">
-        <Setter Property="FontSize" Value="{StaticResource Medium}"/>
-    </Style>
-    <Style x:Key="TextBoxBasic" TargetType="TextBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
-    </Style>
-    <Style x:Key="TextBoxMultilineBasic" TargetType="TextBox" BasedOn="{StaticResource TextBoxBasic}">
-        <Setter Property="AcceptsReturn" Value="True"/>
-        <Setter Property="MinHeight" Value="50"/>
-    </Style>
-    <Style x:Key="CheckBoxBasic" TargetType="CheckBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
-    </Style>
-    <Style x:Key="RadioButtonBasic" TargetType="RadioButton">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
-    </Style>
-    <Style x:Key="ComboBoxBasic" TargetType="ComboBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
-    </Style>
-    <Style x:Key="DatePickerBasic" TargetType="DatePicker">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="ListBoxBasic" TargetType="ListBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-    </Style>
-
-    <!--DG-->
-    <Style x:Key="DataGridBasic" TargetType="DataGrid">
-        <Setter Property="AutoGenerateColumns" Value="False"/>
-        <Setter Property="IsReadOnly" Value="True"/>
-        <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
-        <Setter Property="SelectionMode" Value="Single"/>
-        <Setter Property="GridLinesVisibility" Value="Horizontal"/>
-        <Setter Property="CanUserSortColumns" Value="False"/>
-        <Setter Property="CanUserReorderColumns" Value="False"/>
-    </Style>
-    <Style x:Key="DGTextBlockBasic" TargetType="TextBlock">
-        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-
-    <!--此前的以后慢慢替换掉-->
-
-    <!--规范化后的样式-->
-
     <!--基本资源-->
     <SolidColorBrush x:Key="BGBrushTitleBar" Color="#135995"/>
     <SolidColorBrush x:Key="BGBrushNavigateBar" Color="Orange"/>
     <SolidColorBrush x:Key="BGBrushStatusBar" Color="#CA5100"/>
-    <SolidColorBrush x:Key="BGBrushWindowBody" Color="Wheat"/>
-
+    <SolidColorBrush x:Key="BGBrushWindow" Color="Wheat"/>
+    
     <SolidColorBrush x:Key="FGTitleBar" Color="White"/>
     <SolidColorBrush x:Key="FGNavigateBar" Color="White"/>
     <SolidColorBrush x:Key="FGStatuBar" Color="White"/>
     <SolidColorBrush x:Key="FGText" Color="Black"/>
-
+    
+    <SolidColorBrush x:Key="BorderBrush" Color="Orange"/>
     <SolidColorBrush x:Key="BGReadOnlyTextBox" Color="LightSteelBlue"/>
     <SolidColorBrush x:Key="BGRequiredTextBox" Color="LimeGreen"/>
 
@@ -189,33 +37,30 @@
     <Thickness x:Key="ThicknessLG">10</Thickness>
 
     <!--基本控件-->
-    <Style x:Key="BaseControl" TargetType="Control">
-        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
-    </Style>
+
     <!--登录-->
-    <Style x:Key="LogInUID" TargetType="TextBox">
+    <Style x:Key="StyleLogInUID" TargetType="TextBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
-    <Style x:Key="LogInPwd" TargetType="PasswordBox">
+    <Style x:Key="StyleLogInPwd" TargetType="PasswordBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
-    <Style x:Key="LogInInformation" TargetType="TextBlock">
+    <Style x:Key="StyleLogInInformation" TargetType="TextBlock">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
-    <Style x:Key="LogInButton" TargetType="Button">
+    <Style x:Key="StyleLogInButton" TargetType="Button">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
     <!--导航-->
-    <Style x:Key="ButtonNavigation" TargetType="Button" BasedOn="{StaticResource BaseControl}">
+    <Style x:Key="StyleButtonNavigation" TargetType="Button">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
@@ -223,7 +68,7 @@
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
         <Setter Property="Height" Value="50"/>
     </Style>
-    <Style x:Key="ButtonNavigationTitle" TargetType="Button">
+    <Style x:Key="StyleButtonNavigationTitle" TargetType="Button">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
@@ -234,86 +79,84 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <!--通用-->
-    <Style x:Key="ButtonCommon" TargetType="Button">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
+    <Style x:Key="StyleButtonCommon" TargetType="Button">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="ButtonSpecial" TargetType="Button" BasedOn="{StaticResource ButtonCommon}">
+    <Style x:Key="StyleButtonSpecial" TargetType="Button" BasedOn="{StaticResource StyleButtonCommon}">
         <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="FontWeight" Value="Bold"/>
     </Style>
-    
-    
-    
-    <Style x:Key="TextBlockCommon" TargetType="TextBlock">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+    <Style x:Key="StyleTextBlockCommon" TargetType="TextBlock">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="TextBlockTip" TargetType="TextBlock">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+    <Style x:Key="StyleTextBlockTip" TargetType="TextBlock">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
-    <Style x:Key="TextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockBasic}">
-        <Setter Property="FontSize" Value="{StaticResource Medium}"/>
+    <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
     </Style>
 
-    <Style x:Key="TextBoxCommon" TargetType="TextBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
+    <Style x:Key="StyleTextBoxCommon" TargetType="TextBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="TextBoxReadOnly" TargetType="TextBox" BasedOn="{StaticResource TextBoxCommon}">
+    <Style x:Key="StyleTextBoxReadOnly" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="IsReadOnly" Value="True"/>
-        <Setter Property="Background" Value="{StaticResource ReadOnlyTextBoxBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BGReadOnlyTextBox}"/>
     </Style>
-    <Style x:Key="TextBoxMultiline" TargetType="TextBox" BasedOn="{StaticResource TextBoxCommon}">
+    <Style x:Key="StyleTextBoxMultiline" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="AcceptsReturn" Value="True"/>
         <Setter Property="MinHeight" Value="50"/>
     </Style>
-    
-    <Style x:Key="CheckBoxCommon" TargetType="CheckBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+
+    <Style x:Key="StyleCheckBoxCommon" TargetType="CheckBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="RadioButtonCommon" TargetType="RadioButton">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+    <Style x:Key="StyleRadioButtonCommon" TargetType="RadioButton">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMedium}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="ComboBoxCommon" TargetType="ComboBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+    <Style x:Key="StyleComboBoxCommon" TargetType="ComboBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
-    <Style x:Key="DatePickerCommon" TargetType="DatePicker">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+    <Style x:Key="StyleDatePickerCommon" TargetType="DatePicker">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
-    <Style x:Key="ListBoxCommon" TargetType="ListBox">
-        <Setter Property="Margin" Value="{StaticResource ThicknessMedium}"/>
+    <Style x:Key="StyleListBoxCommon" TargetType="ListBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
     </Style>
 
 
-    <Style x:Key="DataGridCommon" TargetType="DataGrid">
+    <Style x:Key="StyleDataGridCommon" TargetType="DataGrid">
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
@@ -322,22 +165,22 @@
         <Setter Property="CanUserSortColumns" Value="False"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
     </Style>
-    <Style x:Key="DGTextBlockCommon" TargetType="TextBlock">
-        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
+    <Style x:Key="StyleDGTextBlockCommon" TargetType="TextBlock">
+        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
-    <Style x:Key="DGTextBlockLeft" TargetType="TextBlock" BasedOn="{StaticResource DGTextBlockCommon}">
+    <Style x:Key="StyleDGTextBlockLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
-    <Style x:Key="DGTextBlockCenter" TargetType="TextBlock" BasedOn="{StaticResource DGTextBlockCommon}">
+    <Style x:Key="StyleDGTextBlockCenter" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
-    <Style x:Key="DGTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource DGTextBlockCommon}">
+    <Style x:Key="StyleDGTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
-    <Style x:Key="DGButton" TargetType="Button">
+    <Style x:Key="StyleDGButton" TargetType="Button">
         <Setter Property="Margin" Value="0 0 2 0"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessSmall}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="50"/>

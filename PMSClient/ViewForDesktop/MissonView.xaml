@@ -12,7 +12,7 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -21,21 +21,21 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonPlan}" Style="{StaticResource ButtonBasic}" Command="{Binding GoToPlan}"/>
-            <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource ButtonBasic}" Command="{Binding Refresh}"/>
+        <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource ButtonPlan}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToPlan}"/>
+            <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource CompletedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource UnCompletedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource PausedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource TextBlockBasic}" Background="{StaticResource EmergencyBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource DataGridBasic}"
+        <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
                   SelectedIndex="{Binding CurrentSelectIndex}"
                   ItemsSource="{Binding Missons}" LoadingRow="DataGrid_LoadingRow">
             <i:Interaction.Triggers>
@@ -49,83 +49,83 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonAddItem}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonAddItem}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 
-                <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
 
                 <DataGridTemplateColumn Header="{StaticResource OrderDeadLine}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderPMINumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PMINumber}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding PMINumber}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderStandardComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding CompositionStandard }" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding CompositionStandard }" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderPurity}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding  Purity}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding  Purity}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderQuantity}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Quantity}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding Quantity}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderQuantityUnit}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding  QuantityUnit}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding  QuantityUnit}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Dimension}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding Dimension}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderDimensionDetails}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DimensionDetails}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding DimensionDetails}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderSampleNeed}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderMIniummAcceptDefect}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding MinimumAcceptDefect}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -133,14 +133,14 @@
                 <!--<DataGridTemplateColumn Header="{StaticResource CustomerName">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding CustomerName}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding CustomerName}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>-->
                 <!--<DataGridTemplateColumn Header="{StaticResource OrderPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PO}" Style="{StaticResource TextBlockDGBasic}"/>
+                            <TextBlock Text="{Binding PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>-->
@@ -152,65 +152,65 @@
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
-        <DataGrid Grid.Row="5" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding PlanVHPs}">
+        <DataGrid Grid.Row="5" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.EditPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.DuplicatePlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPlanDate}" Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPlanLot}" Binding="{Binding PlanLot}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding VHPDeviceCode}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanMoldType}" Binding="{Binding MoldType}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanMoldDiameter}" Binding="{Binding MoldDiameter}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanCalculationDensity}" Binding="{Binding CalculationDensity}"/>
                 
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanProcessCode}" Binding="{Binding ProcessCode}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPreTemperature}" Binding="{Binding PreTemperature}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPrePressure}" Binding="{Binding PrePressure}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanTemperature}" Binding="{Binding Temperature}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPressure}" Binding="{Binding Pressure}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanVaccum}" Binding="{Binding Vaccum}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanKeepTempTime}" Binding="{Binding KeepTempTime}"/>
 
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanRoomTemperature}" Binding="{Binding RoomTemperature}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanRoomHumidity}" Binding="{Binding RoomHumidity}"/>
 
 
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanMillingRequirement}" Binding="{Binding MillingRequirement}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanFillingRequirement}" Binding="{Binding FillingRequirement}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanMachineRequirement}" Binding="{Binding MachineRequirement}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding SpecialRequirement}"/>
-                <DataGridTextColumn ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanRemark}" Binding="{Binding Remark}"/>
                 
             </DataGrid.Columns>

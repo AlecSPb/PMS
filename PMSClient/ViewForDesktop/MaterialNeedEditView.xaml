@@ -11,23 +11,23 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">      
-            <TextBlock Text="{StaticResource PageMaterialNeedEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource TextBlockPageTitleBasic}" Foreground="Blue"/>
+            <TextBlock Text="{StaticResource PageMaterialNeedEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource ButtonBasic}"
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource ButtonBasic}"
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
-            <Button Content="{StaticResource ButtonSelectMisson}" Style="{StaticResource ButtonBasic}"
+            <Button Content="{StaticResource ButtonSelectMisson}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding Select}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
@@ -60,58 +60,58 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MNComposition}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="这是来自选择任务的成分，可以自行更改"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MNPMINumber}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="内部工作号"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MNPurity}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MNWeight}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="重量计算器" Style="{StaticResource ButtonBasic}" HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <Button Grid.Row="3" Grid.Column="2" Content="重量计算器" Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料重量，单位kg"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MNSpecialNeeds}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MNState}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单状态"/>
 
 
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MNCreator}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
                             HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MNCreateTime}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
                             HorizontalAlignment="Stretch"/>
 
 

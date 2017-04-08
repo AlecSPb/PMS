@@ -11,70 +11,70 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageRecordMachine}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  ButtonBasic}"
+        <TextBlock Text="{StaticResource PageRecordMachine}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  ButtonBasic}"
+            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  Add}"/>
-            <TextBlock Text="Milling ID" Style="{StaticResource TextBlockBasic}"/>
+            <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <TextBlock Text="CompositionStd" Style="{StaticResource TextBlockBasic}"/>
+                     Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
+            <TextBlock Text="{StaticResource RMComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource TextBoxBasic }" MinWidth="200"/>
-            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
+                     Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordMachines}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordMachines}"
                   SelectedIndex="0">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Operation">
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource ButtonDGBasic}"
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource ButtonDGBasic}"
+                                <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="批号" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="批号" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding VHPPlanLot}"/>
-                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="要求尺寸" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="要求尺寸" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Dimension}"/>
-                <DataGridTextColumn Header="额外要求" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="额外要求" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ExtraRequirement}"/>
-                <DataGridTextColumn Header="直径1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="直径1" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Diameter1}"/>
-                <DataGridTextColumn Header="直径2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="直径2" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Diameter2}"/>
-                <DataGridTextColumn Header="厚度1" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="厚度1" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness1}"/>
-                <DataGridTextColumn Header="厚度2" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="厚度2" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness2}"/>
-                <DataGridTextColumn Header="厚度3" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="厚度3" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness3}"/>
-                <DataGridTextColumn Header="厚度4" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="厚度4" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness4}"/>
 
-                <DataGridTextColumn Header="缺陷" ElementStyle="{StaticResource TextBlockDGBasic}"
+                <DataGridTextColumn Header="缺陷" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Defects}"/>
 
 

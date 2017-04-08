@@ -9,20 +9,20 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml" />
     </UserControl.Resources>
-    <Grid Background="{StaticResource BackgroundWindow}">
+    <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageMaterialOrderEdit}" Style="{StaticResource TextBlockPageTitleBasic}"/>
-            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource TextBlockPageTitleBasic}" Foreground="Blue"/>
+            <TextBlock Text="{StaticResource PageMaterialOrderEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BackgroundNavigateBar}">
-            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource ButtonBasic}"
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource ButtonBasic}"
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
@@ -55,100 +55,100 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MOOrderPO}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OrderPO}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OrderPO}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单PO"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOSupplier}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox x:Name="txtSupplier" Grid.Row="1" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox x:Name="txtSupplier" Grid.Row="1" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"
                          IsReadOnly="True"
-                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
                 <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           DisplayMemberPath="SupplierName"
                           SelectionChanged="ComboBox_SelectionChanged"
-                          Style="{StaticResource ComboBoxBasic}"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                          Style="{StaticResource StyleComboBoxCommon}"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOSupplierAbbr}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxCommon}"
                          IsReadOnly="True"
-                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}" 
+                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}" 
                            Text="供应商缩写"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MOSupplierReceiver}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox x:Name="txtReceiver" Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox x:Name="txtReceiver" Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver}" Style="{StaticResource StyleTextBoxCommon}"
                          IsReadOnly="True"
-                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商收货人"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MOSupplierEmail}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail}" Style="{StaticResource StyleTextBoxCommon}"
                          IsReadOnly="True"
-                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商Email"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MOSupplierAddress}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox x:Name="txtAddress" Grid.Row="5" Grid.Column="1" Text="{Binding SupplierAddress}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox x:Name="txtAddress" Grid.Row="5" Grid.Column="1" Text="{Binding SupplierAddress}" Style="{StaticResource StyleTextBoxCommon}"
                          IsReadOnly="True"
-                         Background="{StaticResource ReadOnlyTextBoxBrush}"
+                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商地址"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MORemark}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOShipFee}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ShipFee}" Style="{StaticResource TextBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ShipFee}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="运输费用，没有就写0"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MOState}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOPriority}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.OrderPriorities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding Priority}"/>
-                <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource TextBlockTipBasic}"
+                <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOCreator}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource TextBlockBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOCreateTime}"
-                           Style="{StaticResource TextBlockBasic}"/>
-                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource TextBlockBasic}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
                          HorizontalAlignment="Stretch"/>
 
 
