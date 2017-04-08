@@ -13,7 +13,7 @@ namespace PMSClient.Helper
         private LogInformation _currentSession;
         private string _logfile;
         private string _errorfile;
-        public LocalLog()
+        public LocalLog(LogInformation session)
         {
             var currentdir = Environment.CurrentDirectory;
             var _logdir = Path.Combine(currentdir, "Log");
@@ -30,7 +30,7 @@ namespace PMSClient.Helper
             _logfile = Path.Combine(_logdir, $"mainlog{DateTime.Now.ToString("yyMMdd")}.txt");
             _errorfile = Path.Combine(_errordir, $"mainerror{ DateTime.Now.ToString("yyMMdd")}.txt");
 
-            _currentSession = PMSHelper.CurrentSession;
+            _currentSession = session;
         }
         public void Log(string message)
         {

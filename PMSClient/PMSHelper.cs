@@ -17,7 +17,7 @@ namespace PMSClient
         static PMSHelper()
         {
             _currentSession = new LogInformation();
-            _currentLog = new LocalLog();
+            _currentLog = new LocalLog(_currentSession);
 
             _desktopViews = new DesktopViewLocator();
             _tabletViews = new TabletViewLocator();
