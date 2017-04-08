@@ -38,6 +38,7 @@ namespace PMSClient.ViewModel
             plan.OrderID = order.ID;
             plan.PlanDate = DateTime.Now.Date;
             plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            plan.PlanLot = 1;
             plan.MoldType = "GQ";
             plan.VHPDeviceCode = "A";
             plan.Temperature = 0;

@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BasicDataService.svc" />
+    <Content Include="HeartBeatService.svc" />
     <Content Include="PMSService.svc" />
     <Content Include="UserAccessService.svc" />
     <Content Include="Web.config" />
@@ -117,11 +118,13 @@
     <Compile Include="Log\LogService.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
     <Compile Include="ServiceContracts\IElementService.cs" />
+    <Compile Include="ServiceContracts\IHeartBeatSerive.cs" />
     <Compile Include="ServiceContracts\IMaintenanceService.cs" />
     <Compile Include="ServiceContracts\IMaterialInventoryService.cs" />
     <Compile Include="ServiceContracts\IMissonWithPlanService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
+    <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
