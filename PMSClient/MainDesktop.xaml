@@ -66,13 +66,13 @@
         <Border Grid.Row="1">
             <ContentControl x:Name="mainArea"/>
         </Border>
-        <Grid Grid.Row="2"  Background="{StaticResource BackgroundStatusBar}">
+        <Grid Grid.Row="2"  Background="{StaticResource BGBrushStatusBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource TextBlockBasic}" Foreground="White"/>
-            <TextBlock Grid.Column="1" Text="designed by xs.zhou" Style="{StaticResource TextBlockBasic}" Foreground="White" HorizontalAlignment="Right"/>
+            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
+            <TextBlock Grid.Column="1" Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>
 </Window>

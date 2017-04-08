@@ -61,7 +61,7 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource PlanPlanDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" ElementStyle="{StaticResource TextBlockDGCenter}"
+                    <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                         Binding="{Binding VHPDeviceCode}"/>
                     <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                         Binding="{Binding CompositionStandard}"/>
