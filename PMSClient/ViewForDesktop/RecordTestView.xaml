@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordTest}">
@@ -35,8 +36,13 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   ButtonBasic}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    ButtonBasic}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}"
-                  SelectedIndex="0">
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource DataGridBasic}" ItemsSource="{Binding RecordProducts}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -152,7 +158,7 @@
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
         <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid DataContext="{Binding ElementName=dg,Path=SelectedItem}">
+            <Grid DataContext="{Binding CurrentSelectItem}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="700"/>
@@ -242,7 +248,7 @@
                 </Grid>
 
                 <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding CompositionXRF}"
-                                          Margin="5" Height="280" VerticalAlignment="Top"/>
+                                          Margin="5" Height="320" VerticalAlignment="Top"/>
             </Grid>
         </ScrollViewer>
     </Grid>

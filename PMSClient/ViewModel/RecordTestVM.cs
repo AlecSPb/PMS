@@ -37,6 +37,12 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd);
             Edit = new RelayCommand<DcRecordTest>(ActionEdit);
             Doc = new RelayCommand<DcRecordTest>(ActionDoc);
+            SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
+        }
+
+        private void ActionSelectionChanged(DcRecordTest model)
+        {
+            CurrentSelectItem = model;
         }
 
         private bool CanSearch()
@@ -61,7 +67,7 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.RecordTestEdit);
         }
 
-        private void ActionDoc(DcRecordTest obj)
+        private void ActionDoc(DcRecordTest model)
         {
             //TODO:这里添加生成doc的代码
         }
@@ -95,6 +101,8 @@ namespace PMSClient.ViewModel
             var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
             RecordProducts.Clear();
             orders.ToList<DcRecordTest>().ForEach(o => RecordProducts.Add(o));
+
+            CurrentSelectItem = RecordProducts.FirstOrDefault();
         }
         #region Commands
         public RelayCommand Report { get; set; }
@@ -128,6 +136,15 @@ namespace PMSClient.ViewModel
         }
 
         public ObservableCollection<DcRecordTest> RecordProducts { get; set; }
+        private DcRecordTest currentSelectItem;
+
+        public DcRecordTest CurrentSelectItem
+        {
+            get { return currentSelectItem; }
+            set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
+        }
+
+        public RelayCommand<DcRecordTest> SelectionChanged { get; set; }
         #endregion
     }
 }

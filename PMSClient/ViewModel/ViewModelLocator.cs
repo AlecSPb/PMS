@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<PlanSelectVM>();
 
 
-
+            SimpleIoc.Default.Register<MaterialNeedVM>();
             SimpleIoc.Default.Register<MaterialNeedEditVM>();
             SimpleIoc.Default.Register<MaterialNeedSelectVM>();
 
