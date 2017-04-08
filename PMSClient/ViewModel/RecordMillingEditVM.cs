@@ -51,7 +51,17 @@ namespace PMSClient.ViewModel
                 CurrentRecordMilling = model;
             }
         }
-
+        public void SetByDuplicate(DcRecordMilling model)
+        {
+            if (model != null)
+            {
+                IsNew = true;
+                model.ID = Guid.NewGuid();
+                model.CreateTime = DateTime.Now;
+                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentRecordMilling = model;
+            }
+        }
         public void SetBySelect(DcMissonWithPlan plan)
         {
             if (plan!=null)

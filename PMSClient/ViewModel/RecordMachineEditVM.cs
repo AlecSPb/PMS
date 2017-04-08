@@ -55,6 +55,17 @@ namespace PMSClient.ViewModel
                 CurrentRecordMachine = model;
             }
         }
+        public void SetByDuplicate(DcRecordMachine model)
+        {
+            if (model != null)
+            {
+                IsNew = true;
+                model.ID = Guid.NewGuid();
+                model.CreateTime = DateTime.Now;
+                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentRecordMachine = model;
+            }
+        }
 
         public void SetBySelect(DcMissonWithPlan plan)
         {

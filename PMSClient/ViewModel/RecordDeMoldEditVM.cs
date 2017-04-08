@@ -64,6 +64,18 @@ namespace PMSClient.ViewModel
             }
         }
 
+        public void SetByDuplicate(DcRecordDeMold model)
+        {
+            if (model!=null)
+            {
+                IsNew = true;
+                model.ID = Guid.NewGuid();
+                model.CreateTime = DateTime.Now;
+                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+
+                CurrentRecordDeMold = model;
+            }
+        }
 
         public void SetBySelect(DcMissonWithPlan plan)
         {

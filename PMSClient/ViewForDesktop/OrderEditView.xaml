@@ -87,7 +87,7 @@
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
-                           Text="这里填写订单上的原始成分"/>
+                           Text="这里可填写订单上的原始成分"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OrderAbbrComposition}"
                            Style="{StaticResource TextBlockBasic}" />
@@ -130,7 +130,7 @@
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource TextBoxBasic}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource TextBlockTipBasic}"
-                           Text="尺寸信息"/>
+                           Text="尺寸信息,必须写成230mm OD x4mm的格式"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OrderDimensionDetails}"
                            Style="{StaticResource TextBlockBasic}" />

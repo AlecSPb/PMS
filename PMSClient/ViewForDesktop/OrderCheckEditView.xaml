@@ -26,7 +26,7 @@
             <Grid DataContext="{Binding CurrentOrder}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="250"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -136,19 +136,27 @@
                 <ComboBox Grid.Row="18" Grid.Column="1" Style="{StaticResource ComboBoxBasic}"
                           ItemsSource="{Binding DataContext.PolicyTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PolicyType,Mode=TwoWay}"/>
+                <TextBlock Grid.Row="18" Grid.Column="2" Text="选择策略，VHP才会显示给生产部门,OutSource和Others不会"
+                           Style="{StaticResource TextBlockTipBasic}" />
+
+
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource OrderState}"
                            Style="{StaticResource TextBlockBasic}" />
                 <ComboBox Grid.Row="19" Grid.Column="1" ItemsSource="{Binding DataContext.OrderStates,
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State,Mode=TwoWay}"
                           Style="{StaticResource ComboBoxBasic}"/>
+                <TextBlock Grid.Row="19" Grid.Column="2" Text="选择状态，只有UnCompleted,Paused状态才会显示给生产部门"
+                           Style="{StaticResource TextBlockTipBasic}" />
+
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderPriority}"
                            Style="{StaticResource TextBlockBasic}" />
                 <ComboBox Grid.Row="20" Grid.Column="1" ItemsSource="{Binding DataContext.OrderPriorities,
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                          SelectedItem="{Binding Priority,Mode=TwoWay}"
                          Style="{StaticResource ComboBoxBasic}"/>
-
+                <TextBlock Grid.Row="20" Grid.Column="2" Text="选择优先级，默认Normal"
+                           Style="{StaticResource TextBlockTipBasic}" />
 
             </Grid>
         </ScrollViewer>
