@@ -134,7 +134,6 @@
     <Compile Include="Helpers\Calcualtion\TargetDensity.cs" />
     <Compile Include="Helpers\Calcualtion\TargetDensityCalculation.cs" />
     <Compile Include="Helpers\Calcualtion\TargetDensityCalculationItem.cs" />
-    <Compile Include="NavigationCollection.cs" />
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
     <Compile Include="Helpers\CommonDialogService.cs" />
