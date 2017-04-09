@@ -55,8 +55,6 @@
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialSource}"/>
-                <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RMMillingTool}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MillingTool}"/>
                 <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -67,6 +65,8 @@
                                     Binding="{Binding WeightOut}"/>
                 <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightRemain}"/>
+                <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
 
