@@ -83,15 +83,13 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanMoldType}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox x:Name="moldType" Grid.Row="3" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
-                         Background="{StaticResource BGReadOnlyTextBox}"
-                         Style="{StaticResource StyleTextBoxCommon}" IsReadOnly="True"
+                         Style="{StaticResource StyleTextBoxCommon}" 
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox x:Name="moldDiameter" Grid.Row="4" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
-                         Background="{StaticResource BGReadOnlyTextBox}"
-                         Style="{StaticResource StyleTextBoxCommon}" IsReadOnly="True" 
+                         Style="{StaticResource StyleTextBoxCommon}" 
                          HorizontalAlignment="Stretch"/>
                 <ComboBox x:Name="cboMolds" Grid.Row="4" Grid.Column="2"
                           HorizontalAlignment="Stretch"

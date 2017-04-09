@@ -319,6 +319,7 @@
     <Compile Include="ViewForTablet\TabletViewLocator.cs" />
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MaterialInventoryInSelectVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
@@ -328,6 +329,7 @@
     <Compile Include="ViewModel\MaterialNeedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemEditVM.cs" />
+    <Compile Include="ViewModel\MaterialOrderItemSelectVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\MissonVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />

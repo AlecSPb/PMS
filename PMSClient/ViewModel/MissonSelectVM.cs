@@ -105,7 +105,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             var orders = service.GetMissons(skip, take);
             MainOrders.Clear();
-            orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+            orders.ToList().ForEach(o => MainOrders.Add(o));
         }
 
         #region Proeperties

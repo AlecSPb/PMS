@@ -55,9 +55,13 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MaterialOrderVM>();
             SimpleIoc.Default.Register<MaterialOrderEditVM>();
             SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
+            SimpleIoc.Default.Register<MaterialOrderItemSelectVM>();
+
 
             SimpleIoc.Default.Register<MaterialInventoryInVM>();
             SimpleIoc.Default.Register<MaterialInventoryInEditVM>();
+            SimpleIoc.Default.Register<MaterialInventoryInSelectVM>();
+
             SimpleIoc.Default.Register<MaterialInventoryOutVM>();
             SimpleIoc.Default.Register<MaterialInventoryOutEditVM>();
 
@@ -127,17 +131,6 @@ namespace PMSClient.ViewModel
             get { return SimpleIoc.Default.GetInstance<PlanSelectVM>(); }
         }
 
-
-        public RecordVHPVM RecordVHP
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
-        }
-        public RecordVHPQuickEditVM RecordVHPQuickEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
-        }
-
-
         public MaterialNeedVM MaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<MaterialNeedVM>(); }
@@ -162,7 +155,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditVM>(); }
         }
-
+        public MaterialOrderItemSelectVM MaterialOrderSelectEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemSelectVM>(); }
+        }
         public MaterialInventoryInVM MaterialInventoryIn
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInVM>(); }
@@ -171,6 +167,11 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInEditVM>(); }
         }
+        public MaterialInventoryInSelectVM MaterialInventoryInSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectVM>(); }
+        }
+
         public MaterialInventoryOutVM MaterialInventoryOut
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutVM>(); }
@@ -180,6 +181,16 @@ namespace PMSClient.ViewModel
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutEditVM>(); }
         }
 
+
+
+        public RecordVHPVM RecordVHP
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPVM>(); }
+        }
+        public RecordVHPQuickEditVM RecordVHPQuickEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordVHPQuickEditVM>(); }
+        }
 
         public RecordTestVM RecordTest
         {
