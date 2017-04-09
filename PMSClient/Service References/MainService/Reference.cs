@@ -3886,6 +3886,9 @@ namespace PMSClient.MainService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPPlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightInField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4017,6 +4020,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPPlanLot {
+            get {
+                return this.VHPPlanLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPPlanLotField, value) != true)) {
+                    this.VHPPlanLotField = value;
+                    this.RaisePropertyChanged("VHPPlanLot");
                 }
             }
         }
@@ -6595,6 +6611,20 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCount", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordMillingCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse")]
+        PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotRespons" +
+            "e")]
+        int GetRecordMillingCountByVHPPlanLot(string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/AddRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/AddRecordMillingResponse")]
         int AddRecordMilling(PMSClient.MainService.DcRecordMilling model);
         
@@ -6657,6 +6687,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetRecordMillingCountAsync();
         }
         
+        public PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMillingsByVHPPlanLot(skip, take, vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMillingsByVHPPlanLotAsync(skip, take, vhpplanlot);
+        }
+        
+        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot) {
+            return base.Channel.GetRecordMillingCountByVHPPlanLot(vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot) {
+            return base.Channel.GetRecordMillingCountByVHPPlanLotAsync(vhpplanlot);
+        }
+        
         public int AddRecordMilling(PMSClient.MainService.DcRecordMilling model) {
             return base.Channel.AddRecordMilling(model);
         }
@@ -6697,6 +6743,20 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCount", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordMachineCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLotResponse")]
+        PMSClient.MainService.DcRecordMachine[] GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLotResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMachine[]> GetRecordMachinesByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLotRespons" +
+            "e")]
+        int GetRecordMachineCountByVHPPlanLot(string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLotRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int> GetRecordMachineCountByVHPPlanLotAsync(string vhpplanlot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/AddRecordMachine", ReplyAction="http://tempuri.org/IRecordMachineService/AddRecordMachineResponse")]
         int AddRecordMachine(PMSClient.MainService.DcRecordMachine model);
@@ -6760,6 +6820,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetRecordMachineCountAsync();
         }
         
+        public PMSClient.MainService.DcRecordMachine[] GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMachinesByVHPPlanLot(skip, take, vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMachine[]> GetRecordMachinesByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMachinesByVHPPlanLotAsync(skip, take, vhpplanlot);
+        }
+        
+        public int GetRecordMachineCountByVHPPlanLot(string vhpplanlot) {
+            return base.Channel.GetRecordMachineCountByVHPPlanLot(vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordMachineCountByVHPPlanLotAsync(string vhpplanlot) {
+            return base.Channel.GetRecordMachineCountByVHPPlanLotAsync(vhpplanlot);
+        }
+        
         public int AddRecordMachine(PMSClient.MainService.DcRecordMachine model) {
             return base.Channel.AddRecordMachine(model);
         }
@@ -6800,6 +6876,20 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCount", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordDeMoldsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse")]
+        PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" +
+            "")]
+        int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" +
+            "")]
+        System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldResponse")]
         int AddRecordDeMold(PMSClient.MainService.DcRecordDeMold model);
@@ -6861,6 +6951,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetRecordDeMoldsCountAsync() {
             return base.Channel.GetRecordDeMoldsCountAsync();
+        }
+        
+        public PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsByVHPPlanLot(skip, take, vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsByVHPPlanLotAsync(skip, take, vhpplanlot);
+        }
+        
+        public int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsCountByVHPPlanLot(vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsCountByVHPPlanLotAsync(vhpplanlot);
         }
         
         public int AddRecordDeMold(PMSClient.MainService.DcRecordDeMold model) {

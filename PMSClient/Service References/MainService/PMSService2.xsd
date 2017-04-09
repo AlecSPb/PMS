@@ -368,6 +368,7 @@
       <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeightIn" type="xs:double" />
       <xs:element minOccurs="0" name="WeightOut" type="xs:double" />
       <xs:element minOccurs="0" name="WeightRemain" type="xs:double" />

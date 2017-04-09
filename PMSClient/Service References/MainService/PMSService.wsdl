@@ -373,6 +373,18 @@
   <wsdl:message name="IRecordMillingService_GetRecordMillingCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordMillingCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingsByVHPPlanLot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsByVHPPlanLot" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingsByVHPPlanLot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsByVHPPlanLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingCountByVHPPlanLot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingCountByVHPPlanLot" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingCountByVHPPlanLot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingCountByVHPPlanLotResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordMillingService_AddRecordMilling_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordMilling" />
   </wsdl:message>
@@ -403,6 +415,18 @@
   <wsdl:message name="IRecordMachineService_GetRecordMachineCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordMachineCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachinesByVHPPlanLot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachinesByVHPPlanLot" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachinesByVHPPlanLot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachinesByVHPPlanLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachineCountByVHPPlanLot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachineCountByVHPPlanLot" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_GetRecordMachineCountByVHPPlanLot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMachineCountByVHPPlanLotResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordMachineService_AddRecordMachine_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordMachine" />
   </wsdl:message>
@@ -432,6 +456,18 @@
   </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordDeMoldsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsByVHPPlanLot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsByVHPPlanLot" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsByVHPPlanLot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsByVHPPlanLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsCountByVHPPlanLot_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsCountByVHPPlanLot" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_GetRecordDeMoldsCountByVHPPlanLot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordDeMoldsCountByVHPPlanLotResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_AddRecordDeMold_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordDeMold" />
@@ -800,6 +836,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCount" message="tns:IRecordMillingService_GetRecordMillingCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountResponse" message="tns:IRecordMillingService_GetRecordMillingCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingsByVHPPlanLot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot" message="tns:IRecordMillingService_GetRecordMillingsByVHPPlanLot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse" message="tns:IRecordMillingService_GetRecordMillingsByVHPPlanLot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingCountByVHPPlanLot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot" message="tns:IRecordMillingService_GetRecordMillingCountByVHPPlanLot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotResponse" message="tns:IRecordMillingService_GetRecordMillingCountByVHPPlanLot_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddRecordMilling">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/AddRecordMilling" message="tns:IRecordMillingService_AddRecordMilling_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/AddRecordMillingResponse" message="tns:IRecordMillingService_AddRecordMilling_OutputMessage" />
@@ -822,6 +866,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCount" message="tns:IRecordMachineService_GetRecordMachineCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountResponse" message="tns:IRecordMachineService_GetRecordMachineCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMachinesByVHPPlanLot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLot" message="tns:IRecordMachineService_GetRecordMachinesByVHPPlanLot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLotResponse" message="tns:IRecordMachineService_GetRecordMachinesByVHPPlanLot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMachineCountByVHPPlanLot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLot" message="tns:IRecordMachineService_GetRecordMachineCountByVHPPlanLot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLotResponse" message="tns:IRecordMachineService_GetRecordMachineCountByVHPPlanLot_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddRecordMachine">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/AddRecordMachine" message="tns:IRecordMachineService_AddRecordMachine_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/AddRecordMachineResponse" message="tns:IRecordMachineService_AddRecordMachine_OutputMessage" />
@@ -843,6 +895,14 @@
     <wsdl:operation name="GetRecordDeMoldsCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCount" message="tns:IRecordDeMoldService_GetRecordDeMoldsCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountResponse" message="tns:IRecordDeMoldService_GetRecordDeMoldsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsByVHPPlanLot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot" message="tns:IRecordDeMoldService_GetRecordDeMoldsByVHPPlanLot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse" message="tns:IRecordDeMoldService_GetRecordDeMoldsByVHPPlanLot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsCountByVHPPlanLot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot" message="tns:IRecordDeMoldService_GetRecordDeMoldsCountByVHPPlanLot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" message="tns:IRecordDeMoldService_GetRecordDeMoldsCountByVHPPlanLot_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecordDeMold">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMold" message="tns:IRecordDeMoldService_AddRecordDeMold_InputMessage" />
@@ -1496,6 +1556,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingsByVHPPlanLot">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingCountByVHPPlanLot">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddRecordMilling">
       <soap:operation soapAction="http://tempuri.org/IRecordMillingService/AddRecordMilling" style="document" />
       <wsdl:input>
@@ -1544,6 +1622,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetRecordMachinesByVHPPlanLot">
+      <soap:operation soapAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMachineCountByVHPPlanLot">
+      <soap:operation soapAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddRecordMachine">
       <soap:operation soapAction="http://tempuri.org/IRecordMachineService/AddRecordMachine" style="document" />
       <wsdl:input>
@@ -1585,6 +1681,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordDeMoldsCount">
       <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsByVHPPlanLot">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordDeMoldsCountByVHPPlanLot">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

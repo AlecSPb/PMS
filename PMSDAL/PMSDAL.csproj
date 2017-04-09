@@ -287,6 +287,10 @@
     <Compile Include="Migrations\201704062337417_editmi.Designer.cs">
       <DependentUpon>201704062337417_editmi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704090111426_millingchange1.cs" />
+    <Compile Include="Migrations\201704090111426_millingchange1.Designer.cs">
+      <DependentUpon>201704090111426_millingchange1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -491,6 +495,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704062337417_editmi.resx">
       <DependentUpon>201704062337417_editmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704090111426_millingchange1.resx">
+      <DependentUpon>201704090111426_millingchange1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
