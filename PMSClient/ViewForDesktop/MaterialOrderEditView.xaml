@@ -59,13 +59,11 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OrderPO}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="订单PO"/>
+                           Text="订单PO，自动生成的不一定合适，可以自行修改，但最好确保唯一"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOSupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox x:Name="txtSupplier" Grid.Row="1" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"
-                         IsReadOnly="True"
-                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
                 <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -73,13 +71,11 @@
                           SelectionChanged="ComboBox_SelectionChanged"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="供应商"/>
+                           Text="供应商,选择预设后会自动填充，然后结合实际进行修改"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOSupplierAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxCommon}"
-                         IsReadOnly="True"
-                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}" 
                            Text="供应商缩写"/>
@@ -87,8 +83,6 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MOSupplierReceiver}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox x:Name="txtReceiver" Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver}" Style="{StaticResource StyleTextBoxCommon}"
-                         IsReadOnly="True"
-                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商收货人"/>
@@ -96,8 +90,6 @@
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MOSupplierEmail}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail}" Style="{StaticResource StyleTextBoxCommon}"
-                         IsReadOnly="True"
-                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商Email"/>
@@ -105,8 +97,6 @@
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MOSupplierAddress}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox x:Name="txtAddress" Grid.Row="5" Grid.Column="1" Text="{Binding SupplierAddress}" Style="{StaticResource StyleTextBoxCommon}"
-                         IsReadOnly="True"
-                         Background="{StaticResource BGReadOnlyTextBox}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商地址"/>
