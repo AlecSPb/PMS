@@ -16,16 +16,23 @@ namespace PMSClient
         [STAThread]
         public static void Main()
         {
-            App app = new PMSClient.App();
-            app.InitializeComponent();
+            try
+            {
+                App app = new PMSClient.App();
+                app.InitializeComponent();
 
-#if IsDesktopEdtion
-            var firstWindow = new MainDesktop();
-#else
-            var firstWindow = new MainTablet();
-#endif
+                #if IsDesktopEdtion
+                 var firstWindow = new MainDesktop();
+                #else
+                 var firstWindow = new MainTablet();
+                #endif
 
-            app.Run(firstWindow);
+                app.Run(firstWindow);
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }
