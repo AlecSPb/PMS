@@ -65,9 +65,10 @@
                                     Binding="{Binding WeightOut}"/>
                 <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightRemain}"/>
-
-
-
+                <DataGridTextColumn Header="{StaticResource RMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
 
 
             </DataGrid.Columns>

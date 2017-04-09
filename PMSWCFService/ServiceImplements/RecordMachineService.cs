@@ -28,7 +28,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
@@ -37,12 +37,19 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc = new PMSDbContext())
+                {
+                    int result=0;
+                    var model = dc.RecordMachines.Find(id);
+                    dc.RecordMachines.Remove(model);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
@@ -59,9 +66,28 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
+        }
+
+        public int GetRecordMachineCountByVHPPlanLot(string vhpplanlot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from r in dc.RecordMachines
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                select r;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcRecordMachine> GetRecordMachines(int skip, int take)
@@ -79,9 +105,30 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
+        }
+
+        public List<DcRecordMachine> GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
+                    var query = from r in dc.RecordMachines
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                orderby r.CreateTime descending
+                                select r;
+                    return Mapper.Map<List<RecordMachine>, List<DcRecordMachine>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateRecordMachine(DcRecordMachine model)
@@ -101,7 +148,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }

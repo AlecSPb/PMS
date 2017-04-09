@@ -28,7 +28,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
@@ -37,12 +37,19 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var model = dc.RecordMillings.Find(id);
+                    dc.RecordMillings.Remove(model);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
@@ -59,9 +66,28 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
+        }
+
+        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from r in dc.RecordMillings
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                select r;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcRecordMilling> GetRecordMillings(int skip, int take)
@@ -71,18 +97,38 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
-                    var result = dc.RecordMillings.OrderBy(i => i.CreateTime).OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
-                    return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(result);
+                    var query = from r in dc.RecordMillings
+                                orderby r.CreateTime descending
+                                select r;
+                    return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Skip(skip).Take(take).ToList());
                 }
             }
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
+        }
 
-
-
+        public List<DcRecordMilling> GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
+                    var query = from r in dc.RecordMillings
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                orderby r.CreateTime descending
+                                select r;
+                    return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateRecordMilling(DcRecordMilling model)
@@ -102,7 +148,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }

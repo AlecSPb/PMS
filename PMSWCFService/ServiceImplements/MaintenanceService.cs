@@ -15,7 +15,14 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc=new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenancePlan, MaintenancePlan>());
+                    var plan = Mapper.Map<MaintenancePlan>(model);
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
@@ -29,7 +36,14 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenanceRecord, MaintenanceRecord>());
+                    var record = Mapper.Map<MaintenanceRecord>(model);
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
@@ -113,7 +127,14 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenancePlan, MaintenancePlan>());
+                    var plan = Mapper.Map<MaintenancePlan>(model);
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {
@@ -127,7 +148,14 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaintenanceRecord, MaintenanceRecord>());
+                    var record = Mapper.Map<MaintenanceRecord>(model);
+
+                    return result;
+                }
             }
             catch (Exception ex)
             {

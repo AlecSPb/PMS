@@ -64,9 +64,10 @@ namespace PMSClient.ViewModel
         }
         public void SetBySelect(DcMissonWithPlan plan)
         {
-            if (plan!=null)
+            if (plan != null)
             {
                 CurrentRecordMilling.Composition = plan.CompositionStandard;
+                currentRecordMilling.VHPPlanLot = plan.PlanDate.ToString("yyMMdd") + "-" + plan.VHPDeviceCode;
                 RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }

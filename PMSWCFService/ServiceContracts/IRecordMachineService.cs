@@ -14,6 +14,14 @@ namespace PMSWCFService.ServiceContracts
         List<DcRecordMachine> GetRecordMachines(int skip, int take);
         [OperationContract]
         int GetRecordMachineCount();
+
+        [OperationContract]
+        List<DcRecordMachine> GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot);
+        [OperationContract]
+        int GetRecordMachineCountByVHPPlanLot(string vhpplanlot);
+
+
+
         [OperationContract]
         int AddRecordMachine(DcRecordMachine model);
         [OperationContract]

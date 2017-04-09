@@ -28,7 +28,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
@@ -37,12 +37,19 @@ namespace PMSWCFService
         {
             try
             {
-                throw new NotImplementedException();
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var model = dc.RecordDeMolds.Find(id);
+                    dc.RecordDeMolds.Remove(model);
+                    result = dc.SaveChanges();
+                    return result;
+                }
             }
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
@@ -61,9 +68,30 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
+        }
+
+        public List<DcRecordDeMold> GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
+                    var query = from r in dc.RecordDeMolds
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                orderby r.CreateTime descending
+                                select r;
+                    return Mapper.Map<List<RecordDeMold>, List<DcRecordDeMold>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetRecordDeMoldsCount()
@@ -78,9 +106,28 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
+        }
+
+        public int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from r in dc.RecordDeMolds
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                select r;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateRecordDeMold(DcRecordDeMold model)
@@ -100,7 +147,7 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw;
+                throw ex;
             }
 
         }
