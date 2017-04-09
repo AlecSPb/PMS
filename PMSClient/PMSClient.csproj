@@ -126,15 +126,22 @@
     <Compile Include="Helpers\BasicDataInstance.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
     <Compile Include="Helpers\OK\LocalLog.cs" />
-    <Compile Include="Helpers\PMSViews.cs" />
+    <Compile Include="Helpers\OK\PMSViews.cs" />
+    <Compile Include="Helpers\Calcualtion\MaterialDensityCalculation.cs" />
+    <Compile Include="Helpers\Calcualtion\MaterialDensityCalculationItem.cs" />
+    <Compile Include="Helpers\Calcualtion\PMTranslate.cs" />
+    <Compile Include="Helpers\Calcualtion\StateProcess.cs" />
+    <Compile Include="Helpers\Calcualtion\TargetDensity.cs" />
+    <Compile Include="Helpers\Calcualtion\TargetDensityCalculation.cs" />
+    <Compile Include="Helpers\Calcualtion\TargetDensityCalculationItem.cs" />
     <Compile Include="NavigationCollection.cs" />
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
-    <Compile Include="LocalService\CommonDialogService.cs" />
+    <Compile Include="Helpers\CommonDialogService.cs" />
     <Compile Include="Helpers\EmptyModel.cs" />
-    <Compile Include="Helpers\MainNavigationToken.cs" />
+    <Compile Include="Helpers\OK\MainNavigationToken.cs" />
     <Compile Include="Helpers\MsgObject.cs" />
-    <Compile Include="LocalService\NavigationService.cs" />
+    <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="MainSanJie.xaml.cs">
       <DependentUpon>MainSanJie.xaml</DependentUpon>
