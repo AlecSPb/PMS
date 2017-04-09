@@ -31,7 +31,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.UnDeleted.ToString();
-            model.VHPPlanLot = UsefulPackage.PMTranslate.VHPPlanLot(model, 1);
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot();
             model.Composition = "填入成分";
             model.GasProtection = "Ar";
             model.MaterialSource = "Sanjie";
@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 CurrentRecordMilling.Composition = plan.CompositionStandard;
-                currentRecordMilling.VHPPlanLot = plan.PlanDate.ToString("yyMMdd") + "-" + plan.VHPDeviceCode;
+                currentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot(plan, "1");
                 RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }
@@ -113,8 +113,6 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }
-
-
 
         public RelayCommand Select { get; set; }
     }

@@ -59,7 +59,7 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="热压编号"/>
+                           Text="热压编号,自动生成的可能不合适，必要时请手动更改"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
@@ -72,49 +72,49 @@
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="ProductID"/>
+                           Text="原料来源"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="Composition"/>
+                           Text="备注信息"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMMillingTool}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="制粉工具"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMGasProtection}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="气体保护"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMWeightIn}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="来料重量"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMWeightOut}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="出料重量"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="余料重量"/>
             </Grid>
         </ScrollViewer>
     </Grid>
