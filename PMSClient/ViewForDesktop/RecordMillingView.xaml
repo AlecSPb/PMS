@@ -49,6 +49,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource RMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding VHPPlanLot}"/>
                 <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -65,8 +67,6 @@
                                     Binding="{Binding WeightOut}"/>
                 <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightRemain}"/>
-                <DataGridTextColumn Header="{StaticResource RMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding VHPPlanLot}"/>
                 <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
 

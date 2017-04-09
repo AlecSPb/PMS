@@ -31,6 +31,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.VHPPlanLot = UsefulPackage.PMTranslate.VHPPlanLot(model, 1);
             model.Composition = "填入成分";
             model.GasProtection = "Ar";
             model.MaterialSource = "Sanjie";
