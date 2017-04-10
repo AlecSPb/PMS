@@ -16,6 +16,14 @@ namespace PMSWCFService.ServiceContracts
         int GetMaterialOrderCountBySearch(string orderPo, string supplier);
 
         [OperationContract]
+        List<DcMaterialOrder> GetMaterialOrderForSanjie(int skip, int take, string orderPo);
+        [OperationContract]
+        int GetMaterialOrderCountForSanjie(string orderPo);
+
+
+
+
+        [OperationContract]
         int AddMaterialOrder(DcMaterialOrder model);
         [OperationContract]
         int UpdateMaterialOrder(DcMaterialOrder model);
@@ -32,7 +40,13 @@ namespace PMSWCFService.ServiceContracts
         int UpdateMaterialOrderItem(DcMaterialOrderItem model);
         [OperationContract]
         int DeleteMaterialOrderItem(Guid id);
-
-
+        /// <summary>
+        /// 用来给原料入库提供选择
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        List<DcMaterialOrderItem> GetMaterialOrderItems(int skip, int take);
+        [OperationContract]
+        int GetMaterialOrderItemsCount();
     }
 }

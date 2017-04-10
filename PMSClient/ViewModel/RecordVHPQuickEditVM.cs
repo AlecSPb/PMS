@@ -164,6 +164,7 @@ namespace PMSClient.ViewModel
             {
                 var model = new DcRecordVHP();
 
+                #region 初始化
                 model.PlanVHPID = obj.PlanVHPID;
                 model.ID = Guid.NewGuid();
                 model.CurrentTime = DateTime.Now;
@@ -182,6 +183,7 @@ namespace PMSClient.ViewModel
                 model.WaterTemperatureIn = obj.WaterTemperatureIn;
                 model.WaterTemperatureOut = obj.WaterTemperatureOut;
                 model.ExtraInformation = obj.ExtraInformation;
+                #endregion
 
                 isNew = true;
 
@@ -200,8 +202,8 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 6;
-            var service = new MissonWithPlanServiceClient();
-            RecordCount = service.GetMissonWithPlanCount();
+            var service = new MissonServiceClient();
+            RecordCount = service.GetMissonWithPlanCheckedCount();
             ActionPaging();
         }
         /// <summary>
@@ -209,11 +211,11 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonWithPlanServiceClient();
+            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonWithPlan(skip, take);
+            var orders = service.GetMissonWithPlanChecked(skip, take);
             MissonWithPlans.Clear();
             orders.ToList().ForEach(o => MissonWithPlans.Add(o));
 

@@ -399,10 +399,10 @@
     <sys:String x:Key="RVHPPV2">PV2</sys:String>
     <sys:String x:Key="RVHPPV3">PV3</sys:String>
     <sys:String x:Key="RVHPSV">SV</sys:String>
-    <sys:String x:Key="RVHPTon">Ton</sys:String>
-    <sys:String x:Key="RVHPVaccum">Vaccum</sys:String>
-    <sys:String x:Key="RVHPShift1">Shift1</sys:String>
-    <sys:String x:Key="RVHPShift2">Shift2</sys:String>
+    <sys:String x:Key="RVHPTon">吨位</sys:String>
+    <sys:String x:Key="RVHPVaccum">真空度</sys:String>
+    <sys:String x:Key="RVHPShift1">位移1</sys:String>
+    <sys:String x:Key="RVHPShift2">位移2</sys:String>
     <sys:String x:Key="RVHPOmega">Omega</sys:String>
     <sys:String x:Key="RVHPWaterTemperatureOut">进水温度</sys:String>
     <sys:String x:Key="RVHPWaterTemperatureIn">出水温度</sys:String>

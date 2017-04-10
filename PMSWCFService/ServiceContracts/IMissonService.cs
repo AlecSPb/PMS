@@ -17,7 +17,27 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcPlanVHP> GetPlans(Guid id);
 
+
         [OperationContract]
         int GetMissonsCount();
+
+
+        //所有状态的计划
+        [OperationContract]
+        List<DcMissonWithPlan> GetMissonWithPlan(int skip, int take);
+        [OperationContract]
+        int GetMissonWithPlanCount();
+
+        //Checked状态的计划显示
+        [OperationContract]
+        List<DcMissonWithPlan> GetMissonWithPlanChecked(int skip, int take);
+        [OperationContract]
+        int GetMissonWithPlanCheckedCount();
+
+
+
+        //按照日期获取
+        [OperationContract]
+        List<DcMissonWithPlan> GetMissonWithPlanByDate(DateTime date);
     }
 }

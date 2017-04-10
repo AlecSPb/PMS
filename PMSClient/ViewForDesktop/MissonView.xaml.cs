@@ -58,6 +58,23 @@ namespace PMSClient.ViewForDesktop
 
         }
 
-
+        private void dgplans_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var plan = (DcPlanVHP)e.Row.DataContext;
+            if (plan != null)
+            {
+                switch (plan.State)
+                {
+                    case "UnChecked":
+                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                        break;
+                    case "Checked":
+                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

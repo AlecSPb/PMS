@@ -162,7 +162,8 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialNeed, DcMaterialNeed>());
                     var mapper = config.CreateMapper();
-                    var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && m.State != OrderState.Deleted.ToString())
+                    var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) 
+                        && m.State != OrderState.Deleted.ToString())
                         .OrderByDescending(m => m.CreateTime)
                         .Skip(skip).Take(take)
                         .ToList();
@@ -182,7 +183,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) && m.State != OrderState.Deleted.ToString()).Count();
+                    return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) 
+                    && m.State != OrderState.Deleted.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -203,10 +205,13 @@ namespace PMSWCFService
                         cfg.CreateMap<PMSMaterialOrder, DcMaterialOrder>();
                     });
                     var mapper = config.CreateMapper();
-                    var result = dc.MaterialOrders.Include("MaterialOrderItems").Where(m => m.OrderPO.Contains(orderPo) && m.Supplier.Contains(supplier)
-                    && m.State != OrderState.Deleted.ToString())
-                        .OrderByDescending(m => m.CreateTime).Skip(skip).Take(take).ToList();
-                    return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(result);
+                    var query = from m in dc.MaterialOrders
+                                where m.State != OrderState.Deleted.ToString() 
+                                && m.OrderPO.Contains(orderPo) 
+                                && m.Supplier.Contains(supplier)
+                                orderby m.CreateTime descending
+                                select m;
+                    return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
 
                 }
             }
@@ -233,6 +238,57 @@ namespace PMSWCFService
             }
         }
 
+        public int GetMaterialOrderCountForSanjie(string orderPo)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrders
+                                where m.OrderPO.Contains(orderPo)&&
+                                (m.State == OrderState.Paused.ToString()
+                                || m.State == OrderState.Completed.ToString()
+                                || m.State == OrderState.UnCompleted.ToString())
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcMaterialOrder> GetMaterialOrderForSanjie(int skip, int take, string orderPo)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSMaterialOrder, DcMaterialOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrders
+                                where m.OrderPO.Contains(orderPo) &&
+                                (m.State == OrderState.Paused.ToString()
+                                || m.State == OrderState.Completed.ToString()
+                                || m.State == OrderState.UnCompleted.ToString())
+                                orderby m.CreateTime descending
+                                select m;
+                    return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
+
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcMaterialOrderItem> GetMaterialOrderItembyMaterialID(Guid id)
         {
             try
@@ -243,6 +299,48 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var result = dc.MaterialOrderItems.Where(m => m.MaterialOrderID == id).OrderByDescending(m => m.CreateTime).ToList();
                     return mapper.Map<List<PMSMaterialOrderItem>, List<DcMaterialOrderItem>>(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcMaterialOrderItem> GetMaterialOrderItems(int skip,int take)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialOrderItem, DcMaterialOrderItem>());
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrderItems
+                                where m.State != PMSCommon.SimpleState.Deleted.ToString()
+                                orderby m.CreateTime descending
+                                select m;
+                    return mapper.Map<List<PMSMaterialOrderItem>, List<DcMaterialOrderItem>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMaterialOrderItemsCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                where m.State != PMSCommon.SimpleState.Deleted.ToString()
+                                orderby m.CreateTime descending
+                                select m;
+                    return query.Count();
                 }
             }
             catch (Exception ex)

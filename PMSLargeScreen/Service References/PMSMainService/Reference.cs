@@ -1033,9 +1033,6 @@ namespace PMSLargeScreen.PMSMainService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SupplierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1153,19 +1150,6 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Supplier {
-            get {
-                return this.SupplierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
-                    this.SupplierField = value;
-                    this.RaisePropertyChanged("Supplier");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Weight {
             get {
                 return this.WeightField;
@@ -1205,9 +1189,6 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSLargeScreen.PMSMainService.DcMaterialOrderItem[] MaterialOrderItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderPOField;
@@ -1284,19 +1265,6 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSLargeScreen.PMSMainService.DcMaterialOrderItem[] MaterialOrderItems {
-            get {
-                return this.MaterialOrderItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialOrderItemsField, value) != true)) {
-                    this.MaterialOrderItemsField = value;
-                    this.RaisePropertyChanged("MaterialOrderItems");
                 }
             }
         }
@@ -1680,6 +1648,384 @@ namespace PMSLargeScreen.PMSMainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryIn", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialInventoryIn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialLot {
+            get {
+                return this.MaterialLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialLotField, value) != true)) {
+                    this.MaterialLotField = value;
+                    this.RaisePropertyChanged("MaterialLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Supplier {
+            get {
+                return this.SupplierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
+                    this.SupplierField = value;
+                    this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryOut", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialInventoryOut : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PurityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReceiverField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialLot {
+            get {
+                return this.MaterialLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialLotField, value) != true)) {
+                    this.MaterialLotField = value;
+                    this.RaisePropertyChanged("MaterialLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Purity {
+            get {
+                return this.PurityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PurityField, value) != true)) {
+                    this.PurityField = value;
+                    this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Receiver {
+            get {
+                return this.ReceiverField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReceiverField, value) != true)) {
+                    this.ReceiverField = value;
+                    this.RaisePropertyChanged("Receiver");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcMissonWithPlan", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcMissonWithPlan : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1758,6 +2104,9 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid PlanIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlanLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PrePressureField;
@@ -2134,6 +2483,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.PlanIDField.Equals(value) != true)) {
                     this.PlanIDField = value;
                     this.RaisePropertyChanged("PlanID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlanLot {
+            get {
+                return this.PlanLotField;
+            }
+            set {
+                if ((this.PlanLotField.Equals(value) != true)) {
+                    this.PlanLotField = value;
+                    this.RaisePropertyChanged("PlanLot");
                 }
             }
         }
@@ -3524,6 +3886,9 @@ namespace PMSLargeScreen.PMSMainService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VHPPlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightInField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3655,6 +4020,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VHPPlanLot {
+            get {
+                return this.VHPPlanLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VHPPlanLotField, value) != true)) {
+                    this.VHPPlanLotField = value;
+                    this.RaisePropertyChanged("VHPPlanLot");
                 }
             }
         }
@@ -5378,6 +5756,18 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjieResponse")]
+        PMSLargeScreen.PMSMainService.DcMaterialOrder[] GetMaterialOrderForSanjie(int skip, int take, string orderPo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjieResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialOrder[]> GetMaterialOrderForSanjieAsync(int skip, int take, string orderPo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjieResponse")]
+        int GetMaterialOrderCountForSanjie(string orderPo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjieResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderCountForSanjieAsync(string orderPo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse")]
         int AddMaterialOrder(PMSLargeScreen.PMSMainService.DcMaterialOrder model);
         
@@ -5421,6 +5811,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse")]
         System.Threading.Tasks.Task<int> DeleteMaterialOrderItemAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItems", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsResponse")]
+        PMSLargeScreen.PMSMainService.DcMaterialOrderItem[] GetMaterialOrderItems(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItems", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialOrderItem[]> GetMaterialOrderItemsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
+        int GetMaterialOrderItemsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5464,6 +5866,22 @@ namespace PMSLargeScreen.PMSMainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier) {
             return base.Channel.GetMaterialOrderCountBySearchAsync(orderPo, supplier);
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcMaterialOrder[] GetMaterialOrderForSanjie(int skip, int take, string orderPo) {
+            return base.Channel.GetMaterialOrderForSanjie(skip, take, orderPo);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialOrder[]> GetMaterialOrderForSanjieAsync(int skip, int take, string orderPo) {
+            return base.Channel.GetMaterialOrderForSanjieAsync(skip, take, orderPo);
+        }
+        
+        public int GetMaterialOrderCountForSanjie(string orderPo) {
+            return base.Channel.GetMaterialOrderCountForSanjie(orderPo);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderCountForSanjieAsync(string orderPo) {
+            return base.Channel.GetMaterialOrderCountForSanjieAsync(orderPo);
         }
         
         public int AddMaterialOrder(PMSLargeScreen.PMSMainService.DcMaterialOrder model) {
@@ -5521,29 +5939,250 @@ namespace PMSLargeScreen.PMSMainService {
         public System.Threading.Tasks.Task<int> DeleteMaterialOrderItemAsync(System.Guid id) {
             return base.Channel.DeleteMaterialOrderItemAsync(id);
         }
+        
+        public PMSLargeScreen.PMSMainService.DcMaterialOrderItem[] GetMaterialOrderItems(int skip, int take) {
+            return base.Channel.GetMaterialOrderItems(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialOrderItem[]> GetMaterialOrderItemsAsync(int skip, int take) {
+            return base.Channel.GetMaterialOrderItemsAsync(skip, take);
+        }
+        
+        public int GetMaterialOrderItemsCount() {
+            return base.Channel.GetMaterialOrderItemsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync() {
+            return base.Channel.GetMaterialOrderItemsCountAsync();
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMaterialInventoryService")]
+    public interface IMaterialInventoryService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse")]
+        PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse")]
+        int GetMaterialInventoryInCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryInCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
+        int AddMaterialInventoryIn(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryInAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse")]
+        int UpdateMaterialInventoryIn(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse")]
+        int DeleteMaterialInventoryIn(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse")]
+        System.Threading.Tasks.Task<int> DeleteMaterialInventoryInAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse")]
+        PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[] GetMaterialInventoryOuts(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOuts", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountResponse" +
+            "")]
+        int GetMaterialInventoryOutCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountResponse" +
+            "")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
+        int AddMaterialInventoryOut(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryOutAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse")]
+        int UpdateMaterialInventoryOut(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse")]
+        int DeleteMaterialInventoryOut(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse")]
+        System.Threading.Tasks.Task<int> DeleteMaterialInventoryOutAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMaterialInventoryServiceChannel : PMSLargeScreen.PMSMainService.IMaterialInventoryService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MaterialInventoryServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IMaterialInventoryService>, PMSLargeScreen.PMSMainService.IMaterialInventoryService {
+        
+        public MaterialInventoryServiceClient() {
+        }
+        
+        public MaterialInventoryServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MaterialInventoryServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MaterialInventoryServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MaterialInventoryServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take) {
+            return base.Channel.GetMaterialInventoryIns(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsAsync(int skip, int take) {
+            return base.Channel.GetMaterialInventoryInsAsync(skip, take);
+        }
+        
+        public int GetMaterialInventoryInCount() {
+            return base.Channel.GetMaterialInventoryInCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountAsync() {
+            return base.Channel.GetMaterialInventoryInCountAsync();
+        }
+        
+        public int AddMaterialInventoryIn(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model) {
+            return base.Channel.AddMaterialInventoryIn(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryInAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model) {
+            return base.Channel.AddMaterialInventoryInAsync(model);
+        }
+        
+        public int UpdateMaterialInventoryIn(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model) {
+            return base.Channel.UpdateMaterialInventoryIn(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model) {
+            return base.Channel.UpdateMaterialInventoryInAsync(model);
+        }
+        
+        public int DeleteMaterialInventoryIn(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryIn(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteMaterialInventoryInAsync(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryInAsync(id);
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[] GetMaterialInventoryOuts(int skip, int take) {
+            return base.Channel.GetMaterialInventoryOuts(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsAsync(int skip, int take) {
+            return base.Channel.GetMaterialInventoryOutsAsync(skip, take);
+        }
+        
+        public int GetMaterialInventoryOutCount() {
+            return base.Channel.GetMaterialInventoryOutCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountAsync() {
+            return base.Channel.GetMaterialInventoryOutCountAsync();
+        }
+        
+        public int AddMaterialInventoryOut(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model) {
+            return base.Channel.AddMaterialInventoryOut(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryOutAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model) {
+            return base.Channel.AddMaterialInventoryOutAsync(model);
+        }
+        
+        public int UpdateMaterialInventoryOut(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model) {
+            return base.Channel.UpdateMaterialInventoryOut(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model) {
+            return base.Channel.UpdateMaterialInventoryOutAsync(model);
+        }
+        
+        public int DeleteMaterialInventoryOut(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryOut(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteMaterialInventoryOutAsync(System.Guid id) {
+            return base.Channel.DeleteMaterialInventoryOutAsync(id);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMissonService")]
     public interface IMissonService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
-        PMSLargeScreen.PMSMainService.DcOrder[] GetMissonBySearchInPage(int skip, int take);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissons", ReplyAction="http://tempuri.org/IMissonService/GetMissonsResponse")]
+        PMSLargeScreen.PMSMainService.DcOrder[] GetMissons(int skip, int take);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonBySearchInPage", ReplyAction="http://tempuri.org/IMissonService/GetMissonBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissons", ReplyAction="http://tempuri.org/IMissonService/GetMissonsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcOrder[]> GetMissonsAsync(int skip, int take);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlansByOrderID", ReplyAction="http://tempuri.org/IMissonService/GetPlansByOrderIDResponse")]
-        PMSLargeScreen.PMSMainService.DcPlanVHP[] GetPlansByOrderID(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlans", ReplyAction="http://tempuri.org/IMissonService/GetPlansResponse")]
+        PMSLargeScreen.PMSMainService.DcPlanVHP[] GetPlans(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlansByOrderID", ReplyAction="http://tempuri.org/IMissonService/GetPlansByOrderIDResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlans", ReplyAction="http://tempuri.org/IMissonService/GetPlansResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanVHP[]> GetPlansAsync(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
-        int GetMissonCountBySearch();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountResponse")]
+        int GetMissonsCount();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanResponse")]
+        PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCountResponse")]
+        int GetMissonWithPlanCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanChecked", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedResponse")]
+        PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanChecked(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanChecked", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanCheckedAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountResponse")]
+        int GetMissonWithPlanCheckedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse")]
+        PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5573,79 +6212,28 @@ namespace PMSLargeScreen.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSLargeScreen.PMSMainService.DcOrder[] GetMissonBySearchInPage(int skip, int take) {
-            return base.Channel.GetMissonBySearchInPage(skip, take);
+        public PMSLargeScreen.PMSMainService.DcOrder[] GetMissons(int skip, int take) {
+            return base.Channel.GetMissons(skip, take);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcOrder[]> GetMissonBySearchInPageAsync(int skip, int take) {
-            return base.Channel.GetMissonBySearchInPageAsync(skip, take);
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcOrder[]> GetMissonsAsync(int skip, int take) {
+            return base.Channel.GetMissonsAsync(skip, take);
         }
         
-        public PMSLargeScreen.PMSMainService.DcPlanVHP[] GetPlansByOrderID(System.Guid id) {
-            return base.Channel.GetPlansByOrderID(id);
+        public PMSLargeScreen.PMSMainService.DcPlanVHP[] GetPlans(System.Guid id) {
+            return base.Channel.GetPlans(id);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanVHP[]> GetPlansByOrderIDAsync(System.Guid id) {
-            return base.Channel.GetPlansByOrderIDAsync(id);
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanVHP[]> GetPlansAsync(System.Guid id) {
+            return base.Channel.GetPlansAsync(id);
         }
         
-        public int GetMissonCountBySearch() {
-            return base.Channel.GetMissonCountBySearch();
+        public int GetMissonsCount() {
+            return base.Channel.GetMissonsCount();
         }
         
-        public System.Threading.Tasks.Task<int> GetMissonCountBySearchAsync() {
-            return base.Channel.GetMissonCountBySearchAsync();
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IMissonWithPlanService")]
-    public interface IMissonWithPlanService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
-        PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
-        int GetMissonWithPlanCount();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
-        System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
-        PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMissonWithPlanServiceChannel : PMSLargeScreen.PMSMainService.IMissonWithPlanService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MissonWithPlanServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IMissonWithPlanService>, PMSLargeScreen.PMSMainService.IMissonWithPlanService {
-        
-        public MissonWithPlanServiceClient() {
-        }
-        
-        public MissonWithPlanServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public MissonWithPlanServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public MissonWithPlanServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public MissonWithPlanServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public System.Threading.Tasks.Task<int> GetMissonsCountAsync() {
+            return base.Channel.GetMissonsCountAsync();
         }
         
         public PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take) {
@@ -5662,6 +6250,22 @@ namespace PMSLargeScreen.PMSMainService {
         
         public System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync() {
             return base.Channel.GetMissonWithPlanCountAsync();
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanChecked(int skip, int take) {
+            return base.Channel.GetMissonWithPlanChecked(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMissonWithPlan[]> GetMissonWithPlanCheckedAsync(int skip, int take) {
+            return base.Channel.GetMissonWithPlanCheckedAsync(skip, take);
+        }
+        
+        public int GetMissonWithPlanCheckedCount() {
+            return base.Channel.GetMissonWithPlanCheckedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountAsync() {
+            return base.Channel.GetMissonWithPlanCheckedCountAsync();
         }
         
         public PMSLargeScreen.PMSMainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date) {
@@ -6058,6 +6662,20 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCount", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordMillingCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse")]
+        PMSLargeScreen.PMSMainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotRespons" +
+            "e")]
+        int GetRecordMillingCountByVHPPlanLot(string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/AddRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/AddRecordMillingResponse")]
         int AddRecordMilling(PMSLargeScreen.PMSMainService.DcRecordMilling model);
         
@@ -6120,6 +6738,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetRecordMillingCountAsync();
         }
         
+        public PMSLargeScreen.PMSMainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMillingsByVHPPlanLot(skip, take, vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMillingsByVHPPlanLotAsync(skip, take, vhpplanlot);
+        }
+        
+        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot) {
+            return base.Channel.GetRecordMillingCountByVHPPlanLot(vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot) {
+            return base.Channel.GetRecordMillingCountByVHPPlanLotAsync(vhpplanlot);
+        }
+        
         public int AddRecordMilling(PMSLargeScreen.PMSMainService.DcRecordMilling model) {
             return base.Channel.AddRecordMilling(model);
         }
@@ -6160,6 +6794,20 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCount", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordMachineCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLotResponse")]
+        PMSLargeScreen.PMSMainService.DcRecordMachine[] GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachinesByVHPPlanLotResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordMachine[]> GetRecordMachinesByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLotRespons" +
+            "e")]
+        int GetRecordMachineCountByVHPPlanLot(string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMachineService/GetRecordMachineCountByVHPPlanLotRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int> GetRecordMachineCountByVHPPlanLotAsync(string vhpplanlot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/AddRecordMachine", ReplyAction="http://tempuri.org/IRecordMachineService/AddRecordMachineResponse")]
         int AddRecordMachine(PMSLargeScreen.PMSMainService.DcRecordMachine model);
@@ -6223,6 +6871,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetRecordMachineCountAsync();
         }
         
+        public PMSLargeScreen.PMSMainService.DcRecordMachine[] GetRecordMachinesByVHPPlanLot(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMachinesByVHPPlanLot(skip, take, vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordMachine[]> GetRecordMachinesByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordMachinesByVHPPlanLotAsync(skip, take, vhpplanlot);
+        }
+        
+        public int GetRecordMachineCountByVHPPlanLot(string vhpplanlot) {
+            return base.Channel.GetRecordMachineCountByVHPPlanLot(vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordMachineCountByVHPPlanLotAsync(string vhpplanlot) {
+            return base.Channel.GetRecordMachineCountByVHPPlanLotAsync(vhpplanlot);
+        }
+        
         public int AddRecordMachine(PMSLargeScreen.PMSMainService.DcRecordMachine model) {
             return base.Channel.AddRecordMachine(model);
         }
@@ -6263,6 +6927,20 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCount", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountResponse")]
         System.Threading.Tasks.Task<int> GetRecordDeMoldsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse")]
+        PMSLargeScreen.PMSMainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" +
+            "")]
+        int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" +
+            "")]
+        System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldResponse")]
         int AddRecordDeMold(PMSLargeScreen.PMSMainService.DcRecordDeMold model);
@@ -6324,6 +7002,22 @@ namespace PMSLargeScreen.PMSMainService {
         
         public System.Threading.Tasks.Task<int> GetRecordDeMoldsCountAsync() {
             return base.Channel.GetRecordDeMoldsCountAsync();
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsByVHPPlanLot(skip, take, vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsByVHPPlanLotAsync(skip, take, vhpplanlot);
+        }
+        
+        public int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsCountByVHPPlanLot(vhpplanlot);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot) {
+            return base.Channel.GetRecordDeMoldsCountByVHPPlanLotAsync(vhpplanlot);
         }
         
         public int AddRecordDeMold(PMSLargeScreen.PMSMainService.DcRecordDeMold model) {

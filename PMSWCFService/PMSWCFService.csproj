@@ -121,7 +121,6 @@
     <Compile Include="ServiceContracts\IHeartBeatSerive.cs" />
     <Compile Include="ServiceContracts\IMaintenanceService.cs" />
     <Compile Include="ServiceContracts\IMaterialInventoryService.cs" />
-    <Compile Include="ServiceContracts\IMissonWithPlanService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
@@ -131,7 +130,6 @@
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
     <Compile Include="ServiceImplements\RecordDeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />
-    <Compile Include="ServiceImplements\MissonWithPlanService.cs" />
     <Compile Include="ServiceImplements\RecordDeMoldService.cs" />
     <Compile Include="ServiceImplements\RecordMachineService.cs" />
     <Compile Include="ServiceImplements\RecordMillingService.cs" />

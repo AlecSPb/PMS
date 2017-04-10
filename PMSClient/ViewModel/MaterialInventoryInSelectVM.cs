@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialInventoryInSelectVM
+    public class MaterialInventoryInSelectVM:BaseViewModelPage
     {
 
 

@@ -152,7 +152,7 @@
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
-        <DataGrid Grid.Row="5" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}">
+        <DataGrid Name="dgplans" Grid.Row="5" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}" LoadingRow="dgplans_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>

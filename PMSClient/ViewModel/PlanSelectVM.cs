@@ -68,14 +68,15 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
             Select = new RelayCommand<DcMissonWithPlan>(ActionSelect);
+            All = new RelayCommand(SetPageParametersWhenConditionChange);
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MissonWithPlanServiceClient();
-            RecordCount = service.GetMissonWithPlanCount();
+            var service = new MissonServiceClient();
+            RecordCount = service.GetMissonWithPlanCheckedCount();
             ActionPaging();
         }
         /// <summary>
@@ -83,11 +84,11 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonWithPlanServiceClient();
+            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonWithPlan(skip, take);
+            var orders = service.GetMissonWithPlanChecked(skip, take);
             MissonWithPlans.Clear();
             orders.ToList<DcMissonWithPlan>().ForEach(o => MissonWithPlans.Add(o));
         }

@@ -5756,6 +5756,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjieResponse")]
+        PMSClient.MainService.DcMaterialOrder[] GetMaterialOrderForSanjie(int skip, int take, string orderPo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderForSanjieResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder[]> GetMaterialOrderForSanjieAsync(int skip, int take, string orderPo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjieResponse")]
+        int GetMaterialOrderCountForSanjie(string orderPo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjie", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountForSanjieResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderCountForSanjieAsync(string orderPo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderResponse")]
         int AddMaterialOrder(PMSClient.MainService.DcMaterialOrder model);
         
@@ -5799,6 +5811,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse")]
         System.Threading.Tasks.Task<int> DeleteMaterialOrderItemAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItems", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsResponse")]
+        PMSClient.MainService.DcMaterialOrderItem[] GetMaterialOrderItems(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItems", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItem[]> GetMaterialOrderItemsAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
+        int GetMaterialOrderItemsCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5842,6 +5866,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderCountBySearchAsync(string orderPo, string supplier) {
             return base.Channel.GetMaterialOrderCountBySearchAsync(orderPo, supplier);
+        }
+        
+        public PMSClient.MainService.DcMaterialOrder[] GetMaterialOrderForSanjie(int skip, int take, string orderPo) {
+            return base.Channel.GetMaterialOrderForSanjie(skip, take, orderPo);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder[]> GetMaterialOrderForSanjieAsync(int skip, int take, string orderPo) {
+            return base.Channel.GetMaterialOrderForSanjieAsync(skip, take, orderPo);
+        }
+        
+        public int GetMaterialOrderCountForSanjie(string orderPo) {
+            return base.Channel.GetMaterialOrderCountForSanjie(orderPo);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderCountForSanjieAsync(string orderPo) {
+            return base.Channel.GetMaterialOrderCountForSanjieAsync(orderPo);
         }
         
         public int AddMaterialOrder(PMSClient.MainService.DcMaterialOrder model) {
@@ -5898,6 +5938,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteMaterialOrderItemAsync(System.Guid id) {
             return base.Channel.DeleteMaterialOrderItemAsync(id);
+        }
+        
+        public PMSClient.MainService.DcMaterialOrderItem[] GetMaterialOrderItems(int skip, int take) {
+            return base.Channel.GetMaterialOrderItems(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItem[]> GetMaterialOrderItemsAsync(int skip, int take) {
+            return base.Channel.GetMaterialOrderItemsAsync(skip, take);
+        }
+        
+        public int GetMaterialOrderItemsCount() {
+            return base.Channel.GetMaterialOrderItemsCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync() {
+            return base.Channel.GetMaterialOrderItemsCountAsync();
         }
     }
     
@@ -6097,6 +6153,36 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountResponse")]
         System.Threading.Tasks.Task<int> GetMissonsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanResponse")]
+        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCountResponse")]
+        int GetMissonWithPlanCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanChecked", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedResponse")]
+        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanChecked(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanChecked", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanCheckedAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountResponse")]
+        int GetMissonWithPlanCheckedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse")]
+        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6149,57 +6235,6 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<int> GetMissonsCountAsync() {
             return base.Channel.GetMissonsCountAsync();
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IMissonWithPlanService")]
-    public interface IMissonWithPlanService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
-        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlan", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanAsync(int skip, int take);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
-        int GetMissonWithPlanCount();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCount", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanCountResponse")]
-        System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
-        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonWithPlanService/GetMissonWithPlanByDateResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMissonWithPlanServiceChannel : PMSClient.MainService.IMissonWithPlanService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MissonWithPlanServiceClient : System.ServiceModel.ClientBase<PMSClient.MainService.IMissonWithPlanService>, PMSClient.MainService.IMissonWithPlanService {
-        
-        public MissonWithPlanServiceClient() {
-        }
-        
-        public MissonWithPlanServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public MissonWithPlanServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public MissonWithPlanServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public MissonWithPlanServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
         
         public PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlan(int skip, int take) {
             return base.Channel.GetMissonWithPlan(skip, take);
@@ -6215,6 +6250,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMissonWithPlanCountAsync() {
             return base.Channel.GetMissonWithPlanCountAsync();
+        }
+        
+        public PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanChecked(int skip, int take) {
+            return base.Channel.GetMissonWithPlanChecked(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanCheckedAsync(int skip, int take) {
+            return base.Channel.GetMissonWithPlanCheckedAsync(skip, take);
+        }
+        
+        public int GetMissonWithPlanCheckedCount() {
+            return base.Channel.GetMissonWithPlanCheckedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountAsync() {
+            return base.Channel.GetMissonWithPlanCheckedCountAsync();
         }
         
         public PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date) {

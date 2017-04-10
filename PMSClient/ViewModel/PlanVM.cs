@@ -47,7 +47,7 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MissonWithPlanServiceClient();
+            var service = new MissonServiceClient();
             RecordCount = service.GetMissonWithPlanCount();
             ActionPaging();
         }
@@ -56,7 +56,7 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonWithPlanServiceClient();
+            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;

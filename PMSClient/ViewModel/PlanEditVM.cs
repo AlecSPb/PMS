@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
             plan.MoldDiameter = 230;
             plan.Thickness = 5;
             plan.CreateTime = DateTime.Now;
-            plan.State = PMSCommon.CommonState.UnChecked.ToString();
+            plan.State = PMSCommon.CommonState.Checked.ToString();
             plan.CalculationDensity = 5.75;
             plan.GrainSize = "-200";
             plan.RoomHumidity = 70;
