@@ -157,7 +157,7 @@ namespace PMSClient.Tool
         {
             if (item != null)
             {
-                item.Weight = Math.PI * item.Diameter * item.Diameter * item.Thickness / 4 / 1000 * CurrentDensity + item.WeightLoss;
+                item.Weight = Math.PI * item.Diameter * item.Diameter * item.Thickness / 4 / 1000 * CurrentDensity*item.Quantity + item.WeightLoss;
             }
         }
         private void CalcualteTotalWeight()

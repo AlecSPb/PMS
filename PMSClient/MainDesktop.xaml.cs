@@ -61,11 +61,19 @@ namespace PMSClient
             {
                 using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
-                    if (heartbeat.Beat().Contains("ok"))
+                    System.Diagnostics.Debug.Print(heartbeat.Beat());
+                    if (heartbeat.Beat()=="ok")
                     {
                         this.Dispatcher.Invoke(() =>
                         {
                             txtHeartBeat.Text = "服务器通信正常";
+                        });
+                    }
+                    else
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            txtHeartBeat.Text = "服务器通信故障";
                         });
                     }
                 }
