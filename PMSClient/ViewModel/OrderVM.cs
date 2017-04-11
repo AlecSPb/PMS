@@ -22,10 +22,12 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        public override void Cleanup()
+        /// <summary>
+        /// 用于编辑后刷新订单调用
+        /// </summary>
+        public void Refresh()
         {
-            Messenger.Default.Unregister(this);
-            base.Cleanup();
+            SetPageParametersWhenConditionChange();
         }
 
 

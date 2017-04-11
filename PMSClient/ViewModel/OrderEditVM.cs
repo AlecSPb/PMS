@@ -130,12 +130,18 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                NavigationService.GoTo(PMSViews.Order);
+                PMSHelper.ViewModels.Order.Refresh();
+                GoBack();
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
             }
+        }
+
+        private static void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.Order);
         }
 
         private DcOrder currentOrder;
