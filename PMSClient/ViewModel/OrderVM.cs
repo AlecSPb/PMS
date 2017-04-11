@@ -43,17 +43,28 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
-            Add = new RelayCommand(ActionAdd);
+            Add = new RelayCommand(ActionAdd, CanAdd);
 
             Edit = new RelayCommand<DcOrder>(order =>
             {
                 PMSHelper.ViewModels.OrderEdit.SetEdit(order);
                 NavigationService.GoTo(PMSViews.OrderEdit);
-            });
+            }, CanEdit);
 
-            Duplicate = new RelayCommand<DcOrder>(ActionDuplicate);
+            Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
 
         }
+
+        #region 权限控制代码000002
+        private bool CanEdit(DcOrder arg)
+        {
+            return CanAdd();
+        }
+        private bool CanAdd()
+        {
+            return PMSHelper.CurrentSession.CurrentAccesses.Where(i => i.AccessCode == "000002").Count() > 0;
+        }
+        #endregion
 
 
         private void ActionDuplicate(DcOrder order)
