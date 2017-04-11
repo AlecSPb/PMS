@@ -39,7 +39,7 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MIICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource MIIMaterialLot}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource MIIMaterialLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding MaterialLot}"/>
                 <DataGridTextColumn Header="{StaticResource MIIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>

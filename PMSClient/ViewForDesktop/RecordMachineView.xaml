@@ -53,28 +53,28 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="批号" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding VHPPlanLot}"/>
-                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="要求尺寸" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Dimension}"/>
-                <DataGridTextColumn Header="额外要求" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMExtraRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ExtraRequirement}"/>
-                <DataGridTextColumn Header="直径1" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Diameter1}"/>
-                <DataGridTextColumn Header="直径2" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Diameter2}"/>
-                <DataGridTextColumn Header="厚度1" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness1}"/>
-                <DataGridTextColumn Header="厚度2" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness2}"/>
-                <DataGridTextColumn Header="厚度3" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness3}"/>
-                <DataGridTextColumn Header="厚度4" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness4}"/>
 
-                <DataGridTextColumn Header="缺陷" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RMMDefects}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Defects}"/>
 
 
