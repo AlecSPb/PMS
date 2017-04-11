@@ -13,8 +13,16 @@ namespace PMSClient.Tool
         public ToolViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-        }
 
+            SimpleIoc.Default.Register<MaterialNeedCalcualtionVM>();
+
+
+
+        }
+        public MaterialNeedCalcualtionVM MaterialNeedCalcualtion
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialNeedCalcualtionVM>(); }
+        }
 
 
 

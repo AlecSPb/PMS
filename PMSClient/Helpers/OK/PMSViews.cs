@@ -25,6 +25,7 @@ namespace PMSClient
         MaterialOrderItemEdit,
         MaterialInventoryIn,
         MaterialInventoryInEdit,
+        MaterialInventoryInSelect,
         MaterialInventoryOut,
         MaterialInventoryOutEdit,
         Misson,
@@ -52,6 +53,6 @@ namespace PMSClient
         RecordBondingPlateEdit,
         Maintanence,
         MaintanenceEdit,
-        MaterialInventoryInSelect
+        MaterialNeedCalcuationTool
     }
 }

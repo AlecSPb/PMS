@@ -163,6 +163,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
+    <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewForDesktop\LogInView.xaml.cs">
@@ -614,7 +615,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Locator.xaml">
+    <Page Include="VMLocator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

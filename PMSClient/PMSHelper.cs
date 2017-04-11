@@ -25,7 +25,7 @@ namespace PMSClient
             _viewModels = (App.Current as App).FindResource("Locator") as ViewModelLocator;
 
             _toolViews = new ToolViewLocator();
-            _toolViewModels = new ToolViewModelLocator():
+            _toolViewModels = (App.Current as App).FindResource("ToolLocator") as ToolViewModelLocator;
         }
         public static LogInformation CurrentSession
         {

@@ -70,6 +70,14 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
+
+            Calculator = new RelayCommand(ActionCalculator);
+        }
+
+        private void ActionCalculator()
+        {
+            PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.MaterialNeedEdit);
+            NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
         }
 
         private void ActionSelect()
@@ -119,5 +127,7 @@ namespace PMSClient.ViewModel
         public ObservableCollection<string> States { get; set; }
 
         public RelayCommand Select { get; set; }
+
+        public RelayCommand Calculator { get; set; }
     }
 }

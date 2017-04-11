@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using PMSClient.ViewModel;
 using PMSClient.ViewForDesktop;
 using PMSClient.MainService;
+using PMSClient.Tool;
 
 namespace PMSClient
 {
@@ -25,7 +26,8 @@ namespace PMSClient
     /// </summary>
     public partial class MainDesktop : Window
     {
-        private DesktopViewLocator _views; 
+        private DesktopViewLocator _views;
+        private ToolViewLocator _toolviews;
 
         public MainDesktop()
         {
@@ -35,6 +37,7 @@ namespace PMSClient
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _views = PMSHelper.DesktopViews;
+            _toolviews = PMSHelper.ToolViews;
 
             Messenger.Default.Register<PMSViews>(this, MainNavigationToken.Navigate, ActionNavigation);
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
@@ -42,7 +45,6 @@ namespace PMSClient
             NavigateTo(_views.LogIn);
 
             RefreshLogInformation();
-            //this.BringIntoView();
         }
 
         private void ActionNavigation(PMSViews token)
@@ -159,10 +161,9 @@ namespace PMSClient
                 case PMSViews.RecordDeliveryItemEdit:
                     NavigateTo(_views.RecordDeliveryItemEdit);
                     break;
-
-
-
-
+                case PMSViews.MaterialNeedCalcuationTool:
+                    NavigateTo(_toolviews.MaterialNeedCalculation);
+                    break;
                 default:
                     break;
             }
@@ -208,28 +209,6 @@ namespace PMSClient
             Messenger.Default.Unregister(this);
             base.OnClosing(e);
         }
-
-        //private void btnClose_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.Close();
-        //}
-
-        //private void btnMaximum_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (this.WindowState == WindowState.Maximized)
-        //    {
-        //        this.WindowState = WindowState.Normal;
-        //    }
-        //    else
-        //    {
-        //        this.WindowState = WindowState.Maximized;
-        //    }
-        //}
-
-        //private void btnMiinimum_Click(object sender, RoutedEventArgs e)
-        //{
-        //    this.WindowState = WindowState.Minimized;
-        //}
 
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
