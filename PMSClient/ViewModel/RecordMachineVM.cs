@@ -24,6 +24,10 @@ namespace PMSClient.ViewModel
 
             SetPageParametersWhenConditionChange();
         }
+        public void RefreshData()
+        {
+            SetPageParametersWhenConditionChange();
+        }
 
         private void ActionDuplicate(DcRecordMachine model)
         {

@@ -19,16 +19,11 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
-
-        private void ActionRefresh(MsgObject obj)
+        public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
         }
-        public override void Cleanup()
-        {
-            Messenger.Default.Unregister(this);
-            base.Cleanup();
-        }
+
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);

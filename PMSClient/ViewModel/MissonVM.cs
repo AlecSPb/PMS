@@ -16,13 +16,12 @@ namespace PMSClient.ViewModel
     {
         public MissonVM()
         {
-            Messenger.Default.Register<MsgObject>(this, VToken.MissonRefresh, ActionRefreshItems);
             InitializeProperties();
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionRefreshItems(MsgObject obj)
+        public void RefreshData()
         {
             ActionSelectionChanged(CurrentSelectItem);
         }

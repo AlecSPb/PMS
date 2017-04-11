@@ -26,7 +26,10 @@ namespace PMSClient.ViewModel
 
             Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate);
         }
-
+        public void RefreshData()
+        {
+            SetPageParametersWhenConditionChange();
+        }
         private void ActionAll()
         {
             SetPageParametersWhenConditionChange();

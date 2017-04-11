@@ -114,7 +114,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateRecordTest(CurrentRecordTest);
                 }
-
+                PMSHelper.ViewModels.RecordTest.RefreshData();
                 GoBack();
             }
             catch (Exception ex)

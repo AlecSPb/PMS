@@ -111,6 +111,7 @@ namespace PMSClient.ViewModel
                         service.UpdateRecordDeMold(CurrentRecordDeMold);
                     }
                 }
+                PMSHelper.ViewModels.RecordDeMold.RefreshData();
                 GoBack();
             }
             catch (Exception ex)

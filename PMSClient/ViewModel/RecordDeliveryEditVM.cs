@@ -88,7 +88,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateReocrdDelivery(CurrentRecordDelivery);
                 }
-
+                PMSHelper.ViewModels.RecordDelivery.RefreshData();
                 GoBack();
             }
             catch (Exception ex)

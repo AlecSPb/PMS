@@ -12,7 +12,7 @@ namespace PMSClient.ViewModel
     {
         public RecordMillingEditVM()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling));
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
 
             Select = new RelayCommand(() =>
@@ -91,8 +91,8 @@ namespace PMSClient.ViewModel
                         {
                             dc.UpdateRecordMilling(CurrentRecordMilling);
                         }
-                        //TODO:以后将这里的重复代替掉
-                        NavigationService.GoTo(PMSViews.RecordMilling);
+                        PMSHelper.ViewModels.RecordMilling.RefreshData();
+                        GoBack();
                     }
                 }
                 catch (Exception ex)
@@ -100,6 +100,11 @@ namespace PMSClient.ViewModel
                     PMSHelper.CurrentLog.Error(ex);
                 }
             }
+        }
+
+        private static void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.RecordMilling);
         }
 
         private DcRecordMilling currentRecordMilling;

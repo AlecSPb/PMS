@@ -101,7 +101,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialInventoryIn(CurrentMaterialInventoryIn);
                 }
-                PMSHelper.ViewModels.MaterialInventoryIn.RefreshData():
+                PMSHelper.ViewModels.MaterialInventoryIn.RefreshData();
                 GoBack();
             }
             catch (Exception ex)

@@ -23,13 +23,16 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        public override void Cleanup()
+        public void RefreshData()
         {
-            Messenger.Default.Unregister(this);
-            base.Cleanup();
+            SetPageParametersWhenConditionChange();
         }
 
 
+        public void RefreshDataItem()
+        {
+            ActionSelectionChanged(CurrentSelectItem);
+        }
         private void InitializeProperties()
         {
             RecordDeliveries = new ObservableCollection<DcRecordDelivery>();

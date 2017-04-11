@@ -16,11 +16,15 @@ namespace PMSClient.ViewModel
     {
         public RecordMillingVM()
         {
-            RecordMillings = new ObservableCollection<MainService.DcRecordMilling>();
+            RecordMillings = new ObservableCollection<DcRecordMilling>();
             SetPageParametersWhenConditionChange();
             InitializeCommands();
         }
 
+        public void RefreshData()
+        {
+            SetPageParametersWhenConditionChange();
+        }
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);

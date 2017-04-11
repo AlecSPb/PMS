@@ -17,14 +17,10 @@ namespace PMSClient.ViewModel
         public PlanEditVM()
         {
             InitializeProperties();
-            GiveUp = new RelayCommand(ActionGiveUp);
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
         }
-        public void SetKeyProperties(ModelObject msg)
-        {
-            CurrentPlan = msg.Model as DcPlanVHP;
-            IsNew = msg.IsNew;
-        }
+
         public void SetNew(DcOrder order)
         {
             if (order==null)
@@ -125,8 +121,8 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateVHPPlan(CurrentPlan);
                 }
-
-                NavigationService.GoTo(PMSViews.Misson);
+                PMSHelper.ViewModels.Misson.RefreshData();
+                GoBack();
             }
             catch (Exception ex)
             {
@@ -134,10 +130,11 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionGiveUp()
+        private static void GoBack()
         {
             NavigationService.GoTo(PMSViews.Misson);
         }
+
         public ObservableCollection<DcBDVHPMold> Molds { get; set; }
         public ObservableCollection<string> States { get; set; }
         public ObservableCollection<string> ProcessCodes { get; set; }

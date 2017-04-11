@@ -101,7 +101,7 @@ namespace PMSClient.ViewModel
                         service.UpdateReocrdDeliveryItem(CurrentRecordDeliveryItem);
                     }
                 }
-
+                PMSHelper.ViewModels.RecordDelivery.RefreshDataItem();
                 GoBack();
             }
             catch (Exception ex)
