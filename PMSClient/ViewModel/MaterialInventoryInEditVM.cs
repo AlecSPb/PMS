@@ -24,6 +24,7 @@ namespace PMSClient.ViewModel
         {
 
             var empty = new DcMaterialInventoryIn();
+            #region 初始化
             empty.Id = Guid.NewGuid();
             empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
             empty.Composition = "成分";
@@ -34,6 +35,7 @@ namespace PMSClient.ViewModel
             empty.Weight = 1;
             empty.Purity = "5N";
             empty.Remark = "无";
+            #endregion
 
             IsNew = true;
             CurrentMaterialInventoryIn = empty;
@@ -69,9 +71,14 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn));
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
+        }
+
+        private void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.MaterialInventoryIn);
         }
 
         private void ActionSelect()
@@ -94,7 +101,8 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialInventoryIn(CurrentMaterialInventoryIn);
                 }
-                NavigationService.GoTo(PMSViews.MaterialInventoryIn);
+                PMSHelper.ViewModels.MaterialInventoryIn.RefreshData():
+                GoBack();
             }
             catch (Exception ex)
             {

@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut));
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }
@@ -97,12 +97,18 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialInventoryOut(CurrentMaterialInventoryOut);
                 }
-                NavigationService.GoTo(PMSViews.MaterialInventoryOut);
+                PMSHelper.ViewModels.MaterialInventoryOut.RefreshData();
+                GoBack();
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
             }
+        }
+
+        private static void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.MaterialInventoryOut);
         }
 
         private DcMaterialInventoryOut currentMaterialInventoryOut;
