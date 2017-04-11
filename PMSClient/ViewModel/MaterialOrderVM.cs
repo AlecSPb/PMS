@@ -25,11 +25,15 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
-        public override void Cleanup()
+        public void RefreshData()
         {
-            Messenger.Default.Unregister(this);
-            base.Cleanup();
+            SetPageParametersWhenConditionChange();
         }
+        public void RefreshDataItem()
+        {
+            ActionSelectionChanged(CurrentSelectItem); 
+        }
+
         private void InitializeProperties()
         {
             SearchOrderPO = "";
@@ -42,28 +46,28 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Doc = new RelayCommand<MainService.DcMaterialOrder>(ActionGenerateDoc);
+            Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
 
             Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<MainService.DcMaterialOrder>(ActionEdit);
+            Edit = new RelayCommand<DcMaterialOrder>(ActionEdit);
 
-            AddItem = new RelayCommand<MainService.DcMaterialOrder>(ActionAddItem);
-            EditItem = new RelayCommand<MainService.DcMaterialOrderItem>(ActionEditItem);
+            AddItem = new RelayCommand<DcMaterialOrder>(ActionAddItem);
+            EditItem = new RelayCommand<DcMaterialOrderItem>(ActionEditItem);
 
-            SelectionChanged = new RelayCommand<MainService.DcMaterialOrder>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
         }
 
-        private void ActionSelectionChanged(DcMaterialOrder obj)
+        private void ActionSelectionChanged(DcMaterialOrder model)
         {
-            if (obj != null)
+            if (model != null)
             {
                 using (var service = new MaterialOrderServiceClient())
                 {
-                    var result = service.GetMaterialOrderItembyMaterialID(obj.ID);
+                    var result = service.GetMaterialOrderItembyMaterialID(model.ID);
                     MaterialOrderItems.Clear();
                     result.ToList().ForEach(i => MaterialOrderItems.Add(i));
-                    CurrentSelectItem = obj;
+                    CurrentSelectItem = model;
                 }
             }
         }

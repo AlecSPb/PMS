@@ -20,11 +20,6 @@ namespace PMSClient.ViewModel
             states.ToList().ForEach(s => OrderStates.Add(s));
             InitialCommmands();
         }
-        public void SetKeyProperties(ModelObject model)
-        {
-            IsNew = model.IsNew;
-            CurrentMaterialOrderItem = model.Model as DcMaterialOrderItem;
-        }
 
         public void SetNew(DcMaterialOrder order)
         {
@@ -33,6 +28,7 @@ namespace PMSClient.ViewModel
                 IsNew = true;
 
                 var item = new DcMaterialOrderItem();
+                #region 初始化
                 item.ID = Guid.NewGuid();
                 item.MaterialOrderID = order.ID;
                 item.State = PMSCommon.SimpleState.UnDeleted.ToString();
@@ -46,6 +42,7 @@ namespace PMSClient.ViewModel
                 item.UnitPrice = 0;
                 item.Weight = 0;
                 item.DeliveryDate = DateTime.Now.AddDays(7);
+                #endregion
 
                 CurrentMaterialOrderItem = item;
             }
@@ -75,7 +72,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder));
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }
@@ -88,17 +85,31 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            var service = new MaterialOrderServiceClient();
-            if (IsNew)
+            try
             {
-                service.AddMaterialOrderItem(CurrentMaterialOrderItem);
+                var service = new MaterialOrderServiceClient();
+                if (IsNew)
+                {
+                    service.AddMaterialOrderItem(CurrentMaterialOrderItem);
+                }
+                else
+                {
+                    service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
+                }
+                PMSHelper.ViewModels.MaterialOrder.RefreshDataItem();
+                GoBack();
             }
-            else
+            catch (Exception ex)
             {
-                service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
+                PMSHelper.CurrentLog.Error(ex);
             }
+        }
+
+        private static void GoBack()
+        {
             NavigationService.GoTo(PMSViews.MaterialOrder);
         }
+
         public ObservableCollection<string> OrderStates { get; set; }
 
         private DcMaterialOrderItem currentMaterialOrderItem;

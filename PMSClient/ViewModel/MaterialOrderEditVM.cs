@@ -23,6 +23,7 @@ namespace PMSClient.ViewModel
         public void SetNew()
         {
             var model = new DcMaterialOrder();
+            #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.State = PMSCommon.OrderState.UnChecked.ToString();
@@ -36,6 +37,7 @@ namespace PMSClient.ViewModel
             model.Priority = PMSCommon.OrderPriority.Normal.ToString();
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
+            #endregion
 
             IsNew = true;
             CurrentMaterialOrder = model;
@@ -68,22 +70,36 @@ namespace PMSClient.ViewModel
 
         private void InitialCommmands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder));
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+        }
+
+        private void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.MaterialOrder);
         }
 
         private void ActionSave()
         {
-            var service = new MaterialOrderServiceClient();
-            if (IsNew)
+            try
             {
-                service.AddMaterialOrder(CurrentMaterialOrder);
+                var service = new MaterialOrderServiceClient();
+                if (IsNew)
+                {
+                    service.AddMaterialOrder(CurrentMaterialOrder);
+                }
+                else
+                {
+                    service.UpdateMaterialOrder(CurrentMaterialOrder);
+                }
+                PMSHelper.ViewModels.MaterialOrder.RefreshData();
+                GoBack();
             }
-            else
+            catch (Exception ex)
             {
-                service.UpdateMaterialOrder(CurrentMaterialOrder);
+                PMSHelper.CurrentLog.Error(ex);
             }
-            NavigationService.GoTo(PMSViews.MaterialOrder);
+
         }
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> OrderPriorities { get; set; }

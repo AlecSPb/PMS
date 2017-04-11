@@ -21,12 +21,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        public override void Cleanup()
-        {
-            Messenger.Default.Unregister(this);
-            base.Cleanup();
-        }
-        private void ActionRefresh(MsgObject obj)
+        public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
         }

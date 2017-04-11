@@ -24,6 +24,7 @@ namespace PMSClient.ViewModel
         {
 
             var empty = new DcMaterialNeed();
+            #region 初始化
             empty.Id = Guid.NewGuid();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
@@ -32,7 +33,7 @@ namespace PMSClient.ViewModel
             empty.PMINumber = DateTime.Now.ToString("yyMMdd");
             empty.Purity = "5N";
             empty.Weight = 1;
-
+            #endregion
             IsNew = true;
             CurrentMaterialNeed = empty;
         }
@@ -66,7 +67,7 @@ namespace PMSClient.ViewModel
 
         private void InitialCommands()
         {
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
+            GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
         }
@@ -91,12 +92,18 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialNeed(CurrentMaterialNeed);
                 }
-                NavigationService.GoTo(PMSViews.MaterialNeed);
+                PMSHelper.ViewModels.MaterialNeed.RefreshData();
+                GoBack();
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
             }
+        }
+
+        private static void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.MaterialNeed);
         }
 
         private DcMaterialNeed currentMaterialNeed;
