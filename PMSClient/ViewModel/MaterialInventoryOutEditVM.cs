@@ -58,7 +58,7 @@ namespace PMSClient.ViewModel
                 CurrentMaterialInventoryOut.MaterialLot = model.MaterialLot;
                 CurrentMaterialInventoryOut.Weight = model.Weight;
                 CurrentMaterialInventoryOut.Remark = model.Supplier;
-                RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
+                //RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
             }
         }
 

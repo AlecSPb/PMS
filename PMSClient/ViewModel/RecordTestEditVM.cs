@@ -86,7 +86,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.Dimension = plan.Dimension;
                 CurrentRecordTest.DimensionActual = plan.Dimension;
 
-                RaisePropertyChanged(nameof(CurrentRecordTest));
+                //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }
 

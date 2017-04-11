@@ -94,7 +94,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="3=开始计算"/>
-                    <Button Name="btnUnLockDensity" Content="手动密度" Style="{StaticResource StyleButtonCommon}" Click="btnUnLockDensity_Click"/>
+                    <CheckBox Name="chkUnLockDensity" Content="手动输入密度" Style="{StaticResource StyleCheckBoxCommon}" Click="chkUnLockDensity_Click"/>
                 </StackPanel>
                 <Grid Grid.Row="1" DataContext="{Binding CurrentCalculationItem}">
                     <Grid.RowDefinitions>

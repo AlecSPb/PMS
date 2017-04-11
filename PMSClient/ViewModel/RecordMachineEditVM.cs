@@ -73,7 +73,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordMachine.Composition = plan.CompositionStandard;
                 CurrentRecordMachine.Dimension = plan.Dimension;
-                RaisePropertyChanged(nameof(CurrentRecordMachine));
+                //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
         }
 

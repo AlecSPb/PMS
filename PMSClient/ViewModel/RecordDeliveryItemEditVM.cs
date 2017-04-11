@@ -62,7 +62,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordDeliveryItem.ProductType = test.TestType;
                 CurrentRecordDeliveryItem.PO = test.PO;
 
-                RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
+                //RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
             }
         }
 

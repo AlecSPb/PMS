@@ -25,7 +25,7 @@ namespace PMSClient.Tool
             InitializeComponent();
         }
 
-        private void btnUnLockDensity_Click(object sender, RoutedEventArgs e)
+        private void chkUnLockDensity_Click(object sender, RoutedEventArgs e)
         {
             txtDensity.IsReadOnly = !txtDensity.IsReadOnly;
         }

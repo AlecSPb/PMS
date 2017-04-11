@@ -83,7 +83,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordDeMold.Composition = plan.CompositionStandard;
                 CurrentRecordDeMold.VHPPlanLot = plan.PlanDate.ToString("yyMMdd") + "-" + plan.VHPDeviceCode;
-                RaisePropertyChanged(nameof(CurrentRecordDeMold));
+                //RaisePropertyChanged(nameof(CurrentRecordDeMold));
             }
         }
         private void ActionGiveUp()

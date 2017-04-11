@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentMaterialNeed.Composition = order.CompositionStandard;
                 CurrentMaterialNeed.PMINumber = order.PMINumber;
-                RaisePropertyChanged(nameof(CurrentMaterialNeed));
+                //RaisePropertyChanged(nameof(CurrentMaterialNeed));
             }
         }
 

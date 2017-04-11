@@ -68,8 +68,8 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 CurrentRecordMilling.Composition = plan.CompositionStandard;
-                currentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot(plan, "1");
-                RaisePropertyChanged(nameof(CurrentRecordMilling));
+                CurrentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot(plan, "1");
+                //RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }
 
