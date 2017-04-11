@@ -139,6 +139,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDProductType}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -198,6 +200,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

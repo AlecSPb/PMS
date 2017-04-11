@@ -26,6 +26,8 @@ namespace PMSClient.ViewModel
             var model = new DcRecordDeliveryItem();
             #region 初始化
             model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.DeliveryID = delivery.ID;
             model.ProductType = PMSCommon.ProductType.Target.ToString();
             model.ProductID = DateTime.Now.ToString("yyMMdd");

@@ -19,6 +19,10 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
+        public DateTime CreateTime { get; set; }
+        [DataMember]
+        public string Creator { get; set; }
+        [DataMember]
         public string ProductType { get; set; }//产品 or 样品 or其他
         [DataMember]
         public string ProductID { get; set; }//根据这个来查询具体信息

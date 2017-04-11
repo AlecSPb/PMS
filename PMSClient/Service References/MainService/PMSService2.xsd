@@ -280,6 +280,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Abbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryID" type="ser:guid" />
       <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />

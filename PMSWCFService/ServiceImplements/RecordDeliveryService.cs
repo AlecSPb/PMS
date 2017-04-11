@@ -107,16 +107,16 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    var result = dc.RecordDeliverys.Include("DeliveryItems")
+                    var result = dc.RecordDeliverys
                         .OrderByDescending(d => d.CreateTime)
                         .ToList();
                     Mapper.Initialize(cfg =>
                     {
                         cfg.CreateMap<PMSDAL.RecordDelivery, DcRecordDelivery>();
-                        cfg.CreateMap<PMSDAL.RecordDeliveryItem, DcRecordDeliveryItem>();
+                        //cfg.CreateMap<PMSDAL.RecordDeliveryItem, DcRecordDeliveryItem>();
                     });
 
-                    var records = Mapper.Map<List<PMSDAL.RecordDelivery>, List<DcRecordDelivery>>(result);
+                    var records = Mapper.Map<List<RecordDelivery>, List<DcRecordDelivery>>(result);
 
                     return records;
                 }
@@ -156,6 +156,7 @@ namespace PMSWCFService
 
                     var result = dc.RecordDeliveryItems
                         .Where(i => i.DeliveryID == id && i.State != PMSCommon.CommonState.Deleted.ToString())
+                        .OrderByDescending(i=>i.CreateTime)
                         .ToList();
                     return Mapper.Map<List<RecordDeliveryItem>, List<DcRecordDeliveryItem>>(result);
                 }

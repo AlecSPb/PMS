@@ -291,6 +291,10 @@
     <Compile Include="Migrations\201704090111426_millingchange1.Designer.cs">
       <DependentUpon>201704090111426_millingchange1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704111315125_newdb.cs" />
+    <Compile Include="Migrations\201704111315125_newdb.Designer.cs">
+      <DependentUpon>201704111315125_newdb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -498,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704090111426_millingchange1.resx">
       <DependentUpon>201704090111426_millingchange1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704111315125_newdb.resx">
+      <DependentUpon>201704111315125_newdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
