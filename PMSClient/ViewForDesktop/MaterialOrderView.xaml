@@ -191,14 +191,14 @@
                 <DataGridTemplateColumn Header="{StaticResource MOIUnitPrice}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding UnitPrice}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding UnitPrice}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource MOIWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

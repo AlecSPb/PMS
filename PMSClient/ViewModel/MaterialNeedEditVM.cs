@@ -56,7 +56,12 @@ namespace PMSClient.ViewModel
                 //RaisePropertyChanged(nameof(CurrentMaterialNeed));
             }
         }
-
+        public void SetByCalculate(double weight)
+        {
+            //克到千克的转换
+            CurrentMaterialNeed.Weight = weight/1000;
+            //RaisePropertyChanged(nameof(CurrentMaterialNeed));
+        }
 
         private void InitializeProperties()
         {

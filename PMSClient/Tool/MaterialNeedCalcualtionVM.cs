@@ -25,17 +25,46 @@ namespace PMSClient.Tool
 
             Add = new RelayCommand(ActionAdd);
             Delete = new RelayCommand<MaterialNeedCalculationItem>(ActionDelete);
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
+            GiveUp = new RelayCommand(GoBack);
             CompoundsSelectionChanged = new RelayCommand<DcBDCompound>(ActionCompoundSelectionChanged);
             MoldsSelectionChanged = new RelayCommand<DcBDVHPMold>(ActionMoldsSelectionChanged);
+            Save = new RelayCommand(ActionSave);
         }
+
+        private void ActionSave()
+        {
+            switch (requestView)
+            {
+                case PMSViews.MaterialNeedEdit:
+                    PMSHelper.ViewModels.MaterialNeedEdit.SetByCalculate(TotalWeight);
+                    break;
+                case PMSViews.MaterialOrderItemEdit:
+                    PMSHelper.ViewModels.MaterialOrderItemEdit.SetByCalculate(TotalWeight);
+                    break;
+                default:
+                    break;
+            }
+            GoBack();
+        }
+
+        private void GoBack()
+        {
+            NavigationService.GoTo(requestView);
+        }
+
         private void ActionMoldsSelectionChanged(DcBDVHPMold model)
         {
             if (model != null && CurrentCalculationItem != null)
             {
-                CurrentCalculationItem.Diameter = model.InnerDiameter;
-
-                RaisePropertyChanged(nameof(CurrentCalculationItem));
+                var newValue = new MaterialNeedCalculationItem();
+                newValue.ID = Guid.NewGuid();
+                newValue.Diameter = model.InnerDiameter;
+                newValue.Thickness = CurrentCalculationItem.Thickness;
+                newValue.Weight = CurrentCalculationItem.Weight;
+                newValue.WeightLoss = CurrentCalculationItem.WeightLoss;
+                newValue.Quantity = CurrentCalculationItem.Quantity;
+                newValue.Remark = CurrentCalculationItem.Remark;
+                CurrentCalculationItem = newValue;
             }
         }
         private void ActionCompoundSelectionChanged(DcBDCompound model)
@@ -51,6 +80,8 @@ namespace PMSClient.Tool
         public void SetRequestView(PMSViews view)
         {
             requestView = view;
+            //clear data
+            InitializeCurrentItem(5.7);
         }
         private void InitializeCurrentItem(double density)
         {
@@ -176,7 +207,7 @@ namespace PMSClient.Tool
 
 
         public RelayCommand GiveUp { get; set; }
-
+        public RelayCommand Save { get; set; }
 
         public RelayCommand<DcBDCompound> CompoundsSelectionChanged { get; set; }
         public RelayCommand<DcBDVHPMold> MoldsSelectionChanged { get; set; }

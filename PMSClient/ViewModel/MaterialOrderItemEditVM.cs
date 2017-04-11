@@ -75,8 +75,20 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
+            Calculator = new RelayCommand(ActionCalculator);
         }
 
+        private void ActionCalculator()
+        {
+            PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.MaterialOrderItemEdit);
+            NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
+        }
+        public void SetByCalculate(double weight)
+        {
+            //克到千克的转换
+            CurrentMaterialOrderItem.Weight = weight / 1000;
+            //RaisePropertyChanged(nameof(CurrentMaterialNeed));
+        }
         private void ActionSelect()
         {
             PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialOrderItemEdit);
@@ -124,7 +136,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Select { get; set; }
 
-
+        public RelayCommand Calculator { get; set; }
 
     }
 }

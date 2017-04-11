@@ -19,6 +19,7 @@
         <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="原料需求计算"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -33,7 +34,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="1=选择密度"/>
-                <TextBox Grid.Row="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="1" Text="" Style="{StaticResource StyleTextBoxCommon}" FontWeight="Bold"/>
                 <ListBox Name="lst1" Grid.Row="2" ItemsSource="{Binding Compounds}" Style="{StaticResource StyleListBoxCommon}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">

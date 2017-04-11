@@ -343,7 +343,7 @@
     <sys:String x:Key="MNCreateTime">创建时间</sys:String>
     <sys:String x:Key="MNComposition">原料成分</sys:String>
     <sys:String x:Key="MNPurity">纯度</sys:String>
-    <sys:String x:Key="MNWeight">重量</sys:String>
+    <sys:String x:Key="MNWeight">重量(kg)</sys:String>
     <sys:String x:Key="MNSupplier">供应商</sys:String>
     <sys:String x:Key="MNSpecialNeeds">特殊要求</sys:String>
     <sys:String x:Key="MNPMINumber">内部编号</sys:String>
@@ -375,7 +375,7 @@
     <sys:String x:Key="MOIProvideRawMaterial">提供原料</sys:String>
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>
-    <sys:String x:Key="MOIWeight">重量</sys:String>
+    <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
 
     <!--RecordMilling-->
     <sys:String x:Key="RMState">状态</sys:String>
@@ -387,9 +387,9 @@
     <sys:String x:Key="RMRemark">备注</sys:String>
     <sys:String x:Key="RMMillingTool">制粉方式</sys:String>
     <sys:String x:Key="RMGasProtection">气体保护</sys:String>
-    <sys:String x:Key="RMWeightIn">进料重量</sys:String>
-    <sys:String x:Key="RMWeightOut">出料重量</sys:String>
-    <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
+    <sys:String x:Key="RMWeightIn">进料重量(g)</sys:String>
+    <sys:String x:Key="RMWeightOut">出料重量(g)</sys:String>
+    <sys:String x:Key="RMWeightRemain">余料重量(g)</sys:String>
 
     <!--RecordVHP-->
     <sys:String x:Key="RVHPState">状态</sys:String>
@@ -417,7 +417,7 @@
     <sys:String x:Key="RDMComposition">成分</sys:String>
     <sys:String x:Key="RDMTemperature1">取模温度</sys:String>
     <sys:String x:Key="RDMTemperature2">脱模温度</sys:String>
-    <sys:String x:Key="RDMWeight">重量</sys:String>
+    <sys:String x:Key="RDMWeight">重量(g)</sys:String>
     <sys:String x:Key="RDMDiameter1">直径1</sys:String>
     <sys:String x:Key="RDMDiameter2">直径2</sys:String>
     <sys:String x:Key="RDMThickness1">厚度1</sys:String>
@@ -454,7 +454,7 @@
     <sys:String x:Key="RTCustomer">客户</sys:String>
     <sys:String x:Key="RTDimension">要求尺寸</sys:String>
     <sys:String x:Key="RTDensity">密度</sys:String>
-    <sys:String x:Key="RTWeight">重量</sys:String>
+    <sys:String x:Key="RTWeight">重量(g)</sys:String>
     <sys:String x:Key="RTResistance">电阻率</sys:String>
     <sys:String x:Key="RTCompositionXRF">XRF成分</sys:String>
     <sys:String x:Key="RTDimensionActual">实际尺寸</sys:String>
@@ -482,7 +482,7 @@
     <sys:String x:Key="RDAbbr">缩写</sys:String>
     <sys:String x:Key="RDCustomer">客户</sys:String>
     <sys:String x:Key="RDDetailRecord">记录细节</sys:String>
-    <sys:String x:Key="RDWeight">重量</sys:String>
+    <sys:String x:Key="RDWeight">重量(g)</sys:String>
     <sys:String x:Key="RDPosition">货架位置</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
     <!--MaterialInventoryInAndOut-->

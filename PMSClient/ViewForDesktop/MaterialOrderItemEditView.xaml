@@ -84,7 +84,7 @@
                 <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
                     <TextBox  Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                    <Button Grid.Row="3" Grid.Column="2" Content="重量计算器"
+                    <Button Grid.Row="3" Grid.Column="2" Content="原料需求计算器" Command="{Binding DataContext.Calculator,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                             Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"/>
                 </StackPanel>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
