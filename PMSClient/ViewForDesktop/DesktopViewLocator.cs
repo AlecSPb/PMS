@@ -42,6 +42,7 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<MaterialInventoryInView>();
             SimpleIoc.Default.Register<MaterialInventoryInEditView>();
+            SimpleIoc.Default.Register<MaterialInventoryInSelectView>();
             SimpleIoc.Default.Register<MaterialInventoryOutView>();
             SimpleIoc.Default.Register<MaterialInventoryOutEditView>();
 
@@ -167,6 +168,10 @@ namespace PMSClient.ViewForDesktop
         public MaterialInventoryInEditView MaterialInventoryInEdit
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInEditView>(); }
+        }
+        public MaterialInventoryInSelectView MaterialInventoryInSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectView>(); }
         }
         public MaterialInventoryOutView MaterialInventoryOut
         {

@@ -96,6 +96,9 @@ namespace PMSClient
                 case PMSViews.MaterialInventoryInEdit:
                     NavigateTo(_views.MaterialInventoryInEdit);
                     break;
+                case PMSViews.MaterialInventoryInSelect:
+                    NavigateTo(_views.MaterialInventoryInSelect);
+                    break;
                 case PMSViews.MaterialInventoryOut:
                     NavigateTo(_views.MaterialInventoryOut);
                     break;

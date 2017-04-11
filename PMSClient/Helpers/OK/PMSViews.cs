@@ -51,6 +51,7 @@ namespace PMSClient
         RecordBondingTargetEdit,
         RecordBondingPlateEdit,
         Maintanence,
-        MaintanenceEdit
+        MaintanenceEdit,
+        MaterialInventoryInSelect
     }
 }

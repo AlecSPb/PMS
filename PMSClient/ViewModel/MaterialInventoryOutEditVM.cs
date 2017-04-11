@@ -24,6 +24,7 @@ namespace PMSClient.ViewModel
         {
 
             var empty = new DcMaterialInventoryOut();
+            #region 初始化
             empty.Id = Guid.NewGuid();
             empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
             empty.Composition = "成分";
@@ -34,6 +35,7 @@ namespace PMSClient.ViewModel
             empty.Weight = 1;
             empty.Purity = "5N";
             empty.Remark = "无";
+            #endregion
 
             IsNew = true;
             CurrentMaterialInventoryOut = empty;
@@ -48,14 +50,15 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect(DcOrder order)
+        public void SetBySelect(DcMaterialInventoryIn model)
         {
-            if (order != null)
+            if (model != null)
             {
-                //TODO:完成选择填充
-                //CurrentMaterialInventoryOut.Composition = order.CompositionStandard;
-                //CurrentMaterialInventoryOut.PMINumber = order.PMINumber;
-                //RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
+                CurrentMaterialInventoryOut.Composition = model.Composition;
+                CurrentMaterialInventoryOut.MaterialLot = model.MaterialLot;
+                CurrentMaterialInventoryOut.Weight = model.Weight;
+                CurrentMaterialInventoryOut.Remark = model.Supplier;
+                RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
             }
         }
 
@@ -76,8 +79,8 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            //PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialNeedEdit);
-            //NavigationService.GoTo(PMSViews.MaterialNeedSelect);
+            PMSHelper.ViewModels.MaterialInventoryInSelect.SetRequestView(PMSViews.MaterialInventoryOutEdit);
+            NavigationService.GoTo(PMSViews.MaterialInventoryInSelect);
         }
 
         private void ActionSave()

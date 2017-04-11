@@ -177,6 +177,9 @@
     <Compile Include="ViewForDesktop\MaintenanceView.xaml.cs">
       <DependentUpon>MaintenanceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\MaterialInventoryInSelectView.xaml.cs">
+      <DependentUpon>MaterialInventoryInSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\MaterialInventoryOutEditView.xaml.cs">
       <DependentUpon>MaterialInventoryOutEditView.xaml</DependentUpon>
     </Compile>
@@ -410,6 +413,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\MaintenanceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\MaterialInventoryInSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
