@@ -47,6 +47,7 @@ namespace PMSClient.Helper
             using (var sw = new StreamWriter(_logfile, true))
             {
                 sw.WriteLine($"{user}+{date.ToString()}+{message}");
+                sw.Close();
             }
         }
 
@@ -72,6 +73,7 @@ namespace PMSClient.Helper
             using (var sw = new StreamWriter(_errorfile, true))
             {
                 sw.WriteLine($"{user}+{date.ToString()}+{error}");
+                sw.Close();
             }
         }
 

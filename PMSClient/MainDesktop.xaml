@@ -68,11 +68,13 @@
         </Border>
         <Grid Grid.Row="2"  Background="{StaticResource BGBrushStatusBar}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
-            <TextBlock Grid.Column="1" Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="1" Name="txtHeartBeat" Text="心跳检测" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
+            <TextBlock Grid.Column="2" Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>
 </Window>

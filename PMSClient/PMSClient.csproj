@@ -152,6 +152,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\HeartBeatService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\MainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -711,6 +716,13 @@
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryIn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -824,6 +836,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BasicService\" />
+    <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
     <WCFMetadataStorage Include="Service References\UserService\" />
   </ItemGroup>
@@ -917,6 +930,21 @@
     <Resource Include="Resource\Images\chart.png" />
     <Resource Include="Resource\Images\crm.ico" />
     <Resource Include="Resource\Images\crm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HeartBeatService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HeartBeatService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HeartBeatService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,6 +18,7 @@ using PMSClient.ViewModel;
 using PMSClient.ViewForDesktop;
 using PMSClient.MainService;
 using PMSClient.Tool;
+using System.Timers;
 
 namespace PMSClient
 {
@@ -33,7 +34,7 @@ namespace PMSClient
         {
             InitializeComponent();
         }
-
+        private Timer _timer;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             _views = PMSHelper.DesktopViews;
@@ -42,9 +43,40 @@ namespace PMSClient
             Messenger.Default.Register<PMSViews>(this, MainNavigationToken.Navigate, ActionNavigation);
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
 
-            NavigateTo(_views.LogIn);
+            //设置服务器心跳检测定时器
+            _timer = new Timer();
+            _timer.Interval = 5000;
+            _timer.Elapsed += _timer_Elapsed;
+            _timer.Start();
 
-            RefreshLogInformation();
+            _timer_Elapsed(this, null);
+
+            //导航到首页
+            NavigateTo(_views.LogIn);
+        }
+
+        private void _timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
+                {
+                    if (heartbeat.Beat().Contains("ok"))
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            txtHeartBeat.Text = "服务器通信正常";
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    txtHeartBeat.Text = ex.Message;
+                });
+            }
         }
 
         private void ActionNavigation(PMSViews token)

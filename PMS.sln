@@ -57,6 +57,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{9739E055-BD12-4E8A-B26E-EC3E3677E9FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSClient", "PMSClient\PMSClient.csproj", "{4C091E29-8472-49D5-BD5E-87858F6198A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6AF8CE5C-F3E4-4652-A9A7-4DF9EAC6A061} = {6AF8CE5C-F3E4-4652-A9A7-4DF9EAC6A061}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
