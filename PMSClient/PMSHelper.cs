@@ -8,6 +8,7 @@ using PMSClient.Helper;
 using PMSClient.ViewForDesktop;
 using PMSClient.ViewForTablet;
 using PMSClient.ViewModel;
+using PMSClient.Tool;
 
 namespace PMSClient
 {
@@ -22,6 +23,9 @@ namespace PMSClient
             _desktopViews = new DesktopViewLocator();
             _tabletViews = new TabletViewLocator();
             _viewModels = (App.Current as App).FindResource("Locator") as ViewModelLocator;
+
+            _toolViews = new ToolViewLocator();
+            _toolViewModels = new ToolViewModelLocator():
         }
         public static LogInformation CurrentSession
         {
@@ -46,6 +50,10 @@ namespace PMSClient
 
         private static ViewModelLocator _viewModels;
 
+
+        private static ToolViewLocator _toolViews;
+        private static ToolViewModelLocator _toolViewModels;
+
         public static DesktopViewLocator DesktopViews
         {
             get { return _desktopViews; }
@@ -58,6 +66,19 @@ namespace PMSClient
         public static ViewModelLocator ViewModels
         {
             get { return _viewModels; }
+        }
+
+
+        public static ToolViewLocator ToolViews
+        {
+            get { return _toolViews; }
+        }
+        public static ToolViewModelLocator ToolViewModels
+        {
+            get
+            {
+                return _toolViewModels;
+            }
         }
         #endregion
     }

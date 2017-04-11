@@ -162,6 +162,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
+    <Compile Include="Tool\ToolViewLocator.cs" />
+    <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewForDesktop\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
@@ -248,6 +251,9 @@
     </Compile>
     <Compile Include="ViewForDesktop\RecordMachineView.xaml.cs">
       <DependentUpon>RecordMachineView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
+      <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForTablet\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
@@ -511,6 +517,10 @@
     <Page Include="ViewForDesktop\RecordMachineView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\MaterialNeedCalculationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewForTablet\PlanSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -789,6 +799,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documents\" />
+    <Folder Include="LocalData\" />
     <Folder Include="Resource\Files\" />
     <Folder Include="ViewForSanjie\" />
   </ItemGroup>
