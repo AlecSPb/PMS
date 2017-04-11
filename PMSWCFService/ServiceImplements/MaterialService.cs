@@ -162,7 +162,7 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialNeed, DcMaterialNeed>());
                     var mapper = config.CreateMapper();
-                    var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) 
+                    var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
                         && m.State != OrderState.Deleted.ToString())
                         .OrderByDescending(m => m.CreateTime)
                         .Skip(skip).Take(take)
@@ -183,7 +183,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition) 
+                    return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
                     && m.State != OrderState.Deleted.ToString()).Count();
                 }
             }
@@ -206,8 +206,8 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.State != OrderState.Deleted.ToString() 
-                                && m.OrderPO.Contains(orderPo) 
+                                where m.State != OrderState.Deleted.ToString()
+                                && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
                                 select m;
@@ -245,7 +245,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrders
-                                where m.OrderPO.Contains(orderPo)&&
+                                where m.OrderPO.Contains(orderPo) &&
                                 (m.State == OrderState.Paused.ToString()
                                 || m.State == OrderState.Completed.ToString()
                                 || m.State == OrderState.UnCompleted.ToString())
@@ -272,7 +272,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.OrderPO.Contains(orderPo) &&
+                                where m.OrderPO.Contains(orderPo) && m.SupplierAbbr.Contains("SJ") &&
                                 (m.State == OrderState.Paused.ToString()
                                 || m.State == OrderState.Completed.ToString()
                                 || m.State == OrderState.UnCompleted.ToString())
@@ -308,7 +308,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcMaterialOrderItem> GetMaterialOrderItems(int skip,int take)
+        public List<DcMaterialOrderItem> GetMaterialOrderItems(int skip, int take)
         {
             try
             {

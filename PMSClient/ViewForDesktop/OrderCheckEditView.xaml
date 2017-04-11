@@ -149,7 +149,7 @@
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State,Mode=TwoWay}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="19" Grid.Column="2" Text="选择状态，只有UnCompleted,Paused状态才会显示给生产部门"
+                <TextBlock Grid.Row="19" Grid.Column="2" Text="选择状态，只有UnCompleted,Paused,Completed状态才会显示给生产部门"
                            Style="{StaticResource StyleTextBlockTip}" />
 
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderPriority}"

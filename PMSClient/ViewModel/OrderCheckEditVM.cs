@@ -33,7 +33,7 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             Save = new RelayCommand(ActionSave, CanSave);
-            GiveUp = new RelayCommand(ActionGiveUp);
+            GiveUp = new RelayCommand(GoBack);
         }
 
         public void InitializeProperties()
@@ -51,12 +51,6 @@ namespace PMSClient.ViewModel
             PolicyTypes = new ObservableCollection<string>();
             var policyTypes = Enum.GetNames(typeof(PMSCommon.OrderPolicyType));
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
-        }
-
-
-        private void ActionGiveUp()
-        {
-            NavigationService.GoTo(PMSViews.OrderCheck);
         }
 
         private bool CanSave()
@@ -77,13 +71,20 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                NavigationService.GoTo(PMSViews.OrderCheck);
+                PMSHelper.ViewModels.OrderCheck.RefreshData();
+                GoBack();
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+
+        private static void GoBack()
+        {
+            NavigationService.GoTo(PMSViews.OrderCheck);
+        }
+
         private DcOrder currentOrder;
 
         public DcOrder CurrentOrder

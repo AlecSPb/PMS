@@ -75,7 +75,7 @@
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOSupplierAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}" 
                            Text="供应商缩写"/>
@@ -121,7 +121,7 @@
                           ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态"/>
+                           Text="只有UnCompleted,Paused,Complete状态会显示给供应商"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOPriority}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -129,7 +129,7 @@
                           ItemsSource="{Binding DataContext.OrderPriorities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding Priority}"/>
                 <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态"/>
+                           Text="默认为Normal"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

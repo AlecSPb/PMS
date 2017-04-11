@@ -22,7 +22,7 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             Save = new RelayCommand(ActionSave, CanSave);
-            GiveUp = new RelayCommand(ActionGiveUp);
+            GiveUp = new RelayCommand(GoBack);
         }
 
         public void InitializeProperties()
@@ -107,10 +107,6 @@ namespace PMSClient.ViewModel
                 CurrentOrder = order;
             }
         }
-        private void ActionGiveUp()
-        {
-            NavigationService.GoTo(PMSViews.Order);
-        }
 
         private bool CanSave()
         {
@@ -130,7 +126,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                PMSHelper.ViewModels.Order.Refresh();
+                PMSHelper.ViewModels.Order.RefreshData();
                 GoBack();
             }
             catch (Exception ex)

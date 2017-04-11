@@ -25,7 +25,7 @@ namespace PMSClient.ViewModel
         /// <summary>
         /// 用于编辑后刷新订单调用
         /// </summary>
-        public void Refresh()
+        public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
         }
