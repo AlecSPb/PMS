@@ -89,14 +89,16 @@ namespace PMSClient
 
         private void ActionNavigation(PMSViews token)
         {
-            RefreshLogInformation();
             PMSHelper.CurrentLog.Log(token.ToString());
             switch (token)
             {
                 case PMSViews.LogIn:
+                    _views.LogIn.ClearLog();
+                    RefreshLogInformation();
                     NavigateTo(_views.LogIn);
                     break;
                 case PMSViews.Navigation:
+                    RefreshLogInformation();
                     NavigateTo(_views.Navigation);
                     break;
                 case PMSViews.Order:
@@ -256,6 +258,15 @@ namespace PMSClient
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void MenuExit_Click(object sender, RoutedEventArgs e)
+        {
+            if (PMSHelper.CurrentSession.CurrentUser!=null)
+            {
+                PMSHelper.CurrentSession.LogOut();
+                NavigationService.GoTo(PMSViews.LogIn);
+            }
         }
     }
 }

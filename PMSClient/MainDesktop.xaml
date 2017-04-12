@@ -24,37 +24,9 @@
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Menu>
                     <MenuItem Header="{StaticResource strPageStart}">
-                        <MenuItem Header="登录"/>
-                        <MenuItem Header="{StaticResource strPageNaivgation}"/>
-                        <Separator/>
-                        <MenuItem Header="{StaticResource strPageBasicData}">
-                            <MenuItem Header="Compound"/>
-                            <MenuItem Header="Element"/>
-                            <MenuItem Header="Mold"/>
-                            <MenuItem Header="VHP Device"/>
-                            <MenuItem Header="VHP Process"/>
-                            <MenuItem Header="Supplier Information"/>
-                            <MenuItem Header="Customer Information"/>
-                            <MenuItem Header="Delivery Address Collection"/>
-                        </MenuItem>
-                        <Separator/>
-                        <MenuItem Header="{StaticResource strPageAdmin}">
-                            <MenuItem Header="User Access Control"/>
-                            <MenuItem Header="Log Information"/>
-                            <MenuItem Header="Debug Mode"/>
-                        </MenuItem>
-                        <Separator/>
                         <MenuItem Header="{StaticResource strPageSetting}"/>
                         <Separator/>
-                        <MenuItem Header="{StaticResource strPageAbout}">
-                            <MenuItem Header="{StaticResource strPageInstruct}"/>
-                            <MenuItem Header="{StaticResource strPageHelp}"/>
-                            <MenuItem Header="{StaticResource strPageWebSite}"/>
-                            <MenuItem Header="{StaticResource strPageAbout}"/>
-                        </MenuItem>
-                        <Separator/>
-                        <!--<MenuItem Header="Log Out"/>-->
-                        <MenuItem x:Name="MenuExit" Header="{StaticResource strPageExit}"/>
+                        <MenuItem x:Name="MenuExit" Header="{StaticResource strPageExit}" Click="MenuExit_Click"/>
                     </MenuItem>
 
                 </Menu>
@@ -68,8 +40,8 @@
         </Border>
         <Grid Grid.Row="2"  Background="{StaticResource BGBrushStatusBar}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>

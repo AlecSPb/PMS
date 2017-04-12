@@ -29,7 +29,7 @@
     <sys:String x:Key="strPageSetting">设置</sys:String>
     <sys:String x:Key="strPageBasicData">数据</sys:String>
     <sys:String x:Key="strPageStatistic">统计</sys:String>
-    <sys:String x:Key="strPageExit">退出</sys:String>
+    <sys:String x:Key="strPageExit">注销</sys:String>
     <sys:String x:Key="strPageAbout">关于</sys:String>
     <sys:String x:Key="strPageInstruct">指南</sys:String>
     <sys:String x:Key="strPageHelp">帮助</sys:String>

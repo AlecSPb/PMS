@@ -25,7 +25,10 @@ namespace PMSClient.ViewForDesktop
         {
             InitializeComponent();
         }
-
+        public void ClearLog()
+        {
+            txtPassword.Password = "";
+        }
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
             var uid = txtUserName.Text.Trim();
