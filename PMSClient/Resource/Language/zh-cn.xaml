@@ -157,6 +157,7 @@
     <sys:String x:Key="PageStart">开始</sys:String>
     <sys:String x:Key="PageSetting">设置</sys:String>
     <sys:String x:Key="PageBasicData">数据</sys:String>
+    <sys:String x:Key="PageAuthority">权限</sys:String>
     <sys:String x:Key="PageStatistic">统计</sys:String>
     <sys:String x:Key="PageExit">退出</sys:String>
     <sys:String x:Key="PageAbout">关于</sys:String>
@@ -185,6 +186,11 @@
     <sys:String x:Key="PageSieve">筛网库</sys:String>
 
 
+    <sys:String x:Key="PageUser">用户</sys:String>
+    <sys:String x:Key="PageRole">角色</sys:String>
+    <sys:String x:Key="PageAccess">授权</sys:String>
+    
+    
     <sys:String x:Key="PageOrder">订单</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
