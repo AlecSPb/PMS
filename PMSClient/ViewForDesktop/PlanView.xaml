@@ -56,9 +56,15 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding MoldDiameter}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="{StaticResource PlanThickness}" Binding="{Binding Thickness}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding TargetQuantity}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanCalculationDensity}" Binding="{Binding CalculationDensity,StringFormat={}{0:N2}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="{StaticResource PlanSinglePowderWeight}" Binding="{Binding SingleWeight,StringFormat={}{0:N2}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="{StaticResource PlanAllPowderWeight}" Binding="{Binding AllWeight,StringFormat={}{0:N2}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanGrainSize}" Binding="{Binding GrainSize}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>

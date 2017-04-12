@@ -44,6 +44,7 @@ namespace PMSClient.ViewModel
             plan.PrePressure = 10;
             plan.PreTemperature = 25;
             plan.Quantity = 1;
+            plan.AllWeight = plan.SingleWeight = 0;
             plan.MoldDiameter = 230;
             plan.Thickness = 5;
             plan.CreateTime = DateTime.Now;

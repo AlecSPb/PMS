@@ -516,6 +516,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AllWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -582,6 +585,9 @@ namespace PMSClient.MainService {
         private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SingleWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -609,6 +615,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double AllWeight {
+            get {
+                return this.AllWeightField;
+            }
+            set {
+                if ((this.AllWeightField.Equals(value) != true)) {
+                    this.AllWeightField = value;
+                    this.RaisePropertyChanged("AllWeight");
+                }
             }
         }
         
@@ -894,6 +913,19 @@ namespace PMSClient.MainService {
                 if ((this.RoomTemperatureField.Equals(value) != true)) {
                     this.RoomTemperatureField = value;
                     this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SingleWeight {
+            get {
+                return this.SingleWeightField;
+            }
+            set {
+                if ((this.SingleWeightField.Equals(value) != true)) {
+                    this.SingleWeightField = value;
+                    this.RaisePropertyChanged("SingleWeight");
                 }
             }
         }
@@ -2050,6 +2082,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AllWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2158,6 +2193,9 @@ namespace PMSClient.MainService {
         private string SampleNeedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SingleWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2188,6 +2226,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double AllWeight {
+            get {
+                return this.AllWeightField;
+            }
+            set {
+                if ((this.AllWeightField.Equals(value) != true)) {
+                    this.AllWeightField = value;
+                    this.RaisePropertyChanged("AllWeight");
+                }
             }
         }
         
@@ -2655,6 +2706,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.SampleNeedField, value) != true)) {
                     this.SampleNeedField = value;
                     this.RaisePropertyChanged("SampleNeed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SingleWeight {
+            get {
+                return this.SingleWeightField;
+            }
+            set {
+                if ((this.SingleWeightField.Equals(value) != true)) {
+                    this.SingleWeightField = value;
+                    this.RaisePropertyChanged("SingleWeight");
                 }
             }
         }

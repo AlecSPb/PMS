@@ -93,7 +93,7 @@
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox x:Name="moldDiameter" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox x:Name="txtmoldDiameter" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
                          Style="{StaticResource StyleTextBoxReadOnly}" 
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboMolds"
@@ -138,23 +138,23 @@
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanThickness}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <TextBox Name="txtThickness" Grid.Row="6" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxLeft}"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanQuantity}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <TextBox Name="txtQuantity" Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxLeft}"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanSinglePowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox  Text="{Binding SingleWeight}" Style="{StaticResource StyleTextBoxCommon}"/>
-                    <Button Content="{StaticResource ButtonCalculate}"  Command="{Binding CalculateMaterialWeight}"
+                    <TextBox Name="txtSingleWeight"  Text="{Binding SingleWeight,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <Button Name="btnCalculate" Content="{StaticResource ButtonCalculate}"  Click="btnCalculate_Click"
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanAllPowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding AllWeight}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <TextBox Name="txtAllWeight" Grid.Row="9" Grid.Column="1" Text="{Binding AllWeight,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"  HorizontalAlignment="Left"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
                            Style="{StaticResource StyleTextBlockCommon}" />

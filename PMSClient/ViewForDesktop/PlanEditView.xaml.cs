@@ -32,7 +32,7 @@ namespace PMSClient.ViewForDesktop
             var selectedMold =cboMolds.SelectedItem as DcBDVHPMold;
             if (selectedMold!=null)
             {
-                this.moldDiameter.Text = selectedMold.InnerDiameter.ToString();
+                this.txtmoldDiameter.Text = selectedMold.InnerDiameter.ToString();
                 this.moldType.Text = selectedMold.MoldType;
             }
         }
@@ -52,6 +52,25 @@ namespace PMSClient.ViewForDesktop
             if (cbo.SelectedItem!=null)
             {
                 txtGrainSize.Text = cbo.SelectedItem.ToString();
+            }
+        }
+
+        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                double diameter = double.Parse(txtmoldDiameter.Text);
+                double thickness = double.Parse(txtThickness.Text);
+                double quantity = double.Parse(txtQuantity.Text);
+                double density = double.Parse(txtCalculationDensity.Text);
+
+                double singleWeight = Math.PI * diameter * diameter * thickness / 4 / 1000 * density;
+
+                txtSingleWeight.Text = singleWeight.ToString("F3");
+                txtAllWeight.Text = (singleWeight * quantity).ToString("F3");
+            }
+            catch (Exception)
+            {
             }
         }
     }

@@ -32,7 +32,8 @@ namespace PMSDAL
         public double MoldDiameter { get; set; }
         public double Thickness { get; set; }
         public int Quantity { get; set; }
-
+        public double SingleWeight { get; set; }
+        public double AllWeight { get; set; }
         public string GrainSize { get; set; }
 
         public double RoomTemperature { get; set; }

@@ -72,6 +72,10 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string GrainSize { get; set; }
         [DataMember]
+        public double SingleWeight { get; set; }
+        [DataMember]
+        public double AllWeight { get; set; }
+        [DataMember]
         public double RoomTemperature { get; set; }
         [DataMember]
         public double RoomHumidity { get; set; }

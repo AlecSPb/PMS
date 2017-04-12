@@ -39,7 +39,10 @@ namespace PMSWCFService.DataContracts
         public double Thickness { get; set; }
         [DataMember]
         public int Quantity { get; set; }
-
+        [DataMember]
+        public double SingleWeight { get; set; }
+        [DataMember]
+        public double AllWeight { get; set; }
         [DataMember]
         public string GrainSize { get; set; }
         [DataMember]
