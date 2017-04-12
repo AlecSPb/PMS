@@ -61,7 +61,7 @@ namespace PMSClient
             {
                 using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
-                    System.Diagnostics.Debug.Print(heartbeat.Beat());
+                    //System.Diagnostics.Debug.Print(heartbeat.Beat());
                     if (heartbeat.Beat()=="ok")
                     {
                         this.Dispatcher.Invoke(() =>

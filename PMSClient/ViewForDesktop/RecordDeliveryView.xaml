@@ -39,15 +39,15 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                    <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
-                                                Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
-                                    <Button Content="{StaticResource ButtonAddItem}" Style="{StaticResource StyleDGButton}" 
+                                <Button Content="{StaticResource ButtonAddItem}" Style="{StaticResource StyleDGButton}" 
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                </StackPanel>
+                                <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleDGButton}"
+                                                Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                            </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -59,20 +59,13 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="{StaticResource RDInvoiceNumber}">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding InvoiceNumber}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="{StaticResource RDDeliveryName}">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Supplier}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RDInvoiceNumber}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding InvoiceNumber}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RDCountry}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

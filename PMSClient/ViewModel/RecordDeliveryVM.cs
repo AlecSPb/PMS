@@ -8,7 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using PMSClient.MainService;
 using GalaSoft.MvvmLight.Messaging;
-using bt = BarTender;
+//using bt = BarTender;
 
 
 
@@ -70,52 +70,60 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private bt.Application btApp;
-        private bt.Format btnFormat;
-        private void ActionDoc(DcRecordDelivery obj)
+        /// <summary>
+        /// 发货单标签打印区域
+        /// </summary>
+        //private bt.Application btApp;
+        //private bt.Format btnFormat;
+        private void ActionDoc(DcRecordDelivery model)
         {
+            #region 必须使用Automation版本的Bartender才允许自动化调用，这个版本36000
+            //string title = model.Country;
+            //StringBuilder sb = new StringBuilder();
+            //DcRecordDeliveryItem[] items;
+            //using (var service = new RecordDeliveryServiceClient())
+            //{
+            //    items = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
+            //}
+            //foreach (var item in items)
+            //{
+            //    sb.Append(item.Composition);
+            //    sb.Append("-");
+            //    sb.AppendLine(item.ProductID);
+            //}
 
-            string title = obj.Country;
+            //string output = sb.ToString();
+
+            //try
+            //{
+            //    btApp = new bt.Application();
+            //    string templateAddress = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "10070.btw");
+            //    if (!System.IO.File.Exists(templateAddress))
+            //    {
+            //        return;
+            //    }
+            //    btnFormat = btApp.Formats.Open(templateAddress, false, "");
+            //    btnFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+            //    btnFormat.PrintSetup.NumberSerializedLabels = 1;
+
+            //    btnFormat.SetNamedSubStringValue("MainTitle", title);
+            //    btnFormat.SetNamedSubStringValue("MainContent", output);
+            //    btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
+
+            //    btnFormat.PrintOut(true, true);
+            //    btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw ex;
+            //}
+            //finally
+            //{
+            //    btApp.Quit(bt.BtSaveOptions.btSaveChanges);
+            //}
+            #endregion
 
 
-            StringBuilder sb = new StringBuilder();
-            DcRecordDeliveryItem[] items;
-            using (var service = new RecordDeliveryServiceClient())
-            {
-                items = service.GetRecordDeliveryItemByRecordDeliveryID(obj.ID);
-            }
-            foreach (var item in items)
-            {
-                sb.Append(item.Composition);
-                sb.Append("-");
-                sb.AppendLine(item.ProductID);
-            }
-
-            string output = sb.ToString();
-
-            try
-            {
-                btApp = new bt.Application();
-                string templateAddress = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "10070.btw");
-                if (!System.IO.File.Exists(templateAddress))
-                {
-                    return;
-                }
-                btnFormat = btApp.Formats.Open(templateAddress, false, "");
-                btnFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
-                btnFormat.PrintSetup.NumberSerializedLabels = 1;
-
-                btnFormat.SetNamedSubStringValue("Title", title);
-                btnFormat.SetNamedSubStringValue("Content", output);
-
-                btnFormat.PrintOut(true, true);
-                btnFormat.Close(bt.BtSaveOptions.btSaveChanges);
-                btApp.Quit(bt.BtSaveOptions.btSaveChanges);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
         private void ActionEditItem(DcRecordDeliveryItem model)
@@ -194,6 +202,6 @@ namespace PMSClient.ViewModel
         #endregion
 
 
-    
+
     }
 }
