@@ -97,7 +97,7 @@ namespace PMSClient.ViewModel
 
             DeviceCodes = new ObservableCollection<string>();
             var service3 = new VHPDeviceServiceClient();
-            var devices = service3.GetVHPDevice().OrderBy(i=>i.CreateTime);
+            var devices = service3.GetVHPDevice().OrderBy(i=>i.CodeName);
             devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 

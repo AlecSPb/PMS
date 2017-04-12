@@ -45,5 +45,14 @@ namespace PMSClient.ViewForDesktop
                 txtCalculationDensity.Text = selectedCompound.Density.ToString();
             }
         }
+
+        private void cboGrainSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cbo = sender as ComboBox;
+            if (cbo.SelectedItem!=null)
+            {
+                txtGrainSize.Text = cbo.SelectedItem.ToString();
+            }
+        }
     }
 }
