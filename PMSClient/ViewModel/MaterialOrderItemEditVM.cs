@@ -34,6 +34,7 @@ namespace PMSClient.ViewModel
                 item.State = PMSCommon.SimpleState.UnDeleted.ToString();
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
+                item.OrderItemNumber = DateTime.Now.ToString("yyMMdd");
                 item.Composition = "需求成分";
                 item.PMINumber = DateTime.Now.ToString("yyMMdd");
                 item.Purity = "5N";
