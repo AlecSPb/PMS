@@ -34,46 +34,61 @@ namespace PMSClient.Helper
         }
         public void Log(string message)
         {
-            var date = DateTime.Now;
-            var user = "none";
-            if (_currentSession.CurrentUser != null)
+            try
             {
-                user = _currentSession.CurrentUser.UserName;
+                var date = DateTime.Now;
+                var user = "none";
+                if (_currentSession.CurrentUser != null)
+                {
+                    user = _currentSession.CurrentUser.UserName;
+                }
+                if (!File.Exists(_logfile))
+                {
+                    File.Create(_logfile);
+                }
+                using (var sw = new StreamWriter(_logfile, true))
+                {
+                    sw.WriteLine($"{user}+{date.ToString()}+{message}");
+                    sw.Close();
+                }
             }
-            if (!File.Exists(_logfile))
+            catch (Exception)
             {
-                File.Create(_logfile);
+
             }
-            using (var sw = new StreamWriter(_logfile, true))
-            {
-                sw.WriteLine($"{user}+{date.ToString()}+{message}");
-                sw.Close();
-            }
+
         }
 
         public void Error(Exception ex)
         {
-            var date = DateTime.Now;
-            var user = "none";
-            if (_currentSession.CurrentUser != null)
+            try
             {
-                user = _currentSession.CurrentUser.UserName;
-            }
+                var date = DateTime.Now;
+                var user = "none";
+                if (_currentSession.CurrentUser != null)
+                {
+                    user = _currentSession.CurrentUser.UserName;
+                }
 
-            if (!File.Exists(_errorfile))
-            {
-                File.Create(_errorfile);
-            }
+                if (!File.Exists(_errorfile))
+                {
+                    File.Create(_errorfile);
+                }
 
-            var error = "未知错误发生";
-            if (ex != null)
-            {
-                error = ex.Message;
+                var error = "未知错误发生";
+                if (ex != null)
+                {
+                    error = ex.Message;
+                }
+                using (var sw = new StreamWriter(_errorfile, true))
+                {
+                    sw.WriteLine($"{user}+{date.ToString()}+{error}");
+                    sw.Close();
+                }
             }
-            using (var sw = new StreamWriter(_errorfile, true))
+            catch (Exception)
             {
-                sw.WriteLine($"{user}+{date.ToString()}+{error}");
-                sw.Close();
+
             }
         }
 
