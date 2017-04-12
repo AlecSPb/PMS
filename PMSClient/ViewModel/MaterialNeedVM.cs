@@ -37,11 +37,21 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcMaterialNeed>(ActionEdit);
+            Add = new RelayCommand(ActionAdd,CanAdd);
+            Edit = new RelayCommand<DcMaterialNeed>(ActionEdit,CanEdit);
 
 
 
+        }
+
+        private bool CanEdit(DcMaterialNeed arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料需求");
+        }
+
+        private bool CanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料需求");
         }
 
         private void ActionEdit(DcMaterialNeed model)

@@ -37,12 +37,31 @@ namespace PMSClient.ViewModel
 
 
             PageChanged = new RelayCommand(ActionPaging);
-            AddNewPlan = new RelayCommand<MainService.DcOrder>(ActionAddNewPlan);
-            EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan);
-            DuplicatePlan = new RelayCommand<MainService.DcPlanVHP>(ActionDuplicatePlan);
+            AddNewPlan = new RelayCommand<MainService.DcOrder>(ActionAddNewPlan,CanAddNewPlan);
+            EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan,CanEditPlan);
+            DuplicatePlan = new RelayCommand<MainService.DcPlanVHP>(ActionDuplicatePlan,CanDuplicatePlan);
 
             SelectionChanged = new RelayCommand<MainService.DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+        }
+
+        private bool CanDuplicatePlan(DcPlanVHP arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑任务");
+        }
+
+        private bool CanEditPlan(DcPlanVHP arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑任务");
+        }
+        /// <summary>
+        /// 权限控制=编辑任务
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        private bool CanAddNewPlan(DcOrder arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑任务");
         }
 
         private void ActionRefresh()

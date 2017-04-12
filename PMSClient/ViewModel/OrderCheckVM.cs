@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanCheck(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.CurrentAccesses.Where(i => i.AccessCode.Contains("订单核验")).Count() > 0;
+            return PMSHelper.CurrentSession.IsAuthorized("订单核验");
         }
 
         private void ActionCheck(DcOrder order)
