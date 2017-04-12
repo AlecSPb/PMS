@@ -122,8 +122,29 @@ namespace PMSClient.ViewModel
             //    btApp.Quit(bt.BtSaveOptions.btSaveChanges);
             //}
             #endregion
+            if (model!=null)
+            {
+                string title = model.Country;
+                StringBuilder sb = new StringBuilder();
+                DcRecordDeliveryItem[] items;
+                using (var service = new RecordDeliveryServiceClient())
+                {
+                    items = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
+                }
+                foreach (var item in items)
+                {
+                    sb.Append(item.Composition);
+                    sb.Append("-");
+                    sb.AppendLine(item.ProductID);
+                }
+                string mainContent = sb.ToString();
 
-
+                var pageTitle = "发货单标签打印输出";
+                var tips = "请复制左边内容后点击打开模板按钮，复制到模板合适位置，然后打印标签";
+                var template = "发货单";
+                PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordDelivery, pageTitle, tips, template, mainContent);
+                NavigationService.GoTo(PMSViews.LabelOutPut);
+            }
         }
 
         private void ActionEditItem(DcRecordDeliveryItem model)

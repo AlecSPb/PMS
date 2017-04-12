@@ -10,7 +10,7 @@ namespace PMSDAL
     {
         public PMSMaterialOrder()
         {
-            MaterialOrderItems = new List<PMSMaterialOrderItem>();
+            //MaterialOrderItems = new List<PMSMaterialOrderItem>();
         }
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }

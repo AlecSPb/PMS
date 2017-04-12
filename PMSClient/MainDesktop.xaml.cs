@@ -204,6 +204,9 @@ namespace PMSClient
                 case PMSViews.MaterialNeedCalcuationTool:
                     NavigateTo(_toolviews.MaterialNeedCalculation);
                     break;
+                case PMSViews.LabelOutPut:
+                    NavigateTo(_toolviews.LabelOutPut);
+                    break;
                 default:
                     break;
             }

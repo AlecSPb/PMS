@@ -12,7 +12,7 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
         public string State { get; set; }
-
+        public string OrderItemNumber { get; set; }
         public string PMINumber { get; set; }
         public string Composition { get; set; }
         public string Purity { get; set; }

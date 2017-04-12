@@ -248,7 +248,7 @@
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>
     <sys:String x:Key="ButtonNewMode">新建模式</sys:String>
-
+    <sys:String x:Key="ButtonOpenFile">打开标签模板</sys:String>
 
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>

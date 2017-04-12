@@ -19,6 +19,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }
         [DataMember]
+        public string OrderItemNumber { get; set; }
+        [DataMember]
         public string PMINumber { get; set; }
         [DataMember]
         public string Composition { get; set; }

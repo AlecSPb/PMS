@@ -15,7 +15,7 @@ namespace PMSClient.Tool
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MaterialNeedCalcualtionVM>();
-
+            SimpleIoc.Default.Register<LabelOutPutVM>();
 
 
         }
@@ -24,7 +24,10 @@ namespace PMSClient.Tool
             get { return SimpleIoc.Default.GetInstance<MaterialNeedCalcualtionVM>(); }
         }
 
-
+        public LabelOutPutVM LabelOutPut
+        {
+            get { return SimpleIoc.Default.GetInstance<LabelOutPutVM>(); }
+        }
 
 
 

@@ -53,6 +53,7 @@ namespace PMSClient
         RecordBondingPlateEdit,
         Maintanence,
         MaintanenceEdit,
-        MaterialNeedCalcuationTool
+        MaterialNeedCalcuationTool,
+        LabelOutPut
     }
 }
