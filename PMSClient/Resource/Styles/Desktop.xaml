@@ -97,11 +97,10 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
+    <Style x:Key="StyleTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
     <Style x:Key="StyleTextBlockTip" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
-        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">

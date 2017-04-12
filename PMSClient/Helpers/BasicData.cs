@@ -59,7 +59,7 @@ namespace PMSClient
         {
             get
             {
-                var productTypes = Enum.GetNames(typeof(PMSCommon.OrderProductType));
+                var productTypes = Enum.GetNames(typeof(PMSCommon.ProductType));
                 return productTypes;
             }
         }
@@ -77,7 +77,13 @@ namespace PMSClient
                 return Enum.GetNames(typeof(PMSCommon.PackageType));
             }
         }
-
+        public static string[] GoodPositions
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.GoodPosition));
+            }
+        }
         //From Services
         public static DcBDCustomer[] Customers
         {

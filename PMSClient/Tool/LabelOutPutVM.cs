@@ -36,7 +36,7 @@ namespace PMSClient.Tool
         {
             try
             {
-                var filepath = System.IO.Path.Combine(System.Environment.CurrentDirectory, "BarTender10.1", "DocTemplate", TemplateFilePath);
+                var filepath = System.IO.Path.Combine(System.Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFilePath);
                 System.Diagnostics.Process.Start(filepath);
             }
             catch (Exception ex)

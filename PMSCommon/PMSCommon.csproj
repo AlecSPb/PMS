@@ -64,13 +64,13 @@
     <Compile Include="AccessState.cs" />
     <Compile Include="CommonState.cs" />
     <Compile Include="Country.cs" />
+    <Compile Include="GoodPosition.cs" />
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
     <Compile Include="OrderPriority.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OrderProductType.cs" />
     <Compile Include="PackageType.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="TestResultState.cs" />

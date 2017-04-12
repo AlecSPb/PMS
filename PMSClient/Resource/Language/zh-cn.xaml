@@ -465,7 +465,7 @@
     <sys:String x:Key="RTSample">样品</sys:String>
 
     <!--RecordDelivery-->
-    <sys:String x:Key="RDCreator">状态</sys:String>
+    <sys:String x:Key="RDCreator">创建者</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>
     <sys:String x:Key="RDState">状态</sys:String>
     <sys:String x:Key="RDDeliveryName">发货名</sys:String>

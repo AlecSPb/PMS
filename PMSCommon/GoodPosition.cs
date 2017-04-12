@@ -5,15 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PMSCommon
-{ 
+{
     /// <summary>
-    /// 订单产品类型
+    /// 货架位置
     /// </summary>
-    public enum OrderProductType
+    public enum GoodPosition
     {
-        Target,
-        Granule,
-        Powder,
-        Other
+        A1,
+        A2,
+        A3,
+        B1,
+        B2,
+        B3,
+        C1,
+        C2,
+        C3
     }
 }

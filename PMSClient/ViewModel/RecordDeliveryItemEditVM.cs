@@ -15,11 +15,23 @@ namespace PMSClient.ViewModel
     {
         public RecordDeliveryItemEditVM()
         {
-            States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
-            states.ToList().ForEach(s => States.Add(s));
+            InitializeBasicData();
+
             InitialCommands();
         }
+
+        private void InitializeBasicData()
+        {
+            States = new List<string>();
+            BasicData.SimpleStates.ToList().ForEach(s => States.Add(s));
+
+            ProductTypes = new List<string>();
+            BasicData.ProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
+
+            GoodPositions = new List<string>();
+            BasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
+        }
+
         public void SetNew(DcRecordDelivery delivery)
         {
             IsNew = true;
@@ -62,7 +74,6 @@ namespace PMSClient.ViewModel
                 CurrentRecordDeliveryItem.Abbr = test.CompositionAbbr;
                 CurrentRecordDeliveryItem.Customer = test.Customer;
                 CurrentRecordDeliveryItem.Weight = test.Weight;
-                CurrentRecordDeliveryItem.ProductType = test.TestType;
                 CurrentRecordDeliveryItem.PO = test.PO;
 
                 //RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
@@ -113,7 +124,9 @@ namespace PMSClient.ViewModel
             }
 
         }
-        public ObservableCollection<string> States { get; set; }
+        public List<string> States { get; set; }
+        public List<string> ProductTypes { get; set; }
+        public List<string> GoodPositions { get; set; }
 
         private DcRecordDeliveryItem currentRecordDeliveryItem;
         public DcRecordDeliveryItem CurrentRecordDeliveryItem
