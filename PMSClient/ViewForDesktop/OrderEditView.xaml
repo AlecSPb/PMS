@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800" DataContext="{Binding Source={StaticResource Locator},Path=OrderEdit}">
     <UserControl.Resources>
@@ -55,9 +56,13 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding CustomerName}"/>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Name="txtCustomerName" Text="{Binding CustomerName}" Width="150"
+                             Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <ComboBox Name="cboCustomerNames" Style="{StaticResource StyleComboBoxCommon}" SelectionChanged="cboCustomerNames_SelectionChanged"
+                      ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                </StackPanel>
+
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="这里选择客户名称，如果下拉列表没有该客户信息，请先添加客户信息"/>
 

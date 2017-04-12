@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.BasicService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace PMSClient.ViewForDesktop
         public OrderEditView()
         {
             InitializeComponent();
+        }
+        private void cboCustomerNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cbo = sender as ComboBox;
+            if (cbo.SelectedItem!=null)
+            {
+                txtCustomerName.Text = cbo.SelectedItem.ToString();
+            }
         }
     }
 }

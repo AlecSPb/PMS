@@ -12,7 +12,7 @@ namespace PMSClient
     /// 生成ComboBox用的基本数据源
     /// 来自枚举，来自数据库，来自文件
     /// </summary>
-    public static class BasicDataInstance
+    public static class BasicData
     {
         //From Enums
         public static string[] OrderStates
@@ -65,8 +65,8 @@ namespace PMSClient
             get
             {
                 var service = new CustomerServiceClient();
-                var customerNames = service.GetCustomer();
-                return customerNames;
+                var customers = service.GetCustomer().OrderBy(i=>i.CustomerName).ToArray();
+                return customers;
             }
         }
 

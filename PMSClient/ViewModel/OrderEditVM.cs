@@ -28,23 +28,23 @@ namespace PMSClient.ViewModel
         public void InitializeProperties()
         {
             OrderStates = new ObservableCollection<string>();
-            var states = BasicDataInstance.OrderStates;
+            var states = BasicData.OrderStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
             OrderPriorities = new ObservableCollection<string>();
-            var priorities = BasicDataInstance.OrderPriorities;
+            var priorities = BasicData.OrderPriorities;
             priorities.ToList().ForEach(p => OrderPriorities.Add(p));
 
             PolicyTypes = new ObservableCollection<string>();
-            var policyTypes = BasicDataInstance.OrderPolicyTypes;
+            var policyTypes = BasicData.OrderPolicyTypes;
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
 
             CustomerNames = new ObservableCollection<string>();
-            var customerNames = BasicDataInstance.CustomerNames;
+            var customerNames = BasicData.CustomerNames;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
 
             ProductTypes = new ObservableCollection<string>();
-            var productTypes = BasicDataInstance.ProductTypes;
+            var productTypes = BasicData.ProductTypes;
             productTypes.ToList().ForEach(p => ProductTypes.Add(p));
 
         }
@@ -59,7 +59,7 @@ namespace PMSClient.ViewModel
             var order = new DcOrder();
             #region 初始化order
             order.ID = Guid.NewGuid();
-            order.CustomerName = "Midsummer";
+            order.CustomerName = "客户名称";
             order.PO = DateTime.Now.ToString("yyMMdd");
             order.PMINumber = DateTime.Now.ToString("yyMMdd");
             order.ProductType = "Target";
@@ -78,9 +78,9 @@ namespace PMSClient.ViewModel
             order.PolicyMakeDate = DateTime.Now;
             order.State = "UnChecked";
             order.Priority = "Normal";
-            order.CompositionOriginal = "CuGaSe2";
-            order.CompositionStandard = "Cu25Ga25Se50";
-            order.CompositionAbbr = "CuGaSe";
+            order.CompositionOriginal = "原始成分写法";
+            order.CompositionStandard = "标准成分写法";
+            order.CompositionAbbr = "成分缩写";
             order.Creator = "xs.zhou";
             order.CreateTime = DateTime.Now;
             order.ProductType = "Target";
