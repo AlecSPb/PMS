@@ -38,8 +38,17 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Check = new RelayCommand<MainService.DcOrder>(ActionCheck);
+            Check = new RelayCommand<MainService.DcOrder>(ActionCheck,CanCheck);
 
+        }
+        /// <summary>
+        /// 核验订单权限编码000003
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        private bool CanCheck(DcOrder arg)
+        {
+            return PMSHelper.CurrentSession.CurrentAccesses.Where(i => i.AccessCode.Contains("000003")).Count() > 0;
         }
 
         private void ActionCheck(DcOrder order)
