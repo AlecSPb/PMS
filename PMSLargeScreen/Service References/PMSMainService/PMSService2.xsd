@@ -49,6 +49,7 @@
   <xs:element name="ArrayOfDcPlanVHP" nillable="true" type="tns:ArrayOfDcPlanVHP" />
   <xs:complexType name="DcPlanVHP">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AllWeight" type="xs:double" />
       <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
@@ -71,6 +72,7 @@
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
       <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="SingleWeight" type="xs:double" />
       <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Temperature" type="xs:double" />
@@ -140,6 +142,7 @@
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialOrderID" type="ser:guid" />
+      <xs:element minOccurs="0" name="OrderItemNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
@@ -199,6 +202,7 @@
   <xs:element name="ArrayOfDcMissonWithPlan" nillable="true" type="tns:ArrayOfDcMissonWithPlan" />
   <xs:complexType name="DcMissonWithPlan">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AllWeight" type="xs:double" />
       <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
       <xs:element minOccurs="0" name="CompositionAbbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CompositionOriginal" nillable="true" type="xs:string" />
@@ -235,6 +239,7 @@
       <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
       <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
       <xs:element minOccurs="0" name="SampleNeed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SingleWeight" type="xs:double" />
       <xs:element minOccurs="0" name="SpecialRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetQuantity" type="xs:int" />
       <xs:element minOccurs="0" name="Temperature" type="xs:double" />
@@ -280,6 +285,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Abbr" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryID" type="ser:guid" />
       <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />

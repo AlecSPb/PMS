@@ -114,7 +114,7 @@ namespace PMSLargeScreen
         {
 
             var today = DateTime.Now;
-            using (var service = new MissonWithPlanServiceClient())
+            using (var service = new MissonServiceClient())
             {
                 var result = service.GetMissonWithPlanByDate(today);
                 return result.ToList();

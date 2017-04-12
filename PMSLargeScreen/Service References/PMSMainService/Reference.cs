@@ -516,6 +516,9 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AllWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -582,6 +585,9 @@ namespace PMSLargeScreen.PMSMainService {
         private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SingleWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -609,6 +615,19 @@ namespace PMSLargeScreen.PMSMainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double AllWeight {
+            get {
+                return this.AllWeightField;
+            }
+            set {
+                if ((this.AllWeightField.Equals(value) != true)) {
+                    this.AllWeightField = value;
+                    this.RaisePropertyChanged("AllWeight");
+                }
             }
         }
         
@@ -894,6 +913,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.RoomTemperatureField.Equals(value) != true)) {
                     this.RoomTemperatureField = value;
                     this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SingleWeight {
+            get {
+                return this.SingleWeightField;
+            }
+            set {
+                if ((this.SingleWeightField.Equals(value) != true)) {
+                    this.SingleWeightField = value;
+                    this.RaisePropertyChanged("SingleWeight");
                 }
             }
         }
@@ -1440,6 +1472,9 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Guid MaterialOrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderItemNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1554,6 +1589,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.MaterialOrderIDField.Equals(value) != true)) {
                     this.MaterialOrderIDField = value;
                     this.RaisePropertyChanged("MaterialOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderItemNumber {
+            get {
+                return this.OrderItemNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderItemNumberField, value) != true)) {
+                    this.OrderItemNumberField = value;
+                    this.RaisePropertyChanged("OrderItemNumber");
                 }
             }
         }
@@ -2034,6 +2082,9 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double AllWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2142,6 +2193,9 @@ namespace PMSLargeScreen.PMSMainService {
         private string SampleNeedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SingleWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialRequirementField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2172,6 +2226,19 @@ namespace PMSLargeScreen.PMSMainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double AllWeight {
+            get {
+                return this.AllWeightField;
+            }
+            set {
+                if ((this.AllWeightField.Equals(value) != true)) {
+                    this.AllWeightField = value;
+                    this.RaisePropertyChanged("AllWeight");
+                }
             }
         }
         
@@ -2644,6 +2711,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SingleWeight {
+            get {
+                return this.SingleWeightField;
+            }
+            set {
+                if ((this.SingleWeightField.Equals(value) != true)) {
+                    this.SingleWeightField = value;
+                    this.RaisePropertyChanged("SingleWeight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SpecialRequirement {
             get {
                 return this.SpecialRequirementField;
@@ -3010,6 +3090,12 @@ namespace PMSLargeScreen.PMSMainService {
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3074,6 +3160,32 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
                     this.CompositionField = value;
                     this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
                 }
             }
         }
