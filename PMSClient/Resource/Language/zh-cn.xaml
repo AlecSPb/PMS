@@ -171,6 +171,20 @@
     <sys:String x:Key="PageProduction">生产</sys:String>
     <sys:String x:Key="PageRecord">记录</sys:String>
     <sys:String x:Key="PageOther">其他</sys:String>
+    <sys:String x:Key="PageTool">工具</sys:String>
+
+
+    <sys:String x:Key="PageCustomer">客户库</sys:String>
+    <sys:String x:Key="PageCompound">化合物库</sys:String>
+    <sys:String x:Key="PageElement">元素库</sys:String>
+    <sys:String x:Key="PageVHPDevice">热压设备库</sys:String>
+    <sys:String x:Key="PageMold">模具库</sys:String>
+    <sys:String x:Key="PageDeliveryAddress">发货信息库</sys:String>
+    <sys:String x:Key="PageProcess">工艺库</sys:String>
+    <sys:String x:Key="PageSupplier">供应商库</sys:String>
+    <sys:String x:Key="PageSieve">筛网库</sys:String>
+
+
     <sys:String x:Key="PageOrder">订单</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
