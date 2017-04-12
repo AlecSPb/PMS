@@ -61,12 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcceptDefects.cs" />
     <Compile Include="AccessState.cs" />
     <Compile Include="CommonState.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="GoodPosition.cs" />
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />
+    <Compile Include="OrderUnit.cs" />
+    <Compile Include="Purity.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
     <Compile Include="OrderPriority.cs" />

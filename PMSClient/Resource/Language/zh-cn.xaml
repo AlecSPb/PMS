@@ -300,8 +300,8 @@
     <sys:String x:Key="OrderPurity">纯度</sys:String>
     <sys:String x:Key="OrderQuantity">数量</sys:String>
     <sys:String x:Key="OrderQuantityUnit">单位</sys:String>
-    <sys:String x:Key="OrderDimension">尺寸</sys:String>
-    <sys:String x:Key="OrderDimensionDetails">要求</sys:String>
+    <sys:String x:Key="OrderDimension">加工尺寸</sys:String>
+    <sys:String x:Key="OrderDimensionDetails">加工要求</sys:String>
     <sys:String x:Key="OrderSampleNeed">样品需求</sys:String>
     <sys:String x:Key="OrderMIniummAcceptDefect">可接受缺陷</sys:String>
     <sys:String x:Key="OrderRemark">备注</sys:String>
