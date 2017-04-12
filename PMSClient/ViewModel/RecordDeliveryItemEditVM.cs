@@ -57,6 +57,7 @@ namespace PMSClient.ViewModel
         {
             if (test != null)
             {
+                CurrentRecordDeliveryItem.ProductID = test.ProductID;
                 CurrentRecordDeliveryItem.Composition = test.Composition;
                 CurrentRecordDeliveryItem.Abbr = test.CompositionAbbr;
                 CurrentRecordDeliveryItem.Customer = test.Customer;

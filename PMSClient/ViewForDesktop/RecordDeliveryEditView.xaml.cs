@@ -28,7 +28,20 @@ namespace PMSClient.ViewForDesktop
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            ComboBox cbo = sender as ComboBox;
+            if (cbo.SelectedItem!=null)
+            {
+                txtCountry.Text = cbo.SelectedItem.ToString();
+            }
+        }
 
+        private void cboPackageTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox cbo = sender as ComboBox;
+            if (cbo.SelectedItem!=null)
+            {
+                txtPackageType.Text = cbo.SelectedItem.ToString();
+            }
         }
     }
 }

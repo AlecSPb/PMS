@@ -42,7 +42,7 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                             Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonAddItem}" Style="{StaticResource StyleDGButton}" 
+                                <Button Content="{StaticResource ButtonAddChild}" Style="{StaticResource StyleDGButton}" 
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleDGButton}"
@@ -66,6 +66,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding DeliveryNumber}"
+                                        ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDCountry}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -76,7 +78,7 @@
                 <DataGridTemplateColumn Header="{StaticResource RDShipTime}">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding ShipTime}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                                <TextBlock Text="{Binding ShipTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -173,7 +175,7 @@
                 <DataGridTemplateColumn Header="{StaticResource RDWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

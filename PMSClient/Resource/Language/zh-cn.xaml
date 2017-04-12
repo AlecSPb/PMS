@@ -470,7 +470,7 @@
     <sys:String x:Key="RDState">状态</sys:String>
     <sys:String x:Key="RDDeliveryName">发货名</sys:String>
     <sys:String x:Key="RDInvoiceNumber">发票号</sys:String>
-    <sys:String x:Key="RDDeliveryNumber">发货编码</sys:String>
+    <sys:String x:Key="RDDeliveryNumber">物流信息</sys:String>
     <sys:String x:Key="RDCountry">国家</sys:String>
     <sys:String x:Key="RDAddress">地址</sys:String>
     <sys:String x:Key="RDShipTime">发货时间</sys:String>

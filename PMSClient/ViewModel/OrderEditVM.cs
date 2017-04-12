@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
 
             CustomerNames = new ObservableCollection<string>();
-            var customerNames = BasicData.CustomerNames;
+            var customerNames = BasicData.Customers;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
 
             ProductTypes = new ObservableCollection<string>();

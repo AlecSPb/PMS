@@ -25,25 +25,24 @@ namespace PMSClient.ViewModel
             #region 初始化
             var model = new DcRecordDelivery();
             model.ID = Guid.NewGuid();
-            model.InvoiceNumber = "InvoiceNumber";
-            model.DeliveryName = DateTime.Now.ToString("yyMMdd") + "A";
+            model.InvoiceNumber = "发票号";
+            model.DeliveryName =$"FH{DateTime.Now.ToString("yyMMdd")}";
             model.DeliveryNumber = "UPS";
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.UnChecked.ToString();
-            model.PackageInformation = "50kg";
-            model.PackageType = "Wood";
+            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.PackageInformation = "重量未知";
+            model.PackageType = PMSCommon.PackageType.木箱.ToString();
             model.Remark = "";
             model.ShipTime = DateTime.Now;
-            model.Address = "Address Here";
-            model.Country = "USA";
-            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.Address = "这里填写发货地址";
+            model.Country = "美国";
             #endregion
             CurrentRecordDelivery = model;
         }
         public void SetEdit(DcRecordDelivery model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 IsNew = false;
                 CurrentRecordDelivery = model;
@@ -56,12 +55,15 @@ namespace PMSClient.ViewModel
         private void InitialProperties()
         {
             OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.TestResultState));
+            var states = BasicData.SimpleStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
             Countries = new ObservableCollection<string>();
-            var countries = Enum.GetNames(typeof(PMSCommon.Country));
+            var countries = BasicData.Countries;
             countries.ToList().ForEach(s => Countries.Add(s));
+
+            PackageTypes = new List<string>();
+            BasicData.PackageTypes.ToList().ForEach(i => PackageTypes.Add(i));
         }
 
         private void InitialCommands()
@@ -100,9 +102,23 @@ namespace PMSClient.ViewModel
 
 
         #region Properties
-        public DcRecordDelivery CurrentRecordDelivery { get; set; }
+        private DcRecordDelivery currentRecordDelivery;
+        public DcRecordDelivery CurrentRecordDelivery
+        {
+            get
+            {
+                return currentRecordDelivery;
+            }
+            set
+            {
+                currentRecordDelivery = value;
+                RaisePropertyChanged(nameof(CurrentRecordDelivery));
+            }
+        }
         public ObservableCollection<string> OrderStates { get; set; }
         public ObservableCollection<string> Countries { get; set; }
+
+        public List<string> PackageTypes { get; set; }
         #endregion
 
     }

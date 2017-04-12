@@ -123,7 +123,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helpers\BasicDataInstance.cs" />
+    <Compile Include="Helpers\BasicData.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
     <Compile Include="Helpers\OK\LocalLog.cs" />
     <Compile Include="Helpers\OK\PMSViews.cs" />
@@ -669,7 +669,7 @@
     <None Include="DocTemplate\Product.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\发货单.btw">
+    <None Include="DocTemplate\BarTender10.1\发货单.btw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

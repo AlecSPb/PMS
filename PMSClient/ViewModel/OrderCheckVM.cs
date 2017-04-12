@@ -42,13 +42,13 @@ namespace PMSClient.ViewModel
 
         }
         /// <summary>
-        /// 核验订单权限编码000003
+        /// 核验订单权限编码订单核验
         /// </summary>
         /// <param name="arg"></param>
         /// <returns></returns>
         private bool CanCheck(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.CurrentAccesses.Where(i => i.AccessCode.Contains("000003")).Count() > 0;
+            return PMSHelper.CurrentSession.CurrentAccesses.Where(i => i.AccessCode.Contains("订单核验")).Count() > 0;
         }
 
         private void ActionCheck(DcOrder order)

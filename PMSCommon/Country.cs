@@ -11,9 +11,10 @@ namespace PMSCommon
     /// </summary>
     public enum Country
     {
-       USA,
-       Sweden,
-       SouthKorea,
-       Japan
+       美国,
+       瑞典,
+       韩国,
+       日本,
+       南京
     }
 }

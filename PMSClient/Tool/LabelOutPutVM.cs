@@ -22,7 +22,7 @@ namespace PMSClient.Tool
             OpenFile = new RelayCommand(ActionOpenFile);
         }
 
-        public void SetAllParameters(PMSViews requestView,string pageTitle,string tips,string templateFilePath,string mainContent)
+        public void SetAllParameters(PMSViews requestView, string pageTitle, string tips, string templateFilePath, string mainContent)
         {
             this.requestView = requestView;
             PageTitle = pageTitle;
@@ -36,7 +36,7 @@ namespace PMSClient.Tool
         {
             try
             {
-                var filepath = System.IO.Path.Combine(System.Environment.CurrentDirectory, "DocTemplate", TemplateFilePath);
+                var filepath = System.IO.Path.Combine(System.Environment.CurrentDirectory, "BarTender10.1", "DocTemplate", TemplateFilePath);
                 System.Diagnostics.Process.Start(filepath);
             }
             catch (Exception ex)

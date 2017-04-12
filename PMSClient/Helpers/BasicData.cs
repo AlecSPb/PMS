@@ -31,6 +31,13 @@ namespace PMSClient
                 return states;
             }
         }
+        public static string[] SimpleStates
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.SimpleState));
+            }
+        }
 
         public static string[] OrderPriorities
         {
@@ -40,7 +47,6 @@ namespace PMSClient
                 return states;
             }
         }
-
         public static string[] OrderPolicyTypes
         {
             get
@@ -49,7 +55,6 @@ namespace PMSClient
                 return states;
             }
         }
-
         public static string[] ProductTypes
         {
             get
@@ -58,14 +63,28 @@ namespace PMSClient
                 return productTypes;
             }
         }
+        public static string[] Countries
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.Country));
+            }
+        }
+        public static string[] PackageTypes
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.PackageType));
+            }
+        }
 
         //From Services
-        public static DcBDCustomer[] CustomerNames
+        public static DcBDCustomer[] Customers
         {
             get
             {
                 var service = new CustomerServiceClient();
-                var customers = service.GetCustomer().OrderBy(i=>i.CustomerName).ToArray();
+                var customers = service.GetCustomer().OrderBy(i => i.CustomerName).ToArray();
                 return customers;
             }
         }

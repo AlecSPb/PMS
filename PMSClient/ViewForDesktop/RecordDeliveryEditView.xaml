@@ -31,7 +31,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -59,76 +58,84 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryName}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="发货单ID"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="简单标识一下此次发货，便于快速识别"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDInvoiceNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding InvoiceNumber,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="发票号"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDDeliveryNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding DeliveryNumber,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="物流信息"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="物流信息，比如运单号"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDCountry}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox x:Name="txtCountry" Grid.Row="3" Grid.Column="1" Text="{Binding Country,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox x:Name="txtCountry"  Text="{Binding Country,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <ComboBox x:Name="cboSuppliers" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch"
+                    <ComboBox x:Name="cboSuppliers"  HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.Countries,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectionChanged="ComboBox_SelectionChanged"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="国家"/>
+                </StackPanel>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="发往哪个国家地区"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDAddress}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Address,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="收件地址信息"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDShipTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <DatePicker Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding ShipTime}"/>
-                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="发货时间"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="备注内容写到这里"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDPackageType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PackageType}" Style="{StaticResource StyleTextBoxCommon}"
+                <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Name="txtPackageType"  Text="{Binding PackageType}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                    <ComboBox x:Name="cboPackageTypes"  HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding DataContext.PackageTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectionChanged="cboPackageTypes_SelectionChanged"
+                          Style="{StaticResource StyleComboBoxCommon}"/>
+                </StackPanel>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="包装类型"/>
-                
+
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDPackageInformation}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PackageInformation}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="包装信息，箱子重量等"/>
-                
+
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                
+
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"

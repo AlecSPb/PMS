@@ -11,9 +11,10 @@ namespace PMSCommon
     /// </summary>
     public enum PackageType
     {
-        Wood,
-        Paper,
-        Plastic,
-        Other
+        木箱,
+        纸箱,
+        塑料箱,
+        铁箱,
+        其他
     }
 }
