@@ -39,9 +39,9 @@ namespace PMSClient.ViewModel
             plan.VHPDeviceCode = "A";
             plan.Temperature = 0;
             plan.Pressure = 0;
-            plan.Vaccum = 0;
+            plan.Vaccum = 1E-3;
             plan.ProcessCode = "W1";
-            plan.PrePressure = 0;
+            plan.PrePressure = 10;
             plan.PreTemperature = 25;
             plan.Quantity = 1;
             plan.MoldDiameter = 230;
@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
         {
             Molds = new ObservableCollection<DcBDVHPMold>();
             var service = new VHPMoldServiceClient();
-            var molds = service.GetVHPMold();
+            var molds = service.GetVHPMold().OrderBy(i=>i.InnerDiameter);
             molds.ToList().ForEach(m => Molds.Add(m));
 
             States = new ObservableCollection<string>();
@@ -97,13 +97,13 @@ namespace PMSClient.ViewModel
 
             DeviceCodes = new ObservableCollection<string>();
             var service3 = new VHPDeviceServiceClient();
-            var devices = service3.GetVHPDevice();
+            var devices = service3.GetVHPDevice().OrderBy(i=>i.CreateTime);
             devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 
             Compounds = new ObservableCollection<DcBDCompound>();
             var service4 = new CompoundServiceClient();
-            var compounds = service4.GetAllCompounds();
+            var compounds = service4.GetAllCompounds().OrderBy(i=>i.MaterialName);
             compounds.ToList().ForEach(c => Compounds.Add(c));
         }
 

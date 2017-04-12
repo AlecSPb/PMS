@@ -55,7 +55,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderCustomer}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtCustomerName" Text="{Binding CustomerName}" Width="150"
                              Style="{StaticResource StyleTextBoxReadOnly}"/>
@@ -74,14 +74,14 @@
                            Text="添加的时候注意去掉首部的PO#字样"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OrderPMINumber}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="自动生成的工作号不一定唯一和合适，请自行修改"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderStandardComposition}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
@@ -117,21 +117,21 @@
                            Text="纯度要求"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OrderQuantity}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="数量,必须是纯数字"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantityUnit}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="数量单位"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OrderDimension}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"

@@ -30,7 +30,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="200"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -61,72 +60,76 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource PlanPlanDate}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
                 <DatePicker Grid.Row="0" Grid.Column="1"
                             SelectedDate="{Binding PlanDate,Mode=TwoWay}"
                             Style="{StaticResource StyleDatePickerCommon}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanVHPDeviceCode}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
                 <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.DeviceCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding VHPDeviceCode,Mode=TwoWay}"/>
-                
+
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding  PlanLot}"
                          Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                
-                
+
+
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanMoldType}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox x:Name="moldType" Grid.Row="3" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
                          Style="{StaticResource StyleTextBoxCommon}" 
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox x:Name="moldDiameter" Grid.Row="4" Grid.Column="1" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource StyleTextBoxCommon}" 
+                           Style="{StaticResource StyleTextBlockSpecial}" />
+                <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox x:Name="moldDiameter" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource StyleTextBoxReadOnly}" 
                          HorizontalAlignment="Stretch"/>
-                <ComboBox x:Name="cboMolds" Grid.Row="4" Grid.Column="2"
+                    <ComboBox x:Name="cboMolds"
                           HorizontalAlignment="Stretch"
                         ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                         SelectionChanged="cboMolds_SelectionChanged"
                         Style="{StaticResource StyleComboBoxCommon}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding MoldType}"/>
-                                <TextBlock Text="{Binding InnerDiameter}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-                <TextBlock Grid.Row="4" Grid.Column="3" Text="请使用下拉菜单选择模具" Style="{StaticResource StyleTextBlockTip}"/>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding MoldType}"/>
+                                    <TextBlock Text="{Binding InnerDiameter}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                <TextBlock Grid.Row="4" Grid.Column="2" Text="请使用下拉菜单选择模具" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlanCalculationDensity}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox x:Name="txtCalculationDensity" Grid.Row="5" Grid.Column="1" Text="{Binding CalculationDensity,UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource StyleTextBoxCommon}"
+                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox x:Name="txtCalculationDensity"  Text="{Binding CalculationDensity,UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource StyleTextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
-
-                <ComboBox x:Name="cboCompounds" Grid.Row="5" Grid.Column="2"
+                    <ComboBox x:Name="cboCompounds"
                           HorizontalAlignment="Stretch"
                         ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                         SelectionChanged="cboCompounds_SelectionChanged"
                         Style="{StaticResource StyleComboBoxCommon}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding MaterialName}"/>
-                                <!--<TextBlock Text="{Binding Density}"/>-->
-                            </StackPanel>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding MaterialName}"/>
+                                    <!--<TextBlock Text="{Binding Density}"/>-->
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanThickness}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -134,7 +137,7 @@
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanQuantity}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
 
@@ -170,12 +173,12 @@
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource PlanTemperature}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource PlanPressure}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
+                           Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
 
