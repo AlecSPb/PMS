@@ -243,7 +243,7 @@
     <sys:String x:Key="ButtonFill">填写</sys:String>
     <sys:String x:Key="ButtonSelect">选择</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
-    <sys:String x:Key="ButtonDeliverySheet">发货单</sys:String>
+    <sys:String x:Key="ButtonDeliverySheet">发货</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>

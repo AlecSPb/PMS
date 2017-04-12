@@ -124,24 +124,27 @@ namespace PMSClient.ViewModel
             #endregion
             if (model!=null)
             {
-                string title = model.Country;
+                string country = model.Country;
                 StringBuilder sb = new StringBuilder();
                 DcRecordDeliveryItem[] items;
                 using (var service = new RecordDeliveryServiceClient())
                 {
                     items = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
                 }
+                int counter = 1;
                 foreach (var item in items)
                 {
-                    sb.Append(item.Composition);
-                    sb.Append("-");
-                    sb.AppendLine(item.ProductID);
+                    //sb.Append(item.Composition.Trim());
+                    sb.Append($"No {counter}");
+                    sb.Append(" = ");
+                    sb.AppendLine($"[{item.ProductID.Trim()}]");
+                    counter++;
                 }
-                string mainContent = sb.ToString();
+                string mainContent = $"发往: {country}\r{sb.ToString()}";
 
                 var pageTitle = "发货单标签打印输出";
                 var tips = "请复制左边内容后点击打开模板按钮，复制到模板合适位置，然后打印标签";
-                var template = "发货单";
+                var template = "发货单.btw";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordDelivery, pageTitle, tips, template, mainContent);
                 NavigationService.GoTo(PMSViews.LabelOutPut);
             }

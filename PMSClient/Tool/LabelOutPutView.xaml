@@ -25,8 +25,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding MainContent}" Margin="2" Padding="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
-            <TextBlock Text="{Binding Tips}" Margin="2" Padding="2" />
+            <TextBox Text="{Binding MainContent}" Margin="2" Padding="2" FontSize="20"
+                     AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+            <TextBlock Grid.Column="1" Text="{Binding Tips}" Margin="2" Padding="2" Foreground="Blue" />
         </Grid>
     </Grid>
 </UserControl>
