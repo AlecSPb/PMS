@@ -102,5 +102,12 @@ namespace PMSClient.ViewForDesktop
             }
         }
 
+        private void chkRemember_Click(object sender, RoutedEventArgs e)
+        {
+            if (chkRemember.IsChecked==false)
+            {
+                SaveUIDandPWD("", "", false);
+            }
+        }
     }
 }
