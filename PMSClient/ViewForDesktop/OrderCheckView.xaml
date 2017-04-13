@@ -94,6 +94,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderProductType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ProductType}"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderStandardComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -138,7 +140,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource OrderDimensionDetails}">
+                <DataGridTemplateColumn Header="{StaticResource OrderDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding DimensionDetails}" Style="{StaticResource StyleDGTextBlockLeft}"/>
@@ -159,6 +161,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}" RecordCount="{Binding RecordCount}"

@@ -8,7 +8,7 @@
     <sys:String x:Key="strWelcome">欢迎</sys:String>
 
     <!--Navigation-->
-    <sys:String x:Key="strbtnOrder">订单</sys:String>
+    <sys:String x:Key="strbtnOrder">订单浏览</sys:String>
     <sys:String x:Key="strbtnOrderCheck">订单核验</sys:String>
     <sys:String x:Key="strbtnMisson">生产任务</sys:String>
     <sys:String x:Key="strbtnPlan">生产计划</sys:String>

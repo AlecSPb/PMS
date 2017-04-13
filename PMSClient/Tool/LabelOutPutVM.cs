@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using System.IO;
 
 namespace PMSClient.Tool
 {
@@ -37,7 +38,16 @@ namespace PMSClient.Tool
             try
             {
                 var filepath = System.IO.Path.Combine(System.Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFilePath);
-                System.Diagnostics.Process.Start(filepath);
+                var targetpath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", "deliverysheet.btw");
+
+                //复制一下
+                if (File.Exists(targetpath))
+                {
+                    File.Delete(targetpath);
+                }
+                File.Copy(filepath, targetpath);
+
+                System.Diagnostics.Process.Start(targetpath);
             }
             catch (Exception ex)
             {
