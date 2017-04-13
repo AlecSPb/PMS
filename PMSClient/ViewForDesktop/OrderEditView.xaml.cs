@@ -30,7 +30,7 @@ namespace PMSClient.ViewForDesktop
             ComboBox cbo = sender as ComboBox;
             if (cbo.SelectedItem!=null)
             {
-                txtCustomerName.Text = cbo.SelectedItem.ToString();
+                PMSMethods.SetTextBox(txtCustomerName, cbo.SelectedItem.ToString());
             }
         }
     }
