@@ -59,6 +59,10 @@
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
     </Style>
+    <Style x:Key="StyleLogInCheckBox" TargetType="CheckBox">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
+    </Style>
     <!--导航-->
     <Style x:Key="StyleButtonNavigation" TargetType="Button">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

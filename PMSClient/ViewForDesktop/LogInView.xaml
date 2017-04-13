@@ -19,12 +19,15 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBox Grid.Row="0" Name="txtUserName" Text="xs.zhou" Style="{StaticResource StyleLogInUID}"/>
             <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource StyleLogInPwd}"/>
-            <Button Grid.Row="2" Content="登录" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
-            <TextBlock Name="txtLogInStatus" Grid.Row="3" Text="" Style="{StaticResource StyleLogInInformation}"/>
+            <CheckBox Name="chkRemember" Grid.Row="2" Content="记住用户名和密码" Style="{StaticResource StyleLogInCheckBox}"/>
+            <Button Grid.Row="3" Content="登录" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
+            <TextBlock Name="txtLogInStatus" Grid.Row="4" Text="" Style="{StaticResource StyleLogInInformation}"/>
         </Grid>
         <Grid Grid.Column="1" Background="LightGray">
             <TextBlock Name="txtInformation" Text="请在左边登录框里输入登录信息登录" Margin="5"/>

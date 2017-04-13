@@ -93,7 +93,6 @@ namespace PMSClient
             switch (token)
             {
                 case PMSViews.LogIn:
-                    _views.LogIn.ClearLog();
                     RefreshLogInformation();
                     NavigateTo(_views.LogIn);
                     break;
@@ -268,6 +267,7 @@ namespace PMSClient
             if (PMSHelper.CurrentSession.CurrentUser!=null)
             {
                 PMSHelper.CurrentSession.LogOut();
+                _views.LogIn.ClearLog();
                 NavigationService.GoTo(PMSViews.LogIn);
             }
         }
