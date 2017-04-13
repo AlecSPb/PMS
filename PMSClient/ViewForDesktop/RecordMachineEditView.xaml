@@ -30,7 +30,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -59,74 +58,74 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="成分"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="要求尺寸"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="额外要求"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ExtraRequirement}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="直径1"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="直径2"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Diameter2}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="厚度1"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Thickness1}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="厚度2"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Thickness2}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="7" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="厚度3"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Thickness3}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="8" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="厚度4"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Thickness4}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="9" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                
+
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="缺陷"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Defects}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="10" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
             </Grid>
         </ScrollViewer>

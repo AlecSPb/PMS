@@ -271,8 +271,10 @@
     <sys:String x:Key="ButtonNewMode">新建模式</sys:String>
     <sys:String x:Key="ButtonOpenFile">打开标签模板</sys:String>
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
-    
-    
+
+    <sys:String x:Key="ButtonInput">导入</sys:String>
+    <sys:String x:Key="ButtonOutput">导出</sys:String>
+
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">选择计划</sys:String>

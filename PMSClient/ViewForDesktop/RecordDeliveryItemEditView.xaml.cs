@@ -31,7 +31,7 @@ namespace PMSClient.ViewForDesktop
             ComboBox cbo = sender as ComboBox;
             if (cbo.SelectedItem != null)
             {
-                txtProductType.Text = cbo.SelectedItem.ToString();
+                PMSMethods.SetTextBox(txtProductType,cbo.SelectedItem.ToString());
             }
         }
 
@@ -40,7 +40,7 @@ namespace PMSClient.ViewForDesktop
             ComboBox cbo = sender as ComboBox;
             if (cbo.SelectedItem != null)
             {
-                txtPosition.Text = cbo.SelectedItem.ToString();
+                PMSMethods.SetTextBox(txtPosition, cbo.SelectedItem.ToString());
             }
 
         }

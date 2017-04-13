@@ -14,13 +14,17 @@ namespace PMSClient.Tool
 {
     public class MaterialNeedCalcualtionVM : ViewModelBase
     {
+        private const double defaultDensity = 5.75;
         public MaterialNeedCalcualtionVM()
         {
             Compounds = new ObservableCollection<DcBDCompound>();
             Molds = new ObservableCollection<DcBDVHPMold>();
             CalculationItems = new ObservableCollection<MaterialNeedCalculationItem>();
+            IsDensityReadOnly = true;
+            ReadOnlyButton = "手动输入密度";
 
-            InitializeCurrentItem(5.7);
+
+            InitializeCurrentItem(defaultDensity);
             InitializeBasicData();
 
             Add = new RelayCommand(ActionAdd);
@@ -29,6 +33,12 @@ namespace PMSClient.Tool
             CompoundsSelectionChanged = new RelayCommand<DcBDCompound>(ActionCompoundSelectionChanged);
             MoldsSelectionChanged = new RelayCommand<DcBDVHPMold>(ActionMoldsSelectionChanged);
             Save = new RelayCommand(ActionSave);
+            ManualInputDensity = new RelayCommand(ActionManulInputDensity);
+        }
+
+        private void ActionManulInputDensity()
+        {
+            SetReadOnlyDensity(!IsDensityReadOnly);
         }
 
         private void ActionSave()
@@ -81,11 +91,11 @@ namespace PMSClient.Tool
         {
             requestView = view;
             //clear data
-            InitializeCurrentItem(5.7);
+            InitializeCurrentItem(defaultDensity);
         }
         private void InitializeCurrentItem(double density)
         {
-           CalculationItems.Clear();
+            CalculationItems.Clear();
             CurrentCalculationItem = new MaterialNeedCalculationItem()
             {
                 ID = Guid.NewGuid(),
@@ -139,9 +149,26 @@ namespace PMSClient.Tool
                 CalculationItems.Add(model);
 
                 CalcualteTotalWeight();
+
+                SetReadOnlyDensity(true);
             }
         }
 
+        private void SetReadOnlyDensity(bool flag)
+        {
+            if (flag)
+            {
+                IsDensityReadOnly = true;
+                ReadOnlyButton = "手动输入密度";
+            }
+            else
+            {
+                IsDensityReadOnly = false;
+                ReadOnlyButton = "关闭手动输入";
+                InitializeCurrentItem(defaultDensity);
+            }
+
+        }
 
 
         private void ActionDelete(MaterialNeedCalculationItem item)
@@ -157,7 +184,7 @@ namespace PMSClient.Tool
         {
             if (item != null)
             {
-                item.Weight = Math.PI * item.Diameter * item.Diameter * item.Thickness / 4 / 1000 * CurrentDensity*item.Quantity + item.WeightLoss;
+                item.Weight = Math.PI * item.Diameter * item.Diameter * item.Thickness / 4 / 1000 * CurrentDensity * item.Quantity + item.WeightLoss;
             }
         }
         private void CalcualteTotalWeight()
@@ -178,7 +205,7 @@ namespace PMSClient.Tool
         public MaterialNeedCalculationItem CurrentCalculationItem
         {
             get { return currentCalculationItem; }
-            set { currentCalculationItem = value;RaisePropertyChanged(nameof(CurrentCalculationItem)); }
+            set { currentCalculationItem = value; RaisePropertyChanged(nameof(CurrentCalculationItem)); }
         }
 
         private double currentDensity;
@@ -199,6 +226,20 @@ namespace PMSClient.Tool
             }
         }
 
+        private bool isDensityReadOnly;
+
+        public bool IsDensityReadOnly
+        {
+            get { return isDensityReadOnly; }
+            set { isDensityReadOnly = value; RaisePropertyChanged(nameof(IsDensityReadOnly)); }
+        }
+        private string readonlyButton;
+
+        public string ReadOnlyButton
+        {
+            get { return readonlyButton; }
+            set { readonlyButton = value; RaisePropertyChanged(nameof(ReadOnlyButton)); }
+        }
 
 
         public ObservableCollection<MaterialNeedCalculationItem> CalculationItems { get; set; }
@@ -211,5 +252,7 @@ namespace PMSClient.Tool
 
         public RelayCommand<DcBDCompound> CompoundsSelectionChanged { get; set; }
         public RelayCommand<DcBDVHPMold> MoldsSelectionChanged { get; set; }
+
+        public RelayCommand ManualInputDensity { get; set; }
     }
 }

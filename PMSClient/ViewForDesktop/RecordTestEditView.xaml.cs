@@ -39,11 +39,14 @@ namespace PMSClient.ViewForDesktop
                 if (File.Exists(filename))
                 {
                     string result = File.ReadAllText(filename);
-                    txtCompositionXRF.Text = result.TrimEnd();
+                    PMSMethods.SetTextBox(txtCompositionXRF, result.TrimEnd());
                 }
             }
         }
 
-
+        private void btnResistance_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(txtResistance, "OutOfRange");
+        }
     }
 }
