@@ -35,10 +35,10 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -59,65 +59,71 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MIIComposition}"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource  MIIMaterialLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MaterialLot}" Style="{StaticResource StyleTextBoxCommon}"
+                            HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="材料订单项目号"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MIIComposition}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="这是来自选择任务的成分，可以自行更改"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource  MIIMaterialLot}"
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MIIPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding MaterialLot}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
-                           Text="内部工作号"/>
-                
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MIIPurity}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="内部编号,指示用于哪个订单"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MIIPurity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="2" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MIIWeight}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MIIWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料重量，单位kg"/>
-                
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MIISupplier}"
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MIISupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="4" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单状态"/>
-                
-                
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MIIRemark}"
+
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MIIRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="5" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MIIState}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIIState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="6" Grid.Column="3" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单状态"/>
 
 
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIICreator}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIICreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
                             HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIICreateTime}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MIICreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
                             HorizontalAlignment="Stretch"/>
 
 

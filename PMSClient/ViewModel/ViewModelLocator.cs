@@ -155,7 +155,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditVM>(); }
         }
-        public MaterialOrderItemSelectVM MaterialOrderSelectEdit
+        public MaterialOrderItemSelectVM MaterialOrderItemSelect
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemSelectVM>(); }
         }

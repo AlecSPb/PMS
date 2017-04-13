@@ -1719,6 +1719,9 @@ namespace PMSLargeScreen.PMSMainService {
         private string MaterialLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1804,6 +1807,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.MaterialLotField, value) != true)) {
                     this.MaterialLotField = value;
                     this.RaisePropertyChanged("MaterialLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -1908,6 +1924,9 @@ namespace PMSLargeScreen.PMSMainService {
         private string MaterialLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1993,6 +2012,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.MaterialLotField, value) != true)) {
                     this.MaterialLotField = value;
                     this.RaisePropertyChanged("MaterialLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }

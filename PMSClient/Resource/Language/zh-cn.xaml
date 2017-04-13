@@ -236,7 +236,7 @@
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
     <sys:String x:Key="PageMissonSelect">请选择一个生产任务项目</sys:String>
-
+    <sys:String x:Key="PageMaterialOrderItemSelect">请选择一个材料订单项目</sys:String>
 
     <sys:String x:Key="PageMaintenance">维护计划</sys:String>
     <!--Button-->
@@ -394,7 +394,7 @@
     <sys:String x:Key="MOIState">状态</sys:String>
     <sys:String x:Key="MOICreator">创建者</sys:String>
     <sys:String x:Key="MOICreateTime">创建时间</sys:String>
-    <sys:String x:Key="MOIOrderItemNumber">条目编号</sys:String>
+    <sys:String x:Key="MOIOrderItemNumber">材料编号</sys:String>
     <sys:String x:Key="MOIPMINumber">内部编号</sys:String>
     <sys:String x:Key="MOIComposition">成分</sys:String>
     <sys:String x:Key="MOIPurity">纯度</sys:String>
@@ -516,6 +516,7 @@
     <sys:String x:Key="MIIState">状态</sys:String>
     <sys:String x:Key="MIICreator">创建者</sys:String>
     <sys:String x:Key="MIICreateTime">创建时间</sys:String>
+    <sys:String x:Key="MIIPMINumber">内部编号</sys:String>
     <sys:String x:Key="MIIMaterialLot">材料批号</sys:String>
     <sys:String x:Key="MIIComposition">成分</sys:String>
     <sys:String x:Key="MIIPurity">纯度</sys:String>
@@ -526,6 +527,7 @@
     <sys:String x:Key="MIOState">状态</sys:String>
     <sys:String x:Key="MIOCreator">创建者</sys:String>
     <sys:String x:Key="MIOCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MIOPMINumber">内部编号</sys:String>
     <sys:String x:Key="MIOMaterialLot">材料批号</sys:String>
     <sys:String x:Key="MIOComposition">成分</sys:String>
     <sys:String x:Key="MIOPurity">纯度</sys:String>

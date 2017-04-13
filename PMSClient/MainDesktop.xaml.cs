@@ -134,6 +134,9 @@ namespace PMSClient
                 case PMSViews.MaterialOrderItemEdit:
                     NavigateTo(_views.MaterialOrderItemEdit);
                     break;
+                case PMSViews.MaterialOrderItemSelect:
+                    NavigateTo(_views.MaterialOrderItemSelect);
+                    break;
                 case PMSViews.MaterialInventoryIn:
                     NavigateTo(_views.MaterialInventoryIn);
                     break;

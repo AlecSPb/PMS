@@ -43,6 +43,8 @@
                                     Binding="{Binding MaterialLot}"/>
                 <DataGridTextColumn Header="{StaticResource MIOComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource MIOPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource MIOPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Purity}"/>
                 <DataGridTextColumn Header="{StaticResource MIOReceiver}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

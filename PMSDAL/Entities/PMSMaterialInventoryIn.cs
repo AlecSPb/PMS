@@ -13,6 +13,7 @@ namespace PMSDAL
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string MaterialLot { get; set; }
+        public string PMINumber { get; set; }
         public string Composition { get; set; }
         public string Purity { get; set; }
         public string Supplier { get; set; }

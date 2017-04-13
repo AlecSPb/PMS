@@ -221,6 +221,9 @@
     <Compile Include="ViewForDesktop\MaterialOrderItemEditView.xaml.cs">
       <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\MaterialOrderItemSelectView.xaml.cs">
+      <DependentUpon>MaterialOrderItemSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\MaterialOrderView.xaml.cs">
       <DependentUpon>MaterialOrderView.xaml</DependentUpon>
     </Compile>
@@ -474,6 +477,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\MaterialOrderItemEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\MaterialOrderItemSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

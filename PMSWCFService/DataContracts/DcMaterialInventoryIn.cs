@@ -21,6 +21,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string MaterialLot { get; set; }
         [DataMember]
+        public string PMINumber { get; set; }
+        [DataMember]
         public string Composition { get; set; }
         [DataMember]
         public string Purity { get; set; }

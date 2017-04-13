@@ -54,6 +54,17 @@ namespace PMSClient
         Maintanence,
         MaintanenceEdit,
         MaterialNeedCalcuationTool,
-        LabelOutPut
+        LabelOutPut,
+        BDCustomer,
+        BDCompound,
+        BDVHPDevice,
+        BDMold,
+        BDDeliveryAddress,
+        BDSupplier,
+        AdminUser,
+        AdminAccesses,
+        AdminAccess,
+        AdminRole,
+        MaterialOrderItemSelect
     }
 }

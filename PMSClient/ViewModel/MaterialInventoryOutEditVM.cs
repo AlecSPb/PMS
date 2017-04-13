@@ -26,6 +26,7 @@ namespace PMSClient.ViewModel
             var empty = new DcMaterialInventoryOut();
             #region 初始化
             empty.Id = Guid.NewGuid();
+            empty.PMINumber = DateTime.Now.ToString("yyMMdd");
             empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
             empty.Composition = "成分";
             empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
@@ -56,6 +57,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentMaterialInventoryOut.Composition = model.Composition;
                 CurrentMaterialInventoryOut.MaterialLot = model.MaterialLot;
+                CurrentMaterialInventoryOut.PMINumber = model.PMINumber;
                 CurrentMaterialInventoryOut.Weight = model.Weight;
                 CurrentMaterialInventoryOut.Remark = model.Supplier;
                 //RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
