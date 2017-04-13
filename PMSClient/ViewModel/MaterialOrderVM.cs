@@ -48,14 +48,35 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
 
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcMaterialOrder>(ActionEdit);
+            Add = new RelayCommand(ActionAdd,CanAdd);
+            Edit = new RelayCommand<DcMaterialOrder>(ActionEdit,CanEdit);
 
-            AddItem = new RelayCommand<DcMaterialOrder>(ActionAddItem);
-            EditItem = new RelayCommand<DcMaterialOrderItem>(ActionEditItem);
+            AddItem = new RelayCommand<DcMaterialOrder>(ActionAddItem,CanAddItem);
+            EditItem = new RelayCommand<DcMaterialOrderItem>(ActionEditItem,CanEditItem);
 
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
+        }
+
+        private bool CanEditItem(DcMaterialOrderItem arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+        }
+
+        private bool CanAddItem(DcMaterialOrder arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+
+        }
+
+        private bool CanEdit(DcMaterialOrder arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+        }
+
+        private bool CanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
         }
 
         private void ActionSelectionChanged(DcMaterialOrder model)

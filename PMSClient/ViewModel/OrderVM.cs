@@ -55,14 +55,14 @@ namespace PMSClient.ViewModel
 
         }
 
-        #region 权限控制代码=订单编辑
+        #region 权限控制代码=编辑订单
         private bool CanEdit(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("订单编辑");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑订单");
         }
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("订单编辑");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑订单");
         }
         #endregion
 

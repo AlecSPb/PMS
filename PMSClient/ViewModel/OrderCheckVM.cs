@@ -42,13 +42,13 @@ namespace PMSClient.ViewModel
 
         }
         /// <summary>
-        /// 核验订单权限编码订单核验
+        /// 核验订单权限编码=编辑订单核验
         /// </summary>
         /// <param name="arg"></param>
         /// <returns></returns>
         private bool CanCheck(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("订单核验");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑订单核验");
         }
 
         private void ActionCheck(DcOrder order)
