@@ -28,8 +28,21 @@ namespace PMSClient.ViewModel
 
 
             All = new RelayCommand(ActionAll);
-            QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit));
             SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
+            QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit),
+                ()=> PMSHelper.CurrentSession.IsAuthorized("编辑热压记录"));
+
+            Doc = new RelayCommand<MainService.DcMissonWithPlan>(ActionDoc, CanDoc);
+        }
+
+        private bool CanDoc(DcMissonWithPlan arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑热压记录");
+        }
+
+        private void ActionDoc(DcMissonWithPlan obj)
+        {
+            throw new NotImplementedException();
         }
 
         private void ActionSelectionChanged(DcMissonWithPlan obj)

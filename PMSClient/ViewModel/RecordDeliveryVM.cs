@@ -44,20 +44,25 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd,CanAdd);
             Edit = new RelayCommand<DcRecordDelivery>(ActionEdit,CanEdit);
-            Doc = new RelayCommand<DcRecordDelivery>(ActionDoc);
+            Doc = new RelayCommand<DcRecordDelivery>(ActionDoc,CanDoc);
             AddItem = new RelayCommand<DcRecordDelivery>(ActionAddItem,CanAddItem);
             EditItem = new RelayCommand<DcRecordDeliveryItem>(ActionEditItem,CanEditItem);
             SelectionChanged = new RelayCommand<DcRecordDelivery>(ActionSelectionChanged);
         }
 
+        private bool CanDoc(DcRecordDelivery arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
+        }
+
         private bool CanEditItem(DcRecordDeliveryItem arg)
         {
-            return CanAdd();
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
 
         private bool CanAddItem(DcRecordDelivery arg)
         {
-            return CanAdd();
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
         /// <summary>
         /// 权限代码=编辑发货记录
@@ -65,12 +70,12 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.CurrentAccesses.Where(i => i.AccessCode.Contains("编辑发货记录")).Count() > 0;
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
 
         private bool CanEdit(DcRecordDelivery arg)
         {
-            return CanAdd();
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
 
         private void ActionAll()
@@ -100,7 +105,7 @@ namespace PMSClient.ViewModel
         //private bt.Format btnFormat;
         private void ActionDoc(DcRecordDelivery model)
         {
-            #region 必须使用Automation版本的Bartender才允许自动化调用，这个版本36000
+            #region 必须使用Automation版本的Bartender才允许自动化调用，这个版本36000RMB
             //string title = model.Country;
             //StringBuilder sb = new StringBuilder();
             //DcRecordDeliveryItem[] items;

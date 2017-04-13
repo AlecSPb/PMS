@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageRecordBlankEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{StaticResource PageRecordDeMoldEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">

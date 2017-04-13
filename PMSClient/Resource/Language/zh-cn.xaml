@@ -67,8 +67,8 @@
     <sys:String x:Key="strPageRecordVHP">热压记录</sys:String>
     <sys:String x:Key="strPageRecordVHPEditPage">热压记录编辑</sys:String>
     <sys:String x:Key="strPageRecordVHPQuickEditPage">热压记录快速录入</sys:String>
-    <sys:String x:Key="strPageRecordBlank">取模记录</sys:String>
-    <sys:String x:Key="strPageRecordBlankEdit">取模记录编辑</sys:String>
+    <sys:String x:Key="strPageRecordDeMold">取模记录</sys:String>
+    <sys:String x:Key="strPageRecordDeMoldEdit">取模记录编辑</sys:String>
     <sys:String x:Key="strPageRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="strPageRecordBondingEdit">绑定记录编辑</sys:String>
     <sys:String x:Key="strPageRecordTest">测试记录</sys:String>
@@ -220,8 +220,8 @@
     <sys:String x:Key="PageRecordVHP">热压记录</sys:String>
     <sys:String x:Key="PageRecordVHPEditPage">热压记录编辑</sys:String>
     <sys:String x:Key="PageRecordVHPQuickEditPage">热压记录快速录入</sys:String>
-    <sys:String x:Key="PageRecordBlank">取模记录</sys:String>
-    <sys:String x:Key="PageRecordBlankEdit">取模记录编辑</sys:String>
+    <sys:String x:Key="PageRecordDeMold">取模记录</sys:String>
+    <sys:String x:Key="PageRecordDeMoldEdit">取模记录编辑</sys:String>
     <sys:String x:Key="PageRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="PageRecordBondingEdit">绑定记录编辑</sys:String>
     <sys:String x:Key="PageRecordTest">测试记录</sys:String>

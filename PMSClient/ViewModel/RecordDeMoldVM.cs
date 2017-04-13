@@ -18,14 +18,30 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
 
             RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit);
+            Add = new RelayCommand(ActionAdd,CanAdd);
+            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit,CanEdit);
             SetPageParametersWhenConditionChange();
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
 
-            Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate);
+            Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate,CanDuplicate);
         }
+
+        private bool CanDuplicate(DcRecordDeMold arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+        }
+
+        private bool CanEdit(DcRecordDeMold arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+        }
+
+        private bool CanAdd()
+        {
+          return  PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+        }
+
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();

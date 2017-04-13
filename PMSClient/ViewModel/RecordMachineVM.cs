@@ -16,14 +16,30 @@ namespace PMSClient.ViewModel
         {
             RecordMachines = new ObservableCollection<DcRecordMachine>();
             PageChanged = new RelayCommand(ActionPaging);
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordMachine>(ActionEdit);
+            Add = new RelayCommand(ActionAdd,CanAdd);
+            Edit = new RelayCommand<DcRecordMachine>(ActionEdit,CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
-            Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate);
+            Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate,CanDuplicate);
 
             SetPageParametersWhenConditionChange();
         }
+
+        private bool CanDuplicate(DcRecordMachine arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑加工记录");
+        }
+
+        private bool CanEdit(DcRecordMachine arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑加工记录");
+        }
+
+        private bool CanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑加工记录");
+        }
+
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();

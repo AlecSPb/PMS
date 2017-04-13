@@ -28,10 +28,20 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordMilling>(ActionEdit);
+            Add = new RelayCommand(ActionAdd,CanAdd);
+            Edit = new RelayCommand<DcRecordMilling>(ActionEdit,CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
+        }
+
+        private bool CanEdit(DcRecordMilling arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑制粉记录");
+        }
+
+        private bool CanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑制粉记录");
         }
 
         private void ActionAll()

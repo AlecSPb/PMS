@@ -29,11 +29,31 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand(ActionAdd);
-            Edit = new RelayCommand<DcRecordTest>(ActionEdit);
-            Doc = new RelayCommand<DcRecordTest>(ActionDoc);
+            Add = new RelayCommand(ActionAdd,CanAdd);
+            Edit = new RelayCommand<DcRecordTest>(ActionEdit,CanEdit);
+            Doc = new RelayCommand<DcRecordTest>(ActionDoc,CanDoc);
             SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
-            Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate);
+            Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate,CanDuplicate);
+        }
+
+        private bool CanDuplicate(DcRecordTest arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+        }
+
+        private bool CanDoc(DcRecordTest arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+        }
+
+        private bool CanEdit(DcRecordTest arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+        }
+
+        private bool CanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
         }
 
         private void ActionSelectionChanged(DcRecordTest model)
