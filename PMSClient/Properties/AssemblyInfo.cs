@@ -7,7 +7,7 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("PMSClient")]
+[assembly: AssemblyTitle("PMS生产管理系统")]
 [assembly: AssemblyDescription("designed by xs.zhou")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Imagination Studio")]
