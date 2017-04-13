@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyDescription("designed by xs.zhou")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Imagination Studio")]
-[assembly: AssemblyProduct("PMSClient")]
+[assembly: AssemblyProduct("Production Management System")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
