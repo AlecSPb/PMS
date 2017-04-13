@@ -27,10 +27,24 @@ namespace PMSClient.ViewForDesktop
         }
         public void ClearLog()
         {
+            //txtUserName.Text = "";
             txtPassword.Password = "";
+            chkRemember.IsChecked = false;
+            //forget uid and pwd
+            SaveUIDandPWD("", "", false);
         }
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
+            //记住密码功能
+            if (chkRemember.IsChecked == true)
+            {
+                SaveUIDandPWD(txtUserName.Text.Trim(), txtPassword.Password, true);
+            }
+            else
+            {
+                SaveUIDandPWD("", "", false);
+            }
+
             var uid = txtUserName.Text.Trim();
             var pwd = txtPassword.Password.Trim();
             var userModel = new DcUser() { UserName = uid, Password = pwd };
@@ -64,5 +78,29 @@ namespace PMSClient.ViewForDesktop
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+
+        private static void SaveUIDandPWD(string uid, string pwd, bool isremember)
+        {
+            Properties.Settings.Default.UID = uid;
+            Properties.Settings.Default.PWD = pwd;
+            Properties.Settings.Default.IsUIDPWDRemembered = isremember;
+            Properties.Settings.Default.Save();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            ReadRememberedUIDPWD();
+        }
+
+        private void ReadRememberedUIDPWD()
+        {
+            if (Properties.Settings.Default.IsUIDPWDRemembered)
+            {
+                txtUserName.Text = Properties.Settings.Default.UID;
+                txtPassword.Password = Properties.Settings.Default.PWD;
+                chkRemember.IsChecked = Properties.Settings.Default.IsUIDPWDRemembered;
+            }
+        }
+
     }
 }
