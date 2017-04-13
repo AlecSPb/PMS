@@ -241,17 +241,29 @@
   <wsdl:message name="IMissonService_GetMissons_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonsResponse" />
   </wsdl:message>
-  <wsdl:message name="IMissonService_GetPlans_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlans" />
-  </wsdl:message>
-  <wsdl:message name="IMissonService_GetPlans_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlansResponse" />
-  </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonsCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonsCount" />
   </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonsCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonsBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonsBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonsBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonsBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonsCountBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonsCountBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonsCountBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonsCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlans_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlans" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlansResponse" />
   </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonWithPlan_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonWithPlan" />
@@ -774,13 +786,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissons" message="tns:IMissonService_GetMissons_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonsResponse" message="tns:IMissonService_GetMissons_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetPlans">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlans" message="tns:IMissonService_GetPlans_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlansResponse" message="tns:IMissonService_GetPlans_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetMissonsCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCount" message="tns:IMissonService_GetMissonsCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountResponse" message="tns:IMissonService_GetMissonsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonsBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonsBySearch" message="tns:IMissonService_GetMissonsBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonsBySearchResponse" message="tns:IMissonService_GetMissonsBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonsCountBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch" message="tns:IMissonService_GetMissonsCountBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse" message="tns:IMissonService_GetMissonsCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlans">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlans" message="tns:IMissonService_GetPlans_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlansResponse" message="tns:IMissonService_GetPlans_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetMissonWithPlan">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlan" message="tns:IMissonService_GetMissonWithPlan_InputMessage" />
@@ -1401,8 +1421,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPlans">
-      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlans" style="document" />
+    <wsdl:operation name="GetMissonsCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonsCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1410,8 +1430,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetMissonsCount">
-      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonsCount" style="document" />
+    <wsdl:operation name="GetMissonsBySearch">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonsBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonsCountBySearch">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonsCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlans">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlans" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

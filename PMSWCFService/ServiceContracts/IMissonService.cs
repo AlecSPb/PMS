@@ -13,13 +13,18 @@ namespace PMSWCFService.ServiceContracts
     {
         [OperationContract]
         List<DcOrder> GetMissons(int skip,int take);
+        [OperationContract]
+        int GetMissonsCount();
+
+        [OperationContract]
+        List<DcOrder> GetMissonsBySearch(int skip, int take,string compostion);
+        [OperationContract]
+        int GetMissonsCountBySearch(string compostion);
+
 
         [OperationContract]
         List<DcPlanVHP> GetPlans(Guid id);
 
-
-        [OperationContract]
-        int GetMissonsCount();
 
 
         //所有状态的计划
@@ -28,12 +33,12 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMissonWithPlanCount();
 
+
         //Checked状态的计划显示
         [OperationContract]
         List<DcMissonWithPlan> GetMissonWithPlanChecked(int skip, int take);
         [OperationContract]
         int GetMissonWithPlanCheckedCount();
-
 
 
         //按照日期获取

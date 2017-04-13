@@ -28,6 +28,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
+            SearchCompositoinStandard = "";
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();
         }
@@ -35,14 +36,19 @@ namespace PMSClient.ViewModel
         {
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
 
-
+            Search = new RelayCommand(ActionSearch);
             PageChanged = new RelayCommand(ActionPaging);
-            AddNewPlan = new RelayCommand<MainService.DcOrder>(ActionAddNewPlan,CanAddNewPlan);
-            EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan,CanEditPlan);
-            DuplicatePlan = new RelayCommand<MainService.DcPlanVHP>(ActionDuplicatePlan,CanDuplicatePlan);
+            AddNewPlan = new RelayCommand<DcOrder>(ActionAddNewPlan, CanAddNewPlan);
+            EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan, CanEditPlan);
+            DuplicatePlan = new RelayCommand<DcPlanVHP>(ActionDuplicatePlan, CanDuplicatePlan);
 
-            SelectionChanged = new RelayCommand<MainService.DcOrder>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private bool CanDuplicatePlan(DcPlanVHP arg)
@@ -122,7 +128,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 10;
                 var service = new MissonServiceClient();
-                RecordCount = service.GetMissonsCount();
+                RecordCount = service.GetMissonsCountBySearch(SearchCompositoinStandard);
                 ActionPaging();
             }
             catch (Exception ex)
@@ -139,7 +145,7 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissons(skip, take);
+            var orders = service.GetMissonsBySearch(skip, take,SearchCompositoinStandard);
             Missons.Clear();
             orders.ToList<DcOrder>().ForEach(o => Missons.Add(o));
 
@@ -164,6 +170,15 @@ namespace PMSClient.ViewModel
         {
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
+        }
+
+
+        private string searchCompositonStandard;
+
+        public string SearchCompositoinStandard
+        {
+            get { return searchCompositonStandard; }
+            set { searchCompositonStandard = value; RaisePropertyChanged((SearchCompositoinStandard)); }
         }
 
         #endregion

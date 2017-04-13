@@ -104,58 +104,58 @@ namespace PMSWCFService
                     //            };
 
                     #region 以后再改
-                  var result = dc.VHPPlans.Where(p => p.State != PMSCommon.CommonState.Deleted.ToString())
-                .OrderByDescending(p => p.PlanDate)
-                .Skip(skip).Take(take)
-                .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan()
-                {
-                    OrderID = o.ID,
-                    PlanID = p.ID,
-                    CustomerName = o.CustomerName,
-                    PO = o.PO,
-                    PMINumber = o.PMINumber,
-                    CompositionStandard = o.CompositionStandard,
-                    CompositionAbbr = o.CompositionAbbr,
-                    CompositionOriginal = o.CompositionOriginal,
-                    ProductType = o.ProductType,
-                    Purity = o.Purity,
-                    Quantity = o.Quantity,
-                    QuantityUnit = o.QuantityUnit,
-                    Dimension = o.Dimension,
-                    DimensionDetails = o.DimensionDetails,
-                    SampleNeed = o.SampleNeed,
-                    DeadLine = o.DeadLine,
-                    MinimumAcceptDefect = o.MinimumAcceptDefect,
-                    OrderRemark = o.Remark,
-                    Creator = p.Creator,
-                    CreateTime = p.CreateTime,
-                    PlanDate = p.PlanDate,
-                    PlanLot = p.PlanLot,
-                    VHPDeviceCode = p.VHPDeviceCode,
-                    MoldType = p.MoldType,
-                    CalculationDensity = p.CalculationDensity,
-                    MoldDiameter = p.MoldDiameter,
-                    Thickness = p.Thickness,
-                    TargetQuantity = p.Quantity,
-                    SingleWeight = p.SingleWeight,
-                    AllWeight = p.AllWeight,
-                    GrainSize = p.GrainSize,
-                    RoomHumidity = p.RoomHumidity,
-                    RoomTemperature = p.RoomTemperature,
-                    PreTemperature = p.PreTemperature,
-                    PrePressure = p.PrePressure,
-                    Temperature = p.Temperature,
-                    Pressure = p.Pressure,
-                    Vaccum = p.Vaccum,
-                    KeepTempTime = p.KeepTempTime,
-                    ProcessCode = p.ProcessCode,
-                    MillingRequirement = p.MillingRequirement,
-                    FillingRequirement = p.FillingRequirement,
-                    VHPPlanRemark = p.Remark,
-                    VHPRequirement = p.VHPRequirement,
-                    MachineRequirement = p.MachineRequirement,
-                    SpecialRequirement = p.SpecialRequirement
-                }).ToList();
+                    var result = dc.VHPPlans.Where(p => p.State != PMSCommon.CommonState.Deleted.ToString())
+                  .OrderByDescending(p => p.PlanDate)
+                  .Skip(skip).Take(take)
+                  .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan()
+                  {
+                      OrderID = o.ID,
+                      PlanID = p.ID,
+                      CustomerName = o.CustomerName,
+                      PO = o.PO,
+                      PMINumber = o.PMINumber,
+                      CompositionStandard = o.CompositionStandard,
+                      CompositionAbbr = o.CompositionAbbr,
+                      CompositionOriginal = o.CompositionOriginal,
+                      ProductType = o.ProductType,
+                      Purity = o.Purity,
+                      Quantity = o.Quantity,
+                      QuantityUnit = o.QuantityUnit,
+                      Dimension = o.Dimension,
+                      DimensionDetails = o.DimensionDetails,
+                      SampleNeed = o.SampleNeed,
+                      DeadLine = o.DeadLine,
+                      MinimumAcceptDefect = o.MinimumAcceptDefect,
+                      OrderRemark = o.Remark,
+                      Creator = p.Creator,
+                      CreateTime = p.CreateTime,
+                      PlanDate = p.PlanDate,
+                      PlanLot = p.PlanLot,
+                      VHPDeviceCode = p.VHPDeviceCode,
+                      MoldType = p.MoldType,
+                      CalculationDensity = p.CalculationDensity,
+                      MoldDiameter = p.MoldDiameter,
+                      Thickness = p.Thickness,
+                      TargetQuantity = p.Quantity,
+                      SingleWeight = p.SingleWeight,
+                      AllWeight = p.AllWeight,
+                      GrainSize = p.GrainSize,
+                      RoomHumidity = p.RoomHumidity,
+                      RoomTemperature = p.RoomTemperature,
+                      PreTemperature = p.PreTemperature,
+                      PrePressure = p.PrePressure,
+                      Temperature = p.Temperature,
+                      Pressure = p.Pressure,
+                      Vaccum = p.Vaccum,
+                      KeepTempTime = p.KeepTempTime,
+                      ProcessCode = p.ProcessCode,
+                      MillingRequirement = p.MillingRequirement,
+                      FillingRequirement = p.FillingRequirement,
+                      VHPPlanRemark = p.Remark,
+                      VHPRequirement = p.VHPRequirement,
+                      MachineRequirement = p.MachineRequirement,
+                      SpecialRequirement = p.SpecialRequirement
+                  }).ToList();
                     #endregion
                     return result;
                 }
@@ -178,57 +178,57 @@ namespace PMSWCFService
                     var tomorrow = date.Date.AddDays(1);
                     //此处直接在linq中使用date属性会出错
                     #region 以后再简化
-                     var result = dc.VHPPlans.Where(p => p.PlanDate >= today && p.PlanDate < tomorrow)
-                     .OrderByDescending(p => p.PlanDate)
-                     .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan
-                     {
-                         OrderID = o.ID,
-                         PlanID = p.ID,
-                         CustomerName = o.CustomerName,
-                         PO = o.PO,
-                         PMINumber = o.PMINumber,
-                         CompositionStandard = o.CompositionStandard,
-                         CompositionAbbr = o.CompositionAbbr,
-                         CompositionOriginal = o.CompositionOriginal,
-                         ProductType = o.ProductType,
-                         Purity = o.Purity,
-                         Quantity = o.Quantity,
-                         QuantityUnit = o.QuantityUnit,
-                         Dimension = o.Dimension,
-                         DimensionDetails = o.DimensionDetails,
-                         SampleNeed = o.SampleNeed,
-                         DeadLine = o.DeadLine,
-                         MinimumAcceptDefect = o.MinimumAcceptDefect,
-                         OrderRemark = o.Remark,
-                         Creator = p.Creator,
-                         CreateTime = p.CreateTime,
-                         PlanDate = p.PlanDate,
-                         PlanLot = p.PlanLot,
-                         VHPDeviceCode = p.VHPDeviceCode,
-                         MoldType = p.MoldType,
-                         CalculationDensity = p.CalculationDensity,
-                         MoldDiameter = p.MoldDiameter,
-                         Thickness = p.Thickness,
-                         TargetQuantity = p.Quantity,
-                         SingleWeight=p.SingleWeight,
-                         AllWeight=p.AllWeight,
-                         GrainSize = p.GrainSize,
-                         RoomHumidity = p.RoomHumidity,
-                         RoomTemperature = p.RoomTemperature,
-                         PreTemperature = p.PreTemperature,
-                         PrePressure = p.PrePressure,
-                         Temperature = p.Temperature,
-                         Pressure = p.Pressure,
-                         Vaccum = p.Vaccum,
-                         KeepTempTime = p.KeepTempTime,
-                         ProcessCode = p.ProcessCode,
-                         MillingRequirement = p.MillingRequirement,
-                         FillingRequirement = p.FillingRequirement,
-                         VHPPlanRemark = p.Remark,
-                         VHPRequirement = p.VHPRequirement,
-                         MachineRequirement = p.MachineRequirement,
-                         SpecialRequirement = p.SpecialRequirement
-                     }).ToList();
+                    var result = dc.VHPPlans.Where(p => p.PlanDate >= today && p.PlanDate < tomorrow)
+                    .OrderByDescending(p => p.PlanDate)
+                    .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan
+                    {
+                        OrderID = o.ID,
+                        PlanID = p.ID,
+                        CustomerName = o.CustomerName,
+                        PO = o.PO,
+                        PMINumber = o.PMINumber,
+                        CompositionStandard = o.CompositionStandard,
+                        CompositionAbbr = o.CompositionAbbr,
+                        CompositionOriginal = o.CompositionOriginal,
+                        ProductType = o.ProductType,
+                        Purity = o.Purity,
+                        Quantity = o.Quantity,
+                        QuantityUnit = o.QuantityUnit,
+                        Dimension = o.Dimension,
+                        DimensionDetails = o.DimensionDetails,
+                        SampleNeed = o.SampleNeed,
+                        DeadLine = o.DeadLine,
+                        MinimumAcceptDefect = o.MinimumAcceptDefect,
+                        OrderRemark = o.Remark,
+                        Creator = p.Creator,
+                        CreateTime = p.CreateTime,
+                        PlanDate = p.PlanDate,
+                        PlanLot = p.PlanLot,
+                        VHPDeviceCode = p.VHPDeviceCode,
+                        MoldType = p.MoldType,
+                        CalculationDensity = p.CalculationDensity,
+                        MoldDiameter = p.MoldDiameter,
+                        Thickness = p.Thickness,
+                        TargetQuantity = p.Quantity,
+                        SingleWeight = p.SingleWeight,
+                        AllWeight = p.AllWeight,
+                        GrainSize = p.GrainSize,
+                        RoomHumidity = p.RoomHumidity,
+                        RoomTemperature = p.RoomTemperature,
+                        PreTemperature = p.PreTemperature,
+                        PrePressure = p.PrePressure,
+                        Temperature = p.Temperature,
+                        Pressure = p.Pressure,
+                        Vaccum = p.Vaccum,
+                        KeepTempTime = p.KeepTempTime,
+                        ProcessCode = p.ProcessCode,
+                        MillingRequirement = p.MillingRequirement,
+                        FillingRequirement = p.FillingRequirement,
+                        VHPPlanRemark = p.Remark,
+                        VHPRequirement = p.VHPRequirement,
+                        MachineRequirement = p.MachineRequirement,
+                        SpecialRequirement = p.SpecialRequirement
+                    }).ToList();
                     #endregion
                     return result;
                 }
@@ -337,6 +337,62 @@ namespace PMSWCFService
                     var query = from p in dc.VHPPlans
                                 where p.State == PMSCommon.CommonState.Checked.ToString()
                                 select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = from o in dc.Orders
+                                 where o.PolicyType.Contains("VHP")
+                                 && o.CompositionStandard.Contains(compostion)
+                                 && (o.State == OrderState.UnCompleted.ToString()
+                                 || o.State == OrderState.Paused.ToString()
+                                 || o.State == OrderState.Completed.ToString())
+                                 orderby o.CreateTime descending
+                                 select o;
+
+                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(skip).Take(take).ToList());
+
+                    return missons;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMissonsCountBySearch(string compostion)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType.Contains("VHP")
+                                 && o.CompositionStandard.Contains(compostion)
+                                 && (o.State == OrderState.UnCompleted.ToString()
+                                 || o.State == OrderState.Paused.ToString()
+                                 || o.State == OrderState.Completed.ToString())
+                                select o;
                     return query.Count();
                 }
             }
