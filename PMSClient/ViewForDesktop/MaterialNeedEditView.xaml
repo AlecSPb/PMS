@@ -105,10 +105,8 @@
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="订单状态"/>
-
-
-
+                           Text="状态,Deleted=作废，UnDeleted=正常"/>
+                
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MNCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"

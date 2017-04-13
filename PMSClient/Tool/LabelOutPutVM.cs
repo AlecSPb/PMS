@@ -16,7 +16,7 @@ namespace PMSClient.Tool
             requestView = PMSViews.RecordDelivery;
             PageTitle = "发货单标签输出结果";
             Tips = "打开BarTender软件，请将下面的标签复制到对应BarTender模板当中";
-            TemplateFilePath = "发货单.btw";
+            TemplateFileName = "发货单.btw";
             MainContent = "标签内容";
 
             GiveUp = new RelayCommand(ActionGiveUp);
@@ -28,7 +28,7 @@ namespace PMSClient.Tool
             this.requestView = requestView;
             PageTitle = pageTitle;
             Tips = tips;
-            TemplateFilePath = templateFilePath;
+            TemplateFileName = templateFilePath;
             MainContent = mainContent;
         }
 
@@ -37,8 +37,8 @@ namespace PMSClient.Tool
         {
             try
             {
-                var filepath = System.IO.Path.Combine(System.Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFilePath);
-                var targetpath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", "deliverysheet.btw");
+                var filepath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFileName,".btw");
+                var targetpath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFileName,"_temp.btw");
 
                 //复制一下
                 if (File.Exists(targetpath))
@@ -83,7 +83,7 @@ namespace PMSClient.Tool
         /// <summary>
         /// 模板名称
         /// </summary>
-        public string TemplateFilePath { get; set; }
+        public string TemplateFileName { get; set; }
 
 
         private string mainContent;

@@ -172,7 +172,7 @@ namespace PMSClient.ViewModel
 
                 var pageTitle = "发货单标签打印输出";
                 var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，然后打印标签";
-                var template = "发货单.btw";
+                var template = "发货单";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordDelivery, pageTitle,
                     tips, template, mainContent);
                 NavigationService.GoTo(PMSViews.LabelOutPut);
