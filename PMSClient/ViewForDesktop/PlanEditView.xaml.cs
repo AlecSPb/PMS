@@ -29,11 +29,11 @@ namespace PMSClient.ViewForDesktop
 
         private void cboMolds_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedMold =cboMolds.SelectedItem as DcBDVHPMold;
-            if (selectedMold!=null)
+            var model =cboMolds.SelectedItem as DcBDVHPMold;
+            if (model!=null)
             {
-                this.txtmoldDiameter.Text = selectedMold.InnerDiameter.ToString();
-                this.moldType.Text = selectedMold.MoldType;
+                PMSMethods.SetTextBox(txtmoldDiameter, model.InnerDiameter.ToString());
+                PMSMethods.SetTextBox(txtmoldType, model.MoldType);
             }
         }
 
@@ -42,7 +42,7 @@ namespace PMSClient.ViewForDesktop
             var selectedCompound = cboCompounds.SelectedItem as DcBDCompound;
             if (selectedCompound!=null)
             {
-                txtCalculationDensity.Text = selectedCompound.Density.ToString();
+                PMSMethods.SetTextBox(txtCalculationDensity, selectedCompound.Density.ToString());
             }
         }
 
@@ -51,7 +51,7 @@ namespace PMSClient.ViewForDesktop
             ComboBox cbo = sender as ComboBox;
             if (cbo.SelectedItem!=null)
             {
-                txtGrainSize.Text = cbo.SelectedItem.ToString();
+                PMSMethods.SetTextBox(txtGrainSize, cbo.SelectedItem.ToString());
             }
         }
 
@@ -66,8 +66,8 @@ namespace PMSClient.ViewForDesktop
 
                 double singleWeight = Math.PI * diameter * diameter * thickness / 4 / 1000 * density;
 
-                txtSingleWeight.Text = singleWeight.ToString("F3");
-                txtAllWeight.Text = (singleWeight * quantity).ToString("F3");
+                PMSMethods.SetTextBox(txtSingleWeight, singleWeight.ToString("F3"));
+                PMSMethods.SetTextBox(txtAllWeight, (singleWeight * quantity).ToString("F3"));
             }
             catch (Exception)
             {

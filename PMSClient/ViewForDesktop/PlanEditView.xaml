@@ -86,14 +86,14 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanMoldType}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox x:Name="moldType" Grid.Row="3" Grid.Column="1" Text="{Binding MoldType,UpdateSourceTrigger=PropertyChanged}"
+                <TextBox x:Name="txtmoldType" Grid.Row="3" Grid.Column="1" Text="{Binding MoldType}"
                          Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="请使用下拉菜单选择模具类型和内径" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox x:Name="txtmoldDiameter" Text="{Binding MoldDiameter,UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox x:Name="txtmoldDiameter" Text="{Binding MoldDiameter}"
                          Style="{StaticResource StyleTextBoxReadOnly}" 
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboMolds"
@@ -151,7 +151,7 @@
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanSinglePowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtSingleWeight"  Text="{Binding SingleWeight,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Name="txtSingleWeight"  Text="{Binding SingleWeight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                     <Button Name="btnCalculate" Content="{StaticResource ButtonCalculate}"  Click="btnCalculate_Click"
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
@@ -159,12 +159,12 @@
                 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanAllPowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Name="txtAllWeight" Grid.Row="9" Grid.Column="1" Text="{Binding AllWeight,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"  HorizontalAlignment="Left"/>
+                <TextBox Name="txtAllWeight" Grid.Row="9" Grid.Column="1" Text="{Binding AllWeight}" Style="{StaticResource StyleTextBoxReadOnly}"  HorizontalAlignment="Left"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtGrainSize" Text="{Binding GrainSize,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Name="txtGrainSize" Text="{Binding GrainSize}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                     <ComboBox Name="cboGrainSize" Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding DataContext.GrainSizes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                               SelectionChanged="cboGrainSize_SelectionChanged"/>
                 </StackPanel>
