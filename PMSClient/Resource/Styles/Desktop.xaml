@@ -127,7 +127,7 @@
     </Style>
     <Style x:Key="StyleTextBoxMultiline" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="AcceptsReturn" Value="True"/>
-        <Setter Property="MinHeight" Value="50"/>
+        <Setter Property="MinHeight" Value="60"/>
     </Style>
 
     <Style x:Key="StyleCheckBoxCommon" TargetType="CheckBox">

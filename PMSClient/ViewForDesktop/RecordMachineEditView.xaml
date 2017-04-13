@@ -59,7 +59,7 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="热压编号170111-A-1,热压日期-设备号-第1片"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="成分"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -87,7 +87,7 @@
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="以下尺寸单位为mm，有写，没有填0，多余的写到备注里"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="直径2"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -121,12 +121,12 @@
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="缺陷"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="缺陷备注"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Defects}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Defects}" Style="{StaticResource StyleTextBoxMultiline}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="这里填写其他信息，比如缺陷等"/>
             </Grid>
         </ScrollViewer>
     </Grid>
