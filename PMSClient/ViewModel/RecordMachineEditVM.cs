@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.Checked.ToString();
-            model.VHPPlanLot = DateTime.Now.ToString("yyMMdd");
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "成分";
             model.Diameter1 = 0;
             model.Diameter2 = 0;
@@ -43,7 +43,6 @@ namespace PMSClient.ViewModel
             model.Thickness4 = 0;
             model.ExtraRequirement = "无缺口无划痕";
             #endregion
-
             CurrentRecordMachine = model;
         }
 
@@ -73,6 +72,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordMachine.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordMachine.Dimension = plan.Misson.Dimension;
+                CurrentRecordMachine.VHPPlanLot= UsefulPackage.PMSTranslate.PlanLot(plan);
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
         }

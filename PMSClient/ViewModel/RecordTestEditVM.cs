@@ -36,7 +36,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Composition = "成分";
-            model.ProductID = DateTime.Now.ToString("yyMMdd") + "-M-1";
+            model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.CompositionXRF = "暂无";
             model.Dimension = "要求尺寸";
             model.DimensionActual = "实际尺寸";
@@ -81,7 +81,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordTest.CompositionAbbr = plan.Misson.CompositionAbbr;
                 CurrentRecordTest.PO = plan.Misson.PO;
-                CurrentRecordTest.ProductID = plan.Plan.PlanDate.ToString("yyMMdd") + "-" + plan.Plan.VHPDeviceCode + "-1";
+                CurrentRecordTest.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
                 CurrentRecordTest.Customer = plan.Misson.CustomerName;
                 CurrentRecordTest.Dimension = plan.Misson.Dimension;
                 CurrentRecordTest.DimensionActual = plan.Misson.Dimension;

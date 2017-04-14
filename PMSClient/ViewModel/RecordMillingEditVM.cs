@@ -15,6 +15,11 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
 
+            States = new List<string>();
+            States.Clear();
+            BasicData.SimpleStates.ToList().ForEach(i=>States.Add(i));
+
+
             Select = new RelayCommand(() =>
             {
                 PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMillingEdit);
@@ -31,7 +36,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.UnDeleted.ToString();
-            model.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot();
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "填入成分";
             model.GasProtection = "Ar";
             model.MaterialSource = "Sanjie";
@@ -68,7 +73,7 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 CurrentRecordMilling.Composition = plan.Misson.CompositionStandard;
-                CurrentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot(plan, "1");
+                CurrentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
                 //RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }
@@ -118,7 +123,7 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }
-
+        public List<string> States { get; set; }
         public RelayCommand Select { get; set; }
     }
 }

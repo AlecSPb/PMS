@@ -10,40 +10,90 @@ namespace UsefulPackage
     public static class PMSTranslate
     {
         /// <summary>
-        /// 生成热压靶材的Lot号码
+        /// 生成当日热压靶材的Lot号码
         /// </summary>
-        public static string VHPPlanLot()
+        public static string PlanLot()
         {
-            return DateTime.Now.ToString("yyMMdd") + "M" + 1;
+            return DateTime.Now.ToString("yyMMdd") + "-M-1";
         }
-        public static string VHPPlanLot(DateTime date, string devicecode, string suffix)
+        /// <summary>
+        /// 利用传递日期和代码来构造
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="devicecode"></param>
+        /// <param name="suffix"></param>
+        /// <returns></returns>
+        public static string PlanLot(DateTime date, string devicecode, string suffix)
         {
             string dateStr = date.ToString("yyMMdd");
             string deviceStr = devicecode;
             return $"{dateStr}-{deviceStr}-{suffix}";
         }
-        public static string VHPPlanLot(DcPlanWithMisson plan, string suffix)
+        /// <summary>
+        /// 生成ABCD代码
+        /// </summary>
+        /// <param name="plan"></param>
+        /// <param name="suffix"></param>
+        /// <returns></returns>
+        public static string PlanLot(DcPlanWithMisson plan, string suffix)
         {
             if (plan == null)
             {
-                return VHPPlanLot();
+                return PlanLot();
             }
             string dateStr = plan.Plan.PlanDate.ToString("yyMMdd");
             string deviceStr = plan.Plan.VHPDeviceCode;
             return $"{dateStr}-{deviceStr}-{suffix}";
         }
         /// <summary>
-        /// 带有设备代码转换
+        /// 翻译成MNO代码
+        /// </summary>
+        /// <param name="plan"></param>
+        /// <returns></returns>
+        public static string PlanLot(DcPlanWithMisson plan)
+        {
+            if (plan == null)
+            {
+                return PlanLot();
+            }
+
+            string deviceStr = plan.Plan.VHPDeviceCode;
+            return PlanLot(plan, "1", code =>
+            {
+                string CodeName = "";
+                switch (code)
+                {
+                    case "A":
+                        CodeName = "M";
+                        break;
+                    case "B":
+                        CodeName = "N";
+                        break;
+                    case "C":
+                        CodeName = "O";
+                        break;
+                    case "D":
+                        CodeName = "D";
+                        break;
+                    default:
+                        CodeName = "A";
+                        break;
+                }
+                return CodeName;
+            });
+        }
+        /// <summary>
+        /// 带有设备代码转换委托
         /// </summary>
         /// <param name="plan"></param>
         /// <param name="suffix"></param>
         /// <param name="DeviceCodeTransfer"></param>
         /// <returns></returns>
-        public static string VHPPlanLot(DcPlanWithMisson plan, string suffix, Func<string, string> DeviceCodeTransfer)
+        public static string PlanLot(DcPlanWithMisson plan, string suffix, Func<string, string> DeviceCodeTransfer)
         {
             if (plan == null)
             {
-                return VHPPlanLot();
+                return PlanLot();
             }
             string dateStr = plan.Plan.PlanDate.ToString("yyMMdd");
             string deviceStr = DeviceCodeTransfer(plan.Plan.VHPDeviceCode);

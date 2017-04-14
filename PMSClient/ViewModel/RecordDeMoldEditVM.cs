@@ -39,7 +39,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.UnDeleted.ToString();
-            model.VHPPlanLot = DateTime.Now.AddDays(-1).ToString("yyMMdd");
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "成分";
             model.Temperature1 = "0";
             model.Temperature2 = "0";
@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 CurrentRecordDeMold.Composition = plan.Misson.CompositionStandard;
-                CurrentRecordDeMold.VHPPlanLot = plan.Plan.PlanDate.ToString("yyMMdd") + "-" + plan.Plan.VHPDeviceCode;
+                CurrentRecordDeMold.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
                 //RaisePropertyChanged(nameof(CurrentRecordDeMold));
             }
         }
