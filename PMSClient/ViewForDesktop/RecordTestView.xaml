@@ -181,65 +181,54 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxCommon}"
-                            Background="{StaticResource BGReadOnlyTextBox}"
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
                 </Grid>
 

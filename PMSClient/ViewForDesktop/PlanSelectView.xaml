@@ -52,33 +52,33 @@
                 <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                 <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding CompositionStandard}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding Plan.Quantity}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanCalculationDensity}" Binding="{Binding Plan.CalculationDensity,StringFormat={}{0:N2}}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanGrainSize}" Binding="{Binding Plan.GrainSize}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanPreTemperature}" Binding="{Binding Plan.PreTemperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanPrePressure}" Binding="{Binding Plan.PrePressure}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanTemperature}" Binding="{Binding Plan.Temperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanPressure}" Binding="{Binding Plan.Pressure}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.KeepTempTime}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="{StaticResource PlanKeepTempTime}" Binding="{Binding Plan.KeepTempTime}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"

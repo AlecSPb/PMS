@@ -40,7 +40,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dg" Grid.Row="0"
+                <DataGrid x:Name="dg" Grid.Row="0" FrozenColumnCount="3"
                 LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanWithMissons}">
                     <i:Interaction.Triggers>
@@ -52,33 +52,33 @@
                         <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                         <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding CompositionStandard}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding Plan.Quantity}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanCalculationDensity}" Binding="{Binding Plan.CalculationDensity,StringFormat={}{0:N2}}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanGrainSize}" Binding="{Binding Plan.GrainSize}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPreTemperature}" Binding="{Binding Plan.PreTemperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPrePressure}" Binding="{Binding Plan.PrePressure}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanTemperature}" Binding="{Binding Plan.Temperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPressure}" Binding="{Binding Plan.Pressure}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.KeepTempTime}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanKeepTempTime}" Binding="{Binding Plan.KeepTempTime}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
@@ -90,7 +90,7 @@
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
                 <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
-                    <Grid DataContext="{Binding DataContext.CurrentMissonWithPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
+                    <Grid DataContext="{Binding DataContext.CurrentPlanWithMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
@@ -118,53 +118,53 @@
                         <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPlanDate}"/>
                         <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding PlanDate,StringFormat={}{0:yyMMdd}}"/>
+                            Text="{Binding Plan.PlanDate,StringFormat={}{0:yyMMdd}}"/>
                         <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanVHPDeviceCode}"/>
                         <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding VHPDeviceCode}"/>
+                            Text="{Binding Plan.VHPDeviceCode}"/>
                         <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPlanLot}"/>
                         <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding PlanLot}"/>
+                            Text="{Binding Plan.PlanLot}"/>
                         <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanMoldType}"/>
                         <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding MoldType}"/>
+                            Text="{Binding Plan.MoldType}"/>
                         <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanMoldDiameter}"/>
                         <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding MoldDiameter}"/>
+                            Text="{Binding Plan.MoldDiameter}"/>
                         
                         <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPreTemperature}"/>
                         <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding PreTemperature}"/>
+                            Text="{Binding Plan.PreTemperature}"/>
 
                         <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPrePressure}"/>
                         <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding PrePressure}"/>
+                            Text="{Binding Plan.PrePressure}"/>
                         
                         <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanTemperature}"/>
                         <TextBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding Temperature}"/>
+                            Text="{Binding Plan.Temperature}"/>
                         
                         <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPressure}"/>
                         <TextBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding Pressure}"/>
+                            Text="{Binding Plan.Pressure}"/>
 
                         <TextBlock Grid.Row="9" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanProcessCode}"/>
                         <TextBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding ProcessCode}"/>
+                            Text="{Binding Plan.ProcessCode}"/>
                         
                         <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanKeepTempTime}"/>
                         <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
-                            Text="{Binding KeepTempTime}"/>
+                            Text="{Binding Plan.KeepTempTime}"/>
 
                     </Grid>
                 </ScrollViewer>
