@@ -21,8 +21,8 @@ namespace PMSClient.ViewModel
 
         private void IntializeProperties()
         {
-            SearchPlanDate1 = DateTime.Now.AddDays(-90).Date;
-            SearchPlanDate2 = DateTime.Now.AddDays(30).Date;
+            searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
+            searchPlanDate2 = DateTime.Now.AddDays(30).Date;
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
         }
