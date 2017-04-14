@@ -145,6 +145,12 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderItembyMaterialID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItembyMaterialIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemCountByMaterialID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemCountByMaterialID" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemCountByMaterialID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemCountByMaterialIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialOrderService_AddMaterialOrderItem_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialOrderItem" />
   </wsdl:message>
@@ -724,6 +730,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialID" message="tns:IMaterialOrderService_GetMaterialOrderItembyMaterialID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialIDResponse" message="tns:IMaterialOrderService_GetMaterialOrderItembyMaterialID_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemCountByMaterialID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialID" message="tns:IMaterialOrderService_GetMaterialOrderItemCountByMaterialID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialIDResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemCountByMaterialID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddMaterialOrderItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItem" message="tns:IMaterialOrderService_AddMaterialOrderItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemResponse" message="tns:IMaterialOrderService_AddMaterialOrderItem_OutputMessage" />
@@ -1274,6 +1284,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderItembyMaterialID">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItembyMaterialID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemCountByMaterialID">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

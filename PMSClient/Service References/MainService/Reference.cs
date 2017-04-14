@@ -5938,6 +5938,14 @@ namespace PMSClient.MainService {
             "")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItem[]> GetMaterialOrderItembyMaterialIDAsync(System.Guid id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialID", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialIDRes" +
+            "ponse")]
+        int GetMaterialOrderItemCountByMaterialID(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialID", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemCountByMaterialIDRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemCountByMaterialIDAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemResponse")]
         int AddMaterialOrderItem(PMSClient.MainService.DcMaterialOrderItem model);
         
@@ -6058,6 +6066,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItem[]> GetMaterialOrderItembyMaterialIDAsync(System.Guid id) {
             return base.Channel.GetMaterialOrderItembyMaterialIDAsync(id);
+        }
+        
+        public int GetMaterialOrderItemCountByMaterialID(System.Guid id) {
+            return base.Channel.GetMaterialOrderItemCountByMaterialID(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemCountByMaterialIDAsync(System.Guid id) {
+            return base.Channel.GetMaterialOrderItemCountByMaterialIDAsync(id);
         }
         
         public int AddMaterialOrderItem(PMSClient.MainService.DcMaterialOrderItem model) {

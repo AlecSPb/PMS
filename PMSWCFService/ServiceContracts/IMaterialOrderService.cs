@@ -33,6 +33,8 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcMaterialOrderItem> GetMaterialOrderItembyMaterialID(Guid id);
+        [OperationContract]
+        int GetMaterialOrderItemCountByMaterialID(Guid id);
 
         [OperationContract]
         int AddMaterialOrderItem(DcMaterialOrderItem model);

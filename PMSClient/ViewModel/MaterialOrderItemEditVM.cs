@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
                 item.State = PMSCommon.SimpleState.UnDeleted.ToString();
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
-                item.OrderItemNumber = DateTime.Now.ToString("yyMMdd");
+                item.OrderItemNumber = DateTime.Now.ToString("yyMMdd")+"-"+ (GetNowItemCount(order)+1).ToString();
                 item.Composition = "需求成分";
                 item.PMINumber = DateTime.Now.ToString("yyMMdd");
                 item.Purity = "5N";
@@ -49,7 +49,17 @@ namespace PMSClient.ViewModel
             }
 
         }
-
+        private int GetNowItemCount(DcMaterialOrder order)
+        {
+            if (order!=null)
+            {
+                using (var service = new MaterialOrderServiceClient())
+                {
+                    return service.GetMaterialOrderItemCountByMaterialID(order.ID);
+                }
+            }
+            return 1;
+        }
         public void SetEdit(DcMaterialOrderItem item)
         {
             if (item != null)

@@ -308,6 +308,26 @@ namespace PMSWCFService
             }
         }
 
+        public int GetMaterialOrderItemCountByMaterialID(Guid id)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                where m.State != PMSCommon.SimpleState.Deleted.ToString() && m.MaterialOrderID==id
+                                orderby m.CreateTime descending
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcMaterialOrderItem> GetMaterialOrderItems(int skip, int take)
         {
             try
