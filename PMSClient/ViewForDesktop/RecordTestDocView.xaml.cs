@@ -14,39 +14,30 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using f = System.Windows.Forms;
 
 namespace PMSClient.ViewForDesktop
 {
     /// <summary>
     /// ProductEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class RecordTestEditView : UserControl
+    public partial class RecordTestDocView : UserControl
     {
-        public RecordTestEditView()
+        public RecordTestDocView()
         {
             InitializeComponent();
         }
 
-        private void btnCsv_Click(object sender, RoutedEventArgs e)
+        private void txtBrowse_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new OpenFileDialog();
-            dialog.Filter = "CSV|*.csv";
-            dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-
-            if (dialog.ShowDialog()==true)
+            f.FolderBrowserDialog fbd = new f.FolderBrowserDialog();
+            fbd.Description = "请选择文档存放路径";
+            fbd.ShowNewFolderButton = true;
+            fbd.RootFolder = Environment.SpecialFolder.DesktopDirectory;
+            if (fbd.ShowDialog() == f.DialogResult.OK)
             {
-                string filename = dialog.FileName;
-                if (File.Exists(filename))
-                {
-                    string result = File.ReadAllText(filename);
-                    PMSMethods.SetTextBox(txtCompositionXRF, result.TrimEnd());
-                }
+                PMSMethods.SetTextBox(txtCurrentFolder, fbd.SelectedPath);
             }
-        }
-
-        private void btnResistance_Click(object sender, RoutedEventArgs e)
-        {
-            PMSMethods.SetTextBox(txtResistance, "OutOfRange");
         }
     }
 }

@@ -69,6 +69,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<RecordTestVM>();
             SimpleIoc.Default.Register<RecordTestEditVM>();
             SimpleIoc.Default.Register<RecordTestSelectVM>();
+            SimpleIoc.Default.Register<RecordTestDocVM>();
+
 
             SimpleIoc.Default.Register<RecordDeliveryVM>();
             SimpleIoc.Default.Register<RecordDeliveryEditVM>();
@@ -209,6 +211,12 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestSelectVM>(); }
         }
+        public RecordTestDocVM RecordTestDoc
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestDocVM>(); }
+        }
+
+
 
         public RecordMillingVM RecordMilling
         {

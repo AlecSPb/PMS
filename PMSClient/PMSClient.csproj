@@ -102,6 +102,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -305,11 +306,11 @@
     <Compile Include="ViewForDesktop\RecordMillingView.xaml.cs">
       <DependentUpon>RecordMillingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordTestDocView.xaml.cs">
-      <DependentUpon>RecordTestDocView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewForDesktop\RecordTestEditView.xaml.cs">
       <DependentUpon>RecordTestEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForDesktop\RecordTestDocView.xaml.cs">
+      <DependentUpon>RecordTestDocView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\RecordTestSelectView.xaml.cs">
       <DependentUpon>RecordTestSelectView.xaml</DependentUpon>
@@ -360,6 +361,7 @@
     <Compile Include="ViewModel\RecordMachineVM.cs" />
     <Compile Include="ViewModel\RecordMillingEditVM.cs" />
     <Compile Include="ViewModel\RecordMillingVM.cs" />
+    <Compile Include="ViewModel\RecordTestDocVM.cs" />
     <Compile Include="ViewModel\RecordTestEditVM.cs" />
     <Compile Include="ViewModel\RecordTestSelectVM.cs" />
     <Compile Include="ViewModel\RecordTestVM.cs" />
@@ -570,11 +572,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordTestDocView.xaml">
+    <Page Include="ViewForDesktop\RecordTestEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordTestEditView.xaml">
+    <Page Include="ViewForDesktop\RecordTestDocView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -91,7 +91,12 @@ namespace PMSClient.ViewModel
 
         private void ActionDoc(DcRecordTest model)
         {
-            //TODO:这里添加生成doc的代码
+            if (model!=null)
+            {
+                PMSHelper.ViewModels.RecordTestDoc.SetModel(model);
+                NavigationService.GoTo(PMSViews.RecordTestDoc);
+            }
+
         }
 
         private void ActionAdd()

@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="PMSClient.ViewForDesktop.RecordTestDocView"
+﻿<UserControl x:Class="PMSClient.ViewForDesktop.RecordTestEditView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestDoc}">
+             d:DesignHeight="800" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -16,152 +16,170 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageRecordTestDoc}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{StaticResource PageRecordTestEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
+            <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource  StyleButtonSpecial}" Command="{Binding Select}"/>
         </StackPanel>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" Style="{StaticResource StyleBorderCommon}">
-                <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-                    <Grid  DataContext="{Binding CurrentRecordTest}">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <Grid  DataContext="{Binding CurrentRecordTest}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTTestType}"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTTestType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TestType}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         HorizontalAlignment="Stretch"/>
+                <ComboBox  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"
+                          ItemsSource="{Binding DataContext.TestTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding TestType,Mode=TwoWay}"
+                          Style="{StaticResource StyleComboBoxCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="测试类型"/>
 
-                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTProductID}"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="产品ID"/>
 
-                        <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTComposition}"
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="标准成分"/>
 
-                        <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTPO}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTCustomer}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDimension}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTDensity}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTWeight}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTResistance}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                            <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                        </StackPanel>
+                    <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="btnResistance_Click"/>
+                </StackPanel>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTRemark}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
 
-                        <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTSample}"
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox  x:Name="txtCompositionXRF" Grid.Row="13" Grid.Column="1"
-                         Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"
+                <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
+                    <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommon}" Click="btnCsv_Click"/>
+                </StackPanel>
+                <TextBox  x:Name="txtCompositionXRF" Grid.Row="14" Grid.Column="1"
+                         Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                           AcceptsReturn="True"
                           VerticalScrollBarVisibility="Auto"
                          Height="120"
                          HorizontalAlignment="Stretch"/>
-                  
-                    </Grid>
-                </ScrollViewer>
-            </Border>
-            <Border Grid.Column="1" Style="{StaticResource StyleBorderCommon}">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal">
-                        <Button Content="{StaticResource ButtonBrowse}" Style="{StaticResource  StyleButtonSpecial}" Command="{Binding BrowseFolder}"/>
-                        <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding CurrentFolder}"/>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Button Content="{StaticResource ButtonDocTest}" Style="{StaticResource  StyleButtonCommon}"
-                                Command="{Binding CreateDoc}" CommandParameter="Test"/>
-                        <Button Content="{StaticResource ButtonDocCoA}" Style="{StaticResource  StyleButtonCommon}"
-                                Command="{Binding CreateDoc}" CommandParameter="CoA"/>
-                        <Button Content="{StaticResource ButtonDocCoABridgeLine}" Style="{StaticResource  StyleButtonCommon}"
-                                Command="{Binding CreateDoc}" CommandParameter="CoABridgeLine"/>
-                        <Button Content="{StaticResource ButtonDocOpticraftGrinding}" Style="{StaticResource  StyleButtonCommon}"
-                                Command="{Binding CreateDoc}" CommandParameter="OpticraftGrinding"/>
-                        <Button Content="{StaticResource ButtonDocTCB}" Style="{StaticResource  StyleButtonCommon}"
-                                Command="{Binding CreateDoc}" CommandParameter="TCB"/>
+                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="15" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="订单状态"/>
 
-
-                    </StackPanel>
-                </Grid>
-            </Border>
-        </Grid>
-
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                            HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
+                            HorizontalAlignment="Stretch"/>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>
