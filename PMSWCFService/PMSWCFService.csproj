@@ -89,6 +89,7 @@
     <Compile Include="DataContracts\DcBDCompound.cs" />
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcMissonWithPlan.cs" />
+    <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcUserAccess.cs" />
     <Compile Include="DataContracts\DcUserRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="DataContracts\DcRecordDeMold.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryIn.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryOut.cs" />
+    <Compile Include="DataContracts\PMSPlanWithMissonModel.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />

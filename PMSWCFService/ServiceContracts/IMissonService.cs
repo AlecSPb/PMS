@@ -11,15 +11,15 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IMissonService
     {
-        //获取任务
+        #region 获取任务
         [OperationContract]
-        List<DcOrder> GetMissons(int skip,int take);
+        List<DcOrder> GetMissons(int skip, int take);
         [OperationContract]
         int GetMissonsCount();
 
 
         [OperationContract]
-        List<DcOrder> GetMissonsBySearch(int skip, int take,string compostion);
+        List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion);
         [OperationContract]
         int GetMissonsCountBySearch(string compostion);
 
@@ -30,10 +30,9 @@ namespace PMSWCFService.ServiceContracts
         /// <returns></returns>
         [OperationContract]
         List<DcPlanVHP> GetPlans(Guid id);
+        #endregion
 
-
-
-        //所有状态的计划
+        #region 获取附带有订单信息任务
         [OperationContract]
         List<DcMissonWithPlan> GetMissonWithPlan(int skip, int take);
         [OperationContract]
@@ -49,8 +48,31 @@ namespace PMSWCFService.ServiceContracts
 
         //按照日期范围获取
         [OperationContract]
-        List<DcMissonWithPlan> GetMissonWithPlanCheckedByDateRange(int skip, int take,DateTime dateStart,DateTime dateEnd);
+        List<DcMissonWithPlan> GetMissonWithPlanCheckedByDateRange(int skip, int take, DateTime dateStart, DateTime dateEnd);
         [OperationContract]
         int GetMissonWithPlanCheckedCountByDateRange(DateTime dateStart, DateTime dateEnd);
+        #endregion
+
+        #region 获取附带有订单信息的任务-New
+        //获取全部
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanWithMisson(int skip, int take);
+        [OperationContract]
+        int GetPlanWithMissonCount();
+
+
+        //Checked状态的计划显示
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanWithMissonChecked(int skip, int take);
+        [OperationContract]
+        int GetPlanWithMissonCheckedCount();
+
+
+        //按照日期范围获取
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange(int skip, int take, DateTime dateStart, DateTime dateEnd);
+        [OperationContract]
+        int GetPlanWithMissonCheckedCountByDateRange(DateTime dateStart, DateTime dateEnd);
+        #endregion
     }
 }
