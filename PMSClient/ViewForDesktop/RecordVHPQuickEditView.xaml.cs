@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,16 +27,22 @@ namespace PMSClient.ViewForDesktop
         public RecordVHPQuickEditView()
         {
             InitializeComponent();
-            Refresh();
-            //view = (ListCollectionView)CollectionViewSource.GetDefaultView(dgitem.ItemsSource);
-            //view.SortDescriptions.Add(new SortDescription("CurrentTime", ListSortDirection.Descending));
+            _timer = new Timer();
+        }
+        private Timer _timer;
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            _timer.Interval = 1000;
+            _timer.Elapsed += _timer_Elapsed;
+            _timer.Start();
         }
 
-        public ICollectionView view { get; set; }
-
-        public void Refresh()
+        private void _timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-
+            this.Dispatcher.Invoke(() =>
+            {
+                txtCurrentTime.Text = $"当前时间:{DateTime.Now.ToString("HH:mm:ss")}";
+            });
         }
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
@@ -61,6 +68,5 @@ namespace PMSClient.ViewForDesktop
 
 
         }
-
     }
 }
