@@ -19,6 +19,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonOpenFile}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OpenFile}"/>
+            <TextBlock Text="注意：要提前安装BarTender 10.1 UltraLite版本方可使用" Style="{StaticResource StyleTextBlockCommon}"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

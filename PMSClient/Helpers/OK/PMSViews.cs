@@ -24,6 +24,7 @@ namespace PMSClient
         MaterialOrder,
         MaterialOrderEdit,
         MaterialOrderItemEdit,
+        MaterialOrderItemSelect,
         MaterialInventoryIn,
         MaterialInventoryInEdit,
         MaterialInventoryInSelect,
@@ -47,6 +48,7 @@ namespace PMSClient
         RecordTest,
         RecordTestEdit,
         RecordTestSelect,
+        RecordTestDoc,
         RecordDelivery,
         RecordDeliveryEdit,
         RecordDeliveryItemEdit,
@@ -67,7 +69,6 @@ namespace PMSClient
         AdminUser,
         AdminAccesses,
         AdminAccess,
-        AdminRole,
-        MaterialOrderItemSelect
+        AdminRole
     }
 }

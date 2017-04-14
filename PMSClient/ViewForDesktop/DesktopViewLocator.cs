@@ -55,6 +55,9 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<RecordTestView>();
             SimpleIoc.Default.Register<RecordTestEditView>();
             SimpleIoc.Default.Register<RecordTestSelectView>();
+            SimpleIoc.Default.Register<RecordTestDocView>();
+
+
 
             SimpleIoc.Default.Register<RecordDeliveryView>();
             SimpleIoc.Default.Register<RecordDeliveryEditView>();
@@ -261,6 +264,11 @@ namespace PMSClient.ViewForDesktop
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestSelectView>(); }
         }
+        public RecordTestDocView RecordTestDoc
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordTestDocView>(); }
+        }
+
 
         public RecordDeliveryView RecordDelivery
         {

@@ -320,7 +320,6 @@
     <Compile Include="Entities\PMSMaterialOrderItem.cs" />
     <Compile Include="Entities\PMSMaterialNeed.cs" />
     <Compile Include="Entities\PMSPlanVHP.cs" />
-    <Compile Include="Entities\RecordBonding.cs" />
     <Compile Include="Entities\RecordMachine.cs" />
     <Compile Include="Entities\RecordMilling.cs" />
     <Compile Include="Entities\RecordDeMold.cs" />

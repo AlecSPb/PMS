@@ -16,9 +16,8 @@ namespace PMSDAL
         public DateTime CreateTime { get;  set; }
         public string State { get; set; }
 
-        public Guid BondingID { get; set; }//foreign key
-        public Guid PlateID { get; set; }//使用的背板ID
-
+        public string InstructionCode { get; set; }//操作手册代码
+        public string PlateLot { get; set; }
         //1.0靶材检查
         public string TargetLot { get; set; }
         public string TargetComposition { get; set; }
@@ -38,6 +37,7 @@ namespace PMSDAL
         public string BondWarpageFix { get; set; }
         //尺寸检查
         public string BondDimensionCheck { get; set; }
+
         public string BondWarpageCheck { get; set; }
         //结合率检查
         public string BondCheck { get; set; }

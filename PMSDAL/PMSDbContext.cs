@@ -50,7 +50,6 @@ namespace PMSDAL
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordTest> RecordTests { get; set; }
 
-        public DbSet<RecordBonding> RecordBondings { get; set; }
         public DbSet<RecordBondingPlate> RecordBondingPlates { get; set; }
         public DbSet<RecordBondingTarget> RecordBondingTargets { get; set; }
 

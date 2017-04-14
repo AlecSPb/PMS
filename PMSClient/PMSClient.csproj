@@ -305,6 +305,9 @@
     <Compile Include="ViewForDesktop\RecordMillingView.xaml.cs">
       <DependentUpon>RecordMillingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\RecordTestDocView.xaml.cs">
+      <DependentUpon>RecordTestDocView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\RecordTestEditView.xaml.cs">
       <DependentUpon>RecordTestEditView.xaml</DependentUpon>
     </Compile>
@@ -564,6 +567,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\RecordMillingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\RecordTestDocView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
