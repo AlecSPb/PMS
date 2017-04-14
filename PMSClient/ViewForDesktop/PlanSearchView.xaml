@@ -21,7 +21,7 @@
         <TextBlock Text="{StaticResource PagePlan}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GoToMisson}"/>
+            <Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonSpecial}"  Command="{Binding GoToMisson}"/>
             <TextBlock Text="{StaticResource SearchDateStart}" Style="{StaticResource StyleTextBlockCommon}"/>
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate1,Mode=TwoWay}"/>
             <TextBlock Text="{StaticResource SearchDateEnd}" Style="{StaticResource StyleTextBlockCommon}"/>
