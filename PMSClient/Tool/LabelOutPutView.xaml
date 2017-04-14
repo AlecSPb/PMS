@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid  Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -25,8 +25,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding MainContent}" Margin="2" Padding="2" FontSize="20" Background="LightGray"
+            <Border Grid.Row="0" BorderBrush="LightBlue" BorderThickness="1" Margin="2">
+                <TextBox Text="{Binding MainContent}" Margin="2" Padding="2" FontSize="20"
                      AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+            </Border>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
