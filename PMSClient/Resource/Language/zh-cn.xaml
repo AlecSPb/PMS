@@ -230,7 +230,7 @@
     <sys:String x:Key="PageRecordDelivery">发货记录</sys:String>
     <sys:String x:Key="PageRecordDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="PageRecordDeliveryItemEdit">发货项记录编辑</sys:String>
-
+    <sys:String x:Key="PageRecordDeliveryItemList">发货记录[所有已发货产品]</sys:String>
 
     <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>

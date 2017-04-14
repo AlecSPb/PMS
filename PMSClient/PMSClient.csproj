@@ -263,6 +263,9 @@
     <Compile Include="ViewForDesktop\PlanSearchView.xaml.cs">
       <DependentUpon>PlanSearchView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\RecordDeliveryItemListView.xaml.cs">
+      <DependentUpon>RecordDeliveryItemListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\RecordDeMoldEditView.xaml.cs">
       <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
     </Compile>
@@ -535,6 +538,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\PlanSearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\RecordDeliveryItemListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
