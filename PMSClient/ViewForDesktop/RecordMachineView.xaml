@@ -27,9 +27,6 @@
             <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
-            <TextBlock Text="{StaticResource RMComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>

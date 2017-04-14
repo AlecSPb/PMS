@@ -24,8 +24,8 @@
                     Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  Add}"/>
-            <TextBlock Text="{StaticResource RMComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource RMVHPPlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Text="{Binding SearchVHPPlanLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>

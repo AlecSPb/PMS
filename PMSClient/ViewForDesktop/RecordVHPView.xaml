@@ -95,7 +95,7 @@
                       ItemsSource="{Binding RecordVHPs}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{StaticResource RVHPCurrentTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Width="150"
-                                        Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd hh:mm:ss}}"/>
+                                        Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                     <DataGridTextColumn Header="{StaticResource RVHPPV1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                         Binding="{Binding PV1}"/>
                     <DataGridTextColumn Header="{StaticResource RVHPPV2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"

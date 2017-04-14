@@ -65,6 +65,7 @@ namespace PMSClient
         AdminAccesses,
         AdminAccess,
         AdminRole,
-        MaterialOrderItemSelect
+        MaterialOrderItemSelect,
+        PlanStatistic
     }
 }
