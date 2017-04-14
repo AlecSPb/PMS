@@ -9,11 +9,11 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
-//using DocGenerator;
-//using gn = DocGenerator.DocModels;
 using AutoMapper;
 using System.Windows;
 using PMSClient;
+using Novacode;
+using PMSClient.Reports;
 
 namespace PMSClient.ViewModel
 {
@@ -141,7 +141,8 @@ namespace PMSClient.ViewModel
 
             if (order != null)
             {
-
+                ReportMaterialOrder report = new ReportMaterialOrder();
+                report.Output(order);
             }
         }
 

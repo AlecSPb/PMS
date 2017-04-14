@@ -152,6 +152,7 @@
     </Compile>
     <Compile Include="MainWindowBase.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Reports\ReportMaterialOrder.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -675,19 +676,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DocTemplate\COA.docx">
+    <None Include="DocTemplate\Reports\COA.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\COABridgeLine.docx">
+    <None Include="DocTemplate\Reports\COABridgeLine.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\GeAsSeElastomer440Blank.docx">
+    <None Include="DocTemplate\Reports\GeAsSeElastomer440Blank.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\MaterialOrder.docx">
+    <None Include="DocTemplate\Reports\MaterialOrder.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\Product.docx">
+    <None Include="DocTemplate\Reports\Product.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\BarTender101\发货单.btw">
@@ -700,11 +701,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Reports\COATempalteBridgeLine.docx" />
-    <None Include="Reports\COATemplate.docx" />
-    <None Include="Reports\GeAsSeElastomer440Blank.docx" />
-    <None Include="Reports\OpticraftGrindingSeAsGe.docx" />
-    <None Include="Reports\ProductTemplate.docx" />
     <None Include="Service References\BasicService\BasicDataService.wsdl" />
     <None Include="Service References\BasicService\BasicDataService.xsd">
       <SubType>Designer</SubType>
