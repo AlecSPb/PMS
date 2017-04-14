@@ -307,6 +307,42 @@
   <wsdl:message name="IMissonService_GetMissonWithPlanCheckedCountByDateRange_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonWithPlanCheckedCountByDateRangeResponse" />
   </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMisson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMisson" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMisson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCount" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonChecked_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonChecked" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonChecked_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCheckedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedCount" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCheckedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCheckedByDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCheckedByDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedByDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCheckedCountByDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedCountByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetPlanWithMissonCheckedCountByDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanWithMissonCheckedCountByDateRangeResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordDeliveryService_GetDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDelivery" />
   </wsdl:message>
@@ -841,6 +877,30 @@
     <wsdl:operation name="GetMissonWithPlanCheckedCountByDateRange">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange" message="tns:IMissonService_GetMissonWithPlanCheckedCountByDateRange_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRangeResponse" message="tns:IMissonService_GetMissonWithPlanCheckedCountByDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMisson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMisson" message="tns:IMissonService_GetPlanWithMisson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonResponse" message="tns:IMissonService_GetPlanWithMisson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCount" message="tns:IMissonService_GetPlanWithMissonCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCountResponse" message="tns:IMissonService_GetPlanWithMissonCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonChecked">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonChecked" message="tns:IMissonService_GetPlanWithMissonChecked_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedResponse" message="tns:IMissonService_GetPlanWithMissonChecked_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCheckedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCount" message="tns:IMissonService_GetPlanWithMissonCheckedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountResponse" message="tns:IMissonService_GetPlanWithMissonCheckedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCheckedByDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange" message="tns:IMissonService_GetPlanWithMissonCheckedByDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRangeResponse" message="tns:IMissonService_GetPlanWithMissonCheckedByDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCheckedCountByDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange" message="tns:IMissonService_GetPlanWithMissonCheckedCountByDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRangeResponse" message="tns:IMissonService_GetPlanWithMissonCheckedCountByDateRange_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordDeliveryService">
@@ -1533,6 +1593,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetMissonWithPlanCheckedCountByDateRange">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMisson">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanWithMisson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanWithMissonCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonChecked">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanWithMissonChecked" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCheckedCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCheckedByDateRange">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanWithMissonCheckedCountByDateRange">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

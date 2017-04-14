@@ -2871,6 +2871,67 @@ namespace PMSClient.MainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlanWithMisson", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPlanWithMisson : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSClient.MainService.DcOrder MissonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSClient.MainService.DcPlanVHP PlanField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSClient.MainService.DcOrder Misson {
+            get {
+                return this.MissonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MissonField, value) != true)) {
+                    this.MissonField = value;
+                    this.RaisePropertyChanged("Misson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSClient.MainService.DcPlanVHP Plan {
+            get {
+                return this.PlanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanField, value) != true)) {
+                    this.PlanField = value;
+                    this.RaisePropertyChanged("Plan");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordDelivery", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcRecordDelivery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6363,6 +6424,44 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRangeRespons" +
             "e")]
         System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
+        PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCountResponse")]
+        int GetPlanWithMissonCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanWithMissonCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonChecked", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedResponse")]
+        PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMissonChecked(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonChecked", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountResponse")]
+        int GetPlanWithMissonCheckedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRangeResponse")]
+        PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMissonCheckedByDateRange(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRangeResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedByDateRangeAsync(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRangeRespons" +
+            "e")]
+        int GetPlanWithMissonCheckedCountByDateRange(System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRangeRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6478,6 +6577,54 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd) {
             return base.Channel.GetMissonWithPlanCheckedCountByDateRangeAsync(dateStart, dateEnd);
+        }
+        
+        public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {
+            return base.Channel.GetPlanWithMisson(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonAsync(int skip, int take) {
+            return base.Channel.GetPlanWithMissonAsync(skip, take);
+        }
+        
+        public int GetPlanWithMissonCount() {
+            return base.Channel.GetPlanWithMissonCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanWithMissonCountAsync() {
+            return base.Channel.GetPlanWithMissonCountAsync();
+        }
+        
+        public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMissonChecked(int skip, int take) {
+            return base.Channel.GetPlanWithMissonChecked(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedAsync(int skip, int take) {
+            return base.Channel.GetPlanWithMissonCheckedAsync(skip, take);
+        }
+        
+        public int GetPlanWithMissonCheckedCount() {
+            return base.Channel.GetPlanWithMissonCheckedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountAsync() {
+            return base.Channel.GetPlanWithMissonCheckedCountAsync();
+        }
+        
+        public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMissonCheckedByDateRange(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetPlanWithMissonCheckedByDateRange(skip, take, dateStart, dateEnd);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedByDateRangeAsync(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetPlanWithMissonCheckedByDateRangeAsync(skip, take, dateStart, dateEnd);
+        }
+        
+        public int GetPlanWithMissonCheckedCountByDateRange(System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetPlanWithMissonCheckedCountByDateRange(dateStart, dateEnd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetPlanWithMissonCheckedCountByDateRangeAsync(dateStart, dateEnd);
         }
     }
     

@@ -253,6 +253,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMissonWithPlan" nillable="true" type="tns:DcMissonWithPlan" />
+  <xs:complexType name="ArrayOfDcPlanWithMisson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPlanWithMisson" nillable="true" type="tns:DcPlanWithMisson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcPlanWithMisson" nillable="true" type="tns:ArrayOfDcPlanWithMisson" />
+  <xs:complexType name="DcPlanWithMisson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Misson" nillable="true" type="tns:DcOrder" />
+      <xs:element minOccurs="0" name="Plan" nillable="true" type="tns:DcPlanVHP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcPlanWithMisson" nillable="true" type="tns:DcPlanWithMisson" />
   <xs:complexType name="ArrayOfDcRecordDelivery">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordDelivery" nillable="true" type="tns:DcRecordDelivery" />

@@ -27,7 +27,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
-            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
         }
 
         private void IntitializeCommands()
@@ -47,9 +47,13 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MissonServiceClient();
+            //var service = new MissonServiceClient();
             //只显示Checked过的计划
-            RecordCount = service.GetMissonWithPlanCheckedCount();
+            //RecordCount = service.GetMissonWithPlanCheckedCount();
+            using (var service=new MissonServiceClient())
+            {
+                RecordCount = service.GetPlanWithMissonCheckedCount();
+            }
             ActionPaging();
         }
         /// <summary>
@@ -57,14 +61,19 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonServiceClient();
+            //var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             //只显示Checked过的计划
-            var orders = service.GetMissonWithPlanChecked(skip, take);
-            MissonWithPlans.Clear();
-            orders.ToList().ForEach(o => MissonWithPlans.Add(o));
+            //var orders = service.GetMissonWithPlanChecked(skip, take);
+            using (var service=new MissonServiceClient())
+            {
+                var orders = service.GetPlanWithMissonChecked(skip, take);
+                PlanWithMissons.Clear();
+                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
+            }
+
         }
 
         #region Commands
@@ -75,7 +84,7 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Properties
-        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
+        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
         #endregion
 
     }

@@ -32,7 +32,7 @@ namespace PMSWCFService
                     dc.SaveChanges();
                 }
             }
-            catch (Exception exx)
+            catch (Exception)
             {
 
             }
@@ -59,7 +59,7 @@ namespace PMSWCFService
                     }
                 }
             }
-            catch (Exception exx)
+            catch (Exception)
             {
 
             }
