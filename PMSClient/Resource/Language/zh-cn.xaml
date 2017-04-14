@@ -227,6 +227,7 @@
     <sys:String x:Key="PageRecordBondingEdit">绑定记录编辑</sys:String>
     <sys:String x:Key="PageRecordTest">测试记录</sys:String>
     <sys:String x:Key="PageRecordTestEdit">测试记录编辑</sys:String>
+    <sys:String x:Key="PageRecordTestDoc">测试记录报告</sys:String>
     <sys:String x:Key="PageRecordDelivery">发货记录</sys:String>
     <sys:String x:Key="PageRecordDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="PageRecordDeliveryItemEdit">发货项记录编辑</sys:String>
@@ -258,7 +259,6 @@
     <sys:String x:Key="ButtonEditItem">编辑</sys:String>
     <sys:String x:Key="ButtonEmpty">使用空记录</sys:String>
     <sys:String x:Key="ButtonQuick">快速编辑</sys:String>
-    <sys:String x:Key="ButtonDoc">文档</sys:String>
     <sys:String x:Key="ButtonPrint">打印</sys:String>
     <sys:String x:Key="ButtonSelectEmpty">使用空项目</sys:String>
     <sys:String x:Key="ButtonFill">填写</sys:String>
@@ -275,8 +275,16 @@
     <sys:String x:Key="ButtonOpenFile">打开标签模板</sys:String>
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
 
+    <sys:String x:Key="ButtonBrowse">浏览</sys:String>
     <sys:String x:Key="ButtonInput">导入</sys:String>
     <sys:String x:Key="ButtonOutput">导出</sys:String>
+    <sys:String x:Key="ButtonDoc">文档</sys:String>
+    <sys:String x:Key="ButtonDocTest">产品测试报告</sys:String>
+    <sys:String x:Key="ButtonDocCoA">普通CoA测试报告</sys:String>
+    <sys:String x:Key="ButtonDocCoABridgeLine">普通CoA测试报告-BridgeLine</sys:String>
+    <sys:String x:Key="ButtonDocOpticraftGrinding">Opticraft加工订单</sys:String>
+    <sys:String x:Key="ButtonDocTCB">TCB加工订单</sys:String>
+
 
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>

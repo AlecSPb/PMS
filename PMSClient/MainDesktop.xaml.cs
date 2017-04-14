@@ -199,6 +199,9 @@ namespace PMSClient
                 case PMSViews.RecordTestSelect:
                     NavigateTo(_views.RecordTestSelect);
                     break;
+                case PMSViews.RecordTestDoc:
+                    NavigateTo(_views.RecordTestDoc);
+                    break;
                 case PMSViews.RecordDelivery:
                     NavigateTo(_views.RecordDelivery);
                     break;
