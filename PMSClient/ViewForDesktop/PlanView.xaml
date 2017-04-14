@@ -34,17 +34,17 @@
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow"
                   ItemsSource="{Binding PlanWithMissons}">
             <DataGrid.Columns>
-                <!--<DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource StyleDGButton}" Content="Edit" 
-                                        Command="{Binding DataContext.EditPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonLabel}" 
+                                        Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"

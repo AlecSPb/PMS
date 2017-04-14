@@ -36,8 +36,34 @@ namespace PMSClient.ViewModel
             Refresh = new RelayCommand(ActionRefresh);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
+            Doc = new RelayCommand<DcPlanWithMisson>(ActionDoc);
         }
 
+        private void ActionDoc(DcPlanWithMisson model)
+        {
+            if (model != null)
+            {
+
+                var sb = new StringBuilder();
+                sb.Append("成分:");
+                sb.AppendLine(model.Misson.CompositionStandard);
+                sb.Append("编号:");
+                sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+                sb.Append("要求:");
+                sb.AppendLine(model.Misson.Dimension);
+
+
+                var mainContent =sb.ToString();
+
+                var pageTitle = "热压产品毛坯标签打印输出";
+                var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签";
+                var template = "毛坯标签";
+                var helpimage = "blanktarget.jpg";
+                PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, pageTitle,
+                    tips, template, mainContent, helpimage);
+                NavigationService.GoTo(PMSViews.LabelOutPut);
+            }
+        }
         private void ActionRefresh()
         {
             SetPageParametersWhenConditionChange();
@@ -79,12 +105,13 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand GoToMisson { get; set; }
         public RelayCommand Refresh { get; set; }
-
         public RelayCommand GoToSearchPlan { get; set; }
+        public RelayCommand<DcPlanWithMisson> Doc { get; set; }
         #endregion
 
         #region Properties
         public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
+
         #endregion
 
     }

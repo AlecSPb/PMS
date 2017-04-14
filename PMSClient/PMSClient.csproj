@@ -788,7 +788,7 @@
     <Resource Include="Resource\Images\funnyfacebig.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\HelpImages\qianyuqianxun.jpg">
+    <None Include="Resource\HelpImages\blanktarget.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

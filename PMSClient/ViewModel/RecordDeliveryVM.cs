@@ -171,7 +171,7 @@ namespace PMSClient.ViewModel
                 string mainContent = $"发往: {country}\r{sb.ToString()}";
 
                 var pageTitle = "发货单标签打印输出";
-                var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，然后打印标签";
+                var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，可以自行修改，然后打印标签";
                 var template = "发货单";
                 var helpimage = "deliverysheet.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordDelivery, pageTitle,
