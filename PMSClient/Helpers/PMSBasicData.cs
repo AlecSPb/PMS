@@ -12,7 +12,7 @@ namespace PMSClient
     /// 生成ComboBox用的基本数据源
     /// 来自枚举，来自数据库，来自文件
     /// </summary>
-    public static class BasicData
+    public static class PMSBasicData
     {
         //From Enums
         public static string[] OrderStates
@@ -38,7 +38,13 @@ namespace PMSClient
                 return Enum.GetNames(typeof(PMSCommon.SimpleState));
             }
         }
-
+        public static string[] VHPPlanStates
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.VHPPlanState));
+            }
+        }
         public static string[] OrderPriorities
         {
             get
@@ -84,14 +90,68 @@ namespace PMSClient
                 return Enum.GetNames(typeof(PMSCommon.GoodPosition));
             }
         }
+
+        public static string[] QuickMessages
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.QuickMessage));
+            }
+        }
         //From Services
         public static DcBDCustomer[] Customers
         {
             get
             {
-                var service = new CustomerServiceClient();
-                var customers = service.GetCustomer().OrderBy(i => i.CustomerName).ToArray();
-                return customers;
+                using (var service = new CustomerServiceClient())
+                {
+                    return service.GetCustomer().OrderBy(i => i.CustomerName).ToArray();
+                }
+            }
+        }
+
+        public static DcBDCompound[] Compounds
+        {
+            get
+            {
+                using (var service = new CompoundServiceClient())
+                {
+                    return service.GetAllCompounds().OrderBy(i => i.MaterialName).ToArray();
+                }
+            }
+        }
+
+        public static DcBDVHPDevice[] VHPDevices
+        {
+            get
+            {
+                using (var service = new VHPDeviceServiceClient())
+                {
+                    return service.GetVHPDevice().OrderBy(i => i.CodeName).ToArray();
+                }
+            }
+        }
+
+
+        public static DcBDVHPProcess[] VHPProcesses
+        {
+            get
+            {
+                using (var service = new VHPProcessServiceClient())
+                {
+                    return service.GetVHPProcess().OrderBy(i=>i.CodeName).ToArray();
+                }
+            }
+        }
+
+        public static DcBDVHPMold[] VHPMolds
+        {
+            get
+            {
+                using (var service=new VHPMoldServiceClient())
+                {
+                    return service.GetVHPMold().OrderBy(i=>i.InnerDiameter).ToArray();
+                }
             }
         }
 

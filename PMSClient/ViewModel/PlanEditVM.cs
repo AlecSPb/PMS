@@ -82,30 +82,26 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             Molds = new ObservableCollection<DcBDVHPMold>();
-            var service = new VHPMoldServiceClient();
-            var molds = service.GetVHPMold().OrderBy(i=>i.InnerDiameter);
-            molds.ToList().ForEach(m => Molds.Add(m));
+            Molds.Clear();
+            PMSBasicData.VHPMolds.ToList().ForEach(m => Molds.Add(m));
 
             States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.VHPPlanState));
-            states.ToList().ForEach(s => States.Add(s));
+            States.Clear();
+            PMSBasicData.VHPPlanStates.ToList().ForEach(s => States.Add(s));
 
             ProcessCodes = new ObservableCollection<string>();
-            var service2 = new VHPProcessServiceClient();
-            var processCodes = service2.GetVHPProcess();
-            processCodes.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
+            ProcessCodes.Clear();
+            PMSBasicData.VHPProcesses.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
 
 
             DeviceCodes = new ObservableCollection<string>();
-            var service3 = new VHPDeviceServiceClient();
-            var devices = service3.GetVHPDevice().OrderBy(i=>i.CodeName);
-            devices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
+            DeviceCodes.Clear();
+            PMSBasicData.VHPDevices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 
             Compounds = new ObservableCollection<DcBDCompound>();
-            var service4 = new CompoundServiceClient();
-            var compounds = service4.GetAllCompounds().OrderBy(i=>i.MaterialName);
-            compounds.ToList().ForEach(c => Compounds.Add(c));
+            Compounds.Clear();
+            PMSBasicData.Compounds.ToList().ForEach(c => Compounds.Add(c));
         }
 
 

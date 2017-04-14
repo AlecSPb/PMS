@@ -70,6 +70,7 @@
     <Compile Include="NavigationToken.cs" />
     <Compile Include="OrderUnit.cs" />
     <Compile Include="Purity.cs" />
+    <Compile Include="QuickMessage.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
     <Compile Include="OrderPriority.cs" />

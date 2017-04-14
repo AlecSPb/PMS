@@ -31,6 +31,10 @@ namespace PMSClient.ViewModel
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             CurrentRecordVHP = new DcRecordVHP();
+
+            QuickMessages = new List<string>();
+            QuickMessages.Clear();
+            PMSBasicData.QuickMessages.ToList().ForEach(i => QuickMessages.Add(i));
         }
 
         private void InitializeCommmands()
@@ -255,6 +259,9 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentPlanWithMisson));
             }
         }
+
+
+        public List<string> QuickMessages { get; set; }
         #endregion
 
         #region Commands

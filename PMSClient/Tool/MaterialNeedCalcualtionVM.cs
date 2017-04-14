@@ -113,18 +113,10 @@ namespace PMSClient.Tool
         {
             try
             {
-                using (var service = new VHPMoldServiceClient())
-                {
-                    var result = service.GetVHPMold();
-                    Molds.Clear();
-                    result.OrderBy(i => i.InnerDiameter).ToList().ForEach(i => Molds.Add(i));
-                }
-                using (var service = new CompoundServiceClient())
-                {
-                    var result = service.GetAllCompounds();
-                    Compounds.Clear();
-                    result.OrderBy(i => i.MaterialName).ToList().ForEach(i => Compounds.Add(i));
-                }
+                Molds.Clear();
+                PMSBasicData.VHPMolds.ToList().ForEach(i => Molds.Add(i));
+                Compounds.Clear();
+                PMSBasicData.Compounds.ToList().ForEach(i => Compounds.Add(i));
             }
             catch (Exception ex)
             {

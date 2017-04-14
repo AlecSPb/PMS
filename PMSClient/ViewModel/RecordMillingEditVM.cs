@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
 
             States = new List<string>();
             States.Clear();
-            BasicData.SimpleStates.ToList().ForEach(i=>States.Add(i));
+            PMSBasicData.SimpleStates.ToList().ForEach(i=>States.Add(i));
 
 
             Select = new RelayCommand(() =>

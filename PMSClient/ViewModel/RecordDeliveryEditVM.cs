@@ -55,15 +55,15 @@ namespace PMSClient.ViewModel
         private void InitialProperties()
         {
             OrderStates = new ObservableCollection<string>();
-            var states = BasicData.SimpleStates;
+            var states = PMSBasicData.SimpleStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
             Countries = new ObservableCollection<string>();
-            var countries = BasicData.Countries;
+            var countries = PMSBasicData.Countries;
             countries.ToList().ForEach(s => Countries.Add(s));
 
             PackageTypes = new List<string>();
-            BasicData.PackageTypes.ToList().ForEach(i => PackageTypes.Add(i));
+            PMSBasicData.PackageTypes.ToList().ForEach(i => PackageTypes.Add(i));
         }
 
         private void InitialCommands()
