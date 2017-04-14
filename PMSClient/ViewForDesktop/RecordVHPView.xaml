@@ -63,6 +63,8 @@
                                         Binding="{Binding PlanDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                         Binding="{Binding VHPDeviceCode}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding PlanLot}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                         Binding="{Binding CompositionStandard}"/>
                     <DataGridTextColumn Header="{StaticResource PlanMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
