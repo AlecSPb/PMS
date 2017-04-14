@@ -138,6 +138,7 @@ namespace PMSClient.ViewModel
                     {
                         if (isNew)
                         {
+                            CurrentRecordVHP.CurrentTime = DateTime.Now;
                             service.AddRecordVHP(CurrentRecordVHP);
                         }
                         else

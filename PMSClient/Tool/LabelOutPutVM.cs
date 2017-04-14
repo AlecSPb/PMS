@@ -39,8 +39,8 @@ namespace PMSClient.Tool
         {
             try
             {
-                var filepath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFileName,".btw");
-                var targetpath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFileName,"_temp.btw");
+                var filepath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFileName+".btw");
+                var targetpath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "BarTender101", TemplateFileName+"_temp.btw");
 
                 //复制一下
                 if (File.Exists(targetpath))
