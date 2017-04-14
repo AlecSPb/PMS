@@ -45,8 +45,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding TestType}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
@@ -54,6 +52,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding TestType}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
