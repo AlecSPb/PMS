@@ -18,18 +18,20 @@ namespace PMSClient.Tool
             Tips = "打开BarTender软件，请将下面的标签复制到对应BarTender模板当中";
             TemplateFileName = "发货单.btw";
             MainContent = "标签内容";
+            HelpImageName = "qianyuqianxun.jpg";
 
             GiveUp = new RelayCommand(ActionGiveUp);
             OpenFile = new RelayCommand(ActionOpenFile);
         }
 
-        public void SetAllParameters(PMSViews requestView, string pageTitle, string tips, string templateFilePath, string mainContent)
+        public void SetAllParameters(PMSViews requestView, string pageTitle, string tips, string templateFilePath, string mainContent,string helpimage)
         {
             this.requestView = requestView;
             PageTitle = pageTitle;
             Tips = tips;
             TemplateFileName = templateFilePath;
             MainContent = mainContent;
+            HelpImageName = helpimage;
         }
 
 
@@ -78,6 +80,14 @@ namespace PMSClient.Tool
         {
             get { return tips; }
             set { tips = value; RaisePropertyChanged(nameof(Tips)); }
+        }
+
+        private string helpImageName;
+
+        public string HelpImageName
+        {
+            get { return helpImageName; }
+            set { helpImageName = value;RaisePropertyChanged(nameof(HelpImageName)); }
         }
 
         /// <summary>

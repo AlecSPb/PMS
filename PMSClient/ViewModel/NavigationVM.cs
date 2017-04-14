@@ -32,6 +32,8 @@ namespace PMSClient.ViewModel
         {
             GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized("浏览订单"));
             GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck), () => _session.IsAuthorized("浏览订单核验"));
+            GoToOrderStatistic = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderStatistic), () => _session.IsAuthorized("浏览订单统计"));
+
 
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed), () => _session.IsAuthorized("浏览原料需求"));
             GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized("浏览原料订单"));
@@ -64,6 +66,9 @@ namespace PMSClient.ViewModel
         }
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
+        public RelayCommand GoToOrderStatistic { get; private set; }
+
+
         public RelayCommand GoToMisson { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
         public RelayCommand GoToPlanStatistic { get; private set; }

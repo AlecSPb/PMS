@@ -129,35 +129,19 @@ namespace PMSClient.ViewModel
         /// <summary>
         /// 生成报告部分
         /// </summary>
-        /// <param name="args"></param>
-        private void ActionGenerateDoc(DcMaterialOrder args)
+        /// <param name="order"></param>
+        private void ActionGenerateDoc(DcMaterialOrder order)
         {
-            if (MessageBox.Show("Do you want to create doc in desktop?", "Ask",
+            if (MessageBox.Show("你确定要在桌面上创建文档吗?", "请问",
                 MessageBoxButton.YesNo, MessageBoxImage.Information)
                 == MessageBoxResult.No)
             {
                 return;
             }
 
-            if (args != null)
+            if (order != null)
             {
-                //var config = new MapperConfiguration(cfg =>
-                //{
-                //    cfg.CreateMap<DcMaterialOrder, gn.MaterialOrder>();
-                //    cfg.CreateMap<DcMaterialOrderItem, gn.MaterialOrderItem>();
-                //});
-                //var mapper = config.CreateMapper();
 
-                //var readyModel = mapper.Map<DcMaterialOrder, gn.MaterialOrder>(args);
-                //gn.MaterialOrder model = readyModel;
-
-                //var mainGenerator = new GeneralGenerator();
-                //IDoc<gn.MaterialOrder> generator = new GeneratorMaterialOrder();
-                //string source = nameof(DocTemplateEnum.MaterialOrder);
-                //string target = model.OrderPO;
-                //mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, "PO" + target);
-
-                //MessageBox.Show("File At:" + mainGenerator.TargetFolder, "Doc has been Created");
             }
         }
 
