@@ -22,7 +22,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
-            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
             searchPlanDate2 = DateTime.Now.AddDays(1).Date;
         }
@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
 
             using (var service = new MissonServiceClient())
             {
-                RecordCount = service.GetMissonWithPlanCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
+                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
             }
             //只显示Checked过的计划
 
@@ -69,9 +69,9 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetMissonWithPlanCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
-                MissonWithPlans.Clear();
-                orders.ToList().ForEach(o => MissonWithPlans.Add(o));
+                var orders = service.GetPlanWithMissonCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
+                PlanWithMissons.Clear();
+                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
         }
 
@@ -81,7 +81,7 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Properties
-        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
+        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
 
         private DateTime searchPlanDate1;
         public DateTime SearchPlanDate1

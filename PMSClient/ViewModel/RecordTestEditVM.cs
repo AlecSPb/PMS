@@ -74,17 +74,17 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest = model;
             }
         }
-        public void SetBySelect(DcMissonWithPlan plan)
+        public void SetBySelect(DcPlanWithMisson plan)
         {
             if (plan != null)
             {
-                CurrentRecordTest.Composition = plan.CompositionStandard;
-                CurrentRecordTest.CompositionAbbr = plan.CompositionAbbr;
-                CurrentRecordTest.PO = plan.PO;
-                CurrentRecordTest.ProductID = plan.PlanDate.ToString("yyMMdd") + "-" + plan.VHPDeviceCode + "-1";
-                CurrentRecordTest.Customer = plan.CustomerName;
-                CurrentRecordTest.Dimension = plan.Dimension;
-                CurrentRecordTest.DimensionActual = plan.Dimension;
+                CurrentRecordTest.Composition = plan.Misson.CompositionStandard;
+                CurrentRecordTest.CompositionAbbr = plan.Misson.CompositionAbbr;
+                CurrentRecordTest.PO = plan.Misson.PO;
+                CurrentRecordTest.ProductID = plan.Plan.PlanDate.ToString("yyMMdd") + "-" + plan.Plan.VHPDeviceCode + "-1";
+                CurrentRecordTest.Customer = plan.Misson.CustomerName;
+                CurrentRecordTest.Dimension = plan.Misson.Dimension;
+                CurrentRecordTest.DimensionActual = plan.Misson.Dimension;
 
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }

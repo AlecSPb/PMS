@@ -67,12 +67,12 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect(DcMissonWithPlan plan)
+        public void SetBySelect(DcPlanWithMisson plan)
         {
             if (plan != null)
             {
-                CurrentRecordMachine.Composition = plan.CompositionStandard;
-                CurrentRecordMachine.Dimension = plan.Dimension;
+                CurrentRecordMachine.Composition = plan.Misson.CompositionStandard;
+                CurrentRecordMachine.Dimension = plan.Misson.Dimension;
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
         }

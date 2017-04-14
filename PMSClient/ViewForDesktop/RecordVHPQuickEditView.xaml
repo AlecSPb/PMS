@@ -42,43 +42,49 @@
                 </Grid.RowDefinitions>
                 <DataGrid x:Name="dg" Grid.Row="0"
                 LoadingRow="DataGrid_LoadingRow"
-                Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MissonWithPlans}">
+                Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanWithMissons}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{StaticResource PlanPlanDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding PlanDate,StringFormat={}{0:yyMMdd}}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
-                                        Binding="{Binding VHPDeviceCode}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding PlanLot}"
+                        <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding CompositionStandard}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding MoldType}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding MoldDiameter}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanPreTemperature}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding PreTemperature}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanPrePressure}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding PrePressure}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanTemperature}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding Temperature}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanPressure}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding Pressure}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanVaccum}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding Vaccum}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanKeepTempTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding KeepTempTime}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding Remark}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                        <DataGridTextColumn Header="{StaticResource PlanCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                        Binding="{Binding Creator}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding CompositionStandard}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding Plan.Quantity}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanCalculationDensity}" Binding="{Binding Plan.CalculationDensity,StringFormat={}{0:N2}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanGrainSize}" Binding="{Binding Plan.GrainSize}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanPreTemperature}" Binding="{Binding Plan.PreTemperature}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanPrePressure}" Binding="{Binding Plan.PrePressure}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanTemperature}" Binding="{Binding Plan.Temperature}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanPressure}" Binding="{Binding Plan.Pressure}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.KeepTempTime}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource PlanCreator}" Binding="{Binding Plan.Creator}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

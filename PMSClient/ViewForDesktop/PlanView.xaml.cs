@@ -32,15 +32,16 @@ namespace PMSClient.ViewForDesktop
             if (row != null)
             {
                 var today = DateTime.Now.Date;
-                if (row.Plan.PlanDate.Date == today.Date)
+                var rowDate = row.Plan.PlanDate.Date;
+                if (rowDate == today.Date)
                 {
                     e.Row.Background = this.FindResource("TodayBrush") as SolidColorBrush;
                 }
-                else if (row.Plan.PlanDate.Date == today.Date.AddDays(-1))
+                else if (rowDate == today.Date.AddDays(-1))
                 {
                     e.Row.Background = this.FindResource("YesterdayBrush") as SolidColorBrush;
                 }
-                else if (row.Plan.PlanDate.Date == today.Date.AddDays(1))
+                else if (rowDate == today.Date.AddDays(1))
                 {
                     e.Row.Background = this.FindResource("TomorrowBrush") as SolidColorBrush;
                 }

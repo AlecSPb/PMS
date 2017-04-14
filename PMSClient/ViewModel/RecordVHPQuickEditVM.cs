@@ -29,7 +29,7 @@ namespace PMSClient.ViewModel
         {
             isNew = true;
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
-            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             CurrentRecordVHP = new DcRecordVHP();
         }
 
@@ -44,7 +44,7 @@ namespace PMSClient.ViewModel
             CopyFill = new RelayCommand<DcRecordVHP>(ActionCopyFill);
             Save = new RelayCommand(ActionSave);
 
-            SelectionChanged = new RelayCommand<DcMissonWithPlan>(obj => { ActionSectionChanged(obj); });
+            SelectionChanged = new RelayCommand<DcPlanWithMisson>(obj => { ActionSectionChanged(obj); });
 
             EditItem = new RelayCommand<MainService.DcRecordVHP>(ActionEditItem);
             New = new RelayCommand(ActionNew);
@@ -77,12 +77,12 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void ActionSectionChanged(DcMissonWithPlan model)
+        public void ActionSectionChanged(DcPlanWithMisson model)
         {
             if (model != null)
             {
-                CurrentMissonWithPlan = model;
-                CurrentRecordVHP.PlanVHPID = CurrentMissonWithPlan.PlanID;           
+                CurrentPlanWithMisson = model;
+                CurrentRecordVHP.PlanVHPID = CurrentPlanWithMisson.Plan.ID;           
                 ReLoadRecordVHPs();
             }
         }
@@ -92,7 +92,7 @@ namespace PMSClient.ViewModel
             using (var service = new RecordVHPServiceClient())
             {
                 //TODO:这里以后使用异步操作
-                var task = service.GetRecordVHP(CurrentMissonWithPlan.PlanID);
+                var task = service.GetRecordVHP(CurrentPlanWithMisson.Plan.ID);
                 RecordVHPs.Clear();
                 var result = task.ToList();
                 result.ToList().ForEach(i => RecordVHPs.Add(i));
@@ -105,7 +105,7 @@ namespace PMSClient.ViewModel
             {
                 var model = new DcRecordVHP();
                 model.ID = Guid.NewGuid();
-                model.PlanVHPID = CurrentMissonWithPlan.PlanID;
+                model.PlanVHPID = CurrentPlanWithMisson.Plan.ID;
                 model.CurrentTime = DateTime.Now;
                 model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 model.State = PMSCommon.SimpleState.UnDeleted.ToString();
@@ -202,8 +202,11 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 5;
-            var service = new MissonServiceClient();
-            RecordCount = service.GetMissonWithPlanCheckedCount();
+            using (var service = new MissonServiceClient())
+            {
+                RecordCount = service.GetPlanWithMissonCheckedCount();
+            }
+
             ActionPaging();
         }
         /// <summary>
@@ -211,22 +214,24 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonWithPlanChecked(skip, take);
-            MissonWithPlans.Clear();
-            orders.ToList().ForEach(o => MissonWithPlans.Add(o));
 
-            CurrentMissonWithPlan = MissonWithPlans.FirstOrDefault();
-            ActionSectionChanged(CurrentMissonWithPlan);
+            using (var service = new MissonServiceClient())
+            {
+                var orders = service.GetPlanWithMissonChecked(skip, take);
+                PlanWithMissons.Clear();
+                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
+            }
+            CurrentPlanWithMisson = PlanWithMissons.FirstOrDefault();
+            ActionSectionChanged(CurrentPlanWithMisson);
         }
 
 
         #region Properties
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
-        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
+        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
 
         private DcRecordVHP currentRecordVHP;
         public DcRecordVHP CurrentRecordVHP
@@ -239,14 +244,14 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private DcMissonWithPlan currentMissonWithPlan;
-        public DcMissonWithPlan CurrentMissonWithPlan
+        private DcPlanWithMisson currentPlanWithMisson;
+        public DcPlanWithMisson CurrentPlanWithMisson
         {
-            get { return currentMissonWithPlan; }
+            get { return currentPlanWithMisson; }
             set
             {
-                currentMissonWithPlan = value;
-                RaisePropertyChanged(nameof(CurrentMissonWithPlan));
+                currentPlanWithMisson = value;
+                RaisePropertyChanged(nameof(CurrentPlanWithMisson));
             }
         }
         #endregion
@@ -255,7 +260,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Refresh { get; set; }
         public RelayCommand GiveUp { get; set; }
         public RelayCommand Save { get; set; }
-        public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
+        public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
         public RelayCommand New { get; set; }
         public RelayCommand<DcRecordVHP> EditItem { get; set; }
         public RelayCommand<DcRecordVHP> CopyFill { get; set; }

@@ -152,7 +152,7 @@
     </Compile>
     <Compile Include="MainWindowBase.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Reports\ReportMaterialOrder.cs" />
+    <Compile Include="ReportsHelper\ReportMaterialOrder.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,9 +281,6 @@
     <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
       <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForTablet\PlanSelectView.xaml.cs">
-      <DependentUpon>PlanSelectView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewForDesktop\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
     </Compile>
@@ -324,33 +321,6 @@
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\DesktopViewLocator.cs" />
-    <Compile Include="ViewForTablet\NavigationView.xaml.cs">
-      <DependentUpon>NavigationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordDeliveryEditView.xaml.cs">
-      <DependentUpon>RecordDeliveryEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordDeliveryItemEditView.xaml.cs">
-      <DependentUpon>RecordDeliveryItemEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordDeliveryView.xaml.cs">
-      <DependentUpon>RecordDeliveryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordTestEditView.xaml.cs">
-      <DependentUpon>RecordTestEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordTestSelectView.xaml.cs">
-      <DependentUpon>RecordTestSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordTestView.xaml.cs">
-      <DependentUpon>RecordTestView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordVHPQuickEditView.xaml.cs">
-      <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewForTablet\RecordVHPView.xaml.cs">
-      <DependentUpon>RecordVHPView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewForTablet\TabletViewLocator.cs" />
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -565,10 +535,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewForTablet\PlanSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="ViewForDesktop\PlanView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -618,42 +584,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\RecordVHPView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\NavigationView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordDeliveryEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordDeliveryItemEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordDeliveryView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordTestEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordTestSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordTestView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordVHPQuickEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewForTablet\RecordVHPView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -768,9 +698,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMissonWithPlan.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcOrder.datasource">

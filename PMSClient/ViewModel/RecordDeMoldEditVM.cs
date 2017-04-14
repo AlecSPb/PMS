@@ -77,12 +77,12 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect(DcMissonWithPlan plan)
+        public void SetBySelect(DcPlanWithMisson plan)
         {
             if (plan != null)
             {
-                CurrentRecordDeMold.Composition = plan.CompositionStandard;
-                CurrentRecordDeMold.VHPPlanLot = plan.PlanDate.ToString("yyMMdd") + "-" + plan.VHPDeviceCode;
+                CurrentRecordDeMold.Composition = plan.Misson.CompositionStandard;
+                CurrentRecordDeMold.VHPPlanLot = plan.Plan.PlanDate.ToString("yyMMdd") + "-" + plan.Plan.VHPDeviceCode;
                 //RaisePropertyChanged(nameof(CurrentRecordDeMold));
             }
         }

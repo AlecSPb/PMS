@@ -79,9 +79,9 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                using (var service = new MissonServiceClient())
+                using (var service = new PlanVHPServiceClient())
                 {
-                    var result = service.GetPlans(model.ID);
+                    var result = service.GetVHPPlansByOrderID(model.ID);
                     PlanVHPs.Clear();
                     result.ToList().ForEach(i => PlanVHPs.Add(i));
 

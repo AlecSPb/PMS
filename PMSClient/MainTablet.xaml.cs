@@ -41,7 +41,7 @@ namespace PMSClient
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
 
             //load the first page
-            GoTo(_viewLocator.Navigation);
+            //GoTo(_viewLocator.Navigation);
         }
 
         private void ActionStatusMessage(string obj)

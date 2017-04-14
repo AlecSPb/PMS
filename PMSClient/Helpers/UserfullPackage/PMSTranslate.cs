@@ -22,14 +22,14 @@ namespace UsefulPackage
             string deviceStr = devicecode;
             return $"{dateStr}-{deviceStr}-{suffix}";
         }
-        public static string VHPPlanLot(DcMissonWithPlan plan, string suffix)
+        public static string VHPPlanLot(DcPlanWithMisson plan, string suffix)
         {
-            if (plan==null)
+            if (plan == null)
             {
                 return VHPPlanLot();
             }
-            string dateStr = plan.PlanDate.ToString("yyMMdd");
-            string deviceStr = plan.VHPDeviceCode;
+            string dateStr = plan.Plan.PlanDate.ToString("yyMMdd");
+            string deviceStr = plan.Plan.VHPDeviceCode;
             return $"{dateStr}-{deviceStr}-{suffix}";
         }
         /// <summary>
@@ -39,14 +39,14 @@ namespace UsefulPackage
         /// <param name="suffix"></param>
         /// <param name="DeviceCodeTransfer"></param>
         /// <returns></returns>
-        public static string VHPPlanLot(DcMissonWithPlan plan, string suffix,Func<string,string> DeviceCodeTransfer)
+        public static string VHPPlanLot(DcPlanWithMisson plan, string suffix, Func<string, string> DeviceCodeTransfer)
         {
             if (plan == null)
             {
                 return VHPPlanLot();
             }
-            string dateStr = plan.PlanDate.ToString("yyMMdd");
-            string deviceStr =DeviceCodeTransfer(plan.VHPDeviceCode);
+            string dateStr = plan.Plan.PlanDate.ToString("yyMMdd");
+            string deviceStr = DeviceCodeTransfer(plan.Plan.VHPDeviceCode);
             return $"{dateStr}-{deviceStr}-{suffix}";
         }
     }

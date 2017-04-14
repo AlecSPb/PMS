@@ -23,39 +23,39 @@ namespace PMSClient.ViewModel
         {
             searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
             searchPlanDate2 = DateTime.Now.AddDays(30).Date;
-            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
         }
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
 
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
-            QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit), 
+            QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit),
                 () => PMSHelper.CurrentSession.IsAuthorized("编辑热压记录"));
 
-            Doc = new RelayCommand<MainService.DcMissonWithPlan>(ActionDoc, CanDoc);
+            Doc = new RelayCommand<MainService.DcPlanWithMisson>(ActionDoc, CanDoc);
         }
 
         private void ActionSearch()
         {
-            SetPageParametersWhenConditionChange(); 
+            SetPageParametersWhenConditionChange();
         }
 
-        private bool CanDoc(DcMissonWithPlan arg)
+        private bool CanDoc(DcPlanWithMisson arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑热压记录");
         }
 
-        private void ActionDoc(DcMissonWithPlan model)
+        private void ActionDoc(DcPlanWithMisson model)
         {
             //TODO:生成VHP报告
             //throw new NotImplementedException();
         }
 
-        private void ActionSelectionChanged(DcMissonWithPlan model)
+        private void ActionSelectionChanged(DcPlanWithMisson model)
         {
             if (model != null)
             {
@@ -63,9 +63,9 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void LoadRecordVHPsByRecordVHPID(DcMissonWithPlan model)
+        public void LoadRecordVHPsByRecordVHPID(DcPlanWithMisson model)
         {
-            var result = (new RecordVHPServiceClient()).GetRecordVHP(model.PlanID);
+            var result = (new RecordVHPServiceClient()).GetRecordVHP(model.Plan.ID);
             RecordVHPs.Clear();
             result.ToList().ForEach(i => RecordVHPs.Add(i));
         }
@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
             PageSize = 6;
             using (var service = new MissonServiceClient())
             {
-                RecordCount = service.GetMissonWithPlanCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
+                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
             }
             ActionPaging();
         }
@@ -97,17 +97,17 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetMissonWithPlanCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
-                MissonWithPlans.Clear();
-                orders.ToList().ForEach(o => MissonWithPlans.Add(o));
-                LoadRecordVHPsByRecordVHPID(MissonWithPlans.FirstOrDefault());
+                var orders = service.GetPlanWithMissonCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
+                PlanWithMissons.Clear();
+                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
+                LoadRecordVHPsByRecordVHPID(PlanWithMissons.FirstOrDefault());
             }
         }
 
         #region Properties
 
 
-        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
+        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
 
         private DateTime searchPlanDate1;
@@ -141,8 +141,8 @@ namespace PMSClient.ViewModel
 
         #region Commands
 
-        public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
-        public RelayCommand<DcMissonWithPlan> Doc { get; set; }
+        public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
+        public RelayCommand<DcPlanWithMisson> Doc { get; set; }
         public RelayCommand QuickEdit { get; set; }
         #endregion
     }

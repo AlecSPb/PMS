@@ -7,7 +7,7 @@ using PMSClient.MainService;
 using Novacode;
 using System.IO;
 
-namespace PMSClient.Reports
+namespace PMSClient.ReportsHelper
 {
     /// <summary>
     /// 订单报告
@@ -23,7 +23,7 @@ namespace PMSClient.Reports
             var sourceFilePath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Reports", "MaterialOrder.docx");
             var targetFilePath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Reports", "MaterialOrder_Temp.docx");
             var finalFileName = DateTime.Now.ToString("yyyyMMddHHmmss");
-            var finalFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), finalFileName+ ".docx");
+            var finalFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), finalFileName + ".docx");
 
 
             if (!File.Exists(sourceFilePath))
@@ -46,13 +46,15 @@ namespace PMSClient.Reports
                 doc.ReplaceText("[SupplierEmail]", order.SupplierEmail ?? "");
                 doc.ReplaceText("[SupplierAddress]", order.SupplierAddress ?? "");
                 doc.ReplaceText("[OrderDate]", order.CreateTime.ToString("MM/dd/yyyy"));
+                doc.ReplaceText("[Creator]", order.Creator ?? "Leon.Chiu");
+
 
                 List<DcMaterialOrderItem> OrderItems;
 
                 using (var service = new MaterialOrderServiceClient())
                 {
                     var result = service.GetMaterialOrderItembyMaterialID(order.ID);
-                    OrderItems = result.ToList();
+                    OrderItems = result.OrderBy(i => i.CreateTime).ToList();
                 }
 
 
@@ -77,7 +79,7 @@ namespace PMSClient.Reports
                         p.Append(item.PMINumber);
 
                         p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                        item.Description = $"Processing fee to cast {item.Purity} {item.Composition} atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
+                        item.Description = $"Processing fee to cast {item.Purity} [{item.Composition}] atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
                         if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
                         {
                             item.Description += $"(PMI to provide { item.ProvideRawMaterial})";

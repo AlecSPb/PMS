@@ -28,19 +28,20 @@ namespace PMSClient.ViewForDesktop
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var row = e.Row.DataContext as DcMissonWithPlan;
+            var row = e.Row.DataContext as DcPlanWithMisson;
             if (row != null)
             {
                 var today = DateTime.Now.Date;
-                if (row.PlanDate.Date == today.Date)
+                var rowDate = row.Plan.PlanDate.Date;
+                if (rowDate == today.Date)
                 {
                     e.Row.Background = this.FindResource("TodayBrush") as SolidColorBrush;
                 }
-                else if (row.PlanDate.Date == today.Date.AddDays(-1))
+                else if (rowDate == today.Date.AddDays(-1))
                 {
                     e.Row.Background = this.FindResource("YesterdayBrush") as SolidColorBrush;
                 }
-                else if (row.PlanDate.Date == today.Date.AddDays(1))
+                else if (rowDate == today.Date.AddDays(1))
                 {
                     e.Row.Background = this.FindResource("TomorrowBrush") as SolidColorBrush;
                 }

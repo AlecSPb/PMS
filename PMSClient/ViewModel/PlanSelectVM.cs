@@ -20,7 +20,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelect(DcMissonWithPlan plan)
+        private void ActionSelect(DcPlanWithMisson plan)
         {
             if (plan != null)
             {
@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
-            MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
+            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
             searchPlanDate2 = DateTime.Now.AddDays(10).Date;
         }
@@ -69,7 +69,7 @@ namespace PMSClient.ViewModel
         {
             PageChanged = new RelayCommand(ActionPaging);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
-            Select = new RelayCommand<DcMissonWithPlan>(ActionSelect);
+            Select = new RelayCommand<DcPlanWithMisson>(ActionSelect);
             All = new RelayCommand(SetPageParametersWhenConditionChange);
         }
 
@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new MissonServiceClient())
             {
-                RecordCount = service.GetMissonWithPlanCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
+                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
             }
             ActionPaging();
         }
@@ -94,9 +94,9 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetMissonWithPlanCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
-                MissonWithPlans.Clear();
-                orders.ToList().ForEach(o => MissonWithPlans.Add(o));
+                var orders = service.GetPlanWithMissonCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
+                PlanWithMissons.Clear();
+                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
         }
 
@@ -106,11 +106,11 @@ namespace PMSClient.ViewModel
 
         #region Commands
         public RelayCommand GiveUp { get; set; }
-        public RelayCommand<DcMissonWithPlan> Select { get; set; }
+        public RelayCommand<DcPlanWithMisson> Select { get; set; }
         #endregion
 
         #region Properties
-        public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
+        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
 
         private DateTime searchPlanDate1;
         public DateTime SearchPlanDate1

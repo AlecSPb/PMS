@@ -13,7 +13,7 @@ using AutoMapper;
 using System.Windows;
 using PMSClient;
 using Novacode;
-using PMSClient.Reports;
+using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
 {

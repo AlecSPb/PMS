@@ -66,13 +66,13 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
-                    var mapper = config.CreateMapper();
-
-                    var plans = dc.VHPPlans.Where(p => p.OrderID == id &&
-                    p.State != OrderState.Deleted.ToString()).OrderByDescending(p => p.PlanDate).ToList();
-
-                    return mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(plans);
+                    Mapper.Initialize(cfg => cfg.CreateMap<PMSPlanVHP, DcPlanVHP>());
+                    var result = from p in dc.VHPPlans
+                                 where p.OrderID == id && p.State != OrderState.Deleted.ToString()
+                                 orderby p.PlanDate descending
+                                 select p;
+                    var plans = Mapper.Map<List<PMSPlanVHP>, List<DcPlanVHP>>(result.ToList());
+                    return plans;
                 }
             }
             catch (Exception ex)

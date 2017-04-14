@@ -63,11 +63,11 @@ namespace PMSClient.ViewModel
                 CurrentRecordMilling = model;
             }
         }
-        public void SetBySelect(DcMissonWithPlan plan)
+        public void SetBySelect(DcPlanWithMisson plan)
         {
             if (plan != null)
             {
-                CurrentRecordMilling.Composition = plan.CompositionStandard;
+                CurrentRecordMilling.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.VHPPlanLot(plan, "1");
                 //RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
