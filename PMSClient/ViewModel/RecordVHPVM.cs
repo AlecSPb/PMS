@@ -114,18 +114,31 @@ namespace PMSClient.ViewModel
         public DateTime SearchPlanDate1
         {
             get { return searchPlanDate1; }
-            set { searchPlanDate1 = value; RaisePropertyChanged(nameof(SearchPlanDate1)); }
+            set
+            {
+                if (value < searchPlanDate2)
+                {
+                    searchPlanDate1 = value;
+                    RaisePropertyChanged(nameof(SearchPlanDate1));
+                }
+            }
         }
 
         private DateTime searchPlanDate2;
         public DateTime SearchPlanDate2
         {
             get { return searchPlanDate2; }
-            set { searchPlanDate2 = value; RaisePropertyChanged(nameof(SearchPlanDate2)); }
+            set
+            {
+                if (value > searchPlanDate1)
+                {
+                    searchPlanDate2 = value;
+                    RaisePropertyChanged(nameof(SearchPlanDate2));
+                }
+            }
         }
-
         #endregion
-                                                                    
+
         #region Commands
 
         public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }

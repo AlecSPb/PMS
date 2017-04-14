@@ -23,8 +23,8 @@ namespace PMSClient.ViewModel
         private void IntitializeProperties()
         {
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
-            SearchPlanDate1 = DateTime.Now.AddDays(-90).Date;
-            SearchPlanDate2 = DateTime.Now.AddDays(1).Date;
+            searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
+            searchPlanDate2 = DateTime.Now.AddDays(1).Date;
         }
 
         private void IntitializeCommands()
@@ -87,14 +87,28 @@ namespace PMSClient.ViewModel
         public DateTime SearchPlanDate1
         {
             get { return searchPlanDate1; }
-            set { searchPlanDate1 = value; RaisePropertyChanged(nameof(SearchPlanDate1)); }
+            set
+            {
+                if (value < searchPlanDate2)
+                {
+                    searchPlanDate1 = value;
+                    RaisePropertyChanged(nameof(SearchPlanDate1));
+                }
+            }
         }
 
         private DateTime searchPlanDate2;
         public DateTime SearchPlanDate2
         {
             get { return searchPlanDate2; }
-            set { searchPlanDate2 = value; RaisePropertyChanged(nameof(SearchPlanDate2)); }
+            set
+            {
+                if (value > searchPlanDate1)
+                {
+                    searchPlanDate2 = value;
+                    RaisePropertyChanged(nameof(SearchPlanDate2));
+                }
+            }
         }
         #endregion
 
