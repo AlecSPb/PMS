@@ -44,6 +44,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MissonSelectVM>();
 
             SimpleIoc.Default.Register<PlanVM>();
+            SimpleIoc.Default.Register<PlanSearchVM>();
             SimpleIoc.Default.Register<PlanEditVM>();
             SimpleIoc.Default.Register<PlanSelectVM>();
 
@@ -121,6 +122,10 @@ namespace PMSClient.ViewModel
         public PlanVM Plan
         {
             get { return SimpleIoc.Default.GetInstance<PlanVM>(); }
+        }
+        public PlanSearchVM PlanSearch
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSearchVM>(); }
         }
         public PlanEditVM PlanEdit
         {

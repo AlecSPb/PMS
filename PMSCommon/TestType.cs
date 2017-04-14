@@ -11,8 +11,8 @@ namespace PMSCommon
     /// </summary>
     public enum TestType
     {
-        Product,
-        Experiement,
-        Other
+        产品,
+        试验,
+        其他
     }
 }

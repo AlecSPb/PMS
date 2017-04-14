@@ -6334,11 +6334,19 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountResponse")]
         System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse")]
-        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRangeResponse")]
+        PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanCheckedByDateRange(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRangeResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanCheckedByDateRangeAsync(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRangeRespons" +
+            "e")]
+        int GetMissonWithPlanCheckedCountByDateRange(System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRangeRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6440,12 +6448,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetMissonWithPlanCheckedCountAsync();
         }
         
-        public PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanByDate(System.DateTime date) {
-            return base.Channel.GetMissonWithPlanByDate(date);
+        public PMSClient.MainService.DcMissonWithPlan[] GetMissonWithPlanCheckedByDateRange(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetMissonWithPlanCheckedByDateRange(skip, take, dateStart, dateEnd);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanByDateAsync(System.DateTime date) {
-            return base.Channel.GetMissonWithPlanByDateAsync(date);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMissonWithPlan[]> GetMissonWithPlanCheckedByDateRangeAsync(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetMissonWithPlanCheckedByDateRangeAsync(skip, take, dateStart, dateEnd);
+        }
+        
+        public int GetMissonWithPlanCheckedCountByDateRange(System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetMissonWithPlanCheckedCountByDateRange(dateStart, dateEnd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonWithPlanCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd) {
+            return base.Channel.GetMissonWithPlanCheckedCountByDateRangeAsync(dateStart, dateEnd);
         }
     }
     

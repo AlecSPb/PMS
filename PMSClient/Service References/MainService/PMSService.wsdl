@@ -289,11 +289,17 @@
   <wsdl:message name="IMissonService_GetMissonWithPlanCheckedCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonWithPlanCheckedCountResponse" />
   </wsdl:message>
-  <wsdl:message name="IMissonService_GetMissonWithPlanByDate_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetMissonWithPlanByDate" />
+  <wsdl:message name="IMissonService_GetMissonWithPlanCheckedByDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanCheckedByDateRange" />
   </wsdl:message>
-  <wsdl:message name="IMissonService_GetMissonWithPlanByDate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetMissonWithPlanByDateResponse" />
+  <wsdl:message name="IMissonService_GetMissonWithPlanCheckedByDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanCheckedByDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonWithPlanCheckedCountByDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanCheckedCountByDateRange" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonWithPlanCheckedCountByDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonWithPlanCheckedCountByDateRangeResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordDeliveryService_GetDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDelivery" />
@@ -818,9 +824,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCount" message="tns:IMissonService_GetMissonWithPlanCheckedCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountResponse" message="tns:IMissonService_GetMissonWithPlanCheckedCount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetMissonWithPlanByDate">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDate" message="tns:IMissonService_GetMissonWithPlanByDate_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanByDateResponse" message="tns:IMissonService_GetMissonWithPlanByDate_OutputMessage" />
+    <wsdl:operation name="GetMissonWithPlanCheckedByDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRange" message="tns:IMissonService_GetMissonWithPlanCheckedByDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRangeResponse" message="tns:IMissonService_GetMissonWithPlanCheckedByDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonWithPlanCheckedCountByDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange" message="tns:IMissonService_GetMissonWithPlanCheckedCountByDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRangeResponse" message="tns:IMissonService_GetMissonWithPlanCheckedCountByDateRange_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordDeliveryService">
@@ -1493,8 +1503,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetMissonWithPlanByDate">
-      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonWithPlanByDate" style="document" />
+    <wsdl:operation name="GetMissonWithPlanCheckedByDateRange">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedByDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonWithPlanCheckedCountByDateRange">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonWithPlanCheckedCountByDateRange" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

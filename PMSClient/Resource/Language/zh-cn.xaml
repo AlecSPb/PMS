@@ -264,8 +264,8 @@
     <sys:String x:Key="ButtonSelect">选择</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">发货</sys:String>
-    <sys:String x:Key="ButtonMisson">任务</sys:String>
-    <sys:String x:Key="ButtonPlan">计划</sys:String>
+    <sys:String x:Key="ButtonMisson">生产任务</sys:String>
+    <sys:String x:Key="ButtonPlan">计划安排</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>
     <sys:String x:Key="ButtonNewMode">新建模式</sys:String>
@@ -304,6 +304,9 @@
 
     <!--公共-->
     <sys:String x:Key="DGOperate">操作</sys:String>
+    <sys:String x:Key="SearchDateStart">开始日期</sys:String>
+    <sys:String x:Key="SearchDateEnd">结束日期</sys:String>
+
 
     <!--LogIn-->
     <sys:String x:Key="LogInWelcome">欢迎</sys:String>

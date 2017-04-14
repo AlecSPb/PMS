@@ -44,7 +44,7 @@ namespace PMSClient.ViewModel
             model.CompositionAbbr = "成分缩写";
             model.Customer = "客户信息";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.TestType = PMSCommon.TestType.Product.ToString();
+            model.TestType = PMSCommon.TestType.产品.ToString();
             model.State = PMSCommon.CommonState.UnChecked.ToString();
             model.Weight = "100";
             model.Remark = "";

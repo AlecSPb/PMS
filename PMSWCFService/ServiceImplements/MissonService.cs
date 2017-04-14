@@ -168,79 +168,6 @@ namespace PMSWCFService
 
         }
 
-        public List<DcMissonWithPlan> GetMissonWithPlanByDate(DateTime date)
-        {
-            try
-            {
-                using (var dc = new PMSDAL.PMSDbContext())
-                {
-                    var today = date.Date;
-                    var tomorrow = date.Date.AddDays(1);
-                    //此处直接在linq中使用date属性会出错
-                    #region 以后再简化
-                    var result = dc.VHPPlans.Where(p => p.PlanDate >= today && p.PlanDate < tomorrow)
-                    .OrderByDescending(p => p.PlanDate)
-                    .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan
-                    {
-                        OrderID = o.ID,
-                        PlanID = p.ID,
-                        CustomerName = o.CustomerName,
-                        PO = o.PO,
-                        PMINumber = o.PMINumber,
-                        CompositionStandard = o.CompositionStandard,
-                        CompositionAbbr = o.CompositionAbbr,
-                        CompositionOriginal = o.CompositionOriginal,
-                        ProductType = o.ProductType,
-                        Purity = o.Purity,
-                        Quantity = o.Quantity,
-                        QuantityUnit = o.QuantityUnit,
-                        Dimension = o.Dimension,
-                        DimensionDetails = o.DimensionDetails,
-                        SampleNeed = o.SampleNeed,
-                        DeadLine = o.DeadLine,
-                        MinimumAcceptDefect = o.MinimumAcceptDefect,
-                        OrderRemark = o.Remark,
-                        Creator = p.Creator,
-                        CreateTime = p.CreateTime,
-                        PlanDate = p.PlanDate,
-                        PlanLot = p.PlanLot,
-                        VHPDeviceCode = p.VHPDeviceCode,
-                        MoldType = p.MoldType,
-                        CalculationDensity = p.CalculationDensity,
-                        MoldDiameter = p.MoldDiameter,
-                        Thickness = p.Thickness,
-                        TargetQuantity = p.Quantity,
-                        SingleWeight = p.SingleWeight,
-                        AllWeight = p.AllWeight,
-                        GrainSize = p.GrainSize,
-                        RoomHumidity = p.RoomHumidity,
-                        RoomTemperature = p.RoomTemperature,
-                        PreTemperature = p.PreTemperature,
-                        PrePressure = p.PrePressure,
-                        Temperature = p.Temperature,
-                        Pressure = p.Pressure,
-                        Vaccum = p.Vaccum,
-                        KeepTempTime = p.KeepTempTime,
-                        ProcessCode = p.ProcessCode,
-                        MillingRequirement = p.MillingRequirement,
-                        FillingRequirement = p.FillingRequirement,
-                        VHPPlanRemark = p.Remark,
-                        VHPRequirement = p.VHPRequirement,
-                        MachineRequirement = p.MachineRequirement,
-                        SpecialRequirement = p.SpecialRequirement
-                    }).ToList();
-                    #endregion
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-
-        }
-
         public int GetMissonWithPlanCount()
         {
             try
@@ -393,6 +320,103 @@ namespace PMSWCFService
                                  || o.State == OrderState.Paused.ToString()
                                  || o.State == OrderState.Completed.ToString())
                                 select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcMissonWithPlan> GetMissonWithPlanCheckedByDateRange(int skip, int take, DateTime dateStart, DateTime dateEnd)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var startDate = dateStart.Date;
+                    var endDate = dateEnd.Date;
+                    //此处直接在linq中使用date属性会出错
+                    #region 以后再简化
+                    var result = dc.VHPPlans.Where(p => p.State == PMSCommon.CommonState.Checked.ToString() 
+                    && p.PlanDate >= startDate 
+                    && p.PlanDate <= endDate)
+                    .OrderByDescending(p => p.PlanDate)
+                    .Skip(skip).Take(take)
+                    .Join(dc.Orders, p => p.OrderID, o => o.ID, (p, o) => new DcMissonWithPlan
+                    {
+                        OrderID = o.ID,
+                        PlanID = p.ID,
+                        CustomerName = o.CustomerName,
+                        PO = o.PO,
+                        PMINumber = o.PMINumber,
+                        CompositionStandard = o.CompositionStandard,
+                        CompositionAbbr = o.CompositionAbbr,
+                        CompositionOriginal = o.CompositionOriginal,
+                        ProductType = o.ProductType,
+                        Purity = o.Purity,
+                        Quantity = o.Quantity,
+                        QuantityUnit = o.QuantityUnit,
+                        Dimension = o.Dimension,
+                        DimensionDetails = o.DimensionDetails,
+                        SampleNeed = o.SampleNeed,
+                        DeadLine = o.DeadLine,
+                        MinimumAcceptDefect = o.MinimumAcceptDefect,
+                        OrderRemark = o.Remark,
+                        Creator = p.Creator,
+                        CreateTime = p.CreateTime,
+                        PlanDate = p.PlanDate,
+                        PlanLot = p.PlanLot,
+                        VHPDeviceCode = p.VHPDeviceCode,
+                        MoldType = p.MoldType,
+                        CalculationDensity = p.CalculationDensity,
+                        MoldDiameter = p.MoldDiameter,
+                        Thickness = p.Thickness,
+                        TargetQuantity = p.Quantity,
+                        SingleWeight = p.SingleWeight,
+                        AllWeight = p.AllWeight,
+                        GrainSize = p.GrainSize,
+                        RoomHumidity = p.RoomHumidity,
+                        RoomTemperature = p.RoomTemperature,
+                        PreTemperature = p.PreTemperature,
+                        PrePressure = p.PrePressure,
+                        Temperature = p.Temperature,
+                        Pressure = p.Pressure,
+                        Vaccum = p.Vaccum,
+                        KeepTempTime = p.KeepTempTime,
+                        ProcessCode = p.ProcessCode,
+                        MillingRequirement = p.MillingRequirement,
+                        FillingRequirement = p.FillingRequirement,
+                        VHPPlanRemark = p.Remark,
+                        VHPRequirement = p.VHPRequirement,
+                        MachineRequirement = p.MachineRequirement,
+                        SpecialRequirement = p.SpecialRequirement
+                    }).ToList();
+                    #endregion
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
+        }
+
+        public int GetMissonWithPlanCheckedCountByDateRange(DateTime dateStart, DateTime dateEnd)
+        {
+            try
+            {
+                var startDate = dateStart.Date;
+                var endDate = dateEnd.Date;
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from p in dc.VHPPlans
+                                where p.State == PMSCommon.CommonState.Checked.ToString() && p.PlanDate >= startDate && p.PlanDate <= endDate
+                                select p;
                     return query.Count();
                 }
             }

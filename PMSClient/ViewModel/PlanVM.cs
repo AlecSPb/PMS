@@ -34,7 +34,6 @@ namespace PMSClient.ViewModel
         {
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
             Refresh = new RelayCommand(ActionRefresh);
-
             PageChanged = new RelayCommand(ActionPaging);
         }
 
@@ -48,7 +47,8 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MissonServiceClient();
-            RecordCount = service.GetMissonWithPlanCount();
+            //只显示Checked过的计划
+            RecordCount = service.GetMissonWithPlanCheckedCount();
             ActionPaging();
         }
         /// <summary>
@@ -60,7 +60,8 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonWithPlan(skip, take);
+            //只显示Checked过的计划
+            var orders = service.GetMissonWithPlanChecked(skip, take);
             MissonWithPlans.Clear();
             orders.ToList().ForEach(o => MissonWithPlans.Add(o));
         }

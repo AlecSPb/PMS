@@ -15,6 +15,7 @@ namespace PMSCommon
        瑞典,
        韩国,
        日本,
-       南京
+       南京,
+       潮州
     }
 }

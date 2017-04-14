@@ -14,25 +14,34 @@ namespace PMSClient.ViewModel
     {
         public RecordVHPVM()
         {
-            InitializeCommands();
             IntializeProperties();
+            InitializeCommands();
             SetPageParametersWhenConditionChange();
-            LoadRecordVHPsByRecordVHPID(MissonWithPlans.FirstOrDefault());
         }
 
         private void IntializeProperties()
         {
-            SearchVHPID = "";
+            SearchPlanDate1 = DateTime.Now.AddDays(-90).Date;
+            SearchPlanDate2 = DateTime.Now.AddDays(30).Date;
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
-
-
-            All = new RelayCommand(ActionAll);
+        }
+        private void InitializeCommands()
+        {
+            PageChanged = new RelayCommand(ActionPaging);
             SelectionChanged = new RelayCommand<DcMissonWithPlan>(ActionSelectionChanged);
-            QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit),
-                ()=> PMSHelper.CurrentSession.IsAuthorized("编辑热压记录"));
+
+            Search = new RelayCommand(ActionSearch);
+            All = new RelayCommand(ActionAll);
+            QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit), 
+                () => PMSHelper.CurrentSession.IsAuthorized("编辑热压记录"));
 
             Doc = new RelayCommand<MainService.DcMissonWithPlan>(ActionDoc, CanDoc);
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange(); 
         }
 
         private bool CanDoc(DcMissonWithPlan arg)
@@ -40,16 +49,17 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized("编辑热压记录");
         }
 
-        private void ActionDoc(DcMissonWithPlan obj)
+        private void ActionDoc(DcMissonWithPlan model)
         {
-            throw new NotImplementedException();
+            //TODO:生成VHP报告
+            //throw new NotImplementedException();
         }
 
-        private void ActionSelectionChanged(DcMissonWithPlan obj)
+        private void ActionSelectionChanged(DcMissonWithPlan model)
         {
-            if (obj != null)
+            if (model != null)
             {
-                LoadRecordVHPsByRecordVHPID(obj);
+                LoadRecordVHPsByRecordVHPID(model);
             }
         }
 
@@ -63,20 +73,17 @@ namespace PMSClient.ViewModel
         private void ActionAll()
         {
             SetPageParametersWhenConditionChange();
-            LoadRecordVHPsByRecordVHPID(MissonWithPlans.FirstOrDefault());
-        }
 
-        private void InitializeCommands()
-        {
-            PageChanged = new RelayCommand(ActionPaging);
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 6;
-            var service = new MissonServiceClient();
-            RecordCount = service.GetMissonWithPlanCheckedCount();
+            using (var service = new MissonServiceClient())
+            {
+                RecordCount = service.GetMissonWithPlanCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
+            }
             ActionPaging();
         }
         /// <summary>
@@ -84,34 +91,45 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetMissonWithPlanChecked(skip, take);
-            MissonWithPlans.Clear();
-            orders.ToList().ForEach(o => MissonWithPlans.Add(o));
+            //只显示Checked过的计划
+            using (var service = new MissonServiceClient())
+            {
+                var orders = service.GetMissonWithPlanCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
+                MissonWithPlans.Clear();
+                orders.ToList().ForEach(o => MissonWithPlans.Add(o));
+                LoadRecordVHPsByRecordVHPID(MissonWithPlans.FirstOrDefault());
+            }
         }
 
         #region Properties
-        private string searchVHPID;
 
-        public string SearchVHPID
-        {
-            get { return searchVHPID; }
-            set { searchVHPID = value; RaisePropertyChanged(nameof(SearchVHPID)); }
-        }
 
         public ObservableCollection<DcMissonWithPlan> MissonWithPlans { get; set; }
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
-        #endregion
 
+        private DateTime searchPlanDate1;
+        public DateTime SearchPlanDate1
+        {
+            get { return searchPlanDate1; }
+            set { searchPlanDate1 = value; RaisePropertyChanged(nameof(SearchPlanDate1)); }
+        }
+
+        private DateTime searchPlanDate2;
+        public DateTime SearchPlanDate2
+        {
+            get { return searchPlanDate2; }
+            set { searchPlanDate2 = value; RaisePropertyChanged(nameof(SearchPlanDate2)); }
+        }
+
+        #endregion
+                                                                    
         #region Commands
 
         public RelayCommand<DcMissonWithPlan> SelectionChanged { get; set; }
         public RelayCommand<DcMissonWithPlan> Doc { get; set; }
-
-
         public RelayCommand QuickEdit { get; set; }
         #endregion
     }

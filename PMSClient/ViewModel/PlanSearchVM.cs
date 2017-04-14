@@ -11,76 +11,51 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class PlanSelectVM : BaseViewModelPage
+    public class PlanSearchVM : BaseViewModelPage
     {
-        public PlanSelectVM()
+        public PlanSearchVM()
         {
             IntitializeCommands();
             IntitializeProperties();
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelect(DcMissonWithPlan plan)
-        {
-            if (plan!=null)
-            {
-                switch (requestView)
-                {
-                    case PMSViews.RecordMillingEdit:
-                        PMSHelper.ViewModels.RecordMillingEdit.SetBySelect(plan);
-                        break;
-                    case PMSViews.RecordVHPQuickEdit:
-                        break;
-                    case PMSViews.RecordDeMoldEdit:
-                        PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan);
-                        break;
-                    case PMSViews.RecordMachineEdit:
-                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan);
-                        break;
-                    case PMSViews.RecordTestEdit:
-                        PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan);
-                        break;
-                    default:
-                        break;
-                }
-
-                NavigationService.GoTo(requestView);
-            }
-        }
-
-        private PMSViews requestView;
-        /// <summary>
-        /// 设置请求视图的token，返回或者选择后返回用
-        /// </summary>
-        /// <param name="request">请求视图的token</param>
-        public void SetRequestView(PMSViews request)
-        {
-            requestView = request;
-        }
-
         private void IntitializeProperties()
         {
             MissonWithPlans = new ObservableCollection<DcMissonWithPlan>();
             SearchPlanDate1 = DateTime.Now.AddDays(-90).Date;
-            SearchPlanDate2 = DateTime.Now.AddDays(10).Date;
+            SearchPlanDate2 = DateTime.Now.AddDays(1).Date;
         }
 
         private void IntitializeCommands()
         {
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
+            Refresh = new RelayCommand(ActionRefresh);
+            Search = new RelayCommand(ActionSearch);
             PageChanged = new RelayCommand(ActionPaging);
-            GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
-            Select = new RelayCommand<DcMissonWithPlan>(ActionSelect);
-            All = new RelayCommand(SetPageParametersWhenConditionChange);
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionRefresh()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 20;
+
             using (var service = new MissonServiceClient())
             {
                 RecordCount = service.GetMissonWithPlanCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
             }
+            //只显示Checked过的计划
+
             ActionPaging();
         }
         /// <summary>
@@ -100,13 +75,9 @@ namespace PMSClient.ViewModel
             }
         }
 
-
-
-
-
         #region Commands
-        public RelayCommand GiveUp { get; set; }
-        public RelayCommand<DcMissonWithPlan> Select { get; set; }
+        public RelayCommand GoToMisson { get; set; }
+        public RelayCommand Refresh { get; set; }
         #endregion
 
         #region Properties

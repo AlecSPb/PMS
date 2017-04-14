@@ -254,6 +254,9 @@
     <Compile Include="ViewForDesktop\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\PlanSearchView.xaml.cs">
+      <DependentUpon>PlanSearchView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\RecordDeMoldEditView.xaml.cs">
       <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
     </Compile>
@@ -364,6 +367,7 @@
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\PlanEditVM.cs" />
     <Compile Include="ViewModel\PlanSelectVM.cs" />
+    <Compile Include="ViewModel\PlanSearchVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
     <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
@@ -521,6 +525,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\PlanSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\PlanSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -872,10 +880,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DocGenerator\DocGenerator.csproj">
-      <Project>{e6ceed5e-ba12-4cc0-a0d3-84746f3cace9}</Project>
-      <Name>DocGenerator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>

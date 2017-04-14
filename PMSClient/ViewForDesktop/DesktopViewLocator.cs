@@ -28,6 +28,7 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<MissonView>();
 
             SimpleIoc.Default.Register<PlanView>();
+            SimpleIoc.Default.Register<PlanSearchView>();
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<PlanEditView>();
 
@@ -125,6 +126,10 @@ namespace PMSClient.ViewForDesktop
         public PlanView Plan
         {
             get { return SimpleIoc.Default.GetInstance<PlanView>(); }
+        }
+        public PlanSearchView PlanSearch
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanSearchView>(); }
         }
         public PlanEditView PlanEdit
         {

@@ -669,17 +669,35 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanByDate">
+  <xs:element name="GetMissonWithPlanCheckedByDateRange">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="dateStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanByDateResponse">
+  <xs:element name="GetMissonWithPlanCheckedByDateRangeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonWithPlanByDateResult" nillable="true" type="q40:ArrayOfDcMissonWithPlan" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonWithPlanCheckedByDateRangeResult" nillable="true" type="q40:ArrayOfDcMissonWithPlan" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonWithPlanCheckedCountByDateRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonWithPlanCheckedCountByDateRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMissonWithPlanCheckedCountByDateRangeResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

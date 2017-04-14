@@ -33,6 +33,7 @@ namespace PMSClient
         Plan,
         PlanSelect, 
         PlanEdit,
+        PlanSearch,
         RecordMilling,
         RecordMillingEdit,
         RecordVHP,

@@ -9,8 +9,8 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
-using DocGenerator;
-using gn = DocGenerator.DocModels;
+//using DocGenerator;
+//using gn = DocGenerator.DocModels;
 using AutoMapper;
 using System.Windows;
 using PMSClient;
@@ -141,23 +141,23 @@ namespace PMSClient.ViewModel
 
             if (args != null)
             {
-                var config = new MapperConfiguration(cfg =>
-                {
-                    cfg.CreateMap<DcMaterialOrder, gn.MaterialOrder>();
-                    cfg.CreateMap<DcMaterialOrderItem, gn.MaterialOrderItem>();
-                });
-                var mapper = config.CreateMapper();
+                //var config = new MapperConfiguration(cfg =>
+                //{
+                //    cfg.CreateMap<DcMaterialOrder, gn.MaterialOrder>();
+                //    cfg.CreateMap<DcMaterialOrderItem, gn.MaterialOrderItem>();
+                //});
+                //var mapper = config.CreateMapper();
 
-                var readyModel = mapper.Map<DcMaterialOrder, gn.MaterialOrder>(args);
-                gn.MaterialOrder model = readyModel;
+                //var readyModel = mapper.Map<DcMaterialOrder, gn.MaterialOrder>(args);
+                //gn.MaterialOrder model = readyModel;
 
-                var mainGenerator = new GeneralGenerator();
-                IDoc<gn.MaterialOrder> generator = new GeneratorMaterialOrder();
-                string source = nameof(DocTemplateEnum.MaterialOrder);
-                string target = model.OrderPO;
-                mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, "PO" + target);
+                //var mainGenerator = new GeneralGenerator();
+                //IDoc<gn.MaterialOrder> generator = new GeneratorMaterialOrder();
+                //string source = nameof(DocTemplateEnum.MaterialOrder);
+                //string target = model.OrderPO;
+                //mainGenerator.Generate<gn.MaterialOrder>(generator, model, source, "PO" + target);
 
-                MessageBox.Show("File At:" + mainGenerator.TargetFolder, "Doc has been Created");
+                //MessageBox.Show("File At:" + mainGenerator.TargetFolder, "Doc has been Created");
             }
         }
 

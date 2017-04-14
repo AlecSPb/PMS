@@ -75,17 +75,17 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelectionChanged(DcOrder obj)
+        private void ActionSelectionChanged(DcOrder model)
         {
-            if (obj != null)
+            if (model != null)
             {
                 using (var service = new MissonServiceClient())
                 {
-                    var result = service.GetPlans(obj.ID);
+                    var result = service.GetPlans(model.ID);
                     PlanVHPs.Clear();
                     result.ToList().ForEach(i => PlanVHPs.Add(i));
 
-                    CurrentSelectItem = obj;
+                    CurrentSelectItem = model;
                 }
             }
         }
