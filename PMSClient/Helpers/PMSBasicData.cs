@@ -98,6 +98,15 @@ namespace PMSClient
                 return Enum.GetNames(typeof(PMSCommon.QuickMessage));
             }
         }
+        public static string[] OrderUnits
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.OrderUnit));
+            }
+        }
+
+
         //From Services
         public static DcBDCustomer[] Customers
         {

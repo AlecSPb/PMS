@@ -125,8 +125,12 @@
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantityUnit}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}"
+                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox  Name="txtOrderUnit" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
+                    <ComboBox Name="cboOrderUnits" Style="{StaticResource StyleComboBoxCommon}" SelectionChanged="cboOrderUnits_SelectionChanged"
+                      ItemsSource="{Binding DataContext.OrderUnits,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                </StackPanel>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="数量单位"/>
 

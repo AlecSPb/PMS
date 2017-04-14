@@ -27,26 +27,29 @@ namespace PMSClient.ViewModel
 
         public void InitializeProperties()
         {
-            OrderStates = new ObservableCollection<string>();
+            OrderStates = new List<string>();
             var states = PMSBasicData.OrderStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
-            OrderPriorities = new ObservableCollection<string>();
+            OrderPriorities = new List<string>();
             var priorities = PMSBasicData.OrderPriorities;
             priorities.ToList().ForEach(p => OrderPriorities.Add(p));
 
-            PolicyTypes = new ObservableCollection<string>();
+            PolicyTypes = new List<string>();
             var policyTypes = PMSBasicData.OrderPolicyTypes;
             policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
 
-            CustomerNames = new ObservableCollection<string>();
+            CustomerNames = new List<string>();
             var customerNames = PMSBasicData.Customers;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
 
-            ProductTypes = new ObservableCollection<string>();
+            ProductTypes = new List<string>();
             var productTypes = PMSBasicData.ProductTypes;
             productTypes.ToList().ForEach(p => ProductTypes.Add(p));
 
+
+            OrderUnits = new List<string>();
+            PMSBasicData.OrderUnits.ToList().ForEach(i => OrderUnits.Add(i));
         }
         /// <summary>
         /// 直接更改属性
@@ -151,11 +154,13 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<string> OrderStates { get; set; }
-        public ObservableCollection<string> OrderPriorities { get; set; }
-        public ObservableCollection<string> PolicyTypes { get; set; }
-        public ObservableCollection<string> CustomerNames { get; set; }
-        public ObservableCollection<string> ProductTypes { get; set; }
+        public List<string> OrderStates { get; set; }
+        public List<string> OrderPriorities { get; set; }
+        public List<string> PolicyTypes { get; set; }
+        public List<string> CustomerNames { get; set; }
+        public List<string> ProductTypes { get; set; }
+
+        public List<string> OrderUnits { get; set; }
 
     }
 }
