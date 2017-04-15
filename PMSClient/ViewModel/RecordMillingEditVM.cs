@@ -55,10 +55,10 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "填入成分";
-            model.GasProtection = "Ar气";
-            model.MaterialSource = "Sanjie";
-            model.MillingTool = "行星球磨";
-            model.MillingTime = "20min, 2次";
+            model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
+            model.MaterialSource = PMSCommon.MillingMaterialSource.三杰.ToString();
+            model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
+            model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
             model.Remark = "";
             model.WeightIn = 0;
             model.WeightOut = 0;
