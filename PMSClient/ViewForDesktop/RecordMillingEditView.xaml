@@ -72,8 +72,10 @@
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                <ComboBox Grid.Row="2" Grid.Column="1"
+                          ItemsSource="{Binding DataContext.MillingMaterialSources,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding MaterialSource}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="原料来源"/>
 

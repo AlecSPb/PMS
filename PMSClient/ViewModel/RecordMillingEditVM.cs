@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSCommon;
+
 
 namespace PMSClient.ViewModel
 {
@@ -27,25 +29,19 @@ namespace PMSClient.ViewModel
         private void InitializeBasicData()
         {
             States = new List<string>();
-            States.Clear();
-            PMSBasicData.SimpleStates.ToList().ForEach(i => States.Add(i));
+            PMSMethods.SetListDS<SimpleState>(States);
 
             MillingTools = new List<string>();
-            MillingTools.Clear();
-            PMSBasicData.MillingTools.ToList().ForEach(i => MillingTools.Add(i));
-
+            PMSMethods.SetListDS<MillingTool>(MillingTools);
 
             MillingTimes = new List<string>();
-            MillingTimes.Clear();
-            PMSBasicData.MillingTimes.ToList().ForEach(i => MillingTimes.Add(i));
-
-
+            PMSMethods.SetListDS<MillingTime>(MillingTimes);
 
             GasProtections = new List<string>();
-            GasProtections.Clear();
-            PMSBasicData.MillingGases.ToList().ForEach(i => GasProtections.Add(i));
+            PMSMethods.SetListDS<MillingGas>(GasProtections);
 
-
+            MillingMaterialSources = new List<string>();
+            PMSMethods.SetListDS<MillingMaterialSource>(MillingMaterialSources);
         }
 
         public void SetNew()
