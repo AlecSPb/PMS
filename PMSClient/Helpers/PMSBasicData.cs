@@ -127,11 +127,11 @@ namespace PMSClient
             }
         }
 
-        public static string[] QuickMessages
+        public static string[] QuickVHPMessages
         {
             get
             {
-                return Enum.GetNames(typeof(PMSCommon.QuickMessage));
+                return Enum.GetNames(typeof(PMSCommon.QuickVHPMessage));
             }
         }
         public static string[] OrderUnits
@@ -141,7 +141,27 @@ namespace PMSClient
                 return Enum.GetNames(typeof(PMSCommon.OrderUnit));
             }
         }
-
+        public static string[] MillingTimes
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.MillingTime));
+            }
+        }
+        public static string[] MillingTools
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.MillingTool));
+            }
+        }
+        public static string[] MillingGases
+        {
+            get
+            {
+                return Enum.GetNames(typeof(PMSCommon.MillingGas));
+            }
+        }
 
         //From Services
         public static DcBDCustomer[] Customers
@@ -154,7 +174,6 @@ namespace PMSClient
                 }
             }
         }
-
         public static DcBDCompound[] Compounds
         {
             get
@@ -165,7 +184,6 @@ namespace PMSClient
                 }
             }
         }
-
         public static DcBDVHPDevice[] VHPDevices
         {
             get
@@ -176,8 +194,6 @@ namespace PMSClient
                 }
             }
         }
-
-
         public static DcBDVHPProcess[] VHPProcesses
         {
             get
@@ -188,7 +204,6 @@ namespace PMSClient
                 }
             }
         }
-
         public static DcBDVHPMold[] VHPMolds
         {
             get

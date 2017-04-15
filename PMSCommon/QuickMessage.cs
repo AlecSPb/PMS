@@ -9,7 +9,7 @@ namespace PMSCommon
     /// <summary>
     /// 热压的时候的短语
     /// </summary>
-    public enum QuickMessage
+    public enum QuickVHPMessage
     {
         粗抽,
         扩散泵加热,

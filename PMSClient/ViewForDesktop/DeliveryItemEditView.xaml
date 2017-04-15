@@ -62,7 +62,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDProductType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtProductType" Text="{Binding ProductType,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"
+                    <TextBox Name="txtProductType" Text="{Binding ProductType}" Style="{StaticResource StyleTextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboProductTypes"  HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.ProductTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
@@ -124,7 +124,7 @@
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDPackNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtPackNumber" Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox Name="txtPackNumber" Text="{Binding PackNumber}"
                              Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboPackNumbers"  HorizontalAlignment="Stretch"
@@ -138,7 +138,7 @@
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDPosition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtPosition" Text="{Binding Position,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                    <TextBox Name="txtPosition" Text="{Binding Position}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboGoodPositions"  HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.GoodPositions,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"

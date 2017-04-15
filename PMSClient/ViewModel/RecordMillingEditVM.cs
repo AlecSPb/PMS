@@ -15,16 +15,37 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
 
-            States = new List<string>();
-            States.Clear();
-            PMSBasicData.SimpleStates.ToList().ForEach(i=>States.Add(i));
-
+            InitializeBasicData();
 
             Select = new RelayCommand(() =>
             {
                 PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMillingEdit);
                 NavigationService.GoTo(PMSViews.PlanSelect);
             });
+        }
+
+        private void InitializeBasicData()
+        {
+            States = new List<string>();
+            States.Clear();
+            PMSBasicData.SimpleStates.ToList().ForEach(i => States.Add(i));
+
+            MillingTools = new List<string>();
+            MillingTools.Clear();
+            PMSBasicData.MillingTools.ToList().ForEach(i => MillingTools.Add(i));
+
+
+            MillingTimes = new List<string>();
+            MillingTimes.Clear();
+            PMSBasicData.MillingTimes.ToList().ForEach(i => MillingTimes.Add(i));
+
+
+
+            GasProtections = new List<string>();
+            GasProtections.Clear();
+            PMSBasicData.MillingGases.ToList().ForEach(i => GasProtections.Add(i));
+
+
         }
 
         public void SetNew()
@@ -126,6 +147,10 @@ namespace PMSClient.ViewModel
             }
         }
         public List<string> States { get; set; }
+        public List<string> MillingMaterialSources { get; set; }
+        public List<string> MillingTimes { get; set; }
+        public List<string> MillingTools { get; set; }
+        public List<string> GasProtections { get; set; }
         public RelayCommand Select { get; set; }
     }
 }

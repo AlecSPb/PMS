@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
 
             QuickMessages = new List<string>();
             QuickMessages.Clear();
-            PMSBasicData.QuickMessages.ToList().ForEach(i => QuickMessages.Add(i));
+            PMSBasicData.QuickVHPMessages.ToList().ForEach(i => QuickMessages.Add(i));
         }
 
         private void InitializeCommmands()

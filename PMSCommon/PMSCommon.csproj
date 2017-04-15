@@ -71,6 +71,8 @@
     <Compile Include="DeMoldType.cs" />
     <Compile Include="GoodPosition.cs" />
     <Compile Include="MillingGas.cs" />
+    <Compile Include="MillingMaterialSource.cs" />
+    <Compile Include="MillingTime.cs" />
     <Compile Include="MillingTool.cs" />
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />

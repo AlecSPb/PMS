@@ -79,22 +79,28 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMillingTool}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                <ComboBox Grid.Row="3" Grid.Column="1"
+                          ItemsSource="{Binding DataContext.MillingTools,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding MillingTool}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="制粉工具"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMGasProtection}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                <ComboBox Grid.Row="4" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.GasProtections,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding GasProtection}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="气体保护"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMMillingTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding MillingTime}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                <ComboBox Grid.Row="5" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.MillingTimes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding MillingTime}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="填写制粉时间次数信息"/>
 

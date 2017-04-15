@@ -177,6 +177,10 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
+    <Style x:Key="StyleComboBoxEditable" TargetType="ComboBox" BasedOn="{StaticResource StyleComboBoxCommon}">
+        <Setter Property="IsEditable" Value="True"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
     <Style x:Key="StyleDatePickerCommon" TargetType="DatePicker">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
