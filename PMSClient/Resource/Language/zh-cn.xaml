@@ -189,14 +189,14 @@
     <sys:String x:Key="PageUser">用户</sys:String>
     <sys:String x:Key="PageRole">角色</sys:String>
     <sys:String x:Key="PageAccess">授权</sys:String>
-    
-    
+
+
     <sys:String x:Key="PageOrder">订单浏览</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
     <sys:String x:Key="PageOrderStatistic">订单统计</sys:String>
-    
+
     <sys:String x:Key="PageMisson">生产任务</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
@@ -439,8 +439,8 @@
     <sys:String x:Key="RMWeightOut">出料重量</sys:String>
     <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
     <sys:String x:Key="RMRatio">损失率</sys:String>
-    
-    
+
+
     <!--RecordVHP-->
     <sys:String x:Key="RVHPState">状态</sys:String>
     <sys:String x:Key="RVHPCreateTime">创建时间</sys:String>
@@ -532,10 +532,27 @@
     <sys:String x:Key="RDAbbr">缩写</sys:String>
     <sys:String x:Key="RDCustomer">客户</sys:String>
     <sys:String x:Key="RDDetailRecord">记录细节</sys:String>
-    <sys:String x:Key="RDWeight">重量(g)</sys:String>
+    <sys:String x:Key="RDWeight">重量</sys:String>
     <sys:String x:Key="RDPackNumber">装箱号</sys:String>
     <sys:String x:Key="RDPosition">货架位置</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
+    
+    <!--Product-->
+    <sys:String x:Key="RPCreator">创建者</sys:String>
+    <sys:String x:Key="RPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RPState">状态</sys:String>
+    <sys:String x:Key="RPProductType">产品类型</sys:String>
+    <sys:String x:Key="RPProductID">产品ID</sys:String>
+    <sys:String x:Key="RPComposition">成分</sys:String>
+    <sys:String x:Key="RPPO">PO</sys:String>
+    <sys:String x:Key="RPAbbr">缩写</sys:String>
+    <sys:String x:Key="RPCustomer">客户</sys:String>
+    <sys:String x:Key="RPWeight">重量</sys:String>
+    <sys:String x:Key="RPPosition">货架位置</sys:String>
+    <sys:String x:Key="RPRemark">备注</sys:String>
+
+
+
     <!--MaterialInventoryInAndOut-->
     <sys:String x:Key="MIIState">状态</sys:String>
     <sys:String x:Key="MIICreator">创建者</sys:String>
@@ -547,7 +564,7 @@
     <sys:String x:Key="MIISupplier">供应商</sys:String>
     <sys:String x:Key="MIIWeight">重量</sys:String>
     <sys:String x:Key="MIIRemark">备注</sys:String>
-
+    <!--材料出库-->
     <sys:String x:Key="MIOState">状态</sys:String>
     <sys:String x:Key="MIOCreator">创建者</sys:String>
     <sys:String x:Key="MIOCreateTime">创建时间</sys:String>

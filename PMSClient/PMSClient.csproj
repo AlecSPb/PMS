@@ -183,6 +183,9 @@
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
+    <Compile Include="ViewForDesktop\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
@@ -355,6 +358,12 @@
     <Compile Include="ViewModel\DeliveryEditVM.cs" />
     <Compile Include="ViewModel\DeliveryItemEditVM.cs" />
     <Compile Include="ViewModel\DeliveryVM.cs" />
+    <Compile Include="ViewModel\ProductEditVM.cs" />
+    <Compile Include="ViewModel\ProductSelectVM.cs" />
+    <Compile Include="ViewModel\ProductVM.cs" />
+    <Compile Include="ViewModel\RecordBondingEditVM.cs" />
+    <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
+    <Compile Include="ViewModel\RecordBondingVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldEditVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldVM.cs" />
     <Compile Include="ViewModel\RecordMachineEditVM.cs" />
@@ -407,6 +416,10 @@
     <Page Include="Tool\LabelOutPutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewForDesktop\ProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\LogInView.xaml">
       <Generator>MSBuild:Compile</Generator>
