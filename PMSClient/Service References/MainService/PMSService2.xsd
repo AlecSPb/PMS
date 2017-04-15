@@ -450,8 +450,10 @@
       <xs:element minOccurs="0" name="TargetCheckTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="TargetComposition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDefects" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDetailRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDiameterCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDimensionActual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPerson" nillable="true" type="xs:string" />
@@ -486,6 +488,9 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Defects" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DimensionActual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />

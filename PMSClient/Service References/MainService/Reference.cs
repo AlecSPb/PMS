@@ -4302,10 +4302,16 @@ namespace PMSClient.MainService {
         private string TargetCustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetDefectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDetailRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDiameterCheckField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDimensionActualField;
@@ -4944,6 +4950,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TargetDefects {
+            get {
+                return this.TargetDefectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetDefectsField, value) != true)) {
+                    this.TargetDefectsField = value;
+                    this.RaisePropertyChanged("TargetDefects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string TargetDetailRecord {
             get {
                 return this.TargetDetailRecordField;
@@ -4965,6 +4984,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.TargetDiameterCheckField, value) != true)) {
                     this.TargetDiameterCheckField = value;
                     this.RaisePropertyChanged("TargetDiameterCheck");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TargetDimension {
+            get {
+                return this.TargetDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetDimensionField, value) != true)) {
+                    this.TargetDimensionField = value;
+                    this.RaisePropertyChanged("TargetDimension");
                 }
             }
         }
@@ -5238,6 +5270,15 @@ namespace PMSClient.MainService {
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DefectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5332,6 +5373,45 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
                     this.CustomerField = value;
                     this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Defects {
+            get {
+                return this.DefectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DefectsField, value) != true)) {
+                    this.DefectsField = value;
+                    this.RaisePropertyChanged("Defects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionActual {
+            get {
+                return this.DimensionActualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
+                    this.DimensionActualField = value;
+                    this.RaisePropertyChanged("DimensionActual");
                 }
             }
         }

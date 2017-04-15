@@ -106,9 +106,9 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            using (var service = new RecordTestServiceClient())
+            using (var service = new ProductServiceClient())
             {
-                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+                RecordCount = service.GetProductCount(SearchProductID, SearchCompositonStd);
             }
             ActionPaging();
         }
@@ -117,9 +117,9 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            using (var service = new RecordTestServiceClient())
+            using (var service = new ProductServiceClient())
             {
-                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+                var orders = service.GetProducts(skip, take, SearchProductID, SearchCompositonStd);
                 RecordProducts.Clear();
                 orders.ToList().ForEach(o => RecordProducts.Add(o));
             }

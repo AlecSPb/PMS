@@ -26,10 +26,12 @@ namespace PMSDAL
         public string TargetCustomer { get; set; }
         public string TargetPO { get; set; }
         public string TargetWeight { get; set; }//显示
+        public string TargetDimension { get; set; }//显示
+        public string TargetDimensionActual { get; set; }
+        public string TargetDefects { get; set; }
         public string TargetDetailRecord { get; set; }//复杂的信息写在这里
 
         //检测信息
-        public string TargetDimensionActual { get; set; }
         public string TargetAppearance { get; set; }
         public string TargetWarpageCheck { get; set; }//翘曲检查结果
         public string TargetThicknessCheck { get; set; }//厚度检查结果

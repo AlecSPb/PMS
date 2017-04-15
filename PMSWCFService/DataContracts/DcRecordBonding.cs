@@ -35,11 +35,15 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string TargetWeight { get; set; }//显示
         [DataMember]
+        public string TargetDimension{ get; set; }//显示
+        [DataMember]
+        public string TargetDimensionActual { get; set; }
+        [DataMember]
+        public string TargetDefects { get; set; }
+        [DataMember]
         public string TargetDetailRecord { get; set; }//复杂的信息写在这里
 
         //检测信息
-        [DataMember]
-        public string TargetDimensionActual { get; set; }
         [DataMember]
         public string TargetAppearance { get; set; }
         [DataMember]

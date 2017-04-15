@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -25,14 +26,12 @@
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
-            <Button Content="{StaticResource ButtonSelectTest}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding Select}"/>
             <Button Content="{StaticResource ButtonSelectProduct}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding Select}"/>
-            <Button Content="{StaticResource ButtonSelectBonding}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding Select}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <TextBlock Grid.Row="2" Text="提示:可以自行在下方输入要发货的产品信息，但从产品库中选择更准确快捷方便" 
+                   Style="{StaticResource StyleTextBlockTip}"/>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentDeliveryItem}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
