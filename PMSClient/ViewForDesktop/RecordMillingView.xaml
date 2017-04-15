@@ -59,12 +59,16 @@
                                     Binding="{Binding MillingTool}"/>
                 <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding GasProtection}"/>
+                <DataGridTextColumn Header="{StaticResource RMMillingTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MillingTime}"/>
                 <DataGridTextColumn Header="{StaticResource RMWeightIn}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightIn}"/>
                 <DataGridTextColumn Header="{StaticResource RMWeightOut}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightOut}"/>
                 <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightRemain}"/>
+                <DataGridTextColumn Header="{StaticResource RMRatio}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Ratio,StringFormat={}{0:P}}"/>
                 <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

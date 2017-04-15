@@ -50,6 +50,7 @@ namespace PMSClient.ViewModel
             model.Weight = "重量";
             model.DetailRecord = "细节";
             model.Remark = "无";
+            model.PackNumber = 1;
             model.Position = "A2";
             model.State = PMSCommon.SimpleState.正常.ToString();
             #endregion

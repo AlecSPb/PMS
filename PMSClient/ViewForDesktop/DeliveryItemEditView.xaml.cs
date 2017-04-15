@@ -44,5 +44,10 @@ namespace PMSClient.ViewForDesktop
             }
 
         }
+
+        private void cboPackNumbers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
