@@ -96,7 +96,23 @@ namespace PMSWCFService.ServiceImplements
 
         public int UpdateProduct(DcProduct model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcProduct, Product>());
+                    var product = Mapper.Map<Product>(model);
+                    dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }
