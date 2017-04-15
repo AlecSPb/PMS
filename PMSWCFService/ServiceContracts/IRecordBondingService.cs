@@ -13,9 +13,9 @@ namespace PMSWCFService.ServiceContracts
     public interface IRecordBondingService
     {
         [OperationContract]
-        List<DcRecordBonding> GetRecordBondings(int skip, int take,string TargetLot,string PlateLot);
+        List<DcRecordBonding> GetRecordBondings(int skip, int take,string productid,string platelot);
         [OperationContract]
-        int GetRecordBondingCount(string TargetLot, string PlateLot);
+        int GetRecordBondingCount(string productid, string platelot);
 
 
 
