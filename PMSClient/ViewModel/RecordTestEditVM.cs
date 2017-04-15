@@ -14,13 +14,11 @@ namespace PMSClient.ViewModel
     {
         public RecordTestEditVM()
         {
-            States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.CommonState));
-            states.ToList().ForEach(s => States.Add(s));
+            States = new List<string>();
+            PMSBasicData.CommonStates.ToList().ForEach(s => States.Add(s));
 
-            TestTypes = new ObservableCollection<string>();
-            var testTypes = Enum.GetNames(typeof(PMSCommon.TestType));
-            testTypes.ToList().ForEach(t => TestTypes.Add(t));
+            TestTypes = new List<string>();
+            PMSBasicData.TestTypes.ToList().ForEach(t => TestTypes.Add(t));
 
 
             GiveUp = new RelayCommand(GoBack);
@@ -124,8 +122,8 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public ObservableCollection<string> TestTypes { get; set; }
-        public ObservableCollection<string> States { get; set; }
+        public List<string> TestTypes { get; set; }
+        public List<string> States { get; set; }
         private DcRecordTest currentRecordTest;
         public DcRecordTest CurrentRecordTest
         {

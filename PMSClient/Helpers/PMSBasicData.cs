@@ -61,11 +61,35 @@ namespace PMSClient
                 return states;
             }
         }
-        public static string[] ProductTypes
+        public static string[] TestTypes
+        {
+            get
+            {
+                var productTypes = Enum.GetNames(typeof(PMSCommon.TestType));
+                return productTypes;
+            }
+        }
+        public static string[] OrderProductTypes
         {
             get
             {
                 var productTypes = Enum.GetNames(typeof(PMSCommon.OrderProductType));
+                return productTypes;
+            }
+        }
+        public static string[] ProductTypes
+        {
+            get
+            {
+                var productTypes = Enum.GetNames(typeof(PMSCommon.ProductType));
+                return productTypes;
+            }
+        }
+        public static string[] ProductStates
+        {
+            get
+            {
+                var productTypes = Enum.GetNames(typeof(PMSCommon.ProductState));
                 return productTypes;
             }
         }

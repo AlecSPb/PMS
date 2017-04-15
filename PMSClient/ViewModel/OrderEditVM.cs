@@ -44,7 +44,7 @@ namespace PMSClient.ViewModel
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
 
             ProductTypes = new List<string>();
-            var productTypes = PMSBasicData.ProductTypes;
+            var productTypes = PMSBasicData.OrderProductTypes;
             productTypes.ToList().ForEach(p => ProductTypes.Add(p));
 
 

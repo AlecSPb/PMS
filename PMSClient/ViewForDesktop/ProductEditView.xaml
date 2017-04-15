@@ -13,10 +13,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageDeliveryItemEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{StaticResource PageProductEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
 
@@ -26,9 +27,13 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
             <Button Content="{StaticResource ButtonSelectTest}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding Select}"/>
+                    Command="{Binding SelectTest}"/>
+            <Button Content="{StaticResource ButtonSelectBonding}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding SelectBonding}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <TextBlock Grid.Row="2" Text="注意:可以自行输入，也可以选择上面的测试结果[靶材],绑定结果[绑定]"
+                   Style="{StaticResource StyleTextBlockTip}"/>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentProduct}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -53,11 +58,11 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RPProductType}"
+                <TextBlock Grid.Column="0" Text="{StaticResource RPProductType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtProductType" Text="{Binding ProductType,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboProductTypes"  HorizontalAlignment="Stretch"
@@ -65,7 +70,7 @@
                           SelectionChanged="cboProductTypes_SelectionChanged"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 </StackPanel>
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="产品类型"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RPProductID}"

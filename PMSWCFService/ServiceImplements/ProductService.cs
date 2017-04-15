@@ -19,7 +19,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcProduct, Product>());
                     var product = Mapper.Map<Product>(model);
                     dc.Products.Add(product);
                     result = dc.SaveChanges();

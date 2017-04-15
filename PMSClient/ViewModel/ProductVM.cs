@@ -10,11 +10,13 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class ProductVM:BaseViewModelPage
+    public class ProductVM : BaseViewModelPage
     {
         public ProductVM()
         {
-
+            InitializeCommands();
+            InitializeProperties();
+            SetPageParametersWhenConditionChange();
         }
 
         public void RefreshData()
@@ -34,17 +36,17 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑产品记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
         }
 
         private bool CanEdit(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑产品记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑产品记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
         }
 
         private void ActionSelectionChanged(DcProduct model)
@@ -68,11 +70,11 @@ namespace PMSClient.ViewModel
             ActionPaging();
         }
 
-        private void ActionDuplicate(DcProduct model)
-        {
-            PMSHelper.ViewModels.ProductEdit.SetNew(model);
-            NavigationService.GoTo(PMSViews.ProductEdit);
-        }
+        //private void ActionDuplicate(DcProduct model)
+        //{
+        //    PMSHelper.ViewModels.ProductEdit.SetNew(model);
+        //    NavigationService.GoTo(PMSViews.ProductEdit);
+        //}
 
         private void ActionEdit(DcProduct model)
         {

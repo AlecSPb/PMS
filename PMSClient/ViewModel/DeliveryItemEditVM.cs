@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             PMSBasicData.SimpleStates.ToList().ForEach(s => States.Add(s));
 
             ProductTypes = new List<string>();
-            PMSBasicData.ProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
+            PMSBasicData.OrderProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
 
             GoodPositions = new List<string>();
             PMSBasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));

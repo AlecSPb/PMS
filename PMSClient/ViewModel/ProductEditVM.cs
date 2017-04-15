@@ -10,18 +10,52 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class ProductEditVM:BaseViewModelEdit
+    public class ProductEditVM : BaseViewModelEdit
     {
         public ProductEditVM()
         {
+            States = new List<string>();
+            PMSBasicData.ProductStates.ToList().ForEach(s => States.Add(s));
+
+            ProductTypes = new List<string>();
+            PMSBasicData.ProductTypes.ToList().ForEach(t => ProductTypes.Add(t));
+
+            GoodPositions = new List<string>();
+            PMSBasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
+
+            InitializeCommands();
 
         }
+
+        private void InitializeCommands()
+        {
+            GiveUp = new RelayCommand(GoBack);
+            Save = new RelayCommand(ActionSave);
+            SelectTest = new RelayCommand(ActionSelect1);
+            SelectBonding = new RelayCommand(ActionSelect2);
+        }
+
         public void SetNew()
         {
             IsNew = true;
             var model = new DcProduct();
             #region 初始化
-          
+            IsNew = true;
+            model.ID = Guid.NewGuid();
+            model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.Composition = "成分";
+            model.Abbr = "缩写";
+            model.Dimension = "尺寸";
+            model.DimensionActual = "实际尺寸";
+            model.Defects = "无";
+            model.Customer = "客户";
+            model.Position = PMSCommon.GoodPosition.A1.ToString();
+            model.ProductType = PMSCommon.ProductType.靶材.ToString();
+            model.Weight = "";
+            model.State = PMSCommon.ProductState.库存.ToString();
+            model.Remark = "";
 
             #endregion
             CurrentProduct = model;
@@ -34,30 +68,21 @@ namespace PMSClient.ViewModel
                 CurrentProduct = model;
             }
         }
-        public void SetNew(DcProduct model)
-        {
-            if (model != null)
-            {
-                IsNew = true;
-                model.ID = Guid.NewGuid();
-                model.CreateTime = DateTime.Now;
-                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentProduct = model;
-            }
-        }
+
         public void SetBySelect(DcRecordTest model)
         {
             if (model != null)
             {
+                CurrentProduct.ProductType = PMSCommon.ProductType.靶材.ToString();
+                CurrentProduct.ProductID = model.ProductID;
+                CurrentProduct.Customer = model.Customer;
                 CurrentProduct.Composition = model.Composition;
                 CurrentProduct.Abbr = model.CompositionAbbr;
                 CurrentProduct.PO = model.PO;
-                CurrentProduct.ProductID = model.ProductID;
-                CurrentProduct.Customer = model.Customer;
+                CurrentProduct.Weight = model.Weight;
                 CurrentProduct.Dimension = model.Dimension;
                 CurrentProduct.DimensionActual = model.DimensionActual;
                 CurrentProduct.Defects = model.Defects;
-                CurrentProduct.ProductType = PMSCommon.ProductType.靶材.ToString();
                 CurrentProduct.Remark = model.Remark;
                 //RaisePropertyChanged(nameof(CurrentProduct));
             }
@@ -66,27 +91,31 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
+                CurrentProduct.ProductType = PMSCommon.ProductType.绑定.ToString();
                 CurrentProduct.ProductID = model.TargetProductID;
                 CurrentProduct.Customer = model.TargetCustomer;
                 CurrentProduct.Composition = model.TargetComposition;
                 CurrentProduct.Abbr = model.TargetAbbr;
                 CurrentProduct.PO = model.TargetPO;
+                CurrentProduct.Weight = model.TargetWeight;
                 CurrentProduct.Dimension = model.TargetDimension;
                 CurrentProduct.DimensionActual = model.TargetDimensionActual;
                 CurrentProduct.Defects = model.TargetDefects;
-                CurrentProduct.ProductType = PMSCommon.ProductType.绑定.ToString();
-                CurrentProduct.Remark = model.PlateLot;
-
+                CurrentProduct.Remark = $"背板编号:{model.PlateLot}";
 
                 //RaisePropertyChanged(nameof(CurrentProduct));
             }
         }
-        private void ActionSelect()
+        private void ActionSelect1()
         {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.ProductEdit);
-            NavigationService.GoTo(PMSViews.PlanSelect);
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.ProductEdit);
+            NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
-
+        private void ActionSelect2()
+        {
+            //PMSHelper.ViewModels.RecordBondingSelect.SetRequestView(PMSViews.ProductEdit);
+            NavigationService.GoTo(PMSViews.RecordBondingSelect);
+        }
         private static void GoBack()
         {
             NavigationService.GoTo(PMSViews.Product);
@@ -113,8 +142,11 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public ObservableCollection<string> TestTypes { get; set; }
-        public ObservableCollection<string> States { get; set; }
+        public List<string> ProductTypes { get; set; }
+        public List<string> States { get; set; }
+
+        public List<string> GoodPositions { get; set; }
+
         private DcProduct currentProduct;
         public DcProduct CurrentProduct
         {
@@ -124,6 +156,7 @@ namespace PMSClient.ViewModel
                 Set(nameof(CurrentProduct), ref currentProduct, value);
             }
         }
-        public RelayCommand Select { get; set; }
+        public RelayCommand SelectTest { get; set; }
+        public RelayCommand SelectBonding { get; set; }
     }
 }
