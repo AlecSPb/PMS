@@ -25,6 +25,8 @@ namespace PMSDAL
         public double WeightIn { get; set; }
         public double WeightOut { get; set; }
         public double WeightRemain { get; set; }
+        public double Ratio { get; set; }
+        public string MillingTime { get; set; }
 
     }
 }

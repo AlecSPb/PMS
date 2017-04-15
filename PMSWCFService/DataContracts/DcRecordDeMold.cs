@@ -31,6 +31,8 @@ namespace PMSWCFService.DataContracts
         public string Temperature2 { get; set; }
 
         [DataMember]
+        public string DeMoldType { get; set; }
+        [DataMember]
         public double Weight { get; set; }
         [DataMember]
         public double Diameter1 { get; set; }

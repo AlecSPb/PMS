@@ -40,6 +40,9 @@ namespace PMSWCFService.DataContracts
         public double WeightOut { get; set; }
         [DataMember]
         public double WeightRemain { get; set; }
-
+        [DataMember]
+        public double Ratio { get; set; }
+        [DataMember]
+        public string MillingTime { get; set; }
     }
 }

@@ -27,11 +27,13 @@ namespace PMSDAL
         public string Weight { get; set; }
         public string DetailRecord { get; set; }//复杂的信息写在这里
 
+        public int PackNumber { get; set; }//箱子号
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
+
         public string Remark { get; set; }
 
         public string State { get; set; }
 
-        public Guid? DeliveryID { get; set; }
+        public Guid DeliveryID { get; set; }
     }
 }

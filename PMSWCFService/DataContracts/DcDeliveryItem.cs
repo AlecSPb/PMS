@@ -39,6 +39,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Weight { get; set; }
         [DataMember]
+        public int PackNumber { get; set; }//箱子号
+        [DataMember]
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
         [DataMember]
         public string Remark { get; set; }

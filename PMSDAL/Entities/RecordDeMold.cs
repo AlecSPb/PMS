@@ -23,9 +23,8 @@ namespace PMSDAL
 
         public string Temperature1 { get; set; }
         public string Temperature2 { get; set; }
-        public string Remark { get; set; }
 
-
+        public string DeMoldType { get; set; }
         public double Weight { get; set; }
         public double Diameter1 { get; set; }
         public double Diameter2 { get; set; }
@@ -34,6 +33,6 @@ namespace PMSDAL
         public double Thickness2 { get; set; }
         public double Thickness3 { get; set; }
         public double Thickness4 { get; set; }
-
+        public string Remark { get; set; }
     }
 }

@@ -14,10 +14,11 @@ namespace PMSDAL
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
+        public string State { get; set; }//取消，未审核，审核通过，已发货
+
 
         public string DeliveryName { get; set; }
         public string InvoiceNumber { get; set; }
-
         public string DeliveryNumber { get; set; }
 
         public string Country { get; set; }
@@ -26,7 +27,7 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string PackageType { get; set; }//木箱 纸箱 塑料箱
         public string PackageInformation { get; set; }//包装重量等细节信息
-        public string State { get; set; }//取消，未审核，审核通过，已发货
+
 
     }
 }
