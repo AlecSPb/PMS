@@ -24,7 +24,7 @@ namespace PMSClient
         {
             var empty = new DcMaterialNeed();
             empty.Id = Guid.NewGuid();
-            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            empty.State = PMSCommon.SimpleState.正常.ToString();
             empty.CreateTime = DateTime.Now;
             //empty.Creator = (App.Current as App).CurrentUser.UserName;
             empty.Purity = "5N";
@@ -109,7 +109,7 @@ namespace PMSClient
             var model = new DcMaterialOrder();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.State = PMSCommon.OrderState.UnChecked.ToString();
+            model.State = PMSCommon.OrderState.未核验.ToString();
             //model.Creator = (App.Current as App).CurrentUser.UserName;
             model.Supplier = "Sanjie";
             model.SupplierAbbr = "SJ";
@@ -117,7 +117,7 @@ namespace PMSClient
             model.SupplierReceiver = "Mr.Wang";
             model.SupplierAddress = "Chengdu,Sichuan CHINA";
             model.ShipFee = 0;
-            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
+            model.Priority = PMSCommon.OrderPriority.通常.ToString();
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
             return model;
@@ -128,7 +128,7 @@ namespace PMSClient
             var item = new MainService.DcMaterialOrderItem();
             item.ID = Guid.NewGuid();
             item.MaterialOrderID = order.ID;
-            item.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            item.State = PMSCommon.SimpleState.正常.ToString();
             //item.Creator = (App.Current as App).CurrentUser.UserName;
             item.CreateTime = DateTime.Now;
             item.Composition = "Composition";

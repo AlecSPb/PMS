@@ -94,7 +94,7 @@ namespace PMSWCFService
                     var model = dc.MaterialNeeds.Find(id);
                     if (model != null)
                     {
-                        model.State = OrderState.Deleted.ToString();
+                        model.State = OrderState.作废.ToString();
                         result = dc.SaveChanges();
                     }
 
@@ -118,7 +118,7 @@ namespace PMSWCFService
                     var model = dc.MaterialOrders.Find(id);
                     if (model != null)
                     {
-                        model.State = OrderState.Deleted.ToString();
+                        model.State = OrderState.作废.ToString();
                         result = dc.SaveChanges();
                     }
                     return result;
@@ -141,7 +141,7 @@ namespace PMSWCFService
                     var model = dc.MaterialOrderItems.Find(id);
                     if (model != null)
                     {
-                        model.State = OrderState.Deleted.ToString();
+                        model.State = OrderState.作废.ToString();
                         result = dc.SaveChanges();
                     }
                     return result;
@@ -163,7 +163,7 @@ namespace PMSWCFService
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialNeed, DcMaterialNeed>());
                     var mapper = config.CreateMapper();
                     var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
-                        && m.State != OrderState.Deleted.ToString())
+                        && m.State != SimpleState.作废.ToString())
                         .OrderByDescending(m => m.CreateTime)
                         .Skip(skip).Take(take)
                         .ToList();
@@ -184,7 +184,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
-                    && m.State != OrderState.Deleted.ToString()).Count();
+                    && m.State != SimpleState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -206,7 +206,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.State != OrderState.Deleted.ToString()
+                                where m.State != OrderState.作废.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
@@ -228,7 +228,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != OrderState.Deleted.ToString()).Count();
+                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != OrderState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -246,9 +246,9 @@ namespace PMSWCFService
                 {
                     var query = from m in dc.MaterialOrders
                                 where m.OrderPO.Contains(orderPo) &&
-                                (m.State == OrderState.Paused.ToString()
-                                || m.State == OrderState.Completed.ToString()
-                                || m.State == OrderState.UnCompleted.ToString())
+                                (m.State == OrderState.暂停.ToString()
+                                || m.State == OrderState.完成.ToString()
+                                || m.State == OrderState.未完成.ToString())
                                 select m;
                     return query.Count();
                 }
@@ -273,9 +273,9 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
                                 where m.OrderPO.Contains(orderPo) && m.SupplierAbbr.Contains("SJ") &&
-                                (m.State == OrderState.Paused.ToString()
-                                || m.State == OrderState.Completed.ToString()
-                                || m.State == OrderState.UnCompleted.ToString())
+                                (m.State == OrderState.暂停.ToString()
+                                || m.State == OrderState.完成.ToString()
+                                || m.State == OrderState.未完成.ToString())
                                 orderby m.CreateTime descending
                                 select m;
                     return mapper.Map<List<MaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
@@ -315,7 +315,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.SimpleState.Deleted.ToString() && m.MaterialOrderID==id
+                                where m.State != PMSCommon.SimpleState.作废.ToString() && m.MaterialOrderID==id
                                 orderby m.CreateTime descending
                                 select m;
                     return query.Count();
@@ -337,7 +337,7 @@ namespace PMSWCFService
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.SimpleState.Deleted.ToString()
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby m.CreateTime descending
                                 select m;
                     return mapper.Map<List<MaterialOrderItem>, List<DcMaterialOrderItem>>(query.Skip(skip).Take(take).ToList());
@@ -357,7 +357,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.SimpleState.Deleted.ToString()
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby m.CreateTime descending
                                 select m;
                     return query.Count();

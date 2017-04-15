@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
             model.Customer = "客户信息";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.TestType = PMSCommon.TestType.产品.ToString();
-            model.State = PMSCommon.CommonState.UnChecked.ToString();
+            model.State = PMSCommon.CommonState.未核验.ToString();
             model.Weight = "100";
             model.Remark = "";
             model.Resistance = "OutOfRange";

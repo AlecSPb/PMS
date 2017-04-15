@@ -15,10 +15,10 @@ namespace PMSCommon
     /// </summary>
     public enum OrderState
     {
-        Deleted = 0,
-        UnChecked = 1,
-        UnCompleted = 2,
-        Paused = 3,
-        Completed = 4
+        作废= 0,
+        未核验 = 1,
+        未完成 = 2,
+        暂停 = 3,
+        完成 = 4
     }
 }

@@ -29,7 +29,7 @@ namespace PMSClient.ViewModel
             empty.PMINumber = DateTime.Now.ToString("yyMMdd");
             empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
             empty.Composition = "成分";
-            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            empty.State = PMSCommon.SimpleState.正常.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             empty.Supplier = "Sanjie";

@@ -31,7 +31,7 @@ namespace PMSClient.ViewModel
                 #region 初始化
                 item.ID = Guid.NewGuid();
                 item.MaterialOrderID = order.ID;
-                item.State = PMSCommon.SimpleState.UnDeleted.ToString();
+                item.State = PMSCommon.SimpleState.正常.ToString();
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
                 item.OrderItemNumber = DateTime.Now.ToString("yyMMdd")+"-"+ (GetNowItemCount(order)+1).ToString();

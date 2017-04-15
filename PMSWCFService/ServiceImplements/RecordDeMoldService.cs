@@ -60,7 +60,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.RecordDeMolds.OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
+                    var result = dc.RecordDeMolds.Where(r => r.State != PMSCommon.SimpleState.作废.ToString())
+                        .OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
                     return Mapper.Map<List<RecordDeMold>, List<DcRecordDeMold>>(result);
                 }
@@ -81,7 +82,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordDeMold, DcRecordDeMold>());
                     var query = from r in dc.RecordDeMolds
-                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby r.CreateTime descending
                                 select r;
                     return Mapper.Map<List<RecordDeMold>, List<DcRecordDeMold>>(query.Skip(skip).Take(take).ToList());
@@ -100,7 +101,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.RecordDeMolds.Count();
+                    return dc.RecordDeMolds.Where(r=>r.State != PMSCommon.SimpleState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -118,7 +119,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordDeMolds
-                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
                                 select r;
                     return query.Count();
                 }

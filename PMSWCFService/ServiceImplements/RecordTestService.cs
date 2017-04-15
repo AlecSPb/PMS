@@ -66,7 +66,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordTests.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
-                      && p.State != OrderState.Deleted.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                      && p.State != CommonState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
                     var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(result);
                     return products;
@@ -87,7 +87,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordTests.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
-                      && p.State != OrderState.Deleted.ToString()).Count();
+                      && p.State != CommonState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)

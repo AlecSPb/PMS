@@ -60,7 +60,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.RecordMillings.Count();
+                    return dc.RecordMillings.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -78,7 +78,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordMillings
-                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
                                 select r;
                     return query.Count();
                 }
@@ -98,6 +98,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
                     var query = from r in dc.RecordMillings
+                                where r.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby r.CreateTime descending
                                 select r;
                     return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Skip(skip).Take(take).ToList());
@@ -118,7 +119,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
                     var query = from r in dc.RecordMillings
-                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby r.CreateTime descending
                                 select r;
                     return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Skip(skip).Take(take).ToList());

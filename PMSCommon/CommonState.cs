@@ -11,8 +11,8 @@ namespace PMSCommon
     /// </summary>
     public enum CommonState
     {
-        Deleted,
-        UnChecked,
-        Checked
+        作废,
+        未核验,
+        已核验
     }
 }

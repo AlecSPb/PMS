@@ -155,7 +155,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<DeliveryItem, DcDeliveryItem>());
 
                     var result = dc.DeliveryItems
-                        .Where(i => i.DeliveryID == id && i.State != PMSCommon.CommonState.Deleted.ToString())
+                        .Where(i => i.DeliveryID == id && i.State != PMSCommon.CommonState.作废.ToString())
                         .OrderByDescending(i=>i.CreateTime)
                         .ToList();
                     return Mapper.Map<List<DeliveryItem>, List<DcDeliveryItem>>(result);

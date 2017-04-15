@@ -112,7 +112,7 @@ namespace PMSClient.ViewModel
                 model.PlanVHPID = CurrentPlanWithMisson.Plan.ID;
                 model.CurrentTime = DateTime.Now;
                 model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+                model.State = PMSCommon.SimpleState.正常.ToString();
                 model.PV1 = 0;
                 model.PV2 = 0;
                 model.PV3 = 0;
@@ -174,7 +174,7 @@ namespace PMSClient.ViewModel
                 model.ID = Guid.NewGuid();
                 model.CurrentTime = DateTime.Now;
                 model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+                model.State = PMSCommon.SimpleState.正常.ToString();
                 model.PV1 = obj.PV1;
                 model.PV2 = obj.PV2;
                 model.PV3 = obj.PV3;

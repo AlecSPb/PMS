@@ -26,9 +26,9 @@ namespace PMSWCFService
 
                     var result = from o in dc.Orders
                                  where o.PolicyType.Contains("VHP")
-                                 && (o.State == OrderState.UnCompleted.ToString()
-                                 || o.State == OrderState.Paused.ToString()
-                                 || o.State == OrderState.Completed.ToString())
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.完成.ToString())
                                  orderby o.CreateTime descending
                                  select o;
 
@@ -52,9 +52,9 @@ namespace PMSWCFService
                 {
                     var query = from o in dc.Orders
                                 where o.PolicyType.Contains("VHP")
-                                 && (o.State == OrderState.UnCompleted.ToString()
-                                 || o.State == OrderState.Paused.ToString()
-                                 || o.State == OrderState.Completed.ToString())
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.完成.ToString())
                                 select o;
                     return query.Count();
                 }
@@ -81,9 +81,9 @@ namespace PMSWCFService
                     var result = from o in dc.Orders
                                  where o.PolicyType.Contains("VHP")
                                  && o.CompositionStandard.Contains(compostion)
-                                 && (o.State == OrderState.UnCompleted.ToString()
-                                 || o.State == OrderState.Paused.ToString()
-                                 || o.State == OrderState.Completed.ToString())
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.完成.ToString())
                                  orderby o.CreateTime descending
                                  select o;
 
@@ -108,9 +108,9 @@ namespace PMSWCFService
                     var query = from o in dc.Orders
                                 where o.PolicyType.Contains("VHP")
                                  && o.CompositionStandard.Contains(compostion)
-                                 && (o.State == OrderState.UnCompleted.ToString()
-                                 || o.State == OrderState.Paused.ToString()
-                                 || o.State == OrderState.Completed.ToString())
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.完成.ToString())
                                 select o;
                     return query.Count();
                 }
@@ -135,7 +135,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
-                                     where p.State != PMSCommon.CommonState.Deleted.ToString()
+                                     where p.State != PMSCommon.CommonState.作废.ToString()
                                      orderby p.PlanDate descending
                                      select p).Skip(skip).Take(take);
                     var queryResult = from p in queryPlan
@@ -169,7 +169,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
-                                     where p.State != PMSCommon.CommonState.Deleted.ToString()
+                                     where p.State != PMSCommon.CommonState.作废.ToString()
                                      orderby p.PlanDate descending
                                      select p);
                     var queryResult = from p in queryPlan
@@ -198,7 +198,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
-                                     where p.State == PMSCommon.CommonState.Checked.ToString()
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
                                      orderby p.PlanDate descending
                                      select p).Skip(skip).Take(take);
                     var queryResult = from p in queryPlan
@@ -231,7 +231,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
-                                     where p.State == PMSCommon.CommonState.Checked.ToString()
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
                                      orderby p.PlanDate descending
                                      select p);
                     var queryResult = from p in queryPlan
@@ -257,7 +257,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
-                                     where p.State == PMSCommon.CommonState.Checked.ToString()
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.PlanDate >= startDate
                                      && p.PlanDate <= endDate
                                      orderby p.PlanDate descending
@@ -295,7 +295,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     var queryPlan = (from p in dc.VHPPlans
-                                     where p.State == PMSCommon.CommonState.Checked.ToString()
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.PlanDate >= startDate
                                      && p.PlanDate <= endDate
                                      orderby p.PlanDate descending

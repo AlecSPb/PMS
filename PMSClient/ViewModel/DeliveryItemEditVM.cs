@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
             model.DetailRecord = "细节";
             model.Remark = "无";
             model.Position = "A2";
-            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.State = PMSCommon.SimpleState.正常.ToString();
             #endregion
             CurrentDeliveryItem = model;
         }

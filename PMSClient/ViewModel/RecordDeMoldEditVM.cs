@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "成分";
             model.Temperature1 = "0";

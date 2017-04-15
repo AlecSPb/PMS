@@ -121,7 +121,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
 
                     var query = from o in dc.MaterialInventoryIns
-                                where o.State != PMSCommon.CommonState.Deleted.ToString()
+                                where o.State != PMSCommon.CommonState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
                     return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
@@ -144,7 +144,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
 
                     var query = from o in dc.MaterialInventoryOuts
-                                where o.State != PMSCommon.CommonState.Deleted.ToString()
+                                where o.State != PMSCommon.CommonState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
                     return Mapper.Map<List<MaterialInventoryOut>, List<DcMaterialInventoryOut>>(query.Skip(skip).Take(take).ToList());

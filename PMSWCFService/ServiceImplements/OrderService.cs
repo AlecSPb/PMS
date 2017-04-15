@@ -57,7 +57,7 @@ namespace PMSWCFService
                     var pmsOrder = dc.Orders.Find(id);
                     if (pmsOrder != null)
                     {
-                        pmsOrder.State = OrderState.Deleted.ToString();
+                        pmsOrder.State = OrderState.作废.ToString();
                         dc.SaveChanges();
                     }
                     return result;
@@ -119,7 +119,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var order = from o in dc.Orders
-                                where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.Deleted.ToString()
+                                where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
 
@@ -147,7 +147,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) &&
-                    o.State != OrderState.Deleted.ToString()).Count();
+                    o.State != OrderState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)

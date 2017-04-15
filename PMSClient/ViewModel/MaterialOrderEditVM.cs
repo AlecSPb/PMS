@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.State = PMSCommon.OrderState.UnChecked.ToString();
+            model.State = PMSCommon.OrderState.未核验.ToString();
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.Supplier = "Sanjie";
             model.SupplierAbbr = "SJ";
@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
             model.SupplierReceiver = "Mr.Wang";
             model.SupplierAddress = "Chengdu,Sichuan CHINA";
             model.ShipFee = 0;
-            model.Priority = PMSCommon.OrderPriority.Normal.ToString();
+            model.Priority = PMSCommon.OrderPriority.通常.ToString();
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
             #endregion

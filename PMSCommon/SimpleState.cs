@@ -11,7 +11,7 @@ namespace PMSCommon
     /// </summary>
     public enum SimpleState
     {
-        Deleted,
-        UnDeleted
+        作废,
+        正常
     }
 }

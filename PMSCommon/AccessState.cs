@@ -11,7 +11,7 @@ namespace PMSCommon.UsedEnum
    /// </summary>
     public enum AccessState
     {
-        UnDeleted,
-        Deleted
+        正常,
+        作废
     }
 }

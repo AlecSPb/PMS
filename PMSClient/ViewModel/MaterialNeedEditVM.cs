@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
             empty.Id = Guid.NewGuid();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            empty.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            empty.State = PMSCommon.SimpleState.正常.ToString();
             empty.Composition = "需求原料成分";
             empty.PMINumber = DateTime.Now.ToString("yyMMdd");
             empty.Purity = "5N";

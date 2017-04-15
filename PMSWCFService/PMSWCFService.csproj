@@ -128,7 +128,7 @@
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
-    <Compile Include="ServiceImplements\RecordDeliveryService.cs" />
+    <Compile Include="ServiceImplements\DeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />
     <Compile Include="ServiceImplements\RecordDeMoldService.cs" />
     <Compile Include="ServiceImplements\RecordMachineService.cs" />

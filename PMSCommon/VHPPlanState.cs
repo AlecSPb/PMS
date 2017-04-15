@@ -8,8 +8,8 @@ namespace PMSCommon
 {
     public enum VHPPlanState
     {
-        Deleted,
-        UnChecked,
-        Checked
+        作废,
+        未核验,
+        已核验
     }
 }

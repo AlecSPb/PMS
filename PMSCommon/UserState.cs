@@ -11,8 +11,8 @@ namespace PMSCommon
     /// </summary>
     public enum UserState
     {
-        Hiring,
-        Resign,
-        Paused
+        雇佣,
+        离职,
+        暂停
     }
 }

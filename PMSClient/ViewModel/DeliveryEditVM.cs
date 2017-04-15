@@ -30,7 +30,7 @@ namespace PMSClient.ViewModel
             model.DeliveryNumber = "UPS";
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.SimpleState.UnDeleted.ToString();
+            model.State = PMSCommon.CommonState.正常.ToString();
             model.PackageInformation = "重量未知";
             model.PackageType = PMSCommon.PackageType.木箱.ToString();
             model.Remark = "";

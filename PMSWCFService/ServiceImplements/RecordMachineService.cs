@@ -60,7 +60,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.RecordMachines.Count();
+                    return dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -78,7 +78,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from r in dc.RecordMachines
-                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
                                 select r;
                     return query.Count();
                 }
@@ -96,7 +96,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.RecordMachines.OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
+                    var result = dc.RecordMachines.Where(r => r.State != PMSCommon.SimpleState.作废.ToString())
+                        .OrderByDescending(i => i.CreateTime).Skip(skip).Take(take).ToList();
 
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
                     return Mapper.Map<List<RecordMachine>, List<DcRecordMachine>>(result);
@@ -118,7 +119,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMachine, DcRecordMachine>());
                     var query = from r in dc.RecordMachines
-                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby r.CreateTime descending
                                 select r;
                     return Mapper.Map<List<RecordMachine>, List<DcRecordMachine>>(query.Skip(skip).Take(take).ToList());
