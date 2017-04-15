@@ -29,11 +29,11 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcRecordTest>(ActionEdit,CanEdit);
-            Doc = new RelayCommand<DcRecordTest>(ActionDoc,CanDoc);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcRecordTest>(ActionEdit, CanEdit);
+            Doc = new RelayCommand<DcRecordTest>(ActionDoc, CanDoc);
             SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
-            Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate,CanDuplicate);
+            Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate, CanDuplicate);
         }
 
         private bool CanDuplicate(DcRecordTest arg)
@@ -91,7 +91,7 @@ namespace PMSClient.ViewModel
 
         private void ActionDoc(DcRecordTest model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 PMSHelper.ViewModels.RecordTestDoc.SetModel(model);
                 NavigationService.GoTo(PMSViews.RecordTestDoc);
@@ -115,19 +115,25 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new RecordTestServiceClient();
-            RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            using (var service = new RecordTestServiceClient())
+            {
+                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            }
+
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordTestServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
-            RecordProducts.Clear();
-            orders.ToList<DcRecordTest>().ForEach(o => RecordProducts.Add(o));
+
+            using (var service = new RecordTestServiceClient())
+            {
+                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+                RecordProducts.Clear();
+                orders.ToList().ForEach(o => RecordProducts.Add(o));
+            }
 
             CurrentSelectItem = RecordProducts.FirstOrDefault();
         }

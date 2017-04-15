@@ -83,19 +83,23 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new RecordTestServiceClient();
-            RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            using (var service = new RecordTestServiceClient())
+            {
+                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+            }
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordTestServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
-            RecordProducts.Clear();
-            orders.ToList<DcRecordTest>().ForEach(o => RecordProducts.Add(o));
+            using (var service = new RecordTestServiceClient())
+            {
+                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+                RecordProducts.Clear();
+                orders.ToList().ForEach(o => RecordProducts.Add(o));
+            }
         }
         #region Commands
         public RelayCommand GiveUp { get; set; }
