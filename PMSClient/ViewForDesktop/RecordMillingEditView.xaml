@@ -109,21 +109,21 @@
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMWeightIn}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Name="txtWeightIn" Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="来料重量(g)"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMWeightOut}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Name="txtWeightOut" Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="出料重量(g)"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Name="txtWeightRemain" Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="余料重量(g)"/>
@@ -131,9 +131,10 @@
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMRatio}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxCommon}"
+                    <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
-                    <Button Content="{StaticResource ButtonCalculate}" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="btnCalculation" Content="{StaticResource ButtonCalculate}" Style="{StaticResource StyleButtonCommon}"
+                            Click="btnCalculation_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="损失率计算,确保进料，出料，预料填写正常才能计算，否则填1，即100%"/>
