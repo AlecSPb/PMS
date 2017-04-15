@@ -57,10 +57,6 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                CurrentOrder.Reviewer = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentOrder.ReviewPassed = true;
-                CurrentOrder.ReviewDate = DateTime.Now;
-
                 var service = new OrderServiceClient();
                 if (IsNew)
                 {

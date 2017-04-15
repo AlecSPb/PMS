@@ -143,7 +143,6 @@
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
     <Compile Include="Helpers\CommonDialogService.cs" />
-    <Compile Include="Helpers\EmptyModel.cs" />
     <Compile Include="Helpers\OK\MainNavigationToken.cs" />
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\OK\NavigationService.cs" />
