@@ -34,28 +34,27 @@ namespace PMSClient.ViewForDesktop
             {
                 switch (order.State)
                 {
-                    case "UnChecked":
+                    case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
                         break;
-                    case "Paused":
+                    case "暂停":
                         e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                         break;
-                    case "UnCompleted":
+                    case "未完成":
                         e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
-                    case "Completed":
+                    case "完成":
                         e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;
                 }
-                if (order.State == "UnCompleted" && order.Priority == "Emergency")
+                if (order.State == OrderState.未完成.ToString() && order.Priority == OrderPriority.紧急.ToString())
                 {
                     e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }
 
             }
-
         }
 
         private void dgplans_LoadingRow(object sender, DataGridRowEventArgs e)
@@ -65,10 +64,10 @@ namespace PMSClient.ViewForDesktop
             {
                 switch (plan.State)
                 {
-                    case "UnChecked":
+                    case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
                         break;
-                    case "Checked":
+                    case "已核验":
                         e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
                         break;
                     default:

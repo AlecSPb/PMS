@@ -35,7 +35,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeProperties()
         {
-            RecordDeliveries = new ObservableCollection<DcDelivery>();
+            Deliveries = new ObservableCollection<DcDelivery>();
             DeliveryItems = new ObservableCollection<DcDeliveryItem>();
         }
         private void InitializeCommands()
@@ -220,15 +220,15 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var models = service.GetDelivery(skip, take);
-            RecordDeliveries.Clear();
-            models.ToList<DcDelivery>().ForEach(o => RecordDeliveries.Add(o));
+            Deliveries.Clear();
+            models.ToList<DcDelivery>().ForEach(o => Deliveries.Add(o));
 
             CurrentSelectIndex = 0;
-            CurrentSelectItem = RecordDeliveries.FirstOrDefault();
+            CurrentSelectItem = Deliveries.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);
         }
         #region Properties
-        public ObservableCollection<DcDelivery> RecordDeliveries { get; set; }
+        public ObservableCollection<DcDelivery> Deliveries { get; set; }
         public ObservableCollection<DcDeliveryItem> DeliveryItems { get; set; }
         private int currentSelectIndex;
 

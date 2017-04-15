@@ -35,16 +35,16 @@ namespace PMSClient.ViewForDesktop
             {
                 switch (order.State)
                 {
-                    case "UnChecked":
+                    case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
                         break;
-                    case "Paused":
+                    case "暂停":
                         e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                         break;
-                    case "UnCompleted":
+                    case "未完成":
                         e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
-                    case "Completed":
+                    case "完成":
                         e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:
