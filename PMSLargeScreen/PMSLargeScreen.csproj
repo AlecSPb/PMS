@@ -109,6 +109,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDeliveryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialInventoryIn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -124,28 +130,19 @@
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialOrderItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMissonWithPlan.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlanVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlanWithMisson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBonding.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBondingPlate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBondingTarget.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDelivery.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDeliveryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDeMold.datasource">

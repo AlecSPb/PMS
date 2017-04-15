@@ -337,10 +337,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetMaterialOrderItemCountByMaterialID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q22:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialOrderItemCountByMaterialIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMaterialOrderItemCountByMaterialIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddMaterialOrderItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q22:DcMaterialOrderItem" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q23:DcMaterialOrderItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -354,7 +368,7 @@
   <xs:element name="UpdateMaterialOrderItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q23:DcMaterialOrderItem" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q24:DcMaterialOrderItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -368,7 +382,7 @@
   <xs:element name="DeleteMaterialOrderItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q24:guid" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q25:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -390,7 +404,7 @@
   <xs:element name="GetMaterialOrderItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialOrderItemsResult" nillable="true" type="q25:ArrayOfDcMaterialOrderItem" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialOrderItemsResult" nillable="true" type="q26:ArrayOfDcMaterialOrderItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -417,7 +431,7 @@
   <xs:element name="GetMaterialInventoryInsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInsResult" nillable="true" type="q26:ArrayOfDcMaterialInventoryIn" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInsResult" nillable="true" type="q27:ArrayOfDcMaterialInventoryIn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -436,7 +450,7 @@
   <xs:element name="AddMaterialInventoryIn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q27:DcMaterialInventoryIn" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q28:DcMaterialInventoryIn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -450,7 +464,7 @@
   <xs:element name="UpdateMaterialInventoryIn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q28:DcMaterialInventoryIn" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q29:DcMaterialInventoryIn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -464,7 +478,7 @@
   <xs:element name="DeleteMaterialInventoryIn">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q29:guid" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q30:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -486,7 +500,7 @@
   <xs:element name="GetMaterialInventoryOutsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryOutsResult" nillable="true" type="q30:ArrayOfDcMaterialInventoryOut" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryOutsResult" nillable="true" type="q31:ArrayOfDcMaterialInventoryOut" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -505,7 +519,7 @@
   <xs:element name="AddMaterialInventoryOut">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q31:DcMaterialInventoryOut" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q32:DcMaterialInventoryOut" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -519,7 +533,7 @@
   <xs:element name="UpdateMaterialInventoryOut">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q32:DcMaterialInventoryOut" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q33:DcMaterialInventoryOut" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -533,7 +547,7 @@
   <xs:element name="DeleteMaterialInventoryOut">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q33:guid" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q34:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -555,21 +569,7 @@
   <xs:element name="GetMissonsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonsResult" nillable="true" type="q34:ArrayOfDcOrder" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlans">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q35:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetPlansResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlansResult" nillable="true" type="q36:ArrayOfDcPlanVHP" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonsResult" nillable="true" type="q35:ArrayOfDcOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -585,7 +585,37 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlan">
+  <xs:element name="GetMissonsBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="compostion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonsBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonsBySearchResult" nillable="true" type="q36:ArrayOfDcOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonsCountBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="compostion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonsCountBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMissonsCountBySearchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanWithMisson">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="skip" type="xs:int" />
@@ -593,26 +623,26 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanResponse">
+  <xs:element name="GetPlanWithMissonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonWithPlanResult" nillable="true" type="q37:ArrayOfDcMissonWithPlan" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanWithMissonResult" nillable="true" type="q37:ArrayOfDcPlanWithMisson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanCount">
+  <xs:element name="GetPlanWithMissonCount">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanCountResponse">
+  <xs:element name="GetPlanWithMissonCountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetMissonWithPlanCountResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetPlanWithMissonCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanChecked">
+  <xs:element name="GetPlanWithMissonChecked">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="skip" type="xs:int" />
@@ -620,36 +650,54 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanCheckedResponse">
+  <xs:element name="GetPlanWithMissonCheckedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonWithPlanCheckedResult" nillable="true" type="q38:ArrayOfDcMissonWithPlan" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanWithMissonCheckedResult" nillable="true" type="q38:ArrayOfDcPlanWithMisson" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanCheckedCount">
+  <xs:element name="GetPlanWithMissonCheckedCount">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanCheckedCountResponse">
+  <xs:element name="GetPlanWithMissonCheckedCountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetMissonWithPlanCheckedCountResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetPlanWithMissonCheckedCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanByDate">
+  <xs:element name="GetPlanWithMissonCheckedByDateRange">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="dateStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonWithPlanByDateResponse">
+  <xs:element name="GetPlanWithMissonCheckedByDateRangeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMissonWithPlanByDateResult" nillable="true" type="q39:ArrayOfDcMissonWithPlan" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanWithMissonCheckedByDateRangeResult" nillable="true" type="q39:ArrayOfDcPlanWithMisson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanWithMissonCheckedCountByDateRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dateStart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlanWithMissonCheckedCountByDateRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPlanWithMissonCheckedCountByDateRangeResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -664,7 +712,7 @@
   <xs:element name="GetDeliveryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryResult" nillable="true" type="q40:ArrayOfDcRecordDelivery" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryResult" nillable="true" type="q40:ArrayOfDcDelivery" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -680,101 +728,101 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordDelivery">
+  <xs:element name="AddDelivery">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q41:DcRecordDelivery" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q41:DcDelivery" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordDeliveryResponse">
+  <xs:element name="AddDeliveryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AddRecordDeliveryResult" type="xs:int" />
+        <xs:element minOccurs="0" name="AddDeliveryResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateReocrdDelivery">
+  <xs:element name="UpdateDelivery">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q42:DcRecordDelivery" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q42:DcDelivery" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateReocrdDeliveryResponse">
+  <xs:element name="UpdateDeliveryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateReocrdDeliveryResult" type="xs:int" />
+        <xs:element minOccurs="0" name="UpdateDeliveryResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordDelivery">
+  <xs:element name="DeleteDelivery">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q43:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordDeliveryResponse">
+  <xs:element name="DeleteDeliveryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="DeleteRecordDeliveryResult" type="xs:int" />
+        <xs:element minOccurs="0" name="DeleteDeliveryResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordDeliveryItemByRecordDeliveryID">
+  <xs:element name="GetDeliveryItemByDeliveryID">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q44:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordDeliveryItemByRecordDeliveryIDResponse">
+  <xs:element name="GetDeliveryItemByDeliveryIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordDeliveryItemByRecordDeliveryIDResult" nillable="true" type="q45:ArrayOfDcRecordDeliveryItem" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetDeliveryItemByDeliveryIDResult" nillable="true" type="q45:ArrayOfDcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordDeliveryItem">
+  <xs:element name="AddDeliveryItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q46:DcRecordDeliveryItem" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q46:DcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordDeliveryItemResponse">
+  <xs:element name="AddDeliveryItemResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AddRecordDeliveryItemResult" type="xs:int" />
+        <xs:element minOccurs="0" name="AddDeliveryItemResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateReocrdDeliveryItem">
+  <xs:element name="UpdateDeliveryItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q47:DcRecordDeliveryItem" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q47:DcDeliveryItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateReocrdDeliveryItemResponse">
+  <xs:element name="UpdateDeliveryItemResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateReocrdDeliveryItemResult" type="xs:int" />
+        <xs:element minOccurs="0" name="UpdateDeliveryItemResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordDeliveryItem">
+  <xs:element name="DeleteDeliveryItem">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q48:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordDeliveryItemResponse">
+  <xs:element name="DeleteDeliveryItemResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="DeleteRecordDeliveryItemResult" type="xs:int" />
+        <xs:element minOccurs="0" name="DeleteDeliveryItemResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1222,6 +1270,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="skip" type="xs:int" />
         <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="platelot" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1234,7 +1284,10 @@
   </xs:element>
   <xs:element name="GetRecordBondingCount">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="platelot" nillable="true" type="xs:string" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetRecordBondingCountResponse">
@@ -1244,53 +1297,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetRecordBondingPlates">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="skip" type="xs:int" />
-        <xs:element minOccurs="0" name="take" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordBondingPlatesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordBondingPlatesResult" nillable="true" type="q74:ArrayOfDcRecordBondingPlate" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordBondingPlatesByBondingID">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="bondingId" type="q75:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordBondingPlatesByBondingIDResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordBondingPlatesByBondingIDResult" nillable="true" type="q76:ArrayOfDcRecordBondingPlate" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordBondingTargets">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="bongdingId" type="q77:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetRecordBondingTargetsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetRecordBondingTargetsResult" nillable="true" type="q78:ArrayOfDcRecordBondingTarget" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="AddRecordBongding">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q79:DcRecordBonding" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q74:DcRecordBonding" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1304,7 +1314,7 @@
   <xs:element name="UpdateRecordBongding">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q80:DcRecordBonding" />
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q75:DcRecordBonding" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1318,7 +1328,7 @@
   <xs:element name="DeleteRecordBongding">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q81:guid" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q76:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1329,87 +1339,77 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordBongdingTarget">
+  <xs:element name="GetProducts">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q82:DcRecordBondingTarget" />
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordBongdingTargetResponse">
+  <xs:element name="GetProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AddRecordBongdingTargetResult" type="xs:int" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetProductsResult" nillable="true" type="q77:ArrayOfDcProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateRecordBongdingTarget">
+  <xs:element name="GetProductCount">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q83:DcRecordBondingTarget" />
+        <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateRecordBongdingTargetResponse">
+  <xs:element name="GetProductCountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateRecordBongdingTargetResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetProductCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordBongdingTarget">
+  <xs:element name="AddProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q84:guid" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q78:DcProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteRecordBongdingTargetResponse">
+  <xs:element name="AddProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="DeleteRecordBongdingTargetResult" type="xs:int" />
+        <xs:element minOccurs="0" name="AddProductResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordBongdingPlate">
+  <xs:element name="UpdateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q85:DcRecordBondingPlate" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q79:DcProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddRecordBongdingPlateResponse">
+  <xs:element name="UpdateProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="AddRecordBongdingPlateResult" type="xs:int" />
+        <xs:element minOccurs="0" name="UpdateProductResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateRecordBongdingPlate">
+  <xs:element name="DeleteProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q86:DcRecordBondingPlate" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q80:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="UpdateRecordBongdingPlateResponse">
+  <xs:element name="DeleteProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="UpdateRecordBongdingPlateResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteRecordBongdingPlate">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q87:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteRecordBongdingPlateResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="DeleteRecordBongdingPlateResult" type="xs:int" />
+        <xs:element minOccurs="0" name="DeleteProductResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
