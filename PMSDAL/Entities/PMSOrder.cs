@@ -53,15 +53,8 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
 
-        public bool ReviewPassed { get; set; }//审核是否通过
-        public string Reviewer { get; set; }
-        public DateTime ReviewDate { get; set; }
-
         //决策部分
         public string PolicyType { get; set; }//热压，代工，库存，其他,只有热压订单才会进入任务
-        public string PolicyContent { get; set; }//决策内容
-        public string PolicyMaker { get; set; }//决策者
-        public DateTime PolicyMakeDate { get; set; }
 
         public virtual List<PMSPlanVHP> PlanVHPs { get; set; }
          

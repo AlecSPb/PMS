@@ -62,21 +62,10 @@ namespace PMSWCFService.DataContracts
         public DateTime CreateTime { get; set; }
         [DataMember]
         public string Creator { get; set; }
-        [DataMember]
-        public bool ReviewPassed { get; set; }
-        [DataMember]
-        public string Reviewer { get; set; }
-        [DataMember]
-        public DateTime ReviewDate { get; set; }
 
         //决策部分
         [DataMember]
         public string PolicyType { get; set; }
-        [DataMember]
-        public string PolicyContent { get; set; }
-        [DataMember]
-        public string PolicyMaker { get; set; }
-        [DataMember]
-        public DateTime PolicyMakeDate { get; set; }
+
     }
 }

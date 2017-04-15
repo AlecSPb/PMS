@@ -62,15 +62,6 @@ namespace PMSClient.MainService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyContentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PolicyMakeDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PolicyMakerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PolicyTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -90,15 +81,6 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ReviewDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool ReviewPassedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReviewerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
@@ -289,45 +271,6 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PolicyContent {
-            get {
-                return this.PolicyContentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyContentField, value) != true)) {
-                    this.PolicyContentField = value;
-                    this.RaisePropertyChanged("PolicyContent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PolicyMakeDate {
-            get {
-                return this.PolicyMakeDateField;
-            }
-            set {
-                if ((this.PolicyMakeDateField.Equals(value) != true)) {
-                    this.PolicyMakeDateField = value;
-                    this.RaisePropertyChanged("PolicyMakeDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PolicyMaker {
-            get {
-                return this.PolicyMakerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PolicyMakerField, value) != true)) {
-                    this.PolicyMakerField = value;
-                    this.RaisePropertyChanged("PolicyMaker");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PolicyType {
             get {
                 return this.PolicyTypeField;
@@ -414,45 +357,6 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime ReviewDate {
-            get {
-                return this.ReviewDateField;
-            }
-            set {
-                if ((this.ReviewDateField.Equals(value) != true)) {
-                    this.ReviewDateField = value;
-                    this.RaisePropertyChanged("ReviewDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool ReviewPassed {
-            get {
-                return this.ReviewPassedField;
-            }
-            set {
-                if ((this.ReviewPassedField.Equals(value) != true)) {
-                    this.ReviewPassedField = value;
-                    this.RaisePropertyChanged("ReviewPassed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Reviewer {
-            get {
-                return this.ReviewerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReviewerField, value) != true)) {
-                    this.ReviewerField = value;
-                    this.RaisePropertyChanged("Reviewer");
                 }
             }
         }

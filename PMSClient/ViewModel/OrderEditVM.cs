@@ -59,24 +59,16 @@ namespace PMSClient.ViewModel
             order.CreateTime = DateTime.Now;
             order.PMINumber = DateTime.Now.ToString("yyMMdd");
             order.ProductType = PMSCommon.OrderProductType.Target.ToString();
+            order.Purity = "99.99";
+            order.Quantity = 1;
+            order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             order.Dimension = "230mm OD x  4mm";
             order.DimensionDetails = "None";
             order.SampleNeed = "无需样品";
             order.MinimumAcceptDefect = "通常";
-            order.Reviewer = "xs.zhou";
-            order.PolicyContent = "";
-            order.PolicyType = "VHP";
-            order.PolicyMaker = "xs.zhou";
-
-            order.Purity = "99.99";
             order.DeadLine = DateTime.Now.AddDays(30);
-            order.ReviewDate = DateTime.Now;
-            order.PolicyMakeDate = DateTime.Now;
             order.State = PMSCommon.OrderState.未核验.ToString();
             order.Priority =PMSCommon.OrderPriority.通常.ToString();
-            order.ReviewPassed = true;
-            order.Quantity = 1;
-            order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             #endregion
             CurrentOrder = order;
         }
