@@ -22,7 +22,7 @@
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource RDProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource RPProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="200"
                      Style="{StaticResource  StyleTextBoxCommon}"/>
             <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockCommon}"/>
@@ -31,87 +31,86 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
-                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding DeliveryItems}">
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Products}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.EditItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RPCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTemplateColumn Header="{StaticResource RDProductType}">
+                <DataGridTemplateColumn Header="{StaticResource RPProductType}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding ProductType}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDProductID}">
+                <DataGridTemplateColumn Header="{StaticResource RPProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding ProductID}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDComposition}">
+                <DataGridTemplateColumn Header="{StaticResource RPComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="Abbr" Binding="{Binding Abbr}"/>
-                <DataGridTemplateColumn Header="{StaticResource RDCustomer}">
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="{StaticResource RPAbbr}" Binding="{Binding Abbr}"/>
+                <DataGridTemplateColumn Header="{StaticResource RPCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Customer}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDPO}">
+                <DataGridTemplateColumn Header="{StaticResource RPPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDWeight}">
+                <DataGridTemplateColumn Header="{StaticResource RPWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RDDetailRecord}">
+                <DataGridTemplateColumn Header="{StaticResource RPRemark}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DetailRecord}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Remark}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PackNumber}"/>
-                <DataGridTemplateColumn Header="{StaticResource RDPosition}">
+                <DataGridTemplateColumn Header="{StaticResource RPPosition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Position}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RPRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="{StaticResource RDCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                <DataGridTextColumn Header="{StaticResource RPCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+
     </Grid>
 </UserControl>

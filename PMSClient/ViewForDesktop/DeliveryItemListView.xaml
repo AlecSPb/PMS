@@ -74,7 +74,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="Abbr" Binding="{Binding Abbr}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="{StaticResource RDAbbr}" Binding="{Binding Abbr}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
