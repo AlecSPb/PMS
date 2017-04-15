@@ -75,7 +75,6 @@
     <Compile Include="OrderUnit.cs" />
     <Compile Include="ProductState.cs" />
     <Compile Include="ProductType.cs" />
-    <Compile Include="Purity.cs" />
     <Compile Include="QuickMessage.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
@@ -87,7 +86,6 @@
     <Compile Include="TestType.cs" />
     <Compile Include="UserState.cs" />
     <Compile Include="VHPPlanState.cs" />
-    <Compile Include="ViewToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />

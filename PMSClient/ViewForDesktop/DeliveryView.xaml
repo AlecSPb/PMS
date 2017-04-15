@@ -185,6 +185,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PackNumber}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDPosition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

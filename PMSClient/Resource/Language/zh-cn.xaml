@@ -530,6 +530,7 @@
     <sys:String x:Key="RDCustomer">客户</sys:String>
     <sys:String x:Key="RDDetailRecord">记录细节</sys:String>
     <sys:String x:Key="RDWeight">重量(g)</sys:String>
+    <sys:String x:Key="RDPackNumber">装箱号</sys:String>
     <sys:String x:Key="RDPosition">货架位置</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
     <!--MaterialInventoryInAndOut-->
