@@ -57,17 +57,21 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                var service = new OrderServiceClient();
-                if (IsNew)
+                CurrentOrder.Reviewer = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentOrder.ReviewTime = DateTime.Now;
+                using (var service = new OrderServiceClient())
                 {
-                    service.AddOrder(CurrentOrder);
+                    if (IsNew)
+                    {
+                        service.AddOrder(CurrentOrder);
+                    }
+                    else
+                    {
+                        service.UpdateOrder(CurrentOrder);
+                    }
+                    PMSHelper.ViewModels.OrderCheck.RefreshData();
+                    GoBack();
                 }
-                else
-                {
-                    service.UpdateOrder(CurrentOrder);
-                }
-                PMSHelper.ViewModels.OrderCheck.RefreshData();
-                GoBack();
             }
             catch (Exception ex)
             {

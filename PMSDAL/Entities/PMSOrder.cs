@@ -52,7 +52,8 @@ namespace PMSDAL
         //创建者和审核部分
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
-
+        public DateTime ReviewTime { get; set; }
+        public string Reviewer { get; set; }
         //决策部分
         public string PolicyType { get; set; }//热压，代工，库存，其他,只有热压订单才会进入任务
 

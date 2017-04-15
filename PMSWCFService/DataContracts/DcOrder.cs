@@ -63,6 +63,11 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Creator { get; set; }
 
+        [DataMember]
+        public DateTime ReviewTime { get; set; }
+        [DataMember]
+        public string Reviewer{ get; set; }
+
         //决策部分
         [DataMember]
         public string PolicyType { get; set; }

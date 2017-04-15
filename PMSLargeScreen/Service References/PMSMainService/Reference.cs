@@ -83,6 +83,12 @@ namespace PMSLargeScreen.PMSMainService {
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ReviewTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReviewerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SampleNeedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -357,6 +363,32 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ReviewTime {
+            get {
+                return this.ReviewTimeField;
+            }
+            set {
+                if ((this.ReviewTimeField.Equals(value) != true)) {
+                    this.ReviewTimeField = value;
+                    this.RaisePropertyChanged("ReviewTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Reviewer {
+            get {
+                return this.ReviewerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReviewerField, value) != true)) {
+                    this.ReviewerField = value;
+                    this.RaisePropertyChanged("Reviewer");
                 }
             }
         }
