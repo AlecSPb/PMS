@@ -70,6 +70,7 @@ namespace PMSClient
         AdminAccesses,
         AdminAccess,
         AdminRole,
-        RecordBondingSelect
+        RecordBondingSelect,
+        ProductSelect
     }
 }

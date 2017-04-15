@@ -26,10 +26,13 @@ namespace PMSClient.ViewModel
             PMSBasicData.SimpleStates.ToList().ForEach(s => States.Add(s));
 
             ProductTypes = new List<string>();
-            PMSBasicData.OrderProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
+            PMSBasicData.ProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
 
             GoodPositions = new List<string>();
             PMSBasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
+
+            PackNumbers = new List<string>();
+            PMSBasicData.PackNumbers.ToList().ForEach(i => PackNumbers.Add(i));
         }
 
         public void SetNew(DcDelivery delivery)
@@ -41,7 +44,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.DeliveryID = delivery.ID;
-            model.ProductType = PMSCommon.OrderProductType.Target.ToString();
+            model.ProductType = PMSCommon.ProductType.靶材.ToString();
             model.ProductID = DateTime.Now.ToString("yyMMdd");
             model.Composition = "填写成分";
             model.Abbr = "缩写";
@@ -66,21 +69,34 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect(DcRecordTest test)
+        public void SetBySelect(DcRecordTest model)
         {
-            if (test != null)
+            if (model != null)
             {
-                CurrentDeliveryItem.ProductID = test.ProductID;
-                CurrentDeliveryItem.Composition = test.Composition;
-                CurrentDeliveryItem.Abbr = test.CompositionAbbr;
-                CurrentDeliveryItem.Customer = test.Customer;
-                CurrentDeliveryItem.Weight = test.Weight;
-                CurrentDeliveryItem.PO = test.PO;
+                CurrentDeliveryItem.ProductID = model.ProductID;
+                CurrentDeliveryItem.Composition = model.Composition;
+                CurrentDeliveryItem.Abbr = model.CompositionAbbr;
+                CurrentDeliveryItem.Customer = model.Customer;
+                CurrentDeliveryItem.Weight = model.Weight;
+                CurrentDeliveryItem.PO = model.PO;
 
                 //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }
+        public void SetBySelect(DcProduct model)
+        {
+            if (model != null)
+            {
+                CurrentDeliveryItem.ProductID = model.ProductID;
+                CurrentDeliveryItem.Composition = model.Composition;
+                CurrentDeliveryItem.Abbr = model.Abbr;
+                CurrentDeliveryItem.Customer = model.Customer;
+                CurrentDeliveryItem.Weight = model.Weight;
+                CurrentDeliveryItem.PO = model.PO;
 
+                //RaisePropertyChanged(nameof(CurrentDeliveryItem));
+            }
+        }
 
         private void InitialCommands()
         {
@@ -91,8 +107,8 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.DeliveryItemEdit);
-            NavigationService.GoTo(PMSViews.RecordTestSelect);
+            PMSHelper.ViewModels.ProductSelect.SetRequestView(PMSViews.DeliveryItemEdit);
+            NavigationService.GoTo(PMSViews.ProductSelect);
         }
 
         private void GoBack()
@@ -128,7 +144,7 @@ namespace PMSClient.ViewModel
         public List<string> States { get; set; }
         public List<string> ProductTypes { get; set; }
         public List<string> GoodPositions { get; set; }
-
+        public List<string> PackNumbers { get; set; }
         private DcDeliveryItem currentDeliveryItem;
         public DcDeliveryItem CurrentDeliveryItem
         {

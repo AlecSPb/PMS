@@ -49,19 +49,15 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
         }
 
-        private void ActionSelectionChanged(DcProduct model)
-        {
-            CurrentSelectItem = model;
-        }
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchProductID) && string.IsNullOrEmpty(SearchCompositonStd));
+            return !(string.IsNullOrEmpty(SearchProductID) && string.IsNullOrEmpty(SearchCompositionStd));
         }
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositonStd = "";
+            SearchProductID = SearchCompositionStd = "";
             ActionPaging();
         }
 
@@ -69,12 +65,6 @@ namespace PMSClient.ViewModel
         {
             ActionPaging();
         }
-
-        //private void ActionDuplicate(DcProduct model)
-        //{
-        //    PMSHelper.ViewModels.ProductEdit.SetNew(model);
-        //    NavigationService.GoTo(PMSViews.ProductEdit);
-        //}
 
         private void ActionEdit(DcProduct model)
         {
@@ -100,8 +90,8 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            RecordProducts = new ObservableCollection<DcProduct>();
-            SearchCompositonStd = searchProductID = "";
+            Products = new ObservableCollection<DcProduct>();
+            SearchCompositionStd = searchProductID = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -110,7 +100,7 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             using (var service = new ProductServiceClient())
             {
-                RecordCount = service.GetProductCount(SearchProductID, SearchCompositonStd);
+                RecordCount = service.GetProductCount(SearchProductID, SearchCompositionStd);
             }
             ActionPaging();
         }
@@ -121,14 +111,13 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new ProductServiceClient())
             {
-                var orders = service.GetProducts(skip, take, SearchProductID, SearchCompositonStd);
-                RecordProducts.Clear();
-                orders.ToList().ForEach(o => RecordProducts.Add(o));
+                var orders = service.GetProducts(skip, take, SearchProductID, SearchCompositionStd);
+                Products.Clear();
+                orders.ToList().ForEach(o => Products.Add(o));
             }
-            CurrentSelectItem = RecordProducts.FirstOrDefault();
+            CurrentSelectItem = Products.FirstOrDefault();
         }
         #region Commands
-        public RelayCommand Report { get; set; }
         public RelayCommand Add { get; set; }
         public RelayCommand<DcProduct> Edit { get; set; }
         public RelayCommand<DcProduct> Doc { get; set; }
@@ -146,7 +135,7 @@ namespace PMSClient.ViewModel
             }
         }
         private string searchCompositionStd;
-        public string SearchCompositonStd
+        public string SearchCompositionStd
         {
             get { return searchCompositionStd; }
             set
@@ -154,11 +143,11 @@ namespace PMSClient.ViewModel
                 if (searchCompositionStd == value)
                     return;
                 searchCompositionStd = value;
-                RaisePropertyChanged(() => SearchCompositonStd);
+                RaisePropertyChanged(() => SearchCompositionStd);
             }
         }
 
-        public ObservableCollection<DcProduct> RecordProducts { get; set; }
+        public ObservableCollection<DcProduct> Products { get; set; }
         private DcProduct currentSelectItem;
 
         public DcProduct CurrentSelectItem
@@ -167,7 +156,6 @@ namespace PMSClient.ViewModel
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
 
-        public RelayCommand<DcProduct> SelectionChanged { get; set; }
         #endregion
 
     }

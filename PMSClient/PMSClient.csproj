@@ -186,6 +186,9 @@
     <Compile Include="ViewForDesktop\ProductEditView.xaml.cs">
       <DependentUpon>ProductEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\ProductSelectView.xaml.cs">
+      <DependentUpon>ProductSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
@@ -421,6 +424,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewForDesktop\ProductEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\ProductSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

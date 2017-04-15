@@ -124,7 +124,8 @@
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDPackNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtPackNumber" Text="{Binding Position,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                    <TextBox Name="txtPackNumber" Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                     <ComboBox x:Name="cboPackNumbers"  HorizontalAlignment="Stretch"
                           ItemsSource="{Binding DataContext.PackNumbers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"

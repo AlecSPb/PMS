@@ -62,6 +62,8 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<ProductView>();
             SimpleIoc.Default.Register<ProductEditView>();
+            SimpleIoc.Default.Register<ProductSelectView>();
+
 
             SimpleIoc.Default.Register<DeliveryView>();
             SimpleIoc.Default.Register<DeliveryEditView>();
@@ -290,6 +292,12 @@ namespace PMSClient.ViewForDesktop
         {
             get { return SimpleIoc.Default.GetInstance<ProductEditView>(); }
         }
+        public ProductSelectView ProductSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductSelectView>(); }
+        }
+
+
         public DeliveryView Delivery
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryView>(); }

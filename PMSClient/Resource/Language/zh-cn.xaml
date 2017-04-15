@@ -232,6 +232,7 @@
     <sys:String x:Key="PageProductTitle">成品</sys:String>
     <sys:String x:Key="PageProduct">成品库</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
+    <sys:String x:Key="PageProductSelect">成品库</sys:String>
     <sys:String x:Key="PageDelivery">发货记录</sys:String>
     <sys:String x:Key="PageDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>

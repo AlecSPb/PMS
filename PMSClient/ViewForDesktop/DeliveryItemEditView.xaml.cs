@@ -47,7 +47,11 @@ namespace PMSClient.ViewForDesktop
 
         private void cboPackNumbers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            ComboBox cbo = sender as ComboBox;
+            if (cbo.SelectedItem != null)
+            {
+                PMSMethods.SetTextBox(txtPackNumber, cbo.SelectedItem.ToString());
+            }
         }
     }
 }

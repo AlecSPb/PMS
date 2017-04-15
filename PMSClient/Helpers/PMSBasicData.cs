@@ -77,6 +77,18 @@ namespace PMSClient
                 return productTypes;
             }
         }
+        public static string[] PackNumbers
+        {
+            get
+            {
+                var numbers = new List<string>();
+                for (int i = 0; i < 10; i++)
+                {
+                    numbers.Add((i+1).ToString());
+                }
+                return numbers.ToArray();
+            }
+        }
         public static string[] ProductTypes
         {
             get
