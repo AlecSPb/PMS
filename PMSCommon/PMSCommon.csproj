@@ -82,7 +82,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PackageType.cs" />
     <Compile Include="OrderProductType.cs" />
-    <Compile Include="TestResultState.cs" />
+    <Compile Include="TestDefectsTypes.cs" />
     <Compile Include="TestType.cs" />
     <Compile Include="UserState.cs" />
     <Compile Include="VHPPlanState.cs" />

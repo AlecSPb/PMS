@@ -132,7 +132,7 @@
     <Compile Include="Helpers\OK\ILog.cs" />
     <Compile Include="Helpers\OK\LocalLog.cs" />
     <Compile Include="Helpers\OK\PMSViews.cs" />
-    <Compile Include="Helpers\PMSMethods.cs" />
+    <Compile Include="Helpers\OK\PMSMethods.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculationItem.cs" />
     <Compile Include="Helpers\UserfullPackage\PMSTranslate.cs" />

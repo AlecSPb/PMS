@@ -17,5 +17,15 @@ namespace PMSClient
                 control.Focus();
             }
         }
+        public static void SetTextBoxAppend(TextBox control, string text)
+        {
+            if (control != null)
+            {
+                control.Text += text;
+                control.Focus();
+            }
+        }
+
+
     }
 }

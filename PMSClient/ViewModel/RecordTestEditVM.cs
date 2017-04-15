@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
         public RecordTestEditVM()
         {
             States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.TestResultState));
+            var states = Enum.GetNames(typeof(PMSCommon.CommonState));
             states.ToList().ForEach(s => States.Add(s));
 
             TestTypes = new ObservableCollection<string>();
@@ -52,6 +52,7 @@ namespace PMSClient.ViewModel
             model.Sample = "无需样品";
             model.CompositionXRF = "暂无";
             model.Density = "0";
+            model.Defects = "无缺陷";
             #endregion
             CurrentRecordTest = model;
         }

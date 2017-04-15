@@ -12,6 +12,9 @@ namespace PMSDAL
     public class RecordTest
     {
         public Guid ID { get; set; }
+        public DateTime CreateTime { get; set; }
+        public string Creator { get; set; }
+        public string State { get; set; }//未审核，审核，作废
         public string TestType { get; set; }
         public string ProductID { get; set; }
         public string Composition { get; set; }
@@ -24,10 +27,8 @@ namespace PMSDAL
         public string Resistance { get; set; }
         public string CompositionXRF { get; set; }
         public string DimensionActual { get; set; }
+        public string Defects { get; set; }
         public string Remark { get; set; }
         public string Sample { get; set; }
-        public DateTime CreateTime { get; set; }
-        public string Creator { get; set; }
-        public string State { get; set; }//未审核，审核，作废
     }
 }

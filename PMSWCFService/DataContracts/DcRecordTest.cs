@@ -13,13 +13,13 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
-        public string TestType { get; set; }
-        [DataMember]
         public DateTime CreateTime { get; set; }
         [DataMember]
         public string Creator { get; set; }
         [DataMember]
         public string State { get; set; }//未审核，审核，作废
+        [DataMember]
+        public string TestType { get; set; }
         [DataMember]
         public string ProductID { get; set; }
         [DataMember]
@@ -42,6 +42,8 @@ namespace PMSWCFService.DataContracts
         public string CompositionXRF { get; set; }
         [DataMember]
         public string DimensionActual { get; set; }
+        [DataMember]
+        public string Defects { get; set; }
         [DataMember]
         public string Remark { get; set; }
         [DataMember]
