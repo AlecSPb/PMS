@@ -128,6 +128,7 @@
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
+    <Compile Include="ServiceImplements\ProductService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />
     <Compile Include="ServiceImplements\MissonService.cs" />
