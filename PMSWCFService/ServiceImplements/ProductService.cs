@@ -6,6 +6,7 @@ using PMSDAL;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
+using PMSCommon;
 
 namespace PMSWCFService.ServiceImplements
 {
@@ -34,17 +35,63 @@ namespace PMSWCFService.ServiceImplements
 
         public int DeleteProduct(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var product = dc.Products.Find(id);
+                    if (product != null)
+                    {
+                        dc.Products.Remove(product);
+                        result = dc.SaveChanges();
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetProductCount(string productid, string composition)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Products.Where(p => p.ProductID.Contains(productid) && p.Composition.Contains(composition)
+                      && p.State != CommonState.作废.ToString()).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcProduct> GetProducts(int skip, int take, string productid, string composition)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var result = dc.Products.Where(p => p.ProductID.Contains(productid) && p.Composition.Contains(composition)
+                      && p.State != ProductState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<Product, DcProduct>());
+                    var products = Mapper.Map<List<Product>, List<DcProduct>>(result);
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateProduct(DcProduct model)
