@@ -229,6 +229,7 @@
     <sys:String x:Key="PageRecordTestEdit">测试记录编辑</sys:String>
     <sys:String x:Key="PageRecordTestDoc">测试记录报告</sys:String>
 
+
     <sys:String x:Key="PageProductTitle">成品</sys:String>
     <sys:String x:Key="PageProduct">成品库</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
@@ -237,7 +238,9 @@
     <sys:String x:Key="PageDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemList">发货记录[所有已发货产品]</sys:String>
-
+    
+    
+    <sys:String x:Key="PageRecordBondingSelect">请选择一个绑定记录</sys:String>
     <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
     <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
@@ -539,7 +542,7 @@
     <sys:String x:Key="RDPackNumber">装箱号</sys:String>
     <sys:String x:Key="RDPosition">货架位置</sys:String>
     <sys:String x:Key="RDItemState">状态</sys:String>
-    
+
     <!--Product-->
     <sys:String x:Key="RPCreator">创建者</sys:String>
     <sys:String x:Key="RPCreateTime">创建时间</sys:String>
@@ -578,6 +581,97 @@
     <sys:String x:Key="MIOReceiver">接受者</sys:String>
     <sys:String x:Key="MIOWeight">重量</sys:String>
     <sys:String x:Key="MIORemark">备注</sys:String>
+
+    <!--绑定-->
+    <sys:String x:Key="BDState">状态</sys:String>
+    <sys:String x:Key="BDCreator">创建者</sys:String>
+    <sys:String x:Key="BDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
+
+    <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
+    <sys:String x:Key="BDTargetComposition">靶材承认</sys:String>
+    <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
+    <sys:String x:Key="BDTargetCustomer">靶材客户</sys:String>
+    <sys:String x:Key="BDTargetPO">靶材批号</sys:String>
+    <sys:String x:Key="BDTargetWeight">靶材重量</sys:String>
+    <sys:String x:Key="BDTargetDimension">靶材尺寸</sys:String>
+    <sys:String x:Key="BDTargetDImensionActual">靶材实际尺寸</sys:String>
+    <sys:String x:Key="BDTargetDefects">靶材缺陷</sys:String>
+    <sys:String x:Key="BDTargetDetailRecord">靶材细节记录</sys:String>
+    <sys:String x:Key="BDTargetAppereance">靶材外观</sys:String>
+    <sys:String x:Key="BDTargetWarpageCheck">靶材翘曲检查</sys:String>
+    <sys:String x:Key="BDTargetThicknessCheck">靶材厚度检查</sys:String>
+    <sys:String x:Key="BDTargetDiameterCheck">靶材直径检查</sys:String>
+    <sys:String x:Key="BDTargetPerson">靶材检查人</sys:String>
+    <sys:String x:Key="BDTargetCheckTime">靶材检查时间</sys:String>
+
+
+
+    <sys:String x:Key="BDPlatelot">背板批号</sys:String>
+    <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
+    <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
+    <sys:String x:Key="BDPlateDimension">背板直径</sys:String>
+    <sys:String x:Key="BDUseCount">背板使用次数</sys:String>
+    <sys:String x:Key="BDHardness">背板硬度</sys:String>
+    <sys:String x:Key="BDSupplier">背板供应商</sys:String>
+    <sys:String x:Key="BDLastWeldMaterial">背板上次焊接材料</sys:String>
+    <sys:String x:Key="BDOtherRecord">背板其他记录</sys:String>
+    <sys:String x:Key="BDPlateApperance">背板外观</sys:String>
+    <sys:String x:Key="BDPlatePerson">背板检查人</sys:String>
+    <sys:String x:Key="BDPlateCheckTime">背板检查时间</sys:String>
+
+
+
+    <sys:String x:Key="BDTargetPreProcessRecord">靶材预处理记录</sys:String>
+    <sys:String x:Key="BDTargetPreProcessPerson">靶材预处理记录人</sys:String>
+    <sys:String x:Key="BDTargetPreProcessCheckTime">靶材预处理记录检查时间</sys:String>
+
+
+    <sys:String x:Key="BDPlatePreProcessRecord">背板预处理记录</sys:String>
+    <sys:String x:Key="BDPlatePreProcessPerson">背板预处理人</sys:String>
+    <sys:String x:Key="BDPlatePreProcessCheckTime">背板预处理时间</sys:String>
+
+
+
+    <sys:String x:Key="BDWeldMaterial">焊接材料</sys:String>
+    <sys:String x:Key="BDWeldCuStringDiameter ">Cu丝直径</sys:String>
+    <sys:String x:Key="BDWeldHold">焊接重物</sys:String>
+    <sys:String x:Key="BDWeldPerson">焊接检查人</sys:String>
+    <sys:String x:Key="BDWeldCheckTime">焊接检查时间</sys:String>
+
+
+    <sys:String x:Key="BDWarpageFix">翘曲修正</sys:String>
+    <sys:String x:Key="BDWarpagePerson">翘曲检查人</sys:String>
+    <sys:String x:Key="BDWarpageCheckTimer">翘曲检查时间</sys:String>
+
+
+    <sys:String x:Key="BDDimensionCheck">尺寸检查</sys:String>
+    <sys:String x:Key="BDDimensionWarpageCheck">尺寸翘曲检查</sys:String>
+    <sys:String x:Key="BDDimensionPerson">尺寸检查人</sys:String>
+    <sys:String x:Key="BDDimensionCheckTime">尺寸检查时间</sys:String>
+
+
+    <sys:String x:Key="BDBindingCheck">结合检查</sys:String>
+    <sys:String x:Key="BDBindingPerson">结合检查人</sys:String>
+    <sys:String x:Key="BDBingdingCheckTime">结合检查时间</sys:String>
+
+
+    <sys:String x:Key="BDSprayCheck">喷砂检查</sys:String>
+    <sys:String x:Key="BDSprayPerson">喷砂检查人</sys:String>
+    <sys:String x:Key="BDSprayCheckTime">喷砂检查时间</sys:String>
+
+    <sys:String x:Key="BDCleanCheck">清洁检查</sys:String>
+    <sys:String x:Key="BDCleanPerson">清洁检查人</sys:String>
+    <sys:String x:Key="BDCleanCheckTime">清洁检查时间</sys:String>
+
+
+    <sys:String x:Key="BDApperanceCheck">外观检查</sys:String>
+    <sys:String x:Key="BDApperancePerson">外观检查人</sys:String>
+    <sys:String x:Key="BDApperanceCheckTime">外观检查时间</sys:String>
+
+    <sys:String x:Key="BDPackCheck">包装检查</sys:String>
+    <sys:String x:Key="BDPackPerson">包装检查人</sys:String>
+    <sys:String x:Key="BDPackCheckTime">包装检查时间</sys:String>
 
 
 </ResourceDictionary>
