@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class PMSMaterialInventoryOut
+    public class MaterialInventoryOut
     {
         public Guid Id { get; set; }
         public string State { get; set; }

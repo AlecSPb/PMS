@@ -31,27 +31,30 @@ namespace PMSDAL
         public DbSet<BDElementGroupItem> ElementGroupItems { get; set; }
 
         //Material
-        public DbSet<PMSMaterialNeed> MaterialNeeds { get; set; }
-        public DbSet<PMSMaterialOrder> MaterialOrders { get; set; }
-        public DbSet<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
+        public DbSet<MaterialNeed> MaterialNeeds { get; set; }
+        public DbSet<MaterialOrder> MaterialOrders { get; set; }
+        public DbSet<MaterialOrderItem> MaterialOrderItems { get; set; }
 
-        public DbSet<PMSMaterialInventoryIn> MaterialInventoryIns { get; set; }
-        public DbSet<PMSMaterialInventoryOut> MaterialInventoryOuts { get; set; }
+        public DbSet<MaterialInventoryIn> MaterialInventoryIns { get; set; }
+        public DbSet<MaterialInventoryOut> MaterialInventoryOuts { get; set; }
         //Core
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
 
         //Records
-        public DbSet<RecordDelivery> RecordDeliverys { get; set; }
-        public DbSet<RecordDeliveryItem> RecordDeliveryItems { get; set; }
         public DbSet<RecordMachine> RecordMachines { get; set; }
         public DbSet<RecordMilling> RecordMillings { get; set; }
         public DbSet<RecordDeMold> RecordDeMolds { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
         public DbSet<RecordTest> RecordTests { get; set; }
+        public DbSet<RecordBonding> RecordBondings { get; set; }
 
-        public DbSet<RecordBondingPlate> RecordBondingPlates { get; set; }
-        public DbSet<RecordBondingTarget> RecordBondingTargets { get; set; }
+        //Product
+        public DbSet<Product> Products { get; set; }
+        //Delivery
+        public DbSet<Delivery> Deliverys { get; set; }
+        public DbSet<DeliveryItem> DeliveryItems { get; set; }
+
 
         //Maintenance
         public DbSet<MaintenancePlan> MaintenancePlans { get; set; }

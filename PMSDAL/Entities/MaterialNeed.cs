@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class PMSMaterialInventoryIn
+    /// <summary>
+    /// 材料需求表，由生产经理根据订单表新建而成
+    /// </summary>
+    public class MaterialNeed
     {
         public Guid Id { get; set; }
         public string State { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
-        public string MaterialLot { get; set; }
-        public string PMINumber { get; set; }
+
         public string Composition { get; set; }
         public string Purity { get; set; }
-        public string Supplier { get; set; }
         public double Weight { get; set; }
-        public string Remark { get; set; }
-
+        public string SpecialNeeds { get; set; }
+        public string PMINumber { get; set; }
     }
 }

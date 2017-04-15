@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class PMSMaterialOrder
+    public class MaterialOrder
     {
-        public PMSMaterialOrder()
-        {
-            //MaterialOrderItems = new List<PMSMaterialOrderItem>();
-        }
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
@@ -31,7 +27,6 @@ namespace PMSDAL
 
         public string Priority { get; set; }
 
-
-        public virtual List<PMSMaterialOrderItem> MaterialOrderItems { get; set; }
+        public virtual List<MaterialOrderItem> MaterialOrderItems { get; set; }
     }
 }

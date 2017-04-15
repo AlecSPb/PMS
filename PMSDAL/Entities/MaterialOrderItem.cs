@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace PMSDAL
 {
-    public class PMSMaterialOrderItem
+    public class MaterialOrderItem
     {
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
@@ -24,6 +24,6 @@ namespace PMSDAL
 
         public Guid? MaterialOrderID { get; set; }
         [ForeignKey(nameof(MaterialOrderID))]
-        public virtual PMSMaterialOrder MaterialOrder { get; set; }
+        public virtual MaterialOrder MaterialOrder { get; set; }
     }
 }

@@ -59,10 +59,10 @@
     <Compile Include="Entities\MaintenanceRecord.cs" />
     <Compile Include="Entities\MaintenancePlan.cs" />
     <Compile Include="Entities\BDSupplier.cs" />
-    <Compile Include="Entities\PMSMaterialInventoryOut.cs" />
-    <Compile Include="Entities\PMSMaterialInventoryIn.cs" />
-    <Compile Include="Entities\RecordBondingTarget.cs" />
-    <Compile Include="Entities\RecordBondingPlate.cs" />
+    <Compile Include="Entities\MaterialInventoryOut.cs" />
+    <Compile Include="Entities\MaterialInventoryIn.cs" />
+    <Compile Include="Entities\RecordBonding.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Migrations\201701090708208_new.cs" />
     <Compile Include="Migrations\201701090708208_new.Designer.cs">
       <DependentUpon>201701090708208_new.cs</DependentUpon>
@@ -314,11 +314,11 @@
     <Compile Include="Entities\BDVHPDevice.cs" />
     <Compile Include="Entities\BDVHPMold.cs" />
     <Compile Include="Entities\BDVHPProcess.cs" />
-    <Compile Include="Entities\RecordDelivery.cs" />
-    <Compile Include="Entities\RecordDeliveryItem.cs" />
-    <Compile Include="Entities\PMSMaterialOrder.cs" />
-    <Compile Include="Entities\PMSMaterialOrderItem.cs" />
-    <Compile Include="Entities\PMSMaterialNeed.cs" />
+    <Compile Include="Entities\Delivery.cs" />
+    <Compile Include="Entities\DeliveryItem.cs" />
+    <Compile Include="Entities\MaterialOrder.cs" />
+    <Compile Include="Entities\MaterialOrderItem.cs" />
+    <Compile Include="Entities\MaterialNeed.cs" />
     <Compile Include="Entities\PMSPlanVHP.cs" />
     <Compile Include="Entities\RecordMachine.cs" />
     <Compile Include="Entities\RecordMilling.cs" />
@@ -330,6 +330,7 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="PMSDbContext.cs" />
     <Compile Include="Entities\RecordTest.cs" />
+    <Compile Include="PMSPlanWithMissonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeedInitializer.cs" />
   </ItemGroup>

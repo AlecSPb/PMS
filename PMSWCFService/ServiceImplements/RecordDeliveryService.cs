@@ -9,9 +9,9 @@ using PMSDAL;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IRecordDeliveryService
+    public partial class PMSService : IDeliveryService
     {
-        public int AddRecordDelivery(DcRecordDelivery model)
+        public int AddDelivery(DcDelivery model)
         {
             try
             {
@@ -20,11 +20,11 @@ namespace PMSWCFService
                     int result = 0;
                     Mapper.Initialize(cfg =>
                     {
-                        cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>();
-                        cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>();
+                        cfg.CreateMap<DcDelivery, PMSDAL.Delivery>();
+                        cfg.CreateMap<DcDeliveryItem, PMSDAL.DeliveryItem>();
                     });
-                    var record = Mapper.Map<PMSDAL.RecordDelivery>(model);
-                    dc.RecordDeliverys.Add(record);
+                    var record = Mapper.Map<PMSDAL.Delivery>(model);
+                    dc.Deliverys.Add(record);
                     result = dc.SaveChanges();
                     return result;
                 }
@@ -37,16 +37,16 @@ namespace PMSWCFService
 
         }
 
-        public int AddRecordDeliveryItem(DcRecordDeliveryItem model)
+        public int AddDeliveryItem(DcDeliveryItem model)
         {
             try
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>());
-                    var record = Mapper.Map<PMSDAL.RecordDeliveryItem>(model);
-                    dc.RecordDeliveryItems.Add(record);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcDeliveryItem, PMSDAL.DeliveryItem>());
+                    var record = Mapper.Map<PMSDAL.DeliveryItem>(model);
+                    dc.DeliveryItems.Add(record);
                     result = dc.SaveChanges();
                     return result;
                 }
@@ -59,15 +59,15 @@ namespace PMSWCFService
 
         }
 
-        public int DeleteRecordDelivery(Guid id)
+        public int DeleteDelivery(Guid id)
         {
             try
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     int result = 0;
-                    var record = dc.RecordDeliverys.Find(id);
-                    dc.RecordDeliverys.Remove(record);
+                    var record = dc.Deliverys.Find(id);
+                    dc.Deliverys.Remove(record);
                     result = dc.SaveChanges();
                     return result;
                 }
@@ -80,15 +80,15 @@ namespace PMSWCFService
 
         }
 
-        public int DeleteRecordDeliveryItem(Guid id)
+        public int DeleteDeliveryItem(Guid id)
         {
             try
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     int result = 0;
-                    var record = dc.RecordDeliveryItems.Find(id);
-                    dc.RecordDeliveryItems.Remove(record);
+                    var record = dc.DeliveryItems.Find(id);
+                    dc.DeliveryItems.Remove(record);
                     result = dc.SaveChanges();
                     return result;
                 }
@@ -101,22 +101,22 @@ namespace PMSWCFService
 
         }
 
-        public List<DcRecordDelivery> GetDelivery(int skip, int take)
+        public List<DcDelivery> GetDelivery(int skip, int take)
         {
             try
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    var result = dc.RecordDeliverys
+                    var result = dc.Deliverys
                         .OrderByDescending(d => d.CreateTime)
                         .ToList();
                     Mapper.Initialize(cfg =>
                     {
-                        cfg.CreateMap<PMSDAL.RecordDelivery, DcRecordDelivery>();
-                        //cfg.CreateMap<PMSDAL.RecordDeliveryItem, DcRecordDeliveryItem>();
+                        cfg.CreateMap<PMSDAL.Delivery, DcDelivery>();
+                        //cfg.CreateMap<PMSDAL.DeliveryItem, DcDeliveryItem>();
                     });
 
-                    var records = Mapper.Map<List<RecordDelivery>, List<DcRecordDelivery>>(result);
+                    var records = Mapper.Map<List<Delivery>, List<DcDelivery>>(result);
 
                     return records;
                 }
@@ -135,7 +135,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    return dc.RecordDeliverys.Count();
+                    return dc.Deliverys.Count();
                 }
             }
             catch (Exception ex)
@@ -146,19 +146,19 @@ namespace PMSWCFService
 
         }
 
-        public List<DcRecordDeliveryItem> GetRecordDeliveryItemByRecordDeliveryID(Guid id)
+        public List<DcDeliveryItem> GetDeliveryItemByDeliveryID(Guid id)
         {
             try
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<RecordDeliveryItem, DcRecordDeliveryItem>());
+                    Mapper.Initialize(cfg => cfg.CreateMap<DeliveryItem, DcDeliveryItem>());
 
-                    var result = dc.RecordDeliveryItems
+                    var result = dc.DeliveryItems
                         .Where(i => i.DeliveryID == id && i.State != PMSCommon.CommonState.Deleted.ToString())
                         .OrderByDescending(i=>i.CreateTime)
                         .ToList();
-                    return Mapper.Map<List<RecordDeliveryItem>, List<DcRecordDeliveryItem>>(result);
+                    return Mapper.Map<List<DeliveryItem>, List<DcDeliveryItem>>(result);
                 }
             }
             catch (Exception ex)
@@ -169,7 +169,7 @@ namespace PMSWCFService
 
         }
 
-        public int UpdateReocrdDelivery(DcRecordDelivery model)
+        public int UpdateDelivery(DcDelivery model)
         {
             try
             {
@@ -178,10 +178,10 @@ namespace PMSWCFService
                     int result = 0;
                     Mapper.Initialize(cfg =>
                     {
-                        cfg.CreateMap<DcRecordDelivery, PMSDAL.RecordDelivery>();
-                        cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>();
+                        cfg.CreateMap<DcDelivery, PMSDAL.Delivery>();
+                        cfg.CreateMap<DcDeliveryItem, PMSDAL.DeliveryItem>();
                     });
-                    var record = Mapper.Map<PMSDAL.RecordDelivery>(model);
+                    var record = Mapper.Map<PMSDAL.Delivery>(model);
                     dc.Entry(record).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                     return result;
@@ -195,15 +195,15 @@ namespace PMSWCFService
 
         }
 
-        public int UpdateReocrdDeliveryItem(DcRecordDeliveryItem model)
+        public int UpdateDeliveryItem(DcDeliveryItem model)
         {
             try
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
                     int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordDeliveryItem, PMSDAL.RecordDeliveryItem>());
-                    var record = Mapper.Map<PMSDAL.RecordDeliveryItem>(model);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcDeliveryItem, PMSDAL.DeliveryItem>());
+                    var record = Mapper.Map<PMSDAL.DeliveryItem>(model);
                     dc.Entry(record).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                     return result;

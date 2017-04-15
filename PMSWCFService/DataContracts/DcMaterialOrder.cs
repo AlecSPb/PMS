@@ -10,10 +10,6 @@ namespace PMSWCFService.DataContracts
     [DataContract]
     public class DcMaterialOrder
     {
-        public DcMaterialOrder()
-        {
-
-        }
         [DataMember]
         public Guid ID { get; set; }
         [DataMember]
@@ -41,9 +37,6 @@ namespace PMSWCFService.DataContracts
         public double ShipFee { get; set; }
         [DataMember]
         public string Priority { get; set; }
-
-        //[DataMember]
-        //public DcMaterialOrderItem[] MaterialOrderItems { get; set; }
 
     }
 }

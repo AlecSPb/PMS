@@ -13,16 +13,12 @@ namespace PMSWCFService.ServiceContracts
     public interface IRecordBondingService
     {
         [OperationContract]
-        List<DcRecordBonding> GetRecordBondings(int skip, int take);
+        List<DcRecordBonding> GetRecordBondings(int skip, int take,string TargetLot,string PlateLot);
         [OperationContract]
-        int GetRecordBondingCount();
-        [OperationContract]
-        List<DcRecordBondingPlate> GetRecordBondingPlates(int skip, int take);
+        int GetRecordBondingCount(string TargetLot, string PlateLot);
 
-        [OperationContract]
-        List<DcRecordBondingPlate> GetRecordBondingPlatesByBondingID(Guid bondingId);
-        [OperationContract]
-        List<DcRecordBondingTarget> GetRecordBondingTargets(Guid bongdingId);
+
+
 
         [OperationContract]
         int AddRecordBongding(DcRecordBonding model);
@@ -31,18 +27,6 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int DeleteRecordBongding(Guid id);
 
-        [OperationContract]
-        int AddRecordBongdingTarget(DcRecordBondingTarget model);
-        [OperationContract]
-        int UpdateRecordBongdingTarget(DcRecordBondingTarget model);
-        [OperationContract]
-        int DeleteRecordBongdingTarget(Guid id);
 
-        [OperationContract]
-        int AddRecordBongdingPlate(DcRecordBondingPlate model);
-        [OperationContract]
-        int UpdateRecordBongdingPlate(DcRecordBondingPlate model);
-        [OperationContract]
-        int DeleteRecordBongdingPlate(Guid id);
     }
 }

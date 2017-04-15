@@ -9,28 +9,28 @@ using PMSWCFService.DataContracts;
 namespace PMSWCFService.ServiceContracts
 {
     [ServiceContract]
-    public interface IRecordDeliveryService
+    public interface IDeliveryService
     {
         [OperationContract]
-        List<DcRecordDelivery> GetDelivery(int skip, int take);
+        List<DcDelivery> GetDelivery(int skip, int take);
         [OperationContract]
         int GetDeliveryCount();
 
         [OperationContract]
-        int AddRecordDelivery(DcRecordDelivery model);
+        int AddDelivery(DcDelivery model);
         [OperationContract]
-        int UpdateReocrdDelivery(DcRecordDelivery model);
+        int UpdateDelivery(DcDelivery model);
         [OperationContract]
-        int DeleteRecordDelivery(Guid id);
+        int DeleteDelivery(Guid id);
 
         [OperationContract]
-        List<DcRecordDeliveryItem> GetRecordDeliveryItemByRecordDeliveryID(Guid id);
+        List<DcDeliveryItem> GetDeliveryItemByDeliveryID(Guid id);
         [OperationContract]
-        int AddRecordDeliveryItem(DcRecordDeliveryItem model);
+        int AddDeliveryItem(DcDeliveryItem model);
         [OperationContract]
-        int UpdateReocrdDeliveryItem(DcRecordDeliveryItem model);
+        int UpdateDeliveryItem(DcDeliveryItem model);
         [OperationContract]
-        int DeleteRecordDeliveryItem(Guid id);
+        int DeleteDeliveryItem(Guid id);
 
 
     }
