@@ -31,8 +31,8 @@ namespace PMSDAL
         public DateTime TargetCheckTime { get; set; }//靶材检查日期
 
         //1.0背板检查
-        public string PlateMaterial { get; set; }
         public string PlateLot { get; set; }//背板ID号
+        public string PlateMaterial { get; set; }
         public string PlateSerialNumber { get; set; }//序列号
         public string PlateBelong { get; set; }//背板归属
         public string PlateDimension { get; set; }

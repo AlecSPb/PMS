@@ -19,9 +19,9 @@ namespace PMSClient.ViewForDesktop
     /// <summary>
     /// MaterialOrderEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class RecordDeliveryItemEditView : UserControl
+    public partial class DeliveryItemEditView : UserControl
     {
-        public RecordDeliveryItemEditView()
+        public DeliveryItemEditView()
         {
             InitializeComponent();
         }

@@ -13,198 +13,27 @@ namespace PMSWCFService
     {
         public int AddRecordBongding(DcRecordBonding model)
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int AddRecordBongdingPlate(DcRecordBondingPlate model)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int AddRecordBongdingTarget(DcRecordBondingTarget model)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
+            throw new NotImplementedException();
         }
 
         public int DeleteRecordBongding(Guid id)
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
+            throw new NotImplementedException();
         }
 
-        public int DeleteRecordBongdingPlate(Guid id)
+        public int GetRecordBondingCount(string TargetLot, string PlateLot)
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
+            throw new NotImplementedException();
         }
 
-        public int DeleteRecordBongdingTarget(Guid id)
+        public List<DcRecordBonding> GetRecordBondings(int skip, int take, string TargetLot, string PlateLot)
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int GetRecordBondingCount()
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public List<DcRecordBondingPlate> GetRecordBondingPlatesByBondingID(Guid bondingId)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public List<DcRecordBondingPlate> GetRecordBondingPlates(int skip, int take)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public List<DcRecordBonding> GetRecordBondings(int skip, int take)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public List<DcRecordBondingTarget> GetRecordBondingTargets(Guid bongdingId)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
+            throw new NotImplementedException();
         }
 
         public int UpdateRecordBongding(DcRecordBonding model)
         {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int UpdateRecordBongdingPlate(DcRecordBondingPlate model)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
-        }
-
-        public int UpdateRecordBongdingTarget(DcRecordBondingTarget model)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw;
-            }
-
+            throw new NotImplementedException();
         }
     }
 }

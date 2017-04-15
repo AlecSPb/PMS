@@ -264,8 +264,8 @@
     <Compile Include="ViewForDesktop\PlanSearchView.xaml.cs">
       <DependentUpon>PlanSearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordDeliveryItemListView.xaml.cs">
-      <DependentUpon>RecordDeliveryItemListView.xaml</DependentUpon>
+    <Compile Include="ViewForDesktop\DeliveryItemListView.xaml.cs">
+      <DependentUpon>DeliveryItemListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\RecordDeMoldEditView.xaml.cs">
       <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
@@ -291,14 +291,14 @@
     <Compile Include="ViewForDesktop\RecordBondingView.xaml.cs">
       <DependentUpon>RecordBondingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordDeliveryEditView.xaml.cs">
-      <DependentUpon>RecordDeliveryEditView.xaml</DependentUpon>
+    <Compile Include="ViewForDesktop\DeliveryEditView.xaml.cs">
+      <DependentUpon>DeliveryEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordDeliveryItemEditView.xaml.cs">
-      <DependentUpon>RecordDeliveryItemEditView.xaml</DependentUpon>
+    <Compile Include="ViewForDesktop\DeliveryItemEditView.xaml.cs">
+      <DependentUpon>DeliveryItemEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordDeliveryView.xaml.cs">
-      <DependentUpon>RecordDeliveryView.xaml</DependentUpon>
+    <Compile Include="ViewForDesktop\DeliveryView.xaml.cs">
+      <DependentUpon>DeliveryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\RecordMillingEditView.xaml.cs">
       <DependentUpon>RecordMillingEditView.xaml</DependentUpon>
@@ -352,9 +352,9 @@
     <Compile Include="ViewModel\PlanSelectVM.cs" />
     <Compile Include="ViewModel\PlanSearchVM.cs" />
     <Compile Include="ViewModel\PlanVM.cs" />
-    <Compile Include="ViewModel\RecordDeliveryEditVM.cs" />
-    <Compile Include="ViewModel\RecordDeliveryItemEditVM.cs" />
-    <Compile Include="ViewModel\RecordDeliveryVM.cs" />
+    <Compile Include="ViewModel\DeliveryEditVM.cs" />
+    <Compile Include="ViewModel\DeliveryItemEditVM.cs" />
+    <Compile Include="ViewModel\DeliveryVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldEditVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldVM.cs" />
     <Compile Include="ViewModel\RecordMachineEditVM.cs" />
@@ -516,7 +516,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordDeliveryItemListView.xaml">
+    <Page Include="ViewForDesktop\DeliveryItemListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -552,15 +552,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordDeliveryEditView.xaml">
+    <Page Include="ViewForDesktop\DeliveryEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordDeliveryItemEditView.xaml">
+    <Page Include="ViewForDesktop\DeliveryItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordDeliveryView.xaml">
+    <Page Include="ViewForDesktop\DeliveryView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

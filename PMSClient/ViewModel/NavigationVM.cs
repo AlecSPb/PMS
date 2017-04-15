@@ -52,8 +52,8 @@ namespace PMSClient.ViewModel
             GoToRecordBonding = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordBonding), () => _session.IsAuthorized("浏览绑定记录"));
 
 
-            GoToProductInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.ProductInventory), () => _session.IsAuthorized("浏览成品记录"));
-            GoToRecordDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordDelivery), () => _session.IsAuthorized("浏览发货记录"));
+            GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product), () => _session.IsAuthorized("浏览成品记录"));
+            GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery), () => _session.IsAuthorized("浏览发货记录"));
 
             GoToMaintenance = new RelayCommand(() => NavigationService.GoTo(PMSViews.Maintanence), () => _session.IsAuthorized("浏览维护信息"));
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCustomer), () => _session.IsAuthorized("浏览客户信息"));
@@ -89,8 +89,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToRecordBonding { get; private set; }
 
 
-        public RelayCommand GoToProductInventory { get; private set; }
-        public RelayCommand GoToRecordDelivery { get; private set; }
+        public RelayCommand GoToProduct { get; private set; }
+        public RelayCommand GoToDelivery { get; private set; }
 
 
         public RelayCommand GoToMaintenance { get; set; }

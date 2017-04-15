@@ -14,9 +14,9 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeliveryVM : BaseViewModelPage
+    public class DeliveryVM : BaseViewModelPage
     {
-        public RecordDeliveryVM()
+        public DeliveryVM()
         {
             InitializeProperties();
             InitializeCommands();

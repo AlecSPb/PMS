@@ -59,9 +59,9 @@ namespace PMSClient.ViewForDesktop
 
 
 
-            SimpleIoc.Default.Register<RecordDeliveryView>();
-            SimpleIoc.Default.Register<RecordDeliveryEditView>();
-            SimpleIoc.Default.Register<RecordDeliveryItemEditView>();
+            SimpleIoc.Default.Register<DeliveryView>();
+            SimpleIoc.Default.Register<DeliveryEditView>();
+            SimpleIoc.Default.Register<DeliveryItemEditView>();
 
 
             SimpleIoc.Default.Register<RecordMillingView>();
@@ -270,17 +270,17 @@ namespace PMSClient.ViewForDesktop
         }
 
 
-        public RecordDeliveryView RecordDelivery
+        public DeliveryView Delivery
         {
-            get { return SimpleIoc.Default.GetInstance<RecordDeliveryView>(); }
+            get { return SimpleIoc.Default.GetInstance<DeliveryView>(); }
         }
-        public RecordDeliveryEditView RecordDeliveryEdit
+        public DeliveryEditView DeliveryEdit
         {
-            get { return SimpleIoc.Default.GetInstance<RecordDeliveryEditView>(); }
+            get { return SimpleIoc.Default.GetInstance<DeliveryEditView>(); }
         }
-        public RecordDeliveryItemEditView RecordDeliveryItemEdit
+        public DeliveryItemEditView DeliveryItemEdit
         {
-            get { return SimpleIoc.Default.GetInstance<RecordDeliveryItemEditView>(); }
+            get { return SimpleIoc.Default.GetInstance<DeliveryItemEditView>(); }
         }
         #endregion
 

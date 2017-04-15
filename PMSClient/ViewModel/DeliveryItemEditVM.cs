@@ -11,9 +11,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeliveryItemEditVM : BaseViewModelEdit
+    public class DeliveryItemEditVM : BaseViewModelEdit
     {
-        public RecordDeliveryItemEditVM()
+        public DeliveryItemEditVM()
         {
             InitializeBasicData();
 

@@ -11,9 +11,9 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeliveryEditVM : BaseViewModelEdit
+    public class DeliveryEditVM : BaseViewModelEdit
     {
-        public RecordDeliveryEditVM()
+        public DeliveryEditVM()
         {
             InitialCommands();
             InitialProperties();
