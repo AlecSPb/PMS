@@ -27,6 +27,10 @@
                     Command="{Binding Save}"/>
             <Button Content="{StaticResource ButtonSelectTest}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding Select}"/>
+            <Button Content="{StaticResource ButtonSelectProduct}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding Select}"/>
+            <Button Content="{StaticResource ButtonSelectBonding}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding Select}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentDeliveryItem}">
