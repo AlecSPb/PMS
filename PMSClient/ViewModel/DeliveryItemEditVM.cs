@@ -41,7 +41,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.DeliveryID = delivery.ID;
-            model.ProductType = PMSCommon.ProductType.Target.ToString();
+            model.ProductType = PMSCommon.OrderProductType.Target.ToString();
             model.ProductID = DateTime.Now.ToString("yyMMdd");
             model.Composition = "填写成分";
             model.Abbr = "缩写";

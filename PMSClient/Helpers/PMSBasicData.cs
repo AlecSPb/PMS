@@ -65,7 +65,7 @@ namespace PMSClient
         {
             get
             {
-                var productTypes = Enum.GetNames(typeof(PMSCommon.ProductType));
+                var productTypes = Enum.GetNames(typeof(PMSCommon.OrderProductType));
                 return productTypes;
             }
         }

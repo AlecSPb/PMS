@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum ProductType
+    public enum OrderProductType
     {
-        靶材,
-        绑定,
-        粉末,
-        颗粒,
-        外包,
-        背板,
-        其他
+        Target,
+        Granule,
+        Powder,
+        BackPlate,
+        Other
     }
 }

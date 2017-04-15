@@ -73,6 +73,7 @@
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />
     <Compile Include="OrderUnit.cs" />
+    <Compile Include="ProductType.cs" />
     <Compile Include="Purity.cs" />
     <Compile Include="QuickMessage.cs" />
     <Compile Include="SimpleState.cs" />
@@ -80,7 +81,7 @@
     <Compile Include="OrderPriority.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PackageType.cs" />
-    <Compile Include="ProductType.cs" />
+    <Compile Include="OrderProductType.cs" />
     <Compile Include="TestResultState.cs" />
     <Compile Include="TestType.cs" />
     <Compile Include="UserState.cs" />
