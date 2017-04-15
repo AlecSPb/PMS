@@ -71,6 +71,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<RecordTestSelectVM>();
             SimpleIoc.Default.Register<RecordTestDocVM>();
 
+            SimpleIoc.Default.Register<RecordBondingVM>();
+            SimpleIoc.Default.Register<RecordBondingEditVM>();
 
             SimpleIoc.Default.Register<ProductVM>();
             SimpleIoc.Default.Register<ProductEditVM>();
@@ -267,6 +269,23 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordMachineEditVM>();
             }
         }
+        public RecordBondingVM RecordBonding
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordBondingVM>();
+            }
+        }
+        public RecordBondingEditVM RecordBondingEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordBondingEditVM>();
+            }
+        }
+
+
+
 
         public ProductVM Product
         {
