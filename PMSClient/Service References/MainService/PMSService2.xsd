@@ -250,6 +250,7 @@
       <xs:element minOccurs="0" name="DetailRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PackNumber" type="xs:int" />
       <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
@@ -330,7 +331,9 @@
       <xs:element minOccurs="0" name="GasProtection" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MillingTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ratio" type="xs:double" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
@@ -377,6 +380,7 @@
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeMoldType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Diameter1" type="xs:double" />
       <xs:element minOccurs="0" name="Diameter2" type="xs:double" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />

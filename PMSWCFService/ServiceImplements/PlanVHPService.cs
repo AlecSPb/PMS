@@ -7,8 +7,7 @@ using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSDAL;
 using PMSCommon;
-
-
+using AuthorizationChecker;
 
 namespace PMSWCFService
 {
@@ -62,6 +61,7 @@ namespace PMSWCFService
 
         public List<DcPlanVHP> GetVHPPlansByOrderID(Guid id)
         {
+            Checker.CheckIfCanRun();
             try
             {
                 using (var dc = new PMSDbContext())

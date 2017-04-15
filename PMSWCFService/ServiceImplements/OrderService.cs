@@ -7,6 +7,7 @@ using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSDAL;
 using PMSCommon;
+using AuthorizationChecker;
 
 namespace PMSWCFService
 {
@@ -77,6 +78,7 @@ namespace PMSWCFService
         /// <returns></returns>
         public List<DcOrder> GetAllOrderInPage(int skip, int take)
         {
+            Checker.CheckIfCanRun();
             try
             {
                 using (var dc = new PMSDbContext())

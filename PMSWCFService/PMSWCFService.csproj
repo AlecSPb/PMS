@@ -174,6 +174,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AuthorizationChecker\AuthorizationChecker.csproj">
+      <Project>{cb6ab81c-1226-468a-9f10-58f7f9637cfd}</Project>
+      <Name>AuthorizationChecker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>

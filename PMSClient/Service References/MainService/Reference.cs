@@ -2439,6 +2439,9 @@ namespace PMSClient.MainService {
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PackNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2579,6 +2582,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.POField, value) != true)) {
                     this.POField = value;
                     this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PackNumber {
+            get {
+                return this.PackNumberField;
+            }
+            set {
+                if ((this.PackNumberField.Equals(value) != true)) {
+                    this.PackNumberField = value;
+                    this.RaisePropertyChanged("PackNumber");
                 }
             }
         }
@@ -3317,7 +3333,13 @@ namespace PMSClient.MainService {
         private string MaterialSourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MillingTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MillingToolField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -3426,6 +3448,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MillingTime {
+            get {
+                return this.MillingTimeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MillingTimeField, value) != true)) {
+                    this.MillingTimeField = value;
+                    this.RaisePropertyChanged("MillingTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string MillingTool {
             get {
                 return this.MillingToolField;
@@ -3434,6 +3469,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.MillingToolField, value) != true)) {
                     this.MillingToolField = value;
                     this.RaisePropertyChanged("MillingTool");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Ratio {
+            get {
+                return this.RatioField;
+            }
+            set {
+                if ((this.RatioField.Equals(value) != true)) {
+                    this.RatioField = value;
+                    this.RaisePropertyChanged("Ratio");
                 }
             }
         }
@@ -3814,6 +3862,9 @@ namespace PMSClient.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeMoldTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Diameter1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3897,6 +3948,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeMoldType {
+            get {
+                return this.DeMoldTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeMoldTypeField, value) != true)) {
+                    this.DeMoldTypeField = value;
+                    this.RaisePropertyChanged("DeMoldType");
                 }
             }
         }

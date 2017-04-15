@@ -124,13 +124,13 @@ namespace PMSWCFService
         {
             try
             {
-            using (var dc = new PMSDbContext())
-            {
-                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
 
 
-                return result;
-            }
+                    return result;
+                }
             }
             catch (Exception ex)
             {
@@ -152,7 +152,9 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<User, DcUser>());
-                    var user = dc.Users.Where(i => i.UserName == username && i.Password == password).FirstOrDefault();
+                    var user = dc.Users.Where(i => i.UserName == username
+                    && i.Password == password
+                    && i.State == PMSCommon.UserState.雇佣.ToString()).FirstOrDefault();
                     return Mapper.Map<DcUser>(user);
                 }
             }
