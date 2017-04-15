@@ -228,6 +228,10 @@
     <sys:String x:Key="PageRecordTest">测试记录</sys:String>
     <sys:String x:Key="PageRecordTestEdit">测试记录编辑</sys:String>
     <sys:String x:Key="PageRecordTestDoc">测试记录报告</sys:String>
+
+    <sys:String x:Key="PageProduct">成品</sys:String>
+    <sys:String x:Key="PageProductInventory">成品库</sys:String>
+    <sys:String x:Key="PageProductInventoryEdit">成品库编辑</sys:String>
     <sys:String x:Key="PageRecordDelivery">发货记录</sys:String>
     <sys:String x:Key="PageRecordDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="PageRecordDeliveryItemEdit">发货项记录编辑</sys:String>
