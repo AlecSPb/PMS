@@ -25,22 +25,5 @@ namespace PMSClient.ViewForDesktop
         {
             InitializeComponent();
         }
-        private void cboCustomerNames_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cbo = sender as ComboBox;
-            if (cbo.SelectedItem!=null)
-            {
-                PMSMethods.SetTextBox(txtCustomerName, cbo.SelectedItem.ToString());
-            }
-        }
-
-        private void cboOrderUnits_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cbo = sender as ComboBox;
-            if (cbo.SelectedItem != null)
-            {
-                PMSMethods.SetTextBox(txtOrderUnit, cbo.SelectedItem.ToString());
-            }
-        }
     }
 }

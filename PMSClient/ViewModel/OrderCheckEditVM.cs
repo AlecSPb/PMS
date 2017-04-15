@@ -38,19 +38,14 @@ namespace PMSClient.ViewModel
 
         public void InitializeProperties()
         {
-            OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.OrderState));
-            states.ToList().ForEach(s => OrderStates.Add(s));
+            OrderStates = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.OrderState>(OrderStates);
 
+            OrderPriorities = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.OrderPriority>(OrderPriorities);
 
-            OrderPriorities = new ObservableCollection<string>();
-            var priorities = Enum.GetNames(typeof(PMSCommon.OrderPriority));
-            priorities.ToList().ForEach(p => OrderPriorities.Add(p));
-
-
-            PolicyTypes = new ObservableCollection<string>();
-            var policyTypes = Enum.GetNames(typeof(PMSCommon.OrderPolicyType));
-            policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
+            PolicyTypes = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.OrderPolicyType>(PolicyTypes);
         }
 
         private bool CanSave()
@@ -101,10 +96,10 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<string> OrderStates { get; set; }
-        public ObservableCollection<string> OrderPriorities { get; set; }
+        public List<string> OrderStates { get; set; }
+        public List<string> OrderPriorities { get; set; }
 
-        public ObservableCollection<string> PolicyTypes { get; set; }
+        public List<string> PolicyTypes { get; set; }
 
     }
 }

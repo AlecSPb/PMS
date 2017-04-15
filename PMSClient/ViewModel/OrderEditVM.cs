@@ -27,29 +27,17 @@ namespace PMSClient.ViewModel
 
         public void InitializeProperties()
         {
-            OrderStates = new List<string>();
-            var states = PMSBasicData.OrderStates;
-            states.ToList().ForEach(s => OrderStates.Add(s));
 
-            OrderPriorities = new List<string>();
-            var priorities = PMSBasicData.OrderPriorities;
-            priorities.ToList().ForEach(p => OrderPriorities.Add(p));
+            ProductTypes = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.OrderProductType>(ProductTypes);
 
-            PolicyTypes = new List<string>();
-            var policyTypes = PMSBasicData.OrderPolicyTypes;
-            policyTypes.ToList().ForEach(p => PolicyTypes.Add(p));
+            OrderUnits = new List<string>();
+            PMSMethods.SetListDS<PMSCommon.OrderUnit>(OrderUnits);
+
 
             CustomerNames = new List<string>();
             var customerNames = PMSBasicData.Customers;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
-
-            ProductTypes = new List<string>();
-            var productTypes = PMSBasicData.OrderProductTypes;
-            productTypes.ToList().ForEach(p => ProductTypes.Add(p));
-
-
-            OrderUnits = new List<string>();
-            PMSBasicData.OrderUnits.ToList().ForEach(i => OrderUnits.Add(i));
         }
         /// <summary>
         /// 直接更改属性
@@ -62,10 +50,15 @@ namespace PMSClient.ViewModel
             var order = new DcOrder();
             #region 初始化order
             order.ID = Guid.NewGuid();
-            order.CustomerName = "客户名称";
+            order.CustomerName = CustomerNames.FirstOrDefault();
             order.PO = DateTime.Now.ToString("yyMMdd");
+            order.CompositionOriginal = "原始成分写法";
+            order.CompositionStandard = "标准成分写法";
+            order.CompositionAbbr = "成分缩写";
+            order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            order.CreateTime = DateTime.Now;
             order.PMINumber = DateTime.Now.ToString("yyMMdd");
-            order.ProductType = "Target";
+            order.ProductType = PMSCommon.OrderProductType.Target.ToString();
             order.Dimension = "230mm OD x  4mm";
             order.DimensionDetails = "None";
             order.SampleNeed = "无需样品";
@@ -79,17 +72,11 @@ namespace PMSClient.ViewModel
             order.DeadLine = DateTime.Now.AddDays(30);
             order.ReviewDate = DateTime.Now;
             order.PolicyMakeDate = DateTime.Now;
-            order.State = "UnChecked";
-            order.Priority = "Normal";
-            order.CompositionOriginal = "原始成分写法";
-            order.CompositionStandard = "标准成分写法";
-            order.CompositionAbbr = "成分缩写";
-            order.Creator = "xs.zhou";
-            order.CreateTime = DateTime.Now;
-            order.ProductType = "Target";
+            order.State = PMSCommon.OrderState.未核验.ToString();
+            order.Priority =PMSCommon.OrderPriority.通常.ToString();
             order.ReviewPassed = true;
             order.Quantity = 1;
-            order.QuantityUnit = "片";
+            order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             #endregion
             CurrentOrder = order;
         }
@@ -153,13 +140,8 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentOrder));
             }
         }
-
-        public List<string> OrderStates { get; set; }
-        public List<string> OrderPriorities { get; set; }
-        public List<string> PolicyTypes { get; set; }
         public List<string> CustomerNames { get; set; }
         public List<string> ProductTypes { get; set; }
-
         public List<string> OrderUnits { get; set; }
 
     }

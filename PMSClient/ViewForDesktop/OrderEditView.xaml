@@ -56,13 +56,10 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderCustomer}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtCustomerName" Text="{Binding CustomerName}" Width="150"
-                             Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    <ComboBox Name="cboCustomerNames" Style="{StaticResource StyleComboBoxCommon}" SelectionChanged="cboCustomerNames_SelectionChanged"
-                      ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
-                </StackPanel>
-
+                <ComboBox Grid.Row="0" Grid.Column="1" Name="cboCustomerNames"
+                      HorizontalAlignment="Stretch"
+                      Style="{StaticResource StyleComboBoxCommon}"
+                      ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" SelectedItem="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="这里选择客户名称，如果下拉列表没有该客户信息，请先添加客户信息"/>
 
@@ -125,12 +122,10 @@
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantityUnit}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox  Name="txtOrderUnit" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
-                    <ComboBox Name="cboOrderUnits" Style="{StaticResource StyleComboBoxCommon}" SelectionChanged="cboOrderUnits_SelectionChanged"
+                <ComboBox Grid.Row="9" Grid.Column="1" 
+                      Text="{Binding QuantityUnit}" 
+                      Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                       ItemsSource="{Binding DataContext.OrderUnits,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
-                </StackPanel>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="数量单位"/>
 
