@@ -8,7 +8,7 @@ using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSCommon;
 
-namespace PMSWCFService.ServiceImplements
+namespace PMSWCFService
 {
     public partial class PMSService : IProductService
     {

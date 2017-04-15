@@ -202,6 +202,12 @@ namespace PMSClient
                 case PMSViews.RecordTestDoc:
                     NavigateTo(_views.RecordTestDoc);
                     break;
+                case PMSViews.RecordBonding:
+                    NavigateTo(_views.RecordBonding);
+                    break;
+                case PMSViews.RecordBondingEdit:
+                    NavigateTo(_views.RecordBondingEdit);
+                    break;
                 case PMSViews.Delivery:
                     NavigateTo(_views.Delivery);
                     break;
@@ -211,6 +217,13 @@ namespace PMSClient
                 case PMSViews.DeliveryItemEdit:
                     NavigateTo(_views.DeliveryItemEdit);
                     break;
+                case PMSViews.Product:
+                    NavigateTo(_views.Product);
+                    break;
+                case PMSViews.ProductEdit:
+                    NavigateTo(_views.ProductEdit);
+                    break;
+
                 case PMSViews.MaterialNeedCalcuationTool:
                     NavigateTo(_toolviews.MaterialNeedCalculation);
                     break;

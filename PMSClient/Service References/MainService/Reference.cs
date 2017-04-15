@@ -5213,6 +5213,243 @@ namespace PMSClient.MainService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcProduct", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Abbr {
+            get {
+                return this.AbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AbbrField, value) != true)) {
+                    this.AbbrField = value;
+                    this.RaisePropertyChanged("Abbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PO {
+            get {
+                return this.POField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POField, value) != true)) {
+                    this.POField = value;
+                    this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PositionField, value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IOrderService")]
     public interface IOrderService {
@@ -6874,16 +7111,16 @@ namespace PMSClient.MainService {
     public interface IRecordBondingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsResponse")]
-        PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string TargetLot, string PlateLot);
+        PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string platelot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string TargetLot, string PlateLot);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string platelot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
-        int GetRecordBondingCount(string TargetLot, string PlateLot);
+        int GetRecordBondingCount(string productid, string platelot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
-        System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string TargetLot, string PlateLot);
+        System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string platelot);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/AddRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingResponse")]
         int AddRecordBongding(PMSClient.MainService.DcRecordBonding model);
@@ -6931,20 +7168,20 @@ namespace PMSClient.MainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string TargetLot, string PlateLot) {
-            return base.Channel.GetRecordBondings(skip, take, TargetLot, PlateLot);
+        public PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string platelot) {
+            return base.Channel.GetRecordBondings(skip, take, productid, platelot);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string TargetLot, string PlateLot) {
-            return base.Channel.GetRecordBondingsAsync(skip, take, TargetLot, PlateLot);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string platelot) {
+            return base.Channel.GetRecordBondingsAsync(skip, take, productid, platelot);
         }
         
-        public int GetRecordBondingCount(string TargetLot, string PlateLot) {
-            return base.Channel.GetRecordBondingCount(TargetLot, PlateLot);
+        public int GetRecordBondingCount(string productid, string platelot) {
+            return base.Channel.GetRecordBondingCount(productid, platelot);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string TargetLot, string PlateLot) {
-            return base.Channel.GetRecordBondingCountAsync(TargetLot, PlateLot);
+        public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string platelot) {
+            return base.Channel.GetRecordBondingCountAsync(productid, platelot);
         }
         
         public int AddRecordBongding(PMSClient.MainService.DcRecordBonding model) {
@@ -6969,6 +7206,109 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordBongdingAsync(System.Guid id) {
             return base.Channel.DeleteRecordBongdingAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IProductService")]
+    public interface IProductService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
+        PMSClient.MainService.DcProduct[] GetProducts(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcProduct[]> GetProductsAsync(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
+        int GetProductCount(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
+        System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
+        int AddProduct(PMSClient.MainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
+        System.Threading.Tasks.Task<int> AddProductAsync(PMSClient.MainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        int UpdateProduct(PMSClient.MainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<int> UpdateProductAsync(PMSClient.MainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
+        int DeleteProduct(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
+        System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IProductServiceChannel : PMSClient.MainService.IProductService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProductServiceClient : System.ServiceModel.ClientBase<PMSClient.MainService.IProductService>, PMSClient.MainService.IProductService {
+        
+        public ProductServiceClient() {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSClient.MainService.DcProduct[] GetProducts(int skip, int take, string productid, string composition) {
+            return base.Channel.GetProducts(skip, take, productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcProduct[]> GetProductsAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetProductsAsync(skip, take, productid, composition);
+        }
+        
+        public int GetProductCount(string productid, string composition) {
+            return base.Channel.GetProductCount(productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition) {
+            return base.Channel.GetProductCountAsync(productid, composition);
+        }
+        
+        public int AddProduct(PMSClient.MainService.DcProduct model) {
+            return base.Channel.AddProduct(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddProductAsync(PMSClient.MainService.DcProduct model) {
+            return base.Channel.AddProductAsync(model);
+        }
+        
+        public int UpdateProduct(PMSClient.MainService.DcProduct model) {
+            return base.Channel.UpdateProduct(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateProductAsync(PMSClient.MainService.DcProduct model) {
+            return base.Channel.UpdateProductAsync(model);
+        }
+        
+        public int DeleteProduct(System.Guid id) {
+            return base.Channel.DeleteProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id) {
+            return base.Channel.DeleteProductAsync(id);
         }
     }
 }

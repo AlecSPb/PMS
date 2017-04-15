@@ -571,6 +571,36 @@
   <wsdl:message name="IRecordBondingService_DeleteRecordBongding_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordBongdingResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCount" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -971,6 +1001,28 @@
     <wsdl:operation name="DeleteRecordBongding">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongding" message="tns:IRecordBondingService_DeleteRecordBongding_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongdingResponse" message="tns:IRecordBondingService_DeleteRecordBongding_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProducts" message="tns:IProductService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsResponse" message="tns:IProductService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCount" message="tns:IProductService_GetProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountResponse" message="tns:IProductService_GetProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductResponse" message="tns:IProductService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProduct" message="tns:IProductService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductResponse" message="tns:IProductService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteProductResponse" message="tns:IProductService_DeleteProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="order" type="tns:IOrderService">
@@ -1858,6 +1910,54 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="product" type="tns:IProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCount">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
     <wsdl:port name="order" binding="tns:order">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
@@ -1896,6 +1996,9 @@
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordbonding" binding="tns:recordbonding">
+      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="product" binding="tns:product">
       <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>

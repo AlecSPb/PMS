@@ -473,4 +473,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />
+  <xs:complexType name="ArrayOfDcProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcProduct" nillable="true" type="tns:DcProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcProduct" nillable="true" type="tns:ArrayOfDcProduct" />
+  <xs:complexType name="DcProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcProduct" nillable="true" type="tns:DcProduct" />
 </xs:schema>

@@ -57,6 +57,9 @@ namespace PMSClient.ViewForDesktop
             SimpleIoc.Default.Register<RecordTestSelectView>();
             SimpleIoc.Default.Register<RecordTestDocView>();
 
+            SimpleIoc.Default.Register<RecordBondingView>();
+            SimpleIoc.Default.Register<RecordBondingEditView>();
+
             SimpleIoc.Default.Register<ProductView>();
             SimpleIoc.Default.Register<ProductEditView>();
 
@@ -269,6 +272,15 @@ namespace PMSClient.ViewForDesktop
         {
             get { return SimpleIoc.Default.GetInstance<RecordTestDocView>(); }
         }
+        public RecordBondingView RecordBonding
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordBondingView>(); }
+        }
+        public RecordBondingEditView RecordBondingEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordBondingEditView>(); }
+        }
+
 
         public ProductView Product
         {
