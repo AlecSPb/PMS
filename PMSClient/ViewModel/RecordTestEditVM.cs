@@ -53,6 +53,7 @@ namespace PMSClient.ViewModel
             model.CompositionXRF = "暂无";
             model.Density = "0";
             model.Defects = "无缺陷";
+           
             #endregion
             CurrentRecordTest = model;
         }
