@@ -121,6 +121,7 @@
     <Compile Include="ServiceContracts\IHeartBeatSerive.cs" />
     <Compile Include="ServiceContracts\IMaintenanceService.cs" />
     <Compile Include="ServiceContracts\IMaterialInventoryService.cs" />
+    <Compile Include="ServiceContracts\IProductService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />

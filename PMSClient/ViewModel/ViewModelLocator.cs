@@ -72,6 +72,9 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<RecordTestDocVM>();
 
 
+            SimpleIoc.Default.Register<ProductVM>();
+            SimpleIoc.Default.Register<ProductEditVM>();
+
             SimpleIoc.Default.Register<DeliveryVM>();
             SimpleIoc.Default.Register<DeliveryEditVM>();
             SimpleIoc.Default.Register<DeliveryItemEditVM>();
@@ -265,7 +268,14 @@ namespace PMSClient.ViewModel
             }
         }
 
-
+        public ProductVM Product
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductVM>(); }
+        }
+        public ProductEditVM ProductEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductEditVM>(); }
+        }
         public DeliveryVM Delivery
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryVM>(); }
