@@ -694,6 +694,12 @@
     <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryIn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -719,18 +725,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcRecordBonding.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordBondingPlate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordBondingTarget.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordDelivery.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordDeliveryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcRecordDeMold.datasource">

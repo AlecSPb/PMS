@@ -20,7 +20,7 @@
     <sys:String x:Key="strbtnRecordBlank">取模记录</sys:String>
     <sys:String x:Key="strbtnRecordMachine">加工记录</sys:String>
     <sys:String x:Key="strbtnRecordTestResult">测试记录</sys:String>
-    <sys:String x:Key="strbtnRecordDelivery">发货记录</sys:String>
+    <sys:String x:Key="strbtnDelivery">发货记录</sys:String>
     <sys:String x:Key="strbtnRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="strbtnMaintenance">设备维护</sys:String>
 
@@ -73,9 +73,9 @@
     <sys:String x:Key="strPageRecordBondingEdit">绑定记录编辑</sys:String>
     <sys:String x:Key="strPageRecordTest">测试记录</sys:String>
     <sys:String x:Key="strPageRecordTestEdit">测试记录编辑</sys:String>
-    <sys:String x:Key="strPageRecordDelivery">发货记录</sys:String>
-    <sys:String x:Key="strPageRecordDeliveryEdit">发货记录编辑</sys:String>
-    <sys:String x:Key="strPageRecordDeliveryItemEdit">发货项记录编辑</sys:String>
+    <sys:String x:Key="strPageDelivery">发货记录</sys:String>
+    <sys:String x:Key="strPageDeliveryEdit">发货记录编辑</sys:String>
+    <sys:String x:Key="strPageDeliveryItemEdit">发货项记录编辑</sys:String>
 
 
     <sys:String x:Key="strPageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
@@ -148,7 +148,7 @@
     <sys:String x:Key="NavigationRecordBlank">取模记录</sys:String>
     <sys:String x:Key="NavigationRecordMachine">加工记录</sys:String>
     <sys:String x:Key="NavigationRecordTestResult">测试记录</sys:String>
-    <sys:String x:Key="NavigationRecordDelivery">发货记录</sys:String>
+    <sys:String x:Key="NavigationDelivery">发货记录</sys:String>
     <sys:String x:Key="NavigationRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="NavigationMaintenance">设备维护</sys:String>
 
@@ -508,7 +508,7 @@
     <sys:String x:Key="RTRemark">备注</sys:String>
     <sys:String x:Key="RTSample">样品</sys:String>
 
-    <!--RecordDelivery-->
+    <!--Delivery-->
     <sys:String x:Key="RDCreator">创建者</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>
     <sys:String x:Key="RDState">状态</sys:String>

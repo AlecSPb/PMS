@@ -42,11 +42,19 @@ namespace PMSDAL
         public string LastWeldMaterial { get; set; }//上次使用的焊接材料
         public string OtherRecord { get; set; }//其他记录
         public string PlateAppearance { get; set; }//外观情况
+
+        public string PlateCheckPerson { get; set; }//靶材检查人
+        public DateTime PlateCheckTime { get; set; }//靶材检查日期
+
+
+        //2.0靶材前置处理
+
+        public string TargetProcessRecord { get; set; }
+
         //3.0背板前置处理
         public string PlateProcessRecord { get; set; }//前置处理结果检查记录
 
-        //2.0靶材前置处理
-        public string TargetProcessRecord { get; set; }
+     
         //接合
         public string WeldMaterial { get; set; }
         public double CuStringDiameter { get; set; }

@@ -20,9 +20,9 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialNeed, PMSMaterialNeed>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialNeed, MaterialNeed>());
                     var mapper = config.CreateMapper();
-                    var materialNeed = mapper.Map<PMSMaterialNeed>(model);
+                    var materialNeed = mapper.Map<MaterialNeed>(model);
                     dc.MaterialNeeds.Add(materialNeed);
                     result = dc.SaveChanges();
 
@@ -45,10 +45,10 @@ namespace PMSWCFService
                     int result = 0;
                     var config = new MapperConfiguration(cfg =>
                     {
-                        cfg.CreateMap<DcMaterialOrder, PMSMaterialOrder>();
+                        cfg.CreateMap<DcMaterialOrder, MaterialOrder>();
                     });
                     var mapper = config.CreateMapper();
-                    var materialOrder = mapper.Map<PMSMaterialOrder>(model);
+                    var materialOrder = mapper.Map<MaterialOrder>(model);
                     dc.MaterialOrders.Add(materialOrder);
                     result = dc.SaveChanges();
 
@@ -68,9 +68,9 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialOrderItem, PMSMaterialOrderItem>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialOrderItem, MaterialOrderItem>());
                     var mapper = config.CreateMapper();
-                    var materialOrderItem = mapper.Map<PMSMaterialOrderItem>(model);
+                    var materialOrderItem = mapper.Map<MaterialOrderItem>(model);
                     dc.MaterialOrderItems.Add(materialOrderItem);
                     result = dc.SaveChanges();
 
@@ -160,14 +160,14 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialNeed, DcMaterialNeed>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialNeed, DcMaterialNeed>());
                     var mapper = config.CreateMapper();
                     var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
                         && m.State != OrderState.Deleted.ToString())
                         .OrderByDescending(m => m.CreateTime)
                         .Skip(skip).Take(take)
                         .ToList();
-                    return mapper.Map<List<PMSMaterialNeed>, List<DcMaterialNeed>>(result);
+                    return mapper.Map<List<MaterialNeed>, List<DcMaterialNeed>>(result);
                 }
             }
             catch (Exception ex)
@@ -202,7 +202,7 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg =>
                     {
-                        cfg.CreateMap<PMSMaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
@@ -211,7 +211,7 @@ namespace PMSWCFService
                                 && m.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
                                 select m;
-                    return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
+                    return mapper.Map<List<MaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
 
                 }
             }
@@ -268,7 +268,7 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg =>
                     {
-                        cfg.CreateMap<PMSMaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
@@ -278,7 +278,7 @@ namespace PMSWCFService
                                 || m.State == OrderState.UnCompleted.ToString())
                                 orderby m.CreateTime descending
                                 select m;
-                    return mapper.Map<List<PMSMaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
+                    return mapper.Map<List<MaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
 
                 }
             }
@@ -295,10 +295,10 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialOrderItem, DcMaterialOrderItem>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
                     var mapper = config.CreateMapper();
                     var result = dc.MaterialOrderItems.Where(m => m.MaterialOrderID == id).OrderByDescending(m => m.CreateTime).ToList();
-                    return mapper.Map<List<PMSMaterialOrderItem>, List<DcMaterialOrderItem>>(result);
+                    return mapper.Map<List<MaterialOrderItem>, List<DcMaterialOrderItem>>(result);
                 }
             }
             catch (Exception ex)
@@ -334,13 +334,13 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<PMSMaterialOrderItem, DcMaterialOrderItem>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrderItems
                                 where m.State != PMSCommon.SimpleState.Deleted.ToString()
                                 orderby m.CreateTime descending
                                 select m;
-                    return mapper.Map<List<PMSMaterialOrderItem>, List<DcMaterialOrderItem>>(query.Skip(skip).Take(take).ToList());
+                    return mapper.Map<List<MaterialOrderItem>, List<DcMaterialOrderItem>>(query.Skip(skip).Take(take).ToList());
                 }
             }
             catch (Exception ex)
@@ -378,9 +378,9 @@ namespace PMSWCFService
                 try
                 {
                     int result = 0;
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialNeed, PMSMaterialNeed>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialNeed, MaterialNeed>());
                     var mapper = config.CreateMapper();
-                    var materialNeed = mapper.Map<PMSMaterialNeed>(model);
+                    var materialNeed = mapper.Map<MaterialNeed>(model);
                     dc.Entry(materialNeed).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                     return result;
@@ -403,10 +403,10 @@ namespace PMSWCFService
                     int result = 0;
                     var config = new MapperConfiguration(cfg =>
                     {
-                        cfg.CreateMap<DcMaterialOrder, PMSMaterialOrder>();
+                        cfg.CreateMap<DcMaterialOrder, MaterialOrder>();
                     });
                     var mapper = config.CreateMapper();
-                    var materialOrder = mapper.Map<PMSMaterialOrder>(model);
+                    var materialOrder = mapper.Map<MaterialOrder>(model);
                     dc.Entry(materialOrder).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                     return result;
@@ -426,9 +426,9 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialOrderItem, PMSMaterialOrderItem>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcMaterialOrderItem, MaterialOrderItem>());
                     var mapper = config.CreateMapper();
-                    var materialOrderItem = mapper.Map<PMSMaterialOrderItem>(model);
+                    var materialOrderItem = mapper.Map<MaterialOrderItem>(model);
                     dc.Entry(materialOrderItem).State = System.Data.Entity.EntityState.Modified;
                     dc.SaveChanges();
                     return result;

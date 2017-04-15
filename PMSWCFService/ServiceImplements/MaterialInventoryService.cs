@@ -18,8 +18,8 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc=new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryIn, PMSMaterialInventoryIn>());
-                    var item = Mapper.Map<PMSMaterialInventoryIn>(model);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryIn, MaterialInventoryIn>());
+                    var item = Mapper.Map<MaterialInventoryIn>(model);
                     dc.MaterialInventoryIns.Add(item);
                     result = dc.SaveChanges();
                 }
@@ -39,8 +39,8 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryOut, PMSMaterialInventoryOut>());
-                    var item = Mapper.Map<PMSMaterialInventoryOut>(model);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryOut, MaterialInventoryOut>());
+                    var item = Mapper.Map<MaterialInventoryOut>(model);
                     dc.MaterialInventoryOuts.Add(item);
                     result = dc.SaveChanges();
                 }
@@ -118,13 +118,13 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<PMSMaterialInventoryIn, DcMaterialInventoryIn>());
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
 
                     var query = from o in dc.MaterialInventoryIns
                                 where o.State != PMSCommon.CommonState.Deleted.ToString()
                                 orderby o.CreateTime descending
                                 select o;
-                    return Mapper.Map<List<PMSMaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
+                    return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
                 }
 
             }
@@ -141,13 +141,13 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<PMSMaterialInventoryOut, DcMaterialInventoryOut>());
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
 
                     var query = from o in dc.MaterialInventoryOuts
                                 where o.State != PMSCommon.CommonState.Deleted.ToString()
                                 orderby o.CreateTime descending
                                 select o;
-                    return Mapper.Map<List<PMSMaterialInventoryOut>, List<DcMaterialInventoryOut>>(query.Skip(skip).Take(take).ToList());
+                    return Mapper.Map<List<MaterialInventoryOut>, List<DcMaterialInventoryOut>>(query.Skip(skip).Take(take).ToList());
                 }
             }
             catch (Exception ex)
@@ -180,8 +180,8 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryIn, PMSMaterialInventoryIn>());
-                    var item = Mapper.Map<PMSMaterialInventoryIn>(model);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryIn, MaterialInventoryIn>());
+                    var item = Mapper.Map<MaterialInventoryIn>(model);
                     dc.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                 }
@@ -202,8 +202,8 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryOut, PMSMaterialInventoryOut>());
-                    var item = Mapper.Map<PMSMaterialInventoryOut>(model);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryOut, MaterialInventoryOut>());
+                    var item = Mapper.Map<MaterialInventoryOut>(model);
                     dc.Entry(item).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                 }

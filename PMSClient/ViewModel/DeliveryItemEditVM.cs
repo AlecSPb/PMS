@@ -32,10 +32,10 @@ namespace PMSClient.ViewModel
             PMSBasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
         }
 
-        public void SetNew(DcRecordDelivery delivery)
+        public void SetNew(DcDelivery delivery)
         {
             IsNew = true;
-            var model = new DcRecordDeliveryItem();
+            var model = new DcDeliveryItem();
             #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
@@ -53,15 +53,15 @@ namespace PMSClient.ViewModel
             model.Position = "A2";
             model.State = PMSCommon.SimpleState.UnDeleted.ToString();
             #endregion
-            CurrentRecordDeliveryItem = model;
+            CurrentDeliveryItem = model;
         }
 
-        public void SetEdit(DcRecordDeliveryItem model)
+        public void SetEdit(DcDeliveryItem model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentRecordDeliveryItem = model;
+                CurrentDeliveryItem = model;
             }
         }
 
@@ -69,14 +69,14 @@ namespace PMSClient.ViewModel
         {
             if (test != null)
             {
-                CurrentRecordDeliveryItem.ProductID = test.ProductID;
-                CurrentRecordDeliveryItem.Composition = test.Composition;
-                CurrentRecordDeliveryItem.Abbr = test.CompositionAbbr;
-                CurrentRecordDeliveryItem.Customer = test.Customer;
-                CurrentRecordDeliveryItem.Weight = test.Weight;
-                CurrentRecordDeliveryItem.PO = test.PO;
+                CurrentDeliveryItem.ProductID = test.ProductID;
+                CurrentDeliveryItem.Composition = test.Composition;
+                CurrentDeliveryItem.Abbr = test.CompositionAbbr;
+                CurrentDeliveryItem.Customer = test.Customer;
+                CurrentDeliveryItem.Weight = test.Weight;
+                CurrentDeliveryItem.PO = test.PO;
 
-                //RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
+                //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }
 
@@ -90,32 +90,32 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordDeliveryItemEdit);
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.DeliveryItemEdit);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
 
         private void GoBack()
         {
-            NavigationService.GoTo(PMSViews.RecordDelivery);
+            NavigationService.GoTo(PMSViews.Delivery);
         }
 
         private void ActionSave()
         {
             try
             {
-                if (CurrentRecordDeliveryItem != null)
+                if (CurrentDeliveryItem != null)
                 {
-                    var service = new RecordDeliveryServiceClient();
+                    var service = new DeliveryServiceClient();
                     if (IsNew)
                     {
-                        service.AddRecordDeliveryItem(CurrentRecordDeliveryItem);
+                        service.AddDeliveryItem(CurrentDeliveryItem);
                     }
                     else
                     {
-                        service.UpdateReocrdDeliveryItem(CurrentRecordDeliveryItem);
+                        service.UpdateDeliveryItem(CurrentDeliveryItem);
                     }
                 }
-                PMSHelper.ViewModels.RecordDelivery.RefreshDataItem();
+                PMSHelper.ViewModels.Delivery.RefreshDataItem();
                 GoBack();
             }
             catch (Exception ex)
@@ -128,17 +128,17 @@ namespace PMSClient.ViewModel
         public List<string> ProductTypes { get; set; }
         public List<string> GoodPositions { get; set; }
 
-        private DcRecordDeliveryItem currentRecordDeliveryItem;
-        public DcRecordDeliveryItem CurrentRecordDeliveryItem
+        private DcDeliveryItem currentDeliveryItem;
+        public DcDeliveryItem CurrentDeliveryItem
         {
             get
             {
-                return currentRecordDeliveryItem;
+                return currentDeliveryItem;
             }
             set
             {
-                currentRecordDeliveryItem = value;
-                RaisePropertyChanged(nameof(CurrentRecordDeliveryItem));
+                currentDeliveryItem = value;
+                RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }
 

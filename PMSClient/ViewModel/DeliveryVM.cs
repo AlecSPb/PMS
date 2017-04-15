@@ -35,32 +35,32 @@ namespace PMSClient.ViewModel
         }
         private void InitializeProperties()
         {
-            RecordDeliveries = new ObservableCollection<DcRecordDelivery>();
-            RecordDeliveryItems = new ObservableCollection<DcRecordDeliveryItem>();
+            RecordDeliveries = new ObservableCollection<DcDelivery>();
+            DeliveryItems = new ObservableCollection<DcDeliveryItem>();
         }
         private void InitializeCommands()
         {
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcRecordDelivery>(ActionEdit,CanEdit);
-            Doc = new RelayCommand<DcRecordDelivery>(ActionDoc,CanDoc);
-            AddItem = new RelayCommand<DcRecordDelivery>(ActionAddItem,CanAddItem);
-            EditItem = new RelayCommand<DcRecordDeliveryItem>(ActionEditItem,CanEditItem);
-            SelectionChanged = new RelayCommand<DcRecordDelivery>(ActionSelectionChanged);
+            Edit = new RelayCommand<DcDelivery>(ActionEdit,CanEdit);
+            Doc = new RelayCommand<DcDelivery>(ActionDoc,CanDoc);
+            AddItem = new RelayCommand<DcDelivery>(ActionAddItem,CanAddItem);
+            EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem,CanEditItem);
+            SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
         }
 
-        private bool CanDoc(DcRecordDelivery arg)
+        private bool CanDoc(DcDelivery arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
 
-        private bool CanEditItem(DcRecordDeliveryItem arg)
+        private bool CanEditItem(DcDeliveryItem arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
 
-        private bool CanAddItem(DcRecordDelivery arg)
+        private bool CanAddItem(DcDelivery arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
@@ -73,7 +73,7 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
 
-        private bool CanEdit(DcRecordDelivery arg)
+        private bool CanEdit(DcDelivery arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
         }
@@ -83,15 +83,15 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelectionChanged(DcRecordDelivery model)
+        private void ActionSelectionChanged(DcDelivery model)
         {
             if (model != null)
             {
-                using (var service = new RecordDeliveryServiceClient())
+                using (var service = new DeliveryServiceClient())
                 {
-                    var result = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
-                    RecordDeliveryItems.Clear();
-                    result.ToList().ForEach(i => RecordDeliveryItems.Add(i));
+                    var result = service.GetDeliveryItemByDeliveryID(model.ID);
+                    DeliveryItems.Clear();
+                    result.ToList().ForEach(i => DeliveryItems.Add(i));
 
                     CurrentSelectItem = model;
                 }
@@ -103,15 +103,15 @@ namespace PMSClient.ViewModel
         /// </summary>
         //private bt.Application btApp;
         //private bt.Format btnFormat;
-        private void ActionDoc(DcRecordDelivery model)
+        private void ActionDoc(DcDelivery model)
         {
             #region 必须使用Automation版本的Bartender才允许自动化调用，这个版本36000RMB
             //string title = model.Country;
             //StringBuilder sb = new StringBuilder();
-            //DcRecordDeliveryItem[] items;
-            //using (var service = new RecordDeliveryServiceClient())
+            //DcDeliveryItem[] items;
+            //using (var service = new DeliveryServiceClient())
             //{
-            //    items = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
+            //    items = service.GetDeliveryItemByDeliveryID(model.ID);
             //}
             //foreach (var item in items)
             //{
@@ -154,10 +154,10 @@ namespace PMSClient.ViewModel
             {
                 string country = model.Country;
                 StringBuilder sb = new StringBuilder();
-                DcRecordDeliveryItem[] items;
-                using (var service = new RecordDeliveryServiceClient())
+                DcDeliveryItem[] items;
+                using (var service = new DeliveryServiceClient())
                 {
-                    items = service.GetRecordDeliveryItemByRecordDeliveryID(model.ID);
+                    items = service.GetDeliveryItemByDeliveryID(model.ID);
                 }
                 int counter = 1;
                 foreach (var item in items)
@@ -174,62 +174,62 @@ namespace PMSClient.ViewModel
                 var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，可以自行修改，然后打印标签";
                 var template = "发货单";
                 var helpimage = "deliverysheet.png";
-                PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordDelivery, pageTitle,
+                PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Delivery, pageTitle,
                     tips, template, mainContent,helpimage);
                 NavigationService.GoTo(PMSViews.LabelOutPut);
             }
         }
 
-        private void ActionEditItem(DcRecordDeliveryItem model)
+        private void ActionEditItem(DcDeliveryItem model)
         {
-            PMSHelper.ViewModels.RecordDeliveryItemEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.RecordDeliveryItemEdit);
+            PMSHelper.ViewModels.DeliveryItemEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.DeliveryItemEdit);
         }
 
-        private void ActionAddItem(DcRecordDelivery model)
+        private void ActionAddItem(DcDelivery model)
         {
-            //传递RecordDelivery
-            PMSHelper.ViewModels.RecordDeliveryItemEdit.SetNew(model);
-            NavigationService.GoTo(PMSViews.RecordDeliveryItemEdit);
+            //传递Delivery
+            PMSHelper.ViewModels.DeliveryItemEdit.SetNew(model);
+            NavigationService.GoTo(PMSViews.DeliveryItemEdit);
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.RecordDeliveryEdit.SetNew();
-            NavigationService.GoTo(PMSViews.RecordDeliveryEdit);
+            PMSHelper.ViewModels.DeliveryEdit.SetNew();
+            NavigationService.GoTo(PMSViews.DeliveryEdit);
         }
 
-        private void ActionEdit(DcRecordDelivery model)
+        private void ActionEdit(DcDelivery model)
         {
-            PMSHelper.ViewModels.RecordDeliveryEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.RecordDeliveryEdit);
+            PMSHelper.ViewModels.DeliveryEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.DeliveryEdit);
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new RecordDeliveryServiceClient();
+            var service = new DeliveryServiceClient();
             RecordCount = service.GetDeliveryCount();
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordDeliveryServiceClient();
+            var service = new DeliveryServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var models = service.GetDelivery(skip, take);
             RecordDeliveries.Clear();
-            models.ToList<DcRecordDelivery>().ForEach(o => RecordDeliveries.Add(o));
+            models.ToList<DcDelivery>().ForEach(o => RecordDeliveries.Add(o));
 
             CurrentSelectIndex = 0;
             CurrentSelectItem = RecordDeliveries.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);
         }
         #region Properties
-        public ObservableCollection<DcRecordDelivery> RecordDeliveries { get; set; }
-        public ObservableCollection<DcRecordDeliveryItem> RecordDeliveryItems { get; set; }
+        public ObservableCollection<DcDelivery> RecordDeliveries { get; set; }
+        public ObservableCollection<DcDeliveryItem> DeliveryItems { get; set; }
         private int currentSelectIndex;
 
         public int CurrentSelectIndex
@@ -237,9 +237,9 @@ namespace PMSClient.ViewModel
             get { return currentSelectIndex; }
             set { currentSelectIndex = value; RaisePropertyChanged(nameof(CurrentSelectIndex)); }
         }
-        private DcRecordDelivery currentSelectItem;
+        private DcDelivery currentSelectItem;
 
-        public DcRecordDelivery CurrentSelectItem
+        public DcDelivery CurrentSelectItem
         {
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
@@ -248,11 +248,11 @@ namespace PMSClient.ViewModel
         #endregion
         #region Commands
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordDelivery> Edit { get; set; }
-        public RelayCommand<DcRecordDelivery> Doc { get; set; }
-        public RelayCommand<DcRecordDelivery> AddItem { get; set; }
-        public RelayCommand<DcRecordDeliveryItem> EditItem { get; set; }
-        public RelayCommand<DcRecordDelivery> SelectionChanged { get; set; }
+        public RelayCommand<DcDelivery> Edit { get; set; }
+        public RelayCommand<DcDelivery> Doc { get; set; }
+        public RelayCommand<DcDelivery> AddItem { get; set; }
+        public RelayCommand<DcDeliveryItem> EditItem { get; set; }
+        public RelayCommand<DcDelivery> SelectionChanged { get; set; }
         #endregion
 
 

@@ -29,10 +29,10 @@ namespace PMSClient
         RecordTest,
         RecordTestEdit,
         RecordTestSelect,
-        RecordDelivery,
-        RecordDeliveryEdit,
-        RecordDeliveryItem,
-        RecordDeliveryItemEdit,
+        Delivery,
+        DeliveryEdit,
+        DeliveryItem,
+        DeliveryItemEdit,
         RecordMilling,
         RecordMillingEdit,
         RecordVHP,
@@ -55,12 +55,12 @@ namespace PMSClient
         MaterialNeedRefresh,
         MaterialOrderRefresh,
         RecordTestRefresh,
-        RecordDeliveryRefresh,
+        DeliveryRefresh,
         PlanSelectForVHP,
         RecordVHPRefresh,
         RecordVHPQuickEdit,
         SetRecordVHPQuickEditSelectIndex,
         MaterialOrderItemRefresh,
-        RecordDeliveryItemRefresh
+        DeliveryItemRefresh
     }
 }

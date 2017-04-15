@@ -13,7 +13,7 @@ namespace PMSClient.Tool
     {
         public LabelOutPutVM()
         {
-            requestView = PMSViews.RecordDelivery;
+            requestView = PMSViews.Delivery;
             PageTitle = "发货单标签输出结果";
             Tips = "打开BarTender软件，请将下面的标签复制到对应BarTender模板当中";
             TemplateFileName = "发货单.btw";

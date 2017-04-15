@@ -23,7 +23,7 @@ namespace PMSClient.ViewModel
         {
             IsNew = true;
             #region 初始化
-            var model = new DcRecordDelivery();
+            var model = new DcDelivery();
             model.ID = Guid.NewGuid();
             model.InvoiceNumber = "发票号";
             model.DeliveryName =$"FH{DateTime.Now.ToString("yyMMdd")}";
@@ -38,14 +38,14 @@ namespace PMSClient.ViewModel
             model.Address = "这里填写发货地址";
             model.Country = "美国";
             #endregion
-            CurrentRecordDelivery = model;
+            CurrentDelivery = model;
         }
-        public void SetEdit(DcRecordDelivery model)
+        public void SetEdit(DcDelivery model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentRecordDelivery = model;
+                CurrentDelivery = model;
             }
         }
 
@@ -74,23 +74,23 @@ namespace PMSClient.ViewModel
 
         private static void GoBack()
         {
-            NavigationService.GoTo(PMSViews.RecordDelivery);
+            NavigationService.GoTo(PMSViews.Delivery);
         }
 
         private void ActionSave()
         {
             try
             {
-                var service = new RecordDeliveryServiceClient();
+                var service = new DeliveryServiceClient();
                 if (IsNew)
                 {
-                    service.AddRecordDelivery(CurrentRecordDelivery);
+                    service.AddDelivery(CurrentDelivery);
                 }
                 else
                 {
-                    service.UpdateReocrdDelivery(CurrentRecordDelivery);
+                    service.UpdateDelivery(CurrentDelivery);
                 }
-                PMSHelper.ViewModels.RecordDelivery.RefreshData();
+                PMSHelper.ViewModels.Delivery.RefreshData();
                 GoBack();
             }
             catch (Exception ex)
@@ -102,17 +102,17 @@ namespace PMSClient.ViewModel
 
 
         #region Properties
-        private DcRecordDelivery currentRecordDelivery;
-        public DcRecordDelivery CurrentRecordDelivery
+        private DcDelivery currentDelivery;
+        public DcDelivery CurrentDelivery
         {
             get
             {
-                return currentRecordDelivery;
+                return currentDelivery;
             }
             set
             {
-                currentRecordDelivery = value;
-                RaisePropertyChanged(nameof(CurrentRecordDelivery));
+                currentDelivery = value;
+                RaisePropertyChanged(nameof(CurrentDelivery));
             }
         }
         public ObservableCollection<string> OrderStates { get; set; }

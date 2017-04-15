@@ -61,10 +61,10 @@ namespace PMSClient.ViewModel
             {
                 switch (requestView)
                 {
-                    case PMSViews.RecordDeliveryItemEdit:
-                        PMSHelper.ViewModels.RecordDeliveryItemEdit.SetBySelect(model);
+                    case PMSViews.DeliveryItemEdit:
+                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model);
                         break;
-                    case PMSViews.RecordBondingTargetEdit:
+                    case PMSViews.RecordBondingEdit:
                         break;
                     default:
                         break;
