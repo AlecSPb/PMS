@@ -27,16 +27,6 @@ namespace PMSClient.ViewForDesktop
             InitializeComponent();
         }
 
-        private void cboMolds_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var model =cboMolds.SelectedItem as DcBDVHPMold;
-            if (model!=null)
-            {
-                PMSMethods.SetTextBox(txtmoldDiameter, model.InnerDiameter.ToString());
-                PMSMethods.SetTextBox(txtmoldType, model.MoldType);
-            }
-        }
-
         private void cboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedCompound = cboCompounds.SelectedItem as DcBDCompound;
@@ -51,7 +41,7 @@ namespace PMSClient.ViewForDesktop
         {
             try
             {
-                double diameter = double.Parse(txtmoldDiameter.Text);
+                double diameter = double.Parse(cboMoldDiameter.Text.Trim());
                 double thickness = double.Parse(txtThickness.Text);
                 double quantity = double.Parse(cboQuantity.SelectedItem.ToString());
                 double density = double.Parse(txtCalculationDensity.Text);

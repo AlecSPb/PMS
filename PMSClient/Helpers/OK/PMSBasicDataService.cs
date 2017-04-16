@@ -22,7 +22,7 @@ namespace PMSClient
         /// </summary>
         /// <param name="source"></param>
         /// <param name="target"></param>
-        public static void SetListDS(List<string> source, List<string> target)
+        public static void SetListDS<T>(List<T> source, List<T> target)
         {
             if (target != null)
             {
@@ -30,9 +30,9 @@ namespace PMSClient
                 source.ForEach(i => target.Add(i));
             }
         }
-        public static void SetListDS(List<int> source,int count)
+        public static void SetListDS(List<int> source, int count)
         {
-            if (source!=null)
+            if (source != null)
             {
                 source.Clear();
                 for (int i = 0; i < count; i++)

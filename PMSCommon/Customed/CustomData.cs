@@ -52,7 +52,24 @@ namespace PMSCommon
                 return data;
             }
         }
-
+        public static List<double> MoldDiameter
+        {
+            get
+            {
+                var data = new List<double>();
+                #region 数据
+                data.Add(80);
+                data.Add(125);
+                data.Add(155);
+                data.Add(205);
+                data.Add(206);
+                data.Add(233);
+                data.Add(303);
+                data.Add(455);
+                #endregion
+                return data;
+            }
+        }
 
     }
 }

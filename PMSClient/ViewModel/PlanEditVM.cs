@@ -35,7 +35,7 @@ namespace PMSClient.ViewModel
             plan.PlanDate = DateTime.Now.Date;
             plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             plan.PlanLot = 1;
-            plan.MoldType = "GQ";
+            plan.MoldType = PMSCommon.MoldType.超强.ToString();
             plan.VHPDeviceCode = "A";
             plan.Temperature = 0;
             plan.Pressure = 0;
@@ -99,15 +99,21 @@ namespace PMSClient.ViewModel
             Compounds.Clear();
             PMSBasicDataService.Compounds.ToList().ForEach(c => Compounds.Add(c));
 
-            Molds = new List<DcBDVHPMold>();
-            Molds.Clear();
-            BasicData.VHPMolds.ForEach(m => Molds.Add(m));
-
             Quantities = new List<int>();
             PMSBasicDataService.SetListDS(Quantities, 10);
 
             PlanLots = new List<int>();
             PMSBasicDataService.SetListDS(PlanLots, 4);
+
+            MoldTypes = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.MoldType>(MoldTypes);
+
+            MoldDiameters = new List<double>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.MoldDiameter, MoldDiameters);
+
+
+            GrainSizes = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.GrainSize, GrainSizes);
         }
 
 
@@ -139,13 +145,16 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.Misson);
         }
 
-        public List<DcBDVHPMold> Molds { get; set; }
         public List<string> States { get; set; }
         public List<string> ProcessCodes { get; set; }
         public List<string> DeviceCodes { get; set; }
 
         public List<int> Quantities { get; set; }
         public List<int> PlanLots { get; set; }
+
+        public List<string> MoldTypes { get; set; }
+        public List<double> MoldDiameters { get; set; }
+        public List<string> GrainSizes { get; set; }
         public List<DcBDCompound> Compounds { get; set; }
 
 

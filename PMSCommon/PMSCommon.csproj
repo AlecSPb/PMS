@@ -75,6 +75,7 @@
     <Compile Include="MillingTime.cs" />
     <Compile Include="MillingTool.cs" />
     <Compile Include="Customed\CustomData.cs" />
+    <Compile Include="MoldType.cs" />
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />
     <Compile Include="OrderUnit.cs" />
