@@ -147,7 +147,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource OrderDimension}">
+                <DataGridTemplateColumn Header="{StaticResource OrderDimensionDetails}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding DimensionDetails}" Style="{StaticResource StyleDGTextBlockLeft}"/>

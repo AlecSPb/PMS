@@ -15,13 +15,13 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageMaterialNeedEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
-
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding GiveUp}"/>
@@ -30,7 +30,11 @@
             <Button Content="{StaticResource ButtonSelectMisson}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding Select}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMaterialNeedEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentMaterialNeed}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -63,7 +67,7 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="这是来自选择任务的成分，可以自行更改"/>
+                           Text="需求原料成分，可从上面任任务信息选择，也可以直接输入"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MNPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -106,7 +110,7 @@
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态,作废就是作废，默认是正常"/>
-                
+
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MNCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"

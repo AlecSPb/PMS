@@ -16,7 +16,7 @@ namespace PMSClient.ViewModel
     {
         public MaterialNeedEditVM()
         {
-            InitializeProperties();
+            InitializeBasicData();
             InitialCommands();
         }
 
@@ -63,11 +63,10 @@ namespace PMSClient.ViewModel
             //RaisePropertyChanged(nameof(CurrentMaterialNeed));
         }
 
-        private void InitializeProperties()
+        private void InitializeBasicData()
         {
-            States = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
-            states.ToList().ForEach(s => States.Add(s));
+            States = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
         }
 
         private void InitialCommands()
@@ -130,7 +129,7 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentMaterialNeed));
             }
         }
-        public ObservableCollection<string> States { get; set; }
+        public List<string> States { get; set; }
 
         public RelayCommand Select { get; set; }
 

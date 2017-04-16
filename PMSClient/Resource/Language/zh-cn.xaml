@@ -132,7 +132,9 @@
     <sys:String x:Key="HelpTipOrderCheckEdit">
         注意：请核验一下每个属性，如果有问题，通知订单输入者修改；没问题请选择合适的策略，状态和优先级
     </sys:String>
-
+    <sys:String x:Key="HelpTipMaterialNeedEdit">
+        注意：可以自行输入原料需求数据，但推荐利用任务信息填写，原料计算器计算的结果仅供参考
+    </sys:String>
 
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>

@@ -39,9 +39,6 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Select = new RelayCommand<MainService.DcMaterialNeed>(ActionSelect);
-
-
-
         }
 
         private void ActionSelect(DcMaterialNeed need)
