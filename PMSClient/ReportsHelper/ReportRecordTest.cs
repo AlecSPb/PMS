@@ -23,8 +23,6 @@ namespace PMSClient.ReportsHelper
             var targetName = $"测试{ReportHelper.TimeName}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
-
-        private DcRecordTest model;
         public void SetModel(DcRecordTest test)
         {
             if (test != null)
@@ -32,6 +30,7 @@ namespace PMSClient.ReportsHelper
                 model = test;
             }
         }
+        private DcRecordTest model;
         public override void Output()
         {
             if (model == null)

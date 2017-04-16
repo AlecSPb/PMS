@@ -229,7 +229,7 @@
     <sys:String x:Key="ButtonInput">导入</sys:String>
     <sys:String x:Key="ButtonOutput">导出</sys:String>
     <sys:String x:Key="ButtonDoc">文档</sys:String>
-    <sys:String x:Key="ButtonDocTest">产品测试报告</sys:String>
+    <sys:String x:Key="ButtonDocTest">测试报告</sys:String>
     <sys:String x:Key="ButtonDocCoA">普通CoA测试报告</sys:String>
     <sys:String x:Key="ButtonDocCoABridgeLine">普通CoA测试报告-BridgeLine</sys:String>
     <sys:String x:Key="ButtonDocOpticraftGrinding">Opticraft加工订单</sys:String>

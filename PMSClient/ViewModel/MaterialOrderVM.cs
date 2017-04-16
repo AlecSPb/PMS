@@ -139,11 +139,20 @@ namespace PMSClient.ViewModel
                 return;
             }
 
-            if (order != null)
+            try
             {
-                ReportMaterialOrder report = new ReportMaterialOrder();
-                report.SetModel(order);
-                report.Output();
+                if (order != null)
+                {
+                    ReportMaterialOrder report = new ReportMaterialOrder();
+                    report.SetModel(order);
+                    report.Output();
+                    NavigationService.ShowStatusMessage("原材料订单创建完毕！");
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
             }
         }
 

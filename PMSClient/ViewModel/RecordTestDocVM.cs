@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
 {
@@ -30,6 +31,10 @@ namespace PMSClient.ViewModel
                 switch (arg)
                 {
                     case "Test":
+                        ReportRecordTest recordTest = new ReportRecordTest();
+                        recordTest.SetModel(CurrentRecordTest);
+                        recordTest.SetTargetFolder(CurrentFolder);
+                        recordTest.Output();
                         break;
                     case "CoA":
                         break;
