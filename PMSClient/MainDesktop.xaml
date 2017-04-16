@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="{StaticResource strAppNameDesktop}"  ResizeMode="CanResize" Icon="Resource\Images\chart.png"
+        Title="{StaticResource AppNameDesktop}"  ResizeMode="CanResize" Icon="Resource\Images\chart.png"
         MinHeight="400" MinWidth="600" WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
@@ -23,10 +23,10 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Orientation="Horizontal">
                 <Menu>
-                    <MenuItem Header="{StaticResource strPageStart}">
-                        <MenuItem Header="{StaticResource strPageSetting}"/>
+                    <MenuItem Header="{StaticResource PageStart}">
+                        <MenuItem Header="{StaticResource PageSetting}"/>
                         <Separator/>
-                        <MenuItem x:Name="MenuExit" Header="{StaticResource strPageExit}" Click="MenuExit_Click"/>
+                        <MenuItem x:Name="MenuExit" Header="{StaticResource PageExit}" Click="MenuExit_Click"/>
                     </MenuItem>
 
                 </Menu>

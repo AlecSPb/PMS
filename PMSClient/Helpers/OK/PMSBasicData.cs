@@ -32,7 +32,7 @@ namespace PMSClient
             if (target != null)
             {
                 target.Clear();
-                target.ForEach(i => target.Add(i));
+                source.ForEach(i => target.Add(i));
             }
         }
 
