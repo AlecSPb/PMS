@@ -53,7 +53,21 @@ namespace PMSCommon
             }
         }
 
-
+        public static List<string> GrainSize
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("-80");
+                data.Add("-100");
+                data.Add("-200");
+                data.Add("-300");
+                data.Add("-400");
+                #endregion
+                return data;
+            }
+        }
 
 
     }

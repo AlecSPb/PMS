@@ -50,7 +50,7 @@ namespace PMSClient.ViewModel
             plan.CreateTime = DateTime.Now;
             plan.State = PMSCommon.VHPPlanState.已核验.ToString();
             plan.CalculationDensity = 5.75;
-            plan.GrainSize = "-200";
+            plan.GrainSize = PMSCommon.CustomData.GrainSize[0];
             plan.RoomHumidity = 70;
             plan.RoomTemperature = 23;
             plan.KeepTempTime = 120;
@@ -81,27 +81,27 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            Molds = new ObservableCollection<DcBDVHPMold>();
-            Molds.Clear();
-            PMSBasicDataService.VHPMolds.ToList().ForEach(m => Molds.Add(m));
-
-            States = new ObservableCollection<string>();
+            States = new List<string>();
             States.Clear();
             PMSBasicDataService.VHPPlanStates.ToList().ForEach(s => States.Add(s));
 
-            ProcessCodes = new ObservableCollection<string>();
+
+            ProcessCodes = new List<string>();
             ProcessCodes.Clear();
             PMSBasicDataService.VHPProcesses.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
 
 
-            DeviceCodes = new ObservableCollection<string>();
+            DeviceCodes = new List<string>();
             DeviceCodes.Clear();
             PMSBasicDataService.VHPDevices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 
-            Compounds = new ObservableCollection<DcBDCompound>();
+            Compounds = new List<DcBDCompound>();
             Compounds.Clear();
             PMSBasicDataService.Compounds.ToList().ForEach(c => Compounds.Add(c));
+            Molds = new List<DcBDVHPMold>();
+            Molds.Clear();
+            BasicData.VHPMolds.ForEach(m => Molds.Add(m));
         }
 
 
@@ -133,11 +133,11 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.Misson);
         }
 
-        public ObservableCollection<DcBDVHPMold> Molds { get; set; }
-        public ObservableCollection<string> States { get; set; }
-        public ObservableCollection<string> ProcessCodes { get; set; }
-        public ObservableCollection<string> DeviceCodes { get; set; }
-        public ObservableCollection<DcBDCompound> Compounds { get; set; }
+        public List<DcBDVHPMold> Molds { get; set; }
+        public List<string> States { get; set; }
+        public List<string> ProcessCodes { get; set; }
+        public List<string> DeviceCodes { get; set; }
+        public List<DcBDCompound> Compounds { get; set; }
 
 
         private DcPlanVHP currentPlan;

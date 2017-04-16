@@ -67,7 +67,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            States = new ObservableCollection<string>();
+            States = new List<string>();
             var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
             states.ToList().ForEach(s => States.Add(s));
         }
@@ -124,7 +124,7 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentMaterialInventoryIn));
             }
         }
-        public ObservableCollection<string> States { get; set; }
+        public List<string> States { get; set; }
 
         public RelayCommand Select { get; set; }
     }

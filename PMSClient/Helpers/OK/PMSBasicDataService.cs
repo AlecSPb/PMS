@@ -185,7 +185,7 @@ namespace PMSClient
         {
             get
             {
-                return Enum.GetNames(typeof(PMSCommon.QuickVHPMessage));
+                return Enum.GetNames(typeof(PMSCommon.QuickVHPMessege));
             }
         }
         public static string[] OrderUnits

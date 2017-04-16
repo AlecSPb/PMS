@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1100" DataContext="{Binding Source={StaticResource Locator},Path=PlanEdit}">
+             d:DesignHeight="1200" d:DesignWidth="1100" DataContext="{Binding Source={StaticResource Locator},Path=PlanEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -49,6 +49,10 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -134,10 +138,10 @@
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding MaterialName}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Density}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Density,StringFormat={}{0:F2}}"/>
                                 </Grid>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
@@ -168,11 +172,10 @@
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtGrainSize" Text="{Binding GrainSize}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    <ComboBox Name="cboGrainSize" Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding DataContext.GrainSizes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                              SelectionChanged="cboGrainSize_SelectionChanged"/>
-                </StackPanel>
+                <ComboBox Grid.Row="10" Grid.Column="1" 
+                          Style="{StaticResource StyleComboBoxEditable}"  HorizontalAlignment="Left"
+                          ItemsSource="{Binding DataContext.GrainSizes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding GrainSize}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Text="请选择粉末粒度" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource PlanRoomTemperature}"
@@ -243,7 +246,7 @@
                 <ComboBox Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State,Mode=TwoWay}"/>
-                <TextBlock Grid.Row="24" Grid.Column="2" Text="状态含义，Delete=删除，UnChecked=暂存不公布，Checked=公布" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="24" Grid.Column="2" Text="状态含义,已核验的才会公布" Style="{StaticResource StyleTextBlockTip}"/>
 
 
                 <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanCreateTime}"

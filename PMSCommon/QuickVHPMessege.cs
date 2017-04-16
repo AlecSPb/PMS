@@ -9,15 +9,19 @@ namespace PMSCommon
     /// <summary>
     /// 热压的时候的短语
     /// </summary>
-    public enum QuickVHPMessage
+    public enum QuickVHPMessege
     {
+        关门,
         粗抽,
         扩散泵加热,
+        开启罗茨泵,
+        开启扩散泵,
         开始加温,
         升温到,
         开始加压,
         结束加压,
         提压头,
+        开门,
         充气,
         结束
     }

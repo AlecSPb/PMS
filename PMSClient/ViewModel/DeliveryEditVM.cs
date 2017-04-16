@@ -54,11 +54,11 @@ namespace PMSClient.ViewModel
 
         private void InitialProperties()
         {
-            OrderStates = new ObservableCollection<string>();
+            OrderStates = new List<string>();
             var states = PMSBasicDataService.SimpleStates;
             states.ToList().ForEach(s => OrderStates.Add(s));
 
-            Countries = new ObservableCollection<string>();
+            Countries = new List<string>();
             var countries = PMSBasicDataService.Countries;
             countries.ToList().ForEach(s => Countries.Add(s));
 
@@ -116,8 +116,8 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentDelivery));
             }
         }
-        public ObservableCollection<string> OrderStates { get; set; }
-        public ObservableCollection<string> Countries { get; set; }
+        public List<string> OrderStates { get; set; }
+        public List<string> Countries { get; set; }
 
         public List<string> PackageTypes { get; set; }
         #endregion

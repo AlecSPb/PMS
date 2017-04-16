@@ -17,8 +17,8 @@ namespace PMSClient.Tool
         private const double defaultDensity = 5.75;
         public MaterialNeedCalcualtionVM()
         {
-            Compounds = new ObservableCollection<DcBDCompound>();
-            Molds = new ObservableCollection<DcBDVHPMold>();
+            Compounds = new List<DcBDCompound>();
+            Molds = new List<DcBDVHPMold>();
             CalculationItems = new ObservableCollection<MaterialNeedCalculationItem>();
             IsDensityReadOnly = true;
             ReadOnlyButton = "手动输入密度";
@@ -235,8 +235,9 @@ namespace PMSClient.Tool
 
 
         public ObservableCollection<MaterialNeedCalculationItem> CalculationItems { get; set; }
-        public ObservableCollection<DcBDCompound> Compounds { get; set; }
-        public ObservableCollection<DcBDVHPMold> Molds { get; set; }
+
+        public List<DcBDCompound> Compounds { get; set; }
+        public List<DcBDVHPMold> Molds { get; set; }
 
 
         public RelayCommand GiveUp { get; set; }

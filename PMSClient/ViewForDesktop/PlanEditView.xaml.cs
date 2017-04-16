@@ -46,14 +46,6 @@ namespace PMSClient.ViewForDesktop
             }
         }
 
-        private void cboGrainSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cbo = sender as ComboBox;
-            if (cbo.SelectedItem!=null)
-            {
-                PMSMethods.SetTextBox(txtGrainSize, cbo.SelectedItem.ToString());
-            }
-        }
 
         private void btnCalculate_Click(object sender, RoutedEventArgs e)
         {

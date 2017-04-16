@@ -68,14 +68,5 @@ namespace PMSClient.ViewForDesktop
 
 
         }
-
-        private void cboQuickMessages_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cbo = sender as ComboBox;
-            if (cbo.SelectedItem!=null)
-            {
-                PMSMethods.SetTextBox(txtExtraInformation, cbo.SelectedItem.ToString());
-            }
-        }
     }
 }

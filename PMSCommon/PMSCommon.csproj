@@ -80,7 +80,7 @@
     <Compile Include="OrderUnit.cs" />
     <Compile Include="ProductState.cs" />
     <Compile Include="ProductType.cs" />
-    <Compile Include="QuickVHPMessage.cs" />
+    <Compile Include="QuickVHPMessege.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
     <Compile Include="OrderPriority.cs" />

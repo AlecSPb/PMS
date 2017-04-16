@@ -32,9 +32,8 @@ namespace PMSClient.ViewModel
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             CurrentRecordVHP = new DcRecordVHP();
 
-            QuickMessages = new List<string>();
-            QuickMessages.Clear();
-            PMSBasicDataService.QuickVHPMessages.ToList().ForEach(i => QuickMessages.Add(i));
+            QuickVHPMesseges = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.QuickVHPMessege>(QuickVHPMesseges);
         }
 
         private void InitializeCommmands()
@@ -71,11 +70,11 @@ namespace PMSClient.ViewModel
             NavigationService.ShowStatusMessage("全新创建一个记录");
         }
 
-        private void ActionEditItem(DcRecordVHP obj)
+        private void ActionEditItem(DcRecordVHP mdoel)
         {
-            if (obj != null)
+            if (mdoel != null)
             {
-                CurrentRecordVHP = obj;
+                CurrentRecordVHP = mdoel;
                 isNew = false;
                 NavigationService.ShowStatusMessage("请修改上方数据，然后保存，取消修改请点新建");
             }
@@ -86,7 +85,7 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 CurrentPlanWithMisson = model;
-                CurrentRecordVHP.PlanVHPID = CurrentPlanWithMisson.Plan.ID;           
+                CurrentRecordVHP.PlanVHPID = CurrentPlanWithMisson.Plan.ID;
                 ReLoadRecordVHPs();
             }
         }
@@ -123,7 +122,7 @@ namespace PMSClient.ViewModel
                 model.Shift2 = 0;
                 model.Omega = 0;
                 model.WaterTemperatureIn = 25;
-                model.WaterTemperatureOut =25;
+                model.WaterTemperatureOut = 25;
                 model.ExtraInformation = "无";
                 isNew = true;
                 CurrentRecordVHP = model;
@@ -206,7 +205,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 5;
+            PageSize = 8;
             using (var service = new MissonServiceClient())
             {
                 RecordCount = service.GetPlanWithMissonCheckedCount();
@@ -261,7 +260,7 @@ namespace PMSClient.ViewModel
         }
 
 
-        public List<string> QuickMessages { get; set; }
+        public List<string> QuickVHPMesseges { get; set; }
         #endregion
 
         #region Commands
