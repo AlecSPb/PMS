@@ -12,21 +12,13 @@ namespace PMSClient
     /// 生成ComboBox用的基本数据源
     /// 来自枚举，来自数据库，来自文件
     /// </summary>
-    public static class PMSBasicData
+    public static class PMSBasicDataService
     {
         /// <summary>
-        /// 传入的T必须是Enum
+        /// 复制源字符串列表到目标字符串列表
         /// </summary>
-        /// <typeparam name="T">必须是枚举类型</typeparam>
-        /// <param name="ds">必须提前new</param>
-        public static void SetListDS<T>(List<string> ds)
-        {
-            if (ds != null)
-            {
-                ds.Clear();
-                GetEnumNames<T>().ToList().ForEach(i => ds.Add(i));
-            }
-        }
+        /// <param name="source"></param>
+        /// <param name="target"></param>
         public static void SetListDS(List<string> source, List<string> target)
         {
             if (target != null)
@@ -35,9 +27,31 @@ namespace PMSClient
                 source.ForEach(i => target.Add(i));
             }
         }
-
+        public static void SetListDS<T>(List<string> ds)
+        {
+            if (ds != null)
+            {
+                ds.Clear();
+                GetEnumNames<T>().ToList().ForEach(i => ds.Add(i));
+            }
+        }
         /// <summary>
-        /// 传入的T必须是Enum
+        /// 传入基础对象
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <param name="transfer"></param>
+        public static void SetListDS<T>(List<T> source, List<string> target, Func<T, string> transfer) where T : class
+        {
+            if (target != null)
+            {
+                target.Clear();
+                source.ForEach(item => target.Add(transfer(item)));
+            }
+        }
+        /// <summary>
+        /// 获取枚举名称
         /// </summary>
         private static List<string> GetEnumNames<T>()
         {
@@ -119,7 +133,7 @@ namespace PMSClient
                 var numbers = new List<string>();
                 for (int i = 0; i < 10; i++)
                 {
-                    numbers.Add((i+1).ToString());
+                    numbers.Add((i + 1).ToString());
                 }
                 return numbers.ToArray();
             }
@@ -235,7 +249,7 @@ namespace PMSClient
             {
                 using (var service = new VHPProcessServiceClient())
                 {
-                    return service.GetVHPProcess().OrderBy(i=>i.CodeName).ToArray();
+                    return service.GetVHPProcess().OrderBy(i => i.CodeName).ToArray();
                 }
             }
         }
@@ -243,9 +257,9 @@ namespace PMSClient
         {
             get
             {
-                using (var service=new VHPMoldServiceClient())
+                using (var service = new VHPMoldServiceClient())
                 {
-                    return service.GetVHPMold().OrderBy(i=>i.InnerDiameter).ToArray();
+                    return service.GetVHPMold().OrderBy(i => i.InnerDiameter).ToArray();
                 }
             }
         }

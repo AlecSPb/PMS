@@ -128,7 +128,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Helpers\OK\PMSBasicData.cs" />
+    <Compile Include="Helpers\OK\BasicData.cs" />
+    <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
     <Compile Include="Helpers\OK\LocalLog.cs" />
     <Compile Include="Helpers\OK\PMSViews.cs" />

@@ -114,9 +114,9 @@ namespace PMSClient.Tool
             try
             {
                 Molds.Clear();
-                PMSBasicData.VHPMolds.ToList().ForEach(i => Molds.Add(i));
+                PMSBasicDataService.VHPMolds.ToList().ForEach(i => Molds.Add(i));
                 Compounds.Clear();
-                PMSBasicData.Compounds.ToList().ForEach(i => Compounds.Add(i));
+                PMSBasicDataService.Compounds.ToList().ForEach(i => Compounds.Add(i));
             }
             catch (Exception ex)
             {

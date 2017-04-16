@@ -8,6 +8,8 @@ using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.BasicService;
+
 
 namespace PMSClient.ViewModel
 {
@@ -29,26 +31,19 @@ namespace PMSClient.ViewModel
         {
 
             ProductTypes = new List<string>();
-            PMSBasicData.SetListDS<PMSCommon.OrderProductType>(ProductTypes);
+            PMSBasicDataService.SetListDS<PMSCommon.OrderProductType>(ProductTypes);
 
             OrderUnits = new List<string>();
-            PMSBasicData.SetListDS<PMSCommon.OrderUnit>(OrderUnits);
-
-
-            CustomerNames = new List<string>();
-            var customerNames = PMSBasicData.Customers;
-            customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
-
+            PMSBasicDataService.SetListDS<PMSCommon.OrderUnit>(OrderUnits);
 
             SampleNeeds = new List<string>();
-            PMSBasicData.SetListDS(PMSCommon.CustomData.OrderSampleNeeds, SampleNeeds);
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.OrderSampleNeeds, SampleNeeds);
 
+            CustomerNames = new List<string>();
+            //BasicData.Customers.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
+            PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
         }
-        /// <summary>
-        /// 直接更改属性
-        /// </summary>
-        /// <param name="isnew"></param>
-        /// <param name="current"></param>
+
         public void SetNew()
         {
             IsNew = true;
@@ -69,11 +64,11 @@ namespace PMSClient.ViewModel
             order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             order.Dimension = "230mm OD x  4mm";
             order.DimensionDetails = "None";
-            order.SampleNeed = "无需样品";
+            order.SampleNeed = PMSCommon.CustomData.OrderSampleNeeds[0];
             order.MinimumAcceptDefect = "通常";
             order.DeadLine = DateTime.Now.AddDays(30);
             order.State = PMSCommon.OrderState.未核验.ToString();
-            order.Priority =PMSCommon.OrderPriority.通常.ToString();
+            order.Priority = PMSCommon.OrderPriority.通常.ToString();
             order.Reviewer = "";
             order.ReviewTime = DateTime.Now;
             #endregion
@@ -81,7 +76,7 @@ namespace PMSClient.ViewModel
         }
         public void SetEdit(DcOrder order)
         {
-            if (order!=null)
+            if (order != null)
             {
                 IsNew = false;
                 CurrentOrder = order;
@@ -90,7 +85,7 @@ namespace PMSClient.ViewModel
 
         public void SetDuplicate(DcOrder order)
         {
-            if (order!=null)
+            if (order != null)
             {
                 IsNew = true;
                 CurrentOrder = order;

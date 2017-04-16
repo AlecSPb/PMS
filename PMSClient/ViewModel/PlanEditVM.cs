@@ -83,25 +83,25 @@ namespace PMSClient.ViewModel
         {
             Molds = new ObservableCollection<DcBDVHPMold>();
             Molds.Clear();
-            PMSBasicData.VHPMolds.ToList().ForEach(m => Molds.Add(m));
+            PMSBasicDataService.VHPMolds.ToList().ForEach(m => Molds.Add(m));
 
             States = new ObservableCollection<string>();
             States.Clear();
-            PMSBasicData.VHPPlanStates.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.VHPPlanStates.ToList().ForEach(s => States.Add(s));
 
             ProcessCodes = new ObservableCollection<string>();
             ProcessCodes.Clear();
-            PMSBasicData.VHPProcesses.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
+            PMSBasicDataService.VHPProcesses.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
 
 
             DeviceCodes = new ObservableCollection<string>();
             DeviceCodes.Clear();
-            PMSBasicData.VHPDevices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
+            PMSBasicDataService.VHPDevices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
 
             Compounds = new ObservableCollection<DcBDCompound>();
             Compounds.Clear();
-            PMSBasicData.Compounds.ToList().ForEach(c => Compounds.Add(c));
+            PMSBasicDataService.Compounds.ToList().ForEach(c => Compounds.Add(c));
         }
 
 

@@ -23,16 +23,16 @@ namespace PMSClient.ViewModel
         private void InitializeBasicData()
         {
             States = new List<string>();
-            PMSBasicData.SimpleStates.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.SimpleStates.ToList().ForEach(s => States.Add(s));
 
             ProductTypes = new List<string>();
-            PMSBasicData.ProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
+            PMSBasicDataService.ProductTypes.ToList().ForEach(i => ProductTypes.Add(i));
 
             GoodPositions = new List<string>();
-            PMSBasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
+            PMSBasicDataService.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
 
             PackNumbers = new List<string>();
-            PMSBasicData.PackNumbers.ToList().ForEach(i => PackNumbers.Add(i));
+            PMSBasicDataService.PackNumbers.ToList().ForEach(i => PackNumbers.Add(i));
         }
 
         public void SetNew(DcDelivery delivery)

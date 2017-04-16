@@ -15,10 +15,10 @@ namespace PMSClient.ViewModel
         public RecordTestEditVM()
         {
             States = new List<string>();
-            PMSBasicData.CommonStates.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.CommonStates.ToList().ForEach(s => States.Add(s));
 
             TestTypes = new List<string>();
-            PMSBasicData.TestTypes.ToList().ForEach(t => TestTypes.Add(t));
+            PMSBasicDataService.TestTypes.ToList().ForEach(t => TestTypes.Add(t));
 
 
             GiveUp = new RelayCommand(GoBack);

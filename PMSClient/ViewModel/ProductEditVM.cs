@@ -15,13 +15,13 @@ namespace PMSClient.ViewModel
         public ProductEditVM()
         {
             States = new List<string>();
-            PMSBasicData.ProductStates.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.ProductStates.ToList().ForEach(s => States.Add(s));
 
             ProductTypes = new List<string>();
-            PMSBasicData.ProductTypes.ToList().ForEach(t => ProductTypes.Add(t));
+            PMSBasicDataService.ProductTypes.ToList().ForEach(t => ProductTypes.Add(t));
 
             GoodPositions = new List<string>();
-            PMSBasicData.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
+            PMSBasicDataService.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
 
             InitializeCommands();
 
