@@ -92,6 +92,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             var service = new MissonServiceClient();
             RecordCount = service.GetMissonsCount();
+            service.Close();
             ActionPaging();
         }
         /// <summary>
@@ -99,11 +100,13 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonServiceClient();
+
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MissonServiceClient();
             var orders = service.GetMissons(skip, take);
+            service.Close();
             MainOrders.Clear();
             orders.ToList().ForEach(o => MainOrders.Add(o));
         }

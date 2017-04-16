@@ -211,15 +211,18 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             var service = new DeliveryServiceClient();
             RecordCount = service.GetDeliveryCount();
+            service.Close();
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new DeliveryServiceClient();
+
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new DeliveryServiceClient();
             var models = service.GetDelivery(skip, take);
+            service.Close();
             Deliveries.Clear();
             models.ToList<DcDelivery>().ForEach(o => Deliveries.Add(o));
 

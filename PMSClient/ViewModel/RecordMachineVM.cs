@@ -84,15 +84,17 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             var service = new RecordMachineServiceClient();
             RecordCount = service.GetRecordMachineCount();
+            service.Close();
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordMachineServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new RecordMachineServiceClient();
             var models = service.GetRecordMachines(skip, take);
+            service.Close();
             RecordMachines.Clear();
             models.ToList<DcRecordMachine>().ForEach(o => RecordMachines.Add(o));
         }

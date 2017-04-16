@@ -69,6 +69,7 @@ namespace PMSClient.ViewModel
                     {
                         service.UpdateOrder(CurrentOrder);
                     }
+                    service.Close();
                     PMSHelper.ViewModels.OrderCheck.RefreshData();
                     GoBack();
                 }

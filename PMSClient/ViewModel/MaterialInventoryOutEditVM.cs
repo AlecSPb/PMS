@@ -99,6 +99,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialInventoryOut(CurrentMaterialInventoryOut);
                 }
+                service.Close();
                 PMSHelper.ViewModels.MaterialInventoryOut.RefreshData();
                 GoBack();
             }

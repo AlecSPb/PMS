@@ -141,13 +141,14 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MissonServiceClient();
             var orders = service.GetMissonsBySearch(skip, take,SearchCompositoinStandard);
+            service.Close();
             Missons.Clear();
-            orders.ToList<DcOrder>().ForEach(o => Missons.Add(o));
+            orders.ToList().ForEach(o => Missons.Add(o));
 
             CurrentSelectIndex = 0;
             CurrentSelectItem = orders.FirstOrDefault();

@@ -12,7 +12,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialNeedSelectVM : BaseViewModelPage
+    public class MaterialNeedSelectVM : BaseViewModelSelect
     {
 
         public MaterialNeedSelectVM()
@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
                         break;
                     default:
                         break;
-                }       
+                }
                 NavigationService.GoTo(requestView);
             }
         }
@@ -82,6 +82,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             var service = new MaterialNeedServiceClient();
             RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
+            service.Close();
             ActionPaging();
         }
         /// <summary>
@@ -89,13 +90,14 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialNeedServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MaterialNeedServiceClient();
             var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
+            service.Close();
             MainMaterialNeeds.Clear();
-            result.ToList<DcMaterialNeed>().ForEach(o => MainMaterialNeeds.Add(o));
+            result.ToList().ForEach(o => MainMaterialNeeds.Add(o));
         }
 
 
@@ -114,9 +116,6 @@ namespace PMSClient.ViewModel
         }
 
 
-
-
-
         private ObservableCollection<DcMaterialNeed> mainMaterialNeeds;
         public ObservableCollection<DcMaterialNeed> MainMaterialNeeds
         {
@@ -127,7 +126,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand GiveUp { get; private set; }
         public RelayCommand<DcMaterialNeed> Select { get; private set; }
         #endregion
 

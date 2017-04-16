@@ -119,6 +119,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
                 }
+                service.Close();
                 PMSHelper.ViewModels.MaterialOrder.RefreshDataItem();
                 GoBack();
             }

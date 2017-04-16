@@ -134,6 +134,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateProduct(CurrentProduct);
                 }
+                service.Close();
                 PMSHelper.ViewModels.Product.RefreshData();
                 GoBack();
             }

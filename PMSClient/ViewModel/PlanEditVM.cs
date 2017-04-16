@@ -118,6 +118,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateVHPPlan(CurrentPlan);
                 }
+                service.Close();
                 PMSHelper.ViewModels.Misson.RefreshData();
                 GoBack();
             }

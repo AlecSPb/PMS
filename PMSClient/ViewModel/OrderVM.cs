@@ -113,6 +113,7 @@ namespace PMSClient.ViewModel
                 PageSize = 20;
                 var service = new OrderServiceClient();
                 RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
+                service.Close();
                 ActionPaging();
             }
             catch (Exception ex)
@@ -127,13 +128,14 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                var service = new OrderServiceClient();
                 int skip, take = 0;
                 skip = (PageIndex - 1) * PageSize;
                 take = PageSize;
+                var service = new OrderServiceClient();
                 var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+                service.Close();
                 MainOrders.Clear();
-                orders.ToList<DcOrder>().ForEach(o => MainOrders.Add(o));
+                orders.ToList().ForEach(o => MainOrders.Add(o));
             }
             catch (Exception ex)
             {

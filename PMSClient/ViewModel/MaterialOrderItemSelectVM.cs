@@ -61,6 +61,7 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             var service = new MaterialOrderServiceClient();
             RecordCount = service.GetMaterialOrderItemsCount();
+            service.Close();
             ActionPaging();
         }
         /// <summary>
@@ -68,11 +69,12 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialOrderServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MaterialOrderServiceClient();
             var orders = service.GetMaterialOrderItems(skip, take);
+            service.Close();
             MaterialOrderItems.Clear();
             orders.ToList<DcMaterialOrderItem>().ForEach(o => MaterialOrderItems.Add(o));
         }

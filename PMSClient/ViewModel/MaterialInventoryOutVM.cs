@@ -92,6 +92,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
             RecordCount = service.GetMaterialInventoryOutCount();
+            service.Close();
             ActionPaging();
         }
         /// <summary>
@@ -99,11 +100,12 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialInventoryServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MaterialInventoryServiceClient();
             var result = service.GetMaterialInventoryOuts(skip, take);
+            service.Close();
             MaterialInventoryOuts.Clear();
             result.ToList().ForEach(o => MaterialInventoryOuts.Add(o));
         }

@@ -75,15 +75,18 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             var service = new RecordMillingServiceClient();
             RecordCount = service.GetRecordMillingCount();
+            service.Close();
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordMillingServiceClient();
+
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new RecordMillingServiceClient();
             var models = service.GetRecordMillings(skip, take);
+            service.Close();
             RecordMillings.Clear();
             models.ToList<DcRecordMilling>().ForEach(o => RecordMillings.Add(o));
         }

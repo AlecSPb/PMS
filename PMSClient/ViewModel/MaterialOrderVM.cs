@@ -31,7 +31,7 @@ namespace PMSClient.ViewModel
         }
         public void RefreshDataItem()
         {
-            ActionSelectionChanged(CurrentSelectItem); 
+            ActionSelectionChanged(CurrentSelectItem);
         }
 
         private void InitializeProperties()
@@ -48,11 +48,11 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
 
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcMaterialOrder>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcMaterialOrder>(ActionEdit, CanEdit);
 
-            AddItem = new RelayCommand<DcMaterialOrder>(ActionAddItem,CanAddItem);
-            EditItem = new RelayCommand<DcMaterialOrderItem>(ActionEditItem,CanEditItem);
+            AddItem = new RelayCommand<DcMaterialOrder>(ActionAddItem, CanAddItem);
+            EditItem = new RelayCommand<DcMaterialOrderItem>(ActionEditItem, CanEditItem);
 
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
@@ -169,6 +169,7 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             var service = new MaterialOrderServiceClient();
             RecordCount = service.GetMaterialOrderCountBySearch(SearchOrderPO, SearchSupplier);
+            service.Close();
             ActionPaging();
         }
         /// <summary>
@@ -176,11 +177,13 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialOrderServiceClient();
+
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MaterialOrderServiceClient();
             var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
+            service.Close();
             MaterialOrders.Clear();
             orders.ToList<DcMaterialOrder>().ForEach(o => MaterialOrders.Add(o));
 

@@ -149,7 +149,7 @@ namespace PMSClient.ViewModel
                         {
                             service.UpdateReocrdVHP(CurrentRecordVHP);
                         }
-
+                        service.Close();
                         ReLoadRecordVHPs();
                         EmptyCurrentRecordVHP();
                         NavigationService.ShowStatusMessage("保存完毕");

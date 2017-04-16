@@ -107,7 +107,7 @@ namespace PMSClient.ViewModel
             {
                 var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
                 MainMaterialNeeds.Clear();
-                result.ToList<DcMaterialNeed>().ForEach(o => MainMaterialNeeds.Add(o));
+                result.ToList().ForEach(o => MainMaterialNeeds.Add(o));
             }
 
         }

@@ -112,6 +112,7 @@ namespace PMSClient.ViewModel
                 }
                 PMSHelper.ViewModels.Order.RefreshData();
                 GoBack();
+                service.Close();
             }
             catch (Exception ex)
             {

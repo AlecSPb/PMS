@@ -131,9 +131,10 @@ namespace PMSClient.ViewModel
                     {
                         service.UpdateDeliveryItem(CurrentDeliveryItem);
                     }
+                    service.Close();
+                    PMSHelper.ViewModels.Delivery.RefreshDataItem();
+                    GoBack();
                 }
-                PMSHelper.ViewModels.Delivery.RefreshDataItem();
-                GoBack();
             }
             catch (Exception ex)
             {

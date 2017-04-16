@@ -104,6 +104,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialInventoryIn(CurrentMaterialInventoryIn);
                 }
+                service.Close();
                 PMSHelper.ViewModels.MaterialInventoryIn.RefreshData();
                 GoBack();
             }

@@ -115,6 +115,7 @@ namespace PMSClient.ViewModel
                         {
                             dc.UpdateRecordMilling(CurrentRecordMilling);
                         }
+                        service.Close();
                         PMSHelper.ViewModels.RecordMilling.RefreshData();
                         GoBack();
                     }

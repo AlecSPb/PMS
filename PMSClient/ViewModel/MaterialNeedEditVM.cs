@@ -105,6 +105,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateMaterialNeed(CurrentMaterialNeed);
                 }
+                service.Close();
                 PMSHelper.ViewModels.MaterialNeed.RefreshData();
                 GoBack();
             }

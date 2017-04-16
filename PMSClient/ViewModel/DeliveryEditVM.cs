@@ -90,6 +90,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateDelivery(CurrentDelivery);
                 }
+                service.Close();
                 PMSHelper.ViewModels.Delivery.RefreshData();
                 GoBack();
             }

@@ -114,6 +114,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateRecordTest(CurrentRecordTest);
                 }
+                service.Close();
                 PMSHelper.ViewModels.RecordTest.RefreshData();
                 GoBack();
             }

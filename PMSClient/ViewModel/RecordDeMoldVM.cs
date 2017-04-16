@@ -85,15 +85,18 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             var service = new RecordDeMoldServiceClient();
             RecordCount = service.GetRecordDeMoldsCount();
+            service.Close();
             ActionPaging();
         }
         private void ActionPaging()
         {
-            var service = new RecordDeMoldServiceClient();
+
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new RecordDeMoldServiceClient();
             var models = service.GetRecordDeMolds(skip, take);
+            service.Close();
             RecordDeMolds.Clear();
             models.ToList<DcRecordDeMold>().ForEach(o => RecordDeMolds.Add(o));
         }

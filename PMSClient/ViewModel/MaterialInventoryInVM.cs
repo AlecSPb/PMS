@@ -37,11 +37,11 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcMaterialInventoryIn>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcMaterialInventoryIn>(ActionEdit, CanEdit);
 
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
-                ()=>PMSHelper.CurrentSession.IsAuthorized("浏览原料库存"));
+                () => PMSHelper.CurrentSession.IsAuthorized("浏览原料库存"));
 
         }
 
@@ -92,6 +92,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
             RecordCount = service.GetMaterialInventoryInCount();
+            service.Close();
             ActionPaging();
         }
         /// <summary>
@@ -99,11 +100,13 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialInventoryServiceClient();
+
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
+            var service = new MaterialInventoryServiceClient();
             var result = service.GetMaterialInventoryIns(skip, take);
+            service.Close();
             MaterialInventoryIns.Clear();
             result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
         }
