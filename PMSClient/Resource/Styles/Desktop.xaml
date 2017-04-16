@@ -177,6 +177,7 @@
     </Style>
     <Style x:Key="StyleComboBoxCommon" TargetType="ComboBox">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
@@ -258,7 +259,7 @@
     <Style x:Key="StyleBorderCommon" TargetType="Border">
         <Setter Property="BorderBrush" Value="LightBlue"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="Margin" Value="4"/>
+        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
     </Style>
 
     <Style x:Key="StyleImageIcon" TargetType="Image">

@@ -15,11 +15,13 @@ namespace PMSClient.ViewModel
         public RecordTestEditVM()
         {
             States = new List<string>();
-            PMSBasicDataService.CommonStates.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.SetListDS<PMSCommon.CommonState>(States);
 
             TestTypes = new List<string>();
-            PMSBasicDataService.TestTypes.ToList().ForEach(t => TestTypes.Add(t));
+            PMSBasicDataService.SetListDS<PMSCommon.TestType>(TestTypes);
 
+            TestDefects = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.TestDefectsTypes>(TestDefects);
 
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
@@ -50,8 +52,8 @@ namespace PMSClient.ViewModel
             model.Sample = "无需样品";
             model.CompositionXRF = "暂无";
             model.Density = "0";
-            model.Defects = "无缺陷";
-           
+            model.Defects = "无";
+
             #endregion
             CurrentRecordTest = model;
         }
@@ -123,8 +125,10 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+        public List<string> TestDefects { get; set; }
         public List<string> TestTypes { get; set; }
         public List<string> States { get; set; }
+
         private DcRecordTest currentRecordTest;
         public DcRecordTest CurrentRecordTest
         {
