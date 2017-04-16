@@ -30,6 +30,17 @@ namespace PMSClient
                 source.ForEach(i => target.Add(i));
             }
         }
+        public static void SetListDS(List<int> source,int count)
+        {
+            if (source!=null)
+            {
+                source.Clear();
+                for (int i = 0; i < count; i++)
+                {
+                    source.Add(i + 1);
+                }
+            }
+        }
         public static void SetListDS<T>(List<string> ds)
         {
             if (ds != null)

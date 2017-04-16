@@ -37,22 +37,6 @@ namespace PMSCommon
                 return data;
             }
         }
-
-        public static List<string> Quantity
-        {
-            get
-            {
-                var data = new List<string>();
-                #region 数据
-                for (int i = 1; i < 10; i++)
-                {
-                    data.Add(i.ToString());
-                }
-                #endregion
-                return data;
-            }
-        }
-
         public static List<string> GrainSize
         {
             get

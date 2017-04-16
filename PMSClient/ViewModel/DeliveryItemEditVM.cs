@@ -31,8 +31,8 @@ namespace PMSClient.ViewModel
             GoodPositions = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.GoodPosition>(GoodPositions);
 
-            PackNumbers = new List<string>();
-            PMSBasicDataService.SetListDS(PMSCommon.CustomData.Quantity, PackNumbers);
+            PackNumbers = new List<int>();
+            PMSBasicDataService.SetListDS(PackNumbers,10);
         }
 
         public void SetNew(DcDelivery delivery)
@@ -145,7 +145,7 @@ namespace PMSClient.ViewModel
         public List<string> States { get; set; }
         public List<string> ProductTypes { get; set; }
         public List<string> GoodPositions { get; set; }
-        public List<string> PackNumbers { get; set; }
+        public List<int> PackNumbers { get; set; }
         private DcDeliveryItem currentDeliveryItem;
         public DcDeliveryItem CurrentDeliveryItem
         {
