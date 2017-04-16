@@ -152,7 +152,9 @@
     <sys:String x:Key="HelpTipPlanVHPEdit">
         注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
     </sys:String>
-
+    <sys:String x:Key="HelpTipMisson">
+        黄色标记的项目为未核验，核验后该计划才会公布
+    </sys:String>
     <sys:String x:Key="HelpTipRecordMillingEdit">
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
@@ -215,6 +217,7 @@
     <sys:String x:Key="ButtonDeliverySheet">发货</sys:String>
     <sys:String x:Key="ButtonMisson">生产任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划安排</sys:String>
+    <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
     <sys:String x:Key="ButtonSearchPlan">搜索计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>

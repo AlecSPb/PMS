@@ -35,6 +35,10 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
+            GoToMaterialNeed= new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
+
+
+
 
             Search = new RelayCommand(ActionSearch);
             PageChanged = new RelayCommand(ActionPaging);
@@ -186,6 +190,7 @@ namespace PMSClient.ViewModel
 
         #region Commands
         public RelayCommand GoToPlan { get; private set; }
+        public RelayCommand GoToMaterialNeed { get; private set; }
         public RelayCommand Add { get; private set; }
         public RelayCommand Refresh { get; set; }
         public RelayCommand<DcOrder> AddNewPlan { get; set; }
