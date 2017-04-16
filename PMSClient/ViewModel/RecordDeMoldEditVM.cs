@@ -14,6 +14,12 @@ namespace PMSClient.ViewModel
     {
         public RecordDeMoldEditVM()
         {
+            DeMoldTypes = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.DeMoldType>(DeMoldTypes);
+
+
+
+
             Save = new RelayCommand(ActionSave);
             GiveUp = new RelayCommand(ActionGiveUp);
             Select = new RelayCommand(ActionSelect);
@@ -33,6 +39,7 @@ namespace PMSClient.ViewModel
 
         public void SetNew()
         {
+            IsNew = true;
             var model = new DcRecordDeMold();
             #region 初始化
             model.ID = Guid.NewGuid();
@@ -40,9 +47,10 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
+            model.DeMoldType = PMSCommon.DeMoldType.手动轻松.ToString();
             model.Composition = "成分";
-            model.Temperature1 = "0";
-            model.Temperature2 = "0";
+            model.Temperature1 = "100";
+            model.Temperature2 = "25";
             model.Weight = 0;
             model.Diameter1 = 0;
             model.Diameter2 = 0;
@@ -52,7 +60,6 @@ namespace PMSClient.ViewModel
             model.Thickness4 = 0;
             model.Remark = "无";
             #endregion
-            IsNew = true;
             CurrentRecordDeMold = model;
         }
         public void SetEdit(DcRecordDeMold model)
@@ -129,5 +136,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Select { get; set; }
 
+
+
+        public List<string> DeMoldTypes { get; set; }
     }
 }
