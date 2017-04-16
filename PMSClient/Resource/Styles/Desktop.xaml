@@ -28,9 +28,10 @@
     <SolidColorBrush x:Key="BGReadOnlyTextBox" Color="LightSteelBlue"/>
     <SolidColorBrush x:Key="BGRequiredTextBox" Color="LimeGreen"/>
 
-    <sys:Double x:Key="FontSM">15</sys:Double>
+    <sys:Double x:Key="FontSM">12</sys:Double>
     <sys:Double x:Key="FontMD">18</sys:Double>
     <sys:Double x:Key="FontLG">25</sys:Double>
+    
     <sys:Double x:Key="DGFontLG">14</sys:Double>
     
     
@@ -117,6 +118,9 @@
     </Style>
     <Style x:Key="StyleTextBlockTip" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+    <Style x:Key="StyleTextBlockWarning" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="Foreground" Value="Red"/>
     </Style>
     <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>

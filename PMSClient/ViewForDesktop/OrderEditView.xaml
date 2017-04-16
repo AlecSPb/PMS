@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -26,7 +27,10 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOrderEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentOrder}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -61,7 +65,7 @@
                       Style="{StaticResource StyleComboBoxCommon}"
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" SelectedItem="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="这里选择客户名称，如果下拉列表没有该客户信息，请先添加客户信息"/>
+                           Text="选择客户名称，如果下拉列表没有该客户信息，请先让管理员添加客户信息"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OrderPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -82,14 +86,14 @@
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="这里必须填写标准成分，即各组分At%和为100"/>
+                           Text="必须填写标准成分，即各组分At%和为100"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="这里可填写订单上的原始成分"/>
+                           Text="填写订单上的原始成分"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OrderAbbrComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -145,8 +149,11 @@
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource OrderSampleNeed}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding SampleNeed}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                <ComboBox Grid.Row="12" Grid.Column="1" 
+                      Text="{Binding SampleNeed}" 
+                      Style="{StaticResource StyleComboBoxEditable}"
+                      ItemsSource="{Binding DataContext.SampleNeeds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="是否需要样品以及样品的要求可以填写在这里"/>
 
@@ -162,11 +169,11 @@
                 <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding MinimumAcceptDefect}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="请在这里填写客户最低的要求，比如可以接受小缺口"/>
+                           Text="填写客户最低的要求，比如可以接受小缺口"/>
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="如果有备注信息，请填写在这里"/>

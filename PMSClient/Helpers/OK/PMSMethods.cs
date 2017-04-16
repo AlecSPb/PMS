@@ -40,6 +40,12 @@ namespace PMSClient
             }
         }
 
-
+        /// <summary>
+        /// 传入的T必须是Enum
+        /// </summary>
+        private static List<string> GetEnumNames<T>()
+        {
+            return Enum.GetNames(typeof(T)).ToList();
+        }
     }
 }

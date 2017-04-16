@@ -14,6 +14,41 @@ namespace PMSClient
     /// </summary>
     public static class PMSBasicData
     {
+        /// <summary>
+        /// 传入的T必须是Enum
+        /// </summary>
+        /// <typeparam name="T">必须是枚举类型</typeparam>
+        /// <param name="ds">必须提前new</param>
+        public static void SetListDS<T>(List<string> ds)
+        {
+            if (ds != null)
+            {
+                ds.Clear();
+                GetEnumNames<T>().ToList().ForEach(i => ds.Add(i));
+            }
+        }
+        public static void SetListDS(List<string> source, List<string> target)
+        {
+            if (target != null)
+            {
+                target.Clear();
+                target.ForEach(i => target.Add(i));
+            }
+        }
+
+        /// <summary>
+        /// 传入的T必须是Enum
+        /// </summary>
+        private static List<string> GetEnumNames<T>()
+        {
+            return Enum.GetNames(typeof(T)).ToList();
+        }
+
+
+
+
+
+
         //From Enums
         public static string[] OrderStates
         {

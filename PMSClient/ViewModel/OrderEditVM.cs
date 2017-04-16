@@ -29,15 +29,20 @@ namespace PMSClient.ViewModel
         {
 
             ProductTypes = new List<string>();
-            PMSMethods.SetListDS<PMSCommon.OrderProductType>(ProductTypes);
+            PMSBasicData.SetListDS<PMSCommon.OrderProductType>(ProductTypes);
 
             OrderUnits = new List<string>();
-            PMSMethods.SetListDS<PMSCommon.OrderUnit>(OrderUnits);
+            PMSBasicData.SetListDS<PMSCommon.OrderUnit>(OrderUnits);
 
 
             CustomerNames = new List<string>();
             var customerNames = PMSBasicData.Customers;
             customerNames.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
+
+
+            SampleNeeds = new List<string>();
+            PMSBasicData.SetListDS(PMSCommon.CustomData.OrderSampleNeeds, SampleNeeds);
+
         }
         /// <summary>
         /// 直接更改属性
@@ -138,6 +143,6 @@ namespace PMSClient.ViewModel
         public List<string> CustomerNames { get; set; }
         public List<string> ProductTypes { get; set; }
         public List<string> OrderUnits { get; set; }
-
+        public List<string> SampleNeeds { get; set; }
     }
 }

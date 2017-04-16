@@ -74,12 +74,13 @@
     <Compile Include="MillingMaterialSource.cs" />
     <Compile Include="MillingTime.cs" />
     <Compile Include="MillingTool.cs" />
+    <Compile Include="CustomData\OrderSample.cs" />
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />
     <Compile Include="OrderUnit.cs" />
     <Compile Include="ProductState.cs" />
     <Compile Include="ProductType.cs" />
-    <Compile Include="QuickMessage.cs" />
+    <Compile Include="QuickVHPMessage.cs" />
     <Compile Include="SimpleState.cs" />
     <Compile Include="OrderPolicyType.cs" />
     <Compile Include="OrderPriority.cs" />
@@ -97,6 +98,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
