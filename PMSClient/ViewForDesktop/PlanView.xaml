@@ -21,9 +21,9 @@
         <TextBlock Text="{StaticResource PagePlan}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonSpecial}"  Command="{Binding GoToMisson}"/>
-            <Button Content="{StaticResource ButtonSearchPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToSearchPlan}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding Refresh}" />
+            <!--<Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonSpecial}"  Command="{Binding GoToMisson}"/>-->
+            <Button Content="{StaticResource ButtonSearchPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToSearchPlan}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>

@@ -1,6 +1,90 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Style TargetType="Button" x:Key="btnBase">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0"/>
+                                    <VisualTransition From="Normal" GeneratedDuration="0:0:0.4" To="MouseOver">
+                                        <VisualTransition.GeneratedEasingFunction>
+                                            <BackEase EasingMode="EaseOut"/>
+                                        </VisualTransition.GeneratedEasingFunction>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFC5C5E4"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FFC5C5E4"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                                            <EasingColorKeyFrame KeyTime="0" Value="#FF9898CD"/>
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled"></VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="rectangle" Fill="#FFE2E2EE" Stroke="Gray" RadiusX="2" RadiusY="2" StrokeThickness="1"/>
+                        <ContentControl x:Name="contentControl" Content="{TemplateBinding Content}" 
+                                        Margin="{TemplateBinding Padding}" VerticalAlignment="Center"
+                                        HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True"/>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Trigger.Setters>
+                                <Setter Property="Fill" Value="#FFDBD2DB" TargetName="rectangle"/>
+                                <Setter Property="Foreground" Value="#FFBCB2BC" TargetName="contentControl"/>
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="txtBase">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}" SnapsToDevicePixels="True" BorderThickness="1">
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
+                                      HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FF687C89"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="border" Value="#FF4D8EBA"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <!--规范化后的样式-->
     <Style x:Key="ControlButton" TargetType="Button">
         <Setter Property="Margin" Value="0 2"/>
@@ -42,7 +126,7 @@
     <!--基本控件-->
 
     <!--登录-->
-    <Style x:Key="StyleLogInUID" TargetType="TextBox">
+    <Style x:Key="StyleLogInUID" TargetType="TextBox"  BasedOn="{StaticResource txtBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
@@ -57,7 +141,7 @@
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
-    <Style x:Key="StyleLogInButton" TargetType="Button">
+    <Style x:Key="StyleLogInButton" TargetType="Button"  BasedOn="{StaticResource btnBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
@@ -67,7 +151,7 @@
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
     </Style>
     <!--导航-->
-    <Style x:Key="StyleButtonNavigation" TargetType="Button">
+    <Style x:Key="StyleButtonNavigation" TargetType="Button"  BasedOn="{StaticResource btnBase}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
@@ -75,7 +159,7 @@
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
         <Setter Property="Height" Value="50"/>
     </Style>
-    <Style x:Key="StyleButtonNavigationTitle" TargetType="Button">
+    <Style x:Key="StyleButtonNavigationTitle" TargetType="Button"  BasedOn="{StaticResource btnBase}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
@@ -86,7 +170,7 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <!--通用-->
-    <Style x:Key="StyleButtonCommon" TargetType="Button">
+    <Style x:Key="StyleButtonCommon" TargetType="Button" BasedOn="{StaticResource btnBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -126,7 +210,7 @@
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
     </Style>
 
-    <Style x:Key="StyleTextBoxCommon" TargetType="TextBox">
+    <Style x:Key="StyleTextBoxCommon" TargetType="TextBox" BasedOn="{StaticResource txtBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -134,7 +218,7 @@
         <Setter Property="MinWidth" Value="80"/>
     </Style>
 
-    <Style x:Key="StyleTextBoxBig" TargetType="TextBox">
+    <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource txtBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -221,7 +305,7 @@
     <Style x:Key="StyleDGTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
-    <Style x:Key="StyleDGButton" TargetType="Button">
+    <Style x:Key="StyleDGButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
         <Setter Property="Margin" Value="0 0 2 0"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -246,7 +330,7 @@
     <Style x:Key="StyleDGTextBlockBigSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockBig}">
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
-    <Style x:Key="StyleDGBigButton" TargetType="Button">
+    <Style x:Key="StyleDGBigButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
         <Setter Property="Margin" Value="0 0 2 0"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
