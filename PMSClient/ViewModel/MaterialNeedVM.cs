@@ -37,8 +37,8 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcMaterialNeed>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcMaterialNeed>(ActionEdit, CanEdit);
 
 
 
@@ -89,8 +89,10 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MaterialNeedServiceClient();
-            RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
+            using (var service = new MaterialNeedServiceClient())
+            {
+                RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
+            }
             ActionPaging();
         }
         /// <summary>
@@ -98,13 +100,16 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            var service = new MaterialNeedServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
-            MainMaterialNeeds.Clear();
-            result.ToList<DcMaterialNeed>().ForEach(o => MainMaterialNeeds.Add(o));
+            using (var service = new MaterialNeedServiceClient())
+            {
+                var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
+                MainMaterialNeeds.Clear();
+                result.ToList<DcMaterialNeed>().ForEach(o => MainMaterialNeeds.Add(o));
+            }
+
         }
 
         #region Proeperties
