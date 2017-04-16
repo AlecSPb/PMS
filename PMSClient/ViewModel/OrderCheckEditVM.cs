@@ -39,13 +39,13 @@ namespace PMSClient.ViewModel
         public void InitializeProperties()
         {
             OrderStates = new List<string>();
-            PMSMethods.SetListDS<PMSCommon.OrderState>(OrderStates);
+            PMSBasicDataService.SetListDS<PMSCommon.OrderState>(OrderStates);
 
             OrderPriorities = new List<string>();
-            PMSMethods.SetListDS<PMSCommon.OrderPriority>(OrderPriorities);
+            PMSBasicDataService.SetListDS<PMSCommon.OrderPriority>(OrderPriorities);
 
             PolicyTypes = new List<string>();
-            PMSMethods.SetListDS<PMSCommon.OrderPolicyType>(PolicyTypes);
+            PMSBasicDataService.SetListDS<PMSCommon.OrderPolicyType>(PolicyTypes);
         }
 
         private bool CanSave()
