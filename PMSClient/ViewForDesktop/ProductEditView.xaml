@@ -136,7 +136,7 @@
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态,Deleted状态会删除掉记录"/>
+                           Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RPCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

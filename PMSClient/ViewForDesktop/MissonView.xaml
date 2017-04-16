@@ -203,7 +203,7 @@
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanPressure}" Binding="{Binding Pressure}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Header="{StaticResource PlanVaccum}" Binding="{Binding Vaccum}"/>
+                                    Header="{StaticResource PlanVaccum}" Binding="{Binding Vaccum,StringFormat={}{0:#.##E00}}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanKeepTempTime}" Binding="{Binding KeepTempTime}"/>
 

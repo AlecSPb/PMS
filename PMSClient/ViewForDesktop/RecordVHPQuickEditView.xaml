@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1300"
+             d:DesignHeight="1000" d:DesignWidth="1300"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordVHPQuickEdit}" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
@@ -96,7 +96,8 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="0*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
                                    Text="{StaticResource PlanPlanDate}"/>
@@ -110,7 +111,7 @@
                                    Text="{StaticResource PlanPlanLot}"/>
                             <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
                             Text="{Binding Plan.PlanLot}"/>
-                            
+
                             <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
                                    Text="{StaticResource OrderStandardComposition}"/>
                             <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
@@ -145,13 +146,18 @@
                             Text="{Binding Plan.Pressure}"/>
 
                             <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
-                                   Text="{StaticResource PlanProcessCode}"/>
+                                   Text="{StaticResource PlanVaccum}"/>
                             <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
-                            Text="{Binding Plan.ProcessCode}"/>
+                            Text="{Binding Plan.Vaccum ,StringFormat={}{0:#.###E00}}"/>
 
                             <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
-                                   Text="{StaticResource PlanKeepTempTime}"/>
+                                   Text="{StaticResource PlanProcessCode}"/>
                             <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            Text="{Binding Plan.ProcessCode}"/>
+
+                            <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                                   Text="{StaticResource PlanKeepTempTime}"/>
+                            <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
                             Text="{Binding Plan.KeepTempTime}"/>
 
                         </Grid>
@@ -207,7 +213,7 @@
                         <TextBlock Text="{StaticResource RVHPTon}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="8"/>
                         <TextBox Text="{Binding Ton}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="9"/>
                         <TextBlock Text="{StaticResource RVHPVaccum}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="10"/>
-                        <TextBox Text="{Binding Vaccum}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="11"/>
+                        <TextBox Text="{Binding Vaccum,StringFormat={}{0:#.###E00}}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="11"/>
 
                         <TextBlock Text="{StaticResource RVHPShift1}" Style="{StaticResource StyleTextBlockBig}"  Grid.Row="1" Grid.Column="0"/>
                         <TextBox Text="{Binding Shift1}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="1"/>
@@ -257,7 +263,7 @@
                         <DataGridTextColumn Header="{StaticResource RVHPTon}" ElementStyle="{StaticResource StyleDGTextBlockBigRight}"
                                         Binding="{Binding Ton}"/>
                         <DataGridTextColumn Header="{StaticResource RVHPVaccum}" ElementStyle="{StaticResource StyleDGTextBlockBigRight}"
-                                        Binding="{Binding Vaccum}"/>
+                                        Binding="{Binding Vaccum,StringFormat={}{0:#.##E00}}"/>
                         <DataGridTextColumn Header="{StaticResource RVHPShift1}" ElementStyle="{StaticResource StyleDGTextBlockBigRight}"
                                         Binding="{Binding Shift1}"/>
                         <DataGridTextColumn Header="{StaticResource RVHPShift2}" ElementStyle="{StaticResource StyleDGTextBlockBigRight}"

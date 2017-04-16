@@ -202,7 +202,7 @@
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource PlanVaccum}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Vaccum}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Vaccum,StringFormat={}{0:#.##E00}}" Style="{StaticResource StyleTextBoxLeft}"/>
 
 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanKeepTempTime}"
