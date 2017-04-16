@@ -25,8 +25,9 @@
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" Style="{StaticResource StyleBorderCommon}">
                 <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
@@ -141,23 +142,27 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" Background="LightGray">
+                    <Grid Background="LightGray">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Button Name="txtBrowse" Content="{StaticResource ButtonBrowse}" Style="{StaticResource  StyleButtonSpecial}"
                                 Click="txtBrowse_Click"/>
-                        <TextBox Name="txtCurrentFolder" Style="{StaticResource StyleTextBoxCommon}" HorizontalAlignment="Stretch"
+                        <TextBox Name="txtCurrentFolder" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" HorizontalAlignment="Stretch"
                                  IsReadOnly="True" Background="{StaticResource BGBrushWindow}"
                                  Text="{Binding CurrentFolder}"/>
-                    </StackPanel>
+                    </Grid>
                     <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Button Content="{StaticResource ButtonDocTest}" Style="{StaticResource  StyleButtonCommon}"
+                        <Button Content="{StaticResource ButtonDocTest}" Style="{StaticResource  StyleButtonCommon}" HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="Test"/>
-                        <Button Content="{StaticResource ButtonDocCoA}" Style="{StaticResource  StyleButtonCommon}"
+                        <Button Content="{StaticResource ButtonDocCoA}" Style="{StaticResource  StyleButtonCommon}" HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="CoA"/>
-                        <Button Content="{StaticResource ButtonDocCoABridgeLine}" Style="{StaticResource  StyleButtonCommon}"
+                        <Button Content="{StaticResource ButtonDocCoABridgeLine}" Style="{StaticResource  StyleButtonCommon}" HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="CoABridgeLine"/>
-                        <Button Content="{StaticResource ButtonDocOpticraftGrinding}" Style="{StaticResource  StyleButtonCommon}"
+                        <Button Content="{StaticResource ButtonDocOpticraftGrinding}" Style="{StaticResource  StyleButtonCommon}" HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="Opticraft"/>
-                        <Button Content="{StaticResource ButtonDocTCB}" Style="{StaticResource  StyleButtonCommon}"
+                        <Button Content="{StaticResource ButtonDocTCB}" Style="{StaticResource  StyleButtonCommon}" HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="TCB"/>
 
 
