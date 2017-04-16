@@ -88,8 +88,9 @@
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding  PlanLot}"
-                         Style="{StaticResource StyleTextBoxLeft}"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.PlanLots,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding PlanLot}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Text="请选择热压批次号，如果当天该热压机只有一个批次，默认为1,依次累加" Style="{StaticResource StyleTextBlockTip}"/>
 
 
@@ -155,7 +156,10 @@
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanQuantity}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Name="txtQuantity" Grid.Row="7" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <ComboBox Name="cboQuantity" Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.Quantities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding Quantity}"/>
+
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanSinglePowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />

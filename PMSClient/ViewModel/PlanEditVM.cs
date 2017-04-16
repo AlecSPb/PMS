@@ -95,13 +95,19 @@ namespace PMSClient.ViewModel
             DeviceCodes.Clear();
             PMSBasicDataService.VHPDevices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
 
-
             Compounds = new List<DcBDCompound>();
             Compounds.Clear();
             PMSBasicDataService.Compounds.ToList().ForEach(c => Compounds.Add(c));
+
             Molds = new List<DcBDVHPMold>();
             Molds.Clear();
             BasicData.VHPMolds.ForEach(m => Molds.Add(m));
+
+            Quantities = new List<int>();
+            PMSBasicDataService.SetListDS(Quantities, 10);
+
+            PlanLots = new List<int>();
+            PMSBasicDataService.SetListDS(PlanLots, 4);
         }
 
 
@@ -137,6 +143,9 @@ namespace PMSClient.ViewModel
         public List<string> States { get; set; }
         public List<string> ProcessCodes { get; set; }
         public List<string> DeviceCodes { get; set; }
+
+        public List<int> Quantities { get; set; }
+        public List<int> PlanLots { get; set; }
         public List<DcBDCompound> Compounds { get; set; }
 
 

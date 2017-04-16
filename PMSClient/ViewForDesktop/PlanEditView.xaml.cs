@@ -53,7 +53,7 @@ namespace PMSClient.ViewForDesktop
             {
                 double diameter = double.Parse(txtmoldDiameter.Text);
                 double thickness = double.Parse(txtThickness.Text);
-                double quantity = double.Parse(txtQuantity.Text);
+                double quantity = double.Parse(cboQuantity.SelectedItem.ToString());
                 double density = double.Parse(txtCalculationDensity.Text);
 
                 double singleWeight = Math.PI * diameter * diameter * thickness / 4 / 1000 * density;
