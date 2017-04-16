@@ -6374,6 +6374,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryCountResponse")]
         System.Threading.Tasks.Task<int> GetDeliveryCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryBySearch", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryBySearchResponse")]
+        PMSClient.MainService.DcDelivery[] GetDeliveryBySearch(int skip, int take, string deliveryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryBySearch", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryBySearchResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDelivery[]> GetDeliveryBySearchAsync(int skip, int take, string deliveryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearch", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearchResponse")]
+        int GetDeliveryCountBySearch(string deliveryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearch", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearchResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryCountBySearchAsync(string deliveryName);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDelivery", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryResponse")]
         int AddDelivery(PMSClient.MainService.DcDelivery model);
         
@@ -6397,6 +6409,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByDeliveryID", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByDeliveryIDResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemByDeliveryIDAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItems", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsResponse")]
+        PMSClient.MainService.DcDeliveryItem[] GetDeliveryItems(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItems", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemsAsync(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsCountResponse")]
+        int GetDeliveryItemsCount(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsCountResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryItemResponse")]
         int AddDeliveryItem(PMSClient.MainService.DcDeliveryItem model);
@@ -6460,6 +6484,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetDeliveryCountAsync();
         }
         
+        public PMSClient.MainService.DcDelivery[] GetDeliveryBySearch(int skip, int take, string deliveryName) {
+            return base.Channel.GetDeliveryBySearch(skip, take, deliveryName);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDelivery[]> GetDeliveryBySearchAsync(int skip, int take, string deliveryName) {
+            return base.Channel.GetDeliveryBySearchAsync(skip, take, deliveryName);
+        }
+        
+        public int GetDeliveryCountBySearch(string deliveryName) {
+            return base.Channel.GetDeliveryCountBySearch(deliveryName);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryCountBySearchAsync(string deliveryName) {
+            return base.Channel.GetDeliveryCountBySearchAsync(deliveryName);
+        }
+        
         public int AddDelivery(PMSClient.MainService.DcDelivery model) {
             return base.Channel.AddDelivery(model);
         }
@@ -6490,6 +6530,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemByDeliveryIDAsync(System.Guid id) {
             return base.Channel.GetDeliveryItemByDeliveryIDAsync(id);
+        }
+        
+        public PMSClient.MainService.DcDeliveryItem[] GetDeliveryItems(int skip, int take, string productid, string composition) {
+            return base.Channel.GetDeliveryItems(skip, take, productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemsAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetDeliveryItemsAsync(skip, take, productid, composition);
+        }
+        
+        public int GetDeliveryItemsCount(string productid, string composition) {
+            return base.Channel.GetDeliveryItemsCount(productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition) {
+            return base.Channel.GetDeliveryItemsCountAsync(productid, composition);
         }
         
         public int AddDeliveryItem(PMSClient.MainService.DcDeliveryItem model) {

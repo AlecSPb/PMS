@@ -21,9 +21,14 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageDelivery}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
+                    Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource RDDeliveryName}" Style="{StaticResource  StyleTextBlockCommon}"/>
+            <TextBox Text="{Binding SearchDeliveryName,UpdateSourceTrigger=PropertyChanged}" Width="200"
+                     Style="{StaticResource StyleTextBoxCommon}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
         <DataGrid x:Name="mainDg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
                       SelectedIndex="{Binding CurrentSelectIndex}"

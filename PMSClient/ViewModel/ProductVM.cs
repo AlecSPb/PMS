@@ -148,8 +148,8 @@ namespace PMSClient.ViewModel
         }
 
         public ObservableCollection<DcProduct> Products { get; set; }
-        private DcProduct currentSelectItem;
 
+        private DcProduct currentSelectItem;
         public DcProduct CurrentSelectItem
         {
             get { return currentSelectItem; }

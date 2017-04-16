@@ -8,6 +8,7 @@ namespace PMSCommon
 {
     public enum TestDefectsTypes
     {
+        无缺陷,
         花纹,
         斑点,
         裂纹,

@@ -61,18 +61,14 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="0*"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Column="0" Text="{StaticResource RPProductType}"
+                <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource RPProductType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtProductType" Text="{Binding ProductType,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         HorizontalAlignment="Stretch"/>
-                    <ComboBox x:Name="cboProductTypes"  HorizontalAlignment="Stretch"
+                <ComboBox Grid.Row="0" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.ProductTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectionChanged="cboProductTypes_SelectionChanged"
+                           SelectedItem="{Binding ProductType}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                </StackPanel>
                 <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="产品类型"/>
 
@@ -127,14 +123,10 @@
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RPPosition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtPosition" Text="{Binding Position,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
-                    <ComboBox x:Name="cboGoodPositions"  HorizontalAlignment="Stretch"
+                <ComboBox Grid.Row="8" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.GoodPositions,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectionChanged="cboGoodPositions_SelectionChanged"
-                          Style="{StaticResource StyleComboBoxCommon}"/>
-                </StackPanel>
+                          Text="{Binding Position}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="货物存放位置,A1表示A架子第一层（从下往上）"/>
 

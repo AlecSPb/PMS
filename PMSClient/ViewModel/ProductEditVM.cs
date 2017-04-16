@@ -15,16 +15,16 @@ namespace PMSClient.ViewModel
         public ProductEditVM()
         {
             States = new List<string>();
-            PMSBasicDataService.ProductStates.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.SetListDS<PMSCommon.ProductState>(States);
 
             ProductTypes = new List<string>();
-            PMSBasicDataService.ProductTypes.ToList().ForEach(t => ProductTypes.Add(t));
+            PMSBasicDataService.SetListDS<PMSCommon.ProductType>(ProductTypes);
 
             GoodPositions = new List<string>();
-            PMSBasicDataService.GoodPositions.ToList().ForEach(i => GoodPositions.Add(i));
+            PMSBasicDataService.SetListDS<PMSCommon.GoodPosition>(GoodPositions);
+
 
             InitializeCommands();
-
         }
 
         private void InitializeCommands()
@@ -47,15 +47,18 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.Composition = "成分";
             model.Abbr = "缩写";
-            model.Dimension = "尺寸";
-            model.DimensionActual = "实际尺寸";
-            model.Defects = "无";
+            model.Weight = "";
             model.Customer = "客户";
             model.Position = PMSCommon.GoodPosition.A1.ToString();
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
-            model.Weight = "";
             model.State = PMSCommon.ProductState.库存.ToString();
             model.Remark = "";
+
+            model.Dimension = "尺寸";
+            model.DimensionActual = "实际尺寸";
+            model.Defects = "无";
+
+
 
             #endregion
             CurrentProduct = model;

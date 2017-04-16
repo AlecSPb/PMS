@@ -313,6 +313,18 @@
   <wsdl:message name="IDeliveryService_GetDeliveryCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryCountBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryCountBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryCountBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryCountBySearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IDeliveryService_AddDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:AddDelivery" />
   </wsdl:message>
@@ -336,6 +348,18 @@
   </wsdl:message>
   <wsdl:message name="IDeliveryService_GetDeliveryItemByDeliveryID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryItemByDeliveryIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItems" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemsCount" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemsCountResponse" />
   </wsdl:message>
   <wsdl:message name="IDeliveryService_AddDeliveryItem_InputMessage">
     <wsdl:part name="parameters" element="tns:AddDeliveryItem" />
@@ -818,6 +842,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryCount" message="tns:IDeliveryService_GetDeliveryCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryCountResponse" message="tns:IDeliveryService_GetDeliveryCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetDeliveryBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryBySearch" message="tns:IDeliveryService_GetDeliveryBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryBySearchResponse" message="tns:IDeliveryService_GetDeliveryBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryCountBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearch" message="tns:IDeliveryService_GetDeliveryCountBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearchResponse" message="tns:IDeliveryService_GetDeliveryCountBySearch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddDelivery">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/AddDelivery" message="tns:IDeliveryService_AddDelivery_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryResponse" message="tns:IDeliveryService_AddDelivery_OutputMessage" />
@@ -833,6 +865,14 @@
     <wsdl:operation name="GetDeliveryItemByDeliveryID">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByDeliveryID" message="tns:IDeliveryService_GetDeliveryItemByDeliveryID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByDeliveryIDResponse" message="tns:IDeliveryService_GetDeliveryItemByDeliveryID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItems" message="tns:IDeliveryService_GetDeliveryItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsResponse" message="tns:IDeliveryService_GetDeliveryItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount" message="tns:IDeliveryService_GetDeliveryItemsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCountResponse" message="tns:IDeliveryService_GetDeliveryItemsCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddDeliveryItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryItem" message="tns:IDeliveryService_AddDeliveryItem_InputMessage" />
@@ -1504,6 +1544,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetDeliveryBySearch">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryCountBySearch">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddDelivery">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/AddDelivery" style="document" />
       <wsdl:input>
@@ -1533,6 +1591,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetDeliveryItemByDeliveryID">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByDeliveryID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItems">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemsCount">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

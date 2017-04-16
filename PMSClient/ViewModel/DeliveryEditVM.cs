@@ -25,18 +25,18 @@ namespace PMSClient.ViewModel
             #region 初始化
             var model = new DcDelivery();
             model.ID = Guid.NewGuid();
-            model.InvoiceNumber = "发票号";
-            model.DeliveryName =$"FH{DateTime.Now.ToString("yyMMdd")}";
-            model.DeliveryNumber = "UPS";
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.已核验.ToString();
+            model.DeliveryName = $"FH{DateTime.Now.ToString("yyMMdd")}";
+            model.InvoiceNumber = "无";
+            model.DeliveryNumber = "UPS";
             model.PackageInformation = "重量未知";
             model.PackageType = PMSCommon.PackageType.木箱.ToString();
             model.Remark = "";
             model.ShipTime = DateTime.Now;
             model.Address = "这里填写发货地址";
-            model.Country = "美国";
+            model.Country = PMSCommon.CountryRegion.美国.ToString();
             #endregion
             CurrentDelivery = model;
         }
@@ -55,15 +55,13 @@ namespace PMSClient.ViewModel
         private void InitialProperties()
         {
             OrderStates = new List<string>();
-            var states = PMSBasicDataService.SimpleStates;
-            states.ToList().ForEach(s => OrderStates.Add(s));
+            PMSBasicDataService.SetListDS<PMSCommon.CommonState>(OrderStates);
 
             Countries = new List<string>();
-            var countries = PMSBasicDataService.Countries;
-            countries.ToList().ForEach(s => Countries.Add(s));
+            PMSBasicDataService.SetListDS<PMSCommon.CountryRegion>(Countries);
 
             PackageTypes = new List<string>();
-            PMSBasicDataService.PackageTypes.ToList().ForEach(i => PackageTypes.Add(i));
+            PMSBasicDataService.SetListDS<PMSCommon.PackageType>(PackageTypes);
         }
 
         private void InitialCommands()
@@ -118,7 +116,6 @@ namespace PMSClient.ViewModel
         }
         public List<string> OrderStates { get; set; }
         public List<string> Countries { get; set; }
-
         public List<string> PackageTypes { get; set; }
         #endregion
 

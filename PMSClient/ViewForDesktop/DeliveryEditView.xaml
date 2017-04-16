@@ -68,34 +68,31 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDInvoiceNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding InvoiceNumber,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding InvoiceNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="发票号"/>
+                           Text="发票号，无则写无"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDDeliveryNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding DeliveryNumber,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding DeliveryNumber}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="物流信息，比如运单号"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDCountry}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox x:Name="txtCountry"  Text="{Binding Country,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
-                    <ComboBox x:Name="cboSuppliers"  HorizontalAlignment="Stretch"
+                <ComboBox Grid.Row="3" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.Countries,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectionChanged="ComboBox_SelectionChanged"
+                          SelectedItem="{Binding Country}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                </StackPanel>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="发往哪个国家地区"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDAddress}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Address,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Address}" 
+                          Style="{StaticResource StyleTextBoxMultiline}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="收件地址信息"/>
@@ -106,33 +103,30 @@
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="发货时间"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注内容写到这里"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDPackageType}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDPackageType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtPackageType"  Text="{Binding PackageType,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
-                    <ComboBox x:Name="cboPackageTypes"  HorizontalAlignment="Stretch"
+                <ComboBox Grid.Row="6" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.PackageTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectionChanged="cboPackageTypes_SelectionChanged"
+                          SelectedItem="{Binding PackageType}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                </StackPanel>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="包装类型"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDPackageInformation}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDPackageInformation}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PackageInformation}" Style="{StaticResource StyleTextBoxCommon}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PackageInformation}" Style="{StaticResource StyleTextBoxCommon}"
+                         HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="包装信息，箱子重量等,例如箱1=50kg,箱2=20kg"/>
+                
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="包装信息，箱子重量等"/>
-
+                           Text="备注内容写到这里"/>
+                
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"

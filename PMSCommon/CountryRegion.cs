@@ -9,13 +9,19 @@ namespace PMSCommon
     /// <summary>
     /// 常见国家
     /// </summary>
-    public enum Country
+    public enum CountryRegion
     {
-       美国,
-       瑞典,
-       韩国,
-       日本,
-       南京,
-       潮州
+        美国,
+        瑞典,
+        韩国,
+        日本,
+        台湾,
+        南京,
+        潮州,
+        北京,
+        成都,
+        上海,
+        昆明
+
     }
 }

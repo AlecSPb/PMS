@@ -35,19 +35,26 @@ namespace PMSClient.ViewModel
         }
         private void InitializeProperties()
         {
+            searchDeliveryName = "";
             Deliveries = new ObservableCollection<DcDelivery>();
             DeliveryItems = new ObservableCollection<DcDeliveryItem>();
         }
         private void InitializeCommands()
         {
+            Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcDelivery>(ActionEdit,CanEdit);
-            Doc = new RelayCommand<DcDelivery>(ActionDoc,CanDoc);
-            AddItem = new RelayCommand<DcDelivery>(ActionAddItem,CanAddItem);
-            EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem,CanEditItem);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcDelivery>(ActionEdit, CanEdit);
+            Doc = new RelayCommand<DcDelivery>(ActionDoc, CanDoc);
+            AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
+            EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private bool CanDoc(DcDelivery arg)
@@ -150,7 +157,7 @@ namespace PMSClient.ViewModel
             //    btApp.Quit(bt.BtSaveOptions.btSaveChanges);
             //}
             #endregion
-            if (model!=null)
+            if (model != null)
             {
                 string country = model.Country;
                 StringBuilder sb = new StringBuilder();
@@ -175,7 +182,7 @@ namespace PMSClient.ViewModel
                 var template = "发货单";
                 var helpimage = "deliverysheet.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Delivery, pageTitle,
-                    tips, template, mainContent,helpimage);
+                    tips, template, mainContent, helpimage);
                 NavigationService.GoTo(PMSViews.LabelOutPut);
             }
         }
@@ -210,7 +217,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 10;
             var service = new DeliveryServiceClient();
-            RecordCount = service.GetDeliveryCount();
+            RecordCount = service.GetDeliveryCountBySearch(SearchDeliveryName);
             service.Close();
             ActionPaging();
         }
@@ -221,10 +228,10 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new DeliveryServiceClient();
-            var models = service.GetDelivery(skip, take);
+            var models = service.GetDeliveryBySearch(skip, take, SearchDeliveryName);
             service.Close();
             Deliveries.Clear();
-            models.ToList<DcDelivery>().ForEach(o => Deliveries.Add(o));
+            models.ToList().ForEach(o => Deliveries.Add(o));
 
             CurrentSelectIndex = 0;
             CurrentSelectItem = Deliveries.FirstOrDefault();
@@ -246,6 +253,15 @@ namespace PMSClient.ViewModel
         {
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
+        }
+
+
+        private string searchDeliveryName;
+
+        public string SearchDeliveryName
+        {
+            get { return searchDeliveryName; }
+            set { searchDeliveryName = value; RaisePropertyChanged(nameof(SearchDeliveryName)); }
         }
 
         #endregion

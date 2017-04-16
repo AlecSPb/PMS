@@ -12,6 +12,10 @@ namespace PMSClient.ViewModel
     {
         public RecordMachineEditVM()
         {
+            MachineDefects = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.TestDefectsTypes>(MachineDefects);
+
+
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
@@ -41,7 +45,8 @@ namespace PMSClient.ViewModel
             model.Thickness2 = 0;
             model.Thickness3 = 0;
             model.Thickness4 = 0;
-            model.ExtraRequirement = "无缺口无划痕";
+            model.ExtraRequirement = "正常要求";
+            model.Defects = PMSCommon.TestDefectsTypes.无缺陷.ToString();
             #endregion
             CurrentRecordMachine = model;
         }
@@ -122,5 +127,8 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand Select { get; set; }
+
+
+        public List<string> MachineDefects { get; set; }
     }
 }

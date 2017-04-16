@@ -163,7 +163,7 @@ namespace PMSClient
         {
             get
             {
-                return Enum.GetNames(typeof(PMSCommon.Country));
+                return Enum.GetNames(typeof(PMSCommon.CountryRegion));
             }
         }
         public static string[] PackageTypes

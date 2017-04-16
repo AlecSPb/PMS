@@ -17,6 +17,13 @@ namespace PMSWCFService.ServiceContracts
         int GetDeliveryCount();
 
         [OperationContract]
+        List<DcDelivery> GetDeliveryBySearch(int skip, int take,string deliveryName);
+        [OperationContract]
+        int GetDeliveryCountBySearch(string deliveryName);
+
+
+
+        [OperationContract]
         int AddDelivery(DcDelivery model);
         [OperationContract]
         int UpdateDelivery(DcDelivery model);
@@ -25,6 +32,12 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcDeliveryItem> GetDeliveryItemByDeliveryID(Guid id);
+
+        [OperationContract]
+        List<DcDeliveryItem> GetDeliveryItems(int skip ,int take,string productid,string composition);
+        [OperationContract]
+        int GetDeliveryItemsCount(string productid, string composition);
+
         [OperationContract]
         int AddDeliveryItem(DcDeliveryItem model);
         [OperationContract]

@@ -25,29 +25,5 @@ namespace PMSClient.ViewForDesktop
         {
             InitializeComponent();
         }
-
-        private void cboProductTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cbo = sender as ComboBox;
-            if (cbo.SelectedItem != null)
-            {
-                PMSMethods.SetTextBox(txtProductType,cbo.SelectedItem.ToString());
-            }
-        }
-
-        private void cboGoodPositions_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cbo = sender as ComboBox;
-            if (cbo.SelectedItem != null)
-            {
-                PMSMethods.SetTextBox(txtPosition, cbo.SelectedItem.ToString());
-            }
-
-        }
-
-        private void cboPackNumbers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
