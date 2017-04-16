@@ -10,10 +10,13 @@ namespace PMSClient
 {
     /// <summary>
     /// 生成ComboBox用的基本数据源
-    /// 来自枚举，来自数据库，来自文件
+    /// 来自枚举
+    /// 来自数据库
+    /// 来自文件
     /// </summary>
     public static class PMSBasicDataService
     {
+        #region 基本数据处理方法
         /// <summary>
         /// 复制源字符串列表到目标字符串列表
         /// </summary>
@@ -57,6 +60,8 @@ namespace PMSClient
         {
             return Enum.GetNames(typeof(T)).ToList();
         }
+        #endregion
+
 
 
 
