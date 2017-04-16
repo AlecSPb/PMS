@@ -139,7 +139,13 @@
         注意：尽量通过选择的方式输入
     </sys:String>
     <sys:String x:Key="HelpTipMaterialOrderItemEdit">
-        注意：可以自行输入要订购的原料信息，但最好通过选择原料需求列表来减少输入时间和错误
+        注意：可以自行输入，但最好通过选择[原料需求列表]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryInEdit">
+        注意：可以自行输入，但最好通过选择[原料订单项目]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryOutEdit">
+        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
     </sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
