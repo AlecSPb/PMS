@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -25,7 +26,11 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipPlanVHPEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
             <Grid  DataContext="{Binding CurrentPlan}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -156,7 +161,7 @@
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="8" Grid.Column="2" Text="点击计算按钮计算用料" Style="{StaticResource StyleTextBlockTip}"/>
-                
+
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanAllPowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Name="txtAllWeight" Grid.Row="9" Grid.Column="1" Text="{Binding AllWeight}" Style="{StaticResource StyleTextBoxReadOnly}"  HorizontalAlignment="Left"/>
@@ -196,19 +201,19 @@
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBoxLeft}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="请选择热压温度" Style="{StaticResource StyleTextBlockTip}"/>
-                
-                
-                
+
+
+
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource PlanPressure}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"/>
                 <TextBlock Grid.Row="17" Grid.Column="2" Text="请选择热压压力" Style="{StaticResource StyleTextBlockTip}"/>
-                
+
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource PlanVaccum}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Vaccum}" Style="{StaticResource StyleTextBoxLeft}"/>
 
-                
+
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanKeepTempTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource StyleTextBoxLeft}"/>

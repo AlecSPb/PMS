@@ -147,6 +147,47 @@
     <sys:String x:Key="HelpTipMaterialInventoryOutEdit">
         注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
     </sys:String>
+
+
+    <sys:String x:Key="HelpTipPlanVHPEdit">
+        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
+    </sys:String>
+
+    <sys:String x:Key="HelpTipRecordMillingEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordVHPQuickEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordDeMoldEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMachineEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordBondingEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryItemEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+
+
+
+
+
+
+
+
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">放弃</sys:String>

@@ -14,6 +14,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -31,9 +32,11 @@
             <Button Content="{StaticResource ButtonSelectBonding}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding SelectBonding}"/>
         </StackPanel>
-        <TextBlock Grid.Row="2" Text="注意:可以自行输入，也可以选择上面的测试结果[靶材],绑定结果[绑定]"
-                   Style="{StaticResource StyleTextBlockTip}"/>
-        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentProduct}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>

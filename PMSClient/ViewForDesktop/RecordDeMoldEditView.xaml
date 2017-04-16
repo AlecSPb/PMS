@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -24,7 +25,11 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
             <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource  StyleButtonSpecial}" Command="{Binding Select}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordDeMoldEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <Grid  DataContext="{Binding CurrentRecordDeMold}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -59,8 +64,8 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="热压编号170111-A-1,热压日期-设备号-第1片"/>
-                
-                
+
+
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
@@ -81,7 +86,7 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="脱模温度"/>
-                
+
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDMWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"
@@ -127,7 +132,7 @@
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                
+
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RDMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
