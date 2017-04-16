@@ -53,19 +53,15 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.OrderState));
-            states.ToList().ForEach(s => OrderStates.Add(s));
+            OrderStates = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.OrderState>(OrderStates);
 
 
-            OrderPriorities = new ObservableCollection<string>();
-            var priorities = Enum.GetNames(typeof(PMSCommon.OrderPriority));
-            priorities.ToList().ForEach(p => OrderPriorities.Add(p));
+            OrderPriorities = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.OrderPriority>(OrderPriorities);
 
-            Suppliers = new ObservableCollection<DcBDSupplier>();
-            var service = new SupplierServiceClient();
-            var suppliers = service.GetSuppliers();
-            suppliers.ToList().ForEach(s => Suppliers.Add(s));
+            Suppliers = new List<DcBDSupplier>();
+            BasicData.Suppliers.ForEach(i => Suppliers.Add(i));
         }
 
         private void InitialCommmands()
@@ -102,9 +98,9 @@ namespace PMSClient.ViewModel
             }
 
         }
-        public ObservableCollection<string> OrderStates { get; set; }
-        public ObservableCollection<string> OrderPriorities { get; set; }
-        public ObservableCollection<DcBDSupplier> Suppliers { get; set; }
+        public List<string> OrderStates { get; set; }
+        public List<string> OrderPriorities { get; set; }
+        public List<DcBDSupplier> Suppliers { get; set; }
 
         private DcMaterialOrder currentMaterialOrder;
         public DcMaterialOrder CurrentMaterialOrder

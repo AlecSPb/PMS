@@ -62,5 +62,19 @@ namespace PMSClient
                 }
             }
         }
+
+
+        public static List<DcBDSupplier> Suppliers
+        {
+            get
+            {
+
+                var service = new SupplierServiceClient();
+                var result= service.GetSuppliers().OrderBy(i => i.Abbr).ToList();
+                service.Close();
+                return result;
+            }
+        }
+
     }
 }

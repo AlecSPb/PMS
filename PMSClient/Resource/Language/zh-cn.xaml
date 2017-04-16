@@ -135,7 +135,12 @@
     <sys:String x:Key="HelpTipMaterialNeedEdit">
         注意：可以自行输入原料需求数据，但推荐利用任务信息填写，原料计算器计算的结果仅供参考
     </sys:String>
-
+    <sys:String x:Key="HelpTipMaterialOrderEdit">
+        注意：尽量通过选择的方式输入
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderItemEdit">
+        注意：可以自行输入要订购的原料信息，但最好通过选择原料需求列表来减少输入时间和错误
+    </sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">放弃</sys:String>

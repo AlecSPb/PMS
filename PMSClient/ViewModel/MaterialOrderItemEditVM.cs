@@ -15,9 +15,8 @@ namespace PMSClient.ViewModel
     {
         public MaterialOrderItemEditVM()
         {
-            OrderStates = new ObservableCollection<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
-            states.ToList().ForEach(s => OrderStates.Add(s));
+            OrderStates = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(OrderStates);
             InitialCommmands();
         }
 
@@ -134,7 +133,7 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.MaterialOrder);
         }
 
-        public ObservableCollection<string> OrderStates { get; set; }
+        public List<string> OrderStates { get; set; }
 
         private DcMaterialOrderItem currentMaterialOrderItem;
         public DcMaterialOrderItem CurrentMaterialOrderItem
