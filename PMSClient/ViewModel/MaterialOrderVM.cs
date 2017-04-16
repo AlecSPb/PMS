@@ -142,7 +142,8 @@ namespace PMSClient.ViewModel
             if (order != null)
             {
                 ReportMaterialOrder report = new ReportMaterialOrder();
-                report.Output(order);
+                report.SetModel(order);
+                report.Output();
             }
         }
 

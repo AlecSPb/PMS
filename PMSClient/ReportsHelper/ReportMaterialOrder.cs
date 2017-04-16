@@ -12,48 +12,51 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class ReportMaterialOrder
+    public class ReportMaterialOrder : ReportBase
     {
-        public void Output(DcMaterialOrder order)
+        public ReportMaterialOrder()
         {
-            if (order == null)
+            var targetName = $"原料订单{ReportHelper.TimeName}";
+            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "MaterialOrder.docx");
+            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "MaterialOrder_Temp.docx");
+            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+        }
+
+        public void SetTargetFolder(string targetFolder)
+        {
+            var targetName = $"原料订单{ReportHelper.TimeName}";
+            targetFile = Path.Combine(targetFolder, targetName);
+        }
+
+        private DcMaterialOrder _order;
+        public void SetModel(DcMaterialOrder order)
+        {
+            _order = order;
+        }
+        public override void Output()
+        {
+            if (_order == null)
             {
                 return;
             }
-            var sourceFilePath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Reports", "MaterialOrder.docx");
-            var targetFilePath = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Reports", "MaterialOrder_Temp.docx");
-            var finalFileName = DateTime.Now.ToString("yyyyMMddHHmmss");
-            var finalFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), finalFileName + ".docx");
-
-
-            if (!File.Exists(sourceFilePath))
-            {
-                return;
-            }
-            if (File.Exists(targetFilePath))
-            {
-                File.Delete(targetFilePath);
-            }
-            File.Copy(sourceFilePath, targetFilePath);
-
-
+            ReportHelper.FileCopy(sourceFile, tempFile);
             //写入数据到文件
-            using (var doc = DocX.Load(targetFilePath))
+            using (var doc = DocX.Load(tempFile))
             {
-                doc.ReplaceText("[OrderPO]", order.OrderPO ?? "");
-                doc.ReplaceText("[SupplierName]", order.Supplier ?? "");
-                doc.ReplaceText("[SupplierReceiver]", order.SupplierReceiver ?? "");
-                doc.ReplaceText("[SupplierEmail]", order.SupplierEmail ?? "");
-                doc.ReplaceText("[SupplierAddress]", order.SupplierAddress ?? "");
-                doc.ReplaceText("[OrderDate]", order.CreateTime.ToString("MM/dd/yyyy"));
-                doc.ReplaceText("[Creator]", order.Creator ?? "Leon.Chiu");
+                doc.ReplaceText("[OrderPO]", _order.OrderPO ?? "");
+                doc.ReplaceText("[SupplierName]", _order.Supplier ?? "");
+                doc.ReplaceText("[SupplierReceiver]", _order.SupplierReceiver ?? "");
+                doc.ReplaceText("[SupplierEmail]", _order.SupplierEmail ?? "");
+                doc.ReplaceText("[SupplierAddress]", _order.SupplierAddress ?? "");
+                doc.ReplaceText("[OrderDate]", _order.CreateTime.ToString("MM/dd/yyyy"));
+                doc.ReplaceText("[Creator]", _order.Creator ?? "Leon.Chiu");
 
 
                 List<DcMaterialOrderItem> OrderItems;
 
                 using (var service = new MaterialOrderServiceClient())
                 {
-                    var result = service.GetMaterialOrderItembyMaterialID(order.ID);
+                    var result = service.GetMaterialOrderItembyMaterialID(_order.ID);
                     OrderItems = result.OrderBy(i => i.CreateTime).ToList();
                 }
 
@@ -97,22 +100,16 @@ namespace PMSClient.ReportsHelper
                     }
                 }
 
-                doc.ReplaceText("[Remark]", order.Remark ?? "");
+                doc.ReplaceText("[Remark]", _order.Remark ?? "");
                 doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0") + "RMB");
-                doc.ReplaceText("[ShipFee]", order.ShipFee.ToString("N0") + "RMB");
-                double totalMoney = subTotalMoney + order.ShipFee;
+                doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0") + "RMB");
+                double totalMoney = subTotalMoney + _order.ShipFee;
                 doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") + "RMB");
 
                 doc.Save();
             }
 
-            if (File.Exists(finalFilePath))
-            {
-                File.Delete(finalFileName);
-            }
-
-            File.Copy(targetFilePath, finalFilePath);
-
+            ReportHelper.FileCopy(tempFile, targetFile);
         }
 
     }

@@ -100,6 +100,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
@@ -153,7 +154,14 @@
     </Compile>
     <Compile Include="MainWindowBase.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ReportsHelper\ReportBase.cs" />
+    <Compile Include="ReportsHelper\ReportGASOpticraftGrinding.cs" />
+    <Compile Include="ReportsHelper\ReportGASElastomer440Blank.cs" />
+    <Compile Include="ReportsHelper\ReportCOABridgeLine.cs" />
+    <Compile Include="ReportsHelper\ReportCOA.cs" />
+    <Compile Include="ReportsHelper\ReportHelper.cs" />
     <Compile Include="ReportsHelper\ReportMaterialOrder.cs" />
+    <Compile Include="ReportsHelper\ReportRecordTest.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -658,7 +666,10 @@
     <None Include="DocTemplate\Reports\MaterialOrder.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\Reports\Product.docx">
+    <None Include="DocTemplate\Reports\GeAsSeOpticraftGrinding.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DocTemplate\Reports\RecordTest.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\BarTender101\发货单.btw">
@@ -943,6 +954,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Icons\lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DocTemplate\Reports\Temp\DoNotDeleteThisFolder.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
