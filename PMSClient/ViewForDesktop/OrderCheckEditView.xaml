@@ -140,7 +140,7 @@
                           ItemsSource="{Binding DataContext.PolicyTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PolicyType,Mode=TwoWay}"/>
                 <TextBlock Grid.Row="18" Grid.Column="2"
-                           Text="选择策略，VHP=热压，OutSource=外包，Other=其他，VHP才会显示给生产部门,其他不会"
+                           Text="选择策略,只有VHP才会显示给生产部门,其他不会"
                            Style="{StaticResource StyleTextBlockTip}" />
 
 
@@ -151,7 +151,7 @@
                           SelectedItem="{Binding State,Mode=TwoWay}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 <TextBlock Grid.Row="19" Grid.Column="2"
-                           Text="选择状态,Deleted=作废,UnChecked=未核验,UnCompleted=未完成,Paused=暂停,Complete=完成,只有UnCompleted,Paused,Completed状态才会显示给生产部门"
+                           Text="选择状态，只有[未完成，暂停，完成]状态才会显示给生产部门"
                            Style="{StaticResource StyleTextBlockTip}" />
 
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource OrderPriority}"
@@ -160,7 +160,7 @@
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                          SelectedItem="{Binding Priority,Mode=TwoWay}"
                          Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Text="选择优先级，默认Normal"
+                <TextBlock Grid.Row="20" Grid.Column="2" Text="选择优先级，默认普通"
                            Style="{StaticResource StyleTextBlockTip}" />
 
             </Grid>
