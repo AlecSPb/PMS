@@ -94,7 +94,6 @@ namespace PMSClient.ViewModel
                         service.UpdateRecordMachine(CurrentRecordMachine);
                     }
                 }
-                service.Close();
                 PMSHelper.ViewModels.RecordMachine.RefreshData();
                 GoBack();
             }

@@ -105,17 +105,16 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    using (var dc = new RecordMillingServiceClient())
+                    using (var service = new RecordMillingServiceClient())
                     {
                         if (IsNew)
                         {
-                            dc.AddRecordMilling(CurrentRecordMilling);
+                            service.AddRecordMilling(CurrentRecordMilling);
                         }
                         else
                         {
-                            dc.UpdateRecordMilling(CurrentRecordMilling);
+                            service.UpdateRecordMilling(CurrentRecordMilling);
                         }
-                        service.Close();
                         PMSHelper.ViewModels.RecordMilling.RefreshData();
                         GoBack();
                     }
