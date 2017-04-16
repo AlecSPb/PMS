@@ -76,7 +76,7 @@ namespace PMSClient.ViewModel
             var orders = service.GetMaterialOrderItems(skip, take);
             service.Close();
             MaterialOrderItems.Clear();
-            orders.ToList<DcMaterialOrderItem>().ForEach(o => MaterialOrderItems.Add(o));
+            orders.ToList().ForEach(o => MaterialOrderItems.Add(o));
         }
         public ObservableCollection<DcMaterialOrderItem> MaterialOrderItems { get; set; }
 

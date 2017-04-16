@@ -23,9 +23,35 @@ namespace PMSCommon
             }
         }
 
+        public static List<string> Purity
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("3N");
+                data.Add("4N");
+                data.Add("5N");
+                data.Add("6N");
+                #endregion
+                return data;
+            }
+        }
 
-
-
+        public static List<string> Quantity
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                for (int i = 1; i < 10; i++)
+                {
+                    data.Add(i.ToString());
+                }
+                #endregion
+                return data;
+            }
+        }
 
 
 
