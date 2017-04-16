@@ -67,7 +67,7 @@ namespace PMSClient.ViewModel
         /// <summary>
         /// 返回
         /// </summary>
-        public RelayCommand GiveUp { get; private set; }
+        public RelayCommand GiveUp { get; set; }
         #endregion
     }
 }

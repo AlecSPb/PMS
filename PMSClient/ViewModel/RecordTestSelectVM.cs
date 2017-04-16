@@ -11,7 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordTestSelectVM : BaseViewModelPage
+    public class RecordTestSelectVM : BaseViewModelSelect
     {
 
         public RecordTestSelectVM()
@@ -105,7 +105,6 @@ namespace PMSClient.ViewModel
             }
         }
         #region Commands
-        public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcRecordTest> Select { get; set; }
 
         #endregion

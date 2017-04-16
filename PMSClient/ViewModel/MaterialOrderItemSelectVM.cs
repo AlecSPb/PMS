@@ -10,7 +10,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialOrderItemSelectVM:BaseViewModelPage
+    public class MaterialOrderItemSelectVM:BaseViewModelSelect
     {
         public MaterialOrderItemSelectVM()
         {
@@ -80,7 +80,6 @@ namespace PMSClient.ViewModel
         }
         public ObservableCollection<DcMaterialOrderItem> MaterialOrderItems { get; set; }
 
-        public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcMaterialOrderItem> Select { get; set; }
   
     }

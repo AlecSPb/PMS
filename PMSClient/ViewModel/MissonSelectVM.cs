@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MissonSelectVM : BaseViewModelPage
+    public class MissonSelectVM : BaseViewModelSelect
     {
         //要转到的页面
 
@@ -50,7 +50,6 @@ namespace PMSClient.ViewModel
             }
         }
         public RelayCommand<DcOrder> Select { get; set; }
-        public RelayCommand GiveUp { get; set; }
         private void ActionRefresh(Object obj)
         {
             SetPageParametersWhenConditionChange();

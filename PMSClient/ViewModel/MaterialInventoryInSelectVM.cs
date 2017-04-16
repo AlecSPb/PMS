@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialInventoryInSelectVM : BaseViewModelPage
+    public class MaterialInventoryInSelectVM : BaseViewModelSelect
     {
         public MaterialInventoryInSelectVM()
         {
@@ -142,7 +142,6 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialInventoryIn> Edit { get; private set; }
 
-        public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcMaterialInventoryIn> Select { get; set; }
         #endregion
 

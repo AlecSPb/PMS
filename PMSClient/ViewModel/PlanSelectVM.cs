@@ -11,7 +11,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class PlanSelectVM : BaseViewModelPage
+    public class PlanSelectVM : BaseViewModelSelect
     {
         public PlanSelectVM()
         {
@@ -105,7 +105,6 @@ namespace PMSClient.ViewModel
 
 
         #region Commands
-        public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcPlanWithMisson> Select { get; set; }
         #endregion
 

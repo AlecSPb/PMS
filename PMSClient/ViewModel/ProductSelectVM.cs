@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class ProductSelectVM : BaseViewModelPage
+    public class ProductSelectVM : BaseViewModelSelect
     {
         public ProductSelectVM()
         {
@@ -146,7 +146,6 @@ namespace PMSClient.ViewModel
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
-        public RelayCommand GiveUp { get; set; }
         #endregion
     }
 }

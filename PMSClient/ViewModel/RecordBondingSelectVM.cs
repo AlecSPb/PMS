@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordBondingSelectVM:BaseViewModelPage
+    public class RecordBondingSelectVM:BaseViewModelSelect
     {
     }
 }
