@@ -29,19 +29,19 @@ namespace PMSClient.ViewModel
         private void InitializeBasicData()
         {
             States = new List<string>();
-            PMSMethods.SetListDS<SimpleState>(States);
+            PMSBasicDataService.SetListDS<SimpleState>(States);
 
             MillingTools = new List<string>();
-            PMSMethods.SetListDS<MillingTool>(MillingTools);
+            PMSBasicDataService.SetListDS<MillingTool>(MillingTools);
 
             MillingTimes = new List<string>();
-            PMSMethods.SetListDS<MillingTime>(MillingTimes);
+            PMSBasicDataService.SetListDS<MillingTime>(MillingTimes);
 
             GasProtections = new List<string>();
-            PMSMethods.SetListDS<MillingGas>(GasProtections);
+            PMSBasicDataService.SetListDS<MillingGas>(GasProtections);
 
             MillingMaterialSources = new List<string>();
-            PMSMethods.SetListDS<MillingMaterialSource>(MillingMaterialSources);
+            PMSBasicDataService.SetListDS<MillingMaterialSource>(MillingMaterialSources);
         }
 
         public void SetNew()
