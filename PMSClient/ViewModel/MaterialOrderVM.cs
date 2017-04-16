@@ -143,6 +143,7 @@ namespace PMSClient.ViewModel
             {
                 if (order != null)
                 {
+                    NavigationService.ShowStatusMessage("开始创建报告……");
                     ReportMaterialOrder report = new ReportMaterialOrder();
                     report.SetModel(order);
                     report.Output();

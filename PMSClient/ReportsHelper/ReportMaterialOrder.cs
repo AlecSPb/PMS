@@ -14,9 +14,10 @@ namespace PMSClient.ReportsHelper
     /// </summary>
     public class ReportMaterialOrder : ReportBase
     {
+        private string prefix = "原料订单";
         public ReportMaterialOrder()
         {
-            var targetName = $"原料订单{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "MaterialOrder.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "MaterialOrder_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
@@ -24,7 +25,7 @@ namespace PMSClient.ReportsHelper
 
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"原料订单{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeName}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
 
@@ -39,8 +40,9 @@ namespace PMSClient.ReportsHelper
             {
                 return;
             }
+            //复制到临时文件
             ReportHelper.FileCopy(sourceFile, tempFile);
-            //写入数据到文件
+            #region 创建文档
             using (var doc = DocX.Load(tempFile))
             {
                 doc.ReplaceText("[OrderPO]", _order.OrderPO ?? "");
@@ -59,11 +61,7 @@ namespace PMSClient.ReportsHelper
                     var result = service.GetMaterialOrderItembyMaterialID(_order.ID);
                     OrderItems = result.OrderBy(i => i.CreateTime).ToList();
                 }
-
-
-
                 //插入表格
-
                 var mainTable = doc.Tables[1];
                 double subTotalMoney = 0;
                 if (mainTable != null)
@@ -108,7 +106,8 @@ namespace PMSClient.ReportsHelper
 
                 doc.Save();
             }
-
+            #endregion
+            //复制到临时文件
             ReportHelper.FileCopy(tempFile, targetFile);
         }
 

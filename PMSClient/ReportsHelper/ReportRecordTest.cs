@@ -11,16 +11,17 @@ namespace PMSClient.ReportsHelper
 {
     public class ReportRecordTest : ReportBase
     {
+        private string prefix = "测试报告";
         public ReportRecordTest()
         {
-            var targetName = $"测试{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "RecordTest.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "RecordTest_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"测试{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeName}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
         public void SetModel(DcRecordTest test)

@@ -16,25 +16,22 @@ namespace PMSClient.ViewModel
         public RecordTestDocVM()
         {
             GiveUp = new RelayCommand(GoBack);
-            Doc = new RelayCommand<string>(ActionDoc);
+            CreateDoc = new RelayCommand<string>(ActionCreateDoc);
             currentFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         }
         /// <summary>
         /// 生成报告
         /// </summary>
         /// <param name="arg"></param>
-        private void ActionDoc(string arg)
+        private void ActionCreateDoc(string arg)
         {
-            //TODO:完成这里的报告生成
+            NavigationService.ShowStatusMessage("开始创建报告……");
             try
             {
                 switch (arg)
                 {
                     case "Test":
-                        ReportRecordTest recordTest = new ReportRecordTest();
-                        recordTest.SetModel(CurrentRecordTest);
-                        recordTest.SetTargetFolder(CurrentFolder);
-                        recordTest.Output();
+                        CreateRecordTest();
                         break;
                     case "CoA":
                         break;
@@ -51,6 +48,23 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        private void CreateRecordTest()
+        {
+            try
+            {
+                ReportRecordTest recordTest = new ReportRecordTest();
+                recordTest.SetModel(CurrentRecordTest);
+                recordTest.SetTargetFolder(CurrentFolder);
+                recordTest.Output();
+                NavigationService.ShowStatusMessage("测试记录报告创建完毕！");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
             }
         }
 
@@ -88,7 +102,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Select { get; set; }
         public RelayCommand GiveUp { get; set; }
 
-        public RelayCommand<string> Doc { get; set; }
+        public RelayCommand<string> CreateDoc { get; set; }
 
     }
 }
