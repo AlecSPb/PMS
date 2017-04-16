@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5928d36707bf4575906c581ff7b3b37a" Name="Diagram1">
-        <EntityTypeShape EntityType="dbnewModel.tb_Density" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_MolWeight" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_Order" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_Plan" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_RMachine" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_RPack" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_RPowder" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_RVHP" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_RWash" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_User" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbnewModel.tb_Worker" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="dbnewModel.FK__tb_Plan__Order__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="dbnewModel.FK_tb_RMachine_tb_Plan" ManuallyRouted="false" />
-        <AssociationConnector Association="dbnewModel.FK_tb_RPack_tb_Plan" ManuallyRouted="false" />
-        <AssociationConnector Association="dbnewModel.FK_tb_RPowder_tb_Plan1" ManuallyRouted="false" />
-        <AssociationConnector Association="dbnewModel.FK_tb_RVHP_tb_Plan" ManuallyRouted="false" />
-        <AssociationConnector Association="dbnewModel.FK_tb_RWash_tb_Plan" ManuallyRouted="false" />
+      <Diagram DiagramId="dbed1c0577724f908d254bbf0ec58a84" Name="Diagram1">
+        <EntityTypeShape EntityType="db_newModel.tb_Density" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_MolWeight" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_Order" Width="1.5" PointX="0.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_Plan" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_RMachine" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_RPack" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_RPowder" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_RVHP" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_RWash" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_User" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_newModel.tb_Worker" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="db_newModel.FK__tb_Plan__Order__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="db_newModel.FK_tb_RMachine_tb_Plan" ManuallyRouted="false" />
+        <AssociationConnector Association="db_newModel.FK_tb_RPack_tb_Plan" ManuallyRouted="false" />
+        <AssociationConnector Association="db_newModel.FK_tb_RPowder_tb_Plan1" ManuallyRouted="false" />
+        <AssociationConnector Association="db_newModel.FK_tb_RVHP_tb_Plan" ManuallyRouted="false" />
+        <AssociationConnector Association="db_newModel.FK_tb_RWash_tb_Plan" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

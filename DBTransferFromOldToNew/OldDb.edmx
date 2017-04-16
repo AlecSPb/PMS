@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbnewModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="db_newModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tb_Density">
           <Key>
             <PropertyRef Name="DensityID" />
@@ -293,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbnewModelStoreContainer">
+        <EntityContainer Name="db_newModelStoreContainer">
           <EntitySet Name="tb_Density" EntityType="Self.tb_Density" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_MolWeight" EntityType="Self.tb_MolWeight" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Order" EntityType="Self.tb_Order" Schema="dbo" store:Type="Tables" />
@@ -334,7 +334,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="dbnewModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="db_newModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="tb_Density">
           <Key>
             <PropertyRef Name="DensityID" />
@@ -635,7 +635,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbnewEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="db_newEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tb_Density" EntityType="Self.tb_Density" />
           <EntitySet Name="tb_MolWeight" EntityType="Self.tb_MolWeight" />
           <EntitySet Name="tb_Order" EntityType="Self.tb_Order" />
@@ -677,9 +677,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="dbnewModelStoreContainer" CdmEntityContainer="dbnewEntities">
+        <EntityContainerMapping StorageEntityContainer="db_newModelStoreContainer" CdmEntityContainer="db_newEntities">
           <EntitySetMapping Name="tb_Density">
-            <EntityTypeMapping TypeName="dbnewModel.tb_Density">
+            <EntityTypeMapping TypeName="db_newModel.tb_Density">
               <MappingFragment StoreEntitySet="tb_Density">
                 <ScalarProperty Name="DensityID" ColumnName="DensityID" />
                 <ScalarProperty Name="Material" ColumnName="Material" />
@@ -689,7 +689,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_MolWeight">
-            <EntityTypeMapping TypeName="dbnewModel.tb_MolWeight">
+            <EntityTypeMapping TypeName="db_newModel.tb_MolWeight">
               <MappingFragment StoreEntitySet="tb_MolWeight">
                 <ScalarProperty Name="MolWeightID" ColumnName="MolWeightID" />
                 <ScalarProperty Name="Element" ColumnName="Element" />
@@ -699,7 +699,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_Order">
-            <EntityTypeMapping TypeName="dbnewModel.tb_Order">
+            <EntityTypeMapping TypeName="db_newModel.tb_Order">
               <MappingFragment StoreEntitySet="tb_Order">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
@@ -723,7 +723,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_Plan">
-            <EntityTypeMapping TypeName="dbnewModel.tb_Plan">
+            <EntityTypeMapping TypeName="db_newModel.tb_Plan">
               <MappingFragment StoreEntitySet="tb_Plan">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="PlanID" ColumnName="PlanID" />
@@ -747,7 +747,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_RMachine">
-            <EntityTypeMapping TypeName="dbnewModel.tb_RMachine">
+            <EntityTypeMapping TypeName="db_newModel.tb_RMachine">
               <MappingFragment StoreEntitySet="tb_RMachine">
                 <ScalarProperty Name="PlanID" ColumnName="PlanID" />
                 <ScalarProperty Name="MachineID" ColumnName="MachineID" />
@@ -773,7 +773,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_RPack">
-            <EntityTypeMapping TypeName="dbnewModel.tb_RPack">
+            <EntityTypeMapping TypeName="db_newModel.tb_RPack">
               <MappingFragment StoreEntitySet="tb_RPack">
                 <ScalarProperty Name="PlanID" ColumnName="PlanID" />
                 <ScalarProperty Name="PackID" ColumnName="PackID" />
@@ -789,7 +789,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_RPowder">
-            <EntityTypeMapping TypeName="dbnewModel.tb_RPowder">
+            <EntityTypeMapping TypeName="db_newModel.tb_RPowder">
               <MappingFragment StoreEntitySet="tb_RPowder">
                 <ScalarProperty Name="PlanID" ColumnName="PlanID" />
                 <ScalarProperty Name="PowderID" ColumnName="PowderID" />
@@ -807,7 +807,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_RVHP">
-            <EntityTypeMapping TypeName="dbnewModel.tb_RVHP">
+            <EntityTypeMapping TypeName="db_newModel.tb_RVHP">
               <MappingFragment StoreEntitySet="tb_RVHP">
                 <ScalarProperty Name="PlanID" ColumnName="PlanID" />
                 <ScalarProperty Name="VHPID" ColumnName="VHPID" />
@@ -852,7 +852,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_RWash">
-            <EntityTypeMapping TypeName="dbnewModel.tb_RWash">
+            <EntityTypeMapping TypeName="db_newModel.tb_RWash">
               <MappingFragment StoreEntitySet="tb_RWash">
                 <ScalarProperty Name="PlanID" ColumnName="PlanID" />
                 <ScalarProperty Name="WashID" ColumnName="WashID" />
@@ -876,7 +876,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_User">
-            <EntityTypeMapping TypeName="dbnewModel.tb_User">
+            <EntityTypeMapping TypeName="db_newModel.tb_User">
               <MappingFragment StoreEntitySet="tb_User">
                 <ScalarProperty Name="UseID" ColumnName="UseID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -886,7 +886,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_Worker">
-            <EntityTypeMapping TypeName="dbnewModel.tb_Worker">
+            <EntityTypeMapping TypeName="db_newModel.tb_Worker">
               <MappingFragment StoreEntitySet="tb_Worker">
                 <ScalarProperty Name="WorkID" ColumnName="WorkID" />
                 <ScalarProperty Name="WorkMan" ColumnName="WorkMan" />

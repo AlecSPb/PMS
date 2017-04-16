@@ -13,10 +13,10 @@ namespace DBTransferFromOldToNew
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ProductsEntities : DbContext
+    public partial class ProductsEntities1 : DbContext
     {
-        public ProductsEntities()
-            : base("name=ProductsEntities")
+        public ProductsEntities1()
+            : base("name=ProductsEntities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace DBTransferFromOldToNew
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Samples> Samples { get; set; }
         public virtual DbSet<Targets> Targets { get; set; }
     }

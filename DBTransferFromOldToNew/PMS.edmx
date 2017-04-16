@@ -1,0 +1,2191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDCompounds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MaterialName" Type="nvarchar(max)" />
+          <Property Name="Density" Type="float" Nullable="false" />
+          <Property Name="MeltingPoint" Type="nvarchar(max)" />
+          <Property Name="BoilingPoint" Type="nvarchar(max)" />
+          <Property Name="SpecialProperty" Type="nvarchar(max)" />
+          <Property Name="InformationSource" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BDCustomers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="ContactPerson" Type="nvarchar(max)" />
+          <Property Name="Phone1" Type="nvarchar(max)" />
+          <Property Name="Phone2" Type="nvarchar(max)" />
+          <Property Name="Fax" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Memo" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BDDeliveryAddresses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Receiver" Type="nvarchar(max)" />
+          <Property Name="Company" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="Tax" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="PostCode" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="CellPhone" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BDElementGroupItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupElementID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="GroupNumber" Type="int" Nullable="false" />
+          <Property Name="MolWeight" Type="float" Nullable="false" />
+          <Property Name="At" Type="float" Nullable="false" />
+          <Property Name="OrderNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDElementGroups">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDElements">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="AtomicNumber" Type="int" Nullable="false" />
+          <Property Name="MolWeight" Type="float" Nullable="false" />
+          <Property Name="Density" Type="float" Nullable="false" />
+          <Property Name="MeltingPoint" Type="nvarchar(max)" />
+          <Property Name="BoilingPoint" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BDSieves">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SieveName" Type="nvarchar(max)" />
+          <Property Name="Mesh" Type="nvarchar(max)" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="Manufacuture" Type="nvarchar(max)" />
+          <Property Name="EstimateUsedCount" Type="int" Nullable="false" />
+          <Property Name="CurrentCount" Type="int" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDSuppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="Abbr" Type="nvarchar(max)" />
+          <Property Name="ContactPerson" Type="nvarchar(max)" />
+          <Property Name="CellPhone" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="BDVHPDevices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar(max)" />
+          <Property Name="DeviceInformation" Type="nvarchar(max)" />
+          <Property Name="HighestTemperature" Type="float" Nullable="false" />
+          <Property Name="HighestPressure" Type="float" Nullable="false" />
+          <Property Name="HighestDiameter" Type="float" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Manufacturer" Type="nvarchar(max)" />
+          <Property Name="ReceiveTime" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDVHPMolds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MoldDetails" Type="nvarchar(max)" />
+          <Property Name="InnerDiameter" Type="float" Nullable="false" />
+          <Property Name="ModelHeight" Type="float" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="MoldType" Type="nvarchar(max)" />
+          <Property Name="MoldName" Type="nvarchar(max)" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EstimateUsedCount" Type="int" Nullable="false" />
+          <Property Name="CurrentUsedCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDVHPProcesses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CodeName" Type="nvarchar(max)" />
+          <Property Name="CodeMeaning" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Deliveries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="InvoiceNumber" Type="nvarchar(max)" />
+          <Property Name="DeliveryNumber" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="ShipTime" Type="datetime" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="PackageType" Type="nvarchar(max)" />
+          <Property Name="PackageInformation" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="DeliveryName" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DeliveryItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductType" Type="nvarchar(max)" />
+          <Property Name="DetailRecord" Type="nvarchar(max)" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="DeliveryID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductID" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Customer" Type="nvarchar(max)" />
+          <Property Name="PO" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Abbr" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="PackNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogErrors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Error" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LogInformations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Log" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaintenancePlans">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="DeviceCode" Type="nvarchar(max)" />
+          <Property Name="PlanItem" Type="nvarchar(max)" />
+          <Property Name="IntervalCount" Type="int" Nullable="false" />
+          <Property Name="CurrentCount" Type="int" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaintenanceRecords">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="PlanID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MaintenancePersons" Type="nvarchar(max)" />
+          <Property Name="MaintenanceContent" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaterialInventoryIns">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Purity" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="MaterialLot" Type="nvarchar(max)" />
+          <Property Name="Supplier" Type="nvarchar(max)" />
+          <Property Name="PMINumber" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaterialInventoryOuts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="MaterialLot" Type="nvarchar(max)" />
+          <Property Name="PMINumber" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Purity" Type="nvarchar(max)" />
+          <Property Name="Receiver" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaterialNeeds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Purity" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="SpecialNeeds" Type="nvarchar(max)" />
+          <Property Name="PMINumber" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaterialOrderItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Purity" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ProvideRawMaterial" Type="nvarchar(max)" />
+          <Property Name="DeliveryDate" Type="datetime" Nullable="false" />
+          <Property Name="UnitPrice" Type="float" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="MaterialOrderID" Type="uniqueidentifier" />
+          <Property Name="PMINumber" Type="nvarchar(max)" />
+          <Property Name="OrderItemNumber" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MaterialOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="OrderPO" Type="nvarchar(max)" />
+          <Property Name="Supplier" Type="nvarchar(max)" />
+          <Property Name="SupplierAbbr" Type="nvarchar(max)" />
+          <Property Name="SupplierReceiver" Type="nvarchar(max)" />
+          <Property Name="SupplierEmail" Type="nvarchar(max)" />
+          <Property Name="SupplierAddress" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="ShipFee" Type="float" Nullable="false" />
+          <Property Name="Priority" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PMSOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar(max)" />
+          <Property Name="PO" Type="nvarchar(max)" />
+          <Property Name="CompositionStandard" Type="nvarchar(max)" />
+          <Property Name="CompositionOriginal" Type="nvarchar(max)" />
+          <Property Name="ProductType" Type="nvarchar(max)" />
+          <Property Name="Purity" Type="nvarchar(max)" />
+          <Property Name="Quantity" Type="float" Nullable="false" />
+          <Property Name="QuantityUnit" Type="nvarchar(max)" />
+          <Property Name="Dimension" Type="nvarchar(max)" />
+          <Property Name="DimensionDetails" Type="nvarchar(max)" />
+          <Property Name="SampleNeed" Type="nvarchar(max)" />
+          <Property Name="DeadLine" Type="datetime" Nullable="false" />
+          <Property Name="MinimumAcceptDefect" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Priority" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="StateRemark" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="PolicyType" Type="nvarchar(max)" />
+          <Property Name="PMINumber" Type="nvarchar(max)" />
+          <Property Name="CompositionAbbr" Type="nvarchar(max)" />
+          <Property Name="ReviewTime" Type="datetime" Nullable="false" />
+          <Property Name="Reviewer" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PMSPlanVHPs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="OrderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PlanDate" Type="datetime" Nullable="false" />
+          <Property Name="VHPDeviceCode" Type="nvarchar(max)" />
+          <Property Name="CalculationDensity" Type="float" Nullable="false" />
+          <Property Name="MoldDiameter" Type="float" Nullable="false" />
+          <Property Name="Thickness" Type="float" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="GrainSize" Type="nvarchar(max)" />
+          <Property Name="MillingRequirement" Type="nvarchar(max)" />
+          <Property Name="RoomTemperature" Type="float" Nullable="false" />
+          <Property Name="RoomHumidity" Type="float" Nullable="false" />
+          <Property Name="PreTemperature" Type="float" Nullable="false" />
+          <Property Name="PrePressure" Type="float" Nullable="false" />
+          <Property Name="Temperature" Type="float" Nullable="false" />
+          <Property Name="Pressure" Type="float" Nullable="false" />
+          <Property Name="Vaccum" Type="float" Nullable="false" />
+          <Property Name="KeepTempTime" Type="float" Nullable="false" />
+          <Property Name="SpecialRequirement" Type="nvarchar(max)" />
+          <Property Name="FillingRequirement" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="ProcessCode" Type="nvarchar(max)" />
+          <Property Name="VHPRequirement" Type="nvarchar(max)" />
+          <Property Name="MachineRequirement" Type="nvarchar(max)" />
+          <Property Name="MoldType" Type="nvarchar(max)" />
+          <Property Name="PlanLot" Type="int" Nullable="false" />
+          <Property Name="SingleWeight" Type="float" Nullable="false" />
+          <Property Name="AllWeight" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="ProductType" Type="nvarchar(max)" />
+          <Property Name="ProductID" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Abbr" Type="nvarchar(max)" />
+          <Property Name="Customer" Type="nvarchar(max)" />
+          <Property Name="PO" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="DetailRecord" Type="nvarchar(max)" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="Dimension" Type="nvarchar(max)" />
+          <Property Name="DimensionActual" Type="nvarchar(max)" />
+          <Property Name="Defects" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RecordBondings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="InstructionCode" Type="nvarchar(max)" />
+          <Property Name="TargetComposition" Type="nvarchar(max)" />
+          <Property Name="TargetAppearance" Type="nvarchar(max)" />
+          <Property Name="TargetWarpageCheck" Type="nvarchar(max)" />
+          <Property Name="TargetThicknessCheck" Type="nvarchar(max)" />
+          <Property Name="TargetDiameterCheck" Type="nvarchar(max)" />
+          <Property Name="TargetCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="PlateLot" Type="nvarchar(max)" />
+          <Property Name="PlateMaterial" Type="nvarchar(max)" />
+          <Property Name="PlateBelong" Type="nvarchar(max)" />
+          <Property Name="PlateDimension" Type="nvarchar(max)" />
+          <Property Name="PlateUseCount" Type="nvarchar(max)" />
+          <Property Name="PlateHardness" Type="nvarchar(max)" />
+          <Property Name="PlateSuplier" Type="nvarchar(max)" />
+          <Property Name="PlateAppearance" Type="nvarchar(max)" />
+          <Property Name="PlateCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="WeldMaterial" Type="nvarchar(max)" />
+          <Property Name="TargetProductID" Type="nvarchar(max)" />
+          <Property Name="TargetAbbr" Type="nvarchar(max)" />
+          <Property Name="TargetCustomer" Type="nvarchar(max)" />
+          <Property Name="TargetPO" Type="nvarchar(max)" />
+          <Property Name="TargetWeight" Type="nvarchar(max)" />
+          <Property Name="TargetDetailRecord" Type="nvarchar(max)" />
+          <Property Name="TargetDimensionActual" Type="nvarchar(max)" />
+          <Property Name="TargetPerson" Type="nvarchar(max)" />
+          <Property Name="PlateLastWeldMaterial" Type="nvarchar(max)" />
+          <Property Name="PlateOtherRecord" Type="nvarchar(max)" />
+          <Property Name="PlatePerson" Type="nvarchar(max)" />
+          <Property Name="TargetPreProcessRecord" Type="nvarchar(max)" />
+          <Property Name="TargetPreProcessPerson" Type="nvarchar(max)" />
+          <Property Name="TargetPreProcessCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="PlatePreProcessRecord" Type="nvarchar(max)" />
+          <Property Name="PlatePreProcessPerson" Type="nvarchar(max)" />
+          <Property Name="PlatePreProcessCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="WeldCuStringDiameter" Type="nvarchar(max)" />
+          <Property Name="WeldHold" Type="nvarchar(max)" />
+          <Property Name="WeldPerson" Type="nvarchar(max)" />
+          <Property Name="WeldCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="WarpageFix" Type="nvarchar(max)" />
+          <Property Name="WarpagePerson" Type="nvarchar(max)" />
+          <Property Name="WarpageCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="DimensionCheck" Type="nvarchar(max)" />
+          <Property Name="DimensionWarpageCheck" Type="nvarchar(max)" />
+          <Property Name="DimensionPerson" Type="nvarchar(max)" />
+          <Property Name="DimensionCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="BindingCheck" Type="nvarchar(max)" />
+          <Property Name="BindingPerson" Type="nvarchar(max)" />
+          <Property Name="BindingCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="SprayCheck" Type="nvarchar(max)" />
+          <Property Name="SprayPerson" Type="nvarchar(max)" />
+          <Property Name="SprayCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="CleanCheck" Type="nvarchar(max)" />
+          <Property Name="CleanPerson" Type="nvarchar(max)" />
+          <Property Name="CleanCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="ApperanceCheck" Type="nvarchar(max)" />
+          <Property Name="ApperancePerson" Type="nvarchar(max)" />
+          <Property Name="ApperanceCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="PackCheck" Type="nvarchar(max)" />
+          <Property Name="PackPerson" Type="nvarchar(max)" />
+          <Property Name="PackCheckTime" Type="datetime" Nullable="false" />
+          <Property Name="TargetDimension" Type="nvarchar(max)" />
+          <Property Name="TargetDefects" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RecordDeMolds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Diameter1" Type="float" Nullable="false" />
+          <Property Name="Diameter2" Type="float" Nullable="false" />
+          <Property Name="Thickness1" Type="float" Nullable="false" />
+          <Property Name="Thickness2" Type="float" Nullable="false" />
+          <Property Name="Thickness3" Type="float" Nullable="false" />
+          <Property Name="Thickness4" Type="float" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="VHPPlanLot" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="Temperature1" Type="nvarchar(max)" />
+          <Property Name="Temperature2" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="DeMoldType" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RecordMachines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Dimension" Type="nvarchar(max)" />
+          <Property Name="ExtraRequirement" Type="nvarchar(max)" />
+          <Property Name="Diameter1" Type="float" Nullable="false" />
+          <Property Name="Diameter2" Type="float" Nullable="false" />
+          <Property Name="Thickness1" Type="float" Nullable="false" />
+          <Property Name="Thickness2" Type="float" Nullable="false" />
+          <Property Name="Thickness3" Type="float" Nullable="false" />
+          <Property Name="Thickness4" Type="float" Nullable="false" />
+          <Property Name="Defects" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="VHPPlanLot" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RecordMillings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MillingTool" Type="nvarchar(max)" />
+          <Property Name="GasProtection" Type="nvarchar(max)" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="MaterialSource" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="WeightIn" Type="float" Nullable="false" />
+          <Property Name="WeightOut" Type="float" Nullable="false" />
+          <Property Name="WeightRemain" Type="float" Nullable="false" />
+          <Property Name="VHPPlanLot" Type="nvarchar(max)" />
+          <Property Name="Ratio" Type="float" Nullable="false" />
+          <Property Name="MillingTime" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RecordTests">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductID" Type="nvarchar(max)" />
+          <Property Name="Composition" Type="nvarchar(max)" />
+          <Property Name="CompositionAbbr" Type="nvarchar(max)" />
+          <Property Name="PO" Type="nvarchar(max)" />
+          <Property Name="Customer" Type="nvarchar(max)" />
+          <Property Name="Dimension" Type="nvarchar(max)" />
+          <Property Name="Density" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="Resistance" Type="nvarchar(max)" />
+          <Property Name="CompositionXRF" Type="nvarchar(max)" />
+          <Property Name="DimensionActual" Type="nvarchar(max)" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Sample" Type="nvarchar(max)" />
+          <Property Name="TestType" Type="nvarchar(max)" />
+          <Property Name="Defects" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RecordVHPs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Creator" Type="nvarchar(max)" />
+          <Property Name="Vaccum" Type="float" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="CurrentTime" Type="datetime" Nullable="false" />
+          <Property Name="PV1" Type="float" Nullable="false" />
+          <Property Name="PV2" Type="float" Nullable="false" />
+          <Property Name="PV3" Type="float" Nullable="false" />
+          <Property Name="SV" Type="float" Nullable="false" />
+          <Property Name="Ton" Type="float" Nullable="false" />
+          <Property Name="Shift1" Type="float" Nullable="false" />
+          <Property Name="Shift2" Type="float" Nullable="false" />
+          <Property Name="Omega" Type="float" Nullable="false" />
+          <Property Name="WaterTemperatureOut" Type="float" Nullable="false" />
+          <Property Name="WaterTemperatureIn" Type="float" Nullable="false" />
+          <Property Name="ExtraInformation" Type="nvarchar(max)" />
+          <Property Name="PlanVHPID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="UserAccesses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccessName" Type="nvarchar(max)" />
+          <Property Name="AccessCode" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="ExtraInformation" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupName" Type="nvarchar(max)" />
+          <Property Name="ExtraInformation" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRoleUserAccesses">
+          <Key>
+            <PropertyRef Name="UserRole_ID" />
+            <PropertyRef Name="UserAccess_ID" />
+          </Key>
+          <Property Name="UserRole_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserAccess_ID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="RealName" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID">
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1" />
+          <End Role="DeliveryItems" Type="Self.DeliveryItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliveries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeliveryItems">
+              <PropertyRef Name="DeliveryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID">
+          <End Role="MaterialOrders" Type="Self.MaterialOrders" Multiplicity="0..1" />
+          <End Role="MaterialOrderItems" Type="Self.MaterialOrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialOrderItems">
+              <PropertyRef Name="MaterialOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID">
+          <End Role="PMSOrders" Type="Self.PMSOrders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PMSPlanVHPs" Type="Self.PMSPlanVHPs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PMSOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PMSPlanVHPs">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserRoleUserAccesses_dbo_UserAccesses_UserAccess_ID">
+          <End Role="UserAccesses" Type="Self.UserAccesses" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRoleUserAccesses" Type="Self.UserRoleUserAccesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccesses">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoleUserAccesses">
+              <PropertyRef Name="UserAccess_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserRoleUserAccesses_dbo_UserRoles_UserRole_ID">
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserRoleUserAccesses" Type="Self.UserRoleUserAccesses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRoles">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRoleUserAccesses">
+              <PropertyRef Name="UserRole_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PMSModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDCompounds" EntityType="Self.BDCompounds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDCustomers" EntityType="Self.BDCustomers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDDeliveryAddresses" EntityType="Self.BDDeliveryAddresses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDElementGroupItems" EntityType="Self.BDElementGroupItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDElementGroups" EntityType="Self.BDElementGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDElements" EntityType="Self.BDElements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDSieves" EntityType="Self.BDSieves" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDSuppliers" EntityType="Self.BDSuppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDVHPDevices" EntityType="Self.BDVHPDevices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDVHPMolds" EntityType="Self.BDVHPMolds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BDVHPProcesses" EntityType="Self.BDVHPProcesses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deliveries" EntityType="Self.Deliveries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeliveryItems" EntityType="Self.DeliveryItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogErrors" EntityType="Self.LogErrors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogInformations" EntityType="Self.LogInformations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaintenancePlans" EntityType="Self.MaintenancePlans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaintenanceRecords" EntityType="Self.MaintenanceRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialInventoryIns" EntityType="Self.MaterialInventoryIns" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialInventoryOuts" EntityType="Self.MaterialInventoryOuts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialNeeds" EntityType="Self.MaterialNeeds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialOrderItems" EntityType="Self.MaterialOrderItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialOrders" EntityType="Self.MaterialOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PMSOrders" EntityType="Self.PMSOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PMSPlanVHPs" EntityType="Self.PMSPlanVHPs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordBondings" EntityType="Self.RecordBondings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordDeMolds" EntityType="Self.RecordDeMolds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordMachines" EntityType="Self.RecordMachines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordMillings" EntityType="Self.RecordMillings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordTests" EntityType="Self.RecordTests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordVHPs" EntityType="Self.RecordVHPs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccesses" EntityType="Self.UserAccesses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoleUserAccesses" EntityType="Self.UserRoleUserAccesses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID" Association="Self.FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID">
+            <End Role="Deliveries" EntitySet="Deliveries" />
+            <End Role="DeliveryItems" EntitySet="DeliveryItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID" Association="Self.FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID">
+            <End Role="MaterialOrders" EntitySet="MaterialOrders" />
+            <End Role="MaterialOrderItems" EntitySet="MaterialOrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID" Association="Self.FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID">
+            <End Role="PMSOrders" EntitySet="PMSOrders" />
+            <End Role="PMSPlanVHPs" EntitySet="PMSPlanVHPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserRoleUserAccesses_dbo_UserAccesses_UserAccess_ID" Association="Self.FK_dbo_UserRoleUserAccesses_dbo_UserAccesses_UserAccess_ID">
+            <End Role="UserAccesses" EntitySet="UserAccesses" />
+            <End Role="UserRoleUserAccesses" EntitySet="UserRoleUserAccesses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserRoleUserAccesses_dbo_UserRoles_UserRole_ID" Association="Self.FK_dbo_UserRoleUserAccesses_dbo_UserRoles_UserRole_ID">
+            <End Role="UserRoles" EntitySet="UserRoles" />
+            <End Role="UserRoleUserAccesses" EntitySet="UserRoleUserAccesses" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDCompounds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="Double" Nullable="false" />
+          <Property Name="MeltingPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BoilingPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialProperty" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InformationSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BDCustomers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Memo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BDDeliveryAddresses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Receiver" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CellPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BDElementGroupItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="GroupElementID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GroupNumber" Type="Int32" Nullable="false" />
+          <Property Name="MolWeight" Type="Double" Nullable="false" />
+          <Property Name="At" Type="Double" Nullable="false" />
+          <Property Name="OrderNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDElementGroups">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="BDElements">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AtomicNumber" Type="Int32" Nullable="false" />
+          <Property Name="MolWeight" Type="Double" Nullable="false" />
+          <Property Name="Density" Type="Double" Nullable="false" />
+          <Property Name="MeltingPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BoilingPoint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BDSieves">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="SieveName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mesh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Manufacuture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EstimateUsedCount" Type="Int32" Nullable="false" />
+          <Property Name="CurrentCount" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="BDSuppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CellPhone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BDVHPDevices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HighestTemperature" Type="Double" Nullable="false" />
+          <Property Name="HighestPressure" Type="Double" Nullable="false" />
+          <Property Name="HighestDiameter" Type="Double" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReceiveTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="BDVHPMolds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="MoldDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InnerDiameter" Type="Double" Nullable="false" />
+          <Property Name="ModelHeight" Type="Double" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MoldType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoldName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstimateUsedCount" Type="Int32" Nullable="false" />
+          <Property Name="CurrentUsedCount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BDVHPProcesses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CodeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeMeaning" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Deliveries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShipTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackageType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackageInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DeliveryItems" Relationship="Self.FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID" FromRole="Deliveries" ToRole="DeliveryItems" />
+        </EntityType>
+        <EntityType Name="DeliveryItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DetailRecord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryID" Type="Guid" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackNumber" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Deliveries" Relationship="Self.FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID" FromRole="DeliveryItems" ToRole="Deliveries" />
+        </EntityType>
+        <EntityType Name="LogErrors">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LogInformations">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Log" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaintenancePlans">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlanItem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IntervalCount" Type="Int32" Nullable="false" />
+          <Property Name="CurrentCount" Type="Int32" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaintenanceRecords">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlanID" Type="Guid" Nullable="false" />
+          <Property Name="MaintenancePersons" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaintenanceContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaterialInventoryIns">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialLot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PMINumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaterialInventoryOuts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MaterialLot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PMINumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Receiver" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaterialNeeds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="SpecialNeeds" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PMINumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MaterialOrderItems">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProvideRawMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UnitPrice" Type="Double" Nullable="false" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="MaterialOrderID" Type="Guid" />
+          <Property Name="PMINumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderItemNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MaterialOrders" Relationship="Self.FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID" FromRole="MaterialOrderItems" ToRole="MaterialOrders" />
+        </EntityType>
+        <EntityType Name="MaterialOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderPO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Supplier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierAbbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierReceiver" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShipFee" Type="Double" Nullable="false" />
+          <Property Name="Priority" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MaterialOrderItems" Relationship="Self.FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID" FromRole="MaterialOrders" ToRole="MaterialOrderItems" />
+        </EntityType>
+        <EntityType Name="PMSOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompositionStandard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompositionOriginal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Purity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Double" Nullable="false" />
+          <Property Name="QuantityUnit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DimensionDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SampleNeed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeadLine" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MinimumAcceptDefect" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StateRemark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PolicyType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PMINumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompositionAbbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Reviewer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PMSPlanVHPs" Relationship="Self.FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID" FromRole="PMSOrders" ToRole="PMSPlanVHPs" />
+        </EntityType>
+        <EntityType Name="PMSPlanVHPs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderID" Type="Guid" Nullable="false" />
+          <Property Name="PlanDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VHPDeviceCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CalculationDensity" Type="Double" Nullable="false" />
+          <Property Name="MoldDiameter" Type="Double" Nullable="false" />
+          <Property Name="Thickness" Type="Double" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="GrainSize" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MillingRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoomTemperature" Type="Double" Nullable="false" />
+          <Property Name="RoomHumidity" Type="Double" Nullable="false" />
+          <Property Name="PreTemperature" Type="Double" Nullable="false" />
+          <Property Name="PrePressure" Type="Double" Nullable="false" />
+          <Property Name="Temperature" Type="Double" Nullable="false" />
+          <Property Name="Pressure" Type="Double" Nullable="false" />
+          <Property Name="Vaccum" Type="Double" Nullable="false" />
+          <Property Name="KeepTempTime" Type="Double" Nullable="false" />
+          <Property Name="SpecialRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FillingRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VHPRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MachineRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoldType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlanLot" Type="Int32" Nullable="false" />
+          <Property Name="SingleWeight" Type="Double" Nullable="false" />
+          <Property Name="AllWeight" Type="Double" Nullable="false" />
+          <NavigationProperty Name="PMSOrders" Relationship="Self.FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID" FromRole="PMSPlanVHPs" ToRole="PMSOrders" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DetailRecord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DimensionActual" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Defects" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecordBondings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InstructionCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetComposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetAppearance" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetWarpageCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetThicknessCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetDiameterCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PlateLot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateBelong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateDimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateUseCount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateHardness" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateSuplier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateAppearance" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WeldMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetProductID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetAbbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetCustomer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetPO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetWeight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetDetailRecord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetDimensionActual" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateLastWeldMaterial" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlateOtherRecord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlatePerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetPreProcessRecord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetPreProcessPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetPreProcessCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PlatePreProcessRecord" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlatePreProcessPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlatePreProcessCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WeldCuStringDiameter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WeldHold" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WeldPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WeldCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WarpageFix" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WarpagePerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WarpageCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DimensionCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DimensionWarpageCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DimensionPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DimensionCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BindingCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BindingPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BindingCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SprayCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SprayPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SprayCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CleanCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CleanPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CleanCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ApperanceCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApperancePerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApperanceCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PackCheck" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PackCheckTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TargetDimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TargetDefects" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecordDeMolds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Diameter1" Type="Double" Nullable="false" />
+          <Property Name="Diameter2" Type="Double" Nullable="false" />
+          <Property Name="Thickness1" Type="Double" Nullable="false" />
+          <Property Name="Thickness2" Type="Double" Nullable="false" />
+          <Property Name="Thickness3" Type="Double" Nullable="false" />
+          <Property Name="Thickness4" Type="Double" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VHPPlanLot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Temperature1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Temperature2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="DeMoldType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecordMachines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Dimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraRequirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Diameter1" Type="Double" Nullable="false" />
+          <Property Name="Diameter2" Type="Double" Nullable="false" />
+          <Property Name="Thickness1" Type="Double" Nullable="false" />
+          <Property Name="Thickness2" Type="Double" Nullable="false" />
+          <Property Name="Thickness3" Type="Double" Nullable="false" />
+          <Property Name="Thickness4" Type="Double" Nullable="false" />
+          <Property Name="Defects" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VHPPlanLot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecordMillings">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="MillingTool" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GasProtection" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WeightIn" Type="Double" Nullable="false" />
+          <Property Name="WeightOut" Type="Double" Nullable="false" />
+          <Property Name="WeightRemain" Type="Double" Nullable="false" />
+          <Property Name="VHPPlanLot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ratio" Type="Double" Nullable="false" />
+          <Property Name="MillingTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecordTests">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ProductID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Composition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompositionAbbr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dimension" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Density" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Resistance" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompositionXRF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DimensionActual" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sample" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TestType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Defects" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RecordVHPs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Vaccum" Type="Double" Nullable="false" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PV1" Type="Double" Nullable="false" />
+          <Property Name="PV2" Type="Double" Nullable="false" />
+          <Property Name="PV3" Type="Double" Nullable="false" />
+          <Property Name="SV" Type="Double" Nullable="false" />
+          <Property Name="Ton" Type="Double" Nullable="false" />
+          <Property Name="Shift1" Type="Double" Nullable="false" />
+          <Property Name="Shift2" Type="Double" Nullable="false" />
+          <Property Name="Omega" Type="Double" Nullable="false" />
+          <Property Name="WaterTemperatureOut" Type="Double" Nullable="false" />
+          <Property Name="WaterTemperatureIn" Type="Double" Nullable="false" />
+          <Property Name="ExtraInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PlanVHPID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="UserAccesses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="AccessName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AccessCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.UserRoleUserAccesses" FromRole="UserAccesses" ToRole="UserRoles" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraInformation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UserAccesses" Relationship="Self.UserRoleUserAccesses" FromRole="UserRoles" ToRole="UserAccesses" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RealName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID">
+          <End Role="Deliveries" Type="Self.Deliveries" Multiplicity="1" />
+          <End Role="DeliveryItems" Type="Self.DeliveryItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliveries">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DeliveryItems">
+              <PropertyRef Name="DeliveryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID">
+          <End Role="MaterialOrders" Type="Self.MaterialOrders" Multiplicity="0..1" />
+          <End Role="MaterialOrderItems" Type="Self.MaterialOrderItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MaterialOrderItems">
+              <PropertyRef Name="MaterialOrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID">
+          <End Role="PMSOrders" Type="Self.PMSOrders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PMSPlanVHPs" Type="Self.PMSPlanVHPs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PMSOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PMSPlanVHPs">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserRoleUserAccesses">
+          <End Role="UserAccesses" Type="Self.UserAccesses" Multiplicity="*" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="PMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="BDCompounds" EntityType="Self.BDCompounds" />
+          <EntitySet Name="BDCustomers" EntityType="Self.BDCustomers" />
+          <EntitySet Name="BDDeliveryAddresses" EntityType="Self.BDDeliveryAddresses" />
+          <EntitySet Name="BDElementGroupItems" EntityType="Self.BDElementGroupItems" />
+          <EntitySet Name="BDElementGroups" EntityType="Self.BDElementGroups" />
+          <EntitySet Name="BDElements" EntityType="Self.BDElements" />
+          <EntitySet Name="BDSieves" EntityType="Self.BDSieves" />
+          <EntitySet Name="BDSuppliers" EntityType="Self.BDSuppliers" />
+          <EntitySet Name="BDVHPDevices" EntityType="Self.BDVHPDevices" />
+          <EntitySet Name="BDVHPMolds" EntityType="Self.BDVHPMolds" />
+          <EntitySet Name="BDVHPProcesses" EntityType="Self.BDVHPProcesses" />
+          <EntitySet Name="Deliveries" EntityType="Self.Deliveries" />
+          <EntitySet Name="DeliveryItems" EntityType="Self.DeliveryItems" />
+          <EntitySet Name="LogErrors" EntityType="Self.LogErrors" />
+          <EntitySet Name="LogInformations" EntityType="Self.LogInformations" />
+          <EntitySet Name="MaintenancePlans" EntityType="Self.MaintenancePlans" />
+          <EntitySet Name="MaintenanceRecords" EntityType="Self.MaintenanceRecords" />
+          <EntitySet Name="MaterialInventoryIns" EntityType="Self.MaterialInventoryIns" />
+          <EntitySet Name="MaterialInventoryOuts" EntityType="Self.MaterialInventoryOuts" />
+          <EntitySet Name="MaterialNeeds" EntityType="Self.MaterialNeeds" />
+          <EntitySet Name="MaterialOrderItems" EntityType="Self.MaterialOrderItems" />
+          <EntitySet Name="MaterialOrders" EntityType="Self.MaterialOrders" />
+          <EntitySet Name="PMSOrders" EntityType="Self.PMSOrders" />
+          <EntitySet Name="PMSPlanVHPs" EntityType="Self.PMSPlanVHPs" />
+          <EntitySet Name="Products" EntityType="Self.Products" />
+          <EntitySet Name="RecordBondings" EntityType="Self.RecordBondings" />
+          <EntitySet Name="RecordDeMolds" EntityType="Self.RecordDeMolds" />
+          <EntitySet Name="RecordMachines" EntityType="Self.RecordMachines" />
+          <EntitySet Name="RecordMillings" EntityType="Self.RecordMillings" />
+          <EntitySet Name="RecordTests" EntityType="Self.RecordTests" />
+          <EntitySet Name="RecordVHPs" EntityType="Self.RecordVHPs" />
+          <EntitySet Name="UserAccesses" EntityType="Self.UserAccesses" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID" Association="Self.FK_dbo_DeliveryItems_dbo_Deliveries_DeliveryID">
+            <End Role="Deliveries" EntitySet="Deliveries" />
+            <End Role="DeliveryItems" EntitySet="DeliveryItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID" Association="Self.FK_dbo_PMSMaterialOrderItems_dbo_PMSMaterialOrders_MaterialOrderID">
+            <End Role="MaterialOrders" EntitySet="MaterialOrders" />
+            <End Role="MaterialOrderItems" EntitySet="MaterialOrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID" Association="Self.FK_dbo_PMSPlanVHPs_dbo_PMSOrders_OrderID">
+            <End Role="PMSOrders" EntitySet="PMSOrders" />
+            <End Role="PMSPlanVHPs" EntitySet="PMSPlanVHPs" />
+          </AssociationSet>
+          <AssociationSet Name="UserRoleUserAccesses" Association="Self.UserRoleUserAccesses">
+            <End Role="UserAccesses" EntitySet="UserAccesses" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PMSModelStoreContainer" CdmEntityContainer="PMSEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="PMSModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDCompounds">
+            <EntityTypeMapping TypeName="PMSModel.BDCompounds">
+              <MappingFragment StoreEntitySet="BDCompounds">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="MeltingPoint" ColumnName="MeltingPoint" />
+                <ScalarProperty Name="BoilingPoint" ColumnName="BoilingPoint" />
+                <ScalarProperty Name="SpecialProperty" ColumnName="SpecialProperty" />
+                <ScalarProperty Name="InformationSource" ColumnName="InformationSource" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDCustomers">
+            <EntityTypeMapping TypeName="PMSModel.BDCustomers">
+              <MappingFragment StoreEntitySet="BDCustomers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDDeliveryAddresses">
+            <EntityTypeMapping TypeName="PMSModel.BDDeliveryAddresses">
+              <MappingFragment StoreEntitySet="BDDeliveryAddresses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDElementGroupItems">
+            <EntityTypeMapping TypeName="PMSModel.BDElementGroupItems">
+              <MappingFragment StoreEntitySet="BDElementGroupItems">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GroupElementID" ColumnName="GroupElementID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="MolWeight" ColumnName="MolWeight" />
+                <ScalarProperty Name="At" ColumnName="At" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDElementGroups">
+            <EntityTypeMapping TypeName="PMSModel.BDElementGroups">
+              <MappingFragment StoreEntitySet="BDElementGroups">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDElements">
+            <EntityTypeMapping TypeName="PMSModel.BDElements">
+              <MappingFragment StoreEntitySet="BDElements">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AtomicNumber" ColumnName="AtomicNumber" />
+                <ScalarProperty Name="MolWeight" ColumnName="MolWeight" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="MeltingPoint" ColumnName="MeltingPoint" />
+                <ScalarProperty Name="BoilingPoint" ColumnName="BoilingPoint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDSieves">
+            <EntityTypeMapping TypeName="PMSModel.BDSieves">
+              <MappingFragment StoreEntitySet="BDSieves">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SieveName" ColumnName="SieveName" />
+                <ScalarProperty Name="Mesh" ColumnName="Mesh" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Manufacuture" ColumnName="Manufacuture" />
+                <ScalarProperty Name="EstimateUsedCount" ColumnName="EstimateUsedCount" />
+                <ScalarProperty Name="CurrentCount" ColumnName="CurrentCount" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDSuppliers">
+            <EntityTypeMapping TypeName="PMSModel.BDSuppliers">
+              <MappingFragment StoreEntitySet="BDSuppliers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Abbr" ColumnName="Abbr" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDVHPDevices">
+            <EntityTypeMapping TypeName="PMSModel.BDVHPDevices">
+              <MappingFragment StoreEntitySet="BDVHPDevices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="DeviceInformation" ColumnName="DeviceInformation" />
+                <ScalarProperty Name="HighestTemperature" ColumnName="HighestTemperature" />
+                <ScalarProperty Name="HighestPressure" ColumnName="HighestPressure" />
+                <ScalarProperty Name="HighestDiameter" ColumnName="HighestDiameter" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="ReceiveTime" ColumnName="ReceiveTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDVHPMolds">
+            <EntityTypeMapping TypeName="PMSModel.BDVHPMolds">
+              <MappingFragment StoreEntitySet="BDVHPMolds">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MoldDetails" ColumnName="MoldDetails" />
+                <ScalarProperty Name="InnerDiameter" ColumnName="InnerDiameter" />
+                <ScalarProperty Name="ModelHeight" ColumnName="ModelHeight" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="MoldType" ColumnName="MoldType" />
+                <ScalarProperty Name="MoldName" ColumnName="MoldName" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EstimateUsedCount" ColumnName="EstimateUsedCount" />
+                <ScalarProperty Name="CurrentUsedCount" ColumnName="CurrentUsedCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BDVHPProcesses">
+            <EntityTypeMapping TypeName="PMSModel.BDVHPProcesses">
+              <MappingFragment StoreEntitySet="BDVHPProcesses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+                <ScalarProperty Name="CodeMeaning" ColumnName="CodeMeaning" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deliveries">
+            <EntityTypeMapping TypeName="PMSModel.Deliveries">
+              <MappingFragment StoreEntitySet="Deliveries">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="DeliveryNumber" ColumnName="DeliveryNumber" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ShipTime" ColumnName="ShipTime" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PackageType" ColumnName="PackageType" />
+                <ScalarProperty Name="PackageInformation" ColumnName="PackageInformation" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="DeliveryName" ColumnName="DeliveryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeliveryItems">
+            <EntityTypeMapping TypeName="PMSModel.DeliveryItems">
+              <MappingFragment StoreEntitySet="DeliveryItems">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="DetailRecord" ColumnName="DetailRecord" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="DeliveryID" ColumnName="DeliveryID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Abbr" ColumnName="Abbr" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="PackNumber" ColumnName="PackNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogErrors">
+            <EntityTypeMapping TypeName="PMSModel.LogErrors">
+              <MappingFragment StoreEntitySet="LogErrors">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogInformations">
+            <EntityTypeMapping TypeName="PMSModel.LogInformations">
+              <MappingFragment StoreEntitySet="LogInformations">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Log" ColumnName="Log" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaintenancePlans">
+            <EntityTypeMapping TypeName="PMSModel.MaintenancePlans">
+              <MappingFragment StoreEntitySet="MaintenancePlans">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="DeviceCode" ColumnName="DeviceCode" />
+                <ScalarProperty Name="PlanItem" ColumnName="PlanItem" />
+                <ScalarProperty Name="IntervalCount" ColumnName="IntervalCount" />
+                <ScalarProperty Name="CurrentCount" ColumnName="CurrentCount" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaintenanceRecords">
+            <EntityTypeMapping TypeName="PMSModel.MaintenanceRecords">
+              <MappingFragment StoreEntitySet="MaintenanceRecords">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="MaintenancePersons" ColumnName="MaintenancePersons" />
+                <ScalarProperty Name="MaintenanceContent" ColumnName="MaintenanceContent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialInventoryIns">
+            <EntityTypeMapping TypeName="PMSModel.MaterialInventoryIns">
+              <MappingFragment StoreEntitySet="MaterialInventoryIns">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Purity" ColumnName="Purity" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="MaterialLot" ColumnName="MaterialLot" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="PMINumber" ColumnName="PMINumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialInventoryOuts">
+            <EntityTypeMapping TypeName="PMSModel.MaterialInventoryOuts">
+              <MappingFragment StoreEntitySet="MaterialInventoryOuts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="MaterialLot" ColumnName="MaterialLot" />
+                <ScalarProperty Name="PMINumber" ColumnName="PMINumber" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Purity" ColumnName="Purity" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialNeeds">
+            <EntityTypeMapping TypeName="PMSModel.MaterialNeeds">
+              <MappingFragment StoreEntitySet="MaterialNeeds">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Purity" ColumnName="Purity" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="SpecialNeeds" ColumnName="SpecialNeeds" />
+                <ScalarProperty Name="PMINumber" ColumnName="PMINumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialOrderItems">
+            <EntityTypeMapping TypeName="PMSModel.MaterialOrderItems">
+              <MappingFragment StoreEntitySet="MaterialOrderItems">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Purity" ColumnName="Purity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProvideRawMaterial" ColumnName="ProvideRawMaterial" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="MaterialOrderID" ColumnName="MaterialOrderID" />
+                <ScalarProperty Name="PMINumber" ColumnName="PMINumber" />
+                <ScalarProperty Name="OrderItemNumber" ColumnName="OrderItemNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialOrders">
+            <EntityTypeMapping TypeName="PMSModel.MaterialOrders">
+              <MappingFragment StoreEntitySet="MaterialOrders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="OrderPO" ColumnName="OrderPO" />
+                <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+                <ScalarProperty Name="SupplierAbbr" ColumnName="SupplierAbbr" />
+                <ScalarProperty Name="SupplierReceiver" ColumnName="SupplierReceiver" />
+                <ScalarProperty Name="SupplierEmail" ColumnName="SupplierEmail" />
+                <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ShipFee" ColumnName="ShipFee" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PMSOrders">
+            <EntityTypeMapping TypeName="PMSModel.PMSOrders">
+              <MappingFragment StoreEntitySet="PMSOrders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="CompositionStandard" ColumnName="CompositionStandard" />
+                <ScalarProperty Name="CompositionOriginal" ColumnName="CompositionOriginal" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="Purity" ColumnName="Purity" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="QuantityUnit" ColumnName="QuantityUnit" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="DimensionDetails" ColumnName="DimensionDetails" />
+                <ScalarProperty Name="SampleNeed" ColumnName="SampleNeed" />
+                <ScalarProperty Name="DeadLine" ColumnName="DeadLine" />
+                <ScalarProperty Name="MinimumAcceptDefect" ColumnName="MinimumAcceptDefect" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="StateRemark" ColumnName="StateRemark" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="PolicyType" ColumnName="PolicyType" />
+                <ScalarProperty Name="PMINumber" ColumnName="PMINumber" />
+                <ScalarProperty Name="CompositionAbbr" ColumnName="CompositionAbbr" />
+                <ScalarProperty Name="ReviewTime" ColumnName="ReviewTime" />
+                <ScalarProperty Name="Reviewer" ColumnName="Reviewer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PMSPlanVHPs">
+            <EntityTypeMapping TypeName="PMSModel.PMSPlanVHPs">
+              <MappingFragment StoreEntitySet="PMSPlanVHPs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="PlanDate" ColumnName="PlanDate" />
+                <ScalarProperty Name="VHPDeviceCode" ColumnName="VHPDeviceCode" />
+                <ScalarProperty Name="CalculationDensity" ColumnName="CalculationDensity" />
+                <ScalarProperty Name="MoldDiameter" ColumnName="MoldDiameter" />
+                <ScalarProperty Name="Thickness" ColumnName="Thickness" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="GrainSize" ColumnName="GrainSize" />
+                <ScalarProperty Name="MillingRequirement" ColumnName="MillingRequirement" />
+                <ScalarProperty Name="RoomTemperature" ColumnName="RoomTemperature" />
+                <ScalarProperty Name="RoomHumidity" ColumnName="RoomHumidity" />
+                <ScalarProperty Name="PreTemperature" ColumnName="PreTemperature" />
+                <ScalarProperty Name="PrePressure" ColumnName="PrePressure" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+                <ScalarProperty Name="Pressure" ColumnName="Pressure" />
+                <ScalarProperty Name="Vaccum" ColumnName="Vaccum" />
+                <ScalarProperty Name="KeepTempTime" ColumnName="KeepTempTime" />
+                <ScalarProperty Name="SpecialRequirement" ColumnName="SpecialRequirement" />
+                <ScalarProperty Name="FillingRequirement" ColumnName="FillingRequirement" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="VHPRequirement" ColumnName="VHPRequirement" />
+                <ScalarProperty Name="MachineRequirement" ColumnName="MachineRequirement" />
+                <ScalarProperty Name="MoldType" ColumnName="MoldType" />
+                <ScalarProperty Name="PlanLot" ColumnName="PlanLot" />
+                <ScalarProperty Name="SingleWeight" ColumnName="SingleWeight" />
+                <ScalarProperty Name="AllWeight" ColumnName="AllWeight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="PMSModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Abbr" ColumnName="Abbr" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="DetailRecord" ColumnName="DetailRecord" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="DimensionActual" ColumnName="DimensionActual" />
+                <ScalarProperty Name="Defects" ColumnName="Defects" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordBondings">
+            <EntityTypeMapping TypeName="PMSModel.RecordBondings">
+              <MappingFragment StoreEntitySet="RecordBondings">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="InstructionCode" ColumnName="InstructionCode" />
+                <ScalarProperty Name="TargetComposition" ColumnName="TargetComposition" />
+                <ScalarProperty Name="TargetAppearance" ColumnName="TargetAppearance" />
+                <ScalarProperty Name="TargetWarpageCheck" ColumnName="TargetWarpageCheck" />
+                <ScalarProperty Name="TargetThicknessCheck" ColumnName="TargetThicknessCheck" />
+                <ScalarProperty Name="TargetDiameterCheck" ColumnName="TargetDiameterCheck" />
+                <ScalarProperty Name="TargetCheckTime" ColumnName="TargetCheckTime" />
+                <ScalarProperty Name="PlateLot" ColumnName="PlateLot" />
+                <ScalarProperty Name="PlateMaterial" ColumnName="PlateMaterial" />
+                <ScalarProperty Name="PlateBelong" ColumnName="PlateBelong" />
+                <ScalarProperty Name="PlateDimension" ColumnName="PlateDimension" />
+                <ScalarProperty Name="PlateUseCount" ColumnName="PlateUseCount" />
+                <ScalarProperty Name="PlateHardness" ColumnName="PlateHardness" />
+                <ScalarProperty Name="PlateSuplier" ColumnName="PlateSuplier" />
+                <ScalarProperty Name="PlateAppearance" ColumnName="PlateAppearance" />
+                <ScalarProperty Name="PlateCheckTime" ColumnName="PlateCheckTime" />
+                <ScalarProperty Name="WeldMaterial" ColumnName="WeldMaterial" />
+                <ScalarProperty Name="TargetProductID" ColumnName="TargetProductID" />
+                <ScalarProperty Name="TargetAbbr" ColumnName="TargetAbbr" />
+                <ScalarProperty Name="TargetCustomer" ColumnName="TargetCustomer" />
+                <ScalarProperty Name="TargetPO" ColumnName="TargetPO" />
+                <ScalarProperty Name="TargetWeight" ColumnName="TargetWeight" />
+                <ScalarProperty Name="TargetDetailRecord" ColumnName="TargetDetailRecord" />
+                <ScalarProperty Name="TargetDimensionActual" ColumnName="TargetDimensionActual" />
+                <ScalarProperty Name="TargetPerson" ColumnName="TargetPerson" />
+                <ScalarProperty Name="PlateLastWeldMaterial" ColumnName="PlateLastWeldMaterial" />
+                <ScalarProperty Name="PlateOtherRecord" ColumnName="PlateOtherRecord" />
+                <ScalarProperty Name="PlatePerson" ColumnName="PlatePerson" />
+                <ScalarProperty Name="TargetPreProcessRecord" ColumnName="TargetPreProcessRecord" />
+                <ScalarProperty Name="TargetPreProcessPerson" ColumnName="TargetPreProcessPerson" />
+                <ScalarProperty Name="TargetPreProcessCheckTime" ColumnName="TargetPreProcessCheckTime" />
+                <ScalarProperty Name="PlatePreProcessRecord" ColumnName="PlatePreProcessRecord" />
+                <ScalarProperty Name="PlatePreProcessPerson" ColumnName="PlatePreProcessPerson" />
+                <ScalarProperty Name="PlatePreProcessCheckTime" ColumnName="PlatePreProcessCheckTime" />
+                <ScalarProperty Name="WeldCuStringDiameter" ColumnName="WeldCuStringDiameter" />
+                <ScalarProperty Name="WeldHold" ColumnName="WeldHold" />
+                <ScalarProperty Name="WeldPerson" ColumnName="WeldPerson" />
+                <ScalarProperty Name="WeldCheckTime" ColumnName="WeldCheckTime" />
+                <ScalarProperty Name="WarpageFix" ColumnName="WarpageFix" />
+                <ScalarProperty Name="WarpagePerson" ColumnName="WarpagePerson" />
+                <ScalarProperty Name="WarpageCheckTime" ColumnName="WarpageCheckTime" />
+                <ScalarProperty Name="DimensionCheck" ColumnName="DimensionCheck" />
+                <ScalarProperty Name="DimensionWarpageCheck" ColumnName="DimensionWarpageCheck" />
+                <ScalarProperty Name="DimensionPerson" ColumnName="DimensionPerson" />
+                <ScalarProperty Name="DimensionCheckTime" ColumnName="DimensionCheckTime" />
+                <ScalarProperty Name="BindingCheck" ColumnName="BindingCheck" />
+                <ScalarProperty Name="BindingPerson" ColumnName="BindingPerson" />
+                <ScalarProperty Name="BindingCheckTime" ColumnName="BindingCheckTime" />
+                <ScalarProperty Name="SprayCheck" ColumnName="SprayCheck" />
+                <ScalarProperty Name="SprayPerson" ColumnName="SprayPerson" />
+                <ScalarProperty Name="SprayCheckTime" ColumnName="SprayCheckTime" />
+                <ScalarProperty Name="CleanCheck" ColumnName="CleanCheck" />
+                <ScalarProperty Name="CleanPerson" ColumnName="CleanPerson" />
+                <ScalarProperty Name="CleanCheckTime" ColumnName="CleanCheckTime" />
+                <ScalarProperty Name="ApperanceCheck" ColumnName="ApperanceCheck" />
+                <ScalarProperty Name="ApperancePerson" ColumnName="ApperancePerson" />
+                <ScalarProperty Name="ApperanceCheckTime" ColumnName="ApperanceCheckTime" />
+                <ScalarProperty Name="PackCheck" ColumnName="PackCheck" />
+                <ScalarProperty Name="PackPerson" ColumnName="PackPerson" />
+                <ScalarProperty Name="PackCheckTime" ColumnName="PackCheckTime" />
+                <ScalarProperty Name="TargetDimension" ColumnName="TargetDimension" />
+                <ScalarProperty Name="TargetDefects" ColumnName="TargetDefects" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordDeMolds">
+            <EntityTypeMapping TypeName="PMSModel.RecordDeMolds">
+              <MappingFragment StoreEntitySet="RecordDeMolds">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Diameter1" ColumnName="Diameter1" />
+                <ScalarProperty Name="Diameter2" ColumnName="Diameter2" />
+                <ScalarProperty Name="Thickness1" ColumnName="Thickness1" />
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="Thickness3" ColumnName="Thickness3" />
+                <ScalarProperty Name="Thickness4" ColumnName="Thickness4" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="VHPPlanLot" ColumnName="VHPPlanLot" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="Temperature1" ColumnName="Temperature1" />
+                <ScalarProperty Name="Temperature2" ColumnName="Temperature2" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="DeMoldType" ColumnName="DeMoldType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordMachines">
+            <EntityTypeMapping TypeName="PMSModel.RecordMachines">
+              <MappingFragment StoreEntitySet="RecordMachines">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="ExtraRequirement" ColumnName="ExtraRequirement" />
+                <ScalarProperty Name="Diameter1" ColumnName="Diameter1" />
+                <ScalarProperty Name="Diameter2" ColumnName="Diameter2" />
+                <ScalarProperty Name="Thickness1" ColumnName="Thickness1" />
+                <ScalarProperty Name="Thickness2" ColumnName="Thickness2" />
+                <ScalarProperty Name="Thickness3" ColumnName="Thickness3" />
+                <ScalarProperty Name="Thickness4" ColumnName="Thickness4" />
+                <ScalarProperty Name="Defects" ColumnName="Defects" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="VHPPlanLot" ColumnName="VHPPlanLot" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordMillings">
+            <EntityTypeMapping TypeName="PMSModel.RecordMillings">
+              <MappingFragment StoreEntitySet="RecordMillings">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MillingTool" ColumnName="MillingTool" />
+                <ScalarProperty Name="GasProtection" ColumnName="GasProtection" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="MaterialSource" ColumnName="MaterialSource" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="WeightIn" ColumnName="WeightIn" />
+                <ScalarProperty Name="WeightOut" ColumnName="WeightOut" />
+                <ScalarProperty Name="WeightRemain" ColumnName="WeightRemain" />
+                <ScalarProperty Name="VHPPlanLot" ColumnName="VHPPlanLot" />
+                <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+                <ScalarProperty Name="MillingTime" ColumnName="MillingTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordTests">
+            <EntityTypeMapping TypeName="PMSModel.RecordTests">
+              <MappingFragment StoreEntitySet="RecordTests">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Composition" ColumnName="Composition" />
+                <ScalarProperty Name="CompositionAbbr" ColumnName="CompositionAbbr" />
+                <ScalarProperty Name="PO" ColumnName="PO" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="Dimension" ColumnName="Dimension" />
+                <ScalarProperty Name="Density" ColumnName="Density" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Resistance" ColumnName="Resistance" />
+                <ScalarProperty Name="CompositionXRF" ColumnName="CompositionXRF" />
+                <ScalarProperty Name="DimensionActual" ColumnName="DimensionActual" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Sample" ColumnName="Sample" />
+                <ScalarProperty Name="TestType" ColumnName="TestType" />
+                <ScalarProperty Name="Defects" ColumnName="Defects" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordVHPs">
+            <EntityTypeMapping TypeName="PMSModel.RecordVHPs">
+              <MappingFragment StoreEntitySet="RecordVHPs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="Vaccum" ColumnName="Vaccum" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CurrentTime" ColumnName="CurrentTime" />
+                <ScalarProperty Name="PV1" ColumnName="PV1" />
+                <ScalarProperty Name="PV2" ColumnName="PV2" />
+                <ScalarProperty Name="PV3" ColumnName="PV3" />
+                <ScalarProperty Name="SV" ColumnName="SV" />
+                <ScalarProperty Name="Ton" ColumnName="Ton" />
+                <ScalarProperty Name="Shift1" ColumnName="Shift1" />
+                <ScalarProperty Name="Shift2" ColumnName="Shift2" />
+                <ScalarProperty Name="Omega" ColumnName="Omega" />
+                <ScalarProperty Name="WaterTemperatureOut" ColumnName="WaterTemperatureOut" />
+                <ScalarProperty Name="WaterTemperatureIn" ColumnName="WaterTemperatureIn" />
+                <ScalarProperty Name="ExtraInformation" ColumnName="ExtraInformation" />
+                <ScalarProperty Name="PlanVHPID" ColumnName="PlanVHPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccesses">
+            <EntityTypeMapping TypeName="PMSModel.UserAccesses">
+              <MappingFragment StoreEntitySet="UserAccesses">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AccessName" ColumnName="AccessName" />
+                <ScalarProperty Name="AccessCode" ColumnName="AccessCode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ExtraInformation" ColumnName="ExtraInformation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="PMSModel.UserRoles">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="ExtraInformation" ColumnName="ExtraInformation" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PMSModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="RealName" ColumnName="RealName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UserRoleUserAccesses" TypeName="PMSModel.UserRoleUserAccesses" StoreEntitySet="UserRoleUserAccesses">
+            <EndProperty Name="UserAccesses">
+              <ScalarProperty Name="ID" ColumnName="UserAccess_ID" />
+            </EndProperty>
+            <EndProperty Name="UserRoles">
+              <ScalarProperty Name="ID" ColumnName="UserRole_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

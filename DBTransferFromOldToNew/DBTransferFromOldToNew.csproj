@@ -55,7 +55,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDCompounds.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDCustomers.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDDeliveryAddresses.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDElementGroupItems.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDElementGroups.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDElements.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDSieves.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDSuppliers.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDVHPDevices.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDVHPMolds.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDVHPProcesses.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBTransfer.cs" />
+    <Compile Include="Deliveries.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryItems.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogErrors.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogInformations.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenancePlans.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaintenanceRecords.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialInventoryIns.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialInventoryOuts.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialNeeds.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialOrderItems.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialOrders.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="OldDb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,28 +140,70 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OldDb.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ProductDB.Context.cs">
+    <Compile Include="PMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDB.Context.tt</DependentUpon>
+      <DependentUpon>PMS.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductDB.cs">
+    <Compile Include="PMS.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDB.tt</DependentUpon>
+      <DependentUpon>PMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="ProductDB.Designer.cs">
+    <Compile Include="PMS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProductDB.edmx</DependentUpon>
+      <DependentUpon>PMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PMSOrders.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PMSPlanVHPs.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Products.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordBondings.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordDeMolds.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordMachines.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordMillings.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordTests.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordVHPs.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Samples.cs">
-      <DependentUpon>ProductDB.tt</DependentUpon>
+      <DependentUpon>Product.tt</DependentUpon>
     </Compile>
     <Compile Include="Targets.cs">
-      <DependentUpon>ProductDB.tt</DependentUpon>
+      <DependentUpon>Product.tt</DependentUpon>
     </Compile>
     <Compile Include="tb_Density.cs">
       <DependentUpon>OldDb.tt</DependentUpon>
@@ -127,6 +238,15 @@
     <Compile Include="tb_Worker.cs">
       <DependentUpon>OldDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserAccesses.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRoles.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>PMS.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -138,12 +258,19 @@
       <DependentUpon>OldDb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <EntityDeploy Include="ProductDB.edmx">
+    <EntityDeploy Include="Product.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ProductDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>Product.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ProductDB.edmx.diagram">
-      <DependentUpon>ProductDB.edmx</DependentUpon>
+    <EntityDeploy Include="PMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PMS.edmx.diagram">
+      <DependentUpon>PMS.edmx</DependentUpon>
+    </None>
+    <None Include="Product.edmx.diagram">
+      <DependentUpon>Product.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +278,9 @@
       <Project>{f75a9c93-ed94-4c69-82e4-bc069f4e9fef}</Project>
       <Name>PMSDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="OldDb.Context.tt">
@@ -163,19 +293,26 @@
       <DependentUpon>OldDb.edmx</DependentUpon>
       <LastGenOutput>OldDb.cs</LastGenOutput>
     </Content>
-    <Content Include="ProductDB.Context.tt">
+    <Content Include="PMS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductDB.edmx</DependentUpon>
-      <LastGenOutput>ProductDB.Context.cs</LastGenOutput>
+      <DependentUpon>PMS.edmx</DependentUpon>
+      <LastGenOutput>PMS.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ProductDB.tt">
+    <Content Include="PMS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ProductDB.edmx</DependentUpon>
-      <LastGenOutput>ProductDB.cs</LastGenOutput>
+      <DependentUpon>PMS.edmx</DependentUpon>
+      <LastGenOutput>PMS.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Product.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Product.edmx</DependentUpon>
+      <LastGenOutput>Product.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Product.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Product.edmx</DependentUpon>
+      <LastGenOutput>Product.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

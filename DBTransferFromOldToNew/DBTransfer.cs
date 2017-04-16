@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSDAL;
 
 namespace DBTransferFromOldToNew
 {
     public class DBTransfer:IDisposable
     {
-        private PMSDbContext newDb;
-        private dbnewEntities oldDb;
-        private ProductsEntities productDb;
+        private PMSEntities newDb;
+        private db_newEntities oldDb;
+        private ProductsEntities1 productDb;
 
         public DBTransfer()
         {
-            newDb = new PMSDbContext();
-            oldDb = new dbnewEntities();
-            productDb = new ProductsEntities();
+            newDb = new PMSEntities();
+            oldDb = new db_newEntities();
+            productDb = new ProductsEntities1();
         }
 
         public void Dispose()
@@ -34,62 +33,64 @@ namespace DBTransferFromOldToNew
             {
                 var orderId = Guid.NewGuid();
 
-                var newOrder = new PMSOrder();
+                var newOrder = new PMSOrders();
                 newOrder.ID = orderId;
                 newOrder.CustomerName = order.Customer;
                 newOrder.PO = order.PO;
                 newOrder.PMINumber = order.PMIWorkNumber;
                 newOrder.CompositionStandard = order.ProductName;
                 newOrder.CompositionOriginal = order.ProductName;
-                newOrder.CompositoinAbbr = "";
+                newOrder.CompositionAbbr= "";
                 newOrder.ProductType = order.ProductType;
                 newOrder.Purity = order.Purity;
                 newOrder.Quantity = order.Number??0;
                 newOrder.QuantityUnit = order.Unit;
                 newOrder.Dimension = order.Dimension;
-                newOrder.DimensionDetails = "Normal";
+                newOrder.DimensionDetails = "无";
                 newOrder.SampleNeed = "";
-                newOrder.DeadLine = order.SendDateNeed??new DateTime(2016,12,12);
-                newOrder.MinimumAcceptDefect = "Normal";
+                newOrder.DeadLine = order.SendDateNeed??new DateTime(2017,4,16);
+                newOrder.MinimumAcceptDefect = "通常";
                 newOrder.Remark = order.OrderMemo;
-                newOrder.Priority = 1;
-                newOrder.State = 1;
+                newOrder.Priority = "普通";
+                newOrder.State =order.IsFinished==true?"完成":"未完成";
                 newOrder.StateRemark = "";
                 newOrder.CreateTime = order.OrderDate;
                 newOrder.Reviewer = "yr.hu";
-                newOrder.ReviewPassed = true;
-                newOrder.ReviewDate = order.OrderDate;
+                newOrder.ReviewTime = order.OrderDate;
                 newOrder.Creator= "yr.hu";
                 newOrder.PolicyType = "VHP";
-                newOrder.PolicyContent = "";
-                newOrder.PolicyMaker = "yr.hu";
-                newOrder.PolicyMakeDate = order.OrderDate;
 
-                newDb.Orders.Add(newOrder);
+                newDb.PMSOrders.Add(newOrder);
                 //获取对应OrderID的Plans
                 #region Plan
                 var plans = oldDb.tb_Plan.Where(p => p.OrderID == order.OrderID).ToList();
                 foreach (var plan in plans)
                 {
                     var planId = Guid.NewGuid();
-                    var newPlan = new PMSPlanVHP();
+                    var newPlan = new PMSPlanVHPs();
                     newPlan.ID = planId;
+                    newPlan.OrderID = orderId;
                     newPlan.CreateTime = plan.VHPTimePlan;
                     newPlan.Creator = "f.liang";
-                    newPlan.OrderID = orderId;
                     newPlan.PlanDate = plan.VHPTimePlan;
+                    newPlan.PlanLot = 1;
                     newPlan.VHPDeviceCode = plan.DeviceType;
-                    newPlan.MoldType = "GM";
+                    newPlan.MoldType = "高强";
                     newPlan.MoldDiameter = plan.MoldMD ?? 0;
                     newPlan.Thickness = plan.PressThick ?? 0;
                     newPlan.CalculationDensity = plan.DensityCal ?? 0;
                     newPlan.Quantity = plan.PressNum ?? 0;
-                    newPlan.FillingRequirement = "Normal";
-                    newPlan.MillingRequirement = "Normal";
+                    newPlan.VHPRequirement = "通常";
+                    newPlan.FillingRequirement = "通常";
+                    newPlan.MillingRequirement = "通常";
+                    newPlan.MachineRequirement = "通常";
                     newPlan.GrainSize = "-200";
-                    newPlan.PowderWeight = plan.WeightAll ?? 0;
+                    newPlan.SingleWeight = plan.WeightS ?? 0;
+                    newPlan.AllWeight = plan.WeightAll ?? 0;
                     newPlan.RoomTemperature = 25;
                     newPlan.RoomHumidity = 65;
+                    newPlan.Vaccum = 0;
+                    newPlan.GrainSize = "-200";
                     newPlan.PreTemperature = 0;
                     newPlan.PrePressure = 0;
                     double press = 0;
@@ -113,11 +114,9 @@ namespace DBTransferFromOldToNew
 
                     newPlan.KeepTempTime = 0;
                     newPlan.SpecialRequirement = plan.PlanMemo;
-                    newPlan.LaterProcess = "";
-                    newPlan.LaterProcessDetails = "";
-                    newPlan.State = 1;
+                    newPlan.State = "已核验";
 
-                    newDb.VHPPlans.Add(newPlan);
+                    newDb.PMSPlanVHPs.Add(newPlan);
                 }
                 #endregion
             }
@@ -131,16 +130,16 @@ namespace DBTransferFromOldToNew
             var oldDensity = oldDb.tb_Density.ToList();
             foreach (var item in oldDensity)
             {
-                var compound = new BDCompound();
-                compound.ID = Guid.NewGuid();
-                compound.MaterialName = item.Material;
-                compound.Density = item.Density??0;
-                compound.InformationSource = item.Memo;
-                compound.Creator = "xs.zhou";
-                compound.CreateTime = DateTime.Now;
+                //var compound = new BDCompound();
+                //compound.ID = Guid.NewGuid();
+                //compound.MaterialName = item.Material;
+                //compound.Density = item.Density??0;
+                //compound.InformationSource = item.Memo;
+                //compound.Creator = "xs.zhou";
+                //compound.CreateTime = DateTime.Now;
 
 
-                newDb.Compounds.Add(compound);
+                //newDb.Compounds.Add(compound);
             }
             newDb.SaveChanges();
 
@@ -151,14 +150,16 @@ namespace DBTransferFromOldToNew
             var targets = productDb.Targets.ToList();
             targets.ForEach(t =>
             {
-                var product = new PMSProduct()
+                var product = new RecordTests()
                 {
                     ID = t.Id,
+                    TestType="靶材",
                     ProductID = t.Lot,
                     Composition = t.Material,
                     CompositionAbbr = t.MaterialAbbr,
                     CompositionXRF = t.XRFComposition,
                     Weight = t.Weight,
+                    Resistance=t.Resistance,
                     Density = t.Density,
                     Remark = t.Remark,
                     CreateTime = t.CreateDate,
@@ -166,13 +167,15 @@ namespace DBTransferFromOldToNew
                     PO = t.PO,
                     Dimension = t.Dimension,
                     DimensionActual = t.Size,
-                    State = 2,
-                    Creator="xs.zhou"
+                    Defects="无",
+                    Sample="无",
+                    State = "已核验",
+                    Creator = "xs.zhou"
                 };
 
 
 
-                newDb.RecordTestResults.Add(product);
+                newDb.RecordTests.Add(product);
             });
 
             newDb.SaveChanges();

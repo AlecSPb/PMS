@@ -13,10 +13,10 @@ namespace DBTransferFromOldToNew
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbnewEntities : DbContext
+    public partial class db_newEntities : DbContext
     {
-        public dbnewEntities()
-            : base("name=dbnewEntities")
+        public db_newEntities()
+            : base("name=db_newEntities")
         {
         }
     

@@ -19,7 +19,7 @@ namespace DBTransferFromOldToNew
             //transfer.TransferOrderPlan();
             //transfer.TransferDensity();
 
-            //transfer.Product();
+            transfer.Product();
 
             Console.WriteLine("Data Transfer Complete");
             Console.Read();
