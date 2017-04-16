@@ -34,16 +34,23 @@ namespace PMSClient.ViewModel
                         CreateRecordTest();
                         break;
                     case "CoA":
+                        CreateCOA();
                         break;
                     case "CoABridgeLine":
+                        CreateCOABridgeLine();
                         break;
                     case "Opticraft":
+                        CreateReportGASOpticraftGrinding();
                         break;
                     case "TCB":
+                        CreateReportGASElastomer440Blank();
                         break;
                     default:
                         break;
                 }
+
+
+
             }
             catch (Exception ex)
             {
@@ -51,14 +58,15 @@ namespace PMSClient.ViewModel
             }
         }
 
+        #region 创建报告
         private void CreateRecordTest()
         {
             try
             {
-                ReportRecordTest recordTest = new ReportRecordTest();
-                recordTest.SetModel(CurrentRecordTest);
-                recordTest.SetTargetFolder(CurrentFolder);
-                recordTest.Output();
+                ReportRecordTest report = new ReportRecordTest();
+                report.SetModel(CurrentRecordTest);
+                report.SetTargetFolder(CurrentFolder);
+                report.Output();
                 NavigationService.ShowStatusMessage("测试记录报告创建完毕！");
             }
             catch (Exception ex)
@@ -67,6 +75,80 @@ namespace PMSClient.ViewModel
                 NavigationService.ShowStatusMessage(ex.Message);
             }
         }
+
+        private void CreateCOA()
+        {
+            try
+            {
+                ReportCOA report = new ReportCOA();
+                report.SetModel(CurrentRecordTest);
+                report.SetTargetFolder(CurrentFolder);
+                report.Output();
+                NavigationService.ShowStatusMessage("测试COA报告创建完毕！");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
+            }
+        }
+
+        private void CreateCOABridgeLine()
+        {
+            try
+            {
+                ReportCOABridgeLine report = new ReportCOABridgeLine();
+                report.SetModel(CurrentRecordTest);
+                report.SetTargetFolder(CurrentFolder);
+                report.Output();
+                NavigationService.ShowStatusMessage("测试COABridgeLine报告创建完毕！");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
+            }
+        }
+
+        private void CreateReportGASElastomer440Blank()
+        {
+            try
+            {
+                ReportGASElastomer440Blank report = new ReportGASElastomer440Blank();
+                report.SetModel(CurrentRecordTest);
+                report.SetTargetFolder(CurrentFolder);
+                report.Output();
+                NavigationService.ShowStatusMessage("测试TCB440绑定报告创建完毕！");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
+            }
+        }
+
+        private void CreateReportGASOpticraftGrinding()
+        {
+            try
+            {
+                ReportGASOpticraftGrinding report = new ReportGASOpticraftGrinding();
+                report.SetModel(CurrentRecordTest);
+                report.SetTargetFolder(CurrentFolder);
+                report.Output();
+                NavigationService.ShowStatusMessage("测试Opticraft440绑定报告创建完毕！");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
+            }
+        }
+
+
+        #endregion
+
+
+
 
         public void SetModel(DcRecordTest model)
         {
