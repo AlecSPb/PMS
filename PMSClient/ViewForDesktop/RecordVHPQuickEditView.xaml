@@ -187,28 +187,27 @@
                     <Grid  DataContext="{Binding CurrentRecordVHP}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition/>
+                            <RowDefinition Height="0*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="134*"/>
                             <ColumnDefinition  Width="auto"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="136*"/>
                             <ColumnDefinition  Width="auto"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="134*"/>
                             <ColumnDefinition  Width="auto"/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="135*"/>
                             <ColumnDefinition  Width="auto"/>
-                            <ColumnDefinition/>
                             <ColumnDefinition   Width="auto"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="134*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Row="0" Grid.Column="12" Margin="5" Content="{StaticResource ButtonNewMode}" 
+                        <Button Grid.Row="0" Grid.Column="10" Margin="5" Content="{StaticResource ButtonNewMode}" 
                    Command="{Binding DataContext.New,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
-                        <Button Content="{StaticResource ButtonSave}" Grid.Row="1" Grid.Column="12" Grid.RowSpan="3" Margin="5"
+                        <Button Content="{StaticResource ButtonSave}" Grid.Row="1" Grid.Column="10" Grid.RowSpan="2" Margin="5"
                     FontSize="20"
                     Command="{Binding DataContext.Save,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                         <TextBlock Text="{StaticResource RVHPPV1}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="0"/>
@@ -219,25 +218,28 @@
                         <TextBox Text="{Binding PV3}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="5"/>
                         <TextBlock Text="{StaticResource RVHPSV}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="6"/>
                         <TextBox Text="{Binding SV}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="7"/>
-                        <TextBlock Text="{StaticResource RVHPTon}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="8"/>
-                        <TextBox Text="{Binding Ton}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="9"/>
-                        <TextBlock Text="{StaticResource RVHPVaccum}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="0" Grid.Column="10"/>
-                        <TextBox Text="{Binding Vaccum,StringFormat={}{0:#.###E00}}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="0" Grid.Column="11"/>
 
-                        <TextBlock Text="{StaticResource RVHPShift1}" Style="{StaticResource StyleTextBlockBig}"  Grid.Row="1" Grid.Column="0"/>
-                        <TextBox Text="{Binding Shift1}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="1"/>
-                        <TextBlock Text="{StaticResource RVHPShift2}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="1" Grid.Column="2"/>
-                        <TextBox Text="{Binding Shift2}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="3"/>
+                        <TextBlock Text="{StaticResource RVHPTon}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="1" Grid.Column="0"/>
+                        <TextBox Text="{Binding Ton}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="1"/>
+                        <TextBlock Text="{StaticResource RVHPVaccum}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="1" Grid.Column="2"/>
+                        <TextBox Text="{Binding Vaccum,StringFormat={}{0:#.###E00}}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="3"/>
                         <TextBlock Text="{StaticResource RVHPOmega}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="1" Grid.Column="4"/>
                         <TextBox Text="{Binding Omega}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="5"/>
-                        <TextBlock Text="{StaticResource RVHPWaterTemperatureIn}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="1" Grid.Column="6"/>
-                        <TextBox Text="{Binding WaterTemperatureIn}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="7"/>
-                        <TextBlock Text="{StaticResource RVHPWaterTemperatureOut}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="1" Grid.Column="8"/>
-                        <TextBox Text="{Binding WaterTemperatureOut}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="1" Grid.Column="9"/>
+
+
+                        <TextBlock Text="{StaticResource RVHPShift1}" Style="{StaticResource StyleTextBlockBig}"  Grid.Row="2" Grid.Column="0"/>
+                        <TextBox Text="{Binding Shift1}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="2" Grid.Column="1"/>
+                        <TextBlock Text="{StaticResource RVHPShift2}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="2" Grid.Column="2"/>
+                        <TextBox Text="{Binding Shift2}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="2" Grid.Column="3"/>
+
+                        <TextBlock Text="{StaticResource RVHPWaterTemperatureIn}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="2" Grid.Column="4"/>
+                        <TextBox Text="{Binding WaterTemperatureIn}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="2" Grid.Column="5"/>
+                        <TextBlock Text="{StaticResource RVHPWaterTemperatureOut}" Style="{StaticResource StyleTextBlockBig}" Grid.Row="2" Grid.Column="6"/>
+                        <TextBox Text="{Binding WaterTemperatureOut}" Style="{StaticResource StyleTextBoxBig}" Grid.Row="2" Grid.Column="7"/>
 
                         <TextBlock Text="{StaticResource RVHPExtraInformation}" Style="{StaticResource StyleTextBlockBig}" 
-                                   Grid.Row="2" Grid.Column="0"/>
-                        <ComboBox  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="11" 
+                                   Grid.Row="3" Grid.Column="0"/>
+                        <ComboBox  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="11" 
                             Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource DGFontLG}"
                             ItemsSource="{Binding DataContext.QuickVHPMesseges,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"                            
                             Text="{Binding ExtraInformation}" />
