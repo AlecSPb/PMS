@@ -152,7 +152,7 @@
 
 
     <sys:String x:Key="HelpTipPlanVHPEdit">
-        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
+        注意：可自行输入，最好先选择，没有的项目填充0，真空可以直接输入小数
     </sys:String>
     <sys:String x:Key="HelpTipMisson">
         黄色标记的项目为未核验，核验后该计划才会公布

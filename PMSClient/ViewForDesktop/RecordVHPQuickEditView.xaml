@@ -243,7 +243,7 @@
                     </Grid>
 
                 </Border>
-                <DataGrid Name="dgitem" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
+                <DataGrid Name="dgitem" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" FrozenColumnCount="1"
                   ItemsSource="{Binding RecordVHPs}">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="{StaticResource DGOperate}" >
