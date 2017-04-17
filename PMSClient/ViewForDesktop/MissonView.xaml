@@ -26,7 +26,10 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockCommon}"/>
-            <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchCompositionStandard,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxCommon}"/>     
+            <TextBlock Text="{StaticResource OrderPMINumber}" Style="{StaticResource  StyleTextBlockCommon}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource StyleTextBoxCommon}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>

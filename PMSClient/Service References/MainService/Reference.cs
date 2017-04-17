@@ -6200,16 +6200,16 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetMissonsCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsBySearchResponse")]
-        PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string compostion);
+        PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string compostion, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsBySearchResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string compostion);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string compostion, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse")]
-        int GetMissonsCountBySearch(string compostion);
+        int GetMissonsCountBySearch(string compostion, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion);
+        System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
         PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
@@ -6293,20 +6293,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetMissonsCountAsync();
         }
         
-        public PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string compostion) {
-            return base.Channel.GetMissonsBySearch(skip, take, compostion);
+        public PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string compostion, string pminumber) {
+            return base.Channel.GetMissonsBySearch(skip, take, compostion, pminumber);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string compostion) {
-            return base.Channel.GetMissonsBySearchAsync(skip, take, compostion);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string compostion, string pminumber) {
+            return base.Channel.GetMissonsBySearchAsync(skip, take, compostion, pminumber);
         }
         
-        public int GetMissonsCountBySearch(string compostion) {
-            return base.Channel.GetMissonsCountBySearch(compostion);
+        public int GetMissonsCountBySearch(string compostion, string pminumber) {
+            return base.Channel.GetMissonsCountBySearch(compostion, pminumber);
         }
         
-        public System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion) {
-            return base.Channel.GetMissonsCountBySearchAsync(compostion);
+        public System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber) {
+            return base.Channel.GetMissonsCountBySearchAsync(compostion, pminumber);
         }
         
         public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {

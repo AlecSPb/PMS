@@ -19,9 +19,9 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
-        List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion);
+        List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion,string pminumber);
         [OperationContract]
-        int GetMissonsCountBySearch(string compostion);
+        int GetMissonsCountBySearch(string compostion, string pminumber);
         #endregion
 
         #region 获取附带有订单信息的任务-New

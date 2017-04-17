@@ -66,7 +66,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion)
+        public List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion, string pminumber)
         {
             try
             {
@@ -81,6 +81,7 @@ namespace PMSWCFService
                     var result = from o in dc.Orders
                                  where o.PolicyType.Contains("VHP")
                                  && o.CompositionStandard.Contains(compostion)
+                                 && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -99,7 +100,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMissonsCountBySearch(string compostion)
+        public int GetMissonsCountBySearch(string compostion, string pminumber)
         {
             try
             {
@@ -108,6 +109,7 @@ namespace PMSWCFService
                     var query = from o in dc.Orders
                                 where o.PolicyType.Contains("VHP")
                                  && o.CompositionStandard.Contains(compostion)
+                                 && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())

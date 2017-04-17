@@ -591,6 +591,7 @@
         <xs:element minOccurs="0" name="skip" type="xs:int" />
         <xs:element minOccurs="0" name="take" type="xs:int" />
         <xs:element minOccurs="0" name="compostion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -605,6 +606,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="compostion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

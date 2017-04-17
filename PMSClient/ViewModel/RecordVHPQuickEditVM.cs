@@ -49,7 +49,7 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(obj => { ActionSectionChanged(obj); });
 
-            EditItem = new RelayCommand<MainService.DcRecordVHP>(ActionEditItem);
+            EditItem = new RelayCommand<DcRecordVHP>(ActionEditItem);
             New = new RelayCommand(ActionNew);
 
             Chart = new RelayCommand(ActionChart);

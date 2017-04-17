@@ -4,9 +4,9 @@
 
     <!--规范化后的命名-->
     <!--AppName-->
-    <sys:String x:Key="AppNameDesktop">生产管理系统Desktop版本</sys:String>
-    <sys:String x:Key="AppNameTablet">生产管理系统Tablet版本</sys:String>
-    <sys:String x:Key="AppNameSanjie">生产管理系统 SanJie版本</sys:String>
+    <sys:String x:Key="AppNameDesktop">PMS生产管理系统4.0版[测试版本]</sys:String>
+    <sys:String x:Key="AppNameTablet">PMS生产管理系统4.0版Tablet版本</sys:String>
+    <sys:String x:Key="AppNameSanjie">PMS生产管理系统4.0版 SanJie版本</sys:String>
 
 
     <!--Navigation Title-->

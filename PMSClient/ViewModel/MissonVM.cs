@@ -28,14 +28,14 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCompositoinStandard = "";
+            searchCompostionStandard = searchPMINumber = "";
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();
         }
         private void InitializeCommands()
         {
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
-            GoToMaterialNeed= new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
+            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
 
 
 
@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 10;
                 var service = new MissonServiceClient();
-                RecordCount = service.GetMissonsCountBySearch(SearchCompositoinStandard);
+                RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
                 ActionPaging();
             }
             catch (Exception ex)
@@ -149,7 +149,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MissonServiceClient();
-            var orders = service.GetMissonsBySearch(skip, take,SearchCompositoinStandard);
+            var orders = service.GetMissonsBySearch(skip, take, SearchCompositionStandard, SearchPMINumber);
             service.Close();
             Missons.Clear();
             orders.ToList().ForEach(o => Missons.Add(o));
@@ -178,12 +178,19 @@ namespace PMSClient.ViewModel
         }
 
 
-        private string searchCompositonStandard;
+        private string searchCompostionStandard;
 
-        public string SearchCompositoinStandard
+        public string SearchCompositionStandard
         {
-            get { return searchCompositonStandard; }
-            set { searchCompositonStandard = value; RaisePropertyChanged((SearchCompositoinStandard)); }
+            get { return searchCompostionStandard; }
+            set { searchCompostionStandard = value; RaisePropertyChanged((SearchCompositionStandard)); }
+        }
+        private string searchPMINumber;
+
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set { searchPMINumber = value; RaisePropertyChanged((SearchPMINumber)); }
         }
 
         #endregion
