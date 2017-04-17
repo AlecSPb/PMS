@@ -9,6 +9,7 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 using System.Windows.Input;
+using System.Windows;
 
 namespace PMSClient.ViewModel
 {
@@ -76,7 +77,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordVHP = mdoel;
                 isNew = false;
-                NavigationService.ShowStatusMessage("请修改上方数据，然后保存，取消修改请点新建");
+                NavigationService.ShowStatusMessage("请修改上方数据，然后保存，保存将使用新的时间，取消修改请点新建");
             }
         }
 
@@ -133,6 +134,12 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            if (MessageBox.Show("确定要保存该条记录？","请问",MessageBoxButton.YesNo,MessageBoxImage.Question)==MessageBoxResult.No)
+            {
+                return;
+            }
+
+
             try
             {
                 if (CurrentRecordVHP != null)
