@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
             set
             {
                 isNew = value;
-                NewOrEditIndicator = isNew ? "New" : "Edit";
+                NewOrEditIndicator = isNew ? "新建" : "编辑";
             }
         }
         #endregion

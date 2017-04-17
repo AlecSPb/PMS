@@ -131,7 +131,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                          Width="150"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="btnResistance_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"

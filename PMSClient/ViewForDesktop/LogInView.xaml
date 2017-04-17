@@ -23,7 +23,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Name="txtUserName" Text="xs.zhou" Style="{StaticResource StyleLogInUID}"/>
+            <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource StyleLogInUID}"/>
             <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource StyleLogInPwd}"/>
             <CheckBox Name="chkRemember" Grid.Row="2" Content="记住用户名和密码" Style="{StaticResource StyleLogInCheckBox}"
                       Click="chkRemember_Click"/>

@@ -65,10 +65,14 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.RecordTests.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
-                      && p.State != CommonState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                    var query = from t in dc.RecordTests
+                                where t.ProductID.Contains(productId)
+                                && t.Composition.Contains(compositionStd)
+                                && t.State != CommonState.作废.ToString()
+                                orderby t.CreateTime descending
+                                select t;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
-                    var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(result);
+                    var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(query.Skip(skip).Take(take).ToList());
                     return products;
                 }
             }
@@ -80,14 +84,42 @@ namespace PMSWCFService
 
         }
 
+        public List<DcRecordTest> GetRecordTestChecked(int skip, int take, string productId, string compositionStd)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from t in dc.RecordTests
+                                where t.ProductID.Contains(productId)
+                                && t.Composition.Contains(compositionStd)
+                                && t.State == CommonState.已核验.ToString()
+                                orderby t.CreateTime descending
+                                select t;
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, DcRecordTest>());
+                    var products = Mapper.Map<List<RecordTest>, List<DcRecordTest>>(query.Skip(skip).Take(take).ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int GetRecordTestCountBySearchInPage(string productId, string compositionStd)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.RecordTests.Where(p => p.ProductID.Contains(productId) && p.Composition.Contains(compositionStd)
-                      && p.State != CommonState.作废.ToString()).Count();
+                    var query = from t in dc.RecordTests
+                                where t.ProductID.Contains(productId)
+                                && t.Composition.Contains(compositionStd)
+                                && t.State != CommonState.作废.ToString()
+                                select t;
+                    return query.Count();
                 }
             }
             catch (Exception ex)
@@ -96,6 +128,27 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public int GetRecordTestCountChecked(string productId, string compositionStd)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from t in dc.RecordTests
+                                where t.ProductID.Contains(productId)
+                                && t.Composition.Contains(compositionStd)
+                                && t.State == CommonState.已核验.ToString()
+                                select t;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateRecordTest(DcRecordTest model)

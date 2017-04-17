@@ -87,7 +87,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.Customer = plan.Misson.CustomerName;
                 CurrentRecordTest.Dimension = plan.Misson.Dimension;
                 CurrentRecordTest.DimensionActual = plan.Misson.Dimension;
-
+                CurrentRecordTest.CompositionAbbr = plan.Misson.CompositionAbbr;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }

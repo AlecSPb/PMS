@@ -231,7 +231,7 @@ namespace PMSClient.ViewModel
 
                 isNew = true;
                 EditStatus = "全新创建";
-                CurrentRecordVHP = model;
+                CurrentRecordVHP = temp;
                 NavigationService.ShowStatusMessage("填充选定项完毕");
             }
         }

@@ -176,6 +176,9 @@
     <sys:String x:Key="HelpTipProductEdit">
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
+    <sys:String x:Key="HelpTipProductSelect">
+        注意：选择的意思就是仅使用这个记录，发货的意思不光使用，还将这个记录的库存状态从库存变成发货
+    </sys:String>
     <sys:String x:Key="HelpTipDeliveryEdit">
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
@@ -455,7 +458,7 @@
     <sys:String x:Key="RTCustomer">客户</sys:String>
     <sys:String x:Key="RTDimension">要求尺寸</sys:String>
     <sys:String x:Key="RTDensity">密度</sys:String>
-    <sys:String x:Key="RTWeight">重量(g)</sys:String>
+    <sys:String x:Key="RTWeight">重量</sys:String>
     <sys:String x:Key="RTResistance">电阻率</sys:String>
     <sys:String x:Key="RTCompositionXRF">XRF成分</sys:String>
     <sys:String x:Key="RTDimensionActual">实际尺寸</sys:String>

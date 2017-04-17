@@ -89,17 +89,31 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RTDensity}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <TextBlock Text="{Binding Density}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDensity}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Density}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTResistance}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Resistance}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDefects}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Defects}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

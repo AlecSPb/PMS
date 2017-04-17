@@ -105,17 +105,31 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource RTDensity}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <TextBlock Text="{Binding Density}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDensity}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Density}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTResistance}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Resistance}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDefects}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding Defects}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -152,13 +166,13 @@
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid DataContext="{Binding CurrentSelectItem}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="700"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <Grid Grid.Column="0" DataContext="{Binding  CurrentSelectItem}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition/>
@@ -172,11 +186,12 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -206,7 +221,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDensity}"
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
@@ -214,26 +229,29 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
-
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Defects}" Style="{StaticResource StyleTextBoxReadOnly}"
+                            HorizontalAlignment="Stretch"/>
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTRemark}"
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
 
-                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTSample}"
+                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"
+                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"
                             HorizontalAlignment="Stretch"/>
                 </Grid>
-
-                <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding CompositionXRF}"
+            </ScrollViewer>
+            <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding  CurrentSelectItem.CompositionXRF}"
                                           Margin="5" Height="320" VerticalAlignment="Top"/>
-            </Grid>
-        </ScrollViewer>
+        </Grid>
+
     </Grid>
 </UserControl>

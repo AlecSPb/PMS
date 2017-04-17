@@ -15,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -30,17 +31,21 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Products}">
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductSelect}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="3" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Products}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonSelectAndSend}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonSelectAndSend}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
@@ -106,7 +111,7 @@
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+        <control:SimplePager Grid.Row="4" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
     </Grid>
