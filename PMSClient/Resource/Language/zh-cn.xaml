@@ -156,7 +156,7 @@
         黄色标记的项目为未核验，核验后该计划才会公布
     </sys:String>
     <sys:String x:Key="HelpTipRecordMillingEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+        注意：填写一定要规范，可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
     <sys:String x:Key="HelpTipRecordVHPQuickEdit">
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
