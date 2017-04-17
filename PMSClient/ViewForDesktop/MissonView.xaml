@@ -8,7 +8,7 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=Misson}">
+             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=Misson}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -16,10 +16,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">

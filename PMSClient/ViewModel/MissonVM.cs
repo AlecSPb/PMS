@@ -130,7 +130,7 @@ namespace PMSClient.ViewModel
             try
             {
                 PageIndex = 1;
-                PageSize = 10;
+                PageSize = 15;
                 var service = new MissonServiceClient();
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
                 ActionPaging();
