@@ -58,7 +58,7 @@
                 <DataGridTemplateColumn Header="{StaticResource RPProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding ProductID}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding ProductID}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

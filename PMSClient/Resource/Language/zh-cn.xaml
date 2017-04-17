@@ -107,13 +107,13 @@
     <sys:String x:Key="PageProductTitle">成品</sys:String>
     <sys:String x:Key="PageProduct">成品库</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
-    <sys:String x:Key="PageProductSelect">成品库</sys:String>
+    
     <sys:String x:Key="PageDelivery">发货记录</sys:String>
     <sys:String x:Key="PageDeliveryEdit">发货记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemList">发货记录[所有已发货产品]</sys:String>
-    
-    
+
+    <sys:String x:Key="PageProductSelect">请选择一个成品项目</sys:String>
     <sys:String x:Key="PageRecordBondingSelect">请选择一个绑定记录</sys:String>
     <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
@@ -178,6 +178,9 @@
     </sys:String>
     <sys:String x:Key="HelpTipProductSelect">
         注意：选择的意思就是仅使用这个记录，发货的意思不光使用，还将这个记录的库存状态从库存变成发货
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestSelect">
+        注意：下面黄色的记录就是还没有最终完成和确定的测试记录，最好不要选择;
     </sys:String>
     <sys:String x:Key="HelpTipDeliveryEdit">
         注意：可以自行输入，但最好通过选择来减少输入时间和错误

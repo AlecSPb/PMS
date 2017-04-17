@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="DcRecordBonding" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>PMSClient.MainService.DcRecordBonding</TypeInfo>
+   <TypeInfo>PMSClient.MainService.DcRecordBonding, PMSClient, Version=4.0.1.2, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

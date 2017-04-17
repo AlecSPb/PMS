@@ -88,7 +88,6 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new RecordTestServiceClient())
             {
-                //TODO:修改为Checked方法
                 RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
             }
             ActionPaging();
@@ -100,7 +99,6 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new RecordTestServiceClient())
             {
-                //TODO:修改为Checked方法
                 var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
                 RecordProducts.Clear();
                 orders.ToList().ForEach(o => RecordProducts.Add(o));

@@ -6589,6 +6589,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse")]
         System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCheckedResponse")]
+        PMSClient.MainService.DcRecordTest[] GetRecordTestChecked(int skip, int take, string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCheckedResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetRecordTestCheckedAsync(int skip, int take, string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountCheckedResponse")]
+        int GetRecordTestCountChecked(string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountCheckedResponse")]
+        System.Threading.Tasks.Task<int> GetRecordTestCountCheckedAsync(string productId, string compositionStd);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestResponse")]
         int AddRecordTest(PMSClient.MainService.DcRecordTest model);
         
@@ -6649,6 +6661,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd) {
             return base.Channel.GetRecordTestCountBySearchInPageAsync(productId, compositionStd);
+        }
+        
+        public PMSClient.MainService.DcRecordTest[] GetRecordTestChecked(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestChecked(skip, take, productId, compositionStd);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetRecordTestCheckedAsync(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCheckedAsync(skip, take, productId, compositionStd);
+        }
+        
+        public int GetRecordTestCountChecked(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCountChecked(productId, compositionStd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordTestCountCheckedAsync(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCountCheckedAsync(productId, compositionStd);
         }
         
         public int AddRecordTest(PMSClient.MainService.DcRecordTest model) {
