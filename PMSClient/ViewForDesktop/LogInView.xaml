@@ -42,11 +42,12 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Name="txtInformation" Text="欢迎使用新版生产管理系统，请在左边登录框里输入登录信息登录"
+            <TextBlock Name="txtInformation" Text="欢迎使用新版生产管理系统"
                        FontSize="20" Margin="5"/>
             <TextBox  Name="txtUpdates" Grid.Row="1" Margin="5" Background="White" Foreground="Black"
-                      AcceptsReturn="True"
-                     Text=""/>
+                      AcceptsReturn="True" Text="" IsReadOnly="True"/>
+            <TextBox  Name="txtUpdate1s" Grid.Row="2" Margin="5" Background="White" Foreground="Black"
+                      AcceptsReturn="True" Text="" IsReadOnly="True"/>
         </Grid>
     </Grid>
 </UserControl>
