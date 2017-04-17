@@ -71,26 +71,6 @@ namespace PMSClient
 
             //导航到首页
             NavigateTo(_views.LogIn);
-
-            #region 更新显示
-            //如果是第一次运行，显示更新
-            try
-            {
-                bool isShowed = Properties.Settings.Default.IsShowedUpdates;
-                if (!isShowed)
-                {
-                    UpdateMessages update = new UpdateMessages();
-                    update.ShowDialog();
-
-                    Properties.Settings.Default.IsShowedUpdates = true;
-                    Properties.Settings.Default.Save();
-                }
-            }
-            catch (Exception)
-            {
-            }
-
-            #endregion
         }
         /// <summary>
         /// 服务器心跳测试

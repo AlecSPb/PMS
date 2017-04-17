@@ -14,24 +14,39 @@
             <ColumnDefinition Width="300"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid>
+        <Border Style="{StaticResource StyleBorderCommon}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="0" Text="用户名" Style="{StaticResource StyleLogInUID}" Foreground="#F3F3F3"/>
+                <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource StyleLogInUID}" Background="Transparent"/>
+
+                <TextBox Grid.Row="1" Text="密码" Style="{StaticResource StyleLogInUID}" Foreground="#F3F3F3"/>
+                <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource StyleLogInPwd}" Background="Transparent"/>
+
+                <CheckBox Name="chkRemember" Grid.Row="2" Content="记住用户名和密码" Style="{StaticResource StyleLogInCheckBox}"
+                      Click="chkRemember_Click"/>
+                <Button Grid.Row="3" Content="登录" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
+                <TextBlock Name="txtLogInStatus" Grid.Row="4" Text="" Style="{StaticResource StyleLogInInformation}"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource StyleLogInUID}"/>
-            <PasswordBox Grid.Row="1" Name="txtPassword"  Style="{StaticResource StyleLogInPwd}"/>
-            <CheckBox Name="chkRemember" Grid.Row="2" Content="记住用户名和密码" Style="{StaticResource StyleLogInCheckBox}"
-                      Click="chkRemember_Click"/>
-            <Button Grid.Row="3" Content="登录" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
-            <TextBlock Name="txtLogInStatus" Grid.Row="4" Text="" Style="{StaticResource StyleLogInInformation}"/>
-        </Grid>
-        <Grid Grid.Column="1" Background="LightGray">
-            <TextBlock Name="txtInformation" Text="欢迎使用新版生产管理系统，请在左边登录框里输入登录信息登录" Margin="5"/>
+            <TextBlock Name="txtInformation" Text="欢迎使用新版生产管理系统，请在左边登录框里输入登录信息登录"
+                       FontSize="20" Margin="5"/>
+            <TextBox  Name="txtUpdates" Grid.Row="1" Margin="5" Background="White" Foreground="Black"
+                      AcceptsReturn="True"
+                     Text=""/>
         </Grid>
     </Grid>
 </UserControl>

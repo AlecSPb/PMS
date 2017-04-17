@@ -90,6 +90,18 @@ namespace PMSClient.ViewForDesktop
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             ReadRememberedUIDPWD();
+
+            try
+            {
+                var updateFile = System.IO.Path.Combine(Environment.CurrentDirectory, "updates.txt");
+                if (System.IO.File.Exists(updateFile))
+                {
+                    txtUpdates.Text = System.IO.File.ReadAllText(updateFile);
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void ReadRememberedUIDPWD()

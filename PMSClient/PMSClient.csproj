@@ -338,9 +338,6 @@
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\DesktopViewLocator.cs" />
-    <Compile Include="UpdateMessages.xaml.cs">
-      <DependentUpon>UpdateMessages.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewForTablet\TabletViewLocator.cs" />
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
@@ -618,10 +615,6 @@
     <Page Include="ViewForDesktop\RecordVHPView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UpdateMessages.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VMLocator.xaml">
       <SubType>Designer</SubType>
