@@ -34,6 +34,7 @@
     <sys:String x:Key="PageAuthority">权限</sys:String>
     <sys:String x:Key="PageStatistic">统计</sys:String>
     <sys:String x:Key="PageExit">退出</sys:String>
+    <sys:String x:Key="PageLogOut">注销</sys:String>
     <sys:String x:Key="PageAbout">关于</sys:String>
     <sys:String x:Key="PageInstruct">指南</sys:String>
     <sys:String x:Key="PageHelp">帮助</sys:String>
@@ -47,6 +48,7 @@
     <sys:String x:Key="PageRecord">记录</sys:String>
     <sys:String x:Key="PageOther">其他</sys:String>
     <sys:String x:Key="PageTool">工具</sys:String>
+
     <sys:String x:Key="PagePlanStatistic">生产统计</sys:String>
 
     <sys:String x:Key="PageCustomer">客户库</sys:String>

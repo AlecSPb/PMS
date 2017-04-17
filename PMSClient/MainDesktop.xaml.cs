@@ -38,6 +38,7 @@ namespace PMSClient
         private Timer _timer;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            #region 标题处理
             try
             {
                 var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
@@ -46,15 +47,17 @@ namespace PMSClient
             }
             catch (Exception)
             {
-               
+
             }
+            #endregion
 
-
+            #region 初始化变量并注册mvvmlight消息
             _views = PMSHelper.DesktopViews;
             _toolviews = PMSHelper.ToolViews;
 
             Messenger.Default.Register<PMSViews>(this, MainNavigationToken.Navigate, ActionNavigation);
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
+            #endregion
 
             //设置服务器心跳检测定时器
             _timer = new Timer();
@@ -67,7 +70,11 @@ namespace PMSClient
             //导航到首页
             NavigateTo(_views.LogIn);
         }
-
+        /// <summary>
+        /// 服务器心跳测试
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             try
@@ -99,7 +106,9 @@ namespace PMSClient
                 });
             }
         }
-
+        /// <summary>
+        /// 导航区域
+        /// </summary>
         private void ActionNavigation(PMSViews token)
         {
             PMSHelper.CurrentLog.Log(token.ToString());
@@ -296,7 +305,15 @@ namespace PMSClient
             this.DragMove();
         }
 
+
+
+        #region 窗口事件处理
         private void MenuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuLogOut_Click(object sender, RoutedEventArgs e)
         {
             if (PMSHelper.CurrentSession.CurrentUser != null)
             {
@@ -305,5 +322,7 @@ namespace PMSClient
                 NavigationService.GoTo(PMSViews.LogIn);
             }
         }
+        #endregion
+
     }
 }

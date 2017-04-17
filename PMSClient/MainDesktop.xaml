@@ -26,9 +26,10 @@
                     <MenuItem Header="{StaticResource PageStart}">
                         <MenuItem Header="{StaticResource PageSetting}"/>
                         <Separator/>
+                        <MenuItem x:Name="MenuLogOut" Header="{StaticResource PageLogOut}" Click="MenuLogOut_Click"/>
+                        <Separator/>
                         <MenuItem x:Name="MenuExit" Header="{StaticResource PageExit}" Click="MenuExit_Click"/>
                     </MenuItem>
-
                 </Menu>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -45,7 +46,8 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
-            <TextBlock Grid.Column="1" Name="txtHeartBeat" Text="心跳检测" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
+            <TextBlock Grid.Column="1" Name="txtHeartBeat" Text="心跳检测" Style="{StaticResource StyleTextBlockCommon}"
+                       Foreground="Yellow"/>
             <TextBlock Grid.Column="2" Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>
