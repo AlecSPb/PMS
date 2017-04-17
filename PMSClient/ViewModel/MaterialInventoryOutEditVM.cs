@@ -58,6 +58,7 @@ namespace PMSClient.ViewModel
                 CurrentMaterialInventoryOut.Composition = model.Composition;
                 CurrentMaterialInventoryOut.MaterialLot = model.MaterialLot;
                 CurrentMaterialInventoryOut.PMINumber = model.PMINumber;
+                CurrentMaterialInventoryOut.Purity = model.Purity;
                 CurrentMaterialInventoryOut.Weight = model.Weight;
                 CurrentMaterialInventoryOut.Remark = model.Supplier;
                 //RaisePropertyChanged(nameof(CurrentMaterialInventoryOut));
