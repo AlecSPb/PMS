@@ -28,5 +28,24 @@ namespace PMSClient.ViewForDesktop
             InitializeComponent();
         }
 
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var order = (DcDelivery)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.State)
+                {
+                    case "未核验":
+                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                        break;
+                    case "已核验":
+                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
     }
 }

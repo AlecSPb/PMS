@@ -8,7 +8,7 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000"
+             d:DesignHeight="800" d:DesignWidth="1200"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordTest}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
