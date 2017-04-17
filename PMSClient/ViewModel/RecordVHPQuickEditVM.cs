@@ -146,6 +146,7 @@ namespace PMSClient.ViewModel
                         }
                         else
                         {
+                            CurrentRecordVHP.CurrentTime = DateTime.Now;
                             service.UpdateReocrdVHP(CurrentRecordVHP);
                         }
                         service.Close();
