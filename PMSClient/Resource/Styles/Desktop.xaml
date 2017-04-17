@@ -129,6 +129,11 @@
     <!--基本控件-->
 
     <!--登录-->
+    <Style x:Key="StyleLogInWaterPrint" TargetType="TextBlock">
+        <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
+    </Style>
     <Style x:Key="StyleLogInUID" TargetType="TextBox"  BasedOn="{StaticResource txtBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
@@ -192,13 +197,6 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
-    <Style x:Key="StyleTextBlockBig" TargetType="TextBlock">
-        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
-    </Style>
 
     <Style x:Key="StyleTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
@@ -213,20 +211,21 @@
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
     </Style>
 
+    <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
+    </Style>
+    
+    
     <Style x:Key="StyleTextBoxCommon" TargetType="TextBox" BasedOn="{StaticResource txtBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
+        <Setter Property="Background" Value="Transparent"/>
     </Style>
 
-    <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource txtBase}">
-        <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
-        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="80"/>
+    <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
 
@@ -318,7 +317,7 @@
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
 
-    <Style x:Key="StyleDGTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+    <Style x:Key="StyleDGTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
     <Style x:Key="StyleDGTextBlockBigLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockBig}">
