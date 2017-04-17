@@ -21,12 +21,7 @@ namespace PMSClient
                 App app = new PMSClient.App();
                 app.InitializeComponent();
 
-                #if IsDesktopEdtion
                  var firstWindow = new MainDesktop();
-                #else
-                 var firstWindow = new MainTablet();
-                #endif
-
                 app.Run(firstWindow);
             }
             catch (Exception ex)

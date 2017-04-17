@@ -149,10 +149,6 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
-    <Compile Include="MainSanJie.xaml.cs">
-      <DependentUpon>MainSanJie.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindowBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\ReportGASOpticraftGrinding.cs" />
@@ -342,7 +338,7 @@
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\DesktopViewLocator.cs" />
-    <Compile Include="ViewForDesktop\UpdateMessages.xaml.cs">
+    <Compile Include="UpdateMessages.xaml.cs">
       <DependentUpon>UpdateMessages.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForTablet\TabletViewLocator.cs" />
@@ -407,14 +403,6 @@
       <DependentUpon>MainDesktop.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MainTablet.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainSanJie.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resource\CommonBrushes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -631,7 +619,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\UpdateMessages.xaml">
+    <Page Include="UpdateMessages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -641,9 +629,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainTablet.xaml.cs">
-      <DependentUpon>MainTablet.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

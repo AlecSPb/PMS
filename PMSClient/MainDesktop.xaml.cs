@@ -59,6 +59,7 @@ namespace PMSClient
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
             #endregion
 
+            #region 心跳检测
             //设置服务器心跳检测定时器
             _timer = new Timer();
             _timer.Interval = 5000;
@@ -66,9 +67,30 @@ namespace PMSClient
             _timer.Start();
 
             _timer_Elapsed(this, null);
+            #endregion
 
             //导航到首页
             NavigateTo(_views.LogIn);
+
+            #region 更新显示
+            //如果是第一次运行，显示更新
+            try
+            {
+                bool isShowed = Properties.Settings.Default.IsShowedUpdates;
+                if (!isShowed)
+                {
+                    UpdateMessages update = new UpdateMessages();
+                    update.ShowDialog();
+
+                    Properties.Settings.Default.IsShowedUpdates = true;
+                    Properties.Settings.Default.Save();
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            #endregion
         }
         /// <summary>
         /// 服务器心跳测试

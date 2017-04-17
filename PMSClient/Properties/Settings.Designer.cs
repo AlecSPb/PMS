@@ -58,5 +58,17 @@ namespace PMSClient.Properties {
                 this["IsUIDPWDRemembered"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsShowedUpdates {
+            get {
+                return ((bool)(this["IsShowedUpdates"]));
+            }
+            set {
+                this["IsShowedUpdates"] = value;
+            }
+        }
     }
 }
