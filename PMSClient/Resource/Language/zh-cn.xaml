@@ -316,8 +316,8 @@
     <sys:String x:Key="PlanSinglePowderWeight">单片</sys:String>
     <sys:String x:Key="PlanAllPowderWeight">全部</sys:String>
     <sys:String x:Key="PlanGrainSize">粉末粒度</sys:String>
-    <sys:String x:Key="PlanRoomTemperature">室内温度</sys:String>
-    <sys:String x:Key="PlanRoomHumidity">室内湿度</sys:String>
+    <sys:String x:Key="PlanRoomTemperature">温度</sys:String>
+    <sys:String x:Key="PlanRoomHumidity">湿度</sys:String>
     <sys:String x:Key="PlanPreTemperature">预压温度</sys:String>
     <sys:String x:Key="PlanPrePressure">预压压力</sys:String>
     <sys:String x:Key="PlanTemperature">温度</sys:String>

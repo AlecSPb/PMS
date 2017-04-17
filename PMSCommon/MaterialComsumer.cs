@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    /// <summary>
-    /// 订单优先级
-    /// </summary>
-    public enum OrderPriority
+    public enum MaterialComsumer
     {
-        普通 = 1,
-        紧急 = 2
+        车间,
+        三杰
     }
 }

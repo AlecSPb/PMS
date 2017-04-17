@@ -43,7 +43,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcRecordTest arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录")||PMSHelper.CurrentSession.IsAuthorized("生成测试报告");
         }
 
         private bool CanEdit(DcRecordTest arg)

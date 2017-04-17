@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
             model.SupplierReceiver = "Mr.Wang";
             model.SupplierAddress = "Chengdu,Sichuan CHINA";
             model.ShipFee = 0;
-            model.Priority = PMSCommon.OrderPriority.通常.ToString();
+            model.Priority = PMSCommon.OrderPriority.普通.ToString();
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
             #endregion

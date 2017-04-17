@@ -70,6 +70,8 @@
     <Compile Include="DeMoldRemark.cs" />
     <Compile Include="DeMoldType.cs" />
     <Compile Include="GoodPosition.cs" />
+    <Compile Include="MaterialComsumer.cs" />
+    <Compile Include="MaterialSupplier.cs" />
     <Compile Include="MillingGas.cs" />
     <Compile Include="MillingMaterialSource.cs" />
     <Compile Include="MillingTime.cs" />

@@ -59,7 +59,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录")|| PMSHelper.CurrentSession.IsAuthorized("生成发货单标签"); 
         }
 
         private bool CanEditItem(DcDeliveryItem arg)

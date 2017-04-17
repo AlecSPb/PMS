@@ -205,7 +205,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 8;
+            PageSize = 5;
             using (var service = new MissonServiceClient())
             {
                 RecordCount = service.GetPlanWithMissonCheckedCount();

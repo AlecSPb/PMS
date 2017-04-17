@@ -8,8 +8,8 @@ namespace PMSCommon
 {
     public enum MillingMaterialSource
     {
-        三杰,
-        汉普,
+        SJ,
+        HP,
         自制,
         其他
     }

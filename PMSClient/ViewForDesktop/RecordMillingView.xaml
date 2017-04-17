@@ -53,8 +53,6 @@
                                     Binding="{Binding VHPPlanLot}"/>
                 <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialSource}"/>
                 <DataGridTextColumn Header="{StaticResource RMMillingTool}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MillingTool}"/>
                 <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -69,12 +67,12 @@
                                     Binding="{Binding WeightRemain}"/>
                 <DataGridTextColumn Header="{StaticResource RMRatio}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Ratio,StringFormat={}{0:P}}"/>
-                <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
+                <!--<DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>-->
                 <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
-
-
+                <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialSource}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

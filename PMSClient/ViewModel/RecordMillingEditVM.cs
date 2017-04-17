@@ -56,7 +56,7 @@ namespace PMSClient.ViewModel
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "填入成分";
             model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
-            model.MaterialSource = PMSCommon.MillingMaterialSource.三杰.ToString();
+            model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
             model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
             model.Remark = "";
