@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="更新说明" HorizontalAlignment="Center" FontSize="20"/>
-        <TextBox Grid.Row="1" IsReadOnly="True" Margin="5"/>
+        <TextBox x:Name="txtUpdatesMessage" Grid.Row="1" IsReadOnly="True" Margin="5" AcceptsReturn="True"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="知道了" Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>

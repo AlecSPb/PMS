@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="CompletedBrush" Color="White"/>
-    <SolidColorBrush x:Key="UnCompletedBrush" Color="LightGreen"/>
+    <SolidColorBrush x:Key="UnCompletedBrush" Color="#00FF80"/>
     <SolidColorBrush x:Key="PausedBrush" Color="LightGray"/>
     <SolidColorBrush x:Key="UnCheckedBrush" Color="Yellow"/>
     <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>

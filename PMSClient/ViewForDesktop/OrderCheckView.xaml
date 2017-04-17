@@ -103,13 +103,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource OrderOriginalComposition}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding CompositionOriginal}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource OrderAbbrComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CompositionAbbr}"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderPurity}">

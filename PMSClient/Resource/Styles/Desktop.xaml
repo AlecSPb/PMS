@@ -15,6 +15,8 @@
         <Setter Property="Foreground" Value="{StaticResource FGTitleBar}"/>
     </Style>
     <!--基本资源-->
+    <SolidColorBrush x:Key="ThemeBrush" Color="#F2753F"/>
+    
     <SolidColorBrush x:Key="BGBrushTitleBar" Color="#135995"/>
     <SolidColorBrush x:Key="BGBrushNavigateBar" Color="Orange"/>
     <SolidColorBrush x:Key="BGBrushStatusBar" Color="#CA5100"/>
@@ -77,7 +79,7 @@
                                 <VisualState x:Name="Disabled"></VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Rectangle x:Name="rectangle" Fill="#FFE2E2EE" Stroke="{StaticResource BGBrushNavigateBar}"  StrokeThickness="1"/>
+                        <Rectangle x:Name="rectangle" Fill="#FFE2E2EE" Stroke="{StaticResource ThemeBrush}"  StrokeThickness="1"/>
                         <ContentControl x:Name="contentControl" Content="{TemplateBinding Content}" 
                                         Margin="{TemplateBinding Padding}" VerticalAlignment="Center"
                                         HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
@@ -103,7 +105,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" BorderBrush="{StaticResource BGBrushNavigateBar}"
+                    <Border x:Name="border" BorderBrush="{StaticResource ThemeBrush}"
                             Background="{TemplateBinding Background}" SnapsToDevicePixels="True" BorderThickness="1">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
                                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
@@ -189,7 +191,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
-    
+
     <Style x:Key="StyleTextBlockBig" TargetType="TextBlock">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
@@ -197,7 +199,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
-    
+
     <Style x:Key="StyleTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
@@ -284,14 +286,14 @@
     <Style x:Key="StyleDataGridCommon" TargetType="DataGrid">
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="IsReadOnly" Value="True"/>
-        <Setter Property="HorizontalGridLinesBrush" Value="Wheat"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource ThemeBrush}"/>
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="GridLinesVisibility" Value="Horizontal"/>
         <Setter Property="CanUserSortColumns" Value="False"/>
         <Setter Property="CanUserReorderColumns" Value="False"/>
     </Style>
     <Style x:Key="StyleDGTextBlockCommon" TargetType="TextBlock">
-        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     <Style x:Key="StyleDGTextBlockLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
@@ -307,17 +309,17 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleDGButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
-        <Setter Property="Margin" Value="0 0 2 0"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="50"/>
     </Style>
-
-    <Style x:Key="StyleDGTextBlockBig" TargetType="TextBlock">
+    <Style x:Key="StyleDGButtonBig" TargetType="Button" BasedOn="{StaticResource StyleDGButton}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="StyleDGTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
     <Style x:Key="StyleDGTextBlockBigLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockBig}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -331,14 +333,7 @@
     <Style x:Key="StyleDGTextBlockBigSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockBig}">
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
-    <Style x:Key="StyleDGBigButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
-        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
-        <Setter Property="Margin" Value="0 0 2 0"/>
-        <Setter Property="Padding" Value="{StaticResource ThicknessSM}"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="MinWidth" Value="50"/>
-    </Style>
+
 
 
     <Style x:Key="StyleBorderCommon" TargetType="Border">
@@ -352,6 +347,6 @@
         <Setter Property="Height" Value="16"/>
         <Setter Property="Width" Value="16"/>
     </Style>
-    
-   
+
+
 </ResourceDictionary>
