@@ -804,7 +804,6 @@
     <Folder Include="LocalData\" />
     <Folder Include="Resource\Files\" />
     <Folder Include="SmallTools\" />
-    <Folder Include="ViewForSanjie\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\funnyface.ico" />
@@ -948,7 +947,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Updates.txt">
+    <None Include="updates.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="notices.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

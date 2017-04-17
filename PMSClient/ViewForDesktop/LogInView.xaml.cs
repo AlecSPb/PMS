@@ -90,13 +90,23 @@ namespace PMSClient.ViewForDesktop
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             ReadRememberedUIDPWD();
+            ReadMessageFromFiles();
+        }
 
+        private void ReadMessageFromFiles()
+        {
             try
             {
                 var updateFile = System.IO.Path.Combine(Environment.CurrentDirectory, "updates.txt");
                 if (System.IO.File.Exists(updateFile))
                 {
-                    txtUpdates.Text = System.IO.File.ReadAllText(updateFile);
+                    txtUpdate.Text = System.IO.File.ReadAllText(updateFile);
+                }
+
+                var noticeFile = System.IO.Path.Combine(Environment.CurrentDirectory, "notices.txt");
+                if (System.IO.File.Exists(noticeFile))
+                {
+                    txtNotice.Text = System.IO.File.ReadAllText(noticeFile);
                 }
             }
             catch (Exception)

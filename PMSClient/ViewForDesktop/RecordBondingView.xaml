@@ -27,8 +27,8 @@
             <TextBlock Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
-            <TextBlock Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
@@ -48,19 +48,28 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>-->
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleTextBlockCommon}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                                    Binding="{Binding TargetProductID}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetComposition}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                                    Binding="{Binding TargetComposition}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetAbbr}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                                    Binding="{Binding TargetAbbr}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetPO}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                                    Binding="{Binding TargetPO}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                                    Binding="{Binding TargetDimension}"/>
+                <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                                    Binding="{Binding PlateLot}"/>
 
-                
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
-                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}" LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
     </Grid>
 </UserControl>
