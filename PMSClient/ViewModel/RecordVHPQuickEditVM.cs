@@ -51,12 +51,43 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(obj => { ActionSectionChanged(obj); });
 
             EditItem = new RelayCommand<DcRecordVHP>(ActionEditItem);
+            DeleteItem = new RelayCommand<DcRecordVHP>(ActionDeleteItem);
             New = new RelayCommand(ActionNew);
 
             Chart = new RelayCommand(ActionChart);
 
 
             PageChanged = new RelayCommand(ActionPaging);
+        }
+
+        private void ActionDeleteItem(DcRecordVHP model)
+        {
+            if (MessageBox.Show("确定要作废该条记录？", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+                return;
+            }
+            try
+            {
+                if (model != null)
+                {
+                    using (var service = new RecordVHPServiceClient())
+                    {
+                        model.State = PMSCommon.SimpleState.作废.ToString();
+
+                        service.UpdateReocrdVHP(model);
+                        service.Close();
+                        ReLoadRecordVHPs();
+                        //EmptyCurrentRecordVHP();
+                        NavigationService.ShowStatusMessage("作废完毕");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+
         }
 
         private void ActionChart()
@@ -77,6 +108,7 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordVHP = mdoel;
                 isNew = false;
+                EditStatus = "编辑创建";
                 NavigationService.ShowStatusMessage("请修改上方数据，然后保存，保存将使用新的时间，取消修改请点新建");
             }
         }
@@ -105,28 +137,29 @@ namespace PMSClient.ViewModel
 
         private void EmptyCurrentRecordVHP()
         {
+            EditStatus = "全新创建";
             if (CurrentRecordVHP != null)
             {
-                var model = new DcRecordVHP();
-                model.ID = Guid.NewGuid();
-                model.PlanVHPID = CurrentPlanWithMisson.Plan.ID;
-                model.CurrentTime = DateTime.Now;
-                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                model.State = PMSCommon.SimpleState.正常.ToString();
-                model.PV1 = 0;
-                model.PV2 = 0;
-                model.PV3 = 0;
-                model.SV = 0;
-                model.Ton = 5;
-                model.Vaccum = 1E-3;
-                model.Shift1 = 0;
-                model.Shift2 = 0;
-                model.Omega = 0;
-                model.WaterTemperatureIn = 25;
-                model.WaterTemperatureOut = 25;
-                model.ExtraInformation = "无";
+                var temp = new DcRecordVHP();
+                temp.ID = Guid.NewGuid();
+                temp.PlanVHPID = CurrentPlanWithMisson.Plan.ID;
+                temp.CurrentTime = DateTime.Now;
+                temp.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                temp.State = PMSCommon.SimpleState.正常.ToString();
+                temp.PV1 = 22;
+                temp.PV2 = 0;
+                temp.PV3 = 0;
+                temp.SV = 0;
+                temp.Ton = 5;
+                temp.Vaccum = 1E-3;
+                temp.Shift1 = 0;
+                temp.Shift2 = 0;
+                temp.Omega = 0;
+                temp.WaterTemperatureIn = 25;
+                temp.WaterTemperatureOut = 25;
+                temp.ExtraInformation = "无";
                 isNew = true;
-                CurrentRecordVHP = model;
+                CurrentRecordVHP = temp;
 
             }
         }
@@ -134,7 +167,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (MessageBox.Show("确定要保存该条记录？","请问",MessageBoxButton.YesNo,MessageBoxImage.Question)==MessageBoxResult.No)
+            if (MessageBox.Show("确定要保存该条记录？", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
             {
                 return;
             }
@@ -153,7 +186,6 @@ namespace PMSClient.ViewModel
                         }
                         else
                         {
-                            CurrentRecordVHP.CurrentTime = DateTime.Now;
                             service.UpdateReocrdVHP(CurrentRecordVHP);
                         }
                         service.Close();
@@ -165,40 +197,40 @@ namespace PMSClient.ViewModel
             }
             catch (Exception ex)
             {
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }
 
-        private void ActionCopyFill(DcRecordVHP obj)
+        private void ActionCopyFill(DcRecordVHP model)
         {
-            if (obj != null)
+            if (model != null)
             {
-                var model = new DcRecordVHP();
+                var temp = new DcRecordVHP();
 
                 #region 初始化
-                model.PlanVHPID = obj.PlanVHPID;
-                model.ID = Guid.NewGuid();
-                model.CurrentTime = DateTime.Now;
-                model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                model.State = PMSCommon.SimpleState.正常.ToString();
-                model.PV1 = obj.PV1;
-                model.PV2 = obj.PV2;
-                model.PV3 = obj.PV3;
-                model.SV = obj.SV;
+                temp.PlanVHPID = model.PlanVHPID;
+                temp.ID = Guid.NewGuid();
+                temp.CurrentTime = DateTime.Now;
+                temp.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                temp.State = PMSCommon.SimpleState.正常.ToString();
+                temp.PV1 = model.PV1;
+                temp.PV2 = model.PV2;
+                temp.PV3 = model.PV3;
+                temp.SV = model.SV;
 
-                model.Ton = obj.Ton;
-                model.Vaccum = obj.Vaccum;
-                model.Shift1 = obj.Shift1;
-                model.Shift2 = obj.Shift2;
-                model.Omega = obj.Omega;
-                model.WaterTemperatureIn = obj.WaterTemperatureIn;
-                model.WaterTemperatureOut = obj.WaterTemperatureOut;
-                model.ExtraInformation = obj.ExtraInformation;
+                temp.Ton = model.Ton;
+                temp.Vaccum = model.Vaccum;
+                temp.Shift1 = model.Shift1;
+                temp.Shift2 = model.Shift2;
+                temp.Omega = model.Omega;
+                temp.WaterTemperatureIn = model.WaterTemperatureIn;
+                temp.WaterTemperatureOut = model.WaterTemperatureOut;
+                temp.ExtraInformation = model.ExtraInformation;
                 #endregion
 
                 isNew = true;
-
+                EditStatus = "全新创建";
                 CurrentRecordVHP = model;
                 NavigationService.ShowStatusMessage("填充选定项完毕");
             }
@@ -266,6 +298,13 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentPlanWithMisson));
             }
         }
+        private string editStatus;
+
+        public string EditStatus
+        {
+            get { return editStatus; }
+            set { editStatus = value; RaisePropertyChanged(nameof(EditStatus)); }
+        }
 
 
         public List<string> QuickVHPMesseges { get; set; }
@@ -278,6 +317,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
         public RelayCommand New { get; set; }
         public RelayCommand<DcRecordVHP> EditItem { get; set; }
+        public RelayCommand<DcRecordVHP> DeleteItem { get; set; }
         public RelayCommand<DcRecordVHP> CopyFill { get; set; }
 
         public RelayCommand Chart { get; set; }
