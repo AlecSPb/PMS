@@ -12,6 +12,7 @@ namespace PMSCommon
     public enum QuickVHPMessege
     {
         关门,
+        凸高,
         粗抽,
         扩散泵加热,
         开启罗茨泵,
