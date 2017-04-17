@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PMSClient.ViewModel
 {
@@ -30,8 +31,28 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Select = new RelayCommand<DcProduct>(ActionSelect);
+            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend);
             GiveUp = new RelayCommand(GoBack);
         }
+
+        private void ActionSelectAndSend(DcProduct model)
+        {
+            if (MessageBox.Show("确定要将此产品设置为发货状态并填入发货单项目中？","请问",MessageBoxButton.YesNo,MessageBoxImage.Question)==MessageBoxResult.No)
+            {
+                return;
+            }
+
+            if (model!=null)
+            {
+                using (var service=new ProductServiceClient())
+                {
+                    model.State = PMSCommon.ProductState.发货.ToString();
+                    service.UpdateProduct(model);
+                }
+                ActionSelect(model);
+            }
+        }
+
         private bool CanSearch()
         {
             return !(string.IsNullOrEmpty(SearchProductID) && string.IsNullOrEmpty(SearchCompositionStd));
@@ -147,5 +168,8 @@ namespace PMSClient.ViewModel
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
         #endregion
+
+
+        public RelayCommand<DcProduct> SelectAndSend { get; set; }
     }
 }

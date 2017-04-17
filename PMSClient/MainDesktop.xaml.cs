@@ -33,10 +33,23 @@ namespace PMSClient
         public MainDesktop()
         {
             InitializeComponent();
+
         }
         private Timer _timer;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
+                var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                Title = $"{titleName}-{versonName}";
+            }
+            catch (Exception)
+            {
+               
+            }
+
+
             _views = PMSHelper.DesktopViews;
             _toolviews = PMSHelper.ToolViews;
 
@@ -62,7 +75,7 @@ namespace PMSClient
                 using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
                     //System.Diagnostics.Debug.Print(heartbeat.Beat());
-                    if (heartbeat.Beat()=="ok")
+                    if (heartbeat.Beat() == "ok")
                     {
                         this.Dispatcher.Invoke(() =>
                         {
@@ -285,7 +298,7 @@ namespace PMSClient
 
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
-            if (PMSHelper.CurrentSession.CurrentUser!=null)
+            if (PMSHelper.CurrentSession.CurrentUser != null)
             {
                 PMSHelper.CurrentSession.LogOut();
                 _views.LogIn.ClearLog();

@@ -68,8 +68,10 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             States = new List<string>();
-            var states = Enum.GetNames(typeof(PMSCommon.SimpleState));
-            states.ToList().ForEach(s => States.Add(s));
+            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
+
+            Suppliers = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.MaterialSupplier>(Suppliers);
         }
 
         private void InitialCommands()
@@ -125,7 +127,7 @@ namespace PMSClient.ViewModel
             }
         }
         public List<string> States { get; set; }
-
+        public List<string> Suppliers { get; set; }
         public RelayCommand Select { get; set; }
     }
 }

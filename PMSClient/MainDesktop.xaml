@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="{StaticResource AppNameDesktop}"  ResizeMode="CanResize" Icon="Resource\Images\chart.png"
+        Title="PMS生产管理系统"  ResizeMode="CanResize" Icon="Resource\Images\chart.png"
         MinHeight="400" MinWidth="600" WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>

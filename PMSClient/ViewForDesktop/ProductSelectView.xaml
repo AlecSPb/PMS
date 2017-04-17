@@ -36,6 +36,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonSelectAndSend}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
@@ -97,8 +100,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RPRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
+                <!--<DataGridTextColumn Header="{StaticResource RPRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>-->
                 <DataGridTextColumn Header="{StaticResource RPCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
