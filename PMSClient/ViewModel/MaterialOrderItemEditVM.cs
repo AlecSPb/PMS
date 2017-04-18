@@ -99,7 +99,7 @@ namespace PMSClient.ViewModel
                     if (CurrentMaterialOrderItem!=null)
                     {
                         //TODO：更新服务后写上
-                        var result = false;
+                        var result = service.CheckOrderItemNumberExist(CurrentMaterialOrderItem.OrderItemNumber);
                         CheckResult = result ? "被占用" : "可以用";
                     }
                 }
