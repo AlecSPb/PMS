@@ -55,6 +55,9 @@ namespace PMSClient.ViewModel
             model.Remark = "无";
             model.PackNumber = 1;
             model.Position = "A2";
+            model.Dimension = "";
+            model.DimensionActual = "";
+            model.Defects = "无";
             model.State = PMSCommon.SimpleState.正常.ToString();
             #endregion
             CurrentDeliveryItem = model;
@@ -79,7 +82,9 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem.Customer = model.Customer;
                 CurrentDeliveryItem.Weight = model.Weight;
                 CurrentDeliveryItem.PO = model.PO;
-
+                CurrentDeliveryItem.Dimension = model.Dimension;
+                CurrentDeliveryItem.DimensionActual = model.DimensionActual;
+                CurrentDeliveryItem.Defects = model.Defects;
                 //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }
@@ -93,7 +98,9 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem.Customer = model.Customer;
                 CurrentDeliveryItem.Weight = model.Weight;
                 CurrentDeliveryItem.PO = model.PO;
-
+                CurrentDeliveryItem.Dimension = model.Dimension;
+                CurrentDeliveryItem.DimensionActual = model.DimensionActual;
+                CurrentDeliveryItem.Defects = model.Defects;
                 //RaisePropertyChanged(nameof(CurrentDeliveryItem));
             }
         }

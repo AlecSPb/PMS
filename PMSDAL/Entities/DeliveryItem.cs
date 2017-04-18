@@ -26,6 +26,9 @@ namespace PMSDAL
         public string PO { get; set; }
         public string Weight { get; set; }
         public string DetailRecord { get; set; }//复杂的信息写在这里
+        public string Dimension { get; set; }
+        public string DimensionActual { get; set; }
+        public string Defects { get; set; }
 
         public int PackNumber { get; set; }//箱子号
         public string Position { get; set; }//入库库房编号，位置编号，unknown，成品库房 产品架A
