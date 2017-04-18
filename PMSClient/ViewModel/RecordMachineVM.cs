@@ -14,6 +14,7 @@ namespace PMSClient.ViewModel
     {
         public RecordMachineVM()
         {
+            searchVHPPlanLot = "";
             RecordMachines = new ObservableCollection<DcRecordMachine>();
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd,CanAdd);
@@ -53,6 +54,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
+            SearchVHPPlanLot = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -83,7 +85,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 10;
             var service = new RecordMachineServiceClient();
-            RecordCount = service.GetRecordMachineCount();
+            RecordCount = service.GetRecordMachineCountByVHPPlanLot(SearchVHPPlanLot);
             service.Close();
             ActionPaging();
         }
@@ -93,13 +95,19 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new RecordMachineServiceClient();
-            var models = service.GetRecordMachines(skip, take);
+            var models = service.GetRecordMachinesByVHPPlanLot(skip, take, SearchVHPPlanLot);
             service.Close();
             RecordMachines.Clear();
-            models.ToList<DcRecordMachine>().ForEach(o => RecordMachines.Add(o));
+            models.ToList().ForEach(o => RecordMachines.Add(o));
         }
 
 
+        private string searchVHPPlanLot;
+        public string SearchVHPPlanLot
+        {
+            get { return searchVHPPlanLot; }
+            set { searchVHPPlanLot = value; RaisePropertyChanged(nameof(SearchVHPPlanLot)); }
+        }
 
         public ObservableCollection<DcRecordMachine> RecordMachines { get; set; }
 

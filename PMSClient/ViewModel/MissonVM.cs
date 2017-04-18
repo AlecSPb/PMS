@@ -77,6 +77,8 @@ namespace PMSClient.ViewModel
 
         private void ActionRefresh()
         {
+            SearchPMINumber = "";
+            SearchCompositionStandard = "";
             SetPageParametersWhenConditionChange();
         }
 

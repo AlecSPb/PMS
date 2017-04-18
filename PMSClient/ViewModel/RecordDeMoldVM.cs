@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel
     {
         public RecordDeMoldVM()
         {
-
+            searchVHPPlanLot = "";
             PageChanged = new RelayCommand(ActionPaging);
 
             RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
@@ -48,6 +48,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
+            SearchVHPPlanLot = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -84,7 +85,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 10;
             var service = new RecordDeMoldServiceClient();
-            RecordCount = service.GetRecordDeMoldsCount();
+            RecordCount = service.GetRecordDeMoldsCountByVHPPlanLot(SearchVHPPlanLot);
             service.Close();
             ActionPaging();
         }
@@ -95,13 +96,19 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new RecordDeMoldServiceClient();
-            var models = service.GetRecordDeMolds(skip, take);
+            var models = service.GetRecordDeMoldsByVHPPlanLot(skip, take, SearchVHPPlanLot);
             service.Close();
             RecordDeMolds.Clear();
-            models.ToList<DcRecordDeMold>().ForEach(o => RecordDeMolds.Add(o));
+            models.ToList().ForEach(o => RecordDeMolds.Add(o));
         }
 
 
+        private string searchVHPPlanLot;
+        public string SearchVHPPlanLot
+        {
+            get { return searchVHPPlanLot; }
+            set { searchVHPPlanLot = value; RaisePropertyChanged(nameof(SearchVHPPlanLot)); }
+        }
 
         public ObservableCollection<DcRecordDeMold> RecordDeMolds { get; set; }
 

@@ -57,8 +57,8 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCustomer = "";
-            SearchCompositoinStandard = "";
+            SearchPMINumber = "";
+            SearchCompositionStandard = "";
             MainOrders = new ObservableCollection<DcOrder>();
         }
         private void InitializeCommands()
@@ -70,13 +70,13 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositoinStandard));
+            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchCompositionStandard));
         }
 
         private void ActionAll()
         {
-            SearchCustomer = "";
-            SearchCompositoinStandard = "";
+            SearchPMINumber = "";
+            SearchCompositionStandard = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -111,20 +111,20 @@ namespace PMSClient.ViewModel
         }
 
         #region Proeperties
-        private string searchCustomer;
-        public string SearchCustomer
+        private string searchPMINumber;
+        public string SearchPMINumber
         {
-            get { return searchCustomer; }
+            get { return searchPMINumber; }
             set
             {
-                if (searchCustomer == value)
+                if (searchPMINumber == value)
                     return;
-                searchCustomer = value;
-                RaisePropertyChanged(() => SearchCustomer);
+                searchPMINumber = value;
+                RaisePropertyChanged(() => SearchPMINumber);
             }
         }
         private string searchCompositionStandard;
-        public string SearchCompositoinStandard
+        public string SearchCompositionStandard
         {
             get { return searchCompositionStandard; }
             set
@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
                 if (searchCompositionStandard == value)
                     return;
                 searchCompositionStandard = value;
-                RaisePropertyChanged(() => SearchCompositoinStandard);
+                RaisePropertyChanged(() => SearchCompositionStandard);
             }
         }
 

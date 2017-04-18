@@ -16,6 +16,9 @@ namespace PMSClient.ViewModel
     {
         public RecordMillingVM()
         {
+
+            searchVHPPlanLot = "";
+
             RecordMillings = new ObservableCollection<DcRecordMilling>();
             SetPageParametersWhenConditionChange();
             InitializeCommands();
@@ -28,8 +31,8 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcRecordMilling>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcRecordMilling>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
         }
@@ -46,6 +49,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
+            SearchVHPPlanLot = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -74,7 +78,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 10;
             var service = new RecordMillingServiceClient();
-            RecordCount = service.GetRecordMillingCount();
+            RecordCount = service.GetRecordMillingCountByVHPPlanLot(SearchVHPPlanLot);
             service.Close();
             ActionPaging();
         }
@@ -85,12 +89,18 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new RecordMillingServiceClient();
-            var models = service.GetRecordMillings(skip, take);
+            var models = service.GetRecordMillingsByVHPPlanLot(skip, take, SearchVHPPlanLot);
             service.Close();
             RecordMillings.Clear();
-            models.ToList<DcRecordMilling>().ForEach(o => RecordMillings.Add(o));
+            models.ToList().ForEach(o => RecordMillings.Add(o));
         }
 
+        private string searchVHPPlanLot;
+        public string SearchVHPPlanLot
+        {
+            get { return searchVHPPlanLot; }
+            set { searchVHPPlanLot = value; RaisePropertyChanged(nameof(SearchVHPPlanLot)); }
+        }
 
 
         #region DerivedPart
