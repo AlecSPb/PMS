@@ -38,6 +38,18 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetDeliveryItemsCount(string productid, string composition);
 
+
+        [OperationContract]
+        List<DcDeliveryItemExtra> GetDeliveryItemExtra(string productid, string composition);
+        [OperationContract]
+        int GetDeliveryItemExtraCount(string productid, string composition);
+
+
+
+
+
+
+
         [OperationContract]
         int AddDeliveryItem(DcDeliveryItem model);
         [OperationContract]

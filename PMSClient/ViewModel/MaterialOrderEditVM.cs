@@ -31,8 +31,8 @@ namespace PMSClient.ViewModel
             model.Supplier = "Sanjie";
             model.SupplierAbbr = "SJ";
             model.SupplierEmail = "sj_materials@163.com";
-            model.SupplierReceiver = "Mr.Wang";
-            model.SupplierAddress = "Chengdu,Sichuan CHINA";
+            model.SupplierReceiver = "Mr. Wang";
+            model.SupplierAddress = "Chengdu, Sichuan CHINA";
             model.ShipFee = 0;
             model.Priority = PMSCommon.OrderPriority.普通.ToString();
             model.Remark = "";

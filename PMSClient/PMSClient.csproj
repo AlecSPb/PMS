@@ -818,9 +818,9 @@
     <Resource Include="Resource\Images\funnyfacebig.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\HelpImages\blanktarget.jpg">
+    <Resource Include="Resource\HelpImages\blanktarget.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DocTemplate\Attention.txt" />
@@ -937,9 +937,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\HelpImages\deliverysheet.png">
+    <Resource Include="Resource\HelpImages\deliverysheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Icons\lightbulb.png" />
@@ -958,6 +958,11 @@
     <None Include="notices.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\HelpImages\materialorder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

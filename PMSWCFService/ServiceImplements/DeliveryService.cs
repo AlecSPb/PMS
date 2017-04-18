@@ -21,7 +21,6 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg =>
                     {
                         cfg.CreateMap<DcDelivery, Delivery>();
-                        cfg.CreateMap<DcDeliveryItem, DeliveryItem>();
                     });
                     var record = Mapper.Map<Delivery>(model);
                     dc.Deliverys.Add(record);
@@ -217,6 +216,16 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(string productid, string composition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetDeliveryItemExtraCount(string productid, string composition)
+        {
+            throw new NotImplementedException();
         }
 
         public List<DcDeliveryItem> GetDeliveryItems(int skip, int take, string productid, string composition)
