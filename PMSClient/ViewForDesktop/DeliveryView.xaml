@@ -180,6 +180,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RPDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Dimension}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
