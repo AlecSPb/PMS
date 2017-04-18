@@ -42,7 +42,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dg" Grid.Row="0" FrozenColumnCount="3"
+                <DataGrid x:Name="dg" Grid.Row="0" 
                 LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanWithMissons}">
                     <i:Interaction.Triggers>
@@ -57,12 +57,12 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                         <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
-                        <!--<DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
-                        <!--<DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
+                        <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
                                     ElementStyle="{StaticResource StyleDGTextBlockBigRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockBigRight}"/>-->
+                                    ElementStyle="{StaticResource StyleDGTextBlockBigRight}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

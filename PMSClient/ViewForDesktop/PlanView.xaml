@@ -59,6 +59,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="{StaticResource PlanThickness}" Binding="{Binding Plan.Thickness}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding Plan.Quantity}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanCalculationDensity}" Binding="{Binding Plan.CalculationDensity,StringFormat={}{0:N2}}"

@@ -18,10 +18,12 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="{StaticResource PageMisson}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{Binding MissonTarget,StringFormat=共有{0}个新订单需要完成}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+        </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding GoToNavigation}"/>
@@ -64,7 +66,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                
+
                 <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
 
@@ -147,16 +149,14 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
-                             LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
-                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-        <StackPanel Grid.Row="4" Orientation="Horizontal">
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <control:SimplePager  Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}" LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMisson}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
         </StackPanel>
-        <DataGrid Name="dgplans" Grid.Row="5" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}" LoadingRow="dgplans_LoadingRow">
+        <DataGrid Name="dgplans" Grid.Row="4" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}" LoadingRow="dgplans_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>

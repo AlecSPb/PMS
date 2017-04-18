@@ -28,6 +28,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
+            missonTarget = 0;
             searchCompostionStandard = searchPMINumber = "";
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();
@@ -133,6 +134,10 @@ namespace PMSClient.ViewModel
                 PageSize = 15;
                 var service = new MissonServiceClient();
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
+                //TODO:实现任务计划
+                MissonTarget += 1;
+                //MissonTarget = service.GetMissonsUnFinished();
+                service.Close();
                 ActionPaging();
             }
             catch (Exception ex)
@@ -192,6 +197,15 @@ namespace PMSClient.ViewModel
             get { return searchPMINumber; }
             set { searchPMINumber = value; RaisePropertyChanged((SearchPMINumber)); }
         }
+        private int missonTarget;
+
+        public int MissonTarget
+        {
+            get { return missonTarget; }
+            set { missonTarget = value; RaisePropertyChanged(nameof(MissonTarget)); }
+        }
+
+
 
         #endregion
 
