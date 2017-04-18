@@ -45,20 +45,16 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.Append("成分:");
                 sb.AppendLine(model.Misson.CompositionStandard);
-                sb.Append("编号:");
-                sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
-                sb.Append("要求:");
                 sb.AppendLine(model.Misson.Dimension);
-
+                sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
 
                 var mainContent =sb.ToString();
 
                 var pageTitle = "热压产品毛坯标签打印输出";
-                var tips = "请复制左边内容后点击打开模板按钮，粘贴到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签";
+                var tips = "点击打开模板按钮，粘贴不同内容到模板合适位置，\n热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签";
                 var template = "毛坯标签";
-                var helpimage = "blanktarget.jpg";
+                var helpimage = "productionlabel.png";
                 PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, pageTitle,
                     tips, template, mainContent, helpimage);
                 NavigationService.GoTo(PMSViews.LabelOutPut);

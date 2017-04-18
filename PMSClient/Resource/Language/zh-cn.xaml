@@ -224,7 +224,7 @@
     <sys:String x:Key="ButtonSelectAndSend">发货</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
-    <sys:String x:Key="ButtonDeliverySheet">发货</sys:String>
+    <sys:String x:Key="ButtonDeliverySheet">发货单</sys:String>
     <sys:String x:Key="ButtonMisson">生产任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划安排</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
