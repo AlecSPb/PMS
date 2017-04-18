@@ -144,15 +144,15 @@
     <Compile Include="Helpers\UserfullPackage\TargetDensityCalculationItem.cs" />
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
-    <Compile Include="Helpers\CommonDialogService.cs" />
+    <Compile Include="Helpers\OK\PMSDialogService.cs" />
     <Compile Include="Helpers\OK\MainNavigationToken.cs" />
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
-    <Compile Include="ReportsHelper\ReportGASOpticraftGrinding.cs" />
-    <Compile Include="ReportsHelper\ReportGASElastomer440Blank.cs" />
+    <Compile Include="ReportsHelper\ReportOpticraft440.cs" />
+    <Compile Include="ReportsHelper\ReportTCB440.cs" />
     <Compile Include="ReportsHelper\ReportCOABridgeLine.cs" />
     <Compile Include="ReportsHelper\ReportCOA.cs" />
     <Compile Include="ReportsHelper\ReportHelper.cs" />
@@ -650,13 +650,13 @@
     <None Include="DocTemplate\Reports\COABridgeLine.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\Reports\GeAsSeElastomer440Blank.docx">
+    <None Include="DocTemplate\Reports\ReportTCB440.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\Reports\MaterialOrder.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\Reports\GeAsSeOpticraftGrinding.docx">
+    <None Include="DocTemplate\Reports\ReportOpticraft440.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\Reports\RecordTest.docx">

@@ -62,7 +62,8 @@ namespace PMSClient.ViewModel
 
         private void ActionDeleteItem(DcRecordVHP model)
         {
-            if (MessageBox.Show("确定要作废该条记录？", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            var msgResult = PMSDialogService.ShowYesNo("确定要作废该条记录？", "请问");
+            if (!msgResult)
             {
                 return;
             }
@@ -167,7 +168,8 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (MessageBox.Show("确定要保存该条记录？", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            var msgResult = PMSDialogService.ShowYesNo("确定要保存该条记录？", "请问");
+            if (!msgResult)
             {
                 return;
             }

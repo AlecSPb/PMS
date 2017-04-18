@@ -114,7 +114,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportGASElastomer440Blank report = new ReportGASElastomer440Blank();
+                ReportTCB440 report = new ReportTCB440();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
@@ -131,7 +131,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportGASOpticraftGrinding report = new ReportGASOpticraftGrinding();
+                ReportOpticraft440 report = new ReportOpticraft440();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();

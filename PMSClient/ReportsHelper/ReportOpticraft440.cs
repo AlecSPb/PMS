@@ -12,14 +12,14 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class ReportGASOpticraftGrinding : ReportBase
+    public class ReportOpticraft440 : ReportBase
     {
         private string prefix = "Opticraft440抛光";
-        public ReportGASOpticraftGrinding()
+        public ReportOpticraft440()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
-            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "GeAsSeOpticraftGrinding.docx");
-            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "GeAsSeOpticraftGrinding_Temp.docx");
+            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportOpticraft440.docx");
+            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "ReportOpticraft440_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
 
@@ -45,7 +45,17 @@ namespace PMSClient.ReportsHelper
             ReportHelper.FileCopy(sourceFile, tempFile);
             //写入数据到文件
             #region 创建文档
-
+            using (DocX document = DocX.Load(tempFile))
+            {
+                string lotNumber = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
+                document.ReplaceText("[Lot]", lotNumber);
+                document.ReplaceText("[PO]", model.PO ?? "");
+                document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
+                document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));
+                document.ReplaceText("[Size]", model.Dimension ?? "");
+                document.ReplaceText("[Dimension]", model.Dimension ?? "");
+                document.Save();
+            }
             #endregion
             //复制到临时文件
             ReportHelper.FileCopy(tempFile, targetFile);
