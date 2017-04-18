@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.MainService;
+using PMSCommon;
 
 namespace PMSClient.ViewModel
 {
@@ -137,7 +138,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Select { get; set; }
 
-
+        public List<string> States { get; set; }
 
         public List<string> DeMoldTypes { get; set; }
     }

@@ -81,6 +81,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<DeliveryVM>();
             SimpleIoc.Default.Register<DeliveryEditVM>();
             SimpleIoc.Default.Register<DeliveryItemEditVM>();
+            SimpleIoc.Default.Register<DeliveryItemListVM>();
 
             SimpleIoc.Default.Register<RecordVHPVM>();
             SimpleIoc.Default.Register<RecordVHPQuickEditVM>();
@@ -312,6 +313,10 @@ namespace PMSClient.ViewModel
         public DeliveryItemEditVM DeliveryItemEdit
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryItemEditVM>(); }
+        }
+        public DeliveryItemListVM DeliveryItemList
+        {
+            get { return SimpleIoc.Default.GetInstance<DeliveryItemListVM>(); }
         }
         #endregion
 

@@ -54,6 +54,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSearch()
         {
+            SearchDeliveryName = "";
             SetPageParametersWhenConditionChange();
         }
 

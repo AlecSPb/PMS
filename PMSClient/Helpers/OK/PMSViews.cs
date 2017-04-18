@@ -51,11 +51,14 @@ namespace PMSClient
         RecordTestDoc,
         RecordBonding,
         RecordBondingEdit,
+        RecordBondingSelect,
         Delivery,
         DeliveryEdit,
         DeliveryItemEdit,
+        DeliveryItemList,
         Product,
         ProductEdit,
+        ProductSelect,
         Maintanence,
         MaintanenceEdit,
         MaterialNeedCalcuationTool,
@@ -69,8 +72,6 @@ namespace PMSClient
         AdminUser,
         AdminAccesses,
         AdminAccess,
-        AdminRole,
-        RecordBondingSelect,
-        ProductSelect
+        AdminRole
     }
 }

@@ -241,6 +241,9 @@ namespace PMSClient
                 case PMSViews.DeliveryItemEdit:
                     NavigateTo(_views.DeliveryItemEdit);
                     break;
+                case PMSViews.DeliveryItemList:
+                    NavigateTo(_views.DeliveryItemList);
+                    break;
                 case PMSViews.Product:
                     NavigateTo(_views.Product);
                     break;

@@ -205,7 +205,7 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleTextBlockWarning" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
-        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
