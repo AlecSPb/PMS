@@ -58,6 +58,12 @@ namespace PMSClient.ViewModel
             }
         }
 
+        private void ShowMessageAfterCreateDoc(string reportName)
+        {
+            NavigationService.ShowStatusMessage($"{reportName}创建完毕！");
+            PMSDialogService.ShowYes("提示",$"{reportName}创建完毕，请打开报告检查内容是否正确");
+        }
+
         #region 创建报告
         private void CreateRecordTest()
         {
@@ -67,7 +73,8 @@ namespace PMSClient.ViewModel
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
-                NavigationService.ShowStatusMessage("测试记录报告创建完毕！");
+
+                ShowMessageAfterCreateDoc("测试记录报告");
             }
             catch (Exception ex)
             {
@@ -84,7 +91,8 @@ namespace PMSClient.ViewModel
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
-                NavigationService.ShowStatusMessage("测试COA报告创建完毕！");
+
+                ShowMessageAfterCreateDoc("COA报告");
             }
             catch (Exception ex)
             {
@@ -101,7 +109,7 @@ namespace PMSClient.ViewModel
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
-                NavigationService.ShowStatusMessage("测试COABridgeLine报告创建完毕！");
+                ShowMessageAfterCreateDoc("COABridgeLine报告");
             }
             catch (Exception ex)
             {
@@ -118,7 +126,7 @@ namespace PMSClient.ViewModel
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
-                NavigationService.ShowStatusMessage("测试TCB440绑定报告创建完毕！");
+                ShowMessageAfterCreateDoc("TCB440绑定报告");
             }
             catch (Exception ex)
             {
@@ -135,7 +143,7 @@ namespace PMSClient.ViewModel
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
-                NavigationService.ShowStatusMessage("测试Opticraft440绑定报告创建完毕！");
+                ShowMessageAfterCreateDoc("Opticraft440绑定报告");
             }
             catch (Exception ex)
             {
