@@ -87,7 +87,7 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
             Calculator = new RelayCommand(ActionCalculator);
-            CheckOrderItemNumberExsit = new RelayCommand(ActionCheck);
+            CheckOrderItemNumberExist = new RelayCommand(ActionCheck);
         }
 
         private void ActionCheck()
@@ -96,7 +96,12 @@ namespace PMSClient.ViewModel
             {
                 using (var service=new MaterialOrderServiceClient())
                 {
-
+                    if (CurrentMaterialOrderItem!=null)
+                    {
+                        //TODO：更新服务后写上
+                        var result = false;
+                        CheckResult = result ? "被占用" : "可以用";
+                    }
                 }
             }
             catch (Exception ex)
@@ -177,7 +182,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Calculator { get; set; }
 
 
-        public RelayCommand CheckOrderItemNumberExsit { get; set; }
+        public RelayCommand CheckOrderItemNumberExist { get; set; }
 
     }
 }

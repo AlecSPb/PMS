@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSCommon;
 
 namespace PMSClient.ViewModel
 {
@@ -109,7 +110,6 @@ namespace PMSClient.ViewModel
             get { return searchVHPPlanLot; }
             set { searchVHPPlanLot = value; RaisePropertyChanged(nameof(SearchVHPPlanLot)); }
         }
-
         public ObservableCollection<DcRecordDeMold> RecordDeMolds { get; set; }
 
         public RelayCommand Add { get; set; }

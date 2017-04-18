@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSCommon;
 
 namespace PMSClient.ViewModel
 {
@@ -13,8 +14,10 @@ namespace PMSClient.ViewModel
         public RecordMachineEditVM()
         {
             MachineDefects = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.TestDefectsTypes>(MachineDefects);
+            PMSBasicDataService.SetListDS<TestDefectsTypes>(MachineDefects);
 
+            States = new List<string>();
+            PMSBasicDataService.SetListDS<SimpleState>(States);
 
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
@@ -35,7 +38,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.已核验.ToString();
+            model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "成分";
             model.Diameter1 = 0;
@@ -128,7 +131,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Select { get; set; }
 
-
+        public List<string> States { get; set; }
         public List<string> MachineDefects { get; set; }
     }
 }

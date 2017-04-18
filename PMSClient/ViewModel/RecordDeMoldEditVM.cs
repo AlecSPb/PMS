@@ -17,7 +17,8 @@ namespace PMSClient.ViewModel
             DeMoldTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.DeMoldType>(DeMoldTypes);
 
-
+            States = new List<string>();
+            PMSBasicDataService.SetListDS<SimpleState>(States);
 
 
             Save = new RelayCommand(ActionSave);
