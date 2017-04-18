@@ -76,6 +76,7 @@
   <ItemGroup>
     <Content Include="BasicDataService.svc" />
     <Content Include="HeartBeatService.svc" />
+    <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
     <Content Include="UserAccessService.svc" />
     <Content Include="Web.config" />
@@ -154,6 +155,7 @@
     <Compile Include="ServiceContracts\IVHPMoldService.cs" />
     <Compile Include="ServiceContracts\IVHPProcessService.cs" />
     <Compile Include="ServiceImplements\RecordVHPService.cs" />
+    <Compile Include="ServiceImplements\SanjieService.cs" />
     <Compile Include="ServiceImplements\UserAccessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataContracts\DcOrder.cs" />

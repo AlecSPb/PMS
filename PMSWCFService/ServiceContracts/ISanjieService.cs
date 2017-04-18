@@ -17,10 +17,29 @@ namespace PMSWCFService.ServiceContracts
         int GetMaterialOrderCount(string orderPo);
 
         [OperationContract]
-        List<DcMaterialInventoryIn> GetMaterialInventoryIn((int skip, int take, string orderPo, string composition);
+        List<DcMaterialOrderItem> GetMaterialOrderItembyMaterialID(Guid id);
+        [OperationContract]
+        int GetMaterialOrderItemCountByMaterialID(Guid id);
+
 
         [OperationContract]
-        int GetMaterialInventoryInCount((int skip, int take, string orderPo, string composition);
+        List<DcMaterialOrderItem> GetMaterialOrderItem(int skip, int take, string orderPo);
+        [OperationContract]
+        int GetMaterialOrderItemCount(string orderPo);
 
+
+
+        [OperationContract]
+        List<DcMaterialInventoryIn> GetMaterialInventoryIn(int skip, int take, string orderlot, string composition);
+
+        [OperationContract]
+        int GetMaterialInventoryInCount(int skip, int take, string orderlot, string composition);
+
+
+        [OperationContract]
+        List<DcMaterialInventoryOut> GetMaterialInventoryOut(int skip, int take, string orderlot, string composition);
+
+        [OperationContract]
+        int GetMaterialInventoryOutCount(int skip, int take, string orderlot, string composition);
     }
 }
