@@ -315,5 +315,27 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+        /// <summary>
+        /// 返回未完成订单的数目
+        /// </summary>
+        /// <returns></returns>
+        public int GetMissonUnCompletedCount()
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.State == PMSCommon.OrderState.未完成.ToString()
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

@@ -50,5 +50,10 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialOrderItem> GetMaterialOrderItems(int skip, int take);
         [OperationContract]
         int GetMaterialOrderItemsCount();
+
+
+        [OperationContract]
+        bool CheckOrderItemNumberExist(string orderItemnumber);
+
     }
 }

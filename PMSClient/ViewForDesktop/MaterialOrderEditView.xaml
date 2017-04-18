@@ -25,12 +25,10 @@
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMaterialOrderEdit}"/>
         </StackPanel>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="600"/>

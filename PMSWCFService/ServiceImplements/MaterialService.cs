@@ -84,6 +84,25 @@ namespace PMSWCFService
             }
         }
 
+        public bool CheckOrderItemNumberExist(string orderItemnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.MaterialOrderItems
+                                where o.OrderItemNumber == orderItemnumber
+                                select o;
+                    return query.Count() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int DeleteMaterialNeed(Guid id)
         {
             try
@@ -94,7 +113,7 @@ namespace PMSWCFService
                     var model = dc.MaterialNeeds.Find(id);
                     if (model != null)
                     {
-                        model.State = OrderState.作废.ToString();
+                        model.State = SimpleState.作废.ToString();
                         result = dc.SaveChanges();
                     }
 
@@ -141,7 +160,7 @@ namespace PMSWCFService
                     var model = dc.MaterialOrderItems.Find(id);
                     if (model != null)
                     {
-                        model.State = OrderState.作废.ToString();
+                        model.State = SimpleState.作废.ToString();
                         result = dc.SaveChanges();
                     }
                     return result;

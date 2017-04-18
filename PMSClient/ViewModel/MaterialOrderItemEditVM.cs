@@ -15,6 +15,7 @@ namespace PMSClient.ViewModel
     {
         public MaterialOrderItemEditVM()
         {
+            checkResult = "";
             OrderStates = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(OrderStates);
             InitialCommmands();
@@ -86,6 +87,22 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
             Calculator = new RelayCommand(ActionCalculator);
+            CheckOrderItemNumberExsit = new RelayCommand(ActionCheck);
+        }
+
+        private void ActionCheck()
+        {
+            try
+            {
+                using (var service=new MaterialOrderServiceClient())
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionCalculator()
@@ -145,9 +162,22 @@ namespace PMSClient.ViewModel
             }
         }
 
+        private string checkResult;
+
+        public string CheckResult
+        {
+            get { return checkResult; }
+            set { checkResult = value; RaisePropertyChanged(nameof(CheckResult)); }
+        }
+
+
+
         public RelayCommand Select { get; set; }
 
         public RelayCommand Calculator { get; set; }
+
+
+        public RelayCommand CheckOrderItemNumberExsit { get; set; }
 
     }
 }

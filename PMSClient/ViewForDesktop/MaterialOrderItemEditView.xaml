@@ -30,12 +30,10 @@
                     Command="{Binding Save}"/>
             <Button Content="{StaticResource ButtonSelectMaterialNeed}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding Select}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMaterialOrderItemEdit}"/>
         </StackPanel>
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="600"/>
@@ -71,29 +69,34 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MOIOrderItemNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OrderItemNumber}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                    <StackPanel Grid.Row="0"  Grid.Column="1"   Orientation="Horizontal">
+                        <TextBox Text="{Binding OrderItemNumber}" Style="{StaticResource StyleTextBoxCommon}" Width="120"/>
+                        <Button Content="检查是否唯一" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.CheckOrderItemNumberExist,
+                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                        <TextBlock Text="{Binding DataContext.CheckResult,
+                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                    </StackPanel>
                     <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="条目编号，自动生成的不一定合适，可以手动修改，但必须唯一"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOIComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="可以选择原料需求的成分，可以自行更改"/>
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOIPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="内部工作号"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MOIPurity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
@@ -101,9 +104,9 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
                         <TextBox  Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                         <Button Grid.Row="3" Grid.Column="2" Content="原料需求计算器" Command="{Binding DataContext.Calculator,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                            Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"/>
+                            Style="{StaticResource StyleButtonCommon}" />
                     </StackPanel>
                     <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料重量，单位kg"/>
@@ -111,14 +114,14 @@
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MOIDescription}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="要求描述,在报告中会显示在每一个订单项目描述内容的最后面"/>
 
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MOIProvideRawMaterial}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="提供原料,例如Cu=2kg,In=1kg,Ga=0.6kg,Se=6kg"/>
 
@@ -132,7 +135,7 @@
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MOIUnitPrice}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding UnitPrice}" Style="{StaticResource StyleTextBoxCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="kg/RMB"/>
 
@@ -149,11 +152,11 @@
                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOICreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOICreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
 
 
