@@ -725,6 +725,9 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryIn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

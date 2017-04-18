@@ -31,11 +31,11 @@ namespace PMSClient.ViewModel
             model.DeliveryName = $"FH{DateTime.Now.ToString("yyMMdd")}";
             model.InvoiceNumber = "无";
             model.DeliveryNumber = "UPS";
-            model.PackageInformation = "重量未知";
+            model.PackageInformation = "无";
             model.PackageType = PMSCommon.PackageType.木箱.ToString();
             model.Remark = "";
             model.ShipTime = DateTime.Now;
-            model.Address = "这里填写发货地址";
+            model.Address = "无";
             model.Country = PMSCommon.CountryRegion.美国.ToString();
             #endregion
             CurrentDelivery = model;

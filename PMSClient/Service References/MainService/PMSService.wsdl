@@ -181,6 +181,12 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemsCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemsCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_CheckOrderItemNumberExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderItemNumberExist" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderItemNumberExistResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryIns_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryIns" />
   </wsdl:message>
@@ -264,6 +270,12 @@
   </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonsCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonsCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCountResponse" />
   </wsdl:message>
   <wsdl:message name="IMissonService_GetPlanWithMisson_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanWithMisson" />
@@ -360,6 +372,18 @@
   </wsdl:message>
   <wsdl:message name="IDeliveryService_GetDeliveryItemsCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryItemsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtra_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtra" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtra_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtraCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCount" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtraCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCountResponse" />
   </wsdl:message>
   <wsdl:message name="IDeliveryService_AddDeliveryItem_InputMessage">
     <wsdl:part name="parameters" element="tns:AddDeliveryItem" />
@@ -760,6 +784,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount" message="tns:IMaterialOrderService_GetMaterialOrderItemsCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemsCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CheckOrderItemNumberExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMaterialInventoryService">
     <wsdl:operation name="GetMaterialInventoryIns">
@@ -819,6 +847,10 @@
     <wsdl:operation name="GetMissonsCountBySearch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch" message="tns:IMissonService_GetMissonsCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse" message="tns:IMissonService_GetMissonsCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount" message="tns:IMissonService_GetMissonUnCompletedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse" message="tns:IMissonService_GetMissonUnCompletedCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPlanWithMisson">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMisson" message="tns:IMissonService_GetPlanWithMisson_InputMessage" />
@@ -885,6 +917,14 @@
     <wsdl:operation name="GetDeliveryItemsCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount" message="tns:IDeliveryService_GetDeliveryItemsCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCountResponse" message="tns:IDeliveryService_GetDeliveryItemsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtra">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra" message="tns:IDeliveryService_GetDeliveryItemExtra_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse" message="tns:IDeliveryService_GetDeliveryItemExtra_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount" message="tns:IDeliveryService_GetDeliveryItemExtraCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse" message="tns:IDeliveryService_GetDeliveryItemExtraCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddDeliveryItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryItem" message="tns:IDeliveryService_AddDeliveryItem_InputMessage" />
@@ -1357,6 +1397,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CheckOrderItemNumberExist">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="materialinventory" type="tns:IMaterialInventoryService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -1482,6 +1531,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMissonsCountBySearch">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonsCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCount">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1629,6 +1687,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetDeliveryItemsCount">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtra">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraCount">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

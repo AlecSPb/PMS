@@ -2625,6 +2625,67 @@ namespace PMSClient.MainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcDeliveryItemExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcDeliveryItemExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSClient.MainService.DcDelivery DeliveryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSClient.MainService.DcDeliveryItem DeliveryItemField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSClient.MainService.DcDelivery Delivery {
+            get {
+                return this.DeliveryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryField, value) != true)) {
+                    this.DeliveryField = value;
+                    this.RaisePropertyChanged("Delivery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSClient.MainService.DcDeliveryItem DeliveryItem {
+            get {
+                return this.DeliveryItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryItemField, value) != true)) {
+                    this.DeliveryItemField = value;
+                    this.RaisePropertyChanged("DeliveryItem");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordTest", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcRecordTest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -5866,6 +5927,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
+        bool CheckOrderItemNumberExist(string orderItemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
+        System.Threading.Tasks.Task<bool> CheckOrderItemNumberExistAsync(string orderItemnumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6005,6 +6072,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync() {
             return base.Channel.GetMaterialOrderItemsCountAsync();
+        }
+        
+        public bool CheckOrderItemNumberExist(string orderItemnumber) {
+            return base.Channel.CheckOrderItemNumberExist(orderItemnumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckOrderItemNumberExistAsync(string orderItemnumber) {
+            return base.Channel.CheckOrderItemNumberExistAsync(orderItemnumber);
         }
     }
     
@@ -6211,6 +6286,12 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse")]
         System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
+        int GetMissonUnCompletedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
         PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
         
@@ -6307,6 +6388,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber) {
             return base.Channel.GetMissonsCountBySearchAsync(compostion, pminumber);
+        }
+        
+        public int GetMissonUnCompletedCount() {
+            return base.Channel.GetMissonUnCompletedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
+            return base.Channel.GetMissonUnCompletedCountAsync();
         }
         
         public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {
@@ -6421,6 +6510,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsCountResponse")]
         System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
+        PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
+        int GetDeliveryItemExtraCount(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryItemResponse")]
         int AddDeliveryItem(PMSClient.MainService.DcDeliveryItem model);
@@ -6546,6 +6647,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition) {
             return base.Channel.GetDeliveryItemsCountAsync(productid, composition);
+        }
+        
+        public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtra(skip, take, productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtraAsync(skip, take, productid, composition);
+        }
+        
+        public int GetDeliveryItemExtraCount(string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtraCount(productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition);
         }
         
         public int AddDeliveryItem(PMSClient.MainService.DcDeliveryItem model) {

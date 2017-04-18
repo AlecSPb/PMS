@@ -256,6 +256,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcDeliveryItem" nillable="true" type="tns:DcDeliveryItem" />
+  <xs:complexType name="ArrayOfDcDeliveryItemExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcDeliveryItemExtra" nillable="true" type="tns:DcDeliveryItemExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcDeliveryItemExtra" nillable="true" type="tns:ArrayOfDcDeliveryItemExtra" />
+  <xs:complexType name="DcDeliveryItemExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Delivery" nillable="true" type="tns:DcDelivery" />
+      <xs:element minOccurs="0" name="DeliveryItem" nillable="true" type="tns:DcDeliveryItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcDeliveryItemExtra" nillable="true" type="tns:DcDeliveryItemExtra" />
   <xs:complexType name="ArrayOfDcRecordTest">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordTest" nillable="true" type="tns:DcRecordTest" />
