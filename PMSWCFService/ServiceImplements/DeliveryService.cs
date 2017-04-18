@@ -218,14 +218,64 @@ namespace PMSWCFService
 
         }
 
-        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(string productid, string composition)
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip, int take, string productid, string composition)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.DeliveryItems
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && d.ProductID.Contains(productid)
+                                && d.Composition.Contains(composition)
+                                orderby d.CreateTime descending
+                                select d;
+                    var query2 = from d in query.Skip(skip).Take(take)
+                                 join dd in dc.Deliverys
+                                 on d.DeliveryID equals dd.ID
+                                 select new PMSDeliveryItemExtra()
+                                 {
+                                     Delivery = dd,
+                                     DeliveryItem=d
+                                 };
+
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSDeliveryItemExtra, DcDeliveryItemExtra>();
+                        cfg.CreateMap<Delivery, DcDelivery>();
+                        cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
+                    });
+
+                    var records = Mapper.Map<List<PMSDeliveryItemExtra>, List<DcDeliveryItemExtra>>(query2.ToList());
+                    return records;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetDeliveryItemExtraCount(string productid, string composition)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.DeliveryItems
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && d.ProductID.Contains(productid)
+                                &&d.Composition.Contains(composition)
+                                select d;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcDeliveryItem> GetDeliveryItems(int skip, int take, string productid, string composition)

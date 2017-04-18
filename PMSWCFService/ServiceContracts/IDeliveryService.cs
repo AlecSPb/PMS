@@ -40,7 +40,7 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
-        List<DcDeliveryItemExtra> GetDeliveryItemExtra(string productid, string composition);
+        List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip,int take,string productid, string composition);
         [OperationContract]
         int GetDeliveryItemExtraCount(string productid, string composition);
 

@@ -364,7 +364,7 @@
     <sys:String x:Key="MOSupplierReceiver">联系人</sys:String>
     <sys:String x:Key="MOSupplierEmail">电子邮件</sys:String>
     <sys:String x:Key="MOSupplierAddress">地址</sys:String>
-    <sys:String x:Key="MORemark">备注</sys:String>
+    <sys:String x:Key="MORemark">订单备注</sys:String>
     <sys:String x:Key="MOShipFee">运输费</sys:String>
     <sys:String x:Key="MOPriority">优先级</sys:String>
 
