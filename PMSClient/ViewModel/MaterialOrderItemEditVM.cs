@@ -34,7 +34,8 @@ namespace PMSClient.ViewModel
                 item.State = PMSCommon.SimpleState.正常.ToString();
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
-                item.OrderItemNumber = DateTime.Now.ToString("yyMMdd")+"-"+ (GetNowItemCount(order)+1).ToString();
+                var prefix = order.OrderPO.Substring(0, order.OrderPO.Length - 3);
+                item.OrderItemNumber = prefix+"-"+ (GetNowItemCount(order)+1).ToString();
                 item.Composition = "需求成分";
                 item.PMINumber = DateTime.Now.ToString("yyMMdd");
                 item.Purity = "5N";
@@ -46,6 +47,7 @@ namespace PMSClient.ViewModel
                 #endregion
 
                 CurrentMaterialOrderItem = item;
+                CheckResult = "";
             }
 
         }
@@ -66,6 +68,7 @@ namespace PMSClient.ViewModel
             {
                 IsNew = false;
                 CurrentMaterialOrderItem = item;
+                CheckResult = "";
             }
         }
 
