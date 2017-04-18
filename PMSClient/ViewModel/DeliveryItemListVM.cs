@@ -23,15 +23,10 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        public void RefreshData()
-        {
-            SetPageParametersWhenConditionChange();
-        }
-
         private void InitializeProperties()
         {
-            searchDeliveryName = "";
-            DeliveryIteExtras = new ObservableCollection<DcDeliveryItemExtra>();
+            searchCompositionStd = "";
+            DeliveryItemExtras = new ObservableCollection<DcDeliveryItemExtra>();
         }
         private void InitializeCommands()
         {
@@ -46,6 +41,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
+            SearchProductID = SearchCompositionStd = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -55,7 +51,8 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 10;
             var service = new DeliveryServiceClient();
-            RecordCount = service.GetDeliveryItemExtraCount(SearchDeliveryName);
+            RecordCount = service.GetDeliveryItemExtraCount(SearchProductID, SearchCompositionStd);
+
             service.Close();
             ActionPaging();
         }
@@ -66,7 +63,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new DeliveryServiceClient();
-            var models = service.GetDeliveryItemExtra(skip, take, SearchDeliveryName);
+            var models = service.GetDeliveryItemExtra(skip, take, SearchProductID, SearchCompositionStd);
             service.Close();
             DeliveryItemExtras.Clear();
             models.ToList().ForEach(o => DeliveryItemExtras.Add(o));
@@ -74,17 +71,23 @@ namespace PMSClient.ViewModel
         #region Properties
         public ObservableCollection<DcDeliveryItemExtra> DeliveryItemExtras { get; set; }
 
-        private string searchDeliveryName;
+        private string searchCompositionStd;
 
-        public string SearchDeliveryName
+        public string SearchCompositionStd
         {
-            get { return searchDeliveryName; }
-            set { searchDeliveryName = value; RaisePropertyChanged(nameof(SearchDeliveryName)); }
+            get { return searchCompositionStd; }
+            set { searchCompositionStd = value; RaisePropertyChanged(nameof(SearchCompositionStd)); }
         }
+        private string searchProductID;
 
+        public string SearchProductID
+        {
+            get { return searchProductID; }
+            set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
+        }
         #endregion
         #region Commands
-  
+
         #endregion
 
 
