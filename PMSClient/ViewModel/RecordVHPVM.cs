@@ -65,11 +65,18 @@ namespace PMSClient.ViewModel
 
         public void LoadRecordVHPsByRecordVHPID(DcPlanWithMisson model)
         {
-            var service = new RecordVHPServiceClient();
-            var result = service.GetRecordVHP(model.Plan.ID);
-            service.Close();
-            RecordVHPs.Clear();
-            result.ToList().ForEach(i => RecordVHPs.Add(i));
+            if (model!=null)
+            {
+                var service = new RecordVHPServiceClient();
+                var result = service.GetRecordVHP(model.Plan.ID);
+                service.Close();
+                RecordVHPs.Clear();
+                result.ToList().ForEach(i => RecordVHPs.Add(i));
+            }
+            else
+            {
+                RecordVHPs.Clear();
+            }
         }
 
         private void ActionAll()

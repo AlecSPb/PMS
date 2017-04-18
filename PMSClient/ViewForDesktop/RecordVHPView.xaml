@@ -26,7 +26,7 @@
             <TextBlock Text="{StaticResource SearchDateEnd}" Style="{StaticResource StyleTextBlockCommon}"/>
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate2,Mode=TwoWay}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <!--<Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>-->
             <Button Content="{StaticResource ButtonQuick}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding QuickEdit}" Width="120"/>
             <!--图例-->

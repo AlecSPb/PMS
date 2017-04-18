@@ -67,6 +67,7 @@ namespace PMSClient.ViewModel
             order.SampleNeed = PMSCommon.CustomData.OrderSampleNeeds[0];
             order.MinimumAcceptDefect = "通常";
             order.DeadLine = DateTime.Now.AddDays(30);
+            order.PolicyType = PMSCommon.OrderPolicyType.VHP.ToString();
             order.State = PMSCommon.OrderState.未核验.ToString();
             order.Priority = PMSCommon.OrderPriority.普通.ToString();
             order.Reviewer = "";
