@@ -120,7 +120,7 @@
                     <DataGridTextColumn Header="{StaticResource RVHPTon}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                         Binding="{Binding Ton}"/>
                     <DataGridTextColumn Header="{StaticResource RVHPVaccum}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                        Binding="{Binding Vaccum}"/>
+                                        Binding="{Binding Vaccum ,StringFormat={}{0:#.###E00}}"/>
                     <DataGridTextColumn Header="{StaticResource RVHPShift1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                         Binding="{Binding Shift1}"/>
                     <DataGridTextColumn Header="{StaticResource RVHPShift2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
