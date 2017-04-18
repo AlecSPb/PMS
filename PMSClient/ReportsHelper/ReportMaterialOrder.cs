@@ -74,18 +74,20 @@ namespace PMSClient.ReportsHelper
                         p.Append(item.OrderItemNumber);
 
                         p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
-                        p.Append(item.Weight.ToString("N2") + "kgs");
+                        p.Append(item.Weight.ToString("N2") + "kg");
 
                         p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
                         p.Append(item.PMINumber);
 
                         p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                        item.Description = $"Processing fee to cast {item.Purity} [{item.Composition}] atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
+                        var descriptionMesseage = $"Processing fee to cast {item.Purity} [{item.Composition}] atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
                         if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
                         {
-                            item.Description += $"(PMI to provide { item.ProvideRawMaterial})";
+                            descriptionMesseage += $"(PMI to provide { item.ProvideRawMaterial})";
                         }
-                        p.Append(item.Description);
+                        descriptionMesseage += item.Description;
+
+                        p.Append(descriptionMesseage);
                         p.AppendLine();
 
                         p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];

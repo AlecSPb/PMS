@@ -113,8 +113,10 @@
     <Compile Include="DataContracts\DcRecordDeMold.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryIn.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryOut.cs" />
+    <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
     <Compile Include="DataContracts\DcProduct.cs" />
+    <Compile Include="DataContracts\DcDeliveryItemExtra.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
