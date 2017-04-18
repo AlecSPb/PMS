@@ -50,6 +50,12 @@ namespace PMSClient.ViewModel
             AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
+            GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
+        }
+
+        private void ActionGoToDeliveryItemList()
+        {
+            NavigationService.GoTo(PMSViews.DeliveryItemList);
         }
 
         private void ActionSearch()
@@ -273,6 +279,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> AddItem { get; set; }
         public RelayCommand<DcDeliveryItem> EditItem { get; set; }
         public RelayCommand<DcDelivery> SelectionChanged { get; set; }
+
+        public RelayCommand GoToDeliveryItemList { get; set; }
         #endregion
 
 

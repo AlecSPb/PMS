@@ -45,7 +45,7 @@
                 </DataGridTemplateColumn>
 
                 <DataGridTextColumn Header="{StaticResource RDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding DeliveryItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDProductType}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -67,7 +67,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="{StaticResource RDAbbr}" Binding="{Binding Abbr}"/>
+                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="{StaticResource RDAbbr}"
+                                    Binding="{Binding DeliveryItem.Abbr}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -122,7 +123,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding DeliveryNumber}"
+                <DataGridTextColumn Header="{StaticResource RDDeliveryNumber}" Binding="{Binding Delivery.DeliveryNumber}"
                                         ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTemplateColumn Header="{StaticResource RDCountry}">
                     <DataGridTemplateColumn.CellTemplate>

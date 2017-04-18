@@ -25,6 +25,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
+            searchProductID = "";
             searchCompositionStd = "";
             DeliveryItemExtras = new ObservableCollection<DcDeliveryItemExtra>();
         }

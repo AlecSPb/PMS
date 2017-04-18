@@ -136,9 +136,7 @@ namespace PMSClient.ViewModel
                 PageSize = 15;
                 var service = new MissonServiceClient();
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
-                //TODO:实现任务计划
-                MissonTarget += 1;
-                //MissonTarget = service.GetMissonsUnFinished();
+                MissonTarget = service.GetMissonUnCompletedCount();
                 service.Close();
                 ActionPaging();
             }
