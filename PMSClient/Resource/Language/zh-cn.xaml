@@ -234,7 +234,7 @@
     <sys:String x:Key="ButtonNewMode">新建模式</sys:String>
     <sys:String x:Key="ButtonOpenFile">打开标签模板</sys:String>
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
-
+    <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
 
     <sys:String x:Key="ButtonDetail">详细</sys:String>
     <sys:String x:Key="ButtonBrowse">浏览</sys:String>
@@ -257,7 +257,7 @@
     <sys:String x:Key="ButtonSelectMaterialOrderItem">选择原料订单项目</sys:String>
     <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
     <sys:String x:Key="ButtonDeliveryItemList">顺序发货记录</sys:String>
-
+    <sys:String x:Key="ButtonRecordTest">测试结果</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>

@@ -49,8 +49,27 @@ namespace PMSClient.ViewModel
             Doc = new RelayCommand<DcDelivery>(ActionDoc, CanDoc);
             AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
+            SearchRecordTest = new RelayCommand<DcDeliveryItem>(ActionRecordTest, CanRecordTest);
+
+
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
             GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
+
+
+        }
+
+        private bool CanRecordTest(DcDeliveryItem arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("浏览测试记录");
+        }
+
+        private void ActionRecordTest(DcDeliveryItem model)
+        {
+            if (model!=null)
+            {
+                PMSHelper.ViewModels.RecordTest.SetSearch("", model.ProductID);
+                NavigationService.GoTo(PMSViews.RecordTest);
+            }
         }
 
         private void ActionGoToDeliveryItemList()
@@ -278,6 +297,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> Doc { get; set; }
         public RelayCommand<DcDelivery> AddItem { get; set; }
         public RelayCommand<DcDeliveryItem> EditItem { get; set; }
+        public RelayCommand<DcDeliveryItem> SearchRecordTest { get; set; }
         public RelayCommand<DcDelivery> SelectionChanged { get; set; }
 
         public RelayCommand GoToDeliveryItemList { get; set; }

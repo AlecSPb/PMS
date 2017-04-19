@@ -177,7 +177,7 @@
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
                          HorizontalAlignment="Stretch"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="如果有备注信息，请填写在这里"/>
+                           Text="备注信息一般只有你自己看得到"/>
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource OrderCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />

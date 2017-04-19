@@ -32,8 +32,24 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcProduct>(ActionEdit, CanEdit);
             Doc = new RelayCommand<DcProduct>(ActionDoc, CanDoc);
+
+            SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
+
+
+        }
+        private bool CanRecordTest(DcProduct arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("浏览测试记录");
         }
 
+        private void ActionRecordTest(DcProduct model)
+        {
+            if (model != null)
+            {
+                PMSHelper.ViewModels.RecordTest.SetSearch("", model.ProductID);
+                NavigationService.GoTo(PMSViews.RecordTest);
+            }
+        }
         private bool CanDoc(DcProduct arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
@@ -121,6 +137,8 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcProduct> Edit { get; set; }
         public RelayCommand<DcProduct> Doc { get; set; }
+        public RelayCommand<DcProduct> SearchRecordTest { get; set; }
+
 
         private string searchProductID;
         public string SearchProductID

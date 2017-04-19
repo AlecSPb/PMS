@@ -19,6 +19,18 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
+
+        /// <summary>
+        /// 设置好搜索字段Product和Composition
+        /// </summary>
+        /// <param name="composition"></param>
+        /// <param name="productid"></param>
+        public void SetSearch(string composition,string productid)
+        {
+            SearchCompositonStd = composition;
+            SearchProductID = productid;
+            SetPageParametersWhenConditionChange();
+        }
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
