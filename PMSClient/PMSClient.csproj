@@ -642,7 +642,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App-publish.config" />
-    <None Include="DocTemplate\BarTender101\热压标签.btw">
+    <None Include="DocTemplate\BarTender101\毛坯标签.btw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DocTemplate\Doc\加工临时记录单.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\Reports\COA.docx">

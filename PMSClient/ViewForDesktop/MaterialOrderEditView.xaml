@@ -117,7 +117,7 @@
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
                          HorizontalAlignment="Stretch"/>
                     <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注信息,会显示到订单底部，一般写总共提供多少原料之类"/>
+                           Text="备注信息，总共提供多少原料，不需要PMI to provide前缀"/>
 
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOShipFee}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

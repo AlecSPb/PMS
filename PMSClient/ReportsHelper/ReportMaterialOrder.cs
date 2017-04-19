@@ -99,8 +99,12 @@ namespace PMSClient.ReportsHelper
                         subTotalMoney += total;
                     }
                 }
-
-                doc.ReplaceText("[Remark]", _order.Remark ?? "");
+                var remark = _order.Remark ?? "";
+                if (remark!="")
+                {
+                    remark = $"PMI to provide:{remark}";
+                }
+                doc.ReplaceText("[Remark]", remark);
                 doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0") + "RMB");
                 doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0") + "RMB");
                 double totalMoney = subTotalMoney + _order.ShipFee;

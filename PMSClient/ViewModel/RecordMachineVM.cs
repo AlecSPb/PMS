@@ -22,8 +22,25 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate,CanDuplicate);
-
+            TempRecordSheet = new RelayCommand(ActionTempRecordSheet);
             SetPageParametersWhenConditionChange();
+        }
+
+        private void ActionTempRecordSheet()
+        {
+            try
+            {
+                var filePath = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Doc", "加工临时记录单.docx");
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.Diagnostics.Process.Start(filePath);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanDuplicate(DcRecordMachine arg)
@@ -114,5 +131,6 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordMachine> Edit { get; set; }
         public RelayCommand<DcRecordMachine> Duplicate { get; set; }
+        public RelayCommand TempRecordSheet { get; set; }
     }
 }
