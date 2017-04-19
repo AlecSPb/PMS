@@ -349,7 +349,7 @@ namespace PMSClient
 
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            var result = PMSDialogService.ShowYesNo("请问", "建议最小化运行，仍然确定要退出吗？");
+            var result = PMSDialogService.ShowYesNo("请问", "确定要退出吗？");
             if (!result)
             {
                 //this.WindowState = WindowState.Minimized;
