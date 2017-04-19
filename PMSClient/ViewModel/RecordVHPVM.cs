@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
 {
@@ -46,13 +47,26 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcPlanWithMisson arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑热压记录");
+            return PMSHelper.CurrentSession.IsAuthorized("浏览热压记录");
         }
 
         private void ActionDoc(DcPlanWithMisson model)
         {
-            //TODO:生成VHP报告
-            //throw new NotImplementedException();
+            if (model != null)
+            {
+                try
+                {
+                    ReportVHP report = new ReportVHP();
+                    report.SetModel(model);
+                    report.Output();
+                    PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告");
+                    NavigationService.ShowStatusMessage("请在桌面查看生成的热压记录报告");
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
         }
 
         private void ActionSelectionChanged(DcPlanWithMisson model)
@@ -65,7 +79,7 @@ namespace PMSClient.ViewModel
 
         public void LoadRecordVHPsByRecordVHPID(DcPlanWithMisson model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 var service = new RecordVHPServiceClient();
                 var result = service.GetRecordVHP(model.Plan.ID);

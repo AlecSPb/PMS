@@ -670,7 +670,7 @@
     <None Include="DocTemplate\BarTender101\发货单.btw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="DocTemplate\Reports\ReportVHP.docx">
+    <None Include="DocTemplate\Reports\ReportRecordVHP.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

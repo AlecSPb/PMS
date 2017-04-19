@@ -10,13 +10,13 @@ using Novacode;
 namespace PMSClient.ReportsHelper
 {
     public class ReportVHP : ReportBase
-    {    {
-        private string prefix = "";
+    {    
+        private string prefix = "热压报告";
         public ReportVHP()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
-            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COA.docx");
-            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COA_Temp.docx");
+            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportRecordVHP.docx");
+            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "ReportRecordVHP_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
 
@@ -25,23 +25,49 @@ namespace PMSClient.ReportsHelper
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
-        public void SetModel(DcOrder model)
+        public void SetModel(DcPlanWithMisson model)
         {
             if (model != null)
             {
                 this.model = model;
             }
         }
-        private DcOrder model;
+        private DcPlanWithMisson model;
         public override void Output()
         {
+            if (model == null)
+            {
+                return;
+            }
+
+            ReportHelper.FileCopy(sourceFile, tempFile);
+            #region 创建报告
             using (DocX document = DocX.Load(tempFile))
             {
-               
+                var plandate = model.Plan.PlanDate.ToString("yyyy-MM-dd");
+                document.ReplaceText("[PlanDate]", plandate);
+                document.ReplaceText("[Composition]", model.Misson.CompositionStandard);
+                document.ReplaceText("[Temperature]", model.Plan.Temperature.ToString());
+                document.ReplaceText("[Pressure]", model.Plan.Pressure.ToString());
+                document.ReplaceText("[Vaccum]", model.Plan.Vaccum.ToString("#.##E00"));
+                document.ReplaceText("[KeepTime]", model.Plan.KeepTempTime.ToString());
+
+
+
+
+
+
+
+
+
+
 
 
                 document.Save();
             }
+            #endregion
+            //复制到临时文件
+            ReportHelper.FileCopy(tempFile, targetFile);
         }
 
     }

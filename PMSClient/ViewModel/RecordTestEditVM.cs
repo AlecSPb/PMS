@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.CommonState.未核验.ToString();
             model.Weight = "100";
             model.Remark = "";
-            model.Resistance = "OutOfRange";
+            model.Resistance = "";
             model.Sample = "无需样品";
             model.CompositionXRF = "暂无";
             model.Density = "0";
