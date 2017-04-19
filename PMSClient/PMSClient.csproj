@@ -814,13 +814,19 @@
     <Folder Include="SmallTools\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Images\funnyface.ico" />
+    <Resource Include="Resource\Images\funnyface.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Images\funnyface.png" />
+    <Resource Include="Resource\Images\funnyface.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Images\funnyfacebig.jpg" />
+    <Resource Include="Resource\Images\funnyfacebig.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\HelpImages\blanktarget.jpg">
@@ -879,8 +885,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Images\main.ico" />
-    <Resource Include="Resource\Images\main.png" />
+    <Resource Include="Resource\Images\main.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\main.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -910,10 +920,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Images\chart.ico" />
-    <Resource Include="Resource\Images\chart.png" />
-    <Resource Include="Resource\Images\crm.ico" />
-    <Resource Include="Resource\Images\crm.png" />
+    <Resource Include="Resource\Images\chart.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\chart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\crm.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Images\crm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\HeartBeatService\HeartBeatService.disco" />

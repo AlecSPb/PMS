@@ -19,6 +19,7 @@ using PMSClient.ViewForDesktop;
 using PMSClient.MainService;
 using PMSClient.Tool;
 using System.Timers;
+using fm=System.Windows.Forms;
 
 namespace PMSClient
 {
@@ -35,7 +36,6 @@ namespace PMSClient
             InitializeComponent();
 
         }
-        private Timer _timer;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             #region 标题处理
@@ -71,12 +71,25 @@ namespace PMSClient
 
 
             #region 托盘部分
-
+            InitializeTray();
             #endregion
 
             //导航到首页
             NavigateTo(_views.LogIn);
         }
+        private fm.NotifyIcon _notifyIcon;
+        private void InitializeTray()
+        {
+            _notifyIcon = new fm.NotifyIcon();
+            _notifyIcon.Text = "PMS生产管理系统";
+            _notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
+            _notifyIcon.Visible = true;
+            _notifyIcon.BalloonTipText = "欢迎使用PMS生产管理系统";
+            _notifyIcon.ShowBalloonTip(2000);
+
+        }
+
+        private Timer _timer;
         /// <summary>
         /// 服务器心跳测试
         /// </summary>
