@@ -143,6 +143,9 @@
     <Compile Include="Helpers\UserfullPackage\TargetDensity.cs" />
     <Compile Include="Helpers\UserfullPackage\TargetDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\TargetDensityCalculationItem.cs" />
+    <Compile Include="NewMessage.xaml.cs">
+      <DependentUpon>NewMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
     <Compile Include="Helpers\OK\PMSDialogService.cs" />
@@ -403,6 +406,10 @@
       <DependentUpon>MainDesktop.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resource\CommonBrushes.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

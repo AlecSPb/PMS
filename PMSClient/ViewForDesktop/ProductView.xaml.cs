@@ -28,5 +28,26 @@ namespace PMSClient.ViewForDesktop
             InitializeComponent();
         }
 
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var order = (DcProduct)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.State)
+                {
+                    case "库存":
+                        e.Row.Background = this.FindResource("StoredBrush") as SolidColorBrush;
+                        break;
+                    case "发货":
+                        e.Row.Background = this.FindResource("DeliveredBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
+
+
     }
 }

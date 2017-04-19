@@ -19,7 +19,8 @@ using PMSClient.ViewForDesktop;
 using PMSClient.MainService;
 using PMSClient.Tool;
 using System.Timers;
-using fm=System.Windows.Forms;
+using fm = System.Windows.Forms;
+using System.Windows.Threading;
 
 namespace PMSClient
 {
@@ -30,12 +31,14 @@ namespace PMSClient
     {
         private DesktopViewLocator _views;
         private ToolViewLocator _toolviews;
-
+        private DispatcherTimer _timerHeartBeat;
+        private DispatcherTimer _timerNotice;
+        private fm.NotifyIcon _notifyIcon;
         public MainDesktop()
         {
             InitializeComponent();
-
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             #region 标题处理
@@ -59,64 +62,95 @@ namespace PMSClient
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
             #endregion
 
-            #region 服务器心跳检测
-            //设置服务器心跳检测定时器
-            _timer = new Timer();
-            _timer.Interval = 20000;
-            _timer.Elapsed += _timer_Elapsed;
-            _timer.Start();
 
-            _timer_Elapsed(this, null);
+            //导航到首页
+            NavigateTo(_views.LogIn);
+
+            #region 设置主定时器
+            //设置主定时器
+            _timerHeartBeat = new DispatcherTimer();
+            _timerHeartBeat.Interval = new TimeSpan(0, 0, 5);
+            _timerHeartBeat.Tick += _timer_Tick; ;
+            _timerHeartBeat.Start();
+
+            _timerNotice = new DispatcherTimer();
+            _timerNotice.Interval = new TimeSpan(0, 0, 10);
+            _timerNotice.Tick += _timerNotice_Tick;
+            _timerNotice.Start();
             #endregion
-
 
             #region 托盘部分
             InitializeTray();
             #endregion
-
-            //导航到首页
-            NavigateTo(_views.LogIn);
         }
-        private fm.NotifyIcon _notifyIcon;
+
+        private void _timerNotice_Tick(object sender, EventArgs e)
+        {
+            //PMSNotice.HasNewDelivery();
+        }
+
+        #region 托盘通知
         private void InitializeTray()
         {
             _notifyIcon = new fm.NotifyIcon();
             _notifyIcon.Text = "PMS生产管理系统";
             _notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
             _notifyIcon.Visible = true;
-            _notifyIcon.BalloonTipText = "欢迎使用PMS生产管理系统";
-            _notifyIcon.ShowBalloonTip(2000);
 
+            fm.ContextMenu menu = new fm.ContextMenu();
+            fm.MenuItem item = new fm.MenuItem();
+            item.Text = "关闭";
+            item.Click += (s, e) =>
+            {
+                this.Close();
+            };
+            menu.MenuItems.Add(item);
+            _notifyIcon.ContextMenu = menu;
+            _notifyIcon.Visible = true;
+            SetNotifyIcon("欢迎", "欢迎使用PMS生产管理系统\r\n请在左上方登录使用", 3000);
         }
+        public void SetNotifyIcon(string title, string message, int showtime)
+        {
+            if (_notifyIcon != null)
+            {
+                _notifyIcon.Visible = true;
+                _notifyIcon.BalloonTipTitle = title;
+                _notifyIcon.BalloonTipText = message;
+                _notifyIcon.ShowBalloonTip(showtime);
+            }
+        }
+        private void RemoveNofiyIcon()
+        {
+            if (_notifyIcon != null)
+            {
+                _notifyIcon.Visible = false;
+                _notifyIcon.Dispose();
+                _notifyIcon = null;
+            }
+        }
+        #endregion
 
-        private Timer _timer;
         /// <summary>
-        /// 服务器心跳测试
+        /// 主定时器
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void _timer_Tick(object sender, EventArgs e)
         {
             try
             {
                 using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
                 {
-                    //System.Diagnostics.Debug.Print(heartbeat.Beat());
                     if (heartbeat.Beat() == "ok")
                     {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            txtHeartBeat.Text = "服务器通信正常";
-                        });
-                    }
-                    else
-                    {
-                        this.Dispatcher.Invoke(() =>
-                        {
-                            txtHeartBeat.Text = "服务器通信故障";
-                        });
+                        //this.Dispatcher.Invoke(() =>
+                        //{
+                        //    txtHeartBeat.Text = "服务器通信正常";
+                        //});
+                        txtHeartBeat.Text = "服务器通信正常";
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -124,6 +158,7 @@ namespace PMSClient
                 {
                     txtHeartBeat.Text = ex.Message;
                 });
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
         /// <summary>
@@ -281,6 +316,7 @@ namespace PMSClient
                     break;
             }
         }
+
         #region 主窗口操作和事件处理
         private void RefreshLogInformation()
         {
@@ -316,11 +352,15 @@ namespace PMSClient
                 mainArea.Content = view;
             }
         }
-
-        protected override void OnClosing(CancelEventArgs e)
+        /// <summary>
+        /// 必须放在Closed事件中，否则退出过程中取消就出问题了
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnClosed(EventArgs e)
         {
+            RemoveNofiyIcon();
             Messenger.Default.Unregister(this);
-            base.OnClosing(e);
+            base.OnClosed(e);
         }
 
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -342,6 +382,7 @@ namespace PMSClient
             {
                 PMSHelper.CurrentSession.LogOut();
                 _views.LogIn.ClearLog();
+                SetNotifyIcon("注销成功", "您的账户已经注销成功", 3000);
                 NavigationService.GoTo(PMSViews.LogIn);
             }
         }
