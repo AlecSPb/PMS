@@ -59,14 +59,19 @@ namespace PMSClient
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
             #endregion
 
-            #region 心跳检测
+            #region 服务器心跳检测
             //设置服务器心跳检测定时器
             _timer = new Timer();
-            _timer.Interval = 5000;
+            _timer.Interval = 20000;
             _timer.Elapsed += _timer_Elapsed;
             _timer.Start();
 
             _timer_Elapsed(this, null);
+            #endregion
+
+
+            #region 托盘部分
+
             #endregion
 
             //导航到首页
@@ -263,7 +268,7 @@ namespace PMSClient
                     break;
             }
         }
-
+        #region 主窗口操作和事件处理
         private void RefreshLogInformation()
         {
             var _logInformation = PMSHelper.CurrentSession;
@@ -325,6 +330,18 @@ namespace PMSClient
                 PMSHelper.CurrentSession.LogOut();
                 _views.LogIn.ClearLog();
                 NavigationService.GoTo(PMSViews.LogIn);
+            }
+        }
+        #endregion
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            var result = PMSDialogService.ShowYesNo("请问", "建议最小化运行，仍然确定要退出吗？");
+            if (!result)
+            {
+                this.WindowState = WindowState.Minimized;
+                e.Cancel = true;
+                return;
             }
         }
         #endregion
