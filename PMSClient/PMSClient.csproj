@@ -129,6 +129,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControls\BondingEditItem.xaml.cs">
+      <DependentUpon>BondingEditItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\OK\BasicData.cs" />
     <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
@@ -394,6 +397,10 @@
     <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="CustomControls\BondingEditItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainDesktop.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
