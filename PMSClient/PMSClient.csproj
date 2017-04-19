@@ -159,6 +159,7 @@
     <Compile Include="ReportsHelper\ReportHelper.cs" />
     <Compile Include="ReportsHelper\ReportMaterialOrder.cs" />
     <Compile Include="ReportsHelper\ReportRecordTest.cs" />
+    <Compile Include="ReportsHelper\ReportVHP.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -667,6 +668,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\BarTender101\发货单.btw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DocTemplate\Reports\ReportVHP.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

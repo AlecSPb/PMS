@@ -352,7 +352,7 @@ namespace PMSClient
             var result = PMSDialogService.ShowYesNo("请问", "建议最小化运行，仍然确定要退出吗？");
             if (!result)
             {
-                this.WindowState = WindowState.Minimized;
+                //this.WindowState = WindowState.Minimized;
                 e.Cancel = true;
                 return;
             }

@@ -31,9 +31,15 @@ namespace PMSClient.ViewModel
             try
             {
                 var filePath = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Doc", "加工临时记录单.docx");
+                var tempPath = System.IO.Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Doc", "加工临时记录单_temp.docx");
                 if (System.IO.File.Exists(filePath))
                 {
-                    System.Diagnostics.Process.Start(filePath);
+                    if (System.IO.File.Exists(tempPath))
+                    {
+                        System.IO.File.Delete(tempPath);
+                    }
+                    System.IO.File.Copy(filePath, tempPath);
+                    System.Diagnostics.Process.Start(tempPath);
                 }
 
             }
