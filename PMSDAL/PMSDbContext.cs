@@ -37,25 +37,44 @@ namespace PMSDAL
 
         public DbSet<MaterialInventoryIn> MaterialInventoryIns { get; set; }
         public DbSet<MaterialInventoryOut> MaterialInventoryOuts { get; set; }
+
+        
+        public DbSet<MaterialNeedHistory> MaterialNeedHistorys { get; set; }
+        public DbSet<MaterialOrderHistory> MaterialOrderHistorys { get; set; }
+        public DbSet<MaterialOrderItemHistory> MaterialOrderItemHistorys { get; set; }
+
+        public DbSet<MaterialInventoryInHistory> MaterialInventoryInHistorys { get; set; }
+        public DbSet<MaterialInventoryOutHistory> MaterialInventoryOutHistorys { get; set; }
         //Core
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
 
+        public DbSet<PMSOrderHistory> OrderHistorys { get; set; }
+        public DbSet<PMSPlanVHPHistory> VHPPlanHistorys { get; set; }
         //Records
-        public DbSet<RecordMachine> RecordMachines { get; set; }
         public DbSet<RecordMilling> RecordMillings { get; set; }
-        public DbSet<RecordDeMold> RecordDeMolds { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }
+        public DbSet<RecordDeMold> RecordDeMolds { get; set; }
+        public DbSet<RecordMachine> RecordMachines { get; set; }
         public DbSet<RecordTest> RecordTests { get; set; }
         public DbSet<RecordBonding> RecordBondings { get; set; }
 
+
+        public DbSet<RecordMillingHistory> RecordMillingHistorys { get; set; }
+        public DbSet<RecordVHPHistory> RecordVHPHistorys { get; set; }
+        public DbSet<RecordDeMoldHistory> RecordDeMoldHistorys { get; set; }
+        public DbSet<RecordMachineHistory> RecordMachineHistorys { get; set; }
+        public DbSet<RecordTestHistory> RecordTestHistorys { get; set; }
+        public DbSet<RecordBondingHistory> RecordBondingHistorys { get; set; }
         //Product
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductHistory> ProductHistorys { get; set; }
         //Delivery
         public DbSet<Delivery> Deliverys { get; set; }
         public DbSet<DeliveryItem> DeliveryItems { get; set; }
 
-
+        public DbSet<DeliveryHistory> DeliveryHistorys { get; set; }
+        public DbSet<DeliveryItemHistory> DeliveryItemHistorys { get; set; }
         //Maintenance
         public DbSet<MaintenancePlan> MaintenancePlans { get; set; }
         public DbSet<MaintenanceRecord> MaintenanceRecords { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace PMSDAL
 {
-    public class MaterialOrderItem
+    public class MaterialOrderItemHistory
     {
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
@@ -21,7 +21,10 @@ namespace PMSDAL
         public DateTime DeliveryDate { get; set; }
         public double UnitPrice { get; set; }
         public double Weight { get; set; }
-
         public Guid? MaterialOrderID { get; set; }
+
+        //操作者和操作时间
+        public string Operator { get; set; }
+        public string OperateTime { get; set; }
     }
 }

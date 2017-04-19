@@ -123,5 +123,7 @@ namespace PMSDAL
         public string PackPerson { get; set; }//靶材检查人
         public DateTime PackCheckTime { get; set; }//靶材检查日期
 
+        //总结
+        public string Remark { get; set; }
     }
 }
