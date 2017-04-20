@@ -26,11 +26,11 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0"> 
-                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="用户名" Foreground="#F3F3F3" HorizontalAlignment="Right"/>
+                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="用户名" Foreground="Yellow" HorizontalAlignment="Right"/>
                     <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource StyleLogInUID}" Background="Transparent"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="密码" Foreground="#F3F3F3" HorizontalAlignment="Right"/>
+                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="密码" Foreground="Yellow" HorizontalAlignment="Right"/>
                     <PasswordBox Name="txtPassword"  Style="{StaticResource StyleLogInPwd}" Background="Transparent"/>
                 </Grid>
 

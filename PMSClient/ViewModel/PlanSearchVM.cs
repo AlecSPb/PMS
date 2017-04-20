@@ -53,8 +53,7 @@ namespace PMSClient.ViewModel
 
             using (var service = new MissonServiceClient())
             {
-                //TODO:增加搜索选项-成分
-                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
+                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange2(SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
             }
             //只显示Checked过的计划
 
@@ -71,8 +70,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {   
-                //TODO:增加搜索选项-成分
-                var orders = service.GetPlanWithMissonCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
+                var orders = service.GetPlanWithMissonCheckedByDateRange2(skip, take, SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
@@ -115,7 +113,7 @@ namespace PMSClient.ViewModel
         }
 
         private string searchCompositionStd;
-        public string SeachCompositionStd
+        public string SearchCompositionStd
         {
             get { return searchCompositionStd; }
             set { searchCompositionStd = value; RaisePropertyChanged(nameof(searchCompositionStd)); }

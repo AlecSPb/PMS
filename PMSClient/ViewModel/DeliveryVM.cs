@@ -66,16 +66,19 @@ namespace PMSClient.ViewModel
 
         private void ActionDeliverySheet(DcDelivery model)
         {
-            try
+            if (PMSDialogService.ShowYesNo("请问","确定要在桌面生成发货清单吗？"))
             {
-                ReportDeliverySheet report = new ReportDeliverySheet();
-                report.SetModel(model);
-                report.Output();
-                PMSDialogService.ShowYes("生成成功", "请打开桌面上的发货单文档");
-            }
-            catch (Exception ex)
-            {
-                PMSHelper.CurrentLog.Error(ex);
+                try
+                {
+                    ReportDeliverySheet report = new ReportDeliverySheet();
+                    report.SetModel(model);
+                    report.Output();
+                    PMSDialogService.ShowYes("生成成功", "请打开桌面上的发货单文档");
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
             }
         }
 

@@ -54,18 +54,21 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                try
+                if (PMSDialogService.ShowYesNo("请问","确定要在桌面生成热压报表吗？"))
                 {
-                    //TODO:4.0.4.6版本再开放
-                    //ReportVHP report = new ReportVHP();
-                    //report.SetModel(model);
-                    //report.Output();
-                    //PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告");
-                    //NavigationService.ShowStatusMessage("请在桌面查看生成的热压记录报告");
-                }
-                catch (Exception ex)
-                {
-                    PMSHelper.CurrentLog.Error(ex);
+                    try
+                    {
+                        //TODO:4.0.4.6版本再开放
+                        //ReportVHP report = new ReportVHP();
+                        //report.SetModel(model);
+                        //report.Output();
+                        //PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告");
+                        //NavigationService.ShowStatusMessage("请在桌面查看生成的热压记录报告");
+                    }
+                    catch (Exception ex)
+                    {
+                        PMSHelper.CurrentLog.Error(ex);
+                    }
                 }
             }
         }

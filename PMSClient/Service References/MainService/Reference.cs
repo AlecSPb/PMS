@@ -4320,6 +4320,9 @@ namespace PMSClient.MainService {
         private string PlateUseCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SprayCheckField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4873,6 +4876,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PlateUseCountField, value) != true)) {
                     this.PlateUseCountField = value;
                     this.RaisePropertyChanged("PlateUseCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -6377,6 +6393,20 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRangeRespons" +
             "e")]
         System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2Response")]
+        PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMissonCheckedByDateRange2(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2Response")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedByDateRange2Async(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2Respon" +
+            "se")]
+        int GetPlanWithMissonCheckedCountByDateRange2(System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2Respon" +
+            "se")]
+        System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRange2Async(System.DateTime dateStart, System.DateTime dateEnd, string composition);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6492,6 +6522,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd) {
             return base.Channel.GetPlanWithMissonCheckedCountByDateRangeAsync(dateStart, dateEnd);
+        }
+        
+        public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMissonCheckedByDateRange2(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedByDateRange2(skip, take, dateStart, dateEnd, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedByDateRange2Async(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedByDateRange2Async(skip, take, dateStart, dateEnd, composition);
+        }
+        
+        public int GetPlanWithMissonCheckedCountByDateRange2(System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedCountByDateRange2(dateStart, dateEnd, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRange2Async(System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedCountByDateRange2Async(dateStart, dateEnd, composition);
         }
     }
     
@@ -7376,16 +7422,16 @@ namespace PMSClient.MainService {
     public interface IRecordBondingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsResponse")]
-        PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string platelot);
+        PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string platelot);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
-        int GetRecordBondingCount(string productid, string platelot);
+        int GetRecordBondingCount(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
-        System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string platelot);
+        System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/AddRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingResponse")]
         int AddRecordBongding(PMSClient.MainService.DcRecordBonding model);
@@ -7433,20 +7479,20 @@ namespace PMSClient.MainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string platelot) {
-            return base.Channel.GetRecordBondings(skip, take, productid, platelot);
+        public PMSClient.MainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string composition) {
+            return base.Channel.GetRecordBondings(skip, take, productid, composition);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string platelot) {
-            return base.Channel.GetRecordBondingsAsync(skip, take, productid, platelot);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetRecordBondingsAsync(skip, take, productid, composition);
         }
         
-        public int GetRecordBondingCount(string productid, string platelot) {
-            return base.Channel.GetRecordBondingCount(productid, platelot);
+        public int GetRecordBondingCount(string productid, string composition) {
+            return base.Channel.GetRecordBondingCount(productid, composition);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string platelot) {
-            return base.Channel.GetRecordBondingCountAsync(productid, platelot);
+        public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string composition) {
+            return base.Channel.GetRecordBondingCountAsync(productid, composition);
         }
         
         public int AddRecordBongding(PMSClient.MainService.DcRecordBonding model) {

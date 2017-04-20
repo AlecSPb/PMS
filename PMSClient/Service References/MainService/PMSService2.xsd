@@ -453,6 +453,7 @@
       <xs:element minOccurs="0" name="PlatePreProcessRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateSuplier" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateUseCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SprayCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SprayCheckTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="SprayPerson" nillable="true" type="xs:string" />
