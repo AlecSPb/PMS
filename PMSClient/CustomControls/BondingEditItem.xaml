@@ -9,12 +9,12 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="Wheat">
+    <Grid Background="LightYellow">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LightYellow">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Wheat">
             <TextBlock Name="txtTitle" Style="{StaticResource StyleTextBlockPageTitle}"/>
         </StackPanel>
         <Grid Grid.Row="1">

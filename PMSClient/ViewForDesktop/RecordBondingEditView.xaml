@@ -41,7 +41,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
-                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding InstructionCode}" Style="{StaticResource StyleTextBoxCommon}"/>
                             <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作代码"/>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
@@ -113,7 +113,7 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0"  Text="外观检查示意图:确定外观完整，无伤痕和凹陷" Style="{StaticResource StyleTextBlockCommon}"/>
-                            <Image Grid.Row="1" Source="../Resource/Bondings/10.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/10.png" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>

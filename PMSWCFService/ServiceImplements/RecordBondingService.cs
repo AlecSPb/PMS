@@ -64,7 +64,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.PlateLot.Contains(platelot)
-                      && p.State != SimpleState.作废.ToString()).Count();
+                      && p.State != CommonState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var result = dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.PlateLot.Contains(platelot)
-                      && p.State != SimpleState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                      && p.State != CommonState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
                     var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);
                     return products;

@@ -31,12 +31,16 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcRecordBonding arg)
         {
-            throw new NotImplementedException();
+            return PMSHelper.CurrentSession.IsAuthorized("编辑绑定记录");
         }
 
-        private void ActionEdit(DcRecordBonding obj)
+        private void ActionEdit(DcRecordBonding model)
         {
-            throw new NotImplementedException();
+            if (model!=null)
+            {
+                PMSHelper.ViewModels.RecordBondingEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.RecordBondingEdit);
+            }
         }
 
         private void ActionDetail(DcRecordBonding obj)
@@ -56,12 +60,13 @@ namespace PMSClient.ViewModel
 
         private bool CanAdd()
         {
-            throw new NotImplementedException();
+            return PMSHelper.CurrentSession.IsAuthorized("编辑绑定记录");
         }
 
         private void ActionAdd()
         {
-            throw new NotImplementedException();
+            PMSHelper.ViewModels.RecordBondingEdit.SetNew();
+            NavigationService.GoTo(PMSViews.RecordBondingEdit);
         }
 
         private void SetPageParametersWhenConditionChange()

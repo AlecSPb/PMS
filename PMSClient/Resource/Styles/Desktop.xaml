@@ -20,7 +20,7 @@
     <SolidColorBrush x:Key="BGBrushTitleBar" Color="#135995"/>
     <SolidColorBrush x:Key="BGBrushNavigateBar" Color="Orange"/>
     <SolidColorBrush x:Key="BGBrushStatusBar" Color="#CA5100"/>
-    <SolidColorBrush x:Key="BGBrushWindow" Color="Wheat"/>
+    <SolidColorBrush x:Key="BGBrushWindow" Color="LightYellow"/>
 
     <SolidColorBrush x:Key="FGTitleBar" Color="White"/>
     <SolidColorBrush x:Key="FGNavigateBar" Color="White"/>

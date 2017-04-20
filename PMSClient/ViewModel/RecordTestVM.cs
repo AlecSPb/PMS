@@ -25,9 +25,9 @@ namespace PMSClient.ViewModel
         /// </summary>
         /// <param name="composition"></param>
         /// <param name="productid"></param>
-        public void SetSearch(string composition,string productid)
+        public void SetSearch(string composition, string productid)
         {
-            SearchCompositonStd = composition;
+            SearchCompositionStd = composition;
             SearchProductID = productid;
             SetPageParametersWhenConditionChange();
         }
@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcRecordTest arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录")||PMSHelper.CurrentSession.IsAuthorized("生成测试报告");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录") || PMSHelper.CurrentSession.IsAuthorized("生成测试报告");
         }
 
         private bool CanEdit(DcRecordTest arg)
@@ -75,18 +75,18 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchProductID) && string.IsNullOrEmpty(SearchCompositonStd));
+            return !string.IsNullOrEmpty(SearchProductID) || !string.IsNullOrEmpty(SearchCompositionStd);
         }
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositonStd = "";
-            ActionPaging();
+            SearchProductID = SearchCompositionStd = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSearch()
         {
-            ActionPaging();
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionDuplicate(DcRecordTest model)
@@ -120,7 +120,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             RecordProducts = new ObservableCollection<DcRecordTest>();
-            SearchCompositonStd = searchProductID = "";
+            SearchCompositionStd = searchProductID = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -129,7 +129,7 @@ namespace PMSClient.ViewModel
             PageSize = 10;
             using (var service = new RecordTestServiceClient())
             {
-                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositionStd);
             }
 
             ActionPaging();
@@ -142,7 +142,7 @@ namespace PMSClient.ViewModel
 
             using (var service = new RecordTestServiceClient())
             {
-                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
                 RecordProducts.Clear();
                 orders.ToList().ForEach(o => RecordProducts.Add(o));
             }
@@ -168,7 +168,7 @@ namespace PMSClient.ViewModel
             }
         }
         private string searchCompositionStd;
-        public string SearchCompositonStd
+        public string SearchCompositionStd
         {
             get { return searchCompositionStd; }
             set
@@ -176,7 +176,7 @@ namespace PMSClient.ViewModel
                 if (searchCompositionStd == value)
                     return;
                 searchCompositionStd = value;
-                RaisePropertyChanged(() => SearchCompositonStd);
+                RaisePropertyChanged(() => SearchCompositionStd);
             }
         }
 

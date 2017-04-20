@@ -41,18 +41,18 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchProductID) && string.IsNullOrEmpty(SearchCompositonStd));
+            return !string.IsNullOrEmpty(SearchProductID) || !string.IsNullOrEmpty(SearchCompositionStd);
         }
 
         private void ActionAll()
         {
-            SearchProductID = SearchCompositonStd = "";
-            ActionPaging();
+            SearchProductID = SearchCompositionStd = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSearch()
         {
-            ActionPaging();
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSelect(DcRecordTest model)
@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             RecordProducts = new ObservableCollection<DcRecordTest>();
-            SearchCompositonStd = searchProductID = "";
+            SearchCompositionStd = searchProductID = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -88,7 +88,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new RecordTestServiceClient())
             {
-                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositonStd);
+                RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositionStd);
             }
             ActionPaging();
         }
@@ -99,7 +99,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new RecordTestServiceClient())
             {
-                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositonStd);
+                var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
                 RecordProducts.Clear();
                 orders.ToList().ForEach(o => RecordProducts.Add(o));
             }
@@ -123,7 +123,7 @@ namespace PMSClient.ViewModel
             }
         }
         private string searchCompositionStd;
-        public string SearchCompositonStd
+        public string SearchCompositionStd
         {
             get { return searchCompositionStd; }
             set
@@ -131,7 +131,7 @@ namespace PMSClient.ViewModel
                 if (searchCompositionStd == value)
                     return;
                 searchCompositionStd = value;
-                RaisePropertyChanged(() => SearchCompositonStd);
+                RaisePropertyChanged(() => SearchCompositionStd);
             }
         }
 

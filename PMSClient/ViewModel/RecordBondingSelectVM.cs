@@ -8,5 +8,9 @@ namespace PMSClient.ViewModel
 {
     public class RecordBondingSelectVM:BaseViewModelSelect
     {
+        public RecordBondingSelectVM()
+        {
+
+        }
     }
 }
