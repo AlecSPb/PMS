@@ -25,22 +25,29 @@ namespace PMSClient.CustomControls
             InitializeComponent();
         }
 
-
-
-        public UserControl TopArea
+        public string Title
         {
-            get { return (UserControl)GetValue(TopAreaProperty); }
-            set { SetValue(TopAreaProperty, value); }
+            set
+            {
+                txtTitle.Text = value;
+            }
         }
 
-        // Using a DependencyProperty as the backing store for TopArea.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TopAreaProperty =
-            DependencyProperty.Register("TopArea", typeof(UserControl), typeof(BondingEditItem), new PropertyMetadata(null,new PropertyChangedCallback(ActionTopAreaChanged)));
-
-        private static void ActionTopAreaChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public Panel LeftArea
         {
-            BondingEditItem item = d as BondingEditItem;
-            item.topArea.Content = e.NewValue;
+            set
+            {
+                leftArea.Content = value;
+            }
         }
+        public Panel RightArea
+        {
+           set
+            {
+                rightArea.Content = value;
+            }
+        }
+
+
     }
 }

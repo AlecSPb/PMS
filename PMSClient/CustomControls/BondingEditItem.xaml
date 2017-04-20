@@ -14,16 +14,16 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Orange">
-            <ContentControl Name="topArea" Grid.Row="0"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LightYellow">
+            <TextBlock Name="txtTitle" Style="{StaticResource StyleTextBlockPageTitle}"/>
         </StackPanel>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ContentControl Name="leftArea" Grid.Row="0"/>
-            <ContentControl Name="rightArea" Grid.Row="1"/>
+            <ContentControl Name="leftArea" Grid.Column="0"/>
+            <ContentControl Name="rightArea" Grid.Column="1"/>
         </Grid>
     </Grid>
 </UserControl>

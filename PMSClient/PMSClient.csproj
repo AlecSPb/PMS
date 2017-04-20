@@ -840,7 +840,6 @@
     <Folder Include="Documents\" />
     <Folder Include="LocalData\" />
     <Folder Include="Resource\Files\" />
-    <Folder Include="SmallTools\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\funnyface.ico">
@@ -1023,6 +1022,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="updates-real.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Bondings\10.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

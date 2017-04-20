@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
+             xmlns:uc="clr-namespace:PMSClient.CustomControls"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMoldEdit}">
+             d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordBondingEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -26,117 +27,97 @@
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordBondingEdit}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <!--<Grid  DataContext="{Binding CurrentRecordBonding}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
+            <StackPanel DataContext="{Binding CurrentRecordBonding}">
+                <uc:BondingEditItem Title="0.0准备">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作代码"/>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
 
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDMVHPPlanLot}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="热压编号170111-A-1,热压日期-设备号-第1片"/>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="1.0靶材检查">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
 
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDTargetApperance}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TargetAppearance}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDMComposition}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="填入标准靶材成分"/>
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDTargetWarpageCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TargetWarpageCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格≤0.1mm,测量1,2"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDMTemperature1}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Temperature1}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="取模温度"/>
+                            <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDTargetThicknessCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetThicknessCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格±0.1mm,测量3"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDMTemperature2}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Temperature2}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="脱模温度"/>
+                            <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetDiameterCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetDiameterCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                            <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格±0.1mm,测量4"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDMWeight}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="靶材重量"/>
+                            <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDTargetPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding TargetPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                            <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            
+                            <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDTargetCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding TargetCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                            <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDMDiameter1}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="以下尺寸单位为mm，有写，没有填0，多余的写到备注里"/>
-
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDMDiameter2}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Diameter2}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDMThickness1}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Thickness1}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDMThickness2}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Thickness2}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDMThickness3}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Thickness3}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDMThickness4}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Thickness4}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RDMRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
-                         />
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注信息，比如有无石墨纸等等"/>
-            </Grid>-->
-            
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Text="外观检查示意图:确定外观完整，无伤痕和凹陷" Style="{StaticResource StyleTextBlockCommon}"/>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/10.png" Stretch="Uniform" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>

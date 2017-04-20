@@ -558,12 +558,12 @@
     <sys:String x:Key="BDTargetDImensionActual">靶材实际尺寸</sys:String>
     <sys:String x:Key="BDTargetDefects">靶材缺陷</sys:String>
     <sys:String x:Key="BDTargetDetailRecord">靶材细节记录</sys:String>
-    <sys:String x:Key="BDTargetAppereance">靶材外观</sys:String>
+    <sys:String x:Key="BDTargetApperance">靶材外观</sys:String>
     <sys:String x:Key="BDTargetWarpageCheck">靶材翘曲检查</sys:String>
     <sys:String x:Key="BDTargetThicknessCheck">靶材厚度检查</sys:String>
     <sys:String x:Key="BDTargetDiameterCheck">靶材直径检查</sys:String>
-    <sys:String x:Key="BDTargetPerson">靶材检查人</sys:String>
-    <sys:String x:Key="BDTargetCheckTime">靶材检查时间</sys:String>
+    <sys:String x:Key="BDTargetPerson">检查人</sys:String>
+    <sys:String x:Key="BDTargetCheckTime">检查时间</sys:String>
 
 
 
