@@ -140,8 +140,8 @@
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                    <TextBox Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxCommon}" Width="200"/>
+                    <Button Content="选择" Style="{StaticResource StyleButtonCommon}" Command="{Binding DataContext.SelectDimensionActual,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"

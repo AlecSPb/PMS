@@ -26,6 +26,13 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
+            SelectDimensionActual = new RelayCommand(ActionSelectDimensionActual);
+        }
+
+        private void ActionSelectDimensionActual()
+        {
+            PMSHelper.ViewModels.RecordMachineSelect.SetRequestView(PMSViews.RecordTestEdit);
+            NavigationService.GoTo(PMSViews.RecordMachineSelect);
         }
 
         public void SetNew()
@@ -148,6 +155,6 @@ namespace PMSClient.ViewModel
             }
         }
         public RelayCommand Select { get; set; }
-
+        public RelayCommand SelectDimensionActual { get; set; }
     }
 }

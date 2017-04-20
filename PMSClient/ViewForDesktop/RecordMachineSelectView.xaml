@@ -20,8 +20,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageRecordMachine}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"
-                    Command="{Binding GoToNavigation}" />
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
+                    Command="{Binding GiveUp}" />
             <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding  SearchVHPPlanLot,UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>

@@ -45,6 +45,7 @@ namespace PMSClient
         RecordDeMoldEdit,
         RecordMachine,
         RecordMachineEdit,
+        RecordMachineSelect,
         RecordTest,
         RecordTestEdit,
         RecordTestSelect,
