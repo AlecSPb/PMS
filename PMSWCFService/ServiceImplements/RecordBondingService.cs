@@ -57,13 +57,13 @@ namespace PMSWCFService
             }
         }
 
-        public int GetRecordBondingCount(string productid, string platelot)
+        public int GetRecordBondingCount(string productid, string composition)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.PlateLot.Contains(platelot)
+                    return dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.TargetComposition.Contains(composition)
                       && p.State != CommonState.作废.ToString()).Count();
                 }
             }
@@ -74,13 +74,13 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordBonding> GetRecordBondings(int skip, int take, string productid, string platelot)
+        public List<DcRecordBonding> GetRecordBondings(int skip, int take, string productid, string composition)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.PlateLot.Contains(platelot)
+                    var result = dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.TargetComposition.Contains(composition)
                       && p.State != CommonState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
                     var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);

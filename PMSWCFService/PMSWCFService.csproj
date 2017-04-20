@@ -91,6 +91,7 @@
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
+    <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcUserAccess.cs" />
     <Compile Include="DataContracts\DcUserRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="ServiceContracts\IProductService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
     <Compile Include="ServiceContracts\ISanjieService.cs" />
+    <Compile Include="ServiceContracts\IStatisticService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />

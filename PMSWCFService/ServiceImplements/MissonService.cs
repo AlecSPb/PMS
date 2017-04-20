@@ -337,5 +337,74 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange2(int skip, int take, DateTime dateStart, DateTime dateEnd, string composition)
+        {
+            try
+            {
+                var startDate = dateStart.Date;
+                var endDate = dateEnd.Date;
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var queryPlan = (from p in dc.VHPPlans
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.PlanDate >= startDate
+                                     && p.PlanDate <= endDate
+                                     orderby p.PlanDate descending
+                                     select p).Skip(skip).Take(take);
+                    var queryResult = from p in queryPlan
+                                      join o in dc.Orders
+                                      on p.OrderID equals o.ID
+                                      where o.CompositionStandard.Contains(composition)
+                                      select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    var final = queryResult.ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanWithMissonModel>, List<DcPlanWithMisson>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd, string composition)
+        {
+            var startDate = dateStart.Date;
+            var endDate = dateEnd.Date;
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var queryPlan = (from p in dc.VHPPlans
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.PlanDate >= startDate
+                                     && p.PlanDate <= endDate
+                                     orderby p.PlanDate descending
+                                     select p);
+                    var queryResult = from p in queryPlan
+                                      join o in dc.Orders
+                                      on p.OrderID equals o.ID
+                                      where o.CompositionStandard.Contains(composition)
+                                      select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    return queryResult.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
+        }
     }
 }

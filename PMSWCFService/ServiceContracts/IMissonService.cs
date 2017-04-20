@@ -49,6 +49,13 @@ namespace PMSWCFService.ServiceContracts
         List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange(int skip, int take, DateTime dateStart, DateTime dateEnd);
         [OperationContract]
         int GetPlanWithMissonCheckedCountByDateRange(DateTime dateStart, DateTime dateEnd);
+
+        //按照日期范围内材料名称获取获取
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange2(int skip, int take, DateTime dateStart, DateTime dateEnd,string composition);
+        [OperationContract]
+        int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd,string composition);
+
         #endregion
     }
 }
