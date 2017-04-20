@@ -47,6 +47,7 @@ namespace PMSClient.ViewModel
                     default:
                         break;
                 }
+                GoBack();
             }
         }
 
