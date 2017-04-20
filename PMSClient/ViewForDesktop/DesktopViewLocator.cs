@@ -75,6 +75,8 @@ namespace PMSClient.ViewForDesktop
 
             SimpleIoc.Default.Register<RecordMachineView>();
             SimpleIoc.Default.Register<RecordMachineEditView>();
+            SimpleIoc.Default.Register<RecordMachineSelectView>();
+
 
             SimpleIoc.Default.Register<RecordDeMoldView>();
             SimpleIoc.Default.Register<RecordDeMoldEditView>();
@@ -231,6 +233,13 @@ namespace PMSClient.ViewForDesktop
             get
             {
                 return SimpleIoc.Default.GetInstance<RecordMachineEditView>();
+            }
+        }
+        public RecordMachineSelectView RecordMachineSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMachineSelectView>();
             }
         }
 

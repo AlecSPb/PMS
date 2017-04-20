@@ -65,6 +65,15 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest = model;
             }
         }
+
+        public void SetDimensionActual(DcRecordMachine model)
+        {
+            if (model!=null)
+            {
+                CurrentRecordTest.DimensionActual = $"{model.Diameter1}mm OD x {model.Thickness1}mm";
+            }
+        }
+
         public void SetNew(DcRecordTest model)
         {
             if (model != null)

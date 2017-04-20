@@ -113,7 +113,7 @@
                 <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
                     <TextBox x:Name="txtCalculationDensity"  Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}"
                          Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <ComboBox x:Name="cboCompounds"
                         ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                         SelectionChanged="cboCompounds_SelectionChanged"
@@ -214,22 +214,22 @@
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding MillingRequirement}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding FillingRequirement}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
                 <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding MachineRequirement}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
                 <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
                 <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanState}"
                            Style="{StaticResource StyleTextBlockCommon}" />
@@ -242,12 +242,12 @@
                 <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
                 <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
             </Grid>
         </ScrollViewer>

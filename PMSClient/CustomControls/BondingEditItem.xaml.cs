@@ -39,7 +39,8 @@ namespace PMSClient.CustomControls
 
         private static void ActionTopAreaChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            throw new NotImplementedException();
+            BondingEditItem item = d as BondingEditItem;
+            item.topArea.Content = e.NewValue;
         }
     }
 }

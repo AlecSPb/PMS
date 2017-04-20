@@ -24,7 +24,7 @@
         <TextBlock Text="{StaticResource PageRecordTest}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"
-                    Command="{Binding GoToNavigation}" CommandParameter="OrderView"/>
+                    Command="{Binding GoToNavigation}" />
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  Add}"/>
             <TextBlock Text="{StaticResource RTProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
@@ -199,57 +199,57 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Defects}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                     <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
 
                     <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"
-                            HorizontalAlignment="Stretch"/>
+                            />
                 </Grid>
             </ScrollViewer>
             <control:BindableCSVTable Grid.Column="1"  CSVContent="{Binding  CurrentSelectItem.CompositionXRF}"

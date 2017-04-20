@@ -297,6 +297,9 @@
     <Compile Include="ViewForDesktop\RecordDeMoldView.xaml.cs">
       <DependentUpon>RecordDeMoldView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewForDesktop\RecordMachineSelectView.xaml.cs">
+      <DependentUpon>RecordMachineSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewForDesktop\RecordMachineView.xaml.cs">
       <DependentUpon>RecordMachineView.xaml</DependentUpon>
     </Compile>
@@ -387,6 +390,7 @@
     <Compile Include="ViewModel\RecordDeMoldEditVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldVM.cs" />
     <Compile Include="ViewModel\RecordMachineEditVM.cs" />
+    <Compile Include="ViewModel\RecordMachineSelectVM.cs" />
     <Compile Include="ViewModel\RecordMachineVM.cs" />
     <Compile Include="ViewModel\RecordMillingEditVM.cs" />
     <Compile Include="ViewModel\RecordMillingVM.cs" />
@@ -566,6 +570,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ViewForDesktop\RecordDeMoldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ViewForDesktop\RecordMachineSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

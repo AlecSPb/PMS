@@ -25,6 +25,7 @@ namespace PMSClient.ViewModel
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
             searchPlanDate2 = DateTime.Now.AddDays(1).Date;
+            searchCompositionStd = "";
         }
 
         private void IntitializeCommands()
@@ -52,6 +53,7 @@ namespace PMSClient.ViewModel
 
             using (var service = new MissonServiceClient())
             {
+                //TODO:增加搜索选项-成分
                 RecordCount = service.GetPlanWithMissonCheckedCountByDateRange(SearchPlanDate1, SearchPlanDate2);
             }
             //只显示Checked过的计划
@@ -68,7 +70,8 @@ namespace PMSClient.ViewModel
             take = PageSize;
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
-            {
+            {   
+                //TODO:增加搜索选项-成分
                 var orders = service.GetPlanWithMissonCheckedByDateRange(skip, take, SearchPlanDate1, SearchPlanDate2);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
@@ -110,6 +113,14 @@ namespace PMSClient.ViewModel
                 }
             }
         }
+
+        private string searchCompositionStd;
+        public string SeachCompositionStd
+        {
+            get { return searchCompositionStd; }
+            set { searchCompositionStd = value; RaisePropertyChanged(nameof(searchCompositionStd)); }
+        }
+
         #endregion
 
     }

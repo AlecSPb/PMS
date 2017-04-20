@@ -64,7 +64,7 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MOOrderPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OrderPO}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单PO，自动生成的不一定合适，可以自行修改，但最好确保唯一"/>
 
@@ -72,8 +72,8 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                         <TextBox x:Name="txtSupplier"  Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
-                        <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"
+                         />
+                        <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" 
                           ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           DisplayMemberPath="SupplierName"
                           SelectionChanged="ComboBox_SelectionChanged"
@@ -87,42 +87,42 @@
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOSupplierAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox  x:Name="txtAbbr" Grid.Row="2" Grid.Column="1" Text="{Binding SupplierAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="供应商缩写"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MOSupplierReceiver}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox x:Name="txtReceiver" Grid.Row="3" Grid.Column="1" Text="{Binding SupplierReceiver}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商收货人"/>
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MOSupplierEmail}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox x:Name="txtEmail" Grid.Row="4" Grid.Column="1" Text="{Binding SupplierEmail}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商Email"/>
 
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MOSupplierAddress}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox x:Name="txtAddress" Grid.Row="5" Grid.Column="1" Text="{Binding SupplierAddress}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="供应商地址"/>
 
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MORemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息，总共提供多少原料，不需要PMI to provide前缀"/>
 
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOShipFee}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding ShipFee}" Style="{StaticResource StyleTextBoxCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
                     <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="运输费用，没有就写0"/>
 
@@ -145,12 +145,12 @@
                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
                     <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
-                         HorizontalAlignment="Stretch"/>
+                         />
 
 
                 </Grid>

@@ -94,7 +94,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<RecordMachineVM>();
             SimpleIoc.Default.Register<RecordMachineEditVM>();
-
+            SimpleIoc.Default.Register<RecordMachineSelectVM>();
 
 
         }
@@ -269,6 +269,14 @@ namespace PMSClient.ViewModel
             get
             {
                 return SimpleIoc.Default.GetInstance<RecordMachineEditVM>();
+            }
+        }
+
+        public RecordMachineSelectVM RecordMachineSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordMachineSelectVM>();
             }
         }
         public RecordBondingVM RecordBonding

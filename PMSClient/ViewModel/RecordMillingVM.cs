@@ -76,7 +76,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             var service = new RecordMillingServiceClient();
             RecordCount = service.GetRecordMillingCountByVHPPlanLot(SearchVHPPlanLot);
             service.Close();
