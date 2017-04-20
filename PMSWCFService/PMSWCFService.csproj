@@ -91,7 +91,7 @@
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
-    <Compile Include="DataContracts\DcStatistic.cs" />
+    <Compile Include="DataContracts\DcOrderStatistic.cs" />
     <Compile Include="DataContracts\DcUserAccess.cs" />
     <Compile Include="DataContracts\DcUserRole.cs" />
     <Compile Include="DataContracts\DcUser.cs" />

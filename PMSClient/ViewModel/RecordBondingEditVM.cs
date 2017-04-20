@@ -60,6 +60,27 @@ namespace PMSClient.ViewModel
             model.TargetCheckTime = DateTime.Now;
 
             //2.0
+            model.PlateLot = "";
+            model.PlateMaterial = "CuCr";
+            model.PlateDimension = "237mm  ODx 11 mm";
+            model.PlateUseCount = "1";
+            model.PlateHardness = "65HRB";
+            model.PlateSuplier = "GuangHan";
+            model.PlateLastWeldMaterial = "In";
+            model.PlateAppearance = "良好";
+            model.PlatePerson = "无";
+            model.PlateCheckTime = DateTime.Now;
+
+
+
+
+
+
+
+
+
+
+
 
             #endregion
             CurrentRecordBonding = model;
