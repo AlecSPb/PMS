@@ -173,7 +173,7 @@
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
     <sys:String x:Key="HelpTipRecordBondingEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+        注意：每个部分完成后请按下签名按钮，签名后会保存输入并转到列表界面，准备下一块绑定的处理。
     </sys:String>
     <sys:String x:Key="HelpTipProductEdit">
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
@@ -235,7 +235,8 @@
     <sys:String x:Key="ButtonOpenFile">打开标签模板</sys:String>
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
-
+    <sys:String x:Key="ButtonSign">签名</sys:String>
+    
     <sys:String x:Key="ButtonDetail">详细</sys:String>
     <sys:String x:Key="ButtonBrowse">浏览</sys:String>
     <sys:String x:Key="ButtonInput">导入</sys:String>

@@ -15,7 +15,16 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+            Sign = new RelayCommand<string>(ActionSign);
+            SelectTest = new RelayCommand(ActionSelectTest);
         }
+
+        private void ActionSelectTest()
+        {
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            NavigationService.GoTo(PMSViews.RecordTestSelect);
+        }
+
         public void SetNew()
         {
             IsNew = true;
@@ -66,8 +75,37 @@ namespace PMSClient.ViewModel
             //TODO:以后用作从中间库房选择背板信息用
         }
 
-        private void ActionSave()
+
+        private void ActionSign(string param)
         {
+            var currentUser = PMSHelper.CurrentSession.CurrentUser.UserName;
+            var currentTime = DateTime.Now;
+            //通过参数判断是按下的是那个签名按钮
+            switch (param)
+            {
+                case "00":
+                    CurrentRecordBonding.Creator = currentUser;
+                    CurrentRecordBonding.CreateTime = currentTime;
+                    break;
+                case "10":
+                    CurrentRecordBonding.Creator = currentUser;
+                    CurrentRecordBonding.CreateTime = currentTime;
+                    break;
+                case "20":
+                    CurrentRecordBonding.Creator = currentUser;
+                    CurrentRecordBonding.CreateTime = currentTime;
+                    break;
+                case "30":
+                    CurrentRecordBonding.Creator = currentUser;
+                    CurrentRecordBonding.CreateTime = currentTime;
+                    break;
+                case "40":
+                    CurrentRecordBonding.Creator = currentUser;
+                    CurrentRecordBonding.CreateTime = currentTime;
+                    break;
+                default:
+                    break;
+            }
 
             try
             {
@@ -90,6 +128,11 @@ namespace PMSClient.ViewModel
             }
         }
 
+        private void ActionSave()
+        {
+
+        }
+
         private void GoBack()
         {
             NavigationService.GoTo(PMSViews.RecordBonding);
@@ -106,7 +149,7 @@ namespace PMSClient.ViewModel
         }
 
 
-
-
+        public RelayCommand<string> Sign { get; set; }
+        public RelayCommand SelectTest { get; set; }
     }
 }
