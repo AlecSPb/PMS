@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using PMSClient.MainService;
 using GalaSoft.MvvmLight.Messaging;
+using PMSClient.ReportsHelper;
 //using bt = BarTender;
 
 
@@ -46,16 +47,36 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcDelivery>(ActionEdit, CanEdit);
-            Doc = new RelayCommand<DcDelivery>(ActionDoc, CanDoc);
+            Label = new RelayCommand<DcDelivery>(ActionLabel, CanLabel);
             AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SearchRecordTest = new RelayCommand<DcDeliveryItem>(ActionRecordTest, CanRecordTest);
-
+            DeliverySheet = new RelayCommand<MainService.DcDelivery>(ActionDeliverySheet, CanDeliverySheet);
 
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
             GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
 
 
+        }
+
+        private bool CanDeliverySheet(DcDelivery arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录") || PMSHelper.CurrentSession.IsAuthorized("生成发货单标签");
+        }
+
+        private void ActionDeliverySheet(DcDelivery model)
+        {
+            try
+            {
+                ReportDeliverySheet report = new ReportDeliverySheet();
+                report.SetModel(model);
+                report.Output();
+                PMSDialogService.ShowYes("生成成功", "请打开桌面上的发货单文档");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanRecordTest(DcDeliveryItem arg)
@@ -83,7 +104,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private bool CanDoc(DcDelivery arg)
+        private bool CanLabel(DcDelivery arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录")|| PMSHelper.CurrentSession.IsAuthorized("生成发货单标签"); 
         }
@@ -136,7 +157,7 @@ namespace PMSClient.ViewModel
         /// </summary>
         //private bt.Application btApp;
         //private bt.Format btnFormat;
-        private void ActionDoc(DcDelivery model)
+        private void ActionLabel(DcDelivery model)
         {
             #region 必须使用Automation版本的Bartender才允许自动化调用，这个版本36000RMB
             //string title = model.Country;
@@ -294,7 +315,8 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; set; }
         public RelayCommand<DcDelivery> Edit { get; set; }
-        public RelayCommand<DcDelivery> Doc { get; set; }
+        public RelayCommand<DcDelivery> Label { get; set; }
+        public RelayCommand<DcDelivery> DeliverySheet { get; set; }
         public RelayCommand<DcDelivery> AddItem { get; set; }
         public RelayCommand<DcDeliveryItem> EditItem { get; set; }
         public RelayCommand<DcDeliveryItem> SearchRecordTest { get; set; }

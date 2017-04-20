@@ -127,13 +127,13 @@ namespace PMSClient.ViewModel
                 if (IsNew)
                 {
                     service.AddRecordTest(CurrentRecordTest);
+                    PMSHelper.ViewModels.RecordTest.RefreshData();
                 }
                 else
                 {
                     service.UpdateRecordTest(CurrentRecordTest);
                 }
                 service.Close();
-                PMSHelper.ViewModels.RecordTest.RefreshData();
                 GoBack();
             }
             catch (Exception ex)

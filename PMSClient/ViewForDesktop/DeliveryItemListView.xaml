@@ -37,7 +37,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleDGButton}"
+                                <Button Content="{StaticResource ButtonRecordTest}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

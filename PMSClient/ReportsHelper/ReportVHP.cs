@@ -39,7 +39,7 @@ namespace PMSClient.ReportsHelper
             {
                 return;
             }
-
+            //复制到临时文件
             ReportHelper.FileCopy(sourceFile, tempFile);
             #region 创建报告
             using (DocX document = DocX.Load(tempFile))

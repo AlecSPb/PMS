@@ -158,6 +158,7 @@
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
+    <Compile Include="ReportsHelper\ReportDeliverySheet.cs" />
     <Compile Include="ReportsHelper\ReportOpticraft440.cs" />
     <Compile Include="ReportsHelper\ReportTCB440.cs" />
     <Compile Include="ReportsHelper\ReportCOABridgeLine.cs" />
@@ -675,6 +676,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\Reports\COABridgeLine.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DocTemplate\Reports\DeliverySheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DocTemplate\Reports\ReportTCB440.docx">

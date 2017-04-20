@@ -93,11 +93,10 @@ namespace PMSClient.ReportsHelper
                 }
 
                 document.Save();
-                #endregion
-                //复制到临时文件
-                ReportHelper.FileCopy(tempFile, targetFile);
             }
-
+            #endregion
+            //复制到临时文件
+            ReportHelper.FileCopy(tempFile, targetFile);
         }
 
 
