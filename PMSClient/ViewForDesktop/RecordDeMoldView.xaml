@@ -76,8 +76,8 @@
                                     Binding="{Binding Thickness3}"/>
                 <DataGridTextColumn Header="{StaticResource RDMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Thickness4}"/>
-                <!--<DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>-->
+                <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
 

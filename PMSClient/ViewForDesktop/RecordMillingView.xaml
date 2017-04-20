@@ -67,8 +67,8 @@
                                     Binding="{Binding WeightRemain}"/>
                 <DataGridTextColumn Header="{StaticResource RMRatio}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Ratio,StringFormat={}{0:P}}"/>
-                <!--<DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>-->
+                <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

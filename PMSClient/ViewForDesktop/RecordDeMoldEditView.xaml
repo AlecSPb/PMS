@@ -145,8 +145,7 @@
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
-                         />
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息，比如有无石墨纸等等"/>
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDMState}"
