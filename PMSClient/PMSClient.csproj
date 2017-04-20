@@ -1034,6 +1034,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Bondings\20.png" />
+    <Resource Include="Resource\Bondings\30.PNG" />
+    <Resource Include="Resource\Bondings\40.PNG" />
+    <Resource Include="Resource\Bondings\51.PNG" />
+    <Resource Include="Resource\Bondings\52.PNG" />
+    <Resource Include="Resource\Bondings\60.PNG" />
+    <Resource Include="Resource\Bondings\70.PNG" />
+    <Resource Include="Resource\Bondings\71.PNG" />
+    <Resource Include="Resource\Bondings\80.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

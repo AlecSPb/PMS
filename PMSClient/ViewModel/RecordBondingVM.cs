@@ -50,12 +50,13 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            throw new NotImplementedException();
+            SearchProductID = SearchCompositionStd = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSearch()
         {
-            throw new NotImplementedException();
+            SetPageParametersWhenConditionChange();
         }
 
         private bool CanAdd()
@@ -72,10 +73,10 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 10;
             using (var service = new RecordBondingServiceClient())
             {
-                RecordCount = service.GetRecordBondingCount(SearchProductID, SearchPlateLot);
+                RecordCount = service.GetRecordBondingCount(SearchProductID, SearchCompositionStd);
             }
 
             ActionPaging();
@@ -88,7 +89,7 @@ namespace PMSClient.ViewModel
 
             using (var service = new RecordBondingServiceClient())
             {
-                var orders = service.GetRecordBondings(skip, take, SearchProductID, SearchPlateLot);
+                var orders = service.GetRecordBondings(skip, take, SearchProductID, SearchCompositionStd);
                 RecordBondings.Clear();
                 orders.ToList().ForEach(o => RecordBondings.Add(o));
             }
@@ -96,11 +97,12 @@ namespace PMSClient.ViewModel
 
 
         public ObservableCollection<DcRecordBonding> RecordBondings { get; set; }
-        private string searchPlateLot;
-        public string SearchPlateLot
+
+        private string searchCompositionStd;
+        public string SearchCompositionStd
         {
-            get { return searchPlateLot; }
-            set { searchPlateLot = value; RaisePropertyChanged(nameof(SearchPlateLot)); }
+            get { return searchCompositionStd; }
+            set { searchCompositionStd = value; RaisePropertyChanged(nameof(SearchCompositionStd)); }
         }
 
         private string searchProductID;

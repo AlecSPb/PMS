@@ -17,6 +17,10 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             Sign = new RelayCommand<string>(ActionSign);
             SelectTest = new RelayCommand(ActionSelectTest);
+
+
+            States = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.CommonState>(States);
         }
 
         private void ActionSelectTest()
@@ -31,10 +35,11 @@ namespace PMSClient.ViewModel
             #region 初始化
             var model = new DcRecordBonding();
             model.ID = Guid.NewGuid();
+            //0.0
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.未核验.ToString();
-            model.InstructionCode = "标准作业流程";
+            model.InstructionCode = "SOP";
             model.TargetProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.TargetComposition = "靶材成分";
             model.TargetDimension = "靶材尺寸";
@@ -46,14 +51,15 @@ namespace PMSClient.ViewModel
             model.TargetDefects = "";
             model.TargetDetailRecord = "";
             //暂时用不到
+            //1.0
             model.TargetAppearance = "外观检查";
             model.TargetWarpageCheck = "翘曲检查";
             model.TargetThicknessCheck = "厚度检查";
             model.TargetDiameterCheck = "直径检查";
-            model.TargetPerson = "";
+            model.TargetPerson = "无";
             model.TargetCheckTime = DateTime.Now;
 
-
+            //2.0
 
             #endregion
             CurrentRecordBonding = model;
@@ -61,13 +67,27 @@ namespace PMSClient.ViewModel
 
         public void SetEdit(DcRecordBonding model)
         {
-            IsNew = false;
-            CurrentRecordBonding = model;
+            if (model != null)
+            {
+                IsNew = false;
+                CurrentRecordBonding = model;
+            }
         }
 
         public void SetBySelect(DcRecordTest model)
         {
-
+            if (model != null)
+            {
+                CurrentRecordBonding.TargetProductID = model.ProductID;
+                CurrentRecordBonding.TargetCustomer = model.Customer;
+                CurrentRecordBonding.TargetComposition = model.Composition;
+                CurrentRecordBonding.TargetAbbr = model.CompositionAbbr;
+                CurrentRecordBonding.TargetPO = model.PO;
+                CurrentRecordBonding.TargetWeight = model.Weight;
+                CurrentRecordBonding.TargetDimension = model.Dimension;
+                CurrentRecordBonding.TargetDimensionActual = model.DimensionActual;
+                CurrentRecordBonding.TargetDefects = model.Defects;
+            }
         }
 
         public void SetBySelect()
@@ -81,6 +101,7 @@ namespace PMSClient.ViewModel
             var currentUser = PMSHelper.CurrentSession.CurrentUser.UserName;
             var currentTime = DateTime.Now;
             //通过参数判断是按下的是那个签名按钮
+            //并设置对应的签名和时间
             switch (param)
             {
                 case "00":
@@ -88,20 +109,20 @@ namespace PMSClient.ViewModel
                     CurrentRecordBonding.CreateTime = currentTime;
                     break;
                 case "10":
-                    CurrentRecordBonding.Creator = currentUser;
-                    CurrentRecordBonding.CreateTime = currentTime;
+                    CurrentRecordBonding.TargetPerson = currentUser;
+                    CurrentRecordBonding.TargetCheckTime = currentTime;
                     break;
                 case "20":
-                    CurrentRecordBonding.Creator = currentUser;
-                    CurrentRecordBonding.CreateTime = currentTime;
+                    CurrentRecordBonding.PlatePerson = currentUser;
+                    CurrentRecordBonding.PlateCheckTime = currentTime;
                     break;
                 case "30":
-                    CurrentRecordBonding.Creator = currentUser;
-                    CurrentRecordBonding.CreateTime = currentTime;
+                    CurrentRecordBonding.TargetPerson = currentUser;
+                    CurrentRecordBonding.TargetCheckTime = currentTime;
                     break;
                 case "40":
-                    CurrentRecordBonding.Creator = currentUser;
-                    CurrentRecordBonding.CreateTime = currentTime;
+                    CurrentRecordBonding.TargetPerson = currentUser;
+                    CurrentRecordBonding.TargetCheckTime = currentTime;
                     break;
                 default:
                     break;
@@ -113,13 +134,14 @@ namespace PMSClient.ViewModel
                 {
                     if (IsNew)
                     {
-                        service.AddRecordBongding(CurrentRecordBonding);
+                        //service.AddRecordBongding(CurrentRecordBonding);
                     }
                     else
                     {
-                        service.UpdateRecordBongding(CurrentRecordBonding);
+                        //service.UpdateRecordBongding(CurrentRecordBonding);
                     }
                 }
+                PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");
                 GoBack();
             }
             catch (Exception ex)
@@ -138,14 +160,14 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.RecordBonding);
         }
 
-
+        public List<string> States { get; set; }
 
         private DcRecordBonding currentRecordBonding;
 
         public DcRecordBonding CurrentRecordBonding
         {
             get { return currentRecordBonding; }
-            set { currentRecordBonding = value;RaisePropertyChanged(nameof(CurrentRecordBonding)); }
+            set { currentRecordBonding = value; RaisePropertyChanged(nameof(CurrentRecordBonding)); }
         }
 
 

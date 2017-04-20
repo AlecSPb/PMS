@@ -572,12 +572,12 @@
     <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
     <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
     <sys:String x:Key="BDPlateDimension">背板直径</sys:String>
-    <sys:String x:Key="BDUseCount">背板使用次数</sys:String>
-    <sys:String x:Key="BDHardness">背板硬度</sys:String>
-    <sys:String x:Key="BDSupplier">背板供应商</sys:String>
-    <sys:String x:Key="BDLastWeldMaterial">背板上次焊接材料</sys:String>
-    <sys:String x:Key="BDOtherRecord">背板其他记录</sys:String>
-    <sys:String x:Key="BDPlateApperance">背板外观</sys:String>
+    <sys:String x:Key="BDPlateUseCount">背板使用次数</sys:String>
+    <sys:String x:Key="BDPlateHardness">背板硬度</sys:String>
+    <sys:String x:Key="BDPlateSupplier">背板供应商</sys:String>
+    <sys:String x:Key="BDPlateLastWeldMaterial">背板上次焊接材料</sys:String>
+    <sys:String x:Key="BDPlateOtherRecord">背板其他记录</sys:String>
+    <sys:String x:Key="BDPlateAppearance">背板外观</sys:String>
     <sys:String x:Key="BDPlatePerson">背板检查人</sys:String>
     <sys:String x:Key="BDPlateCheckTime">背板检查时间</sys:String>
 
