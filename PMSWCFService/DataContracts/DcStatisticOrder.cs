@@ -10,14 +10,14 @@ namespace PMSWCFService.DataContracts
     /// 统计数据集合
     /// </summary>
     [DataContract]
-    public class DcOrderStatistic
+    public class DcStatisticOrder
     {
 
         //Order
         [DataMember]
         public int AllOrderCount { get; set; }
         [DataMember]
-        public int UnFinishedOrderCount { get; ; set; }
+        public int UnFinishedOrderCount { get; set; }
         [DataMember]
         public int FinishedOrderCount { get; set; }
 

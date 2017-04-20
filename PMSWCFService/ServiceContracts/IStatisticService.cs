@@ -12,6 +12,12 @@ namespace PMSWCFService.ServiceContracts
     public interface IStatisticService
     {
         [OperationContract]
-        DcOrderStatistic GetStatistic();
+        DcStatisticOrder GetStatisticOrder();
+        [OperationContract]
+        DcStatisticPlan GetStatisticPlan();
+        [OperationContract]
+        DcStatisticProduct GetStatisticProduct();
+        [OperationContract]
+        DcStatisticDelivery GetStatisticDelivery();
     }
 }
