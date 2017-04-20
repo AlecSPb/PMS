@@ -112,13 +112,13 @@
                 <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"
                          />
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="PO"/>
+                           Text=""/>
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RPWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"
                          />
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="货物重量"/>
+                           Text="货物重量,单位g"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RPPosition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
