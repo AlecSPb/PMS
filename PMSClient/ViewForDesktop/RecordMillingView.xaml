@@ -95,97 +95,93 @@
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             </Grid>
-            <Grid Grid.Column="1" DataContext="{Binding CurrentRecordMilling}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="300"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMVHPPlanLot}"
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <Grid  DataContext="{Binding CurrentRecordMilling}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMVHPPlanLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMillingTool}"
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMillingTool}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMGasProtection}"
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMGasProtection}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMMillingTime}"
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMMillingTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding MillingTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding MillingTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMWeightIn}"
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMWeightIn}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightIn" Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                    <TextBox Name="txtWeightIn" Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMWeightOut}"
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMWeightOut}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightOut" Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                    <TextBox Name="txtWeightOut" Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightRemain" Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                    <TextBox Name="txtWeightRemain" Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMRatio}"
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMRatio}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxReadOnly}"  Width="80"/>
-                </StackPanel>
+                    <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                        <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxReadOnly}"  Width="80"/>
+                    </StackPanel>
 
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMRemark}"
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMCreator}"
+                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
-                            />
+                    <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
-                            />
-            </Grid>
+                    <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                </Grid>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </UserControl>

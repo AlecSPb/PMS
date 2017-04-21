@@ -18,7 +18,7 @@
     <SolidColorBrush x:Key="ThemeBrush" Color="#F2753F"/>
     
     <SolidColorBrush x:Key="BGBrushTitleBar" Color="#135995"/>
-    <SolidColorBrush x:Key="BGBrushNavigateBar" Color="Orange"/>
+    <SolidColorBrush x:Key="BGBrushNavigateBar" Color="#F2753F"/>
     <SolidColorBrush x:Key="BGBrushStatusBar" Color="#CA5100"/>
     <SolidColorBrush x:Key="BGBrushWindow" Color="LightYellow"/>
 
