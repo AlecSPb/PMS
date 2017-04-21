@@ -60,7 +60,7 @@ namespace PMSClient.ReportsHelper
 
                     using (var service = new DeliveryServiceClient())
                     {
-                        var result = service.GetDeliveryItemByDeliveryID(model.ID);
+                        var result = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i=>i.PackNumber);
                         int rownumber = 1;
                         int datanumber = 1;
                         foreach (var item in result)
