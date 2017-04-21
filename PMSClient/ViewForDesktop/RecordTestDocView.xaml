@@ -60,79 +60,63 @@
 
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTTestType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TestType}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TestType}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
                         <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
                         <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
                         <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
                         <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
                         <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                            <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
-                        </StackPanel>
+                        <TextBox Name="txtResistance" Grid.Row="9" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxReadOnly}"  />
 
                         <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"
-                         />
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxReadOnly}"   />
                         <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                         <TextBox  x:Name="txtCompositionXRF" Grid.Row="13" Grid.Column="1"
                          Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxReadOnly}"
                           AcceptsReturn="True"
                           VerticalScrollBarVisibility="Auto"
-                         Height="120"
-                         />
-                  
+                         Height="120"   />
+
                     </Grid>
                 </ScrollViewer>
             </Border>
@@ -154,20 +138,27 @@
                                  Text="{Binding CurrentFolder}"/>
                     </Grid>
                     <StackPanel Grid.Row="1" Orientation="Vertical">
-                        <Button Content="{StaticResource ButtonDocTest}" Style="{StaticResource  StyleButtonCommon}" 
+                        <Button Content="{StaticResource ButtonDocTest}" Style="{StaticResource  StyleButtonCommon}" HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="Test"/>
-                        <Button Content="{StaticResource ButtonDocCoA}" Style="{StaticResource  StyleButtonCommon}" 
+                        <Button Content="{StaticResource ButtonDocCoA}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="CoA"/>
-                        <Button Content="{StaticResource ButtonDocCoABridgeLine}" Style="{StaticResource  StyleButtonCommon}" 
+                        <Button Content="{StaticResource ButtonDocCoABridgeLine}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="CoABridgeLine"/>
-                        <Button Content="{StaticResource ButtonDocOpticraftGrinding}" Style="{StaticResource  StyleButtonCommon}" 
+                        <Button Content="{StaticResource ButtonDocOpticraftGrinding}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="Opticraft"/>
-                        <Button Content="{StaticResource ButtonDocTCB}" Style="{StaticResource  StyleButtonCommon}" 
+                        <Button Content="{StaticResource ButtonDocTCB}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="TCB"/>
 
 
                     </StackPanel>
                 </Grid>
+            </Border>
+            <Border Grid.Column="2" Style="{StaticResource StyleBorderCommon}">
+                <TextBlock Style="{StaticResource StyleTextBlockTip}" VerticalAlignment="Top">
+                    请核对信息后，点击所需要的报告按钮，生成报告后，请务必打开报告查看信息格式是否正确
+                    <LineBreak/>
+                    pdf文件格式请自行创建
+                </TextBlock>
             </Border>
         </Grid>
 

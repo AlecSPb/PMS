@@ -107,7 +107,7 @@ namespace PMSClient
             menu.MenuItems.Add(item);
             _notifyIcon.ContextMenu = menu;
             _notifyIcon.Visible = true;
-            SetNotifyIcon("欢迎", "欢迎使用PMS生产管理系统\r\n请在左上方登录使用", 2000);
+            //SetNotifyIcon("欢迎", "欢迎使用PMS生产管理系统\r\n请在左上方登录使用", 2000);
         }
         public void SetNotifyIcon(string title, string message, int showtime)
         {

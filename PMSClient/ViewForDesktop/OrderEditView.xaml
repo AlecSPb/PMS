@@ -174,8 +174,7 @@
 
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource OrderRemark}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
-                         />
+                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息一般只有你自己看得到"/>
 

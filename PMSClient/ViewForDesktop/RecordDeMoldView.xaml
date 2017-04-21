@@ -62,20 +62,20 @@
                                     Binding="{Binding Temperature2}"/>
                 <DataGridTextColumn Header="{StaticResource RDMDeMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeMoldType}"/>
-                <DataGridTextColumn Header="{StaticResource RDMWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Weight}"/>
-                <DataGridTextColumn Header="{StaticResource RDMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Diameter1}"/>
-                <DataGridTextColumn Header="{StaticResource RDMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Diameter2}"/>
-                <DataGridTextColumn Header="{StaticResource RDMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness1}"/>
-                <DataGridTextColumn Header="{StaticResource RDMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness2}"/>
-                <DataGridTextColumn Header="{StaticResource RDMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness3}"/>
-                <DataGridTextColumn Header="{StaticResource RDMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness4}"/>
+                <DataGridTextColumn Header="{StaticResource RDMWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Weight,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness3,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness4,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

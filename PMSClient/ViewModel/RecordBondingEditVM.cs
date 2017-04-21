@@ -77,9 +77,9 @@ namespace PMSClient.ViewModel
             model.TargetPreProcessCheckTime = DateTime.Now;
 
             //4.0
-            model.TargetPreProcessRecord = "正常";
-            model.TargetPreProcessPerson = "无";
-            model.TargetPreProcessCheckTime = DateTime.Now;
+            model.PlatePreProcessRecord = "正常";
+            model.PlatePreProcessPerson = "无";
+            model.PlatePreProcessCheckTime = DateTime.Now;
 
             //5.0
             model.WeldMaterial = "In";
@@ -94,6 +94,7 @@ namespace PMSClient.ViewModel
             //7.0
             model.DimensionCheck = "正常";
             model.DimensionWarpageCheck = "无";
+            model.DimensionPerson = "无";
             model.DimensionCheckTime = DateTime.Now;
             //
             model.BindingCheck = "正常";

@@ -60,18 +60,18 @@
                                     Binding="{Binding Dimension}"/>
                 <DataGridTextColumn Header="{StaticResource RMMExtraRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ExtraRequirement}"/>
-                <DataGridTextColumn Header="{StaticResource RMMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Diameter1}"/>
-                <DataGridTextColumn Header="{StaticResource RMMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Diameter2}"/>
-                <DataGridTextColumn Header="{StaticResource RMMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness1}"/>
-                <DataGridTextColumn Header="{StaticResource RMMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness2}"/>
-                <DataGridTextColumn Header="{StaticResource RMMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness3}"/>
-                <DataGridTextColumn Header="{StaticResource RMMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Thickness4}"/>
+                <DataGridTextColumn Header="{StaticResource RMMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness3,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness4,StringFormat={}{0:F2}}"/>
 
                 <DataGridTextColumn Header="{StaticResource RMMDefects}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Defects}"/>
