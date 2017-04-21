@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Check = new RelayCommand<MainService.DcOrder>(ActionCheck,CanCheck);
+            Check = new RelayCommand<DcOrder>(ActionCheck,CanCheck);
 
         }
         /// <summary>

@@ -10,7 +10,7 @@
 
 
     <!--Navigation Title-->
-    <sys:String x:Key="NavigationOrder">订单</sys:String>
+    <sys:String x:Key="NavigationOrder">订单管理</sys:String>
     <sys:String x:Key="NavigationOrderCheck">订单核验</sys:String>
     <sys:String x:Key="NavigationMisson">生产任务</sys:String>
     <sys:String x:Key="NavigationPlan">生产计划</sys:String>
@@ -67,7 +67,7 @@
     <sys:String x:Key="PageAccess">授权</sys:String>
 
 
-    <sys:String x:Key="PageOrder">订单浏览</sys:String>
+    <sys:String x:Key="PageOrder">订单管理</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>

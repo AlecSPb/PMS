@@ -52,9 +52,26 @@ namespace PMSClient.ViewModel
             }, CanEdit);
 
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
-
+            Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
+        }
+        /// <summary>
+        /// 核验订单权限编码=编辑订单核验
+        /// </summary>
+        /// <param name="arg"></param>
+        /// <returns></returns>
+        private bool CanCheck(DcOrder arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑订单核验");
         }
 
+        private void ActionCheck(DcOrder order)
+        {
+            if (order != null)
+            {
+                PMSHelper.ViewModels.OrderCheckEdit.SetEdit(order);
+                NavigationService.GoTo(PMSViews.OrderCheckEdit);
+            }
+        }
         #region 权限控制代码=编辑订单
         private bool CanEdit(DcOrder arg)
         {
@@ -193,7 +210,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Edit { get; private set; }
 
         public RelayCommand<DcOrder> Duplicate { get; private set; }
-
+        public RelayCommand<DcOrder> Check { get; private set; }
         #endregion
     }
 }

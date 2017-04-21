@@ -40,6 +40,11 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectAndSend(DcProduct model)
         {
+            if (!PMSDialogService.ShowYesNo("请问","确定设置为发货状态吗？"))
+            {
+                return;
+            }
+
             if (model!=null)
             {
                 using (var service=new ProductServiceClient())

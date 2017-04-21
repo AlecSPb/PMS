@@ -47,9 +47,9 @@
                         Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageOrder}" Grid.Row="1" Grid.Column="1"
                         Command="{Binding GoToOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
-                <Button Content="{StaticResource PageOrderCheck}" Grid.Row="1" Grid.Column="2"
-                        Command="{Binding GoToOrderCheck}" Style="{DynamicResource StyleButtonNavigation}"/>
-                <Button Content="{StaticResource PageOrderStatistic}" Grid.Row="1" Grid.Column="3"
+                <!--<Button Content="{StaticResource PageOrderCheck}" Grid.Row="1" Grid.Column="2"
+                        Command="{Binding GoToOrderCheck}" Style="{DynamicResource StyleButtonNavigation}"/>-->
+                <Button Content="{StaticResource PageOrderStatistic}" Grid.Row="1" Grid.Column="2"
                         Command="{Binding GoToOrderStatistic}" Style="{DynamicResource StyleButtonNavigation}"/>
 
 

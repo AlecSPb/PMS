@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
 
         private static void GoBack()
         {
-            NavigationService.GoTo(PMSViews.OrderCheck);
+            NavigationService.GoTo(PMSViews.Order);
         }
 
         private DcOrder currentOrder;

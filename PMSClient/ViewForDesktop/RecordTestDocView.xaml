@@ -96,7 +96,7 @@
 
                         <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                        <TextBox Name="txtResistance" Grid.Row="9" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                        <TextBox Name="txtResistance" Grid.Row="9" Grid.Column="1" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxReadOnly}" />
 
                         <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
