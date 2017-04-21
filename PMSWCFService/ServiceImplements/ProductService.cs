@@ -63,8 +63,13 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.Products.Where(p => p.ProductID.Contains(productid) && p.Composition.Contains(composition)
-                      && p.State != CommonState.作废.ToString()).Count();
+                    var query = from p in dc.Products
+                                where p.ProductID.Contains(productid)
+                                && p.Composition.Contains(composition)
+                                && p.State != ProductState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    return query.Count();
                 }
             }
             catch (Exception ex)
@@ -80,10 +85,14 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.Products.Where(p => p.ProductID.Contains(productid) && p.Composition.Contains(composition)
-                      && p.State != ProductState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                    var query = from p in dc.Products
+                                where p.ProductID.Contains(productid)
+                                && p.Composition.Contains(composition)
+                                && p.State != ProductState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<Product, DcProduct>());
-                    var products = Mapper.Map<List<Product>, List<DcProduct>>(result);
+                    var products = Mapper.Map<List<Product>, List<DcProduct>>(query.Skip(skip).Take(take).ToList());
                     return products;
                 }
             }

@@ -126,6 +126,13 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            if (CurrentProduct.State == "作废")
+            {
+                if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
+                {
+                    return;
+                }
+            }
             try
             {
                 var service = new ProductServiceClient();
@@ -157,7 +164,8 @@ namespace PMSClient.ViewModel
             get { return currentProduct; }
             set
             {
-                Set(nameof(CurrentProduct), ref currentProduct, value);
+                currentProduct = value;
+                RaisePropertyChanged(nameof(CurrentProduct));
             }
         }
         public RelayCommand SelectTest { get; set; }

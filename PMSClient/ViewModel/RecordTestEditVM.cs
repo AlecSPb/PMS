@@ -53,9 +53,9 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.TestType = PMSCommon.TestType.靶材.ToString();
             model.State = PMSCommon.CommonState.未核验.ToString();
-            model.Weight = "100";
+            model.Weight = "0";
             model.Remark = "";
-            model.Resistance = "";
+            model.Resistance = "0";
             model.Sample = "无需样品";
             model.CompositionXRF = "暂无";
             model.Density = "0";
@@ -121,18 +121,25 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            if (CurrentRecordTest.State == "作废")
+            {
+                if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
+                {
+                    return;
+                }
+            }
             try
             {
                 var service = new RecordTestServiceClient();
                 if (IsNew)
                 {
                     service.AddRecordTest(CurrentRecordTest);
-                    PMSHelper.ViewModels.RecordTest.RefreshData();
                 }
                 else
                 {
                     service.UpdateRecordTest(CurrentRecordTest);
                 }
+                PMSHelper.ViewModels.RecordTest.RefreshData();
                 service.Close();
                 GoBack();
             }

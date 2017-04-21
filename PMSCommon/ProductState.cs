@@ -8,8 +8,8 @@ namespace PMSCommon
 {
     public enum ProductState
     {
+        作废,
         库存,
-        发货,
-        作废
+        发货
     }
 }

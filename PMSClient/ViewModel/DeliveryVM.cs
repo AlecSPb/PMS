@@ -214,17 +214,16 @@ namespace PMSClient.ViewModel
                 DcDeliveryItem[] items;
                 using (var service = new DeliveryServiceClient())
                 {
-                    items = service.GetDeliveryItemByDeliveryID(model.ID);
+                    items = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i => i.PackNumber).ToArray();
                 }
-                int counter = 1;
+                //int counter = 1;
                 foreach (var item in items)
                 {
                     //sb.Append(item.Composition.Trim());
-                    sb.Append($"No {counter}");
-                    sb.Append(" = ");
-                    sb.Append($"[{item.ProductID.Trim()}]");
-                    sb.AppendLine($" in [{item.PackNumber.ToString()}]");
-                    counter++;
+                    sb.Append($"[{item.PackNumber.ToString()}]");
+                    sb.Append($">[{item.ProductID.Trim()}]");
+                    sb.AppendLine($">[PO#{item.PO.ToString()}]");
+                    //counter++;
                 }
                 string mainContent = $"发往: {country}\r{sb.ToString()}";
 

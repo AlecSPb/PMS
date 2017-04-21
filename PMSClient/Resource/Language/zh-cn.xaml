@@ -583,9 +583,9 @@
 
 
 
-    <sys:String x:Key="BDTargetPreProcessRecord">靶材预处理记录</sys:String>
-    <sys:String x:Key="BDTargetPreProcessPerson">靶材预处理记录人</sys:String>
-    <sys:String x:Key="BDTargetPreProcessCheckTime">靶材预处理记录检查时间</sys:String>
+    <sys:String x:Key="BDTargetPreProcessRecord">预处理记录</sys:String>
+    <sys:String x:Key="BDTargetPreProcessPerson">记录人</sys:String>
+    <sys:String x:Key="BDTargetPreProcessCheckTime">记录检查时间</sys:String>
 
 
     <sys:String x:Key="BDPlatePreProcessRecord">背板预处理记录</sys:String>

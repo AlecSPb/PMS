@@ -53,7 +53,7 @@ namespace PMSClient.ReportsHelper
                 document.ReplaceText("[ProductID]", productid);
                 document.ReplaceText("[PO]", model.PO ?? "");
                 document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
-                document.ReplaceText("[Material]", model.Composition ?? "");
+                document.ReplaceText("[Composition]", model.Composition ?? "");
                 document.ReplaceText("[Dimension]", model.Dimension ?? "");
                 document.ReplaceText("[Weight]", model.Weight ?? "");
                 document.ReplaceText("[Density]", model.Density ?? "");
@@ -97,7 +97,7 @@ namespace PMSClient.ReportsHelper
             }
             #endregion
             //复制到临时文件
-            var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
+            var targetName = $"PMI_{prefix}_{model.Customer}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
         }

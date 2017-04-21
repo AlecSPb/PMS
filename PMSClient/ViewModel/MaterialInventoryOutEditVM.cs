@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
             empty.State = PMSCommon.SimpleState.正常.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            empty.Receiver = "B.Lu";
+            empty.Receiver = PMSCommon.MaterialComsumer.车间.ToString();
             empty.Weight = 1;
             empty.Purity = "5N";
             empty.Remark = "无";

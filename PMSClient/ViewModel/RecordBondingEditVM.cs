@@ -71,10 +71,19 @@ namespace PMSClient.ViewModel
             model.PlatePerson = "无";
             model.PlateCheckTime = DateTime.Now;
 
+            //3.0
+            model.TargetPreProcessRecord = "";
+            model.TargetPreProcessPerson = "无";
+            model.TargetPreProcessCheckTime = DateTime.Now;
 
+            //4.0
+            model.TargetPreProcessRecord = "";
+            model.TargetPreProcessPerson = "无";
+            model.TargetPreProcessCheckTime = DateTime.Now;
 
-
-
+            //5.0
+            model.WeldMaterial = "In";
+            model.WeldCuStringDiameter = "3.0";
 
 
 
@@ -138,12 +147,12 @@ namespace PMSClient.ViewModel
                     CurrentRecordBonding.PlateCheckTime = currentTime;
                     break;
                 case "30":
-                    CurrentRecordBonding.TargetPerson = currentUser;
-                    CurrentRecordBonding.TargetCheckTime = currentTime;
+                    CurrentRecordBonding.TargetPreProcessPerson = currentUser;
+                    CurrentRecordBonding.TargetPreProcessCheckTime = currentTime;
                     break;
                 case "40":
-                    CurrentRecordBonding.TargetPerson = currentUser;
-                    CurrentRecordBonding.TargetCheckTime = currentTime;
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
                     break;
                 default:
                     break;
