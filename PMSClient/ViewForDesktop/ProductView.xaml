@@ -46,6 +46,9 @@
                                 <Button Content="{StaticResource ButtonRecordTest}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.SearchRecordTest,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonSelectAndSend}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

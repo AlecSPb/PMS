@@ -211,19 +211,19 @@
                                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
                                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDPlateHardness}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PlateHardness}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PlateHardness}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
                                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDPlateSupplier}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PlateSuplier}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PlateSuplier}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
                                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDPlateLastWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateLastWeldMaterial}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateLastWeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
                                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDPlateAppearance}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PlateAppearance}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PlateAppearance}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
                                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDPlatePerson}" Style="{StaticResource StyleTextBlockCommon}"/>

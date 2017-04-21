@@ -35,8 +35,22 @@ namespace PMSClient.ViewModel
 
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
 
-
+            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend);
         }
+
+        private void ActionSelectAndSend(DcProduct model)
+        {
+            if (model!=null)
+            {
+                using (var service=new ProductServiceClient())
+                {
+                    CurrentSelectItem.State = PMSCommon.ProductState.发货.ToString();
+                    service.UpdateProduct(CurrentSelectItem);
+                }
+                SetPageParametersWhenConditionChange();
+            }
+        }
+
         private bool CanRecordTest(DcProduct arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("浏览测试记录");
@@ -138,6 +152,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcProduct> Edit { get; set; }
         public RelayCommand<DcProduct> Doc { get; set; }
         public RelayCommand<DcProduct> SearchRecordTest { get; set; }
+        public RelayCommand<DcProduct> SelectAndSend { get; set; }
 
 
         private string searchProductID;
