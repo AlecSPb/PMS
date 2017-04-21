@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PMSClient.MainService;
 using Novacode;
 using System.IO;
-
+using System.Drawing;
 namespace PMSClient.ReportsHelper
 {
     /// <summary>

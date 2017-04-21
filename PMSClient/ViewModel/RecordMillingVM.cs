@@ -35,6 +35,15 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcRecordMilling>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
+            SelectionChanged = new RelayCommand<MainService.DcRecordMilling>(ActionSelectionChanged);
+        }
+
+        private void ActionSelectionChanged(DcRecordMilling model)
+        {
+            if (model!=null)
+            {
+                CurrentRecordMilling = model;
+            }
         }
 
         private bool CanEdit(DcRecordMilling arg)
@@ -93,6 +102,8 @@ namespace PMSClient.ViewModel
             service.Close();
             RecordMillings.Clear();
             models.ToList().ForEach(o => RecordMillings.Add(o));
+
+            CurrentRecordMilling = RecordMillings.FirstOrDefault();
         }
 
         private string searchVHPPlanLot;
@@ -104,10 +115,20 @@ namespace PMSClient.ViewModel
 
 
         #region DerivedPart
+        private DcRecordMilling currentRecordMilling;
+
+        public DcRecordMilling CurrentRecordMilling
+        {
+            get { return currentRecordMilling; }
+            set { currentRecordMilling = value; RaisePropertyChanged(nameof(CurrentRecordMilling)); }
+        }
+
         public ObservableCollection<DcRecordMilling> RecordMillings { get; set; }
 
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordMilling> Edit { get; set; }
+
+        public RelayCommand<DcRecordMilling> SelectionChanged { get; set; }
         #endregion
     }
 }

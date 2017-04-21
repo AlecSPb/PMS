@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PMSClient.MainService;
 using Novacode;
 using System.IO;
+using System.Drawing;
 
 namespace PMSClient.ReportsHelper
 {
@@ -78,15 +79,15 @@ namespace PMSClient.ReportsHelper
                         Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
                         foreach (var name in GetCompositionNames(model.Composition))
                         {
-                            elementNames.Append(name + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            elementNames.Append(name + "\r").FontSize(11).Font(new FontFamily("Calibri"));
                         }
 
                         Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
                         Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
                         foreach (var at in GetCompositionValues(model.Composition))
                         {
-                            elementValues.Append(at + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            units.Append("Atm%" + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            elementValues.Append(at + "\r").FontSize(11).Font(new FontFamily("Calibri"));
+                            units.Append("Atm%" + "\r").FontSize(11).Font(new FontFamily("Calibri"));
                         }
 
                     }
@@ -96,6 +97,8 @@ namespace PMSClient.ReportsHelper
             }
             #endregion
             //复制到临时文件
+            var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
+            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
         }
 

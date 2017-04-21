@@ -19,13 +19,13 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
 
             RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit, CanEdit);
             SetPageParametersWhenConditionChange();
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
 
-            Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate,CanDuplicate);
+            Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate, CanDuplicate);
         }
 
         private bool CanDuplicate(DcRecordDeMold arg)
@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
 
         private bool CanAdd()
         {
-          return  PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
         }
 
         public void RefreshData()
@@ -66,8 +66,11 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(DcRecordDeMold model)
         {
-            PMSHelper.ViewModels.RecordDeMoldEdit.SetByDuplicate(model);
-            GoToEditView();
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            {
+                PMSHelper.ViewModels.RecordDeMoldEdit.SetByDuplicate(model);
+                GoToEditView();
+            }
         }
         private void ActionEdit(DcRecordDeMold model)
         {
@@ -114,6 +117,6 @@ namespace PMSClient.ViewModel
 
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordDeMold> Edit { get; set; }
-        public RelayCommand<DcRecordDeMold> Duplicate{ get; set; }
+        public RelayCommand<DcRecordDeMold> Duplicate { get; set; }
     }
 }

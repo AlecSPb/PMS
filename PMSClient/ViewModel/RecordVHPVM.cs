@@ -58,12 +58,11 @@ namespace PMSClient.ViewModel
                 {
                     try
                     {
-                        //TODO:4.0.4.6版本再开放
-                        //ReportVHP report = new ReportVHP();
-                        //report.SetModel(model);
-                        //report.Output();
-                        //PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告");
-                        //NavigationService.ShowStatusMessage("请在桌面查看生成的热压记录报告");
+                        ReportVHP report = new ReportVHP();
+                        report.SetModel(model);
+                        report.Output();
+                        PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告");
+                        NavigationService.ShowStatusMessage("请在桌面查看生成的热压记录报告\r\n如果排版变形，请全选更改为宋体");
                     }
                     catch (Exception ex)
                     {

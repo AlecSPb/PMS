@@ -91,8 +91,12 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(DcRecordTest model)
         {
-            PMSHelper.ViewModels.RecordTestEdit.SetNew(model);
-            NavigationService.GoTo(PMSViews.RecordTestEdit);
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            {
+                PMSHelper.ViewModels.RecordTestEdit.SetNew(model);
+                NavigationService.GoTo(PMSViews.RecordTestEdit);
+            }
+
         }
 
         private void ActionEdit(DcRecordTest model)

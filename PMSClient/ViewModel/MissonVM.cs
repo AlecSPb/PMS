@@ -99,15 +99,19 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicatePlan(DcPlanVHP plan)
         {
-            if (plan != null)
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
             {
-                plan.ID = Guid.NewGuid();
-                plan.CreateTime = DateTime.Now;
-                plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                if (plan != null)
+                {
+                    plan.ID = Guid.NewGuid();
+                    plan.CreateTime = DateTime.Now;
+                    plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
 
-                PMSHelper.ViewModels.PlanEdit.SetDuplicate(plan);
-                NavigationService.GoTo(PMSViews.PlanEdit);
+                    PMSHelper.ViewModels.PlanEdit.SetDuplicate(plan);
+                    NavigationService.GoTo(PMSViews.PlanEdit);
+                }
             }
+
         }
 
         private void ActionEditPlan(DcPlanVHP plan)

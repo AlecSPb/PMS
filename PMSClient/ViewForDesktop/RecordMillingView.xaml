@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordMilling}">
@@ -30,52 +31,161 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordMillings}"
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <DataGrid x:Name="dg" Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordMillings}"
                   LoadingRow="DataGrid_LoadingRow">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
+                                        <!--<Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>-->
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="{StaticResource RMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource RMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                        <DataGridTextColumn Header="{StaticResource RMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding VHPPlanLot}"/>
-                <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource RMMillingTool}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMMillingTool}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MillingTool}"/>
-                <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding GasProtection}"/>
-                <DataGridTextColumn Header="{StaticResource RMMillingTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMMillingTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MillingTime}"/>
-                <DataGridTextColumn Header="{StaticResource RMWeightIn}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMWeightIn}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightIn}"/>
-                <DataGridTextColumn Header="{StaticResource RMWeightOut}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMWeightOut}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightOut}"/>
-                <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMWeightRemain}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding WeightRemain}"/>
-                <DataGridTextColumn Header="{StaticResource RMRatio}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMRatio}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Ratio,StringFormat={}{0:P}}"/>
-                <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
-                <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                        <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialSource}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                    </DataGrid.Columns>
+                </DataGrid>
+                <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+            </Grid>
+            <Grid Grid.Column="1" DataContext="{Binding CurrentRecordMilling}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMVHPPlanLot}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMillingTool}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MillingTool}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMGasProtection}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding GasProtection}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMMillingTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding MillingTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMWeightIn}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="txtWeightIn" Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxReadOnly}"
+                         />
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMWeightOut}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="txtWeightOut" Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxReadOnly}"
+                         />
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="txtWeightRemain" Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxReadOnly}"
+                         />
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMRatio}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxReadOnly}"  Width="80"/>
+                </StackPanel>
+
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"
+                         />
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                            />
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
+                            />
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

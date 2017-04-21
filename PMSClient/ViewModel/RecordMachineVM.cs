@@ -17,11 +17,11 @@ namespace PMSClient.ViewModel
             searchVHPPlanLot = "";
             RecordMachines = new ObservableCollection<DcRecordMachine>();
             PageChanged = new RelayCommand(ActionPaging);
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcRecordMachine>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcRecordMachine>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
-            Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate,CanDuplicate);
+            Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate, CanDuplicate);
             TempRecordSheet = new RelayCommand(ActionTempRecordSheet);
             SetPageParametersWhenConditionChange();
         }
@@ -71,8 +71,12 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(DcRecordMachine model)
         {
-            PMSHelper.ViewModels.RecordMachineEdit.SetByDuplicate(model);
-            GoToEditView();
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            {
+                PMSHelper.ViewModels.RecordMachineEdit.SetByDuplicate(model);
+                GoToEditView();
+            }
+
         }
 
         private void ActionAll()

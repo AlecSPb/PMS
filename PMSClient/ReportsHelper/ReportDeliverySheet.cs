@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+
 
 namespace PMSClient.ReportsHelper
 {
@@ -63,13 +65,14 @@ namespace PMSClient.ReportsHelper
                         int datanumber = 1;
                         foreach (var item in result)
                         {
-                            mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.ProductType).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Font(new FontFamily("宋体"));
+                            mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(10).Font(new FontFamily("宋体"));
+                            mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.ProductType).FontSize(10).Font(new FontFamily("微软雅黑"));
+                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10).Font(new FontFamily("宋体"));
+                            mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10).Font(new FontFamily("宋体"));
+                            mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10).Font(new FontFamily("宋体"));
+                            mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(10).Font(new FontFamily("宋体"));
+                            mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString()).FontSize(10).Font(new FontFamily("宋体"));
 
                             mainTable.InsertRow();
                             datanumber++;
@@ -83,6 +86,8 @@ namespace PMSClient.ReportsHelper
             }
             #endregion
             //复制到临时文件
+            var targetName = $"{prefix}_{model.DeliveryName}.docx";
+            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
 
         }

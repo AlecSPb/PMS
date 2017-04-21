@@ -73,7 +73,7 @@ namespace PMSClient.ViewModel
                     ReportDeliverySheet report = new ReportDeliverySheet();
                     report.SetModel(model);
                     report.Output();
-                    PMSDialogService.ShowYes("生成成功", "请打开桌面上的发货单文档");
+                    PMSDialogService.ShowYes("生成成功", "请打开桌面上的发货单文档\r\n如果排版变形，请全选更改为宋体");
                 }
                 catch (Exception ex)
                 {
@@ -222,7 +222,8 @@ namespace PMSClient.ViewModel
                     //sb.Append(item.Composition.Trim());
                     sb.Append($"No {counter}");
                     sb.Append(" = ");
-                    sb.AppendLine($"[{item.ProductID.Trim()}]");
+                    sb.Append($"[{item.ProductID.Trim()}]");
+                    sb.AppendLine($" in [{item.PackNumber.ToString()}]");
                     counter++;
                 }
                 string mainContent = $"发往: {country}\r{sb.ToString()}";

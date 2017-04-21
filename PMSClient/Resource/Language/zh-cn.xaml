@@ -179,7 +179,7 @@
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
     <sys:String x:Key="HelpTipProductSelect">
-        注意：选择的意思就是仅使用这个记录，发货的意思不光使用，还将这个记录的库存状态从库存变成发货
+        注意：发货的意思不光使用，还将这个记录的库存状态从库存变成发货
     </sys:String>
     <sys:String x:Key="HelpTipRecordTestSelect">
         注意：下面黄色的记录就是还没有最终完成和确定的测试记录，最好不要选择;

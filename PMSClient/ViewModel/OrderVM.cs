@@ -69,17 +69,21 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(DcOrder order)
         {
-            if (order != null)
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
             {
-                order.ID = Guid.NewGuid();
-                order.CreateTime = DateTime.Now;
-                order.State = "UnChecked";
-                order.Priority = "Normal";
-                order.DeadLine = DateTime.Now.AddDays(30);
+                if (order != null)
+                {
+                    order.ID = Guid.NewGuid();
+                    order.CreateTime = DateTime.Now;
+                    order.State = "UnChecked";
+                    order.Priority = "Normal";
+                    order.DeadLine = DateTime.Now.AddDays(30);
 
-                PMSHelper.ViewModels.OrderEdit.SetDuplicate(order);
-                NavigationService.GoTo(PMSViews.OrderEdit);
+                    PMSHelper.ViewModels.OrderEdit.SetDuplicate(order);
+                    NavigationService.GoTo(PMSViews.OrderEdit);
+                }
             }
+
         }
 
         private void ActionAdd()

@@ -35,24 +35,6 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
         }
 
-        private void ActionSelectAndSend(DcProduct model)
-        {
-            if (MessageBox.Show("确定要将此产品设置为发货状态并填入发货单项目中？","请问",MessageBoxButton.YesNo,MessageBoxImage.Question)==MessageBoxResult.No)
-            {
-                return;
-            }
-
-            if (model!=null)
-            {
-                using (var service=new ProductServiceClient())
-                {
-                    model.State = PMSCommon.ProductState.发货.ToString();
-                    service.UpdateProduct(model);
-                }
-                ActionSelect(model);
-            }
-        }
-
         private bool CanSearch()
         {
             return !(string.IsNullOrEmpty(SearchProductID) && string.IsNullOrEmpty(SearchCompositionStd));
@@ -96,7 +78,23 @@ namespace PMSClient.ViewModel
 
             }
         }
+        private void ActionSelectAndSend(DcProduct model)
+        {
+            if (MessageBox.Show("确定要将此产品设置为发货状态并填入发货单项目中？", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            {
+                return;
+            }
 
+            if (model != null)
+            {
+                using (var service = new ProductServiceClient())
+                {
+                    model.State = PMSCommon.ProductState.发货.ToString();
+                    service.UpdateProduct(model);
+                }
+                ActionSelect(model);
+            }
+        }
         private void GoBack()
         {
             NavigationService.GoTo(requestView);

@@ -94,6 +94,8 @@ namespace PMSClient.ReportsHelper
             }
             #endregion
             //复制到临时文件
+            var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
+            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
         }
 

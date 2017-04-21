@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PMSClient.MainService;
 using Novacode;
 using System.IO;
+using System.Drawing;
 
 namespace PMSClient.ReportsHelper
 {
@@ -96,6 +97,8 @@ namespace PMSClient.ReportsHelper
             }
             #endregion
             //复制到临时文件
+            var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
+            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
         }
 
@@ -126,7 +129,7 @@ namespace PMSClient.ReportsHelper
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new FontFamily("Calibri"));
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
