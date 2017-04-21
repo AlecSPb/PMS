@@ -49,8 +49,8 @@ namespace PMSClient.ViewModel
             {
                 using (var service=new ProductServiceClient())
                 {
-                    CurrentSelectItem.State = PMSCommon.ProductState.发货.ToString();
-                    service.UpdateProduct(CurrentSelectItem);
+                    model.State = PMSCommon.ProductState.发货.ToString();
+                    service.UpdateProduct(model);
                 }
                 SetPageParametersWhenConditionChange();
             }
