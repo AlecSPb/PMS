@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
              xmlns:uc="clr-namespace:PMSClient.CustomControls"
              mc:Ignorable="d" 
-             d:DesignHeight="1600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordBondingEdit}">
+             d:DesignHeight="3600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordBondingEdit}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -248,7 +248,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="3.0靶材处理">
+                <uc:BondingEditItem Title="3.0靶材预处理">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -307,6 +307,473 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
+                <uc:BondingEditItem Title="4.0背板预处理">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="40"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDPlatePreProcessRecord}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlatePreProcessRecord}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="有无劣化，翘曲情况，测量1,2"/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDPlatePreProcessPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDPlatePreProcessCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlatePreProcessCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                                (1)旧背板要注意测量翘曲成都，超出规格必须进行校正 <LineBreak/>
+                                 (2)观察焊接面情况，如果有劣化，必须用机械方法将劣化部分去除" 
+                            </TextBlock>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/40.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="5.0接合">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="50"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWeldCuStringDiameter}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WeldCuStringDiameter}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWeldHold}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WeldHold}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDWeldPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDWeldCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding WeldCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                               靶材边缘必须与背板台阶边缘对齐
+                            </TextBlock>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/50.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="6.0翘曲修正">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="60"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDWarpageFix}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWarpagePerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WarpagePerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWarpageCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WarpageCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                               修正后从背板表面测量<LineBreak/>
+                                规格：(1)≤0.25mm(2)≤0.25mm
+                            </TextBlock>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/60.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="7.0尺寸检查">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="70"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDDimensionPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DimensionPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWarpageCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WarpageCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDDimensionCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding DimensionCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDDimensionWarpageCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding DimensionWarpageCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                               尺寸检查规格：位置偏移，检查靶材边缘和背板台阶边缘对齐<LineBreak/>
+                                翘曲（背板表面）测试点1-4 要求≤0.25mm
+                            </TextBlock>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/70.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="8.0接合率检查">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="80"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDBindingPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding BindingPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDBindingCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BindingCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDBindingCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding BindingCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                               注意：为避免水份进入，接合界面用胶带封住<LineBreak/>
+                                翘曲（背板表面）测试点1-4 要求≤0.25mm
+                            </TextBlock>
+                            <Image Grid.Row="1" Source="../Resource/Bondings/80.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="9.0喷砂处理">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="90"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDSprayPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding SprayPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDSprayCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding SprayCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDSprayCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SprayCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDCleanCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CleanCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                               用喷砂的方式去除背板上的氧化物<LineBreak/>
+                               用沾有丙酮的无尘布清洁整个靶材，直到擦拭布完全干净
+                            </TextBlock>
+                            <!--<Image Grid.Row="1" Source="../Resource/Bondings/80.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <uc:BondingEditItem Title="10.0外观处理和封装">
+                    <uc:BondingEditItem.LeftArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
+                                Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                         CommandParameter="100"/>
+                            </StackPanel>
+                            <Grid Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDApperancePerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ApperancePerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDApperanceCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ApperanceCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDApperanceCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ApperanceCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDPackCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PackCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                            </Grid>
+                        </Grid>
+                    </uc:BondingEditItem.LeftArea>
+                    <uc:BondingEditItem.RightArea>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
+                               外观检查：<LineBreak/>
+                                靶材表面和侧面：外观完整，无伤痕和凹陷<LineBreak/>
+                                背板整体：喷砂后，其金属光泽需呈现均匀，确认外观完整，无伤痕和凹陷<LineBreak/>
+                                包装注意：<LineBreak/>
+                                包装前要检查包装袋内部，确定是否干净；并核对靶材编号和标签是否对应；
+                            </TextBlock>
+                            <!--<Image Grid.Row="1" Source="../Resource/Bondings/80.png" Stretch="Uniform" Height="200"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+                        </Grid>
+                    </uc:BondingEditItem.RightArea>
+                </uc:BondingEditItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
+                    <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxMultiline}" Text="{Binding Remark}"/>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </Grid>

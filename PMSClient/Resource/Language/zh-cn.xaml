@@ -595,7 +595,7 @@
 
 
     <sys:String x:Key="BDWeldMaterial">焊接材料</sys:String>
-    <sys:String x:Key="BDWeldCuStringDiameter ">Cu丝直径</sys:String>
+    <sys:String x:Key="BDWeldCuStringDiameter">Cu丝直径</sys:String>
     <sys:String x:Key="BDWeldHold">焊接重物</sys:String>
     <sys:String x:Key="BDWeldPerson">焊接检查人</sys:String>
     <sys:String x:Key="BDWeldCheckTime">焊接检查时间</sys:String>
@@ -603,7 +603,7 @@
 
     <sys:String x:Key="BDWarpageFix">翘曲修正</sys:String>
     <sys:String x:Key="BDWarpagePerson">翘曲检查人</sys:String>
-    <sys:String x:Key="BDWarpageCheckTimer">翘曲检查时间</sys:String>
+    <sys:String x:Key="BDWarpageCheckTime">翘曲检查时间</sys:String>
 
 
     <sys:String x:Key="BDDimensionCheck">尺寸检查</sys:String>
@@ -614,7 +614,7 @@
 
     <sys:String x:Key="BDBindingCheck">结合检查</sys:String>
     <sys:String x:Key="BDBindingPerson">结合检查人</sys:String>
-    <sys:String x:Key="BDBingdingCheckTime">结合检查时间</sys:String>
+    <sys:String x:Key="BDBindingCheckTime">结合检查时间</sys:String>
 
 
     <sys:String x:Key="BDSprayCheck">喷砂检查</sys:String>

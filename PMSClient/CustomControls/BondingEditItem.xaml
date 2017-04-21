@@ -9,21 +9,23 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
-    <Grid Background="LightYellow">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Wheat">
-            <TextBlock Name="txtTitle" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        </StackPanel>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <ContentControl Name="leftArea" Grid.Column="0"/>
-            <ContentControl Name="rightArea" Grid.Column="1"/>
-        </Grid>
+    <Grid>
+        <Expander IsExpanded="True" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Expander.Header>
+                <TextBlock Name="txtTitle" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            </Expander.Header>
+            <Expander.Content>
+                <Border Style="{StaticResource StyleBorderCommon}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="500"/>
+                        </Grid.ColumnDefinitions>
+                        <ContentControl Name="leftArea" Grid.Column="0"/>
+                        <ContentControl Name="rightArea" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+            </Expander.Content>
+        </Expander>
     </Grid>
 </UserControl>
