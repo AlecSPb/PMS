@@ -26,6 +26,9 @@
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate1,Mode=TwoWay}"/>
             <TextBlock Text="{StaticResource SearchDateEnd}" Style="{StaticResource StyleTextBlockCommon}"/>
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate2,Mode=TwoWay}"/>
+            <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" MinWidth="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <!--<Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}"/>-->
             <StackPanel Orientation="Horizontal">

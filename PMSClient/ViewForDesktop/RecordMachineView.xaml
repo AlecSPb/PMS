@@ -26,7 +26,7 @@
                     Command="{Binding  Add}"/>
             <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding  SearchVHPPlanLot,UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource StyleTextBoxCommon }" MinWidth="200"/>
+                     Style="{StaticResource StyleTextBoxSearch}" Width="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonTempRecordSheet}" Style="{StaticResource    StyleButtonSpecial}" 

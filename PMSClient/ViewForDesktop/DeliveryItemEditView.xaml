@@ -87,37 +87,32 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Abbr}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Abbr}" Style="{StaticResource StyleTextBoxCommon}"  />
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="成分Abbr"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="客户"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="PO"/>
 
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="尺寸"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="货物重量"/>
 
@@ -156,7 +151,7 @@
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"
                          />
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>

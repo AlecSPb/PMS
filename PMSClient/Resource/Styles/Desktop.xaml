@@ -227,7 +227,11 @@
         <Setter Property="MinWidth" Value="80"/>
         <Setter Property="Background" Value="Transparent"/>
     </Style>
-
+    
+    <Style x:Key="StyleTextBoxSearch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
+        <Setter Property="Background" Value="White"/>
+    </Style>
+    
     <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>

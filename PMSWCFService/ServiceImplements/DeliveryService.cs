@@ -233,6 +233,7 @@ namespace PMSWCFService
                     var query2 = from d in query.Skip(skip).Take(take)
                                  join dd in dc.Deliverys
                                  on d.DeliveryID equals dd.ID
+                                 orderby dd.CreateTime descending,d.CreateTime descending
                                  select new PMSDeliveryItemExtra()
                                  {
                                      Delivery = dd,

@@ -26,7 +26,7 @@
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource RDDeliveryName}" Style="{StaticResource  StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchDeliveryName,UpdateSourceTrigger=PropertyChanged}" Width="200"
-                     Style="{StaticResource StyleTextBoxCommon}"/>
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonDeliveryItemList}" Style="{StaticResource StyleButtonSpecial}"

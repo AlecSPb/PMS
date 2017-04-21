@@ -24,10 +24,10 @@
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Width="200"
-                     Style="{StaticResource  StyleTextBoxCommon}"/>
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Width="200"
-                     Style="{StaticResource StyleTextBoxCommon}"/>
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <!--图例-->
