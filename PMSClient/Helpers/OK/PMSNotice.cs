@@ -15,7 +15,7 @@ namespace PMSClient
     {
        
         private static int remoteCount = 4;
-        private static int localCount = 0;
+        //private static int localCount = 0;
         private static NewMessage _newMessage;
         static PMSNotice()
         {

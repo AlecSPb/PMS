@@ -56,16 +56,8 @@ namespace WPFControls
         }
 
         public static readonly DependencyProperty PageSizeProperty =
-              DependencyProperty.Register("PageSize", typeof(int), typeof(SimplePager), new PropertyMetadata(20, new PropertyChangedCallback(PageSizePropertyChanged),
-                  new CoerceValueCallback(CoerceProperValue)));
-
-        /// <summary>
-        /// PageSize最小为5
-        /// </summary>
-        /// <param name="d"></param>
-        /// <param name="baseValue"></param>
-        /// <returns></returns>
-        private static object CoerceProperValue(DependencyObject d, object baseValue)
+              DependencyProperty.Register("PageSize", typeof(int), typeof(SimplePager), new PropertyMetadata(20, PageSizePropertyChanged,CoercePageSize));
+        private static object CoercePageSize(DependencyObject d, object baseValue)
         {
             int newvalue = (int)baseValue;
             if (newvalue<5)
@@ -80,7 +72,7 @@ namespace WPFControls
             SimplePager pager = d as SimplePager;
             if (pager != null)
             {
-                pager.SetProperParameter();
+                //pager.CalulatePagingParameter();
             }
         }
 
@@ -92,10 +84,6 @@ namespace WPFControls
             get; set;
         }
 
-        //public static readonly DependencyProperty PageCountProperty =
-        //      DependencyProperty.Register("PageCount", typeof(int), typeof(SimplePager), new PropertyMetadata(1));
-
-
         public int RecordCount
         {
             get
@@ -105,6 +93,8 @@ namespace WPFControls
             set
             {
                 SetValue(RecordCountProperty, value);
+                //只要设置了属性，不管是不是原来的值，都发生计算
+                CalulatePagingParameter();
             }
         }
 
@@ -117,19 +107,17 @@ namespace WPFControls
             SimplePager pager = d as SimplePager;
             if (pager != null)
             {
-                pager.SetProperParameter();
+                //pager.CalulatePagingParameter();
             }
         }
         /// <summary>
         /// 初始化数据
         /// 只有在PageSize和RecordCount的值发生变化的时候进行
         /// </summary>
-        private void SetProperParameter()
+        private void CalulatePagingParameter()
         {
             //只要一发生设置，就说明空间需要初始化了,PageSize和RecordCount都是外部设置的
             PageIndex = 1;
-
-
             //根据RecordCount计算PageCount
             //当记录数少于页大小的时候
             //记录数少于
