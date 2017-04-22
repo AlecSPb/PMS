@@ -93,8 +93,6 @@ namespace WPFControls
             set
             {
                 SetValue(RecordCountProperty, value);
-                //只要设置了属性，不管是不是原来的值，都发生计算
-                CalulatePagingParameter();
             }
         }
 
@@ -107,7 +105,7 @@ namespace WPFControls
             SimplePager pager = d as SimplePager;
             if (pager != null)
             {
-                //pager.CalulatePagingParameter();
+                pager.CalulatePagingParameter();
             }
         }
         /// <summary>
