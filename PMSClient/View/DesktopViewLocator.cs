@@ -19,6 +19,8 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<LogInView>(true);
 
             SimpleIoc.Default.Register<NavigationView>(true);
+            SimpleIoc.Default.Register<NavigationWorkFlowView>(true);
+
             SimpleIoc.Default.Register<OrderView>();
             SimpleIoc.Default.Register<OrderEditView>();
             SimpleIoc.Default.Register<OrderCheckView>();
@@ -95,7 +97,13 @@ namespace PMSClient.View
                 return SimpleIoc.Default.GetInstance<NavigationView>();
             }
         }
-
+        public NavigationWorkFlowView NavigationWorkFlow
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<NavigationWorkFlowView>();
+            }
+        }
         public OrderView Order
         {
             get

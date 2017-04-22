@@ -17,6 +17,7 @@ namespace PMSClient.ViewModel
         {
             _session = PMSHelper.CurrentSession;
             InitialNavigations();
+
             LogIn = new RelayCommand(ActionLogIn);
             LogOut = new RelayCommand(ActionLogOut);
 
@@ -50,6 +51,8 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
+            GoToNavigation= new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
+            GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
 
             GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized("浏览订单"));
             GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck), () => _session.IsAuthorized("浏览订单核验"));
@@ -88,7 +91,8 @@ namespace PMSClient.ViewModel
             GoToAdminRole = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminRole), () => _session.IsAuthorized("浏览角色信息"));
             GoToAdminAccess = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
         }
-
+        public RelayCommand GoToNavigation { get; set; }
+        public RelayCommand GoToNavigationWorkFlow { get; set; }
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
         public RelayCommand GoToOrderStatistic { get; private set; }

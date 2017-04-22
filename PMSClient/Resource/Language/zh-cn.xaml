@@ -40,8 +40,9 @@
     <sys:String x:Key="PageHelp">帮助</sys:String>
     <sys:String x:Key="PageWebSite">网址</sys:String>
     <sys:String x:Key="PageAdmin">管理</sys:String>
-    <sys:String x:Key="PageNaivgation">工作导航</sys:String>
-
+    <sys:String x:Key="PageNaivgation">导航</sys:String>
+    <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
+    
     <sys:String x:Key="PageSales">销售</sys:String>
     <sys:String x:Key="PageMaterial">原料</sys:String>
     <sys:String x:Key="PageProduction">生产</sys:String>

@@ -84,11 +84,44 @@ namespace PMSClient
             InitializeTray();
             #endregion
         }
+        #region 定时器设定
+        /// <summary>
+        /// 主定时器
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void _timer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
+                {
+                    if (heartbeat.Beat() == "ok")
+                    {
+                        //this.Dispatcher.Invoke(() =>
+                        //{
+                        //    txtHeartBeat.Text = "服务器通信正常";
+                        //});
+                        txtHeartBeat.Text = "服务器通信正常";
+                    }
+                }
 
+            }
+            catch (Exception ex)
+            {
+                this.Dispatcher.Invoke(() =>
+                {
+                    txtHeartBeat.Text = ex.Message;
+                });
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
         private void _timerNotice_Tick(object sender, EventArgs e)
         {
             //PMSNotice.HasNewDelivery();
         }
+
+        #endregion
 
         #region 托盘通知
         private void InitializeTray()
@@ -130,38 +163,6 @@ namespace PMSClient
             }
         }
         #endregion
-
-        /// <summary>
-        /// 主定时器
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _timer_Tick(object sender, EventArgs e)
-        {
-            try
-            {
-                using (var heartbeat = new PMSClient.HeartBeatService.HeartBeatSeriveClient())
-                {
-                    if (heartbeat.Beat() == "ok")
-                    {
-                        //this.Dispatcher.Invoke(() =>
-                        //{
-                        //    txtHeartBeat.Text = "服务器通信正常";
-                        //});
-                        txtHeartBeat.Text = "服务器通信正常";
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                this.Dispatcher.Invoke(() =>
-                {
-                    txtHeartBeat.Text = ex.Message;
-                });
-                PMSHelper.CurrentLog.Error(ex);
-            }
-        }
         /// <summary>
         /// 导航区域
         /// </summary>
@@ -177,6 +178,9 @@ namespace PMSClient
                 case PMSViews.Navigation:
                     RefreshLogInformation();
                     NavigateTo(_views.Navigation);
+                    break;
+                case PMSViews.NavigationWorkFlow:
+                    NavigateTo(_views.NavigationWorkFlow);
                     break;
                 case PMSViews.Order:
                     NavigateTo(_views.Order);

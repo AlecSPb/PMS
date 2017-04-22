@@ -13,6 +13,7 @@ namespace PMSClient
     {
         LogIn,
         Navigation,
+        NavigationWorkFlow,
         Order,
         OrderEdit,
         OrderCheck,

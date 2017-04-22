@@ -194,6 +194,9 @@
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
+    <Compile Include="View\NavigationWorkFlowView.xaml.cs">
+      <DependentUpon>NavigationWorkFlowView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductEditView.xaml.cs">
       <DependentUpon>ProductEditView.xaml</DependentUpon>
     </Compile>
@@ -432,6 +435,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\LabelOutPutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\NavigationWorkFlowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
