@@ -84,13 +84,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource OrderStandardComposition}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding CompositionStandard }" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding CompositionStandard }"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderPurity}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

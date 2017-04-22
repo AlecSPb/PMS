@@ -109,6 +109,9 @@ namespace PMSClient.ViewModel
             MoldTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.MoldType>(MoldTypes);
 
+            PlanTypes = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.VHPPlanType>(PlanTypes);
+
             MoldDiameters = new List<double>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.MoldDiameter, MoldDiameters);
 
@@ -158,6 +161,7 @@ namespace PMSClient.ViewModel
         public List<int> Quantities { get; set; }
         public List<int> PlanLots { get; set; }
 
+        public List<string> PlanTypes { get; set; }
         public List<string> MoldTypes { get; set; }
         public List<double> MoldDiameters { get; set; }
         public List<string> GrainSizes { get; set; }

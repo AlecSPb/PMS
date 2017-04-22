@@ -19,7 +19,6 @@ namespace PMSClient.ViewModel
             IntitializeProperties();
             SetPageParametersWhenConditionChange();
         }
-
         private void ActionSelect(DcPlanWithMisson plan)
         {
             if (plan != null)
@@ -71,7 +70,12 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
             Select = new RelayCommand<DcPlanWithMisson>(ActionSelect);
-            All = new RelayCommand(SetPageParametersWhenConditionChange);
+            Search = new RelayCommand(ActionSearch);
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private void SetPageParametersWhenConditionChange()

@@ -34,6 +34,7 @@ namespace PMSClient.ViewModel
             Refresh = new RelayCommand(ActionRefresh);
             Search = new RelayCommand(ActionSearch);
             PageChanged = new RelayCommand(ActionPaging);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
         }
 
         private void ActionSearch()
@@ -79,6 +80,10 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand GoToMisson { get; set; }
         public RelayCommand Refresh { get; set; }
+
+        public RelayCommand GiveUp { get; set; }
+
+
         #endregion
 
         #region Properties

@@ -33,16 +33,25 @@ namespace PMSClient.ViewModel
         private void IntitializeCommands()
         {
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
-            Refresh = new RelayCommand(ActionRefresh);
+            All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
             Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
+            SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
+        }
+
+        private void ActionSelectionChanged(DcPlanWithMisson model)
+        {
+            if (model!=null)
+            {
+                CurrentPlanWithMisson = model;
+            }
         }
 
         private void ActionSearchMisson(DcPlanWithMisson model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 PMSHelper.ViewModels.Misson.SetSearchCondition("", model.Misson.PMINumber);
                 NavigationService.GoTo(PMSViews.Misson);
@@ -59,7 +68,7 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.Misson.Dimension);
                 sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
 
-                var mainContent =sb.ToString();
+                var mainContent = sb.ToString();
 
                 var pageTitle = "热压产品毛坯标签打印输出";
                 var tips = @"点击打开模板按钮，粘贴不同内容到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签\r\n
@@ -71,7 +80,7 @@ namespace PMSClient.ViewModel
                 NavigationService.GoTo(PMSViews.LabelOutPut);
             }
         }
-        private void ActionRefresh()
+        private void ActionAll()
         {
             SetPageParametersWhenConditionChange();
         }
@@ -83,7 +92,7 @@ namespace PMSClient.ViewModel
             //var service = new MissonServiceClient();
             //只显示Checked过的计划
             //RecordCount = service.GetMissonWithPlanCheckedCount();
-            using (var service=new MissonServiceClient())
+            using (var service = new MissonServiceClient())
             {
                 RecordCount = service.GetPlanWithMissonCheckedCount();
             }
@@ -100,21 +109,30 @@ namespace PMSClient.ViewModel
             take = PageSize;
             //只显示Checked过的计划
             //var orders = service.GetMissonWithPlanChecked(skip, take);
-            using (var service=new MissonServiceClient())
+            using (var service = new MissonServiceClient())
             {
                 var orders = service.GetPlanWithMissonChecked(skip, take);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
-
+            CurrentPlanWithMisson = PlanWithMissons.FirstOrDefault();
         }
+
+        private DcPlanWithMisson currentPlanWithMisson;
+
+        public DcPlanWithMisson CurrentPlanWithMisson
+        {
+            get { return currentPlanWithMisson; }
+            set { currentPlanWithMisson = value; RaisePropertyChanged(nameof(CurrentPlanWithMisson)); }
+        }
+
 
         #region Commands
         public RelayCommand GoToMisson { get; set; }
-        public RelayCommand Refresh { get; set; }
         public RelayCommand GoToSearchPlan { get; set; }
         public RelayCommand<DcPlanWithMisson> Label { get; set; }
         public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
+        public RelayCommand<DcPlanWithMisson> SelectionChanged{ get; set; }
         #endregion
 
         #region Properties
