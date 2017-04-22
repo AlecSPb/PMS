@@ -36,7 +36,13 @@
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
-   
+            <Canvas>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOrder}"
+                        Command="{Binding GoToOrder}" Canvas.Left="45" Margin="0" Canvas.Top="10"/>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialOrder}"
+                        Command="{Binding GoToMaterialOrder}" Canvas.Left="45" Margin="0" Canvas.Top="95"/>
+
+            </Canvas>
         </ScrollViewer>
     </Grid>
 
