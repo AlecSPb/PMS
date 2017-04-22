@@ -194,160 +194,160 @@
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
-    <Compile Include="ViewForDesktop\ProductEditView.xaml.cs">
+    <Compile Include="View\ProductEditView.xaml.cs">
       <DependentUpon>ProductEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\ProductSelectView.xaml.cs">
+    <Compile Include="View\ProductSelectView.xaml.cs">
       <DependentUpon>ProductSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\ProductView.xaml.cs">
+    <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\LogInView.xaml.cs">
+    <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaintenanceEditView.xaml.cs">
+    <Compile Include="View\MaintenanceEditView.xaml.cs">
       <DependentUpon>MaintenanceEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaintenanceItemEditView.xaml.cs">
+    <Compile Include="View\MaintenanceItemEditView.xaml.cs">
       <DependentUpon>MaintenanceItemEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaintenanceItemView.xaml.cs">
+    <Compile Include="View\MaintenanceItemView.xaml.cs">
       <DependentUpon>MaintenanceItemView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaintenanceView.xaml.cs">
+    <Compile Include="View\MaintenanceView.xaml.cs">
       <DependentUpon>MaintenanceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialInventoryInSelectView.xaml.cs">
+    <Compile Include="View\MaterialInventoryInSelectView.xaml.cs">
       <DependentUpon>MaterialInventoryInSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialInventoryOutEditView.xaml.cs">
+    <Compile Include="View\MaterialInventoryOutEditView.xaml.cs">
       <DependentUpon>MaterialInventoryOutEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialInventoryOutView.xaml.cs">
+    <Compile Include="View\MaterialInventoryOutView.xaml.cs">
       <DependentUpon>MaterialInventoryOutView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialInventoryInView.xaml.cs">
+    <Compile Include="View\MaterialInventoryInView.xaml.cs">
       <DependentUpon>MaterialInventoryInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialInventoryInEditView.xaml.cs">
+    <Compile Include="View\MaterialInventoryInEditView.xaml.cs">
       <DependentUpon>MaterialInventoryInEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialNeedEditView.xaml.cs">
+    <Compile Include="View\MaterialNeedEditView.xaml.cs">
       <DependentUpon>MaterialNeedEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialNeedSelectView.xaml.cs">
+    <Compile Include="View\MaterialNeedSelectView.xaml.cs">
       <DependentUpon>MaterialNeedSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialNeedView.xaml.cs">
+    <Compile Include="View\MaterialNeedView.xaml.cs">
       <DependentUpon>MaterialNeedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialOrderEditView.xaml.cs">
+    <Compile Include="View\MaterialOrderEditView.xaml.cs">
       <DependentUpon>MaterialOrderEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialOrderItemEditView.xaml.cs">
+    <Compile Include="View\MaterialOrderItemEditView.xaml.cs">
       <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialOrderItemSelectView.xaml.cs">
+    <Compile Include="View\MaterialOrderItemSelectView.xaml.cs">
       <DependentUpon>MaterialOrderItemSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MaterialOrderView.xaml.cs">
+    <Compile Include="View\MaterialOrderView.xaml.cs">
       <DependentUpon>MaterialOrderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MissonView.xaml.cs">
+    <Compile Include="View\MissonView.xaml.cs">
       <DependentUpon>MissonView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\NavigationView.xaml.cs">
+    <Compile Include="View\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\OrderCheckEditView.xaml.cs">
+    <Compile Include="View\OrderCheckEditView.xaml.cs">
       <DependentUpon>OrderCheckEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\OrderCheckView.xaml.cs">
+    <Compile Include="View\OrderCheckView.xaml.cs">
       <DependentUpon>OrderCheckView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\OrderEditView.xaml.cs">
+    <Compile Include="View\OrderEditView.xaml.cs">
       <DependentUpon>OrderEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\MissonSelectView.xaml.cs">
+    <Compile Include="View\MissonSelectView.xaml.cs">
       <DependentUpon>MissonSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\OrderView.xaml.cs">
+    <Compile Include="View\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\PlanEditView.xaml.cs">
+    <Compile Include="View\PlanEditView.xaml.cs">
       <DependentUpon>PlanEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\PlanSelectView.xaml.cs">
+    <Compile Include="View\PlanSelectView.xaml.cs">
       <DependentUpon>PlanSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\PlanSearchView.xaml.cs">
+    <Compile Include="View\PlanSearchView.xaml.cs">
       <DependentUpon>PlanSearchView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\DeliveryItemListView.xaml.cs">
+    <Compile Include="View\DeliveryItemListView.xaml.cs">
       <DependentUpon>DeliveryItemListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordDeMoldEditView.xaml.cs">
+    <Compile Include="View\RecordDeMoldEditView.xaml.cs">
       <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordMachineEditView.xaml.cs">
+    <Compile Include="View\RecordMachineEditView.xaml.cs">
       <DependentUpon>RecordMachineEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordDeMoldView.xaml.cs">
+    <Compile Include="View\RecordDeMoldView.xaml.cs">
       <DependentUpon>RecordDeMoldView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordMachineSelectView.xaml.cs">
+    <Compile Include="View\RecordMachineSelectView.xaml.cs">
       <DependentUpon>RecordMachineSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordMachineView.xaml.cs">
+    <Compile Include="View\RecordMachineView.xaml.cs">
       <DependentUpon>RecordMachineView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
       <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\PlanView.xaml.cs">
+    <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordBondingEditView.xaml.cs">
+    <Compile Include="View\RecordBondingEditView.xaml.cs">
       <DependentUpon>RecordBondingEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordBondingView.xaml.cs">
+    <Compile Include="View\RecordBondingView.xaml.cs">
       <DependentUpon>RecordBondingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\DeliveryEditView.xaml.cs">
+    <Compile Include="View\DeliveryEditView.xaml.cs">
       <DependentUpon>DeliveryEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\DeliveryItemEditView.xaml.cs">
+    <Compile Include="View\DeliveryItemEditView.xaml.cs">
       <DependentUpon>DeliveryItemEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\DeliveryView.xaml.cs">
+    <Compile Include="View\DeliveryView.xaml.cs">
       <DependentUpon>DeliveryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordMillingEditView.xaml.cs">
+    <Compile Include="View\RecordMillingEditView.xaml.cs">
       <DependentUpon>RecordMillingEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordMillingView.xaml.cs">
+    <Compile Include="View\RecordMillingView.xaml.cs">
       <DependentUpon>RecordMillingView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordTestEditView.xaml.cs">
+    <Compile Include="View\RecordTestEditView.xaml.cs">
       <DependentUpon>RecordTestEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordTestDocView.xaml.cs">
+    <Compile Include="View\RecordTestDocView.xaml.cs">
       <DependentUpon>RecordTestDocView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordTestSelectView.xaml.cs">
+    <Compile Include="View\RecordTestSelectView.xaml.cs">
       <DependentUpon>RecordTestSelectView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordTestView.xaml.cs">
+    <Compile Include="View\RecordTestView.xaml.cs">
       <DependentUpon>RecordTestView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordVHPQuickEditView.xaml.cs">
+    <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
       <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\RecordVHPView.xaml.cs">
+    <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewForDesktop\DesktopViewLocator.cs" />
+    <Compile Include="View\DesktopViewLocator.cs" />
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
     <Compile Include="ViewModel\DeliveryItemListVM.cs" />
@@ -435,147 +435,147 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewForDesktop\ProductEditView.xaml">
+    <Page Include="View\ProductEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\ProductSelectView.xaml">
+    <Page Include="View\ProductSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\ProductView.xaml">
+    <Page Include="View\ProductView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\LogInView.xaml">
+    <Page Include="View\LogInView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaintenanceEditView.xaml">
+    <Page Include="View\MaintenanceEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaintenanceItemEditView.xaml">
+    <Page Include="View\MaintenanceItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaintenanceItemView.xaml">
+    <Page Include="View\MaintenanceItemView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaintenanceView.xaml">
+    <Page Include="View\MaintenanceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialInventoryInSelectView.xaml">
+    <Page Include="View\MaterialInventoryInSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialInventoryOutEditView.xaml">
+    <Page Include="View\MaterialInventoryOutEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialInventoryOutView.xaml">
+    <Page Include="View\MaterialInventoryOutView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialInventoryInView.xaml">
+    <Page Include="View\MaterialInventoryInView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialInventoryInEditView.xaml">
+    <Page Include="View\MaterialInventoryInEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialNeedEditView.xaml">
+    <Page Include="View\MaterialNeedEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialNeedSelectView.xaml">
+    <Page Include="View\MaterialNeedSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialNeedView.xaml">
+    <Page Include="View\MaterialNeedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialOrderEditView.xaml">
+    <Page Include="View\MaterialOrderEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialOrderItemEditView.xaml">
+    <Page Include="View\MaterialOrderItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialOrderItemSelectView.xaml">
+    <Page Include="View\MaterialOrderItemSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MaterialOrderView.xaml">
+    <Page Include="View\MaterialOrderView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MissonView.xaml">
+    <Page Include="View\MissonView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\NavigationView.xaml">
+    <Page Include="View\NavigationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\OrderCheckEditView.xaml">
+    <Page Include="View\OrderCheckEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\OrderCheckView.xaml">
+    <Page Include="View\OrderCheckView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\OrderEditView.xaml">
+    <Page Include="View\OrderEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\MissonSelectView.xaml">
+    <Page Include="View\MissonSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\OrderView.xaml">
+    <Page Include="View\OrderView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\PlanEditView.xaml">
+    <Page Include="View\PlanEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\PlanSelectView.xaml">
+    <Page Include="View\PlanSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\PlanSearchView.xaml">
+    <Page Include="View\PlanSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\DeliveryItemListView.xaml">
+    <Page Include="View\DeliveryItemListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordDeMoldEditView.xaml">
+    <Page Include="View\RecordDeMoldEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordMachineEditView.xaml">
+    <Page Include="View\RecordMachineEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordDeMoldView.xaml">
+    <Page Include="View\RecordDeMoldView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordMachineSelectView.xaml">
+    <Page Include="View\RecordMachineSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordMachineView.xaml">
+    <Page Include="View\RecordMachineView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -583,59 +583,59 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewForDesktop\PlanView.xaml">
+    <Page Include="View\PlanView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordBondingEditView.xaml">
+    <Page Include="View\RecordBondingEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordBondingView.xaml">
+    <Page Include="View\RecordBondingView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\DeliveryEditView.xaml">
+    <Page Include="View\DeliveryEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\DeliveryItemEditView.xaml">
+    <Page Include="View\DeliveryItemEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\DeliveryView.xaml">
+    <Page Include="View\DeliveryView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordMillingEditView.xaml">
+    <Page Include="View\RecordMillingEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordMillingView.xaml">
+    <Page Include="View\RecordMillingView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordTestEditView.xaml">
+    <Page Include="View\RecordTestEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordTestDocView.xaml">
+    <Page Include="View\RecordTestDocView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordTestSelectView.xaml">
+    <Page Include="View\RecordTestSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordTestView.xaml">
+    <Page Include="View\RecordTestView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordVHPQuickEditView.xaml">
+    <Page Include="View\RecordVHPQuickEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewForDesktop\RecordVHPView.xaml">
+    <Page Include="View\RecordVHPView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

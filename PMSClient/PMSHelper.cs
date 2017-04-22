@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PMSClient.UserService;
+using GalaSoft.MvvmLight.Views;
 using PMSClient.Helper;
-using PMSClient.ViewForDesktop;
+using PMSClient.View;
 using PMSClient.ViewModel;
 using PMSClient.Tool;
 
