@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PagePlan}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource SearchDateStart}" Style="{StaticResource StyleTextBlockCommon}"/>
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate1,Mode=TwoWay}"/>

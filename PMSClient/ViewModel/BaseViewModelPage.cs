@@ -49,6 +49,10 @@ namespace PMSClient.ViewModel
             get { return recordCount; }
             set
             {
+                //TODO:这一块暂时先用这样的办法吧，分页控件中，重新设置参数在改变RecordCount的时候发生，必须让RecordCount改变一下
+                recordCount = 0;
+                RaisePropertyChanged(nameof(RecordCount));
+
                 recordCount = value;
                 RaisePropertyChanged(nameof(RecordCount));
             }

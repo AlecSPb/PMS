@@ -20,7 +20,7 @@
             <TextBlock Text="{StaticResource PageRecordBondingEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordBondingEdit}"/>

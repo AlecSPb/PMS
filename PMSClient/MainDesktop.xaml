@@ -33,7 +33,7 @@
                 </Menu>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource AppTitleTextBlock}" Foreground="Blue" Margin="0 0 5 0"/>
+                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource StyleTextBlockCommon}" Foreground="Blue" Margin="0 0 5 0"/>
             </StackPanel>
         </Grid>
         <Border Grid.Row="1">

@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageDeliveryItemList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource RDProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="200"

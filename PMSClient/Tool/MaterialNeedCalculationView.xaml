@@ -17,7 +17,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="原料需求计算"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
         </StackPanel>

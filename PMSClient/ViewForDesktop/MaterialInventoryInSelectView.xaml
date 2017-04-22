@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageMaterialInventoryInSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>

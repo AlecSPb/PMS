@@ -20,7 +20,7 @@
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
         </StackPanel>
         <Grid Grid.Row="2">

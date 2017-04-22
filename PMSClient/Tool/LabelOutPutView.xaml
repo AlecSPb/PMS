@@ -16,7 +16,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="{Binding PageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonOpenFile}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OpenFile}"/>
             <TextBlock Text="注意：要提前安装BarTender 10.1 UltraLite版本方可使用" Style="{StaticResource StyleTextBlockCommon}"/>

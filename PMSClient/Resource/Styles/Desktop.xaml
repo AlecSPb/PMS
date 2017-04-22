@@ -1,25 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-
-    <!--规范化后的样式-->
-    <Style x:Key="ControlButton" TargetType="Button">
-        <Setter Property="Margin" Value="0 2"/>
-        <Setter Property="Padding" Value="2"/>
-        <Setter Property="Width" Value="30"/>
-    </Style>
-    <Style x:Key="AppTitleTextBlock" TargetType="TextBlock">
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="0 2"/>
-        <Setter Property="Padding" Value="2"/>
-        <Setter Property="Foreground" Value="{StaticResource FGTitleBar}"/>
-    </Style>
     <!--基本资源-->
-    <SolidColorBrush x:Key="ThemeBrush" Color="#F2753F"/>
-    
+    <SolidColorBrush x:Key="BGNavigationBar" Color="#004B8B"/>
     <SolidColorBrush x:Key="BGBrushTitleBar" Color="#135995"/>
-    <SolidColorBrush x:Key="BGBrushNavigateBar" Color="#F2753F"/>
-    <SolidColorBrush x:Key="BGBrushStatusBar" Color="#CA5100"/>
+    <SolidColorBrush x:Key="BGBrushStatusBar" Color="#007ACC"/>
     <SolidColorBrush x:Key="BGBrushWindow" Color="LightYellow"/>
 
     <SolidColorBrush x:Key="FGTitleBar" Color="White"/>
@@ -27,14 +12,13 @@
     <SolidColorBrush x:Key="FGStatuBar" Color="White"/>
     <SolidColorBrush x:Key="FGText" Color="Black"/>
 
-    <SolidColorBrush x:Key="BorderBrush" Color="Orange"/>
+    <SolidColorBrush x:Key="ControlBorderBrush" Color="#004B8B"/>
     <SolidColorBrush x:Key="BGReadOnlyTextBox" Color="LightSteelBlue"/>
     <SolidColorBrush x:Key="BGRequiredTextBox" Color="LimeGreen"/>
 
     <sys:Double x:Key="FontSM">12</sys:Double>
     <sys:Double x:Key="FontMD">18</sys:Double>
     <sys:Double x:Key="FontLG">25</sys:Double>
-
     <sys:Double x:Key="DGFontLG">14</sys:Double>
 
 
@@ -79,7 +63,7 @@
                                 <VisualState x:Name="Disabled"></VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Rectangle x:Name="rectangle" Fill="#FFE2E2EE" Stroke="{StaticResource ThemeBrush}"  StrokeThickness="1"/>
+                        <Rectangle x:Name="rectangle" Fill="#FFE2E2EE" Stroke="{StaticResource ControlBorderBrush}"  StrokeThickness="1"/>
                         <ContentControl x:Name="contentControl" Content="{TemplateBinding Content}" 
                                         Margin="{TemplateBinding Padding}" VerticalAlignment="Center"
                                         HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
@@ -105,7 +89,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border x:Name="border" BorderBrush="{StaticResource ThemeBrush}"
+                    <Border x:Name="border" BorderBrush="{StaticResource ControlBorderBrush}"
                             Background="{TemplateBinding Background}" SnapsToDevicePixels="True" BorderThickness="1">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" 
                                       HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
@@ -202,7 +186,10 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleTextBlockTip" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
-        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="Foreground" Value="LightGreen"/>
+    </Style>
+    <Style x:Key="StyleTextBlockTip2" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="Foreground" Value="Red"/>
     </Style>
     <Style x:Key="StyleTextBlockWarning" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="Black"/>
@@ -210,7 +197,9 @@
     <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
     </Style>
-
+    <Style x:Key="StyleTextBlockNavigationBar" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
     <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
@@ -227,11 +216,11 @@
         <Setter Property="MinWidth" Value="80"/>
         <Setter Property="Background" Value="Transparent"/>
     </Style>
-    
+
     <Style x:Key="StyleTextBoxSearch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="Background" Value="White"/>
     </Style>
-    
+
     <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
     </Style>
@@ -292,7 +281,7 @@
     <Style x:Key="StyleDataGridCommon" TargetType="DataGrid">
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="IsReadOnly" Value="True"/>
-        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource ThemeBrush}"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource ControlBorderBrush}"/>
         <Setter Property="SelectionMode" Value="Single"/>
         <Setter Property="GridLinesVisibility" Value="Horizontal"/>
         <Setter Property="CanUserSortColumns" Value="False"/>
@@ -356,5 +345,12 @@
         <Setter Property="Width" Value="16"/>
     </Style>
 
-
+    <!--StackPanel-->
+    <Style x:Key="StyleStackPanelCommon" TargetType="StackPanel">
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+    <Style x:Key="StyleStackPanelNavigationBar" TargetType="StackPanel">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Background" Value="{StaticResource BGNavigationBar}"/>
+    </Style>
 </ResourceDictionary>

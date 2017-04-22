@@ -20,20 +20,20 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageOrder}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource OrderCustomer}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Width="200"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Width="200"
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
@@ -243,7 +243,7 @@
 
                     <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource OrderDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                    <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding DeadLine}" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" Style="{StaticResource StyleTextBoxCommon}"/>
 
                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource OrderMIniummAcceptDefect}"
                            Style="{StaticResource StyleTextBlockCommon}" />

@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageTestResultSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding GiveUp}"/>
 

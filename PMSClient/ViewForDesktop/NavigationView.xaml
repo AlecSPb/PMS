@@ -16,7 +16,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="0" Background="{StaticResource BGNavigationBar}">
             <TextBlock Text="{StaticResource PageNaivgation}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">

@@ -20,7 +20,7 @@
             <TextBlock Text="{StaticResource PageOrderEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{StaticResource BGBrushNavigateBar}">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
@@ -63,7 +63,7 @@
                       Style="{StaticResource StyleComboBoxCommon}"
                       ItemsSource="{Binding DataContext.CustomerNames,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" SelectedItem="{Binding CustomerName}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="选择客户名称，如果下拉列表没有该客户信息，请先让管理员添加客户信息"/>
+                           Text="选择客户名称，如果没有该客户信息，请先让管理员添加客户信息"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OrderPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -77,23 +77,23 @@
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="自动生成的工作号不一定唯一和合适，请自行修改"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderStandardComposition}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="必须填写标准成分，即各组分At%和为100"/>
-
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="订单上的原始成分，不会显示给其他人，只作备忘"/>
+                
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OrderStandardComposition}"
+                           Style="{StaticResource StyleTextBlockSpecial}" />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="填写订单上的原始成分"/>
-
+                           Text="必须填写标准成分，即这种材料一直以来的名称"/>
+                
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OrderAbbrComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="请在这里填写成分的缩写"/>
+                           Text="成分的缩写，尽量简洁不包含数字"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OrderProductType}"
                            Style="{StaticResource StyleTextBlockCommon}" />

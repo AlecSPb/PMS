@@ -53,7 +53,17 @@ namespace PMSClient.ViewModel
 
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
+            SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
         }
+
+        private void ActionSelectionChanged(DcOrder model)
+        {
+            if (model!=null)
+            {
+                CurrentOrder = model;
+            }
+        }
+
         /// <summary>
         /// 核验订单权限编码=编辑订单核验
         /// </summary>
@@ -133,8 +143,6 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 20;
                 var service = new OrderServiceClient();
-
-                RecordCount = 0;
                 RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
                 service.Close();
                 ActionPaging();
@@ -159,10 +167,11 @@ namespace PMSClient.ViewModel
                 service.Close();
                 MainOrders.Clear();
                 orders.ToList().ForEach(o => MainOrders.Add(o));
+                CurrentOrder = MainOrders.FirstOrDefault();
             }
             catch (Exception ex)
             {
-                throw ex;
+                PMSHelper.CurrentLog.Error(ex);
             }
 
         }
@@ -194,6 +203,13 @@ namespace PMSClient.ViewModel
             }
         }
 
+        private DcOrder currentOrder;
+
+        public DcOrder CurrentOrder
+        {
+            get { return currentOrder; }
+            set { currentOrder = value;RaisePropertyChanged(nameof(CurrentOrder)); }
+        }
 
 
 
@@ -213,6 +229,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcOrder> Duplicate { get; private set; }
         public RelayCommand<DcOrder> Check { get; private set; }
+        public RelayCommand<DcOrder> SelectionChanged { get; set; }
         #endregion
     }
 }
