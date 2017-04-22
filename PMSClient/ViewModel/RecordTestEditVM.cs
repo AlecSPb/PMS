@@ -137,8 +137,9 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateRecordTest(CurrentRecordTest);
                 }
-                PMSHelper.ViewModels.RecordTest.RefreshData();
                 service.Close();
+                PMSHelper.ViewModels.RecordTest.RefreshData();
+                NavigationService.ShowStatusMessage("保存成功，请手动刷新列表");
                 GoBack();
             }
             catch (Exception ex)

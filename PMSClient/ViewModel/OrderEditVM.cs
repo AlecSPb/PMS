@@ -116,9 +116,11 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
+                service.Close();
                 //PMSHelper.ViewModels.Order.RefreshData();
                 GoBack();
-                service.Close();
+                NavigationService.ShowStatusMessage("保存成功，请手动刷新列表");
+
             }
             catch (Exception ex)
             {
