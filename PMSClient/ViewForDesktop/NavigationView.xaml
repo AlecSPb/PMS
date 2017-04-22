@@ -13,13 +13,19 @@
     </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="{StaticResource BGNavigationBar}">
+        <StackPanel Grid.Row="0" Style="{StaticResource StyleStackPanelCommon}">
             <TextBlock Text="{StaticResource PageNaivgation}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="登录" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="注销" Style="{StaticResource StyleButtonCommon}"/>
+            <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>

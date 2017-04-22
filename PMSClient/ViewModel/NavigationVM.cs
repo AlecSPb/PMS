@@ -15,21 +15,58 @@ namespace PMSClient.ViewModel
         private LogInformation _session;
         public NavigationVM()
         {
-            InitialCommands();
             _session = PMSHelper.CurrentSession;
+            InitialNavigations();
+            LogIn = new RelayCommand(ActionLogIn);
+            LogOut = new RelayCommand(ActionLogOut);
+
+            currentUserInformation = "暂无登录信息";
+
+            SetLogButtonVisbility(true);
+        }
+        #region 登录信息
+        public void SetLogButtonVisbility(bool showlogin)
+        {
+            ShowLogInButton = showlogin;
+            ShowLogOutButton = !ShowLogInButton;
         }
 
-
-        private string logInformation;
-
-        public string LogInformation
+        private string currentUserInformation;
+        public string CurrentUserInformation
         {
-            get { return logInformation; }
-            set { logInformation = value; RaisePropertyChanged(nameof(LogInformation)); }
+            get { return currentUserInformation; }
+            set { currentUserInformation = value; RaisePropertyChanged(nameof(CurrentUserInformation)); }
+        }
+        public RelayCommand LogIn { get; set; }
+        public RelayCommand LogOut { get; set; }
+
+        private bool showLogInButton;
+        public bool ShowLogInButton
+        {
+            get { return showLogInButton; }
+            set { showLogInButton = value; RaisePropertyChanged(nameof(ShowLogInButton)); }
+        }
+        private bool showLogOutButton;
+
+        public bool ShowLogOutButton
+        {
+            get { return showLogOutButton; }
+            set { showLogOutButton = value; RaisePropertyChanged(nameof(ShowLogOutButton)); }
+        }
+        private void ActionLogOut()
+        {
+            throw new NotImplementedException();
         }
 
-        private void InitialCommands()
+        private void ActionLogIn()
         {
+            throw new NotImplementedException();
+        }
+        #endregion
+        #region 导航信息
+        private void InitialNavigations()
+        {
+
             GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized("浏览订单"));
             GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck), () => _session.IsAuthorized("浏览订单核验"));
             GoToOrderStatistic = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderStatistic), () => _session.IsAuthorized("浏览订单统计"));
@@ -65,8 +102,9 @@ namespace PMSClient.ViewModel
 
             GoToAdminUser = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminUser), () => _session.IsAuthorized("浏览用户信息"));
             GoToAdminRole = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminRole), () => _session.IsAuthorized("浏览角色信息"));
-            GoToAdminAccess= new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
+            GoToAdminAccess = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
         }
+
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
         public RelayCommand GoToOrderStatistic { get; private set; }
@@ -82,7 +120,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMaterialInventory { get; private set; }
 
         public RelayCommand GoToRecordMilling { get; private set; }
-        public RelayCommand GoToRecordVHP{ get; private set; }
+        public RelayCommand GoToRecordVHP { get; private set; }
         public RelayCommand GoToRecordDeMold { get; private set; }
         public RelayCommand GoToRecordMachine { get; private set; }
         public RelayCommand GoToRecordTest { get; private set; }
@@ -97,16 +135,14 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToBDCustomer { get; set; }
         public RelayCommand GoToBDCompound { get; set; }
         public RelayCommand GoToBDVHPDevice { get; set; }
-        public RelayCommand GoToBDMold{ get; set; }
+        public RelayCommand GoToBDMold { get; set; }
         public RelayCommand GoToBDDeliveryAddress { get; set; }
         public RelayCommand GoToBDSupplier { get; set; }
 
 
-        public RelayCommand GoToAdminUser{ get; set; }
+        public RelayCommand GoToAdminUser { get; set; }
         public RelayCommand GoToAdminRole { get; set; }
         public RelayCommand GoToAdminAccess { get; set; }
-
-
-
+        #endregion
     }
 }

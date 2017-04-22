@@ -12,34 +12,13 @@
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Name="titleBar" Grid.Row="0" Background="{x:Static SystemColors.MenuBarBrush}" MouseLeftButtonDown="titleBar_MouseLeftButtonDown">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Menu>
-                    <MenuItem Header="{StaticResource PageStart}">
-                        <MenuItem Header="{StaticResource PageSetting}"/>
-                        <Separator/>
-                        <MenuItem x:Name="MenuLogOut" Header="{StaticResource PageLogOut}" Click="MenuLogOut_Click"/>
-                        <Separator/>
-                        <MenuItem x:Name="MenuExit" Header="{StaticResource PageExit}" Click="MenuExit_Click"/>
-                    </MenuItem>
-                </Menu>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock x:Name="txtCurrentUserName" Text="" Style="{StaticResource StyleTextBlockCommon}" Foreground="Blue" Margin="0 0 5 0"/>
-            </StackPanel>
-        </Grid>
-        <Border Grid.Row="1">
+        <Border Grid.Row="0">
             <ContentControl x:Name="mainArea"/>
         </Border>
-        <Grid Grid.Row="2"  Background="{StaticResource BGBrushStatusBar}">
+        <Grid Grid.Row="1"  Background="{StaticResource BGBrushStatusBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
@@ -48,7 +27,8 @@
             <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
             <TextBlock Grid.Column="1" Name="txtHeartBeat" Text="心跳检测" Style="{StaticResource StyleTextBlockCommon}"
                        Foreground="Yellow"/>
-            <TextBlock Grid.Column="2" Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" HorizontalAlignment="Right"/>
+            <TextBlock x:Name="txtCurrentUserName" Grid.Column="2"
+                       Text="" Style="{StaticResource StyleTextBlockCommon}" Foreground="Blue" Margin="0 0 5 0"/>
         </Grid>
     </Grid>
 </Window>

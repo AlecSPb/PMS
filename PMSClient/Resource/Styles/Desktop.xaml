@@ -186,13 +186,13 @@
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleTextBlockTip" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
-        <Setter Property="Foreground" Value="LightGreen"/>
+        <Setter Property="Foreground" Value="Black"/>
     </Style>
     <Style x:Key="StyleTextBlockTip2" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="Red"/>
     </Style>
     <Style x:Key="StyleTextBlockWarning" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
     <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
