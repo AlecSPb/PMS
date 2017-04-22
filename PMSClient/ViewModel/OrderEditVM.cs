@@ -111,7 +111,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrder(CurrentOrder);
                 }
-                PMSHelper.ViewModels.Order.RefreshData();
+                //PMSHelper.ViewModels.Order.RefreshData();
                 GoBack();
                 service.Close();
             }

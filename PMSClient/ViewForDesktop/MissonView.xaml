@@ -178,6 +178,8 @@
                                     Header="{StaticResource PlanPlanLot}" Binding="{Binding PlanLot}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding VHPDeviceCode}"/>
+                <DataGridTextColumn Header="{StaticResource PlanPlanType}" Binding="{Binding PlanType}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Header="{StaticResource PlanMoldType}" Binding="{Binding MoldType}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"

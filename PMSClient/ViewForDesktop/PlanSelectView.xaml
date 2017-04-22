@@ -58,6 +58,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                 <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                <DataGridTextColumn Header="{StaticResource PlanPlanType}" Binding="{Binding Plan.PlanType}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                 <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1300"
              DataContext="{Binding Source={StaticResource Locator},Path=Order}">
@@ -50,8 +51,14 @@
                     <RowDefinition/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <DataGrid Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainOrders}"
+                <DataGrid Name="dg" Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainOrders}"
                   LoadingRow="DataGrid_LoadingRow" FrozenColumnCount="1">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                             <DataGridTemplateColumn.CellTemplate>
@@ -73,31 +80,22 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="{StaticResource OrderCreateTime}">
+                        <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderPolicy}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding PolicyType}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderCustomer}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                            Binding="{Binding CustomerName}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                            Binding="{Binding CompositionStandard}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderAbbrComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CompositionAbbr}"/>
+                        <DataGridTemplateColumn Header="{StaticResource OrderPurity}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="{StaticResource OrderDeadLine}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="{StaticResource OrderPolicy}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding PolicyType}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="{StaticResource OrderCustomer}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding CustomerName}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                                    <TextBlock Text="{Binding  Purity}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -117,22 +115,6 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Header="{StaticResource OrderProductType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ProductType}"/>
-                        <DataGridTemplateColumn Header="{StaticResource OrderStandardComposition}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding CompositionStandard }" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="{StaticResource OrderAbbrComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CompositionAbbr}"/>
-                        <DataGridTemplateColumn Header="{StaticResource OrderPurity}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding  Purity}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="{StaticResource OrderQuantity}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -208,7 +190,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource OrderCustomer}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                           Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CustomerName}" Style="{StaticResource StyleTextBoxCommon}" />
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OrderPO}"
@@ -216,11 +198,11 @@
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxCommon}" />
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OrderPMINumber}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}" />
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderStandardComposition}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"  />
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
@@ -240,11 +222,11 @@
                     <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"/>
 
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OrderQuantity}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                     <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}" />
 
                     <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OrderQuantityUnit}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource StyleTextBlockCommon}" />
                     <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}" />
 
                     <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OrderDimension}"

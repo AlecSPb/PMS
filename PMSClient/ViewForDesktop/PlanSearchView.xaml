@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
               xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=PlanSearch}">
     <UserControl.Resources>
@@ -38,8 +39,14 @@
                 <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
             </StackPanel>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow"
+        <DataGrid Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow"
                   ItemsSource="{Binding PlanWithMissons}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns>
                 <!--<DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -57,6 +64,8 @@
                 <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                 <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                <DataGridTextColumn Header="{StaticResource PlanPlanType}" Binding="{Binding Plan.PlanType}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                 <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
