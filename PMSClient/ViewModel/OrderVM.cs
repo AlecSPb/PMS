@@ -133,6 +133,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 20;
                 var service = new OrderServiceClient();
+
                 RecordCount = 0;
                 RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
                 service.Close();
