@@ -64,6 +64,7 @@ namespace PMSClient
 
 
             //导航到首页
+            RefreshLogInformation();
             NavigateTo(_views.LogIn);
 
             #region 设置主定时器
@@ -350,10 +351,6 @@ namespace PMSClient
             Messenger.Default.Unregister(this);
             base.OnClosed(e);
         }
-        private void MenuExit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             var result = PMSDialogService.ShowYesNo("请问", "确定要退出吗？");
@@ -380,14 +377,17 @@ namespace PMSClient
         public void RefreshLogInformation()
         {
             var _logInformation = PMSHelper.CurrentSession;
+            string logInformation = "";
             if (_logInformation.CurrentUser != null)
             {
-                txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
+                logInformation = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
             }
             else
             {
-                txtCurrentUserName.Text = "未登录";
+                logInformation = "未登录";
             }
+            txtCurrentUserName.Text = logInformation;
+            PMSHelper.ViewModels.Navigation.SetLogInformation(logInformation);
         }
         #endregion
     }

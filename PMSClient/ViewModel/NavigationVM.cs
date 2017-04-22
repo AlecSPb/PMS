@@ -21,16 +21,13 @@ namespace PMSClient.ViewModel
             LogOut = new RelayCommand(ActionLogOut);
 
             currentUserInformation = "暂无登录信息";
-
-            SetLogButtonVisbility(false);
         }
-        #region 登录信息
-        public void SetLogButtonVisbility(bool showlogin)
+        public void SetLogInformation(string logInformation)
         {
-            ShowLogInButton = showlogin;
-            ShowLogOutButton = !ShowLogInButton;
+            CurrentUserInformation = logInformation;
         }
 
+        #region 登录信息
         private string currentUserInformation;
         public string CurrentUserInformation
         {
@@ -40,27 +37,14 @@ namespace PMSClient.ViewModel
         public RelayCommand LogIn { get; set; }
         public RelayCommand LogOut { get; set; }
 
-        private bool showLogInButton;
-        public bool ShowLogInButton
-        {
-            get { return showLogInButton; }
-            set { showLogInButton = value; RaisePropertyChanged(nameof(ShowLogInButton)); }
-        }
-        private bool showLogOutButton;
-
-        public bool ShowLogOutButton
-        {
-            get { return showLogOutButton; }
-            set { showLogOutButton = value; RaisePropertyChanged(nameof(ShowLogOutButton)); }
-        }
         private void ActionLogOut()
         {
-
+            PMSHelper.MainWindow.LogOut();
         }
 
         private void ActionLogIn()
         {
-          
+            NavigationService.GoTo(PMSViews.LogIn);
         }
         #endregion
         #region 导航信息

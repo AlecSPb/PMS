@@ -36,10 +36,7 @@
                     <converter:VisibilityConverter x:Key="visibleConverter"/>
                 </StackPanel.Resources>
                 <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-                <Button Content="登录" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogIn}" 
-                    Visibility="{Binding ShowLogInButton,Converter={StaticResource visibleConverter}}"/>
-                <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}"
-                    Visibility="{Binding ShowLogOutButton,Converter={StaticResource visibleConverter}}"/>
+                <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}" />
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">

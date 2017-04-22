@@ -16,7 +16,7 @@ namespace PMSClient.View
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
-            SimpleIoc.Default.Register<LogInView>();
+            SimpleIoc.Default.Register<LogInView>(true);
 
             SimpleIoc.Default.Register<NavigationView>(true);
             SimpleIoc.Default.Register<OrderView>();

@@ -40,7 +40,7 @@ namespace PMSClient
         #region 当前用户
         private static LogInformation _currentSession;
         private static ILog _currentLog;
-        public static MainDesktop _mainWindow;
+        private static MainDesktop _mainWindow;
         #endregion
 
         #region 视图和视图模型
@@ -51,6 +51,14 @@ namespace PMSClient
 
         private static ToolViewLocator _toolViews;
         private static ToolViewModelLocator _toolViewModels;
+
+        public static MainDesktop MainWindow
+        {
+            get
+            {
+                return _mainWindow;
+            }
+        }
 
         public static DesktopViewLocator DesktopViews
         {
