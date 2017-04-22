@@ -76,6 +76,7 @@
     <sys:String x:Key="PageOrderStatistic">订单统计</sys:String>
 
     <sys:String x:Key="PageMisson">生产任务</sys:String>
+    <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
     <sys:String x:Key="PageMaterialNeed">原料需求</sys:String>
@@ -109,7 +110,7 @@
 
 
     <sys:String x:Key="PageProductTitle">成品</sys:String>
-    <sys:String x:Key="PageProduct">成品库</sys:String>
+    <sys:String x:Key="PageProduct">成品库存</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
 
     <sys:String x:Key="PagePlate">背板库存</sys:String>
@@ -198,7 +199,7 @@
 
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
-    <sys:String x:Key="ButtonGiveUp">放弃</sys:String>
+    <sys:String x:Key="ButtonGiveUp">返回</sys:String>
     <sys:String x:Key="ButtonLogin">登录</sys:String>
     <sys:String x:Key="ButtonBack">返回</sys:String>
     <sys:String x:Key="ButtonCheck">核验</sys:String>

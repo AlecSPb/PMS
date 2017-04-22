@@ -58,7 +58,7 @@ namespace PMSClient.ViewModel
             order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             order.CreateTime = DateTime.Now;
             order.PMINumber = $"{DateTime.Now.ToString("yyMMdd")}-A";
-            order.ProductType = PMSCommon.OrderProductType.Target.ToString();
+            order.ProductType = PMSCommon.OrderProductType.靶材.ToString();
             order.Purity = "99.99";
             order.Quantity = 1;
             order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();

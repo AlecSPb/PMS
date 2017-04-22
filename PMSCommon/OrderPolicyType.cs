@@ -12,7 +12,7 @@ namespace PMSCommon
     public enum OrderPolicyType
     {
         VHP,
-        OutSource,
-        Others
+        外包,
+        其他
     }
 }

@@ -8,10 +8,10 @@ namespace PMSCommon
 {
     public enum OrderProductType
     {
-        Target,
-        Granule,
-        Powder,
-        BackPlate,
-        Other
+        靶材,
+        颗粒,
+        粉末,
+        背板,
+        其他
     }
 }
