@@ -94,6 +94,7 @@
     <Compile Include="TestType.cs" />
     <Compile Include="UserState.cs" />
     <Compile Include="VHPPlanState.cs" />
+    <Compile Include="VHPPlanType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
