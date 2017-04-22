@@ -66,6 +66,7 @@
     <sys:String x:Key="PageRole">角色</sys:String>
     <sys:String x:Key="PageAccess">授权</sys:String>
 
+    <sys:String x:Key="PageWorkFlow">工作流</sys:String>
 
     <sys:String x:Key="PageOrder">订单管理</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
@@ -124,7 +125,7 @@
     <sys:String x:Key="PageMissonSelect">请选择一个生产任务项目</sys:String>
     <sys:String x:Key="PageMaterialOrderItemSelect">请选择一个材料订单项目</sys:String>
 
-    <sys:String x:Key="PageMaintenance">维护计划</sys:String>
+    <sys:String x:Key="PageMaintenance">设备维护</sys:String>
 
 
     <!--每个页面最前面的提示信息-->

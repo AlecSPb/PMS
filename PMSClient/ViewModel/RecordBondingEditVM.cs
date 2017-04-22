@@ -157,6 +157,10 @@ namespace PMSClient.ViewModel
 
         private void ActionSign(string param)
         {
+            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
+            {
+                return;
+            }
             var currentUser = PMSHelper.CurrentSession.CurrentUser.UserName;
             var currentTime = DateTime.Now;
             //通过参数判断是按下的是那个签名按钮
@@ -180,6 +184,30 @@ namespace PMSClient.ViewModel
                     CurrentRecordBonding.TargetPreProcessCheckTime = currentTime;
                     break;
                 case "40":
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    break;
+                case "50":
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    break;
+                case "60":
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    break;
+                case "70":
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    break;
+                case "80":
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    break;
+                case "90":
+                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    break;
+                case "100":
                     CurrentRecordBonding.PlatePreProcessPerson = currentUser;
                     CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
                     break;

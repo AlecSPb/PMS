@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
         Title="PMS生产管理系统"  ResizeMode="CanResize" Icon="Resource\Images\chart.png" Closing="Window_Closing"
-        MinHeight="400" MinWidth="600" WindowState="Maximized" Loaded="Window_Loaded">
+        MinHeight="600" MinWidth="800" WindowState="Maximized" Loaded="Window_Loaded">
     <Window.Resources>
         <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
     </Window.Resources>

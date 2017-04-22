@@ -7,7 +7,7 @@
              xmlns:converter="clr-namespace:PMSClient.Converter"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="1000"
+             d:DesignHeight="1000" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
@@ -66,6 +66,11 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="0*" />
                 </Grid.RowDefinitions>
+                <Button Content="{StaticResource PageStart}" Grid.Row="0" Grid.Column="0"
+                        Style="{DynamicResource StyleButtonNavigationTitle}"/>
+                <Button Content="{StaticResource PageWorkFlow}" Grid.Row="0" Grid.Column="1"
+                        Command="{Binding GoToWorkFlow}" Style="{DynamicResource StyleButtonNavigation}"/>
+                
                 <Button Content="{StaticResource PageSales}" Grid.Row="1" Grid.Column="0"
                         Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageOrder}" Grid.Row="1" Grid.Column="1"
