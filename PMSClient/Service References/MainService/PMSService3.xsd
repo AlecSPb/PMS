@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ArrayOfDcOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOrder" nillable="true" type="tns:DcOrder" />
@@ -60,6 +60,7 @@
       <xs:element minOccurs="0" name="OrderID" type="ser:guid" />
       <xs:element minOccurs="0" name="PlanDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PlanLot" type="xs:int" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PrePressure" type="xs:double" />
       <xs:element minOccurs="0" name="PreTemperature" type="xs:double" />
       <xs:element minOccurs="0" name="Pressure" type="xs:double" />

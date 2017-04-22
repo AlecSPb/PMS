@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:63549/HeartBeatService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8002/HeartBeatService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HeartBeatService.disco" MetadataType="Disco" ID="44f472a3-3b54-4c5e-94d5-e9d1d7c2d50a" SourceId="1" SourceUrl="http://localhost:63549/HeartBeatService.svc?disco" />
-    <MetadataFile FileName="HeartBeatService.xsd" MetadataType="Schema" ID="09185420-60f8-4b93-afd1-0fec15e3ada8" SourceId="1" SourceUrl="http://localhost:63549/HeartBeatService.svc?xsd=xsd1" />
-    <MetadataFile FileName="HeartBeatService.wsdl" MetadataType="Wsdl" ID="816aefcb-b511-471e-8bba-1429f794649a" SourceId="1" SourceUrl="http://localhost:63549/HeartBeatService.svc?wsdl" />
-    <MetadataFile FileName="HeartBeatService1.xsd" MetadataType="Schema" ID="d3582de5-26f0-498f-bb23-d9d5340d3276" SourceId="1" SourceUrl="http://localhost:63549/HeartBeatService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HeartBeatService2.xsd" MetadataType="Schema" ID="770570b4-ef9b-41e8-8f7a-cc65927f0a3c" SourceId="1" SourceUrl="http://localhost:8002/HeartBeatService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HeartBeatService1.wsdl" MetadataType="Wsdl" ID="27516f64-8339-49f5-9125-c3f339f508cf" SourceId="1" SourceUrl="http://localhost:8002/HeartBeatService.svc?wsdl" />
+    <MetadataFile FileName="HeartBeatService21.xsd" MetadataType="Schema" ID="f2ba7144-09c3-4b04-8274-f8f8a6cf1ec2" SourceId="1" SourceUrl="http://localhost:8002/HeartBeatService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HeartBeatService1.disco" MetadataType="Disco" ID="22e07d74-b575-4010-ad79-a04b19256b24" SourceId="1" SourceUrl="http://localhost:8002/HeartBeatService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

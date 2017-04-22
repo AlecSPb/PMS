@@ -35,6 +35,7 @@ namespace PMSClient.ViewModel
             plan.PlanDate = DateTime.Now.Date;
             plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             plan.PlanLot = 1;
+            plan.PlanType = PMSCommon.VHPPlanType.加工.ToString();
             plan.MoldType = PMSCommon.MoldType.超强.ToString();
             plan.VHPDeviceCode = "A";
             plan.Temperature = 0;

@@ -324,6 +324,7 @@
     <sys:String x:Key="PlanPlanDate">计划日期</sys:String>
     <sys:String x:Key="PlanVHPDeviceCode">设备</sys:String>
     <sys:String x:Key="PlanPlanLot">批次</sys:String>
+    <sys:String x:Key="PlanPlanType">计划类型</sys:String>
     <sys:String x:Key="PlanMoldType">模具类型</sys:String>
     <sys:String x:Key="PlanCalculationDensity">密度</sys:String>
     <sys:String x:Key="PlanMoldDiameter">内径</sys:String>

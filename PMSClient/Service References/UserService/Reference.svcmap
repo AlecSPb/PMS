@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.16.254:8002/UserAccessService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8002/UserAccessService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserAccessService.wsdl" MetadataType="Wsdl" ID="2c9e6df1-fc7b-4fbd-a030-4d2d746e18cd" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?wsdl" />
-    <MetadataFile FileName="UserAccessService.xsd" MetadataType="Schema" ID="4944c2d9-924d-4214-a316-f3d6a7166f1a" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserAccessService1.xsd" MetadataType="Schema" ID="cf005fb2-6171-462c-a7dd-b33f966d36bf" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?xsd=xsd1" />
-    <MetadataFile FileName="UserAccessService2.xsd" MetadataType="Schema" ID="04e5805d-6c93-40d3-a4c0-76eedb3b1897" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserAccessService.disco" MetadataType="Disco" ID="a5d23a06-d260-44b2-b1b3-36c8784eecaa" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserAccessService.svc?disco" />
+    <MetadataFile FileName="UserAccessService3.xsd" MetadataType="Schema" ID="2ad12324-a1f4-44d7-a99e-2d18fe5d819a" SourceId="1" SourceUrl="http://localhost:8002/UserAccessService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserAccessService31.xsd" MetadataType="Schema" ID="7cbe99e2-7226-43af-9e3e-cb22da8089d9" SourceId="1" SourceUrl="http://localhost:8002/UserAccessService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserAccessService1.disco" MetadataType="Disco" ID="b2971551-28c5-4b96-bb2c-05798f80ca32" SourceId="1" SourceUrl="http://localhost:8002/UserAccessService.svc?disco" />
+    <MetadataFile FileName="UserAccessService1.wsdl" MetadataType="Wsdl" ID="98561851-4d3d-42f3-b393-4c3421e165be" SourceId="1" SourceUrl="http://localhost:8002/UserAccessService.svc?wsdl" />
+    <MetadataFile FileName="UserAccessService32.xsd" MetadataType="Schema" ID="f0401a4f-fe9f-4391-9621-d3fd12e28b1e" SourceId="1" SourceUrl="http://localhost:8002/UserAccessService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

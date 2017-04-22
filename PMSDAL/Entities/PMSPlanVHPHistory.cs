@@ -26,6 +26,7 @@ namespace PMSDAL
         public DateTime PlanDate { get; set; }//生产日期
         public string VHPDeviceCode { get; set; }//生产机器代码
         public int PlanLot { get; set; }//生产批次，区分同一天同一台的机器的不同批次，默认是1
+        public string PlanType { get; set; }
 
         public string MoldType { get; set; }
         public double CalculationDensity { get; set; }

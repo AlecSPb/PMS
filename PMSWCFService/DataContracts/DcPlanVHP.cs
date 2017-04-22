@@ -27,7 +27,8 @@ namespace PMSWCFService.DataContracts
         public string VHPDeviceCode { get; set; }
         [DataMember]
         public int PlanLot { get; set; }
-
+        [DataMember]
+        public string PlanType { get; set; }
 
         [DataMember]
         public string MoldType { get; set; }
