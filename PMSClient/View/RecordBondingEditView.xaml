@@ -44,8 +44,8 @@
                             <Grid Grid.Row="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
@@ -58,33 +58,34 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDState}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}" Style="{StaticResource StyleComboBoxCommon}"
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDCreator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDCreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDState}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}" Style="{StaticResource StyleComboBoxCommon}"
                                           SelectedItem="{Binding State}"/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding InstructionCode}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作SOP文件代码"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding InstructionCode}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作SOP文件代码"/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材ID"/>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材ID"/>
 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材成分"/>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材成分"/>
 
-                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
 
-                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDCreator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-
-                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDCreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
@@ -121,29 +122,30 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetApperance}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetAppearance}" Style="{StaticResource StyleTextBoxCommon}"/>
+
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDTargetWarpageCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetWarpageCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格≤0.1mm,测量1,2"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDTargetCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDTargetThicknessCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TargetThicknessCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格±0.1mm,测量3"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDTargetApperance}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TargetAppearance}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDTargetDiameterCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TargetDiameterCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格±0.1mm,测量4"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDTargetWarpageCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TargetWarpageCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格≤0.1mm,测量1,2"/>
 
-                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDTargetPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TargetPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDTargetThicknessCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TargetThicknessCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格±0.1mm,测量3"/>
 
-                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDTargetCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDTargetDiameterCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetDiameterCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格±0.1mm,测量4"/>
 
                             </Grid>
                         </Grid>
@@ -154,7 +156,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0"  Text="外观检查示意图:确定外观完整，无伤痕和凹陷" Style="{StaticResource StyleTextBlockMultiline}"/>
+                            <TextBlock Grid.Row="0"  Text="外观检查示意:确定外观完整，无伤痕和凹陷" Style="{StaticResource StyleTextBlockMultiline}"/>
                             <Image Grid.Row="1" Source="../Resource/Bondings/10.png" Stretch="Uniform" Height="200"
                                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         </Grid>
@@ -193,46 +195,47 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDPlatePerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlatePerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDPlateMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlateMaterial}" 
-                                         Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDPlateCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlateCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDPlateDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlateDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDPlateUseCount}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PlateUseCount }" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDPlateMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PlateMaterial}" 
+                                         Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDPlateHardness}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PlateHardness}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDPlateDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PlateDimension}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDPlateSupplier}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PlateSuplier}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDPlateUseCount}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PlateUseCount }" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDPlateLastWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateLastWeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDPlateHardness}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateHardness}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDPlateAppearance}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PlateAppearance}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDPlateSupplier}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PlateSuplier}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDPlatePerson}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PlatePerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDPlateLastWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PlateLastWeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource BDPlateCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding PlateCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource BDPlateAppearance}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding PlateAppearance}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
@@ -242,7 +245,7 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0"  Text="外观检查示意图:确定外观完整，无伤痕和凹陷" Style="{StaticResource StyleTextBlockMultiline}"/>
+                            <TextBlock Grid.Row="0"  Text="外观检查示意:确定外观完整，无伤痕和凹陷" Style="{StaticResource StyleTextBlockMultiline}"/>
                             <Image Grid.Row="1" Source="../Resource/Bondings/20.png" Stretch="Uniform" Height="200"
                                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         </Grid>
@@ -281,16 +284,16 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetPreProcessRecord}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetPreProcessRecord}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetPreProcessPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDTargetPreProcessPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDTargetPreProcessCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetPreProcessCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDTargetPreProcessCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TargetPreProcessCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDTargetPreProcessRecord}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TargetPreProcessRecord}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                             </Grid>
                         </Grid>
@@ -340,17 +343,18 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDPlatePreProcessRecord}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding PlatePreProcessRecord}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="有无劣化，翘曲情况，测量1,2"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDPlatePreProcessPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDPlatePreProcessPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDPlatePreProcessCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PlatePreProcessCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDPlatePreProcessCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlatePreProcessCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDPlatePreProcessRecord}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlatePreProcessRecord}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="有无劣化，翘曲情况，测量1,2"/>
+
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
@@ -362,7 +366,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0"  Style="{StaticResource StyleTextBlockMultiline}">
                                 (1)旧背板要注意测量翘曲成都，超出规格必须进行校正 <LineBreak/>
-                                 (2)观察焊接面情况，如果有劣化，必须用机械方法将劣化部分去除" 
+                                 (2)观察焊接面情况，如果有劣化，必须用机械方法将劣化部分去除"
                             </TextBlock>
                             <Image Grid.Row="1" Source="../Resource/Bondings/40.png" Stretch="Uniform" Height="200"
                                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -402,24 +406,24 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDWeldPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                                
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWeldCuStringDiameter}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WeldCuStringDiameter}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWeldHold}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WeldHold}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWeldCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WeldCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                                 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDWeldPerson}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding TargetPreProcessPerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDWeldCuStringDiameter}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding WeldCuStringDiameter}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDWeldCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding WeldCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDWeldHold}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding WeldHold}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                             </Grid>
                         </Grid>
@@ -471,16 +475,16 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDWarpageFix}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDWarpagePerson}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding WarpagePerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWarpagePerson}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WarpagePerson}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWarpageCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WarpageCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWarpageCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WarpageCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWarpageFix}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                             </Grid>
                         </Grid>
@@ -540,15 +544,15 @@
                                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWarpageCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WarpageCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                                
+
                                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDDimensionCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding DimensionCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                                
+
                                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDDimensionWarpageCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding DimensionWarpageCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                                
+
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
@@ -740,7 +744,7 @@
                                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDApperanceCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ApperanceCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                                
+
                                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDPackCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding PackCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>

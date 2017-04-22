@@ -15,10 +15,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="98*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="97*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageMaterialOrder}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
@@ -138,15 +137,15 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
-        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <control:SimplePager  Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-        <StackPanel Grid.Row="4" Orientation="Horizontal">
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock Text="注意:每个订单的项目最好不要超过5，这时候生成doc报告的时候正好1页" Style="{StaticResource StyleTextBlockWarning}"/>
+            <TextBlock Text="注意:每个订单的项目最好不要超过5，这时候生成doc报告的时候正好1页" Style="{StaticResource StyleTextBlockWarning}"
+                       Foreground="Black"/>
         </StackPanel>
-        <DataGrid Grid.Row="5" Style="{StaticResource StyleDataGridCommon}"
+        <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGridCommon}"
                           ItemsSource="{Binding MaterialOrderItems}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">

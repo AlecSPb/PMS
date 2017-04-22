@@ -112,9 +112,11 @@
                         Command="{Binding GoToRecordBonding}"/>
 
                 <Button Content="{StaticResource PageProductTitle}" Grid.Row="6" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}" />
-                <Button Content="{StaticResource PageProduct}" Grid.Row="6" Grid.Column="1"
+                <Button Content="{StaticResource PagePlate}" Grid.Row="6" Grid.Column="1"
+                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigation}"/>
+                <Button Content="{StaticResource PageProduct}" Grid.Row="6" Grid.Column="2"
                         Command="{Binding GoToProduct}" Style="{DynamicResource StyleButtonNavigation}"/>
-                <Button Content="{StaticResource PageDelivery}" Grid.Row="6" Grid.Column="2"
+                <Button Content="{StaticResource PageDelivery}" Grid.Row="6" Grid.Column="3"
                         Command="{Binding GoToDelivery}" Style="{DynamicResource StyleButtonNavigation}"/>
 
                 <Button Content="{StaticResource PageOther}" Grid.Row="7" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>

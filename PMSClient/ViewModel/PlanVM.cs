@@ -36,10 +36,20 @@ namespace PMSClient.ViewModel
             Refresh = new RelayCommand(ActionRefresh);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
-            Doc = new RelayCommand<DcPlanWithMisson>(ActionDoc);
+            Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
+            SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
         }
 
-        private void ActionDoc(DcPlanWithMisson model)
+        private void ActionSearchMisson(DcPlanWithMisson model)
+        {
+            if (model!=null)
+            {
+                PMSHelper.ViewModels.Misson.SetSearchCondition("", model.Misson.PMINumber);
+                NavigationService.GoTo(PMSViews.Misson);
+            }
+        }
+
+        private void ActionLabel(DcPlanWithMisson model)
         {
             if (model != null)
             {
@@ -103,7 +113,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMisson { get; set; }
         public RelayCommand Refresh { get; set; }
         public RelayCommand GoToSearchPlan { get; set; }
-        public RelayCommand<DcPlanWithMisson> Doc { get; set; }
+        public RelayCommand<DcPlanWithMisson> Label { get; set; }
+        public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
         #endregion
 
         #region Properties

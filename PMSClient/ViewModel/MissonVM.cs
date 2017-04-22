@@ -21,6 +21,12 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        public void SetSearchCondition(string composition, string pminumber)
+        {
+            SearchCompositionStandard = composition;
+            SearchPMINumber = pminumber;
+        }
+
         public void RefreshData()
         {
             ActionSelectionChanged(CurrentSelectItem);
