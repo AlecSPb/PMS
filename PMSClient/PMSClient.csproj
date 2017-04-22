@@ -348,7 +348,6 @@
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewForDesktop\DesktopViewLocator.cs" />
-    <Compile Include="ViewForTablet\TabletViewLocator.cs" />
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
     <Compile Include="ViewModel\DeliveryItemListVM.cs" />

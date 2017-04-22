@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using PMSClient.UserService;
 using PMSClient.Helper;
 using PMSClient.ViewForDesktop;
-using PMSClient.ViewForTablet;
 using PMSClient.ViewModel;
 using PMSClient.Tool;
 
@@ -21,7 +20,6 @@ namespace PMSClient
             _currentLog = new LocalLog(_currentSession);
 
             _desktopViews = new DesktopViewLocator();
-            _tabletViews = new TabletViewLocator();
             _viewModels = (App.Current as App).FindResource("Locator") as ViewModelLocator;
 
             _toolViews = new ToolViewLocator();
@@ -46,7 +44,6 @@ namespace PMSClient
 
         #region 视图和视图模型
         private static DesktopViewLocator _desktopViews;
-        private static TabletViewLocator _tabletViews;
 
         private static ViewModelLocator _viewModels;
 
@@ -58,10 +55,7 @@ namespace PMSClient
         {
             get { return _desktopViews; }
         }
-        public static TabletViewLocator TabletViews
-        {
-            get { return _tabletViews; }
-        }
+
 
         public static ViewModelLocator ViewModels
         {
