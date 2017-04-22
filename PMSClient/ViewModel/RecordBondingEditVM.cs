@@ -229,7 +229,7 @@ namespace PMSClient.ViewModel
                     }
                 }
                 PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");
-                NavigationService.ShowStatusMessage("保存成功，请手动刷新列表");
+                NavigationService.ShowStatusMessage("保存成功，请刷新列表");
                 GoBack();
             }
             catch (Exception ex)

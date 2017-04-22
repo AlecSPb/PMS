@@ -20,6 +20,8 @@ namespace PMSClient
             _currentSession = new LogInformation();
             _currentLog = new LocalLog(_currentSession);
 
+            _mainWindow = (App.Current as App).MainWindow as MainDesktop;
+
             _desktopViews = new DesktopViewLocator();
             _viewModels = (App.Current as App).FindResource("Locator") as ViewModelLocator;
 
@@ -38,9 +40,7 @@ namespace PMSClient
         #region 当前用户
         private static LogInformation _currentSession;
         private static ILog _currentLog;
-        #endregion
-        #region 日志组件
-
+        public static MainDesktop _mainWindow;
         #endregion
 
         #region 视图和视图模型
