@@ -164,6 +164,7 @@
     <Compile Include="ReportsHelper\ReportMaterialOrder.cs" />
     <Compile Include="ReportsHelper\ReportRecordTest.cs" />
     <Compile Include="ReportsHelper\ReportVHP.cs" />
+    <Compile Include="Helpers\Converter\VisibilityConverter.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

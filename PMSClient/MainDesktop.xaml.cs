@@ -321,16 +321,11 @@ namespace PMSClient
         }
 
         #region 主窗口操作和事件处理
-        private void RefreshLogInformation()
+        private void NavigateTo(UserControl view)
         {
-            var _logInformation = PMSHelper.CurrentSession;
-            if (_logInformation.CurrentUser != null)
+            if (view != null)
             {
-                txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
-            }
-            else
-            {
-                txtCurrentUserName.Text = "未登录";
+                mainArea.Content = view;
             }
         }
 
@@ -345,16 +340,6 @@ namespace PMSClient
                 txtStateMessage.Text = "状态栏";
             }
         }
-
-
-
-        private void NavigateTo(UserControl view)
-        {
-            if (view != null)
-            {
-                mainArea.Content = view;
-            }
-        }
         /// <summary>
         /// 必须放在Closed事件中，否则退出过程中取消就出问题了
         /// </summary>
@@ -365,32 +350,10 @@ namespace PMSClient
             Messenger.Default.Unregister(this);
             base.OnClosed(e);
         }
-
-        private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
-
-
-        #region 窗口事件处理
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-        private void MenuLogOut_Click(object sender, RoutedEventArgs e)
-        {
-            if (PMSHelper.CurrentSession.CurrentUser != null)
-            {
-                PMSHelper.CurrentSession.LogOut();
-                _views.LogIn.ClearLog();
-                SetNotifyIcon("注销成功", "您的账户已经注销成功", 3000);
-                NavigationService.GoTo(PMSViews.LogIn);
-            }
-        }
-        #endregion
-
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             var result = PMSDialogService.ShowYesNo("请问", "确定要退出吗？");
@@ -402,6 +365,30 @@ namespace PMSClient
             }
         }
         #endregion
+        #region 公共方法
 
+        public void LogOut()
+        {
+            if (PMSHelper.CurrentSession.CurrentUser != null)
+            {
+                PMSHelper.CurrentSession.LogOut();
+                _views.LogIn.ClearLog();
+                SetNotifyIcon("注销成功", "您的账户已经注销成功", 3000);
+                NavigationService.GoTo(PMSViews.LogIn);
+            }
+        }
+        public void RefreshLogInformation()
+        {
+            var _logInformation = PMSHelper.CurrentSession;
+            if (_logInformation.CurrentUser != null)
+            {
+                txtCurrentUserName.Text = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
+            }
+            else
+            {
+                txtCurrentUserName.Text = "未登录";
+            }
+        }
+        #endregion
     }
 }

@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.ViewForDesktop"
+             xmlns:converter="clr-namespace:PMSClient.Converter"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000"
@@ -21,8 +22,13 @@
             <TextBlock Text="{StaticResource PageNaivgation}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="登录" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="注销" Style="{StaticResource StyleButtonCommon}"/>
+            <StackPanel.Resources>
+                <converter:VisibilityConverter x:Key="visibleConverter"/>
+            </StackPanel.Resources>
+            <Button Content="登录" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogIn}"
+                    Visibility="{Binding ShowLogInButton,Converter={StaticResource visibleConverter}}"/>
+            <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}"
+                    Visibility="{Binding ShowLogOutButton,Converter={StaticResource visibleConverter}}"/>
             <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">

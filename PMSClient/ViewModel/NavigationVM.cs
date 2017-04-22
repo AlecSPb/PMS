@@ -22,7 +22,7 @@ namespace PMSClient.ViewModel
 
             currentUserInformation = "暂无登录信息";
 
-            SetLogButtonVisbility(true);
+            SetLogButtonVisbility(false);
         }
         #region 登录信息
         public void SetLogButtonVisbility(bool showlogin)
@@ -55,12 +55,12 @@ namespace PMSClient.ViewModel
         }
         private void ActionLogOut()
         {
-            throw new NotImplementedException();
+
         }
 
         private void ActionLogIn()
         {
-            throw new NotImplementedException();
+          
         }
         #endregion
         #region 导航信息

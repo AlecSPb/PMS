@@ -195,6 +195,7 @@
         <Setter Property="Foreground" Value="White"/>
     </Style>
     <Style x:Key="StyleTextBlockPageTitle" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="Foreground" Value="{StaticResource BGNavigationBar}"/>
         <Setter Property="FontSize" Value="{StaticResource FontMD}"/>
     </Style>
     <Style x:Key="StyleTextBlockNavigationBar" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
