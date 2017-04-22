@@ -15,9 +15,10 @@ namespace PMSCommon
                 var data = new List<string>();
                 #region 数据
                 data.Add("无需样品");
-                data.Add("需要65gX1,25gx2");
-                data.Add("需要65gX1,25gx3");
-                data.Add("需要1cm大小x2");
+                data.Add("65gx1+15gx2");
+                data.Add("65gX1,15gx3");
+                data.Add("15gx2");
+                data.Add("1cm大小x2");
                 #endregion
                 return data;
             }

@@ -93,12 +93,12 @@ namespace PMSClient.ViewModel
         private void ActionAll()
         {
             SearchProductID = SearchCompositionStd = "";
-            ActionPaging();
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSearch()
         {
-            ActionPaging();
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionEdit(DcProduct model)

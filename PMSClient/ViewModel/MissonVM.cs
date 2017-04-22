@@ -23,8 +23,9 @@ namespace PMSClient.ViewModel
 
         public void SetSearchCondition(string composition, string pminumber)
         {
-            SearchCompositionStandard = composition;
-            SearchPMINumber = pminumber;
+            searchCompositionStandard = composition;
+            searchPMINumber = pminumber;
+            SetPageParametersWhenConditionChange(); 
         }
 
         public void RefreshData()
@@ -35,7 +36,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             missonTarget = 0;
-            searchCompostionStandard = searchPMINumber = "";
+            SearchCompositionStandard = SearchPMINumber = "";
             Missons = new ObservableCollection<DcOrder>();
             PlanVHPs = new ObservableCollection<DcPlanVHP>();
         }
@@ -43,9 +44,6 @@ namespace PMSClient.ViewModel
         {
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
-
-
-
 
             Search = new RelayCommand(ActionSearch);
             PageChanged = new RelayCommand(ActionPaging);
@@ -83,8 +81,7 @@ namespace PMSClient.ViewModel
 
         private void ActionRefresh()
         {
-            SearchPMINumber = "";
-            SearchCompositionStandard = "";
+            SearchPMINumber = SearchCompositionStandard = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -193,12 +190,12 @@ namespace PMSClient.ViewModel
         }
 
 
-        private string searchCompostionStandard;
+        private string searchCompositionStandard;
 
         public string SearchCompositionStandard
         {
-            get { return searchCompostionStandard; }
-            set { searchCompostionStandard = value; RaisePropertyChanged((SearchCompositionStandard)); }
+            get { return searchCompositionStandard; }
+            set { searchCompositionStandard = value; RaisePropertyChanged((SearchCompositionStandard)); }
         }
         private string searchPMINumber;
 

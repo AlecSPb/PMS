@@ -52,7 +52,7 @@
 
     <sys:String x:Key="PagePlanStatistic">生产统计</sys:String>
 
-    <sys:String x:Key="PageCustomer">客户库</sys:String>
+    <sys:String x:Key="PageCustomer">客户信息</sys:String>
     <sys:String x:Key="PageCompound">化合物库</sys:String>
     <sys:String x:Key="PageElement">元素库</sys:String>
     <sys:String x:Key="PageVHPDevice">热压设备库</sys:String>
@@ -112,8 +112,8 @@
     <sys:String x:Key="PageProduct">成品库</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
 
-    <sys:String x:Key="PagePlate">背板库</sys:String>
-    <sys:String x:Key="PagePlatetEdit">背板库编辑</sys:String>
+    <sys:String x:Key="PagePlate">背板库存</sys:String>
+    <sys:String x:Key="PagePlatetEdit">背板库存编辑</sys:String>
     
     <sys:String x:Key="PageDelivery">发货记录</sys:String>
     <sys:String x:Key="PageDeliveryEdit">发货记录编辑</sys:String>

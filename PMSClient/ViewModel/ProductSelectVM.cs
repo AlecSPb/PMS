@@ -43,7 +43,7 @@ namespace PMSClient.ViewModel
         private void ActionAll()
         {
             SearchProductID = SearchCompositionStd = "";
-            ActionPaging();
+            SetPageParametersWhenConditionChange();
         }
         private PMSViews requestView;
         public void SetRequestView(PMSViews view)
@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionSearch()
         {
-            ActionPaging();
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionEdit(DcProduct model)

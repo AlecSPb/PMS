@@ -57,13 +57,13 @@ namespace PMSClient.ViewModel
             order.CompositionAbbr = "成分缩写";
             order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             order.CreateTime = DateTime.Now;
-            order.PMINumber = DateTime.Now.ToString("yyMMdd");
+            order.PMINumber = $"{DateTime.Now.ToString("yyMMdd")}-A";
             order.ProductType = PMSCommon.OrderProductType.Target.ToString();
             order.Purity = "99.99";
             order.Quantity = 1;
             order.QuantityUnit = PMSCommon.OrderUnit.片.ToString();
             order.Dimension = "230mm OD x  4mm";
-            order.DimensionDetails = "None";
+            order.DimensionDetails = "无";
             order.SampleNeed = PMSCommon.CustomData.OrderSampleNeeds[0];
             order.MinimumAcceptDefect = "通常";
             order.DeadLine = DateTime.Now.AddDays(30);
