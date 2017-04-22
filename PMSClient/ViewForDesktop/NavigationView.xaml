@@ -21,16 +21,27 @@
         <StackPanel Grid.Row="0" Style="{StaticResource StyleStackPanelCommon}">
             <TextBlock Text="{StaticResource PageNaivgation}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <StackPanel.Resources>
-                <converter:VisibilityConverter x:Key="visibleConverter"/>
-            </StackPanel.Resources>
-            <Button Content="登录" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogIn}"
+        <Grid Grid.Row="1" Background="{StaticResource BGNavigationBar}" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition  Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Style="{StaticResource StyleStackPanelNavigationBar}">
+                <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,7,0,6.6"/>
+                <TextBlock  Style="{StaticResource StyleTextBlockNavigationBar}"
+                       Text="欢迎使用PMS生产管理系统，请从下面开始"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
+                <StackPanel.Resources>
+                    <converter:VisibilityConverter x:Key="visibleConverter"/>
+                </StackPanel.Resources>
+                <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <Button Content="登录" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogIn}" 
                     Visibility="{Binding ShowLogInButton,Converter={StaticResource visibleConverter}}"/>
-            <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}"
+                <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}"
                     Visibility="{Binding ShowLogOutButton,Converter={StaticResource visibleConverter}}"/>
-            <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-        </StackPanel>
+            </StackPanel>
+        </Grid>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
