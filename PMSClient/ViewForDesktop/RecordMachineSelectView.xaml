@@ -22,7 +22,7 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding GiveUp}" />
-            <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding  SearchVHPPlanLot,UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource StyleTextBoxSearch }" Width="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>

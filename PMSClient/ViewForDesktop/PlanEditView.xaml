@@ -13,7 +13,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -25,12 +24,10 @@
                     Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
-        </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipPlanVHPEdit}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="3" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
             <Grid  DataContext="{Binding CurrentPlan}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -209,8 +206,8 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource StyleTextBoxLeft}"/>
                 <TextBlock Grid.Row="19" Grid.Column="2" Text="单位min，默认120" Style="{StaticResource StyleTextBlockTip}"/>
-                
-                
+
+
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding MillingRequirement}" Style="{StaticResource StyleTextBoxCommon}"

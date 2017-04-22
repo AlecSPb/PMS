@@ -21,11 +21,11 @@
         <TextBlock Text="{StaticResource PageRecordVHP}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1"  Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
-            <TextBlock Text="{StaticResource SearchDateStart}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource SearchDateStart}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate1,Mode=TwoWay}"/>
-            <TextBlock Text="{StaticResource SearchDateEnd}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource SearchDateEnd}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate2,Mode=TwoWay}"/>
-            <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" Width="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
@@ -34,7 +34,7 @@
                     Command="{Binding QuickEdit}" Width="120"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
