@@ -704,14 +704,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\BasicService\BasicDataService1.wsdl" />
-    <None Include="Service References\BasicService\BasicDataService3.xsd">
+    <None Include="Service References\BasicService\BasicDataService.wsdl" />
+    <None Include="Service References\BasicService\BasicDataService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\BasicDataService31.xsd">
+    <None Include="Service References\BasicService\BasicDataService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\BasicDataService32.xsd">
+    <None Include="Service References\BasicService\BasicDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
@@ -744,11 +744,11 @@
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService1.wsdl" />
-    <None Include="Service References\HeartBeatService\HeartBeatService2.xsd">
+    <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService21.xsd">
+    <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcDelivery.datasource">
@@ -805,14 +805,14 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSService1.wsdl" />
-    <None Include="Service References\MainService\PMSService3.xsd">
+    <None Include="Service References\MainService\PMSService.wsdl" />
+    <None Include="Service References\MainService\PMSService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService31.xsd">
+    <None Include="Service References\MainService\PMSService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService32.xsd">
+    <None Include="Service References\MainService\PMSService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserService\PMSClient.UserService.DcUser.datasource">
@@ -987,14 +987,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\UserService\UserAccessService1.wsdl" />
-    <None Include="Service References\UserService\UserAccessService3.xsd">
+    <None Include="Service References\UserService\UserAccessService.wsdl" />
+    <None Include="Service References\UserService\UserAccessService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService\UserAccessService31.xsd">
+    <None Include="Service References\UserService\UserAccessService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService\UserAccessService32.xsd">
+    <None Include="Service References\UserService\UserAccessService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="updates.txt">
@@ -1040,16 +1040,16 @@
     <Resource Include="Resource\Bondings\50.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\BasicService\BasicDataService1.disco" />
+    <None Include="Service References\BasicService\BasicDataService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\HeartBeatService\HeartBeatService1.disco" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MainService\PMSService1.disco" />
+    <None Include="Service References\MainService\PMSService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\UserService\UserAccessService1.disco" />
+    <None Include="Service References\UserService\UserAccessService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

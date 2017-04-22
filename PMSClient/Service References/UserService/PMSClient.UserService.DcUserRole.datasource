@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="DcUserRole" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>PMSClient.UserService.DcUserRole, PMSClient, Version=4.0.4.6, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>PMSClient.UserService.DcUserRole, Service References.UserService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>
