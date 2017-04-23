@@ -41,14 +41,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    int result = 0;
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
-                    var mapper = config.CreateMapper();
-                    var plan = mapper.Map<PMSPlanVHP>(model);
-                    dc.VHPPlans.Add(plan);
-                    result = dc.SaveChanges();
                     SaveHistory(model, uid);
-                    return result;
+                    return AddVHPPlan(model);
                 }
             }
             catch (Exception ex)
@@ -133,14 +127,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    int result = 0;
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHP>());
-                    var mapper = config.CreateMapper();
-                    var plan = mapper.Map<PMSPlanVHP>(model);
-                    dc.Entry(plan).State = System.Data.Entity.EntityState.Modified;
-                    result = dc.SaveChanges();
-
-                    return result;
+                    SaveHistory(model, uid);
+                    return UpdateVHPPlan(model);
                 }
             }
             catch (Exception ex)

@@ -216,5 +216,45 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcMaterialInventoryIn> GetMaterialInventoryInsBySearch(int skip, int take, string supplier, string composition, string batchnumber, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int AddMaterialInventoryInByUID(DcMaterialInventoryIn model, string uid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateMaterialInventoryInByUID(DcMaterialInventoryIn model, string uid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<DcMaterialInventoryOut> GetMaterialInventoryOutsBySearch(int skip, int take, string receiver, string composition, string batchnumber, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int AddMaterialInventoryOutByUID(DcMaterialInventoryOut model, string uid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateMaterialInventoryOutByUID(DcMaterialInventoryOut model, string uid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
