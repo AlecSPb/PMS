@@ -53,6 +53,37 @@ namespace PMSCommon
                 return data;
             }
         }
+        public static List<string> VHPQuickMessage
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("粗抽开扩散凸高");
+                data.Add("关门");
+                data.Add("凸高");
+                data.Add("粗抽");
+                data.Add("开启旋片泵");
+                data.Add("开启扩散泵加热");
+                data.Add("开启罗茨泵");
+                data.Add("转为扩散泵");
+                data.Add("开始加温");
+                data.Add("升温到");
+                data.Add("开始加压");
+                data.Add("结束加压");
+                data.Add("结束加压");
+                data.Add("关闭扩散泵");
+                data.Add("关闭罗茨泵");
+                data.Add("关闭旋片泵");
+                data.Add("提压头");
+                data.Add("充气");
+                data.Add("开门");
+                data.Add("取出模具");
+                data.Add("结束");
+                #endregion
+                return data;
+            }
+        }
         public static List<double> MoldDiameter
         {
             get

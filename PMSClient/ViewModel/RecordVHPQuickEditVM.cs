@@ -34,7 +34,8 @@ namespace PMSClient.ViewModel
             CurrentRecordVHP = new DcRecordVHP();
 
             QuickVHPMesseges = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.QuickVHPMessege>(QuickVHPMesseges);
+            //PMSBasicDataService.SetListDS<PMSCommon.QuickVHPMessege>(QuickVHPMesseges);
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.VHPQuickMessage, QuickVHPMesseges);
         }
 
         private void InitializeCommmands()
