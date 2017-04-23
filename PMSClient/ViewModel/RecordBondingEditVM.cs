@@ -168,8 +168,8 @@ namespace PMSClient.ViewModel
             switch (param)
             {
                 case "00":
-                    CurrentRecordBonding.Creator = currentUser;
-                    CurrentRecordBonding.CreateTime = currentTime;
+                    //CurrentRecordBonding.Creator = currentUser;
+                    //CurrentRecordBonding.CreateTime = currentTime;
                     break;
                 case "10":
                     CurrentRecordBonding.TargetPerson = currentUser;

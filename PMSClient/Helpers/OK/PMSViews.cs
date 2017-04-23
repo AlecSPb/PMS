@@ -18,7 +18,6 @@ namespace PMSClient
         OrderEdit,
         OrderCheck,
         OrderCheckEdit,
-        OrderStatistic,
         MaterialNeed,
         MaterialNeedEdit,
         MaterialNeedSelect,
@@ -37,7 +36,6 @@ namespace PMSClient
         PlanSelect, 
         PlanEdit,
         PlanSearch,
-        PlanStatistic,
         RecordMilling,
         RecordMillingEdit,
         RecordVHP,
@@ -62,6 +60,9 @@ namespace PMSClient
         Product,
         ProductEdit,
         ProductSelect,
+        StatisticOrder,
+        StatisticPlan,
+        StatisticDelivery,
         Maintanence,
         MaintanenceEdit,
         MaterialNeedCalcuationTool,
@@ -75,6 +76,7 @@ namespace PMSClient
         AdminUser,
         AdminAccesses,
         AdminAccess,
-        AdminRole
+        AdminRole,
+        Plate
     }
 }

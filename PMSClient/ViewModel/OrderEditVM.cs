@@ -17,18 +17,31 @@ namespace PMSClient.ViewModel
     {
         public OrderEditVM()
         {
-            InitializeCommands();
             InitializeProperties();
+            InitializeCommands();
         }
 
         private void InitializeCommands()
         {
             Save = new RelayCommand(ActionSave, CanSave);
             GiveUp = new RelayCommand(GoBack);
+            CheckPMINumber = new RelayCommand(ActionCheckPMINumber);
+        }
+
+        private void ActionCheckPMINumber()
+        {
+            if (CurrentOrder!=null)
+            {
+                using (var service=new OrderServiceClient())
+                {
+                    CanUseThisPMINumber = service.CheckPMINumberExisit(CurrentOrder.PMINumber) ? "被占用" : "可以用";
+                }
+            }
         }
 
         public void InitializeProperties()
         {
+            canUseThisPMINumber = "";
 
             ProductTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.OrderProductType>(ProductTypes);
@@ -148,6 +161,17 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentOrder));
             }
         }
+        private string canUseThisPMINumber;
+
+        public string CanUseThisPMINumber
+        {
+            get { return canUseThisPMINumber; }
+            set { canUseThisPMINumber = value; RaisePropertyChanged(nameof(CanUseThisPMINumber)); }
+        }
+
+        public RelayCommand CheckPMINumber { get; set; }
+
+
         public List<string> CustomerNames { get; set; }
         public List<string> ProductTypes { get; set; }
         public List<string> OrderUnits { get; set; }

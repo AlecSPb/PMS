@@ -381,17 +381,19 @@ namespace PMSClient
         public void RefreshLogInformation()
         {
             var _logInformation = PMSHelper.CurrentSession;
-            string logInformation = "";
+            string logNavigationBar = "";
+            string logStatusBar = "";
             if (_logInformation.CurrentUser != null)
             {
-                logInformation = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
+                logNavigationBar = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
+                logStatusBar = $"[{ _logInformation.CurrentUser.RealName}]";
             }
             else
             {
-                logInformation = "未登录";
+                logNavigationBar = logStatusBar = "未登录";
             }
-            txtCurrentUserName.Text = logInformation;
-            PMSHelper.ViewModels.Navigation.SetLogInformation(logInformation);
+            txtCurrentUserName.Text = logStatusBar;
+            PMSHelper.ViewModels.Navigation.SetLogInformation(logNavigationBar);
         }
         #endregion
     }

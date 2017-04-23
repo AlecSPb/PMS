@@ -50,8 +50,6 @@
     <sys:String x:Key="PageOther">其他</sys:String>
     <sys:String x:Key="PageTool">工具</sys:String>
 
-    <sys:String x:Key="PagePlanStatistic">生产统计</sys:String>
-
     <sys:String x:Key="PageCustomer">客户信息</sys:String>
     <sys:String x:Key="PageCompound">化合物库</sys:String>
     <sys:String x:Key="PageElement">元素库</sys:String>
@@ -73,7 +71,6 @@
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
-    <sys:String x:Key="PageOrderStatistic">订单统计</sys:String>
 
     <sys:String x:Key="PageMisson">生产任务</sys:String>
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
@@ -121,8 +118,14 @@
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemList">发货流水[所有已发货产品]</sys:String>
 
+    <sys:String x:Key="PageStatisticOrder">订单统计</sys:String>
+    <sys:String x:Key="PageStatisticDelivery">发货统计</sys:String>
+    <sys:String x:Key="PageStatisticPlan">生产统计</sys:String>
+
+    
+    
     <sys:String x:Key="PageProductSelect">请选择一个成品项目</sys:String>
-    <sys:String x:Key="PageRecordDeMoldSelect">请选择一个绑定记录</sys:String>
+    <sys:String x:Key="PageRecordDeMoldSelect">请选择一个取模记录</sys:String>
     <sys:String x:Key="PageRecordBondingSelect">请选择一个绑定记录</sys:String>
     <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>

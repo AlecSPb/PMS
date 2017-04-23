@@ -7,7 +7,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
-             DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMold}">
+             DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMoldSelect}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>

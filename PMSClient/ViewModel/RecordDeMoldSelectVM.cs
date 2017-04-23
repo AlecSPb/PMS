@@ -11,7 +11,7 @@ using PMSCommon;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordDeMoldSelectVM : BaseViewModelPage
+    public class RecordDeMoldSelectVM : BaseViewModelSelect
     {
         public RecordDeMoldSelectVM()
         {
@@ -19,29 +19,40 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
 
             RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
-            Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcRecordDeMold>(ActionEdit, CanEdit);
-            SetPageParametersWhenConditionChange();
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
-
-            Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate, CanDuplicate);
+            SetPageParametersWhenConditionChange();
+            GiveUp = new RelayCommand(GoBack);
+            Select = new RelayCommand<DcRecordDeMold>(ActionSelect);
         }
 
-        private bool CanDuplicate(DcRecordDeMold arg)
+        private void ActionSelect(DcRecordDeMold model)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            if (model!=null)
+            {
+                switch (requestView)
+                {
+                    case PMSViews.RecordMachineEdit:
+                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(model);
+                        break;
+                    default:
+                        break;
+                }
+                GoBack();
+            }
         }
 
-        private bool CanEdit(DcRecordDeMold arg)
+        private PMSViews requestView;
+        public void SetRequestView(PMSViews view)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            requestView = view;
         }
 
-        private bool CanAdd()
+        private void GoBack()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            NavigationService.GoTo(requestView);
         }
+
 
         public void RefreshData()
         {
@@ -115,8 +126,6 @@ namespace PMSClient.ViewModel
         }
         public ObservableCollection<DcRecordDeMold> RecordDeMolds { get; set; }
 
-        public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordDeMold> Edit { get; set; }
-        public RelayCommand<DcRecordDeMold> Duplicate { get; set; }
+        public RelayCommand<DcRecordDeMold> Select { get; set; }
     }
 }

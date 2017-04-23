@@ -85,7 +85,16 @@ namespace PMSClient.ViewModel
             }
         }
 
-
+        public void SetBySelect(DcRecordDeMold  model)
+        {
+            if (model != null)
+            {
+                CurrentRecordMachine.Composition = model.Composition;
+                CurrentRecordMachine.Dimension = model.BlankDimension;
+                CurrentRecordMachine.VHPPlanLot = model.VHPPlanLot;
+                //RaisePropertyChanged(nameof(CurrentRecordMachine));
+            }
+        }
 
         private void ActionSave()
         {

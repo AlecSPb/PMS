@@ -42,9 +42,6 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonDetail}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Detail,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
@@ -52,19 +49,19 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetProductID}"/>
-                <DataGridTextColumn Header="{StaticResource BDTargetComposition}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                <DataGridTextColumn Header="{StaticResource BDTargetComposition}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetComposition}"/>
-                <DataGridTextColumn Header="{StaticResource BDTargetAbbr}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                <DataGridTextColumn Header="{StaticResource BDTargetAbbr}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetAbbr}"/>
-                <DataGridTextColumn Header="{StaticResource BDTargetPO}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                <DataGridTextColumn Header="{StaticResource BDTargetPO}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetPO}"/>
-                <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetDimension}"/>
-                <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleTextBlockCommon}" 
+                <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
 
             </DataGrid.Columns>
