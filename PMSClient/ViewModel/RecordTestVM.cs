@@ -29,6 +29,9 @@ namespace PMSClient.ViewModel
         {
             SearchCompositionStd = composition;
             SearchProductID = productid;
+            //必须重新激发
+            RaisePropertyChanged(nameof(SearchCompositionStd));
+            RaisePropertyChanged(nameof(SearchProductID));
             SetPageParametersWhenConditionChange();
         }
         public void RefreshData()

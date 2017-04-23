@@ -25,6 +25,9 @@ namespace PMSClient.ViewModel
         {
             SearchCompositionStandard = composition;
             SearchPMINumber = pminumber;
+            //需要重新激发一下
+            RaisePropertyChanged(nameof(SearchCompositionStandard));
+            RaisePropertyChanged(nameof(SearchPMINumber));
             SetPageParametersWhenConditionChange(); 
         }
 

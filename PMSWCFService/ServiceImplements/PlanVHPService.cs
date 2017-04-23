@@ -144,10 +144,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.CreateMap<DcPlanVHP, PMSPlanVHPHistory>();
-                    });
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlanVHP, PMSPlanVHPHistory>());
                     var mapper = config.CreateMapper();
                     var history = mapper.Map<PMSPlanVHPHistory>(model);
                     history.OperateTime = DateTime.Now;
