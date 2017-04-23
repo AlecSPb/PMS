@@ -38,7 +38,16 @@ namespace PMSWCFService
 
         public int AddDeliveryByUID(DcDelivery model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SaveHistory(model, uid);
+                return AddDelivery(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int AddDeliveryItem(DcDeliveryItem model)
@@ -65,7 +74,16 @@ namespace PMSWCFService
 
         public int AddDeliveryItemByUID(DcDeliveryItem model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SaveHistory(model, uid);
+                return AddDeliveryItem(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int DeleteDelivery(Guid id)
@@ -366,7 +384,16 @@ namespace PMSWCFService
 
         public int UpdateDeliveryByUID(DcDelivery model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateDelivery(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateDeliveryItem(DcDeliveryItem model)
@@ -393,7 +420,64 @@ namespace PMSWCFService
 
         public int UpdateDeliveryItemByUID(DcDeliveryItem model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateDeliveryItem(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
+
+        private void SaveHistory(DcDelivery model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcDelivery, DeliveryHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<DeliveryHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.DeliveryHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        private void SaveHistory(DcDeliveryItem model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcDeliveryItem,DeliveryItemHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<DeliveryItemHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.DeliveryItemHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
+
     }
 }
