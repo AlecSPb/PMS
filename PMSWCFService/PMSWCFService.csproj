@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\lenovo_publish.pubxml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Properties\PublishProfiles\serverftp.pubxml" />
     <None Include="Properties\PublishProfiles\thinkpad.pubxml" />

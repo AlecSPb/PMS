@@ -106,6 +106,14 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanMillingRequirement}" Binding="{Binding Plan.MillingRequirement}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanFillingRequirement}" Binding="{Binding Plan.FillingRequirement}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanMachineRequirement}" Binding="{Binding Plan.MachineRequirement}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding Plan.SpecialRequirement}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreator}" Binding="{Binding Plan.Creator}"
@@ -237,14 +245,30 @@
                     <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource PlanProcessCode}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="21" Grid.Column="1" Text="{Binding Plan.ProcessCode}" Style="{StaticResource StyleTextBoxReadOnly}" />
-
-                    <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
+                    
+                    <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                    <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanCreator}"
+                    <TextBox Grid.Row="22" Grid.Column="1" Text="{Binding Plan.MillingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
+                    <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding Plan.Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="23" Grid.Column="1" Text="{Binding Plan.FillingRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
+                    <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding Plan.MachineRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
+                    <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="25" Grid.Column="1" Text="{Binding Plan.SpecialRequirement}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
+                    <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                    <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding Plan.Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
                 </Grid>
             </ScrollViewer>
         </Grid>

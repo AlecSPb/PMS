@@ -189,7 +189,7 @@ namespace PMSWCFService
                 //更改ID
                 history.ID = Guid.NewGuid();
                 history.OperateTime = DateTime.Now;
-                history.Operator =;
+                history.Operator ="";
 
                 using (var dc = new PMSDbContext())
                 {
