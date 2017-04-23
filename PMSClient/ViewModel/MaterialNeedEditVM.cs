@@ -59,7 +59,7 @@ namespace PMSClient.ViewModel
         public void SetByCalculate(double weight)
         {
             //克到千克的转换
-            CurrentMaterialNeed.Weight = weight/1000;
+            CurrentMaterialNeed.Weight = weight / 1000;
             //RaisePropertyChanged(nameof(CurrentMaterialNeed));
         }
 
@@ -96,13 +96,14 @@ namespace PMSClient.ViewModel
             try
             {
                 var service = new MaterialNeedServiceClient();
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 if (IsNew)
                 {
-                    service.AddMaterialNeed(CurrentMaterialNeed);
+                    service.AddMaterialNeedByUID(CurrentMaterialNeed, uid);
                 }
                 else
                 {
-                    service.UpdateMaterialNeed(CurrentMaterialNeed);
+                    service.UpdateMaterialNeedByUID(CurrentMaterialNeed, uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialNeed.RefreshData();

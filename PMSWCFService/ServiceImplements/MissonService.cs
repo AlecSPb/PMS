@@ -25,7 +25,7 @@ namespace PMSWCFService
                     });
 
                     var result = from o in dc.Orders
-                                 where o.PolicyType.Contains("VHP")
+                                 where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -51,7 +51,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
-                                where o.PolicyType.Contains("VHP")
+                                where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -79,7 +79,7 @@ namespace PMSWCFService
                     });
 
                     var result = from o in dc.Orders
-                                 where o.PolicyType.Contains("VHP")
+                                 where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
                                  && o.CompositionStandard.Contains(compostion)
                                  && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
@@ -107,7 +107,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
-                                where o.PolicyType.Contains("VHP")
+                                where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
                                  && o.CompositionStandard.Contains(compostion)
                                  && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()

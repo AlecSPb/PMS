@@ -92,14 +92,15 @@ namespace PMSClient.ViewModel
 
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new MaterialInventoryServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialInventoryOut(CurrentMaterialInventoryOut);
+                    service.AddMaterialInventoryOutByUID(CurrentMaterialInventoryOut,uid);
                 }
                 else
                 {
-                    service.UpdateMaterialInventoryOut(CurrentMaterialInventoryOut);
+                    service.UpdateMaterialInventoryOutByUID(CurrentMaterialInventoryOut,uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialInventoryOut.RefreshData();
