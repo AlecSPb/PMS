@@ -105,15 +105,16 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
+                    string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                     using (var service = new RecordMillingServiceClient())
                     {
                         if (IsNew)
                         {
-                            service.AddRecordMilling(CurrentRecordMilling);
+                            service.AddRecordMillingByUID(CurrentRecordMilling,uid);
                         }
                         else
                         {
-                            service.UpdateRecordMilling(CurrentRecordMilling);
+                            service.UpdateRecordMillingByUID(CurrentRecordMilling,uid);
                         }
                         PMSHelper.ViewModels.RecordMilling.RefreshData();
                         GoBack();

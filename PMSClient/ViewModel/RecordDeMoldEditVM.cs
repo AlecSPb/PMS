@@ -117,15 +117,16 @@ namespace PMSClient.ViewModel
         {
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 using (var service = new RecordDeMoldServiceClient())
                 {
                     if (IsNew)
                     {
-                        service.AddRecordDeMold(CurrentRecordDeMold);
+                        service.AddRecordDeMoldByUID(CurrentRecordDeMold, uid);
                     }
                     else
                     {
-                        service.UpdateRecordDeMold(CurrentRecordDeMold);
+                        service.UpdateRecordDeMoldByUID(CurrentRecordDeMold, uid);
                     }
                 }
                 PMSHelper.ViewModels.RecordDeMold.RefreshData();

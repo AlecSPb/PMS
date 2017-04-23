@@ -122,9 +122,9 @@ namespace PMSClient.ViewModel
                 return;
             }
 
-            string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new OrderServiceClient();
                 if (IsNew)
                 {

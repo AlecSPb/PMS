@@ -100,15 +100,16 @@ namespace PMSClient.ViewModel
         {
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 using (var service = new RecordMachineServiceClient())
                 {
                     if (IsNew)
                     {
-                        service.AddRecordMachine(CurrentRecordMachine);
+                        service.AddRecordMachineByUID(CurrentRecordMachine,uid);
                     }
                     else
                     {
-                        service.UpdateRecordMachine(CurrentRecordMachine);
+                        service.UpdateRecordMachineByUID(CurrentRecordMachine, uid);
                     }
                 }
                 PMSHelper.ViewModels.RecordMachine.RefreshData();

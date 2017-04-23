@@ -135,14 +135,15 @@ namespace PMSClient.ViewModel
             }
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new ProductServiceClient();
                 if (IsNew)
                 {
-                    service.AddProduct(CurrentProduct);
+                    service.AddProductByUID(CurrentProduct, uid);
                 }
                 else
                 {
-                    service.UpdateProduct(CurrentProduct);
+                    service.UpdateProductByUID(CurrentProduct, uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.Product.RefreshData();

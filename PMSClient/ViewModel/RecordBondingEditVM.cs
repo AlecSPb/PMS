@@ -217,15 +217,16 @@ namespace PMSClient.ViewModel
 
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 using (var service = new RecordBondingServiceClient())
                 {
                     if (IsNew)
                     {
-                        service.AddRecordBongding(CurrentRecordBonding);
+                        service.AddRecordBongdingByUID(CurrentRecordBonding, uid);
                     }
                     else
                     {
-                        service.UpdateRecordBongding(CurrentRecordBonding);
+                        service.UpdateRecordBongdingByUID(CurrentRecordBonding, uid);
                     }
                 }
                 //PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");
