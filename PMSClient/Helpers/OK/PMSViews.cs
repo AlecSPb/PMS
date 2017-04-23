@@ -77,6 +77,7 @@ namespace PMSClient
         AdminAccesses,
         AdminAccess,
         AdminRole,
-        Plate
+        Plate,
+        OutSource
     }
 }

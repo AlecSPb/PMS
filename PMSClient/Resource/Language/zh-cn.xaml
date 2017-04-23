@@ -42,6 +42,8 @@
     <sys:String x:Key="PageAdmin">管理</sys:String>
     <sys:String x:Key="PageNaivgation">导航</sys:String>
     <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
+    <sys:String x:Key="PageOutSource">外包管理</sys:String>
+    
     
     <sys:String x:Key="PageSales">销售</sys:String>
     <sys:String x:Key="PageMaterial">原料</sys:String>
@@ -49,8 +51,8 @@
     <sys:String x:Key="PageRecord">记录</sys:String>
     <sys:String x:Key="PageOther">其他</sys:String>
     <sys:String x:Key="PageTool">工具</sys:String>
-
-    <sys:String x:Key="PageCustomer">客户信息</sys:String>
+    
+    <sys:String x:Key="PageCustomer">客户管理</sys:String>
     <sys:String x:Key="PageCompound">化合物库</sys:String>
     <sys:String x:Key="PageElement">元素库</sys:String>
     <sys:String x:Key="PageVHPDevice">热压设备库</sys:String>

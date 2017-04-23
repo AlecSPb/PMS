@@ -65,7 +65,9 @@
                         Command="{Binding GoToOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PageCustomer}" Grid.Row="0" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToBDCustomer}"/>
-                <Button Content="{StaticResource PageStatisticOrder}" Grid.Row="0" Grid.Column="3"
+                <Button Content="{StaticResource PageOutSource}" Grid.Row="0" Grid.Column="3" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToOutSource}"/>
+                <Button Content="{StaticResource PageStatisticOrder}" Grid.Row="0" Grid.Column="4"
                         Command="{Binding GoToStatisticOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
 
 
