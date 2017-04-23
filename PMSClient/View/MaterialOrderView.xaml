@@ -24,9 +24,9 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource MOOrderPO}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  StyleTextBoxSearch}" Width="200"/>
+            <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  StyleTextBoxSearch}" Width="150"/>
             <TextBlock Text="{StaticResource MOSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxSearch}" Width="200"/>
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxSearch}" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <!--图例-->
