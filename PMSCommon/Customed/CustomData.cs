@@ -102,6 +102,33 @@ namespace PMSCommon
                 return data;
             }
         }
+        public static List<string> TestDefectsTypes
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无缺陷");
+                data.Add("花纹");
+                data.Add("斑点");
+                data.Add("裂纹");
+                data.Add("崩边");
+                data.Add("缺口");
+                data.Add("污物");
+                data.Add("表面浅坑");
+                data.Add("密度低");
+                data.Add("花纹+斑点");
+                data.Add("崩边+缺口");
+                data.Add("崩边+划痕");
+                data.Add("黑点");
+                data.Add("臭味");
+                data.Add("水渍");
+                #endregion
+                return data;
+            }
+        }
+
+
 
     }
 }

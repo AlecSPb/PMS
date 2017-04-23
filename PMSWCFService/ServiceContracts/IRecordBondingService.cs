@@ -25,6 +25,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateRecordBongding(DcRecordBonding model);
         [OperationContract]
+        int AddRecordBongdingByUID(DcRecordBonding model,string uid);
+        [OperationContract]
+        int UpdateRecordBongdingByUID(DcRecordBonding model,string uid);
+        [OperationContract]
         int DeleteRecordBongding(Guid id);
 
 

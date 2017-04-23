@@ -33,6 +33,11 @@ namespace PMSWCFService
             }
         }
 
+        public int AddRecordBongdingByUID(DcRecordBonding model, string uid)
+        {
+            throw new NotImplementedException();
+        }
+
         public int DeleteRecordBongding(Guid id)
         {
             try
@@ -113,6 +118,11 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public int UpdateRecordBongdingByUID(DcRecordBonding model, string uid)
+        {
+            throw new NotImplementedException();
         }
     }
 }

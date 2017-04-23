@@ -36,6 +36,11 @@ namespace PMSWCFService
 
         }
 
+        public int AddDeliveryByUID(DcDelivery model, string uid)
+        {
+            throw new NotImplementedException();
+        }
+
         public int AddDeliveryItem(DcDeliveryItem model)
         {
             try
@@ -56,6 +61,11 @@ namespace PMSWCFService
                 throw;
             }
 
+        }
+
+        public int AddDeliveryItemByUID(DcDeliveryItem model, string uid)
+        {
+            throw new NotImplementedException();
         }
 
         public int DeleteDelivery(Guid id)
@@ -354,6 +364,11 @@ namespace PMSWCFService
 
         }
 
+        public int UpdateDeliveryByUID(DcDelivery model, string uid)
+        {
+            throw new NotImplementedException();
+        }
+
         public int UpdateDeliveryItem(DcDeliveryItem model)
         {
             try
@@ -374,6 +389,11 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public int UpdateDeliveryItemByUID(DcDeliveryItem model, string uid)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -28,6 +28,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateDelivery(DcDelivery model);
         [OperationContract]
+        int AddDeliveryByUID(DcDelivery model,string uid);
+        [OperationContract]
+        int UpdateDeliveryByUID(DcDelivery model,string uid);
+
+        [OperationContract]
         int DeleteDelivery(Guid id);
 
         [OperationContract]
@@ -44,16 +49,14 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetDeliveryItemExtraCount(string productid, string composition);
 
-
-
-
-
-
-
         [OperationContract]
         int AddDeliveryItem(DcDeliveryItem model);
         [OperationContract]
         int UpdateDeliveryItem(DcDeliveryItem model);
+        [OperationContract]
+        int AddDeliveryItemByUID(DcDeliveryItem model,string uid);
+        [OperationContract]
+        int UpdateDeliveryItemByUID(DcDeliveryItem model,string uid);
         [OperationContract]
         int DeleteDeliveryItem(Guid id);
 

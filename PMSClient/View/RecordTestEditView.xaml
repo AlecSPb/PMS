@@ -174,8 +174,7 @@
                            Text=""/>
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
-                         />
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTState}"
