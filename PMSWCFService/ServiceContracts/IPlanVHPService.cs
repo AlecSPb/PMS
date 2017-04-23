@@ -16,7 +16,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int AddVHPPlan(DcPlanVHP model);
         [OperationContract]
+        int AddVHPPlanByUID(DcPlanVHP model, string uid);
+        [OperationContract]
         int UpdateVHPPlan(DcPlanVHP model);
+        [OperationContract]
+        int UpdateVHPPlanByUID(DcPlanVHP model, string uid);
         [OperationContract]
         int DeleteVHPPlan(Guid id);
     }

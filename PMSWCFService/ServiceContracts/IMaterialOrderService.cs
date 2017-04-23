@@ -28,6 +28,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateMaterialOrder(DcMaterialOrder model);
         [OperationContract]
+        int AddMaterialOrderByUID(DcMaterialOrder model,string uid);
+        [OperationContract]
+        int UpdateMaterialOrderByUID(DcMaterialOrder model,string uid);
+        [OperationContract]
         int DeleteMaterialOrder(Guid id);
 
 
@@ -40,6 +44,10 @@ namespace PMSWCFService.ServiceContracts
         int AddMaterialOrderItem(DcMaterialOrderItem model);
         [OperationContract]
         int UpdateMaterialOrderItem(DcMaterialOrderItem model);
+        [OperationContract]
+        int AddMaterialOrderItemByUID(DcMaterialOrderItem model,string uid);
+        [OperationContract]
+        int UpdateMaterialOrderItemByUID(DcMaterialOrderItem model,string uid);
         [OperationContract]
         int DeleteMaterialOrderItem(Guid id);
         /// <summary>

@@ -19,10 +19,16 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int AddOrder(DcOrder order);
         [OperationContract]
+        int AddOrderByUID(DcOrder order,string uid);
+        [OperationContract]
         int UpdateOrder(DcOrder order);
         [OperationContract]
         int UpdateOrderByUID(DcOrder order,string uid);
         [OperationContract]
         int DeleteOrder(Guid id);
+
+
+        [OperationContract]
+        bool CheckPMINumberExisit(string pminumber);
     }
 }

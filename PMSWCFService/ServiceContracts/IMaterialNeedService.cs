@@ -20,6 +20,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateMaterialNeed(DcMaterialNeed model);
         [OperationContract]
+        int AddMaterialNeedByUID(DcMaterialNeed model,string uid);
+        [OperationContract]
+        int UpdateMaterialNeedByUID(DcMaterialNeed model,string uid);
+        [OperationContract]
         int DeleteMaterialNeed(Guid id);
     }
 }

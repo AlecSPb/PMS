@@ -36,6 +36,20 @@ namespace PMSWCFService
             }
         }
 
+        public int AddMaterialNeedByUID(DcMaterialNeed model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddMaterialNeed(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int AddMaterialOrder(DcMaterialOrder model)
         {
             try
@@ -61,6 +75,21 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int AddMaterialOrderByUID(DcMaterialOrder model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddMaterialOrder(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int AddMaterialOrderItem(DcMaterialOrderItem model)
         {
             try
@@ -76,6 +105,20 @@ namespace PMSWCFService
 
                     return result;
                 }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int AddMaterialOrderItemByUID(DcMaterialOrderItem model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddMaterialOrderItem(model);
             }
             catch (Exception ex)
             {
@@ -413,6 +456,20 @@ namespace PMSWCFService
 
         }
 
+        public int UpdateMaterialNeedByUID(DcMaterialNeed model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateMaterialNeed(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int UpdateMaterialOrder(DcMaterialOrder model)
         {
             try
@@ -430,6 +487,20 @@ namespace PMSWCFService
                     result = dc.SaveChanges();
                     return result;
                 }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int UpdateMaterialOrderByUID(DcMaterialOrder model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateMaterialOrder(model);
             }
             catch (Exception ex)
             {
@@ -459,5 +530,97 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int UpdateMaterialOrderItemByUID(DcMaterialOrderItem model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateMaterialOrderItem(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
+        private void SaveHistory(DcMaterialNeed model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcMaterialNeed, MaterialNeedHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<MaterialNeedHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.MaterialNeedHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        private void SaveHistory(DcMaterialOrder model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcMaterialOrder, MaterialOrderHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<MaterialOrderHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.MaterialOrderHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        private void SaveHistory(DcMaterialOrderItem model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcMaterialOrderItem, MaterialOrderItemHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<MaterialOrderItemHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.MaterialOrderItemHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
     }
 }

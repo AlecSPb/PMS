@@ -34,6 +34,28 @@ namespace PMSWCFService
 
         }
 
+        public int AddRecordTestByUID(DcRecordTest model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
+                    var product = Mapper.Map<RecordTest>(model);
+                    dc.RecordTests.Add(product);
+                    result = dc.SaveChanges();
+                    SaveHistory(model, uid);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int DeleteRecordTest(Guid id)
         {
             try
@@ -200,6 +222,8 @@ namespace PMSWCFService
 
         /// <summary>
         /// 更新备份
+        /// 在更新的时候
+        /// 但是会遗漏掉第一次
         /// </summary>
         /// <param name="model"></param>
         private void SaveHistory(DcRecordTest model, string uid)

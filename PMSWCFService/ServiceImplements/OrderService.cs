@@ -43,6 +43,52 @@ namespace PMSWCFService
             }
 
         }
+
+        public int AddOrderByUID(DcOrder order, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcOrder, PMSOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var pmsOrder = mapper.Map<PMSOrder>(order);
+                    dc.Orders.Add(pmsOrder);
+                    result = dc.SaveChanges();
+                    SaveHistory(order, uid);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public bool CheckPMINumberExisit(string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Orders
+                                where i.PMINumber == pminumber
+                                select i;
+                    return query.Count() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// 删除订单
         /// </summary>
@@ -160,31 +206,6 @@ namespace PMSWCFService
 
         }
 
-        private void SaveHistory(DcOrder model, string uid)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.CreateMap<DcOrder, PMSOrderHistory>();
-                    });
-                    var mapper = config.CreateMapper();
-                    var history = mapper.Map<PMSOrderHistory>(model);
-                    history.OperateTime = DateTime.Now;
-                    history.Operator = uid;
-                    history.HistoryID = Guid.NewGuid();
-                    dc.OrderHistorys.Add(history);
-                    dc.SaveChanges();
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
 
         /// <summary>
         /// 更新订单
@@ -243,7 +264,31 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        private void SaveHistory(DcOrder model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcOrder, PMSOrderHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<PMSOrderHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.OrderHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
 
     }
 }
