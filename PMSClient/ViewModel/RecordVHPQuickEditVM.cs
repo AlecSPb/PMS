@@ -70,13 +70,14 @@ namespace PMSClient.ViewModel
             }
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 if (model != null)
                 {
                     using (var service = new RecordVHPServiceClient())
                     {
                         model.State = PMSCommon.SimpleState.作废.ToString();
 
-                        service.UpdateReocrdVHP(model);
+                        service.UpdateRecordVHPByUID(model,uid);
                         service.Close();
                         ReLoadRecordVHPs();
                         //EmptyCurrentRecordVHP();
@@ -180,16 +181,17 @@ namespace PMSClient.ViewModel
             {
                 if (CurrentRecordVHP != null)
                 {
+                    string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                     using (var service = new RecordVHPServiceClient())
                     {
                         if (isNew)
                         {
                             CurrentRecordVHP.CurrentTime = DateTime.Now;
-                            service.AddRecordVHP(CurrentRecordVHP);
+                            service.AddRecordVHPByUID(CurrentRecordVHP,uid);
                         }
                         else
                         {
-                            service.UpdateReocrdVHP(CurrentRecordVHP);
+                            service.UpdateRecordVHPByUID(CurrentRecordVHP,uid);
                         }
                         service.Close();
                         ReLoadRecordVHPs();
