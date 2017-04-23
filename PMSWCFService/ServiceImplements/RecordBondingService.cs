@@ -35,7 +35,16 @@ namespace PMSWCFService
 
         public int AddRecordBongdingByUID(DcRecordBonding model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SaveHistory(model, uid);
+                return AddRecordBongding(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int DeleteRecordBongding(Guid id)
@@ -122,7 +131,41 @@ namespace PMSWCFService
 
         public int UpdateRecordBongdingByUID(DcRecordBonding model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateRecordBongding(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
+
+        private void SaveHistory(DcRecordBonding model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordBonding, RecordBondingHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<RecordBondingHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.RecordBondingHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
     }
 }
