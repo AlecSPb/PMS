@@ -30,6 +30,7 @@
                      Style="{StaticResource StyleTextBoxSearch }" Width="200"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonCalculator}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding Calculator}"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

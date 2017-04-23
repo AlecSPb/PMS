@@ -240,7 +240,10 @@
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
-    
+
+    <sys:String x:Key="ButtonCalculator">计算器</sys:String>
+    <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
+
     <sys:String x:Key="ButtonDetail">详细</sys:String>
     <sys:String x:Key="ButtonBrowse">浏览</sys:String>
     <sys:String x:Key="ButtonInput">导入</sys:String>
