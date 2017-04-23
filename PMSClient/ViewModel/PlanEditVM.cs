@@ -23,7 +23,7 @@ namespace PMSClient.ViewModel
 
         public void SetNew(DcOrder order)
         {
-            if (order==null)
+            if (order == null)
             {
                 return;
             }
@@ -77,6 +77,10 @@ namespace PMSClient.ViewModel
             {
                 IsNew = true;
                 CurrentPlan = plan;
+                CurrentPlan.ID = Guid.NewGuid();
+                CurrentPlan.CreateTime = DateTime.Now;
+                CurrentPlan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentPlan.State = PMSCommon.VHPPlanState.已核验.ToString();
             }
         }
 
@@ -129,14 +133,15 @@ namespace PMSClient.ViewModel
             }
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new PlanVHPServiceClient();
                 if (IsNew)
                 {
-                    service.AddVHPPlan(CurrentPlan);
+                    service.AddVHPPlanByUID(CurrentPlan, uid);
                 }
                 else
                 {
-                    service.UpdateVHPPlan(CurrentPlan);
+                    service.UpdateVHPPlanByUID(CurrentPlan, uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.Misson.RefreshData();

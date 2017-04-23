@@ -106,9 +106,6 @@ namespace PMSClient.ViewModel
             {
                 if (plan != null)
                 {
-                    plan.ID = Guid.NewGuid();
-                    plan.CreateTime = DateTime.Now;
-                    plan.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
 
                     PMSHelper.ViewModels.PlanEdit.SetDuplicate(plan);
                     NavigationService.GoTo(PMSViews.PlanEdit);

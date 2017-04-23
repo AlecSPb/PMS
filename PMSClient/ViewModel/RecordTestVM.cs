@@ -93,7 +93,7 @@ namespace PMSClient.ViewModel
         {
             if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
             {
-                PMSHelper.ViewModels.RecordTestEdit.SetNew(model);
+                PMSHelper.ViewModels.RecordTestEdit.SetDuplicate(model);
                 NavigationService.GoTo(PMSViews.RecordTestEdit);
             }
 

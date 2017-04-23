@@ -79,14 +79,15 @@ namespace PMSClient.ViewModel
         {
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new MaterialOrderServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialOrder(CurrentMaterialOrder);
+                    service.AddMaterialOrderByUID(CurrentMaterialOrder, uid);
                 }
                 else
                 {
-                    service.UpdateMaterialOrder(CurrentMaterialOrder);
+                    service.UpdateMaterialOrderByUID(CurrentMaterialOrder, uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialOrder.RefreshData();

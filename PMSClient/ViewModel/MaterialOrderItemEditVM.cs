@@ -133,14 +133,15 @@ namespace PMSClient.ViewModel
         {
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new MaterialOrderServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialOrderItem(CurrentMaterialOrderItem);
+                    service.AddMaterialOrderItemByUID(CurrentMaterialOrderItem,uid);
                 }
                 else
                 {
-                    service.UpdateMaterialOrderItem(CurrentMaterialOrderItem);
+                    service.UpdateMaterialOrderItemByUID(CurrentMaterialOrderItem,uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialOrder.RefreshDataItem();

@@ -90,6 +90,10 @@ namespace PMSClient.ViewModel
             {
                 IsNew = true;
                 CurrentOrder = order;
+                CurrentOrder.ID = Guid.NewGuid();
+                CurrentOrder.State = PMSCommon.OrderState.未核验.ToString();
+                currentOrder.CreateTime = DateTime.Now;
+                CurrentOrder.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             }
         }
 

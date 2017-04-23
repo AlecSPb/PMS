@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
             model.CompositionXRF = "暂无";
             model.Density = "0";
             model.Defects = "无";
-
+            model.OrderDate = DateTime.Now.AddDays(-30);
             #endregion
             CurrentRecordTest = model;
         }
@@ -75,13 +75,13 @@ namespace PMSClient.ViewModel
 
         public void SetDimensionActual(DcRecordMachine model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentRecordTest.DimensionActual = $"{model.Diameter1}mm OD x {model.Thickness1}mm";
             }
         }
 
-        public void SetNew(DcRecordTest model)
+        public void SetDuplicate(DcRecordTest model)
         {
             if (model != null)
             {
@@ -89,6 +89,7 @@ namespace PMSClient.ViewModel
                 model.ID = Guid.NewGuid();
                 model.CreateTime = DateTime.Now;
                 model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                model.State = PMSCommon.CommonState.未核验.ToString();
                 CurrentRecordTest = model;
             }
         }
@@ -104,6 +105,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.Dimension = plan.Misson.Dimension;
                 CurrentRecordTest.DimensionActual = plan.Misson.Dimension;
                 CurrentRecordTest.CompositionAbbr = plan.Misson.CompositionAbbr;
+                CurrentRecordTest.OrderDate = plan.Misson.CreateTime;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
         }
@@ -128,14 +130,15 @@ namespace PMSClient.ViewModel
 
             try
             {
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new RecordTestServiceClient();
                 if (IsNew)
                 {
-                    service.AddRecordTest(CurrentRecordTest);
+                    service.AddRecordTestByUID(CurrentRecordTest, uid);
                 }
                 else
                 {
-                    service.UpdateRecordTest(CurrentRecordTest);
+                    service.UpdateRecordTestByUID(CurrentRecordTest, uid);
                 }
                 service.Close();
                 //PMSHelper.ViewModels.RecordTest.RefreshData();

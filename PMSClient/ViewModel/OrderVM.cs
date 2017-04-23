@@ -100,12 +100,6 @@ namespace PMSClient.ViewModel
             {
                 if (order != null)
                 {
-                    order.ID = Guid.NewGuid();
-                    order.CreateTime = DateTime.Now;
-                    order.State = "UnChecked";
-                    order.Priority = "Normal";
-                    order.DeadLine = DateTime.Now.AddDays(30);
-
                     PMSHelper.ViewModels.OrderEdit.SetDuplicate(order);
                     NavigationService.GoTo(PMSViews.OrderEdit);
                 }
