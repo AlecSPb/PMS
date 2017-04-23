@@ -59,16 +59,14 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMVHPPlanLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="热压编号170111-A-1,热压日期-设备号-第1片"/>
+                           Text="热压编号170111-M-1,热压日期-设备号-第1片"/>
 
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="原材料"/>
 
@@ -77,7 +75,7 @@
                 <ComboBox Grid.Row="2" Grid.Column="1"
                           ItemsSource="{Binding DataContext.MillingMaterialSources,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding MaterialSource}"
-                          Style="{StaticResource StyleComboBoxEditable}"/>
+                          Style="{StaticResource StyleComboBoxEditable}" FontSize="{StaticResource TabletFontLG}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="原料来源"/>
 
@@ -85,8 +83,8 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="3" Grid.Column="1"
                           ItemsSource="{Binding DataContext.MillingTools,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding MillingTool}"
-                          Style="{StaticResource StyleComboBoxEditable}"/>
+                          Text="{Binding MillingTool}" 
+                          Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="制粉方式"/>
 
@@ -95,7 +93,7 @@
                 <ComboBox Grid.Row="4" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.GasProtections,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding GasProtection}"
-                          Style="{StaticResource StyleComboBoxEditable}"/>
+                          Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="气体保护"/>
 
@@ -104,36 +102,33 @@
                 <ComboBox Grid.Row="5" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.MillingTimes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding MillingTime}"
-                          Style="{StaticResource StyleComboBoxEditable}"/>
+                          Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="填写制粉时间次数信息"/>
 
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMWeightIn}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightIn" Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Name="txtWeightIn" Grid.Row="6" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="来料重量(g)"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMWeightOut}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightOut" Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Name="txtWeightOut" Grid.Row="7" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="出料重量(g)"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightRemain" Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Name="txtWeightRemain" Grid.Row="8" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="余料重量(g)"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMRatio}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxCommon}"  Width="80"/>
+                    <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxBig}"  Width="80"/>
                     <Button Name="btnCalculation" Content="{StaticResource ButtonCalculate}" Style="{StaticResource StyleButtonCommon}"
                             Click="btnCalculation_Click"/>
                 </StackPanel>
@@ -143,8 +138,7 @@
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息"/>
 
@@ -158,13 +152,11 @@
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
-                            />
+                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
-                            />
+                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -52,15 +52,15 @@
                     </i:Interaction.Triggers>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockBigLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockBigCenter}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                         <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockBigSpecial}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
                         <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockBigRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockBigRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     </DataGrid.Columns>
@@ -96,65 +96,65 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPlanDate}"/>
-                            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.PlanDate,StringFormat={}{0:yyMMdd}}"/>
-                            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanVHPDeviceCode}"/>
-                            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.VHPDeviceCode}"/>
-                            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPlanLot}"/>
-                            <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.PlanLot}"/>
 
-                            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource OrderStandardComposition}"/>
-                            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Misson.CompositionStandard}"/>
-                            <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanMoldType}"/>
-                            <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.MoldType}"/>
-                            <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanMoldDiameter}"/>
-                            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.MoldDiameter}"/>
 
-                            <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPreTemperature}"/>
-                            <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.PreTemperature}"/>
 
-                            <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPrePressure}"/>
-                            <TextBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.PrePressure}"/>
 
-                            <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanTemperature}"/>
-                            <TextBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.Temperature}"/>
 
-                            <TextBlock Grid.Row="9" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="9" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanPressure}"/>
-                            <TextBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.Pressure}"/>
 
-                            <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanVaccum}"/>
-                            <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.Vaccum ,StringFormat={}{0:#.###E00}}"/>
 
-                            <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanProcessCode}"/>
-                            <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.ProcessCode}"/>
 
-                            <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource StyleTextBlockBig}"
+                            <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}"
                                    Text="{StaticResource PlanKeepTempTime}"/>
-                            <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnlyBig}"
+                            <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"
                             Text="{Binding Plan.KeepTempTime}"/>
 
                         </Grid>
@@ -237,7 +237,7 @@
                         <TextBlock Text="{StaticResource RVHPExtraInformation}" Style="{StaticResource StyleTextBlockBig}" 
                                    Grid.Row="3" Grid.Column="0"/>
                         <ComboBox  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="11" 
-                            Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource DGFontLG}"
+                            Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"
                             ItemsSource="{Binding DataContext.QuickVHPMesseges,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"                            
                             Text="{Binding ExtraInformation}" />
                     </Grid>

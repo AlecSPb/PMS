@@ -19,7 +19,7 @@
     <sys:Double x:Key="FontSM">12</sys:Double>
     <sys:Double x:Key="FontMD">18</sys:Double>
     <sys:Double x:Key="FontLG">25</sys:Double>
-    <sys:Double x:Key="DGFontLG">14</sys:Double>
+    <sys:Double x:Key="TabletFontLG">18</sys:Double>
 
 
     <Thickness x:Key="ThicknessSM">2</Thickness>
@@ -207,7 +207,7 @@
         <Setter Property="Foreground" Value="White"/>
     </Style>
     <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
-        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
+        <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
     <Style x:Key="StyleTextBlockMultiline" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="Foreground" Value="Black"/>
@@ -228,7 +228,7 @@
     </Style>
 
     <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
-        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
+        <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
 
     <Style x:Key="StyleTextBoxLeft" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
@@ -283,7 +283,6 @@
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
     </Style>
 
-
     <Style x:Key="StyleDataGridCommon" TargetType="DataGrid">
         <Setter Property="AutoGenerateColumns" Value="False"/>
         <Setter Property="IsReadOnly" Value="True"/>
@@ -318,11 +317,11 @@
         <Setter Property="MinWidth" Value="50"/>
     </Style>
     <Style x:Key="StyleDGButtonBig" TargetType="Button" BasedOn="{StaticResource StyleDGButton}">
-        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
+        <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
 
     <Style x:Key="StyleDGTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
-        <Setter Property="FontSize" Value="{StaticResource DGFontLG}"/>
+        <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
     <Style x:Key="StyleDGTextBlockBigLeft" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockBig}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
