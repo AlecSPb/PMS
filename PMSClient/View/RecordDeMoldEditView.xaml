@@ -51,6 +51,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -152,40 +153,42 @@
                 <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Thickness4,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDMDensity}"
+                <StackPanel Grid.Row="15" Grid.Column="1" Orientation="Horizontal">
+                    <Button Content="密度计算工具" Style="{StaticResource StyleButtonCommon}" Width="120"/>
+                </StackPanel>
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RDMDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="15" Grid.Column="1"  Text="{Binding Density,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="#计算密度"/>
-                
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RDMRatioDensity}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="16" Grid.Column="1"  Text="{Binding RatioDensity,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox  Grid.Row="16" Grid.Column="1"  Text="{Binding Density,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="#密度百分比"/>
-                
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RDMRemark}"
+                           Text="#计算密度"/>
+
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RDMRatioDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox  Grid.Row="17" Grid.Column="1"  Text="{Binding RatioDensity,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注信息，比如有无石墨纸等等"/>
-                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RDMState}"
+                           Text="#密度百分比"/>
+
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RDMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="18" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}" FontSize="{StaticResource TabletFontLG}"
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="备注信息，比如有无石墨纸等等"/>
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RDMState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="19" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}" FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="19" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RDMCreator}"
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RDMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
                             />
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RDMCreateTime}"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource RDMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
+                <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
                             />
             </Grid>
         </ScrollViewer>
