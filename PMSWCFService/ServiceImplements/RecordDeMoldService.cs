@@ -33,6 +33,20 @@ namespace PMSWCFService
 
         }
 
+        public int AddRecordDeMoldByUID(DcRecordDeMold model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddRecordDeMold(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int DeleteRecordDeMold(Guid id)
         {
             try
@@ -152,5 +166,45 @@ namespace PMSWCFService
             }
 
         }
+
+        public int UpdateRecordDeMoldByUID(DcRecordDeMold model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateRecordDeMold(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
+        private void SaveHistory(DcRecordDeMold model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordDeMold, RecordDeMoldHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<RecordDeMoldHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.RecordDeMoldHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
     }
 }

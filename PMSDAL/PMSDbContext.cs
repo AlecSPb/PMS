@@ -38,13 +38,16 @@ namespace PMSDAL
         public DbSet<MaterialInventoryIn> MaterialInventoryIns { get; set; }
         public DbSet<MaterialInventoryOut> MaterialInventoryOuts { get; set; }
 
-        
+
         public DbSet<MaterialNeedHistory> MaterialNeedHistorys { get; set; }
         public DbSet<MaterialOrderHistory> MaterialOrderHistorys { get; set; }
         public DbSet<MaterialOrderItemHistory> MaterialOrderItemHistorys { get; set; }
 
         public DbSet<MaterialInventoryInHistory> MaterialInventoryInHistorys { get; set; }
         public DbSet<MaterialInventoryOutHistory> MaterialInventoryOutHistorys { get; set; }
+
+        public DbSet<Plate> Plates { get; set; }
+
         //Core
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }

@@ -27,6 +27,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateRecordMachine(DcRecordMachine model);
         [OperationContract]
+        int AddRecordMachineByUID(DcRecordMachine model, string uid);
+        [OperationContract]
+        int UpdateRecordMachineByUID(DcRecordMachine model, string uid);
+        [OperationContract]
         int DeleteRecordMachine(Guid id);
     }
 }

@@ -122,6 +122,7 @@
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
     <Compile Include="DataContracts\DcProduct.cs" />
     <Compile Include="DataContracts\DcDeliveryItemExtra.cs" />
+    <Compile Include="DataContracts\DcPlate.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />

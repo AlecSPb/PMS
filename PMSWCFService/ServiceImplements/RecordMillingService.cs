@@ -33,6 +33,20 @@ namespace PMSWCFService
 
         }
 
+        public int AddRecordMillingByUID(DcRecordMilling model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddRecordMilling(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int DeleteRecordMilling(Guid id)
         {
             try
@@ -152,6 +166,42 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public int UpdateRecordMillingByUID(DcRecordMilling model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateRecordMilling(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        private void SaveHistory(DcRecordMilling model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordMilling, RecordMillingHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<RecordMillingHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.RecordMillingHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }

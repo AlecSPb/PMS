@@ -33,6 +33,20 @@ namespace PMSWCFService
 
         }
 
+        public int AddRecordMachineByUID(DcRecordMachine model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddRecordMachine(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int DeleteRecordMachine(Guid id)
         {
             try
@@ -152,6 +166,42 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public int UpdateRecordMachineByUID(DcRecordMachine model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateRecordMachine(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        private void SaveHistory(DcRecordMachine model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordMachine, RecordMachineHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<RecordMachineHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.RecordMachineHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }

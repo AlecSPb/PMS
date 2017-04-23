@@ -69,6 +69,7 @@
     <Compile Include="Entities\MaterialOrderHistory.cs" />
     <Compile Include="Entities\MaterialOrderItemHistory.cs" />
     <Compile Include="Entities\MaterialOrderItem.cs" />
+    <Compile Include="Entities\Plate.cs" />
     <Compile Include="Entities\PMSOrderHistory.cs" />
     <Compile Include="Entities\PMSPlanVHPHistory.cs" />
     <Compile Include="Entities\ProductHistory.cs" />
