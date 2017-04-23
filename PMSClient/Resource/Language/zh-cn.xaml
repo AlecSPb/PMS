@@ -122,6 +122,7 @@
     <sys:String x:Key="PageDeliveryItemList">发货记录[所有已发货产品]</sys:String>
 
     <sys:String x:Key="PageProductSelect">请选择一个成品项目</sys:String>
+    <sys:String x:Key="PageRecordDeMoldSelect">请选择一个绑定记录</sys:String>
     <sys:String x:Key="PageRecordBondingSelect">请选择一个绑定记录</sys:String>
     <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
     <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
@@ -259,6 +260,7 @@
     <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
     <sys:String x:Key="ButtonDeliveryItemList">顺序发货记录</sys:String>
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
+    <sys:String x:Key="ButtonSelectRecordDeMold">选择取模记录</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>

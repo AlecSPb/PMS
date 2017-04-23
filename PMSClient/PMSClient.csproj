@@ -294,6 +294,9 @@
     <Compile Include="View\RecordDeMoldEditView.xaml.cs">
       <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RecordDeMoldSelectView.xaml.cs">
+      <DependentUpon>RecordDeMoldSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RecordMachineEditView.xaml.cs">
       <DependentUpon>RecordMachineEditView.xaml</DependentUpon>
     </Compile>
@@ -571,6 +574,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\RecordDeMoldSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\RecordMachineEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -790,6 +797,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcPlanWithMisson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcPlate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcProduct.datasource">

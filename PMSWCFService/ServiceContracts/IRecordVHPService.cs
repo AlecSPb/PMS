@@ -24,7 +24,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int AddRecordVHPByUID(DcRecordVHP model, string uid);
         [OperationContract]
-        int UpdateReocrdVHPByUID(DcRecordVHP model, string uid);
+        int UpdateRecordVHPByUID(DcRecordVHP model, string uid);
         [OperationContract]
         int DeleteRecordVHP(Guid id);
     }

@@ -1,26 +1,27 @@
-﻿using System;
+﻿using PMSWCFService.ServiceContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using PMSWCFService.DataContracts;
-using PMSWCFService.ServiceContracts;
-using PMSDAL;
 using AutoMapper;
+using PMSDAL;
+using PMSCommon;
 
 namespace PMSWCFService
 {
-    public partial class PMSService : IRecordVHPService
+    public partial class PMSService : IPlateService
     {
-        public int AddRecordVHP(DcRecordVHP model)
+        public int AddPlate(DcPlate model)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHP, RecordVHP>());
-                    var newModel = Mapper.Map<RecordVHP>(model);
-                    dc.RecordVHPs.Add(newModel);
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcPlate, Plate>());
+                    var product = Mapper.Map<Plate>(model);
+                    dc.Plates.Add(product);
                     result = dc.SaveChanges();
                     return result;
                 }
@@ -30,15 +31,14 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
-
         }
 
-        public int AddRecordVHPByUID(DcRecordVHP model, string uid)
+        public int AddPlateByUID(DcPlate model, string uid)
         {
             try
             {
                 SaveHistory(model, uid);
-                return AddRecordVHP(model);
+                return AddPlate(model);
             }
             catch (Exception ex)
             {
@@ -47,60 +47,20 @@ namespace PMSWCFService
             }
         }
 
-        public int DeleteRecordVHP(Guid id)
+        public int DeletePlate(Guid id)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    var model = dc.RecordVHPs.Find(id);
-                    dc.RecordVHPs.Remove(model);
-                    result = dc.SaveChanges();
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-
-        }
-
-
-        public List<DcRecordVHP> GetRecordVHP(Guid planVHPId)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    var result = dc.RecordVHPs.Where(p => p.PlanVHPID == planVHPId&&p.State!=PMSCommon.SimpleState.作废.ToString())
-                        .OrderByDescending(v => v.CurrentTime).ToList();
-                    Mapper.Initialize(cfg =>
+                    var product = dc.Plates.Find(id);
+                    if (product != null)
                     {
-                        cfg.CreateMap<RecordVHP, DcRecordVHP>();
-                    });
+                        dc.Plates.Remove(product);
+                        result = dc.SaveChanges();
+                    }
 
-                    var final = Mapper.Map<List<RecordVHP>, List<DcRecordVHP>>(result);
-                    return final;
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-
-        }
-
-        public int GetRecordVHPCount()
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    var result = dc.RecordVHPs.Count();
                     return result;
                 }
             }
@@ -109,19 +69,64 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
-
         }
-        //TODO:以后的时候再修改这个错误拼写
-        public int UpdateReocrdVHP(DcRecordVHP model)
+
+        public int GetPlateCount(string platelot, string supplier)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Plates
+                                where p.PlateLot.Contains(platelot)
+                                && p.Supplier.Contains(supplier)
+                                && p.State != SimpleState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Plates
+                                where p.PlateLot.Contains(platelot)
+                                && p.Supplier.Contains(supplier)
+                                && p.State != SimpleState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<Plate, DcPlate>());
+                    var products = Mapper.Map<List<Plate>, List<DcPlate>>(query.Skip(skip).Take(take).ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int UpdatePlate(DcPlate model)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordVHP, RecordVHP>());
-                    var newModel = Mapper.Map<RecordVHP>(model);
-                    dc.Entry(newModel).State = System.Data.Entity.EntityState.Modified;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcPlate, Plate>());
+                    var product = Mapper.Map<Plate>(model);
+                    dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
                     return result;
                 }
@@ -131,15 +136,14 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
-
         }
 
-        public int UpdateRecordVHPByUID(DcRecordVHP model, string uid)
+        public int UpdatePlateByUID(DcPlate model, string uid)
         {
             try
             {
                 SaveHistory(model, uid);
-                return UpdateReocrdVHP(model);
+                return UpdatePlate(model);
             }
             catch (Exception ex)
             {
@@ -148,19 +152,19 @@ namespace PMSWCFService
             }
         }
 
-        private void SaveHistory(DcRecordVHP model, string uid)
+        private void SaveHistory(DcPlate model, string uid)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcRecordVHP, RecordVHPHistory>());
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcPlate, PlateHistory>());
                     var mapper = config.CreateMapper();
-                    var history = mapper.Map<RecordVHPHistory>(model);
+                    var history = mapper.Map<PlateHistory>(model);
                     history.OperateTime = DateTime.Now;
                     history.Operator = uid;
                     history.HistoryID = Guid.NewGuid();
-                    dc.RecordVHPHistorys.Add(history);
+                    dc.PlateHistorys.Add(history);
                     dc.SaveChanges();
                 }
             }

@@ -475,6 +475,18 @@
   <wsdl:message name="IDeliveryService_UpdateDelivery_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDeliveryResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_AddDeliveryByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryByUID" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_AddDeliveryByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_UpdateDeliveryByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryByUID" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_UpdateDeliveryByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryByUIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IDeliveryService_DeleteDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteDelivery" />
   </wsdl:message>
@@ -523,11 +535,107 @@
   <wsdl:message name="IDeliveryService_UpdateDeliveryItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateDeliveryItemResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_AddDeliveryItemByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryItemByUID" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_AddDeliveryItemByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeliveryItemByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_UpdateDeliveryItemByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryItemByUID" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_UpdateDeliveryItemByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeliveryItemByUIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IDeliveryService_DeleteDeliveryItem_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteDeliveryItem" />
   </wsdl:message>
   <wsdl:message name="IDeliveryService_DeleteDeliveryItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteDeliveryItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlates" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateCount" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_AddPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlate" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_AddPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_UpdatePlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlate" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_UpdatePlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_AddPlateByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlateByUID" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_AddPlateByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlateByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_UpdatePlateByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlateByUID" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_UpdatePlateByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlateByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_DeletePlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlate" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_DeletePlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCount" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProductByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductByUID" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_AddProductByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductByUID" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProductByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordTestService_GetRecordTestBySearchInPage_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestBySearchInPage" />
@@ -607,6 +715,18 @@
   <wsdl:message name="IRecordVHPService_UpdateReocrdVHP_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateReocrdVHPResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordVHPService_AddRecordVHPByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordVHPByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordVHPService_AddRecordVHPByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordVHPByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordVHPService_UpdateRecordVHPByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordVHPByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordVHPService_UpdateRecordVHPByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordVHPByUIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordVHPService_DeleteRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordVHP" />
   </wsdl:message>
@@ -648,6 +768,18 @@
   </wsdl:message>
   <wsdl:message name="IRecordMillingService_UpdateRecordMilling_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRecordMillingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_AddRecordMillingByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordMillingByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_AddRecordMillingByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordMillingByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_UpdateRecordMillingByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordMillingByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_UpdateRecordMillingByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordMillingByUIDResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordMillingService_DeleteRecordMilling_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordMilling" />
@@ -691,6 +823,18 @@
   <wsdl:message name="IRecordMachineService_UpdateRecordMachine_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRecordMachineResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMachineService_AddRecordMachineByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordMachineByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_AddRecordMachineByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordMachineByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_UpdateRecordMachineByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordMachineByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMachineService_UpdateRecordMachineByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordMachineByUIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordMachineService_DeleteRecordMachine_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordMachine" />
   </wsdl:message>
@@ -733,6 +877,18 @@
   <wsdl:message name="IRecordDeMoldService_UpdateRecordDeMold_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRecordDeMoldResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_AddRecordDeMoldByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordDeMoldByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_AddRecordDeMoldByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordDeMoldByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_UpdateRecordDeMoldByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordDeMoldByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordDeMoldService_UpdateRecordDeMoldByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordDeMoldByUIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordDeMoldService_DeleteRecordDeMold_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordDeMold" />
   </wsdl:message>
@@ -763,41 +919,23 @@
   <wsdl:message name="IRecordBondingService_UpdateRecordBongding_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateRecordBongdingResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordBondingService_AddRecordBongdingByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordBongdingByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_AddRecordBongdingByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecordBongdingByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_UpdateRecordBongdingByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordBongdingByUID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_UpdateRecordBongdingByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecordBongdingByUIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordBondingService_DeleteRecordBongding_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordBongding" />
   </wsdl:message>
   <wsdl:message name="IRecordBondingService_DeleteRecordBongding_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordBongdingResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_GetProducts_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetProducts" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_GetProducts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_GetProductCount_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductCount" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_GetProductCount_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductCountResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_AddProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddProduct" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_AddProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddProductResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_UpdateProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateProduct" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_UpdateProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_DeleteProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteProduct" />
-  </wsdl:message>
-  <wsdl:message name="IProductService_DeleteProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
@@ -1124,6 +1262,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDelivery" message="tns:IDeliveryService_UpdateDelivery_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryResponse" message="tns:IDeliveryService_UpdateDelivery_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddDeliveryByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryByUID" message="tns:IDeliveryService_AddDeliveryByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryByUIDResponse" message="tns:IDeliveryService_AddDeliveryByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryByUID" message="tns:IDeliveryService_UpdateDeliveryByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryByUIDResponse" message="tns:IDeliveryService_UpdateDeliveryByUID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteDelivery">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/DeleteDelivery" message="tns:IDeliveryService_DeleteDelivery_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/DeleteDeliveryResponse" message="tns:IDeliveryService_DeleteDelivery_OutputMessage" />
@@ -1156,9 +1302,77 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItem" message="tns:IDeliveryService_UpdateDeliveryItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItemResponse" message="tns:IDeliveryService_UpdateDeliveryItem_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddDeliveryItemByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryItemByUID" message="tns:IDeliveryService_AddDeliveryItemByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryItemByUIDResponse" message="tns:IDeliveryService_AddDeliveryItemByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryItemByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUID" message="tns:IDeliveryService_UpdateDeliveryItemByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUIDResponse" message="tns:IDeliveryService_UpdateDeliveryItemByUID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteDeliveryItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/DeleteDeliveryItem" message="tns:IDeliveryService_DeleteDeliveryItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/DeleteDeliveryItemResponse" message="tns:IDeliveryService_DeleteDeliveryItem_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPlateService">
+    <wsdl:operation name="GetPlates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/GetPlates" message="tns:IPlateService_GetPlates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/GetPlatesResponse" message="tns:IPlateService_GetPlates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/GetPlateCount" message="tns:IPlateService_GetPlateCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/GetPlateCountResponse" message="tns:IPlateService_GetPlateCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/AddPlate" message="tns:IPlateService_AddPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/AddPlateResponse" message="tns:IPlateService_AddPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/UpdatePlate" message="tns:IPlateService_UpdatePlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/UpdatePlateResponse" message="tns:IPlateService_UpdatePlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlateByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/AddPlateByUID" message="tns:IPlateService_AddPlateByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/AddPlateByUIDResponse" message="tns:IPlateService_AddPlateByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlateByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/UpdatePlateByUID" message="tns:IPlateService_UpdatePlateByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/UpdatePlateByUIDResponse" message="tns:IPlateService_UpdatePlateByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/DeletePlate" message="tns:IPlateService_DeletePlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/DeletePlateResponse" message="tns:IPlateService_DeletePlate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProducts" message="tns:IProductService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsResponse" message="tns:IProductService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCount" message="tns:IProductService_GetProductCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountResponse" message="tns:IProductService_GetProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductResponse" message="tns:IProductService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProduct" message="tns:IProductService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductResponse" message="tns:IProductService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProductByUID" message="tns:IProductService_AddProductByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductByUIDResponse" message="tns:IProductService_AddProductByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProductByUID" message="tns:IProductService_UpdateProductByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductByUIDResponse" message="tns:IProductService_UpdateProductByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteProductResponse" message="tns:IProductService_DeleteProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordTestService">
@@ -1216,6 +1430,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHP" message="tns:IRecordVHPService_UpdateReocrdVHP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPResponse" message="tns:IRecordVHPService_UpdateReocrdVHP_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddRecordVHPByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/AddRecordVHPByUID" message="tns:IRecordVHPService_AddRecordVHPByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/AddRecordVHPByUIDResponse" message="tns:IRecordVHPService_AddRecordVHPByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordVHPByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUID" message="tns:IRecordVHPService_UpdateRecordVHPByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUIDResponse" message="tns:IRecordVHPService_UpdateRecordVHPByUID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordVHP">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHP" message="tns:IRecordVHPService_DeleteRecordVHP_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHPResponse" message="tns:IRecordVHPService_DeleteRecordVHP_OutputMessage" />
@@ -1245,6 +1467,14 @@
     <wsdl:operation name="UpdateRecordMilling">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/UpdateRecordMilling" message="tns:IRecordMillingService_UpdateRecordMilling_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/UpdateRecordMillingResponse" message="tns:IRecordMillingService_UpdateRecordMilling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordMillingByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/AddRecordMillingByUID" message="tns:IRecordMillingService_AddRecordMillingByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/AddRecordMillingByUIDResponse" message="tns:IRecordMillingService_AddRecordMillingByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordMillingByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUID" message="tns:IRecordMillingService_UpdateRecordMillingByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUIDResponse" message="tns:IRecordMillingService_UpdateRecordMillingByUID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteRecordMilling">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/DeleteRecordMilling" message="tns:IRecordMillingService_DeleteRecordMilling_InputMessage" />
@@ -1276,6 +1506,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachine" message="tns:IRecordMachineService_UpdateRecordMachine_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachineResponse" message="tns:IRecordMachineService_UpdateRecordMachine_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddRecordMachineByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/AddRecordMachineByUID" message="tns:IRecordMachineService_AddRecordMachineByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/AddRecordMachineByUIDResponse" message="tns:IRecordMachineService_AddRecordMachineByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordMachineByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUID" message="tns:IRecordMachineService_UpdateRecordMachineByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUIDResponse" message="tns:IRecordMachineService_UpdateRecordMachineByUID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordMachine">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachine" message="tns:IRecordMachineService_DeleteRecordMachine_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachineResponse" message="tns:IRecordMachineService_DeleteRecordMachine_OutputMessage" />
@@ -1306,6 +1544,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMold" message="tns:IRecordDeMoldService_UpdateRecordDeMold_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldResponse" message="tns:IRecordDeMoldService_UpdateRecordDeMold_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddRecordDeMoldByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUID" message="tns:IRecordDeMoldService_AddRecordDeMoldByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUIDResponse" message="tns:IRecordDeMoldService_AddRecordDeMoldByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordDeMoldByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUID" message="tns:IRecordDeMoldService_UpdateRecordDeMoldByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUIDResponse" message="tns:IRecordDeMoldService_UpdateRecordDeMoldByUID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordDeMold">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold" message="tns:IRecordDeMoldService_DeleteRecordDeMold_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMoldResponse" message="tns:IRecordDeMoldService_DeleteRecordDeMold_OutputMessage" />
@@ -1328,31 +1574,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongding" message="tns:IRecordBondingService_UpdateRecordBongding_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingResponse" message="tns:IRecordBondingService_UpdateRecordBongding_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddRecordBongdingByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUID" message="tns:IRecordBondingService_AddRecordBongdingByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUIDResponse" message="tns:IRecordBondingService_AddRecordBongdingByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordBongdingByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUID" message="tns:IRecordBondingService_UpdateRecordBongdingByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUIDResponse" message="tns:IRecordBondingService_UpdateRecordBongdingByUID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordBongding">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongding" message="tns:IRecordBondingService_DeleteRecordBongding_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongdingResponse" message="tns:IRecordBondingService_DeleteRecordBongding_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="IProductService">
-    <wsdl:operation name="GetProducts">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProducts" message="tns:IProductService_GetProducts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsResponse" message="tns:IProductService_GetProducts_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetProductCount">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCount" message="tns:IProductService_GetProductCount_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountResponse" message="tns:IProductService_GetProductCount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="AddProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/AddProductResponse" message="tns:IProductService_AddProduct_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateProduct" message="tns:IProductService_UpdateProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateProductResponse" message="tns:IProductService_UpdateProduct_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DeleteProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteProductResponse" message="tns:IProductService_DeleteProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="order" type="tns:IOrderService">
@@ -2077,6 +2309,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddDeliveryByUID">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/AddDeliveryByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryByUID">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/UpdateDeliveryByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteDelivery">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/DeleteDelivery" style="document" />
       <wsdl:input>
@@ -2149,8 +2399,158 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddDeliveryItemByUID">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/AddDeliveryItemByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDeliveryItemByUID">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteDeliveryItem">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/DeleteDeliveryItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="plate" type="tns:IPlateService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPlates">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/GetPlates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateCount">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/GetPlateCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlate">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/AddPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlate">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/UpdatePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlateByUID">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/AddPlateByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlateByUID">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/UpdatePlateByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlate">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/DeletePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="product" type="tns:IProductService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCount">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductByUID">
+      <soap:operation soapAction="http://tempuri.org/IProductService/AddProductByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductByUID">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProductByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2281,6 +2681,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddRecordVHPByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/AddRecordVHPByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordVHPByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordVHP">
       <soap:operation soapAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHP" style="document" />
       <wsdl:input>
@@ -2340,6 +2758,24 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateRecordMilling">
       <soap:operation soapAction="http://tempuri.org/IRecordMillingService/UpdateRecordMilling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecordMillingByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/AddRecordMillingByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordMillingByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2413,6 +2849,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddRecordMachineByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordMachineService/AddRecordMachineByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordMachineByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordMachine">
       <soap:operation soapAction="http://tempuri.org/IRecordMachineService/DeleteRecordMachine" style="document" />
       <wsdl:input>
@@ -2479,6 +2933,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddRecordDeMoldByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordDeMoldByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordDeMold">
       <soap:operation soapAction="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold" style="document" />
       <wsdl:input>
@@ -2527,56 +2999,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddRecordBongdingByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecordBongdingByUID">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DeleteRecordBongding">
       <soap:operation soapAction="http://tempuri.org/IRecordBondingService/DeleteRecordBongding" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="product" type="tns:IProductService">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetProducts">
-      <soap:operation soapAction="http://tempuri.org/IProductService/GetProducts" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetProductCount">
-      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddProduct">
-      <soap:operation soapAction="http://tempuri.org/IProductService/AddProduct" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateProduct">
-      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateProduct" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DeleteProduct">
-      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2607,6 +3049,12 @@
     <wsdl:port name="delivery" binding="tns:delivery">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
+    <wsdl:port name="plate" binding="tns:plate">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="product" binding="tns:product">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
     <wsdl:port name="recordtest" binding="tns:recordtest">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
@@ -2623,9 +3071,6 @@
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordbonding" binding="tns:recordbonding">
-      <soap:address location="http://localhost:8002/PMSService.svc" />
-    </wsdl:port>
-    <wsdl:port name="product" binding="tns:product">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>

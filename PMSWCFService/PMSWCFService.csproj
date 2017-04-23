@@ -131,6 +131,7 @@
     <Compile Include="ServiceContracts\IHistoryService.cs" />
     <Compile Include="ServiceContracts\IMaintenanceService.cs" />
     <Compile Include="ServiceContracts\IMaterialInventoryService.cs" />
+    <Compile Include="ServiceContracts\IPlateService.cs" />
     <Compile Include="ServiceContracts\IProductService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
     <Compile Include="ServiceContracts\ISanjieService.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
+    <Compile Include="ServiceImplements\PlateService.cs" />
     <Compile Include="ServiceImplements\ProductService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />

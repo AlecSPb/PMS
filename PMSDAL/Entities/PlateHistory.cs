@@ -1,36 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSWCFService.DataContracts
+namespace PMSDAL
 {
-    [DataContract]
-    public class DcPlate
+    public class PlateHistory
     {
-        [DataMember]
         public Guid ID { get; set; }
-        [DataMember]
         public string Creator { get; set; }
-        [DataMember]
         public DateTime CreateTime { get; set; }
-        [DataMember]
         public string State { get; set; }
-        [DataMember]
         public string PlateLot { get; set; }
-        [DataMember]
         public string Dimension { get; set; }
-        [DataMember]
         public string Weight { get; set; }
-        [DataMember]
         public string Supplier { get; set; }
-        [DataMember]
         public string Appearance { get; set; }
-        [DataMember]
         public string Defects { get; set; }
-        [DataMember]
         public string Remark { get; set; }
+        //操作者和操作时间
+        [Key]
+        public Guid HistoryID { get; set; }
+        public string Operator { get; set; }
+        public DateTime OperateTime { get; set; }
     }
 }

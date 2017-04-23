@@ -47,6 +47,7 @@ namespace PMSDAL
         public DbSet<MaterialInventoryOutHistory> MaterialInventoryOutHistorys { get; set; }
 
         public DbSet<Plate> Plates { get; set; }
+        public DbSet<PlateHistory> PlateHistorys { get; set; }
 
         //Core
         public DbSet<PMSOrder> Orders { get; set; }
