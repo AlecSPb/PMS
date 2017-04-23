@@ -52,8 +52,8 @@ namespace PMSClient.ViewModel
             order.ID = Guid.NewGuid();
             order.CustomerName = CustomerNames.FirstOrDefault();
             order.PO = DateTime.Now.ToString("yyMMdd");
-            order.CompositionOriginal = "原始成分写法";
-            order.CompositionStandard = "标准成分写法";
+            order.CompositionOriginal = "原始成分";
+            order.CompositionStandard = "标准成分";
             order.CompositionAbbr = "成分缩写";
             order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             order.CreateTime = DateTime.Now;
@@ -105,16 +105,17 @@ namespace PMSClient.ViewModel
                 return;
             }
 
+            string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
             try
             {
                 var service = new OrderServiceClient();
                 if (IsNew)
                 {
-                    service.AddOrder(CurrentOrder);
+                    service.AddOrderByUID(CurrentOrder, uid);
                 }
                 else
                 {
-                    service.UpdateOrder(CurrentOrder);
+                    service.UpdateOrderByUID(CurrentOrder, uid);
                 }
                 service.Close();
                 //PMSHelper.ViewModels.Order.RefreshData();

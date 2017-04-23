@@ -50,6 +50,10 @@ namespace PMSClient.ViewModel
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.DeMoldType = PMSCommon.DeMoldType.手动轻松.ToString();
+            model.BlankDimension = "";
+            model.CalculationDensity = 0;
+            model.Density = 0;
+            model.RatioDensity = 0;
             model.Composition = "成分";
             model.Temperature1 = "100";
             model.Temperature2 = "25";
