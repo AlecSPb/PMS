@@ -63,15 +63,16 @@ namespace PMSClient.ViewModel
             {
                 CurrentOrder.Reviewer = PMSHelper.CurrentSession.CurrentUser.UserName;
                 CurrentOrder.ReviewTime = DateTime.Now;
+                string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 using (var service = new OrderServiceClient())
                 {
                     if (IsNew)
                     {
-                        service.AddOrder(CurrentOrder);
+                        service.AddOrderByUID(CurrentOrder, uid);
                     }
                     else
                     {
-                        service.UpdateOrder(CurrentOrder);
+                        service.UpdateOrderByUID(CurrentOrder, uid);
                     }
                     service.Close();
                     PMSHelper.ViewModels.OrderCheck.RefreshData();
