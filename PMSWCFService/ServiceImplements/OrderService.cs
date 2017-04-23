@@ -159,6 +159,35 @@ namespace PMSWCFService
             }
 
         }
+
+        p void SaveHistory(DcOrder model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcOrder, PMSOrderHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<PMSOrderHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.OrderHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
+
         /// <summary>
         /// 更新订单
         /// </summary>
@@ -189,5 +218,34 @@ namespace PMSWCFService
             }
 
         }
+
+        public int UpdateOrderByUID(DcOrder order, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcOrder, PMSOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    PMSOrder pmsOrder = mapper.Map<PMSOrder>(order);
+                    dc.Entry(pmsOrder).State = System.Data.Entity.EntityState.Modified;
+                    dc.SaveChanges();
+
+                    SaveHistory(order, uid);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
     }
 }

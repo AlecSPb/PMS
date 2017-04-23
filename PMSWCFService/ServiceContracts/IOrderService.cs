@@ -21,6 +21,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateOrder(DcOrder order);
         [OperationContract]
+        int UpdateOrderByUID(DcOrder order,string uid);
+        [OperationContract]
         int DeleteOrder(Guid id);
     }
 }

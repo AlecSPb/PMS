@@ -134,6 +134,7 @@
     <Compile Include="ServiceContracts\IStatisticService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
+    <Compile Include="Helper\ISnapShot.cs" />
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
