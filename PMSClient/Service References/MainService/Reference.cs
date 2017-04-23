@@ -2791,6 +2791,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime OrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2963,6 +2966,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime OrderDate {
+            get {
+                return this.OrderDateField;
+            }
+            set {
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
                 }
             }
         }
@@ -3930,6 +3946,12 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BlankDimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CalculationDensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3942,6 +3964,9 @@ namespace PMSClient.MainService {
         private string DeMoldTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Diameter1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3949,6 +3974,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RatioDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -3987,6 +4015,32 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BlankDimension {
+            get {
+                return this.BlankDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlankDimensionField, value) != true)) {
+                    this.BlankDimensionField = value;
+                    this.RaisePropertyChanged("BlankDimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CalculationDensity {
+            get {
+                return this.CalculationDensityField;
+            }
+            set {
+                if ((this.CalculationDensityField.Equals(value) != true)) {
+                    this.CalculationDensityField = value;
+                    this.RaisePropertyChanged("CalculationDensity");
+                }
             }
         }
         
@@ -4043,6 +4097,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Density {
+            get {
+                return this.DensityField;
+            }
+            set {
+                if ((this.DensityField.Equals(value) != true)) {
+                    this.DensityField = value;
+                    this.RaisePropertyChanged("Density");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Diameter1 {
             get {
                 return this.Diameter1Field;
@@ -4077,6 +4144,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double RatioDensity {
+            get {
+                return this.RatioDensityField;
+            }
+            set {
+                if ((this.RatioDensityField.Equals(value) != true)) {
+                    this.RatioDensityField = value;
+                    this.RaisePropertyChanged("RatioDensity");
                 }
             }
         }
@@ -5635,17 +5715,35 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
         System.Threading.Tasks.Task<int> AddOrderAsync(PMSClient.MainService.DcOrder order);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrderByUID", ReplyAction="http://tempuri.org/IOrderService/AddOrderByUIDResponse")]
+        int AddOrderByUID(PMSClient.MainService.DcOrder order, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrderByUID", ReplyAction="http://tempuri.org/IOrderService/AddOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddOrderByUIDAsync(PMSClient.MainService.DcOrder order, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
         int UpdateOrder(PMSClient.MainService.DcOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
         System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSClient.MainService.DcOrder order);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrderByUID", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderByUIDResponse")]
+        int UpdateOrderByUID(PMSClient.MainService.DcOrder order, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrderByUID", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateOrderByUIDAsync(PMSClient.MainService.DcOrder order, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         int DeleteOrder(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         System.Threading.Tasks.Task<int> DeleteOrderAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/CheckPMINumberExisit", ReplyAction="http://tempuri.org/IOrderService/CheckPMINumberExisitResponse")]
+        bool CheckPMINumberExisit(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/CheckPMINumberExisit", ReplyAction="http://tempuri.org/IOrderService/CheckPMINumberExisitResponse")]
+        System.Threading.Tasks.Task<bool> CheckPMINumberExisitAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5707,6 +5805,14 @@ namespace PMSClient.MainService {
             return base.Channel.AddOrderAsync(order);
         }
         
+        public int AddOrderByUID(PMSClient.MainService.DcOrder order, string uid) {
+            return base.Channel.AddOrderByUID(order, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddOrderByUIDAsync(PMSClient.MainService.DcOrder order, string uid) {
+            return base.Channel.AddOrderByUIDAsync(order, uid);
+        }
+        
         public int UpdateOrder(PMSClient.MainService.DcOrder order) {
             return base.Channel.UpdateOrder(order);
         }
@@ -5715,12 +5821,28 @@ namespace PMSClient.MainService {
             return base.Channel.UpdateOrderAsync(order);
         }
         
+        public int UpdateOrderByUID(PMSClient.MainService.DcOrder order, string uid) {
+            return base.Channel.UpdateOrderByUID(order, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateOrderByUIDAsync(PMSClient.MainService.DcOrder order, string uid) {
+            return base.Channel.UpdateOrderByUIDAsync(order, uid);
+        }
+        
         public int DeleteOrder(System.Guid id) {
             return base.Channel.DeleteOrder(id);
         }
         
         public System.Threading.Tasks.Task<int> DeleteOrderAsync(System.Guid id) {
             return base.Channel.DeleteOrderAsync(id);
+        }
+        
+        public bool CheckPMINumberExisit(string pminumber) {
+            return base.Channel.CheckPMINumberExisit(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckPMINumberExisitAsync(string pminumber) {
+            return base.Channel.CheckPMINumberExisitAsync(pminumber);
         }
     }
     
@@ -5740,11 +5862,23 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanResponse")]
         System.Threading.Tasks.Task<int> AddVHPPlanAsync(PMSClient.MainService.DcPlanVHP model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanByUIDResponse")]
+        int AddVHPPlanByUID(PMSClient.MainService.DcPlanVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddVHPPlanByUIDAsync(PMSClient.MainService.DcPlanVHP model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse")]
         int UpdateVHPPlan(PMSClient.MainService.DcPlanVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse")]
         System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSClient.MainService.DcPlanVHP model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUIDResponse")]
+        int UpdateVHPPlanByUID(PMSClient.MainService.DcPlanVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateVHPPlanByUIDAsync(PMSClient.MainService.DcPlanVHP model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/DeleteVHPPlanResponse")]
         int DeleteVHPPlan(System.Guid id);
@@ -5796,12 +5930,28 @@ namespace PMSClient.MainService {
             return base.Channel.AddVHPPlanAsync(model);
         }
         
+        public int AddVHPPlanByUID(PMSClient.MainService.DcPlanVHP model, string uid) {
+            return base.Channel.AddVHPPlanByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddVHPPlanByUIDAsync(PMSClient.MainService.DcPlanVHP model, string uid) {
+            return base.Channel.AddVHPPlanByUIDAsync(model, uid);
+        }
+        
         public int UpdateVHPPlan(PMSClient.MainService.DcPlanVHP model) {
             return base.Channel.UpdateVHPPlan(model);
         }
         
         public System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSClient.MainService.DcPlanVHP model) {
             return base.Channel.UpdateVHPPlanAsync(model);
+        }
+        
+        public int UpdateVHPPlanByUID(PMSClient.MainService.DcPlanVHP model, string uid) {
+            return base.Channel.UpdateVHPPlanByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateVHPPlanByUIDAsync(PMSClient.MainService.DcPlanVHP model, string uid) {
+            return base.Channel.UpdateVHPPlanByUIDAsync(model, uid);
         }
         
         public int DeleteVHPPlan(System.Guid id) {
@@ -5840,6 +5990,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialNeedAsync(PMSClient.MainService.DcMaterialNeed model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUIDResponse")]
+        int AddMaterialNeedByUID(PMSClient.MainService.DcMaterialNeed model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialNeedByUIDAsync(PMSClient.MainService.DcMaterialNeed model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUIDResponse")]
+        int UpdateMaterialNeedByUID(PMSClient.MainService.DcMaterialNeed model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialNeedByUIDAsync(PMSClient.MainService.DcMaterialNeed model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeedResponse")]
         int DeleteMaterialNeed(System.Guid id);
@@ -5907,6 +6069,22 @@ namespace PMSClient.MainService {
             return base.Channel.UpdateMaterialNeedAsync(model);
         }
         
+        public int AddMaterialNeedByUID(PMSClient.MainService.DcMaterialNeed model, string uid) {
+            return base.Channel.AddMaterialNeedByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialNeedByUIDAsync(PMSClient.MainService.DcMaterialNeed model, string uid) {
+            return base.Channel.AddMaterialNeedByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialNeedByUID(PMSClient.MainService.DcMaterialNeed model, string uid) {
+            return base.Channel.UpdateMaterialNeedByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialNeedByUIDAsync(PMSClient.MainService.DcMaterialNeed model, string uid) {
+            return base.Channel.UpdateMaterialNeedByUIDAsync(model, uid);
+        }
+        
         public int DeleteMaterialNeed(System.Guid id) {
             return base.Channel.DeleteMaterialNeed(id);
         }
@@ -5956,6 +6134,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialOrderAsync(PMSClient.MainService.DcMaterialOrder model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUIDResponse")]
+        int AddMaterialOrderByUID(PMSClient.MainService.DcMaterialOrder model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialOrderByUIDAsync(PMSClient.MainService.DcMaterialOrder model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUIDResponse")]
+        int UpdateMaterialOrderByUID(PMSClient.MainService.DcMaterialOrder model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderByUIDAsync(PMSClient.MainService.DcMaterialOrder model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderResponse")]
         int DeleteMaterialOrder(System.Guid id);
         
@@ -5989,6 +6179,18 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSClient.MainService.DcMaterialOrderItem model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUIDResponse")]
+        int AddMaterialOrderItemByUID(PMSClient.MainService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialOrderItemByUIDAsync(PMSClient.MainService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUIDResponse")]
+        int UpdateMaterialOrderItemByUID(PMSClient.MainService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderItemByUIDAsync(PMSClient.MainService.DcMaterialOrderItem model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse")]
         int DeleteMaterialOrderItem(System.Guid id);
@@ -6090,6 +6292,22 @@ namespace PMSClient.MainService {
             return base.Channel.UpdateMaterialOrderAsync(model);
         }
         
+        public int AddMaterialOrderByUID(PMSClient.MainService.DcMaterialOrder model, string uid) {
+            return base.Channel.AddMaterialOrderByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialOrderByUIDAsync(PMSClient.MainService.DcMaterialOrder model, string uid) {
+            return base.Channel.AddMaterialOrderByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialOrderByUID(PMSClient.MainService.DcMaterialOrder model, string uid) {
+            return base.Channel.UpdateMaterialOrderByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderByUIDAsync(PMSClient.MainService.DcMaterialOrder model, string uid) {
+            return base.Channel.UpdateMaterialOrderByUIDAsync(model, uid);
+        }
+        
         public int DeleteMaterialOrder(System.Guid id) {
             return base.Channel.DeleteMaterialOrder(id);
         }
@@ -6128,6 +6346,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSClient.MainService.DcMaterialOrderItem model) {
             return base.Channel.UpdateMaterialOrderItemAsync(model);
+        }
+        
+        public int AddMaterialOrderItemByUID(PMSClient.MainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.AddMaterialOrderItemByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialOrderItemByUIDAsync(PMSClient.MainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.AddMaterialOrderItemByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialOrderItemByUID(PMSClient.MainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.UpdateMaterialOrderItemByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderItemByUIDAsync(PMSClient.MainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.UpdateMaterialOrderItemByUIDAsync(model, uid);
         }
         
         public int DeleteMaterialOrderItem(System.Guid id) {
@@ -6179,6 +6413,22 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryInCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearchRespo" +
+            "nse")]
+        PMSClient.MainService.DcMaterialInventoryIn[] GetMaterialInventoryInsBySearch(int skip, int take, string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearchRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsBySearchAsync(int skip, int take, string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchR" +
+            "esponse")]
+        int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchR" +
+            "esponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryInCountBySearchAsync(string supplier, string composition, string batchnumber, string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
         int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model);
         
@@ -6190,6 +6440,20 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSClient.MainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUIDResponse")]
+        int AddMaterialInventoryInByUID(PMSClient.MainService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryInByUIDAsync(PMSClient.MainService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUIDRespon" +
+            "se")]
+        int UpdateMaterialInventoryInByUID(PMSClient.MainService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUIDRespon" +
+            "se")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryInByUIDAsync(PMSClient.MainService.DcMaterialInventoryIn model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse")]
         int DeleteMaterialInventoryIn(System.Guid id);
@@ -6211,6 +6475,24 @@ namespace PMSClient.MainService {
             "")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearchResp" +
+            "onse")]
+        PMSClient.MainService.DcMaterialInventoryOut[] GetMaterialInventoryOutsBySearch(int skip, int take, string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearchResp" +
+            "onse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsBySearchAsync(int skip, int take, string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "Response")]
+        int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "Response")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountBySearchAsync(string receiver, string composition, string batchnumber, string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
         int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model);
         
@@ -6222,6 +6504,22 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSClient.MainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUIDResponse" +
+            "")]
+        int AddMaterialInventoryOutByUID(PMSClient.MainService.DcMaterialInventoryOut model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUIDResponse" +
+            "")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryOutByUIDAsync(PMSClient.MainService.DcMaterialInventoryOut model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUIDRespo" +
+            "nse")]
+        int UpdateMaterialInventoryOutByUID(PMSClient.MainService.DcMaterialInventoryOut model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUIDRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutByUIDAsync(PMSClient.MainService.DcMaterialInventoryOut model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse")]
         int DeleteMaterialInventoryOut(System.Guid id);
@@ -6273,6 +6571,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetMaterialInventoryInCountAsync();
         }
         
+        public PMSClient.MainService.DcMaterialInventoryIn[] GetMaterialInventoryInsBySearch(int skip, int take, string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInsBySearch(skip, take, supplier, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsBySearchAsync(int skip, int take, string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInsBySearchAsync(skip, take, supplier, composition, batchnumber, pminumber);
+        }
+        
+        public int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInCountBySearch(supplier, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountBySearchAsync(string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInCountBySearchAsync(supplier, composition, batchnumber, pminumber);
+        }
+        
         public int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model) {
             return base.Channel.AddMaterialInventoryIn(model);
         }
@@ -6287,6 +6601,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSClient.MainService.DcMaterialInventoryIn model) {
             return base.Channel.UpdateMaterialInventoryInAsync(model);
+        }
+        
+        public int AddMaterialInventoryInByUID(PMSClient.MainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.AddMaterialInventoryInByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryInByUIDAsync(PMSClient.MainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.AddMaterialInventoryInByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialInventoryInByUID(PMSClient.MainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.UpdateMaterialInventoryInByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryInByUIDAsync(PMSClient.MainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.UpdateMaterialInventoryInByUIDAsync(model, uid);
         }
         
         public int DeleteMaterialInventoryIn(System.Guid id) {
@@ -6313,6 +6643,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetMaterialInventoryOutCountAsync();
         }
         
+        public PMSClient.MainService.DcMaterialInventoryOut[] GetMaterialInventoryOutsBySearch(int skip, int take, string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutsBySearch(skip, take, receiver, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsBySearchAsync(int skip, int take, string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutsBySearchAsync(skip, take, receiver, composition, batchnumber, pminumber);
+        }
+        
+        public int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutCountBySearch(receiver, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountBySearchAsync(string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutCountBySearchAsync(receiver, composition, batchnumber, pminumber);
+        }
+        
         public int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model) {
             return base.Channel.AddMaterialInventoryOut(model);
         }
@@ -6327,6 +6673,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSClient.MainService.DcMaterialInventoryOut model) {
             return base.Channel.UpdateMaterialInventoryOutAsync(model);
+        }
+        
+        public int AddMaterialInventoryOutByUID(PMSClient.MainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.AddMaterialInventoryOutByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryOutByUIDAsync(PMSClient.MainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.AddMaterialInventoryOutByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialInventoryOutByUID(PMSClient.MainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.UpdateMaterialInventoryOutByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutByUIDAsync(PMSClient.MainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.UpdateMaterialInventoryOutByUIDAsync(model, uid);
         }
         
         public int DeleteMaterialInventoryOut(System.Guid id) {
@@ -6834,11 +7196,23 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestResponse")]
         System.Threading.Tasks.Task<int> AddRecordTestAsync(PMSClient.MainService.DcRecordTest model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestByUIDResponse")]
+        int AddRecordTestByUID(PMSClient.MainService.DcRecordTest model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordTestByUIDAsync(PMSClient.MainService.DcRecordTest model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse")]
         int UpdateRecordTest(PMSClient.MainService.DcRecordTest model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse")]
         System.Threading.Tasks.Task<int> UpdateRecordTestAsync(PMSClient.MainService.DcRecordTest model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestByUIDResponse")]
+        int UpdateRecordTestByUID(PMSClient.MainService.DcRecordTest model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordTestByUIDAsync(PMSClient.MainService.DcRecordTest model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/DeleteRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse")]
         int DeleteRecordTest(System.Guid id);
@@ -6914,12 +7288,28 @@ namespace PMSClient.MainService {
             return base.Channel.AddRecordTestAsync(model);
         }
         
+        public int AddRecordTestByUID(PMSClient.MainService.DcRecordTest model, string uid) {
+            return base.Channel.AddRecordTestByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordTestByUIDAsync(PMSClient.MainService.DcRecordTest model, string uid) {
+            return base.Channel.AddRecordTestByUIDAsync(model, uid);
+        }
+        
         public int UpdateRecordTest(PMSClient.MainService.DcRecordTest model) {
             return base.Channel.UpdateRecordTest(model);
         }
         
         public System.Threading.Tasks.Task<int> UpdateRecordTestAsync(PMSClient.MainService.DcRecordTest model) {
             return base.Channel.UpdateRecordTestAsync(model);
+        }
+        
+        public int UpdateRecordTestByUID(PMSClient.MainService.DcRecordTest model, string uid) {
+            return base.Channel.UpdateRecordTestByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordTestByUIDAsync(PMSClient.MainService.DcRecordTest model, string uid) {
+            return base.Channel.UpdateRecordTestByUIDAsync(model, uid);
         }
         
         public int DeleteRecordTest(System.Guid id) {
