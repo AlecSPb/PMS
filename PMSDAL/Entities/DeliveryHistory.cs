@@ -10,7 +10,6 @@ namespace PMSDAL
     //发货单
     public class DeliveryHistory
     {
-        [Key]
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }

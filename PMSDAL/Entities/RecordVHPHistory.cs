@@ -12,7 +12,6 @@ namespace PMSDAL
     /// </summary>
     public class RecordVHPHistory
     {
-        [Key]
         public Guid ID { get; set; }
         public string Creator { get; set; }
         public DateTime CurrentTime { get; set; }

@@ -14,7 +14,6 @@ namespace PMSDAL
     /// </summary>
     public class DeliveryItemHistory
     {
-        [Key]
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }

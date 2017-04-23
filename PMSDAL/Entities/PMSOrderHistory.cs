@@ -14,7 +14,6 @@ namespace PMSDAL
     public class PMSOrderHistory
     {
         //基本信息
-        [Key]
         public Guid ID { get; set; }
         public string CustomerName { get; set; }
         public string PO { get; set; }
