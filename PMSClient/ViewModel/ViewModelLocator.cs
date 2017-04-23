@@ -90,6 +90,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<RecordMillingEditVM>();
 
             SimpleIoc.Default.Register<RecordDeMoldVM>();
+            SimpleIoc.Default.Register<RecordDeMoldSelectVM>();
             SimpleIoc.Default.Register<RecordDeMoldEditVM>();
 
             SimpleIoc.Default.Register<RecordMachineVM>();
@@ -246,6 +247,13 @@ namespace PMSClient.ViewModel
             get
             {
                 return SimpleIoc.Default.GetInstance<RecordDeMoldVM>();
+            }
+        }
+        public RecordDeMoldSelectVM RecordDeMoldSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordDeMoldSelectVM>();
             }
         }
         public RecordDeMoldEditVM RecordDeMoldEdit

@@ -43,6 +43,7 @@ namespace PMSClient
         RecordVHP,
         RecordVHPQuickEdit,
         RecordDeMold,
+        RecordDeMoldSelect,
         RecordDeMoldEdit,
         RecordMachine,
         RecordMachineEdit,
