@@ -160,7 +160,7 @@ namespace PMSWCFService
 
         }
 
-        p void SaveHistory(DcOrder model, string uid)
+        private void SaveHistory(DcOrder model, string uid)
         {
             try
             {
@@ -185,8 +185,6 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
-
 
         /// <summary>
         /// 更新订单

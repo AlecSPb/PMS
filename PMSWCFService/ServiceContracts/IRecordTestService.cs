@@ -26,6 +26,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateRecordTest(DcRecordTest model);
         [OperationContract]
+        int UpdateRecordTestByUID(DcRecordTest model,string uid);
+        [OperationContract]
         int DeleteRecordTest(Guid id);
     }
 }

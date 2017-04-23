@@ -163,7 +163,7 @@ namespace PMSWCFService
                     dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
 
-
+                    
                     return result;
                 }
             }
@@ -175,24 +175,48 @@ namespace PMSWCFService
 
         }
 
+        public int UpdateRecordTestByUID(DcRecordTest model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
+                    var product = Mapper.Map<RecordTest>(model);
+                    dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                    result = dc.SaveChanges();
+
+                    SaveHistory(model, uid);
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// 更新备份
         /// </summary>
         /// <param name="model"></param>
-        private void AddHistory(RecordTest model)
+        private void SaveHistory(DcRecordTest model, string uid)
         {
             try
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, RecordTestHistory>());
-                var history = Mapper.Map<RecordTestHistory>(model);
-
-                //更改ID
-                history.ID = Guid.NewGuid();
-                history.OperateTime = DateTime.Now;
-                history.Operator ="";
-
                 using (var dc = new PMSDbContext())
                 {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcRecordTest, RecordTestHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<RecordTestHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
                     dc.RecordTestHistorys.Add(history);
                     dc.SaveChanges();
                 }
@@ -202,7 +226,6 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
-
         }
 
 
