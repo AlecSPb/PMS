@@ -22,7 +22,7 @@
     <sys:String x:Key="NavigationRecordBlank">取模记录</sys:String>
     <sys:String x:Key="NavigationRecordMachine">加工记录</sys:String>
     <sys:String x:Key="NavigationRecordTestResult">测试记录</sys:String>
-    <sys:String x:Key="NavigationDelivery">发货记录</sys:String>
+    <sys:String x:Key="NavigationDelivery">发货管理</sys:String>
     <sys:String x:Key="NavigationRecordBonding">绑定记录</sys:String>
     <sys:String x:Key="NavigationMaintenance">设备维护</sys:String>
 
@@ -116,10 +116,10 @@
     <sys:String x:Key="PagePlate">背板库存</sys:String>
     <sys:String x:Key="PagePlatetEdit">背板库存编辑</sys:String>
     
-    <sys:String x:Key="PageDelivery">发货记录</sys:String>
-    <sys:String x:Key="PageDeliveryEdit">发货记录编辑</sys:String>
+    <sys:String x:Key="PageDelivery">发货管理</sys:String>
+    <sys:String x:Key="PageDeliveryEdit">发货管理编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
-    <sys:String x:Key="PageDeliveryItemList">发货记录[所有已发货产品]</sys:String>
+    <sys:String x:Key="PageDeliveryItemList">发货流水[所有已发货产品]</sys:String>
 
     <sys:String x:Key="PageProductSelect">请选择一个成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择一个绑定记录</sys:String>
@@ -258,7 +258,7 @@
     <sys:String x:Key="ButtonSelectBonding">选择绑定结果</sys:String>
     <sys:String x:Key="ButtonSelectMaterialOrderItem">选择原料订单项目</sys:String>
     <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
-    <sys:String x:Key="ButtonDeliveryItemList">顺序发货记录</sys:String>
+    <sys:String x:Key="ButtonDeliveryItemList">发货流水</sys:String>
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
     <sys:String x:Key="ButtonSelectRecordDeMold">选择取模记录</sys:String>
     <!--Indicator-->
