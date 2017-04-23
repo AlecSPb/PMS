@@ -3976,6 +3976,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlanTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RatioDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4144,6 +4147,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlanType {
+            get {
+                return this.PlanTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanTypeField, value) != true)) {
+                    this.PlanTypeField = value;
+                    this.RaisePropertyChanged("PlanType");
                 }
             }
         }

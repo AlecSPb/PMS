@@ -22,6 +22,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }
         [DataMember]
+        public string PlanType { get; set; }
+        [DataMember]
         public string VHPPlanLot { get; set; }
         [DataMember]
         public string Composition { get; set; }

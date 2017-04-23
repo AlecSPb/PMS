@@ -54,6 +54,8 @@
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="{StaticResource RDMPlanType}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding PlanType}"/>
                 <DataGridTextColumn Header="{StaticResource RDMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource RDMTemperature1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -62,6 +64,10 @@
                                     Binding="{Binding Temperature2}"/>
                 <DataGridTextColumn Header="{StaticResource RDMDeMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeMoldType}"/>
+                <DataGridTextColumn Header="{StaticResource RDMBlankDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding BlankDimension}"/>
+                <DataGridTextColumn Header="{StaticResource RDMCalculationDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding CalculationDensity,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding Weight,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
@@ -76,6 +82,10 @@
                                     Binding="{Binding Thickness3,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding Thickness4,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Density,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMRatioDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding RatioDensity,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

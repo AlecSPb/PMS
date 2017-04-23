@@ -228,7 +228,7 @@ namespace PMSClient.ViewModel
                         service.UpdateRecordBongding(CurrentRecordBonding);
                     }
                 }
-                PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");
+                //PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");
                 NavigationService.ShowStatusMessage("保存成功，请刷新列表");
                 GoBack();
             }

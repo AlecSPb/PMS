@@ -402,6 +402,7 @@
       <xs:element minOccurs="0" name="Diameter1" type="xs:double" />
       <xs:element minOccurs="0" name="Diameter2" type="xs:double" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RatioDensity" type="xs:double" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />

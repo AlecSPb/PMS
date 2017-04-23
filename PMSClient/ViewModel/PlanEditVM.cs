@@ -41,7 +41,7 @@ namespace PMSClient.ViewModel
             plan.Temperature = 0;
             plan.Pressure = 0;
             plan.Vaccum = 1E-3;
-            plan.ProcessCode = "W1";
+            plan.ProcessCode = ProcessCodes[0];
             plan.PrePressure = 10;
             plan.PreTemperature = 25;
             plan.Quantity = 1;

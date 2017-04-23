@@ -80,11 +80,11 @@ namespace PMSWCFService
 
                     var result = from o in dc.Orders
                                  where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && o.CompositionStandard.Contains(compostion)
-                                 && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
+                                 && o.CompositionStandard.Contains(compostion)
+                                 && o.PMINumber.Contains(pminumber)
                                  orderby o.CreateTime descending
                                  select o;
 

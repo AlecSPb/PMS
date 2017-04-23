@@ -143,6 +143,7 @@ namespace PMSClient.ViewModel
                 PageSize = 15;
                 var service = new MissonServiceClient();
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
+
                 MissonTarget = service.GetMissonUnCompletedCount();
                 service.Close();
                 ActionPaging();
