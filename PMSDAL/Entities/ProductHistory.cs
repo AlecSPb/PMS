@@ -29,8 +29,10 @@ namespace PMSDAL
 
 
         //操作者和操作时间
+        [Key]
+        public Guid HistoryID { get; set; }
         public string Operator { get; set; }
-        public string OperateTime { get; set; }
+        public DateTime OperateTime { get; set; }
 
     }
 }

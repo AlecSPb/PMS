@@ -162,6 +162,8 @@ namespace PMSWCFService
                     var product = Mapper.Map<RecordTest>(model);
                     dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
                     result = dc.SaveChanges();
+
+
                     return result;
                 }
             }
@@ -172,5 +174,38 @@ namespace PMSWCFService
             }
 
         }
+
+        /// <summary>
+        /// 更新备份
+        /// </summary>
+        /// <param name="model"></param>
+        private void AddHistory(RecordTest model)
+        {
+            try
+            {
+                Mapper.Initialize(cfg => cfg.CreateMap<RecordTest, RecordTestHistory>());
+                var history = Mapper.Map<RecordTestHistory>(model);
+
+                //更改ID
+                history.ID = Guid.NewGuid();
+                history.OperateTime = DateTime.Now;
+                history.Operator =;
+
+                using (var dc = new PMSDbContext())
+                {
+                    dc.RecordTestHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
+        }
+
+
+
     }
 }
