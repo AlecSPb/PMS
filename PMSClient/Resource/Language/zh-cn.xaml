@@ -439,7 +439,7 @@
     <sys:String x:Key="RDMTemperature2">脱模温度</sys:String>
     <sys:String x:Key="RDMDeMoldType">脱模类型</sys:String>
     <sys:String x:Key="RDMPlanType">计划类型</sys:String>
-    <sys:String x:Key="RDMBlankDimension">毛坯规格</sys:String>
+    <sys:String x:Key="RDMBlankDimension">设计规格</sys:String>
     <sys:String x:Key="RDMCalculationDensity">计算密度</sys:String>
     <sys:String x:Key="RDMDensity">密度</sys:String>
     <sys:String x:Key="RDMRatioDensity">密度%</sys:String>

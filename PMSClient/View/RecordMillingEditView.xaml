@@ -144,7 +144,7 @@
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"

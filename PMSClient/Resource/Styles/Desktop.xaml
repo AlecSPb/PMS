@@ -19,7 +19,7 @@
     <sys:Double x:Key="FontSM">12</sys:Double>
     <sys:Double x:Key="FontMD">18</sys:Double>
     <sys:Double x:Key="FontLG">25</sys:Double>
-    <sys:Double x:Key="TabletFontLG">18</sys:Double>
+    <sys:Double x:Key="TabletFontLG">14</sys:Double>
 
 
     <Thickness x:Key="ThicknessSM">2</Thickness>
