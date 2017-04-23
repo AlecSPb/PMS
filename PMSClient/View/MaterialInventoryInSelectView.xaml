@@ -20,7 +20,17 @@
         <TextBlock Text="{StaticResource PageMaterialInventoryInSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource RPProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource RPProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryIns}">
             <DataGrid.Columns>
