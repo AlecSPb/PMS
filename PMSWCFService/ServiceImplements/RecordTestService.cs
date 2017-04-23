@@ -40,13 +40,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
-                    var product = Mapper.Map<RecordTest>(model);
-                    dc.RecordTests.Add(product);
-                    result = dc.SaveChanges();
                     SaveHistory(model, uid);
-                    return result;
+                    return AddRecordTest(model);
                 }
             }
             catch (Exception ex)
@@ -203,14 +198,8 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    int result = 0;
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcRecordTest, RecordTest>());
-                    var product = Mapper.Map<RecordTest>(model);
-                    dc.Entry(product).State = System.Data.Entity.EntityState.Modified;
-                    result = dc.SaveChanges();
-
                     SaveHistory(model, uid);
-                    return result;
+                    return UpdateRecordTest(model);
                 }
             }
             catch (Exception ex)
