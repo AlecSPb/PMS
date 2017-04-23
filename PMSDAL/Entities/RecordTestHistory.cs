@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace PMSDAL
         public string Defects { get; set; }
         public string Remark { get; set; }
         public string Sample { get; set; }
+        public DateTime OrderDate { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

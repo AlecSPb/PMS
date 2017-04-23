@@ -30,5 +30,6 @@ namespace PMSDAL
         public string Defects { get; set; }
         public string Remark { get; set; }
         public string Sample { get; set; }
+        public DateTime OrderDate { get; set; }
     }
 }

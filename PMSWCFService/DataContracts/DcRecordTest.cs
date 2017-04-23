@@ -48,8 +48,8 @@ namespace PMSWCFService.DataContracts
         public string Remark { get; set; }
         [DataMember]
         public string Sample { get; set; }
-
-
+        [DataMember]
+        public DateTime OrderDate { get; set; }
 
     }
 }

@@ -20,6 +20,10 @@ namespace PMSDAL
         public string VHPPlanLot { get; set; }
         public string Composition { get; set; }
 
+        public string BlankDimension { get; set; }
+        public double CalculationDensity { get; set; }
+        public double Density { get; set; }
+        public double RatioDensity { get; set; }
 
         public string Temperature1 { get; set; }
         public string Temperature2 { get; set; }

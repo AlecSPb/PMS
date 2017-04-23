@@ -26,6 +26,14 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Composition { get; set; }
         [DataMember]
+        public string BlankDimension { get; set; }
+        [DataMember]
+        public double CalculationDensity { get; set; }
+        [DataMember]
+        public double Density { get; set; }
+        [DataMember]
+        public double RatioDensity { get; set; }
+        [DataMember]
         public string Temperature1 { get; set; }
         [DataMember]
         public string Temperature2 { get; set; }
