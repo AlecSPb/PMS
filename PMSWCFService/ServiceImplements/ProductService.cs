@@ -33,6 +33,20 @@ namespace PMSWCFService
             }
         }
 
+        public int AddProductByUID(DcProduct model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddProduct(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int DeleteProduct(Guid id)
         {
             try
@@ -123,5 +137,44 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int UpdateProductByUID(DcProduct model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return UpdateProduct(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        private void SaveHistory(DcProduct  model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcProduct, ProductHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<ProductHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.ProductHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
     }
 }

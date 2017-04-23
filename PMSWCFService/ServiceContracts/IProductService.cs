@@ -21,6 +21,10 @@ namespace PMSWCFService.ServiceContracts
         int AddProduct(DcProduct model);
         [OperationContract]
         int UpdateProduct(DcProduct model);
+        [OperationContract]
+        int AddProductByUID(DcProduct model,string uid);
+        [OperationContract]
+        int UpdateProductByUID(DcProduct model,string uid);
 
         [OperationContract]
         int DeleteProduct(Guid id);
