@@ -188,28 +188,28 @@ namespace PMSClient.ViewModel
                     CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
                     break;
                 case "50":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    CurrentRecordBonding.WeldPerson = currentUser;
+                    CurrentRecordBonding.WeldCheckTime = currentTime;
                     break;
                 case "60":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    CurrentRecordBonding.WarpagePerson = currentUser;
+                    CurrentRecordBonding.WarpageCheckTime = currentTime;
                     break;
                 case "70":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    CurrentRecordBonding.DimensionPerson = currentUser;
+                    CurrentRecordBonding.DimensionCheckTime = currentTime;
                     break;
                 case "80":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    CurrentRecordBonding.BindingPerson = currentUser;
+                    CurrentRecordBonding.BindingCheckTime = currentTime;
                     break;
                 case "90":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    CurrentRecordBonding.SprayPerson = currentUser;
+                    CurrentRecordBonding.SprayCheckTime = currentTime;
                     break;
                 case "100":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+                    CurrentRecordBonding.ApperancePerson = currentUser;
+                    CurrentRecordBonding.ApperanceCheckTime = currentTime;
                     break;
                 default:
                     break;
@@ -221,11 +221,11 @@ namespace PMSClient.ViewModel
                 {
                     if (IsNew)
                     {
-                        //service.AddRecordBongding(CurrentRecordBonding);
+                        service.AddRecordBongding(CurrentRecordBonding);
                     }
                     else
                     {
-                        //service.UpdateRecordBongding(CurrentRecordBonding);
+                        service.UpdateRecordBongding(CurrentRecordBonding);
                     }
                 }
                 PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");

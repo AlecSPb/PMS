@@ -634,7 +634,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="9.0喷砂处理">
+                <uc:BondingEditItem Title="9.0喷砂和清洁处理">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -679,9 +679,9 @@
                                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding SprayCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDCleanCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding CleanCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDCleanCheck}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CleanCheck}" Style="{StaticResource StyleTextBoxCommon}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
