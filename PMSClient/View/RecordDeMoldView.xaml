@@ -29,6 +29,14 @@
                      Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
+            <!--图例-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+            </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordDeMolds}"
                   LoadingRow="DataGrid_LoadingRow">

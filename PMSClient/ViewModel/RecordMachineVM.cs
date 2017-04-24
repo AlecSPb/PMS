@@ -35,7 +35,7 @@ namespace PMSClient.ViewModel
 
                 var sb = new StringBuilder();
                 sb.AppendLine(model.Composition);
-                sb.Append(model.Dimension);
+                sb.AppendLine(model.Dimension);
                 sb.AppendLine("加工");
                 sb.AppendLine(model.VHPPlanLot);
 

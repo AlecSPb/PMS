@@ -47,7 +47,7 @@ namespace PMSClient.ViewModel
 
                 var sb = new StringBuilder();
                 sb.AppendLine(model.Composition);
-                sb.Append(model.PMINumber);
+                sb.AppendLine(model.PMINumber);
                 sb.AppendLine("制粉");
                 sb.AppendLine(model.VHPPlanLot);
 

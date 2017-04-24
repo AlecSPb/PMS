@@ -65,7 +65,7 @@ namespace PMSClient.ViewModel
 
                 var sb = new StringBuilder();
                 sb.AppendLine(model.Misson.CompositionStandard);
-                sb.Append(model.Misson.Dimension);
+                sb.AppendLine(model.Misson.Dimension);
                 sb.AppendLine(model.Plan.PlanType);
                 sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
 
