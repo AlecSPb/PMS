@@ -286,11 +286,14 @@
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Defects" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hardness" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastWeldMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UseCount" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -532,6 +535,7 @@
       <xs:element minOccurs="0" name="TargetDiameterCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetDimensionActual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetPMINumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPerson" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TargetPreProcessCheckTime" type="xs:dateTime" />

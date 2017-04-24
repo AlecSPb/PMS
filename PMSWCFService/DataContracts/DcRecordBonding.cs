@@ -33,9 +33,11 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string TargetPO { get; set; }
         [DataMember]
+        public string TargetPMINumber { get; set; }
+        [DataMember]
         public string TargetWeight { get; set; }//显示
         [DataMember]
-        public string TargetDimension{ get; set; }//显示
+        public string TargetDimension { get; set; }//显示
         [DataMember]
         public string TargetDimensionActual { get; set; }
         [DataMember]

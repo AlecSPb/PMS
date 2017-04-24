@@ -2773,7 +2773,13 @@ namespace PMSClient.MainService {
         private string DimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HardnessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastWeldMaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateLotField;
@@ -2786,6 +2792,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SupplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UseCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeightField;
@@ -2866,6 +2875,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Hardness {
+            get {
+                return this.HardnessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HardnessField, value) != true)) {
+                    this.HardnessField = value;
+                    this.RaisePropertyChanged("Hardness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -2874,6 +2896,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastWeldMaterial {
+            get {
+                return this.LastWeldMaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastWeldMaterialField, value) != true)) {
+                    this.LastWeldMaterialField = value;
+                    this.RaisePropertyChanged("LastWeldMaterial");
                 }
             }
         }
@@ -2926,6 +2961,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
                     this.SupplierField = value;
                     this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UseCount {
+            get {
+                return this.UseCountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UseCountField, value) != true)) {
+                    this.UseCountField = value;
+                    this.RaisePropertyChanged("UseCount");
                 }
             }
         }
@@ -5095,6 +5143,9 @@ namespace PMSClient.MainService {
         private string TargetDimensionActualField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetPMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetPOField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5801,6 +5852,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.TargetDimensionActualField, value) != true)) {
                     this.TargetDimensionActualField = value;
                     this.RaisePropertyChanged("TargetDimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TargetPMINumber {
+            get {
+                return this.TargetPMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetPMINumberField, value) != true)) {
+                    this.TargetPMINumberField = value;
+                    this.RaisePropertyChanged("TargetPMINumber");
                 }
             }
         }

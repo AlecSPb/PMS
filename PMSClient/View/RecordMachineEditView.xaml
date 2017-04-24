@@ -23,7 +23,7 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
-            <Button Content="{StaticResource ButtonSelectRecordDeMold}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Select}"/>
+            <Button Content="{StaticResource ButtonSelectVHPPlan}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding SelectPlan}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordMachineEdit}"/>
         </StackPanel>
@@ -55,7 +55,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="0*"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RMMVHPPlanLot}"
@@ -86,9 +86,13 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMMBlankDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding BlankDimension}" Style="{StaticResource StyleTextBoxBig}" />
+                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Text="{Binding BlankDimension}" Style="{StaticResource StyleTextBoxBig}" Width="200"/>
+                    <Button Content="{StaticResource ButtonSelectRecordDeMold}" Style="{StaticResource  StyleButtonCommon}"
+                            Command="{Binding DataContext.SelectDeMold,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                </StackPanel>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#毛坯尺寸"/>
-                
+
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMMDiameter1}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Diameter1,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>

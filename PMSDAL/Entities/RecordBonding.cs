@@ -25,7 +25,7 @@ namespace PMSDAL
         public string TargetAbbr { get; set; }
         public string TargetCustomer { get; set; }
         public string TargetPO { get; set; }
-        public string PMINumber { get; set; }
+        public string TargetPMINumber { get; set; }
         public string TargetWeight { get; set; }//显示
         public string TargetDimension { get; set; }//显示
         public string TargetDimensionActual { get; set; }

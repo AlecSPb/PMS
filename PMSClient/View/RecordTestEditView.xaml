@@ -66,39 +66,39 @@
                           ItemsSource="{Binding DataContext.TestTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding TestType,Mode=TwoWay}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="测试类型"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#测试类型"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RTProductID}"  Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"   Text="产品ID"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"   Text="#产品ID"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxBig}"    />
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"   Text="标准成分"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"   Text="#标准成分"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxBig}"   />
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text=""/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"    Text="#"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RTPMINumber}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxBig}" />
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text=""/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RTPO}" Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PO}" Style="{StaticResource StyleTextBoxBig}" />
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text=""/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RTCustomer}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Customer}" Style="{StaticResource StyleTextBoxBig}" />
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RTDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxBig}"  />
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

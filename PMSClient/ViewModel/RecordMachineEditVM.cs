@@ -21,10 +21,17 @@ namespace PMSClient.ViewModel
 
             GiveUp = new RelayCommand(ActionGiveUp);
             Save = new RelayCommand(ActionSave);
-            Select = new RelayCommand(ActionSelect);
+            SelectPlan = new RelayCommand(ActionSelectPlan);
+            SelectDeMold = new RelayCommand(ActionSelectDeMold);
         }
 
-        private void ActionSelect()
+        private void ActionSelectPlan()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMachineEdit);
+            NavigationService.GoTo(PMSViews.PlanSelect);
+        }
+
+        private void ActionSelectDeMold()
         {
             PMSHelper.ViewModels.RecordDeMoldSelect.SetRequestView(PMSViews.RecordMachineEdit);
             NavigationService.GoTo(PMSViews.RecordDeMoldSelect);
@@ -84,7 +91,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordMachine.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordMachine.Dimension = plan.Misson.Dimension;
                 CurrentRecordMachine.BlankDimension = "";
-                CurrentRecordMachine.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
+                CurrentRecordMachine.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);//粗略设定
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
         }
@@ -93,11 +100,8 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                CurrentRecordMachine.PMINumber = model.PMINumber;
-                CurrentRecordMachine.Composition = model.Composition;
-                CurrentRecordMachine.Dimension = model.Dimension;
-                CurrentRecordMachine.BlankDimension = UsefulPackage.PMSTranslate.Dimension(model);
                 CurrentRecordMachine.VHPPlanLot = model.VHPPlanLot;
+                CurrentRecordMachine.BlankDimension = UsefulPackage.PMSTranslate.Dimension(model);
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
         }
@@ -145,7 +149,8 @@ namespace PMSClient.ViewModel
             set { currentRecordMachine = value; RaisePropertyChanged(nameof(CurrentRecordMachine)); }
         }
 
-        public RelayCommand Select { get; set; }
+        public RelayCommand SelectPlan{ get; set; }
+        public RelayCommand SelectDeMold { get; set; }
 
         public List<string> States { get; set; }
         public List<string> MachineDefects { get; set; }

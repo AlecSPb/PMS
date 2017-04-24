@@ -57,6 +57,8 @@
                                     Binding="{Binding TargetComposition}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetAbbr}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetAbbr}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding TargetPMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetPO}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetPO}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 

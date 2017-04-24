@@ -185,9 +185,10 @@ namespace PMSCommon
                 #region 数据
                 data.Add("无需加工");
                 data.Add("切割成");
-                data.Add("表面粗糙度");
+                data.Add("表面粗糙度Ra");
                 data.Add("直径偏差");
                 data.Add("厚度偏差");
+                data.Add("参考加工图纸");
                 #endregion
                 return data;
             }
@@ -204,5 +205,69 @@ namespace PMSCommon
                 return data;
             }
         }
+
+        public static List<string> TargetDimension
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                data.Add("50.8mm OD x3.175mm");
+                data.Add("50.8mm OD x4.317mm");
+                data.Add("76.2mm OD x4mm");
+                data.Add("124.5mm OD x3mm");
+                data.Add("124.5mm OD x4mm");
+                data.Add("230mm OD x 4mm");
+                #endregion
+                return data;
+            }
+        }
+
+        public static List<string> PlateDimension
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                data.Add("237mm OD x 11mm");
+                data.Add("158mm OD x 11mm");
+                #endregion
+                return data;
+            }
+        }
+
+        public static List<string> PlateSupplier
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                data.Add("广汉");
+                data.Add("六九");
+                #endregion
+                return data;
+            }
+        }
+
+        public static List<string> PlateLastWeldMaterial
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                data.Add("铟");
+                data.Add("锡");
+                data.Add("导电胶");
+                #endregion
+                return data;
+            }
+        }
+
+
+
     }
 }

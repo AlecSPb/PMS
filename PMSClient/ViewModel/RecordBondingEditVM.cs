@@ -46,6 +46,7 @@ namespace PMSClient.ViewModel
             //暂时用不到
             model.TargetAbbr = "";
             model.TargetPO = "";
+            model.TargetPMINumber = UsefulPackage.PMSTranslate.PMINumber();
             model.TargetWeight = "";
             model.TargetDimensionActual = "";
             model.TargetDefects = "";
@@ -142,6 +143,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordBonding.TargetComposition = model.Composition;
                 CurrentRecordBonding.TargetAbbr = model.CompositionAbbr;
                 CurrentRecordBonding.TargetPO = model.PO;
+                CurrentRecordBonding.TargetPMINumber = model.PMINumber;
                 CurrentRecordBonding.TargetWeight = model.Weight;
                 CurrentRecordBonding.TargetDimension = model.Dimension;
                 CurrentRecordBonding.TargetDimensionActual = model.DimensionActual;

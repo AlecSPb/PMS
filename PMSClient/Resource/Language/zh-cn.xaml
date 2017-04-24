@@ -578,6 +578,7 @@
     <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
     <sys:String x:Key="BDTargetCustomer">靶材客户</sys:String>
     <sys:String x:Key="BDTargetPO">靶材批号</sys:String>
+    <sys:String x:Key="BDTargetPMINumber">内部编号</sys:String>
     <sys:String x:Key="BDTargetWeight">靶材重量</sys:String>
     <sys:String x:Key="BDTargetDimension">靶材尺寸</sys:String>
     <sys:String x:Key="BDTargetDImensionActual">靶材实际尺寸</sys:String>

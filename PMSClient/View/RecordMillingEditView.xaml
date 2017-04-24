@@ -64,20 +64,20 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="热压编号170111-M-1,热压日期-设备号-第1片"/>
+                           Text="#热压编号170111-M-1,热压日期-设备号-第1片"/>
 
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="原材料"/>
+                           Text="#原材料"/>
                 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="确保唯一"/>
+                           Text="#确保唯一"/>
                 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

@@ -23,9 +23,15 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Dimension { get; set; }
         [DataMember]
-        public string Weight { get; set; }
-        [DataMember]
         public string Supplier { get; set; }
+        [DataMember]
+        public string UseCount { get; set; }
+        [DataMember]
+        public string Hardness { get; set; }
+        [DataMember]
+        public string LastWeldMaterial { get; set; }
+        [DataMember]
+        public string Weight { get; set; }
         [DataMember]
         public string Appearance { get; set; }
         [DataMember]
