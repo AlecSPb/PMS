@@ -136,7 +136,7 @@ namespace UsefulPackage
         {
             double diameter = Average(model.Diameter1, model.Diameter2);
             double thickness = Average(model.Thickness1, model.Thickness2, model.Thickness3, model.Thickness4);
-            return $"{diameter}mm ODx {thickness}mm";
+            return $"{diameter.ToString("F2")}mm ODx {thickness.ToString("F2")}mm";
         }
         /// <summary>
         ///输入加工数据，得到靶材尺寸
@@ -147,7 +147,7 @@ namespace UsefulPackage
         {
             double diameter = Average(model.Diameter1, model.Diameter2);
             double thickness = Average(model.Thickness1, model.Thickness2, model.Thickness3, model.Thickness4);
-            return $"{diameter}mm ODx {thickness}mm";
+            return $"{diameter.ToString("F2")}mm ODx {thickness.ToString("F2")}mm";
         }
     }
 }

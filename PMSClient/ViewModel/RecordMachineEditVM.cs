@@ -80,20 +80,23 @@ namespace PMSClient.ViewModel
             if (plan != null)
             {
                 CurrentRecordMachine.PMINumber = plan.Misson.PMINumber;
-                CurrentRecordMachine.BlankDimension=
                 CurrentRecordMachine.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordMachine.Dimension = plan.Misson.Dimension;
-                CurrentRecordMachine.VHPPlanLot= UsefulPackage.PMSTranslate.PlanLot(plan);
+                CurrentRecordMachine.BlankDimension = "";
+                CurrentRecordMachine.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
         }
 
-        public void SetBySelect(DcRecordDeMold  model)
+        public void SetBySelect(DcRecordDeMold model)
         {
             if (model != null)
             {
+                CurrentRecordMachine.PMINumber = model.PMINumber;
                 CurrentRecordMachine.Composition = model.Composition;
-                CurrentRecordMachine.Dimension = model.BlankDimension;
+                CurrentRecordMachine.Dimension = model.Dimension;
+                CurrentRecordMachine.BlankDimension = UsefulPackage.PMSTranslate.Dimension(model);
+                CurrentRecordMachine.PMINumber = model.PMINumber;
                 CurrentRecordMachine.VHPPlanLot = model.VHPPlanLot;
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }
@@ -108,7 +111,7 @@ namespace PMSClient.ViewModel
                 {
                     if (IsNew)
                     {
-                        service.AddRecordMachineByUID(CurrentRecordMachine,uid);
+                        service.AddRecordMachineByUID(CurrentRecordMachine, uid);
                     }
                     else
                     {

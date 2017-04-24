@@ -66,6 +66,13 @@
                                     Binding="{Binding VHPPlanLot}"/>
                     <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
+                    <DataGridTextColumn Header="{StaticResource RMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PMINumber}"/>
+                    <DataGridTextColumn Header="{StaticResource RMRoomTemperature}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding RoomTemperature}"/>
+                    <DataGridTextColumn Header="{StaticResource RMRoomHumidity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding RoomHumidity}"/>
+
                     <DataGridTextColumn Header="{StaticResource RMMillingTool}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MillingTool}"/>
                     <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -9,6 +9,7 @@ namespace PMSCommon
     public enum MaterialComsumer
     {
         车间,
-        三杰
+        三杰,
+        Leon
     }
 }

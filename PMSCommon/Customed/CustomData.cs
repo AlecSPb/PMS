@@ -8,6 +8,21 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        public static List<string> MillingTime
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                data.Add("10minx2");
+                data.Add("20minx2");
+                data.Add("30minx2");
+                data.Add("40minx2");
+                #endregion
+                return data;
+            }
+        }
         public static List<string> OrderSampleNeeds
         {
             get

@@ -4532,7 +4532,7 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BlankDimensionField;
+        private string CalculateDimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double CalculationDensityField;
@@ -4614,14 +4614,14 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BlankDimension {
+        public string CalculateDimension {
             get {
-                return this.BlankDimensionField;
+                return this.CalculateDimensionField;
             }
             set {
-                if ((object.ReferenceEquals(this.BlankDimensionField, value) != true)) {
-                    this.BlankDimensionField = value;
-                    this.RaisePropertyChanged("BlankDimension");
+                if ((object.ReferenceEquals(this.CalculateDimensionField, value) != true)) {
+                    this.CalculateDimensionField = value;
+                    this.RaisePropertyChanged("CalculateDimension");
                 }
             }
         }

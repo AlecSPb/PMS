@@ -78,7 +78,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                CurrentRecordTest.DimensionActual = $"{model.Diameter1}mm OD x {model.Thickness1}mm";
+                CurrentRecordTest.DimensionActual = UsefulPackage.PMSTranslate.Dimension(model);
             }
         }
 

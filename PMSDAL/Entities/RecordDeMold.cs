@@ -20,8 +20,8 @@ namespace PMSDAL
         public string PMINumber { get; set; }
         public string VHPPlanLot { get; set; }
         public string Composition { get; set; }
-        public string Dimension { get; set; }//隐藏属性
-        public string BlankDimension { get; set; }
+        public string Dimension { get; set; }
+        public string CalculateDimension { get; set; }//计算装料的尺寸
         public double CalculationDensity { get; set; }
         public double Density { get; set; }
         public double RatioDensity { get; set; }

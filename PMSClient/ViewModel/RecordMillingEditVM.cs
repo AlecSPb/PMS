@@ -36,7 +36,7 @@ namespace PMSClient.ViewModel
             PMSBasicDataService.SetListDS<MillingTool>(MillingTools);
 
             MillingTimes = new List<string>();
-            PMSBasicDataService.SetListDS<MillingTime>(MillingTimes);
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.MillingTime, MillingTimes);
 
             GasProtections = new List<string>();
             PMSBasicDataService.SetListDS<MillingGas>(GasProtections);

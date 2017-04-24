@@ -447,7 +447,7 @@
   <xs:element name="ArrayOfDcRecordDeMold" nillable="true" type="tns:ArrayOfDcRecordDeMold" />
   <xs:complexType name="DcRecordDeMold">
     <xs:sequence>
-      <xs:element minOccurs="0" name="BlankDimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CalculateDimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
