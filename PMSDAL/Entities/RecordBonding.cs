@@ -48,6 +48,7 @@ namespace PMSDAL
         public string PlateDimension { get; set; }
         public string PlateUseCount { get; set; }//使用次数
         public string PlateHardness { get; set; }//硬度
+        //TODO:合适的时候修改这里的拼写错误，o(╯□╰)o
         public string PlateSuplier { get; set; }//供应商
         public string PlateLastWeldMaterial { get; set; }//上次使用的焊接材料
         public string PlateOtherRecord { get; set; }//其他记录

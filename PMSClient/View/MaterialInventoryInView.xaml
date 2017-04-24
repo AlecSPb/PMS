@@ -21,15 +21,18 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource RPProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBlock Text="{StaticResource MIIComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource RPProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBlock Text="{StaticResource MIIMaterialLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchMaterialLot,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBlock Text="{StaticResource MIISupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MIIPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonMaterialInventoryOut}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialInventoryOut}"/>

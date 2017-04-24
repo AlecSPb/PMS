@@ -17,10 +17,16 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             Sign = new RelayCommand<string>(ActionSign);
             SelectTest = new RelayCommand(ActionSelectTest);
-
+            SelectPlate = new RelayCommand(ActionSelectPlate);
 
             States = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.CommonState>(States);
+        }
+
+        private void ActionSelectPlate()
+        {
+            PMSHelper.ViewModels.PlateSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            NavigationService.GoTo(PMSViews.PlateSelect);
         }
 
         private void ActionSelectTest()
@@ -39,7 +45,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.CommonState.未核验.ToString();
-            model.InstructionCode = "SOP";
+            model.InstructionCode = "无";
             model.TargetProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.TargetComposition = "靶材成分";
             model.TargetDimension = "靶材尺寸";
@@ -151,9 +157,22 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public void SetBySelect()
+        public void SetBySelect(DcPlate model)
         {
-            //TODO:以后用作从中间库房选择背板信息用
+            if (model!=null)
+            {
+                CurrentRecordBonding.PlateLot = model.PlateLot;
+                CurrentRecordBonding.PlateMaterial = model.PlateMaterial;
+                CurrentRecordBonding.PlateDimension = model.Dimension;
+                CurrentRecordBonding.PlateUseCount = model.UseCount;
+                CurrentRecordBonding.PlateHardness = model.Hardness;
+                CurrentRecordBonding.PlateSuplier = model.Supplier;
+                CurrentRecordBonding.PlateLastWeldMaterial = model.LastWeldMaterial;
+                CurrentRecordBonding.PlateOtherRecord = model.Defects;
+                CurrentRecordBonding.PlateAppearance = model.Appearance;
+            }
+
+
         }
 
 
@@ -264,5 +283,6 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<string> Sign { get; set; }
         public RelayCommand SelectTest { get; set; }
+        public RelayCommand SelectPlate { get; set; }
     }
 }

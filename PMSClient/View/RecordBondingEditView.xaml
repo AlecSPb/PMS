@@ -27,6 +27,11 @@
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel DataContext="{Binding CurrentRecordBonding}">
+                <Border Style="{StaticResource StyleBorderCommon}">
+                    <TextBlock Style="{StaticResource StyleTextBlockMultiline}">
+                        因为绑定时间段跨度很大，所以设定了多个步骤，请在每个步骤完成后，就点击该步骤的签名按钮，就会完成记录的保存。
+                    </TextBlock>
+                </Border>
                 <uc:BondingEditItem Title="0.0预备开始">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
@@ -40,6 +45,10 @@
                                          CommandParameter="00"/>
                                 <Button  Content="{StaticResource ButtonSelectTest}" Style="{StaticResource StyleButtonSpecial}"
                                 Command="{Binding DataContext.SelectTest,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"/>
+                                <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+                                <TextBlock  Style="{StaticResource StyleTextBlockSpecial}">
+                                    请从测试库选择靶材记录，如无则自行填写
+                                </TextBlock>
                             </StackPanel>
                             <Grid Grid.Row="1">
                                 <Grid.RowDefinitions>
@@ -173,6 +182,12 @@
                                 <Button  Content="{StaticResource ButtonSign}" Style="{StaticResource StyleButtonCommon}"
                                 Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
                                          CommandParameter="20"/>
+                                <Button  Content="{StaticResource ButtonSelectPlate}" Style="{StaticResource StyleButtonSpecial}"
+                                Command="{Binding DataContext.SelectPlate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"/>
+                                <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+                                <TextBlock  Style="{StaticResource StyleTextBlockSpecial}">
+                                    请从背板库选择背板记录，如无则自行填写
+                                </TextBlock>
                             </StackPanel>
                             <Grid Grid.Row="1">
                                 <Grid.RowDefinitions>
@@ -770,14 +785,16 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
-                    <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxMultiline}" Text="{Binding Remark}"/>
-                </Grid>
+                <Border Style="{StaticResource StyleBorderCommon}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
+                        <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxMultiline}" Text="{Binding Remark}"/>
+                    </Grid>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>
