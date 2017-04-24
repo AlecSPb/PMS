@@ -17,9 +17,9 @@ namespace PMSClient
     /// <summary>
     /// NewMessage.xaml 的交互逻辑
     /// </summary>
-    public partial class NewMessage : Window
+    public partial class PMSMessageBox : Window
     {
-        public NewMessage()
+        public PMSMessageBox()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace PMSClient
         {
             set
             {
-                txtMessage.Text = value;
+                txtMessageContent.Text = value;
             }
         }
 

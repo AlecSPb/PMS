@@ -136,6 +136,7 @@
     <Compile Include="Helpers\OK\PMSViews.cs" />
     <Compile Include="Helpers\OK\PMSMethods.cs" />
     <Compile Include="Helpers\OK\PMSNotice.cs" />
+    <Compile Include="Helpers\OK\PMSFolderPath.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculationItem.cs" />
     <Compile Include="Helpers\UserfullPackage\PMSTranslate.cs" />
@@ -143,8 +144,8 @@
     <Compile Include="Helpers\UserfullPackage\TargetDensity.cs" />
     <Compile Include="Helpers\UserfullPackage\TargetDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\TargetDensityCalculationItem.cs" />
-    <Compile Include="NewMessage.xaml.cs">
-      <DependentUpon>NewMessage.xaml</DependentUpon>
+    <Compile Include="CustomControls\PMSMessageBox.xaml.cs">
+      <DependentUpon>PMSMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
@@ -422,7 +423,7 @@
       <DependentUpon>MainDesktop.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NewMessage.xaml">
+    <Page Include="CustomControls\PMSMessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -849,7 +850,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Documents\" />
     <Folder Include="LocalData\" />
     <Folder Include="Resource\Files\" />
   </ItemGroup>
@@ -1015,12 +1015,12 @@
     <None Include="Service References\UserService\UserAccessService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="updates.txt">
+    <None Include="Documents\updates.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="notices.txt">
+    <None Include="Documents\notices.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -1035,7 +1035,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="updates-real.txt">
+    <Resource Include="Documents\updates-real.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
