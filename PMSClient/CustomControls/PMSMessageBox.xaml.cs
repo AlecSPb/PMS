@@ -24,7 +24,7 @@ namespace PMSClient
             InitializeComponent();
         }
 
-        public string Message
+        public string MessageContent
         {
             set
             {
@@ -32,5 +32,12 @@ namespace PMSClient
             }
         }
 
+        public string MessageTitle
+        {
+            set
+            {
+                txtMessageTitle.Text = value;
+            }
+        }
     }
 }

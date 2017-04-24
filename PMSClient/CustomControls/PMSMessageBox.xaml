@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="提醒" Height="300" Width="300" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="信息" Height="300" Width="300" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="..\Resource\Styles\Desktop.xaml"/>
     </Window.Resources>
@@ -18,7 +18,7 @@
         <TextBlock Name="txtMessageTitle" Grid.Row="0"  Style="{StaticResource StyleTextBlockCommon}" Text="通知提醒"/>
         <TextBox Name="txtMessageContent" Grid.Row="1" Margin="2" IsReadOnly="True" AcceptsReturn="True" Background="Wheat"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="确定" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="知道了" Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
     </Grid>
 </Window>

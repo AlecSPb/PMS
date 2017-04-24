@@ -16,10 +16,10 @@ namespace PMSClient
        
         private static int remoteCount = 4;
         //private static int localCount = 0;
-        private static NewMessage _newMessage;
+        private static PMSMessageBox _newMessage;
         static PMSNotice()
         {
-            _newMessage = new NewMessage();
+            _newMessage = new PMSMessageBox();
         }
         public static void HasNewDelivery()
         {
@@ -39,7 +39,7 @@ namespace PMSClient
                 {
                     if (_newMessage==null)
                     {
-                        _newMessage = new NewMessage();
+                        _newMessage = new PMSMessageBox();
 
                     }
                     _newMessage.Message = $"有新的发货单{remoteCount}记录了，准备发货了";
