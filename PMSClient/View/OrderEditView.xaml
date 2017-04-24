@@ -85,25 +85,26 @@
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OrderOriginalComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Name="txtCompositionOrignal" Grid.Row="3" Grid.Column="1" Text="{Binding CompositionOriginal}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="*订单成分原始表示，不会显示给其他人，只存作备忘"/>
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-                    <Button Content="自动生成标准成分和缩写" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Content="自动生成标准成分和缩写" Style="{StaticResource StyleButtonCommon}" Name="btnAutoTransferComposition"
+                            Click="btnAutoTransferComposition_Click"/>
                     <Button Content="告诉我什么是规范名称？" Style="{StaticResource StyleButtonCommon}" Name="btnTipCompositionStd"
                             Click="btnTipCompositionStd_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OrderStandardComposition}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Name="txtCompositionStandard" Grid.Row="5" Grid.Column="1" Text="{Binding CompositionStandard}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="标准成分，即这种材料一直以来的规范名称，必须At%比例"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OrderAbbrComposition}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Name="txtCompositionAbbr"  Grid.Row="6" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="成分的缩写，尽量简洁不包含数字"/>
+                           Text="成分的缩写，尽量简洁不包含数字,不包含符号，不包含添加剂成分"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OrderProductType}"
                            Style="{StaticResource StyleTextBlockCommon}" />

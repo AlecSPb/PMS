@@ -65,12 +65,12 @@ namespace PMSClient.ViewModel
             order.ID = Guid.NewGuid();
             order.CustomerName = CustomerNames.FirstOrDefault();
             order.PO = DateTime.Now.ToString("yyMMdd");
-            order.CompositionOriginal = "原始成分";
-            order.CompositionStandard = "标准成分";
-            order.CompositionAbbr = "成分缩写";
+            order.CompositionOriginal = "CuInGaSe";
+            order.CompositionStandard = "";
+            order.CompositionAbbr = "";
             order.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             order.CreateTime = DateTime.Now;
-            order.PMINumber = $"{DateTime.Now.ToString("yyMMdd")}-A";
+            order.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
             order.ProductType = PMSCommon.OrderProductType.靶材.ToString();
             order.Purity = "99.99";
             order.Quantity = 1;

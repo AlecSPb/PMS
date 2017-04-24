@@ -45,5 +45,43 @@ namespace PMSClient.View
 
 
         }
+
+        private void btnAutoTransferComposition_Click(object sender, RoutedEventArgs e)
+        {
+
+            var source = txtCompositionOrignal.Text.Trim();
+            if (string.IsNullOrEmpty(source))
+            {
+                return;
+            }
+            //成分标准化
+            string std = source.Replace(" ", "");
+
+            //成分缩写
+            string abbr="";
+            if (IsCIGS(std))
+            {
+                abbr = "CIGS";
+            }
+            else
+            {
+               var matches = System.Text.RegularExpressions.Regex.Matches(std, @"[a-zA-Z]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                foreach (var item in matches)
+                {
+                    abbr += item.ToString();
+                }
+            }
+            PMSMethods.SetTextBox(txtCompositionStandard, std);
+            PMSMethods.SetTextBox(txtCompositionAbbr, abbr);
+
+        }
+
+        private bool IsCIGS(string source)
+        {
+            var s = source.ToLower();
+            return s.Contains("cu") && s.Contains("in") && s.Contains("ga") && s.Contains("se");
+        }
+
+
     }
 }
