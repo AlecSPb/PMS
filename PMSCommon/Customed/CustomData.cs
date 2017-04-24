@@ -168,6 +168,7 @@ namespace PMSCommon
             {
                 var data = new List<string>();
                 #region 数据
+                data.Add("无需加工");
                 data.Add("切割成");
                 data.Add("表面粗糙度");
                 data.Add("直径偏差");

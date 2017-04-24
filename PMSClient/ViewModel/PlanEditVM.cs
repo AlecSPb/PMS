@@ -122,6 +122,16 @@ namespace PMSClient.ViewModel
 
             GrainSizes = new List<string>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.GrainSize, GrainSizes);
+
+            MillingRequirements = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.MillingRequirement, MillingRequirements);
+            FillingRequirements = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.FillingRequirement, FillingRequirements);
+            MachineRequirements = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.MachineRequirement, MachineRequirements);
+            SpecialRequirements = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.SpecialRequirement, SpecialRequirements);
+
         }
 
 
@@ -171,7 +181,10 @@ namespace PMSClient.ViewModel
         public List<double> MoldDiameters { get; set; }
         public List<string> GrainSizes { get; set; }
         public List<DcBDCompound> Compounds { get; set; }
-
+        public List<string> MillingRequirements { get; set; }
+        public List<string> FillingRequirements { get; set; }
+        public List<string> MachineRequirements { get; set; }
+        public List<string> SpecialRequirements { get; set; }
 
         private DcPlanVHP currentPlan;
         public DcPlanVHP CurrentPlan
