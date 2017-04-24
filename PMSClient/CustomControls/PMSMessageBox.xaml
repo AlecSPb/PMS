@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient"
         mc:Ignorable="d"
-        Title="信息" Height="300" Width="300" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="信息" Height="400" Width="500" WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary Source="..\Resource\Styles\Desktop.xaml"/>
     </Window.Resources>
@@ -15,10 +16,12 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Name="txtMessageTitle" Grid.Row="0"  Style="{StaticResource StyleTextBlockCommon}" Text="通知提醒"/>
-        <TextBox Name="txtMessageContent" Grid.Row="1" Margin="2" IsReadOnly="True" AcceptsReturn="True" Background="Wheat"/>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="知道了" Style="{StaticResource StyleButtonCommon}"/>
+        <TextBlock Name="txtMessageTitle" Grid.Row="0"  Style="{StaticResource StyleTextBlockCommon}" Text="通知提醒"
+                   FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"/>
+        <TextBox Name="txtMessageContent" Grid.Row="1" Margin="2" IsReadOnly="True" AcceptsReturn="True" Background="LightYellow"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnClose" Content="晓得了" Style="{StaticResource StyleButtonCommon}" Click="btnClose_Click"
+                    HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>

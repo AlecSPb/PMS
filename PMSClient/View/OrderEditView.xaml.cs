@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace PMSClient.View
 {
@@ -24,6 +25,25 @@ namespace PMSClient.View
         public OrderEditView()
         {
             InitializeComponent();
+        }
+
+        private void btnTipCompositionStd_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMessageBox msg = new PMSClient.PMSMessageBox();
+            try
+            {
+                msg.MessageTitle = "规范的成分写法";
+                var filepath = System.IO.Path.Combine(PMSFolderPath.Documents, "stdcomposition.txt");
+                var content = File.ReadAllText(filepath);
+                msg.MessageContent = content;
+                msg.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+
         }
     }
 }

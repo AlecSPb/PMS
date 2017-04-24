@@ -42,8 +42,8 @@ namespace PMSClient
                         _newMessage = new PMSMessageBox();
 
                     }
-                    _newMessage.Message = $"有新的发货单{remoteCount}记录了，准备发货了";
-                    _newMessage.ShowDialog();
+                    //_newMessage.Message = $"有新的发货单{remoteCount}记录了，准备发货了";
+                    //_newMessage.ShowDialog();
                     //保存远程数量到设置
                     Properties.Settings.Default.DeliveryCount = remoteCount;
                     Properties.Settings.Default.Save();
