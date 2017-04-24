@@ -244,7 +244,6 @@ namespace PMSCommon
             {
                 var data = new List<string>();
                 #region 数据
-                data.Add("无");
                 data.Add("广汉");
                 data.Add("六九");
                 #endregion
@@ -267,7 +266,20 @@ namespace PMSCommon
             }
         }
 
-
+        public static List<string> PlateDefect
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                data.Add("生锈");
+                data.Add("磕碰");
+                data.Add("翘曲");
+                #endregion
+                return data;
+            }
+        }
 
     }
 }

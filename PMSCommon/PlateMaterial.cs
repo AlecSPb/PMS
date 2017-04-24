@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum BondingPlateType
+    public enum PlateMaterial
     {
         Cu,
         Ni,

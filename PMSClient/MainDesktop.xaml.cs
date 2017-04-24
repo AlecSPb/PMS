@@ -317,6 +317,15 @@ namespace PMSClient
                 case PMSViews.ProductSelect:
                     NavigateTo(_views.ProductSelect);
                     break;
+                case PMSViews.Plate:
+                    NavigateTo(_views.Plate);
+                    break;
+                case PMSViews.PlateEdit:
+                    NavigateTo(_views.PlateEdit);
+                    break;
+                case PMSViews.PlateSelect:
+                    NavigateTo(_views.PlateSelect);
+                    break;
                 case PMSViews.MaterialNeedCalcuationTool:
                     NavigateTo(_toolviews.MaterialNeedCalculation);
                     break;

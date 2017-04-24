@@ -60,6 +60,9 @@ namespace PMSClient
         Product,
         ProductEdit,
         ProductSelect,
+        Plate,
+        PlateEdit,
+        PlateSelect,
         StatisticOrder,
         StatisticPlan,
         StatisticDelivery,
@@ -77,7 +80,6 @@ namespace PMSClient
         AdminAccesses,
         AdminAccess,
         AdminRole,
-        Plate,
         OutSource
     }
 }

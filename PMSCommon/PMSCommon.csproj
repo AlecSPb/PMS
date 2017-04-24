@@ -63,8 +63,8 @@
   <ItemGroup>
     <Compile Include="AcceptDefects.cs" />
     <Compile Include="AccessState.cs" />
-    <Compile Include="BondingPlateType.cs" />
-    <Compile Include="BondingPlateWeldingMaterial.cs" />
+    <Compile Include="PlateMaterial.cs" />
+    <Compile Include="PlateWeldingMaterial.cs" />
     <Compile Include="CommonState.cs" />
     <Compile Include="CountryRegion.cs" />
     <Compile Include="DeMoldRemark.cs" />

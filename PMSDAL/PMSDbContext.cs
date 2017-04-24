@@ -49,12 +49,16 @@ namespace PMSDAL
         public DbSet<Plate> Plates { get; set; }
         public DbSet<PlateHistory> PlateHistorys { get; set; }
 
+
         //Core
         public DbSet<PMSOrder> Orders { get; set; }
         public DbSet<PMSPlanVHP> VHPPlans { get; set; }
 
         public DbSet<PMSOrderHistory> OrderHistorys { get; set; }
         public DbSet<PMSPlanVHPHistory> VHPPlanHistorys { get; set; }
+
+        public DbSet<OutSource> OutSources { get; set; }
+        public DbSet<OutSourceHistory> OutSourceHistorys { get; set; }
         //Records
         public DbSet<RecordMilling> RecordMillings { get; set; }
         public DbSet<RecordVHP> RecordVHPs { get; set; }

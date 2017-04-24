@@ -69,6 +69,8 @@
     <Compile Include="Entities\MaterialOrderHistory.cs" />
     <Compile Include="Entities\MaterialOrderItemHistory.cs" />
     <Compile Include="Entities\MaterialOrderItem.cs" />
+    <Compile Include="Entities\OutSourceHistory.cs" />
+    <Compile Include="Entities\OutSource.cs" />
     <Compile Include="Entities\PlateHistory.cs" />
     <Compile Include="Entities\Plate.cs" />
     <Compile Include="Entities\PMSOrderHistory.cs" />
@@ -406,6 +408,14 @@
     <Compile Include="Migrations\201704241356065_change22.Designer.cs">
       <DependentUpon>201704241356065_change22.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704241440376_change23.cs" />
+    <Compile Include="Migrations\201704241440376_change23.Designer.cs">
+      <DependentUpon>201704241440376_change23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704241509221_change24.cs" />
+    <Compile Include="Migrations\201704241509221_change24.Designer.cs">
+      <DependentUpon>201704241509221_change24.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\BDCompound.cs" />
     <Compile Include="Entities\BDCustomer.cs" />
@@ -683,6 +693,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704241356065_change22.resx">
       <DependentUpon>201704241356065_change22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241440376_change23.resx">
+      <DependentUpon>201704241440376_change23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704241509221_change24.resx">
+      <DependentUpon>201704241509221_change24.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

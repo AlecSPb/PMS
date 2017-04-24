@@ -15,7 +15,10 @@ namespace UsefulPackage
             return $"{DateTime.Now.ToString("yyMMdd")}-A";
         }
 
-
+        public static string PlateLot()
+        {
+            return $"{DateTime.Now.ToString("yyMMdd")}";
+        }
 
         /// <summary>
         /// 生成当日热压靶材的Lot号码

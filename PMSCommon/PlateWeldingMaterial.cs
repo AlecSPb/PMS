@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum BondingPlateWeldingMaterial
+    public enum PlateWeldingMaterial
     {
-        In,
+        铟,
         导电胶
     }
 }

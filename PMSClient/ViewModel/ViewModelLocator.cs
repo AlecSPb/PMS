@@ -78,6 +78,10 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<ProductEditVM>();
             SimpleIoc.Default.Register<ProductSelectVM>();
 
+            SimpleIoc.Default.Register<PlateVM>();
+            SimpleIoc.Default.Register<PlateEditVM>();
+            SimpleIoc.Default.Register<PlateSelectVM>();
+
             SimpleIoc.Default.Register<DeliveryVM>();
             SimpleIoc.Default.Register<DeliveryEditVM>();
             SimpleIoc.Default.Register<DeliveryItemEditVM>();
@@ -317,6 +321,20 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<ProductSelectVM>(); }
         }
+
+        public PlateVM Plate
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateVM>(); }
+        }
+        public PlateEditVM PlateEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateEditVM>(); }
+        }
+        public PlateSelectVM PlateSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateSelectVM>(); }
+        }
+
 
         public DeliveryVM Delivery
         {

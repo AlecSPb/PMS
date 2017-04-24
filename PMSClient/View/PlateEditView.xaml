@@ -77,7 +77,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="2" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.PlateDimensions,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding PlateDimension}"
+                          Text="{Binding Dimension}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#"/>
@@ -105,7 +105,10 @@
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlateLastWeldMaterial}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding LastWeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <ComboBox Grid.Row="6" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.PlateLastWeldMaterials,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding LastWeldMaterial}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlateWeight}"
@@ -122,7 +125,7 @@
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlateDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="9" Grid.Column="1" 
-                          ItemsSource="{Binding DataContext.PlateDefectss,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          ItemsSource="{Binding DataContext.PlateDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding Defects}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
