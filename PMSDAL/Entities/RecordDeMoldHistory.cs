@@ -16,10 +16,11 @@ namespace PMSDAL
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
-
+        public string PlanType { get; set; }
+        public string PMINumber { get; set; }
         public string VHPPlanLot { get; set; }
         public string Composition { get; set; }
-        public string PlanType { get; set; }
+        public string Dimension { get; set; }//隐藏属性，为后面加工
         public string BlankDimension { get; set; }
         public double CalculationDensity { get; set; }
         public double Density { get; set; }

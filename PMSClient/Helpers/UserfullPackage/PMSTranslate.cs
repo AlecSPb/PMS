@@ -99,5 +99,55 @@ namespace UsefulPackage
             string deviceStr = DeviceCodeTransfer(plan.Plan.VHPDeviceCode);
             return $"{dateStr}-{deviceStr}-{suffix}";
         }
+
+
+
+        private static double Average(double w1,double w2,double w3=0,double w4=0)
+        {
+            double sum = 0;
+            double count = 0;
+            if (w1>0)
+            {
+                sum += w1;
+                count++;
+            }
+            if (w2> 0)
+            {
+                sum += w2;
+                count++;
+            }
+            if (w3 > 0)
+            {
+                sum += w3;
+                count++;
+            }
+            if (w4 > 0)
+            {
+                sum += w4;
+                count++;
+            }
+        }
+        /// <summary>
+        ///输入取模数据，得到毛坯尺寸
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static string Dimension(DcRecordDeMold model)
+        {
+            double diameter = Average(model.Diameter1, model.Diameter2);
+            double thickness = Average(model.Thickness1, model.Thickness2, model.Thickness3, model.Thickness4);
+            return $"{diameter}mm ODx {thickness}mm";
+        }
+        /// <summary>
+        ///输入加工数据，得到靶材尺寸
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static string Dimension(DcRecordMachine model)
+        {
+            double diameter = Average(model.Diameter1, model.Diameter2);
+            double thickness = Average(model.Thickness1, model.Thickness2, model.Thickness3, model.Thickness4);
+            return $"{diameter}mm ODx {thickness}mm";
+        }
     }
 }

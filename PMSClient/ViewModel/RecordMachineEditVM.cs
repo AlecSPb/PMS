@@ -37,6 +37,7 @@ namespace PMSClient.ViewModel
             var model = new DcRecordMachine();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
+            model.PMINumber = "";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
@@ -78,6 +79,8 @@ namespace PMSClient.ViewModel
         {
             if (plan != null)
             {
+                CurrentRecordMachine.PMINumber = plan.Misson.PMINumber;
+                CurrentRecordMachine.BlankDimension=
                 CurrentRecordMachine.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordMachine.Dimension = plan.Misson.Dimension;
                 CurrentRecordMachine.VHPPlanLot= UsefulPackage.PMSTranslate.PlanLot(plan);

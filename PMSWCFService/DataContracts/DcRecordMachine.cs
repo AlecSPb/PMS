@@ -25,9 +25,13 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string VHPPlanLot { get; set; }
         [DataMember]
+        public string PMINumber { get; set; }
+        [DataMember]
         public string Composition { get; set; }
         [DataMember]
         public string Dimension { get; set; }
+        [DataMember]
+        public string BlankDimension { get; set; }//毛坯尺寸
         [DataMember]
         public string ExtraRequirement { get; set; }
 

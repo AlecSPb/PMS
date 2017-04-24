@@ -15,6 +15,7 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
         public string State { get; set; }//未审核，审核，作废
+        public string PMINumber { get; set; }
         public string TestType { get; set; }
         public string ProductID { get; set; }
         public string Composition { get; set; }

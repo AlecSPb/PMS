@@ -24,6 +24,12 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string VHPPlanLot { get; set; }
         [DataMember]
+        public double RoomTemperature { get; set; }
+        [DataMember]
+        public double RoomHumidity { get; set; }
+        [DataMember]
+        public string PMINumber { get; set; }
+        [DataMember]
         //需要记录的信息
         public string Composition { get; set; }
         [DataMember]

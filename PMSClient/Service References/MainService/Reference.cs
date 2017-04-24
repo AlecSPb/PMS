@@ -3284,6 +3284,9 @@ namespace PMSClient.MainService {
         private System.DateTime OrderDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3469,6 +3472,19 @@ namespace PMSClient.MainService {
                 if ((this.OrderDateField.Equals(value) != true)) {
                     this.OrderDateField = value;
                     this.RaisePropertyChanged("OrderDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -3922,10 +3938,19 @@ namespace PMSClient.MainService {
         private string MillingToolField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RoomHumidityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
@@ -4057,6 +4082,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Ratio {
             get {
                 return this.RatioField;
@@ -4078,6 +4116,32 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double RoomHumidity {
+            get {
+                return this.RoomHumidityField;
+            }
+            set {
+                if ((this.RoomHumidityField.Equals(value) != true)) {
+                    this.RoomHumidityField = value;
+                    this.RaisePropertyChanged("RoomHumidity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double RoomTemperature {
+            get {
+                return this.RoomTemperatureField;
+            }
+            set {
+                if ((this.RoomTemperatureField.Equals(value) != true)) {
+                    this.RoomTemperatureField = value;
+                    this.RaisePropertyChanged("RoomTemperature");
                 }
             }
         }
@@ -4167,6 +4231,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BlankDimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4194,6 +4261,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4218,6 +4288,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BlankDimension {
+            get {
+                return this.BlankDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlankDimensionField, value) != true)) {
+                    this.BlankDimensionField = value;
+                    this.RaisePropertyChanged("BlankDimension");
+                }
             }
         }
         
@@ -4334,6 +4417,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -4463,7 +4559,13 @@ namespace PMSClient.MainService {
         private double Diameter2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlanTypeField;
@@ -4629,6 +4731,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -4637,6 +4752,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }

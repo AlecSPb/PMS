@@ -133,7 +133,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 8;
             using (var service = new RecordTestServiceClient())
             {
                 RecordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositionStd);

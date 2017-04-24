@@ -18,8 +18,10 @@ namespace PMSDAL
         public string State { get; set; }
         public string VHPPlanLot { get; set; }
         public string Composition { get; set; }
+        public string PMINumber { get; set; }
         //加工要求
-        public string Dimension { get; set; }
+        public string Dimension { get; set; }//要求尺寸
+        public string BlankDimension { get; set; }//毛坯尺寸
         public string ExtraRequirement { get; set; }
 
         //加工参数

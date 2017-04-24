@@ -42,6 +42,7 @@ namespace PMSClient.ViewModel
             #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
+            model.PMINumber = "";
             model.Composition = "成分";
             model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.CompositionXRF = "暂无";
@@ -97,6 +98,7 @@ namespace PMSClient.ViewModel
         {
             if (plan != null)
             {
+                CurrentRecordTest.PMINumber = plan.Misson.PMINumber;
                 CurrentRecordTest.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordTest.CompositionAbbr = plan.Misson.CompositionAbbr;
                 CurrentRecordTest.PO = plan.Misson.PO;

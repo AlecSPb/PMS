@@ -58,6 +58,9 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
+            model.PMINumber = "";
+            model.RoomHumidity = 0;
+            model.RoomTemperature = 0;
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "填入成分";
             model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
@@ -98,6 +101,9 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordMilling.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordMilling.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
+                CurrentRecordMilling.PMINumber = plan.Misson.PMINumber;
+                CurrentRecordMilling.RoomTemperature = plan.Plan.RoomTemperature;
+                CurrentRecordMilling.RoomHumidity = plan.Plan.RoomHumidity;
                 //RaisePropertyChanged(nameof(CurrentRecordMilling));
             }
         }

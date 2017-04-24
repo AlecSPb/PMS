@@ -19,6 +19,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }//未审核，审核，作废
         [DataMember]
+        public string PMINumber { get; set; }
+        [DataMember]
         public string TestType { get; set; }
         [DataMember]
         public string ProductID { get; set; }

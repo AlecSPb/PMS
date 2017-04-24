@@ -24,9 +24,13 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string PlanType { get; set; }
         [DataMember]
+        public string PMINumber { get; set; }
+        [DataMember]
         public string VHPPlanLot { get; set; }
         [DataMember]
         public string Composition { get; set; }
+        [DataMember]
+        public string Dimension { get; set; }//隐藏属性，为后面加工
         [DataMember]
         public string BlankDimension { get; set; }
         [DataMember]

@@ -81,6 +81,7 @@
     <Content Include="PMSService.svc" />
     <Content Include="UserAccessService.svc" />
     <Content Include="Web.config" />
+    <Content Include="更新说明.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContracts\DcBDElementGroup.cs" />
