@@ -128,7 +128,65 @@ namespace PMSCommon
             }
         }
 
+        public static List<string> MillingRequirement
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("+Sb2Te3");
+                data.Add("+Na2S");
+                data.Add("+KF");
+                data.Add("+NaF");
+                data.Add("注意防潮");
+                data.Add("N气保护");
+                data.Add("Ar气保护");
+                #endregion
+                return data;
+            }
+        }
 
+        public static List<string> FillingRequirement
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("裸板");
+                data.Add("BN");
+                data.Add("BN+石墨纸");
+                data.Add("BN+石墨纸+Al2O3纸");
+                data.Add("BN+Al2O3纸");
+                #endregion
+                return data;
+            }
+        }
 
+        public static List<string> MachineRequirement
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("切割成");
+                data.Add("表面粗糙度");
+                data.Add("直径偏差");
+                data.Add("厚度偏差");
+                #endregion
+                return data;
+            }
+        }
+
+        public static List<string> SpecialRequirement
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("无");
+                #endregion
+                return data;
+            }
+        }
     }
 }

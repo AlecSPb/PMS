@@ -16,6 +16,10 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
         //需要记录的信息
+        public double RoomTemperature { get; set; }
+        public double RoomHumidity { get; set; }
+        public string PMINumber { get; set; }
+
         public string Composition { get; set; }
         public string VHPPlanLot { get; set; }
         public string MaterialSource { get; set; }//MaterialSource
