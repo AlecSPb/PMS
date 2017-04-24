@@ -2785,6 +2785,9 @@ namespace PMSClient.MainService {
         private string PlateLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateMaterialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2922,6 +2925,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
                     this.PlateLotField = value;
                     this.RaisePropertyChanged("PlateLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateMaterial {
+            get {
+                return this.PlateMaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateMaterialField, value) != true)) {
+                    this.PlateMaterialField = value;
+                    this.RaisePropertyChanged("PlateMaterial");
                 }
             }
         }

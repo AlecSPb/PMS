@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
         public ProductEditVM()
         {
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.ProductState>(States);
+            PMSBasicDataService.SetListDS<PMSCommon.InventoryState>(States);
 
             ProductTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.ProductType>(ProductTypes);
@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
             model.Customer = "客户";
             model.Position = PMSCommon.GoodPosition.A1.ToString();
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
-            model.State = PMSCommon.ProductState.库存.ToString();
+            model.State = PMSCommon.InventoryState.库存.ToString();
             model.Remark = "";
 
             model.Dimension = "尺寸";

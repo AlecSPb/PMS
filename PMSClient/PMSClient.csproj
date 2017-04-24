@@ -200,11 +200,20 @@
     <Compile Include="View\NavigationWorkFlowView.xaml.cs">
       <DependentUpon>NavigationWorkFlowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PlateEditView.xaml.cs">
+      <DependentUpon>PlateEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlateSelectView.xaml.cs">
+      <DependentUpon>PlateSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductEditView.xaml.cs">
       <DependentUpon>ProductEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductSelectView.xaml.cs">
       <DependentUpon>ProductSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlateView.xaml.cs">
+      <DependentUpon>PlateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
@@ -447,11 +456,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PlateEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlateSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\ProductEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ProductSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlateView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

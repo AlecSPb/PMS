@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    public enum ProductState
+    public enum InventoryState
     {
         作废,
         库存,

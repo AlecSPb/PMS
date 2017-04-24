@@ -49,7 +49,7 @@ namespace PMSClient.ViewModel
             {
                 using (var service=new ProductServiceClient())
                 {
-                    model.State = PMSCommon.ProductState.发货.ToString();
+                    model.State = PMSCommon.InventoryState.发货.ToString();
                     service.UpdateProduct(model);
                 }
                 SetPageParametersWhenConditionChange();

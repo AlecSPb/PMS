@@ -81,7 +81,7 @@
     <Compile Include="OrderState.cs" />
     <Compile Include="NavigationToken.cs" />
     <Compile Include="OrderUnit.cs" />
-    <Compile Include="ProductState.cs" />
+    <Compile Include="InventoryState.cs" />
     <Compile Include="ProductType.cs" />
     <Compile Include="QuickVHPMessege.cs" />
     <Compile Include="SimpleState.cs" />

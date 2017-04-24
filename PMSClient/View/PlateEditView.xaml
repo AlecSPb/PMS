@@ -1,0 +1,160 @@
+﻿<UserControl x:Class="PMSClient.View.PlateEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+           d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=PlateEdit}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Text="{StaticResource PagePlateEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding Save}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+            <Grid  DataContext="{Binding CurrentPlate}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource PlateLot}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="批号"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlateMaterial}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.PlateMaterials,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding PlateMaterial}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#"/>
+
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlateDimension}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.PlateDimensions,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding PlateDimension}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="#"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlateSupplier}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="3" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.PlateSuppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding Supplier}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text=""/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlateUseCount}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding UseCount}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text=""/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlateHardness}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Hardness}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlateLastWeldMaterial}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding LastWeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlateWeight}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="7" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlateAppearance}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Appearance}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlateDefects}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="9" Grid.Column="1" 
+                          ItemsSource="{Binding DataContext.PlateDefectss,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Text="{Binding Defects}"
+                          Style="{StaticResource StyleComboBoxEditable}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlateState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="状态,发货代表该产品已发出，库存代表该产品还在仓库中"/>
+                
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource PlateRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="备注信息"/>
+
+
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource PlateCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建时间"/>
+
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource PlateCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="创建者"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

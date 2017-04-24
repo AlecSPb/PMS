@@ -21,6 +21,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string PlateLot { get; set; }
         [DataMember]
+        public string PlateMaterial { get; set; }
+        [DataMember]
         public string Dimension { get; set; }
         [DataMember]
         public string Supplier { get; set; }

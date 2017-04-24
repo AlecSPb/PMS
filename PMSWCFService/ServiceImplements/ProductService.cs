@@ -80,7 +80,7 @@ namespace PMSWCFService
                     var query = from p in dc.Products
                                 where p.ProductID.Contains(productid)
                                 && p.Composition.Contains(composition)
-                                && p.State != ProductState.作废.ToString()
+                                && p.State != InventoryState.作废.ToString()
                                 orderby p.CreateTime descending
                                 select p;
                     return query.Count();
@@ -102,7 +102,7 @@ namespace PMSWCFService
                     var query = from p in dc.Products
                                 where p.ProductID.Contains(productid)
                                 && p.Composition.Contains(composition)
-                                && p.State != ProductState.作废.ToString()
+                                && p.State != InventoryState.作废.ToString()
                                 orderby p.CreateTime descending
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<Product, DcProduct>());

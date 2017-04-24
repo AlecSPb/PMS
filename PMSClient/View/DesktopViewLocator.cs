@@ -66,6 +66,9 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<ProductEditView>();
             SimpleIoc.Default.Register<ProductSelectView>();
 
+            SimpleIoc.Default.Register<PlateView>();
+            SimpleIoc.Default.Register<PlateEditView>();
+            SimpleIoc.Default.Register<PlateSelectView>();
 
             SimpleIoc.Default.Register<DeliveryView>();
             SimpleIoc.Default.Register<DeliveryEditView>();
@@ -319,6 +322,18 @@ namespace PMSClient.View
             get { return SimpleIoc.Default.GetInstance<ProductSelectView>(); }
         }
 
+        public PlateView Plate
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateView>(); }
+        }
+        public PlateEditView PlateEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateEditView>(); }
+        }
+        public PlateSelectView PlateSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateSelectView>(); }
+        }
 
         public DeliveryView Delivery
         {

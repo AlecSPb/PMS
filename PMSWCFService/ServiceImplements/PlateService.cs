@@ -80,7 +80,7 @@ namespace PMSWCFService
                     var query = from p in dc.Plates
                                 where p.PlateLot.Contains(platelot)
                                 && p.Supplier.Contains(supplier)
-                                && p.State != SimpleState.作废.ToString()
+                                && p.State != InventoryState.作废.ToString()
                                 orderby p.CreateTime descending
                                 select p;
                     return query.Count();
@@ -102,7 +102,7 @@ namespace PMSWCFService
                     var query = from p in dc.Plates
                                 where p.PlateLot.Contains(platelot)
                                 && p.Supplier.Contains(supplier)
-                                && p.State != SimpleState.作废.ToString()
+                                && p.State != InventoryState.作废.ToString()
                                 orderby p.CreateTime descending
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<Plate, DcPlate>());
