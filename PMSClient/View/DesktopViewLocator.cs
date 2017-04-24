@@ -61,6 +61,8 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<RecordBondingView>();
             SimpleIoc.Default.Register<RecordBondingEditView>();
+            SimpleIoc.Default.Register<RecordBondingSelectView>();
+
 
             SimpleIoc.Default.Register<ProductView>();
             SimpleIoc.Default.Register<ProductEditView>();
@@ -307,7 +309,10 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<RecordBondingEditView>(); }
         }
-
+        public RecordBondingSelectView RecordBondingSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<RecordBondingSelectView>(); }
+        }
 
         public ProductView Product
         {

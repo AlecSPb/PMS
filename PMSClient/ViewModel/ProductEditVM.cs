@@ -116,7 +116,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionSelect2()
         {
-            //PMSHelper.ViewModels.RecordBondingSelect.SetRequestView(PMSViews.ProductEdit);
+            PMSHelper.ViewModels.RecordBondingSelect.SetRequestView(PMSViews.ProductEdit);
             NavigationService.GoTo(PMSViews.RecordBondingSelect);
         }
         private static void GoBack()

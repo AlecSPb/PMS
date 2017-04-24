@@ -127,18 +127,18 @@
 
 
 
-    <sys:String x:Key="PageProductSelect">请选择一个成品项目</sys:String>
-    <sys:String x:Key="PageRecordDeMoldSelect">请选择一个取模记录</sys:String>
-    <sys:String x:Key="PageRecordBondingSelect">请选择一个绑定记录</sys:String>
-    <sys:String x:Key="PageMaterialNeedSelect">请选择一个原材料需求项目</sys:String>
-    <sys:String x:Key="PageTestResultSelect">请选择一个测试结果项目</sys:String>
-    <sys:String x:Key="PagePlanSelect">请选择一个生产计划项目</sys:String>
-    <sys:String x:Key="PageOrderSelect">请选择一个订单项目</sys:String>
-    <sys:String x:Key="PageMissonSelect">请选择一个生产任务项目</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemSelect">请选择一个材料订单项目</sys:String>
+    <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
+    <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
+    <sys:String x:Key="PageRecordBondingSelect">请选择绑定记录</sys:String>
+    <sys:String x:Key="PageMaterialNeedSelect">请选择原材料需求项目</sys:String>
+    <sys:String x:Key="PageTestResultSelect">请选择测试结果项目</sys:String>
+    <sys:String x:Key="PagePlanSelect">请选择生产计划项目</sys:String>
+    <sys:String x:Key="PageOrderSelect">请选择订单项目</sys:String>
+    <sys:String x:Key="PageMissonSelect">请选择生产任务项目</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemSelect">请选择材料订单项目</sys:String>
     <sys:String x:Key="PageSelectPlate">选择背板库存</sys:String>
-    
-    
+    <sys:String x:Key="PageSelectRecordBonding">选择绑定记录</sys:String>
+
     <sys:String x:Key="PageMaintenance">设备维护</sys:String>
 
 
@@ -266,6 +266,7 @@
     <sys:String x:Key="ButtonSelectVHPPlan">选择计划</sys:String>
     <sys:String x:Key="ButtonSelectTest">选择测试结果</sys:String>
     <sys:String x:Key="ButtonSelectProduct">选择产品库存</sys:String>
+    <sys:String x:Key="ButtonSelectPlate">选择背板库存</sys:String>
     <sys:String x:Key="ButtonSelectBonding">选择绑定结果</sys:String>
     <sys:String x:Key="ButtonSelectMaterialOrderItem">选择原料订单项目</sys:String>
     <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>

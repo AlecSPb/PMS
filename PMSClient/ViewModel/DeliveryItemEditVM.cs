@@ -92,6 +92,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
+                CurrentDeliveryItem.ProductType = PMSCommon.ProductType.靶材.ToString();
                 CurrentDeliveryItem.ProductID = model.ProductID;
                 CurrentDeliveryItem.Composition = model.Composition;
                 CurrentDeliveryItem.Abbr = model.Abbr;
@@ -105,14 +106,39 @@ namespace PMSClient.ViewModel
             }
         }
 
+        public void SetBySelect(DcPlate model)
+        {
+            if (model!=null)
+            {
+                CurrentDeliveryItem.ProductType = PMSCommon.ProductType.背板.ToString();
+                CurrentDeliveryItem.ProductID = model.PlateLot;
+                CurrentDeliveryItem.Composition = $"{model.PlateMaterial}背板";
+                CurrentDeliveryItem.Abbr = model.PlateMaterial;
+                CurrentDeliveryItem.Customer = "无";
+                CurrentDeliveryItem.Weight = model.Weight;
+                CurrentDeliveryItem.PO = "无";
+                CurrentDeliveryItem.Dimension = model.Dimension;
+                CurrentDeliveryItem.DimensionActual = model.Dimension;
+                CurrentDeliveryItem.Defects = model.Defects;
+                //RaisePropertyChanged(nameof(CurrentDeliveryItem));
+            }
+        }
+
         private void InitialCommands()
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
-            Select = new RelayCommand(ActionSelect);
+            SelectProduct= new RelayCommand(ActionSelectProduct);
+            SelectPlate = new RelayCommand(ActionSelectPlate);
         }
 
-        private void ActionSelect()
+        private void ActionSelectPlate()
+        {
+            PMSHelper.ViewModels.PlateSelect.SetRequestView(PMSViews.DeliveryItemEdit);
+            NavigationService.GoTo(PMSViews.PlateSelect);
+        }
+
+        private void ActionSelectProduct()
         {
             PMSHelper.ViewModels.ProductSelect.SetRequestView(PMSViews.DeliveryItemEdit);
             NavigationService.GoTo(PMSViews.ProductSelect);
@@ -167,7 +193,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public RelayCommand Select { get; set; }
-
+        public RelayCommand SelectProduct { get; set; }
+        public RelayCommand SelectPlate { get; set; }
     }
 }

@@ -28,7 +28,7 @@
                 <Button Content="{StaticResource PageNaivgationWorkFlow}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigationWorkFlow}"/>
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,7,0,6.6"/>
                 <TextBlock  Style="{StaticResource StyleTextBlockNavigationBar}"
-                       Text="欢迎使用PMS生产管理系统，请从下面开始"/>
+                       Text="欢迎使用PMS生产管理系统"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

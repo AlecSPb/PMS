@@ -73,6 +73,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<RecordBondingVM>();
             SimpleIoc.Default.Register<RecordBondingEditVM>();
+            SimpleIoc.Default.Register<RecordBondingSelectVM>();
 
             SimpleIoc.Default.Register<ProductVM>();
             SimpleIoc.Default.Register<ProductEditVM>();
@@ -305,7 +306,13 @@ namespace PMSClient.ViewModel
                 return SimpleIoc.Default.GetInstance<RecordBondingEditVM>();
             }
         }
-
+        public RecordBondingSelectVM RecordBondingSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordBondingSelectVM>();
+            }
+        }
 
 
 

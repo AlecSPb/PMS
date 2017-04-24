@@ -305,6 +305,9 @@
     <Compile Include="View\DeliveryItemListView.xaml.cs">
       <DependentUpon>DeliveryItemListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RecordBondingSelectView.xaml.cs">
+      <DependentUpon>RecordBondingSelectView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RecordDeMoldEditView.xaml.cs">
       <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
     </Compile>
@@ -592,6 +595,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\DeliveryItemListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RecordBondingSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

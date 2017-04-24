@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class RecordBondingSelectVM : BaseViewModelPage
+    public class RecordBondingSelectVM : BaseViewModelSelect
     {
         public RecordBondingSelectVM()
         {
@@ -22,30 +22,34 @@ namespace PMSClient.ViewModel
 
         private void InitializeCommands()
         {
-            Add = new RelayCommand(ActionAdd, CanAdd);
-            Detail = new RelayCommand<DcRecordBonding>(ActionDetail);
-            Edit = new RelayCommand<DcRecordBonding>(ActionEdit, CanEdit);
+            Select = new RelayCommand<MainService.DcRecordBonding>(ActionSelect);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
         }
-
-        private bool CanEdit(DcRecordBonding arg)
+        private PMSViews requestView;
+        public void SetRequestView(PMSViews view)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑绑定记录");
+            requestView = view;
         }
 
-        private void ActionEdit(DcRecordBonding model)
+        private void GoBack()
         {
-            if (model!=null)
+            NavigationService.GoTo(requestView);
+        }
+        private void ActionSelect(DcRecordBonding model)
+        {
+            if (model != null)
             {
-                PMSHelper.ViewModels.RecordBondingEdit.SetEdit(model);
-                NavigationService.GoTo(PMSViews.RecordBondingEdit);
+                switch (requestView)
+                {
+                    case PMSViews.ProductEdit:
+                        PMSHelper.ViewModels.ProductEdit.SetBySelect(model);
+                        break;
+                    default:
+                        break;
+                }
+                GoBack();
             }
-        }
-
-        private void ActionDetail(DcRecordBonding obj)
-        {
-            throw new NotImplementedException();
         }
 
         private void ActionAll()
@@ -57,17 +61,6 @@ namespace PMSClient.ViewModel
         private void ActionSearch()
         {
             SetPageParametersWhenConditionChange();
-        }
-
-        private bool CanAdd()
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑绑定记录");
-        }
-
-        private void ActionAdd()
-        {
-            PMSHelper.ViewModels.RecordBondingEdit.SetNew();
-            NavigationService.GoTo(PMSViews.RecordBondingEdit);
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -113,9 +106,7 @@ namespace PMSClient.ViewModel
         }
 
 
-        public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordBonding> Detail { get; set; }
-        public RelayCommand<DcRecordBonding> Edit { get; set; }
+        public RelayCommand<DcRecordBonding> Select { get; set; }
 
 
     }

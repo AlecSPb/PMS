@@ -31,7 +31,6 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Select = new RelayCommand<DcPlate>(ActionSelect);
-            SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend);
             GiveUp = new RelayCommand(GoBack);
         }
 
@@ -69,6 +68,9 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.DeliveryItemEdit:
+                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model);
+                        break;
+                    case PMSViews.RecordBondingEdit:
 
                         break;
                     default:

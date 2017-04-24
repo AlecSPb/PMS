@@ -296,6 +296,9 @@ namespace PMSClient
                 case PMSViews.RecordBondingEdit:
                     NavigateTo(_views.RecordBondingEdit);
                     break;
+                case PMSViews.RecordBondingSelect:
+                    NavigateTo(_views.RecordBondingSelect);
+                    break;
                 case PMSViews.Delivery:
                     NavigateTo(_views.Delivery);
                     break;

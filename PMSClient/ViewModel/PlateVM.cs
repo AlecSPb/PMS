@@ -55,12 +55,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcPlate arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
+            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
         }
 
 
