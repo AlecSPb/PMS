@@ -24,6 +24,7 @@ namespace PMSClient.ViewModel
                 PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMillingEdit);
                 NavigationService.GoTo(PMSViews.PlanSelect);
             });
+            Calculator = new RelayCommand(ActionCalculator);
         }
 
         private void InitializeBasicData()
@@ -43,7 +44,11 @@ namespace PMSClient.ViewModel
             MillingMaterialSources = new List<string>();
             PMSBasicDataService.SetListDS<MillingMaterialSource>(MillingMaterialSources);
         }
-
+        private void ActionCalculator()
+        {
+            PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.RecordMillingEdit);
+            NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
+        }
         public void SetNew()
         {
             IsNew = true;
@@ -148,6 +153,8 @@ namespace PMSClient.ViewModel
         public List<string> MillingTimes { get; set; }
         public List<string> MillingTools { get; set; }
         public List<string> GasProtections { get; set; }
+
         public RelayCommand Select { get; set; }
+        public RelayCommand Calculator { get; set; }
     }
 }

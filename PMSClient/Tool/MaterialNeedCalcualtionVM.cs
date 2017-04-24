@@ -51,6 +51,10 @@ namespace PMSClient.Tool
                 case PMSViews.MaterialOrderItemEdit:
                     PMSHelper.ViewModels.MaterialOrderItemEdit.SetByCalculate(TotalWeight);
                     break;
+                case PMSViews.RecordMilling:
+                    break;
+                case PMSViews.RecordMillingEdit:
+                    break;
                 default:
                     break;
             }

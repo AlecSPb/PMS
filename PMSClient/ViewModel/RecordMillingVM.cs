@@ -36,6 +36,13 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             SelectionChanged = new RelayCommand<MainService.DcRecordMilling>(ActionSelectionChanged);
+            Calculator = new RelayCommand(ActionCalculator);
+        }
+
+        private void ActionCalculator()
+        {
+            PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.RecordMillingEdit);
+            NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
         }
 
         private void ActionSelectionChanged(DcRecordMilling model)
@@ -129,6 +136,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordMilling> Edit { get; set; }
 
         public RelayCommand<DcRecordMilling> SelectionChanged { get; set; }
+        public RelayCommand Calculator { get; set; }
         #endregion
     }
 }
