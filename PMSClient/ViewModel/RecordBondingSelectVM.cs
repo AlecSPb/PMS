@@ -14,7 +14,7 @@ namespace PMSClient.ViewModel
         public RecordBondingSelectVM()
         {
             RecordBondings = new ObservableCollection<DcRecordBonding>();
-
+            GiveUp = new RelayCommand(GoBack);
             InitializeCommands();
             searchCompositionStd = searchProductID = "";
             SetPageParametersWhenConditionChange();

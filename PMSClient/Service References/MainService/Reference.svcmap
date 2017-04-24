@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/PMSService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/PMSService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PMSService1.disco" MetadataType="Disco" ID="23a0e9d9-443c-4a9c-a85d-2255642c8dbc" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?disco" />
-    <MetadataFile FileName="PMSService3.xsd" MetadataType="Schema" ID="829e4e9f-e8d5-4154-8715-614a4e36d6cf" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd2" />
-    <MetadataFile FileName="PMSService31.xsd" MetadataType="Schema" ID="5d4368cf-552b-4e0c-b502-88a3d821c871" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PMSService32.xsd" MetadataType="Schema" ID="7ba22345-9625-4a7c-a4c1-b6f5ebe887cb" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PMSService1.wsdl" MetadataType="Wsdl" ID="04181d9a-a83e-4d1a-82bd-575991807eed" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?wsdl" />
+    <MetadataFile FileName="PMSService.xsd" MetadataType="Schema" ID="8ba20c2d-3a23-4e78-aa0e-47fd7df9c21e" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PMSService1.xsd" MetadataType="Schema" ID="bd2a7950-aa62-4d68-b4fb-795a977e0a70" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMSService2.xsd" MetadataType="Schema" ID="1a4c2b1b-ea23-4778-8d4b-89db662734d6" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PMSService.wsdl" MetadataType="Wsdl" ID="5b0ab3b6-5cb3-49ec-b6bb-b22cd114ad7f" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?wsdl" />
+    <MetadataFile FileName="PMSService.disco" MetadataType="Disco" ID="6215d0a6-b80f-4b58-a3bb-de87f0de955d" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
