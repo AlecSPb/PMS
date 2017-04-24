@@ -133,7 +133,7 @@
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="毛坯数量" Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="2" Text="单位：(mm)" Style="{StaticResource StyleTextBlockTip}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="单位：个" Style="{StaticResource StyleTextBlockTip}"/>
 
 
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="重量损耗" Style="{StaticResource StyleTextBlockCommon}"/>
