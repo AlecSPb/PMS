@@ -9,6 +9,14 @@ namespace UsefulPackage
 {
     public static class PMSTranslate
     {
+
+        public static string PMINumber()
+        {
+            return $"{DateTime.Now.ToString("yyMMdd")}-A";
+        }
+
+
+
         /// <summary>
         /// 生成当日热压靶材的Lot号码
         /// </summary>
@@ -126,6 +134,11 @@ namespace UsefulPackage
                 sum += w4;
                 count++;
             }
+            if (count==0)
+            {
+                count = 1;
+            }
+            return sum / count;
         }
         /// <summary>
         ///输入取模数据，得到毛坯尺寸
