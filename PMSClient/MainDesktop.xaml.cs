@@ -266,6 +266,9 @@ namespace PMSClient
                 case PMSViews.RecordDeMoldEdit:
                     NavigateTo(_views.RecordDeMoldEdit);
                     break;
+                case PMSViews.RecordDeMoldSelect:
+                    NavigateTo(_views.RecordDeMoldSelect);
+                    break;
                 case PMSViews.RecordMachine:
                     NavigateTo(_views.RecordMachine);
                     break;

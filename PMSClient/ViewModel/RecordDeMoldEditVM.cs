@@ -51,7 +51,9 @@ namespace PMSClient.ViewModel
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.DeMoldType = PMSCommon.DeMoldType.手动轻松.ToString();
             model.PlanType = PMSCommon.VHPPlanType.加工.ToString();
-            model.CalculateDimension = "";
+            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.Dimension = "无";
+            model.CalculateDimension = "无";
             model.CalculationDensity = 0;
             model.Density = 0;
             model.RatioDensity = 0;
@@ -97,6 +99,8 @@ namespace PMSClient.ViewModel
             {
                 CurrentRecordDeMold.Composition = plan.Misson.CompositionStandard;
                 CurrentRecordDeMold.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
+                CurrentRecordDeMold.PMINumber = plan.Misson.PMINumber;
+                CurrentRecordDeMold.Dimension = plan.Misson.Dimension;
                 CurrentRecordDeMold.PlanType = plan.Plan.PlanType;
                 CurrentRecordDeMold.CalculationDensity = plan.Plan.CalculationDensity;
                 CurrentRecordDeMold.CalculateDimension = $"{plan.Plan.MoldDiameter.ToString("F2")}mm OD x {plan.Plan.Thickness}mm";

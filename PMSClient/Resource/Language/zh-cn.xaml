@@ -268,7 +268,7 @@
     <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
     <sys:String x:Key="ButtonDeliveryItemList">发货流水</sys:String>
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
-    <sys:String x:Key="ButtonSelectRecordDeMold">选择取模记录</sys:String>
+    <sys:String x:Key="ButtonSelectRecordDeMold">选择取模</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
@@ -442,12 +442,14 @@
     <sys:String x:Key="RDMCreateTime">创建时间</sys:String>
     <sys:String x:Key="RDMState">状态</sys:String>
     <sys:String x:Key="RDMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RDMPMINumber">内部编号</sys:String>
     <sys:String x:Key="RDMComposition">成分</sys:String>
     <sys:String x:Key="RDMTemperature1">取模温度</sys:String>
     <sys:String x:Key="RDMTemperature2">脱模温度</sys:String>
     <sys:String x:Key="RDMDeMoldType">脱模类型</sys:String>
     <sys:String x:Key="RDMPlanType">计划类型</sys:String>
-    <sys:String x:Key="RDMBlankDimension">设计规格</sys:String>
+    <sys:String x:Key="RDMDimension">产品尺寸</sys:String>
+    <sys:String x:Key="RDMCalculateDimension">设计毛坯</sys:String>
     <sys:String x:Key="RDMCalculationDensity">计算密度</sys:String>
     <sys:String x:Key="RDMDensity">密度</sys:String>
     <sys:String x:Key="RDMRatioDensity">密度%</sys:String>
@@ -465,9 +467,11 @@
     <sys:String x:Key="RMMCreateTime">创建时间</sys:String>
     <sys:String x:Key="RMMState">状态</sys:String>
     <sys:String x:Key="RMMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RMMPMINumber">内部编号</sys:String>
     <sys:String x:Key="RMMComposition">成分</sys:String>
-    <sys:String x:Key="RMMExtraRequirement">额外要求</sys:String>
     <sys:String x:Key="RMMDimension">尺寸要求</sys:String>
+    <sys:String x:Key="RMMExtraRequirement">额外要求</sys:String>
+    <sys:String x:Key="RMMBlankDimension">毛坯尺寸</sys:String>
     <sys:String x:Key="RMMDiameter1">直径1</sys:String>
     <sys:String x:Key="RMMDiameter2">直径2</sys:String>
     <sys:String x:Key="RMMThickness1">厚度2</sys:String>
@@ -485,6 +489,7 @@
     <sys:String x:Key="RTComposition">成分</sys:String>
     <sys:String x:Key="RTCompositionAbbr">缩写</sys:String>
     <sys:String x:Key="RTPO">PO</sys:String>
+    <sys:String x:Key="RTPMINumber">内部编号</sys:String>
     <sys:String x:Key="RTCustomer">客户</sys:String>
     <sys:String x:Key="RTDimension">要求尺寸</sys:String>
     <sys:String x:Key="RTDensity">密度</sys:String>

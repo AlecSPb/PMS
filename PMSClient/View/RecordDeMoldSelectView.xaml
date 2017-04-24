@@ -46,6 +46,8 @@
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="{StaticResource RDMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource RDMPlanType}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding PlanType}"/>
                 <DataGridTextColumn Header="{StaticResource RDMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -56,8 +58,10 @@
                                     Binding="{Binding Temperature2}"/>
                 <DataGridTextColumn Header="{StaticResource RDMDeMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeMoldType}"/>
-                <DataGridTextColumn Header="{StaticResource RDMBlankDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                    Binding="{Binding BlankDimension}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Dimension}"/>
+                <DataGridTextColumn Header="{StaticResource RDMCalculateDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding CalculateDimension}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCalculationDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding CalculationDensity,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
@@ -82,7 +86,6 @@
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
-
 
             </DataGrid.Columns>
         </DataGrid>

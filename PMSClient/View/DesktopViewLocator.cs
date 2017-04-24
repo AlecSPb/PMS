@@ -82,6 +82,7 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<RecordDeMoldView>();
             SimpleIoc.Default.Register<RecordDeMoldEditView>();
+            SimpleIoc.Default.Register<RecordDeMoldSelectView>();
         }
 
         #region NavigationProperties
@@ -212,8 +213,6 @@ namespace PMSClient.View
 
         }
 
-
-
         public RecordMillingView RecordMilling
         {
             get
@@ -265,7 +264,13 @@ namespace PMSClient.View
                 return SimpleIoc.Default.GetInstance<RecordDeMoldEditView>();
             }
         }
-
+        public RecordDeMoldSelectView RecordDeMoldSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<RecordDeMoldSelectView>();
+            }
+        }
         public RecordVHPView RecordVHP
         {
             get { return SimpleIoc.Default.GetInstance<RecordVHPView>(); }

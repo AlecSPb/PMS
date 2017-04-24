@@ -26,8 +26,8 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMachineEdit);
-            NavigationService.GoTo(PMSViews.PlanSelect);
+            PMSHelper.ViewModels.RecordDeMoldSelect.SetRequestView(PMSViews.RecordMachineEdit);
+            NavigationService.GoTo(PMSViews.RecordDeMoldSelect);
         }
 
         public void SetNew()
@@ -45,6 +45,7 @@ namespace PMSClient.ViewModel
             model.Diameter1 = 0;
             model.Diameter2 = 0;
             model.Dimension = "230mm OD x 4mm";
+            model.BlankDimension = "无";
             model.Thickness1 = 0;
             model.Thickness2 = 0;
             model.Thickness3 = 0;
@@ -96,7 +97,6 @@ namespace PMSClient.ViewModel
                 CurrentRecordMachine.Composition = model.Composition;
                 CurrentRecordMachine.Dimension = model.Dimension;
                 CurrentRecordMachine.BlankDimension = UsefulPackage.PMSTranslate.Dimension(model);
-                CurrentRecordMachine.PMINumber = model.PMINumber;
                 CurrentRecordMachine.VHPPlanLot = model.VHPPlanLot;
                 //RaisePropertyChanged(nameof(CurrentRecordMachine));
             }

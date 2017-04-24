@@ -76,6 +76,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RTPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PMINumber}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
