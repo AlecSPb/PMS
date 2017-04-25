@@ -42,7 +42,7 @@
     <sys:String x:Key="PageAdmin">管理</sys:String>
     <sys:String x:Key="PageNaivgation">导航</sys:String>
     <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
-    <sys:String x:Key="PageOutSource">外包管理</sys:String>
+    <sys:String x:Key="PageOutSource">外购管理</sys:String>
 
 
     <sys:String x:Key="PageSales">销售</sys:String>
@@ -431,6 +431,7 @@
     <sys:String x:Key="RMVHPPlanLot">热压编号</sys:String>
     <sys:String x:Key="RMComposition">成分</sys:String>
     <sys:String x:Key="RMPMINumber">内部编号</sys:String>
+    <sys:String x:Key="RMRoomTemperatureHumidity">温度湿度</sys:String>
     <sys:String x:Key="RMRoomTemperature">温度</sys:String>
     <sys:String x:Key="RMRoomHumidity">湿度</sys:String>
     <sys:String x:Key="RMMaterialSource">原料来源</sys:String>

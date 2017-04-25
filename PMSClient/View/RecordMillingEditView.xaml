@@ -88,7 +88,7 @@
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="原料来源"/>
                 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMRoomTemperature}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMRoomTemperatureHumidity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
                     <TextBox  Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxBig}"/>

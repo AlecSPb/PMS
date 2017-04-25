@@ -718,8 +718,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="App-server.config" />
-    <None Include="App-publish.config" />
     <None Include="DocTemplate\BarTender101\毛坯标签.btw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1116,6 +1114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\HelpImages\workflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\HelpImages\workflow2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

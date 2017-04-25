@@ -77,7 +77,8 @@
                         Command="{Binding GoToMaterialOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PageMaterialInventory}" Grid.Row="1" Grid.Column="2"
                         Command="{Binding GoToMaterialInventory}" Style="{DynamicResource StyleButtonNavigation}"/>
-
+                <Button Content="{StaticResource PagePlate}"  Grid.Row="1" Grid.Column="3"
+                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigation}" />
                 <Button Content="{StaticResource PageSupplier}" Grid.Row="1" Grid.Column="4" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToBDSupplier}"/>
 

@@ -55,9 +55,9 @@ namespace PMSClient.ViewModel
             plan.RoomHumidity = 70;
             plan.RoomTemperature = 23;
             plan.KeepTempTime = 120;
-            plan.MillingRequirement = "常规要求";
-            plan.MachineRequirement = "常规要求";
-            plan.FillingRequirement = "常规要求";
+            plan.MillingRequirement = "无";
+            plan.MachineRequirement = "无";
+            plan.FillingRequirement = PMSCommon.CustomData.FillingRequirement[2];
             plan.SpecialRequirement = "无";
             #endregion
             CurrentPlan = plan;

@@ -90,7 +90,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MissonServiceClient();
-            RecordCount = service.GetMissonsCount();
+            RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -104,7 +104,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MissonServiceClient();
-            var orders = service.GetMissons(skip, take);
+            var orders = service.GetMissonsBySearch(skip, take, SearchCompositionStandard, SearchPMINumber);
             service.Close();
             MainOrders.Clear();
             orders.ToList().ForEach(o => MainOrders.Add(o));
