@@ -35,7 +35,10 @@ namespace PMSClient.ViewModel
         }
         private void AcionCalculator()
         {
-            PMSHelper.ToolViewModels.DensityEstamator.SetRequestView(PMSViews.RecordDeMoldEdit);
+            var vm = PMSHelper.ToolViewModels.DensityEstamator;
+            vm.SetRequestView(PMSViews.RecordDeMoldEdit);
+            vm.SetCalculationItem(CurrentRecordDeMold);
+            vm.CalculateDensity();
             NavigationService.GoTo(PMSViews.DensityEstamator);
         }
 

@@ -113,7 +113,7 @@ namespace UsefulPackage
 
 
 
-        private static double Average(double w1,double w2,double w3=0,double w4=0)
+        public static double Average(double w1,double w2,double w3=0,double w4=0)
         {
             double sum = 0;
             double count = 0;
