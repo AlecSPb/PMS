@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1000"
+             d:DesignHeight="1000" d:DesignWidth="1300"
              DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
@@ -37,11 +37,34 @@
         </Grid>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
             <Canvas>
+                <Canvas.Background>
+                    <ImageBrush ImageSource="../Resource/HelpImages/workflow.png"   Stretch="None" AlignmentX="Left" AlignmentY="Top"/>
+                </Canvas.Background>
                 <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOrder}"
-                        Command="{Binding GoToOrder}" Canvas.Left="45" Margin="0" Canvas.Top="10"/>
+                        Command="{Binding GoToOrder}" Canvas.Left="26" Margin="0" Canvas.Top="84"/>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOrderCheck}"
+                        Command="{Binding GoToOrder}" Canvas.Left="26" Margin="0" Canvas.Top="164"/>
                 <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialOrder}"
-                        Command="{Binding GoToMaterialOrder}" Canvas.Left="45" Margin="0" Canvas.Top="95"/>
+                        Command="{Binding GoToMaterialOrder}" Canvas.Left="389" Canvas.Top="245"  Margin="0" />
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialNeed}"
+                        Command="{Binding GoToMaterialNeed}" Canvas.Left="226" Canvas.Top="245"  Margin="0" />
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialInventory}"
+                        Command="{Binding GoToMaterialInventory}" Canvas.Left="548" Canvas.Top="245"  Margin="0" />
 
+                <Button Content="{StaticResource PagePlate}" 
+                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="864" Margin="0" Canvas.Top="245"/>
+
+                <Button Content="{StaticResource PageMisson}"  Command="{Binding GoToMisson}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="26" Margin="0" Canvas.Top="245"/>
+                <Button Content="{StaticResource PagePlan}"  Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="26" Margin="0" Canvas.Top="321"/>
+                <Button Content="{StaticResource PageRecordMilling}" Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordMilling}" Canvas.Left="226" Margin="0" Canvas.Top="403"/>
+                <Button Content="{StaticResource PageRecordVHP}" Command="{Binding GoToRecordVHP}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="389" Margin="0" Canvas.Top="403"/>
+                <Button Content="{StaticResource PageRecordDeMold}"  Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordDeMold}" Canvas.Left="548" Margin="0" Canvas.Top="403"/>
+                <Button Content="{StaticResource PageRecordMachine}" Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordMachine}" Canvas.Left="707" Margin="0" Canvas.Top="403"/>
+                <Button Content="{StaticResource PageRecordTest}"  Command="{Binding GoToRecordTest}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="864" Margin="0" Canvas.Top="403"/>
+                <Button Content="{StaticResource PageRecordBonding}"  Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordBonding}" Canvas.Left="1025" Margin="0" Canvas.Top="403"/>
+
+                <Button Content="{StaticResource PageProduct}"   Command="{Binding GoToProduct}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="548" Margin="0" Canvas.Top="543"/>
+                <Button Content="{StaticResource PageDelivery}"  Command="{Binding GoToDelivery}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="26" Margin="0" Canvas.Top="546" Height="56"/>
             </Canvas>
         </ScrollViewer>
     </Grid>

@@ -187,6 +187,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Tool\DensityEstamatorView.xaml.cs">
+      <DependentUpon>DensityEstamatorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\DensityEstamatorVM.cs" />
     <Compile Include="Tool\HelpImagePathConverter.cs" />
     <Compile Include="Tool\LabelOutPutView.xaml.cs">
       <DependentUpon>LabelOutPutView.xaml</DependentUpon>
@@ -454,6 +458,10 @@
     <Page Include="Resource\Styles\Desktop.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\DensityEstamatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tool\LabelOutPutView.xaml">
       <SubType>Designer</SubType>
@@ -1105,6 +1113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MainService\PMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\HelpImages\workflow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
