@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -25,9 +26,29 @@
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordBondingEdit}"/>
         </StackPanel>
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <Grid Grid.Row="2" DataContext="{Binding CurrentRecordBonding}" Background="Wheat">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxReadOnly}" FontWeight="Bold" Foreground="Blue"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold"/>
+        </Grid>
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel DataContext="{Binding CurrentRecordBonding}">
-                <Border Style="{StaticResource StyleBorderCommon}">
+                <Border Style="{StaticResource StyleBorderCommon}" Background="Yellow">
                     <TextBlock Style="{StaticResource StyleTextBlockMultiline}">
                         因为绑定时间段跨度很大，所以设定了多个步骤，请在每个步骤完成后，就点击该步骤的签名按钮，就会完成记录的保存。
                     </TextBlock>
@@ -428,7 +449,7 @@
                                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDWeldCheckTime}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WeldCheckTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-                                
+
                                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDWeldMaterial}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding WeldMaterial}" Style="{StaticResource StyleTextBoxCommon}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>

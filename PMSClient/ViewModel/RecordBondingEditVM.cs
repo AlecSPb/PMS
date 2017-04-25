@@ -59,10 +59,10 @@ namespace PMSClient.ViewModel
             model.TargetDetailRecord = "";
             //暂时用不到
             //1.0
-            model.TargetAppearance = "外观检查";
-            model.TargetWarpageCheck = "翘曲检查";
-            model.TargetThicknessCheck = "厚度检查";
-            model.TargetDiameterCheck = "直径检查";
+            model.TargetAppearance = "正常";
+            model.TargetWarpageCheck = "正常";
+            model.TargetThicknessCheck = "正常";
+            model.TargetDiameterCheck = "正常";
             model.TargetPerson = "无";
             model.TargetCheckTime = DateTime.Now;
 
@@ -71,10 +71,10 @@ namespace PMSClient.ViewModel
             model.PlateMaterial = "CuCr";
             model.PlateDimension = "237mm  ODx 11 mm";
             model.PlateUseCount = "1";
-            model.PlateHardness = "65HRB";
-            model.PlateSuplier = "GuangHan";
-            model.PlateLastWeldMaterial = "In";
-            model.PlateAppearance = "良好";
+            model.PlateHardness = "未知";
+            model.PlateSuplier = "广汉";
+            model.PlateLastWeldMaterial = "铟";
+            model.PlateAppearance = "正常";
             model.PlatePerson = "无";
             model.PlateCheckTime = DateTime.Now;
 
@@ -89,7 +89,7 @@ namespace PMSClient.ViewModel
             model.PlatePreProcessCheckTime = DateTime.Now;
 
             //5.0
-            model.WeldMaterial = "In";
+            model.WeldMaterial = "铟";
             model.WeldCuStringDiameter = "3.0";
             model.WeldHold = "4个";
             model.WeldPerson = "无";
@@ -252,7 +252,15 @@ namespace PMSClient.ViewModel
                 }
                 //PMSDialogService.ShowYes("Success", $"{param}-{currentUser}-{currentTime}");
                 NavigationService.ShowStatusMessage("保存成功，请刷新列表");
-                GoBack();
+                if (PMSDialogService.ShowYesNo("请问", "继续记录Yes还是返回列表No？"))
+                {
+                    return;
+                }
+                else
+                {
+                    GoBack();
+                }
+
             }
             catch (Exception ex)
             {
