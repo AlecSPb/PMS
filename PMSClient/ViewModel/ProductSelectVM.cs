@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.ViewModel
 {
@@ -30,9 +31,15 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Select = new RelayCommand<DcProduct>(ActionSelect);
-            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend);
+            Select = new RelayCommand<ProductExtra>(ActionSelect);
+            SelectAndSend = new RelayCommand<ProductExtra>(ActionSelectAndSend);
             GiveUp = new RelayCommand(GoBack);
+            InventoryOut = new RelayCommand(ActionInventoryOut);
+        }
+
+        private void ActionInventoryOut()
+        {
+          
         }
 
         private bool CanSearch()
@@ -55,13 +62,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionEdit(DcProduct model)
-        {
-            PMSHelper.ViewModels.ProductEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.ProductEdit);
-        }
-
-        private void ActionSelect(DcProduct model)
+        private void ActionSelect(ProductExtra model)
         {
 
             if (model != null)
@@ -69,7 +70,7 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.DeliveryItemEdit:
-                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model);
+                        //PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.Product);
                         break;
                     default:
                         break;
@@ -78,21 +79,29 @@ namespace PMSClient.ViewModel
 
             }
         }
-        private void ActionSelectAndSend(DcProduct model)
+        private void ActionSelectAndSend(ProductExtra model)
         {
-            if (MessageBox.Show("确定要将此产品设置为发货状态并填入发货单项目中？", "请问", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+            if (!PMSDialogService.ShowYesNo("请问", "确定要将此产品设置为发货状态并填入发货单项目中？"))
             {
                 return;
             }
 
-            if (model != null)
+            try
             {
-                using (var service = new ProductServiceClient())
+                if (model != null)
                 {
-                    model.State = PMSCommon.InventoryState.发货.ToString();
-                    service.UpdateProduct(model);
+                    using (var service = new ProductServiceClient())
+                    {
+                        model.Product.State = PMSCommon.InventoryState.发货.ToString();
+                        service.UpdateProduct(model.Product);
+                    }
+                    ActionSelect(model);
                 }
-                ActionSelect(model);
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                throw;
             }
         }
         private void GoBack()
@@ -102,35 +111,52 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            Products = new ObservableCollection<DcProduct>();
+            ProductExtras = new ObservableCollection<ProductExtra>();
             SearchCompositionStd = searchProductID = "";
 
         }
         private void SetPageParametersWhenConditionChange()
         {
-            PageIndex = 1;
-            PageSize = 20;
-            using (var service = new ProductServiceClient())
+            try
             {
-                RecordCount = service.GetProductCount(SearchProductID, SearchCompositionStd);
+                PageIndex = 1;
+                PageSize = 20;
+                using (var service = new ProductServiceClient())
+                {
+                    RecordCount = service.GetProductCount(SearchProductID, SearchCompositionStd);
+                }
+                ActionPaging();
             }
-            ActionPaging();
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                throw;
+            }
+
         }
         private void ActionPaging()
         {
-            int skip, take = 0;
-            skip = (PageIndex - 1) * PageSize;
-            take = PageSize;
-            using (var service = new ProductServiceClient())
+            try
             {
-                var orders = service.GetProducts(skip, take, SearchProductID, SearchCompositionStd);
-                Products.Clear();
-                orders.ToList().ForEach(o => Products.Add(o));
+                int skip, take = 0;
+                skip = (PageIndex - 1) * PageSize;
+                take = PageSize;
+                using (var service = new ProductServiceClient())
+                {
+                    var orders = service.GetProducts(skip, take, SearchProductID, SearchCompositionStd);
+                    ProductExtras.Clear();
+                    orders.ToList().ForEach(o => ProductExtras.Add(new ProductExtra { Product = o }));
+                }
+                CurrentSelectItem = ProductExtras.FirstOrDefault();
             }
-            CurrentSelectItem = Products.FirstOrDefault();
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                throw;
+            }
         }
         #region Commands
-        public RelayCommand<DcProduct> Select { get; set; }
+        public RelayCommand<ProductExtra> Select { get; set; }
 
         private string searchProductID;
         public string SearchProductID
@@ -157,10 +183,10 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcProduct> Products { get; set; }
-        private DcProduct currentSelectItem;
+        public ObservableCollection<ProductExtra> ProductExtras { get; set; }
+        private ProductExtra currentSelectItem;
 
-        public DcProduct CurrentSelectItem
+        public ProductExtra CurrentSelectItem
         {
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
@@ -168,6 +194,8 @@ namespace PMSClient.ViewModel
         #endregion
 
 
-        public RelayCommand<DcProduct> SelectAndSend { get; set; }
+        public RelayCommand<ProductExtra> SelectAndSend { get; set; }
+
+        public RelayCommand InventoryOut { get; set; }
     }
 }

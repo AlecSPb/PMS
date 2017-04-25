@@ -248,7 +248,7 @@
 
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
-
+    <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>
     <sys:String x:Key="ButtonDetail">详细</sys:String>
     <sys:String x:Key="ButtonBrowse">浏览</sys:String>
     <sys:String x:Key="ButtonInput">导入</sys:String>

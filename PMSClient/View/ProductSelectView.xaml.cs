@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using PMSClient.MainService;
 using PMSCommon;
 using PMSClient.ViewModel;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.View
 {
@@ -29,10 +30,10 @@ namespace PMSClient.View
         }
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var order = (DcProduct)e.Row.DataContext;
+            var order = (ProductExtra)e.Row.DataContext;
             if (order != null)
             {
-                switch (order.State)
+                switch (order.Product.State)
                 {
                     case "库存":
                         e.Row.Background = this.FindResource("StoredBrush") as SolidColorBrush;
