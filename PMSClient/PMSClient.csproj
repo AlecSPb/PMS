@@ -197,6 +197,7 @@
     </Compile>
     <Compile Include="Tool\LabelOutPutVM.cs" />
     <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
+    <Compile Include="Tool\Models\GraphicPaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
