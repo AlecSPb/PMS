@@ -15,9 +15,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="98*"/>
+            <RowDefinition Height="58*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="97*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageMaterialOrder}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
@@ -233,5 +234,9 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="{Binding TotalCost,StringFormat=总材料费用（不含运费）:{0:F2}RMB}" 
+                       Foreground="Blue" FontWeight="Bold"/>
+        </StackPanel>
     </Grid>
 </UserControl>

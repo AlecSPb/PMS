@@ -36,8 +36,9 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchOrderPO = "";
-            SearchSupplier = "";
+            searchOrderPO = "";
+            searchSupplier = "";
+            totalCost = 0;
             MaterialOrders = new ObservableCollection<DcMaterialOrder>();
             MaterialOrderItems = new ObservableCollection<DcMaterialOrderItem>();
         }
@@ -89,8 +90,21 @@ namespace PMSClient.ViewModel
                     MaterialOrderItems.Clear();
                     result.ToList().ForEach(i => MaterialOrderItems.Add(i));
                     CurrentSelectItem = model;
+
+                    CalculateTotalCost();
                 }
             }
+        }
+
+        private void CalculateTotalCost()
+        {
+            double sumCost = 0;
+            foreach (var item in MaterialOrderItems)
+            {
+                var singleCost = item.UnitPrice * item.Weight;
+                sumCost += singleCost;
+            }
+            TotalCost = sumCost;
         }
 
         private void ActionEditItem(DcMaterialOrderItem item)
@@ -228,6 +242,13 @@ namespace PMSClient.ViewModel
                 searchSupplier = value;
                 RaisePropertyChanged(() => SearchSupplier);
             }
+        }
+        private double totalCost;
+
+        public double TotalCost
+        {
+            get { return totalCost; }
+            set { totalCost = value; RaisePropertyChanged(nameof(TotalCost)); }
         }
 
         public ObservableCollection<DcMaterialOrder> MaterialOrders { get; set; }
