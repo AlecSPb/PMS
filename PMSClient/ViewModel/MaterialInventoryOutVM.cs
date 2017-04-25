@@ -91,6 +91,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
+            //TODO:完成搜索
             RecordCount = service.GetMaterialInventoryOutCount();
             service.Close();
             ActionPaging();

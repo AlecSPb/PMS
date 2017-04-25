@@ -93,7 +93,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             //RecordCount = service.GetMissonWithPlanCheckedCount();
             using (var service = new MissonServiceClient())
-            {
+            {//TODO:切换搜索
                 RecordCount = service.GetPlanWithMissonCheckedCount();
             }
             ActionPaging();

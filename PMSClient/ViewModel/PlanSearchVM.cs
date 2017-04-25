@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
 
             using (var service = new MissonServiceClient())
-            {
+            {//TODO:切换搜索
                 RecordCount = service.GetPlanWithMissonCheckedCountByDateRange2(SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
             }
             //只显示Checked过的计划

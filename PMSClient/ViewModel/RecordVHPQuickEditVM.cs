@@ -252,7 +252,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 6;
             using (var service = new MissonServiceClient())
-            {
+            {//TODO:切换搜索
                 RecordCount = service.GetPlanWithMissonCheckedCount();
             }
 
