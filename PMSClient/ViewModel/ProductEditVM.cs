@@ -126,6 +126,10 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
+            {
+                return;
+            }
             if (CurrentProduct.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))

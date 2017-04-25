@@ -94,7 +94,10 @@ namespace PMSClient.ViewModel
         }
 
         private void ActionCheck()
-        {
+        {            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
+            {
+                return;
+            }
             try
             {
                 using (var service=new MaterialOrderServiceClient())
@@ -131,6 +134,10 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
+            {
+                return;
+            }
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
