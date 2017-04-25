@@ -66,12 +66,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPlateID) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchPlateLot) && string.IsNullOrEmpty(SearchSupplier));
         }
 
         private void ActionAll()
         {
-            SearchPlateID = SearchSupplier = "";
+            SearchPlateLot = SearchSupplier = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -95,7 +95,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             Plates = new ObservableCollection<DcPlate>();
-            SearchSupplier = searchPlateID = "";
+            SearchSupplier = searchPlateLot = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -104,7 +104,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new PlateServiceClient())
             {
-                RecordCount = service.GetPlateCount(SearchPlateID, SearchSupplier);
+                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier);
             }
             ActionPaging();
         }
@@ -115,7 +115,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new PlateServiceClient())
             {
-                var orders = service.GetPlates(skip, take, SearchPlateID, SearchSupplier);
+                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier);
                 Plates.Clear();
                 orders.ToList().ForEach(o => Plates.Add(o));
             }
@@ -127,16 +127,16 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlate> SelectAndSend { get; set; }
 
 
-        private string searchPlateID;
-        public string SearchPlateID
+        private string searchPlateLot;
+        public string SearchPlateLot
         {
-            get { return searchPlateID; }
+            get { return searchPlateLot; }
             set
             {
-                if (searchPlateID == value)
+                if (searchPlateLot == value)
                     return;
-                searchPlateID = value;
-                RaisePropertyChanged(() => SearchPlateID);
+                searchPlateLot = value;
+                RaisePropertyChanged(() => SearchPlateLot);
             }
         }
         private string searchSupplier;

@@ -406,5 +406,67 @@ namespace PMSWCFService
             }
 
         }
+
+        public List<DcPlanWithMisson> GetPlanExtra(int skip, int take, string searchCode, string composition)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var queryPlan = (from p in dc.VHPPlans
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.SearchCode.Contains(searchCode)
+                                     orderby p.PlanDate descending
+                                     select p).Skip(skip).Take(take);
+                    var queryResult = from p in queryPlan
+                                      join o in dc.Orders
+                                      on p.OrderID equals o.ID
+                                      where o.CompositionStandard.Contains(composition)
+                                      select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    var final = queryResult.ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanWithMissonModel>, List<DcPlanWithMisson>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetPlanExtraCount(string searchCode, string composition)
+        {
+            try
+            {
+                using (var dc = new PMSDAL.PMSDbContext())
+                {
+                    var queryPlan = (from p in dc.VHPPlans
+                                     where p.State == PMSCommon.CommonState.已核验.ToString()
+                                     && p.SearchCode.Contains(searchCode)
+                                     orderby p.PlanDate descending
+                                     select p);
+                    var queryResult = from p in queryPlan
+                                      join o in dc.Orders
+                                      on p.OrderID equals o.ID
+                                      where o.CompositionStandard.Contains(composition)
+                                      select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    return queryResult.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

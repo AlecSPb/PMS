@@ -524,6 +524,9 @@ namespace PMSClient.MainService {
         private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SearchCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double SingleWeightField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -865,6 +868,19 @@ namespace PMSClient.MainService {
                 if ((this.RoomTemperatureField.Equals(value) != true)) {
                     this.RoomTemperatureField = value;
                     this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SearchCode {
+            get {
+                return this.SearchCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SearchCodeField, value) != true)) {
+                    this.SearchCodeField = value;
+                    this.RaisePropertyChanged("SearchCode");
                 }
             }
         }
@@ -7214,6 +7230,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2Respon" +
             "se")]
         System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRange2Async(System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtra", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraResponse")]
+        PMSClient.MainService.DcPlanWithMisson[] GetPlanExtra(int skip, int take, string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtra", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanExtraAsync(int skip, int take, string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCountResponse")]
+        int GetPlanExtraCount(string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7345,6 +7373,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRange2Async(System.DateTime dateStart, System.DateTime dateEnd, string composition) {
             return base.Channel.GetPlanWithMissonCheckedCountByDateRange2Async(dateStart, dateEnd, composition);
+        }
+        
+        public PMSClient.MainService.DcPlanWithMisson[] GetPlanExtra(int skip, int take, string searchCode, string composition) {
+            return base.Channel.GetPlanExtra(skip, take, searchCode, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlanWithMisson[]> GetPlanExtraAsync(int skip, int take, string searchCode, string composition) {
+            return base.Channel.GetPlanExtraAsync(skip, take, searchCode, composition);
+        }
+        
+        public int GetPlanExtraCount(string searchCode, string composition) {
+            return base.Channel.GetPlanExtraCount(searchCode, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition) {
+            return base.Channel.GetPlanExtraCountAsync(searchCode, composition);
         }
     }
     

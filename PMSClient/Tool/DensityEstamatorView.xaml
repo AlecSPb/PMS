@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.Tool"
              mc:Ignorable="d"  
-             d:DesignHeight="600" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource ToolLocator},Path=LabelOutPut}">
+             d:DesignHeight="600" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource ToolLocator},Path=DensityEstamator}">
     <UserControl.Resources>
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
@@ -18,6 +18,7 @@
         <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="欢迎热压毛坯密度估算程序"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -33,7 +34,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Text="80" Grid.Column="0"/>
-                            <TextBlock Text="4.4" Grid.Column="1" HorizontalAlignment="Right"/>
+                            <TextBlock Text="4.4" Grid.Column="1" HorizontalAlignment="Right" Foreground="Blue"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -41,10 +42,7 @@
             <Grid Grid.Column="1">
                 
             </Grid>
-            
-            
-            
-            
+
         </Grid>
     </Grid>
 </UserControl>

@@ -197,6 +197,7 @@
     </Compile>
     <Compile Include="Tool\LabelOutPutVM.cs" />
     <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
+    <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
     <Compile Include="Tool\Models\GraphicPaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
@@ -863,14 +864,14 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSService.wsdl" />
-    <None Include="Service References\MainService\PMSService.xsd">
+    <None Include="Service References\MainService\PMSService1.wsdl" />
+    <None Include="Service References\MainService\PMSService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService1.xsd">
+    <None Include="Service References\MainService\PMSService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService2.xsd">
+    <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserService\PMSClient.UserService.DcUser.datasource">
@@ -1111,13 +1112,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MainService\PMSService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resource\HelpImages\workflow.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\HelpImages\workflow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MainService\PMSService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

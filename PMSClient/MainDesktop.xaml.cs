@@ -335,6 +335,9 @@ namespace PMSClient
                 case PMSViews.LabelOutPut:
                     NavigateTo(_toolviews.LabelOutPut);
                     break;
+                case PMSViews.DensityEstamator:
+                    NavigateTo(_toolviews.DensityEstamator);
+                    break;
                 default:
                     break;
             }

@@ -25,6 +25,18 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
             GiveUp = new RelayCommand(ActionGiveUp);
             Select = new RelayCommand(ActionSelect);
+            Calculator = new RelayCommand(AcionCalculator);
+        }
+        public void SetDensity(double density,double ratiodensity)
+        {
+            CurrentRecordDeMold.Density = density;
+            CurrentRecordDeMold.RatioDensity = ratiodensity;
+           
+        }
+        private void AcionCalculator()
+        {
+            PMSHelper.ToolViewModels.DensityEstamator.SetRequestView(PMSViews.RecordDeMoldEdit);
+            NavigationService.GoTo(PMSViews.DensityEstamator);
         }
 
         private void ActionSelect()
@@ -154,6 +166,7 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand Select { get; set; }
+        public RelayCommand Calculator { get; set; }
 
         public List<string> States { get; set; }
 

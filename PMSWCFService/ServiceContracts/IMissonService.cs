@@ -56,6 +56,12 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd,string composition);
 
+
+        [OperationContract]
+        List<DcPlanWithMisson> GetPlanExtra(int skip, int take, string searchCode, string composition);
+        [OperationContract]
+        int GetPlanExtraCount(string searchCode, string composition);
+
         #endregion
     }
 }

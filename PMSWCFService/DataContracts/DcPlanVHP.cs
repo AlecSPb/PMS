@@ -22,6 +22,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public Guid OrderID { get; set; }
         [DataMember]
+        public string SearchCode { get; set; }
+        [DataMember]
         public DateTime PlanDate { get; set; }
         [DataMember]
         public string VHPDeviceCode { get; set; }

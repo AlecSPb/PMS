@@ -16,7 +16,8 @@ namespace PMSWCFService
         public int AddVHPPlan(DcPlanVHP model)
         {
             try
-            {
+            {                //自动生成搜索号
+                model.SearchCode = $"{model.PlanDate.ToString("yyMMdd")}-{model.VHPDeviceCode}";
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;
@@ -103,6 +104,8 @@ namespace PMSWCFService
         {
             try
             {
+                //自动生成搜索号
+                model.SearchCode = $"{model.PlanDate.ToString("yyMMdd")}-{model.VHPDeviceCode}";
                 using (var dc = new PMSDbContext())
                 {
                     int result = 0;

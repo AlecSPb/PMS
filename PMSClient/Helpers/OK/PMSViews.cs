@@ -70,6 +70,7 @@ namespace PMSClient
         MaintanenceEdit,
         MaterialNeedCalcuationTool,
         LabelOutPut,
+        DensityEstamator,
         BDCustomer,
         BDCompound,
         BDVHPDevice,

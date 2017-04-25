@@ -16,7 +16,7 @@ namespace PMSClient.Tool
 
             SimpleIoc.Default.Register<MaterialNeedCalcualtionVM>();
             SimpleIoc.Default.Register<LabelOutPutVM>();
-
+            SimpleIoc.Default.Register<DensityEstamatorVM>();
 
         }
         public MaterialNeedCalcualtionVM MaterialNeedCalcualtion
@@ -29,6 +29,13 @@ namespace PMSClient.Tool
             get { return SimpleIoc.Default.GetInstance<LabelOutPutVM>(); }
         }
 
+        public DensityEstamatorVM DensityEstamator
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<DensityEstamatorVM>();
+            }
+        }
 
 
     }

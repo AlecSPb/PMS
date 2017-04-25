@@ -23,6 +23,8 @@ namespace PMSDAL
 
         public Guid OrderID { get; set; }
 
+        public string SearchCode { get; set; }
+
         public DateTime PlanDate { get; set; }//生产日期
         public string VHPDeviceCode { get; set; }//生产机器代码
         public int PlanLot { get; set; }//生产批次，区分同一天同一台的机器的不同批次，默认是1
