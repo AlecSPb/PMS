@@ -141,6 +141,7 @@ namespace PMSClient.ViewModel
         private void ActionSelectProduct()
         {
             PMSHelper.ViewModels.ProductSelect.SetRequestView(PMSViews.DeliveryItemEdit);
+            PMSHelper.ViewModels.ProductSelect.ForeignKey = CurrentDeliveryItem.DeliveryID;
             NavigationService.GoTo(PMSViews.ProductSelect);
         }
 

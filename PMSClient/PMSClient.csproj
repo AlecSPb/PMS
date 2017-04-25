@@ -203,6 +203,7 @@
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\Model\ProductExtra.cs" />
+    <Compile Include="ViewModel\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />
     <Compile Include="ViewModel\PlateEditVM.cs" />

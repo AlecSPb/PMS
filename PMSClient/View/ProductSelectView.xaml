@@ -39,7 +39,14 @@
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding ProductExtras}"
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected}" ElementStyle="{StaticResource StyleDGCheckBoxCommon}"/>
+                <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource StyleDGCheckBoxCommon}"/>
+                <!--<DataGridTemplateColumn Header="选择">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleDGCheckBoxCommon}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -37,9 +37,59 @@ namespace PMSClient.ViewModel
             InventoryOut = new RelayCommand(ActionInventoryOut);
         }
 
+        public Guid ForeignKey { get; set; }
         private void ActionInventoryOut()
         {
-          
+            if (!PMSDialogService.ShowYesNo("请问","请问要批量添加选中的记录吗？"))
+            {
+                return;
+            }
+            try
+            {
+                switch (requestView)
+                {
+                    case PMSViews.DeliveryItemEdit:
+                        BatchInsertDeliveryItem(ForeignKey);
+                        break;
+                    default:
+                        break;
+                }
+                PMSDialogService.ShowYes("成功", "添加成功，返回列表视图,请刷新");
+                NavigationService.GoTo(PMSViews.Delivery);
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+        }
+
+        private void BatchInsertDeliveryItem(Guid deliveryid)
+        {
+            using (var service = new DeliveryServiceClient())
+            {
+                foreach (var item in ProductExtras)
+                {
+                    if (item.IsSelected)
+                    {
+                        var model = item.Product;
+                        //System.Diagnostics.Debug.Print(item.IsSelected.ToString() + item.Product.ProductID);
+                        var deliveryItem = NewModelCollection.NewDeliveryItem(deliveryid);
+                        deliveryItem.ProductType = PMSCommon.ProductType.靶材.ToString();
+                        deliveryItem.ProductID = model.ProductID;
+                        deliveryItem.Composition = model.Composition;
+                        deliveryItem.Abbr = model.Abbr;
+                        deliveryItem.Customer = model.Customer;
+                        deliveryItem.Weight = model.Weight;
+                        deliveryItem.PO = model.PO;
+                        deliveryItem.Dimension = model.Dimension;
+                        deliveryItem.DimensionActual = model.DimensionActual;
+                        deliveryItem.Defects = model.Defects;
+
+                        service.AddDeliveryItem(deliveryItem);
+                    }
+                }
+            }
         }
 
         private bool CanSearch()
@@ -70,7 +120,7 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.DeliveryItemEdit:
-                        //PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.Product);
+                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.Product);
                         break;
                     default:
                         break;
@@ -101,7 +151,6 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                throw;
             }
         }
         private void GoBack()
@@ -130,7 +179,6 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                throw;
             }
 
         }
@@ -152,7 +200,6 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                throw;
             }
         }
         #region Commands
