@@ -359,7 +359,11 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
                     var mapper = config.CreateMapper();
-                    var result = dc.MaterialOrderItems.Where(m => m.MaterialOrderID == id).OrderByDescending(m => m.CreateTime).ToList();
+                    var query=from m in dc.MaterialOrderItems
+                              where m.State != PMSCommon.MaterialOrderItemState.作废.ToString() && m.MaterialOrderID == id
+                              orderby m.CreateTime descending
+                              select m;
+                    var result = query.ToList();
                     return mapper.Map<List<MaterialOrderItem>, List<DcMaterialOrderItem>>(result);
                 }
             }
@@ -377,7 +381,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.SimpleState.作废.ToString() && m.MaterialOrderID==id
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString() && m.MaterialOrderID==id
                                 orderby m.CreateTime descending
                                 select m;
                     return query.Count();

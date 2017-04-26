@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="AcceptDefects.cs" />
     <Compile Include="AccessState.cs" />
+    <Compile Include="MaterialOrderItemState.cs" />
     <Compile Include="PlateMaterial.cs" />
     <Compile Include="PlateWeldingMaterial.cs" />
     <Compile Include="CommonState.cs" />
