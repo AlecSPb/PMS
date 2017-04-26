@@ -43,7 +43,7 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonSelectAndSend}" Style="{StaticResource StyleDGButton}"
+                                <Button Content="{StaticResource ButtonSend}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
