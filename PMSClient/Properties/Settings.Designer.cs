@@ -58,29 +58,5 @@ namespace PMSClient.Properties {
                 this["IsUIDPWDRemembered"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int MissonCount {
-            get {
-                return ((int)(this["MissonCount"]));
-            }
-            set {
-                this["MissonCount"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int DeliveryCount {
-            get {
-                return ((int)(this["DeliveryCount"]));
-            }
-            set {
-                this["DeliveryCount"] = value;
-            }
-        }
     }
 }

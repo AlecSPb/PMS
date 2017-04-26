@@ -129,6 +129,7 @@
     <Compile Include="CustomControls\BondingEditItem.xaml.cs">
       <DependentUpon>BondingEditItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AccessString.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
     <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
