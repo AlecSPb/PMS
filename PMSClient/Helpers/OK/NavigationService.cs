@@ -28,7 +28,7 @@ namespace PMSClient
         {
             GoTo(new MsgObject() { NavigateTo = token, MsgModel = model });
         }
-        public static void ShowStatusMessage(string msg = "状态信息")
+        public static void Status(string msg = "状态信息")
         {
             Messenger.Default.Send<string>(msg, MainNavigationToken.StatusMessage);
         }

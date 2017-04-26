@@ -81,7 +81,7 @@ namespace PMSClient.ViewModel
                         service.Close();
                         ReLoadRecordVHPs();
                         //EmptyCurrentRecordVHP();
-                        NavigationService.ShowStatusMessage("作废完毕");
+                        NavigationService.Status("作废完毕");
                     }
                 }
             }
@@ -102,7 +102,7 @@ namespace PMSClient.ViewModel
         {
             EmptyCurrentRecordVHP();
             isNew = true;
-            NavigationService.ShowStatusMessage("全新创建一个记录");
+            NavigationService.Status("全新创建一个记录");
         }
 
         private void ActionEditItem(DcRecordVHP mdoel)
@@ -112,7 +112,7 @@ namespace PMSClient.ViewModel
                 CurrentRecordVHP = mdoel;
                 isNew = false;
                 EditStatus = "编辑创建";
-                NavigationService.ShowStatusMessage("请修改上方数据，然后保存，保存将使用新的时间，取消修改请点新建");
+                NavigationService.Status("请修改上方数据，然后保存，保存将使用新的时间，取消修改请点新建");
             }
         }
 
@@ -196,7 +196,7 @@ namespace PMSClient.ViewModel
                         service.Close();
                         ReLoadRecordVHPs();
                         EmptyCurrentRecordVHP();
-                        NavigationService.ShowStatusMessage("保存完毕");
+                        NavigationService.Status("保存完毕");
                     }
                 }
             }
@@ -237,7 +237,7 @@ namespace PMSClient.ViewModel
                 isNew = true;
                 EditStatus = "全新创建";
                 CurrentRecordVHP = temp;
-                NavigationService.ShowStatusMessage("填充选定项完毕");
+                NavigationService.Status("填充选定项完毕");
             }
         }
 

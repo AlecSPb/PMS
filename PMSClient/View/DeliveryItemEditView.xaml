@@ -26,9 +26,9 @@
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding Save}"/>
             <Button Content="{StaticResource ButtonSelectProduct}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding SelectProduct}"/>
+                    Command="{Binding SelectProduct}" Width="100"/>
             <Button Content="{StaticResource ButtonSelectPlate}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding SelectPlate}"/>
+                    Command="{Binding SelectPlate}" Width="100"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipDeliveryItemEdit}"/>
         </StackPanel>

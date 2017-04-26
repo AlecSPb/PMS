@@ -137,7 +137,7 @@ namespace PMSClient.ViewModel
                 service.Close();
                 //PMSHelper.ViewModels.Order.RefreshData();
                 GoBack();
-                NavigationService.ShowStatusMessage("保存成功，请刷新列表");
+                NavigationService.Status("保存成功，请刷新列表");
 
             }
             catch (Exception ex)

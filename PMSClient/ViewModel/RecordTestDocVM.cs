@@ -25,7 +25,7 @@ namespace PMSClient.ViewModel
         /// <param name="arg"></param>
         private void ActionCreateDoc(string arg)
         {
-            NavigationService.ShowStatusMessage("开始创建报告……");
+            NavigationService.Status("开始创建报告……");
             try
             {
                 switch (arg)
@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
 
         private void ShowMessageAfterCreateDoc(string reportName)
         {
-            NavigationService.ShowStatusMessage($"{reportName}创建完毕！");
+            NavigationService.Status($"{reportName}创建完毕！");
             PMSDialogService.ShowYes("提示",$"{reportName}创建完毕，请打开报告检查内容是否正确");
         }
 
@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 
@@ -97,7 +97,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 
@@ -114,7 +114,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 
@@ -131,7 +131,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 
@@ -148,7 +148,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 

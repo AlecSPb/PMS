@@ -157,17 +157,17 @@ namespace PMSClient.ViewModel
             {
                 if (order != null)
                 {
-                    NavigationService.ShowStatusMessage("开始创建报告……");
+                    NavigationService.Status("开始创建报告……");
                     ReportMaterialOrder report = new ReportMaterialOrder();
                     report.SetModel(order);
                     report.Output();
-                    NavigationService.ShowStatusMessage("原材料订单创建完毕！");
+                    NavigationService.Status("原材料订单创建完毕！");
                 }
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 

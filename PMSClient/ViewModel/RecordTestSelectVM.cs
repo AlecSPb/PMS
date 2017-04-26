@@ -33,6 +33,67 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Select = new RelayCommand<RecordTestExtra>(ActionSelect);
+            SelectBatch = new RelayCommand(ActionSelectBatch);
+        }
+
+        private void ActionSelectBatch()
+        {
+            try
+            {
+                var count = RecordTestExtras.Where(i => i.IsSelected == true).Count();
+                if (!PMSDialogService.ShowYesNo("请问", $"请问要导入当前选定的{count}条记录吗？"))
+                {
+                    return;
+                }
+
+                switch (requestView)
+                {
+                    case PMSViews.ProductEdit:
+                        BatchSaveProducts();
+                        break;
+                    case PMSViews.RecordBondingEdit:
+                        break;
+                    default:
+                        break;
+                }
+                PMSDialogService.ShowYes("成功", "记录导入完成，请刷新列表");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.Status(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 批量导入到产品
+        /// </summary>
+        private void BatchSaveProducts()
+        {
+            using (var service=new ProductServiceClient())
+            {
+                foreach (var item in RecordTestExtras)
+                {
+                    if (item.IsSelected)
+                    {
+                        var temp = PMSNewModelCollection.NewProduct();
+                        temp.ProductType = PMSCommon.ProductType.靶材.ToString();
+                        temp.ProductID = item.RecordTest.ProductID;
+                        temp.Customer = item.RecordTest.Customer;
+                        temp.Composition = item.RecordTest.Composition;
+                        temp.Abbr = item.RecordTest.CompositionAbbr;
+                        temp.PO = item.RecordTest.PO;
+                        temp.Weight = item.RecordTest.Weight;
+                        temp.Dimension = item.RecordTest.Dimension;
+                        temp.DimensionActual = item.RecordTest.DimensionActual;
+                        temp.Defects = item.RecordTest.Defects;
+                        temp.Remark = item.RecordTest.Remark;
+
+                        service.AddProductByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+                NavigationService.GoTo(PMSViews.Product);
+            }
+
         }
 
         private void GoBack()
@@ -80,7 +141,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            RecordProductExtras = new ObservableCollection<RecordTestExtra>();
+            RecordTestExtras = new ObservableCollection<RecordTestExtra>();
             SearchCompositionStd = searchProductID = "";
 
         }
@@ -102,8 +163,8 @@ namespace PMSClient.ViewModel
             using (var service = new RecordTestServiceClient())
             {
                 var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
-                RecordProductExtras.Clear();
-                orders.ToList().ForEach(o => RecordProductExtras.Add(new Model.RecordTestExtra { RecordTest=o}));
+                RecordTestExtras.Clear();
+                orders.ToList().ForEach(o => RecordTestExtras.Add(new Model.RecordTestExtra { RecordTest=o}));
             }
         }
         #region Commands
@@ -137,7 +198,8 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<RecordTestExtra> RecordProductExtras { get; set; }
+        public ObservableCollection<RecordTestExtra> RecordTestExtras { get; set; }
+        public RelayCommand SelectBatch { get; set; }
         #endregion
     }
 }

@@ -13,36 +13,36 @@ namespace PMSClient
     {
         public static void SaveOK()
         {
-            NavigationService.ShowStatusMessage("保存成功");
+            NavigationService.Status("保存成功");
         }
         public static void SaveNotOK()
         {
-            NavigationService.ShowStatusMessage("保存不成功");
+            NavigationService.Status("保存不成功");
         }
         public static void NewItem()
         {
-            NavigationService.ShowStatusMessage("开始新建");
+            NavigationService.Status("开始新建");
         }
         public static void EditItem()
         {
-            NavigationService.ShowStatusMessage("开始编辑");
+            NavigationService.Status("开始编辑");
         }
         public static void DeleteItem()
         {
-            NavigationService.ShowStatusMessage("准备作废");
+            NavigationService.Status("准备作废");
         }
 
         public static void LogInOK()
         {
-            NavigationService.ShowStatusMessage("登录成功");
+            NavigationService.Status("登录成功");
         }
         public static void LogInNotOK()
         {
-            NavigationService.ShowStatusMessage("登录不成功");
+            NavigationService.Status("登录不成功");
         }
         public static void LogOutOK()
         {
-            NavigationService.ShowStatusMessage("注销成功");
+            NavigationService.Status("注销成功");
         }
 
 

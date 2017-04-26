@@ -1,4 +1,5 @@
 ﻿using PMSClient.MainService;
+using PMSClient.ViewModel.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,10 +28,10 @@ namespace PMSClient.View
         }
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var order = (DcRecordTest)e.Row.DataContext;
+            var order = (RecordTestExtra)e.Row.DataContext;
             if (order != null)
             {
-                switch (order.State)
+                switch (order.RecordTest.State)
                 {
                     case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;

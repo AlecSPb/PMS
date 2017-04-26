@@ -40,7 +40,6 @@ namespace PMSClient.ViewModel
             IsNew = true;
             var model = new DcProduct();
             #region 初始化
-            IsNew = true;
             model.ID = Guid.NewGuid();
             model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.CreateTime = DateTime.Now;

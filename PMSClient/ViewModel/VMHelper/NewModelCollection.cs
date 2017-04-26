@@ -9,6 +9,27 @@ namespace PMSClient.ViewModel
 {
     public static class PMSNewModelCollection
     {
+        public static DcProduct NewProduct()
+        {
+            var model = new DcProduct();
+            model.ID = Guid.NewGuid();
+            model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.Composition = "成分";
+            model.Abbr = "缩写";
+            model.Weight = "";
+            model.Customer = "客户";
+            model.Position = PMSCommon.GoodPosition.A1.ToString();
+            model.ProductType = PMSCommon.ProductType.靶材.ToString();
+            model.State = PMSCommon.InventoryState.库存.ToString();
+            model.Remark = "";
+
+            model.Dimension = "尺寸";
+            model.DimensionActual = "实际尺寸";
+            model.Defects = "无";
+            return model;
+        }
         public static DcDeliveryItem NewDeliveryItem(Guid deliveryid)
         {
 

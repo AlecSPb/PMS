@@ -63,7 +63,7 @@ namespace PMSClient.ViewModel
                         report.SetModel(model);
                         report.Output();
                         PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告\r\n如果排版变形，请全选更改为宋体");
-                        NavigationService.ShowStatusMessage("请在桌面查看生成的热压记录报告,如果排版变形，请全选更改为宋体");
+                        NavigationService.Status("请在桌面查看生成的热压记录报告,如果排版变形，请全选更改为宋体");
                     }
                     catch (Exception ex)
                     {

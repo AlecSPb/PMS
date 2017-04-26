@@ -48,9 +48,9 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActioSendSelected()
         {
-            int selectedCount = ProductExtras.Where(i => i.IsSelected == true).Count();
+            int count = ProductExtras.Where(i => i.IsSelected == true).Count();
 
-            if (!PMSDialogService.ShowYesNo("请问", $"请问要批量出库选中的{selectedCount}条记录吗？"))
+            if (!PMSDialogService.ShowYesNo("请问", $"请问要批量出库选中的{count}条记录吗？"))
             {
                 return;
             }
@@ -66,13 +66,12 @@ namespace PMSClient.ViewModel
                     default:
                         break;
                 }
-                PMSDialogService.ShowYes("成功", "添加成功，即将返回列表视图,之后请刷新列表看到最新信息");
-                NavigationService.GoTo(PMSViews.Delivery);
+                PMSDialogService.ShowYes("成功", "添加成功，请刷新列表看到最新信息");
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
 
         }
@@ -109,11 +108,12 @@ namespace PMSClient.ViewModel
                 }
                 serviceDelivery.Close();
                 serviceProduct.Close();
+                NavigationService.GoTo(PMSViews.Delivery);
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 
@@ -164,7 +164,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
         private void GoBack()
@@ -187,7 +187,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
 
         }
@@ -209,7 +209,7 @@ namespace PMSClient.ViewModel
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
-                NavigationService.ShowStatusMessage(ex.Message);
+                NavigationService.Status(ex.Message);
             }
         }
 

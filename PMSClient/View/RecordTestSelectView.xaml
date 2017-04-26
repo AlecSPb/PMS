@@ -31,12 +31,12 @@
                      Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SelectBatch}" />
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SendSelected}" />
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordTestSelect}"/>
         </StackPanel>
 
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordProductExtras}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordTestExtras}"
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource StyleDGCheckBoxCommon}"/>
@@ -54,96 +54,96 @@
                 <DataGridTemplateColumn Header="{StaticResource RTProductID}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.ProductID}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
+                            <TextBlock Text="{Binding RecordTest.ProductID}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding RecordTestExtra.TestType}"/>
+                                    Binding="{Binding RecordTest.TestType}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTComposition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Composition}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.Composition}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTCompositionAbbr}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.CompositionAbbr}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.CompositionAbbr}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RTPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding RecordTestExtra.PMINumber}"/>
+                                    Binding="{Binding RecordTest.PMINumber}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Customer}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.Customer}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Dimension}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.Dimension}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                            <TextBlock Text="{Binding RecordTest.Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTDensity}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Density}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                            <TextBlock Text="{Binding RecordTest.Density}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTResistance}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Resistance}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                            <TextBlock Text="{Binding RecordTest.Resistance}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTDefects}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Defects}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.Defects}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTDimensionActual}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.DimensionActual}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.DimensionActual}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource RTSample}" Binding="{Binding RecordTestExtra.Sample}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTextColumn Header="{StaticResource RTSample}" Binding="{Binding RecordTest.Sample}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                 <DataGridTemplateColumn Header="{StaticResource RTCreateTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RTCreator}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
-                            <TextBlock Text="{Binding RecordTestExtra.Creator}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

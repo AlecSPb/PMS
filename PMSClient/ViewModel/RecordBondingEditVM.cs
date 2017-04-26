@@ -251,7 +251,7 @@ namespace PMSClient.ViewModel
                     }
                 }
 
-                NavigationService.ShowStatusMessage("保存成功，请刷新列表");
+                NavigationService.Status("保存成功，请刷新列表");
                 if (!PMSDialogService.ShowYesNo("请问", "继续记录Yes还是返回列表No？"))
                 {
                     GoBack();

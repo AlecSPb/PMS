@@ -144,7 +144,7 @@ namespace PMSClient.ViewModel
                 }
                 service.Close();
                 //PMSHelper.ViewModels.RecordTest.RefreshData();
-                NavigationService.ShowStatusMessage("保存成功，请刷新列表");
+                NavigationService.Status("保存成功，请刷新列表");
                 GoBack();
             }
             catch (Exception ex)
