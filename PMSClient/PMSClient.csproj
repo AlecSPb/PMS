@@ -210,6 +210,9 @@
     <Compile Include="ViewModel\PlateEditVM.cs" />
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
+    <Compile Include="View\MaterialOrderItemListView.xaml.cs">
+      <DependentUpon>MaterialOrderItemListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\NavigationWorkFlowView.xaml.cs">
       <DependentUpon>NavigationWorkFlowView.xaml</DependentUpon>
     </Compile>
@@ -471,6 +474,10 @@
     <Page Include="Tool\LabelOutPutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MaterialOrderItemListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\NavigationWorkFlowView.xaml">
       <SubType>Designer</SubType>
