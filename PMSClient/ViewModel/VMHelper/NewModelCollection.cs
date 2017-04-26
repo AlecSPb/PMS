@@ -7,7 +7,7 @@ using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
-    public static class NewModelCollection
+    public static class PMSNewModelCollection
     {
         public static DcDeliveryItem NewDeliveryItem(Guid deliveryid)
         {

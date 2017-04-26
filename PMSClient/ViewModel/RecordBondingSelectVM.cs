@@ -22,7 +22,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeCommands()
         {
-            Select = new RelayCommand<MainService.DcRecordBonding>(ActionSelect);
+            Select = new RelayCommand<DcRecordBonding>(ActionSelect);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
         }

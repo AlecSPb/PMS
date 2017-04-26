@@ -204,7 +204,7 @@
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\Model\ProductExtra.cs" />
-    <Compile Include="ViewModel\NewModelCollection.cs" />
+    <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />
     <Compile Include="ViewModel\PlateEditVM.cs" />
@@ -1129,6 +1129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MainService\PMSService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documents\Sanjie.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

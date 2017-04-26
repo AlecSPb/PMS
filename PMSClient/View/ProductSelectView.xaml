@@ -29,7 +29,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonInventoryOut}" Style="{StaticResource StyleButtonCommon}" Command="{Binding InventoryOut}"/>
+            <Button Content="{StaticResource ButtonSendSelected}" Style="{StaticResource StyleButtonCommon}" Command="{Binding SendSelected}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
             <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>
@@ -40,22 +40,12 @@
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource StyleDGCheckBoxCommon}"/>
-                <!--<DataGridTemplateColumn Header="选择">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleDGCheckBoxCommon}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <!--<Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>-->
-                                <Button Content="{StaticResource ButtonSelectAndSend}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource ButtonSend}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Send,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

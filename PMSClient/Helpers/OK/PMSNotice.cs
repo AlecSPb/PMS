@@ -13,24 +13,6 @@ namespace PMSClient
     /// </summary>
     public static class PMSNotice
     {
-       
-        private static int remoteCount = 4;
-        //private static int localCount = 0;
-        private static PMSMessageBox _newMessage;
-        static PMSNotice()
-        {
-            _newMessage = new PMSMessageBox();
-        }
-        public static void HasNewDelivery()
-        {
-            try
-            {
 
-            }
-            catch (Exception ex)
-            {
-                PMSHelper.CurrentLog.Error(ex);
-            }
-        }
     }
 }

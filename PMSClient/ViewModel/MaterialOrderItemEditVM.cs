@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
         {
             checkResult = "";
             OrderStates = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(OrderStates);
+            PMSBasicDataService.SetListDS<PMSCommon.MaterialOrderItemState>(OrderStates);
             InitialCommmands();
         }
 

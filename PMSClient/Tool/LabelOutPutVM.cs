@@ -54,6 +54,7 @@ namespace PMSClient.Tool
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
+                NavigationService.ShowStatusMessage(ex.Message);
             }
         }
 

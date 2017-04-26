@@ -229,7 +229,8 @@
     <sys:String x:Key="ButtonSelectEmpty">使用空项目</sys:String>
     <sys:String x:Key="ButtonFill">填写</sys:String>
     <sys:String x:Key="ButtonSelect">选择</sys:String>
-    <sys:String x:Key="ButtonSelectAndSend">发出</sys:String>
+    <sys:String x:Key="ButtonSend">发出</sys:String>
+    <sys:String x:Key="ButtonSendSelected">发出所选</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
@@ -273,6 +274,9 @@
     <sys:String x:Key="ButtonDeliveryItemList">发货流水</sys:String>
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
     <sys:String x:Key="ButtonSelectRecordDeMold">选择取模</sys:String>
+    
+    
+    
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
