@@ -52,6 +52,7 @@ namespace PMSClient.ViewModel
                         BatchSaveProducts();
                         break;
                     case PMSViews.RecordBondingEdit:
+                        BatchSaveRecordBondings();
                         break;
                     default:
                         break;
@@ -64,12 +65,41 @@ namespace PMSClient.ViewModel
                 NavigationService.Status(ex.Message);
             }
         }
+
+        private void BatchSaveRecordBondings()
+        {
+            using (var service = new RecordBondingServiceClient())
+            {
+                foreach (var item in RecordTestExtras)
+                {
+                    if (item.IsSelected)
+                    {
+                        var model = item.RecordTest;
+                        var temp = PMSNewModelCollection.NewRecordBonding();
+                        temp.TargetProductID = model.ProductID;
+                        temp.TargetCustomer = model.Customer;
+                        temp.TargetComposition = model.Composition;
+                        temp.TargetAbbr = model.CompositionAbbr;
+                        temp.TargetPO = model.PO;
+                        temp.TargetPMINumber = model.PMINumber;
+                        temp.TargetWeight = model.Weight;
+                        temp.TargetDimension = model.Dimension;
+                        temp.TargetDimensionActual = model.DimensionActual;
+                        temp.TargetDefects = model.Defects;
+
+                        service.AddRecordBongdingByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+                NavigationService.GoTo(PMSViews.RecordBonding);
+            }
+        }
+
         /// <summary>
         /// 批量导入到产品
         /// </summary>
         private void BatchSaveProducts()
         {
-            using (var service=new ProductServiceClient())
+            using (var service = new ProductServiceClient())
             {
                 foreach (var item in RecordTestExtras)
                 {
@@ -119,7 +149,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect(RecordTestExtra model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 switch (requestView)
                 {
@@ -164,7 +194,7 @@ namespace PMSClient.ViewModel
             {
                 var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
                 RecordTestExtras.Clear();
-                orders.ToList().ForEach(o => RecordTestExtras.Add(new Model.RecordTestExtra { RecordTest=o}));
+                orders.ToList().ForEach(o => RecordTestExtras.Add(new Model.RecordTestExtra { RecordTest = o }));
             }
         }
         #region Commands

@@ -27,6 +27,7 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcRecordBonding>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
+            PageChanged = new RelayCommand(ActionPaging);
         }
 
         private bool CanEdit(DcRecordBonding arg)
@@ -73,7 +74,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             using (var service = new RecordBondingServiceClient())
             {
                 RecordCount = service.GetRecordBondingCount(SearchProductID, SearchCompositionStd);
