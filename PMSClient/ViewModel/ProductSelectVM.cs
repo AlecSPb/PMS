@@ -40,7 +40,16 @@ namespace PMSClient.ViewModel
         public Guid ForeignKey { get; set; }
         private void ActionInventoryOut()
         {
-            if (!PMSDialogService.ShowYesNo("请问","请问要批量添加选中的记录吗？"))
+            int selectedCount = 0;
+            foreach (var item in ProductExtras)
+            {
+                if (item.IsSelected)
+                {
+                    selectedCount++;
+                }
+            }
+
+            if (!PMSDialogService.ShowYesNo("请问",$"请问要批量添加选中的{selectedCount}条记录吗？"))
             {
                 return;
             }

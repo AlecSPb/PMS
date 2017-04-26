@@ -25,30 +25,7 @@ namespace PMSClient
         {
             try
             {
-                //var remoteCount = 0;
-                var localCount = 0;
-                //using (var service = new DeliveryServiceClient())
-                //{
-                //    //remoteCount = service.GetDeliveryCount();
-                //    remoteCount = 4;
-                //}
-                localCount = Properties.Settings.Default.DeliveryCount;
-                System.Diagnostics.Debug.Print($"local={localCount.ToString()},remote={remoteCount.ToString()}");
 
-                if (remoteCount > localCount)
-                {
-                    if (_newMessage==null)
-                    {
-                        _newMessage = new PMSMessageBox();
-
-                    }
-                    //_newMessage.Message = $"有新的发货单{remoteCount}记录了，准备发货了";
-                    //_newMessage.ShowDialog();
-                    //保存远程数量到设置
-                    Properties.Settings.Default.DeliveryCount = remoteCount;
-                    Properties.Settings.Default.Save();
-                }
-                remoteCount++;
             }
             catch (Exception ex)
             {

@@ -21,7 +21,7 @@
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="不需要每个尺寸都有，没有的是0就行了"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="不需要每个尺寸都有，没有的是0就行了,从取模过来的数据一般不需要改动，直接选石墨纸类型就行了"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

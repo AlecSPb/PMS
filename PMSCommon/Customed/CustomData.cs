@@ -106,13 +106,18 @@ namespace PMSCommon
                 var data = new List<double>();
                 #region 数据
                 data.Add(80);
-                data.Add(125);
+                data.Add(105);
+                data.Add(128);
                 data.Add(155);
+                data.Add(160);
                 data.Add(205);
                 data.Add(206);
                 data.Add(233);
+                data.Add(255);
                 data.Add(303);
-                data.Add(455);
+                data.Add(319);
+                data.Add(336);
+                data.Add(450);
                 #endregion
                 return data;
             }

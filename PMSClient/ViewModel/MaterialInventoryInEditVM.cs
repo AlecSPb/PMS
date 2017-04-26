@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             empty.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
             empty.Weight = 1;
-            empty.Purity = "5N";
+            empty.Purity = "4.5N";
             empty.Remark = "无";
             #endregion
 

@@ -11,7 +11,7 @@ namespace PMSClient.ViewModel.Model
     {
         public ProductExtra()
         {
-            IsSelected = true;
+            IsSelected =false;
         }
         public bool IsSelected { get; set; }
         public DcProduct Product { get; set; }

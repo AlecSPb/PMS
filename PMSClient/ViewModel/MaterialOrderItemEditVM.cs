@@ -31,7 +31,7 @@ namespace PMSClient.ViewModel
                 #region 初始化
                 item.ID = Guid.NewGuid();
                 item.MaterialOrderID = order.ID;
-                item.State = PMSCommon.SimpleState.正常.ToString();
+                item.State = PMSCommon.MaterialOrderItemState.未完成.ToString();
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
                 var prefix = order.OrderPO.Substring(0, order.OrderPO.Length - 3);
