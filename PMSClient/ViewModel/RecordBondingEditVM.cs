@@ -67,7 +67,7 @@ namespace PMSClient.ViewModel
             model.TargetCheckTime = DateTime.Now;
 
             //2.0
-            model.PlateLot = "铜板编号";
+            model.PlateLot = "暂无";
             model.PlateMaterial = "CuCr";
             model.PlateDimension = "237mm  ODx 11 mm";
             model.PlateUseCount = "1";
@@ -189,8 +189,8 @@ namespace PMSClient.ViewModel
             switch (param)
             {
                 case "00":
-                    //CurrentRecordBonding.Creator = currentUser;
-                    //CurrentRecordBonding.CreateTime = currentTime;
+                    CurrentRecordBonding.Creator = currentUser;
+                    CurrentRecordBonding.CreateTime = currentTime;
                     break;
                 case "10":
                     CurrentRecordBonding.TargetPerson = currentUser;
@@ -252,7 +252,7 @@ namespace PMSClient.ViewModel
                 }
 
                 NavigationService.Status("保存成功，请刷新列表");
-                if (!PMSDialogService.ShowYesNo("请问", "继续记录Yes还是返回列表No？"))
+                if (!PMSDialogService.ShowYesNo("请问", "留在本页Yes，返回列表No？"))
                 {
                     GoBack();
                 }

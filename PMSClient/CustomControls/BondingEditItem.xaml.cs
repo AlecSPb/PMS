@@ -24,7 +24,13 @@ namespace PMSClient.CustomControls
         {
             InitializeComponent();
         }
-
+        public bool IsExpanded
+        {
+            set
+            {
+                MyExpander.IsExpanded = value;
+            }
+        }
         public string Title
         {
             set

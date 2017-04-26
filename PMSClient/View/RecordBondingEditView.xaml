@@ -41,11 +41,11 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxReadOnly}" FontWeight="Bold" Foreground="Blue"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxReadOnly}" FontWeight="Bold" Foreground="Blue" FontSize="20"/>
             <TextBlock Grid.Row="0" Grid.Column="2" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold"/>
+            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold" FontSize="20"/>
             <TextBlock Grid.Row="0" Grid.Column="4" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold"/>
+            <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold" FontSize="20"/>
         </Grid>
         <Border Grid.Row="3"  Background="Yellow">
             <TextBlock Style="{StaticResource StyleTextBlockMultiline}">
@@ -54,7 +54,7 @@
         </Border>
         <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel DataContext="{Binding CurrentRecordBonding}">
-                <uc:BondingEditItem Title="0.0预备开始">
+                <uc:BondingEditItem Title="0.0预备开始" IsExpanded="True">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>

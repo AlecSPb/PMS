@@ -10,7 +10,7 @@
         <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
     </UserControl.Resources>
     <Grid>
-        <Expander IsExpanded="True" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Expander Name="MyExpander" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
             <Expander.Header>
                 <TextBlock Name="txtTitle" Style="{StaticResource StyleTextBlockPageTitle}"/>
             </Expander.Header>
