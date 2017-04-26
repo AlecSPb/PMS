@@ -41,7 +41,7 @@ namespace PMSClient.ViewModel
 
                 var mainContent = sb.ToString();
 
-                var pageTitle = "热压产品毛坯标签打印输出";
+                var pageTitle = "热压毛坯标签打印输出";
                 var tips = @"点击打开模板按钮，粘贴不同内容到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签，一般生成2张标签，一份用于取模，一份用于加工后补救被水浸泡的原标签";
                 var template = "毛坯标签";
                 var helpimage = "productionlabel.png";

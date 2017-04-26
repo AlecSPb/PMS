@@ -100,15 +100,15 @@
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxBig}"  />
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTDensity}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text=""/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="单位：g"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTWeight}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}" />
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位:g/cm3"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -117,7 +117,7 @@
                           Width="150"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="btnResistance_Click"/>
                 </StackPanel>
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text=""/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -153,7 +153,9 @@
                           AcceptsReturn="True"
                           VerticalScrollBarVisibility="Auto"
                          Height="120"/>
-                <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="CSV格式文件"/>
+                
+                
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>

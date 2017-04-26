@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.ViewModel
 {
@@ -31,7 +32,7 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Select = new RelayCommand<DcRecordTest>(ActionSelect);
+            Select = new RelayCommand<RecordTestExtra>(ActionSelect);
         }
 
         private void GoBack()
@@ -55,20 +56,20 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionSelect(DcRecordTest model)
+        private void ActionSelect(RecordTestExtra model)
         {
             if (model!=null)
             {
                 switch (requestView)
                 {
                     case PMSViews.RecordBondingEdit:
-                        PMSHelper.ViewModels.RecordBondingEdit.SetBySelect(model);
+                        PMSHelper.ViewModels.RecordBondingEdit.SetBySelect(model.RecordTest);
                         break;
                     case PMSViews.ProductEdit:
-                        PMSHelper.ViewModels.ProductEdit.SetBySelect(model);
+                        PMSHelper.ViewModels.ProductEdit.SetBySelect(model.RecordTest);
                         break;
                     case PMSViews.DeliveryItemEdit:
-                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model);
+                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.RecordTest);
                         break;
                     default:
                         break;
@@ -79,7 +80,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            RecordProducts = new ObservableCollection<DcRecordTest>();
+            RecordProductExtras = new ObservableCollection<RecordTestExtra>();
             SearchCompositionStd = searchProductID = "";
 
         }
@@ -101,12 +102,12 @@ namespace PMSClient.ViewModel
             using (var service = new RecordTestServiceClient())
             {
                 var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
-                RecordProducts.Clear();
-                orders.ToList().ForEach(o => RecordProducts.Add(o));
+                RecordProductExtras.Clear();
+                orders.ToList().ForEach(o => RecordProductExtras.Add(new Model.RecordTestExtra { RecordTest=o}));
             }
         }
         #region Commands
-        public RelayCommand<DcRecordTest> Select { get; set; }
+        public RelayCommand<RecordTestExtra> Select { get; set; }
 
         #endregion
 
@@ -136,7 +137,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcRecordTest> RecordProducts { get; set; }
+        public ObservableCollection<RecordTestExtra> RecordProductExtras { get; set; }
         #endregion
     }
 }

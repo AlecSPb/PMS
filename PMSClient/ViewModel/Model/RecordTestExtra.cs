@@ -9,7 +9,11 @@ namespace PMSClient.ViewModel.Model
 {
     public class RecordTestExtra
     {
+        public RecordTestExtra()
+        {
+            IsSelected = false;
+        }
         public bool IsSelected { get; set; }
-        public DcRecordTest RecordTest { get; ; set; }
+        public DcRecordTest RecordTest { get; set; }
     }
 }

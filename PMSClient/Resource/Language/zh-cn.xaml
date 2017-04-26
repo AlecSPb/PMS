@@ -229,8 +229,8 @@
     <sys:String x:Key="ButtonSelectEmpty">使用空项目</sys:String>
     <sys:String x:Key="ButtonFill">填写</sys:String>
     <sys:String x:Key="ButtonSelect">选择</sys:String>
+    <sys:String x:Key="ButtonSelectBatch">批量选择</sys:String>
     <sys:String x:Key="ButtonSend">发出</sys:String>
-    <sys:String x:Key="ButtonSendSelected">发出所选</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
