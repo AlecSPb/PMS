@@ -322,6 +322,9 @@
     <Style x:Key="StyleDGTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Red"/>
     </Style>
+    <Style x:Key="StyleDGTextBlockSpecial2" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
     <Style x:Key="StyleDGButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>

@@ -81,9 +81,11 @@
                                             Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPolicy}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding PolicyType}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding PMINumber}"/>
                     <DataGridTextColumn Header="{StaticResource OrderCustomer}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                             Binding="{Binding CustomerName}"/>
-                    <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                    <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial2}"
                                             Binding="{Binding CompositionStandard}"/>
                     <DataGridTextColumn Header="{StaticResource OrderAbbrComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CompositionAbbr}"/>
@@ -98,13 +100,6 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="{StaticResource OrderPMINumber}">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding PMINumber}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
