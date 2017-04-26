@@ -143,7 +143,7 @@ namespace PMSClient.ViewModel
         private void ActionSend(ProductExtra model)
         {
 
-            if (!PMSDialogService.ShowYesNo("请问", "确定要将此产品设置为发货状态并填入发货单项目中？"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定要将此产品设置为发货状态\r\n并填入发货项目编辑页面中？"))
             {
                 return;
             }
@@ -152,12 +152,13 @@ namespace PMSClient.ViewModel
             {
                 if (model != null)
                 {
+                    PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(model.Product);
                     using (var service = new ProductServiceClient())
                     {
                         model.Product.State = PMSCommon.InventoryState.发货.ToString();
                         service.UpdateProduct(model.Product);
                     }
-                    ActionSend(model);
+                    GoBack();
                 }
             }
             catch (Exception ex)

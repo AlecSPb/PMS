@@ -203,7 +203,10 @@
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
+    <Compile Include="ViewModel\Model\PlateExtra.cs" />
     <Compile Include="ViewModel\Model\ProductExtra.cs" />
+    <Compile Include="ViewModel\Model\RecordBondingExtra.cs" />
+    <Compile Include="ViewModel\Model\RecordTestExtra.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />
