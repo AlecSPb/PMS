@@ -89,7 +89,7 @@
                 <DataGridTextColumn Header="{StaticResource RDMDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding Density,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMRatioDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                    Binding="{Binding RatioDensity,StringFormat={}{0:F2}}"/>
+                                    Binding="{Binding RatioDensity,StringFormat={}{0:P2}}"/>
                 <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

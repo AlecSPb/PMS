@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
             //需要重新激发一下
             RaisePropertyChanged(nameof(SearchCompositionStandard));
             RaisePropertyChanged(nameof(SearchPMINumber));
-            SetPageParametersWhenConditionChange(); 
+            SetPageParametersWhenConditionChange();
         }
 
         public void RefreshData()
@@ -48,7 +48,7 @@ namespace PMSClient.ViewModel
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
 
-            Search = new RelayCommand(ActionSearch);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             PageChanged = new RelayCommand(ActionPaging);
             AddNewPlan = new RelayCommand<DcOrder>(ActionAddNewPlan, CanAddNewPlan);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan, CanEditPlan);
@@ -56,6 +56,12 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+        }
+
+        private bool CanSearch()
+        {
+            return !(String.IsNullOrEmpty(SearchPMINumber) && 
+                string.IsNullOrEmpty(SearchCompositionStandard));
         }
 
         private void ActionSearch()

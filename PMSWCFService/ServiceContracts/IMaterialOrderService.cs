@@ -60,9 +60,9 @@ namespace PMSWCFService.ServiceContracts
         int GetMaterialOrderItemsCount();
 
         [OperationContract]
-        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take);
+        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take,string composition ,string pminumber,string orderitemnumber);
         [OperationContract]
-        int GetMaterialOrderItemExtrasCount();
+        int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
 
 
 

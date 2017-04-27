@@ -359,10 +359,10 @@ namespace PMSWCFService
                 {
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
                     var mapper = config.CreateMapper();
-                    var query=from m in dc.MaterialOrderItems
-                              where m.State != PMSCommon.MaterialOrderItemState.作废.ToString() && m.MaterialOrderID == id
-                              orderby m.CreateTime descending
-                              select m;
+                    var query = from m in dc.MaterialOrderItems
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString() && m.MaterialOrderID == id
+                                orderby m.CreateTime descending
+                                select m;
                     var result = query.ToList();
                     return mapper.Map<List<MaterialOrderItem>, List<DcMaterialOrderItem>>(result);
                 }
@@ -381,7 +381,66 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString() && m.MaterialOrderID==id
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString() && m.MaterialOrderID == id
+                                orderby m.CreateTime descending
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSMaterialOrderItemExtra, DcMaterialOrderItemExtra>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.Composition.Contains(composition)
+                                && m.PMINumber.Contains(pminumber)
+                                && m.OrderItemNumber.Contains(orderitemnumber)
+                                orderby m.CreateTime descending
+                                select new PMSMaterialOrderItemExtra
+                                {
+                                    MaterialOrder=mm,
+                                    MaterialOrderItem=m
+                                };
+                    return mapper.Map<List<PMSMaterialOrderItemExtra>, List<DcMaterialOrderItemExtra>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.Composition.Contains(composition)
+                                && m.PMINumber.Contains(pminumber)
+                                && m.OrderItemNumber.Contains(orderitemnumber)
                                 orderby m.CreateTime descending
                                 select m;
                     return query.Count();

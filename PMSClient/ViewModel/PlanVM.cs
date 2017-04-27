@@ -15,8 +15,8 @@ namespace PMSClient.ViewModel
     {
         public PlanVM()
         {
-            IntitializeCommands();
             IntitializeProperties();
+            IntitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
@@ -34,13 +34,18 @@ namespace PMSClient.ViewModel
         private void IntitializeCommands()
         {
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
-            Search = new RelayCommand(ActionSearch);
+            Search = new RelayCommand(ActionSearch,CanSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
             Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
+        }
+
+        private bool CanSearch()
+        {
+            return !(string.IsNullOrEmpty(SearchComposition)&&string.IsNullOrEmpty(SearchVHPDate));
         }
 
         private void ActionSearch()

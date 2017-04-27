@@ -15,8 +15,8 @@ namespace PMSClient.ViewModel
     {
         public PlanSelectVM()
         {
-            IntitializeCommands();
             IntitializeProperties();
+            IntitializeCommands();
             SetPageParametersWhenConditionChange();
         }
         private void ActionSelect(DcPlanWithMisson plan)
@@ -68,7 +68,12 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
             Select = new RelayCommand<DcPlanWithMisson>(ActionSelect);
-            Search = new RelayCommand(ActionSearch);
+            Search = new RelayCommand(ActionSearch,CanSearch);
+        }
+
+        private bool CanSearch()
+        {
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate));
         }
 
         private void ActionSearch()

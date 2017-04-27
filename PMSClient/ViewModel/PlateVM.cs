@@ -14,8 +14,8 @@ namespace PMSClient.ViewModel
     {
         public PlateVM()
         {
-            InitializeCommands();
             InitializeProperties();
+            InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
 
