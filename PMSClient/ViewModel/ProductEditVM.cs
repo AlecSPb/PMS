@@ -111,6 +111,7 @@ namespace PMSClient.ViewModel
         private void ActionSelect1()
         {
             PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.ProductEdit);
+            PMSHelper.ViewModels.RecordTestSelect.RefreshData();
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
         private void ActionSelect2()

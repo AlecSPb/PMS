@@ -21,6 +21,12 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
+
+        public void RefreshData()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
         private PMSViews requestView;
         public void SetRequestView(PMSViews view)
         {

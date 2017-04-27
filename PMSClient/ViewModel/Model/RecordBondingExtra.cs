@@ -9,6 +9,10 @@ namespace PMSClient.ViewModel.Model
 {
     public class RecordBondingExtra
     {
+        public RecordBondingExtra()
+        {
+            IsSelected = false;
+        }
         public bool IsSelected { get; set; }
         public DcRecordBonding RecordBonding { get; set; }
     }

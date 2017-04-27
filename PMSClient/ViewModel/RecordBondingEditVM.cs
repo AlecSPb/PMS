@@ -32,6 +32,7 @@ namespace PMSClient.ViewModel
         private void ActionSelectTest()
         {
             PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            PMSHelper.ViewModels.RecordTestSelect.RefreshData();
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
 
