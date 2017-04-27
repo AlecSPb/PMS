@@ -91,6 +91,7 @@
     <Compile Include="DataContracts\DcBDCustomer.cs" />
     <Compile Include="DataContracts\DcBDCompound.cs" />
     <Compile Include="DataContracts\DcBDSupplier.cs" />
+    <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="DataContracts\DcMaterialInventoryIn.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryOut.cs" />
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
+    <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
     <Compile Include="DataContracts\DcProduct.cs" />
     <Compile Include="DataContracts\DcDeliveryItemExtra.cs" />
