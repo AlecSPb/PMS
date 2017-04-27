@@ -16,6 +16,7 @@ namespace PMSClient.ViewModel
 
         public BaseViewModelSelect()
         {
+            IsNewBatch = true;
         }
 
         #region PageRelated
@@ -73,5 +74,15 @@ namespace PMSClient.ViewModel
         /// </summary>
         public RelayCommand GiveUp { get; set; }
         #endregion
+
+
+        private bool isNewBatch;
+
+        public bool IsNewBatch
+        {
+            get { return isNewBatch; }
+            set { isNewBatch = value; RaisePropertyChanged(nameof(IsNewBatch)); }
+        }
+
     }
 }

@@ -110,14 +110,17 @@ namespace PMSClient.ViewModel
         }
         private void ActionSelect1()
         {
-            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.ProductEdit);
-            PMSHelper.ViewModels.RecordTestSelect.RefreshData();
+            var vm = PMSHelper.ViewModels.RecordTestSelect;
+            vm.SetRequestView(PMSViews.ProductEdit);
+            vm.RefreshData();
+            PMSBatchHelper.SetRecordTestBatchEnable(IsNew);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
         private void ActionSelect2()
         {
             PMSHelper.ViewModels.RecordBondingSelect.SetRequestView(PMSViews.ProductEdit);
             PMSHelper.ViewModels.RecordBondingSelect.RefreshData();
+            PMSBatchHelper.SetRecordBondingBatchEnable(IsNew);
             NavigationService.GoTo(PMSViews.RecordBondingSelect);
         }
         private static void GoBack()

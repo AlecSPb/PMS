@@ -413,17 +413,15 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    var queryPlan = (from p in dc.VHPPlans
-                                     where p.State == PMSCommon.CommonState.已核验.ToString()
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
-                                     orderby p.PlanDate descending
-                                     select p);
-                    var queryResult = from p in queryPlan
-                                      join o in dc.Orders
-                                      on p.OrderID equals o.ID
-                                      where o.CompositionStandard.Contains(composition)
-                                      select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
-                    var final = queryResult.Skip(skip).Take(take).ToList();
+                                     && o.CompositionStandard.Contains(composition)
+                                orderby p.PlanDate descending
+                                select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+
+                    var final = query.Skip(skip).Take(take).ToList();
                     Mapper.Initialize(cfg =>
                     {
                         cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
@@ -449,17 +447,14 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDAL.PMSDbContext())
                 {
-                    var queryPlan = (from p in dc.VHPPlans
-                                     where p.State == PMSCommon.CommonState.已核验.ToString()
+                    var query = from p in dc.VHPPlans
+                                join o in dc.Orders on p.OrderID equals o.ID
+                                where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
-                                     orderby p.PlanDate descending
-                                     select p);
-                    var queryResult = from p in queryPlan
-                                      join o in dc.Orders
-                                      on p.OrderID equals o.ID
-                                      where o.CompositionStandard.Contains(composition)
-                                      select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
-                    return queryResult.Count();
+                                     && o.CompositionStandard.Contains(composition)
+                                orderby p.PlanDate descending
+                                select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
+                    return query.Count();
                 }
             }
             catch (Exception ex)

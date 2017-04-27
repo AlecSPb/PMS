@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Send = new RelayCommand<ProductExtra>(ActionSend);
-            SendSelected = new RelayCommand(ActioSendSelected);
+            SelectBatch = new RelayCommand(ActioSelectBatch);
             GiveUp = new RelayCommand(GoBack);
         }
 
@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
         /// <summary>
         /// 批量发货
         /// </summary>
-        private void ActioSendSelected()
+        private void ActioSelectBatch()
         {
             int count = ProductExtras.Where(i => i.IsSelected == true).Count();
 
@@ -248,6 +248,6 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand<ProductExtra> Send { get; set; }
-        public RelayCommand SendSelected { get; set; }
+        public RelayCommand SelectBatch { get; set; }
     }
 }

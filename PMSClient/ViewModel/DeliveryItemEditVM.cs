@@ -135,6 +135,7 @@ namespace PMSClient.ViewModel
         private void ActionSelectPlate()
         {
             PMSHelper.ViewModels.PlateSelect.SetRequestView(PMSViews.DeliveryItemEdit);
+            PMSBatchHelper.SetPlateBatchEnable(IsNew);
             NavigationService.GoTo(PMSViews.PlateSelect);
         }
 
@@ -142,6 +143,8 @@ namespace PMSClient.ViewModel
         {
             PMSHelper.ViewModels.ProductSelect.SetRequestView(PMSViews.DeliveryItemEdit);
             PMSHelper.ViewModels.ProductSelect.RefreshData();
+            PMSBatchHelper.SetProductBatchEnable(IsNew);
+
             NavigationService.GoTo(PMSViews.ProductSelect);
         }
 

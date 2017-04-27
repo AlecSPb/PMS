@@ -26,6 +26,7 @@ namespace PMSClient.ViewModel
         private void ActionSelectPlate()
         {
             PMSHelper.ViewModels.PlateSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            PMSBatchHelper.SetPlateBatchEnable(false);
             NavigationService.GoTo(PMSViews.PlateSelect);
         }
 
@@ -33,6 +34,7 @@ namespace PMSClient.ViewModel
         {
             PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
             PMSHelper.ViewModels.RecordTestSelect.RefreshData();
+            PMSBatchHelper.SetRecordTestBatchEnable(false);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
 
