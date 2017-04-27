@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:8002/PMSService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PMSService1.disco" MetadataType="Disco" ID="d6161433-5d57-411f-8b50-9a5c1e0db306" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?disco" />
-    <MetadataFile FileName="PMSService3.xsd" MetadataType="Schema" ID="b81befd0-8948-43ff-8a9d-fe4e683406bd" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd2" />
-    <MetadataFile FileName="PMSService31.xsd" MetadataType="Schema" ID="2fb7436c-325e-4902-977f-1dd33bb6c841" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PMSService32.xsd" MetadataType="Schema" ID="8a90bfde-6451-4225-973d-56036e49291d" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PMSService1.wsdl" MetadataType="Wsdl" ID="89bd3ee2-69c3-4893-8fe7-6a9c62e30ae1" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?wsdl" />
+    <MetadataFile FileName="PMSService1.disco" MetadataType="Disco" ID="9dfe3a4f-d369-43b6-ae65-13bc4c3b3195" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?disco" />
+    <MetadataFile FileName="PMSService3.xsd" MetadataType="Schema" ID="9ffd2f78-d1d1-4da0-ae84-dee659e09b55" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PMSService31.xsd" MetadataType="Schema" ID="2ef79240-d2cc-4da4-88db-db3b43ca1b35" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMSService32.xsd" MetadataType="Schema" ID="c87bfcf6-dda2-4db1-bb70-9e2987cdfad3" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PMSService1.wsdl" MetadataType="Wsdl" ID="f1b6ee21-d2de-4ae8-a391-77cb84611401" SourceId="1" SourceUrl="http://localhost:8002/PMSService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

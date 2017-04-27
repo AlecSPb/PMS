@@ -43,6 +43,9 @@
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonSend}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
@@ -77,7 +80,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="{StaticResource RPAbbr}" Binding="{Binding Abbr}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateUseCount}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

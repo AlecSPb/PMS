@@ -61,9 +61,9 @@ namespace PMSClient.ReportsHelper
                 }
                 File.Copy(sourceFile, targetFile);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

@@ -21,6 +21,8 @@ namespace PMSClient.ViewModel
             States = new List<string>();
             PMSBasicDataService.SetListDS<SimpleState>(States);
 
+            DeMoldRemarks = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.DeMoldRemark>(DeMoldRemarks);
 
             Save = new RelayCommand(ActionSave);
             GiveUp = new RelayCommand(ActionGiveUp);
@@ -172,7 +174,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Calculator { get; set; }
 
         public List<string> States { get; set; }
-
         public List<string> DeMoldTypes { get; set; }
+        public List<string> DeMoldRemarks { get; set; }
     }
 }

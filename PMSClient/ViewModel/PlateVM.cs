@@ -31,8 +31,18 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcPlate>(ActionEdit, CanEdit);
-
+            Duplicate = new RelayCommand<DcPlate>(ActionDuplicate);
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend);
+        }
+
+        private void ActionDuplicate(DcPlate model)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定复用这条记录吗？"))
+            {
+                return;
+            }
+            PMSHelper.ViewModels.PlateEdit.SetDuplicate(model);
+            NavigationService.GoTo(PMSViews.PlateEdit);
         }
 
         private void ActionSelectAndSend(DcPlate model)
@@ -162,6 +172,6 @@ namespace PMSClient.ViewModel
         }
 
         #endregion
-
+        public RelayCommand<DcPlate> Duplicate { get; set; }
     }
 }

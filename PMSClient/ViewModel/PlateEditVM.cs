@@ -66,6 +66,18 @@ namespace PMSClient.ViewModel
             #endregion
             CurrentPlate = model;
         }
+        public void SetDuplicate(DcPlate model)
+        {
+            if (model != null)
+            {
+                IsNew = true;
+                CurrentPlate = model;
+                CurrentPlate.ID = Guid.NewGuid();
+                CurrentPlate.CreateTime = DateTime.Now;
+                CurrentPlate.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentPlate.State = PMSCommon.InventoryState.库存.ToString();
+            }
+        }
         public void SetEdit(DcPlate model)
         {
             if (model != null)

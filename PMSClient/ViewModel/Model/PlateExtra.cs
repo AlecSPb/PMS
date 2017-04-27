@@ -11,7 +11,7 @@ namespace PMSClient.ViewModel.Model
     {
         public PlateExtra()
         {
-
+            IsSelected = false;
         }
         public bool IsSelected { get; set; }
         public DcPlate Plate { get; set; }

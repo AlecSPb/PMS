@@ -1131,10 +1131,10 @@
     <Resource Include="Resource\HelpImages\workflow2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MainService\PMSService1.disco" />
+    <Resource Include="Documents\Sanjie.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Documents\Sanjie.txt" />
+    <None Include="Service References\MainService\PMSService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -17,7 +17,7 @@ namespace UsefulPackage
 
         public static string PlateLot()
         {
-            return $"{DateTime.Now.ToString("yyMMdd")}";
+            return $"{DateTime.Now.ToString("yyMMdd")}-BP-1";
         }
 
         /// <summary>

@@ -30,12 +30,15 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SelectBatch}" />
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
             <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Plates}" LoadingRow="DataGrid_LoadingRow">
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlateExtras}" LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                        ElementStyle="{StaticResource StyleDGCheckBoxCommon}"/>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -48,69 +51,68 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource PlateCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding Plate.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource PlateState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding State}"/>
+                                    Binding="{Binding Plate.State}"/>
                 <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PlateMaterial}"/>
+                                    Binding="{Binding Plate.PlateMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateLot}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding PlateLot}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Plate.PlateLot}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource PlateDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Dimension}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
+                            <TextBlock Text="{Binding Plate.Dimension}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource PlateSupplier}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Supplier}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Plate.Supplier}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}" Header="{StaticResource RPAbbr}" Binding="{Binding Abbr}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateUseCount}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding UseCount}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Plate.UseCount}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource PlateHardness}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Hardness}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Plate.Hardness}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource PlateLastWeldMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding LastWeldMaterial}"/>
+                                    Binding="{Binding Plate.LastWeldMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                            <TextBlock Text="{Binding Plate.Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource PlateAppearance}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Appearance}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding Plate.Appearance}" Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource PlateDefects}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Defects}"/>
+                                    Binding="{Binding Plate.Defects}"/>
                 <DataGridTextColumn Header="{StaticResource PlateRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
+                                    Binding="{Binding Plate.Remark}"/>
                 <DataGridTextColumn Header="{StaticResource RPCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Creator}"/>
+                                    Binding="{Binding Plate.Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

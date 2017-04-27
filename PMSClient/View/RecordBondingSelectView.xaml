@@ -22,8 +22,6 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding GiveUp}" />
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
-                    Command="{Binding  Add}"/>
             <TextBlock Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
@@ -32,12 +30,15 @@
                      Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SelectBatch}" />
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordBondings}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordBondingExtras}"
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="选择" Binding="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                        ElementStyle="{StaticResource StyleDGCheckBoxCommon}"/>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
@@ -50,21 +51,21 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding RecordBonding.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding TargetProductID}"/>
+                                    Binding="{Binding RecordBonding.TargetProductID}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetComposition}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding TargetComposition}"/>
+                                    Binding="{Binding RecordBonding.TargetComposition}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetAbbr}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding TargetAbbr}"/>
+                                    Binding="{Binding RecordBonding.TargetAbbr}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding TargetPMINumber}"/>
+                                    Binding="{Binding RecordBonding.TargetPMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetPO}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding TargetPO}"/>
+                                    Binding="{Binding RecordBonding.TargetPO}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding TargetDimension}"/>
+                                    Binding="{Binding RecordBonding.TargetDimension}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding PlateLot}"/>
+                                    Binding="{Binding RecordBonding.PlateLot}"/>
 
             </DataGrid.Columns>
         </DataGrid>

@@ -141,6 +141,7 @@ namespace PMSClient.ViewModel
         private void EmptyCurrentRecordVHP()
         {
             EditStatus = "全新创建";
+            isNew = true;
             if (CurrentRecordVHP != null)
             {
                 var temp = new DcRecordVHP();
@@ -149,19 +150,18 @@ namespace PMSClient.ViewModel
                 temp.CurrentTime = DateTime.Now;
                 temp.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 temp.State = PMSCommon.SimpleState.正常.ToString();
-                temp.PV1 = 22;
+                temp.PV1 = 0;
                 temp.PV2 = 0;
                 temp.PV3 = 0;
                 temp.SV = 0;
                 temp.Ton = 5;
-                temp.Vaccum = 1E-3;
+                temp.Vaccum=0;
                 temp.Shift1 = 0;
                 temp.Shift2 = 0;
                 temp.Omega = 0;
-                temp.WaterTemperatureIn = 25;
-                temp.WaterTemperatureOut = 25;
+                temp.WaterTemperatureIn = 0;
+                temp.WaterTemperatureOut = 0;
                 temp.ExtraInformation = "无";
-                isNew = true;
                 CurrentRecordVHP = temp;
 
             }
