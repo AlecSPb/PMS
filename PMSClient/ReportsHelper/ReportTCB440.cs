@@ -49,7 +49,7 @@ namespace PMSClient.ReportsHelper
             using (DocX document = DocX.Load(tempFile))
             {
                 string lotNumber = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
-                document.ReplaceText("[Lot]", lotNumber);
+                document.ReplaceText("[Lot]", lotNumber??"");
                 document.ReplaceText("[PO]", model.PO ?? "");
                 document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
                 document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));

@@ -34,69 +34,78 @@ namespace PMSClient.ReportsHelper
         private DcRecordTest model;
         public override void Output()
         {
-            if (model == null)
+            try
             {
-                return;
-            }
-            //复制到临时文件
-            ReportHelper.FileCopy(sourceFile, tempFile);
-            #region 创建文档
-            //写入数据到文件
-            using (var doc = DocX.Load(tempFile))
-            {
-                doc.ReplaceText("[Composition]", model.Composition ?? "");
-                doc.ReplaceText("[Customer]", model.Customer ?? "");
-                doc.ReplaceText("[PO]", model.PO ?? "");
-                doc.ReplaceText("[CreateTime]", model.CreateTime.ToShortDateString());
-
-                doc.ReplaceText("[ProductID]", model.ProductID ?? "");
-                doc.ReplaceText("[Weight]", model.Weight ?? "");
-                doc.ReplaceText("[Density]", model.Density ?? "");
-                doc.ReplaceText("[Resistance]", model.Resistance ?? "");
-                doc.ReplaceText("[Remark]", model.Remark ?? "");
-                doc.ReplaceText("[Dimension]", model.Dimension ?? "");
-                doc.ReplaceText("[DimensionActual]", model.DimensionActual ?? "");
-                //写入XRF数据表
-                Table mainTable = doc.Tables[0];
-                if (mainTable != null)
+                if (model == null)
                 {
-                    Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
-                    //判断xrf数据内容是否以No开头
-                    if (model.CompositionXRF.StartsWith("No"))
-                    {
-                        string[] lines = model.CompositionXRF.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-                        int rowCount = lines.Count();
-                        int columnCount = lines[0].Split(',').Count();
-                        Table xrfTable = doc.AddTable(rowCount, columnCount);
-                        xrfTable.Design = TableDesign.TableGrid;
-                        xrfTable.Alignment = Alignment.center;
-                        xrfTable.AutoFit = AutoFit.Contents;
-                        for (int i = 0; i < lines.Count(); i++)
-                        {
-                            string[] items = lines[i].Split(',');
-                            for (int j = 0; j < items.Count(); j++)
-                            {
-                                Cell cell = xrfTable.Rows[i].Cells[j];
-                                cell.Width = 80;
-                                cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            }
-                        }
-                        p.InsertTableAfterSelf(xrfTable);
-
-                    }
-                    else
-                    {
-                        p.Append(model.CompositionXRF);
-                    }
-
+                    return;
                 }
-                doc.Save();
+                //复制到临时文件
+                ReportHelper.FileCopy(sourceFile, tempFile);
+                #region 创建文档
+                //写入数据到文件
+                using (var doc = DocX.Load(tempFile))
+                {
+                    doc.ReplaceText("[Composition]", model.Composition ?? "");
+                    doc.ReplaceText("[Customer]", model.Customer ?? "");
+                    doc.ReplaceText("[PO]", model.PO ?? "");
+                    doc.ReplaceText("[CreateTime]", model.CreateTime.ToShortDateString());
+
+                    doc.ReplaceText("[ProductID]", model.ProductID ?? "");
+                    doc.ReplaceText("[Weight]", model.Weight ?? "");
+                    doc.ReplaceText("[Density]", model.Density ?? "");
+                    doc.ReplaceText("[Resistance]", model.Resistance ?? "");
+                    doc.ReplaceText("[Remark]", model.Remark ?? "");
+                    doc.ReplaceText("[Dimension]", model.Dimension ?? "");
+                    doc.ReplaceText("[DimensionActual]", model.DimensionActual ?? "");
+                    //写入XRF数据表
+                    Table mainTable = doc.Tables[0];
+                    if (mainTable != null)
+                    {
+                        Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
+                        //判断xrf数据内容是否以No开头
+                        if (model.CompositionXRF.StartsWith("No"))
+                        {
+                            string[] lines = model.CompositionXRF.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                            int rowCount = lines.Count();
+                            int columnCount = lines[0].Split(',').Count();
+                            Table xrfTable = doc.AddTable(rowCount, columnCount);
+                            xrfTable.Design = TableDesign.TableGrid;
+                            xrfTable.Alignment = Alignment.center;
+                            xrfTable.AutoFit = AutoFit.Contents;
+                            for (int i = 0; i < lines.Count(); i++)
+                            {
+                                string[] items = lines[i].Split(',');
+                                for (int j = 0; j < items.Count(); j++)
+                                {
+                                    Cell cell = xrfTable.Rows[i].Cells[j];
+                                    cell.Width = 80;
+                                    cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                                }
+                            }
+                            p.InsertTableAfterSelf(xrfTable);
+
+                        }
+                        else
+                        {
+                            p.Append(model.CompositionXRF);
+                        }
+
+                    }
+                    doc.Save();
+                }
+                #endregion
+                //复制到临时文件
+                var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
+                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+                ReportHelper.FileCopy(tempFile, targetFile);
             }
-            #endregion
-            //复制到临时文件
-            var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
-            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
-            ReportHelper.FileCopy(tempFile, targetFile);
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+
         }
 
 

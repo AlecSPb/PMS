@@ -303,8 +303,14 @@
     <sys:String x:Key="DGOperate">操作</sys:String>
     <sys:String x:Key="SearchDateStart">开始日期</sys:String>
     <sys:String x:Key="SearchDateEnd">结束日期</sys:String>
-
-
+    <sys:String x:Key="SearchComposition">成分</sys:String>
+    <sys:String x:Key="SearchVHPDate">热压日期</sys:String>
+    <sys:String x:Key="SearchProductID">产品ID</sys:String>
+    <sys:String x:Key="SearchPlateLot">背板批号</sys:String>
+    <sys:String x:Key="SearchCustomer">客户</sys:String>    
+    
+    
+    
     <!--LogIn-->
     <sys:String x:Key="LogInWelcome">欢迎</sys:String>
     <sys:String x:Key="LogInLogInButton">欢迎</sys:String>

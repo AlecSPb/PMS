@@ -22,15 +22,14 @@
         <TextBlock Text="{StaticResource PagePlan}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GiveUp}"/>
-            <TextBlock Text="{StaticResource SearchDateStart}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate1,Mode=TwoWay}"/>
-            <TextBlock Text="{StaticResource SearchDateEnd}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <DatePicker Style="{StaticResource StyleDatePickerCommon}" SelectedDate="{Binding SearchPlanDate2,Mode=TwoWay}"/>
-            <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource SearchVHPDate}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchVHPDate,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+            <TextBlock Text="{StaticResource SearchComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
-            <!--<Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding Refresh}" />-->
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
             <!--<Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonSpecial}"  Command="{Binding GoToMisson}"/>-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

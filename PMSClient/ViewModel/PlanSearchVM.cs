@@ -23,18 +23,24 @@ namespace PMSClient.ViewModel
         private void IntitializeProperties()
         {
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
-            searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
-            searchPlanDate2 = DateTime.Now.AddDays(1).Date;
-            searchCompositionStd = "";
+            searchComposition = "";
+            searchVHPDate = "";
         }
 
         private void IntitializeCommands()
         {
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
             Refresh = new RelayCommand(ActionRefresh);
+            All = new RelayCommand(ActionAll);
             Search = new RelayCommand(ActionSearch);
             PageChanged = new RelayCommand(ActionPaging);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
+        }
+
+        private void ActionAll()
+        {
+            SearchVHPDate = SearchComposition = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSearch()
@@ -53,11 +59,10 @@ namespace PMSClient.ViewModel
             PageSize = 20;
 
             using (var service = new MissonServiceClient())
-            {//TODO:切换搜索
-                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange2(SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
+            {
+                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
             }
             //只显示Checked过的计划
-
             ActionPaging();
         }
         /// <summary>
@@ -70,8 +75,8 @@ namespace PMSClient.ViewModel
             take = PageSize;
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
-            {   
-                var orders = service.GetPlanWithMissonCheckedByDateRange2(skip, take, SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
+            {
+                var orders = service.GetPlanExtra(skip, take, searchVHPDate, SearchComposition);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
@@ -89,41 +94,19 @@ namespace PMSClient.ViewModel
         #region Properties
         public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
 
-        private DateTime searchPlanDate1;
-        public DateTime SearchPlanDate1
-        {
-            get { return searchPlanDate1; }
-            set
-            {
-                if (value < searchPlanDate2)
-                {
-                    searchPlanDate1 = value;
-                    RaisePropertyChanged(nameof(SearchPlanDate1));
-                }
-            }
-        }
 
-        private DateTime searchPlanDate2;
-        public DateTime SearchPlanDate2
+        private string searchComposition;
+        public string SearchComposition
         {
-            get { return searchPlanDate2; }
-            set
-            {
-                if (value > searchPlanDate1)
-                {
-                    searchPlanDate2 = value;
-                    RaisePropertyChanged(nameof(SearchPlanDate2));
-                }
-            }
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(searchComposition)); }
         }
-
-        private string searchCompositionStd;
-        public string SearchCompositionStd
+        private string searchVHPDate;
+        public string SearchVHPDate
         {
-            get { return searchCompositionStd; }
-            set { searchCompositionStd = value; RaisePropertyChanged(nameof(searchCompositionStd)); }
+            get { return searchVHPDate; }
+            set { searchVHPDate = value; RaisePropertyChanged(nameof(searchVHPDate)); }
         }
-
         #endregion
 
     }

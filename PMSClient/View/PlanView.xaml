@@ -22,9 +22,15 @@
         <TextBlock Text="{StaticResource PagePlan}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding All}"/>
-            <!--<Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonSpecial}"  Command="{Binding GoToMisson}"/>-->
-            <Button Content="{StaticResource ButtonSearchPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToSearchPlan}"/>
+            <TextBlock Text="{StaticResource SearchVHPDate}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchVHPDate,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+            <TextBlock Text="{StaticResource SearchComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
+            <!--<Button Content="{StaticResource ButtonSearchPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToSearchPlan}"/>-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>

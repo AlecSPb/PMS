@@ -52,7 +52,7 @@ namespace PMSClient.ReportsHelper
                     #region 基本字段
                     document.ReplaceText("[Customer]", model.Customer ?? "");
                     string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
-                    document.ReplaceText("[ProductID]", productid);
+                    document.ReplaceText("[ProductID]", productid??"");
                     document.ReplaceText("[PO]", model.PO ?? "");
                     document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
                     document.ReplaceText("[Composition]", model.Composition ?? "");

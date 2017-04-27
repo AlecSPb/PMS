@@ -37,59 +37,67 @@ namespace PMSClient.ReportsHelper
         private DcDelivery model;
         public override void Output()
         {
-            if (model == null)
+            try
             {
-                return;
-            }
-            ReportHelper.FileCopy(sourceFile, tempFile);
-            //写入数据到文件
-            #region 创建文档
-            using (DocX document = DocX.Load(tempFile))
-            {
-                #region 基本字段
-                document.ReplaceText("[CreateTime]", DateTime.Now.ToString("yyyy-MM-dd"));
-                document.ReplaceText("[ShipTime]", model.ShipTime.ToString("yyyy-MM-dd"));
-                document.ReplaceText("[Country]", model.Country??"");
-                document.ReplaceText("[DeliveryName]", model.DeliveryName??"");
-                document.ReplaceText("[DeliveryNumber]", model.DeliveryNumber??"");
-                document.ReplaceText("[InvoiceNumber]", model.InvoiceNumber??"");
-
-                if (document.Tables[0] != null)
+                if (model == null)
                 {
-                    Table mainTable = document.Tables[1];
-
-                    using (var service = new DeliveryServiceClient())
-                    {
-                        var result = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i=>i.PackNumber);
-                        int rownumber = 1;
-                        int datanumber = 1;
-                        foreach (var item in result)
-                        {
-                            mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Font(new FontFamily("宋体"));
-                            mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(10).Font(new FontFamily("宋体"));
-                            mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.ProductType).FontSize(10).Font(new FontFamily("微软雅黑"));
-                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10).Font(new FontFamily("宋体"));
-                            mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10).Font(new FontFamily("宋体"));
-                            mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10).Font(new FontFamily("宋体"));
-                            mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(10).Font(new FontFamily("宋体"));
-                            mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString()).FontSize(10).Font(new FontFamily("宋体"));
-
-                            mainTable.InsertRow();
-                            datanumber++;
-                            rownumber++;
-                        }
-                    }
-
+                    return;
                 }
-                document.Save();
-                #endregion
-            }
-            #endregion
-            //复制到临时文件
-            var targetName = $"{prefix}_{model.DeliveryName}.docx";
-            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
-            ReportHelper.FileCopy(tempFile, targetFile);
+                ReportHelper.FileCopy(sourceFile, tempFile);
+                //写入数据到文件
+                #region 创建文档
+                using (DocX document = DocX.Load(tempFile))
+                {
+                    #region 基本字段
+                    document.ReplaceText("[CreateTime]", DateTime.Now.ToString("yyyy-MM-dd"));
+                    document.ReplaceText("[ShipTime]", model.ShipTime.ToString("yyyy-MM-dd"));
+                    document.ReplaceText("[Country]", model.Country ?? "");
+                    document.ReplaceText("[DeliveryName]", model.DeliveryName ?? "");
+                    document.ReplaceText("[DeliveryNumber]", model.DeliveryNumber ?? "");
+                    document.ReplaceText("[InvoiceNumber]", model.InvoiceNumber ?? "");
 
+                    if (document.Tables[0] != null)
+                    {
+                        Table mainTable = document.Tables[1];
+
+                        using (var service = new DeliveryServiceClient())
+                        {
+                            var result = service.GetDeliveryItemByDeliveryID(model.ID).OrderBy(i => i.PackNumber);
+                            int rownumber = 1;
+                            int datanumber = 1;
+                            foreach (var item in result)
+                            {
+                                mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(datanumber.ToString()).FontSize(10).Font(new FontFamily("宋体"));
+                                mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.ProductID).FontSize(10).Font(new FontFamily("宋体"));
+                                mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.ProductType).FontSize(10).Font(new FontFamily("微软雅黑"));
+                                mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.Composition).FontSize(10).Font(new FontFamily("宋体"));
+                                mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.Customer).FontSize(10).Font(new FontFamily("宋体"));
+                                mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.PO).FontSize(10).Font(new FontFamily("宋体"));
+                                mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Dimension).FontSize(10).Font(new FontFamily("宋体"));
+                                mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.PackNumber.ToString()).FontSize(10).Font(new FontFamily("宋体"));
+
+                                mainTable.InsertRow();
+                                datanumber++;
+                                rownumber++;
+                            }
+                        }
+
+                    }
+                    document.Save();
+                    #endregion
+                }
+                #endregion
+                //复制到临时文件
+                var targetName = $"{prefix}_{model.DeliveryName}.docx";
+                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+                ReportHelper.FileCopy(tempFile, targetFile);
+
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }

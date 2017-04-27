@@ -38,68 +38,75 @@ namespace PMSClient.ReportsHelper
         private DcRecordTest model;
         public override void Output()
         {
-            if (model == null)
+            try
             {
-                return;
-            }
-            ReportHelper.FileCopy(sourceFile, tempFile);
-            //写入数据到文件
-            #region 创建文档
-            using (DocX document = DocX.Load(tempFile))
-            {
-                document.ReplaceText("[Customer]", model.Customer ?? "");
-                string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
-                document.ReplaceText("[ProductID]", productid);
-                document.ReplaceText("[PO]", model.PO ?? "");
-                document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
-
-                document.ReplaceText("[Composition]", model.Composition ?? "");
-                document.ReplaceText("[Weight]", model.Weight ?? "");
-                document.ReplaceText("[Density]", model.Density ?? "");
-                document.ReplaceText("[Resistance]", model.Resistance ?? "");
-                document.ReplaceText("[Dimension]", model.Dimension ?? "");
-                document.ReplaceText("[DimensionActual]", model.DimensionActual ?? "");
-                document.ReplaceText("[OrderDate]", model.CreateTime.AddDays(-15).ToString("MM/dd/yyyy"));
-                document.ReplaceText("[CreateDate]", model.CreateTime.ToString("MM/dd/yyyy"));
-
-                //填充XRF表格
-                //填充XRF表格
-                if (document.Tables[1] != null)
+                if (model == null)
                 {
-                    Table mainTable = document.Tables[1];
-                    Paragraph p = mainTable.Rows[6].Cells[0].Paragraphs[0];
-                    InsertCompositionXRFTable(document, p, model.CompositionXRF, "No Composition Test Results");
+                    return;
+                }
+                ReportHelper.FileCopy(sourceFile, tempFile);
+                //写入数据到文件
+                #region 创建文档
+                using (DocX document = DocX.Load(tempFile))
+                {
+                    document.ReplaceText("[Customer]", model.Customer ?? "");
+                    string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
+                    document.ReplaceText("[ProductID]", productid ?? "");
+                    document.ReplaceText("[PO]", model.PO ?? "");
+                    document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
 
+                    document.ReplaceText("[Composition]", model.Composition ?? "");
+                    document.ReplaceText("[Weight]", model.Weight ?? "");
+                    document.ReplaceText("[Density]", model.Density ?? "");
+                    document.ReplaceText("[Resistance]", model.Resistance ?? "");
+                    document.ReplaceText("[Dimension]", model.Dimension ?? "");
+                    document.ReplaceText("[DimensionActual]", model.DimensionActual ?? "");
+                    document.ReplaceText("[OrderDate]", model.CreateTime.AddDays(-15).ToString("MM/dd/yyyy"));
+                    document.ReplaceText("[CreateDate]", model.CreateTime.ToString("MM/dd/yyyy"));
 
-                    //填充标称的成分
-                    if (!string.IsNullOrEmpty(model.Composition))
+                    //填充XRF表格
+                    //填充XRF表格
+                    if (document.Tables[1] != null)
                     {
-                        Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
-                        foreach (var name in GetCompositionNames(model.Composition))
+                        Table mainTable = document.Tables[1];
+                        Paragraph p = mainTable.Rows[6].Cells[0].Paragraphs[0];
+                        InsertCompositionXRFTable(document, p, model.CompositionXRF, "No Composition Test Results");
+
+
+                        //填充标称的成分
+                        if (!string.IsNullOrEmpty(model.Composition))
                         {
-                            elementNames.Append(name + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
+                            foreach (var name in GetCompositionNames(model.Composition))
+                            {
+                                elementNames.Append(name + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            }
+
+                            Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
+                            Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
+                            foreach (var at in GetCompositionValues(model.Composition))
+                            {
+                                elementValues.Append(at + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                                units.Append("Atm%" + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            }
+
                         }
 
-                        Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
-                        Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
-                        foreach (var at in GetCompositionValues(model.Composition))
-                        {
-                            elementValues.Append(at + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                            units.Append("Atm%" + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                        }
 
                     }
 
-
+                    document.Save();
                 }
-
-                document.Save();
+                #endregion
+                //复制到临时文件
+                var targetName = $"PMI_{prefix}_{model.Customer}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
+                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+                ReportHelper.FileCopy(tempFile, targetFile);
             }
-            #endregion
-            //复制到临时文件
-            var targetName = $"PMI_{prefix}_{model.Customer}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
-            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
-            ReportHelper.FileCopy(tempFile, targetFile);
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
 

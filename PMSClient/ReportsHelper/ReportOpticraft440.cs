@@ -38,29 +38,36 @@ namespace PMSClient.ReportsHelper
         private DcRecordTest model;
         public override void Output()
         {
-            if (model == null)
+            try
             {
-                return;
+                if (model == null)
+                {
+                    return;
+                }
+                ReportHelper.FileCopy(sourceFile, tempFile);
+                //写入数据到文件
+                #region 创建文档
+                using (DocX document = DocX.Load(tempFile))
+                {
+                    string lotNumber = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
+                    document.ReplaceText("[Lot]", lotNumber ?? "");
+                    document.ReplaceText("[PO]", model.PO ?? "");
+                    document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
+                    document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));
+                    document.ReplaceText("[Size]", model.Dimension ?? "");
+                    document.ReplaceText("[Dimension]", model.Dimension ?? "");
+                    document.Save();
+                }
+                #endregion
+                //复制到临时文件
+                var targetName = $"PMI_{prefix}_{model.Customer}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
+                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+                ReportHelper.FileCopy(tempFile, targetFile);
             }
-            ReportHelper.FileCopy(sourceFile, tempFile);
-            //写入数据到文件
-            #region 创建文档
-            using (DocX document = DocX.Load(tempFile))
+            catch (Exception ex)
             {
-                string lotNumber = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
-                document.ReplaceText("[Lot]", lotNumber);
-                document.ReplaceText("[PO]", model.PO ?? "");
-                document.ReplaceText("[CurrentDate]", DateTime.Now.ToString("MM/dd/yyyy"));
-                document.ReplaceText("[CurrentLot]", DateTime.Now.ToString("yyMMdd"));
-                document.ReplaceText("[Size]", model.Dimension ?? "");
-                document.ReplaceText("[Dimension]", model.Dimension ?? "");
-                document.Save();
+                PMSHelper.CurrentLog.Error(ex);
             }
-            #endregion
-            //复制到临时文件
-            var targetName = $"PMI_{prefix}_{model.Customer}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
-            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
-            ReportHelper.FileCopy(tempFile, targetFile);
         }
 
 

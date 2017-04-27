@@ -57,8 +57,8 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchPMINumber = "";
-            SearchCompositionStandard = "";
+            searchPMINumber = "";
+            searchCompositionStandard = "";
             MainOrders = new ObservableCollection<DcOrder>();
         }
         private void InitializeCommands()
@@ -135,10 +135,6 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(() => SearchCompositionStandard);
             }
         }
-
-
-
-
 
         private ObservableCollection<DcOrder> mainOrders;
         public ObservableCollection<DcOrder> MainOrders

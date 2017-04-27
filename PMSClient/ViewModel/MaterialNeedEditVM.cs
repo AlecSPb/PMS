@@ -38,6 +38,19 @@ namespace PMSClient.ViewModel
             CurrentMaterialNeed = empty;
         }
 
+        public void SetDuplicate(DcMaterialNeed model)
+        {
+            if (model != null)
+            {
+                IsNew = true;
+                CurrentMaterialNeed = model;
+                CurrentMaterialNeed.Id = Guid.NewGuid();
+                CurrentMaterialNeed.CreateTime = DateTime.Now;
+                CurrentMaterialNeed.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentMaterialNeed.State = PMSCommon.SimpleState.正常.ToString();
+            }
+        }
+
         public void SetEdit(DcMaterialNeed model)
         {
             if (model != null)

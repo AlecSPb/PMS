@@ -22,9 +22,7 @@ namespace PMSClient.ViewModel
 
         private void IntializeProperties()
         {
-            searchPlanDate1 = DateTime.Now.AddDays(-90).Date;
-            searchPlanDate2 = DateTime.Now.AddDays(30).Date;
-            SearchCompositionStd = "";
+            searchComposition=searchVHPDate = "";
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
         }
@@ -99,8 +97,8 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
+            SearchComposition = SearchVHPDate = "";
             SetPageParametersWhenConditionChange();
-
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -108,8 +106,8 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 6;
             using (var service = new MissonServiceClient())
-            {            //TODO:切换搜索
-                RecordCount = service.GetPlanWithMissonCheckedCountByDateRange2(SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
+            {
+                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
             }
             ActionPaging();
         }
@@ -124,7 +122,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetPlanWithMissonCheckedByDateRange2(skip, take, SearchPlanDate1, SearchPlanDate2,SearchCompositionStd);
+                var orders = service.GetPlanExtra(skip,take,SearchVHPDate, SearchComposition);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
                 LoadRecordVHPsByRecordVHPID(PlanWithMissons.FirstOrDefault());
@@ -137,40 +135,17 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
         public ObservableCollection<DcRecordVHP> RecordVHPs { get; set; }
 
-        private DateTime searchPlanDate1;
-        public DateTime SearchPlanDate1
+        private string searchComposition;
+        public string SearchComposition
         {
-            get { return searchPlanDate1; }
-            set
-            {
-                if (value < searchPlanDate2)
-                {
-                    searchPlanDate1 = value;
-                    RaisePropertyChanged(nameof(SearchPlanDate1));
-                }
-            }
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(searchComposition)); }
         }
-
-        private DateTime searchPlanDate2;
-        public DateTime SearchPlanDate2
+        private string searchVHPDate;
+        public string SearchVHPDate
         {
-            get { return searchPlanDate2; }
-            set
-            {
-                if (value > searchPlanDate1)
-                {
-                    searchPlanDate2 = value;
-                    RaisePropertyChanged(nameof(SearchPlanDate2));
-                }
-            }
-        }
-
-        private string searchCompositionStd;
-
-        public string SearchCompositionStd
-        {
-            get { return searchCompositionStd; }
-            set { searchCompositionStd = value; RaisePropertyChanged(nameof(SearchCompositionStd)); }
+            get { return searchVHPDate; }
+            set { searchVHPDate = value; RaisePropertyChanged(nameof(searchVHPDate)); }
         }
 
         #endregion

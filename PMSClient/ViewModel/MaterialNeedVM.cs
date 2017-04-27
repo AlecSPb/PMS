@@ -39,9 +39,27 @@ namespace PMSClient.ViewModel
 
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcMaterialNeed>(ActionEdit, CanEdit);
+            Duplicate = new RelayCommand<MainService.DcMaterialNeed>(ActionDuplicate,CanDuplicate);
 
 
+        }
 
+        private bool CanDuplicate(DcMaterialNeed arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑原料需求");
+        }
+
+        private void ActionDuplicate(DcMaterialNeed model)
+        {
+            if (!PMSDialogService.ShowYesNo("请问","请用确定要复用这条记录吗？"))
+            {
+                return;
+            }
+            if (model != null)
+            {
+                PMSHelper.ViewModels.MaterialNeedEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.MaterialNeedEdit);
+            }
         }
 
         private bool CanEdit(DcMaterialNeed arg)
@@ -142,6 +160,7 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialNeed> Edit { get; private set; }
+        public RelayCommand<DcMaterialNeed> Duplicate { get; private set; }
         #endregion
 
 

@@ -27,18 +27,25 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
+            searchComposition = searchVHPDate = "";
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
         }
 
         private void IntitializeCommands()
         {
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
+            Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
             Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
+        }
+
+        private void ActionSearch()
+        {
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSelectionChanged(DcPlanWithMisson model)
@@ -82,6 +89,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
+            SearchComposition = SearchVHPDate = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -89,12 +97,9 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            //var service = new MissonServiceClient();
-            //只显示Checked过的计划
-            //RecordCount = service.GetMissonWithPlanCheckedCount();
             using (var service = new MissonServiceClient())
-            {//TODO:切换搜索
-                RecordCount = service.GetPlanWithMissonCheckedCount();
+            {
+                RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
             }
             ActionPaging();
         }
@@ -103,15 +108,13 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionPaging()
         {
-            //var service = new MissonServiceClient();
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             //只显示Checked过的计划
-            //var orders = service.GetMissonWithPlanChecked(skip, take);
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetPlanWithMissonChecked(skip, take);
+                var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
@@ -126,6 +129,18 @@ namespace PMSClient.ViewModel
             set { currentPlanWithMisson = value; RaisePropertyChanged(nameof(CurrentPlanWithMisson)); }
         }
 
+        private string searchComposition;
+        public string SearchComposition
+        {
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(searchComposition)); }
+        }
+        private string searchVHPDate;
+        public string SearchVHPDate
+        {
+            get { return searchVHPDate; }
+            set { searchVHPDate = value; RaisePropertyChanged(nameof(searchVHPDate)); }
+        }
 
         #region Commands
         public RelayCommand GoToMisson { get; set; }
@@ -137,7 +152,6 @@ namespace PMSClient.ViewModel
 
         #region Properties
         public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
-
         #endregion
 
     }

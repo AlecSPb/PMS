@@ -36,85 +36,92 @@ namespace PMSClient.ReportsHelper
         }
         public override void Output()
         {
-            if (_order == null)
+            try
             {
-                return;
-            }
-            //复制到临时文件
-            ReportHelper.FileCopy(sourceFile, tempFile);
-            #region 创建文档
-            using (var doc = DocX.Load(tempFile))
-            {
-                doc.ReplaceText("[OrderPO]", _order.OrderPO ?? "");
-                doc.ReplaceText("[SupplierName]", _order.Supplier ?? "");
-                doc.ReplaceText("[SupplierReceiver]", _order.SupplierReceiver ?? "");
-                doc.ReplaceText("[SupplierEmail]", _order.SupplierEmail ?? "");
-                doc.ReplaceText("[SupplierAddress]", _order.SupplierAddress ?? "");
-                doc.ReplaceText("[OrderDate]", _order.CreateTime.ToString("MM/dd/yyyy"));
-                doc.ReplaceText("[Creator]", _order.Creator ?? "Leon.Chiu");
-
-
-                List<DcMaterialOrderItem> OrderItems;
-
-                using (var service = new MaterialOrderServiceClient())
+                if (_order == null)
                 {
-                    var result = service.GetMaterialOrderItembyMaterialID(_order.ID);
-                    OrderItems = result.OrderBy(i => i.CreateTime).ToList();
+                    return;
                 }
-                //插入表格
-                var mainTable = doc.Tables[1];
-                double subTotalMoney = 0;
-                if (mainTable != null)
+                //复制到临时文件
+                ReportHelper.FileCopy(sourceFile, tempFile);
+                #region 创建文档
+                using (var doc = DocX.Load(tempFile))
                 {
-                    for (int i = 0; i < OrderItems.Count; i++)
+                    doc.ReplaceText("[OrderPO]", _order.OrderPO ?? "");
+                    doc.ReplaceText("[SupplierName]", _order.Supplier ?? "");
+                    doc.ReplaceText("[SupplierReceiver]", _order.SupplierReceiver ?? "");
+                    doc.ReplaceText("[SupplierEmail]", _order.SupplierEmail ?? "");
+                    doc.ReplaceText("[SupplierAddress]", _order.SupplierAddress ?? "");
+                    doc.ReplaceText("[OrderDate]", _order.CreateTime.ToString("MM/dd/yyyy"));
+                    doc.ReplaceText("[Creator]", _order.Creator ?? "Leon.Chiu");
+
+
+                    List<DcMaterialOrderItem> OrderItems;
+
+                    using (var service = new MaterialOrderServiceClient())
                     {
-                        var item = OrderItems[i];
-                        Paragraph p;
-                        p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
-                        p.Append(item.OrderItemNumber);
-
-                        p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
-                        p.Append(item.Weight.ToString("N2") + "kg");
-
-                        p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
-                        p.Append(item.PMINumber);
-
-                        p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                        var descriptionMesseage = $"Processing fee to cast {item.Purity} [{item.Composition}] atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
-                        if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
-                        {
-                            descriptionMesseage += $"(PMI to provide { item.ProvideRawMaterial})";
-                        }
-                        descriptionMesseage += item.Description;
-
-                        p.Append(descriptionMesseage);
-                        p.AppendLine();
-
-                        p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
-                        p.Append(item.UnitPrice.ToString("N0") + "RMB");
-
-                        p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
-                        double total = item.UnitPrice * item.Weight;
-                        p.Append(total.ToString("N0") + "RMB");
-                        subTotalMoney += total;
+                        var result = service.GetMaterialOrderItembyMaterialID(_order.ID);
+                        OrderItems = result.OrderBy(i => i.CreateTime).ToList();
                     }
-                }
-                var remark = _order.Remark ?? "";
-                if (remark!="")
-                {
-                    remark = $"PMI to provide:{remark}";
-                }
-                doc.ReplaceText("[Remark]", remark);
-                doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0") + "RMB");
-                doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0") + "RMB");
-                double totalMoney = subTotalMoney + _order.ShipFee;
-                doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") + "RMB");
+                    //插入表格
+                    var mainTable = doc.Tables[1];
+                    double subTotalMoney = 0;
+                    if (mainTable != null)
+                    {
+                        for (int i = 0; i < OrderItems.Count; i++)
+                        {
+                            var item = OrderItems[i];
+                            Paragraph p;
+                            p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
+                            p.Append(item.OrderItemNumber);
 
-                doc.Save();
+                            p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
+                            p.Append(item.Weight.ToString("N2") + "kg");
+
+                            p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
+                            p.Append(item.PMINumber);
+
+                            p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
+                            var descriptionMesseage = $"Processing fee to cast {item.Purity} [{item.Composition}] atomic%;please deliver by {item.DeliveryDate.ToShortDateString()};";
+                            if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
+                            {
+                                descriptionMesseage += $"(PMI to provide { item.ProvideRawMaterial})";
+                            }
+                            descriptionMesseage += item.Description;
+
+                            p.Append(descriptionMesseage);
+                            p.AppendLine();
+
+                            p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
+                            p.Append(item.UnitPrice.ToString("N0") + "RMB");
+
+                            p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
+                            double total = item.UnitPrice * item.Weight;
+                            p.Append(total.ToString("N0") + "RMB");
+                            subTotalMoney += total;
+                        }
+                    }
+                    var remark = _order.Remark ?? "";
+                    if (remark != "")
+                    {
+                        remark = $"PMI to provide:{remark}";
+                    }
+                    doc.ReplaceText("[Remark]", remark);
+                    doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0") + "RMB");
+                    doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0") + "RMB");
+                    double totalMoney = subTotalMoney + _order.ShipFee;
+                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") + "RMB");
+
+                    doc.Save();
+                }
+                #endregion
+                //复制到临时文件
+                ReportHelper.FileCopy(tempFile, targetFile);
             }
-            #endregion
-            //复制到临时文件
-            ReportHelper.FileCopy(tempFile, targetFile);
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
     }
