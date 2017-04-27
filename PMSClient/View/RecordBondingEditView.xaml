@@ -65,7 +65,7 @@
                                 <Button  Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                                 Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
                                          CommandParameter="00"/>
-                                <Button  Content="{StaticResource ButtonSelectTest}" Style="{StaticResource StyleButtonSpecial}"
+                                <Button  Content="{StaticResource ButtonSelectTest}" Style="{StaticResource StyleButtonSpecial}" Width="100"
                                 Command="{Binding DataContext.SelectTest,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"/>
                                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
                                 <TextBlock  Style="{StaticResource StyleTextBlockSpecial}">
@@ -204,7 +204,7 @@
                                 <Button  Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"
                                 Command="{Binding DataContext.Sign,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
                                          CommandParameter="20"/>
-                                <Button  Content="{StaticResource ButtonSelectPlate}" Style="{StaticResource StyleButtonSpecial}"
+                                <Button  Content="{StaticResource ButtonSelectPlate}" Style="{StaticResource StyleButtonSpecial}" Width="100"
                                 Command="{Binding DataContext.SelectPlate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"/>
                                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
                                 <TextBlock  Style="{StaticResource StyleTextBlockSpecial}">
