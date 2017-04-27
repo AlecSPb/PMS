@@ -417,13 +417,13 @@ namespace PMSWCFService
                                      where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
                                      orderby p.PlanDate descending
-                                     select p).Skip(skip).Take(take);
+                                     select p);
                     var queryResult = from p in queryPlan
                                       join o in dc.Orders
                                       on p.OrderID equals o.ID
                                       where o.CompositionStandard.Contains(composition)
                                       select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
-                    var final = queryResult.ToList();
+                    var final = queryResult.Skip(skip).Take(take).ToList();
                     Mapper.Initialize(cfg =>
                     {
                         cfg.CreateMap<PMSPlanWithMissonModel, DcPlanWithMisson>();
