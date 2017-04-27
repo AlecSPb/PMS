@@ -21,7 +21,6 @@
         <TextBlock Text="{StaticResource PageSelectPlate}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource PlateLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>

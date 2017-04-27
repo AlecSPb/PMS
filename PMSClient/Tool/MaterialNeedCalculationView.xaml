@@ -34,7 +34,8 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="1=选择密度"/>
-                <TextBox Grid.Row="1" Text="" Style="{StaticResource StyleTextBoxCommon}" FontWeight="Bold"/>
+                <TextBox Name="txtSearch" Grid.Row="1" Text="" Style="{StaticResource StyleTextBoxCommon}" FontWeight="Bold"
+                        TextChanged="txtSearch_TextChanged"/>
                 <ListBox Name="lst1" Grid.Row="2" ItemsSource="{Binding Compounds}" Style="{StaticResource StyleListBoxCommon}">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
