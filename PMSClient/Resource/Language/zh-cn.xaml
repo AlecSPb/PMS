@@ -274,9 +274,9 @@
     <sys:String x:Key="ButtonDeliveryItemList">发货流水</sys:String>
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
     <sys:String x:Key="ButtonSelectRecordDeMold">选择取模</sys:String>
-    
-    
-    
+
+
+
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
@@ -307,10 +307,10 @@
     <sys:String x:Key="SearchVHPDate">热压日期</sys:String>
     <sys:String x:Key="SearchProductID">产品ID</sys:String>
     <sys:String x:Key="SearchPlateLot">背板批号</sys:String>
-    <sys:String x:Key="SearchCustomer">客户</sys:String>    
-    
-    
-    
+    <sys:String x:Key="SearchCustomer">客户</sys:String>
+
+
+
     <!--LogIn-->
     <sys:String x:Key="LogInWelcome">欢迎</sys:String>
     <sys:String x:Key="LogInLogInButton">欢迎</sys:String>
@@ -695,5 +695,15 @@
     <sys:String x:Key="BDPackPerson">包装检查人</sys:String>
     <sys:String x:Key="BDPackCheckTime">包装检查时间</sys:String>
 
+    <!--Customer-->
+    <sys:String x:Key="CustomerState">状态</sys:String>
+    <sys:String x:Key="CustomerCustomerName">客户名称</sys:String>
+    <sys:String x:Key="CustomerAddress">地址</sys:String>
+    <sys:String x:Key="CustomerContactPerson">联系人</sys:String>
+    <sys:String x:Key="CustomerPhone1">电话</sys:String>
+    <sys:String x:Key="CustomerPhone2">手机</sys:String>
+    <sys:String x:Key="CustomerFax">传真</sys:String>
+    <sys:String x:Key="CustomerEmail">Email</sys:String>
+    <sys:String x:Key="CustomerMemo">备注</sys:String>
 
 </ResourceDictionary>

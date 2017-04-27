@@ -338,6 +338,12 @@ namespace PMSClient
                 case PMSViews.DensityEstamator:
                     NavigateTo(_toolviews.DensityEstamator);
                     break;
+                case PMSViews.Customer:
+                    NavigateTo(_views.Customer);
+                    break;
+                case PMSViews.CustomerEdit:
+                    NavigateTo(_views.CustomerEdit);
+                    break;
                 default:
                     break;
             }

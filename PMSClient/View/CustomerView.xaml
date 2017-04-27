@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="PMSClient.View.CustomerView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PMSClient.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=Customer}">
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageCustomer}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
+                    Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Customers}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                    CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource CustomerCustomerName}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding CustomerName}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerAddress}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Address}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerContactPerson}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding ContactPerson}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerPhone1}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Phone1}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerPhone2}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Phone2}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerFax}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Fax}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerEmail}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="{StaticResource CustomerMemo}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding Memo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

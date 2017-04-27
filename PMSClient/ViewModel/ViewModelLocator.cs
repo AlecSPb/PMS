@@ -102,7 +102,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<RecordMachineEditVM>();
             SimpleIoc.Default.Register<RecordMachineSelectVM>();
 
-
+            SimpleIoc.Default.Register<CustomerVM>();
+            SimpleIoc.Default.Register<CustomerEditVM>();
         }
         #region Properties
         public NavigationVM Navigation
@@ -358,6 +359,15 @@ namespace PMSClient.ViewModel
         public DeliveryItemListVM DeliveryItemList
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryItemListVM>(); }
+        }
+
+        public CustomerVM Customer
+        {
+            get { return SimpleIoc.Default.GetInstance<CustomerVM>(); }
+        }
+        public CustomerEditVM CustomerEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CustomerEditVM>(); }
         }
         #endregion
 

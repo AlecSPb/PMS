@@ -58,8 +58,7 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDDeliveryName}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryName}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding DeliveryName}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="简单标识一下此次发货，便于快速识别"/>
 

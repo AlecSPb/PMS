@@ -88,6 +88,10 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<RecordDeMoldView>();
             SimpleIoc.Default.Register<RecordDeMoldEditView>();
             SimpleIoc.Default.Register<RecordDeMoldSelectView>();
+
+            SimpleIoc.Default.Register<CustomerView>();
+            SimpleIoc.Default.Register<CustomerEditView>();
+
         }
 
         #region NavigationProperties
@@ -355,6 +359,15 @@ namespace PMSClient.View
         public DeliveryItemListView DeliveryItemList
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryItemListView>(); }
+        }
+
+        public CustomerView Customer
+        {
+            get { return SimpleIoc.Default.GetInstance<CustomerView>(); }
+        }
+        public CustomerEditView CustomerEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CustomerEditView>(); }
         }
         #endregion
 

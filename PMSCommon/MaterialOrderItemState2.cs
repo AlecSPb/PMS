@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PMSCommon
 {
-    
-    public enum MaterialOrderItemState
+    /// <summary>
+    /// 三杰用
+    /// </summary>
+    public enum MaterialOrderItemState2
     {
-        作废,
         未完成,
-        暂停,
         完成
     }
 }
