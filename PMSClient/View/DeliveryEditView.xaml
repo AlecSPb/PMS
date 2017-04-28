@@ -117,8 +117,7 @@
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"
-                         />
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注内容写到这里"/>
 

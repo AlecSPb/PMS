@@ -58,6 +58,7 @@ namespace PMSClient.ViewModel
                         var id = PMSHelper.ViewModels.MaterialOrderItemEdit.CurrentMaterialOrderItem.MaterialOrderID;
                         BatchSaveMaterialOrderItem(id);
                         NavigationService.GoTo(PMSViews.MaterialOrder);
+                        PMSDialogService.ShowYes("成功", "批量添加成功，请刷新列表,并修改材料批号\r\n因为批量添加的是相同的材料批号");
                         break;
                     default:
                         break;
@@ -67,7 +68,6 @@ namespace PMSClient.ViewModel
             {
                 PMSHelper.CurrentLog.Error(ex);
             }
-            PMSDialogService.ShowYes("成功", "批量添加成功，如果没有看到请刷新列表");
         }
 
         private void BatchSaveMaterialOrderItem(Guid id)
@@ -76,12 +76,15 @@ namespace PMSClient.ViewModel
             {
                 MainMaterialNeedExtras.ToList().ForEach(i =>
                 {
-                    var temp = PMSNewModelCollection.NewMaterialOrderItem(id);
-                    temp.Composition = i.MaterialNeed.Composition;
-                    temp.PMINumber = i.MaterialNeed.PMINumber;
-                    temp.Weight = i.MaterialNeed.Weight;
+                    if (i.IsSelected)
+                    {
+                        var temp = PMSNewModelCollection.NewMaterialOrderItem(id);
+                        temp.Composition = i.MaterialNeed.Composition;
+                        temp.PMINumber = i.MaterialNeed.PMINumber;
+                        temp.Weight = i.MaterialNeed.Weight;
 
-                    service.AddMaterialOrderItemByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                        service.AddMaterialOrderItemByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
                 });
             }
         }

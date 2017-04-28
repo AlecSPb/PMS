@@ -137,6 +137,7 @@ namespace PMSClient.ViewModel
         private void ActionSelect()
         {
             PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialOrderItemEdit);
+            PMSBatchHelper.SetMaterialNeedBatchEnable(IsNew);
             NavigationService.GoTo(PMSViews.MaterialNeedSelect);
         }
 

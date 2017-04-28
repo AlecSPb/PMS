@@ -26,7 +26,10 @@ namespace PMSClient.ViewModel
         {
             PMSHelper.ViewModels.ProductSelect.IsNewBatch = flag;
         }
-
+        public static void SetMaterialNeedBatchEnable(bool flag)
+        {
+            PMSHelper.ViewModels.MaterialNeedSelect.IsNewBatch = flag;
+        }
 
 
 
