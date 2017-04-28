@@ -185,6 +185,13 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+            if (CurrentRecordBonding.State == "作废")
+            {
+                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
+                {
+                    return;
+                }
+            }
             var currentUser = PMSHelper.CurrentSession.CurrentUser.UserName;
             var currentTime = DateTime.Now;
             //通过参数判断是按下的是那个签名按钮

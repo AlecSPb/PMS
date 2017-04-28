@@ -253,15 +253,13 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.DeliveryItems
-                                where d.State != PMSCommon.SimpleState.作废.ToString()
-                                && d.ProductID.Contains(productid)
-                                && d.Composition.Contains(composition)
-                                orderby d.CreateTime descending
-                                select d;
-                    var query2 = from d in query.Skip(skip).Take(take)
                                  join dd in dc.Deliverys
                                  on d.DeliveryID equals dd.ID
-                                 orderby dd.CreateTime descending,d.CreateTime descending
+                                 where d.State != PMSCommon.SimpleState.作废.ToString()
+                                 && dd.State!=PMSCommon.CommonState.作废.ToString()
+                                 && d.ProductID.Contains(productid)
+                                 && d.Composition.Contains(composition)
+                                 orderby  dd.CreateTime descending,d.CreateTime descending
                                  select new PMSDeliveryItemExtra()
                                  {
                                      Delivery = dd,
@@ -275,7 +273,7 @@ namespace PMSWCFService
                         cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
                     });
 
-                    var records = Mapper.Map<List<PMSDeliveryItemExtra>, List<DcDeliveryItemExtra>>(query2.ToList());
+                    var records = Mapper.Map<List<PMSDeliveryItemExtra>, List<DcDeliveryItemExtra>>(query.Skip(skip).Take(take).ToList());
                     return records;
                 }
             }
@@ -293,10 +291,17 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.DeliveryItems
+                                join dd in dc.Deliverys
+                                on d.DeliveryID equals dd.ID
                                 where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && dd.State != PMSCommon.CommonState.作废.ToString()
                                 && d.ProductID.Contains(productid)
-                                &&d.Composition.Contains(composition)
-                                select d;
+                                && d.Composition.Contains(composition)
+                                select new PMSDeliveryItemExtra()
+                                {
+                                    Delivery = dd,
+                                    DeliveryItem = d
+                                };
                     return query.Count();
                 }
             }

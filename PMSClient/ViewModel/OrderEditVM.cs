@@ -121,7 +121,6 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;

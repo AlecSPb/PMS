@@ -93,6 +93,13 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+            if (CurrentMaterialInventoryOut.State == "作废")
+            {
+                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
+                {
+                    return;
+                }
+            }
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;

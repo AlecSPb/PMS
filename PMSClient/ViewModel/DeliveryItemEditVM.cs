@@ -159,6 +159,13 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+            if (CurrentDeliveryItem.State == "作废")
+            {
+                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
+                {
+                    return;
+                }
+            }
             try
             {
                 if (CurrentDeliveryItem != null)

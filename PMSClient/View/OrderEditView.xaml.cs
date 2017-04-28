@@ -55,8 +55,11 @@ namespace PMSClient.View
                 return;
             }
             //成分标准化
-            string std = source.Replace(" ", "");
-
+            string std = source.Replace(" ", "")
+                                               .Replace("(","")
+                                               .Replace(")", "")
+                                               .Replace("atomic", "")
+                                               .Replace("%","");
             //成分缩写
             string abbr="";
             if (IsCIGS(std))
