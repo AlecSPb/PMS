@@ -15,7 +15,7 @@ namespace PMSClient.Tool.Models
         {
             Diameter = 0;
             Weight = 0;
-            Thickness = 0.4;
+            Thickness = 0.5;
         }
         public double Diameter { get; set; }
         public double Weight { get; set; }
@@ -29,7 +29,7 @@ namespace PMSClient.Tool.Models
            get
             {
                 var papers = new List<GraphitePaper>();
-                papers.Add(new GraphitePaper { Diameter=0,Weight=0});
+                papers.Add(new GraphitePaper { Diameter=0,Weight=0,Thickness=0});
                 papers.Add(new GraphitePaper { Diameter = 80, Weight = 4.4 });
                 papers.Add(new GraphitePaper { Diameter = 105, Weight = 6.4 });
                 papers.Add(new GraphitePaper { Diameter = 128, Weight = 11 });

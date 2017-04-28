@@ -45,7 +45,45 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectBatch()
         {
-            throw new NotImplementedException();
+            var count = MainMaterialNeedExtras.Where(i => i.IsSelected == true).Count();
+            if (!PMSDialogService.ShowYesNo("请问", $"请问要批量添加选定的{count}记录吗？"))
+            {
+                return;
+            }
+            try
+            {
+                switch (requestView)
+                {
+                    case PMSViews.MaterialOrderItemEdit:
+                        var id = PMSHelper.ViewModels.MaterialOrderItemEdit.CurrentMaterialOrderItem.MaterialOrderID;
+                        BatchSaveMaterialOrderItem(id);
+                        NavigationService.GoTo(PMSViews.MaterialOrder);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+            PMSDialogService.ShowYes("成功", "批量添加成功，如果没有看到请刷新列表");
+        }
+
+        private void BatchSaveMaterialOrderItem(Guid id)
+        {
+            using (var service = new MaterialOrderServiceClient())
+            {
+                MainMaterialNeedExtras.ToList().ForEach(i =>
+                {
+                    var temp = PMSNewModelCollection.NewMaterialOrderItem(id);
+                    temp.Composition = i.MaterialNeed.Composition;
+                    temp.PMINumber = i.MaterialNeed.PMINumber;
+                    temp.Weight = i.MaterialNeed.Weight;
+
+                    service.AddMaterialOrderItemByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                });
+            }
         }
 
         private void ActionSelect(MaterialNeedExtra need)
@@ -101,7 +139,7 @@ namespace PMSClient.ViewModel
             var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
             service.Close();
             MainMaterialNeedExtras.Clear();
-            result.ToList().ForEach(o => MainMaterialNeedExtras.Add(new MaterialNeedExtra { MaterialNeed =o}));
+            result.ToList().ForEach(o => MainMaterialNeedExtras.Add(new MaterialNeedExtra { MaterialNeed = o }));
         }
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="ArrayOfDcOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOrder" nillable="true" type="tns:DcOrder" />
@@ -150,19 +150,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
-  <xs:complexType name="ArrayOfDcMaterialOrderItemExtra">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialOrderItemExtra" nillable="true" type="tns:DcMaterialOrderItemExtra" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDcMaterialOrderItemExtra" nillable="true" type="tns:ArrayOfDcMaterialOrderItemExtra" />
-  <xs:complexType name="DcMaterialOrderItemExtra">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="MaterialOrder" nillable="true" type="tns:DcMaterialOrder" />
-      <xs:element minOccurs="0" name="MaterialOrderItem" nillable="true" type="tns:DcMaterialOrderItem" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="DcMaterialOrderItemExtra" nillable="true" type="tns:DcMaterialOrderItemExtra" />
   <xs:complexType name="ArrayOfDcMaterialInventoryIn">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />

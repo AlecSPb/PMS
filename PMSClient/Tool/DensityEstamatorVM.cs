@@ -44,7 +44,7 @@ namespace PMSClient.Tool
             double thicknessAverage = UsefulPackage.PMSTranslate.Average(t.T1, t.T2, t.T3, t.T4);
             t.TAverage = thicknessAverage - t.GraphiteThickness;
 
-            double volumn = Math.PI * diameterAverage * diameterAverage * thicknessAverage / 4 / 1000;
+            double volumn = Math.PI * diameterAverage * diameterAverage * t.TAverage / 4 / 1000;
             double targetWeight = t.Weight - t.GraphiteWeight;
             if (t.CalculateDensity > 0 && volumn > 0)
             {

@@ -9,6 +9,29 @@ namespace PMSClient.ViewModel
 {
     public static class PMSNewModelCollection
     {
+
+        public static DcMaterialOrderItem NewMaterialOrderItem(Guid id)
+        {
+            var item = new DcMaterialOrderItem();
+            #region 初始化
+            item.ID = Guid.NewGuid();
+            item.MaterialOrderID = id;
+            item.State = PMSCommon.MaterialOrderItemState.未完成.ToString();
+            item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            item.CreateTime = DateTime.Now;
+            item.OrderItemNumber = DateTime.Now.ToString("yyMMdd") + "-" + 1;
+            item.Composition = "需求成分";
+            item.PMINumber = DateTime.Now.ToString("yyMMdd");
+            item.Purity = "5N";
+            item.Description = "";
+            item.ProvideRawMaterial = "";
+            item.UnitPrice = 0;
+            item.Weight = 0;
+            item.DeliveryDate = DateTime.Now.AddDays(7);
+            #endregion
+            return item;
+        }
+
         public static DcRecordBonding NewRecordBonding()
         {
             var model = new DcRecordBonding();

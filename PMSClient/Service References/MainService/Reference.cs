@@ -1664,67 +1664,6 @@ namespace PMSClient.MainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialOrderItemExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
-    [System.SerializableAttribute()]
-    public partial class DcMaterialOrderItemExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSClient.MainService.DcMaterialOrder MaterialOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PMSClient.MainService.DcMaterialOrderItem MaterialOrderItemField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSClient.MainService.DcMaterialOrder MaterialOrder {
-            get {
-                return this.MaterialOrderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialOrderField, value) != true)) {
-                    this.MaterialOrderField = value;
-                    this.RaisePropertyChanged("MaterialOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PMSClient.MainService.DcMaterialOrderItem MaterialOrderItem {
-            get {
-                return this.MaterialOrderItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialOrderItemField, value) != true)) {
-                    this.MaterialOrderItemField = value;
-                    this.RaisePropertyChanged("MaterialOrderItem");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryIn", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcMaterialInventoryIn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6716,18 +6655,6 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse")]
-        PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
-        int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
-        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
         bool CheckOrderItemNumberExist(string orderItemnumber);
         
@@ -6904,22 +6831,6 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync() {
             return base.Channel.GetMaterialOrderItemsCountAsync();
-        }
-        
-        public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtras(skip, take, composition, pminumber, orderitemnumber);
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtrasAsync(skip, take, composition, pminumber, orderitemnumber);
-        }
-        
-        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtrasCount(composition, pminumber, orderitemnumber);
-        }
-        
-        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber);
         }
         
         public bool CheckOrderItemNumberExist(string orderItemnumber) {
