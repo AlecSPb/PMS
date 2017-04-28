@@ -77,6 +77,7 @@
     <Content Include="BasicDataService.svc" />
     <Content Include="HeartBeatService.svc" />
     <Content Include="HistoryService.svc" />
+    <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
     <Content Include="UserAccessService.svc" />
@@ -94,6 +95,7 @@
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
+    <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
     <Compile Include="DataContracts\DcStatisticDelivery.cs" />
     <Compile Include="DataContracts\DcStatisticPlan.cs" />
@@ -140,8 +142,10 @@
     <Compile Include="ServiceContracts\ISanjieService.cs" />
     <Compile Include="ServiceContracts\IStatisticService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
+    <Compile Include="ServiceContracts\IMainStatisticService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
+    <Compile Include="ServiceImplements\MainStatisticService.cs" />
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />

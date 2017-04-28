@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="19797abb-9245-49b2-afeb-f455c02417e4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/StatisticService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StatisticService.xsd" MetadataType="Schema" ID="830f4478-046d-4569-bc69-d40f7d079ed3" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?xsd=xsd0" />
+    <MetadataFile FileName="StatisticService.disco" MetadataType="Disco" ID="f3be8f95-f98e-4854-8564-65b73e968de4" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?disco" />
+    <MetadataFile FileName="StatisticService1.xsd" MetadataType="Schema" ID="a46d5655-6739-454d-8f08-16dfdfdbe1ea" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MainStatisticService.wsdl" MetadataType="Wsdl" ID="a956c828-dd28-4412-bcde-7205511eb6b0" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?wsdl" />
+    <MetadataFile FileName="StatisticService2.xsd" MetadataType="Schema" ID="ce33839c-f5cf-47bf-98dc-cea745ef3929" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -183,6 +183,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\StatisticService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UserService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -906,6 +911,19 @@
     <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\StatisticService\MainStatisticService.wsdl" />
+    <None Include="Service References\StatisticService\PMSClient.StatisticService.DcStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatisticService\StatisticService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatisticService\StatisticService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatisticService\StatisticService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserService\PMSClient.UserService.DcUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -955,6 +973,7 @@
     <WCFMetadataStorage Include="Service References\BasicService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
+    <WCFMetadataStorage Include="Service References\StatisticService\" />
     <WCFMetadataStorage Include="Service References\UserService\" />
   </ItemGroup>
   <ItemGroup>
@@ -1154,6 +1173,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\MainService\PMSService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Documents\statistic.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StatisticService\StatisticService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StatisticService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StatisticService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StatisticService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
