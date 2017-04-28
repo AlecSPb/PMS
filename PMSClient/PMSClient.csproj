@@ -235,6 +235,15 @@
     <Compile Include="View\NavigationWorkFlowView.xaml.cs">
       <DependentUpon>NavigationWorkFlowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DeliveryStatisticVIew.xaml.cs">
+      <DependentUpon>DeliveryStatisticVIew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanStatisticVIew.xaml.cs">
+      <DependentUpon>PlanStatisticVIew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderStatisticVIew.xaml.cs">
+      <DependentUpon>OrderStatisticVIew.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PlateEditView.xaml.cs">
       <DependentUpon>PlateEditView.xaml</DependentUpon>
     </Compile>
@@ -507,6 +516,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\NavigationWorkFlowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeliveryStatisticVIew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanStatisticVIew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrderStatisticVIew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
