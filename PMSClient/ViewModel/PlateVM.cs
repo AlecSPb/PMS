@@ -31,8 +31,18 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcPlate>(ActionEdit, CanEdit);
-            Duplicate = new RelayCommand<DcPlate>(ActionDuplicate);
-            SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend);
+            Duplicate = new RelayCommand<DcPlate>(ActionDuplicate,CanDuplicate);
+            SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend,CanSelect);
+        }
+
+        private bool CanSelect(DcPlate arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
+        }
+
+        private bool CanDuplicate(DcPlate arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
         }
 
         private void ActionDuplicate(DcPlate model)

@@ -35,7 +35,12 @@ namespace PMSClient.ViewModel
 
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
 
-            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend);
+            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend,CanSelect);
+        }
+
+        private bool CanSelect(DcProduct arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
         }
 
         private void ActionSelectAndSend(DcProduct model)
