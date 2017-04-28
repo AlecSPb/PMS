@@ -24,9 +24,20 @@
             <TextBox Text="{Binding SearchCompositoinStandard,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxSearch}" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SelectBatch}"
+                    IsEnabled="{Binding IsNewBatch}"/>
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainMaterialNeeds}">
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MainMaterialNeedExtras}">
             <DataGrid.Columns>
+                <DataGridTemplateColumn Header="选择">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsEnabled="{Binding DataContext.IsNewBatch,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                      Style="{StaticResource StyleDGCheckBoxCommon}"
+                                      IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -39,26 +50,26 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MNCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding MaterialNeed.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MNComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Composition}"/>
+                                    Binding="{Binding MaterialNeed.Composition}"/>
                 <DataGridTextColumn Header="{StaticResource MNPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding PMINumber}"/>
+                                    Binding="{Binding MaterialNeed.PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource MNPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Purity}"/>
+                                    Binding="{Binding MaterialNeed.Purity}"/>
                 <DataGridTemplateColumn Header="{StaticResource MNWeight}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" HorizontalAlignment="Right"
+                            <TextBlock Text="{Binding MaterialNeed.Weight,StringFormat={}{0:F3}}" HorizontalAlignment="Right"
                                        Style="{StaticResource StyleDGTextBlockLeft}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
                 <DataGridTextColumn Header="{StaticResource MNSpecialNeeds}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding SpecialNeeds}"/>
+                                    Binding="{Binding MaterialNeed.SpecialNeeds}"/>
                 <DataGridTextColumn Header="{StaticResource MNCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Creator}"/>
+                                    Binding="{Binding MaterialNeed.Creator}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"

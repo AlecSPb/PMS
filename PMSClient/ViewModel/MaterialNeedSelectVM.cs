@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.ViewModel
 {
@@ -30,7 +31,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             SearchCompositoinStandard = "";
-            MainMaterialNeeds = new ObservableCollection<DcMaterialNeed>();
+            MainMaterialNeedExtras = new ObservableCollection<MaterialNeedExtra>();
         }
         private void InitializeCommands()
         {
@@ -38,17 +39,23 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            Select = new RelayCommand<MainService.DcMaterialNeed>(ActionSelect);
+            Select = new RelayCommand<MaterialNeedExtra>(ActionSelect);
+            SelectBatch = new RelayCommand(ActionSelectBatch);
         }
 
-        private void ActionSelect(DcMaterialNeed need)
+        private void ActionSelectBatch()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionSelect(MaterialNeedExtra need)
         {
             if (need != null)
             {
                 switch (requestView)
                 {
                     case PMSViews.MaterialOrderItemEdit:
-                        PMSHelper.ViewModels.MaterialOrderItemEdit.SetBySelect(need);
+                        PMSHelper.ViewModels.MaterialOrderItemEdit.SetBySelect(need.MaterialNeed);
                         break;
                     default:
                         break;
@@ -93,8 +100,8 @@ namespace PMSClient.ViewModel
             var service = new MaterialNeedServiceClient();
             var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
             service.Close();
-            MainMaterialNeeds.Clear();
-            result.ToList().ForEach(o => MainMaterialNeeds.Add(o));
+            MainMaterialNeedExtras.Clear();
+            result.ToList().ForEach(o => MainMaterialNeedExtras.Add(new MaterialNeedExtra { MaterialNeed =o}));
         }
 
 
@@ -113,17 +120,18 @@ namespace PMSClient.ViewModel
         }
 
 
-        private ObservableCollection<DcMaterialNeed> mainMaterialNeeds;
-        public ObservableCollection<DcMaterialNeed> MainMaterialNeeds
+        private ObservableCollection<MaterialNeedExtra> mainMaterialNeeds;
+        public ObservableCollection<MaterialNeedExtra> MainMaterialNeedExtras
         {
             get { return mainMaterialNeeds; }
-            set { mainMaterialNeeds = value; RaisePropertyChanged(nameof(MainMaterialNeeds)); }
+            set { mainMaterialNeeds = value; RaisePropertyChanged(nameof(MainMaterialNeedExtras)); }
         }
 
         #endregion
 
         #region Commands
-        public RelayCommand<DcMaterialNeed> Select { get; private set; }
+        public RelayCommand<MaterialNeedExtra> Select { get; private set; }
+        public RelayCommand SelectBatch { get; set; }
         #endregion
 
 

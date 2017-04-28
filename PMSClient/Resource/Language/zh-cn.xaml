@@ -126,8 +126,8 @@
     <sys:String x:Key="PageStatisticPlan">生产统计</sys:String>
 
     <sys:String x:Key="PageCustomerService">售后</sys:String>
-    
-    
+    <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
+
 
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>

@@ -198,10 +198,10 @@ namespace PMSClient.ViewModel
             //并设置对应的签名和时间
             switch (param)
             {
-                case "00":
-                    CurrentRecordBonding.Creator = currentUser;
-                    CurrentRecordBonding.CreateTime = currentTime;
-                    break;
+                //case "00":
+                //    CurrentRecordBonding.Creator = currentUser;
+                //    CurrentRecordBonding.CreateTime = currentTime;
+                //    break;
                 case "10":
                     CurrentRecordBonding.TargetPerson = currentUser;
                     CurrentRecordBonding.TargetCheckTime = currentTime;
