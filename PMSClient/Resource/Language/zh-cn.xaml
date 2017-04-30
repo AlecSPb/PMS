@@ -212,10 +212,10 @@
         统计的是订单的数目，不是靶材的数目
     </sys:String>
     <sys:String x:Key="HelpTipStatisticPlan">
-        黄色标记的项目为未核验，核验后该计划才会公布
+       统计的是热压次数
     </sys:String>
     <sys:String x:Key="HelpTipStatisticDelivery">
-        黄色标记的项目为未核验，核验后该计划才会公布
+        统计的是发货的数目（靶材背板样品各类发货均统计在内）
     </sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
@@ -291,7 +291,7 @@
     <sys:String x:Key="ButtonStatisticBySeason">该年按季度</sys:String>
     <sys:String x:Key="ButtonStatisticByCustomer">该年按客户</sys:String>
     <sys:String x:Key="ButtonStatisticByDevice">按设备</sys:String>
-    <sys:String x:Key="ButtonStatisticByCountrys">按国家</sys:String>
+    <sys:String x:Key="ButtonStatisticByCountry">按国家</sys:String>
 
 
 

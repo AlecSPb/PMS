@@ -39,7 +39,7 @@
                 <TextBlock  Style="{StaticResource StyleTextBlockWarning2}" Text="{StaticResource HelpTipStatisticOrder}"/>
             </StackPanel>
             <Border Grid.Row="1" Style="{StaticResource StyleBorderCommon}">
-                <lvc:CartesianChart Series="{Binding StatisticChartData}">
+                <lvc:CartesianChart Series="{Binding StatisticChartData}" LegendLocation="Top">
                     <lvc:CartesianChart.AxisX>
                         <lvc:Axis Title="{Binding  AxisXTitle }" Labels="{Binding StatisticChartLabels}"/>
                     </lvc:CartesianChart.AxisX>

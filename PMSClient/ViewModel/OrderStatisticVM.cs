@@ -64,6 +64,7 @@ namespace PMSClient.ViewModel
                     var ordeByCustomer = new ChartValues<int>();
                     var labelByCustomer = new List<string>();
                     var sb = new StringBuilder();
+                    sb.AppendLine("按客户统计结果:");
                     ordeByCustomer.Clear();
                     labelByCustomer.Clear();
                     result.ToList().ForEach(i =>
@@ -115,6 +116,7 @@ namespace PMSClient.ViewModel
                     var ordeByMonth = new ChartValues<int>();
                     var labelByMonth = new List<string>();
                     var sb = new StringBuilder();
+                    sb.AppendLine("按月份统计结果:");
                     ordeByMonth.Clear();
                     labelByMonth.Clear();
                     result.ToList().ForEach(i =>
@@ -165,6 +167,7 @@ namespace PMSClient.ViewModel
                     var ordeByYear = new ChartValues<int>();
                     var labelByYear = new List<string>();
                     var sb = new StringBuilder();
+                    sb.AppendLine("全部按年份统计结果:");
                     ordeByYear.Clear();
                     labelByYear.Clear();
                     result.ToList().ForEach(i =>
