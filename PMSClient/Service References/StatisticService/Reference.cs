@@ -120,11 +120,11 @@ namespace PMSClient.StatisticService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticByMonth", ReplyAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticByMonthResponse")]
         System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetPlanStatisticByMonthAsync(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaon", ReplyAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaonResponse")]
-        PMSClient.StatisticService.DcStatistic[] GetPlanStatisticBySeaon(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeason", ReplyAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeasonResponse")]
+        PMSClient.StatisticService.DcStatistic[] GetPlanStatisticBySeason(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaon", ReplyAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaonResponse")]
-        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetPlanStatisticBySeaonAsync(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeason", ReplyAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeasonResponse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetPlanStatisticBySeasonAsync(int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticByDevice", ReplyAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticByDeviceResponse")]
         PMSClient.StatisticService.DcStatistic[] GetPlanStatisticByDevice(int year);
@@ -240,12 +240,12 @@ namespace PMSClient.StatisticService {
             return base.Channel.GetPlanStatisticByMonthAsync(year);
         }
         
-        public PMSClient.StatisticService.DcStatistic[] GetPlanStatisticBySeaon(int year) {
-            return base.Channel.GetPlanStatisticBySeaon(year);
+        public PMSClient.StatisticService.DcStatistic[] GetPlanStatisticBySeason(int year) {
+            return base.Channel.GetPlanStatisticBySeason(year);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetPlanStatisticBySeaonAsync(int year) {
-            return base.Channel.GetPlanStatisticBySeaonAsync(year);
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetPlanStatisticBySeasonAsync(int year) {
+            return base.Channel.GetPlanStatisticBySeasonAsync(year);
         }
         
         public PMSClient.StatisticService.DcStatistic[] GetPlanStatisticByDevice(int year) {

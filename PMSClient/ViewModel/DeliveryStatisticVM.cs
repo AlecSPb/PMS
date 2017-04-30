@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class DeliveryStatisticVM:BaseViewModel
+    public class DeliveryStatisticVM:BaseViewModelStatistic
     {
+        public DeliveryStatisticVM()
+        {
+                
+        }
+
+
+
+
     }
 }

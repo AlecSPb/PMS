@@ -93,17 +93,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlanStatisticBySeaon">
+  <xs:element name="GetPlanStatisticBySeason">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="year" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPlanStatisticBySeaonResponse">
+  <xs:element name="GetPlanStatisticBySeasonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanStatisticBySeaonResult" nillable="true" type="q8:ArrayOfDcStatistic" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetPlanStatisticBySeasonResult" nillable="true" type="q8:ArrayOfDcStatistic" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

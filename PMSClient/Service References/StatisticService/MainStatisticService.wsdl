@@ -49,11 +49,11 @@
   <wsdl:message name="IMainStatisticService_GetPlanStatisticByMonth_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanStatisticByMonthResponse" />
   </wsdl:message>
-  <wsdl:message name="IMainStatisticService_GetPlanStatisticBySeaon_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlanStatisticBySeaon" />
+  <wsdl:message name="IMainStatisticService_GetPlanStatisticBySeason_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanStatisticBySeason" />
   </wsdl:message>
-  <wsdl:message name="IMainStatisticService_GetPlanStatisticBySeaon_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPlanStatisticBySeaonResponse" />
+  <wsdl:message name="IMainStatisticService_GetPlanStatisticBySeason_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanStatisticBySeasonResponse" />
   </wsdl:message>
   <wsdl:message name="IMainStatisticService_GetPlanStatisticByDevice_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanStatisticByDevice" />
@@ -114,9 +114,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticByMonth" message="tns:IMainStatisticService_GetPlanStatisticByMonth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticByMonthResponse" message="tns:IMainStatisticService_GetPlanStatisticByMonth_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetPlanStatisticBySeaon">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaon" message="tns:IMainStatisticService_GetPlanStatisticBySeaon_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaonResponse" message="tns:IMainStatisticService_GetPlanStatisticBySeaon_OutputMessage" />
+    <wsdl:operation name="GetPlanStatisticBySeason">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeason" message="tns:IMainStatisticService_GetPlanStatisticBySeason_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeasonResponse" message="tns:IMainStatisticService_GetPlanStatisticBySeason_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPlanStatisticByDevice">
       <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetPlanStatisticByDevice" message="tns:IMainStatisticService_GetPlanStatisticByDevice_InputMessage" />
@@ -204,8 +204,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPlanStatisticBySeaon">
-      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeaon" style="document" />
+    <wsdl:operation name="GetPlanStatisticBySeason">
+      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetPlanStatisticBySeason" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

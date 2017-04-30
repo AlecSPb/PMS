@@ -217,6 +217,7 @@
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
