@@ -218,6 +218,8 @@
         <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
     <Style x:Key="StyleTextBlockMultiline" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>

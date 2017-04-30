@@ -49,7 +49,9 @@
                 </lvc:CartesianChart>
             </Border>
             <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}">
-                <TextBlock Style="{StaticResource StyleTextBlockMultiline}" Text="{Binding StatisticTextData}"/>
+                <TextBox Text="{Binding StatisticTextData}" Margin="2" Padding="5" AcceptsReturn="True" IsReadOnly="True"
+                         FontSize="{StaticResource FontMD}"
+                         VerticalScrollBarVisibility="Auto"/>
             </Border>
         </Grid>
     </Grid>

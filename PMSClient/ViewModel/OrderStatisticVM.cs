@@ -13,7 +13,7 @@ using LiveCharts.Wpf;
 namespace PMSClient.ViewModel
 {
 
-    public class OrderStatisticVM: BaseViewModel
+    public class OrderStatisticVM : BaseViewModel
     {
         public OrderStatisticVM()
         {
@@ -32,23 +32,29 @@ namespace PMSClient.ViewModel
             try
             {
                 StatisticChartData.Clear();
-                using (var service=new MainStatisticServiceClient())
+                using (var service = new MainStatisticServiceClient())
                 {
                     var result = service.GetOrderStatisticByYear();
-                   var ordeByYear = new ChartValues<double>();
+                    var ordeByYear = new ChartValues<double>();
                     var labelByYear = new List<string>();
+                    var sb = new StringBuilder();
                     ordeByYear.Clear();
                     labelByYear.Clear();
                     result.ToList().ForEach(i =>
                     {
-                        ordeByYear.Add(i.Value);
                         labelByYear.Add(i.Key);
+                        ordeByYear.Add(i.Value);
+
+                        sb.AppendLine($"[{i.Key}]年，共有订单{i.Value}个");
+
                     });
                     var series = new ColumnSeries();
                     series.Title = "订单数目-按年份统计";
                     series.Values = ordeByYear;
                     StatisticChartData.Add(series);
                     StatisticChartLabels = labelByYear.ToArray();
+
+                    StatisticTextData = sb.ToString();
                 }
 
             }
