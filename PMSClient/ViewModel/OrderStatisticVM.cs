@@ -21,21 +21,23 @@ namespace PMSClient.ViewModel
             GetOrderStatisticByYear();
         }
 
+        private int firstYear;
+
         private void Initialize()
         {
-            StatisticChartData = new SeriesCollection();
-            StatisticChartLabels = new ObservableCollection<string>();
-            AxisXTitle = "年份";
-            AxisYTitle = "数量";
-
             Years = new List<int>();
             Years.Clear();
-            int firstYear = 2010;
+            firstYear = 2011;
             for (int i = 0; i < 30; i++)
             {
                 Years.Add(firstYear + i);
             }
             CurrentYear = DateTime.Now.Year;
+
+            StatisticChartData = new SeriesCollection();
+            StatisticChartLabels = new ObservableCollection<string>();
+            AxisXTitle = $"年份,开始于{firstYear}";
+            AxisYTitle = "数量";
 
             ByYear = new RelayCommand(ActionByYear);
             ByMonth = new RelayCommand(ActionByMonth);
@@ -100,7 +102,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = $"{CurrentYear}-月份";
+                AxisXTitle = $"{CurrentYear}的月份";
                 AxisYTitle = "数量";
                 using (var service = new MainStatisticServiceClient())
                 {
@@ -150,7 +152,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = "年份";
+                AxisXTitle = $"年份,开始于{firstYear}";
                 AxisYTitle = "数量";
                 using (var service = new MainStatisticServiceClient())
                 {
