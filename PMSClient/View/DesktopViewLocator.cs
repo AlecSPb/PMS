@@ -92,6 +92,11 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<CustomerView>();
             SimpleIoc.Default.Register<CustomerEditView>();
 
+            SimpleIoc.Default.Register<OrderStatisticVIew>();
+            SimpleIoc.Default.Register<PlanStatisticVIew>();
+            SimpleIoc.Default.Register<DeliveryStatisticVIew>();
+
+
         }
 
         #region NavigationProperties
@@ -368,6 +373,21 @@ namespace PMSClient.View
         public CustomerEditView CustomerEdit
         {
             get { return SimpleIoc.Default.GetInstance<CustomerEditView>(); }
+        }
+
+        public OrderStatisticVIew OrderStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderStatisticVIew>(); }
+        }
+
+        public PlanStatisticVIew PlanStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanStatisticVIew>(); }
+        }
+
+        public DeliveryStatisticVIew DeliveryStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<DeliveryStatisticVIew>(); }
         }
         #endregion
 

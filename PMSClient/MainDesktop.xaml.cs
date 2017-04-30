@@ -344,6 +344,15 @@ namespace PMSClient
                 case PMSViews.CustomerEdit:
                     NavigateTo(_views.CustomerEdit);
                     break;
+                case PMSViews.StatisticOrder:
+                    NavigateTo(_views.OrderStatistic);
+                    break;
+                case PMSViews.StatisticPlan:
+                    NavigateTo(_views.PlanStatistic);
+                    break;
+                case PMSViews.StatisticDelivery:
+                    NavigateTo(_views.DeliveryStatistic);
+                    break;
                 default:
                     break;
             }

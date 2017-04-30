@@ -104,6 +104,11 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<CustomerVM>();
             SimpleIoc.Default.Register<CustomerEditVM>();
+
+
+
+
+
         }
         #region Properties
         public NavigationVM Navigation
