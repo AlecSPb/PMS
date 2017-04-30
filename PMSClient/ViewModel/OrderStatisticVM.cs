@@ -49,7 +49,7 @@ namespace PMSClient.ViewModel
 
                     });
                     var series = new ColumnSeries();
-                    series.Title = "订单数目-按年份统计";
+                    series.Title = "订单数";
                     series.Values = ordeByYear;
                     StatisticChartData.Add(series);
                     StatisticChartLabels = labelByYear.ToArray();
