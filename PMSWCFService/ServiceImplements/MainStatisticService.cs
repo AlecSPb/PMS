@@ -122,22 +122,88 @@ namespace PMSWCFService
 
         public List<DcStatistic> GetPlanStatisticByDevice(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.VHPPlans
+                                where i.State != PMSCommon.VHPPlanState.作废.ToString()
+                                && i.PlanDate.Year == year
+                                group i by i.VHPDeviceCode into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcStatistic> GetPlanStatisticByMonth(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.VHPPlans
+                                where i.State != PMSCommon.VHPPlanState.作废.ToString()
+                                &&i.PlanDate.Year==year
+                                group i by i.PlanDate.Month into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
-        public List<DcStatistic> GetPlanStatisticBySeaon(int year)
+        public List<DcStatistic> GetPlanStatisticBySeason(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.VHPPlans
+                                where i.State != PMSCommon.VHPPlanState.作废.ToString()
+                                group i by i.PlanDate.Year into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcStatistic> GetPlanStatisticByYear()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.VHPPlans
+                                where i.State != PMSCommon.VHPPlanState.作废.ToString()
+                                group i by i.PlanDate.Year into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }

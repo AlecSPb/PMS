@@ -32,7 +32,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcStatistic> GetPlanStatisticByMonth(int year);
         [OperationContract]
-        List<DcStatistic> GetPlanStatisticBySeaon(int year);
+        List<DcStatistic> GetPlanStatisticBySeason(int year);
         [OperationContract]
         List<DcStatistic> GetPlanStatisticByDevice(int year);
 
