@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSClient.Helpers
+namespace PMSClient
 {
     /// <summary>
     /// 权限字符串，方便统一修改
@@ -24,6 +24,8 @@ namespace PMSClient.Helpers
         public static string EditMaterialOrder { get; set; } = "编辑材料订单";
         public static string EditMaterialOrderItem { get; set; } = "编辑材料订单项";
 
-
+        public static string ReadStatisticOrder { get; set; } = "浏览订单统计";
+        public static string ReadStatisticPlan { get; set; } = "浏览计划统计";
+        public static string ReadStatisticDelivery { get; set; } = "浏览发货统计";
     }
 }

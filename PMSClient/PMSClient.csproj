@@ -224,6 +224,9 @@
     <Compile Include="ViewModel\Model\ProductExtra.cs" />
     <Compile Include="ViewModel\Model\RecordBondingExtra.cs" />
     <Compile Include="ViewModel\Model\RecordTestExtra.cs" />
+    <Compile Include="ViewModel\OrderStatisticVM.cs" />
+    <Compile Include="ViewModel\DeliveryStatisticVM.cs" />
+    <Compile Include="ViewModel\PlanStatisticVM.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />

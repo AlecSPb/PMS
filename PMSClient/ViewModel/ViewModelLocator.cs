@@ -105,8 +105,9 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<CustomerVM>();
             SimpleIoc.Default.Register<CustomerEditVM>();
 
-
-
+            SimpleIoc.Default.Register<OrderStatisticVM>();
+            SimpleIoc.Default.Register<PlanStatisticVM>();
+            SimpleIoc.Default.Register<DeliveryStatisticVM>();
 
 
         }
@@ -374,6 +375,19 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<CustomerEditVM>(); }
         }
+        public OrderStatisticVM OrderStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderStatisticVM>(); }
+        }
+        public PlanStatisticVM PlanStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanStatisticVM>(); }
+        }
+        public DeliveryStatisticVM DeliveryStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<DeliveryStatisticVM>(); }
+        }
+
         #endregion
 
 

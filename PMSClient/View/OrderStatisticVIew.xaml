@@ -23,10 +23,13 @@
             <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
         </StackPanel>
         <Grid Grid.Row="2">
-            <lvc:CartesianChart>
-                <lvc:CartesianChart.Series>
-                    <lvc:ColumnSeries Values="{Binding OrderStatistic}"/>
-                </lvc:CartesianChart.Series>
+            <lvc:CartesianChart Series="{Binding OrderSeries}">
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="Year" Labels="{Binding Labels}"/>
+                </lvc:CartesianChart.AxisX>
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="Count"/>
+                </lvc:CartesianChart.AxisY>
             </lvc:CartesianChart>
         </Grid>
     </Grid>
