@@ -13,7 +13,7 @@ using LiveCharts.Wpf;
 namespace PMSClient.ViewModel
 {
 
-    public class OrderStatisticVM:ViewModelBase
+    public class OrderStatisticVM: BaseViewModel
     {
         public OrderStatisticVM()
         {
@@ -38,10 +38,10 @@ namespace PMSClient.ViewModel
                         ordeByYear.Add(i.Value);
                         labelByYear.Add(i.Key);
                     });
-                    var colum = new ColumnSeries();
-                    colum.Title = "Order by Year";
-                    colum.Values = ordeByYear;
-                    OrderSeries.Add(colum);
+                    var series = new ColumnSeries();
+                    series.Title = "订单数目-按年份统计";
+                    series.Values = ordeByYear;
+                    OrderSeries.Add(series);
                     Labels = labelByYear.ToArray();
                 }
 

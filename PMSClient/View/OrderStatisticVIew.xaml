@@ -25,10 +25,10 @@
         <Grid Grid.Row="2">
             <lvc:CartesianChart Series="{Binding OrderSeries}">
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Year" Labels="{Binding Labels}"/>
+                    <lvc:Axis Title="年份" Labels="{Binding Labels}"/>
                 </lvc:CartesianChart.AxisX>
                 <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Count"/>
+                    <lvc:Axis Title="数目"/>
                 </lvc:CartesianChart.AxisY>
             </lvc:CartesianChart>
         </Grid>
