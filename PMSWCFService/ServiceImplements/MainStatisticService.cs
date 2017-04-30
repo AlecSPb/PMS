@@ -104,6 +104,7 @@ namespace PMSWCFService
                     var query = from i in dc.Orders
                                 where i.State != PMSCommon.OrderState.作废.ToString()
                                 group i by i.CreateTime.Year into g
+                                orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
                 }
