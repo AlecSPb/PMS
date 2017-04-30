@@ -16,21 +16,41 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageStatisticPlan}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
         </StackPanel>
         <Grid Grid.Row="2">
-            <lvc:CartesianChart Series="{Binding OrderSeries}">
-                <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="年份" Labels="{Binding Labels}"/>
-                </lvc:CartesianChart.AxisX>
-                <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="数目"/>
-                </lvc:CartesianChart.AxisY>
-            </lvc:CartesianChart>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Button Content="{StaticResource  ButtonStatisticByYear}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
+                <TextBlock Text="请选择年份" Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox ItemsSource="{Binding}" Style="{StaticResource StyleComboBoxCommon}"/>
+                <Button Content="{StaticResource  ButtonStatisticByMonth}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
+                <Button Content="{StaticResource  ButtonStatisticBySeason}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
+                <Button Content="{StaticResource  ButtonStatisticByCustomer}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
+
+                <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+                <TextBlock  Style="{StaticResource StyleTextBlockWarning2}" Text="{StaticResource HelpTipStatisticOrder}"/>
+            </StackPanel>
+            <Border Grid.Row="1" Style="{StaticResource StyleBorderCommon}">
+                <lvc:CartesianChart Series="{Binding StatisticChartData}">
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="时间" Labels="{Binding StatisticChartLabels}"/>
+                    </lvc:CartesianChart.AxisX>
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="订单数目"/>
+                    </lvc:CartesianChart.AxisY>
+                </lvc:CartesianChart>
+            </Border>
+            <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}">
+                <TextBlock Style="{StaticResource StyleTextBlockMultiline}" Text="{Binding StatisticTextData}"/>
+            </Border>
         </Grid>
     </Grid>
 </UserControl>

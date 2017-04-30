@@ -17,15 +17,21 @@ namespace PMSClient.ViewModel
     {
         public OrderStatisticVM()
         {
-            OrderSeries = new SeriesCollection();
-            GetStatisticData();
+            StatisticChartData = new SeriesCollection();
+            Refresh = new RelayCommand(ActionRefresh);
+            GetOrderStatisticByYear();
         }
 
-        private void GetStatisticData()
+        private void ActionRefresh()
+        {
+            GetOrderStatisticByYear();
+        }
+
+        private void GetOrderStatisticByYear()
         {
             try
             {
-                OrderSeries.Clear();
+                StatisticChartData.Clear();
                 using (var service=new MainStatisticServiceClient())
                 {
                     var result = service.GetOrderStatisticByYear();
@@ -41,8 +47,8 @@ namespace PMSClient.ViewModel
                     var series = new ColumnSeries();
                     series.Title = "订单数目-按年份统计";
                     series.Values = ordeByYear;
-                    OrderSeries.Add(series);
-                    Labels = labelByYear.ToArray();
+                    StatisticChartData.Add(series);
+                    StatisticChartLabels = labelByYear.ToArray();
                 }
 
             }
@@ -52,7 +58,19 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public SeriesCollection OrderSeries { get; set; }
-        public string[] Labels { get; set; }
+        public SeriesCollection StatisticChartData { get; set; }
+        public string[] StatisticChartLabels { get; set; }
+
+        private string statisticTextData;
+
+        public string StatisticTextData
+        {
+            get { return statisticTextData; }
+            set { statisticTextData = value; RaisePropertyChanged(nameof(StatisticTextData)); }
+        }
+        public RelayCommand Refresh { get; set; }
+
+
+
     }
 }

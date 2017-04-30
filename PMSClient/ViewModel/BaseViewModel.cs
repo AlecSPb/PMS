@@ -8,7 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSClient.ViewModel
 {
-    public class BaseViewModel
+    public class BaseViewModel:ViewModelBase
     {
         public BaseViewModel()
         {

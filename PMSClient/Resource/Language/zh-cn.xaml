@@ -207,6 +207,16 @@
         注意：可以自行输入，但最好通过选择来减少输入时间和错误
     </sys:String>
 
+
+    <sys:String x:Key="HelpTipStatisticOrder">
+        统计数目不区分靶材大小，只要有1片就算1
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticPlan">
+        黄色标记的项目为未核验，核验后该计划才会公布
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticDelivery">
+        黄色标记的项目为未核验，核验后该计划才会公布
+    </sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
@@ -275,6 +285,13 @@
     <sys:String x:Key="ButtonDeliveryItemList">发货流水</sys:String>
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
     <sys:String x:Key="ButtonSelectRecordDeMold">选择取模</sys:String>
+
+    <sys:String x:Key="ButtonStatisticByYear">按年份</sys:String>
+    <sys:String x:Key="ButtonStatisticByMonth">按月份</sys:String>
+    <sys:String x:Key="ButtonStatisticBySeason">按季度</sys:String>
+    <sys:String x:Key="ButtonStatisticByCustomer">按客户</sys:String>
+    <sys:String x:Key="ButtonStatisticByDevice">按设备</sys:String>
+    <sys:String x:Key="ButtonStatisticByCountrys">按国家</sys:String>
 
 
 
