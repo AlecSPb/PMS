@@ -14,11 +14,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcStatistic> GetOrderStatisticByYear();
         [OperationContract]
-        List<DcStatistic> GetOrderStatisticBySeason();
+        List<DcStatistic> GetOrderStatisticBySeason(int year);
         [OperationContract]
-        List<DcStatistic> GetOrderStatisticByMonth();
+        List<DcStatistic> GetOrderStatisticByMonth(int year);
         [OperationContract]
-        List<DcStatistic> GetOrderStatisticByCustomer();
+        List<DcStatistic> GetOrderStatisticByCustomer(int year);
 
 
 
@@ -30,18 +30,20 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcStatistic> GetPlanStatisticByYear();
         [OperationContract]
-        List<DcStatistic> GetPlanStatisticByMonth();
+        List<DcStatistic> GetPlanStatisticByMonth(int year);
         [OperationContract]
-        List<DcStatistic> GetPlanStatisticBySeaon();
+        List<DcStatistic> GetPlanStatisticBySeaon(int year);
         [OperationContract]
-        List<DcStatistic> GetPlanStatisticByDevice();
+        List<DcStatistic> GetPlanStatisticByDevice(int year);
 
 
         [OperationContract]
-        List<DcStatistic> GetDeliveryByYear();
+        List<DcStatistic> GetDeliveryStatisticByYear();
         [OperationContract]
-        List<DcStatistic> GetDeliveryBySeaon();
+        List<DcStatistic> GetDeliveryStatisticBySeaon(int year);
         [OperationContract]
-        List<DcStatistic> GetDeliveryByMonth();
+        List<DcStatistic> GetDeliveryStatisticByMonth(int year);
+        [OperationContract]
+        List<DcStatistic> GetDeliveryStatisticByCountry(int year);
     }
 }

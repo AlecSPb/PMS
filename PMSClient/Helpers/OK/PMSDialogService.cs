@@ -21,5 +21,9 @@ namespace PMSClient
             MessageBox.Show(content, title, MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        public static void ShowYes(string content)
+        {
+            ShowYes("消息", content);
+        }
     }
 }

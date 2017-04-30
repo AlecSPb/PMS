@@ -10,17 +10,17 @@ namespace PMSWCFService
 {
     public class MainStatisticService : IMainStatisticService
     {
-        public List<DcStatistic> GetDeliveryByMonth()
+        public List<DcStatistic> GetDeliveryStatisticByMonth(int year)
         {
             throw new NotImplementedException();
         }
 
-        public List<DcStatistic> GetDeliveryBySeaon()
+        public List<DcStatistic> GetDeliveryStatisticBySeaon(int year)
         {
             throw new NotImplementedException();
         }
 
-        public List<DcStatistic> GetDeliveryByYear()
+        public List<DcStatistic> GetDeliveryStatisticByCountry(int year)
         {
             throw new NotImplementedException();
         }
@@ -35,7 +35,7 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public List<DcStatistic> GetOrderStatisticByCustomer()
+        public List<DcStatistic> GetOrderStatisticByCustomer(int year)
         {
             try
             {
@@ -43,6 +43,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.Orders
                                 where i.State != PMSCommon.OrderState.作废.ToString()
+                                && i.CreateTime.Year == year
                                 group i by i.CustomerName into g
                                 select new DcStatistic { Key = g.Key, Value = g.Count() };
                     return query.ToList();
@@ -55,7 +56,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetOrderStatisticByMonth()
+        public List<DcStatistic> GetOrderStatisticByMonth(int year)
         {
             try
             {
@@ -63,8 +64,9 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.Orders
                                 where i.State != PMSCommon.OrderState.作废.ToString()
-                                group i by new { i.CreateTime.Year, i.CreateTime.Month } into g
-                                select new DcStatistic { Key = $"{g.Key.Year}-{g.Key.Month}", Value = g.Count() };
+                                 && i.CreateTime.Year == year
+                                group i by  i.CreateTime.Month  into g
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
                 }
             }
@@ -75,7 +77,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetOrderStatisticBySeason()
+        public List<DcStatistic> GetOrderStatisticBySeason(int year)
         {
             try
             {
@@ -83,6 +85,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.Orders
                                 where i.State != PMSCommon.OrderState.作废.ToString()
+                                && i.CreateTime.Year == year
                                 group i by i.CreateTime.Year into g
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
@@ -116,17 +119,17 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetPlanStatisticByDevice()
+        public List<DcStatistic> GetPlanStatisticByDevice(int year)
         {
             throw new NotImplementedException();
         }
 
-        public List<DcStatistic> GetPlanStatisticByMonth()
+        public List<DcStatistic> GetPlanStatisticByMonth(int year)
         {
             throw new NotImplementedException();
         }
 
-        public List<DcStatistic> GetPlanStatisticBySeaon()
+        public List<DcStatistic> GetPlanStatisticBySeaon(int year)
         {
             throw new NotImplementedException();
         }

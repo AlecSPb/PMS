@@ -286,10 +286,10 @@
     <sys:String x:Key="ButtonRecordTest">报告</sys:String>
     <sys:String x:Key="ButtonSelectRecordDeMold">选择取模</sys:String>
 
-    <sys:String x:Key="ButtonStatisticByYear">按年份</sys:String>
-    <sys:String x:Key="ButtonStatisticByMonth">按月份</sys:String>
-    <sys:String x:Key="ButtonStatisticBySeason">按季度</sys:String>
-    <sys:String x:Key="ButtonStatisticByCustomer">按客户</sys:String>
+    <sys:String x:Key="ButtonStatisticByYear">全部按年份</sys:String>
+    <sys:String x:Key="ButtonStatisticByMonth">该年按月份</sys:String>
+    <sys:String x:Key="ButtonStatisticBySeason">该年按季度</sys:String>
+    <sys:String x:Key="ButtonStatisticByCustomer">该年按客户</sys:String>
     <sys:String x:Key="ButtonStatisticByDevice">按设备</sys:String>
     <sys:String x:Key="ButtonStatisticByCountrys">按国家</sys:String>
 

@@ -17,42 +17,64 @@ namespace PMSClient.ViewModel
     {
         public OrderStatisticVM()
         {
-            StatisticChartData = new SeriesCollection();
-            Refresh = new RelayCommand(ActionRefresh);
+            Initialize();
             GetOrderStatisticByYear();
         }
 
-        private void ActionRefresh()
+        private void Initialize()
         {
-            GetOrderStatisticByYear();
+            StatisticChartData = new SeriesCollection();
+            StatisticChartLabels = new ObservableCollection<string>();
+            AxisXTitle = "年份";
+            AxisYTitle = "数量";
+
+            Years = new List<int>();
+            Years.Clear();
+            int firstYear = 2010;
+            for (int i = 0; i < 30; i++)
+            {
+                Years.Add(firstYear + i);
+            }
+            CurrentYear = DateTime.Now.Year;
+
+            ByYear = new RelayCommand(ActionByYear);
+            ByMonth = new RelayCommand(ActionByMonth);
         }
 
-        private void GetOrderStatisticByYear()
+        private void ActionByMonth()
         {
             try
             {
                 StatisticChartData.Clear();
+                StatisticChartLabels.Clear();
+                AxisXTitle = $"{CurrentYear}-月份";
+                AxisYTitle = "数量";
                 using (var service = new MainStatisticServiceClient())
                 {
-                    var result = service.GetOrderStatisticByYear();
-                    var ordeByYear = new ChartValues<double>();
-                    var labelByYear = new List<string>();
+                    var result = service.GetOrderStatisticByMonth(CurrentYear);
+                    if (result.Count() == 0)
+                    {
+                        PMSDialogService.ShowYes("该年没有记录");
+                        return;
+                    }
+                    var ordeByMonth = new ChartValues<int>();
+                    var labelByMonth = new List<string>();
                     var sb = new StringBuilder();
-                    ordeByYear.Clear();
-                    labelByYear.Clear();
+                    ordeByMonth.Clear();
+                    labelByMonth.Clear();
                     result.ToList().ForEach(i =>
                     {
-                        labelByYear.Add(i.Key);
-                        ordeByYear.Add(i.Value);
+                        labelByMonth.Add(i.Key);
+                        ordeByMonth.Add((int)i.Value);
 
-                        sb.AppendLine($"[{i.Key}]年，共有订单{i.Value}个");
+                        sb.AppendLine($"[{CurrentYear}-{i.Key}]，共有{i.Value}个订单");
 
                     });
                     var series = new ColumnSeries();
                     series.Title = "订单数";
-                    series.Values = ordeByYear;
+                    series.Values = ordeByMonth;
                     StatisticChartData.Add(series);
-                    StatisticChartLabels = labelByYear.ToArray();
+                    labelByMonth.ForEach(i => StatisticChartLabels.Add(i));
 
                     StatisticTextData = sb.ToString();
                 }
@@ -64,8 +86,81 @@ namespace PMSClient.ViewModel
             }
         }
 
+        private void ActionByYear()
+        {
+            GetOrderStatisticByYear();
+        }
+
+        private void GetOrderStatisticByYear()
+        {
+            try
+            {
+                StatisticChartData.Clear();
+                StatisticChartLabels.Clear();
+                AxisXTitle = "年份";
+                AxisYTitle = "数量";
+                using (var service = new MainStatisticServiceClient())
+                {
+                    var result = service.GetOrderStatisticByYear();
+                    if (result.Count() == 0)
+                    {
+                        PMSDialogService.ShowYes("没有记录");
+                        return;
+                    }
+                    var ordeByYear = new ChartValues<int>();
+                    var labelByYear = new List<string>();
+                    var sb = new StringBuilder();
+                    ordeByYear.Clear();
+                    labelByYear.Clear();
+                    result.ToList().ForEach(i =>
+                    {
+                        labelByYear.Add(i.Key);
+                        ordeByYear.Add((int)i.Value);
+
+                        sb.AppendLine($"[{i.Key}]年，共有{i.Value}个订单");
+
+                    });
+                    var series = new ColumnSeries();
+                    series.Title = "订单数";
+                    series.Values = ordeByYear;
+                    StatisticChartData.Add(series);
+                    labelByYear.ForEach(i => StatisticChartLabels.Add(i));
+                    StatisticTextData = sb.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        public List<int> Years { get; set; }
+        private int currentYear;
+
+        public int CurrentYear
+        {
+            get { return currentYear; }
+            set { currentYear = value; RaisePropertyChanged(nameof(CurrentYear)); }
+        }
+
+        private string axisXTitle;
+
+        public string AxisXTitle
+        {
+            get { return axisXTitle; }
+            set { axisXTitle = value; RaisePropertyChanged(nameof(AxisXTitle)); }
+        }
+
+        private string axisYTitle;
+        public string AxisYTitle
+        {
+            get { return axisYTitle; }
+            set { axisYTitle = value; RaisePropertyChanged(nameof(AxisYTitle)); }
+        }
+
         public SeriesCollection StatisticChartData { get; set; }
-        public string[] StatisticChartLabels { get; set; }
+        public ObservableCollection<string> StatisticChartLabels { get; set; }
 
         private string statisticTextData;
 
@@ -74,9 +169,9 @@ namespace PMSClient.ViewModel
             get { return statisticTextData; }
             set { statisticTextData = value; RaisePropertyChanged(nameof(StatisticTextData)); }
         }
-        public RelayCommand Refresh { get; set; }
-
-
-
+        public RelayCommand ByYear { get; set; }
+        public RelayCommand ByMonth { get; set; }
+        public RelayCommand BySeason { get; set; }
+        public RelayCommand ByCustomer { get; set; }
     }
 }

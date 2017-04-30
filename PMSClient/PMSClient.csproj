@@ -900,6 +900,9 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -247,6 +247,18 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemsCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemsCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtras_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtras" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCount" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialOrderService_CheckOrderItemNumberExist_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckOrderItemNumberExist" />
   </wsdl:message>
@@ -1116,6 +1128,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount" message="tns:IMaterialOrderService_GetMaterialOrderItemsCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemsCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras" message="tns:IMaterialOrderService_GetMaterialOrderItemExtras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCount_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CheckOrderItemNumberExist">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage" />
@@ -1971,6 +1991,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderItemsCount">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtras">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasCount">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
