@@ -45,6 +45,7 @@ namespace PMSWCFService
                                 where i.State != PMSCommon.OrderState.作废.ToString()
                                 && i.CreateTime.Year == year
                                 group i by i.CustomerName into g
+                                orderby g.Count() descending
                                 select new DcStatistic { Key = g.Key, Value = g.Count() };
                     return query.ToList();
                 }

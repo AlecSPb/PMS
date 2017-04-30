@@ -209,7 +209,7 @@
 
 
     <sys:String x:Key="HelpTipStatisticOrder">
-        统计数目不区分靶材大小，只要有1片就算1
+        统计的是订单的数目，不是靶材的数目
     </sys:String>
     <sys:String x:Key="HelpTipStatisticPlan">
         黄色标记的项目为未核验，核验后该计划才会公布

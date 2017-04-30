@@ -39,6 +39,59 @@ namespace PMSClient.ViewModel
 
             ByYear = new RelayCommand(ActionByYear);
             ByMonth = new RelayCommand(ActionByMonth);
+            BySeason = new RelayCommand(ActionBySeason);
+            ByCustomer = new RelayCommand(ActionByCustomer);
+        }
+
+        private void ActionByCustomer()
+        {
+            try
+            {
+                StatisticChartData.Clear();
+                StatisticChartLabels.Clear();
+                AxisXTitle = $"{CurrentYear}-客户";
+                AxisYTitle = "数量";
+                using (var service = new MainStatisticServiceClient())
+                {
+                    var result = service.GetOrderStatisticByCustomer(CurrentYear);
+                    if (result.Count() == 0)
+                    {
+                        PMSDialogService.ShowYes("该年没有记录");
+                        return;
+                    }
+                    var ordeByCustomer = new ChartValues<int>();
+                    var labelByCustomer = new List<string>();
+                    var sb = new StringBuilder();
+                    ordeByCustomer.Clear();
+                    labelByCustomer.Clear();
+                    result.ToList().ForEach(i =>
+                    {
+                        labelByCustomer.Add(i.Key);
+                        ordeByCustomer.Add((int)i.Value);
+
+                        sb.AppendLine($"[{CurrentYear}-{i.Key}]，共有{i.Value}个订单");
+
+                    });
+                    var series = new ColumnSeries();
+                    series.Title = "订单数";
+                    series.Values = ordeByCustomer;
+                    StatisticChartData.Add(series);
+                    labelByCustomer.ForEach(i => StatisticChartLabels.Add(i));
+
+                    StatisticTextData = sb.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+        }
+
+        private void ActionBySeason()
+        {
+
         }
 
         private void ActionByMonth()
