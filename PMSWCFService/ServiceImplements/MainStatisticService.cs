@@ -12,22 +12,89 @@ namespace PMSWCFService
     {
         public List<DcStatistic> GetDeliveryStatisticByMonth(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.CreateTime.Year == year
+                                group i by i.CreateTime.Month into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcStatistic> GetDeliveryStatisticBySeaon(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.CreateTime.Year == year
+                                group i by i.CreateTime.Month into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
-        public List<DcStatistic> GetDeliveryStatisticByCountry(int year)
+        public List<DcStatistic> GetDeliveryStatisticByByProductType(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.CreateTime.Year == year
+                                group i by i.ProductType into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcStatistic> GetDeliveryStatisticByYear()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                group i by i.CreateTime.Year into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcStatistic> GetMissonStatistic()
@@ -194,6 +261,93 @@ namespace PMSWCFService
                     var query = from i in dc.VHPPlans
                                 where i.State != PMSCommon.VHPPlanState.作废.ToString()
                                 group i by i.PlanDate.Year into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcStatistic> GetProductStatisticByYear()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                group i by i.CreateTime.Year into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcStatistic> GetProductStatisticByMonth(int year)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                &&i.CreateTime.Year==year
+                                group i by i.CreateTime.Month into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcStatistic> GetProductStatisticBySeason(int year)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.CreateTime.Year == year
+                                group i by i.CreateTime.Month into g
+                                orderby g.Key
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcStatistic> GetProductStatisticByProductType(int year)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.Products
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.CreateTime.Year == year
+                                group i by i.ProductType into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();

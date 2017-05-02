@@ -44,6 +44,17 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcStatistic> GetDeliveryStatisticByMonth(int year);
         [OperationContract]
-        List<DcStatistic> GetDeliveryStatisticByCountry(int year);
+        List<DcStatistic> GetDeliveryStatisticByByProductType(int year);
+
+        [OperationContract]
+        List<DcStatistic> GetProductStatisticByYear();
+        [OperationContract]
+        List<DcStatistic> GetProductStatisticByMonth(int year);
+        [OperationContract]
+        List<DcStatistic> GetProductStatisticBySeason(int year);
+        [OperationContract]
+        List<DcStatistic> GetProductStatisticByProductType(int year);
+
+
     }
 }
