@@ -15,14 +15,23 @@ namespace PMSClient
         public static string EditOrder { get; set; } = "编辑订单";
         public static string ReadOrderCheck { get; set; } = "浏览订单核验";
         public static string EditOrderCheck { get; set; } = "编辑订单核验";
+
         public static string ReadMisson { get; set; } = "浏览任务";
         public static string ReadPlan { get; set; } = "浏览计划";
         public static string EditPlan { get; set; } = "编辑计划";
+
         public static string ReadMaterialNeed { get; set; } = "浏览材料需求";
         public static string EditMaterialNeed { get; set; } = "编辑材料需求";
+
         public static string ReadMaterialOrder { get; set; } = "浏览材料订单";
         public static string EditMaterialOrder { get; set; } = "编辑材料订单";
         public static string EditMaterialOrderItem { get; set; } = "编辑材料订单项";
+
+        public static string ReadMaterialInventoryIn { get; set; } = "浏览材料入库";
+        public static string EditMaterialInventoryIn { get; set; } = "编辑材料入库";
+
+        public static string ReadMaterialInventoryOut { get; set; } = "浏览材料出库";
+        public static string EditMaterialInventoryOut { get; set; } = "编辑材料出库";
 
         public static string ReadStatisticOrder { get; set; } = "浏览订单统计";
         public static string ReadStatisticPlan { get; set; } = "浏览计划统计";
