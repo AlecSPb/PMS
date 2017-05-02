@@ -66,17 +66,17 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#靶材的成分"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMMPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxReadOnlyBig}" />
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#内部编号，确保唯一"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnlyBig}" />
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#加工尺寸"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMMExtraRequirement}"
@@ -95,32 +95,32 @@
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMMDiameter1}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Diameter1,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="以下尺寸单位为mm，有写，没有填0，多余的写到备注里"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMMDiameter2}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Diameter2,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Diameter2}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMMThickness1}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Thickness1,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Thickness1}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMMThickness2}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Thickness2,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Thickness2}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMMThickness3}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Thickness3,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Thickness3}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMMThickness4}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Thickness4,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Thickness4}" Style="{StaticResource StyleTextBoxBig}" />
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text=""/>
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMMDefects}"

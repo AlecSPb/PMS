@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCompositoinStandard = "";
+            searchComposition = searchMaterialLot = searchPMINumber = searchReceiver = "";
             MaterialInventoryOuts = new ObservableCollection<DcMaterialInventoryOut>();
         }
         private void InitializeCommands()
@@ -37,11 +37,11 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
-            Add = new RelayCommand(ActionAdd,CanAdd);
-            Edit = new RelayCommand<DcMaterialInventoryOut>(ActionEdit,CanEdit);
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcMaterialInventoryOut>(ActionEdit, CanEdit);
 
             GoToMaterialInventoryIn = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn),
-                ()=>PMSHelper.CurrentSession.IsAuthorized("浏览原料库存"));
+                () => PMSHelper.CurrentSession.IsAuthorized("浏览原料库存"));
 
         }
 
@@ -72,12 +72,13 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCompositoinStandard));
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchMaterialLot)
+                && string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchReceiver));
         }
 
         private void ActionAll()
         {
-            SearchCompositoinStandard = "";
+            SearchComposition = SearchMaterialLot = SearchPMINumber = SearchReceiver = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -91,8 +92,8 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
-            //TODO:完成搜索
-            RecordCount = service.GetMaterialInventoryOutCount();
+            RecordCount = service.GetMaterialInventoryOutCountBySearch(SearchReceiver, SearchComposition,
+                SearchMaterialLot, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -105,24 +106,45 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialInventoryServiceClient();
-            var result = service.GetMaterialInventoryOuts(skip, take);
+            var result = service.GetMaterialInventoryOutsBySearch(skip, take, SearchReceiver, SearchComposition,
+                SearchMaterialLot, SearchPMINumber);
             service.Close();
             MaterialInventoryOuts.Clear();
             result.ToList().ForEach(o => MaterialInventoryOuts.Add(o));
         }
 
         #region Proeperties
-        private string searchCompositionStandard;
-        public string SearchCompositoinStandard
+        private string searchComposition;
+        public string SearchComposition
         {
-            get { return searchCompositionStandard; }
+            get { return searchComposition; }
             set
             {
-                if (searchCompositionStandard == value)
+                if (searchComposition == value)
                     return;
-                searchCompositionStandard = value;
-                RaisePropertyChanged(() => SearchCompositoinStandard);
+                searchComposition = value;
+                RaisePropertyChanged(() => SearchComposition);
             }
+        }
+        private string searchMaterialLot;
+        public string SearchMaterialLot
+        {
+            get { return searchMaterialLot; }
+            set { searchMaterialLot = value; RaisePropertyChanged(nameof(SearchMaterialLot)); }
+        }
+
+        private string searchReceiver;
+        public string SearchReceiver
+        {
+            get { return searchReceiver; }
+            set { searchReceiver = value; RaisePropertyChanged(nameof(SearchReceiver)); }
+        }
+
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set { searchPMINumber = value; RaisePropertyChanged(nameof(SearchPMINumber)); }
         }
 
 

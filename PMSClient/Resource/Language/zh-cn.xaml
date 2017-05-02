@@ -530,10 +530,10 @@
     <sys:String x:Key="RMMBlankDimension">毛坯尺寸</sys:String>
     <sys:String x:Key="RMMDiameter1">直径1</sys:String>
     <sys:String x:Key="RMMDiameter2">直径2</sys:String>
-    <sys:String x:Key="RMMThickness1">厚度2</sys:String>
-    <sys:String x:Key="RMMThickness2">厚度3</sys:String>
-    <sys:String x:Key="RMMThickness3">厚度4</sys:String>
-    <sys:String x:Key="RMMThickness4">厚度3</sys:String>
+    <sys:String x:Key="RMMThickness1">厚度1</sys:String>
+    <sys:String x:Key="RMMThickness2">厚度2</sys:String>
+    <sys:String x:Key="RMMThickness3">厚度3</sys:String>
+    <sys:String x:Key="RMMThickness4">厚度4</sys:String>
     <sys:String x:Key="RMMDefects">缺陷</sys:String>
 
     <!--RecordTest-->
