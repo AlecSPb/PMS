@@ -23,7 +23,7 @@
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding GiveUp}" />
             <TextBlock Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
             <TextBlock Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
