@@ -99,7 +99,37 @@ namespace PMSWCFService
 
         public List<DcStatistic> GetMissonStatistic()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc=new PMSDbContext())
+                {
+                    List<DcStatistic> result = new List<DcStatistic>();
+                    var query1 = from i in dc.Orders
+                                 where i.State != PMSCommon.OrderState.作废.ToString()
+                                 && i.PolicyType.Contains("VHP")
+                                 select i;
+                    result.Add(new DataContracts.DcStatistic { Key = "All", Value = query1.Count() });
+
+                    var query2 = from i in dc.Orders
+                                            where i.State == PMSCommon.OrderState.未完成.ToString()
+                                            && i.PolicyType.Contains("VHP")
+                                            select i;
+                    result.Add(new DataContracts.DcStatistic { Key = "UnCompleted", Value = query2.Count() });
+
+                    var query3 = from i in dc.Orders
+                                 where i.State == PMSCommon.OrderState.完成.ToString()
+                                 && i.PolicyType.Contains("VHP")
+                                 select i;
+                    result.Add(new DataContracts.DcStatistic { Key = "Completed", Value = query3.Count() });
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcStatistic> GetOrderStatisticByCustomer(int year)
