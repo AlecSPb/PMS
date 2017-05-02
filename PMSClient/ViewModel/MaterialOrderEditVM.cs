@@ -26,7 +26,7 @@ namespace PMSClient.ViewModel
             #region 初始化
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
-            model.State = PMSCommon.OrderState.未核验.ToString();
+            model.State = PMSCommon.OrderState.未完成.ToString();
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.Supplier = "Sanjie";
             model.SupplierAbbr = "SJ";

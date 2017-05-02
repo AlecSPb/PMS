@@ -29,7 +29,7 @@ namespace PMSClient.ViewModel
             empty.PMINumber = DateTime.Now.ToString("yyMMdd");
             empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
             empty.Composition = "成分";
-            empty.State = PMSCommon.SimpleState.正常.ToString();
+            empty.State = PMSCommon.InventoryState.库存.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             empty.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
@@ -68,7 +68,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
+            PMSBasicDataService.SetListDS<PMSCommon.InventoryState>(States);
 
             Suppliers = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.MaterialSupplier>(Suppliers);
