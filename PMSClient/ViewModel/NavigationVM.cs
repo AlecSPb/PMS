@@ -96,6 +96,7 @@ namespace PMSClient.ViewModel
             GoToStatisticOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticOrder), () => _session.IsAuthorized(AccessString.ReadStatisticOrder));
             GoToStatisticPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticPlan), () => _session.IsAuthorized(AccessString.ReadStatisticPlan));
             GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery), () => _session.IsAuthorized(AccessString.ReadStatisticDelivery));
+            GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(AccessString.ReadStatisticProduct));
 
 
         }
@@ -103,12 +104,11 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToNavigationWorkFlow { get; set; }
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
-        public RelayCommand GoToStatisticOrder { get; private set; }
         public RelayCommand GoToOutSource{ get; private set; }
 
         public RelayCommand GoToMisson { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
-        public RelayCommand GoToStatisticPlan { get; private set; }
+
 
         public RelayCommand GoToPlate { get; private set; }
 
@@ -126,7 +126,11 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToProduct { get; private set; }
         public RelayCommand GoToDelivery { get; private set; }
+
+        public RelayCommand GoToStatisticOrder { get; private set; }
         public RelayCommand GoToStatisticDelivery { get; private set; }
+        public RelayCommand GoToStatisticPlan { get; private set; }
+        public RelayCommand GoToStatisticProduct { get; private set; }
 
         public RelayCommand GoToMaintenance { get; set; }
         public RelayCommand GoToBDCustomer { get; set; }
@@ -135,6 +139,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToBDMold { get; set; }
         public RelayCommand GoToBDDeliveryAddress { get; set; }
         public RelayCommand GoToBDSupplier { get; set; }
+
+
 
 
         public RelayCommand GoToAdminUser { get; set; }

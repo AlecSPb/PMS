@@ -220,6 +220,7 @@
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
+    <Compile Include="ViewModel\ProductStatisticVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
     <Compile Include="ViewModel\Model\PlateExtra.cs" />
     <Compile Include="ViewModel\Model\ProductExtra.cs" />
@@ -240,6 +241,9 @@
     </Compile>
     <Compile Include="View\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductStatisticVIew.xaml.cs">
+      <DependentUpon>ProductStatisticVIew.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialOrderItemListView.xaml.cs">
       <DependentUpon>MaterialOrderItemListView.xaml</DependentUpon>
@@ -522,6 +526,10 @@
     <Page Include="View\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProductStatisticVIew.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MaterialOrderItemListView.xaml">
       <Generator>MSBuild:Compile</Generator>

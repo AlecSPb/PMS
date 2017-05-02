@@ -350,6 +350,9 @@ namespace PMSClient
                 case PMSViews.StatisticPlan:
                     NavigateTo(_views.PlanStatistic);
                     break;
+                case PMSViews.StatisticProduct:
+                    NavigateTo(_views.ProductStatistic);
+                    break;
                 case PMSViews.StatisticDelivery:
                     NavigateTo(_views.DeliveryStatistic);
                     break;

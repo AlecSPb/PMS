@@ -124,7 +124,9 @@
     <sys:String x:Key="PageStatisticOrder">订单统计</sys:String>
     <sys:String x:Key="PageStatisticDelivery">发货统计</sys:String>
     <sys:String x:Key="PageStatisticPlan">生产统计</sys:String>
-
+    <sys:String x:Key="PageStatisticProduct">产品统计</sys:String>
+    
+    
     <sys:String x:Key="PageCustomerService">售后</sys:String>
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
 

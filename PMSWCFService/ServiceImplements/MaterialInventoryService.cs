@@ -102,7 +102,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialInventoryIns.Where(o=> o.State != PMSCommon.SimpleState.作废.ToString()).Count();
+                    return dc.MaterialInventoryIns.Where(o=> o.State != PMSCommon.InventoryState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -121,7 +121,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
 
                     var query = from o in dc.MaterialInventoryIns
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
                     return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
@@ -144,7 +144,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
 
                     var query = from o in dc.MaterialInventoryOuts
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
                     return Mapper.Map<List<MaterialInventoryOut>, List<DcMaterialInventoryOut>>(query.Skip(skip).Take(take).ToList());
@@ -163,7 +163,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialInventoryOuts.Where(o => o.State != PMSCommon.SimpleState.作废.ToString()).Count();
+                    return dc.MaterialInventoryOuts.Where(o => o.State != PMSCommon.InventoryState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -226,7 +226,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
 
                     var query = from o in dc.MaterialInventoryIns
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
                                 &&o.Supplier.Contains(supplier)
                                 &&o.Composition.Contains(composition)
                                 &&o.MaterialLot.Contains(batchnumber)
@@ -250,7 +250,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.MaterialInventoryIns
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
                                 && o.Supplier.Contains(supplier)
                                 && o.Composition.Contains(composition)
                                 && o.MaterialLot.Contains(batchnumber)
@@ -304,7 +304,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
 
                     var query = from o in dc.MaterialInventoryOuts
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
                                 && o.Receiver.Contains(receiver)
                                 && o.Composition.Contains(composition)
                                 && o.MaterialLot.Contains(batchnumber)
@@ -330,7 +330,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
 
                     var query = from o in dc.MaterialInventoryOuts
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
                                 && o.Receiver.Contains(receiver)
                                 && o.Composition.Contains(composition)
                                 && o.MaterialLot.Contains(batchnumber)

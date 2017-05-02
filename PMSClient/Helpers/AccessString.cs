@@ -27,5 +27,6 @@ namespace PMSClient
         public static string ReadStatisticOrder { get; set; } = "浏览订单统计";
         public static string ReadStatisticPlan { get; set; } = "浏览计划统计";
         public static string ReadStatisticDelivery { get; set; } = "浏览发货统计";
+        public static string ReadStatisticProduct { get; set; } = "浏览产品统计";
     }
 }

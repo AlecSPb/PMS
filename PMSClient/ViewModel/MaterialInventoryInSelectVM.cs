@@ -31,7 +31,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCompositoinStandard = "";
+            searchComposition = searchMaterialLot = searchPMINumber = searchSupplier = "";
             MaterialInventoryIns = new ObservableCollection<DcMaterialInventoryIn>();
         }
         private void InitializeCommands()
@@ -73,12 +73,13 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCompositoinStandard));
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchMaterialLot)
+                && string.IsNullOrEmpty(SearchSupplier) && string.IsNullOrEmpty(SearchPMINumber));
         }
 
         private void ActionAll()
         {
-            SearchCompositoinStandard = "";
+            SearchComposition = SearchPMINumber = SearchMaterialLot = SearchSupplier = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -92,8 +93,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
-            //TODO:完成搜索
-            RecordCount = service.GetMaterialInventoryInCount();
+            RecordCount = service.GetMaterialInventoryInCountBySearch(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -106,24 +106,44 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialInventoryServiceClient();
-            var result = service.GetMaterialInventoryIns(skip, take);
+            var result = service.GetMaterialInventoryInsBySearch(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             MaterialInventoryIns.Clear();
             result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
         }
 
         #region Proeperties
-        private string searchCompositionStandard;
-        public string SearchCompositoinStandard
+        private string searchComposition;
+        public string SearchComposition
         {
-            get { return searchCompositionStandard; }
+            get { return searchComposition; }
             set
             {
-                if (searchCompositionStandard == value)
+                if (searchComposition == value)
                     return;
-                searchCompositionStandard = value;
-                RaisePropertyChanged(() => SearchCompositoinStandard);
+                searchComposition = value;
+                RaisePropertyChanged(() => SearchComposition);
             }
+        }
+        private string searchMaterialLot;
+        public string SearchMaterialLot
+        {
+            get { return searchMaterialLot; }
+            set { searchMaterialLot = value; RaisePropertyChanged(nameof(SearchMaterialLot)); }
+        }
+
+        private string searchSupplier;
+        public string SearchSupplier
+        {
+            get { return searchSupplier; }
+            set { searchSupplier = value; RaisePropertyChanged(nameof(SearchSupplier)); }
+        }
+
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set { searchPMINumber = value; RaisePropertyChanged(nameof(SearchPMINumber)); }
         }
 
 

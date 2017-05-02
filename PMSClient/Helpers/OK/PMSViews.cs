@@ -66,6 +66,7 @@ namespace PMSClient
         StatisticOrder,
         StatisticPlan,
         StatisticDelivery,
+        StatisticProduct,
         Maintanence,
         MaintanenceEdit,
         MaterialNeedCalcuationTool,

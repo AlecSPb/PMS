@@ -95,7 +95,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<OrderStatisticVIew>();
             SimpleIoc.Default.Register<PlanStatisticVIew>();
             SimpleIoc.Default.Register<DeliveryStatisticVIew>();
-
+            SimpleIoc.Default.Register<ProductStatisticVIew>();
 
         }
 
@@ -384,7 +384,10 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<PlanStatisticVIew>(); }
         }
-
+        public ProductStatisticVIew ProductStatistic
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductStatisticVIew>(); }
+        }
         public DeliveryStatisticVIew DeliveryStatistic
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryStatisticVIew>(); }
