@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.MainService;
 
 namespace PMSClient.View
 {
@@ -24,5 +25,28 @@ namespace PMSClient.View
         {
             InitializeComponent();
         }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            var order = (DcMaterialInventoryIn)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.State)
+                {
+                    case "库存":
+                        e.Row.Background = this.FindResource("StoredBrush") as SolidColorBrush;
+                        break;
+                    case "发货":
+                        e.Row.Background = this.FindResource("DeliveredBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
+
+
+
     }
 }

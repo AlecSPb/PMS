@@ -219,6 +219,9 @@
     <sys:String x:Key="HelpTipStatisticDelivery">
         统计的是发货的数目（靶材背板样品各类发货均统计在内）
     </sys:String>
+    <sys:String x:Key="HelpTipStatisticProduct">
+        统计的是产品的数目
+    </sys:String>
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
@@ -292,8 +295,9 @@
     <sys:String x:Key="ButtonStatisticByMonth">该年按月份</sys:String>
     <sys:String x:Key="ButtonStatisticBySeason">该年按季度</sys:String>
     <sys:String x:Key="ButtonStatisticByCustomer">该年按客户</sys:String>
-    <sys:String x:Key="ButtonStatisticByDevice">按设备</sys:String>
-    <sys:String x:Key="ButtonStatisticByCountry">按国家</sys:String>
+    <sys:String x:Key="ButtonStatisticByProductType">该年按产品类型</sys:String>
+    <sys:String x:Key="ButtonStatisticByDevice">该年按设备</sys:String>
+    <sys:String x:Key="ButtonStatisticByCountry">该年按国家</sys:String>
 
 
 

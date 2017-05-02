@@ -355,7 +355,7 @@ namespace PMSWCFService
                     var query = from i in dc.Products
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.CreateTime.Year == year
-                                group i by i.CreateTime.Month into g
+                                group i by ((i.CreateTime.Month - 1) / 3 + 1) into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
