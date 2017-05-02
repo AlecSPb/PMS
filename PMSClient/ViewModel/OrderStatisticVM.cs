@@ -97,24 +97,30 @@ namespace PMSClient.ViewModel
                         PMSDialogService.ShowYes("该年没有记录");
                         return;
                     }
-                    var ordeByMonth = new ChartValues<int>();
+                    var orderByMonth = new ChartValues<int>();
                     var labelByMonth = new List<string>();
                     var sb = new StringBuilder();
                     sb.AppendLine("按月份统计结果:");
-                    ordeByMonth.Clear();
+                    orderByMonth.Clear();
                     labelByMonth.Clear();
                     result.ToList().ForEach(i =>
                     {
                         labelByMonth.Add(i.Key);
-                        ordeByMonth.Add((int)i.Value);
+                        orderByMonth.Add((int)i.Value);
 
                         sb.AppendLine($"[{CurrentYear}-{i.Key}]，共有{i.Value}个订单");
 
                     });
                     var series = new ColumnSeries();
-                    series.Title = "订单数";
-                    series.Values = ordeByMonth;
+                    series.Title = "订单数-柱状";
+                    series.Values = orderByMonth;
                     StatisticChartData.Add(series);
+
+                    var seriesLine = new LineSeries();
+                    seriesLine.Title = "订单数-曲线";
+                    seriesLine.Values = orderByMonth;
+                    StatisticChartData.Add(seriesLine);
+
                     labelByMonth.ForEach(i => StatisticChartLabels.Add(i));
 
                     StatisticTextData = sb.ToString();
@@ -143,24 +149,30 @@ namespace PMSClient.ViewModel
                         PMSDialogService.ShowYes("没有记录");
                         return;
                     }
-                    var ordeByYear = new ChartValues<int>();
+                    var orderByYear = new ChartValues<int>();
                     var labelByYear = new List<string>();
                     var sb = new StringBuilder();
                     sb.AppendLine("全部按年份统计结果:");
-                    ordeByYear.Clear();
+                    orderByYear.Clear();
                     labelByYear.Clear();
                     result.ToList().ForEach(i =>
                     {
                         labelByYear.Add(i.Key);
-                        ordeByYear.Add((int)i.Value);
+                        orderByYear.Add((int)i.Value);
 
                         sb.AppendLine($"[{i.Key}]年，共有{i.Value}个订单");
 
                     });
-                    var series = new ColumnSeries();
-                    series.Title = "订单数";
-                    series.Values = ordeByYear;
-                    StatisticChartData.Add(series);
+                    var seriesColumn = new ColumnSeries();
+                    seriesColumn.Title = "订单数-柱状";
+                    seriesColumn.Values = orderByYear;
+                    StatisticChartData.Add(seriesColumn);
+
+                    var seriesLine = new LineSeries();
+                    seriesLine.Title = "订单数-曲线";
+                    seriesLine.Values = orderByYear;
+                    StatisticChartData.Add(seriesLine);
+
                     labelByYear.ForEach(i => StatisticChartLabels.Add(i));
                     StatisticTextData = sb.ToString();
                 }
