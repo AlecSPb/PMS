@@ -22,8 +22,8 @@ namespace PMSClient.ViewModel
         {
             ByYear = new RelayCommand(ActionByYear);
             ByMonth = new RelayCommand(ActionByMonth);
-            ByDevice = new RelayCommand(ActionByDevice);
             BySeason = new RelayCommand(ActionBySeason);
+            ByDevice = new RelayCommand(ActionByDevice);
         }
 
         private void ActionByDevice()

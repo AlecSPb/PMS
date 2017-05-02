@@ -34,7 +34,8 @@
                 <ComboBox ItemsSource="{Binding Years}" SelectedItem="{Binding CurrentYear}" Style="{StaticResource StyleComboBoxCommon}"/>
                 <Button Content="{StaticResource  ButtonStatisticByMonth}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ByMonth}"/>
                 <Button Content="{StaticResource  ButtonStatisticBySeason}" Style="{StaticResource StyleButtonCommon}" Command="{Binding BySeason}"/>
-                <Button Content="{StaticResource  ButtonStatisticByCountry}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ByCounrty}"/>
+                <Button Content="{StaticResource  ButtonStatisticByProductType}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ByProductType}"/>
+                <Button Content="{StaticResource  ButtonStatisticByCustomer}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ByCustomer}"/>
 
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
                 <TextBlock  Style="{StaticResource StyleTextBlockWarning2}" Text="{StaticResource HelpTipStatisticDelivery}"/>

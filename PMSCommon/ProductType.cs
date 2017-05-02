@@ -14,6 +14,7 @@ namespace PMSCommon
         颗粒,
         外包,
         背板,
+        样品,
         其他
     }
 }

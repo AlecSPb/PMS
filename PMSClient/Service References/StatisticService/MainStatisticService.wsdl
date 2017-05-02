@@ -67,11 +67,11 @@
   <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByYear_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByYearResponse" />
   </wsdl:message>
-  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticBySeaon_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticBySeaon" />
+  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticBySeason_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticBySeason" />
   </wsdl:message>
-  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticBySeaon_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticBySeaonResponse" />
+  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticBySeason_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticBySeasonResponse" />
   </wsdl:message>
   <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByMonth_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByMonth" />
@@ -79,11 +79,17 @@
   <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByMonth_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByMonthResponse" />
   </wsdl:message>
-  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByByProductType_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByByProductType" />
+  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByProductType" />
   </wsdl:message>
-  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByByProductType_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByByProductTypeResponse" />
+  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IMainStatisticService_GetDeliveryStatisticByCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryStatisticByCustomerResponse" />
   </wsdl:message>
   <wsdl:message name="IMainStatisticService_GetProductStatisticByYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductStatisticByYear" />
@@ -150,17 +156,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByYear" message="tns:IMainStatisticService_GetDeliveryStatisticByYear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByYearResponse" message="tns:IMainStatisticService_GetDeliveryStatisticByYear_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDeliveryStatisticBySeaon">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaon" message="tns:IMainStatisticService_GetDeliveryStatisticBySeaon_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaonResponse" message="tns:IMainStatisticService_GetDeliveryStatisticBySeaon_OutputMessage" />
+    <wsdl:operation name="GetDeliveryStatisticBySeason">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeason" message="tns:IMainStatisticService_GetDeliveryStatisticBySeason_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeasonResponse" message="tns:IMainStatisticService_GetDeliveryStatisticBySeason_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDeliveryStatisticByMonth">
       <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonth" message="tns:IMainStatisticService_GetDeliveryStatisticByMonth_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonthResponse" message="tns:IMainStatisticService_GetDeliveryStatisticByMonth_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDeliveryStatisticByByProductType">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductType" message="tns:IMainStatisticService_GetDeliveryStatisticByByProductType_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductTypeResponse" message="tns:IMainStatisticService_GetDeliveryStatisticByByProductType_OutputMessage" />
+    <wsdl:operation name="GetDeliveryStatisticByProductType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductType" message="tns:IMainStatisticService_GetDeliveryStatisticByProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductTypeResponse" message="tns:IMainStatisticService_GetDeliveryStatisticByProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryStatisticByCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomer" message="tns:IMainStatisticService_GetDeliveryStatisticByCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomerResponse" message="tns:IMainStatisticService_GetDeliveryStatisticByCustomer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductStatisticByYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByYear" message="tns:IMainStatisticService_GetProductStatisticByYear_InputMessage" />
@@ -271,8 +281,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDeliveryStatisticBySeaon">
-      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaon" style="document" />
+    <wsdl:operation name="GetDeliveryStatisticBySeason">
+      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeason" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -289,8 +299,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDeliveryStatisticByByProductType">
-      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductType" style="document" />
+    <wsdl:operation name="GetDeliveryStatisticByProductType">
+      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryStatisticByCustomer">
+      <soap:operation soapAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomer" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

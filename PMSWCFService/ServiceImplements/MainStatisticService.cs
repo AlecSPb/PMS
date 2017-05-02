@@ -10,13 +10,36 @@ namespace PMSWCFService
 {
     public class MainStatisticService : IMainStatisticService
     {
+
+        public List<DcStatistic> GetDeliveryStatisticByCustomer(int year)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.DeliveryItems
+                                where i.State != PMSCommon.CommonState.作废.ToString()
+                                && i.CreateTime.Year == year
+                                group i by i.Customer into g
+                                orderby g.Count() descending
+                                select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
+                    return query.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcStatistic> GetDeliveryStatisticByMonth(int year)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var query = from i in dc.Products
+                    var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.CreateTime.Year == year
                                 group i by i.CreateTime.Month into g
@@ -32,13 +55,13 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetDeliveryStatisticBySeaon(int year)
+        public List<DcStatistic> GetDeliveryStatisticBySeason(int year)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var query = from i in dc.Products
+                    var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.CreateTime.Year == year
                                 group i by ((i.CreateTime.Month - 1) / 3 + 1) into g
@@ -54,13 +77,13 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetDeliveryStatisticByByProductType(int year)
+        public List<DcStatistic> GetDeliveryStatisticByProductType(int year)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var query = from i in dc.Products
+                    var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.CreateTime.Year == year
                                 group i by i.ProductType into g
@@ -82,7 +105,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var query = from i in dc.Products
+                    var query = from i in dc.DeliveryItems
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 group i by i.CreateTime.Year into g
                                 orderby g.Key
@@ -389,5 +412,6 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
     }
 }

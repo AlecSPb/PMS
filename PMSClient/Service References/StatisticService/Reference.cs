@@ -138,11 +138,11 @@ namespace PMSClient.StatisticService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByYear", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByYearResponse")]
         System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByYearAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaon", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaonResponse")]
-        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticBySeaon(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeason", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeasonResponse")]
+        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticBySeason(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaon", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeaonResponse")]
-        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticBySeaonAsync(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeason", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticBySeasonResponse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticBySeasonAsync(int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonth", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonthResponse")]
         PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByMonth(int year);
@@ -150,13 +150,19 @@ namespace PMSClient.StatisticService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonth", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonthResponse")]
         System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByMonthAsync(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductTypeRespo" +
-            "nse")]
-        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByByProductType(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductTypeRespons" +
+            "e")]
+        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByProductType(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductTypeRespo" +
-            "nse")]
-        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByByProductTypeAsync(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByProductTypeRespons" +
+            "e")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByProductTypeAsync(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomer", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomerResponse")]
+        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByCustomer(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomer", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCustomerResponse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByCustomerAsync(int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByYear", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByYearResponse")]
         PMSClient.StatisticService.DcStatistic[] GetProductStatisticByYear();
@@ -292,12 +298,12 @@ namespace PMSClient.StatisticService {
             return base.Channel.GetDeliveryStatisticByYearAsync();
         }
         
-        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticBySeaon(int year) {
-            return base.Channel.GetDeliveryStatisticBySeaon(year);
+        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticBySeason(int year) {
+            return base.Channel.GetDeliveryStatisticBySeason(year);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticBySeaonAsync(int year) {
-            return base.Channel.GetDeliveryStatisticBySeaonAsync(year);
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticBySeasonAsync(int year) {
+            return base.Channel.GetDeliveryStatisticBySeasonAsync(year);
         }
         
         public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByMonth(int year) {
@@ -308,12 +314,20 @@ namespace PMSClient.StatisticService {
             return base.Channel.GetDeliveryStatisticByMonthAsync(year);
         }
         
-        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByByProductType(int year) {
-            return base.Channel.GetDeliveryStatisticByByProductType(year);
+        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByProductType(int year) {
+            return base.Channel.GetDeliveryStatisticByProductType(year);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByByProductTypeAsync(int year) {
-            return base.Channel.GetDeliveryStatisticByByProductTypeAsync(year);
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByProductTypeAsync(int year) {
+            return base.Channel.GetDeliveryStatisticByProductTypeAsync(year);
+        }
+        
+        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByCustomer(int year) {
+            return base.Channel.GetDeliveryStatisticByCustomer(year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByCustomerAsync(int year) {
+            return base.Channel.GetDeliveryStatisticByCustomerAsync(year);
         }
         
         public PMSClient.StatisticService.DcStatistic[] GetProductStatisticByYear() {
