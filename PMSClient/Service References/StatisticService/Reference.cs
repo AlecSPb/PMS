@@ -150,11 +150,39 @@ namespace PMSClient.StatisticService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonth", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByMonthResponse")]
         System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByMonthAsync(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCountry", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCountryResponse")]
-        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByCountry(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductTypeRespo" +
+            "nse")]
+        PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByByProductType(int year);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCountry", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByCountryResponse")]
-        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByCountryAsync(int year);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetDeliveryStatisticByByProductTypeRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByByProductTypeAsync(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByYear", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByYearResponse")]
+        PMSClient.StatisticService.DcStatistic[] GetProductStatisticByYear();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByYear", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByYearResponse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticByYearAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByMonth", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByMonthResponse")]
+        PMSClient.StatisticService.DcStatistic[] GetProductStatisticByMonth(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByMonth", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByMonthResponse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticByMonthAsync(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticBySeason", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticBySeasonResponse")]
+        PMSClient.StatisticService.DcStatistic[] GetProductStatisticBySeason(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticBySeason", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticBySeasonResponse")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticBySeasonAsync(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByProductTypeResponse" +
+            "")]
+        PMSClient.StatisticService.DcStatistic[] GetProductStatisticByProductType(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMainStatisticService/GetProductStatisticByProductType", ReplyAction="http://tempuri.org/IMainStatisticService/GetProductStatisticByProductTypeResponse" +
+            "")]
+        System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticByProductTypeAsync(int year);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -280,12 +308,44 @@ namespace PMSClient.StatisticService {
             return base.Channel.GetDeliveryStatisticByMonthAsync(year);
         }
         
-        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByCountry(int year) {
-            return base.Channel.GetDeliveryStatisticByCountry(year);
+        public PMSClient.StatisticService.DcStatistic[] GetDeliveryStatisticByByProductType(int year) {
+            return base.Channel.GetDeliveryStatisticByByProductType(year);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByCountryAsync(int year) {
-            return base.Channel.GetDeliveryStatisticByCountryAsync(year);
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetDeliveryStatisticByByProductTypeAsync(int year) {
+            return base.Channel.GetDeliveryStatisticByByProductTypeAsync(year);
+        }
+        
+        public PMSClient.StatisticService.DcStatistic[] GetProductStatisticByYear() {
+            return base.Channel.GetProductStatisticByYear();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticByYearAsync() {
+            return base.Channel.GetProductStatisticByYearAsync();
+        }
+        
+        public PMSClient.StatisticService.DcStatistic[] GetProductStatisticByMonth(int year) {
+            return base.Channel.GetProductStatisticByMonth(year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticByMonthAsync(int year) {
+            return base.Channel.GetProductStatisticByMonthAsync(year);
+        }
+        
+        public PMSClient.StatisticService.DcStatistic[] GetProductStatisticBySeason(int year) {
+            return base.Channel.GetProductStatisticBySeason(year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticBySeasonAsync(int year) {
+            return base.Channel.GetProductStatisticBySeasonAsync(year);
+        }
+        
+        public PMSClient.StatisticService.DcStatistic[] GetProductStatisticByProductType(int year) {
+            return base.Channel.GetProductStatisticByProductType(year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.StatisticService.DcStatistic[]> GetProductStatisticByProductTypeAsync(int year) {
+            return base.Channel.GetProductStatisticByProductTypeAsync(year);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace PMSWCFService
                     var query = from i in dc.Products
                                 where i.State != PMSCommon.CommonState.作废.ToString()
                                 && i.CreateTime.Year == year
-                                group i by i.CreateTime.Month into g
+                                group i by ((i.CreateTime.Month - 1) / 3 + 1) into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
@@ -101,7 +101,7 @@ namespace PMSWCFService
         {
             try
             {
-                using (var dc=new PMSDbContext())
+                using (var dc = new PMSDbContext())
                 {
                     List<DcStatistic> result = new List<DcStatistic>();
                     var query1 = from i in dc.Orders
@@ -111,9 +111,9 @@ namespace PMSWCFService
                     result.Add(new DataContracts.DcStatistic { Key = "All", Value = query1.Count() });
 
                     var query2 = from i in dc.Orders
-                                            where i.State == PMSCommon.OrderState.未完成.ToString()
-                                            && i.PolicyType.Contains("VHP")
-                                            select i;
+                                 where i.State == PMSCommon.OrderState.未完成.ToString()
+                                 && i.PolicyType.Contains("VHP")
+                                 select i;
                     result.Add(new DataContracts.DcStatistic { Key = "UnCompleted", Value = query2.Count() });
 
                     var query3 = from i in dc.Orders
@@ -163,7 +163,7 @@ namespace PMSWCFService
                     var query = from i in dc.Orders
                                 where i.State != PMSCommon.OrderState.作废.ToString()
                                  && i.CreateTime.Year == year
-                                group i by  i.CreateTime.Month  into g
+                                group i by i.CreateTime.Month into g
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
                 }
@@ -184,7 +184,7 @@ namespace PMSWCFService
                     var query = from i in dc.Orders
                                 where i.State != PMSCommon.OrderState.作废.ToString()
                                 && i.CreateTime.Year == year
-                                group i by i.CreateTime.Year into g
+                                group i by ((i.CreateTime.Month - 1) / 3 + 1) into g
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
                 }
@@ -247,7 +247,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.VHPPlans
                                 where i.State != PMSCommon.VHPPlanState.作废.ToString()
-                                &&i.PlanDate.Year==year
+                                && i.PlanDate.Year == year
                                 group i by i.PlanDate.Month into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
@@ -269,7 +269,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.VHPPlans
                                 where i.State != PMSCommon.VHPPlanState.作废.ToString()
-                                group i by i.PlanDate.Year into g
+                                group i by ((i.PlanDate.Month - 1) / 3 + 1) into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
                     return query.ToList();
@@ -332,7 +332,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.Products
                                 where i.State != PMSCommon.CommonState.作废.ToString()
-                                &&i.CreateTime.Year==year
+                                && i.CreateTime.Year == year
                                 group i by i.CreateTime.Month into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
