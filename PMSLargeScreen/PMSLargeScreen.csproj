@@ -115,6 +115,9 @@
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDeliveryItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDeliveryItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialInventoryIn.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -130,6 +133,9 @@
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialOrderItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialOrderItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -137,6 +143,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlanWithMisson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlate.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcProduct.datasource">
@@ -160,16 +169,6 @@
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PMSMainService\PMSService.wsdl" />
-    <None Include="Service References\PMSMainService\PMSService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\PMSService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\PMSService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -187,15 +186,22 @@
     <WCFMetadataStorage Include="Service References\PMSMainService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\PMSMainService\PMSService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\PMSMainService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\PMSMainService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\PMSMainService\PMSService1.wsdl" />
+    <None Include="Service References\PMSMainService\PMSService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSMainService\PMSService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PMSMainService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -203,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PMSMainService\PMSService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

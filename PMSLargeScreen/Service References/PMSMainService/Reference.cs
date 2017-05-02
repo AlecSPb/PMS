@@ -497,6 +497,9 @@ namespace PMSLargeScreen.PMSMainService {
         private int PlanLotField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlanTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double PrePressureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -519,6 +522,9 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RoomTemperatureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SearchCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double SingleWeightField;
@@ -750,6 +756,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlanType {
+            get {
+                return this.PlanTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanTypeField, value) != true)) {
+                    this.PlanTypeField = value;
+                    this.RaisePropertyChanged("PlanType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double PrePressure {
             get {
                 return this.PrePressureField;
@@ -849,6 +868,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.RoomTemperatureField.Equals(value) != true)) {
                     this.RoomTemperatureField = value;
                     this.RaisePropertyChanged("RoomTemperature");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SearchCode {
+            get {
+                return this.SearchCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SearchCodeField, value) != true)) {
+                    this.SearchCodeField = value;
+                    this.RaisePropertyChanged("SearchCode");
                 }
             }
         }
@@ -1632,6 +1664,67 @@ namespace PMSLargeScreen.PMSMainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialOrderItemExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcMaterialOrderItemExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSLargeScreen.PMSMainService.DcMaterialOrder MaterialOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSLargeScreen.PMSMainService.DcMaterialOrderItem MaterialOrderItemField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSLargeScreen.PMSMainService.DcMaterialOrder MaterialOrder {
+            get {
+                return this.MaterialOrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialOrderField, value) != true)) {
+                    this.MaterialOrderField = value;
+                    this.RaisePropertyChanged("MaterialOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSLargeScreen.PMSMainService.DcMaterialOrderItem MaterialOrderItem {
+            get {
+                return this.MaterialOrderItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialOrderItemField, value) != true)) {
+                    this.MaterialOrderItemField = value;
+                    this.RaisePropertyChanged("MaterialOrderItem");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryIn", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcMaterialInventoryIn : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2363,10 +2456,19 @@ namespace PMSLargeScreen.PMSMainService {
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DefectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid DeliveryIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DetailRecordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionActualField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -2471,6 +2573,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Defects {
+            get {
+                return this.DefectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DefectsField, value) != true)) {
+                    this.DefectsField = value;
+                    this.RaisePropertyChanged("Defects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid DeliveryID {
             get {
                 return this.DeliveryIDField;
@@ -2492,6 +2607,32 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.DetailRecordField, value) != true)) {
                     this.DetailRecordField = value;
                     this.RaisePropertyChanged("DetailRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionActual {
+            get {
+                return this.DimensionActualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
+                    this.DimensionActualField = value;
+                    this.RaisePropertyChanged("DimensionActual");
                 }
             }
         }
@@ -2625,6 +2766,621 @@ namespace PMSLargeScreen.PMSMainService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcDeliveryItemExtra", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcDeliveryItemExtra : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSLargeScreen.PMSMainService.DcDelivery DeliveryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PMSLargeScreen.PMSMainService.DcDeliveryItem DeliveryItemField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSLargeScreen.PMSMainService.DcDelivery Delivery {
+            get {
+                return this.DeliveryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryField, value) != true)) {
+                    this.DeliveryField = value;
+                    this.RaisePropertyChanged("Delivery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PMSLargeScreen.PMSMainService.DcDeliveryItem DeliveryItem {
+            get {
+                return this.DeliveryItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeliveryItemField, value) != true)) {
+                    this.DeliveryItemField = value;
+                    this.RaisePropertyChanged("DeliveryItem");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcPlate", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcPlate : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AppearanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DefectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HardnessField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastWeldMaterialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateMaterialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UseCountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Appearance {
+            get {
+                return this.AppearanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AppearanceField, value) != true)) {
+                    this.AppearanceField = value;
+                    this.RaisePropertyChanged("Appearance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Defects {
+            get {
+                return this.DefectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DefectsField, value) != true)) {
+                    this.DefectsField = value;
+                    this.RaisePropertyChanged("Defects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Hardness {
+            get {
+                return this.HardnessField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HardnessField, value) != true)) {
+                    this.HardnessField = value;
+                    this.RaisePropertyChanged("Hardness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastWeldMaterial {
+            get {
+                return this.LastWeldMaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastWeldMaterialField, value) != true)) {
+                    this.LastWeldMaterialField = value;
+                    this.RaisePropertyChanged("LastWeldMaterial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateLot {
+            get {
+                return this.PlateLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateLotField, value) != true)) {
+                    this.PlateLotField = value;
+                    this.RaisePropertyChanged("PlateLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateMaterial {
+            get {
+                return this.PlateMaterialField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateMaterialField, value) != true)) {
+                    this.PlateMaterialField = value;
+                    this.RaisePropertyChanged("PlateMaterial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Supplier {
+            get {
+                return this.SupplierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
+                    this.SupplierField = value;
+                    this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UseCount {
+            get {
+                return this.UseCountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UseCountField, value) != true)) {
+                    this.UseCountField = value;
+                    this.RaisePropertyChanged("UseCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcProduct", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AbbrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CompositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DefectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PositionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WeightField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Abbr {
+            get {
+                return this.AbbrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AbbrField, value) != true)) {
+                    this.AbbrField = value;
+                    this.RaisePropertyChanged("Abbr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Composition {
+            get {
+                return this.CompositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
+                    this.CompositionField = value;
+                    this.RaisePropertyChanged("Composition");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Defects {
+            get {
+                return this.DefectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DefectsField, value) != true)) {
+                    this.DefectsField = value;
+                    this.RaisePropertyChanged("Defects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DimensionActual {
+            get {
+                return this.DimensionActualField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
+                    this.DimensionActualField = value;
+                    this.RaisePropertyChanged("DimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PO {
+            get {
+                return this.POField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POField, value) != true)) {
+                    this.POField = value;
+                    this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Position {
+            get {
+                return this.PositionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PositionField, value) != true)) {
+                    this.PositionField = value;
+                    this.RaisePropertyChanged("Position");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductID {
+            get {
+                return this.ProductIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
+                    this.ProductIDField = value;
+                    this.RaisePropertyChanged("ProductID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductType {
+            get {
+                return this.ProductTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
+                    this.ProductTypeField = value;
+                    this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcRecordTest", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcRecordTest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2664,6 +3420,12 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime OrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string POField;
@@ -2838,6 +3600,32 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime OrderDate {
+            get {
+                return this.OrderDateField;
+            }
+            set {
+                if ((this.OrderDateField.Equals(value) != true)) {
+                    this.OrderDateField = value;
+                    this.RaisePropertyChanged("OrderDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
                 }
             }
         }
@@ -3291,10 +4079,19 @@ namespace PMSLargeScreen.PMSMainService {
         private string MillingToolField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RoomHumidityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RoomTemperatureField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
@@ -3426,6 +4223,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Ratio {
             get {
                 return this.RatioField;
@@ -3447,6 +4257,32 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
                     this.RemarkField = value;
                     this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double RoomHumidity {
+            get {
+                return this.RoomHumidityField;
+            }
+            set {
+                if ((this.RoomHumidityField.Equals(value) != true)) {
+                    this.RoomHumidityField = value;
+                    this.RaisePropertyChanged("RoomHumidity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double RoomTemperature {
+            get {
+                return this.RoomTemperatureField;
+            }
+            set {
+                if ((this.RoomTemperatureField.Equals(value) != true)) {
+                    this.RoomTemperatureField = value;
+                    this.RaisePropertyChanged("RoomTemperature");
                 }
             }
         }
@@ -3536,6 +4372,9 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BlankDimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3563,6 +4402,9 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3587,6 +4429,19 @@ namespace PMSLargeScreen.PMSMainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BlankDimension {
+            get {
+                return this.BlankDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlankDimensionField, value) != true)) {
+                    this.BlankDimensionField = value;
+                    this.RaisePropertyChanged("BlankDimension");
+                }
             }
         }
         
@@ -3708,6 +4563,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string State {
             get {
                 return this.StateField;
@@ -3805,6 +4673,12 @@ namespace PMSLargeScreen.PMSMainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CalculateDimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CalculationDensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3817,13 +4691,28 @@ namespace PMSLargeScreen.PMSMainService {
         private string DeMoldTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Diameter1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double Diameter2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DimensionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PMINumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlanTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double RatioDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -3862,6 +4751,32 @@ namespace PMSLargeScreen.PMSMainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CalculateDimension {
+            get {
+                return this.CalculateDimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CalculateDimensionField, value) != true)) {
+                    this.CalculateDimensionField = value;
+                    this.RaisePropertyChanged("CalculateDimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CalculationDensity {
+            get {
+                return this.CalculationDensityField;
+            }
+            set {
+                if ((this.CalculationDensityField.Equals(value) != true)) {
+                    this.CalculationDensityField = value;
+                    this.RaisePropertyChanged("CalculationDensity");
+                }
             }
         }
         
@@ -3918,6 +4833,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Density {
+            get {
+                return this.DensityField;
+            }
+            set {
+                if ((this.DensityField.Equals(value) != true)) {
+                    this.DensityField = value;
+                    this.RaisePropertyChanged("Density");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public double Diameter1 {
             get {
                 return this.Diameter1Field;
@@ -3944,6 +4872,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Dimension {
+            get {
+                return this.DimensionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
+                    this.DimensionField = value;
+                    this.RaisePropertyChanged("Dimension");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -3952,6 +4893,45 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PMINumber {
+            get {
+                return this.PMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
+                    this.PMINumberField = value;
+                    this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlanType {
+            get {
+                return this.PlanTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlanTypeField, value) != true)) {
+                    this.PlanTypeField = value;
+                    this.RaisePropertyChanged("PlanType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double RatioDensity {
+            get {
+                return this.RatioDensityField;
+            }
+            set {
+                if ((this.RatioDensityField.Equals(value) != true)) {
+                    this.RatioDensityField = value;
+                    this.RaisePropertyChanged("RatioDensity");
                 }
             }
         }
@@ -4211,6 +5191,9 @@ namespace PMSLargeScreen.PMSMainService {
         private string PlateUseCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SprayCheckField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4251,6 +5234,9 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetDimensionActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetPMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TargetPOField;
@@ -4769,6 +5755,19 @@ namespace PMSLargeScreen.PMSMainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string SprayCheck {
             get {
                 return this.SprayCheckField;
@@ -4946,6 +5945,19 @@ namespace PMSLargeScreen.PMSMainService {
                 if ((object.ReferenceEquals(this.TargetDimensionActualField, value) != true)) {
                     this.TargetDimensionActualField = value;
                     this.RaisePropertyChanged("TargetDimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TargetPMINumber {
+            get {
+                return this.TargetPMINumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetPMINumberField, value) != true)) {
+                    this.TargetPMINumberField = value;
+                    this.RaisePropertyChanged("TargetPMINumber");
                 }
             }
         }
@@ -5181,291 +6193,6 @@ namespace PMSLargeScreen.PMSMainService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DcProduct", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
-    [System.SerializableAttribute()]
-    public partial class DcProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AbbrField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CompositionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CreatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CustomerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DefectsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DimensionActualField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string POField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PositionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RemarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WeightField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Abbr {
-            get {
-                return this.AbbrField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AbbrField, value) != true)) {
-                    this.AbbrField = value;
-                    this.RaisePropertyChanged("Abbr");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Composition {
-            get {
-                return this.CompositionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompositionField, value) != true)) {
-                    this.CompositionField = value;
-                    this.RaisePropertyChanged("Composition");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateTime {
-            get {
-                return this.CreateTimeField;
-            }
-            set {
-                if ((this.CreateTimeField.Equals(value) != true)) {
-                    this.CreateTimeField = value;
-                    this.RaisePropertyChanged("CreateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Creator {
-            get {
-                return this.CreatorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
-                    this.CreatorField = value;
-                    this.RaisePropertyChanged("Creator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Customer {
-            get {
-                return this.CustomerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
-                    this.CustomerField = value;
-                    this.RaisePropertyChanged("Customer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Defects {
-            get {
-                return this.DefectsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DefectsField, value) != true)) {
-                    this.DefectsField = value;
-                    this.RaisePropertyChanged("Defects");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Dimension {
-            get {
-                return this.DimensionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionField, value) != true)) {
-                    this.DimensionField = value;
-                    this.RaisePropertyChanged("Dimension");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DimensionActual {
-            get {
-                return this.DimensionActualField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
-                    this.DimensionActualField = value;
-                    this.RaisePropertyChanged("DimensionActual");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PO {
-            get {
-                return this.POField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.POField, value) != true)) {
-                    this.POField = value;
-                    this.RaisePropertyChanged("PO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Position {
-            get {
-                return this.PositionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PositionField, value) != true)) {
-                    this.PositionField = value;
-                    this.RaisePropertyChanged("Position");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductID {
-            get {
-                return this.ProductIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductIDField, value) != true)) {
-                    this.ProductIDField = value;
-                    this.RaisePropertyChanged("ProductID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductType {
-            get {
-                return this.ProductTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
-                    this.ProductTypeField = value;
-                    this.RaisePropertyChanged("ProductType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Remark {
-            get {
-                return this.RemarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
-                    this.RemarkField = value;
-                    this.RaisePropertyChanged("Remark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Weight {
-            get {
-                return this.WeightField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WeightField, value) != true)) {
-                    this.WeightField = value;
-                    this.RaisePropertyChanged("Weight");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IOrderService")]
     public interface IOrderService {
@@ -5494,17 +6221,35 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
         System.Threading.Tasks.Task<int> AddOrderAsync(PMSLargeScreen.PMSMainService.DcOrder order);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrderByUID", ReplyAction="http://tempuri.org/IOrderService/AddOrderByUIDResponse")]
+        int AddOrderByUID(PMSLargeScreen.PMSMainService.DcOrder order, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrderByUID", ReplyAction="http://tempuri.org/IOrderService/AddOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcOrder order, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
         int UpdateOrder(PMSLargeScreen.PMSMainService.DcOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrder", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderResponse")]
         System.Threading.Tasks.Task<int> UpdateOrderAsync(PMSLargeScreen.PMSMainService.DcOrder order);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrderByUID", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderByUIDResponse")]
+        int UpdateOrderByUID(PMSLargeScreen.PMSMainService.DcOrder order, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/UpdateOrderByUID", ReplyAction="http://tempuri.org/IOrderService/UpdateOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcOrder order, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         int DeleteOrder(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/DeleteOrder", ReplyAction="http://tempuri.org/IOrderService/DeleteOrderResponse")]
         System.Threading.Tasks.Task<int> DeleteOrderAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/CheckPMINumberExisit", ReplyAction="http://tempuri.org/IOrderService/CheckPMINumberExisitResponse")]
+        bool CheckPMINumberExisit(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/CheckPMINumberExisit", ReplyAction="http://tempuri.org/IOrderService/CheckPMINumberExisitResponse")]
+        System.Threading.Tasks.Task<bool> CheckPMINumberExisitAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5566,6 +6311,14 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.AddOrderAsync(order);
         }
         
+        public int AddOrderByUID(PMSLargeScreen.PMSMainService.DcOrder order, string uid) {
+            return base.Channel.AddOrderByUID(order, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcOrder order, string uid) {
+            return base.Channel.AddOrderByUIDAsync(order, uid);
+        }
+        
         public int UpdateOrder(PMSLargeScreen.PMSMainService.DcOrder order) {
             return base.Channel.UpdateOrder(order);
         }
@@ -5574,12 +6327,28 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateOrderAsync(order);
         }
         
+        public int UpdateOrderByUID(PMSLargeScreen.PMSMainService.DcOrder order, string uid) {
+            return base.Channel.UpdateOrderByUID(order, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcOrder order, string uid) {
+            return base.Channel.UpdateOrderByUIDAsync(order, uid);
+        }
+        
         public int DeleteOrder(System.Guid id) {
             return base.Channel.DeleteOrder(id);
         }
         
         public System.Threading.Tasks.Task<int> DeleteOrderAsync(System.Guid id) {
             return base.Channel.DeleteOrderAsync(id);
+        }
+        
+        public bool CheckPMINumberExisit(string pminumber) {
+            return base.Channel.CheckPMINumberExisit(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckPMINumberExisitAsync(string pminumber) {
+            return base.Channel.CheckPMINumberExisitAsync(pminumber);
         }
     }
     
@@ -5599,11 +6368,23 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanResponse")]
         System.Threading.Tasks.Task<int> AddVHPPlanAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanByUIDResponse")]
+        int AddVHPPlanByUID(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/AddVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/AddVHPPlanByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddVHPPlanByUIDAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse")]
         int UpdateVHPPlan(PMSLargeScreen.PMSMainService.DcPlanVHP model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanResponse")]
         System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUIDResponse")]
+        int UpdateVHPPlanByUID(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUID", ReplyAction="http://tempuri.org/IPlanVHPService/UpdateVHPPlanByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateVHPPlanByUIDAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/DeleteVHPPlanResponse")]
         int DeleteVHPPlan(System.Guid id);
@@ -5655,12 +6436,28 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.AddVHPPlanAsync(model);
         }
         
+        public int AddVHPPlanByUID(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid) {
+            return base.Channel.AddVHPPlanByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddVHPPlanByUIDAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid) {
+            return base.Channel.AddVHPPlanByUIDAsync(model, uid);
+        }
+        
         public int UpdateVHPPlan(PMSLargeScreen.PMSMainService.DcPlanVHP model) {
             return base.Channel.UpdateVHPPlan(model);
         }
         
         public System.Threading.Tasks.Task<int> UpdateVHPPlanAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model) {
             return base.Channel.UpdateVHPPlanAsync(model);
+        }
+        
+        public int UpdateVHPPlanByUID(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid) {
+            return base.Channel.UpdateVHPPlanByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateVHPPlanByUIDAsync(PMSLargeScreen.PMSMainService.DcPlanVHP model, string uid) {
+            return base.Channel.UpdateVHPPlanByUIDAsync(model, uid);
         }
         
         public int DeleteVHPPlan(System.Guid id) {
@@ -5699,6 +6496,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialNeedAsync(PMSLargeScreen.PMSMainService.DcMaterialNeed model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUIDResponse")]
+        int AddMaterialNeedByUID(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialNeedByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUIDResponse")]
+        int UpdateMaterialNeedByUID(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUID", ReplyAction="http://tempuri.org/IMaterialNeedService/UpdateMaterialNeedByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialNeedByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/DeleteMaterialNeedResponse")]
         int DeleteMaterialNeed(System.Guid id);
@@ -5766,6 +6575,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateMaterialNeedAsync(model);
         }
         
+        public int AddMaterialNeedByUID(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid) {
+            return base.Channel.AddMaterialNeedByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialNeedByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid) {
+            return base.Channel.AddMaterialNeedByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialNeedByUID(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid) {
+            return base.Channel.UpdateMaterialNeedByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialNeedByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialNeed model, string uid) {
+            return base.Channel.UpdateMaterialNeedByUIDAsync(model, uid);
+        }
+        
         public int DeleteMaterialNeed(System.Guid id) {
             return base.Channel.DeleteMaterialNeed(id);
         }
@@ -5815,6 +6640,18 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialOrderAsync(PMSLargeScreen.PMSMainService.DcMaterialOrder model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUIDResponse")]
+        int AddMaterialOrderByUID(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUIDResponse")]
+        int UpdateMaterialOrderByUID(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrder", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderResponse")]
         int DeleteMaterialOrder(System.Guid id);
         
@@ -5849,6 +6686,18 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUIDResponse")]
+        int AddMaterialOrderItemByUID(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/AddMaterialOrderItemByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialOrderItemByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUIDResponse")]
+        int UpdateMaterialOrderItemByUID(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUID", ReplyAction="http://tempuri.org/IMaterialOrderService/UpdateMaterialOrderItemByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderItemByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItem", ReplyAction="http://tempuri.org/IMaterialOrderService/DeleteMaterialOrderItemResponse")]
         int DeleteMaterialOrderItem(System.Guid id);
         
@@ -5866,6 +6715,24 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemsCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse")]
+        PMSLargeScreen.PMSMainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
+        int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
+        bool CheckOrderItemNumberExist(string orderItemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
+        System.Threading.Tasks.Task<bool> CheckOrderItemNumberExistAsync(string orderItemnumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5943,6 +6810,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateMaterialOrderAsync(model);
         }
         
+        public int AddMaterialOrderByUID(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid) {
+            return base.Channel.AddMaterialOrderByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid) {
+            return base.Channel.AddMaterialOrderByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialOrderByUID(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid) {
+            return base.Channel.UpdateMaterialOrderByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrder model, string uid) {
+            return base.Channel.UpdateMaterialOrderByUIDAsync(model, uid);
+        }
+        
         public int DeleteMaterialOrder(System.Guid id) {
             return base.Channel.DeleteMaterialOrder(id);
         }
@@ -5983,6 +6866,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateMaterialOrderItemAsync(model);
         }
         
+        public int AddMaterialOrderItemByUID(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.AddMaterialOrderItemByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialOrderItemByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.AddMaterialOrderItemByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialOrderItemByUID(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.UpdateMaterialOrderItemByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderItemByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.UpdateMaterialOrderItemByUIDAsync(model, uid);
+        }
+        
         public int DeleteMaterialOrderItem(System.Guid id) {
             return base.Channel.DeleteMaterialOrderItem(id);
         }
@@ -6006,6 +6905,30 @@ namespace PMSLargeScreen.PMSMainService {
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync() {
             return base.Channel.GetMaterialOrderItemsCountAsync();
         }
+        
+        public PMSLargeScreen.PMSMainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtras(skip, take, composition, pminumber, orderitemnumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasAsync(skip, take, composition, pminumber, orderitemnumber);
+        }
+        
+        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasCount(composition, pminumber, orderitemnumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber);
+        }
+        
+        public bool CheckOrderItemNumberExist(string orderItemnumber) {
+            return base.Channel.CheckOrderItemNumberExist(orderItemnumber);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CheckOrderItemNumberExistAsync(string orderItemnumber) {
+            return base.Channel.CheckOrderItemNumberExistAsync(orderItemnumber);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6024,6 +6947,22 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCount", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryInCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearchRespo" +
+            "nse")]
+        PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[] GetMaterialInventoryInsBySearch(int skip, int take, string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInsBySearchRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsBySearchAsync(int skip, int take, string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchR" +
+            "esponse")]
+        int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchR" +
+            "esponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryInCountBySearchAsync(string supplier, string composition, string batchnumber, string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
         int AddMaterialInventoryIn(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model);
         
@@ -6035,6 +6974,20 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUIDResponse")]
+        int AddMaterialInventoryInByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryInByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUIDRespon" +
+            "se")]
+        int UpdateMaterialInventoryInByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryInByUIDRespon" +
+            "se")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryInByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryInResponse")]
         int DeleteMaterialInventoryIn(System.Guid id);
@@ -6056,6 +7009,24 @@ namespace PMSLargeScreen.PMSMainService {
             "")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearchResp" +
+            "onse")]
+        PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[] GetMaterialInventoryOutsBySearch(int skip, int take, string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsBySearchResp" +
+            "onse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsBySearchAsync(int skip, int take, string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "Response")]
+        int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
+            "Response")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountBySearchAsync(string receiver, string composition, string batchnumber, string pminumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
         int AddMaterialInventoryOut(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model);
         
@@ -6067,6 +7038,22 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutResponse")]
         System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUIDResponse" +
+            "")]
+        int AddMaterialInventoryOutByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutByUIDResponse" +
+            "")]
+        System.Threading.Tasks.Task<int> AddMaterialInventoryOutByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUIDRespo" +
+            "nse")]
+        int UpdateMaterialInventoryOutByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUID", ReplyAction="http://tempuri.org/IMaterialInventoryService/UpdateMaterialInventoryOutByUIDRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/DeleteMaterialInventoryOutResponse")]
         int DeleteMaterialInventoryOut(System.Guid id);
@@ -6118,6 +7105,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetMaterialInventoryInCountAsync();
         }
         
+        public PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[] GetMaterialInventoryInsBySearch(int skip, int take, string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInsBySearch(skip, take, supplier, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryIn[]> GetMaterialInventoryInsBySearchAsync(int skip, int take, string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInsBySearchAsync(skip, take, supplier, composition, batchnumber, pminumber);
+        }
+        
+        public int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInCountBySearch(supplier, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountBySearchAsync(string supplier, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryInCountBySearchAsync(supplier, composition, batchnumber, pminumber);
+        }
+        
         public int AddMaterialInventoryIn(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model) {
             return base.Channel.AddMaterialInventoryIn(model);
         }
@@ -6132,6 +7135,22 @@ namespace PMSLargeScreen.PMSMainService {
         
         public System.Threading.Tasks.Task<int> UpdateMaterialInventoryInAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model) {
             return base.Channel.UpdateMaterialInventoryInAsync(model);
+        }
+        
+        public int AddMaterialInventoryInByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.AddMaterialInventoryInByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryInByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.AddMaterialInventoryInByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialInventoryInByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.UpdateMaterialInventoryInByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryInByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.UpdateMaterialInventoryInByUIDAsync(model, uid);
         }
         
         public int DeleteMaterialInventoryIn(System.Guid id) {
@@ -6158,6 +7177,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetMaterialInventoryOutCountAsync();
         }
         
+        public PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[] GetMaterialInventoryOutsBySearch(int skip, int take, string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutsBySearch(skip, take, receiver, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsBySearchAsync(int skip, int take, string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutsBySearchAsync(skip, take, receiver, composition, batchnumber, pminumber);
+        }
+        
+        public int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutCountBySearch(receiver, composition, batchnumber, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountBySearchAsync(string receiver, string composition, string batchnumber, string pminumber) {
+            return base.Channel.GetMaterialInventoryOutCountBySearchAsync(receiver, composition, batchnumber, pminumber);
+        }
+        
         public int AddMaterialInventoryOut(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model) {
             return base.Channel.AddMaterialInventoryOut(model);
         }
@@ -6172,6 +7207,22 @@ namespace PMSLargeScreen.PMSMainService {
         
         public System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model) {
             return base.Channel.UpdateMaterialInventoryOutAsync(model);
+        }
+        
+        public int AddMaterialInventoryOutByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.AddMaterialInventoryOutByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddMaterialInventoryOutByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.AddMaterialInventoryOutByUIDAsync(model, uid);
+        }
+        
+        public int UpdateMaterialInventoryOutByUID(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.UpdateMaterialInventoryOutByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialInventoryOutByUIDAsync(PMSLargeScreen.PMSMainService.DcMaterialInventoryOut model, string uid) {
+            return base.Channel.UpdateMaterialInventoryOutByUIDAsync(model, uid);
         }
         
         public int DeleteMaterialInventoryOut(System.Guid id) {
@@ -6211,6 +7262,12 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse")]
         System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
+        int GetMissonUnCompletedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
         PMSLargeScreen.PMSMainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
         
@@ -6248,6 +7305,32 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRangeRespons" +
             "e")]
         System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2Response")]
+        PMSLargeScreen.PMSMainService.DcPlanWithMisson[] GetPlanWithMissonCheckedByDateRange2(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedByDateRange2Response")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedByDateRange2Async(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2Respon" +
+            "se")]
+        int GetPlanWithMissonCheckedCountByDateRange2(System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonCheckedCountByDateRange2Respon" +
+            "se")]
+        System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRange2Async(System.DateTime dateStart, System.DateTime dateEnd, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtra", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraResponse")]
+        PMSLargeScreen.PMSMainService.DcPlanWithMisson[] GetPlanExtra(int skip, int take, string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtra", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanWithMisson[]> GetPlanExtraAsync(int skip, int take, string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCountResponse")]
+        int GetPlanExtraCount(string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6309,6 +7392,14 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetMissonsCountBySearchAsync(compostion, pminumber);
         }
         
+        public int GetMissonUnCompletedCount() {
+            return base.Channel.GetMissonUnCompletedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
+            return base.Channel.GetMissonUnCompletedCountAsync();
+        }
+        
         public PMSLargeScreen.PMSMainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {
             return base.Channel.GetPlanWithMisson(skip, take);
         }
@@ -6356,6 +7447,38 @@ namespace PMSLargeScreen.PMSMainService {
         public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRangeAsync(System.DateTime dateStart, System.DateTime dateEnd) {
             return base.Channel.GetPlanWithMissonCheckedCountByDateRangeAsync(dateStart, dateEnd);
         }
+        
+        public PMSLargeScreen.PMSMainService.DcPlanWithMisson[] GetPlanWithMissonCheckedByDateRange2(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedByDateRange2(skip, take, dateStart, dateEnd, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanWithMisson[]> GetPlanWithMissonCheckedByDateRange2Async(int skip, int take, System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedByDateRange2Async(skip, take, dateStart, dateEnd, composition);
+        }
+        
+        public int GetPlanWithMissonCheckedCountByDateRange2(System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedCountByDateRange2(dateStart, dateEnd, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanWithMissonCheckedCountByDateRange2Async(System.DateTime dateStart, System.DateTime dateEnd, string composition) {
+            return base.Channel.GetPlanWithMissonCheckedCountByDateRange2Async(dateStart, dateEnd, composition);
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcPlanWithMisson[] GetPlanExtra(int skip, int take, string searchCode, string composition) {
+            return base.Channel.GetPlanExtra(skip, take, searchCode, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlanWithMisson[]> GetPlanExtraAsync(int skip, int take, string searchCode, string composition) {
+            return base.Channel.GetPlanExtraAsync(skip, take, searchCode, composition);
+        }
+        
+        public int GetPlanExtraCount(string searchCode, string composition) {
+            return base.Channel.GetPlanExtraCount(searchCode, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition) {
+            return base.Channel.GetPlanExtraCountAsync(searchCode, composition);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6398,6 +7521,18 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/UpdateDelivery", ReplyAction="http://tempuri.org/IDeliveryService/UpdateDeliveryResponse")]
         System.Threading.Tasks.Task<int> UpdateDeliveryAsync(PMSLargeScreen.PMSMainService.DcDelivery model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryByUID", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryByUIDResponse")]
+        int AddDeliveryByUID(PMSLargeScreen.PMSMainService.DcDelivery model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryByUID", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddDeliveryByUIDAsync(PMSLargeScreen.PMSMainService.DcDelivery model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/UpdateDeliveryByUID", ReplyAction="http://tempuri.org/IDeliveryService/UpdateDeliveryByUIDResponse")]
+        int UpdateDeliveryByUID(PMSLargeScreen.PMSMainService.DcDelivery model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/UpdateDeliveryByUID", ReplyAction="http://tempuri.org/IDeliveryService/UpdateDeliveryByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateDeliveryByUIDAsync(PMSLargeScreen.PMSMainService.DcDelivery model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/DeleteDelivery", ReplyAction="http://tempuri.org/IDeliveryService/DeleteDeliveryResponse")]
         int DeleteDelivery(System.Guid id);
         
@@ -6422,6 +7557,18 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemsCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemsCountResponse")]
         System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
+        PMSLargeScreen.PMSMainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
+        int GetDeliveryItemExtraCount(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryItemResponse")]
         int AddDeliveryItem(PMSLargeScreen.PMSMainService.DcDeliveryItem model);
         
@@ -6433,6 +7580,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/UpdateDeliveryItemResponse")]
         System.Threading.Tasks.Task<int> UpdateDeliveryItemAsync(PMSLargeScreen.PMSMainService.DcDeliveryItem model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryItemByUID", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryItemByUIDResponse")]
+        int AddDeliveryItemByUID(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryItemByUID", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryItemByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddDeliveryItemByUIDAsync(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUID", ReplyAction="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUIDResponse")]
+        int UpdateDeliveryItemByUID(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUID", ReplyAction="http://tempuri.org/IDeliveryService/UpdateDeliveryItemByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateDeliveryItemByUIDAsync(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/DeleteDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/DeleteDeliveryItemResponse")]
         int DeleteDeliveryItem(System.Guid id);
@@ -6516,6 +7675,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateDeliveryAsync(model);
         }
         
+        public int AddDeliveryByUID(PMSLargeScreen.PMSMainService.DcDelivery model, string uid) {
+            return base.Channel.AddDeliveryByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddDeliveryByUIDAsync(PMSLargeScreen.PMSMainService.DcDelivery model, string uid) {
+            return base.Channel.AddDeliveryByUIDAsync(model, uid);
+        }
+        
+        public int UpdateDeliveryByUID(PMSLargeScreen.PMSMainService.DcDelivery model, string uid) {
+            return base.Channel.UpdateDeliveryByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateDeliveryByUIDAsync(PMSLargeScreen.PMSMainService.DcDelivery model, string uid) {
+            return base.Channel.UpdateDeliveryByUIDAsync(model, uid);
+        }
+        
         public int DeleteDelivery(System.Guid id) {
             return base.Channel.DeleteDelivery(id);
         }
@@ -6548,6 +7723,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetDeliveryItemsCountAsync(productid, composition);
         }
         
+        public PMSLargeScreen.PMSMainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtra(skip, take, productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtraAsync(skip, take, productid, composition);
+        }
+        
+        public int GetDeliveryItemExtraCount(string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtraCount(productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition) {
+            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition);
+        }
+        
         public int AddDeliveryItem(PMSLargeScreen.PMSMainService.DcDeliveryItem model) {
             return base.Channel.AddDeliveryItem(model);
         }
@@ -6564,12 +7755,290 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateDeliveryItemAsync(model);
         }
         
+        public int AddDeliveryItemByUID(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid) {
+            return base.Channel.AddDeliveryItemByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddDeliveryItemByUIDAsync(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid) {
+            return base.Channel.AddDeliveryItemByUIDAsync(model, uid);
+        }
+        
+        public int UpdateDeliveryItemByUID(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid) {
+            return base.Channel.UpdateDeliveryItemByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateDeliveryItemByUIDAsync(PMSLargeScreen.PMSMainService.DcDeliveryItem model, string uid) {
+            return base.Channel.UpdateDeliveryItemByUIDAsync(model, uid);
+        }
+        
         public int DeleteDeliveryItem(System.Guid id) {
             return base.Channel.DeleteDeliveryItem(id);
         }
         
         public System.Threading.Tasks.Task<int> DeleteDeliveryItemAsync(System.Guid id) {
             return base.Channel.DeleteDeliveryItemAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IPlateService")]
+    public interface IPlateService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlates", ReplyAction="http://tempuri.org/IPlateService/GetPlatesResponse")]
+        PMSLargeScreen.PMSMainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlates", ReplyAction="http://tempuri.org/IPlateService/GetPlatesResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCount", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountResponse")]
+        int GetPlateCount(string platelot, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCount", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/AddPlate", ReplyAction="http://tempuri.org/IPlateService/AddPlateResponse")]
+        int AddPlate(PMSLargeScreen.PMSMainService.DcPlate model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/AddPlate", ReplyAction="http://tempuri.org/IPlateService/AddPlateResponse")]
+        System.Threading.Tasks.Task<int> AddPlateAsync(PMSLargeScreen.PMSMainService.DcPlate model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/UpdatePlate", ReplyAction="http://tempuri.org/IPlateService/UpdatePlateResponse")]
+        int UpdatePlate(PMSLargeScreen.PMSMainService.DcPlate model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/UpdatePlate", ReplyAction="http://tempuri.org/IPlateService/UpdatePlateResponse")]
+        System.Threading.Tasks.Task<int> UpdatePlateAsync(PMSLargeScreen.PMSMainService.DcPlate model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/AddPlateByUID", ReplyAction="http://tempuri.org/IPlateService/AddPlateByUIDResponse")]
+        int AddPlateByUID(PMSLargeScreen.PMSMainService.DcPlate model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/AddPlateByUID", ReplyAction="http://tempuri.org/IPlateService/AddPlateByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddPlateByUIDAsync(PMSLargeScreen.PMSMainService.DcPlate model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/UpdatePlateByUID", ReplyAction="http://tempuri.org/IPlateService/UpdatePlateByUIDResponse")]
+        int UpdatePlateByUID(PMSLargeScreen.PMSMainService.DcPlate model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/UpdatePlateByUID", ReplyAction="http://tempuri.org/IPlateService/UpdatePlateByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdatePlateByUIDAsync(PMSLargeScreen.PMSMainService.DcPlate model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/DeletePlate", ReplyAction="http://tempuri.org/IPlateService/DeletePlateResponse")]
+        int DeletePlate(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/DeletePlate", ReplyAction="http://tempuri.org/IPlateService/DeletePlateResponse")]
+        System.Threading.Tasks.Task<int> DeletePlateAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IPlateServiceChannel : PMSLargeScreen.PMSMainService.IPlateService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class PlateServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IPlateService>, PMSLargeScreen.PMSMainService.IPlateService {
+        
+        public PlateServiceClient() {
+        }
+        
+        public PlateServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public PlateServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PlateServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public PlateServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier) {
+            return base.Channel.GetPlates(skip, take, platelot, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier) {
+            return base.Channel.GetPlatesAsync(skip, take, platelot, supplier);
+        }
+        
+        public int GetPlateCount(string platelot, string supplier) {
+            return base.Channel.GetPlateCount(platelot, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier) {
+            return base.Channel.GetPlateCountAsync(platelot, supplier);
+        }
+        
+        public int AddPlate(PMSLargeScreen.PMSMainService.DcPlate model) {
+            return base.Channel.AddPlate(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddPlateAsync(PMSLargeScreen.PMSMainService.DcPlate model) {
+            return base.Channel.AddPlateAsync(model);
+        }
+        
+        public int UpdatePlate(PMSLargeScreen.PMSMainService.DcPlate model) {
+            return base.Channel.UpdatePlate(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdatePlateAsync(PMSLargeScreen.PMSMainService.DcPlate model) {
+            return base.Channel.UpdatePlateAsync(model);
+        }
+        
+        public int AddPlateByUID(PMSLargeScreen.PMSMainService.DcPlate model, string uid) {
+            return base.Channel.AddPlateByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddPlateByUIDAsync(PMSLargeScreen.PMSMainService.DcPlate model, string uid) {
+            return base.Channel.AddPlateByUIDAsync(model, uid);
+        }
+        
+        public int UpdatePlateByUID(PMSLargeScreen.PMSMainService.DcPlate model, string uid) {
+            return base.Channel.UpdatePlateByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdatePlateByUIDAsync(PMSLargeScreen.PMSMainService.DcPlate model, string uid) {
+            return base.Channel.UpdatePlateByUIDAsync(model, uid);
+        }
+        
+        public int DeletePlate(System.Guid id) {
+            return base.Channel.DeletePlate(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeletePlateAsync(System.Guid id) {
+            return base.Channel.DeletePlateAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IProductService")]
+    public interface IProductService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
+        PMSLargeScreen.PMSMainService.DcProduct[] GetProducts(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcProduct[]> GetProductsAsync(int skip, int take, string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
+        int GetProductCount(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
+        System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
+        int AddProduct(PMSLargeScreen.PMSMainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
+        System.Threading.Tasks.Task<int> AddProductAsync(PMSLargeScreen.PMSMainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        int UpdateProduct(PMSLargeScreen.PMSMainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<int> UpdateProductAsync(PMSLargeScreen.PMSMainService.DcProduct model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProductByUID", ReplyAction="http://tempuri.org/IProductService/AddProductByUIDResponse")]
+        int AddProductByUID(PMSLargeScreen.PMSMainService.DcProduct model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProductByUID", ReplyAction="http://tempuri.org/IProductService/AddProductByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddProductByUIDAsync(PMSLargeScreen.PMSMainService.DcProduct model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProductByUID", ReplyAction="http://tempuri.org/IProductService/UpdateProductByUIDResponse")]
+        int UpdateProductByUID(PMSLargeScreen.PMSMainService.DcProduct model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProductByUID", ReplyAction="http://tempuri.org/IProductService/UpdateProductByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateProductByUIDAsync(PMSLargeScreen.PMSMainService.DcProduct model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
+        int DeleteProduct(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
+        System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IProductServiceChannel : PMSLargeScreen.PMSMainService.IProductService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProductServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IProductService>, PMSLargeScreen.PMSMainService.IProductService {
+        
+        public ProductServiceClient() {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSLargeScreen.PMSMainService.DcProduct[] GetProducts(int skip, int take, string productid, string composition) {
+            return base.Channel.GetProducts(skip, take, productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcProduct[]> GetProductsAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetProductsAsync(skip, take, productid, composition);
+        }
+        
+        public int GetProductCount(string productid, string composition) {
+            return base.Channel.GetProductCount(productid, composition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition) {
+            return base.Channel.GetProductCountAsync(productid, composition);
+        }
+        
+        public int AddProduct(PMSLargeScreen.PMSMainService.DcProduct model) {
+            return base.Channel.AddProduct(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddProductAsync(PMSLargeScreen.PMSMainService.DcProduct model) {
+            return base.Channel.AddProductAsync(model);
+        }
+        
+        public int UpdateProduct(PMSLargeScreen.PMSMainService.DcProduct model) {
+            return base.Channel.UpdateProduct(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateProductAsync(PMSLargeScreen.PMSMainService.DcProduct model) {
+            return base.Channel.UpdateProductAsync(model);
+        }
+        
+        public int AddProductByUID(PMSLargeScreen.PMSMainService.DcProduct model, string uid) {
+            return base.Channel.AddProductByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddProductByUIDAsync(PMSLargeScreen.PMSMainService.DcProduct model, string uid) {
+            return base.Channel.AddProductByUIDAsync(model, uid);
+        }
+        
+        public int UpdateProductByUID(PMSLargeScreen.PMSMainService.DcProduct model, string uid) {
+            return base.Channel.UpdateProductByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateProductByUIDAsync(PMSLargeScreen.PMSMainService.DcProduct model, string uid) {
+            return base.Channel.UpdateProductByUIDAsync(model, uid);
+        }
+        
+        public int DeleteProduct(System.Guid id) {
+            return base.Channel.DeleteProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id) {
+            return base.Channel.DeleteProductAsync(id);
         }
     }
     
@@ -6589,17 +8058,41 @@ namespace PMSLargeScreen.PMSMainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPage", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountBySearchInPageResponse")]
         System.Threading.Tasks.Task<int> GetRecordTestCountBySearchInPageAsync(string productId, string compositionStd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCheckedResponse")]
+        PMSLargeScreen.PMSMainService.DcRecordTest[] GetRecordTestChecked(int skip, int take, string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCheckedResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordTest[]> GetRecordTestCheckedAsync(int skip, int take, string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountCheckedResponse")]
+        int GetRecordTestCountChecked(string productId, string compositionStd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestCountChecked", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestCountCheckedResponse")]
+        System.Threading.Tasks.Task<int> GetRecordTestCountCheckedAsync(string productId, string compositionStd);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestResponse")]
         int AddRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestResponse")]
         System.Threading.Tasks.Task<int> AddRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestByUIDResponse")]
+        int AddRecordTestByUID(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/AddRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/AddRecordTestByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordTestByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse")]
         int UpdateRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestResponse")]
         System.Threading.Tasks.Task<int> UpdateRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestByUIDResponse")]
+        int UpdateRecordTestByUID(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/UpdateRecordTestByUID", ReplyAction="http://tempuri.org/IRecordTestService/UpdateRecordTestByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordTestByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/DeleteRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse")]
         int DeleteRecordTest(System.Guid id);
@@ -6651,6 +8144,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.GetRecordTestCountBySearchInPageAsync(productId, compositionStd);
         }
         
+        public PMSLargeScreen.PMSMainService.DcRecordTest[] GetRecordTestChecked(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestChecked(skip, take, productId, compositionStd);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordTest[]> GetRecordTestCheckedAsync(int skip, int take, string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCheckedAsync(skip, take, productId, compositionStd);
+        }
+        
+        public int GetRecordTestCountChecked(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCountChecked(productId, compositionStd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetRecordTestCountCheckedAsync(string productId, string compositionStd) {
+            return base.Channel.GetRecordTestCountCheckedAsync(productId, compositionStd);
+        }
+        
         public int AddRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model) {
             return base.Channel.AddRecordTest(model);
         }
@@ -6659,12 +8168,28 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.AddRecordTestAsync(model);
         }
         
+        public int AddRecordTestByUID(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid) {
+            return base.Channel.AddRecordTestByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordTestByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid) {
+            return base.Channel.AddRecordTestByUIDAsync(model, uid);
+        }
+        
         public int UpdateRecordTest(PMSLargeScreen.PMSMainService.DcRecordTest model) {
             return base.Channel.UpdateRecordTest(model);
         }
         
         public System.Threading.Tasks.Task<int> UpdateRecordTestAsync(PMSLargeScreen.PMSMainService.DcRecordTest model) {
             return base.Channel.UpdateRecordTestAsync(model);
+        }
+        
+        public int UpdateRecordTestByUID(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid) {
+            return base.Channel.UpdateRecordTestByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordTestByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordTest model, string uid) {
+            return base.Channel.UpdateRecordTestByUIDAsync(model, uid);
         }
         
         public int DeleteRecordTest(System.Guid id) {
@@ -6703,6 +8228,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateReocrdVHP", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateReocrdVHPResponse")]
         System.Threading.Tasks.Task<int> UpdateReocrdVHPAsync(PMSLargeScreen.PMSMainService.DcRecordVHP model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHPByUID", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPByUIDResponse")]
+        int AddRecordVHPByUID(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/AddRecordVHPByUID", ReplyAction="http://tempuri.org/IRecordVHPService/AddRecordVHPByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordVHPByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUID", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUIDResponse")]
+        int UpdateRecordVHPByUID(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUID", ReplyAction="http://tempuri.org/IRecordVHPService/UpdateRecordVHPByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordVHPByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordVHPService/DeleteRecordVHP", ReplyAction="http://tempuri.org/IRecordVHPService/DeleteRecordVHPResponse")]
         int DeleteRecordVHP(System.Guid id);
@@ -6770,6 +8307,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateReocrdVHPAsync(model);
         }
         
+        public int AddRecordVHPByUID(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid) {
+            return base.Channel.AddRecordVHPByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordVHPByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid) {
+            return base.Channel.AddRecordVHPByUIDAsync(model, uid);
+        }
+        
+        public int UpdateRecordVHPByUID(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid) {
+            return base.Channel.UpdateRecordVHPByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordVHPByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordVHP model, string uid) {
+            return base.Channel.UpdateRecordVHPByUIDAsync(model, uid);
+        }
+        
         public int DeleteRecordVHP(System.Guid id) {
             return base.Channel.DeleteRecordVHP(id);
         }
@@ -6820,6 +8373,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/UpdateRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/UpdateRecordMillingResponse")]
         System.Threading.Tasks.Task<int> UpdateRecordMillingAsync(PMSLargeScreen.PMSMainService.DcRecordMilling model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/AddRecordMillingByUID", ReplyAction="http://tempuri.org/IRecordMillingService/AddRecordMillingByUIDResponse")]
+        int AddRecordMillingByUID(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/AddRecordMillingByUID", ReplyAction="http://tempuri.org/IRecordMillingService/AddRecordMillingByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordMillingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUID", ReplyAction="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUIDResponse")]
+        int UpdateRecordMillingByUID(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUID", ReplyAction="http://tempuri.org/IRecordMillingService/UpdateRecordMillingByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordMillingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/DeleteRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/DeleteRecordMillingResponse")]
         int DeleteRecordMilling(System.Guid id);
@@ -6903,6 +8468,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateRecordMillingAsync(model);
         }
         
+        public int AddRecordMillingByUID(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid) {
+            return base.Channel.AddRecordMillingByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordMillingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid) {
+            return base.Channel.AddRecordMillingByUIDAsync(model, uid);
+        }
+        
+        public int UpdateRecordMillingByUID(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid) {
+            return base.Channel.UpdateRecordMillingByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordMillingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMilling model, string uid) {
+            return base.Channel.UpdateRecordMillingByUIDAsync(model, uid);
+        }
+        
         public int DeleteRecordMilling(System.Guid id) {
             return base.Channel.DeleteRecordMilling(id);
         }
@@ -6953,6 +8534,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachine", ReplyAction="http://tempuri.org/IRecordMachineService/UpdateRecordMachineResponse")]
         System.Threading.Tasks.Task<int> UpdateRecordMachineAsync(PMSLargeScreen.PMSMainService.DcRecordMachine model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/AddRecordMachineByUID", ReplyAction="http://tempuri.org/IRecordMachineService/AddRecordMachineByUIDResponse")]
+        int AddRecordMachineByUID(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/AddRecordMachineByUID", ReplyAction="http://tempuri.org/IRecordMachineService/AddRecordMachineByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordMachineByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUID", ReplyAction="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUIDResponse")]
+        int UpdateRecordMachineByUID(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUID", ReplyAction="http://tempuri.org/IRecordMachineService/UpdateRecordMachineByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordMachineByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMachineService/DeleteRecordMachine", ReplyAction="http://tempuri.org/IRecordMachineService/DeleteRecordMachineResponse")]
         int DeleteRecordMachine(System.Guid id);
@@ -7036,6 +8629,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateRecordMachineAsync(model);
         }
         
+        public int AddRecordMachineByUID(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid) {
+            return base.Channel.AddRecordMachineByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordMachineByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid) {
+            return base.Channel.AddRecordMachineByUIDAsync(model, uid);
+        }
+        
+        public int UpdateRecordMachineByUID(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid) {
+            return base.Channel.UpdateRecordMachineByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordMachineByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordMachine model, string uid) {
+            return base.Channel.UpdateRecordMachineByUIDAsync(model, uid);
+        }
+        
         public int DeleteRecordMachine(System.Guid id) {
             return base.Channel.DeleteRecordMachine(id);
         }
@@ -7086,6 +8695,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldResponse")]
         System.Threading.Tasks.Task<int> UpdateRecordDeMoldAsync(PMSLargeScreen.PMSMainService.DcRecordDeMold model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUID", ReplyAction="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUIDResponse")]
+        int AddRecordDeMoldByUID(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUID", ReplyAction="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordDeMoldByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUID", ReplyAction="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUIDResponse")]
+        int UpdateRecordDeMoldByUID(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUID", ReplyAction="http://tempuri.org/IRecordDeMoldService/UpdateRecordDeMoldByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordDeMoldByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/DeleteRecordDeMoldResponse")]
         int DeleteRecordDeMold(System.Guid id);
@@ -7169,6 +8790,22 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateRecordDeMoldAsync(model);
         }
         
+        public int AddRecordDeMoldByUID(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid) {
+            return base.Channel.AddRecordDeMoldByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordDeMoldByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid) {
+            return base.Channel.AddRecordDeMoldByUIDAsync(model, uid);
+        }
+        
+        public int UpdateRecordDeMoldByUID(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid) {
+            return base.Channel.UpdateRecordDeMoldByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordDeMoldByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordDeMold model, string uid) {
+            return base.Channel.UpdateRecordDeMoldByUIDAsync(model, uid);
+        }
+        
         public int DeleteRecordDeMold(System.Guid id) {
             return base.Channel.DeleteRecordDeMold(id);
         }
@@ -7183,16 +8820,16 @@ namespace PMSLargeScreen.PMSMainService {
     public interface IRecordBondingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsResponse")]
-        PMSLargeScreen.PMSMainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string platelot);
+        PMSLargeScreen.PMSMainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingsResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string platelot);
+        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
-        int GetRecordBondingCount(string productid, string platelot);
+        int GetRecordBondingCount(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingCount", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingCountResponse")]
-        System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string platelot);
+        System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/AddRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingResponse")]
         int AddRecordBongding(PMSLargeScreen.PMSMainService.DcRecordBonding model);
@@ -7205,6 +8842,18 @@ namespace PMSLargeScreen.PMSMainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingResponse")]
         System.Threading.Tasks.Task<int> UpdateRecordBongdingAsync(PMSLargeScreen.PMSMainService.DcRecordBonding model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUID", ReplyAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUIDResponse")]
+        int AddRecordBongdingByUID(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUID", ReplyAction="http://tempuri.org/IRecordBondingService/AddRecordBongdingByUIDResponse")]
+        System.Threading.Tasks.Task<int> AddRecordBongdingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUID", ReplyAction="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUIDResponse")]
+        int UpdateRecordBongdingByUID(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUID", ReplyAction="http://tempuri.org/IRecordBondingService/UpdateRecordBongdingByUIDResponse")]
+        System.Threading.Tasks.Task<int> UpdateRecordBongdingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/DeleteRecordBongdingResponse")]
         int DeleteRecordBongding(System.Guid id);
@@ -7240,20 +8889,20 @@ namespace PMSLargeScreen.PMSMainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSLargeScreen.PMSMainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string platelot) {
-            return base.Channel.GetRecordBondings(skip, take, productid, platelot);
+        public PMSLargeScreen.PMSMainService.DcRecordBonding[] GetRecordBondings(int skip, int take, string productid, string composition) {
+            return base.Channel.GetRecordBondings(skip, take, productid, composition);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string platelot) {
-            return base.Channel.GetRecordBondingsAsync(skip, take, productid, platelot);
+        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcRecordBonding[]> GetRecordBondingsAsync(int skip, int take, string productid, string composition) {
+            return base.Channel.GetRecordBondingsAsync(skip, take, productid, composition);
         }
         
-        public int GetRecordBondingCount(string productid, string platelot) {
-            return base.Channel.GetRecordBondingCount(productid, platelot);
+        public int GetRecordBondingCount(string productid, string composition) {
+            return base.Channel.GetRecordBondingCount(productid, composition);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string platelot) {
-            return base.Channel.GetRecordBondingCountAsync(productid, platelot);
+        public System.Threading.Tasks.Task<int> GetRecordBondingCountAsync(string productid, string composition) {
+            return base.Channel.GetRecordBondingCountAsync(productid, composition);
         }
         
         public int AddRecordBongding(PMSLargeScreen.PMSMainService.DcRecordBonding model) {
@@ -7272,115 +8921,28 @@ namespace PMSLargeScreen.PMSMainService {
             return base.Channel.UpdateRecordBongdingAsync(model);
         }
         
+        public int AddRecordBongdingByUID(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid) {
+            return base.Channel.AddRecordBongdingByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddRecordBongdingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid) {
+            return base.Channel.AddRecordBongdingByUIDAsync(model, uid);
+        }
+        
+        public int UpdateRecordBongdingByUID(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid) {
+            return base.Channel.UpdateRecordBongdingByUID(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateRecordBongdingByUIDAsync(PMSLargeScreen.PMSMainService.DcRecordBonding model, string uid) {
+            return base.Channel.UpdateRecordBongdingByUIDAsync(model, uid);
+        }
+        
         public int DeleteRecordBongding(System.Guid id) {
             return base.Channel.DeleteRecordBongding(id);
         }
         
         public System.Threading.Tasks.Task<int> DeleteRecordBongdingAsync(System.Guid id) {
             return base.Channel.DeleteRecordBongdingAsync(id);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="PMSMainService.IProductService")]
-    public interface IProductService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
-        PMSLargeScreen.PMSMainService.DcProduct[] GetProducts(int skip, int take, string productid, string composition);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcProduct[]> GetProductsAsync(int skip, int take, string productid, string composition);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
-        int GetProductCount(string productid, string composition);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
-        System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
-        int AddProduct(PMSLargeScreen.PMSMainService.DcProduct model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
-        System.Threading.Tasks.Task<int> AddProductAsync(PMSLargeScreen.PMSMainService.DcProduct model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
-        int UpdateProduct(PMSLargeScreen.PMSMainService.DcProduct model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
-        System.Threading.Tasks.Task<int> UpdateProductAsync(PMSLargeScreen.PMSMainService.DcProduct model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
-        int DeleteProduct(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
-        System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IProductServiceChannel : PMSLargeScreen.PMSMainService.IProductService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ProductServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.PMSMainService.IProductService>, PMSLargeScreen.PMSMainService.IProductService {
-        
-        public ProductServiceClient() {
-        }
-        
-        public ProductServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public ProductServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ProductServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ProductServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public PMSLargeScreen.PMSMainService.DcProduct[] GetProducts(int skip, int take, string productid, string composition) {
-            return base.Channel.GetProducts(skip, take, productid, composition);
-        }
-        
-        public System.Threading.Tasks.Task<PMSLargeScreen.PMSMainService.DcProduct[]> GetProductsAsync(int skip, int take, string productid, string composition) {
-            return base.Channel.GetProductsAsync(skip, take, productid, composition);
-        }
-        
-        public int GetProductCount(string productid, string composition) {
-            return base.Channel.GetProductCount(productid, composition);
-        }
-        
-        public System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition) {
-            return base.Channel.GetProductCountAsync(productid, composition);
-        }
-        
-        public int AddProduct(PMSLargeScreen.PMSMainService.DcProduct model) {
-            return base.Channel.AddProduct(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> AddProductAsync(PMSLargeScreen.PMSMainService.DcProduct model) {
-            return base.Channel.AddProductAsync(model);
-        }
-        
-        public int UpdateProduct(PMSLargeScreen.PMSMainService.DcProduct model) {
-            return base.Channel.UpdateProduct(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateProductAsync(PMSLargeScreen.PMSMainService.DcProduct model) {
-            return base.Channel.UpdateProductAsync(model);
-        }
-        
-        public int DeleteProduct(System.Guid id) {
-            return base.Channel.DeleteProduct(id);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id) {
-            return base.Channel.DeleteProductAsync(id);
         }
     }
 }
