@@ -49,7 +49,7 @@ namespace PMSClient.ViewModel
                 Customers.Clear();
                 using (var service=new CustomerServiceClient())
                 {
-                    service.GetCustomer().ToList().ForEach(i => Customers.Add(i));
+                    service.GetCustomer().OrderBy(i=>i.CustomerName).ToList().ForEach(i => Customers.Add(i));
                 }
             }
             catch (Exception ex)

@@ -35,7 +35,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = $"{CurrentYear}-客户";
+                AxisXTitle = $"{CurrentYear}的客户";
                 AxisYTitle = "数量";
                 using (var service = new MainStatisticServiceClient())
                 {
@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = $"{CurrentYear}-季度";
+                AxisXTitle = $"{CurrentYear}的季度";
                 AxisYTitle = "数量";
                 using (var service = new MainStatisticServiceClient())
                 {
@@ -103,7 +103,7 @@ namespace PMSClient.ViewModel
                         labelByCustomer.Add(i.Key);
                         ordeByCustomer.Add((int)i.Value);
 
-                        sb.AppendLine($"[{i.Key}]，共有{i.Value}个订单");
+                        sb.AppendLine($"[{CurrentYear}第{i.Key}季度]，共有{i.Value}个订单");
 
                     });
                     var series = new ColumnSeries();
@@ -180,7 +180,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = $"年份,开始于{FirstYear}";
+                AxisXTitle = $"全部年份,开始于{FirstYear}";
                 AxisYTitle = "数量";
                 using (var service = new MainStatisticServiceClient())
                 {

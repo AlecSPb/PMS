@@ -23,6 +23,7 @@ namespace PMSClient.ViewModel
             ByYear = new RelayCommand(ActionByYear);
             ByMonth = new RelayCommand(ActionByMonth);
             ByDevice = new RelayCommand(ActionByDevice);
+            BySeason = new RelayCommand(ActionBySeason);
         }
 
         private void ActionByDevice()
@@ -73,7 +74,48 @@ namespace PMSClient.ViewModel
 
         private void ActionBySeason()
         {
-            throw new NotImplementedException();
+            try
+            {
+                StatisticChartData.Clear();
+                StatisticChartLabels.Clear();
+                AxisXTitle = $"{CurrentYear}的季度";
+                AxisYTitle = "热压次数";
+                using (var service = new MainStatisticServiceClient())
+                {
+                    var result = service.GetPlanStatisticBySeason(CurrentYear);
+                    if (result.Count() == 0)
+                    {
+                        PMSDialogService.ShowYes("没有记录");
+                        return;
+                    }
+                    var tempValues = new ChartValues<int>();
+                    var tempLabels = new List<string>();
+                    var sb = new StringBuilder();
+                    sb.AppendLine("按季度统计结果:");
+                    tempValues.Clear();
+                    tempLabels.Clear();
+                    result.ToList().ForEach(i =>
+                    {
+                        tempLabels.Add(i.Key);
+                        tempValues.Add((int)i.Value);
+
+                        sb.AppendLine($"[{CurrentYear}第{i.Key}季度]，共热压{i.Value}次");
+
+                    });
+                    var series = new ColumnSeries();
+                    series.Title = "热压次数";
+                    series.Values = tempValues;
+                    StatisticChartData.Add(series);
+                    tempLabels.ForEach(i => StatisticChartLabels.Add(i));
+
+                    StatisticTextData = sb.ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionByMonth()
@@ -82,7 +124,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = $"{CurrentYear}";
+                AxisXTitle = $"{CurrentYear}的月份";
                 AxisYTitle = "热压次数";
                 using (var service = new MainStatisticServiceClient())
                 {
@@ -128,7 +170,7 @@ namespace PMSClient.ViewModel
             {
                 StatisticChartData.Clear();
                 StatisticChartLabels.Clear();
-                AxisXTitle = "年份";
+                AxisXTitle = $"全部年份,开始于{FirstYear}";
                 AxisYTitle = "热压次数";
                 using (var service = new MainStatisticServiceClient())
                 {
