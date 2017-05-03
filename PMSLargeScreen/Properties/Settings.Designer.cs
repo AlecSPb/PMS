@@ -22,5 +22,17 @@ namespace PMSLargeScreen.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("120000")]
+        public double UpdateInterval {
+            get {
+                return ((double)(this["UpdateInterval"]));
+            }
+            set {
+                this["UpdateInterval"] = value;
+            }
+        }
     }
 }

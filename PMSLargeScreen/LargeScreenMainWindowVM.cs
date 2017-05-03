@@ -19,10 +19,11 @@ namespace PMSLargeScreen
         public LargeScreenMainWindowVM()
         {
             InitializeAll();
+            IntervalLoadData = Properties.Settings.Default.UpdateInterval;
         }
 
-        private const double IntervalDistributeData = 5000;
-        private const double IntervalLoadData = 120000;
+        private const double IntervalDistributeData = 10000;
+        private double IntervalLoadData = 120000;
 
         private void InitializeAll()
         {
