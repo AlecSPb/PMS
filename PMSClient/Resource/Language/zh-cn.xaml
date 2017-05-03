@@ -170,7 +170,7 @@
 
 
     <sys:String x:Key="HelpTipPlanVHPEdit">
-        注意：可自行输入，最好先选择，没有的项目填充0，真空可以直接输入小数
+        注意：尽量选择，没有自己输入，不需要的项目填充0，同批次同台设备压多个成分任务的时候，要注意设置装料和热压参数相同
     </sys:String>
     <sys:String x:Key="HelpTipMisson">
         黄色标记的项目为未核验，核验后该计划才会公布

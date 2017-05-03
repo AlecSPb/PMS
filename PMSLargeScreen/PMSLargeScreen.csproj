@@ -88,11 +88,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\PMSMainService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="SingleUnit.xaml.cs">
       <DependentUpon>SingleUnit.xaml</DependentUpon>
     </Compile>
@@ -152,66 +147,6 @@
     <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcPlanExtra.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDelivery.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDeliveryItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDeliveryItemExtra.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialInventoryIn.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialInventoryOut.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialNeed.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialOrder.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialOrderItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcMaterialOrderItemExtra.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcOrder.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlanVHP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlanWithMisson.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcPlate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcProduct.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordBonding.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordDeMold.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordMachine.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordMilling.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordTest.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcRecordVHP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -227,35 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\LargeScreenService\" />
-    <WCFMetadataStorage Include="Service References\PMSMainService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSMainService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSMainService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSMainService\PMSService1.wsdl" />
-    <None Include="Service References\PMSMainService\PMSService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\PMSService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\PMSService32.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\PMSMainService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\PMSMainService\PMSService1.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\LargeScreenService\configuration91.svcinfo" />
@@ -264,6 +173,9 @@
     <None Include="Service References\LargeScreenService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcStatistic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\LargeScreenService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

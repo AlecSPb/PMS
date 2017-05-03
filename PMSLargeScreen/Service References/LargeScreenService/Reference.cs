@@ -1060,6 +1060,67 @@ namespace PMSLargeScreen.LargeScreenService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcStatistic", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcStatistic : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Key {
+            get {
+                return this.KeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KeyField, value) != true)) {
+                    this.KeyField = value;
+                    this.RaisePropertyChanged("Key");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LargeScreenService.ILargeScreenService")]
     public interface ILargeScreenService {
@@ -1069,6 +1130,12 @@ namespace PMSLargeScreen.LargeScreenService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanByDate", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanByDateResponse")]
         System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanExtra[]> GetPlanByDateAsync(System.DateTime planDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanStatisticResponse")]
+        PMSLargeScreen.LargeScreenService.DcStatistic[] GetPlanStatistic();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanStatisticResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcStatistic[]> GetPlanStatisticAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1104,6 +1171,14 @@ namespace PMSLargeScreen.LargeScreenService {
         
         public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanExtra[]> GetPlanByDateAsync(System.DateTime planDate) {
             return base.Channel.GetPlanByDateAsync(planDate);
+        }
+        
+        public PMSLargeScreen.LargeScreenService.DcStatistic[] GetPlanStatistic() {
+            return base.Channel.GetPlanStatistic();
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcStatistic[]> GetPlanStatisticAsync() {
+            return base.Channel.GetPlanStatisticAsync();
         }
     }
 }

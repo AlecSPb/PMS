@@ -13,5 +13,7 @@ namespace PMSWCFService.ServiceContracts
     {
         [OperationContract]
         List<DcPlanExtra> GetPlanByDate(DateTime planDate);
+        [OperationContract]
+        List<DcStatistic> GetPlanStatistic();
     }
 }

@@ -15,12 +15,12 @@ namespace PMSWCFService
         {
             try
             {
-                using (var dc = new PMSDAL.PMSDbContext())
+                using (var dc = new PMSDbContext())
                 {
                     var dateStart = planDate.Date;
                     var dateEnd = planDate.Date.AddDays(1).Date;
                     var queryPlan = from p in dc.VHPPlans
-                                    where p.State == PMSCommon.CommonState.已核验.ToString()
+                                    where p.State == PMSCommon.VHPPlanState.已核验.ToString()
                                     && p.PlanDate >= dateStart && p.PlanDate < dateEnd
                                     orderby p.PlanDate descending
                                     select p;
@@ -37,6 +37,29 @@ namespace PMSWCFService
                     });
 
                     var result = Mapper.Map<List<PMSPlanExtraModel>, List<DcPlanExtra>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcStatistic> GetPlanStatistic()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    List<DcStatistic> result = new List<DcStatistic>();
+                    var count = (from i in dc.VHPPlans
+                                 where i.State == PMSCommon.VHPPlanState.已核验.ToString()
+                                 select i).Count();
+                    result.Add(new DcStatistic { Key = "FinishedPlan", Value = count });
+
 
                     return result;
                 }

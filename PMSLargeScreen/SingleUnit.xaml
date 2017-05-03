@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
     <Border Style="{StaticResource StyleBorder}">
-        <Grid Background="LightYellow">
+        <Grid Background="LightYellow" Name="mainGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -16,12 +16,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="{Binding DeviceCode}" Style="{StaticResource StyleTextBlockBig}" FontSize="30" Foreground="Blue"/>
-                <TextBlock Text="{Binding PlanLot,StringFormat=批次{0}}" Style="{StaticResource StyleTextBlockBig}"  FontSize="30" Foreground="Blue"/>
+                <TextBlock Text="{Binding PlanLot,StringFormat=批次{0}}" Style="{StaticResource StyleTextBlockBig}"  FontSize="30" Foreground="Red"/>
+                <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" FontSize="30" Foreground="Blue"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig}"/>
-                <TextBlock Text="{Binding MoldInnerDiameter}" Style="{StaticResource StyleTextBlockBig}"/>
+                <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig}"/>
                 <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
@@ -31,18 +31,26 @@
                 <TextBlock Text="{Binding Temp,StringFormat=温度{0}℃}" Style="{StaticResource StyleTextBlockBig}"/>
                 <TextBlock Text="{Binding Pressure,StringFormat=压力{0}t}" Style="{StaticResource StyleTextBlockBig}"/>
                 <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig}"/>
-                <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
             </StackPanel>
             <ListBox Grid.Row="4" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
                      BorderThickness="0">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Style="{StaticResource StyleBorder}" Background="Transparent">
-                            <StackPanel>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
                                 <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig}"/>
-                                <TextBlock Text="{Binding SingleWeight,StringFormat=每片重{0}g}" Style="{StaticResource StyleTextBlockBig}"/>
-                                <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
-                            </StackPanel>
+                                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding SingleWeight,StringFormat=每片重{0}g}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
+                                </StackPanel>
+                                <TextBlock Grid.Row="2" Text="{Binding ProcessCode,StringFormat=工艺代码{0}}" Style="{StaticResource StyleTextBlockBig}"/>
+                            </Grid>
                         </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

@@ -1,6 +1,7 @@
 ﻿using PMSLargeScreen.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,11 @@ namespace PMSLargeScreen
         public SingleUnit()
         {
             InitializeComponent();
-            this.DataContext = CurrentModel;
+            //设计模式下显示数据
+            if (DesignerProperties.GetIsInDesignMode(this))
+            {
+                CurrentModel = new UnitModel();
+            }
         }
 
 
@@ -35,8 +40,13 @@ namespace PMSLargeScreen
         }
 
         public static readonly DependencyProperty CurrentModelProperty =
-            DependencyProperty.Register("CurrentModel", typeof(UnitModel), typeof(SingleUnit), new PropertyMetadata(new UnitModel()));
+            DependencyProperty.Register("CurrentModel", typeof(UnitModel), typeof(SingleUnit), new PropertyMetadata(PropertyChanged));
 
-
+        private static void PropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            SingleUnit source = (SingleUnit)d;
+            //不能直接用整个usercontrol，只能使用部分控件
+            source.mainGrid.DataContext = (UnitModel)e.NewValue;
+        }
     }
 }

@@ -13,16 +13,35 @@
   <wsdl:message name="ILargeScreenService_GetPlanByDate_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanByDateResponse" />
   </wsdl:message>
+  <wsdl:message name="ILargeScreenService_GetPlanStatistic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanStatistic" />
+  </wsdl:message>
+  <wsdl:message name="ILargeScreenService_GetPlanStatistic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanStatisticResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILargeScreenService">
     <wsdl:operation name="GetPlanByDate">
       <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetPlanByDate" message="tns:ILargeScreenService_GetPlanByDate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetPlanByDateResponse" message="tns:ILargeScreenService_GetPlanByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanStatistic">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetPlanStatistic" message="tns:ILargeScreenService_GetPlanStatistic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetPlanStatisticResponse" message="tns:ILargeScreenService_GetPlanStatistic_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="largescreen" type="tns:ILargeScreenService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetPlanByDate">
       <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetPlanByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanStatistic">
+      <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetPlanStatistic" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

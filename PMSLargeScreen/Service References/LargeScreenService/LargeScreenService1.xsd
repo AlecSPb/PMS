@@ -82,4 +82,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcPlanVHP" nillable="true" type="tns:DcPlanVHP" />
+  <xs:complexType name="ArrayOfDcStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcStatistic" nillable="true" type="tns:DcStatistic" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcStatistic" nillable="true" type="tns:ArrayOfDcStatistic" />
+  <xs:complexType name="DcStatistic">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcStatistic" nillable="true" type="tns:DcStatistic" />
 </xs:schema>

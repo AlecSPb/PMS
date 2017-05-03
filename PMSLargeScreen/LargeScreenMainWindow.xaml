@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border Style="{StaticResource StyleBorder}">
             <Grid Background="Orange">
@@ -22,8 +23,8 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}" Style="{StaticResource StyleTextBlockLightBig}"/>
-                <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=截止今日已经完成热压{0}机次}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}" Style="{StaticResource StyleTextBlockLightBig}" Foreground="Black"/>
+                <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=从2011年到现在，已经完成热压{0}次}" Style="{StaticResource StyleTextBlockLightBig}"/>
                 <Button Grid.Column="2" Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
             </Grid>
         </Border>
@@ -34,10 +35,13 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <local:SingleUnit  Grid.Column="0" x:Name="unit1" CurrentModel="{Binding Model1}"/>
-                <local:SingleUnit  Grid.Column="1" x:Name="unit2" CurrentModel="{Binding Model2}"/>
-                <local:SingleUnit  Grid.Column="2" x:Name="unit3" CurrentModel="{Binding Model3}"/>
+                <local:SingleUnit  Grid.Column="0" x:Name="unit1" CurrentModel="{Binding ModelList.[0]}" />
+                <local:SingleUnit  Grid.Column="1" x:Name="unit2" CurrentModel="{Binding ModelList.[1]}" />
+                <local:SingleUnit  Grid.Column="2" x:Name="unit3" CurrentModel="{Binding ModelList.[2]}" />
             </Grid>
         </Border>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Orange">
+            <TextBlock Text="状态栏" Style="{StaticResource StyleTextBlock}"/>
+        </StackPanel>
     </Grid>
 </Window>
