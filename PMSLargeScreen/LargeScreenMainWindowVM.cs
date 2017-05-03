@@ -126,6 +126,7 @@ namespace PMSLargeScreen
                 {
                     result = service.GetPlanByDate(CurrentDate.Date);
                 }
+                ErrorMessage = "其他信息";
 
                 AllModels.Clear();
                 //按批次分组
@@ -197,6 +198,7 @@ namespace PMSLargeScreen
                         FinishedPlanCount = 0;
                     }
                 }
+                ErrorMessage = "其他信息";
             }
             catch (Exception ex)
             {
