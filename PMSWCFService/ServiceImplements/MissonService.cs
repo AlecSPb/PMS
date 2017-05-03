@@ -7,6 +7,7 @@ using PMSWCFService.DataContracts;
 using PMSDAL;
 using AutoMapper;
 using PMSCommon;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -418,7 +419,7 @@ namespace PMSWCFService
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
                                      && o.CompositionStandard.Contains(composition)
-                                orderby p.PlanDate descending
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending,p.PlanLot descending,p.VHPDeviceCode descending
                                 select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
 
                     var final = query.Skip(skip).Take(take).ToList();
@@ -452,7 +453,6 @@ namespace PMSWCFService
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
                                      && o.CompositionStandard.Contains(composition)
-                                orderby p.PlanDate descending
                                 select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
                     return query.Count();
                 }

@@ -17,15 +17,19 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border Style="{StaticResource StyleBorder}">
-            <Grid Background="Orange">
+            <Grid Background="#004B8B">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}" Style="{StaticResource StyleTextBlockLightBig}" Foreground="Black"/>
+                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}" Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
                 <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=从2011年到现在，已经完成热压{0}次}" Style="{StaticResource StyleTextBlockLightBig}"/>
-                <Button Grid.Column="2" Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                    <TextBlock Text="{Binding IntervalRefreshDistribute,StringFormat=显示轮换间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                    <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
+                </StackPanel>
             </Grid>
         </Border>
         <Border Grid.Row="1" Style="{StaticResource StyleBorder}">
@@ -35,13 +39,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <local:SingleUnit  Grid.Column="0" x:Name="unit1" CurrentModel="{Binding ModelList.[0]}" />
-                <local:SingleUnit  Grid.Column="1" x:Name="unit2" CurrentModel="{Binding ModelList.[1]}" />
-                <local:SingleUnit  Grid.Column="2" x:Name="unit3" CurrentModel="{Binding ModelList.[2]}" />
+                <local:SingleUnit  Grid.Column="0" x:Name="unit1" CurrentModel="{Binding Model1}" />
+                <local:SingleUnit  Grid.Column="1" x:Name="unit2" CurrentModel="{Binding Model2}" />
+                <local:SingleUnit  Grid.Column="2" x:Name="unit3" CurrentModel="{Binding Model3}" />
             </Grid>
         </Border>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="Orange">
-            <TextBlock Text="状态栏" Style="{StaticResource StyleTextBlock}"/>
+        <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#CA5100">
+            <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
+            <TextBlock Text="{Binding Status2}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
+            <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
         </StackPanel>
     </Grid>
 </Window>

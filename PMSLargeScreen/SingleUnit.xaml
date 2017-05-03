@@ -12,7 +12,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
@@ -22,17 +21,13 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig}"/>
                 <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig}"/>
-                <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <TextBlock Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"/>
-            </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal">
                 <TextBlock Text="{Binding Temp,StringFormat=温度{0}℃}" Style="{StaticResource StyleTextBlockBig}"/>
                 <TextBlock Text="{Binding Pressure,StringFormat=压力{0}t}" Style="{StaticResource StyleTextBlockBig}"/>
                 <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig}"/>
             </StackPanel>
-            <ListBox Grid.Row="4" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
+            <ListBox Grid.Row="3" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
                      BorderThickness="0">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -44,12 +39,16 @@
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig}"/>
+                                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
+                                    <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
+                                </StackPanel>
                                 <StackPanel Grid.Row="1" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding SingleWeight,StringFormat=每片重{0}g}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding SingleWeight,StringFormat=单片{0}g}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
                                 </StackPanel>
-                                <TextBlock Grid.Row="2" Text="{Binding ProcessCode,StringFormat=工艺代码{0}}" Style="{StaticResource StyleTextBlockBig}"/>
+                                <TextBlock Grid.Row="2" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

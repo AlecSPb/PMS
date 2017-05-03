@@ -55,8 +55,10 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     List<DcStatistic> result = new List<DcStatistic>();
+                    var now = DateTime.Now.Date.AddDays(1);
                     var count = (from i in dc.VHPPlans
                                  where i.State == PMSCommon.VHPPlanState.已核验.ToString()
+                                 && i.PlanDate < now
                                  select i).Count();
                     result.Add(new DcStatistic { Key = "FinishedPlan", Value = count });
 
