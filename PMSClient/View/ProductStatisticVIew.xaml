@@ -37,7 +37,7 @@
                 <Button Content="{StaticResource  ButtonStatisticByProductType}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ByProductType}"/>
 
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-                <TextBlock  Style="{StaticResource StyleTextBlockWarning2}" Text="{StaticResource HelpTipStatisticDelivery}"/>
+                <TextBlock  Style="{StaticResource StyleTextBlockWarning2}" Text="{StaticResource HelpTipStatisticProduct}"/>
             </StackPanel>
             <Border Grid.Row="1" Style="{StaticResource StyleBorderCommon}">
                 <lvc:CartesianChart Series="{Binding StatisticChartData}" LegendLocation="Top">
