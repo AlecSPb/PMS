@@ -1,1 +1,7 @@
 ﻿2017-4-24 15:00更新Lenovo
+
+服务器上开通2个WCF服务，原来的端口是8002，现在的端口是8003
+8002是兼容给leon
+8003是用来测试？
+
+170504更新后要修改materialinventoryin的状态到inventorystate

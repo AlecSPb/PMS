@@ -77,6 +77,7 @@
     <Content Include="BasicDataService.svc" />
     <Content Include="HeartBeatService.svc" />
     <Content Include="HistoryService.svc" />
+    <Content Include="LargeScreenService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
@@ -94,6 +95,7 @@
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
+    <Compile Include="DataContracts\DcPlanExtra.cs" />
     <Compile Include="DataContracts\DcRecordBonding.cs" />
     <Compile Include="DataContracts\DcStatistic.cs" />
     <Compile Include="DataContracts\DcStatisticProduct.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
+    <Compile Include="DataContracts\Model\PMSPlanExtraModel.cs" />
     <Compile Include="DataContracts\DcProduct.cs" />
     <Compile Include="DataContracts\DcDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\DcPlate.cs" />
@@ -134,6 +137,7 @@
     <Compile Include="ServiceContracts\IElementService.cs" />
     <Compile Include="ServiceContracts\IHeartBeatSerive.cs" />
     <Compile Include="ServiceContracts\IHistoryService.cs" />
+    <Compile Include="ServiceContracts\ILargeScreenService.cs" />
     <Compile Include="ServiceContracts\IMaintenanceService.cs" />
     <Compile Include="ServiceContracts\IMaterialInventoryService.cs" />
     <Compile Include="ServiceContracts\IPlateService.cs" />
@@ -145,6 +149,7 @@
     <Compile Include="ServiceContracts\IMainStatisticService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
+    <Compile Include="ServiceImplements\LargeScreenService.cs" />
     <Compile Include="ServiceImplements\MainStatisticService.cs" />
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />

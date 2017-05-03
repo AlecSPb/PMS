@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSLargeScreen.Models;
+using PMSLargeScreen.LargeScreenService;
+using System.Timers;
 
 namespace PMSLargeScreen
 {
     public class LargeScreenMainWindowVM : ViewModelBase
     {
+        private Timer _timer;
         public LargeScreenMainWindowVM()
         {
             InitializeAll();
@@ -19,7 +22,24 @@ namespace PMSLargeScreen
         private void InitializeAll()
         {
             currentDate = DateTime.Now;
-            finishedPlanCount = 1000;
+            finishedPlanCount = 10000;
+            model1 = new UnitModel();
+            model2 = new UnitModel();
+            model3 = new UnitModel();
+
+            _timer = new Timer();
+            _timer.Interval = 1000;
+            _timer.Elapsed += _timer_Elapsed;
+            _timer.Start();
+        }
+
+        private void _timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            using (var service=new LargeScreenServiceClient())
+            {
+                var result = service.GetPlanByDate(CurrentDate.Date);
+
+            }
         }
 
         private DateTime currentDate;

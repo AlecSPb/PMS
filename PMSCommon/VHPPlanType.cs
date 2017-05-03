@@ -15,6 +15,7 @@ namespace PMSCommon
         加工,
         回收,
         烤料,
+        代工,
         其他
     }
 }

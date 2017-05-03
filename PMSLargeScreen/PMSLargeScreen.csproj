@@ -83,6 +83,11 @@
     </Compile>
     <Compile Include="LargeScreenMainWindowVM.cs" />
     <Compile Include="Models\UnitModel.cs" />
+    <Compile Include="Service References\LargeScreenService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\PMSMainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +139,19 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\LargeScreenService\LargeScreenService.wsdl" />
+    <None Include="Service References\LargeScreenService\LargeScreenService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LargeScreenService\LargeScreenService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LargeScreenService\LargeScreenService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcPlanExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSMainService\PMSLargeScreen.PMSMainService.DcDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -204,8 +222,11 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="Service References\LargeScreenService\LargeScreenService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LargeScreenService\" />
     <WCFMetadataStorage Include="Service References\PMSMainService\" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +256,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\PMSMainService\PMSService1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LargeScreenService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LargeScreenService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LargeScreenService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
