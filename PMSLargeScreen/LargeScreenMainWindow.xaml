@@ -49,7 +49,7 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#CA5100">
             <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding Status2}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
-            <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
+            <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>
         </StackPanel>
     </Grid>
 </Window>

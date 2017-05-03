@@ -30,7 +30,10 @@ namespace PMSLargeScreen
             SetFinishedPlanCount();
             ShowModels = new ObservableCollection<UnitModel>();
             AllModels = new List<UnitModel>();
-            Status1 = "状态栏";
+            status1 = "状态栏1";
+            status2 = "状态栏2";
+            errorMessage = "其他信息";
+
             CenterMessage =$"准备数据中，请等待,{IntervalDistributeData/1000}s后显示";
 
             #region 设定定时器
@@ -180,17 +183,24 @@ namespace PMSLargeScreen
         }
         private void SetFinishedPlanCount()
         {
-            using (var service = new LargeScreenServiceClient())
+            try
             {
-                var result = service.GetPlanStatistic();
-                if (result.Count() > 0)
+                using (var service = new LargeScreenServiceClient())
                 {
-                    FinishedPlanCount = (int)result[0].Value;
+                    var result = service.GetPlanStatistic();
+                    if (result.Count() > 0)
+                    {
+                        FinishedPlanCount = (int)result[0].Value;
+                    }
+                    else
+                    {
+                        FinishedPlanCount = 0;
+                    }
                 }
-                else
-                {
-                    FinishedPlanCount = 0;
-                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
             }
         }
         public ObservableCollection<UnitModel> ShowModels { get; set; }
