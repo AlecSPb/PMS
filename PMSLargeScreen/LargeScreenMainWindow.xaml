@@ -33,6 +33,9 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <local:SingleUnit  Grid.Column="0"/>
+                <local:SingleUnit  Grid.Column="1"/>
+                <local:SingleUnit  Grid.Column="2"/>
             </Grid>
         </Border>
     </Grid>

@@ -82,10 +82,14 @@
       <DependentUpon>LargeScreenMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="LargeScreenMainWindowVM.cs" />
+    <Compile Include="Models\UnitModel.cs" />
     <Compile Include="Service References\PMSMainService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SingleUnit.xaml.cs">
+      <DependentUpon>SingleUnit.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -98,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SimpleStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SingleUnit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,9 +204,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\PMSMainService\" />
   </ItemGroup>

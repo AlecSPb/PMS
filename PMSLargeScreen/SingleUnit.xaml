@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="PMSLargeScreen.SingleUnit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSLargeScreen"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="300">
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding DeviceCode}" Style="{StaticResource StyleTextBlockBig}"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig}"/>
+            <TextBlock Text="{Binding MoldInnerDiameter}" Style="{StaticResource StyleTextBlockBig}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="{Binding Temp,StringFormat=温度{0}℃}" Style="{StaticResource StyleTextBlockBig}"/>
+            <TextBlock Text="{Binding Pressure,StringFormat=压力{0}t}" Style="{StaticResource StyleTextBlockBig}"/>
+            <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig}"/>
+            <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"/>
+        </StackPanel>
+        <ListBox Grid.Row="4" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource StyleBorder}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig}"/>
+                            <TextBlock Text="{Binding SingleWeight,StringFormat=每片重{0}g}" Style="{StaticResource StyleTextBlockBig}"/>
+                            <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
