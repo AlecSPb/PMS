@@ -14,6 +14,16 @@ namespace PMSClient.ViewModel
     {
         public RecordTestEditVM()
         {
+            InitializeBasic();
+
+            GiveUp = new RelayCommand(GoBack);
+            Save = new RelayCommand(ActionSave);
+            Select = new RelayCommand(ActionSelect);
+            SelectDimensionActual = new RelayCommand(ActionSelectDimensionActual);
+        }
+
+        private void InitializeBasic()
+        {
             States = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.CommonState>(States);
 
@@ -23,10 +33,8 @@ namespace PMSClient.ViewModel
             TestDefects = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.TestDefectsTypes>(TestDefects);
 
-            GiveUp = new RelayCommand(GoBack);
-            Save = new RelayCommand(ActionSave);
-            Select = new RelayCommand(ActionSelect);
-            SelectDimensionActual = new RelayCommand(ActionSelectDimensionActual);
+            CustomerNames = new List<string>();
+            PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
         }
 
         private void ActionSelectDimensionActual()
@@ -161,6 +169,7 @@ namespace PMSClient.ViewModel
         public List<string> TestDefects { get; set; }
         public List<string> TestTypes { get; set; }
         public List<string> States { get; set; }
+        public List<string> CustomerNames { get; set; }
 
         private DcRecordTest currentRecordTest;
         public DcRecordTest CurrentRecordTest
