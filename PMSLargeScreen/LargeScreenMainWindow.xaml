@@ -7,7 +7,7 @@
         Language="zh-cn"
         Icon="Images/screen.png"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"  WindowState="Maximized" ShowInTaskbar="True"
-        Title="LargeScreenMainWindow" Height="1000" Width="1600">
+        Title="热压安排大屏幕显示程序" Height="1000" Width="1600">
     <Window.DataContext>
         <local:LargeScreenMainWindowVM/>
     </Window.DataContext>
@@ -17,7 +17,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Border Style="{StaticResource StyleBorder}">
+        <Border >
             <Grid Background="#004B8B">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -25,7 +25,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}" Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
-                <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=从2011年到现在，已经完成热压{0}次}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=自2011年到现在，已进行热压计划{0}次}" Style="{StaticResource StyleTextBlockLightBig}"/>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
                     <TextBlock Text="{Binding IntervalRefreshDistribute,StringFormat=显示轮换间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
@@ -33,7 +33,7 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Border Grid.Row="1" Style="{StaticResource StyleBorder}">
+        <Border Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

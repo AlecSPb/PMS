@@ -945,27 +945,27 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSService1.wsdl" />
-    <None Include="Service References\MainService\PMSService3.xsd">
+    <None Include="Service References\MainService\PMSService.wsdl" />
+    <None Include="Service References\MainService\PMSService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService31.xsd">
+    <None Include="Service References\MainService\PMSService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService32.xsd">
+    <None Include="Service References\MainService\PMSService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisticService\MainStatisticService.wsdl" />
+    <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\PMSClient.StatisticService.DcStatistic.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\StatisticService\StatisticService.xsd">
+    <None Include="Service References\StatisticService\StatisticService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisticService\StatisticService1.xsd">
+    <None Include="Service References\StatisticService\StatisticService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisticService\StatisticService2.xsd">
+    <None Include="Service References\StatisticService\StatisticService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserService\PMSClient.UserService.DcUser.datasource">
@@ -1216,13 +1216,7 @@
     <Resource Include="Documents\Sanjie.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MainService\PMSService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Documents\statistic.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\StatisticService\StatisticService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\StatisticService\configuration91.svcinfo" />
@@ -1235,6 +1229,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MainService\PMSService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StatisticService\StatisticService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

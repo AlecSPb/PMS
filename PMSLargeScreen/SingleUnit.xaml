@@ -41,11 +41,11 @@
                                 </Grid.RowDefinitions>
                                 <StackPanel Grid.Row="0" Orientation="Horizontal">
                                     <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
-                                    <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
-                                    <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
                                 </StackPanel>
                                 <StackPanel Grid.Row="1" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding SingleWeight,StringFormat=单片{0}g}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding SingleWeight,StringFormat=单片{0:F2}g}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
                                 </StackPanel>
                                 <TextBlock Grid.Row="2" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"/>

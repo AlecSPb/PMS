@@ -35,7 +35,7 @@ namespace PMSLargeScreen
             status2 = "状态栏2";
             errorMessage = "其他信息";
 
-            CenterMessage =$"准备数据中，请等待,{IntervalDistributeData/1000}s后显示";
+            CenterMessage =$"准备数据中，请等待，{IntervalDistributeData/1000}s后显示";
 
             #region 设定定时器
             _timerLoadData = new Timer();
@@ -75,14 +75,14 @@ namespace PMSLargeScreen
                 Model1 = AllModels[0];
                 Model2 = null;
                 Model3 = null;
-                Status2 = $"数据已刷新于{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                Status2 = $"数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
             }
             if (AllModels.Count == 2)
             {
                 Model1 = AllModels[0];
                 Model2 = AllModels[1];
                 Model3 = null;
-                Status2 = $"数据已刷新于{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                Status2 = $"数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
             }
 
             if (AllModels.Count == 3)
@@ -90,14 +90,14 @@ namespace PMSLargeScreen
                 Model1 = AllModels[0];
                 Model2 = AllModels[1];
                 Model3 = AllModels[2];
-                Status2 = $"数据已刷新于{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                Status2 = $"数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
             }
 
             if (AllModels.Count > 3)
             {
                 System.Diagnostics.Debug.Print($"======显示的是第{counter + 1}批");
                 System.Diagnostics.Debug.Print($"显示的是第{counter },{counter + 1},{ counter + 2}");
-                Status2 = $"第{counter + 1}批数据已刷新于{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                Status2 = $"第{counter + 1}批数据已轮换于{DateTime.Now.ToString("HH:mm:ss")}";
                 Model1 = AllModels[counter];
                 Model2 = AllModels[counter + 1];
                 Model3 = AllModels[counter + 2];
@@ -173,7 +173,7 @@ namespace PMSLargeScreen
                     }
                 }
                 #endregion
-                Status1 = $"读取数据库数据于{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                Status1 = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")}";
                 counter = 0;
                 _timerDistributeData.Start();
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="pNVjlH66JuLIzHZ6P58s1te6NmA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="wPzPm7gTd9KqdUfMgK2cUocvt5c=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="largescreen">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="largescreen" contract="LargeScreenService.ILargeScreenService" bindingType="basicHttpBinding" address="http://localhost:8002/LargeScreenService.svc" bindingConfiguration="largescreen">
+    <endpoint name="largescreen" contract="LargeScreenService.ILargeScreenService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/LargeScreenService.svc" bindingConfiguration="largescreen">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/LargeScreenService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/LargeScreenService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
