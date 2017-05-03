@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSLargeScreen"
         Language="zh-cn"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen"  WindowState="Maximized"
+        Icon="Images/screen.png"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"  WindowState="Maximized" ShowInTaskbar="True"
         Title="LargeScreenMainWindow" Height="1000" Width="1600">
     <Window.DataContext>
         <local:LargeScreenMainWindowVM/>
