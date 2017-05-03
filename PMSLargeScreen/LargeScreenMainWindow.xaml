@@ -1,0 +1,39 @@
+﻿<Window x:Class="PMSLargeScreen.LargeScreenMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSLargeScreen"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized"
+        Title="LargeScreenMainWindow" Height="1000" Width="1600">
+    <Window.DataContext>
+        <local:LargeScreenMainWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Style="{StaticResource StyleBorder}">
+            <Grid Background="Orange">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding CurrentDate,StringFormat=今天日期{0:yyyy-MM-dd dddd}}" Style="{StaticResource StyleTextBlockLight}"/>
+                <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=截止今日已经完成热压{0}机次}" Style="{StaticResource StyleTextBlockLight}"/>
+                <Button Grid.Column="2" Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource StyleBorder}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
