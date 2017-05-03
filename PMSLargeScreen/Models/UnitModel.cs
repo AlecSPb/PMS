@@ -11,6 +11,8 @@ namespace PMSLargeScreen.Models
         public UnitModel()
         {
             DeviceCode = "A";
+            PlanLot = 1;
+            PlanType = "加工";
             MoldInnerDiameter = 230;
             MoldType = "高强";
             Pressure = 65;
@@ -27,6 +29,8 @@ namespace PMSLargeScreen.Models
             };
         }
         public string DeviceCode { get; set; }
+        public int PlanLot { get; set; }
+        public string PlanType { get; set; }
         public double MoldInnerDiameter { get; set; }
         public string MoldType { get; set; }
         public double Pressure { get; set; }

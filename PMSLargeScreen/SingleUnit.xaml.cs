@@ -24,10 +24,19 @@ namespace PMSLargeScreen
         public SingleUnit()
         {
             InitializeComponent();
-            CurrentModel = new UnitModel();
             this.DataContext = CurrentModel;
         }
 
-        public UnitModel CurrentModel { get; set; }
+
+        public UnitModel CurrentModel
+        {
+            get { return (UnitModel)GetValue(CurrentModelProperty); }
+            set { SetValue(CurrentModelProperty, value); }
+        }
+
+        public static readonly DependencyProperty CurrentModelProperty =
+            DependencyProperty.Register("CurrentModel", typeof(UnitModel), typeof(SingleUnit), new PropertyMetadata(new UnitModel()));
+
+
     }
 }
