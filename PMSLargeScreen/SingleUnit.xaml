@@ -15,12 +15,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="{Binding PlanLot,StringFormat=批次{0}}" Style="{StaticResource StyleTextBlockBig}"  FontSize="30" Foreground="Red"/>
-                <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" FontSize="30" Foreground="Blue"/>
+                <TextBlock Text="{Binding PlanLot,StringFormat=批次{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Red"/>
+                <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Blue"/>
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig}"/>
-                <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig}"/>
+                <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig3}"/>
+                <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig3}"/>
             </StackPanel>
             <StackPanel Grid.Row="2" Orientation="Horizontal">
                 <TextBlock Text="{Binding Temp,StringFormat=温度{0}℃}" Style="{StaticResource StyleTextBlockBig}"/>
@@ -40,7 +40,7 @@
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <StackPanel Grid.Row="0" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
+                                    <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig3}" Foreground="Blue"/>
                                 </StackPanel>
                                 <StackPanel Grid.Row="1" Orientation="Horizontal">
                                     <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
