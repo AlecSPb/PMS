@@ -66,8 +66,8 @@
                                     Binding="{Binding Temperature2}"/>
                 <DataGridTextColumn Header="{StaticResource RDMDeMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeMoldType}"/>
-                <DataGridTextColumn Header="{StaticResource RDMDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
-                                    Binding="{Binding Dimension}"/>
+                <!--<DataGridTextColumn Header="{StaticResource RDMDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Dimension}"/>-->
                 <DataGridTextColumn Header="{StaticResource RDMCalculateDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding CalculateDimension}"/>
                 <DataGridTextColumn Header="{StaticResource RDMCalculationDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"

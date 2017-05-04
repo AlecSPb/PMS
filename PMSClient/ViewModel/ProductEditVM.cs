@@ -23,6 +23,8 @@ namespace PMSClient.ViewModel
             GoodPositions = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.GoodPosition>(GoodPositions);
 
+            CustomerNames = new List<string>();
+            PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
 
             InitializeCommands();
         }
@@ -166,6 +168,8 @@ namespace PMSClient.ViewModel
         public List<string> States { get; set; }
 
         public List<string> GoodPositions { get; set; }
+
+        public List<string> CustomerNames { get; set; }
 
         private DcProduct currentProduct;
         public DcProduct CurrentProduct

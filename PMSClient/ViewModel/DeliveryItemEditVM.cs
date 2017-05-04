@@ -33,6 +33,9 @@ namespace PMSClient.ViewModel
 
             PackNumbers = new List<int>();
             PMSBasicDataService.SetListDS(PackNumbers,10);
+
+            CustomerNames = new List<string>();
+            PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
         }
 
         public void SetNew(DcDelivery delivery)
@@ -194,6 +197,7 @@ namespace PMSClient.ViewModel
         public List<string> ProductTypes { get; set; }
         public List<string> GoodPositions { get; set; }
         public List<int> PackNumbers { get; set; }
+        public List<string> CustomerNames { get; set; }
         private DcDeliveryItem currentDeliveryItem;
         public DcDeliveryItem CurrentDeliveryItem
         {

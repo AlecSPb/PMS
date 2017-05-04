@@ -53,7 +53,6 @@ namespace PMSClient.ViewModel
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.OrderSampleNeeds, SampleNeeds);
 
             CustomerNames = new List<string>();
-            //BasicData.Customers.ToList().ForEach(c => CustomerNames.Add(c.CustomerName));
             PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
         }
 
