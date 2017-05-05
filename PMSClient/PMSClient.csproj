@@ -143,6 +143,9 @@
     <Compile Include="CustomControls\BondingEditItem.xaml.cs">
       <DependentUpon>BondingEditItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
+      <DependentUpon>ProgressIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\AccessString.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
     <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
@@ -501,6 +504,10 @@
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="CustomControls\BondingEditItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\ProgressIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
