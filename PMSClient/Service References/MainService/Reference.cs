@@ -5113,6 +5113,9 @@ namespace PMSClient.MainService {
         private string CleanPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CoverPlateNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5412,6 +5415,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CleanPersonField, value) != true)) {
                     this.CleanPersonField = value;
                     this.RaisePropertyChanged("CleanPerson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CoverPlateNumber {
+            get {
+                return this.CoverPlateNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CoverPlateNumberField, value) != true)) {
+                    this.CoverPlateNumberField = value;
+                    this.RaisePropertyChanged("CoverPlateNumber");
                 }
             }
         }

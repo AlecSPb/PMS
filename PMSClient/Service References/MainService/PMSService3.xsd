@@ -509,6 +509,7 @@
       <xs:element minOccurs="0" name="CleanCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CleanCheckTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="CleanPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverPlateNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DimensionCheck" nillable="true" type="xs:string" />

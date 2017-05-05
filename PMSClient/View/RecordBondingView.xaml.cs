@@ -32,11 +32,17 @@ namespace PMSClient.View
             {
                 switch (order.State)
                 {
-                    case "未核验":
-                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                    case "未完成":
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
                         break;
-                    case "已核验":
-                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
+                    case "暂停":
+                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                        break;
+                    case "失败":
+                        e.Row.Background = this.FindResource("FailedBrush") as SolidColorBrush;
+                        break;
+                    case "完成":
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;

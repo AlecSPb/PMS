@@ -262,7 +262,9 @@
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
-
+    <sys:String x:Key="ButtonLocation">定位</sys:String>
+    
+    
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
     <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>
@@ -312,7 +314,9 @@
     <sys:String x:Key="IndicatorCompleted">完成</sys:String>
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
-
+    <sys:String x:Key="IndicatorFailed">失败</sys:String>
+    
+    
     <sys:String x:Key="IndicatorStored">库存</sys:String>
     <sys:String x:Key="IndicatorDelivered">发货</sys:String>
 
