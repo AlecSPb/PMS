@@ -33,7 +33,10 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorFailed}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource FailedBrush}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordBondings}"
                   LoadingRow="DataGrid_LoadingRow">
@@ -51,6 +54,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource BDState}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetProductID}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetComposition}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
@@ -63,9 +68,10 @@
                                     Binding="{Binding TargetPO}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetDimension}"/>
+                <DataGridTextColumn Header="{StaticResource BDTargetCoverPlateNumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding CoverPlateNumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
-
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}" LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>

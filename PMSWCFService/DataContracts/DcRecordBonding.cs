@@ -17,6 +17,10 @@ namespace PMSWCFService.DataContracts
         public DateTime CreateTime { get; set; }
         [DataMember]
         public string State { get; set; }
+
+        [DataMember]
+        public string CoverPlateNumber { get; set; }
+
         [DataMember]
         public string InstructionCode { get; set; }//操作手册代码
 

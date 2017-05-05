@@ -814,7 +814,7 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
-                        <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxMultiline}" Text="{Binding Remark}"/>
+                        <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding Remark}"/>
                     </Grid>
                 </Border>
             </StackPanel>

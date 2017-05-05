@@ -6,8 +6,8 @@
     <SolidColorBrush x:Key="UnCheckedBrush" Color="Yellow"/>
     <SolidColorBrush x:Key="EmergencyBrush" Color="LightCoral"/>
     <SolidColorBrush x:Key="CheckedBrush" Color="White"/>
-    
-    
+    <SolidColorBrush x:Key="FailedBrush" Color="Gray"/>
+
     <SolidColorBrush x:Key="YesterdayBrush" Color="LightGray"/>
     <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
     <SolidColorBrush x:Key="TomorrowBrush" Color="LightCoral"/>

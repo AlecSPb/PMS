@@ -262,7 +262,9 @@
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
-
+    <sys:String x:Key="ButtonLocation">定位</sys:String>
+    
+    
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
     <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>
@@ -312,7 +314,9 @@
     <sys:String x:Key="IndicatorCompleted">完成</sys:String>
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
-
+    <sys:String x:Key="IndicatorFailed">失败</sys:String>
+    
+    
     <sys:String x:Key="IndicatorStored">库存</sys:String>
     <sys:String x:Key="IndicatorDelivered">发货</sys:String>
 
@@ -641,6 +645,7 @@
     <sys:String x:Key="BDTargetPMINumber">内部编号</sys:String>
     <sys:String x:Key="BDTargetWeight">靶材重量</sys:String>
     <sys:String x:Key="BDTargetDimension">靶材尺寸</sys:String>
+    <sys:String x:Key="BDTargetCoverPlateNumber">盖板编号</sys:String>
     <sys:String x:Key="BDTargetDImensionActual">靶材实际尺寸</sys:String>
     <sys:String x:Key="BDTargetDefects">靶材缺陷</sys:String>
     <sys:String x:Key="BDTargetDetailRecord">靶材细节记录</sys:String>
