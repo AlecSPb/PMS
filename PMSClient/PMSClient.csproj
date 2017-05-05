@@ -269,6 +269,18 @@
     <Compile Include="View\DataOutputCenterView.xaml.cs">
       <DependentUpon>DataOutputCenterView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FeedBackEditView.xaml.cs">
+      <DependentUpon>FeedBackEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FeedbackView.xaml.cs">
+      <DependentUpon>FeedbackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutsourceEditView.xaml.cs">
+      <DependentUpon>OutsourceEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutSourceView.xaml.cs">
+      <DependentUpon>OutSourceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductStatisticVIew.xaml.cs">
       <DependentUpon>ProductStatisticVIew.xaml</DependentUpon>
     </Compile>
@@ -575,6 +587,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataOutputCenterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FeedBackEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FeedbackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutsourceEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutSourceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
