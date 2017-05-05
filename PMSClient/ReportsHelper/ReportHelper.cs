@@ -16,7 +16,7 @@ namespace PMSClient.ReportsHelper
         {
             get
             {
-                var reportsFolder = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Reports");
+                var reportsFolder = Path.Combine(Environment.CurrentDirectory,"Resource", "DocTemplate", "Reports");
                 return reportsFolder;
             }
         }
@@ -27,7 +27,7 @@ namespace PMSClient.ReportsHelper
         {
             get
             {
-                var reportsFolder = Path.Combine(Environment.CurrentDirectory, "DocTemplate", "Reports","Temp");
+                var reportsFolder = Path.Combine(Environment.CurrentDirectory, "Resource", "DocTemplate", "Reports","Temp");
                 return reportsFolder;
             }
         }
