@@ -266,6 +266,9 @@
     <Compile Include="View\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DataOutputCenterView.xaml.cs">
+      <DependentUpon>DataOutputCenterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ProductStatisticVIew.xaml.cs">
       <DependentUpon>ProductStatisticVIew.xaml</DependentUpon>
     </Compile>
@@ -568,6 +571,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\CustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DataOutputCenterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
