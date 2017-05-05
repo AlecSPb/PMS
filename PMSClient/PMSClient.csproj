@@ -182,6 +182,19 @@
     <Compile Include="ReportsHelper\ReportRecordTest.cs" />
     <Compile Include="ReportsHelper\ReportVHP.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter.cs" />
+    <Compile Include="Sanjie\MaterialOrderListView.xaml.cs">
+      <DependentUpon>MaterialOrderListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sanjie\MaterialOrderView.xaml.cs">
+      <DependentUpon>MaterialOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sanjie\NavigationView.xaml.cs">
+      <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sanjie\NavigationVM.cs" />
+    <Compile Include="Sanjie\RawMaterialReceiveView.xaml.cs">
+      <DependentUpon>RawMaterialReceiveView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sanjie\SanjieViewLocator.cs" />
     <Compile Include="Sanjie\SanjieViewModelLocator.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
@@ -518,6 +531,22 @@
     <Page Include="Resource\Styles\Desktop.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sanjie\MaterialOrderListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sanjie\MaterialOrderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sanjie\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sanjie\RawMaterialReceiveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tool\DensityEstamatorView.xaml">
       <SubType>Designer</SubType>

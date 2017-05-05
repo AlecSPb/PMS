@@ -24,3 +24,6 @@
 
 
 170505更新lenovo
+bonding记录添加了CoverPlate字段
+bonding State有了自己专用的状态、
+ MaterialItem  State有了自己专用的字段
