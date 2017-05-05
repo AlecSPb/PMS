@@ -945,14 +945,14 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcRecordVHP.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\MainService\PMSService.wsdl" />
-    <None Include="Service References\MainService\PMSService.xsd">
+    <None Include="Service References\MainService\PMSService1.wsdl" />
+    <None Include="Service References\MainService\PMSService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService1.xsd">
+    <None Include="Service References\MainService\PMSService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService2.xsd">
+    <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
@@ -1231,10 +1231,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\MainService\PMSService.disco" />
+    <None Include="Service References\StatisticService\StatisticService1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\StatisticService\StatisticService1.disco" />
+    <None Include="Service References\MainService\PMSService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
