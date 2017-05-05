@@ -18,11 +18,11 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleTextBlockBig2" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
-        <Setter Property="FontSize" Value="35"/>
+        <Setter Property="FontSize" Value="40"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleTextBlockBig3" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="30"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleTextBlockLightBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig}">
