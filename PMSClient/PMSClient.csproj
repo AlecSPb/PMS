@@ -185,21 +185,6 @@
     <Compile Include="ReportsHelper\ReportRecordTest.cs" />
     <Compile Include="ReportsHelper\ReportVHP.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter.cs" />
-    <Compile Include="Sanjie\MaterialOrderListView.xaml.cs">
-      <DependentUpon>MaterialOrderListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sanjie\MaterialOrderView.xaml.cs">
-      <DependentUpon>MaterialOrderView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sanjie\NavigationView.xaml.cs">
-      <DependentUpon>NavigationView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sanjie\NavigationVM.cs" />
-    <Compile Include="Sanjie\RawMaterialReceiveView.xaml.cs">
-      <DependentUpon>RawMaterialReceiveView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Sanjie\SanjieViewLocator.cs" />
-    <Compile Include="Sanjie\SanjieViewModelLocator.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -554,22 +539,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Sanjie\MaterialOrderListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sanjie\MaterialOrderView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sanjie\NavigationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Sanjie\RawMaterialReceiveView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Tool\DensityEstamatorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -873,7 +842,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Sanjie\Note.txt" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1112,6 +1080,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PMSClientBase\PMSClientBase.csproj">
+      <Project>{8f93cf3f-b94f-4c6d-871b-61bc4dc93ea2}</Project>
+      <Name>PMSClientBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
