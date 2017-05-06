@@ -6,11 +6,54 @@ using PMSDAL;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
+using PMSCommon;
 
 namespace PMSWCFService
 {
     public class LargeScreenService : ILargeScreenService
     {
+        public List<DcRecordBonding> GetBondingUnComplete()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.RecordBondings
+                                where i.State == PMSCommon.BondingState.未完成.ToString()
+                                orderby i.CreateTime descending
+                                select i;
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
+                    return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcStatistic> GetBondingUnCompleteStatistic()
+        {
+            try
+            {
+                var result = new List<DcStatistic>();
+                var dc = new PMSDbContext();
+                var query = from i in dc.RecordBondings
+                            where i.State == PMSCommon.BondingState.未完成.ToString()
+                            orderby i.CreateTime descending
+                            select i;
+                result.Add(new DcStatistic { Key = "UnCompletedRecordBonding", Value = query.Count() });
+                dc.Dispose();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcPlanExtra> GetPlanByDate(DateTime planDate)
         {
             try
@@ -72,5 +115,6 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
     }
 }
