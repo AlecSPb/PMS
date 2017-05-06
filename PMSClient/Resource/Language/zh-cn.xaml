@@ -42,7 +42,6 @@
     <sys:String x:Key="PageAdmin">管理</sys:String>
     <sys:String x:Key="PageNaivgation">导航</sys:String>
     <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
-    <sys:String x:Key="PageOutSource">外购管理</sys:String>
 
 
     <sys:String x:Key="PageSales">销售</sys:String>
@@ -73,6 +72,8 @@
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
+    
+    <sys:String x:Key="PageOutSource">外购管理</sys:String>
 
     <sys:String x:Key="PageMisson">生产任务</sys:String>
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
@@ -129,7 +130,11 @@
     
     <sys:String x:Key="PageCustomerService">售后</sys:String>
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
-
+    
+    <sys:String x:Key="PageMaintenance">设备维护</sys:String>
+    
+    
+    
 
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
@@ -143,85 +148,9 @@
     <sys:String x:Key="PageSelectPlate">选择背板库存</sys:String>
     <sys:String x:Key="PageSelectRecordBonding">选择绑定记录</sys:String>
 
-    <sys:String x:Key="PageMaintenance">设备维护</sys:String>
-
-    <!--每个页面最前面的提示信息-->
-    <sys:String x:Key="HelpTipOrderEdit">
-        注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范
-    </sys:String>
-    <sys:String x:Key="HelpTipOrderCheckEdit">
-        注意：请核验一下每个属性，如果有问题，通知订单输入者修改；没问题请选择合适的策略，状态和优先级
-    </sys:String>
-    <sys:String x:Key="HelpTipMaterialNeedEdit">
-        注意：可以自行输入原料需求数据，但推荐利用任务信息填写，原料计算器计算的结果仅供参考
-    </sys:String>
-    <sys:String x:Key="HelpTipMaterialOrderEdit">
-        注意：尽量通过选择的方式输入
-    </sys:String>
-    <sys:String x:Key="HelpTipMaterialOrderItemEdit">
-        注意：可以自行输入，但最好通过选择[原料需求列表]来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipMaterialInventoryInEdit">
-        注意：可以自行输入，但最好通过选择[原料订单项目]来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipMaterialInventoryOutEdit">
-        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
-    </sys:String>
 
 
-    <sys:String x:Key="HelpTipPlanVHPEdit">
-        注意：尽量选择，没有自己输入，不需要的项目填充0，同批次同台设备压多个成分任务的时候，要注意设置装料和热压参数相同
-    </sys:String>
-    <sys:String x:Key="HelpTipMisson">
-        黄色标记的项目为未核验，核验后该计划才会公布
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordMillingEdit">
-        注意：填写一定要规范，可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordVHPQuickEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordDeMoldEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordMachineEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordTestEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordBondingEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipProductEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipProductSelect">
-        注意：发货的意思不光使用，还将这个记录的库存状态从库存变成发货
-    </sys:String>
-    <sys:String x:Key="HelpTipRecordTestSelect">
-        注意：下面黄色的记录就是还没有最终完成和确定的测试记录，最好不要选择;
-    </sys:String>
-    <sys:String x:Key="HelpTipDeliveryEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-    <sys:String x:Key="HelpTipDeliveryItemEdit">
-        注意：可以自行输入，但最好通过选择来减少输入时间和错误
-    </sys:String>
-
-
-    <sys:String x:Key="HelpTipStatisticOrder">
-        统计的是订单的数目，不是靶材的数目
-    </sys:String>
-    <sys:String x:Key="HelpTipStatisticPlan">
-       统计的是热压次数
-    </sys:String>
-    <sys:String x:Key="HelpTipStatisticDelivery">
-        统计的是发货的数目（靶材背板样品各类发货均统计在内）
-    </sys:String>
-    <sys:String x:Key="HelpTipStatisticProduct">
-        统计的是产品的数目
-    </sys:String>
+    
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
@@ -735,4 +664,84 @@
     <sys:String x:Key="CustomerEmail">Email</sys:String>
     <sys:String x:Key="CustomerMemo">备注</sys:String>
 
+
+
+
+    <!--每个页面最前面的提示信息-->
+    <sys:String x:Key="HelpTipOrderEdit">
+        注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范
+    </sys:String>
+    <sys:String x:Key="HelpTipOrderCheckEdit">
+        注意：请核验一下每个属性，如果有问题，通知订单输入者修改；没问题请选择合适的策略，状态和优先级
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialNeedEdit">
+        注意：可以自行输入原料需求数据，但推荐利用任务信息填写，原料计算器计算的结果仅供参考
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderEdit">
+        注意：尽量通过选择的方式输入
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderItemEdit">
+        注意：可以自行输入，但最好通过选择[原料需求列表]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryInEdit">
+        注意：可以自行输入，但最好通过选择[原料订单项目]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryOutEdit">
+        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
+    </sys:String>
+
+
+    <sys:String x:Key="HelpTipPlanVHPEdit">
+        注意：尽量选择，没有自己输入，不需要的项目填充0，同批次同台设备压多个成分任务的时候，要注意设置装料和热压参数相同
+    </sys:String>
+    <sys:String x:Key="HelpTipMisson">
+        黄色标记的项目为未核验，核验后该计划才会公布
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMillingEdit">
+        注意：填写一定要规范，可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordVHPQuickEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordDeMoldEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMachineEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordBondingEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductSelect">
+        注意：发货的意思不光使用，还将这个记录的库存状态从库存变成发货
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestSelect">
+        注意：下面黄色的记录就是还没有最终完成和确定的测试记录，最好不要选择;
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryItemEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+
+
+    <sys:String x:Key="HelpTipStatisticOrder">
+        统计的是订单的数目，不是靶材的数目
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticPlan">
+        统计的是热压次数
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticDelivery">
+        统计的是发货的数目（靶材背板样品各类发货均统计在内）
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticProduct">
+        统计的是产品的数目
+    </sys:String>
 </ResourceDictionary>
