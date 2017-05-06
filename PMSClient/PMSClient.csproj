@@ -1080,10 +1080,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PMSClientBase\PMSClientBase.csproj">
-      <Project>{8f93cf3f-b94f-4c6d-871b-61bc4dc93ea2}</Project>
-      <Name>PMSClientBase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
       <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
       <Name>PMSCommon</Name>
@@ -1165,17 +1161,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="BarTender">
-      <Guid>{D58562C1-E51B-11CF-8941-00A024A9083F}</Guid>
-      <VersionMajor>10</VersionMajor>
-      <VersionMinor>1</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resource\HelpImages\deliverysheet.png">

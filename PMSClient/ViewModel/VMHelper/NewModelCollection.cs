@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
             //0.0
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.未核验.ToString();
+            model.State = PMSCommon.BondingState.未完成.ToString();
             model.InstructionCode = "无";
             model.TargetProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.TargetComposition = "靶材成分";

@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
         {
             PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
             PMSHelper.ViewModels.RecordTestSelect.RefreshData();
-            PMSBatchHelper.SetRecordTestBatchEnable(false);
+            PMSBatchHelper.SetRecordTestBatchEnable(true);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
 

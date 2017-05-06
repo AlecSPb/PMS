@@ -149,12 +149,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\PMSClientBase\PMSClientBase.csproj">
-      <Project>{8f93cf3f-b94f-4c6d-871b-61bc4dc93ea2}</Project>
-      <Name>PMSClientBase</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
