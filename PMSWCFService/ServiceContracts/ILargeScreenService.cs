@@ -15,5 +15,11 @@ namespace PMSWCFService.ServiceContracts
         List<DcPlanExtra> GetPlanByDate(DateTime planDate);
         [OperationContract]
         List<DcStatistic> GetPlanStatistic();
+
+        [OperationContract]
+        List<DcPlanExtra> GetBondingUnComplete();
+        [OperationContract]
+        List<DcStatistic> GetBondingUnCompleteStatistic();
+
     }
 }

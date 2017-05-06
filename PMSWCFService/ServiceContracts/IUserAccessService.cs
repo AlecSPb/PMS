@@ -7,6 +7,10 @@ using System.ServiceModel;
 
 namespace PMSWCFService.ServiceContracts
 {
+    /// <summary>
+    /// 全面的客户信息服务
+    /// 用户管理类型客户端
+    /// </summary>
     [ServiceContract]
     public interface IUserAccessService
     {

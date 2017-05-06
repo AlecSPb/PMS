@@ -144,6 +144,7 @@
     <Compile Include="ServiceContracts\IProductService.cs" />
     <Compile Include="ServiceContracts\IRecordMachineService.cs" />
     <Compile Include="ServiceContracts\ISanjieService.cs" />
+    <Compile Include="ServiceContracts\ISimpleUserService.cs" />
     <Compile Include="ServiceContracts\IStatisticService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceContracts\IMainStatisticService.cs" />
