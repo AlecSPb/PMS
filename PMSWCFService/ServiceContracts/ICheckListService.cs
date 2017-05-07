@@ -9,18 +9,18 @@ using PMSWCFService.DataContracts;
 namespace PMSWCFService.ServiceContracts
 {
     [ServiceContract]
-    public interface IItemDebitService
+    public interface ICheckListService
     {
         [OperationContract]
-        List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName, string creaditor);
+        List<DcCheckList> GetCheckList(int s, int t, string title);
         [OperationContract]
-        int GetItemDebitCount(string itemType, string itemName, string creaditor);
+        int GetCheckListCount(string title);
 
         [OperationContract]
-        int AddItemDebit(DcItemDebit model);
+        int AddCheckList(DcCheckList model);
         [OperationContract]
-        int UpdateItemDebit(DcItemDebit model);
+        int UpdateCheckList(DcCheckList model);
         [OperationContract]
-        int DeleteItemDebit(Guid id);
+        int DeleteCheckList(Guid id);
     }
 }
