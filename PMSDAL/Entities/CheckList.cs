@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace PMSDAL
 {
-    public class MaintenanceRecord
+    public class CheckList
     {
         public Guid ID { get; set; }
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
 
-        public Guid PlanID { get; set; }
-        public string MaintenancePersons { get; set; }//负责维护的人员
-        public string MaintenanceContent { get; set; }//维护日志
+        public DateTime UpdateTime { get; set; }
+        public string Updator { get; set; }
+
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 }
