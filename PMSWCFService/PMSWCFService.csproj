@@ -199,6 +199,7 @@
     <Compile Include="ServiceContracts\IPlanVHPService.cs" />
     <Compile Include="ServiceContracts\IRecordTestService.cs" />
     <Compile Include="ServiceContracts\IUserAccessService.cs" />
+    <Compile Include="ServiceImplements\UserSimpleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
