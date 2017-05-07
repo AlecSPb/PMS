@@ -86,6 +86,7 @@
     <Content Include="更新说明.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\DcCheckList.cs" />
     <Compile Include="DataContracts\DcBDElementGroup.cs" />
     <Compile Include="DataContracts\DcBDElementGroupItem.cs" />
     <Compile Include="DataContracts\DcBDElement.cs" />
@@ -124,6 +125,8 @@
     <Compile Include="DataContracts\DcRecordDeMold.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryIn.cs" />
     <Compile Include="DataContracts\DcMaterialInventoryOut.cs" />
+    <Compile Include="DataContracts\DcFeedBack.cs" />
+    <Compile Include="DataContracts\DcItemDebit.cs" />
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
@@ -133,6 +136,7 @@
     <Compile Include="DataContracts\DcPlate.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
+    <Compile Include="ServiceContracts\IItemDebitService.cs" />
     <Compile Include="ServiceContracts\IDeliveryAddressService.cs" />
     <Compile Include="ServiceContracts\IElementService.cs" />
     <Compile Include="ServiceContracts\IHeartBeatSerive.cs" />
