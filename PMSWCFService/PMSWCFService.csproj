@@ -82,6 +82,7 @@
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
+    <Content Include="UserSimpleService.svc" />
     <Content Include="UserAccessService.svc" />
     <Content Include="Web.config" />
     <Content Include="更新说明.txt" />
