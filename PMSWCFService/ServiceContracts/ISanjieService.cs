@@ -28,14 +28,14 @@ namespace PMSWCFService.ServiceContracts
         
         //Inventory
         [OperationContract]
-        List<DcMaterialInventoryIn> GetMaterialInventoryInsBySearch(int skip, int take, string composition, string batchnumber, string pminumber);
+        List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber);
         [OperationContract]
-        int GetMaterialInventoryInCountBySearch(string composition, string batchnumber, string pminumber);
+        int GetMaterialInventoryInCount(string composition, string batchnumber, string pminumber);
 
         [OperationContract]
-        List<DcMaterialInventoryOut> GetMaterialInventoryOutsBySearch(int skip, int take, string composition, string batchnumber, string pminumber);
+        List<DcMaterialInventoryOut> GetMaterialInventoryOuts(int skip, int take, string composition, string batchnumber, string pminumber);
         [OperationContract]
-        int GetMaterialInventoryOutCountBySearch(string composition, string batchnumber, string pminumber);
+        int GetMaterialInventoryOutCount(string composition, string batchnumber, string pminumber);
 
 
         //Debit
