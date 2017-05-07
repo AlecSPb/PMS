@@ -98,6 +98,9 @@ namespace PMSDAL
 
         //Operate
         public DbSet<CheckList> Checklists { get; set; }
+        public DbSet<CheckListHistory> ChecklistHistorys { get; set; }
 
+        public DbSet<ItemDebit> ItemDebits { get; set; }
+        public DbSet<ItemDebitHistory> ItemDebitHistorys { get; set; }
     }
 }
