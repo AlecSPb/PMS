@@ -11,35 +11,37 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface ISanjieService
     {
+        //Order
         [OperationContract]
         List<DcMaterialOrder> GetMaterialOrder(int skip, int take, string orderPo);
         [OperationContract]
         int GetMaterialOrderCount(string orderPo);
-
         [OperationContract]
         List<DcMaterialOrderItem> GetMaterialOrderItembyMaterialID(Guid id);
+
+
+        //Order Item List
         [OperationContract]
-        int GetMaterialOrderItemCountByMaterialID(Guid id);
-
-
+        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber);
         [OperationContract]
-        List<DcMaterialOrderItem> GetMaterialOrderItem(int skip, int take, string orderPo);
+        int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
+        
+        //Inventory
         [OperationContract]
-        int GetMaterialOrderItemCount(string orderPo);
-
-
-
+        List<DcMaterialInventoryIn> GetMaterialInventoryInsBySearch(int skip, int take, string composition, string batchnumber, string pminumber);
         [OperationContract]
-        List<DcMaterialInventoryIn> GetMaterialInventoryIn(int skip, int take, string orderlot, string composition);
-
-        [OperationContract]
-        int GetMaterialInventoryInCount(int skip, int take, string orderlot, string composition);
-
+        int GetMaterialInventoryInCountBySearch(string composition, string batchnumber, string pminumber);
 
         [OperationContract]
-        List<DcMaterialInventoryOut> GetMaterialInventoryOut(int skip, int take, string orderlot, string composition);
-
+        List<DcMaterialInventoryOut> GetMaterialInventoryOutsBySearch(int skip, int take, string composition, string batchnumber, string pminumber);
         [OperationContract]
-        int GetMaterialInventoryOutCount(int skip, int take, string orderlot, string composition);
+        int GetMaterialInventoryOutCountBySearch(string composition, string batchnumber, string pminumber);
+
+
+        //Debit
+        [OperationContract]
+        List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName, string creaditor);
+        [OperationContract]
+        int GetItemDebitCount(string itemType, string itemName, string creaditor);
     }
 }

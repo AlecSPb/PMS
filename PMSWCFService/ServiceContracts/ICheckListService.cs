@@ -17,10 +17,10 @@ namespace PMSWCFService.ServiceContracts
         int GetCheckListCount(string title);
 
         [OperationContract]
-        int AddCheckList(DcCheckList model);
+        int AddCheckList(DcCheckList model,string uid);
         [OperationContract]
-        int UpdateCheckList(DcCheckList model);
+        int UpdateCheckList(DcCheckList model,string uid);
         [OperationContract]
-        int DeleteCheckList(Guid id);
+        int DeleteCheckList(Guid id,string uid);
     }
 }

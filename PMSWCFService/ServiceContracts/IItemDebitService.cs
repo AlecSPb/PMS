@@ -17,10 +17,10 @@ namespace PMSWCFService.ServiceContracts
         int GetItemDebitCount(string itemType, string itemName, string creaditor);
 
         [OperationContract]
-        int AddItemDebit(DcItemDebit model);
+        int AddItemDebit(DcItemDebit model, string uid);
         [OperationContract]
-        int UpdateItemDebit(DcItemDebit model);
+        int UpdateItemDebit(DcItemDebit model, string uid);
         [OperationContract]
-        int DeleteItemDebit(Guid id);
+        int DeleteItemDebit(Guid id, string uid);
     }
 }

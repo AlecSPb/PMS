@@ -10,12 +10,12 @@ namespace PMSWCFService
 {
     public partial class PMSService : IFeedBackService
     {
-        public int AddFeedBack(DcFeedBack model)
+        public int AddFeedBack(DcFeedBack model, string uid)
         {
             throw new NotImplementedException();
         }
 
-        public int DeleteFeedBack(Guid id)
+        public int DeleteFeedBack(Guid id, string uid)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public int UpdateFeedBack(DcFeedBack model)
+        public int UpdateFeedBack(DcFeedBack model, string uid)
         {
             throw new NotImplementedException();
         }

@@ -41,6 +41,8 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialInventoryOut> GetMaterialInventoryOutsBySearch(int skip, int take,string receiver,string composition,string batchnumber,string pminumber);
         [OperationContract]
         int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber);
+
+
         [OperationContract]
         int AddMaterialInventoryOut(DcMaterialInventoryOut model);
         [OperationContract]

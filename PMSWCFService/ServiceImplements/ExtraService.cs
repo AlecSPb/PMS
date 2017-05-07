@@ -10,22 +10,22 @@ namespace PMSWCFService
 {
     public class ExtraService : ICheckListService, IItemDebitService
     {
-        public int AddCheckList(DcCheckList model)
+        public int AddCheckList(DcCheckList model, string uid)
         {
             throw new NotImplementedException();
         }
 
-        public int AddItemDebit(DcItemDebit model)
+        public int AddItemDebit(DcItemDebit model, string uid)
         {
             throw new NotImplementedException();
         }
 
-        public int DeleteCheckList(Guid id)
+        public int DeleteCheckList(Guid id, string uid)
         {
             throw new NotImplementedException();
         }
 
-        public int DeleteItemDebit(Guid id)
+        public int DeleteItemDebit(Guid id, string uid)
         {
             throw new NotImplementedException();
         }
@@ -50,12 +50,12 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-        public int UpdateCheckList(DcCheckList model)
+        public int UpdateCheckList(DcCheckList model, string uid)
         {
             throw new NotImplementedException();
         }
 
-        public int UpdateItemDebit(DcItemDebit model)
+        public int UpdateItemDebit(DcItemDebit model, string uid)
         {
             throw new NotImplementedException();
         }

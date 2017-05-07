@@ -17,10 +17,10 @@ namespace PMSWCFService.ServiceContracts
         int GetFeedBackCount(string productId, string composition, string customer);
 
         [OperationContract]
-        int AddFeedBack(DcFeedBack model);
+        int AddFeedBack(DcFeedBack model, string uid);
         [OperationContract]
-        int UpdateFeedBack(DcFeedBack model);
+        int UpdateFeedBack(DcFeedBack model, string uid);
         [OperationContract]
-        int DeleteFeedBack(Guid id);
+        int DeleteFeedBack(Guid id, string uid);
     }
 }
