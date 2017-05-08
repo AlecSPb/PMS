@@ -28,7 +28,7 @@
                 <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig}"/>
             </StackPanel>
             <ListBox Grid.Row="3" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
-                     BorderThickness="0">
+                     BorderThickness="0" HorizontalAlignment="Stretch">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border Style="{StaticResource StyleBorder}" Background="Transparent">

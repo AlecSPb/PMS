@@ -76,6 +76,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                     <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding Misson.PMINumber}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
                     <DataGridTextColumn Header="{StaticResource PlanMoldType}" Binding="{Binding Plan.MoldType}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"

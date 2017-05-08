@@ -63,6 +63,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                         <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                        <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding Misson.PMINumber}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
