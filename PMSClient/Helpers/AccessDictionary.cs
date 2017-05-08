@@ -9,7 +9,7 @@ namespace PMSClient
     /// <summary>
     /// 权限字符串，方便统一修改
     /// </summary>
-    public static class AccessString
+    public static class AccessDictionary
     {
         public static string ReadOrder { get; set; } = "浏览订单";
         public static string EditOrder { get; set; } = "编辑订单";

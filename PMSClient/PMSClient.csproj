@@ -146,7 +146,7 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\AccessString.cs" />
+    <Compile Include="Helpers\AccessDictionary.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
     <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
     <Compile Include="Helpers\OK\ILog.cs" />
