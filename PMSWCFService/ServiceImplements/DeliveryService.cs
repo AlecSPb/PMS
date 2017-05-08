@@ -456,7 +456,6 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
             }
         }
         private void SaveHistory(DcDeliveryItem model, string uid)
@@ -478,7 +477,6 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
             }
         }
 

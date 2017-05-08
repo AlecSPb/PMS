@@ -422,7 +422,6 @@ namespace PMSWCFService
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
-                throw ex;
             }
         }
 

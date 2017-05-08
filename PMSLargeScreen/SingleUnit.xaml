@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
     <Border Style="{StaticResource StyleBorder}">
-        <Grid Background="LightYellow" Name="mainGrid">
+        <Grid Background="{StaticResource BG3}" Name="mainGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
