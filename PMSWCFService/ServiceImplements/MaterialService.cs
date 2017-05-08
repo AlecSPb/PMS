@@ -409,7 +409,7 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
-                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
@@ -437,7 +437,7 @@ namespace PMSWCFService
                 {
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
-                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
@@ -462,7 +462,7 @@ namespace PMSWCFService
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>());
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
                                 orderby m.CreateTime descending
                                 select m;
                     return mapper.Map<List<MaterialOrderItem>, List<DcMaterialOrderItem>>(query.Skip(skip).Take(take).ToList());
@@ -482,7 +482,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrderItems
-                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
                                 orderby m.CreateTime descending
                                 select m;
                     return query.Count();
