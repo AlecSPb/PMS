@@ -15,7 +15,14 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcCheckList, CheckList>());
+                    var entity = Mapper.Map<CheckList>(model);
+                    SaveHistory(model, uid);
+                    dc.CheckLists.Add(entity);
+                    return dc.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -28,7 +35,14 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcItemDebit, ItemDebit>());
+                    var entity = Mapper.Map<ItemDebit>(model);
+                    SaveHistory(model, uid);
+                    dc.ItemDebits.Add(entity);
+                    return dc.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -41,7 +55,12 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    var entity = dc.CheckLists.Find(id);
+                    dc.CheckLists.Remove(entity);
+                    return dc.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -54,7 +73,12 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    var entity = dc.ItemDebits.Find(id);
+                    dc.ItemDebits.Remove(entity);
+                    return dc.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -119,7 +143,14 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcCheckList, CheckList>());
+                    var entity = Mapper.Map<CheckList>(model);
+                    SaveHistory(model, uid);
+                    dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    return dc.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -132,7 +163,14 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcItemDebit, ItemDebit>());
+                    var entity = Mapper.Map<ItemDebit>(model);
+                    SaveHistory(model, uid);
+                    dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    return dc.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
@@ -140,5 +178,57 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        private void SaveHistory(DcItemDebit model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcItemDebit, ItemDebitHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<ItemDebitHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.ItemDebitHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        private void SaveHistory(DcCheckList model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg => cfg.CreateMap<DcCheckList, CheckListHistory>());
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<CheckListHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.CheckListHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+
+
+
+
+
     }
 }
