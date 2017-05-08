@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid Background="{StaticResource BG}">
             <Grid.ColumnDefinitions>
@@ -26,6 +27,15 @@
 
 
 
-
+        <Grid Grid.Row="2" Background="{StaticResource BG2}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Style="{StaticResource StyleTextBlock}" Text="状态栏" Foreground="White"/>
+            <TextBlock Grid.Column="1" Style="{StaticResource StyleTextBlock}" Text="状态栏" Foreground="White"/>
+            <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlock}" Text="状态栏" Foreground="Yellow"/>
+        </Grid>
     </Grid>
 </Window>

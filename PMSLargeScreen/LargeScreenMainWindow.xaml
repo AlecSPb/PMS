@@ -18,7 +18,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border >
-            <Grid Background="#004B8B">
+            <Grid Background="{StaticResource BG}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
@@ -46,7 +46,7 @@
             </Grid>
         </Border>
         <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#CA5100">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding Status2}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>
