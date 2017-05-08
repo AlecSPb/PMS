@@ -20,9 +20,9 @@ namespace PMSLargeScreen.Models
             KeepTime = 120;
             Items = new List<UnitModelItem>()
             {
-                new UnitModelItem {Composition="Cu22.8In20Ga7Se50.2",Quantity=1,SingleWeight=1200,ProcessCode="W1",PlanType = "加工",FillRequirement="BN+石墨纸+Al2O3" },
-                new UnitModelItem {Composition="Cu22.8In21Ga6Se50.2",Quantity=2,SingleWeight=1300 ,ProcessCode="W1",PlanType = "加工",FillRequirement="BN+石墨纸+Al2O3" },
-                new UnitModelItem {Composition="Cu22.8In22Ga5Se50.2",Quantity=3,SingleWeight=1400,ProcessCode="W1",PlanType = "加工",FillRequirement="BN+石墨纸+Al2O3"  }
+                new UnitModelItem {Composition="Cu22.8In20Ga7Se50.2",Quantity=1,SingleWeight=1200,ProcessCode="W1",PlanType = "加工",FillRequirement="BN+石墨纸+Al2O3",PMINumber="" },
+                new UnitModelItem {Composition="Cu22.8In21Ga6Se50.2",Quantity=2,SingleWeight=1300 ,ProcessCode="W1",PlanType = "加工",FillRequirement="BN+石墨纸+Al2O3" ,PMINumber=""},
+                new UnitModelItem {Composition="Cu22.8In22Ga5Se50.2",Quantity=3,SingleWeight=1400,ProcessCode="W1",PlanType = "加工",FillRequirement="BN+石墨纸+Al2O3" ,PMINumber="" }
             };
         }
         public string DeviceCode { get; set; }
@@ -38,6 +38,7 @@ namespace PMSLargeScreen.Models
     public class UnitModelItem
     {
         public string Composition { get; set; }
+        public string PMINumber { get; set; }
         public double SingleWeight { get; set; }
         public int Quantity { get; set; }
         public string ProcessCode { get; set; }

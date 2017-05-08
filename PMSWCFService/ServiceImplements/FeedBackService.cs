@@ -12,27 +12,71 @@ namespace PMSWCFService
     {
         public int AddFeedBack(DcFeedBack model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc=new PMSDbContext())
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int DeleteFeedBack(Guid id, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcFeedBack> GetFeedBack(int s, int t, string productId, string composition, string customer)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetFeedBackCount(string productId, string composition, string customer)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateFeedBack(DcFeedBack model, string uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }

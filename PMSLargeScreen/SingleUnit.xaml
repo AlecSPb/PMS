@@ -37,18 +37,20 @@
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <StackPanel Grid.Row="0" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig3}" Foreground="Blue"/>
-                                </StackPanel>
-                                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <TextBlock Grid.Row="0" Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig3}" Foreground="Blue"
+                                           TextWrapping="WrapWithOverflow"/>
+                                <TextBlock Grid.Row="1" Text="{Binding PMINumber,StringFormat=工作号{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
+                                <StackPanel Grid.Row="2" Orientation="Horizontal">
                                     <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding SingleWeight,StringFormat=单片{0:F2}g}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
                                 </StackPanel>
-                                <TextBlock Grid.Row="2" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"/>
+                                <TextBlock Grid.Row="3" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"
+                                           TextWrapping="WrapWithOverflow"/>
                             </Grid>
                         </Border>
                     </DataTemplate>

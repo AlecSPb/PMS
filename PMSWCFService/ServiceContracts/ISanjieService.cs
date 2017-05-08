@@ -40,8 +40,8 @@ namespace PMSWCFService.ServiceContracts
 
         //Debit
         [OperationContract]
-        List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName, string creaditor);
+        List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName);
         [OperationContract]
-        int GetItemDebitCount(string itemType, string itemName, string creaditor);
+        int GetItemDebitCount(string itemType, string itemName);
     }
 }

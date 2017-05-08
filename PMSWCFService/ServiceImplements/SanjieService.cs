@@ -12,14 +12,48 @@ namespace PMSWCFService
 {
     public class SanjieService : ISanjieService
     {
-        public List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName, string creaditor)
+        public List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<ItemDebit, DcItemDebit>());
+                    var query = from i in dc.ItemDebits
+                                where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.ItemName.Contains(itemName)
+                                && i.Creditor.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                orderby i.CreateTime descending
+                                select i;
+                    return Mapper.Map<List<ItemDebit>, List<DcItemDebit>>(query.Skip(s).Take(t).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
-        public int GetItemDebitCount(string itemType, string itemName, string creaditor)
+        public int GetItemDebitCount(string itemType, string itemName)
         {
-
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.ItemDebits
+                                where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.ItemName.Contains(itemName)
+                                && i.Creditor.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                select i;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetMaterialInventoryInCount(string composition, string batchnumber, string pminumber)

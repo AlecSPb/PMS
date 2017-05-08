@@ -138,6 +138,7 @@
     <Compile Include="DataContracts\DcPlate.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
+    <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />

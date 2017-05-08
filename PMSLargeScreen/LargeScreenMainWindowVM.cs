@@ -161,6 +161,7 @@ namespace PMSLargeScreen
 
                             var modelItem = new UnitModelItem();
                             modelItem.Composition = item.Misson.CompositionStandard;
+                            modelItem.PMINumber = item.Misson.PMINumber;
                             modelItem.SingleWeight = item.Plan.SingleWeight;
                             modelItem.PlanType = item.Plan.PlanType;
                             modelItem.Quantity = item.Plan.Quantity;
