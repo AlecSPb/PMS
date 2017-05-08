@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSLargeScreenBonding"
         mc:Ignorable="d"
-        Title="绑定大屏幕显示程序" Height="350" Width="525">
+        Title="绑定大屏幕显示程序" Height="800" Width="1000">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource BG}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding CurrentDate}" Grid.Column="0" Style="{StaticResource StyleTextBlockLightBig}"/>
+            <TextBlock Text="{Binding FinishedCount}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
+            <TextBlock Text="数据更新时间" Grid.Column="2"  Style="{StaticResource StyleTextBlockLightBig}"/>
+            <Button Content="退出" Grid.Column="3"  Style="{StaticResource StyleButton}"/>
+        </Grid>
+
+
+
+
     </Grid>
 </Window>

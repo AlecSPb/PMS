@@ -12,7 +12,7 @@
                 <ResourceDictionary>
                     <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSLargeScreen.ViewModel" />
                 </ResourceDictionary>
-                <ResourceDictionary Source="SimpleStyle.xaml"/>
+                <ResourceDictionary Source="Resources/SimpleStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
   </Application.Resources>
