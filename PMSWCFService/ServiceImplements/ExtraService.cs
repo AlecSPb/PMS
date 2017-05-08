@@ -91,7 +91,16 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<CheckList, DcCheckList>());
+                    var query = from i in dc.CheckLists
+                                where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.Title.Contains(title)
+                                orderby i.CreateTime descending
+                                select i;
+                    return Mapper.Map<List<CheckList>, List<DcCheckList>>(query.Skip(s).Take(t).ToList());
+                }
             }
             catch (Exception ex)
             {
@@ -104,7 +113,14 @@ namespace PMSWCFService
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.CheckLists
+                                where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.Title.Contains(title)
+                                select i;
+                    return query.Count();
+                }
             }
             catch (Exception ex)
             {
@@ -113,11 +129,21 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName, string creaditor)
+        public List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName, string creditor)
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<ItemDebit, DcItemDebit>());
+                    var query = from i in dc.ItemDebits
+                                where i.State == PMSCommon.SimpleState.正常.ToString()
+                                &&i.ItemName.Contains(itemName)
+                                &&i.Creditor.Contains(creditor)
+                                orderby i.CreateTime descending
+                                select i;
+                    return Mapper.Map<List<ItemDebit>, List<DcItemDebit>>(query.Skip(s).Take(t).ToList());
+                }
             }
             catch (Exception ex)
             {
@@ -126,11 +152,19 @@ namespace PMSWCFService
             }
         }
 
-        public int GetItemDebitCount(string itemType, string itemName, string creaditor)
+        public int GetItemDebitCount(string itemType, string itemName, string creditor)
         {
             try
             {
-
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.ItemDebits
+                                where i.State == PMSCommon.SimpleState.正常.ToString()
+                                && i.ItemName.Contains(itemName)
+                                && i.Creditor.Contains(creditor)
+                                select i;
+                    return query.Count();
+                }
             }
             catch (Exception ex)
             {
