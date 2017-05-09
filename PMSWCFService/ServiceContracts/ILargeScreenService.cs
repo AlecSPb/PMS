@@ -19,7 +19,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcRecordBonding> GetBondingUnComplete();
         [OperationContract]
-        List<DcStatistic> GetBondingUnCompleteStatistic();
+        List<DcStatistic> GetBondingCompleteStatistic();
 
     }
 }

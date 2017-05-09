@@ -39,15 +39,15 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetBondingUnCompleteStatistic">
+  <xs:element name="GetBondingCompleteStatistic">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetBondingUnCompleteStatisticResponse">
+  <xs:element name="GetBondingCompleteStatisticResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetBondingUnCompleteStatisticResult" nillable="true" type="q4:ArrayOfDcStatistic" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetBondingCompleteStatisticResult" nillable="true" type="q4:ArrayOfDcStatistic" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

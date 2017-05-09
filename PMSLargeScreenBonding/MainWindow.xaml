@@ -25,8 +25,8 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding CurrentDate,StringFormat=今天是 {0:yyyy-MM-dd dddd}}" Grid.Column="0" Foreground="Yellow"
                        Style="{StaticResource StyleTextBlockLightBig}"/>
-            <TextBlock Text="{Binding FinishedCount,StringFormat=共完成绑定计划{0}次}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
-            <TextBlock Text="数据更新时间" Grid.Column="2"  Style="{StaticResource StyleTextBlockLightBig}"/>
+            <TextBlock Text="{Binding FinishedCount,StringFormat=从2017年04月起共完成绑定计划{0}次}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
+            <TextBlock Text="{Binding IntervalRefreshDataTime,StringFormat=数据更新时间{0}s}" Grid.Column="2"  Style="{StaticResource StyleTextBlockLightBig}"/>
             <Button Name="btnClose" Content="退出" Grid.Column="3"  Style="{StaticResource StyleButton}" Click="btnClose_Click"/>
         </Grid>
         <DataGrid Grid.Row="1" ItemsSource="{Binding RecordBondings}" IsReadOnly="True" SelectionUnit="Cell"  GridLinesVisibility="Horizontal"
@@ -42,6 +42,7 @@
                 <DataGridTextColumn Header="备注" Binding="{Binding Remark}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig2}" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <Grid Grid.Row="2" Background="{StaticResource BG2}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>

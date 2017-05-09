@@ -25,11 +25,11 @@
   <wsdl:message name="ILargeScreenService_GetBondingUnComplete_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBondingUnCompleteResponse" />
   </wsdl:message>
-  <wsdl:message name="ILargeScreenService_GetBondingUnCompleteStatistic_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetBondingUnCompleteStatistic" />
+  <wsdl:message name="ILargeScreenService_GetBondingCompleteStatistic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBondingCompleteStatistic" />
   </wsdl:message>
-  <wsdl:message name="ILargeScreenService_GetBondingUnCompleteStatistic_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetBondingUnCompleteStatisticResponse" />
+  <wsdl:message name="ILargeScreenService_GetBondingCompleteStatistic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBondingCompleteStatisticResponse" />
   </wsdl:message>
   <wsdl:portType name="ILargeScreenService">
     <wsdl:operation name="GetPlanByDate">
@@ -44,9 +44,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnComplete" message="tns:ILargeScreenService_GetBondingUnComplete_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteResponse" message="tns:ILargeScreenService_GetBondingUnComplete_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetBondingUnCompleteStatistic">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatistic" message="tns:ILargeScreenService_GetBondingUnCompleteStatistic_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatisticResponse" message="tns:ILargeScreenService_GetBondingUnCompleteStatistic_OutputMessage" />
+    <wsdl:operation name="GetBondingCompleteStatistic">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic" message="tns:ILargeScreenService_GetBondingCompleteStatistic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatisticResponse" message="tns:ILargeScreenService_GetBondingCompleteStatistic_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="largescreen" type="tns:ILargeScreenService">
@@ -78,8 +78,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBondingUnCompleteStatistic">
-      <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatistic" style="document" />
+    <wsdl:operation name="GetBondingCompleteStatistic">
+      <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

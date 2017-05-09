@@ -851,6 +851,9 @@
     <Content Include="Resource\DocTemplate\Reports\MaterialOrderHorizontal.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\DocTemplate\BarTender101\产品标签.btw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcCheckList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

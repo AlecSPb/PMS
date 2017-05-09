@@ -35,7 +35,7 @@ namespace PMSLargeScreen
             status2 = "状态栏2";
             errorMessage = "其他信息";
 
-            CenterMessage =$"准备数据中，请等待，{IntervalDistributeData/1000}s后显示";
+            CenterMessage = $"准备数据中，请等待，{IntervalDistributeData / 1000}s后显示";
 
             #region 设定定时器
             _timerLoadData = new Timer();
@@ -170,7 +170,10 @@ namespace PMSLargeScreen
 
                             model.Items.Add(modelItem);
                         }
-                        AllModels.Add(model);
+                        App.Current.Dispatcher.Invoke(() =>
+                        {
+                            AllModels.Add(model);
+                        });
                     }
                 }
                 #endregion

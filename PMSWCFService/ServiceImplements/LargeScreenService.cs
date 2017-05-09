@@ -23,7 +23,7 @@ namespace PMSWCFService
                                 orderby i.CreateTime descending
                                 select i;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
-                    return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.ToList());
+                    return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.Take(16).ToList());
                 }
             }
             catch (Exception ex)
@@ -33,17 +33,17 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcStatistic> GetBondingUnCompleteStatistic()
+        public List<DcStatistic> GetBondingCompleteStatistic()
         {
             try
             {
                 var result = new List<DcStatistic>();
                 var dc = new PMSDbContext();
                 var query = from i in dc.RecordBondings
-                            where i.State == PMSCommon.BondingState.未完成.ToString()
+                            where i.State == PMSCommon.BondingState.完成.ToString()
                             orderby i.CreateTime descending
                             select i;
-                result.Add(new DcStatistic { Key = "UnCompletedRecordBonding", Value = query.Count() });
+                result.Add(new DcStatistic { Key = "CompletedRecordBondingCount", Value = query.Count() });
                 dc.Dispose();
                 return result;
             }

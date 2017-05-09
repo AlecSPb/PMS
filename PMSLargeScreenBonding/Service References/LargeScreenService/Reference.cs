@@ -2276,11 +2276,11 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetBondingUnComplete", ReplyAction="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteResponse")]
         System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcRecordBonding[]> GetBondingUnCompleteAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatisticResponse")]
-        PMSLargeScreenBonding.LargeScreenService.DcStatistic[] GetBondingUnCompleteStatistic();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatisticResponse")]
+        PMSLargeScreenBonding.LargeScreenService.DcStatistic[] GetBondingCompleteStatistic();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteStatisticResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcStatistic[]> GetBondingUnCompleteStatisticAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatisticResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcStatistic[]> GetBondingCompleteStatisticAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2334,12 +2334,12 @@ namespace PMSLargeScreenBonding.LargeScreenService {
             return base.Channel.GetBondingUnCompleteAsync();
         }
         
-        public PMSLargeScreenBonding.LargeScreenService.DcStatistic[] GetBondingUnCompleteStatistic() {
-            return base.Channel.GetBondingUnCompleteStatistic();
+        public PMSLargeScreenBonding.LargeScreenService.DcStatistic[] GetBondingCompleteStatistic() {
+            return base.Channel.GetBondingCompleteStatistic();
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcStatistic[]> GetBondingUnCompleteStatisticAsync() {
-            return base.Channel.GetBondingUnCompleteStatisticAsync();
+        public System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcStatistic[]> GetBondingCompleteStatisticAsync() {
+            return base.Channel.GetBondingCompleteStatisticAsync();
         }
     }
 }
