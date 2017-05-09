@@ -3,6 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=System">
     <SolidColorBrush x:Key="BG" Color="#004B8B"/>
     <SolidColorBrush x:Key="BG2" Color="#CA5100"/>
+    <SolidColorBrush x:Key="BG3" Color="LightYellow"/>
     <Style x:Key="StyleBorder" TargetType="Border">
         <Setter Property="Margin" Value="1"/>
         <Setter Property="BorderBrush" Value="LightBlue"/>
@@ -24,8 +25,12 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleTextBlockBig3" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
-        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontSize" Value="18"/>
+    </Style>
+    <Style x:Key="StyleTextBlockBig3Bold" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Red"/>
     </Style>
     <Style x:Key="StyleTextBlockLightBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig}">
         <Setter Property="Foreground" Value="White"/>
