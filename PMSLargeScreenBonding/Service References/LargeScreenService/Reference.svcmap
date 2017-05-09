@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1528719-6486-4882-a822-d1908ebd8700" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/LargeScreenService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LargeScreenService.wsdl" MetadataType="Wsdl" ID="d05159a7-87df-4702-9741-b0f3c3fea4a7" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?wsdl" />
+    <MetadataFile FileName="LargeScreenService.xsd" MetadataType="Schema" ID="ecec6d68-113c-44b2-a243-60efa85214d7" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LargeScreenService1.xsd" MetadataType="Schema" ID="cbf45109-02b1-4ac7-a978-844a39e0f858" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LargeScreenService2.xsd" MetadataType="Schema" ID="be11ad63-9bc8-4bca-b264-69d5499766b1" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LargeScreenService.disco" MetadataType="Disco" ID="35cdd442-29a3-467a-acd3-d7495713de35" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

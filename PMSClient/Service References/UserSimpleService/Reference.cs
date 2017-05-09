@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMSClient.UserService {
+namespace PMSClient.UserSimpleService {
     using System.Runtime.Serialization;
     using System;
     
@@ -405,259 +405,77 @@ namespace PMSClient.UserService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserService.IUserAccessService")]
-    public interface IUserAccessService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserSimpleService.IUserSimpleService")]
+    public interface IUserSimpleService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAllUsers", ReplyAction="http://tempuri.org/IUserAccessService/GetAllUsersResponse")]
-        PMSClient.UserService.DcUser[] GetAllUsers();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetUser", ReplyAction="http://tempuri.org/IUserSimpleService/GetUserResponse")]
+        PMSClient.UserSimpleService.DcUser GetUser(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAllUsers", ReplyAction="http://tempuri.org/IUserAccessService/GetAllUsersResponse")]
-        System.Threading.Tasks.Task<PMSClient.UserService.DcUser[]> GetAllUsersAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetUser", ReplyAction="http://tempuri.org/IUserSimpleService/GetUserResponse")]
+        System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUser> GetUserAsync(string username, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAllRoles", ReplyAction="http://tempuri.org/IUserAccessService/GetAllRolesResponse")]
-        PMSClient.UserService.DcUserRole[] GetAllRoles();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetRole", ReplyAction="http://tempuri.org/IUserSimpleService/GetRoleResponse")]
+        PMSClient.UserSimpleService.DcUserRole GetRole(System.Guid roleId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAllRoles", ReplyAction="http://tempuri.org/IUserAccessService/GetAllRolesResponse")]
-        System.Threading.Tasks.Task<PMSClient.UserService.DcUserRole[]> GetAllRolesAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetRole", ReplyAction="http://tempuri.org/IUserSimpleService/GetRoleResponse")]
+        System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUserRole> GetRoleAsync(System.Guid roleId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAllAccesses", ReplyAction="http://tempuri.org/IUserAccessService/GetAllAccessesResponse")]
-        PMSClient.UserService.DcUserAccess[] GetAllAccesses();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAccesses", ReplyAction="http://tempuri.org/IUserSimpleService/GetAccessesResponse")]
+        PMSClient.UserSimpleService.DcUserAccess[] GetAccesses(System.Guid roleId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAllAccesses", ReplyAction="http://tempuri.org/IUserAccessService/GetAllAccessesResponse")]
-        System.Threading.Tasks.Task<PMSClient.UserService.DcUserAccess[]> GetAllAccessesAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/IsUserNameExsit", ReplyAction="http://tempuri.org/IUserAccessService/IsUserNameExsitResponse")]
-        bool IsUserNameExsit(string userName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/IsUserNameExsit", ReplyAction="http://tempuri.org/IUserAccessService/IsUserNameExsitResponse")]
-        System.Threading.Tasks.Task<bool> IsUserNameExsitAsync(string userName);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetUser", ReplyAction="http://tempuri.org/IUserAccessService/GetUserResponse")]
-        PMSClient.UserService.DcUser GetUser(string username, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetUser", ReplyAction="http://tempuri.org/IUserAccessService/GetUserResponse")]
-        System.Threading.Tasks.Task<PMSClient.UserService.DcUser> GetUserAsync(string username, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetRole", ReplyAction="http://tempuri.org/IUserAccessService/GetRoleResponse")]
-        PMSClient.UserService.DcUserRole GetRole(System.Guid roleId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetRole", ReplyAction="http://tempuri.org/IUserAccessService/GetRoleResponse")]
-        System.Threading.Tasks.Task<PMSClient.UserService.DcUserRole> GetRoleAsync(System.Guid roleId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAccesses", ReplyAction="http://tempuri.org/IUserAccessService/GetAccessesResponse")]
-        PMSClient.UserService.DcUserAccess[] GetAccesses(System.Guid roleId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/GetAccesses", ReplyAction="http://tempuri.org/IUserAccessService/GetAccessesResponse")]
-        System.Threading.Tasks.Task<PMSClient.UserService.DcUserAccess[]> GetAccessesAsync(System.Guid roleId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/AddUser", ReplyAction="http://tempuri.org/IUserAccessService/AddUserResponse")]
-        int AddUser(PMSClient.UserService.DcUser model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/AddUser", ReplyAction="http://tempuri.org/IUserAccessService/AddUserResponse")]
-        System.Threading.Tasks.Task<int> AddUserAsync(PMSClient.UserService.DcUser model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/AddRole", ReplyAction="http://tempuri.org/IUserAccessService/AddRoleResponse")]
-        int AddRole(PMSClient.UserService.DcUserRole model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/AddRole", ReplyAction="http://tempuri.org/IUserAccessService/AddRoleResponse")]
-        System.Threading.Tasks.Task<int> AddRoleAsync(PMSClient.UserService.DcUserRole model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/AddAccess", ReplyAction="http://tempuri.org/IUserAccessService/AddAccessResponse")]
-        int AddAccess(PMSClient.UserService.DcUserAccess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/AddAccess", ReplyAction="http://tempuri.org/IUserAccessService/AddAccessResponse")]
-        System.Threading.Tasks.Task<int> AddAccessAsync(PMSClient.UserService.DcUserAccess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/UpdateUser", ReplyAction="http://tempuri.org/IUserAccessService/UpdateUserResponse")]
-        int UpdateUser(PMSClient.UserService.DcUser model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/UpdateUser", ReplyAction="http://tempuri.org/IUserAccessService/UpdateUserResponse")]
-        System.Threading.Tasks.Task<int> UpdateUserAsync(PMSClient.UserService.DcUser model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/UpdateRole", ReplyAction="http://tempuri.org/IUserAccessService/UpdateRoleResponse")]
-        int UpdateRole(PMSClient.UserService.DcUserRole model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/UpdateRole", ReplyAction="http://tempuri.org/IUserAccessService/UpdateRoleResponse")]
-        System.Threading.Tasks.Task<int> UpdateRoleAsync(PMSClient.UserService.DcUserRole model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/UpdateAccess", ReplyAction="http://tempuri.org/IUserAccessService/UpdateAccessResponse")]
-        int UpdateAccess(PMSClient.UserService.DcUserAccess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/UpdateAccess", ReplyAction="http://tempuri.org/IUserAccessService/UpdateAccessResponse")]
-        System.Threading.Tasks.Task<int> UpdateAccessAsync(PMSClient.UserService.DcUserAccess model);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/DeleteUser", ReplyAction="http://tempuri.org/IUserAccessService/DeleteUserResponse")]
-        int DeleteUser(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/DeleteUser", ReplyAction="http://tempuri.org/IUserAccessService/DeleteUserResponse")]
-        System.Threading.Tasks.Task<int> DeleteUserAsync(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/DeleteRole", ReplyAction="http://tempuri.org/IUserAccessService/DeleteRoleResponse")]
-        int DeleteRole(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/DeleteRole", ReplyAction="http://tempuri.org/IUserAccessService/DeleteRoleResponse")]
-        System.Threading.Tasks.Task<int> DeleteRoleAsync(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/DeleteAccess", ReplyAction="http://tempuri.org/IUserAccessService/DeleteAccessResponse")]
-        int DeleteAccess(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserAccessService/DeleteAccess", ReplyAction="http://tempuri.org/IUserAccessService/DeleteAccessResponse")]
-        System.Threading.Tasks.Task<int> DeleteAccessAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserSimpleService/GetAccesses", ReplyAction="http://tempuri.org/IUserSimpleService/GetAccessesResponse")]
+        System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUserAccess[]> GetAccessesAsync(System.Guid roleId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IUserAccessServiceChannel : PMSClient.UserService.IUserAccessService, System.ServiceModel.IClientChannel {
+    public interface IUserSimpleServiceChannel : PMSClient.UserSimpleService.IUserSimpleService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UserAccessServiceClient : System.ServiceModel.ClientBase<PMSClient.UserService.IUserAccessService>, PMSClient.UserService.IUserAccessService {
+    public partial class UserSimpleServiceClient : System.ServiceModel.ClientBase<PMSClient.UserSimpleService.IUserSimpleService>, PMSClient.UserSimpleService.IUserSimpleService {
         
-        public UserAccessServiceClient() {
+        public UserSimpleServiceClient() {
         }
         
-        public UserAccessServiceClient(string endpointConfigurationName) : 
+        public UserSimpleServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public UserAccessServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public UserSimpleServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public UserAccessServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserSimpleServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public UserAccessServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UserSimpleServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.UserService.DcUser[] GetAllUsers() {
-            return base.Channel.GetAllUsers();
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.UserService.DcUser[]> GetAllUsersAsync() {
-            return base.Channel.GetAllUsersAsync();
-        }
-        
-        public PMSClient.UserService.DcUserRole[] GetAllRoles() {
-            return base.Channel.GetAllRoles();
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.UserService.DcUserRole[]> GetAllRolesAsync() {
-            return base.Channel.GetAllRolesAsync();
-        }
-        
-        public PMSClient.UserService.DcUserAccess[] GetAllAccesses() {
-            return base.Channel.GetAllAccesses();
-        }
-        
-        public System.Threading.Tasks.Task<PMSClient.UserService.DcUserAccess[]> GetAllAccessesAsync() {
-            return base.Channel.GetAllAccessesAsync();
-        }
-        
-        public bool IsUserNameExsit(string userName) {
-            return base.Channel.IsUserNameExsit(userName);
-        }
-        
-        public System.Threading.Tasks.Task<bool> IsUserNameExsitAsync(string userName) {
-            return base.Channel.IsUserNameExsitAsync(userName);
-        }
-        
-        public PMSClient.UserService.DcUser GetUser(string username, string password) {
+        public PMSClient.UserSimpleService.DcUser GetUser(string username, string password) {
             return base.Channel.GetUser(username, password);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.UserService.DcUser> GetUserAsync(string username, string password) {
+        public System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUser> GetUserAsync(string username, string password) {
             return base.Channel.GetUserAsync(username, password);
         }
         
-        public PMSClient.UserService.DcUserRole GetRole(System.Guid roleId) {
+        public PMSClient.UserSimpleService.DcUserRole GetRole(System.Guid roleId) {
             return base.Channel.GetRole(roleId);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.UserService.DcUserRole> GetRoleAsync(System.Guid roleId) {
+        public System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUserRole> GetRoleAsync(System.Guid roleId) {
             return base.Channel.GetRoleAsync(roleId);
         }
         
-        public PMSClient.UserService.DcUserAccess[] GetAccesses(System.Guid roleId) {
+        public PMSClient.UserSimpleService.DcUserAccess[] GetAccesses(System.Guid roleId) {
             return base.Channel.GetAccesses(roleId);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.UserService.DcUserAccess[]> GetAccessesAsync(System.Guid roleId) {
+        public System.Threading.Tasks.Task<PMSClient.UserSimpleService.DcUserAccess[]> GetAccessesAsync(System.Guid roleId) {
             return base.Channel.GetAccessesAsync(roleId);
-        }
-        
-        public int AddUser(PMSClient.UserService.DcUser model) {
-            return base.Channel.AddUser(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> AddUserAsync(PMSClient.UserService.DcUser model) {
-            return base.Channel.AddUserAsync(model);
-        }
-        
-        public int AddRole(PMSClient.UserService.DcUserRole model) {
-            return base.Channel.AddRole(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> AddRoleAsync(PMSClient.UserService.DcUserRole model) {
-            return base.Channel.AddRoleAsync(model);
-        }
-        
-        public int AddAccess(PMSClient.UserService.DcUserAccess model) {
-            return base.Channel.AddAccess(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> AddAccessAsync(PMSClient.UserService.DcUserAccess model) {
-            return base.Channel.AddAccessAsync(model);
-        }
-        
-        public int UpdateUser(PMSClient.UserService.DcUser model) {
-            return base.Channel.UpdateUser(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateUserAsync(PMSClient.UserService.DcUser model) {
-            return base.Channel.UpdateUserAsync(model);
-        }
-        
-        public int UpdateRole(PMSClient.UserService.DcUserRole model) {
-            return base.Channel.UpdateRole(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateRoleAsync(PMSClient.UserService.DcUserRole model) {
-            return base.Channel.UpdateRoleAsync(model);
-        }
-        
-        public int UpdateAccess(PMSClient.UserService.DcUserAccess model) {
-            return base.Channel.UpdateAccess(model);
-        }
-        
-        public System.Threading.Tasks.Task<int> UpdateAccessAsync(PMSClient.UserService.DcUserAccess model) {
-            return base.Channel.UpdateAccessAsync(model);
-        }
-        
-        public int DeleteUser(System.Guid id) {
-            return base.Channel.DeleteUser(id);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteUserAsync(System.Guid id) {
-            return base.Channel.DeleteUserAsync(id);
-        }
-        
-        public int DeleteRole(System.Guid id) {
-            return base.Channel.DeleteRole(id);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteRoleAsync(System.Guid id) {
-            return base.Channel.DeleteRoleAsync(id);
-        }
-        
-        public int DeleteAccess(System.Guid id) {
-            return base.Channel.DeleteAccess(id);
-        }
-        
-        public System.Threading.Tasks.Task<int> DeleteAccessAsync(System.Guid id) {
-            return base.Channel.DeleteAccessAsync(id);
         }
     }
 }

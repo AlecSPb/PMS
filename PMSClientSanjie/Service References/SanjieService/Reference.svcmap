@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7dd62c8f-8e18-40b4-b2b0-7a4dc89484e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/SanjieService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SanjieService.xsd" MetadataType="Schema" ID="ec73d064-e23c-43d1-8f00-ae22176348ab" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SanjieService.wsdl" MetadataType="Wsdl" ID="fd4ccd36-66be-4e4d-a606-778367090235" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?wsdl" />
+    <MetadataFile FileName="SanjieService1.xsd" MetadataType="Schema" ID="398d9b46-f8a2-4b4b-ad23-14803a3568cf" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SanjieService.disco" MetadataType="Disco" ID="981f873d-43c4-4632-905b-db03ed5a62ef" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?disco" />
+    <MetadataFile FileName="SanjieService2.xsd" MetadataType="Schema" ID="77d10388-6494-43da-8aa6-3a0fc4150bdd" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

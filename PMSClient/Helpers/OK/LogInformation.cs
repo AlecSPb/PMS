@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PMSClient.UserService;
+using PMSClient.UserSimpleService;
 
 namespace PMSClient.Helper
 {
@@ -39,7 +39,7 @@ namespace PMSClient.Helper
         {
             try
             {
-                using (var service = new UserAccessServiceClient())
+                using (var service = new UserSimpleServiceClient())
                 {
                     CurrentUser = service.GetUser(username, password);
                     if (CurrentUser != null)

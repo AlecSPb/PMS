@@ -54,6 +54,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +78,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Service References\SanjieService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserSimpleService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="View\MaterialOrderListView.xaml.cs">
       <DependentUpon>MaterialOrderListView.xaml</DependentUpon>
     </Compile>
@@ -144,12 +156,93 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcItemDebit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialInventoryIn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialInventoryOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrderItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService.wsdl" />
+    <None Include="Service References\SanjieService\SanjieService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUserAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUserRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
+    <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\UserSimpleService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\UserSimpleService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SanjieService\" />
+    <WCFMetadataStorage Include="Service References\UserSimpleService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SanjieService\SanjieService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SanjieService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SanjieService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SanjieService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSimpleService\UserSimpleService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSimpleService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSimpleService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSimpleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -158,7 +158,6 @@
     <Compile Include="ServiceContracts\IStatisticService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceContracts\IMainStatisticService.cs" />
-    <Compile Include="ServiceImplements\FeedBackService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
     <Compile Include="ServiceImplements\LargeScreenService.cs" />

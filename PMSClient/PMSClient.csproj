@@ -190,6 +190,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ExtraService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HeartBeatService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,7 +210,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\UserService\Reference.cs">
+    <Compile Include="Service References\UserSimpleService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -842,6 +847,48 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcCheckList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcFeedBack.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcItemDebit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ExtraService\configuration.svcinfo" />
+    <None Include="Service References\ExtraService\configuration91.svcinfo" />
+    <None Include="Service References\ExtraService\ExtraService.disco" />
+    <None Include="Service References\ExtraService\ExtraService.wsdl" />
+    <None Include="Service References\ExtraService\ExtraService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExtraService\ExtraService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExtraService\ExtraService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcUserAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcUserRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserSimpleService\configuration.svcinfo" />
+    <None Include="Service References\UserSimpleService\configuration91.svcinfo" />
+    <None Include="Service References\UserSimpleService\UserSimpleService.disco" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1016,14 +1063,15 @@
     <None Include="Service References\StatisticService\StatisticService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService\PMSClient.UserService.DcUser.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
+    <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService\PMSClient.UserService.DcUserAccess.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\UserSimpleService\UserSimpleService1.xsd">
+      <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserService\PMSClient.UserService.DcUserRole.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="Service References\UserSimpleService\UserSimpleService2.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -1062,22 +1110,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BasicService\" />
+    <WCFMetadataStorage Include="Service References\ExtraService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
-    <WCFMetadataStorage Include="Service References\UserService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
@@ -1178,16 +1215,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\UserService\UserAccessService.wsdl" />
-    <None Include="Service References\UserService\UserAccessService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserService\UserAccessService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserService\UserAccessService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Documents\updates.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1233,9 +1260,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserService\UserAccessService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Note\stdcomposition.txt" />

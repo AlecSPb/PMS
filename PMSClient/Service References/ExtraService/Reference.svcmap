@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="72f9fa07-0b0f-4be8-8092-ba68e125b661" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/ExtraService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExtraService.wsdl" MetadataType="Wsdl" ID="39ff2c9a-fdd4-490c-b0f2-d5fc47e5cefc" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?wsdl" />
+    <MetadataFile FileName="ExtraService.xsd" MetadataType="Schema" ID="ef71c115-05dc-4e74-9eb1-e6d83d97c43d" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExtraService.disco" MetadataType="Disco" ID="9b661d11-db14-4b11-9ee5-73bee27e5853" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?disco" />
+    <MetadataFile FileName="ExtraService1.xsd" MetadataType="Schema" ID="1dfe26f3-8e16-4547-afeb-ffd107317b27" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExtraService2.xsd" MetadataType="Schema" ID="e4ba7cd6-cfd2-4bc5-9a59-392f24d4081f" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
