@@ -7,12 +7,13 @@ using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSCommon;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
     public class LargeScreenService : ILargeScreenService
     {
-        public List<DcRecordBonding> GetBondingUnComplete()
+        public List<DcRecordBonding> GetBondingUnComplete(int s, int t)
         {
             try
             {
@@ -20,10 +21,10 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.RecordBondings
                                 where i.State == PMSCommon.BondingState.未完成.ToString()
-                                orderby i.CreateTime descending
+                                orderby DbFunctions.TruncateTime(i.CreateTime) descending,i.TargetProductID
                                 select i;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
-                    return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.Take(16).ToList());
+                    return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.Skip(s).Take(t).ToList());
                 }
             }
             catch (Exception ex)
@@ -32,7 +33,24 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        public int GetBondingUnCompleteCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.RecordBondings
+                                where i.State == PMSCommon.BondingState.未完成.ToString()
+                                select i;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
         public List<DcStatistic> GetBondingCompleteStatistic()
         {
             try

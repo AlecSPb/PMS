@@ -34,8 +34,8 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
                                     ElementStyle="{StaticResource StyleTextBlockBig3}"/>
-                <DataGridTextColumn Header="产品ID" Binding="{Binding TargetProductID}" ElementStyle="{StaticResource StyleTextBlockBig3Bold}"/>
-                <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
+                <DataGridTextColumn Header="产品ID" Binding="{Binding TargetProductID}" ElementStyle="{StaticResource StyleTextBlockBig3B}"/>
+                <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3A}"/>
                 <DataGridTextColumn Header="尺寸" Binding="{Binding TargetDimension}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="盖板号码" Binding="{Binding CoverPlateNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="背板编号" Binding="{Binding PlateLot}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>

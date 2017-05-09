@@ -17,7 +17,9 @@ namespace PMSWCFService.ServiceContracts
         List<DcStatistic> GetPlanStatistic();
 
         [OperationContract]
-        List<DcRecordBonding> GetBondingUnComplete();
+        List<DcRecordBonding> GetBondingUnComplete(int s,int t);
+        [OperationContract]
+        int GetBondingUnCompleteCount();
         [OperationContract]
         List<DcStatistic> GetBondingCompleteStatistic();
 

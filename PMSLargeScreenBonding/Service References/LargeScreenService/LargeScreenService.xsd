@@ -29,13 +29,28 @@
   </xs:element>
   <xs:element name="GetBondingUnComplete">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:int" />
+        <xs:element minOccurs="0" name="t" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetBondingUnCompleteResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetBondingUnCompleteResult" nillable="true" type="q3:ArrayOfDcRecordBonding" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBondingUnCompleteCount">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBondingUnCompleteCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBondingUnCompleteCountResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

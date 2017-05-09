@@ -13,8 +13,9 @@ namespace PMSLargeScreenBonding
 {
     public class MainWindowVM : ViewModelBase
     {
-        private Timer _timer;
-        private double IntervalRefreshData;
+        private Timer _Loadtimer;
+
+        private double IntervalLoadDataTime;
         public MainWindowVM()
         {
             currentDate = DateTime.Now;
@@ -24,26 +25,54 @@ namespace PMSLargeScreenBonding
             RecordBondings = new ObservableCollection<DcRecordBonding>();
 
 
-            IntervalRefreshData = 10000;
+            IntervalLoadDataTime = 10000;
+            _Loadtimer = new Timer();
+            _Loadtimer.Interval = IntervalLoadDataTime;
+            _Loadtimer.Elapsed += _Loadtimer_Elapsed;
+            _Loadtimer.Start();
 
-            _timer = new Timer();
-            _timer.Interval = IntervalRefreshData;
-            _timer.Elapsed += _timer_Elapsed;
-            _timer.Start();
 
-            CenterMessage = $"准备数据中，请等待，{IntervalRefreshData / 1000}s后显示";
+            CenterMessage = $"准备数据中，请等待，{IntervalLoadDataTime / 1000}s后显示";
         }
 
-        private void _timer_Elapsed(object sender, ElapsedEventArgs e)
+        private int pageIndex = 0;
+        private int PageSize = 8;
+        private int dataCount = 0;
+        private void _Loadtimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                using (var service=new LargeScreenServiceClient())
+                {
+                    dataCount = service.GetBondingUnCompleteCount();
+                }
+                int skip = pageIndex * PageSize;
+                int take = PageSize;
+
+                Status2 = $"每次显示{PageSize}条，这是第{pageIndex+1}页，共{dataCount}条数据";
+                LoadData(skip,take);
+
+                pageIndex++;
+                if (pageIndex*PageSize>dataCount)
+                {
+                    pageIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Status3 = ex.Message;
+            }
+        }
+
+        private void LoadData(int skip,int take)
         {
             try
             {
                 CurrentDate = DateTime.Now;
-
                 DcRecordBonding[] result;
                 using (var service = new LargeScreenServiceClient())
                 {
-                    result = service.GetBondingUnComplete();
+                    result = service.GetBondingUnComplete(skip, take);
                     FinishedCount = (int)service.GetBondingCompleteStatistic()[0].Value;
                 }
                 if (result.Count() == 0)
@@ -58,7 +87,7 @@ namespace PMSLargeScreenBonding
                     result.ToList().ForEach(i => RecordBondings.Add(i));
                 });
 
-                Status1 = $"数据刷新于{DateTime.Now.ToString("HH:mm:ss")}";
+                Status1 = $"全部数据刷新于{DateTime.Now.ToString("HH:mm:ss")}";
             }
             catch (Exception ex)
             {
@@ -67,8 +96,6 @@ namespace PMSLargeScreenBonding
         }
 
         public ObservableCollection<DcRecordBonding> RecordBondings { get; set; }
-
-
         private DateTime currentDate;
 
         public DateTime CurrentDate
@@ -119,7 +146,7 @@ namespace PMSLargeScreenBonding
         {
             get
             {
-                return IntervalRefreshData / 1000;
+                return IntervalLoadDataTime / 1000;
             }
         }
     }

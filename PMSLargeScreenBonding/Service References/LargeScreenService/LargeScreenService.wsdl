@@ -25,6 +25,12 @@
   <wsdl:message name="ILargeScreenService_GetBondingUnComplete_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBondingUnCompleteResponse" />
   </wsdl:message>
+  <wsdl:message name="ILargeScreenService_GetBondingUnCompleteCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBondingUnCompleteCount" />
+  </wsdl:message>
+  <wsdl:message name="ILargeScreenService_GetBondingUnCompleteCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBondingUnCompleteCountResponse" />
+  </wsdl:message>
   <wsdl:message name="ILargeScreenService_GetBondingCompleteStatistic_InputMessage">
     <wsdl:part name="parameters" element="tns:GetBondingCompleteStatistic" />
   </wsdl:message>
@@ -43,6 +49,10 @@
     <wsdl:operation name="GetBondingUnComplete">
       <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnComplete" message="tns:ILargeScreenService_GetBondingUnComplete_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteResponse" message="tns:ILargeScreenService_GetBondingUnComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBondingUnCompleteCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteCount" message="tns:ILargeScreenService_GetBondingUnCompleteCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteCountResponse" message="tns:ILargeScreenService_GetBondingUnCompleteCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBondingCompleteStatistic">
       <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic" message="tns:ILargeScreenService_GetBondingCompleteStatistic_InputMessage" />
@@ -71,6 +81,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetBondingUnComplete">
       <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetBondingUnComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBondingUnCompleteCount">
+      <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetBondingUnCompleteCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
