@@ -22,7 +22,9 @@
                             <ColumnDefinition Width="500"/>
                         </Grid.ColumnDefinitions>
                         <ContentControl Name="leftArea" Grid.Column="0"/>
-                        <ContentControl Name="rightArea" Grid.Column="1"/>
+                        <Border Grid.Column="1" Style="{StaticResource StyleBorderCommon}">
+                            <ContentControl Name="rightArea"/>
+                        </Border>
                     </Grid>
                 </Border>
             </Expander.Content>

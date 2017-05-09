@@ -46,13 +46,13 @@ namespace PMSClient.ViewModel
             model.TargetComposition = "靶材成分";
             model.TargetDimension = "靶材尺寸";
             //暂时用不到
-            model.TargetAbbr = "";
-            model.TargetPO = "";
+            model.TargetAbbr = "尚未确定";
+            model.TargetPO = "尚未确定";
             model.TargetPMINumber = UsefulPackage.PMSTranslate.PMINumber();
-            model.TargetWeight = "";
-            model.TargetDimensionActual = "";
-            model.TargetDefects = "";
-            model.TargetDetailRecord = "";
+            model.TargetWeight = "尚未确定";
+            model.TargetDimensionActual = "尚未确定";
+            model.TargetDefects = "尚未确定";
+            model.TargetDetailRecord = "尚未确定";
             //暂时用不到
             //1.0
             model.TargetAppearance = "正常";
@@ -66,10 +66,10 @@ namespace PMSClient.ViewModel
             model.PlateLot = "暂无";
             model.PlateMaterial = "CuCr";
             model.PlateDimension = "237mm  ODx 11 mm";
-            model.PlateUseCount = "1";
+            model.PlateUseCount = "0";
             model.PlateHardness = "未知";
             model.PlateSuplier = "广汉";
-            model.PlateLastWeldMaterial = "铟";
+            model.PlateLastWeldMaterial = "无";
             model.PlateAppearance = "正常";
             model.PlatePerson = "无";
             model.PlateCheckTime = DateTime.Now;
@@ -120,7 +120,7 @@ namespace PMSClient.ViewModel
             model.PackPerson = "无";
             model.PackCheckTime = DateTime.Now;
 
-            model.Remark = "";
+            model.Remark = "无";
 
 
             #endregion

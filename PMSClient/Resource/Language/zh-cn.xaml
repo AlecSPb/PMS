@@ -565,7 +565,8 @@
     <sys:String x:Key="BDCreator">创建者</sys:String>
     <sys:String x:Key="BDCreateTime">创建时间</sys:String>
     <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
-
+    <sys:String x:Key="BDRemark">备注</sys:String>
+    
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>
     <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
@@ -607,7 +608,7 @@
     <sys:String x:Key="BDTargetPreProcessCheckTime">记录检查时间</sys:String>
 
 
-    <sys:String x:Key="BDPlatePreProcessRecord">背板预处理记录</sys:String>
+    <sys:String x:Key="BDPlatePreProcessRecord">预处理记录</sys:String>
     <sys:String x:Key="BDPlatePreProcessPerson">背板预处理人</sys:String>
     <sys:String x:Key="BDPlatePreProcessCheckTime">背板预处理时间</sys:String>
 

@@ -74,6 +74,8 @@
                                     Binding="{Binding RecordBonding.TargetDimension}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding RecordBonding.PlateLot}"/>
+                <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding Remark}"/>
 
             </DataGrid.Columns>
         </DataGrid>

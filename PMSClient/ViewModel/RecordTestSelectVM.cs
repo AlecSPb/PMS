@@ -92,7 +92,6 @@ namespace PMSClient.ViewModel
                         temp.TargetDimension = model.Dimension;
                         temp.TargetDimensionActual = model.DimensionActual;
                         temp.TargetDefects = model.Defects;
-
                         service.AddRecordBongdingByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 }

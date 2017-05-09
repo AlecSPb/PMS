@@ -50,9 +50,9 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.BondingState.未完成.ToString();
             model.InstructionCode = "无";
-            model.TargetProductID = UsefulPackage.PMSTranslate.PlanLot();
-            model.TargetComposition = "靶材成分";
-            model.TargetDimension = "靶材尺寸";
+            model.TargetProductID = "尚未安排";
+            model.TargetComposition = "尚未安排";
+            model.TargetDimension = "尚未安排";
             //暂时用不到
             model.TargetAbbr = "";
             model.TargetPO = "";
@@ -67,65 +67,65 @@ namespace PMSClient.ViewModel
             model.TargetWarpageCheck = "正常";
             model.TargetThicknessCheck = "正常";
             model.TargetDiameterCheck = "正常";
-            model.TargetPerson = "无";
+            model.TargetPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.TargetCheckTime = DateTime.Now;
 
             //2.0
             model.PlateLot = "暂无";
             model.PlateMaterial = "CuCr";
             model.PlateDimension = "237mm  ODx 11 mm";
-            model.PlateUseCount = "1";
+            model.PlateUseCount = "0";
             model.PlateHardness = "未知";
             model.PlateSuplier = "广汉";
-            model.PlateLastWeldMaterial = "铟";
+            model.PlateLastWeldMaterial = "无";
             model.PlateAppearance = "正常";
-            model.PlatePerson = "无";
+            model.PlatePerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.PlateCheckTime = DateTime.Now;
 
             //3.0
             model.TargetPreProcessRecord = "正常";
-            model.TargetPreProcessPerson = "无";
+            model.TargetPreProcessPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.TargetPreProcessCheckTime = DateTime.Now;
 
             //4.0
             model.PlatePreProcessRecord = "正常";
-            model.PlatePreProcessPerson = "无";
+            model.PlatePreProcessPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.PlatePreProcessCheckTime = DateTime.Now;
 
             //5.0
             model.WeldMaterial = "铟";
             model.WeldCuStringDiameter = "3.0";
             model.WeldHold = "4个";
-            model.WeldPerson = "无";
+            model.WeldPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.WeldCheckTime = DateTime.Now;
             //6.0
             model.WarpageFix = "正常";
-            model.WarpagePerson = "无";
+            model.WarpagePerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.WarpageCheckTime = DateTime.Now;
             //7.0
             model.DimensionCheck = "正常";
             model.DimensionWarpageCheck = "无";
-            model.DimensionPerson = "无";
+            model.DimensionPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.DimensionCheckTime = DateTime.Now;
             //
             model.BindingCheck = "正常";
-            model.BindingPerson = "无";
+            model.BindingPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.BindingCheckTime = DateTime.Now;
             //
             model.SprayCheck = "正常";
-            model.SprayPerson = "无";
+            model.SprayPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.SprayCheckTime = DateTime.Now;
             //
             model.CleanCheck = "正常";
-            model.CleanPerson = "无";
+            model.CleanPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.CleanCheckTime = DateTime.Now;
             //
             model.ApperanceCheck = "正常";
-            model.ApperancePerson = "无";
+            model.ApperancePerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.ApperanceCheckTime = DateTime.Now;
             //
             model.PackCheck = "正常";
-            model.PackPerson = "无";
+            model.PackPerson = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.PackCheckTime = DateTime.Now;
 
             model.Remark = "";
@@ -193,60 +193,61 @@ namespace PMSClient.ViewModel
                     return;
                 }
             }
-            var currentUser = PMSHelper.CurrentSession.CurrentUser.UserName;
-            var currentTime = DateTime.Now;
-            //通过参数判断是按下的是那个签名按钮
-            //并设置对应的签名和时间
-            switch (param)
-            {
-                //case "00":
-                //    CurrentRecordBonding.Creator = currentUser;
-                //    CurrentRecordBonding.CreateTime = currentTime;
-                //    break;
-                case "10":
-                    CurrentRecordBonding.TargetPerson = currentUser;
-                    CurrentRecordBonding.TargetCheckTime = currentTime;
-                    break;
-                case "20":
-                    CurrentRecordBonding.PlatePerson = currentUser;
-                    CurrentRecordBonding.PlateCheckTime = currentTime;
-                    break;
-                case "30":
-                    CurrentRecordBonding.TargetPreProcessPerson = currentUser;
-                    CurrentRecordBonding.TargetPreProcessCheckTime = currentTime;
-                    break;
-                case "40":
-                    CurrentRecordBonding.PlatePreProcessPerson = currentUser;
-                    CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
-                    break;
-                case "50":
-                    CurrentRecordBonding.WeldPerson = currentUser;
-                    CurrentRecordBonding.WeldCheckTime = currentTime;
-                    break;
-                case "60":
-                    CurrentRecordBonding.WarpagePerson = currentUser;
-                    CurrentRecordBonding.WarpageCheckTime = currentTime;
-                    break;
-                case "70":
-                    CurrentRecordBonding.DimensionPerson = currentUser;
-                    CurrentRecordBonding.DimensionCheckTime = currentTime;
-                    break;
-                case "80":
-                    CurrentRecordBonding.BindingPerson = currentUser;
-                    CurrentRecordBonding.BindingCheckTime = currentTime;
-                    break;
-                case "90":
-                    CurrentRecordBonding.SprayPerson = currentUser;
-                    CurrentRecordBonding.SprayCheckTime = currentTime;
-                    break;
-                case "100":
-                    CurrentRecordBonding.ApperancePerson = currentUser;
-                    CurrentRecordBonding.ApperanceCheckTime = currentTime;
-                    break;
-                default:
-                    break;
-            }
-
+            #region 暂时作废
+            //var currentUser = PMSHelper.CurrentSession.CurrentUser.UserName;
+            //var currentTime = DateTime.Now;
+            ////通过参数判断是按下的是那个签名按钮
+            ////并设置对应的签名和时间
+            //switch (param)
+            //{
+            //    //case "00":
+            //    //    CurrentRecordBonding.Creator = currentUser;
+            //    //    CurrentRecordBonding.CreateTime = currentTime;
+            //    //    break;
+            //    case "10":
+            //        CurrentRecordBonding.TargetPerson = currentUser;
+            //        CurrentRecordBonding.TargetCheckTime = currentTime;
+            //        break;
+            //    case "20":
+            //        CurrentRecordBonding.PlatePerson = currentUser;
+            //        CurrentRecordBonding.PlateCheckTime = currentTime;
+            //        break;
+            //    case "30":
+            //        CurrentRecordBonding.TargetPreProcessPerson = currentUser;
+            //        CurrentRecordBonding.TargetPreProcessCheckTime = currentTime;
+            //        break;
+            //    case "40":
+            //        CurrentRecordBonding.PlatePreProcessPerson = currentUser;
+            //        CurrentRecordBonding.PlatePreProcessCheckTime = currentTime;
+            //        break;
+            //    case "50":
+            //        CurrentRecordBonding.WeldPerson = currentUser;
+            //        CurrentRecordBonding.WeldCheckTime = currentTime;
+            //        break;
+            //    case "60":
+            //        CurrentRecordBonding.WarpagePerson = currentUser;
+            //        CurrentRecordBonding.WarpageCheckTime = currentTime;
+            //        break;
+            //    case "70":
+            //        CurrentRecordBonding.DimensionPerson = currentUser;
+            //        CurrentRecordBonding.DimensionCheckTime = currentTime;
+            //        break;
+            //    case "80":
+            //        CurrentRecordBonding.BindingPerson = currentUser;
+            //        CurrentRecordBonding.BindingCheckTime = currentTime;
+            //        break;
+            //    case "90":
+            //        CurrentRecordBonding.SprayPerson = currentUser;
+            //        CurrentRecordBonding.SprayCheckTime = currentTime;
+            //        break;
+            //    case "100":
+            //        CurrentRecordBonding.ApperancePerson = currentUser;
+            //        CurrentRecordBonding.ApperanceCheckTime = currentTime;
+            //        break;
+            //    default:
+            //        break;
+            //}
+            #endregion
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
