@@ -25,7 +25,7 @@ namespace PMSLargeScreenBonding
             RecordBondings = new ObservableCollection<DcRecordBonding>();
 
 
-            IntervalLoadDataTime = 10000;
+            IntervalLoadDataTime = 60000;
             _Loadtimer = new Timer();
             _Loadtimer.Interval = IntervalLoadDataTime;
             _Loadtimer.Elapsed += _Loadtimer_Elapsed;

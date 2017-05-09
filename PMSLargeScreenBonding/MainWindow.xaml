@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PMSLargeScreenBonding"
         Language="zh-cn"
         mc:Ignorable="d"
+        Icon="Resources\Images\tv.png"
         Title="绑定记录大屏幕显示程序" Height="800" Width="1000" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.DataContext>
         <local:MainWindowVM/>
@@ -32,14 +33,13 @@
         <DataGrid Grid.Row="1" ItemsSource="{Binding RecordBondings}" IsReadOnly="True" SelectionUnit="Cell"  GridLinesVisibility="Horizontal"
                   HorizontalGridLinesBrush="Wheat" SelectionMode="Single" AutoGenerateColumns="False" Background="{StaticResource BG3}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
+                <DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding TargetProductID}" ElementStyle="{StaticResource StyleTextBlockBig3B}"/>
                 <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3A}"/>
                 <DataGridTextColumn Header="尺寸" Binding="{Binding TargetDimension}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="盖板号码" Binding="{Binding CoverPlateNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="背板编号" Binding="{Binding PlateLot}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
-                <DataGridTextColumn Header="备注" Binding="{Binding Remark}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig2}" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"/>
