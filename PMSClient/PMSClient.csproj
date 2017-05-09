@@ -176,6 +176,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\ReportDeliverySheet.cs" />
+    <Compile Include="ReportsHelper\ReportMaterialOrderHorizontal.cs" />
     <Compile Include="ReportsHelper\ReportOpticraft440.cs" />
     <Compile Include="ReportsHelper\ReportTCB440.cs" />
     <Compile Include="ReportsHelper\ReportCOABridgeLine.cs" />
@@ -847,6 +848,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="Resource\DocTemplate\Reports\MaterialOrderHorizontal.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcCheckList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

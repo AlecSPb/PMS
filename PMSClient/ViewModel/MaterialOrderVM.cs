@@ -158,7 +158,7 @@ namespace PMSClient.ViewModel
                 if (order != null)
                 {
                     NavigationService.Status("开始创建报告……");
-                    ReportMaterialOrder report = new ReportMaterialOrder();
+                    ReportMaterialOrderHorizontal report = new ReportMaterialOrderHorizontal();
                     report.SetModel(order);
                     report.Output();
                     NavigationService.Status("原材料订单创建完毕！");
