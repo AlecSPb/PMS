@@ -161,6 +161,7 @@ namespace PMSClient.ViewModel
                     ReportMaterialOrderHorizontal report = new ReportMaterialOrderHorizontal();
                     report.SetModel(order);
                     report.Output();
+                    PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
                     NavigationService.Status("原材料订单创建完毕！");
                 }
             }

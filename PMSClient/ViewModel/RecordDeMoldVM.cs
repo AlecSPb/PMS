@@ -128,6 +128,14 @@ namespace PMSClient.ViewModel
             service.Close();
             RecordDeMolds.Clear();
             models.ToList().ForEach(o => RecordDeMolds.Add(o));
+            CurrentRecordDeMold = RecordDeMolds.FirstOrDefault();
+        }
+        private DcRecordDeMold currentRecordDeMold;
+
+        public DcRecordDeMold CurrentRecordDeMold
+        {
+            get { return currentRecordDeMold; }
+            set { currentRecordDeMold = value; RaisePropertyChanged(nameof(CurrentRecordDeMold)); }
         }
 
 
@@ -142,7 +150,6 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcRecordDeMold> Edit { get; set; }
         public RelayCommand<DcRecordDeMold> Duplicate { get; set; }
-
         public RelayCommand<DcRecordDeMold> Label { get; set; }
     }
 }
