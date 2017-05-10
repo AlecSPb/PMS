@@ -43,6 +43,8 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<MaterialOrderEditView>();
             SimpleIoc.Default.Register<MaterialOrderItemEditView>();
             SimpleIoc.Default.Register<MaterialOrderItemSelectView>();
+            SimpleIoc.Default.Register<MaterialOrderItemListView>();
+
 
             SimpleIoc.Default.Register<MaterialInventoryInView>();
             SimpleIoc.Default.Register<MaterialInventoryInEditView>();
@@ -204,6 +206,10 @@ namespace PMSClient.View
         public MaterialOrderItemEditView MaterialOrderItemEdit
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditView>(); }
+        }
+        public MaterialOrderItemListView MaterialOrderItemList
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemListView>(); }
         }
         public MaterialInventoryInView MaterialInventoryIn
         {

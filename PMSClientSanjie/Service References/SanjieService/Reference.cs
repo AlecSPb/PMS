@@ -1017,6 +1017,9 @@ namespace PMSClientSanjie.SanjieService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double UnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double UnitPriceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1168,6 +1171,19 @@ namespace PMSClientSanjie.SanjieService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Unit {
+            get {
+                return this.UnitField;
+            }
+            set {
+                if ((this.UnitField.Equals(value) != true)) {
+                    this.UnitField = value;
+                    this.RaisePropertyChanged("Unit");
                 }
             }
         }

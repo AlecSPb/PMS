@@ -126,6 +126,7 @@
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="Remark" type="xs:double" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" type="xs:double" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
     </xs:sequence>
   </xs:complexType>

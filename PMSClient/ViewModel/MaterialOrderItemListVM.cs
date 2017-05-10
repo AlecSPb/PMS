@@ -17,9 +17,9 @@ using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialOrderListVM : BaseViewModelPage
+    public class MaterialOrderItemListVM : BaseViewModelPage
     {
-        public MaterialOrderListVM()
+        public MaterialOrderItemListVM()
         {
             InitializeProperties();
             InitializeCommands();

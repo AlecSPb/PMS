@@ -62,7 +62,6 @@ namespace PMSClient
             Messenger.Default.Register<string>(this, MainNavigationToken.StatusMessage, ActionStatusMessage);
             #endregion
 
-
             //导航到首页
             RefreshLogInformation();
             NavigateTo(_views.LogIn);
@@ -217,6 +216,9 @@ namespace PMSClient
                     break;
                 case PMSViews.MaterialOrderItemSelect:
                     NavigateTo(_views.MaterialOrderItemSelect);
+                    break;
+                case PMSViews.MaterialOrderItemList:
+                    NavigateTo(_views.MaterialOrderItemList);
                     break;
                 case PMSViews.MaterialInventoryIn:
                     NavigateTo(_views.MaterialInventoryIn);

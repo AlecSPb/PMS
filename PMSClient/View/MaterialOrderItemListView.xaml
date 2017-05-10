@@ -18,10 +18,24 @@
         <TextBlock Text="{StaticResource PageMaterialOrderList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
-            <Button Content="{StaticResource ButtonRefresh}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource MOIOrderItemNumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchOrderItemNumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MOIPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MOIComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
-                          ItemsSource="{Binding MaterialOrderItems}">
+                          ItemsSource="{Binding MaterialOrderItemExtras}">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -34,78 +48,27 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOICreateTime}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIOrderItemNumber}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding OrderItemNumber}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIPMINumber}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding PMINumber}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIComposition}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Composition}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIPurity}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Purity}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIUnitPrice}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding UnitPrice}" Style="{StaticResource StyleDGTextBlockRight}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIWeight}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleDGTextBlockRight}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIDeliveryDate}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIProvideRawMaterial}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIDescription}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Description}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MOICreateTime}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.CreateTime}"/>
+                <DataGridTextColumn Header="{StaticResource MOIState}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.State}"/>
+                <DataGridTextColumn Header="{StaticResource MOICreator}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.Creator}"/>
+                <DataGridTextColumn Header="{StaticResource MOIComposition}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.Cmposition}"/>
+                <DataGridTextColumn Header="{StaticResource MOIPurity}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.Purity}"/>
+                <DataGridTextColumn Header="{StaticResource MOIWeight}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.Weight}"/>
+                <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrderItem.DeliveryDate}"/>
 
-
+                <DataGridTextColumn Header="{StaticResource MOOrderPO}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrder.OrderPO}"/>
+                <DataGridTextColumn Header="{StaticResource MOSupplier}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrder.Supplier}"/>
+                <DataGridTextColumn Header="{StaticResource MOPriority}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding MaterialOrder.Priority}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
