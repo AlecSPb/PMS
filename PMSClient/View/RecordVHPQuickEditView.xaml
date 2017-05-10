@@ -184,16 +184,17 @@
                     <Grid  DataContext="{Binding DataContext.CurrentPlanWithMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Style="{StaticResource StyleTextBlockBig2}" Text="本次热压要求->"/>
-                        <TextBlock Grid.Column="1" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Temperature,StringFormat=温度{0}℃}"/>
-                        <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Pressure,StringFormat=压力{0}ton}"/>
-                        <TextBlock Grid.Column="3" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Vaccum,StringFormat=真空{0:#.###E00}Pa}"/>
-                        <TextBlock Grid.Column="4" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.KeepTempTime,StringFormat=保温时间{0}min}"/>
+                        <TextBlock Grid.Column="0" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.VHPDeviceCode,StringFormat=当前设备:{0}}"/>
+                        <TextBlock Grid.Column="1" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Temperature,StringFormat=温度:{0}℃}"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Pressure,StringFormat=压力:{0}ton}"/>
+                        <TextBlock Grid.Column="3" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.Vaccum,StringFormat=真空:{0:#.###E00}Pa}"/>
+                        <TextBlock Grid.Column="4" Style="{StaticResource StyleTextBlockBig2}" Text="{Binding Plan.KeepTempTime,StringFormat=保温时间:{0}min}"/>
                     </Grid>
                 </Border>
                 <Border Grid.Row="2" Style="{StaticResource StyleBorderCommon}">
