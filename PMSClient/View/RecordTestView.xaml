@@ -10,9 +10,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordTest}">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

@@ -7,9 +7,6 @@
              xmlns:uc="clr-namespace:PMSClient.CustomControls"
              mc:Ignorable="d" 
              d:DesignHeight="3600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordBondingEdit}">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

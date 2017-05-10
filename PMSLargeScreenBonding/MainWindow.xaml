@@ -38,8 +38,8 @@
                 <DataGridTextColumn Header="产品ID" Binding="{Binding TargetProductID}" ElementStyle="{StaticResource StyleTextBlockBig3B}"/>
                 <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3A}"/>
                 <DataGridTextColumn Header="尺寸" Binding="{Binding TargetDimension}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
-                <DataGridTextColumn Header="盖板号码" Binding="{Binding CoverPlateNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
-                <DataGridTextColumn Header="背板编号" Binding="{Binding PlateLot}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
+                <!--<DataGridTextColumn Header="盖板" Binding="{Binding CoverPlateNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
+                <DataGridTextColumn Header="背板编号" Binding="{Binding PlateLot}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>-->
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig2}" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"/>

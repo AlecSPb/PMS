@@ -8,9 +8,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordMachine}">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

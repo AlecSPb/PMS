@@ -15,10 +15,10 @@ namespace PMSCommon
     /// </summary>
     public enum OrderState
     {
-        作废= 0,
-        未核验 = 1,
-        未完成 = 2,
-        暂停 = 3,
-        完成 = 4
+        作废,
+        未核验,
+        未完成,
+        暂停,
+        完成 
     }
 }

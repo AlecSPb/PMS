@@ -84,7 +84,9 @@
     <sys:String x:Key="PageMaterialOrder">原料订单</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
-
+    <sys:String x:Key="PageMaterialOrderList">原料订单项目列表</sys:String>
+    
+    
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>

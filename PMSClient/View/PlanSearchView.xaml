@@ -9,9 +9,6 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=PlanSearch}">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

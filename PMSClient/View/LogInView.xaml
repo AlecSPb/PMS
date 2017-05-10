@@ -6,9 +6,6 @@
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="1000" Loaded="UserControl_Loaded">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>

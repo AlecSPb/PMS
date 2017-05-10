@@ -7,9 +7,6 @@
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MaterialInventoryOut}">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
