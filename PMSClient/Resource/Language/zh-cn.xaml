@@ -736,6 +736,9 @@
     <sys:String x:Key="HelpTipPlanVHPEdit">
         注意：尽量选择，没有自己输入，不需要的项目填充0，同批次同台设备压多个成分任务的时候，要注意设置装料和热压参数相同
     </sys:String>
+    <sys:String x:Key="HelpTipPlanVHPQuickEdit">
+        注意：尽量选择，没有自己输入，不需要的项目填充0,保存前要认真检查有无错误，有错误及时修改
+    </sys:String>
     <sys:String x:Key="HelpTipMisson">
         黄色标记的项目为未核验，核验后该计划才会公布
     </sys:String>

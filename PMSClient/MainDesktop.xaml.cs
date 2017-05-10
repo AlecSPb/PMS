@@ -88,7 +88,7 @@ namespace PMSClient
         private void _timerMain_Tick(object sender, EventArgs e)
         {
             HeartBeatCheck();
-            NoticeCheck();
+            //NoticeCheck();
         }
 
         private void HeartBeatCheck()

@@ -217,6 +217,10 @@
     <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="FontSize" Value="{StaticResource TabletFontLG}"/>
     </Style>
+    <Style x:Key="StyleTextBlockBig2" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig}">
+        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
     <Style x:Key="StyleTextBlockMultiline" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
