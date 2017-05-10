@@ -31,8 +31,7 @@ namespace PMSClient
     {
         private DesktopViewLocator _views;
         private ToolViewLocator _toolviews;
-        private DispatcherTimer _timerHeartBeat;
-        private DispatcherTimer _timerNotice;
+        private DispatcherTimer _timerMain;
         private fm.NotifyIcon _notifyIcon;
         public MainDesktop()
         {
@@ -68,20 +67,17 @@ namespace PMSClient
 
             #region 设置主定时器
             //设置主定时器
-            _timerHeartBeat = new DispatcherTimer();
-            _timerHeartBeat.Interval = new TimeSpan(0, 0, 5);
-            _timerHeartBeat.Tick += _timer_Tick; ;
-            _timerHeartBeat.Start();
-
-            _timerNotice = new DispatcherTimer();
-            _timerNotice.Interval = new TimeSpan(0, 0, 10);
-            _timerNotice.Tick += _timerNotice_Tick;
-            _timerNotice.Start();
+            _timerMain = new DispatcherTimer();
+            _timerMain.Interval = new TimeSpan(0, 0, 20);
+            _timerMain.Tick += _timerMain_Tick; ;
+            _timerMain.Start();
             #endregion
 
             #region 托盘部分
             InitializeTray();
             #endregion
+            //首次检测心跳
+            HeartBeatCheck();
         }
         #region 定时器设定
         /// <summary>
@@ -89,7 +85,13 @@ namespace PMSClient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _timer_Tick(object sender, EventArgs e)
+        private void _timerMain_Tick(object sender, EventArgs e)
+        {
+            HeartBeatCheck();
+            NoticeCheck();
+        }
+
+        private void HeartBeatCheck()
         {
             try
             {
@@ -115,9 +117,18 @@ namespace PMSClient
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        private void _timerNotice_Tick(object sender, EventArgs e)
+
+        private void NoticeCheck()
         {
-            //PMSNotice.HasNewDelivery();
+            if (PMSHelper.CurrentSession.CurrentUser != null)
+            {
+                string msg = PMSNotice.NoticeMessage();
+                if (string.IsNullOrEmpty(msg))
+                {
+                    return;
+                }
+                SetNotifyIcon("新消息", msg, 3000);
+            }
         }
 
         #endregion

@@ -51,6 +51,10 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
+            Notice = new RelayCommand(ActionNotice);
+
+
+
             GoToNavigation= new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
 
@@ -93,13 +97,19 @@ namespace PMSClient.ViewModel
             GoToAdminAccess = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
 
 
-            GoToStatisticOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticOrder), () => _session.IsAuthorized(AccessDictionary.ReadStatisticOrder));
-            GoToStatisticPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticPlan), () => _session.IsAuthorized(AccessDictionary.ReadStatisticPlan));
-            GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery), () => _session.IsAuthorized(AccessDictionary.ReadStatisticDelivery));
-            GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(AccessDictionary.ReadStatisticProduct));
+            GoToStatisticOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticOrder), () => _session.IsAuthorized(PMSAccessDictionary.ReadStatisticOrder));
+            GoToStatisticPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticPlan), () => _session.IsAuthorized(PMSAccessDictionary.ReadStatisticPlan));
+            GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery), () => _session.IsAuthorized(PMSAccessDictionary.ReadStatisticDelivery));
+            GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(PMSAccessDictionary.ReadStatisticProduct));
 
 
         }
+
+        private void ActionNotice()
+        {
+            PMSNotice.ShowNoticeWindow();
+        }
+
         public RelayCommand GoToNavigation { get; set; }
         public RelayCommand GoToNavigationWorkFlow { get; set; }
         public RelayCommand GoToOrder { get; private set; }
@@ -147,5 +157,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToAdminRole { get; set; }
         public RelayCommand GoToAdminAccess { get; set; }
         #endregion
+
+        public RelayCommand Notice { get; set; }
     }
 }
