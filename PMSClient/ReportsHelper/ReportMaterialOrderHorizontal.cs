@@ -79,10 +79,10 @@ namespace PMSClient.ReportsHelper
                             p.Append(item.Weight.ToString("N2")).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
-                            p.Append(item.PMINumber).FontSize(8);
+                            p.Append($"[{item.Purity}] {item.Composition}").FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                            p.Append($"[{item.Purity}] {item.Composition}").FontSize(8);
+                            p.Append(item.PMINumber).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
                             p.Append(item.DeliveryDate.ToString("yyMMdd")).FontSize(8);

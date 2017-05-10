@@ -25,10 +25,16 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             Label = new RelayCommand<DcRecordDeMold>(ActionLabel);
-
+            SelectionChanged = new RelayCommand<DcRecordDeMold>(ActionSelectionChanged);
             Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate, CanDuplicate);
         }
-
+        private void ActionSelectionChanged(DcRecordDeMold model)
+        {
+            if (model != null)
+            {
+                CurrentRecordDeMold = model;
+            }
+        }
         private void ActionLabel(DcRecordDeMold model)
         {
             if (model != null)
@@ -130,6 +136,9 @@ namespace PMSClient.ViewModel
             models.ToList().ForEach(o => RecordDeMolds.Add(o));
             CurrentRecordDeMold = RecordDeMolds.FirstOrDefault();
         }
+
+        public RelayCommand<DcRecordDeMold> SelectionChanged { get; set; }
+
         private DcRecordDeMold currentRecordDeMold;
 
         public DcRecordDeMold CurrentRecordDeMold

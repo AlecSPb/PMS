@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1000"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMold}">
@@ -50,6 +51,12 @@
                 </Grid.RowDefinitions>
                 <DataGrid x:Name="dg" Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordDeMolds}"
                   LoadingRow="DataGrid_LoadingRow">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                             <DataGridTemplateColumn.CellTemplate>

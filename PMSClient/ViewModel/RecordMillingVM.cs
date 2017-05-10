@@ -35,7 +35,7 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcRecordMilling>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
-            SelectionChanged = new RelayCommand<MainService.DcRecordMilling>(ActionSelectionChanged);
+            SelectionChanged = new RelayCommand<DcRecordMilling>(ActionSelectionChanged);
             Label = new RelayCommand<DcRecordMilling>(ActionLabel);
             Calculator = new RelayCommand(ActionCalculator);
         }
