@@ -26,18 +26,18 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding CurrentDate,StringFormat=今天是 {0:yyyy-MM-dd dddd}}" Grid.Column="0" Foreground="Yellow"
                        Style="{StaticResource StyleTextBlockLightBig}"/>
-            <TextBlock Text="{Binding FinishedCount,StringFormat=从2017年04月起共完成绑定计划{0}次}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
+            <TextBlock Text="{Binding FinishedCount,StringFormat=从2017年04月起已完成绑定计划{0}次}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
             <TextBlock Text="{Binding IntervalRefreshDataTime,StringFormat=数据更新时间{0}s}" Grid.Column="2"  Style="{StaticResource StyleTextBlockLightBig}"/>
             <Button Name="btnClose" Content="退出" Grid.Column="3"  Style="{StaticResource StyleButton}" Click="btnClose_Click"/>
         </Grid>
         <DataGrid Grid.Row="1" ItemsSource="{Binding RecordBondings}" IsReadOnly="True" SelectionUnit="Cell"  GridLinesVisibility="Horizontal"
                   HorizontalGridLinesBrush="Wheat" SelectionMode="Single" AutoGenerateColumns="False" Background="{StaticResource BG3}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyMMdd}}"
-                                    ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding TargetProductID}" ElementStyle="{StaticResource StyleTextBlockBig3B}"/>
                 <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3A}"/>
                 <DataGridTextColumn Header="尺寸" Binding="{Binding TargetDimension}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
+                <DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
+                                    ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <!--<DataGridTextColumn Header="盖板" Binding="{Binding CoverPlateNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="背板编号" Binding="{Binding PlateLot}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>-->
             </DataGrid.Columns>

@@ -21,7 +21,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.RecordBondings
                                 where i.State == PMSCommon.BondingState.未完成.ToString()
-                                orderby DbFunctions.TruncateTime(i.CreateTime) descending,i.TargetProductID
+                                orderby i.TargetProductID
                                 select i;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
                     return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.Skip(s).Take(t).ToList());

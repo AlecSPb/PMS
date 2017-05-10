@@ -21,6 +21,7 @@ namespace PMSDAL
         public string ItemName { get; set; }//项目
         public string ItemProperty { get; set; }
         public double Quantity { get; set; }
+        public double Unit { get; set; }
         public double UnitPrice { get; set; }
         public string Creditor { get; set; }
         public double Remark { get; set; }

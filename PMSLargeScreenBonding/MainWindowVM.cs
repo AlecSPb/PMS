@@ -21,7 +21,7 @@ namespace PMSLargeScreenBonding
             currentDate = DateTime.Now;
             finishedCount = 0;
             status1 = status3 = "状态栏";
-            status2 = "只显示最近未完成的16条记录";
+            status2 = "循环显示";
             RecordBondings = new ObservableCollection<DcRecordBonding>();
 
 
@@ -30,7 +30,6 @@ namespace PMSLargeScreenBonding
             _Loadtimer.Interval = IntervalLoadDataTime;
             _Loadtimer.Elapsed += _Loadtimer_Elapsed;
             _Loadtimer.Start();
-
 
             CenterMessage = $"准备数据中，请等待，{IntervalLoadDataTime / 1000}s后显示";
         }

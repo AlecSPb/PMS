@@ -72,7 +72,7 @@
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
-    
+
     <sys:String x:Key="PageOutSource">外购管理</sys:String>
 
     <sys:String x:Key="PageMisson">生产任务</sys:String>
@@ -85,8 +85,8 @@
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderList">原料订单项目列表</sys:String>
-    
-    
+
+
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
@@ -128,11 +128,11 @@
     <sys:String x:Key="PageStatisticDelivery">发货统计</sys:String>
     <sys:String x:Key="PageStatisticPlan">生产统计</sys:String>
     <sys:String x:Key="PageStatisticProduct">产品统计</sys:String>
-    
-    
+
+
     <sys:String x:Key="PageCustomerService">售后</sys:String>
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
-    
+
     <sys:String x:Key="PageMaintenance">设备维护</sys:String>
 
     <sys:String x:Key="PageCheckList">检查清单</sys:String>
@@ -152,7 +152,7 @@
 
 
 
-    
+
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
@@ -194,8 +194,8 @@
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>
-    
-    
+
+
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
     <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>
@@ -246,8 +246,8 @@
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
     <sys:String x:Key="IndicatorFailed">失败</sys:String>
-    
-    
+
+
     <sys:String x:Key="IndicatorStored">库存</sys:String>
     <sys:String x:Key="IndicatorDelivered">发货</sys:String>
 
@@ -568,7 +568,7 @@
     <sys:String x:Key="BDCreateTime">创建时间</sys:String>
     <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
     <sys:String x:Key="BDRemark">备注</sys:String>
-    
+
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>
     <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
@@ -667,7 +667,43 @@
     <sys:String x:Key="CustomerEmail">Email</sys:String>
     <sys:String x:Key="CustomerMemo">备注</sys:String>
 
+    <!--OutSource-->
+    <sys:String x:Key="OSState">状态</sys:String>
+    <sys:String x:Key="OSCreator">创建者</sys:String>
+    <sys:String x:Key="OSCreateTime">创建时间</sys:String>
+    <sys:String x:Key="OSOrderName">名称</sys:String>
+    <sys:String x:Key="OSSupplier">供应商</sys:String>
+    <sys:String x:Key="OSQuantity">数量</sys:String>
+    <sys:String x:Key="OSQuantityUnit">单位</sys:String>
+    <sys:String x:Key="OSCost">费用</sys:String>
+    <sys:String x:Key="OSRemark">备注</sys:String>
 
+    <!--Feedback-->
+    <sys:String x:Key="FBState">状态</sys:String>
+    <sys:String x:Key="FBCreator">创建者</sys:String>
+    <sys:String x:Key="FBCreateTime">创建时间</sys:String>
+    <sys:String x:Key="FBProductID">状态</sys:String>
+    <sys:String x:Key="FBProductType">状态</sys:String>
+    <sys:String x:Key="FBComposition">状态</sys:String>
+    <sys:String x:Key="FBCustomer">状态</sys:String>
+    <sys:String x:Key="FBFeedbackPerson">状态</sys:String>
+    <sys:String x:Key="FBReceivedDate">状态</sys:String>
+    <sys:String x:Key="FBProcessWay">状态</sys:String>
+    <sys:String x:Key="FBRemark">状态</sys:String>
+
+    <!--ItemDebit-->
+    <sys:String x:Key="IDState">状态</sys:String>
+    <sys:String x:Key="IDCreator">创建者</sys:String>
+    <sys:String x:Key="IDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="IDItemType">类型</sys:String>
+    <sys:String x:Key="IDItemLot">批号</sys:String>
+    <sys:String x:Key="IDItemName">名称</sys:String>
+    <sys:String x:Key="IDItemProperty">属性</sys:String>
+    <sys:String x:Key="IDQuantity">数量</sys:String>
+    <sys:String x:Key="IDUnitPrice">单价</sys:String>
+    <sys:String x:Key="IDUnit">单位</sys:String>
+    <sys:String x:Key="IDCreditor">债权人</sys:String>
+    <sys:String x:Key="IDRemark">备注</sys:String>
 
 
     <!--每个页面最前面的提示信息-->
