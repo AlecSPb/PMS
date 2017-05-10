@@ -134,9 +134,9 @@
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
     
     <sys:String x:Key="PageMaintenance">设备维护</sys:String>
-    
-    
-    
+
+    <sys:String x:Key="PageCheckList">检查清单</sys:String>
+
 
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>

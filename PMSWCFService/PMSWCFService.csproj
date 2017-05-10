@@ -140,6 +140,7 @@
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
+    <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
     <Compile Include="ServiceContracts\IItemDebitService.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
+    <Compile Include="ServiceImplements\OutSourceService.cs" />
     <Compile Include="ServiceImplements\PlateService.cs" />
     <Compile Include="ServiceImplements\ProductService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
