@@ -28,7 +28,29 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-
-
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            DcMaterialOrderItemExtra order = (DcMaterialOrderItemExtra)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.MaterialOrderItem.State)
+                {
+                    case "未核验":
+                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                        break;
+                    case "暂停":
+                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                        break;
+                    case "未完成":
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                        break;
+                    case "完成":
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

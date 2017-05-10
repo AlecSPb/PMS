@@ -79,12 +79,12 @@
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
-    <sys:String x:Key="PageMaterialNeed">原料需求</sys:String>
-    <sys:String x:Key="PageMaterialNeedEdit">原料需求编辑</sys:String>
+    <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
+    <sys:String x:Key="PageMaterialNeedEdit">材料需求编辑</sys:String>
     <sys:String x:Key="PageMaterialOrder">原料订单</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrderList">原料订单项目列表</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemList">原料订单流水</sys:String>
 
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
@@ -122,7 +122,7 @@
     <sys:String x:Key="PageDelivery">发货管理</sys:String>
     <sys:String x:Key="PageDeliveryEdit">发货管理编辑</sys:String>
     <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
-    <sys:String x:Key="PageDeliveryItemList">发货流水[所有已发货产品]</sys:String>
+    <sys:String x:Key="PageDeliveryItemList">发货流水</sys:String>
 
     <sys:String x:Key="PageStatisticOrder">订单统计</sys:String>
     <sys:String x:Key="PageStatisticDelivery">发货统计</sys:String>
@@ -141,7 +141,7 @@
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
     <sys:String x:Key="PageRecordBondingSelect">请选择绑定记录</sys:String>
-    <sys:String x:Key="PageMaterialNeedSelect">请选择原材料需求项目</sys:String>
+    <sys:String x:Key="PageMaterialNeedSelect">请选择材料需求项目</sys:String>
     <sys:String x:Key="PageTestResultSelect">请选择测试结果项目</sys:String>
     <sys:String x:Key="PagePlanSelect">请选择生产计划项目</sys:String>
     <sys:String x:Key="PageOrderSelect">请选择订单项目</sys:String>

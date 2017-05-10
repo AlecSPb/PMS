@@ -27,7 +27,7 @@
             <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxSearch}" Width="150"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonMaterialOrderItemList}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToMaterialOrderItemList}"/>
+            <Button Content="{StaticResource ButtonMaterialOrderItemList}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialOrderItemList}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

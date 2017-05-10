@@ -27,13 +27,13 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://192.168.16.254:8001/PMS/</InstallUrl>
     <SupportUrl>http://www.cd-pmi.com</SupportUrl>
-    <ProductName>Production Management System</ProductName>
+    <ProductName>PMS</ProductName>
     <PublisherName>xs.zhou</PublisherName>
     <SuiteName>Imagination Studio</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>20</ApplicationRevision>
     <ApplicationVersion>4.0.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

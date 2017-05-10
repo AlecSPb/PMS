@@ -15,7 +15,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageMaterialOrderList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <TextBlock Text="{StaticResource PageMaterialOrderItemList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource MOIOrderItemNumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -38,7 +38,7 @@
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
-                          ItemsSource="{Binding MaterialOrderItemExtras}">
+                          ItemsSource="{Binding MaterialOrderItemExtras}" LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
@@ -52,19 +52,19 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MOICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrderItem.CreateTime}"/>
+                                    Binding="{Binding MaterialOrderItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.State}"/>
                 <DataGridTextColumn Header="{StaticResource MOICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Creator}"/>
                 <DataGridTextColumn Header="{StaticResource MOIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrderItem.Cmposition}"/>
+                                    Binding="{Binding MaterialOrderItem.Composition}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Purity}"/>
-                <DataGridTextColumn Header="{StaticResource MOIWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrderItem.Weight}"/>
+                <DataGridTextColumn Header="{StaticResource MOIWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MaterialOrderItem.Weight,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrderItem.DeliveryDate}"/>
+                                    Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
 
                 <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.OrderPO}"/>
