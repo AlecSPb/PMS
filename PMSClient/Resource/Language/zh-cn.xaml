@@ -194,7 +194,7 @@
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>
-
+    <sys:String x:Key="ButtonMaterialOrderItemList">订单项流水</sys:String>
 
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>

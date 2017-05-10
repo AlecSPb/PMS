@@ -592,6 +592,7 @@
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="orderitemnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -608,6 +609,7 @@
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="orderitemnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

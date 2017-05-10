@@ -394,7 +394,8 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber)
+        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition,
+            string pminumber, string orderitemnumber,string supplier)
         {
             try
             {
@@ -413,6 +414,7 @@ namespace PMSWCFService
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
+                                &&mm.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
                                 select new PMSMaterialOrderItemExtra
                                 {
@@ -429,7 +431,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber)
+        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber,string supplier)
         {
             try
             {
@@ -441,7 +443,7 @@ namespace PMSWCFService
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
-                                orderby m.CreateTime descending
+                                && mm.Supplier.Contains(supplier)
                                 select m;
                     return query.Count();
                 }

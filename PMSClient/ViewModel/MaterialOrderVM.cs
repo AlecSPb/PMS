@@ -57,8 +57,13 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
-        }
+            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
 
+        }
+        private void ActionGoToMaterialOrderItemList()
+        {
+            NavigationService.GoTo(PMSViews.MaterialOrderItemList);
+        }
         private bool CanEditItem(DcMaterialOrderItem arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
@@ -211,7 +216,7 @@ namespace PMSClient.ViewModel
             var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
             service.Close();
             MaterialOrders.Clear();
-            orders.ToList<DcMaterialOrder>().ForEach(o => MaterialOrders.Add(o));
+            orders.ToList().ForEach(o => MaterialOrders.Add(o));
 
             CurrentSelectIndex = 0;
             CurrentSelectItem = MaterialOrders.FirstOrDefault();
@@ -277,7 +282,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcMaterialOrder> Doc { get; private set; }
         public RelayCommand<DcMaterialOrder> Refresh { get; set; }
         public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }
-
+        public RelayCommand GoToMaterialOrderItemList { get; set; }
         public RelayCommand<DcMaterialOrder> AddItem { get; private set; }
         public RelayCommand<DcMaterialOrderItem> EditItem { get; private set; }
         #endregion

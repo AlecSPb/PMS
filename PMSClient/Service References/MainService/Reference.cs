@@ -6733,16 +6733,16 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetMaterialOrderItemsCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse")]
-        PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtras", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
-        int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
+        int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
-        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber);
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber, string supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
         bool CheckOrderItemNumberExist(string orderItemnumber);
@@ -6922,20 +6922,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetMaterialOrderItemsCountAsync();
         }
         
-        public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtras(skip, take, composition, pminumber, orderitemnumber);
+        public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtras(skip, take, composition, pminumber, orderitemnumber, supplier);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtrasAsync(skip, take, composition, pminumber, orderitemnumber);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasAsync(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasAsync(skip, take, composition, pminumber, orderitemnumber, supplier);
         }
         
-        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtrasCount(composition, pminumber, orderitemnumber);
+        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasCount(composition, pminumber, orderitemnumber, supplier);
         }
         
-        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber) {
-            return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber);
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber, supplier);
         }
         
         public bool CheckOrderItemNumberExist(string orderItemnumber) {

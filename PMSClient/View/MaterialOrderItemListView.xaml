@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageMaterialOrderList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource MOIOrderItemNumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchOrderItemNumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
@@ -25,7 +25,10 @@
             <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MOIComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MOSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
@@ -48,26 +51,26 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource MOICreateTime}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.CreateTime}"/>
-                <DataGridTextColumn Header="{StaticResource MOIState}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.State}"/>
-                <DataGridTextColumn Header="{StaticResource MOICreator}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Creator}"/>
-                <DataGridTextColumn Header="{StaticResource MOIComposition}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Cmposition}"/>
-                <DataGridTextColumn Header="{StaticResource MOIPurity}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Purity}"/>
-                <DataGridTextColumn Header="{StaticResource MOIWeight}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOIWeight}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Weight}"/>
-                <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.DeliveryDate}"/>
 
-                <DataGridTextColumn Header="{StaticResource MOOrderPO}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.OrderPO}"/>
-                <DataGridTextColumn Header="{StaticResource MOSupplier}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.Supplier}"/>
-                <DataGridTextColumn Header="{StaticResource MOPriority}" CellStyle="{StaticResource StyleDGTextBlockCommon}"
+                <DataGridTextColumn Header="{StaticResource MOPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.Priority}"/>
             </DataGrid.Columns>
         </DataGrid>
