@@ -46,7 +46,7 @@
                     <RowDefinition/>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dg" Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordDeMolds}"
+                <DataGrid x:Name="dg" Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordDeMolds}" FrozenColumnCount="1"
                   LoadingRow="DataGrid_LoadingRow">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">

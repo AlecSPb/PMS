@@ -8,7 +8,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="1600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
+             d:DesignHeight="1000" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -40,7 +40,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <DataGrid Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow"
+            <DataGrid Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow" FrozenColumnCount="1"
                   ItemsSource="{Binding PlanWithMissons}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">

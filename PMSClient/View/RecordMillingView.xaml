@@ -42,7 +42,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <DataGrid x:Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordMillings}"
+            <DataGrid x:Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordMillings}" FrozenColumnCount="1"
                   LoadingRow="DataGrid_LoadingRow">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
