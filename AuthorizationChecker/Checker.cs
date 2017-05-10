@@ -11,7 +11,7 @@ namespace AuthorizationChecker
 
         public static void CheckIfCanRun()
         {
-            //最后使用期限
+            //最后使用期限 To Protect My Self
             var untilTime = new DateTime(2018, 1, 1);
             if (DateTime.Now>untilTime)
             {
