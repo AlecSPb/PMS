@@ -69,6 +69,13 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
             Select = new RelayCommand<DcPlanWithMisson>(ActionSelect);
             Search = new RelayCommand(ActionSearch,CanSearch);
+            All = new RelayCommand(ActionAll);
+        }
+
+        private void ActionAll()
+        {
+            SearchComposition = SearchVHPDate = "";
+            SetPageParametersWhenConditionChange();
         }
 
         private bool CanSearch()

@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
             model.PlateMaterial = PMSCommon.PlateMaterial.Cu.ToString();
             model.Dimension = PMSCommon.CustomData.PlateDimension[0];
             model.Supplier = PMSCommon.CustomData.PlateSupplier[0];
-            model.UseCount = "1";
+            model.UseCount = "0";
             model.Hardness = "65HRB";
             model.LastWeldMaterial = PMSCommon.CustomData.PlateLastWeldMaterial[0].ToString();
             model.Weight = "未知";

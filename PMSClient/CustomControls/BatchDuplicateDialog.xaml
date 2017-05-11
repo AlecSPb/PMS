@@ -1,0 +1,29 @@
+﻿<Window x:Class="PMSClient.CustomControls.BatchDuplicateDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.CustomControls"
+        mc:Ignorable="d"
+        Title="BatchDuplicateDialog" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="txtBrief" Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}"  TextWrapping="WrapWithOverflow"
+                   VerticalAlignment="Top">
+            提示：请选择要批量复用的数量,然后点击确定，出于防止意外失误造成添加过多，这个数量设定最多不能超过10
+        </TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="复用数量" Style="{StaticResource StyleTextBlockCommon}"/>
+            <ComboBox Name="cboNumbers"  Style="{StaticResource StyleComboBoxCommon}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"/>
+            <Button Name="btnNo" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnNo_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

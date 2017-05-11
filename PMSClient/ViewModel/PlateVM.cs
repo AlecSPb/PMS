@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSClient.CustomControls;
 using PMSClient.MainService;
 using System;
 using System.Collections.Generic;
@@ -31,8 +32,9 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcPlate>(ActionEdit, CanEdit);
-            Duplicate = new RelayCommand<DcPlate>(ActionDuplicate,CanDuplicate);
-            SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend,CanSelect);
+            Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
+            BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate);
+            SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
         }
 
         private bool CanSelect(DcPlate arg)
@@ -43,6 +45,47 @@ namespace PMSClient.ViewModel
         private bool CanDuplicate(DcPlate arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
+        }
+
+        private void ActionBatchDuplicate(DcPlate model)
+        {
+            BatchDuplicateDialog dialog = new BatchDuplicateDialog();
+            if (dialog.ShowDialog() == true)
+            {
+                int number = dialog.DuplicateNumber;
+                try
+                {
+                    using (var service=new PlateServiceClient())
+                    {
+                        for (int i = 0; i < number; i++)
+                        {
+                            var temp = new DcPlate();
+                            temp.ID = Guid.NewGuid();
+                            temp.CreateTime = DateTime.Now;
+                            temp.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                            temp.State = PMSCommon.InventoryState.库存.ToString();
+                            temp.Appearance = model.Appearance;
+                            temp.Defects = model.Defects;
+                            temp.Dimension = model.Dimension;
+                            temp.Hardness = model.Hardness;
+                            temp.LastWeldMaterial = model.LastWeldMaterial;
+                            temp.PlateLot = model.PlateLot;
+                            temp.PlateMaterial = model.PlateMaterial;
+                            temp.Remark = model.Remark;
+                            temp.Supplier = model.Supplier;
+                            temp.UseCount = model.UseCount;
+                            temp.Weight = model.Weight;
+
+                            service.AddPlateByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                        }
+                    }
+                    PMSDialogService.ShowYes("批量复制已完成，请刷新列表查看");
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
         }
 
         private void ActionDuplicate(DcPlate model)
@@ -57,14 +100,14 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectAndSend(DcPlate model)
         {
-            if (!PMSDialogService.ShowYesNo("请问","确定设置为发货状态吗？"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定设置为发货状态吗？"))
             {
                 return;
             }
 
-            if (model!=null)
+            if (model != null)
             {
-                using (var service=new PlateServiceClient())
+                using (var service = new PlateServiceClient())
                 {
                     model.State = PMSCommon.InventoryState.发货.ToString();
                     service.UpdatePlate(model);
@@ -183,5 +226,6 @@ namespace PMSClient.ViewModel
 
         #endregion
         public RelayCommand<DcPlate> Duplicate { get; set; }
+        public RelayCommand<DcPlate> BatchDuplicate { get; set; }
     }
 }

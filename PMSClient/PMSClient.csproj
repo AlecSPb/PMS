@@ -139,6 +139,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
+      <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\BondingEditItem.xaml.cs">
       <DependentUpon>BondingEditItem.xaml</DependentUpon>
     </Compile>
@@ -512,6 +515,10 @@
     <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
     <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="CustomControls\BatchDuplicateDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\BondingEditItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
