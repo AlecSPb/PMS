@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
             PMSBasicDataService.SetListDS<PMSCommon.GoodPosition>(GoodPositions);
 
             PackNumbers = new List<int>();
-            PMSBasicDataService.SetListDS(PackNumbers,10);
+            PMSBasicDataService.SetListDS(PackNumbers, 10);
 
             CustomerNames = new List<string>();
             PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
@@ -95,7 +95,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                CurrentDeliveryItem.ProductType = PMSCommon.ProductType.靶材.ToString();
+                CurrentDeliveryItem.ProductType = model.ProductType;
                 CurrentDeliveryItem.ProductID = model.ProductID;
                 CurrentDeliveryItem.Composition = model.Composition;
                 CurrentDeliveryItem.Abbr = model.Abbr;
@@ -111,7 +111,7 @@ namespace PMSClient.ViewModel
 
         public void SetBySelect(DcPlate model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentDeliveryItem.ProductType = PMSCommon.ProductType.背板.ToString();
                 CurrentDeliveryItem.ProductID = model.PlateLot;
@@ -131,7 +131,7 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
-            SelectProduct= new RelayCommand(ActionSelectProduct);
+            SelectProduct = new RelayCommand(ActionSelectProduct);
             SelectPlate = new RelayCommand(ActionSelectPlate);
         }
 

@@ -88,7 +88,7 @@ namespace PMSClient.ViewModel
                     {
                         var model = item.Product;
                         var deliveryItem = PMSNewModelCollection.NewDeliveryItem(deliveryid);
-                        deliveryItem.ProductType = PMSCommon.ProductType.靶材.ToString();
+                        deliveryItem.ProductType = model.ProductType;
                         deliveryItem.ProductID = model.ProductID;
                         deliveryItem.Composition = model.Composition;
                         deliveryItem.Abbr = model.Abbr;
