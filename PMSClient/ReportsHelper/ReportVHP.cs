@@ -73,19 +73,19 @@ namespace PMSClient.ReportsHelper
                         foreach (var item in RecordVHPs)
                         {
                             var currentTime = item.CurrentTime.ToString("yyyy-MM-dd HH:mm:ss");
-                            mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(currentTime).FontSize(10));
-                            mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.PV1.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.PV2.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.PV3.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.SV.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.Ton.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Vaccum.ToString("#.##E00")).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.Omega.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[8].Paragraphs[0].Append(item.Shift1.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[9].Paragraphs[0].Append(item.Shift2.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[10].Paragraphs[0].Append(item.WaterTemperatureIn.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[11].Paragraphs[0].Append(item.WaterTemperatureOut.ToString()).FontSize(10)).Alignment = Alignment.right;
-                            mainTable.Rows[rownumber].Cells[12].Paragraphs[0].Append(item.ExtraInformation.ToString()).FontSize(10));
+                            mainTable.Rows[rownumber].Cells[0].Paragraphs[0].Append(currentTime).FontSize(10);
+                            mainTable.Rows[rownumber].Cells[1].Paragraphs[0].Append(item.PV1.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[2].Paragraphs[0].Append(item.PV2.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0].Append(item.PV3.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[4].Paragraphs[0].Append(item.SV.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[5].Paragraphs[0].Append(item.Ton.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[6].Paragraphs[0].Append(item.Vaccum.ToString("#.##E00")).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[7].Paragraphs[0].Append(item.Omega.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[8].Paragraphs[0].Append(item.Shift1.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[9].Paragraphs[0].Append(item.Shift2.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[10].Paragraphs[0].Append(item.WaterTemperatureIn.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[11].Paragraphs[0].Append(item.WaterTemperatureOut.ToString()).FontSize(10).Alignment = Alignment.right;
+                            mainTable.Rows[rownumber].Cells[12].Paragraphs[0].Append(item.ExtraInformation.ToString()).FontSize(10);
 
                             mainTable.InsertRow();
                             rownumber++;
