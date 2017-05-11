@@ -18,9 +18,9 @@ namespace PMSClient.View
     /// <summary>
     /// FeedbackView.xaml 的交互逻辑
     /// </summary>
-    public partial class FeedbackView : UserControl
+    public partial class FeedBackView : UserControl
     {
-        public FeedbackView()
+        public FeedBackView()
         {
             InitializeComponent();
         }

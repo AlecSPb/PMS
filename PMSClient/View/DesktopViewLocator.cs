@@ -25,8 +25,11 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<OrderEditView>();
             SimpleIoc.Default.Register<OrderCheckView>();
             SimpleIoc.Default.Register<OrderCheckEditView>();
-            SimpleIoc.Default.Register<MissonSelectView>();
 
+            SimpleIoc.Default.Register<OutSourceView>();
+            SimpleIoc.Default.Register<OutSourceEditView>();
+
+            SimpleIoc.Default.Register<MissonSelectView>();
             SimpleIoc.Default.Register<MissonView>();
 
             SimpleIoc.Default.Register<PlanView>();
@@ -94,11 +97,13 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<CustomerView>();
             SimpleIoc.Default.Register<CustomerEditView>();
 
-            SimpleIoc.Default.Register<OrderStatisticVIew>();
-            SimpleIoc.Default.Register<PlanStatisticVIew>();
-            SimpleIoc.Default.Register<DeliveryStatisticVIew>();
-            SimpleIoc.Default.Register<ProductStatisticVIew>();
+            SimpleIoc.Default.Register<OrderStatisticView>();
+            SimpleIoc.Default.Register<PlanStatisticView>();
+            SimpleIoc.Default.Register<DeliveryStatisticView>();
+            SimpleIoc.Default.Register<ProductStatisticView>();
 
+            SimpleIoc.Default.Register<FeedBackView>();
+            SimpleIoc.Default.Register<FeedBackEditView>();
         }
 
         #region NavigationProperties
@@ -145,6 +150,21 @@ namespace PMSClient.View
         public OrderCheckEditView OrderCheckEdit
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckEditView>(); }
+        }
+
+        public OutSourceView OutSource
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OutSourceView>();
+            }
+        }
+        public OutSourceEditView OutSourceEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OutSourceEditView>();
+            }
         }
         public MissonSelectView MissonSelect
         {
@@ -381,23 +401,33 @@ namespace PMSClient.View
             get { return SimpleIoc.Default.GetInstance<CustomerEditView>(); }
         }
 
-        public OrderStatisticVIew OrderStatistic
+        public OrderStatisticView OrderStatistic
         {
-            get { return SimpleIoc.Default.GetInstance<OrderStatisticVIew>(); }
+            get { return SimpleIoc.Default.GetInstance<OrderStatisticView>(); }
         }
 
-        public PlanStatisticVIew PlanStatistic
+        public PlanStatisticView PlanStatistic
         {
-            get { return SimpleIoc.Default.GetInstance<PlanStatisticVIew>(); }
+            get { return SimpleIoc.Default.GetInstance<PlanStatisticView>(); }
         }
-        public ProductStatisticVIew ProductStatistic
+        public ProductStatisticView ProductStatistic
         {
-            get { return SimpleIoc.Default.GetInstance<ProductStatisticVIew>(); }
+            get { return SimpleIoc.Default.GetInstance<ProductStatisticView>(); }
         }
-        public DeliveryStatisticVIew DeliveryStatistic
+        public DeliveryStatisticView DeliveryStatistic
         {
-            get { return SimpleIoc.Default.GetInstance<DeliveryStatisticVIew>(); }
+            get { return SimpleIoc.Default.GetInstance<DeliveryStatisticView>(); }
         }
+
+        public FeedBackView FeedBack
+        {
+            get { return SimpleIoc.Default.GetInstance<FeedBackView>(); }
+        }
+        public FeedBackEditView FeedBackEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<FeedBackEditView>(); }
+        }
+
         #endregion
 
     }

@@ -18,6 +18,8 @@ namespace PMSClient
         OrderEdit,
         OrderCheck,
         OrderCheckEdit,
+        OutSource,
+        OutSourceEdit,
         MaterialNeed,
         MaterialNeedEdit,
         MaterialNeedSelect,
@@ -84,6 +86,7 @@ namespace PMSClient
         AdminAccesses,
         AdminAccess,
         AdminRole,
-        OutSource
+       FeedBack,
+       FeedBackEdit
     }
 }

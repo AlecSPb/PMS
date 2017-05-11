@@ -18,9 +18,9 @@ namespace PMSClient.View
     /// <summary>
     /// OrderStatisticVIew.xaml 的交互逻辑
     /// </summary>
-    public partial class ProductStatisticVIew : UserControl
+    public partial class ProductStatisticView : UserControl
     {
-        public ProductStatisticVIew()
+        public ProductStatisticView()
         {
             InitializeComponent();
         }

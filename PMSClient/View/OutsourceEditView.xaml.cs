@@ -18,9 +18,9 @@ namespace PMSClient.View
     /// <summary>
     /// OutsourceEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class OutsourceEditView : UserControl
+    public partial class OutSourceEditView : UserControl
     {
-        public OutsourceEditView()
+        public OutSourceEditView()
         {
             InitializeComponent();
         }

@@ -241,6 +241,10 @@
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
+    <Compile Include="ViewModel\FeedBackEditVM.cs" />
+    <Compile Include="ViewModel\OutSourceEditVM.cs" />
+    <Compile Include="ViewModel\FeedBackVM.cs" />
+    <Compile Include="ViewModel\OutSourceVM.cs" />
     <Compile Include="ViewModel\ProductStatisticVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
     <Compile Include="ViewModel\Model\PlateExtra.cs" />
@@ -269,17 +273,17 @@
     <Compile Include="View\FeedBackEditView.xaml.cs">
       <DependentUpon>FeedBackEditView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FeedbackView.xaml.cs">
-      <DependentUpon>FeedbackView.xaml</DependentUpon>
+    <Compile Include="View\FeedBackView.xaml.cs">
+      <DependentUpon>FeedBackView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OutsourceEditView.xaml.cs">
-      <DependentUpon>OutsourceEditView.xaml</DependentUpon>
+    <Compile Include="View\OutSourceEditView.xaml.cs">
+      <DependentUpon>OutSourceEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OutSourceView.xaml.cs">
       <DependentUpon>OutSourceView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ProductStatisticVIew.xaml.cs">
-      <DependentUpon>ProductStatisticVIew.xaml</DependentUpon>
+    <Compile Include="View\ProductStatisticView.xaml.cs">
+      <DependentUpon>ProductStatisticView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialOrderItemListView.xaml.cs">
       <DependentUpon>MaterialOrderItemListView.xaml</DependentUpon>
@@ -287,14 +291,14 @@
     <Compile Include="View\NavigationWorkFlowView.xaml.cs">
       <DependentUpon>NavigationWorkFlowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DeliveryStatisticVIew.xaml.cs">
-      <DependentUpon>DeliveryStatisticVIew.xaml</DependentUpon>
+    <Compile Include="View\DeliveryStatisticView.xaml.cs">
+      <DependentUpon>DeliveryStatisticView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PlanStatisticVIew.xaml.cs">
-      <DependentUpon>PlanStatisticVIew.xaml</DependentUpon>
+    <Compile Include="View\PlanStatisticView.xaml.cs">
+      <DependentUpon>PlanStatisticView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OrderStatisticVIew.xaml.cs">
-      <DependentUpon>OrderStatisticVIew.xaml</DependentUpon>
+    <Compile Include="View\OrderStatisticView.xaml.cs">
+      <DependentUpon>OrderStatisticView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PlateEditView.xaml.cs">
       <DependentUpon>PlateEditView.xaml</DependentUpon>
@@ -583,11 +587,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FeedbackView.xaml">
+    <Page Include="View\FeedBackView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OutsourceEditView.xaml">
+    <Page Include="View\OutSourceEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -595,7 +599,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ProductStatisticVIew.xaml">
+    <Page Include="View\ProductStatisticView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -607,15 +611,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\DeliveryStatisticVIew.xaml">
+    <Page Include="View\DeliveryStatisticView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PlanStatisticVIew.xaml">
+    <Page Include="View\PlanStatisticView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\OrderStatisticVIew.xaml">
+    <Page Include="View\OrderStatisticView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

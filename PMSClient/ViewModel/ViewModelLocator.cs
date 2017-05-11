@@ -40,6 +40,9 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<OrderCheckEditVM>();
 
+            SimpleIoc.Default.Register<OutSourceVM>();
+            SimpleIoc.Default.Register<OutSourceEditVM>();
+
             SimpleIoc.Default.Register<MissonVM>();
             SimpleIoc.Default.Register<MissonSelectVM>();
 
@@ -110,6 +113,9 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<DeliveryStatisticVM>();
             SimpleIoc.Default.Register<ProductStatisticVM>();
 
+            SimpleIoc.Default.Register<FeedBackVM>();
+            SimpleIoc.Default.Register<FeedBackEditVM>();
+
         }
         #region Properties
         public NavigationVM Navigation
@@ -131,6 +137,14 @@ namespace PMSClient.ViewModel
         public OrderCheckEditVM OrderCheckEdit
         {
             get { return SimpleIoc.Default.GetInstance<OrderCheckEditVM>(); }
+        }
+        public OutSourceVM OutSource
+        {
+            get { return SimpleIoc.Default.GetInstance<OutSourceVM>(); }
+        }
+        public OutSourceEditVM OutSourceEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<OutSourceEditVM>(); }
         }
 
         public MissonVM Misson
@@ -395,13 +409,20 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<DeliveryStatisticVM>(); }
         }
-
+        public FeedBackVM FeedBack
+        {
+            get { return SimpleIoc.Default.GetInstance<FeedBackVM>(); }
+        }
+        public FeedBackEditVM FeedBackEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<FeedBackEditVM>(); }
+        }
         #endregion
 
 
         public static void Cleanup()
         {
-   
+
         }
 
 

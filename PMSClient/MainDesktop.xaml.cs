@@ -198,6 +198,12 @@ namespace PMSClient
                 case PMSViews.OrderEdit:
                     NavigateTo(_views.OrderEdit);
                     break;
+                case PMSViews.OutSource:
+                    NavigateTo(_views.OutSource);
+                    break;
+                case PMSViews.OutSourceEdit:
+                    NavigateTo(_views.OutSourceEdit);
+                    break;
                 case PMSViews.MissonSelect:
                     NavigateTo(_views.MissonSelect);
                     break;
@@ -368,6 +374,12 @@ namespace PMSClient
                     break;
                 case PMSViews.StatisticDelivery:
                     NavigateTo(_views.DeliveryStatistic);
+                    break;
+                case PMSViews.FeedBack:
+                    NavigateTo(_views.FeedBack);
+                    break;
+                case PMSViews.FeedBackEdit:
+                    NavigateTo(_views.FeedBackEdit);
                     break;
                 default:
                     break;
