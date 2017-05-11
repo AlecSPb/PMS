@@ -1276,7 +1276,9 @@
     <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Note\stdcomposition.txt" />
+    <Content Include="Documents\stdcomposition.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resource\HelpImages\workflow.png">
