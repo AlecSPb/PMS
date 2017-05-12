@@ -124,9 +124,11 @@
                         Command="{Binding GoToMaintenance}"/>
 
                 <Button Content="{StaticResource PageOther}" Grid.Row="8" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
-                <Button Content="{StaticResource PageMaintenance}" Grid.Row="8" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
+                <Button Content="{StaticResource PageOutput}" Grid.Row="8" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToOutput}"/>
+                <Button Content="{StaticResource PageMaintenance}" Grid.Row="8" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToMaintenance}"/>
-                <Button Content="{StaticResource PageCheckList}" Grid.Row="8" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                <Button Content="{StaticResource PageCheckList}" Grid.Row="8" Grid.Column="3" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToMaintenance}"/>
 
                 <Button Content="{StaticResource PageBasicData}" Grid.Row="9" Grid.Column="0" Grid.RowSpan="2"

@@ -62,6 +62,7 @@
     <sys:String x:Key="PageSupplier">供应商库</sys:String>
     <sys:String x:Key="PageSieve">筛网库</sys:String>
 
+    <sys:String x:Key="PageOutput">数据导出</sys:String>
 
     <sys:String x:Key="PageUser">用户</sys:String>
     <sys:String x:Key="PageRole">角色</sys:String>

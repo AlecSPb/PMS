@@ -55,18 +55,18 @@ namespace PMSClient.ViewModel
 
 
 
-            GoToNavigation= new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
+            GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
 
             GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized("浏览订单"));
             GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck), () => _session.IsAuthorized("浏览订单核验"));
-            GoToOutSource= new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource), () => _session.IsAuthorized("浏览外包记录"));
+            GoToOutSource = new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource), () => _session.IsAuthorized("浏览外包记录"));
 
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed), () => _session.IsAuthorized("浏览原料需求"));
             GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized("浏览原料订单"));
             GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn), () => _session.IsAuthorized("浏览原料库存"));
 
-            GoToPlate= new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate), () => _session.IsAuthorized("浏览背板记录"));
+            GoToPlate = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate), () => _session.IsAuthorized("浏览背板记录"));
 
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), () => _session.IsAuthorized("浏览任务"));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), () => _session.IsAuthorized("浏览计划安排"));
@@ -102,6 +102,8 @@ namespace PMSClient.ViewModel
             GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery), () => _session.IsAuthorized(PMSAccessDictionary.ReadStatisticDelivery));
             GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(PMSAccessDictionary.ReadStatisticProduct));
 
+            GoToFeedBack = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
+            GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
 
         }
 
@@ -114,7 +116,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToNavigationWorkFlow { get; set; }
         public RelayCommand GoToOrder { get; private set; }
         public RelayCommand GoToOrderCheck { get; private set; }
-        public RelayCommand GoToOutSource{ get; private set; }
+        public RelayCommand GoToOutSource { get; private set; }
 
         public RelayCommand GoToMisson { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
@@ -150,8 +152,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToBDDeliveryAddress { get; set; }
         public RelayCommand GoToBDSupplier { get; set; }
 
-
-
+        public RelayCommand GoToFeedBack { get; set; }
+        public RelayCommand GoToOutput { get; set; }
 
         public RelayCommand GoToAdminUser { get; set; }
         public RelayCommand GoToAdminRole { get; set; }
