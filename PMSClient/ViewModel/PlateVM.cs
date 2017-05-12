@@ -53,9 +53,10 @@ namespace PMSClient.ViewModel
             if (dialog.ShowDialog() == true)
             {
                 int number = dialog.DuplicateNumber;
+                string prefix = dialog.DuplicatePrefix;
                 try
                 {
-                    using (var service=new PlateServiceClient())
+                    using (var service = new PlateServiceClient())
                     {
                         for (int i = 0; i < number; i++)
                         {
@@ -69,7 +70,7 @@ namespace PMSClient.ViewModel
                             temp.Dimension = model.Dimension;
                             temp.Hardness = model.Hardness;
                             temp.LastWeldMaterial = model.LastWeldMaterial;
-                            temp.PlateLot = model.PlateLot;
+                            temp.PlateLot = prefix + (i + 1).ToString("00");
                             temp.PlateMaterial = model.PlateMaterial;
                             temp.Remark = model.Remark;
                             temp.Supplier = model.Supplier;

@@ -22,15 +22,31 @@ namespace PMSClient.CustomControls
         public BatchDuplicateDialog()
         {
             InitializeComponent();
+            InitializeData();
+        }
+
+        private void InitializeData()
+        {
             int[] numbers = new int[10];
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = i + 1;
             }
+            txtPrefix.Text = $"{DateTime.Now.ToString("yyMMdd")}-BP-";
             cboNumbers.ItemsSource = numbers;
             cboNumbers.SelectedItem = 1;
         }
-
+        public string DuplicatePrefix
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(txtPrefix.Text))
+                {
+                    return $"{DateTime.Now.ToString("yyMMdd")}-BP-";
+                }
+                return txtPrefix.Text;
+            }
+        }
         public int DuplicateNumber
         {
             get

@@ -7,10 +7,17 @@
         xmlns:WpfMediaKit="clr-namespace:WPFMediaKit.DirectShow.Controls;assembly=WPFMediaKit"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
-    <StackPanel>
-        <ComboBox Name="cbo" SelectionChanged="cbo_SelectionChanged"/>
-        <WpfMediaKit:VideoCaptureElement Height="200" Name="vce"/>
-        <Button Name="btnCapture" Height="50" Content="拍照" Click="btnCapture_Click"/>
-        <Button Name="btnNew" Height="50" Content="重拍" Click="btnNew_Click"/>
-    </StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <ComboBox Grid.Row="0" Name="cbo" SelectionChanged="cbo_SelectionChanged"/>
+        <WpfMediaKit:VideoCaptureElement Grid.Row="1"  Name="vce"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Name="btnCapture" Height="50" Content="拍照" Click="btnCapture_Click" Width="80"/>
+            <Button Name="btnNew" Height="50" Content="重拍" Click="btnNew_Click" Width="80"/>
+        </StackPanel>
+    </Grid>
 </Window>

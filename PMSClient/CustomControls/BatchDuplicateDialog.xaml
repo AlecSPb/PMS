@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="BatchDuplicateDialog" Height="200" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="BatchDuplicateDialog" Height="200" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -15,9 +15,11 @@
         </Grid.RowDefinitions>
         <TextBlock Name="txtBrief" Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}"  TextWrapping="WrapWithOverflow"
                    VerticalAlignment="Top">
-            提示：请选择要批量复用的数量,然后点击确定，出于防止意外失误造成添加过多，这个数量设定最多不能超过10
+            提示：请选择要批量复用的数量,然后点击确定，出于防止意外失误造成添加过多，每次批量添加数量最多不超过10;请确定好前缀和数量
         </TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="编码前缀" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Name="txtPrefix" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
             <TextBlock Text="复用数量" Style="{StaticResource StyleTextBlockCommon}"/>
             <ComboBox Name="cboNumbers"  Style="{StaticResource StyleComboBoxCommon}"/>
         </StackPanel>

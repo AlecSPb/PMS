@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFMediaKit.DirectShow.Controls;
+using System.IO;
+
+
 
 namespace CameraAndQRCode
 {
@@ -49,12 +52,17 @@ namespace CameraAndQRCode
             bmp.Render(vce);
             //这里需要创建一个流以便存储摄像头拍摄到的图片。
             //当然，可以使文件流，也可以使内存流。
-            //BitmapEncoder encoder = new JpegBitmapEncoder();
-            //encoder.Frames.Add(BitmapFrame.Create(bmp));
-            //encoder.Save(ms);
+            BitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bmp));
+            using (MemoryStream ms = new MemoryStream())
+            {
+                encoder.Save(ms);
+                byte[] captureData = ms.ToArray();
+                string filename=System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "capture.jpg");
+                File.WriteAllBytes(filename, captureData);
+            }
+
             vce.Pause();
-
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
