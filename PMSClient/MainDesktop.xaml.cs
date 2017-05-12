@@ -29,7 +29,7 @@ namespace PMSClient
     /// </summary>
     public partial class MainDesktop : Window
     {
-        private DesktopViewLocator _views;
+        private ViewLocator _views;
         private ToolViewLocator _toolviews;
         private DispatcherTimer _timerMain;
         private fm.NotifyIcon _notifyIcon;

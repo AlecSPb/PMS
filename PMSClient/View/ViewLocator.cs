@@ -10,9 +10,9 @@ using GalaSoft.MvvmLight.Ioc;
 
 namespace PMSClient.View
 {
-    public class DesktopViewLocator
+    public class ViewLocator
     {
-        public DesktopViewLocator()
+        public ViewLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
@@ -104,6 +104,8 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<FeedBackView>();
             SimpleIoc.Default.Register<FeedBackEditView>();
+
+            SimpleIoc.Default.Register<OutputView>();
         }
 
         #region NavigationProperties
@@ -427,7 +429,10 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<FeedBackEditView>(); }
         }
-
+        public OutputView Output
+        {
+            get { return SimpleIoc.Default.GetInstance<OutputView>(); }
+        }
         #endregion
 
     }

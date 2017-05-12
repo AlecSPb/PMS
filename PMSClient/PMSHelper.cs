@@ -21,7 +21,7 @@ namespace PMSClient
 
             _mainWindow = (App.Current as App).MainWindow as MainDesktop;
 
-            _desktopViews = new DesktopViewLocator();
+            _desktopViews = new ViewLocator();
             _viewModels = (App.Current as App).FindResource("Locator") as ViewModelLocator;
 
             _toolViews = new ToolViewLocator();
@@ -43,7 +43,7 @@ namespace PMSClient
         #endregion
 
         #region 视图和视图模型
-        private static DesktopViewLocator _desktopViews;
+        private static ViewLocator _desktopViews;
 
         private static ViewModelLocator _viewModels;
 
@@ -59,7 +59,7 @@ namespace PMSClient
             }
         }
 
-        public static DesktopViewLocator DesktopViews
+        public static ViewLocator DesktopViews
         {
             get { return _desktopViews; }
         }
