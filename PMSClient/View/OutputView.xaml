@@ -18,6 +18,31 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
         </StackPanel>
-            
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="选择年份"/>
+                <ComboBox Style="{StaticResource StyleComboBoxCommon}"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Button Content="导出销售订单" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出原料订单" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出原料入库" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出原料出库" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出借记数据" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出发货数据" Style="{StaticResource StyleButtonStretch}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

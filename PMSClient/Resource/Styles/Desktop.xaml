@@ -179,6 +179,9 @@
         <Setter Property="Foreground" Value="Blue"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
+    <Style x:Key="StyleButtonStretch" TargetType="Button" BasedOn="{StaticResource StyleButtonCommon}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
 
     <Style x:Key="StyleTextBlockCommon" TargetType="TextBlock">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
