@@ -694,14 +694,14 @@
     <sys:String x:Key="FBState">状态</sys:String>
     <sys:String x:Key="FBCreator">创建者</sys:String>
     <sys:String x:Key="FBCreateTime">创建时间</sys:String>
-    <sys:String x:Key="FBProductID">状态</sys:String>
-    <sys:String x:Key="FBProductType">状态</sys:String>
-    <sys:String x:Key="FBComposition">状态</sys:String>
-    <sys:String x:Key="FBCustomer">状态</sys:String>
-    <sys:String x:Key="FBFeedbackPerson">状态</sys:String>
-    <sys:String x:Key="FBReceivedDate">状态</sys:String>
-    <sys:String x:Key="FBProcessWay">状态</sys:String>
-    <sys:String x:Key="FBRemark">状态</sys:String>
+    <sys:String x:Key="FBProductID">产品ID</sys:String>
+    <sys:String x:Key="FBProductType">产品类型</sys:String>
+    <sys:String x:Key="FBComposition">成分</sys:String>
+    <sys:String x:Key="FBCustomer">客户</sys:String>
+    <sys:String x:Key="FBFeedbackPerson">反馈人</sys:String>
+    <sys:String x:Key="FBReceivedDate">反馈日期</sys:String>
+    <sys:String x:Key="FBProcessWay">处理结果</sys:String>
+    <sys:String x:Key="FBRemark">备注</sys:String>
 
     <!--ItemDebit-->
     <sys:String x:Key="IDState">状态</sys:String>
