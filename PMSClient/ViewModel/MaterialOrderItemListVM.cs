@@ -49,9 +49,14 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(this.ActionAll);
             Doc = new RelayCommand<DcMaterialOrderItemExtra>(ActionGenerateDoc);
             SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
+            Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
         }
 
-
+        private void ActionLocation(DcMaterialOrderItemExtra model)
+        {
+            PMSHelper.ViewModels.MaterialOrder.SetSearch(model.MaterialOrder.OrderPO, "");
+            NavigationService.GoTo(PMSViews.MaterialOrder);
+        }
 
         private void ActionSelectionChanged(DcMaterialOrderItemExtra model)
         {
@@ -217,6 +222,8 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand<DcMaterialOrderItemExtra> Doc { get; private set; }
         public RelayCommand<DcMaterialOrderItemExtra> SelectionChanged { get; set; }
+
+        public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }
         #endregion
     }
 }

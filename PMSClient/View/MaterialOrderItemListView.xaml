@@ -44,8 +44,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource ButtonLocation}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Location,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

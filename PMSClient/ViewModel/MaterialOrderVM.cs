@@ -60,6 +60,16 @@ namespace PMSClient.ViewModel
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
 
         }
+
+        public void SetSearch(string orderPO, string supplier)
+        {
+            SearchOrderPO = orderPO;
+            SearchSupplier = supplier;
+            SetPageParametersWhenConditionChange();
+        }
+
+
+
         private void ActionGoToMaterialOrderItemList()
         {
             NavigationService.GoTo(PMSViews.MaterialOrderItemList);
