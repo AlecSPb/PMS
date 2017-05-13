@@ -425,8 +425,24 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcMaterialInventoryIn> GetMaterialInventoryInByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
 
+        public int GetMaterialInventoryInCountByYear(int year)
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
 
+        public int GetMaterialInventoryOutCountByYear(int year)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

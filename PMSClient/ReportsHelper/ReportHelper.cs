@@ -39,11 +39,18 @@ namespace PMSClient.ReportsHelper
                 return reportsFolder;
             }
         }
-        public static string TimeName
+        public static string TimeNameDocx
         {
             get
             {
                 return DateTime.Now.ToString("yyyyMMddHHmmss")+".docx";
+            }
+        }
+        public static string TimeNameXlsx
+        {
+            get
+            {
+                return DateTime.Now.ToString("yyyyMMddHHmmss") + ".xlsx";
             }
         }
         /// <summary>

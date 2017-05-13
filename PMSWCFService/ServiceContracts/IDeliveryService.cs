@@ -50,6 +50,11 @@ namespace PMSWCFService.ServiceContracts
         int GetDeliveryItemExtraCount(string productid, string composition);
 
         [OperationContract]
+        List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetDeliveryItemExtraCountByYear(string productid, int year);
+
+        [OperationContract]
         int AddDeliveryItem(DcDeliveryItem model);
         [OperationContract]
         int UpdateDeliveryItem(DcDeliveryItem model);

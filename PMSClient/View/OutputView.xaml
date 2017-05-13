@@ -39,7 +39,7 @@
                     <Button Content="导出原料订单" Style="{StaticResource StyleButtonStretch}"/>
                     <Button Content="导出原料入库" Style="{StaticResource StyleButtonStretch}"/>
                     <Button Content="导出原料出库" Style="{StaticResource StyleButtonStretch}"/>
-                    <Button Content="导出借记数据" Style="{StaticResource StyleButtonStretch}"/>
+                    <!--<Button Content="导出借记数据" Style="{StaticResource StyleButtonStretch}"/>-->
                     <Button Content="导出发货数据" Style="{StaticResource StyleButtonStretch}"/>
                 </StackPanel>
             </Grid>

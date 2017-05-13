@@ -25,6 +25,18 @@
   <wsdl:message name="IOrderService_GetOrderCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderCountBySearchResponse" />
   </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByYear" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountByYearResponse" />
+  </wsdl:message>
   <wsdl:message name="IOrderService_AddOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:AddOrder" />
   </wsdl:message>
@@ -259,6 +271,18 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtraByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraByYear" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtraByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtraCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtraCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraCountByYearResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialOrderService_CheckOrderItemNumberExist_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckOrderItemNumberExist" />
   </wsdl:message>
@@ -288,6 +312,18 @@
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInByYear" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountByYearResponse" />
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryIn_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialInventoryIn" />
@@ -342,6 +378,18 @@
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutsByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutsByYear" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutsByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutsByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryOutCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCountByYearResponse" />
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryOut_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialInventoryOut" />
@@ -547,6 +595,18 @@
   <wsdl:message name="IDeliveryService_GetDeliveryItemExtraCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtraByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraByYear" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtraByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtraCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemExtraCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemExtraCountByYearResponse" />
+  </wsdl:message>
   <wsdl:message name="IDeliveryService_AddDeliveryItem_InputMessage">
     <wsdl:part name="parameters" element="tns:AddDeliveryItem" />
   </wsdl:message>
@@ -630,6 +690,18 @@
   </wsdl:message>
   <wsdl:message name="IProductService_GetProductCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByYear" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductsByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCountByYearResponse" />
   </wsdl:message>
   <wsdl:message name="IProductService_AddProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:AddProduct" />
@@ -974,6 +1046,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountBySearch" message="tns:IOrderService_GetOrderCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse" message="tns:IOrderService_GetOrderCountBySearch_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetOrderByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderByYear" message="tns:IOrderService_GetOrderByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderByYearResponse" message="tns:IOrderService_GetOrderByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountByYear" message="tns:IOrderService_GetOrderCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountByYearResponse" message="tns:IOrderService_GetOrderCountByYear_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/AddOrder" message="tns:IOrderService_AddOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/AddOrderResponse" message="tns:IOrderService_AddOrder_OutputMessage" />
@@ -1136,6 +1216,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYear" message="tns:IMaterialOrderService_GetMaterialOrderItemExtraByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYearResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtraByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYear" message="tns:IMaterialOrderService_GetMaterialOrderItemExtraCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYearResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtraCountByYear_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CheckOrderItemNumberExist">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage" />
@@ -1157,6 +1245,14 @@
     <wsdl:operation name="GetMaterialInventoryInCountBySearch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYear" message="tns:IMaterialInventoryService_GetMaterialInventoryInByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYearResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYear" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYearResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountByYear_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddMaterialInventoryIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn" message="tns:IMaterialInventoryService_AddMaterialInventoryIn_InputMessage" />
@@ -1193,6 +1289,14 @@
     <wsdl:operation name="GetMaterialInventoryOutCountBySearch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" message="tns:IMaterialInventoryService_GetMaterialInventoryOutCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearchResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryOutCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutsByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYear" message="tns:IMaterialInventoryService_GetMaterialInventoryOutsByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYearResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryOutsByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYear" message="tns:IMaterialInventoryService_GetMaterialInventoryOutCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYearResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryOutCountByYear_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddMaterialInventoryOut">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut" message="tns:IMaterialInventoryService_AddMaterialInventoryOut_InputMessage" />
@@ -1334,6 +1438,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount" message="tns:IDeliveryService_GetDeliveryItemExtraCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse" message="tns:IDeliveryService_GetDeliveryItemExtraCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYear" message="tns:IDeliveryService_GetDeliveryItemExtraByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYearResponse" message="tns:IDeliveryService_GetDeliveryItemExtraByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYear" message="tns:IDeliveryService_GetDeliveryItemExtraCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYearResponse" message="tns:IDeliveryService_GetDeliveryItemExtraCountByYear_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddDeliveryItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryItem" message="tns:IDeliveryService_AddDeliveryItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/AddDeliveryItemResponse" message="tns:IDeliveryService_AddDeliveryItem_OutputMessage" />
@@ -1393,6 +1505,14 @@
     <wsdl:operation name="GetProductCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCount" message="tns:IProductService_GetProductCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountResponse" message="tns:IProductService_GetProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductsByYear" message="tns:IProductService_GetProductsByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsByYearResponse" message="tns:IProductService_GetProductsByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCountByYear" message="tns:IProductService_GetProductCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountByYearResponse" message="tns:IProductService_GetProductCountByYear_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/AddProduct" message="tns:IProductService_AddProduct_InputMessage" />
@@ -1649,6 +1769,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetOrderCountBySearch">
       <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderByYear">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountByYear">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountByYear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2016,6 +2154,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraByYear">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraCountByYear">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckOrderItemNumberExist">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" style="document" />
       <wsdl:input>
@@ -2057,6 +2213,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryInCountBySearch">
       <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInByYear">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCountByYear">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2138,6 +2312,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryOutCountBySearch">
       <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutsByYear">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutCountByYear">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2457,6 +2649,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraByYear">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemExtraCountByYear">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddDeliveryItem">
       <soap:operation soapAction="http://tempuri.org/IDeliveryService/AddDeliveryItem" style="document" />
       <wsdl:input>
@@ -2582,6 +2792,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductCount">
       <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByYear">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductsByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCountByYear">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCountByYear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

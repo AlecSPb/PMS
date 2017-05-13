@@ -93,6 +93,11 @@ namespace PMSWCFService
             }
         }
 
+        public int GetProductCountByYear(string productid, int year)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<DcProduct> GetProducts(int skip, int take, string productid, string composition)
         {
             try
@@ -115,6 +120,11 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public List<DcProduct> GetProductsByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
         }
 
         public int UpdateProduct(DcProduct model)

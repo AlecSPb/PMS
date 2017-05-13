@@ -21,8 +21,6 @@ namespace PMSWCFService.ServiceContracts
         int GetMaterialOrderCountForSanjie(string orderPo);
 
 
-
-
         [OperationContract]
         int AddMaterialOrder(DcMaterialOrder model);
         [OperationContract]
@@ -64,7 +62,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber,string supplier);
 
-
+        [OperationContract]
+        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtraByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber,int year);
 
 
         [OperationContract]

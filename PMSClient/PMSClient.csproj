@@ -152,6 +152,9 @@
     <Compile Include="CustomControls\NoticeWindow.xaml.cs">
       <DependentUpon>NoticeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\OutputProgress.xaml.cs">
+      <DependentUpon>OutputProgress.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
@@ -544,6 +547,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomControls\OutputProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\ProgressIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -887,6 +894,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Note\nuget.txt" />
     <Content Include="Resource\DocTemplate\Reports\MaterialOrderHorizontal.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

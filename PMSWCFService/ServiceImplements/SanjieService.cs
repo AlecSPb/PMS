@@ -56,6 +56,11 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcMaterialInventoryIn> GetMaterialInventoryInByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
+
         public int GetMaterialInventoryInCount(string composition, string batchnumber, string pminumber)
         {
             try
@@ -78,6 +83,11 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public int GetMaterialInventoryInCountByYear(int year)
+        {
+            throw new NotImplementedException();
         }
 
         public List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber)
@@ -132,6 +142,11 @@ namespace PMSWCFService
             }
         }
 
+        public int GetMaterialInventoryOutCountByYear(int year)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<DcMaterialInventoryOut> GetMaterialInventoryOuts(int skip, int take, string composition, string batchnumber, string pminumber)
         {
             try
@@ -156,6 +171,11 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
         }
 
         public List<DcMaterialOrder> GetMaterialOrder(int skip, int take, string orderPo)
@@ -228,6 +248,16 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtraByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year)
+        {
+            throw new NotImplementedException();
         }
 
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber)

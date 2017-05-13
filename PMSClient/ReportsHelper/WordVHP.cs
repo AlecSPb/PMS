@@ -15,7 +15,7 @@ namespace PMSClient.ReportsHelper
         private string prefix = "热压报告";
         public WordVHP()
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportRecordVHP.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "ReportRecordVHP_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
@@ -23,7 +23,7 @@ namespace PMSClient.ReportsHelper
 
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
         public void SetModel(DcPlanWithMisson model)

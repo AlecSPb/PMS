@@ -17,7 +17,7 @@ namespace PMSClient.ReportsHelper
         private string prefix = "Opticraft440抛光";
         public WordOpticraft440()
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportOpticraft440.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "ReportOpticraft440_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
@@ -25,7 +25,7 @@ namespace PMSClient.ReportsHelper
 
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
         public void SetModel(DcRecordTest test)

@@ -22,6 +22,14 @@ namespace PMSWCFService.ServiceContracts
         int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber);
 
         [OperationContract]
+        List<DcMaterialInventoryIn> GetMaterialInventoryInByYear(int skip, int take,int year);
+        [OperationContract]
+        int GetMaterialInventoryInCountByYear(int year);
+
+
+
+
+        [OperationContract]
         int AddMaterialInventoryIn(DcMaterialInventoryIn model);
         [OperationContract]
         int UpdateMaterialInventoryIn(DcMaterialInventoryIn model);
@@ -41,6 +49,10 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialInventoryOut> GetMaterialInventoryOutsBySearch(int skip, int take,string receiver,string composition,string batchnumber,string pminumber);
         [OperationContract]
         int GetMaterialInventoryOutCountBySearch(string receiver, string composition, string batchnumber, string pminumber);
+        [OperationContract]
+        List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetMaterialInventoryOutCountByYear(int year);
 
 
         [OperationContract]

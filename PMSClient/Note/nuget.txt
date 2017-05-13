@@ -1,0 +1,7 @@
+﻿EntityFramework
+DocX
+EPPlus
+AutoMapper
+LiveCharts
+MvvmLight
+

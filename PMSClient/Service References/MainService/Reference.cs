@@ -6231,6 +6231,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
         System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByYear", ReplyAction="http://tempuri.org/IOrderService/GetOrderByYearResponse")]
+        PMSClient.MainService.DcOrder[] GetOrderByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByYear", ReplyAction="http://tempuri.org/IOrderService/GetOrderByYearResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountByYear", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountByYearResponse")]
+        int GetOrderCountByYear(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountByYear", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountByYearResponse")]
+        System.Threading.Tasks.Task<int> GetOrderCountByYearAsync(int year);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/AddOrder", ReplyAction="http://tempuri.org/IOrderService/AddOrderResponse")]
         int AddOrder(PMSClient.MainService.DcOrder order);
         
@@ -6317,6 +6329,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd) {
             return base.Channel.GetOrderCountBySearchAsync(customer, compositionstd);
+        }
+        
+        public PMSClient.MainService.DcOrder[] GetOrderByYear(int skip, int take, int year) {
+            return base.Channel.GetOrderByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetOrderByYearAsync(skip, take, year);
+        }
+        
+        public int GetOrderCountByYear(int year) {
+            return base.Channel.GetOrderCountByYear(year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOrderCountByYearAsync(int year) {
+            return base.Channel.GetOrderCountByYearAsync(year);
         }
         
         public int AddOrder(PMSClient.MainService.DcOrder order) {
@@ -6744,6 +6772,20 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber, string supplier);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYear", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYearResponse")]
+        PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtraByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYear", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYearResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtraByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYear", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYearResp" +
+            "onse")]
+        int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYear", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraCountByYearResp" +
+            "onse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtraCountByYearAsync(string composition, string pminumber, int year);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
         bool CheckOrderItemNumberExist(string orderItemnumber);
         
@@ -6938,6 +6980,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber, supplier);
         }
         
+        public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtraByYear(int skip, int take, int year) {
+            return base.Channel.GetMaterialOrderItemExtraByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtraByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetMaterialOrderItemExtraByYearAsync(skip, take, year);
+        }
+        
+        public int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year) {
+            return base.Channel.GetMaterialOrderItemExtraCountByYear(composition, pminumber, year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtraCountByYearAsync(string composition, string pminumber, int year) {
+            return base.Channel.GetMaterialOrderItemExtraCountByYearAsync(composition, pminumber, year);
+        }
+        
         public bool CheckOrderItemNumberExist(string orderItemnumber) {
             return base.Channel.CheckOrderItemNumberExist(orderItemnumber);
         }
@@ -6978,6 +7036,22 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchR" +
             "esponse")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryInCountBySearchAsync(string supplier, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYearResponse" +
+            "")]
+        PMSClient.MainService.DcMaterialInventoryIn[] GetMaterialInventoryInByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYearResponse" +
+            "")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYearRes" +
+            "ponse")]
+        int GetMaterialInventoryInCountByYear(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountByYearRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryInCountByYearAsync(int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
         int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model);
@@ -7042,6 +7116,22 @@ namespace PMSClient.MainService {
             "", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountBySearch" +
             "Response")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountBySearchAsync(string receiver, string composition, string batchnumber, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYearRespon" +
+            "se")]
+        PMSClient.MainService.DcMaterialInventoryOut[] GetMaterialInventoryOutsByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutsByYearRespon" +
+            "se")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYearRe" +
+            "sponse")]
+        int GetMaterialInventoryOutCountByYear(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYear", ReplyAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryOutCountByYearRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountByYearAsync(int year);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryOutResponse")]
         int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model);
@@ -7137,6 +7227,22 @@ namespace PMSClient.MainService {
             return base.Channel.GetMaterialInventoryInCountBySearchAsync(supplier, composition, batchnumber, pminumber);
         }
         
+        public PMSClient.MainService.DcMaterialInventoryIn[] GetMaterialInventoryInByYear(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryInByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryIn[]> GetMaterialInventoryInByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryInByYearAsync(skip, take, year);
+        }
+        
+        public int GetMaterialInventoryInCountByYear(int year) {
+            return base.Channel.GetMaterialInventoryInCountByYear(year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountByYearAsync(int year) {
+            return base.Channel.GetMaterialInventoryInCountByYearAsync(year);
+        }
+        
         public int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model) {
             return base.Channel.AddMaterialInventoryIn(model);
         }
@@ -7207,6 +7313,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountBySearchAsync(string receiver, string composition, string batchnumber, string pminumber) {
             return base.Channel.GetMaterialInventoryOutCountBySearchAsync(receiver, composition, batchnumber, pminumber);
+        }
+        
+        public PMSClient.MainService.DcMaterialInventoryOut[] GetMaterialInventoryOutsByYear(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryOutsByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryOutsByYearAsync(skip, take, year);
+        }
+        
+        public int GetMaterialInventoryOutCountByYear(int year) {
+            return base.Channel.GetMaterialInventoryOutCountByYear(year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountByYearAsync(int year) {
+            return base.Channel.GetMaterialInventoryOutCountByYearAsync(year);
         }
         
         public int AddMaterialInventoryOut(PMSClient.MainService.DcMaterialInventoryOut model) {
@@ -7585,6 +7707,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
         System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYear", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYearResponse")]
+        PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtraByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYear", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYearResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYear", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYearResponse")]
+        int GetDeliveryItemExtraCountByYear(string productid, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYear", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountByYearResponse")]
+        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountByYearAsync(string productid, int year);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/AddDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/AddDeliveryItemResponse")]
         int AddDeliveryItem(PMSClient.MainService.DcDeliveryItem model);
         
@@ -7753,6 +7887,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition) {
             return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition);
+        }
+        
+        public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtraByYear(int skip, int take, int year) {
+            return base.Channel.GetDeliveryItemExtraByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetDeliveryItemExtraByYearAsync(skip, take, year);
+        }
+        
+        public int GetDeliveryItemExtraCountByYear(string productid, int year) {
+            return base.Channel.GetDeliveryItemExtraCountByYear(productid, year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountByYearAsync(string productid, int year) {
+            return base.Channel.GetDeliveryItemExtraCountByYearAsync(productid, year);
         }
         
         public int AddDeliveryItem(PMSClient.MainService.DcDeliveryItem model) {
@@ -7943,6 +8093,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCount", ReplyAction="http://tempuri.org/IProductService/GetProductCountResponse")]
         System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsByYear", ReplyAction="http://tempuri.org/IProductService/GetProductsByYearResponse")]
+        PMSClient.MainService.DcProduct[] GetProductsByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsByYear", ReplyAction="http://tempuri.org/IProductService/GetProductsByYearResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcProduct[]> GetProductsByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCountByYear", ReplyAction="http://tempuri.org/IProductService/GetProductCountByYearResponse")]
+        int GetProductCountByYear(string productid, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductCountByYear", ReplyAction="http://tempuri.org/IProductService/GetProductCountByYearResponse")]
+        System.Threading.Tasks.Task<int> GetProductCountByYearAsync(string productid, int year);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/AddProduct", ReplyAction="http://tempuri.org/IProductService/AddProductResponse")]
         int AddProduct(PMSClient.MainService.DcProduct model);
         
@@ -8015,6 +8177,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetProductCountAsync(string productid, string composition) {
             return base.Channel.GetProductCountAsync(productid, composition);
+        }
+        
+        public PMSClient.MainService.DcProduct[] GetProductsByYear(int skip, int take, int year) {
+            return base.Channel.GetProductsByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcProduct[]> GetProductsByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetProductsByYearAsync(skip, take, year);
+        }
+        
+        public int GetProductCountByYear(string productid, int year) {
+            return base.Channel.GetProductCountByYear(productid, year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetProductCountByYearAsync(string productid, int year) {
+            return base.Channel.GetProductCountByYearAsync(productid, year);
         }
         
         public int AddProduct(PMSClient.MainService.DcProduct model) {

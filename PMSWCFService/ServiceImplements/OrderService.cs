@@ -8,6 +8,7 @@ using AutoMapper;
 using PMSDAL;
 using PMSCommon;
 using AuthorizationChecker;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -166,12 +167,12 @@ namespace PMSWCFService
                         cfg.CreateMap<PMSOrder, DcOrder>();
                     });
                     var mapper = config.CreateMapper();
-                    var order = from o in dc.Orders
+                    var query = from o in dc.Orders
                                 where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
 
-                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order.Skip(skip).Take(take).ToList());
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());
                     return result;
                 }
             }
@@ -204,6 +205,56 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public int GetOrderCountByYear(int year)
+        {
+            try
+            {
+                var date = new DateTime(year, 0, 0);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.State != OrderState.作废.ToString()
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcOrder> GetOrderByYear(int skip, int take, int year)
+        {
+            try
+            {
+                var date = new DateTime(year, 0, 0);
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var order = from o in dc.Orders
+                                where o.State != OrderState.作废.ToString()
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(order.Skip(skip).Take(take).ToList());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
 

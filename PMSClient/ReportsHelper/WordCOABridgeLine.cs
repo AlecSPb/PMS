@@ -18,14 +18,14 @@ namespace PMSClient.ReportsHelper
         private string prefix = "COABridgeLine";
         public WordCOABridgeLine()
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COABridgeLine.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COABridgeLine_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
         public void SetModel(DcRecordTest test)

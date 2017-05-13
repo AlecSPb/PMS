@@ -43,5 +43,20 @@ namespace PMSWCFService.ServiceContracts
         List<DcItemDebit> GetItemDebit(int s, int t, string itemType, string itemName);
         [OperationContract]
         int GetItemDebitCount(string itemType, string itemName);
+
+
+        //Output
+        [OperationContract]
+        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtraByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year);
+        [OperationContract]
+        List<DcMaterialInventoryIn> GetMaterialInventoryInByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetMaterialInventoryInCountByYear(int year);
+        [OperationContract]
+        List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetMaterialInventoryOutCountByYear(int year);
     }
 }

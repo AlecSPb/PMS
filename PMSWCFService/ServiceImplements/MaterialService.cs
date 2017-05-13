@@ -394,6 +394,16 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtraByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition,
             string pminumber, string orderitemnumber,string supplier)
         {

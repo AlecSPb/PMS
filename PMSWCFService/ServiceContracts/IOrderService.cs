@@ -17,6 +17,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetOrderCountBySearch(string customer, string compositionstd);
         [OperationContract]
+        List<DcOrder> GetOrderByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetOrderCountByYear(int year);
+
+        [OperationContract]
         int AddOrder(DcOrder order);
         [OperationContract]
         int AddOrderByUID(DcOrder order,string uid);

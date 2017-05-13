@@ -14,14 +14,14 @@ namespace PMSClient.ReportsHelper
         private string prefix = "测试报告";
         public WordRecordTest()
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "RecordTest.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "RecordTest_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
         public void SetModel(DcRecordTest test)

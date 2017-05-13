@@ -14,9 +14,16 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcProduct> GetProducts(int skip, int take, string productid, string composition);
-
         [OperationContract]
         int GetProductCount(string productid, string composition);
+
+        [OperationContract]
+        List<DcProduct> GetProductsByYear(int skip, int take, int year);
+        [OperationContract]
+        int GetProductCountByYear(string productid, int year);
+
+
+
         [OperationContract]
         int AddProduct(DcProduct model);
         [OperationContract]

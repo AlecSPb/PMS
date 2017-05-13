@@ -284,6 +284,11 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
+
         public int GetDeliveryItemExtraCount(string productid, string composition)
         {
             try
@@ -310,6 +315,11 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public int GetDeliveryItemExtraCountByYear(string productid, int year)
+        {
+            throw new NotImplementedException();
         }
 
         public List<DcDeliveryItem> GetDeliveryItems(int skip, int take, string productid, string composition)

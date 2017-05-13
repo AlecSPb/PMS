@@ -17,7 +17,7 @@ namespace PMSClient.ReportsHelper
         private string prefix = "TCB440Bonding";
         public WordTCB440()
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportTCB440.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "ReportTCB440_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
@@ -26,7 +26,7 @@ namespace PMSClient.ReportsHelper
 
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
         public void SetModel(DcRecordTest test)

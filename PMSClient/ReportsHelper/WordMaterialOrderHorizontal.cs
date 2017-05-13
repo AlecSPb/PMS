@@ -17,7 +17,7 @@ namespace PMSClient.ReportsHelper
         private string prefix = "原料订单横版";
         public WordMaterialOrderHorizontal()
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "MaterialOrderHorizontal.docx");
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "MaterialOrderHorizontal_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
@@ -25,7 +25,7 @@ namespace PMSClient.ReportsHelper
 
         public void SetTargetFolder(string targetFolder)
         {
-            var targetName = $"{prefix}{ReportHelper.TimeName}";
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             targetFile = Path.Combine(targetFolder, targetName);
         }
 
