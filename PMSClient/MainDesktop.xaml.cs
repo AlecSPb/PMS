@@ -381,6 +381,12 @@ namespace PMSClient
                 case PMSViews.FeedBackEdit:
                     NavigateTo(_views.FeedBackEdit);
                     break;
+                case PMSViews.Output:
+                    NavigateTo(_views.Output);
+                    break;
+                case PMSViews.Debug:
+                    NavigateTo(_views.Debug);
+                    break;
                 default:
                     break;
             }

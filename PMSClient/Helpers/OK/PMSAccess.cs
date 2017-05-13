@@ -16,31 +16,31 @@ namespace PMSClient
         public static string ReadOrderCheck { get; set; } = "浏览订单核验";
         public static string EditOrderCheck { get; set; } = "编辑订单核验";
 
-        public static string ReadCustomer { get; set; } = "浏览客户信息";
-        public static string EditCustomer { get; set; } = "编辑客户信息";
+        public static string ReadCustomer { get; set; } = "浏览客户记录";
+        public static string EditCustomer { get; set; } = "编辑客户记录";
 
-        public static string ReadOutSource { get; set; } = "浏览外包订单";
-        public static string EditOutSource { get; set; } = "编辑外包订单";
+        public static string ReadOutSource { get; set; } = "浏览外购记录";
+        public static string EditOutSource { get; set; } = "编辑外购记录";
 
-        public static string ReadMaterialNeed { get; set; } = "浏览材料需求";
-        public static string EditMaterialNeed { get; set; } = "编辑材料需求";
+        public static string ReadMaterialNeed { get; set; } = "浏览原料需求";
+        public static string EditMaterialNeed { get; set; } = "编辑原料需求";
 
-        public static string ReadMaterialOrder { get; set; } = "浏览材料订单";
-        public static string EditMaterialOrder { get; set; } = "编辑材料订单";
-        public static string EditMaterialOrderItem { get; set; } = "编辑材料订单项";
+        public static string ReadMaterialOrder { get; set; } = "浏览原料订单";
+        public static string EditMaterialOrder { get; set; } = "编辑原料订单";
+        public static string EditMaterialOrderItem { get; set; } = "编辑原料订单项";
 
-        public static string ReadMaterialInventoryIn { get; set; } = "浏览材料入库";
-        public static string EditMaterialInventoryIn { get; set; } = "编辑材料入库";
+        public static string ReadMaterialInventoryIn { get; set; } = "浏览原料库存";
+        public static string EditMaterialInventoryIn { get; set; } = "编辑原料库存";
 
-        public static string ReadMaterialInventoryOut { get; set; } = "浏览材料出库";
-        public static string EditMaterialInventoryOut { get; set; } = "编辑材料出库";
+        public static string ReadMaterialInventoryOut { get; set; } = "浏览原料库存";
+        public static string EditMaterialInventoryOut { get; set; } = "编辑原料库存";
 
-        public static string ReadPlate { get; set; } = "浏览背板库存";
-        public static string EditPlate { get; set; } = "编辑背板库存";
+        public static string ReadPlate { get; set; } = "浏览背板记录";
+        public static string EditPlate { get; set; } = "编辑背板记录";
 
         public static string ReadMisson { get; set; } = "浏览任务";
-        public static string ReadPlan { get; set; } = "浏览计划";
-        public static string EditPlan { get; set; } = "编辑计划";
+        public static string ReadPlan { get; set; } = "浏览计划安排";
+        public static string EditPlan { get; set; } = "编辑计划安排";
 
 
         public static string ReadRecordMilling { get; set; } = "浏览制粉记录";
@@ -61,8 +61,8 @@ namespace PMSClient
         public static string ReadRecordBonding { get; set; } = "浏览绑定记录";
         public static string EditRecordBonding { get; set; } = "编辑绑定记录";
 
-        public static string ReadProduct { get; set; } = "浏览产品记录";
-        public static string EditProduct { get; set; } = "编辑产品记录";
+        public static string ReadProduct { get; set; } = "浏览成品记录";
+        public static string EditProduct { get; set; } = "编辑成品记录";
 
         public static string ReadDelivery { get; set; } = "浏览发货记录";
         public static string EditDelivery { get; set; } = "编辑发货记录";
@@ -75,11 +75,11 @@ namespace PMSClient
 
         public static string ReadMaintenance { get; set; } = "浏览维护计划";
 
-        public static string CanOutput { get; set; } = "导出数据";
+        public static string CanOutput { get; set; } = "数据导出";
         public static string ReadFeedback { get; set; } = "浏览客户反馈";
         public static string EditFeedback { get; set; } = "编辑客户反馈";
 
-
+        public static string CanDebug { get; set; } = "调试";
 
 
 

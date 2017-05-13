@@ -240,6 +240,7 @@
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
+    <Compile Include="ViewModel\DebugVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
@@ -270,6 +271,9 @@
     </Compile>
     <Compile Include="View\DataOutputCenterView.xaml.cs">
       <DependentUpon>DataOutputCenterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DebugView.xaml.cs">
+      <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FeedBackEditView.xaml.cs">
       <DependentUpon>FeedBackEditView.xaml</DependentUpon>
@@ -584,6 +588,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DataOutputCenterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DebugView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -960,7 +968,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
-    <None Include="PMSClient_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

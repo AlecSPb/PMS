@@ -1,21 +1,19 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GalaSoft;
-using GalaSoft.MvvmLight;
-using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
-    public class OutputVM: BaseViewModel
+    public class DebugVM: BaseViewModel
     {
-        public OutputVM()
+        public DebugVM()
         {
 
         }
-
 
 
     }

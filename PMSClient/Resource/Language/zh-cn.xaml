@@ -40,7 +40,7 @@
     <sys:String x:Key="PageHelp">帮助</sys:String>
     <sys:String x:Key="PageWebSite">网址</sys:String>
     <sys:String x:Key="PageAdmin">管理</sys:String>
-    <sys:String x:Key="PageDebug">调试</sys:String>
+    <sys:String x:Key="PageDebug">调试信息</sys:String>
     <sys:String x:Key="PageNaivgation">导航</sys:String>
     <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
 

@@ -87,6 +87,8 @@ namespace PMSClient
         AdminAccess,
         AdminRole,
        FeedBack,
-       FeedBackEdit
+       FeedBackEdit,
+       Output,
+       Debug
     }
 }

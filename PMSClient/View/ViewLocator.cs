@@ -106,6 +106,8 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<FeedBackEditView>();
 
             SimpleIoc.Default.Register<OutputView>();
+
+            SimpleIoc.Default.Register<DebugView>();
         }
 
         #region NavigationProperties
@@ -432,6 +434,10 @@ namespace PMSClient.View
         public OutputView Output
         {
             get { return SimpleIoc.Default.GetInstance<OutputView>(); }
+        }
+        public DebugView Debug
+        {
+            get { return SimpleIoc.Default.GetInstance<DebugView>(); }
         }
         #endregion
 

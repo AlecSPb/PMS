@@ -121,7 +121,7 @@
 
                 <Button Content="{StaticResource PageCustomerService}" Grid.Row="7" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageFeedBack}" Grid.Row="7" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToMaintenance}"/>
+                        Command="{Binding GoToFeedBack }"/>
 
                 <Button Content="{StaticResource PageOther}" Grid.Row="8" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageOutput}" Grid.Row="8" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"

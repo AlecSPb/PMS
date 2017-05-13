@@ -117,6 +117,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FeedBackEditVM>();
 
             SimpleIoc.Default.Register<OutputVM>();
+
+            SimpleIoc.Default.Register<DebugVM>();
         }
         #region Properties
         public NavigationVM Navigation
@@ -418,10 +420,13 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<FeedBackEditVM>(); }
         }
-
         public OutputVM Output
         {
             get { return SimpleIoc.Default.GetInstance<OutputVM>(); }
+        }
+        public DebugVM Debug
+        {
+            get { return SimpleIoc.Default.GetInstance<DebugVM>(); }
         }
         #endregion
 
