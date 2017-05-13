@@ -20,6 +20,7 @@
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="Remark" type="xs:double" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" type="xs:double" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
@@ -55,12 +56,11 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FeebackReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeedbackReason" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="ProcessWay" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>

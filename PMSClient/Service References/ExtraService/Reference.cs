@@ -56,6 +56,9 @@ namespace PMSClient.ExtraService {
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double UnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double UnitPriceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -207,6 +210,19 @@ namespace PMSClient.ExtraService {
                 if ((object.ReferenceEquals(this.StateField, value) != true)) {
                     this.StateField = value;
                     this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Unit {
+            get {
+                return this.UnitField;
+            }
+            set {
+                if ((this.UnitField.Equals(value) != true)) {
+                    this.UnitField = value;
+                    this.RaisePropertyChanged("Unit");
                 }
             }
         }
@@ -413,7 +429,7 @@ namespace PMSClient.ExtraService {
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FeebackReasonField;
+        private string FeedbackReasonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -426,9 +442,6 @@ namespace PMSClient.ExtraService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReceivedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
@@ -499,14 +512,14 @@ namespace PMSClient.ExtraService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FeebackReason {
+        public string FeedbackReason {
             get {
-                return this.FeebackReasonField;
+                return this.FeedbackReasonField;
             }
             set {
-                if ((object.ReferenceEquals(this.FeebackReasonField, value) != true)) {
-                    this.FeebackReasonField = value;
-                    this.RaisePropertyChanged("FeebackReason");
+                if ((object.ReferenceEquals(this.FeedbackReasonField, value) != true)) {
+                    this.FeedbackReasonField = value;
+                    this.RaisePropertyChanged("FeedbackReason");
                 }
             }
         }
@@ -559,19 +572,6 @@ namespace PMSClient.ExtraService {
                 if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
                     this.ProductTypeField = value;
                     this.RaisePropertyChanged("ProductType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReceivedDate {
-            get {
-                return this.ReceivedDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReceivedDateField, value) != true)) {
-                    this.ReceivedDateField = value;
-                    this.RaisePropertyChanged("ReceivedDate");
                 }
             }
         }

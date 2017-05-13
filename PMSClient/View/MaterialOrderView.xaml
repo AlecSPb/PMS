@@ -141,7 +141,7 @@
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock Text="注意:每个订单的项目最好不要超过5，这时候生成doc报告的时候正好1页" Style="{StaticResource StyleTextBlockWarning}"
+            <TextBlock Text="注意:每个订单的项目尽量不要超过5" Style="{StaticResource StyleTextBlockWarning}"
                        Foreground="Black"/>
         </StackPanel>
         <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGridCommon}"

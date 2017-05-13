@@ -24,5 +24,10 @@ namespace PMSClient.View
         {
             InitializeComponent();
         }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+
+        }
     }
 }
