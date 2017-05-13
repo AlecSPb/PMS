@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OutSourceVM:BaseViewModelPage
+    public class OutSourceVM : BaseViewModelPage
     {
         public OutSourceVM()
         {
@@ -62,12 +62,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchOrderLot) && string.IsNullOrEmpty(SearchOrderName));
+            return !(string.IsNullOrEmpty(SearchOrderLot) && string.IsNullOrEmpty(SearchOrderName) && string.IsNullOrEmpty(SearchSupplier));
         }
 
         private void ActionAll()
         {
-            SearchOrderLot = SearchOrderName = "";
+            searchOrderLot = searchOrderName = searchSupplier = "";
             SetPageParametersWhenConditionChange();
         }
 
