@@ -19,6 +19,10 @@ namespace PMSDAL
         [DataMember]
         public string State { get; set; }
         [DataMember]
+        public string OrderLot { get; set; }
+        [DataMember]
+        public string OrderType { get; set; }
+        [DataMember]
         public string OrderName { get; set; }
         [DataMember]
         public string Supplier { get; set; }

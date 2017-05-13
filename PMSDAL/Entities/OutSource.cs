@@ -12,7 +12,8 @@ namespace PMSDAL
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
-
+        public string OrderLot { get; set; }
+        public string OrderType { get; set; }
         public string OrderName { get; set; }
         public string Supplier { get; set; }
         public double Quantity { get; set; }

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=FeedBack}">
@@ -12,9 +13,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageDelivery}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <TextBlock Text="{StaticResource PageFeedBack}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
@@ -29,6 +29,61 @@
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
         </StackPanel>
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordMachines}"
+                  LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RMMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="{StaticResource RMMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource RMMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding PMINumber}"/>
+                <DataGridTextColumn Header="{StaticResource RMMDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Dimension}"/>
+                <DataGridTextColumn Header="{StaticResource RMMExtraRequirement}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ExtraRequirement}"/>
+                <DataGridTextColumn Header="{StaticResource RMMBlankDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding BlankDimension}"/>
+                <DataGridTextColumn Header="{StaticResource RMMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness3,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RMMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness4,StringFormat={}{0:F2}}"/>
+
+                <DataGridTextColumn Header="{StaticResource RMMDefects}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Defects}"/>
+
+
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
     </Grid>
 </UserControl>

@@ -76,7 +76,9 @@
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
 
     <sys:String x:Key="PageOutSource">外购管理</sys:String>
-
+    <sys:String x:Key="PageOutSourceEdit">外购管理编辑</sys:String>
+    
+    
     <sys:String x:Key="PageMisson">生产任务</sys:String>
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
@@ -133,12 +135,15 @@
 
 
     <sys:String x:Key="PageCustomerService">售后</sys:String>
+    <sys:String x:Key="PageCustomerServiceEdit">售后编辑</sys:String>
+    
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
-
+    <sys:String x:Key="PageFeedBackEdit">客户反馈编辑</sys:String>
+    
     <sys:String x:Key="PageMaintenance">设备维护</sys:String>
 
     <sys:String x:Key="PageCheckList">检查清单</sys:String>
-
+    <sys:String x:Key="PageCheckListEdit">检查清单编辑</sys:String>
 
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
@@ -676,6 +681,8 @@
     <sys:String x:Key="OSState">状态</sys:String>
     <sys:String x:Key="OSCreator">创建者</sys:String>
     <sys:String x:Key="OSCreateTime">创建时间</sys:String>
+    <sys:String x:Key="OSOrderLot">Lot</sys:String>
+    <sys:String x:Key="OSOrderType">类型</sys:String>
     <sys:String x:Key="OSOrderName">名称</sys:String>
     <sys:String x:Key="OSSupplier">供应商</sys:String>
     <sys:String x:Key="OSQuantity">数量</sys:String>
