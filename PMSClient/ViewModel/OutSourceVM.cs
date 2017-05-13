@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            //PMSHelper.ViewModels.PlateEdit.SetDuplicate(model);
+            PMSHelper.ViewModels.OutSourceEdit.SetDuplicate(model);
             NavigationService.GoTo(PMSViews.OutSourceEdit);
         }
 
@@ -78,20 +78,20 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcOutSource model)
         {
-            //PMSHelper.ViewModels.PlateEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.PlateEdit);
+            PMSHelper.ViewModels.OutSourceEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.OutSourceEdit);
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.PlateEdit.SetNew();
-            NavigationService.GoTo(PMSViews.PlateEdit);
+            PMSHelper.ViewModels.OutSourceEdit.SetNew();
+            NavigationService.GoTo(PMSViews.OutSourceEdit);
         }
 
         private void InitializeProperties()
         {
             OutSources = new ObservableCollection<DcOutSource>();
-            SearchOrderName = searchOrderLot = "";
+            searchOrderLot = searchOrderName = searchSupplier = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -115,7 +115,6 @@ namespace PMSClient.ViewModel
                 OutSources.Clear();
                 orders.ToList().ForEach(o => OutSources.Add(o));
             }
-            CurrentSelectItem = OutSources.FirstOrDefault();
         }
         #region Commands
         public RelayCommand Add { get; set; }
@@ -160,14 +159,6 @@ namespace PMSClient.ViewModel
         }
 
         public ObservableCollection<DcOutSource> OutSources { get; set; }
-
-        private DcOutSource currentSelectItem;
-        public DcOutSource CurrentSelectItem
-        {
-            get { return currentSelectItem; }
-            set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
-        }
-
         #endregion
         public RelayCommand<DcOutSource> Duplicate { get; set; }
 

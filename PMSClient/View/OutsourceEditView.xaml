@@ -55,7 +55,7 @@
                 <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource OSOrderType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="0" Grid.Column="1" 
-                          ItemsSource="{Binding DataContext.OrderTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          ItemsSource="{Binding DataContext.OutSourceTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            SelectedItem="{Binding OrderType}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 <TextBlock Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
@@ -65,7 +65,7 @@
                            Style="{StaticResource StyleTextBlockSpecial}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding OrderLot}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="订购批号"/>
+                           Text="订单编号，便于搜索"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource OSOrderName}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -76,9 +76,9 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource OSSupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="3" Grid.Column="1" Name="cboSuppliers"
-                      Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Stretch"
+                      Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Stretch"
                       ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                      SelectedItem="{Binding Supplier}"/>
+                      Text="{Binding Supplier}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#选择供应商信息"/>
 

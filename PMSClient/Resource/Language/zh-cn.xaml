@@ -681,7 +681,7 @@
     <sys:String x:Key="OSState">状态</sys:String>
     <sys:String x:Key="OSCreator">创建者</sys:String>
     <sys:String x:Key="OSCreateTime">创建时间</sys:String>
-    <sys:String x:Key="OSOrderLot">Lot</sys:String>
+    <sys:String x:Key="OSOrderLot">编号</sys:String>
     <sys:String x:Key="OSOrderType">类型</sys:String>
     <sys:String x:Key="OSOrderName">名称</sys:String>
     <sys:String x:Key="OSSupplier">供应商</sys:String>
