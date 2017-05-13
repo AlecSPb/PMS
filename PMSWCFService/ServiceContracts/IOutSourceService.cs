@@ -13,9 +13,9 @@ namespace PMSWCFService.ServiceContracts
     public interface IOutSourceService
     {
         [OperationContract]
-        List<DcOutSource> GetOutSources(int s, int t, string ordername, string supplier);
+        List<DcOutSource> GetOutSources(int s, int t,string orderlot, string ordername, string supplier);
         [OperationContract]
-        int GetOutSourcesCount(string ordername, string supplier);
+        int GetOutSourcesCount(string orderlot,string ordername, string supplier);
 
         [OperationContract]
         int AddOutSource(DcOutSource model,string uid);

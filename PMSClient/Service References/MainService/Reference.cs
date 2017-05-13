@@ -6209,6 +6209,227 @@ namespace PMSClient.MainService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcOutSource", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcOutSource : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CostField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QuantityUnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SupplierField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Cost {
+            get {
+                return this.CostField;
+            }
+            set {
+                if ((this.CostField.Equals(value) != true)) {
+                    this.CostField = value;
+                    this.RaisePropertyChanged("Cost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderLot {
+            get {
+                return this.OrderLotField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderLotField, value) != true)) {
+                    this.OrderLotField = value;
+                    this.RaisePropertyChanged("OrderLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderName {
+            get {
+                return this.OrderNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderNameField, value) != true)) {
+                    this.OrderNameField = value;
+                    this.RaisePropertyChanged("OrderName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderType {
+            get {
+                return this.OrderTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderTypeField, value) != true)) {
+                    this.OrderTypeField = value;
+                    this.RaisePropertyChanged("OrderType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QuantityUnit {
+            get {
+                return this.QuantityUnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuantityUnitField, value) != true)) {
+                    this.QuantityUnitField = value;
+                    this.RaisePropertyChanged("QuantityUnit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Supplier {
+            get {
+                return this.SupplierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SupplierField, value) != true)) {
+                    this.SupplierField = value;
+                    this.RaisePropertyChanged("Supplier");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IOrderService")]
     public interface IOrderService {
@@ -9137,6 +9358,109 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordBongdingAsync(System.Guid id) {
             return base.Channel.DeleteRecordBongdingAsync(id);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MainService.IOutSourceService")]
+    public interface IOutSourceService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/GetOutSources", ReplyAction="http://tempuri.org/IOutSourceService/GetOutSourcesResponse")]
+        PMSClient.MainService.DcOutSource[] GetOutSources(int s, int t, string orderlot, string ordername, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/GetOutSources", ReplyAction="http://tempuri.org/IOutSourceService/GetOutSourcesResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOutSource[]> GetOutSourcesAsync(int s, int t, string orderlot, string ordername, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/GetOutSourcesCount", ReplyAction="http://tempuri.org/IOutSourceService/GetOutSourcesCountResponse")]
+        int GetOutSourcesCount(string orderlot, string ordername, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/GetOutSourcesCount", ReplyAction="http://tempuri.org/IOutSourceService/GetOutSourcesCountResponse")]
+        System.Threading.Tasks.Task<int> GetOutSourcesCountAsync(string orderlot, string ordername, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/AddOutSource", ReplyAction="http://tempuri.org/IOutSourceService/AddOutSourceResponse")]
+        int AddOutSource(PMSClient.MainService.DcOutSource model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/AddOutSource", ReplyAction="http://tempuri.org/IOutSourceService/AddOutSourceResponse")]
+        System.Threading.Tasks.Task<int> AddOutSourceAsync(PMSClient.MainService.DcOutSource model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/UpdateOutSource", ReplyAction="http://tempuri.org/IOutSourceService/UpdateOutSourceResponse")]
+        int UpdateOutSource(PMSClient.MainService.DcOutSource model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/UpdateOutSource", ReplyAction="http://tempuri.org/IOutSourceService/UpdateOutSourceResponse")]
+        System.Threading.Tasks.Task<int> UpdateOutSourceAsync(PMSClient.MainService.DcOutSource model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/DeleteOutSource", ReplyAction="http://tempuri.org/IOutSourceService/DeleteOutSourceResponse")]
+        int DeleteOutSource(System.Guid id, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOutSourceService/DeleteOutSource", ReplyAction="http://tempuri.org/IOutSourceService/DeleteOutSourceResponse")]
+        System.Threading.Tasks.Task<int> DeleteOutSourceAsync(System.Guid id, string uid);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IOutSourceServiceChannel : PMSClient.MainService.IOutSourceService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OutSourceServiceClient : System.ServiceModel.ClientBase<PMSClient.MainService.IOutSourceService>, PMSClient.MainService.IOutSourceService {
+        
+        public OutSourceServiceClient() {
+        }
+        
+        public OutSourceServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public OutSourceServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OutSourceServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OutSourceServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSClient.MainService.DcOutSource[] GetOutSources(int s, int t, string orderlot, string ordername, string supplier) {
+            return base.Channel.GetOutSources(s, t, orderlot, ordername, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOutSource[]> GetOutSourcesAsync(int s, int t, string orderlot, string ordername, string supplier) {
+            return base.Channel.GetOutSourcesAsync(s, t, orderlot, ordername, supplier);
+        }
+        
+        public int GetOutSourcesCount(string orderlot, string ordername, string supplier) {
+            return base.Channel.GetOutSourcesCount(orderlot, ordername, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOutSourcesCountAsync(string orderlot, string ordername, string supplier) {
+            return base.Channel.GetOutSourcesCountAsync(orderlot, ordername, supplier);
+        }
+        
+        public int AddOutSource(PMSClient.MainService.DcOutSource model, string uid) {
+            return base.Channel.AddOutSource(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddOutSourceAsync(PMSClient.MainService.DcOutSource model, string uid) {
+            return base.Channel.AddOutSourceAsync(model, uid);
+        }
+        
+        public int UpdateOutSource(PMSClient.MainService.DcOutSource model, string uid) {
+            return base.Channel.UpdateOutSource(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateOutSourceAsync(PMSClient.MainService.DcOutSource model, string uid) {
+            return base.Channel.UpdateOutSourceAsync(model, uid);
+        }
+        
+        public int DeleteOutSource(System.Guid id, string uid) {
+            return base.Channel.DeleteOutSource(id, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteOutSourceAsync(System.Guid id, string uid) {
+            return base.Channel.DeleteOutSourceAsync(id, uid);
         }
     }
 }

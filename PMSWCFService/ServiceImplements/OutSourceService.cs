@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PMSDAL;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
+using PMSDAL;
 
 namespace PMSWCFService
 {
@@ -49,7 +49,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOutSource> GetOutSources(int s, int t, string ordername, string supplier)
+        public List<DcOutSource> GetOutSources(int s, int t, string orderlot,string ordername, string supplier)
         {
             try
             {
@@ -58,6 +58,7 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<OutSource, DcOutSource>());
                     var query = from i in dc.OutSources
                                 where i.State != PMSCommon.OrderState.作废.ToString()
+                                &&i.OrderLot.Contains(orderlot)
                                 && i.OrderName.Contains(ordername)
                                 && i.Supplier.Contains(supplier)
                                 orderby i.CreateTime descending
@@ -72,7 +73,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetOutSourcesCount(string ordername, string supplier)
+        public int GetOutSourcesCount(string orderlot,string ordername, string supplier)
         {
             try
             {
@@ -80,6 +81,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.OutSources
                                 where i.State != PMSCommon.OrderState.作废.ToString()
+                                && i.OrderLot.Contains(orderlot)
                                 && i.OrderName.Contains(ordername)
                                 && i.Supplier.Contains(supplier)
                                 select i;

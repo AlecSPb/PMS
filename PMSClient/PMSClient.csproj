@@ -894,13 +894,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Note\nuget.txt" />
-    <Content Include="Resource\DocTemplate\Reports\MaterialOrderHorizontal.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\BarTender101\产品标签.btw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDDeliveryAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElementGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElementGroupItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDSupplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPDevice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcCheckList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -910,6 +933,117 @@
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcItemDebit.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryIn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialNeed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcOutSource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcPlanVHP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcPlanWithMisson.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcPlate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcRecordBonding.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcRecordDeMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcRecordMachine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcRecordMilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcRecordTest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSClient.MainService.DcRecordVHP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MainService\configuration.svcinfo" />
+    <None Include="Service References\MainService\configuration91.svcinfo" />
+    <None Include="Service References\MainService\PMSService.disco" />
+    <Resource Include="Note\nuget.txt" />
+    <Content Include="Resource\DocTemplate\Reports\MaterialOrderHorizontal.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\BarTender101\产品标签.btw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDCompound.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDCustomer.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDDeliveryAddress.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDElement.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDElementGroup.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDElementGroupItem.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDSupplier.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDVHPDevice.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDVHPMold.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcBDVHPProcess.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcCheckList.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcDelivery.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcDeliveryItem.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcDeliveryItemExtra.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcFeedBack.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcItemDebit.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcMaterialInventoryIn.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcMaterialInventoryOut.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcMaterialNeed.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcMaterialOrder.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcMaterialOrderItem.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcMaterialOrderItemExtra.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcOrder.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcOutSource.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcPlanVHP.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcPlanWithMisson.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcPlate.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcProduct.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcRecordBonding.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcRecordDeMold.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcRecordMachine.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcRecordMilling.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcRecordTest.datasource" />
+    <None Include="Properties\DataSources\PMSWCFService.DataContracts.DcRecordVHP.datasource" />
     <None Include="Service References\ExtraService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -925,6 +1059,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ExtraService\ExtraService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService.wsdl" />
+    <None Include="Service References\MainService\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcUser.datasource">
@@ -996,111 +1140,11 @@
     <None Include="Service References\BasicService\BasicDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCustomer.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDDeliveryAddress.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElement.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElementGroup.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElementGroupItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDSupplier.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPDevice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPMold.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
     <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcDelivery.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcDeliveryItemExtra.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryIn.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialInventoryOut.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialNeed.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrder.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcMaterialOrderItemExtra.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcOrder.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcPlanVHP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcPlanWithMisson.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcPlate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcProduct.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordBonding.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordDeMold.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordMachine.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordMilling.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordTest.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSClient.MainService.DcRecordVHP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\MainService\PMSService1.wsdl" />
-    <None Include="Service References\MainService\PMSService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
@@ -1213,18 +1257,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MainService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MainService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MainService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Images\chart.ico">
@@ -1349,9 +1381,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\StatisticService\StatisticService1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\MainService\PMSService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

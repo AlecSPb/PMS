@@ -39,12 +39,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSelect(DcPlate arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
         }
 
         private bool CanDuplicate(DcPlate arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
         }
 
         private void ActionBatchDuplicate(DcPlate model)

@@ -572,4 +572,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />
+  <xs:complexType name="ArrayOfDcOutSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcOutSource" nillable="true" type="tns:DcOutSource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcOutSource" nillable="true" type="tns:ArrayOfDcOutSource" />
+  <xs:complexType name="DcOutSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cost" type="xs:double" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="OrderLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcOutSource" nillable="true" type="tns:DcOutSource" />
 </xs:schema>

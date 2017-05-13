@@ -1033,6 +1033,36 @@
   <wsdl:message name="IRecordBondingService_DeleteRecordBongding_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordBongdingResponse" />
   </wsdl:message>
+  <wsdl:message name="IOutSourceService_GetOutSources_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutSources" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_GetOutSources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutSourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_GetOutSourcesCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutSourcesCount" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_GetOutSourcesCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutSourcesCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_AddOutSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOutSource" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_AddOutSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOutSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_UpdateOutSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOutSource" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_UpdateOutSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOutSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_DeleteOutSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOutSource" />
+  </wsdl:message>
+  <wsdl:message name="IOutSourceService_DeleteOutSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOutSourceResponse" />
+  </wsdl:message>
   <wsdl:portType name="IOrderService">
     <wsdl:operation name="GetAllOrderInPage">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetAllOrderInPage" message="tns:IOrderService_GetAllOrderInPage_InputMessage" />
@@ -1745,6 +1775,28 @@
     <wsdl:operation name="DeleteRecordBongding">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongding" message="tns:IRecordBondingService_DeleteRecordBongding_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongdingResponse" message="tns:IRecordBondingService_DeleteRecordBongding_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOutSourceService">
+    <wsdl:operation name="GetOutSources">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutSourceService/GetOutSources" message="tns:IOutSourceService_GetOutSources_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutSourceService/GetOutSourcesResponse" message="tns:IOutSourceService_GetOutSources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutSourcesCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutSourceService/GetOutSourcesCount" message="tns:IOutSourceService_GetOutSourcesCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutSourceService/GetOutSourcesCountResponse" message="tns:IOutSourceService_GetOutSourcesCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOutSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutSourceService/AddOutSource" message="tns:IOutSourceService_AddOutSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutSourceService/AddOutSourceResponse" message="tns:IOutSourceService_AddOutSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOutSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutSourceService/UpdateOutSource" message="tns:IOutSourceService_UpdateOutSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutSourceService/UpdateOutSourceResponse" message="tns:IOutSourceService_UpdateOutSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOutSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOutSourceService/DeleteOutSource" message="tns:IOutSourceService_DeleteOutSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOutSourceService/DeleteOutSourceResponse" message="tns:IOutSourceService_DeleteOutSource_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="order" type="tns:IOrderService">
@@ -3331,6 +3383,54 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="outsource" type="tns:IOutSourceService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetOutSources">
+      <soap:operation soapAction="http://tempuri.org/IOutSourceService/GetOutSources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutSourcesCount">
+      <soap:operation soapAction="http://tempuri.org/IOutSourceService/GetOutSourcesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOutSource">
+      <soap:operation soapAction="http://tempuri.org/IOutSourceService/AddOutSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOutSource">
+      <soap:operation soapAction="http://tempuri.org/IOutSourceService/UpdateOutSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOutSource">
+      <soap:operation soapAction="http://tempuri.org/IOutSourceService/DeleteOutSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="PMSService">
     <wsdl:port name="order" binding="tns:order">
       <soap:address location="http://localhost:8002/PMSService.svc" />
@@ -3375,6 +3475,9 @@
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordbonding" binding="tns:recordbonding">
+      <soap:address location="http://localhost:8002/PMSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="outsource" binding="tns:outsource">
       <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>
