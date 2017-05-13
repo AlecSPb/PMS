@@ -9,7 +9,7 @@ namespace PMSClient
     /// <summary>
     /// 权限字符串，方便统一修改
     /// </summary>
-    public static class PMSAccessDictionary
+    public static class PMSAccess
     {
         public static string ReadOrder { get; set; } = "浏览订单";
         public static string EditOrder { get; set; } = "编辑订单";
@@ -19,7 +19,7 @@ namespace PMSClient
         public static string ReadCustomer { get; set; } = "浏览客户信息";
         public static string EditCustomer { get; set; } = "编辑客户信息";
 
-        public static string ReadOutSource{ get; set; } = "浏览外包订单";
+        public static string ReadOutSource { get; set; } = "浏览外包订单";
         public static string EditOutSource { get; set; } = "编辑外包订单";
 
         public static string ReadMaterialNeed { get; set; } = "浏览材料需求";
@@ -43,23 +43,23 @@ namespace PMSClient
         public static string EditPlan { get; set; } = "编辑计划";
 
 
-        public static string ReadMillingRecord { get; set; } = "浏览制粉记录";
-        public static string EditMillingRecord { get; set; } = "编辑制粉记录";
+        public static string ReadRecordMilling { get; set; } = "浏览制粉记录";
+        public static string EditRecordMilling { get; set; } = "编辑制粉记录";
 
-        public static string ReadVHPRecord { get; set; } = "浏览热压记录";
-        public static string EditVHPRecord { get; set; } = "编辑热压记录";
+        public static string ReadRecordVHP { get; set; } = "浏览热压记录";
+        public static string EditRecordVHP { get; set; } = "编辑热压记录";
 
-        public static string ReadMachineRecord { get; set; } = "浏览加工记录";
-        public static string EditMachineRecord { get; set; } = "编辑加工记录";
+        public static string ReadRecordMachine { get; set; } = "浏览加工记录";
+        public static string EditRecordMachine { get; set; } = "编辑加工记录";
 
-        public static string ReadDeMoldRecord { get; set; } = "浏览取模记录";
-        public static string EditDeMoldRecord { get; set; } = "编辑取模记录";
+        public static string ReadRecordDeMold { get; set; } = "浏览取模记录";
+        public static string EditRecordDeMold { get; set; } = "编辑取模记录";
 
-        public static string ReadTestRecord { get; set; } = "浏览测试记录";
-        public static string EditTestRecord { get; set; } = "编辑测试记录";
+        public static string ReadRecordTest { get; set; } = "浏览测试记录";
+        public static string EditRecordTest { get; set; } = "编辑测试记录";
 
-        public static string ReadBondingRecord { get; set; } = "浏览绑定记录";
-        public static string EditBondingRecord { get; set; } = "编辑绑定记录";
+        public static string ReadRecordBonding { get; set; } = "浏览绑定记录";
+        public static string EditRecordBonding { get; set; } = "编辑绑定记录";
 
         public static string ReadProduct { get; set; } = "浏览产品记录";
         public static string EditProduct { get; set; } = "编辑产品记录";
@@ -73,8 +73,10 @@ namespace PMSClient
         public static string ReadStatisticDelivery { get; set; } = "浏览发货统计";
         public static string ReadStatisticProduct { get; set; } = "浏览产品统计";
 
+        public static string ReadMaintenance { get; set; } = "浏览维护计划";
 
-        public static string ReadFeedback{ get; set; } = "浏览客户反馈";
+        public static string CanOutput { get; set; } = "导出数据";
+        public static string ReadFeedback { get; set; } = "浏览客户反馈";
         public static string EditFeedback { get; set; } = "编辑客户反馈";
 
 
