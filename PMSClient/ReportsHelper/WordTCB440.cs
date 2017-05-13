@@ -12,10 +12,10 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class ReportTCB440:ReportBase
+    public class WordTCB440:ReportBase
     {
         private string prefix = "TCB440Bonding";
-        public ReportTCB440()
+        public WordTCB440()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportTCB440.docx");

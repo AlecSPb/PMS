@@ -69,7 +69,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportRecordTest report = new ReportRecordTest();
+                WordRecordTest report = new WordRecordTest();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
@@ -87,7 +87,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportCOA report = new ReportCOA();
+                WordCOA report = new WordCOA();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
@@ -105,7 +105,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportCOABridgeLine report = new ReportCOABridgeLine();
+                WordCOABridgeLine report = new WordCOABridgeLine();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
@@ -122,7 +122,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportTCB440 report = new ReportTCB440();
+                WordTCB440 report = new WordTCB440();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();
@@ -139,7 +139,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                ReportOpticraft440 report = new ReportOpticraft440();
+                WordOpticraft440 report = new WordOpticraft440();
                 report.SetModel(CurrentRecordTest);
                 report.SetTargetFolder(CurrentFolder);
                 report.Output();

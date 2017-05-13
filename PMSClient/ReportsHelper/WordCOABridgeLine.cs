@@ -13,14 +13,14 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class ReportCOA : ReportBase
+    public class WordCOABridgeLine : ReportBase
     {
-        private string prefix = "COA";
-        public ReportCOA()
+        private string prefix = "COABridgeLine";
+        public WordCOABridgeLine()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
-            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COA.docx");
-            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COA_Temp.docx");
+            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COABridgeLine.docx");
+            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COABridgeLine_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
         public void SetTargetFolder(string targetFolder)
@@ -49,29 +49,27 @@ namespace PMSClient.ReportsHelper
                 #region 创建文档
                 using (DocX document = DocX.Load(tempFile))
                 {
-                    #region 基本字段
                     document.ReplaceText("[Customer]", model.Customer ?? "");
                     string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
-                    document.ReplaceText("[ProductID]", productid??"");
+                    document.ReplaceText("[ProductID]", productid ?? "");
                     document.ReplaceText("[PO]", model.PO ?? "");
                     document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
+
                     document.ReplaceText("[Composition]", model.Composition ?? "");
-                    document.ReplaceText("[Dimension]", model.Dimension ?? "");
                     document.ReplaceText("[Weight]", model.Weight ?? "");
                     document.ReplaceText("[Density]", model.Density ?? "");
                     document.ReplaceText("[Resistance]", model.Resistance ?? "");
+                    document.ReplaceText("[Dimension]", model.Dimension ?? "");
                     document.ReplaceText("[DimensionActual]", model.DimensionActual ?? "");
                     document.ReplaceText("[OrderDate]", model.CreateTime.AddDays(-15).ToString("MM/dd/yyyy"));
                     document.ReplaceText("[CreateDate]", model.CreateTime.ToString("MM/dd/yyyy"));
-                    #endregion
 
-
+                    //填充XRF表格
                     //填充XRF表格
                     if (document.Tables[1] != null)
                     {
                         Table mainTable = document.Tables[1];
-                        Paragraph p = mainTable.Rows[5].Cells[0].Paragraphs[0];
-
+                        Paragraph p = mainTable.Rows[6].Cells[0].Paragraphs[0];
                         InsertCompositionXRFTable(document, p, model.CompositionXRF, "No Composition Test Results");
 
 
@@ -81,18 +79,20 @@ namespace PMSClient.ReportsHelper
                             Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
                             foreach (var name in GetCompositionNames(model.Composition))
                             {
-                                elementNames.Append(name + "\r").FontSize(11).Font(new FontFamily("Calibri"));
+                                elementNames.Append(name + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
                             }
 
                             Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
                             Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
                             foreach (var at in GetCompositionValues(model.Composition))
                             {
-                                elementValues.Append(at + "\r").FontSize(11).Font(new FontFamily("Calibri"));
-                                units.Append("Atm%" + "\r").FontSize(11).Font(new FontFamily("Calibri"));
+                                elementValues.Append(at + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                                units.Append("Atm%" + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
                             }
 
                         }
+
+
                     }
 
                     document.Save();
@@ -136,7 +136,7 @@ namespace PMSClient.ReportsHelper
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                            cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new FontFamily("Calibri"));
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
@@ -169,6 +169,7 @@ namespace PMSClient.ReportsHelper
         {
             return GetMatchesString(material, @"[A-Za-z]+");
         }
+
 
 
     }

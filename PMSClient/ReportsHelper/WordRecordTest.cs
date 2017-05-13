@@ -9,10 +9,10 @@ using System.IO;
 
 namespace PMSClient.ReportsHelper
 {
-    public class ReportRecordTest : ReportBase
+    public class WordRecordTest : ReportBase
     {
         private string prefix = "测试报告";
-        public ReportRecordTest()
+        public WordRecordTest()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "RecordTest.docx");

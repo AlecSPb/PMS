@@ -10,10 +10,10 @@ using System.Drawing;
 
 namespace PMSClient.ReportsHelper
 {
-    public class ReportVHP : ReportBase
+    public class WordVHP : ReportBase
     {
         private string prefix = "热压报告";
-        public ReportVHP()
+        public WordVHP()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportRecordVHP.docx");

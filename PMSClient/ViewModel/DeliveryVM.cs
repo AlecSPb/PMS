@@ -70,7 +70,7 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    ReportDeliverySheet report = new ReportDeliverySheet();
+                    WordDeliverySheet report = new WordDeliverySheet();
                     report.SetModel(model);
                     report.Output();
                     PMSDialogService.ShowYes("生成成功", "请打开桌面上的发货单文档\r\n如果排版变形，请全选更改为宋体");

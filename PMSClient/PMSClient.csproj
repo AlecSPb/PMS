@@ -86,6 +86,10 @@
       <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
       <Private>True</Private>
@@ -180,17 +184,18 @@
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
-    <Compile Include="ReportsHelper\ReportDeliverySheet.cs" />
-    <Compile Include="ReportsHelper\ReportMaterialOrderHorizontal.cs" />
-    <Compile Include="ReportsHelper\ReportOpticraft440.cs" />
-    <Compile Include="ReportsHelper\ReportTCB440.cs" />
-    <Compile Include="ReportsHelper\ReportCOABridgeLine.cs" />
-    <Compile Include="ReportsHelper\ReportCOA.cs" />
+    <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
+    <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
+    <Compile Include="ReportsHelper\WordOpticraft440.cs" />
+    <Compile Include="ReportsHelper\WordTCB440.cs" />
+    <Compile Include="ReportsHelper\WordCOABridgeLine.cs" />
+    <Compile Include="ReportsHelper\WordCOA.cs" />
     <Compile Include="ReportsHelper\ReportHelper.cs" />
-    <Compile Include="ReportsHelper\ReportMaterialOrder.cs" />
-    <Compile Include="ReportsHelper\ReportRecordTest.cs" />
-    <Compile Include="ReportsHelper\ReportVHP.cs" />
+    <Compile Include="ReportsHelper\WordMaterialOrder.cs" />
+    <Compile Include="ReportsHelper\WordRecordTest.cs" />
+    <Compile Include="ReportsHelper\WordVHP.cs" />
     <Compile Include="Helpers\Converter\VisibilityConverter.cs" />
+    <Compile Include="ReportsHelper\ExcelOrder.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

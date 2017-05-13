@@ -12,10 +12,10 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class ReportOpticraft440 : ReportBase
+    public class WordOpticraft440 : ReportBase
     {
         private string prefix = "Opticraft440抛光";
-        public ReportOpticraft440()
+        public WordOpticraft440()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "ReportOpticraft440.docx");

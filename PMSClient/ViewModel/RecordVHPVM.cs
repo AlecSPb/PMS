@@ -57,7 +57,7 @@ namespace PMSClient.ViewModel
                 {
                     try
                     {
-                        ReportVHP report = new ReportVHP();
+                        WordVHP report = new WordVHP();
                         report.SetModel(model);
                         report.Output();
                         PMSDialogService.ShowYes("报告生成成功", "请在桌面查看生成的热压记录报告\r\n如果排版变形，请全选更改为宋体");

@@ -11,10 +11,10 @@ using System.Drawing;
 
 namespace PMSClient.ReportsHelper
 {
-    public class ReportDeliverySheet : ReportBase
+    public class WordDeliverySheet : ReportBase
     {
         private string prefix = "发货清单";
-        public ReportDeliverySheet()
+        public WordDeliverySheet()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet.docx");

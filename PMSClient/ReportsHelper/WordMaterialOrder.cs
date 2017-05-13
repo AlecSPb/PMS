@@ -12,10 +12,10 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class ReportMaterialOrder : ReportBase
+    public class WordMaterialOrder : ReportBase
     {
         private string prefix = "原料订单";
-        public ReportMaterialOrder()
+        public WordMaterialOrder()
         {
             var targetName = $"{prefix}{ReportHelper.TimeName}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "MaterialOrder.docx");
