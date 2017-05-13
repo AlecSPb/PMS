@@ -211,7 +211,7 @@ namespace PMSWCFService
         {
             try
             {
-                var date = new DateTime(year, 0, 0);
+                var date = new DateTime(year, 1, 1);
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
@@ -232,7 +232,7 @@ namespace PMSWCFService
         {
             try
             {
-                var date = new DateTime(year, 0, 0);
+                var date = new DateTime(year, 1, 1);
                 using (var dc = new PMSDbContext())
                 {
                     var config = new MapperConfiguration(cfg =>

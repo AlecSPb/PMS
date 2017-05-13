@@ -23,5 +23,20 @@ namespace PMSClient.CustomControls
         {
             InitializeComponent();
         }
+        public double Value
+        {
+            set
+            {
+                if (value>100)
+                {
+                    pb.Value = 100;
+                }
+                if (value<0)
+                {
+                    pb.Value = 0;
+                }
+                pb.Value = value;
+            }
+        }
     }
 }

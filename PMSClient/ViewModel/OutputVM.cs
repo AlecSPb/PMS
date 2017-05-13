@@ -28,6 +28,10 @@ namespace PMSClient.ViewModel
 
         private void ActionOutputOrder()
         {
+            if (!PMSDialogService.ShowYesNo("请问","生成报告需要一段时间，确定生成报告吗？"))
+            {
+                return;
+            }
             ExcelOrder report = new ExcelOrder();
             report.Year = CurrentYear;
             report.Output();

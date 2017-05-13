@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="OutputProgress" Height="300" Width="300">
+        Title="OutputProgress" Height="100" Width="300" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" TextWrapping="WrapWithOverflow" Style="{StaticResource StyleDGTextBlockCommon}">
+            正在导出数据，请耐心等候
+        </TextBlock>
+        <ProgressBar Grid.Row="1" Name="pb" Height="20" Margin="2" Value="30" Maximum="100"/>
     </Grid>
 </Window>

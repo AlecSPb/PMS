@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="选择年份"/>
-                <ComboBox Style="{StaticResource StyleComboBoxCommon}"/>
+                <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding Years}" SelectedItem="{Binding CurrentYear}"/>
             </StackPanel>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -35,12 +35,12 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0">
-                    <Button Content="导出销售订单" Style="{StaticResource StyleButtonStretch}"/>
-                    <Button Content="导出原料订单" Style="{StaticResource StyleButtonStretch}"/>
-                    <Button Content="导出原料入库" Style="{StaticResource StyleButtonStretch}"/>
-                    <Button Content="导出原料出库" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出销售订单" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputOrder}"/>
+                    <Button Content="导出原料订单" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialOrder}"/>
+                    <Button Content="导出原料入库" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialInventoryIn}"/>
+                    <Button Content="导出原料出库" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialInventoryOut}"/>
                     <!--<Button Content="导出借记数据" Style="{StaticResource StyleButtonStretch}"/>-->
-                    <Button Content="导出发货数据" Style="{StaticResource StyleButtonStretch}"/>
+                    <Button Content="导出发货数据" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputDeliveryItem}"/>
                 </StackPanel>
             </Grid>
         </Grid>
