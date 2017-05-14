@@ -154,8 +154,9 @@
     <Style x:Key="StyleButtonNavigationFixed" TargetType="Button"  BasedOn="{StaticResource StyleButtonNavigation}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Width" Value="95"/>
-        <Setter Property="Height" Value="40"/>
+        <Setter  Property="FontSize" Value="12"/>
+        <Setter Property="Width" Value="110"/>
+        <Setter Property="Height" Value="45"/>
     </Style>
     <Style x:Key="StyleButtonNavigationTitle" TargetType="Button"  BasedOn="{StaticResource btnBase}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>

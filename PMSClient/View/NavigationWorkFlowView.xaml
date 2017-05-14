@@ -42,16 +42,16 @@
                 <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOrderCheck}"
                         Command="{Binding GoToOrder}" Canvas.Left="21" Margin="0" Canvas.Top="134"/>
                 <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialOrder}"
-                        Command="{Binding GoToMaterialOrder}" Canvas.Left="312" Canvas.Top="198"  Margin="0" />
+                        Command="{Binding GoToMaterialOrder}" Canvas.Left="312" Canvas.Top="197"  Margin="0" />
                 <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialNeed}"
-                        Command="{Binding GoToMaterialNeed}" Canvas.Left="183" Canvas.Top="198"  Margin="0" />
+                        Command="{Binding GoToMaterialNeed}" Canvas.Left="183" Canvas.Top="197"  Margin="0" />
                 <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialInventory}"
-                        Command="{Binding GoToMaterialInventory}" Canvas.Left="440" Canvas.Top="198"  Margin="0" />
+                        Command="{Binding GoToMaterialInventory}" Canvas.Left="440" Canvas.Top="197"  Margin="0" />
 
                 <Button Content="{StaticResource PagePlate}" 
-                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="692" Margin="0" Canvas.Top="198"/>
+                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="692" Margin="0" Canvas.Top="197"/>
 
-                <Button Content="{StaticResource PageMisson}"  Command="{Binding GoToMisson}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="198"/>
+                <Button Content="{StaticResource PageMisson}"  Command="{Binding GoToMisson}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="197"/>
                 <Button Content="{StaticResource PagePlan}"  Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="261"/>
                 <Button Content="{StaticResource PageRecordMilling}" Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordMilling}" Canvas.Left="183" Margin="0" Canvas.Top="325"/>
                 <Button Content="{StaticResource PageRecordVHP}" Command="{Binding GoToRecordVHP}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="312" Margin="0" Canvas.Top="325"/>
