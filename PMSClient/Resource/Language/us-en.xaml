@@ -156,7 +156,7 @@
 
 
     <!--TXT-->
-    <sys:String x:Key="TxtWelcome">Welcome Production Management System</sys:String>
+    <sys:String x:Key="TxtWelcome">Welcome to use Production Management System</sys:String>
     <sys:String x:Key="TxtUserName">User Name</sys:String>
     <sys:String x:Key="TxtPassWord">Password</sys:String>
     <sys:String x:Key="TxtRemindUIDPWD">Remember User Name and Password</sys:String>
