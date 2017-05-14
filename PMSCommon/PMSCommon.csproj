@@ -53,6 +53,7 @@
     <Compile Include="AccessState.cs" />
     <Compile Include="BondingState.cs" />
     <Compile Include="MaterialOrderItemState.cs" />
+    <Compile Include="OutSourceSupplier.cs" />
     <Compile Include="OutSourceType.cs" />
     <Compile Include="PlateMaterial.cs" />
     <Compile Include="PlateWeldingMaterial.cs" />

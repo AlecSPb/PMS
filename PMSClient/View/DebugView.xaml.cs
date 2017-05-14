@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace PMSClient.View
 {
@@ -23,6 +24,26 @@ namespace PMSClient.View
         public DebugView()
         {
             InitializeComponent();
+        }
+
+
+        private void btnLog_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFolder("Log");
+        }
+
+        private static void OpenFolder(string folderName)
+        {
+            string folder = System.IO.Path.Combine(Environment.CurrentDirectory, folderName);
+            if (Directory.Exists(folder))
+            {
+                System.Diagnostics.Process.Start(folder);
+            }
+        }
+
+        private void btnError_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFolder("Error");
         }
     }
 }

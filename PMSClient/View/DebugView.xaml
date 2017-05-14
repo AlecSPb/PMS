@@ -18,6 +18,18 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
         </StackPanel>
-            
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Background="Wheat">
+                <Button Name="btnLog" Content="操作日志文件夹" Style="{StaticResource StyleButtonStretch}" Click="btnLog_Click"/>
+                <Button Name="btnError" Content="错误日志文件夹" Style="{StaticResource StyleButtonStretch}" Click="btnError_Click"/>
+            </StackPanel>
+        </Grid>    
+        
+        
     </Grid>
 </UserControl>

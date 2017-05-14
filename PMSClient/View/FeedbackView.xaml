@@ -57,8 +57,6 @@
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource FBCustomer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Customer}"/>
-                <DataGridTextColumn Header="{StaticResource FBReceivedDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ReceivedDate}"/>
                 <DataGridTextColumn Header="{StaticResource FBProcessWay}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding ProcessWay}"/>
                 <DataGridTextColumn Header="{StaticResource FBRemark}" ElementStyle="{StaticResource StyleDGTextBlockRight}"

@@ -9,7 +9,7 @@ using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
-    public class OutSourceEditVM:BaseViewModelEdit
+    public class OutSourceEditVM : BaseViewModelEdit
     {
         public OutSourceEditVM()
         {
@@ -20,6 +20,7 @@ namespace PMSClient.ViewModel
             PMSBasicDataService.SetListDS<PMSCommon.OutSourceType>(OutSourceTypes);
 
             Suppliers = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.OutSourceSupplier>(Suppliers);
 
             InitializeCommands();
         }
@@ -46,7 +47,7 @@ namespace PMSClient.ViewModel
             model.QuantityUnit = "片";
             model.Quantity = 1;
             model.Supplier = "";
-            model.OrderLot = "";
+            model.OrderLot = $"WG{DateTime.Now.ToString("yyMMdd")}";
             model.OrderName = "";
             model.Cost = 0;
             model.Remark = "";

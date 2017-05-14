@@ -17,14 +17,19 @@ namespace PMSClient.ViewModel
         {
             searchProductID = searchComposition = searchCustomer = "";
             FeedBacks = new ObservableCollection<DcFeedBack>();
+
+            InitializeCommands();
+
+            SetPageParametersWhenConditionChange();
+        }
+
+        private void InitializeCommands()
+        {
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcFeedBack>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
-
-
-            SetPageParametersWhenConditionChange();
         }
 
         private void ActionAll()

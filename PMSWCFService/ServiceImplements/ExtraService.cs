@@ -302,7 +302,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    Mapper.Initialize(cfg => cfg.CreateMap<DcFeedBack, FeedBack>());
+                    Mapper.Initialize(cfg => cfg.CreateMap<FeedBack, DcFeedBack>());
                     var query = from i in dc.FeedBacks
                                 where i.State != PMSCommon.SimpleState.作废.ToString()
                                 && i.ProductID.Contains(productId)
