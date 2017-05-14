@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSClient.Sanjie
+namespace PMSClientSanjie
 {
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑

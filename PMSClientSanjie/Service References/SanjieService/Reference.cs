@@ -1280,6 +1280,42 @@ namespace PMSClientSanjie.SanjieService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetItemDebitCount", ReplyAction="http://tempuri.org/ISanjieService/GetItemDebitCountResponse")]
         System.Threading.Tasks.Task<int> GetItemDebitCountAsync(string itemType, string itemName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYearResponse")]
+        PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtraByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYearResponse")]
+        System.Threading.Tasks.Task<PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtraByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYearResponse")]
+        int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYearResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtraCountByYearAsync(string composition, string pminumber, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYearResponse")]
+        PMSClientSanjie.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryInByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYearResponse")]
+        System.Threading.Tasks.Task<PMSClientSanjie.SanjieService.DcMaterialInventoryIn[]> GetMaterialInventoryInByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYearResponse")]
+        int GetMaterialInventoryInCountByYear(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYearResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryInCountByYearAsync(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYearResponse")]
+        PMSClientSanjie.SanjieService.DcMaterialInventoryOut[] GetMaterialInventoryOutsByYear(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYearResponse")]
+        System.Threading.Tasks.Task<PMSClientSanjie.SanjieService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsByYearAsync(int skip, int take, int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYearResponse")]
+        int GetMaterialInventoryOutCountByYear(int year);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYear", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYearResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountByYearAsync(int year);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1395,6 +1431,54 @@ namespace PMSClientSanjie.SanjieService {
         
         public System.Threading.Tasks.Task<int> GetItemDebitCountAsync(string itemType, string itemName) {
             return base.Channel.GetItemDebitCountAsync(itemType, itemName);
+        }
+        
+        public PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtraByYear(int skip, int take, int year) {
+            return base.Channel.GetMaterialOrderItemExtraByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtraByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetMaterialOrderItemExtraByYearAsync(skip, take, year);
+        }
+        
+        public int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year) {
+            return base.Channel.GetMaterialOrderItemExtraCountByYear(composition, pminumber, year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtraCountByYearAsync(string composition, string pminumber, int year) {
+            return base.Channel.GetMaterialOrderItemExtraCountByYearAsync(composition, pminumber, year);
+        }
+        
+        public PMSClientSanjie.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryInByYear(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryInByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClientSanjie.SanjieService.DcMaterialInventoryIn[]> GetMaterialInventoryInByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryInByYearAsync(skip, take, year);
+        }
+        
+        public int GetMaterialInventoryInCountByYear(int year) {
+            return base.Channel.GetMaterialInventoryInCountByYear(year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountByYearAsync(int year) {
+            return base.Channel.GetMaterialInventoryInCountByYearAsync(year);
+        }
+        
+        public PMSClientSanjie.SanjieService.DcMaterialInventoryOut[] GetMaterialInventoryOutsByYear(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryOutsByYear(skip, take, year);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClientSanjie.SanjieService.DcMaterialInventoryOut[]> GetMaterialInventoryOutsByYearAsync(int skip, int take, int year) {
+            return base.Channel.GetMaterialInventoryOutsByYearAsync(skip, take, year);
+        }
+        
+        public int GetMaterialInventoryOutCountByYear(int year) {
+            return base.Channel.GetMaterialInventoryOutCountByYear(year);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialInventoryOutCountByYearAsync(int year) {
+            return base.Channel.GetMaterialInventoryOutCountByYearAsync(year);
         }
     }
 }

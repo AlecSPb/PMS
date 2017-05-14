@@ -73,6 +73,42 @@
   <wsdl:message name="ISanjieService_GetItemDebitCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetItemDebitCountResponse" />
   </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtraByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraByYear" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtraByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtraCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtraCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraCountByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryInByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInByYear" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryInByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryInCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryInCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryOutsByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutsByYear" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryOutsByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutsByYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryOutCountByYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCountByYear" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialInventoryOutCountByYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryOutCountByYearResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISanjieService">
     <wsdl:operation name="GetMaterialOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrder" message="tns:ISanjieService_GetMaterialOrder_InputMessage" />
@@ -117,6 +153,30 @@
     <wsdl:operation name="GetItemDebitCount">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetItemDebitCount" message="tns:ISanjieService_GetItemDebitCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetItemDebitCountResponse" message="tns:ISanjieService_GetItemDebitCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYear" message="tns:ISanjieService_GetMaterialOrderItemExtraByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYearResponse" message="tns:ISanjieService_GetMaterialOrderItemExtraByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYear" message="tns:ISanjieService_GetMaterialOrderItemExtraCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYearResponse" message="tns:ISanjieService_GetMaterialOrderItemExtraCountByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYear" message="tns:ISanjieService_GetMaterialInventoryInByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYearResponse" message="tns:ISanjieService_GetMaterialInventoryInByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYear" message="tns:ISanjieService_GetMaterialInventoryInCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYearResponse" message="tns:ISanjieService_GetMaterialInventoryInCountByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutsByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYear" message="tns:ISanjieService_GetMaterialInventoryOutsByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYearResponse" message="tns:ISanjieService_GetMaterialInventoryOutsByYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutCountByYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYear" message="tns:ISanjieService_GetMaterialInventoryOutCountByYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYearResponse" message="tns:ISanjieService_GetMaterialInventoryOutCountByYear_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="sanjie" type="tns:ISanjieService">
@@ -213,6 +273,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetItemDebitCount">
       <soap:operation soapAction="http://tempuri.org/ISanjieService/GetItemDebitCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraByYear">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtraCountByYear">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtraCountByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInByYear">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCountByYear">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInCountByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutsByYear">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutsByYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryOutCountByYear">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialInventoryOutCountByYear" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-namespace PMSClient.Sanjie
+namespace PMSClientSanjie
 {
     public class SanjieViewLocator
     {
