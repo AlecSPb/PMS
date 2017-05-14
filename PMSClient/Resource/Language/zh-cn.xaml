@@ -5,9 +5,6 @@
     <!--规范化后的命名-->
     <!--AppName-->
     <sys:String x:Key="AppNameDesktop">PMS生产管理系统[测试版本]</sys:String>
-    <sys:String x:Key="AppNameTablet">PMS生产管理系统4.0版Tablet版本</sys:String>
-    <sys:String x:Key="AppNameSanjie">PMS生产管理系统4.0版 SanJie版本</sys:String>
-
 
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">订单管理</sys:String>
@@ -157,13 +154,18 @@
     <sys:String x:Key="PageSelectPlate">选择背板库存</sys:String>
     <sys:String x:Key="PageSelectRecordBonding">选择绑定记录</sys:String>
 
-
-
-
+    <!--TXT-->
+    <sys:String x:Key="TxtWelcome">欢迎使用PMS生产管理系统</sys:String>
+    <sys:String x:Key="TxtUserName">用户名</sys:String>
+    <sys:String x:Key="TxtPassWord">密码</sys:String>
+    <sys:String x:Key="TxtRemindUIDPWD">记住用户名和密码</sys:String>
+    
+    
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
     <sys:String x:Key="ButtonLogin">登录</sys:String>
+    <sys:String x:Key="ButtonLogOut">注销</sys:String>
     <sys:String x:Key="ButtonBack">返回</sys:String>
     <sys:String x:Key="ButtonCheck">核验</sys:String>
     <sys:String x:Key="ButtonRefresh">刷新</sys:String>

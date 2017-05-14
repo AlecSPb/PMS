@@ -26,17 +26,17 @@
                 <Button Content="{StaticResource ButtonNotice}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Notice}"/>
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,7,0,6.6"/>
                 <TextBlock  Style="{StaticResource StyleTextBlockNavigationBar}"
-                       Text="欢迎使用PMS生产管理系统"/>
+                       Text="{StaticResource TxtWelcome}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-                <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}" />
+                <Button Content="{StaticResource ButtonLogOut}" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}" />
             </StackPanel>
         </Grid>
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -129,7 +129,7 @@
                 <Button Content="{StaticResource PageMaintenance}" Grid.Row="8" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToMaintenance}"/>
                 <Button Content="{StaticResource PageCheckList}" Grid.Row="8" Grid.Column="3" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToMaintenance}"/>
+                        Command="{Binding GoToMaintenance}" Visibility="Hidden"/>
 
                 <Button Content="{StaticResource PageBasicData}" Grid.Row="9" Grid.Column="0" Grid.RowSpan="2"
                         Style="{DynamicResource StyleButtonNavigationTitle}" Visibility="Collapsed"/>
