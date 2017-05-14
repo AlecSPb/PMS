@@ -42,6 +42,7 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.OrderState.未完成.ToString();
             model.OrderType = PMSCommon.OrderProductType.靶材.ToString();
+            model.Dimension = "";
             model.QuantityUnit = "片";
             model.Quantity = 1;
             model.Supplier = "";
@@ -67,6 +68,7 @@ namespace PMSClient.ViewModel
                 CurrentOutSource.OrderName = model.OrderName;
                 CurrentOutSource.OrderLot = model.OrderLot;
                 CurrentOutSource.Supplier = model.Supplier;
+                CurrentOutSource.Dimension = model.Dimension;
                 CurrentOutSource.Quantity = model.Quantity;
                 CurrentOutSource.QuantityUnit = model.QuantityUnit;
                 CurrentOutSource.Cost = model.Cost;

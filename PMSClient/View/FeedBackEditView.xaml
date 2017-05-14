@@ -38,7 +38,6 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -80,42 +79,36 @@
                       SelectedItem="{Binding Customer}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#选择客户名称，如果没有该客户信息，请先添加客户信息"/>
-
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FBFeedbackPerson}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource FBProcessWay}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding FeedBackPerson}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding ProcessWay}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource FBProcessWay}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource FBRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding ProcessWay}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource FBRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RPState}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RPState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
 
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RPCreateTime}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RPCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RPCreator}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RPCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

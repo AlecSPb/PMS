@@ -19,15 +19,21 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource RDDeliveryName}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchDeliveryName,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBlock Text="{StaticResource FBProductID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource FBComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource FBCustomer}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordFeedBacks}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding FeedBacks}"
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
@@ -36,12 +42,6 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
@@ -57,8 +57,6 @@
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource FBCustomer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Customer}"/>
-                <DataGridTextColumn Header="{StaticResource FBFeedbackPerson}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding FeedbackPerson}"/>
                 <DataGridTextColumn Header="{StaticResource FBReceivedDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ReceivedDate}"/>
                 <DataGridTextColumn Header="{StaticResource FBProcessWay}" ElementStyle="{StaticResource StyleDGTextBlockRight}"

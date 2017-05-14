@@ -54,6 +54,8 @@
                                     Binding="{Binding OrderLot}"/>
                 <DataGridTextColumn Header="{StaticResource OSOrderName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding OrderName}"/>
+                <DataGridTextColumn Header="{StaticResource OSDimension}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Dimension}"/>
                 <DataGridTextColumn Header="{StaticResource OSSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Supplier}"/>
                 <DataGridTextColumn Header="{StaticResource OSQuantity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

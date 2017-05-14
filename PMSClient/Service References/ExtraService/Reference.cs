@@ -429,9 +429,6 @@ namespace PMSClient.ExtraService {
         private string CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FeedbackReasonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -507,19 +504,6 @@ namespace PMSClient.ExtraService {
                 if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
                     this.CustomerField = value;
                     this.RaisePropertyChanged("Customer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FeedbackReason {
-            get {
-                return this.FeedbackReasonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FeedbackReasonField, value) != true)) {
-                    this.FeedbackReasonField = value;
-                    this.RaisePropertyChanged("FeedbackReason");
                 }
             }
         }

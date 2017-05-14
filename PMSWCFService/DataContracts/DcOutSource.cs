@@ -27,6 +27,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Supplier { get; set; }
         [DataMember]
+        public string Dimension { get; set; }
+        [DataMember]
         public double Quantity { get; set; }
         [DataMember]
         public string QuantityUnit { get; set; }

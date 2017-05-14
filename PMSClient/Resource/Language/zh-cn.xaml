@@ -685,6 +685,7 @@
     <sys:String x:Key="OSOrderType">类型</sys:String>
     <sys:String x:Key="OSOrderName">名称</sys:String>
     <sys:String x:Key="OSSupplier">供应商</sys:String>
+    <sys:String x:Key="OSDimension">规格</sys:String>
     <sys:String x:Key="OSQuantity">数量</sys:String>
     <sys:String x:Key="OSQuantityUnit">单位</sys:String>
     <sys:String x:Key="OSCost">费用</sys:String>

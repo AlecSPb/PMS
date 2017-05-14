@@ -38,6 +38,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
@@ -81,47 +82,51 @@
                       Text="{Binding Supplier}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#选择供应商信息"/>
-
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OSQuantity}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource OSDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OSQuantityUnit}"
+                           Text="填入规格要求"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource OSQuantity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OSCost}"
+                           Text="数量单位"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource OSQuantityUnit}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Cost}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding QuantityUnit}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OSState}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource OSCost}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Cost}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text=""/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OSState}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OSRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OSRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息"/>
 
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OSCreateTime}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OSCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OSCreator}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource OSCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

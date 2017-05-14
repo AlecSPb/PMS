@@ -17,7 +17,6 @@ namespace PMSDAL
         public string ProductType { get; set; }
         public string Composition { get; set; }
         public string Customer { get; set; }
-        public string FeedbackReason { get; set; }
         public string ProcessWay { get; set; }
         public string Remark { get; set; }
     }

@@ -583,6 +583,7 @@
       <xs:element minOccurs="0" name="Cost" type="xs:double" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="OrderLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderName" nillable="true" type="xs:string" />

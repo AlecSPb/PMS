@@ -16,6 +16,7 @@ namespace PMSDAL
         public string OrderType { get; set; }
         public string OrderName { get; set; }
         public string Supplier { get; set; }
+        public string Dimension { get; set; }
         public double Quantity { get; set; }
         public string QuantityUnit { get; set; }
         public double Cost { get; set; }

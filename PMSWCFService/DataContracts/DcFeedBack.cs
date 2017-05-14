@@ -27,8 +27,6 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Customer { get; set; }
         [DataMember]
-        public string FeedbackReason { get; set; }
-        [DataMember]
         public string ProcessWay { get; set; }
         [DataMember]
         public string Remark { get; set; }
