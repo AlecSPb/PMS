@@ -16,7 +16,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSClient.ViewModel;
 using PMSClient.View;
-using PMSClient.MainService;
 using PMSClient.Tool;
 using System.Timers;
 using fm = System.Windows.Forms;

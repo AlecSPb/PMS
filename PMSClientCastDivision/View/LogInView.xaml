@@ -23,16 +23,18 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0"> 
-                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="用户名" Foreground="{StaticResource ControlBorderBrush}" HorizontalAlignment="Right"/>
+                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="{StaticResource TxtUserName}" Foreground="{StaticResource ControlBorderBrush}" HorizontalAlignment="Right"/>
                     <TextBox Grid.Row="0" Name="txtUserName" Text="" Style="{StaticResource StyleLogInUID}" Background="Transparent"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="密码" Foreground="{StaticResource ControlBorderBrush}" HorizontalAlignment="Right"/>
+                    <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="{StaticResource TxtPassWord}" Foreground="{StaticResource ControlBorderBrush}" HorizontalAlignment="Right"/>
                     <PasswordBox Name="txtPassword"  Style="{StaticResource StyleLogInPwd}" Background="Transparent"/>
                 </Grid>
-                <CheckBox Name="chkRemember" Grid.Row="2" Content="记住用户名和密码" Style="{StaticResource StyleLogInCheckBox}"
+
+
+                <CheckBox Name="chkRemember" Grid.Row="2" Content="{StaticResource TxtRemindUIDPWD}" Style="{StaticResource StyleLogInCheckBox}"
                       Click="chkRemember_Click"/>
-                <Button Grid.Row="3" Content="登录" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
+                <Button Grid.Row="3" Content="{StaticResource ButtonLogin}" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
                 <TextBlock Name="txtLogInStatus" Grid.Row="4" Text="" Style="{StaticResource StyleLogInInformation}"/>
             </Grid>
         </Border>
@@ -42,7 +44,7 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <TextBlock Name="txtInformation" Text="PMS生产管理系统-三杰专用"
+            <TextBlock Name="txtInformation" Text="{StaticResource AppNameDesktop}"
                        FontSize="20" Margin="5"/>
             <TextBox  Name="txtNotice" Grid.Row="1" Margin="5" Background="Transparent" Foreground="Gray" VerticalScrollBarVisibility="Visible"
                       AcceptsReturn="True" Text="" IsReadOnly="True" FontSize="14"/>

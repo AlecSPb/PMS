@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="PMSClient.View.RecordDeMoldSelectView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource Locator},Path=RecordDeMoldSelect}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageRecordDeMoldSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
+                    Command="{Binding GiveUp}" />
+            <TextBlock Text="{StaticResource RDMVHPPlanLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding  SearchVHPPlanLot,UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
+            <!--图例-->
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <TextBlock Text="{StaticResource IndicatorYesterday}" Background="{StaticResource YesterdayBrush}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorToday}" Background="{StaticResource TodayBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Text="{StaticResource IndicatorTomorrow}" Background="{StaticResource TomorrowBrush}" Style="{StaticResource StyleTextBlockCommon}"/>
+            </StackPanel>
+        </StackPanel>
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordDeMolds}"
+                  LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="{StaticResource RDMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding PMINumber}"/>
+                <DataGridTextColumn Header="{StaticResource RDMPlanType}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding PlanType}"/>
+                <DataGridTextColumn Header="{StaticResource RDMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="{StaticResource RDMTemperature1}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Temperature1}"/>
+                <DataGridTextColumn Header="{StaticResource RDMTemperature2}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Temperature2}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDeMoldType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding DeMoldType}"/>
+                <!--<DataGridTextColumn Header="{StaticResource RDMDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Dimension}"/>-->
+                <DataGridTextColumn Header="{StaticResource RDMCalculateDimension}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding CalculateDimension}"/>
+                <DataGridTextColumn Header="{StaticResource RDMCalculationDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding CalculationDensity,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Weight,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDiameter1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDiameter2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Diameter2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness1,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness2}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness2,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness3}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness3,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMThickness4}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Thickness4,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Density,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMRatioDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding RatioDensity,StringFormat={}{0:P2}}"/>
+                <DataGridTextColumn Header="{StaticResource RDMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource RDMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+    </Grid>
+</UserControl>

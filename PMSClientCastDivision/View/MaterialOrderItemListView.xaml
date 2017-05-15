@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="PMSClient.View.MaterialOrderItemListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:local="clr-namespace:PMSClient.View"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MaterialOrderItemList}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageMaterialOrderItemList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
+            <TextBlock Text="{StaticResource MOIOrderItemNumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchOrderItemNumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MOIPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MOIComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource MOSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Width="150"
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
+                          ItemsSource="{Binding MaterialOrderItemExtras}" LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonLocation}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Location,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MOICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.State}"/>
+                <DataGridTextColumn Header="{StaticResource MOICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.Creator}"/>
+                <DataGridTextColumn Header="{StaticResource MOIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.Composition}"/>
+                <DataGridTextColumn Header="{StaticResource MOIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.Purity}"/>
+                <DataGridTextColumn Header="{StaticResource MOIWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MaterialOrderItem.Weight,StringFormat={}{0:F2}}"/>
+                <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+
+                <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrder.OrderPO}"/>
+                <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrder.Supplier}"/>
+                <DataGridTextColumn Header="{StaticResource MOPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrder.Priority}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
+                             LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+    </Grid>
+</UserControl>

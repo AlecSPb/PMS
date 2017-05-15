@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="PMSClient.View.NavigationWorkFlowView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1300"
+             DataContext="{Binding Source={StaticResource Locator},Path=Navigation}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Style="{StaticResource StyleStackPanelCommon}">
+            <TextBlock Text="{StaticResource PageNaivgationWorkFlow}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Background="{StaticResource BGNavigationBar}" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition  Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Style="{StaticResource StyleStackPanelNavigationBar}">
+                <Button Content="{StaticResource PageNaivgation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
+                <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,7,0,6.6"/>
+                <TextBlock  Style="{StaticResource StyleTextBlockNavigationBar}"
+                       Text="以下是工作流程图"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
+                <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+                <Button Content="注销" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}" />
+            </StackPanel>
+        </Grid>
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Visible">
+            <Canvas>
+                <Canvas.Background>
+                    <ImageBrush ImageSource="../Resource/HelpImages/workflow2.png"   Stretch="None" AlignmentX="Left" AlignmentY="Top"/>
+                </Canvas.Background>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOrder}"
+                        Command="{Binding GoToOrder}" Canvas.Left="21" Margin="0" Canvas.Top="71"/>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOrderCheck}"
+                        Command="{Binding GoToOrder}" Canvas.Left="21" Margin="0" Canvas.Top="134"/>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialOrder}"
+                        Command="{Binding GoToMaterialOrder}" Canvas.Left="312" Canvas.Top="197"  Margin="0" />
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialNeed}"
+                        Command="{Binding GoToMaterialNeed}" Canvas.Left="183" Canvas.Top="197"  Margin="0" />
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageMaterialInventory}"
+                        Command="{Binding GoToMaterialInventory}" Canvas.Left="440" Canvas.Top="197"  Margin="0" />
+
+                <Button Content="{StaticResource PagePlate}" 
+                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="692" Margin="0" Canvas.Top="197"/>
+
+                <Button Content="{StaticResource PageMisson}"  Command="{Binding GoToMisson}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="197"/>
+                <Button Content="{StaticResource PagePlan}"  Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="261"/>
+                <Button Content="{StaticResource PageRecordMilling}" Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordMilling}" Canvas.Left="183" Margin="0" Canvas.Top="325"/>
+                <Button Content="{StaticResource PageRecordVHP}" Command="{Binding GoToRecordVHP}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="312" Margin="0" Canvas.Top="325"/>
+                <Button Content="{StaticResource PageRecordDeMold}"  Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordDeMold}" Canvas.Left="440" Margin="0" Canvas.Top="325"/>
+                <Button Content="{StaticResource PageRecordMachine}" Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordMachine}" Canvas.Left="566" Margin="0" Canvas.Top="325"/>
+                <Button Content="{StaticResource PageRecordTest}"  Command="{Binding GoToRecordTest}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="692" Margin="0" Canvas.Top="325"/>
+                <Button Content="{StaticResource PageRecordBonding}"  Style="{DynamicResource StyleButtonNavigationFixed}" Command="{Binding GoToRecordBonding}" Canvas.Left="821" Margin="0" Canvas.Top="325"/>
+
+                <Button Content="{StaticResource PageProduct}"   Command="{Binding GoToProduct}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="440" Margin="0" Canvas.Top="437"/>
+                <Button Content="{StaticResource PageDelivery}"  Command="{Binding GoToDelivery}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="437"/>
+            </Canvas>
+        </ScrollViewer>
+    </Grid>
+
+</UserControl>

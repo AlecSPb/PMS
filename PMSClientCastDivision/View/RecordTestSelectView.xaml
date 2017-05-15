@@ -1,0 +1,161 @@
+﻿<UserControl x:Class="PMSClient.View.RecordTestSelectView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordTestSelect}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageTestResultSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"
+                    Command="{Binding GiveUp}"/>
+
+            <TextBlock Text="{StaticResource RTProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+            <TextBlock Text="{StaticResource RTComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SelectBatch}"
+                    IsEnabled="{Binding IsNewBatch}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipRecordTestSelect}"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordTestExtras}"
+                  LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="选择">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsEnabled="{Binding DataContext.IsNewBatch,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                      Style="{StaticResource StyleDGCheckBoxCommon}"
+                                      IsChecked="{Binding IsSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTProductID}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.ProductID}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RTTestType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding RecordTest.TestType}"/>
+                <DataGridTemplateColumn Header="{StaticResource RTComposition}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Composition}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTCompositionAbbr}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.CompositionAbbr}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RTPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding RecordTest.PMINumber}"/>
+                <DataGridTemplateColumn Header="{StaticResource RTPO}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.PO}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTCustomer}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Customer}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDimension}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Dimension}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTWeight}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDensity}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Density}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTResistance}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Resistance}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDefects}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Defects}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTDimensionActual}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.DimensionActual}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RTSample}" Binding="{Binding RecordTest.Sample}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                <DataGridTemplateColumn Header="{StaticResource RTCreateTime}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource RTCreator}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate >
+                            <TextBlock Text="{Binding RecordTest.Creator}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+    </Grid>
+</UserControl>

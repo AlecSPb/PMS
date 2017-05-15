@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="PMSClient.View.OutputView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1300"
+             DataContext="{Binding Source={StaticResource Locator},Path=Output}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PageOutput}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource  ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOutputEdit}"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="选择年份"/>
+                <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding Years}" SelectedItem="{Binding CurrentYear}"/>
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Background="Wheat">
+                    <Button Content="{StaticResource OutputOrder}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputOrder}"/>
+                    <!--<Button Content="{StaticResource OutputMaterialOrder}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialOrder}"/>
+                    <Button Content="{StaticResource OutputMaterialInventoryIn}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialInventoryIn}"/>
+                    <Button Content="{StaticResource OutputMaterialInventoryOut}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialInventoryOut}"/>
+                    <Button Content="{StaticResource OutputDeliveryItem}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputDeliveryItem}"/>-->
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Background="Wheat">
+                    <!--<Button Content="{StaticResource OutputItemCredit}" Style="{StaticResource StyleButtonStretch}"/>-->
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

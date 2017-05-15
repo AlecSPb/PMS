@@ -239,6 +239,9 @@
     </Compile>
     <Compile Include="Tool\LabelOutPutVM.cs" />
     <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
+    <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
+      <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
@@ -439,9 +442,6 @@
     <Compile Include="View\RecordMachineView.xaml.cs">
       <DependentUpon>RecordMachineView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
-      <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PlanView.xaml.cs">
       <DependentUpon>PlanView.xaml</DependentUpon>
     </Compile>
@@ -588,12 +588,16 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\DensityEstamatorView.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\LabelOutPutView.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\MaterialNeedCalculationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\CustomerEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -818,10 +822,6 @@
     <Page Include="View\RecordMachineView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tool\MaterialNeedCalculationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PlanView.xaml">
       <Generator>MSBuild:Compile</Generator>

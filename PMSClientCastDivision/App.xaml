@@ -2,8 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PMSClientCastDivision"
-             StartupUri="MainWindow.xaml">
+             xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             StartupUri="MainDesktop.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resource/CommonBrushes.xaml" />
+                <ResourceDictionary Source="Resource/Language/zh-cn.xaml" />
+                <ResourceDictionary Source="Resource/Styles/XSStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -12,8 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.MainService;
+using PMSCommon;
+using PMSClient.ViewModel;
 
-namespace PMSClient
+namespace PMSClient.View
 {
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑
@@ -24,5 +27,39 @@ namespace PMSClient
         {
             InitializeComponent();
         }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            DcMaterialOrder order = (DcMaterialOrder)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.State)
+                {
+                    case "未核验":
+                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                        break;
+                    case "暂停":
+                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                        break;
+                    case "未完成":
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                        break;
+                    case "完成":
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+                if (order.State==OrderState.未完成.ToString() && order.Priority ==OrderPriority.紧急.ToString())
+                {
+                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
+                }
+
+            }
+        }
+
+
+
+
     }
 }
