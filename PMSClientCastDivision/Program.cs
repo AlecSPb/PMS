@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PMSClientCastDivision;
 
 namespace PMSClient
 {
@@ -18,7 +19,7 @@ namespace PMSClient
         {
             try
             {
-                App app = new PMSClient.App();
+                App app = new PMSClientCastDivision.App();
                 app.InitializeComponent();
 
                  var firstWindow = new MainDesktop();

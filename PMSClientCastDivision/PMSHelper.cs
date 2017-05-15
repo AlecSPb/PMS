@@ -8,6 +8,7 @@ using PMSClient.Helper;
 using PMSClient.View;
 using PMSClient.ViewModel;
 using PMSClient.Tool;
+using PMSClientCastDivision;
 
 namespace PMSClient
 {

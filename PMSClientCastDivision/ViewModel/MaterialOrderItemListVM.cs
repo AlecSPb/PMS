@@ -127,9 +127,9 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MaterialOrderServiceClient();
-            RecordCount = service.GetMaterialOrderItemExtrasCount(SearchComposition, SearchPMINumber,
-                SearchOrderItemNumber, SearchSupplier);
+            var service = new SanjieServiceClient();
+            //RecordCount = service.GetMaterialOrderItemExtrasCount(SearchComposition, SearchPMINumber,
+            //    SearchOrderItemNumber, SearchSupplier);
             service.Close();
             ActionPaging();
         }
@@ -142,12 +142,12 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var service = new MaterialOrderServiceClient();
-            var orders = service.GetMaterialOrderItemExtras(skip, take, SearchComposition, SearchPMINumber,
-                SearchOrderItemNumber, SearchSupplier);
-            service.Close();
-            MaterialOrderItemExtras.Clear();
-            orders.ToList().ForEach(o => MaterialOrderItemExtras.Add(o));
+            var service = new SanjieServiceClient();
+            //var orders = service.GetMaterialOrderItemExtras(skip, take, SearchComposition, SearchPMINumber,
+            //    SearchOrderItemNumber, SearchSupplier);
+            //service.Close();
+            //MaterialOrderItemExtras.Clear();
+            //orders.ToList().ForEach(o => MaterialOrderItemExtras.Add(o));
 
             CurrentSelectItem = MaterialOrderItemExtras.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);

@@ -35,17 +35,11 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<NavigationVM>(true);
 
             SimpleIoc.Default.Register<MaterialOrderVM>();
-            SimpleIoc.Default.Register<MaterialOrderEditVM>();
-            SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
-            SimpleIoc.Default.Register<MaterialOrderItemSelectVM>();
             SimpleIoc.Default.Register<MaterialOrderItemListVM>();
 
             SimpleIoc.Default.Register<MaterialInventoryInVM>();
-            SimpleIoc.Default.Register<MaterialInventoryInEditVM>();
-            SimpleIoc.Default.Register<MaterialInventoryInSelectVM>();
 
             SimpleIoc.Default.Register<MaterialInventoryOutVM>();
-            SimpleIoc.Default.Register<MaterialInventoryOutEditVM>();
 
             SimpleIoc.Default.Register<OutputVM>();
 
@@ -61,18 +55,7 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderVM>(); }
         }
-        public MaterialOrderEditVM MaterialOrderEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialOrderEditVM>(); }
-        }
-        public MaterialOrderItemEditVM MaterialOrderItemEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemEditVM>(); }
-        }
-        public MaterialOrderItemSelectVM MaterialOrderItemSelect
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemSelectVM>(); }
-        }
+ 
         public MaterialOrderItemListVM MaterialOrderItemList
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemListVM>(); }
@@ -81,22 +64,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInVM>(); }
         }
-        public MaterialInventoryInEditVM MaterialInventoryInEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInEditVM>(); }
-        }
-        public MaterialInventoryInSelectVM MaterialInventoryInSelect
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectVM>(); }
-        }
-
+ 
         public MaterialInventoryOutVM MaterialInventoryOut
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutVM>(); }
-        }
-        public MaterialInventoryOutEditVM MaterialInventoryOutEdit
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutEditVM>(); }
         }
 
         public OutputVM Output

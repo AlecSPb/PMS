@@ -99,7 +99,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                using (var service = new MaterialOrderServiceClient())
+                using (var service = new SanjieServiceClient())
                 {
                     var result = service.GetMaterialOrderItembyMaterialID(model.ID);
                     MaterialOrderItems.Clear();
@@ -126,8 +126,8 @@ namespace PMSClient.ViewModel
         {
             if (item != null)
             {
-                PMSHelper.ViewModels.MaterialOrderItemEdit.SetEdit(item);
-                NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
+                //PMSHelper.ViewModels.MaterialOrderItemEdit.SetEdit(item);
+                //NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
             }
         }
 
@@ -135,8 +135,8 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-                PMSHelper.ViewModels.MaterialOrderItemEdit.SetNew(order);
-                NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
+                //PMSHelper.ViewModels.MaterialOrderItemEdit.SetNew(order);
+                //NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
             }
         }
 
@@ -144,15 +144,15 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-                PMSHelper.ViewModels.MaterialOrderEdit.SetEdit(order);
-                NavigationService.GoTo(PMSViews.MaterialOrderEdit);
+                //PMSHelper.ViewModels.MaterialOrderEdit.SetEdit(order);
+                //NavigationService.GoTo(PMSViews.MaterialOrderEdit);
             }
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.MaterialOrderEdit.SetNew();
-            NavigationService.GoTo(PMSViews.MaterialOrderEdit);
+            //PMSHelper.ViewModels.MaterialOrderEdit.SetNew();
+            //NavigationService.GoTo(PMSViews.MaterialOrderEdit);
         }
 
         /// <summary>
@@ -208,8 +208,8 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 10;
-            var service = new MaterialOrderServiceClient();
-            RecordCount = service.GetMaterialOrderCountBySearch(SearchOrderPO, SearchSupplier);
+            var service = new SanjieServiceClient();
+            //RecordCount = service.GetMaterialOrderCountBySearch(SearchOrderPO, SearchSupplier);
             service.Close();
             ActionPaging();
         }
@@ -222,11 +222,11 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var service = new MaterialOrderServiceClient();
-            var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
-            service.Close();
-            MaterialOrders.Clear();
-            orders.ToList().ForEach(o => MaterialOrders.Add(o));
+            var service = new SanjieServiceClient();
+            //var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
+            //service.Close();
+            //MaterialOrders.Clear();
+            //orders.ToList().ForEach(o => MaterialOrders.Add(o));
 
             CurrentSelectIndex = 0;
             CurrentSelectItem = MaterialOrders.FirstOrDefault();

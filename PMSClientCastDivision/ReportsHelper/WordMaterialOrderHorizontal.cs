@@ -58,7 +58,7 @@ namespace PMSClient.ReportsHelper
 
                     List<DcMaterialOrderItem> OrderItems;
 
-                    using (var service = new MaterialOrderServiceClient())
+                    using (var service = new SanjieServiceClient())
                     {
                         var result = service.GetMaterialOrderItembyMaterialID(_order.ID);
                         OrderItems = result.OrderBy(i => i.CreateTime).ToList();

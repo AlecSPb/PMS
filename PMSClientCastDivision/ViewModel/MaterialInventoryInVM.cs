@@ -59,15 +59,15 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                PMSHelper.ViewModels.MaterialInventoryInEdit.SetEdit(model);
-                NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+                //PMSHelper.ViewModels.MaterialInventoryInEdit.SetEdit(model);
+                //NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
             }
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.MaterialInventoryInEdit.SetNew();
-            NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+            //PMSHelper.ViewModels.MaterialInventoryInEdit.SetNew();
+            //NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
         }
 
         private bool CanSearch()
@@ -91,8 +91,8 @@ namespace PMSClient.ViewModel
         {
             PageIndex = 1;
             PageSize = 20;
-            var service = new MaterialInventoryServiceClient();
-            RecordCount = service.GetMaterialInventoryInCountBySearch(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
+            var service = new SanjieServiceClient();
+            //RecordCount = service.GetMaterialInventoryInCountBySearch(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -105,11 +105,11 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            var service = new MaterialInventoryServiceClient();
-            var result = service.GetMaterialInventoryInsBySearch(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
+            var service = new SanjieServiceClient();
+            //var result = service.GetMaterialInventoryInsBySearch(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             MaterialInventoryIns.Clear();
-            result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
+            //result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
         }
 
         #region Proeperties

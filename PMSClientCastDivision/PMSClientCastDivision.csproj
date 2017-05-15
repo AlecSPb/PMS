@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PMSClient.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
@@ -159,16 +162,9 @@
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\MaterialInventoryInEditVM.cs" />
-    <Compile Include="ViewModel\MaterialInventoryInSelectVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInVM.cs" />
-    <Compile Include="ViewModel\MaterialInventoryOutEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
-    <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
-    <Compile Include="ViewModel\MaterialOrderItemEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
-    <Compile Include="ViewModel\MaterialOrderItemSelectVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
@@ -179,32 +175,14 @@
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaterialInventoryInEditView.xaml.cs">
-      <DependentUpon>MaterialInventoryInEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialInventoryInSelectView.xaml.cs">
-      <DependentUpon>MaterialInventoryInSelectView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MaterialInventoryInView.xaml.cs">
       <DependentUpon>MaterialInventoryInView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialInventoryOutEditView.xaml.cs">
-      <DependentUpon>MaterialInventoryOutEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialInventoryOutView.xaml.cs">
       <DependentUpon>MaterialInventoryOutView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaterialOrderEditView.xaml.cs">
-      <DependentUpon>MaterialOrderEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialOrderItemEditView.xaml.cs">
-      <DependentUpon>MaterialOrderItemEditView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MaterialOrderItemListView.xaml.cs">
       <DependentUpon>MaterialOrderItemListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialOrderItemSelectView.xaml.cs">
-      <DependentUpon>MaterialOrderItemSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialOrderListView.xaml.cs">
       <DependentUpon>MaterialOrderListView.xaml</DependentUpon>
@@ -287,7 +265,6 @@
     <Compile Include="Helpers\PMSStatus.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculationItem.cs" />
-    <Compile Include="Helpers\UserfullPackage\PMSTranslate.cs" />
     <Compile Include="Helpers\UserfullPackage\StateProcess.cs" />
     <Compile Include="Helpers\UserfullPackage\TargetDensity.cs" />
     <Compile Include="Helpers\UserfullPackage\TargetDensityCalculation.cs" />
@@ -317,19 +294,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaterialInventoryInEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialInventoryInSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\MaterialInventoryInView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialInventoryOutEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -337,19 +302,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaterialOrderEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialOrderItemEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\MaterialOrderItemListView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialOrderItemSelectView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -189,29 +189,8 @@ namespace PMSClient
                     RefreshLogInformation();
                     NavigateTo(_views.Navigation);
                     break;
-                case PMSViews.NavigationWorkFlow:
-                    NavigateTo(_views.NavigationWorkFlow);
-                    break;
-                case PMSViews.MaterialNeed:
-                    NavigateTo(_views.MaterialNeed);
-                    break;
-                case PMSViews.MaterialNeedEdit:
-                    NavigateTo(_views.MaterialNeedEdit);
-                    break;
-                case PMSViews.MaterialNeedSelect:
-                    NavigateTo(_views.MaterialNeedSelect);
-                    break;
                 case PMSViews.MaterialOrder:
                     NavigateTo(_views.MaterialOrder);
-                    break;
-                case PMSViews.MaterialOrderEdit:
-                    NavigateTo(_views.MaterialOrderEdit);
-                    break;
-                case PMSViews.MaterialOrderItemEdit:
-                    NavigateTo(_views.MaterialOrderItemEdit);
-                    break;
-                case PMSViews.MaterialOrderItemSelect:
-                    NavigateTo(_views.MaterialOrderItemSelect);
                     break;
                 case PMSViews.MaterialOrderItemList:
                     NavigateTo(_views.MaterialOrderItemList);
@@ -219,17 +198,8 @@ namespace PMSClient
                 case PMSViews.MaterialInventoryIn:
                     NavigateTo(_views.MaterialInventoryIn);
                     break;
-                case PMSViews.MaterialInventoryInEdit:
-                    NavigateTo(_views.MaterialInventoryInEdit);
-                    break;
-                case PMSViews.MaterialInventoryInSelect:
-                    NavigateTo(_views.MaterialInventoryInSelect);
-                    break;
                 case PMSViews.MaterialInventoryOut:
                     NavigateTo(_views.MaterialInventoryOut);
-                    break;
-                case PMSViews.MaterialInventoryOutEdit:
-                    NavigateTo(_views.MaterialInventoryOutEdit);
                     break;
                 case PMSViews.Output:
                     NavigateTo(_views.Output);
