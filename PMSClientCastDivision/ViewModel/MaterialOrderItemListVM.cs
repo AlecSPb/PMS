@@ -37,7 +37,6 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             searchPMINumber = "";
-            searchSupplier = "";
             searchComposition = "";
             searchOrderItemNumber = "";
             MaterialOrderItemExtras = new ObservableCollection<DcMaterialOrderItemExtra>();
@@ -47,7 +46,6 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(this.ActionAll);
-            Doc = new RelayCommand<DcMaterialOrderItemExtra>(ActionGenerateDoc);
             SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
             Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
         }
@@ -72,47 +70,14 @@ namespace PMSClient.ViewModel
             }
         }
 
-        /// <summary>
-        /// 生成报告部分
-        /// </summary>
-        /// <param name="order"></param>
-        private void ActionGenerateDoc(DcMaterialOrderItemExtra order)
-        {
-            if (MessageBox.Show("你确定要在桌面上创建文档吗?", "请问",
-                MessageBoxButton.YesNo, MessageBoxImage.Information)
-                == MessageBoxResult.No)
-            {
-                return;
-            }
-
-            try
-            {
-                if (order != null)
-                {
-                    //NavigationService.Status("开始创建报告……");
-                    //ReportMaterialOrderHorizontal report = new ReportMaterialOrderHorizontal();
-                    //report.SetModel(order);
-                    //report.Output();
-                    //PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
-                    //NavigationService.Status("原材料订单创建完毕！");
-                }
-            }
-            catch (Exception ex)
-            {
-                PMSHelper.CurrentLog.Error(ex);
-                NavigationService.Status(ex.Message);
-            }
-        }
-
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchPMINumber)&& string.IsNullOrEmpty(SearchOrderItemNumber)&& string.IsNullOrEmpty(SearchComposition));
         }
 
         private void ActionAll()
         {
             searchPMINumber = "";
-            searchSupplier = "";
             searchOrderItemNumber = "";
             searchComposition = "";
             SetPageParametersWhenConditionChange();
@@ -128,8 +93,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new SanjieServiceClient();
-            //RecordCount = service.GetMaterialOrderItemExtrasCount(SearchComposition, SearchPMINumber,
-            //    SearchOrderItemNumber, SearchSupplier);
+            RecordCount = service.GetMaterialOrderItemExtrasCount(SearchComposition, SearchPMINumber, SearchOrderItemNumber);
             service.Close();
             ActionPaging();
         }
@@ -143,11 +107,10 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new SanjieServiceClient();
-            //var orders = service.GetMaterialOrderItemExtras(skip, take, SearchComposition, SearchPMINumber,
-            //    SearchOrderItemNumber, SearchSupplier);
-            //service.Close();
-            //MaterialOrderItemExtras.Clear();
-            //orders.ToList().ForEach(o => MaterialOrderItemExtras.Add(o));
+            var orders = service.GetMaterialOrderItemExtras(skip, take, SearchComposition, SearchPMINumber, SearchOrderItemNumber);
+            service.Close();
+            MaterialOrderItemExtras.Clear();
+            orders.ToList().ForEach(o => MaterialOrderItemExtras.Add(o));
 
             CurrentSelectItem = MaterialOrderItemExtras.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);
@@ -179,18 +142,7 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(() => SearchPMINumber);
             }
         }
-        private string searchSupplier;
-        public string SearchSupplier
-        {
-            get { return searchSupplier; }
-            set
-            {
-                if (searchSupplier == value)
-                    return;
-                searchSupplier = value;
-                RaisePropertyChanged(() => SearchSupplier);
-            }
-        }
+
         private string searchComposition;
         public string SearchComposition
         {
@@ -220,7 +172,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand<DcMaterialOrderItemExtra> Doc { get; private set; }
         public RelayCommand<DcMaterialOrderItemExtra> SelectionChanged { get; set; }
 
         public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }

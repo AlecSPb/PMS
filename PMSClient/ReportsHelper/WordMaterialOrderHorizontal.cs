@@ -105,6 +105,10 @@ namespace PMSClient.ReportsHelper
                             double total = item.UnitPrice * item.Weight;
                             p.Append(total.ToString("N0")).FontSize(8);
                             subTotalMoney += total;
+                            if (i > 13)
+                            {
+                                break;
+                            }
                         }
                     }
                     var remark = _order.Remark ?? "";
@@ -123,6 +127,7 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
+                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {

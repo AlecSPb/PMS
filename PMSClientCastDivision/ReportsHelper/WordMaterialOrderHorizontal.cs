@@ -105,6 +105,10 @@ namespace PMSClient.ReportsHelper
                             double total = item.UnitPrice * item.Weight;
                             p.Append(total.ToString("N0")).FontSize(8);
                             subTotalMoney += total;
+                            if (i > 13)
+                            {
+                                break;
+                            }
                         }
                     }
                     var remark = _order.Remark ?? "";
@@ -114,15 +118,16 @@ namespace PMSClient.ReportsHelper
                     }
                     doc.ReplaceText("[Remark]", remark);
                     doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0"));
-                    doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0") );
+                    doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0"));
                     double totalMoney = subTotalMoney + _order.ShipFee;
-                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") );
+                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0"));
 
                     doc.Save();
                 }
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
+                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {

@@ -99,6 +99,7 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
+                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {

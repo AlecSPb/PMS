@@ -99,6 +99,7 @@ namespace PMSClient.ReportsHelper
                 var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
                 targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
                 ReportHelper.FileCopy(tempFile, targetFile);
+                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {
