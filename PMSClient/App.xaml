@@ -9,7 +9,7 @@
                 <ResourceDictionary Source="VMLocator.xaml"/>
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml" />
                 <ResourceDictionary Source="Resource/Language/us-en.xaml" />
-                <ResourceDictionary Source="Resource/Styles/Desktop.xaml"/>
+                <ResourceDictionary Source="Resource/Styles/XSStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

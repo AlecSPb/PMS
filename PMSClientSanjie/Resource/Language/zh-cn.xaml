@@ -1,0 +1,817 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--规范化后的命名-->
+    <!--AppName-->
+    <sys:String x:Key="AppNameDesktop">PMS生产管理系统[测试版本]</sys:String>
+
+    <!--Navigation Title-->
+    <sys:String x:Key="NavigationOrder">订单管理</sys:String>
+    <sys:String x:Key="NavigationOrderCheck">订单核验</sys:String>
+    <sys:String x:Key="NavigationMisson">生产任务</sys:String>
+    <sys:String x:Key="NavigationPlan">生产计划</sys:String>
+    <sys:String x:Key="NavigationMaterialNeed">原料需求</sys:String>
+    <sys:String x:Key="NavigationMaterialOrder">原料订单</sys:String>
+    <sys:String x:Key="NavigationMaterialInventory">原料库存</sys:String>
+    <sys:String x:Key="NavigationRecordMilling">制粉记录</sys:String>
+    <sys:String x:Key="NavigationRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="NavigationRecordBlank">取模记录</sys:String>
+    <sys:String x:Key="NavigationRecordMachine">加工记录</sys:String>
+    <sys:String x:Key="NavigationRecordTestResult">测试记录</sys:String>
+    <sys:String x:Key="NavigationDelivery">发货管理</sys:String>
+    <sys:String x:Key="NavigationRecordBonding">绑定记录</sys:String>
+    <sys:String x:Key="NavigationMaintenance">设备维护</sys:String>
+
+
+    <!--PageAndNavigationName-->
+    <sys:String x:Key="PageStart">开始</sys:String>
+    <sys:String x:Key="PageSetting">设置</sys:String>
+    <sys:String x:Key="PageBasicData">数据</sys:String>
+    <sys:String x:Key="PageAuthority">权限</sys:String>
+    <sys:String x:Key="PageStatistic">统计</sys:String>
+    <sys:String x:Key="PageExit">退出</sys:String>
+    <sys:String x:Key="PageLogOut">注销</sys:String>
+    <sys:String x:Key="PageAbout">关于</sys:String>
+    <sys:String x:Key="PageInstruct">指南</sys:String>
+    <sys:String x:Key="PageHelp">帮助</sys:String>
+    <sys:String x:Key="PageWebSite">网址</sys:String>
+    <sys:String x:Key="PageAdmin">管理</sys:String>
+    <sys:String x:Key="PageDebug">调试信息</sys:String>
+    <sys:String x:Key="PageNaivgation">导航</sys:String>
+    <sys:String x:Key="PageNaivgationWorkFlow">工作流</sys:String>
+
+
+    <sys:String x:Key="PageSales">销售</sys:String>
+    <sys:String x:Key="PageMaterial">原料</sys:String>
+    <sys:String x:Key="PageProduction">生产</sys:String>
+    <sys:String x:Key="PageRecord">记录</sys:String>
+    <sys:String x:Key="PageOther">其他</sys:String>
+    <sys:String x:Key="PageTool">工具</sys:String>
+
+    <sys:String x:Key="PageCustomer">客户管理</sys:String>
+    <sys:String x:Key="PageCompound">化合物库</sys:String>
+    <sys:String x:Key="PageElement">元素库</sys:String>
+    <sys:String x:Key="PageVHPDevice">热压设备库</sys:String>
+    <sys:String x:Key="PageMold">模具库</sys:String>
+    <sys:String x:Key="PageDeliveryAddress">发货信息库</sys:String>
+    <sys:String x:Key="PageProcess">工艺库</sys:String>
+    <sys:String x:Key="PageSupplier">供应商库</sys:String>
+    <sys:String x:Key="PageSieve">筛网库</sys:String>
+
+    <sys:String x:Key="PageOutput">数据导出</sys:String>
+
+    <sys:String x:Key="PageUser">用户</sys:String>
+    <sys:String x:Key="PageRole">角色</sys:String>
+    <sys:String x:Key="PageAccess">授权</sys:String>
+
+    <sys:String x:Key="PageWorkFlow">工作流</sys:String>
+
+    <sys:String x:Key="PageOrder">订单管理</sys:String>
+    <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
+    <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
+    <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
+
+    <sys:String x:Key="PageOutSource">外购管理</sys:String>
+    <sys:String x:Key="PageOutSourceEdit">外购管理编辑</sys:String>
+    
+    
+    <sys:String x:Key="PageMisson">生产任务</sys:String>
+    <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
+    <sys:String x:Key="PagePlan">生产计划</sys:String>
+    <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
+    <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
+    <sys:String x:Key="PageMaterialNeedEdit">材料需求编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrder">原料订单</sys:String>
+    <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemList">原料订单流水</sys:String>
+
+
+    <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOutEdit">原料库存[出库]编辑</sys:String>
+
+
+    <sys:String x:Key="PageRecordMilling">制粉记录</sys:String>
+    <sys:String x:Key="PageRecordMillingEdit">制粉记录编辑</sys:String>
+    <sys:String x:Key="PageRecordMachine">加工记录</sys:String>
+    <sys:String x:Key="PageRecordMachineEdit">加工记录编辑</sys:String>
+    <sys:String x:Key="PageRecordVHP">热压记录</sys:String>
+    <sys:String x:Key="PageRecordVHPEditPage">热压记录编辑</sys:String>
+    <sys:String x:Key="PageRecordVHPQuickEditPage">热压记录快速录入</sys:String>
+    <sys:String x:Key="PageRecordDeMold">取模记录</sys:String>
+    <sys:String x:Key="PageRecordDeMoldEdit">取模记录编辑</sys:String>
+    <sys:String x:Key="PageRecordBonding">绑定记录</sys:String>
+    <sys:String x:Key="PageRecordBondingEdit">绑定记录编辑</sys:String>
+    <sys:String x:Key="PageRecordTest">测试记录</sys:String>
+    <sys:String x:Key="PageRecordTestEdit">测试记录编辑</sys:String>
+    <sys:String x:Key="PageRecordTestDoc">测试记录报告</sys:String>
+
+
+    <sys:String x:Key="PageProductTitle">成品</sys:String>
+    <sys:String x:Key="PageProduct">成品库存</sys:String>
+    <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
+
+    <sys:String x:Key="PagePlate">背板库存</sys:String>
+    <sys:String x:Key="PagePlateEdit">背板库存编辑</sys:String>
+
+
+    <sys:String x:Key="PageDelivery">发货管理</sys:String>
+    <sys:String x:Key="PageDeliveryEdit">发货管理编辑</sys:String>
+    <sys:String x:Key="PageDeliveryItemEdit">发货项记录编辑</sys:String>
+    <sys:String x:Key="PageDeliveryItemList">发货流水</sys:String>
+
+    <sys:String x:Key="PageStatisticOrder">订单统计</sys:String>
+    <sys:String x:Key="PageStatisticDelivery">发货统计</sys:String>
+    <sys:String x:Key="PageStatisticPlan">生产统计</sys:String>
+    <sys:String x:Key="PageStatisticProduct">产品统计</sys:String>
+
+
+    <sys:String x:Key="PageCustomerService">售后</sys:String>
+    <sys:String x:Key="PageCustomerServiceEdit">售后编辑</sys:String>
+    
+    <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
+    <sys:String x:Key="PageFeedBackEdit">客户反馈编辑</sys:String>
+    
+    <sys:String x:Key="PageMaintenance">设备维护</sys:String>
+
+    <sys:String x:Key="PageCheckList">检查清单</sys:String>
+    <sys:String x:Key="PageCheckListEdit">检查清单编辑</sys:String>
+
+    <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
+    <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
+    <sys:String x:Key="PageRecordBondingSelect">请选择绑定记录</sys:String>
+    <sys:String x:Key="PageMaterialNeedSelect">请选择材料需求项目</sys:String>
+    <sys:String x:Key="PageTestResultSelect">请选择测试结果项目</sys:String>
+    <sys:String x:Key="PagePlanSelect">请选择生产计划项目</sys:String>
+    <sys:String x:Key="PageOrderSelect">请选择订单项目</sys:String>
+    <sys:String x:Key="PageMissonSelect">请选择生产任务项目</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemSelect">请选择材料订单项目</sys:String>
+    <sys:String x:Key="PageSelectPlate">选择背板库存</sys:String>
+    <sys:String x:Key="PageSelectRecordBonding">选择绑定记录</sys:String>
+
+    <!--TXT-->
+    <sys:String x:Key="TxtWelcome">欢迎使用PMS生产管理系统</sys:String>
+    <sys:String x:Key="TxtUserName">用户名</sys:String>
+    <sys:String x:Key="TxtPassWord">密码</sys:String>
+    <sys:String x:Key="TxtRemindUIDPWD">记住用户名和密码</sys:String>
+    
+    
+    <!--Button-->
+    <sys:String x:Key="ButtonNavigation">导航</sys:String>
+    <sys:String x:Key="ButtonGiveUp">返回</sys:String>
+    <sys:String x:Key="ButtonLogin">登录</sys:String>
+    <sys:String x:Key="ButtonLogOut">注销</sys:String>
+    <sys:String x:Key="ButtonBack">返回</sys:String>
+    <sys:String x:Key="ButtonCheck">核验</sys:String>
+    <sys:String x:Key="ButtonRefresh">刷新</sys:String>
+    <sys:String x:Key="ButtonSearch">搜索</sys:String>
+    <sys:String x:Key="ButtonAll">全部</sys:String>
+    <sys:String x:Key="ButtonSave">保存</sys:String>
+    <sys:String x:Key="ButtonAdd">添加</sys:String>
+    <sys:String x:Key="ButtonEdit">编辑</sys:String>
+    <sys:String x:Key="ButtonDuplicate">复用</sys:String>
+    <sys:String x:Key="ButtonBatchDuplicate">复用</sys:String>
+    <sys:String x:Key="ButtonDelete">作废</sys:String>
+    <sys:String x:Key="ButtonAddItem">安排</sys:String>
+    <sys:String x:Key="ButtonAddChild">子项</sys:String>
+    <sys:String x:Key="ButtonEditItem">编辑</sys:String>
+    <sys:String x:Key="ButtonEmpty">使用空记录</sys:String>
+    <sys:String x:Key="ButtonQuick">快速编辑</sys:String>
+    <sys:String x:Key="ButtonPrint">打印</sys:String>
+    <sys:String x:Key="ButtonSelectEmpty">使用空项目</sys:String>
+    <sys:String x:Key="ButtonFill">填写</sys:String>
+    <sys:String x:Key="ButtonSelect">选择</sys:String>
+    <sys:String x:Key="ButtonSelectBatch">批量选择</sys:String>
+    <sys:String x:Key="ButtonSend">发出</sys:String>
+    <sys:String x:Key="ButtonChart">曲线图</sys:String>
+    <sys:String x:Key="ButtonLabel">标签</sys:String>
+    <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
+    <sys:String x:Key="ButtonMisson">生产任务</sys:String>
+    <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
+    <sys:String x:Key="ButtonPlan">计划安排</sys:String>
+    <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
+    <sys:String x:Key="ButtonSearchPlan">搜索计划</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>
+    <sys:String x:Key="ButtonNewMode">新建模式</sys:String>
+    <sys:String x:Key="ButtonOpenFile">打开标签模板</sys:String>
+    <sys:String x:Key="ButtonCalculate">计算</sys:String>
+    <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
+    <sys:String x:Key="ButtonSign">签名</sys:String>
+    <sys:String x:Key="ButtonLocation">定位</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemList">原料流水</sys:String>
+    <sys:String x:Key="ButtonNotice">新消息</sys:String>
+    
+    
+    <sys:String x:Key="ButtonCalculator">计算器</sys:String>
+    <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
+    <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>
+    <sys:String x:Key="ButtonDetail">详细</sys:String>
+    <sys:String x:Key="ButtonBrowse">浏览</sys:String>
+    <sys:String x:Key="ButtonInput">导入</sys:String>
+    <sys:String x:Key="ButtonOutput">导出</sys:String>
+    <sys:String x:Key="ButtonDoc">文档</sys:String>
+    <sys:String x:Key="ButtonDocTest">测试报告</sys:String>
+    <sys:String x:Key="ButtonDocCoA">普通CoA测试报告</sys:String>
+    <sys:String x:Key="ButtonDocCoABridgeLine">普通CoA测试报告-BridgeLine</sys:String>
+    <sys:String x:Key="ButtonDocOpticraftGrinding">Opticraft加工订单</sys:String>
+    <sys:String x:Key="ButtonDocTCB">TCB加工订单</sys:String>
+
+
+    <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>
+    <sys:String x:Key="ButtonSelectVHPPlan">选择计划</sys:String>
+    <sys:String x:Key="ButtonSelectTest">选择检测结果</sys:String>
+    <sys:String x:Key="ButtonSelectProduct">选择产品库存</sys:String>
+    <sys:String x:Key="ButtonSelectPlate">选择背板库存</sys:String>
+    <sys:String x:Key="ButtonSelectBonding">选择绑定结果</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialOrderItem">选择原料订单项目</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
+    <sys:String x:Key="ButtonDeliveryItemList">发货流水</sys:String>
+    <sys:String x:Key="ButtonRecordTest">报告</sys:String>
+    <sys:String x:Key="ButtonSelectRecordDeMold">选择取模</sys:String>
+
+    <sys:String x:Key="ButtonStatisticByYear">全部按年份</sys:String>
+    <sys:String x:Key="ButtonStatisticByMonth">该年按月份</sys:String>
+    <sys:String x:Key="ButtonStatisticBySeason">该年按季度</sys:String>
+    <sys:String x:Key="ButtonStatisticByCustomer">该年按客户</sys:String>
+    <sys:String x:Key="ButtonStatisticByProductType">该年按产品类型</sys:String>
+    <sys:String x:Key="ButtonStatisticByDevice">该年按设备</sys:String>
+    <sys:String x:Key="ButtonStatisticByCountry">该年按国家</sys:String>
+
+
+
+    <!--Indicator-->
+    <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
+    <sys:String x:Key="IndicatorYesterday">昨天</sys:String>
+    <sys:String x:Key="IndicatorToday">今天</sys:String>
+    <sys:String x:Key="IndicatorTomorrow">明天</sys:String>
+
+    <sys:String x:Key="IndicatorUnChecked">未核验</sys:String>
+    <sys:String x:Key="IndicatorUnCompleted">未完成</sys:String>
+    <sys:String x:Key="IndicatorCompleted">完成</sys:String>
+    <sys:String x:Key="IndicatorPaused">暂停</sys:String>
+    <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
+    <sys:String x:Key="IndicatorFailed">失败</sys:String>
+
+
+    <sys:String x:Key="IndicatorStored">库存</sys:String>
+    <sys:String x:Key="IndicatorDelivered">发货</sys:String>
+
+    <!--Paging-->
+    <sys:String x:Key="PagingCurrentPageIndex">当前页码</sys:String>
+    <sys:String x:Key="PagingPageCount">总页码</sys:String>
+    <sys:String x:Key="PagingPageSize">每页记录数</sys:String>
+    <sys:String x:Key="PagingRecordCount">总记录</sys:String>
+
+
+    <!--公共-->
+    <sys:String x:Key="DGOperate">操作</sys:String>
+    <sys:String x:Key="SearchDateStart">开始日期</sys:String>
+    <sys:String x:Key="SearchDateEnd">结束日期</sys:String>
+    <sys:String x:Key="SearchComposition">成分</sys:String>
+    <sys:String x:Key="SearchVHPDate">热压日期</sys:String>
+    <sys:String x:Key="SearchProductID">产品ID</sys:String>
+    <sys:String x:Key="SearchPlateLot">背板批号</sys:String>
+    <sys:String x:Key="SearchCustomer">客户</sys:String>
+
+
+
+    <!--LogIn-->
+    <sys:String x:Key="LogInWelcome">欢迎</sys:String>
+    <sys:String x:Key="LogInLogInButton">欢迎</sys:String>
+
+    <!--Order-->
+    <sys:String x:Key="OrderCreator">创建者</sys:String>
+    <sys:String x:Key="OrderCreateTime">创建时间</sys:String>
+    <sys:String x:Key="OrderDeadLine">交付日期</sys:String>
+    <sys:String x:Key="OrderPolicy">策略</sys:String>
+    <sys:String x:Key="OrderCustomer">客户</sys:String>
+    <sys:String x:Key="OrderPO">PO</sys:String>
+    <sys:String x:Key="OrderProductType">产品类型</sys:String>
+    <sys:String x:Key="OrderPMINumber">内部编号</sys:String>
+    <sys:String x:Key="OrderStandardComposition">标准成分</sys:String>
+    <sys:String x:Key="OrderOriginalComposition">原始成分</sys:String>
+    <sys:String x:Key="OrderAbbrComposition">缩写</sys:String>
+    <sys:String x:Key="OrderPurity">纯度</sys:String>
+    <sys:String x:Key="OrderQuantity">数量</sys:String>
+    <sys:String x:Key="OrderQuantityUnit">单位</sys:String>
+    <sys:String x:Key="OrderDimension">加工尺寸</sys:String>
+    <sys:String x:Key="OrderDimensionDetails">加工要求</sys:String>
+    <sys:String x:Key="OrderSampleNeed">样品需求</sys:String>
+    <sys:String x:Key="OrderMIniummAcceptDefect">可接受缺陷</sys:String>
+    <sys:String x:Key="OrderRemark">备注</sys:String>
+    <sys:String x:Key="OrderPriority">优先级</sys:String>
+    <sys:String x:Key="OrderState">订单状态</sys:String>
+    <sys:String x:Key="OrderChecker">核验者</sys:String>
+    <sys:String x:Key="OrderCheckContent">核验内容</sys:String>
+    <sys:String x:Key="OrderCheckDate">核验日期</sys:String>
+
+    <!--Plan-->
+    <sys:String x:Key="PlanState">计划状态</sys:String>
+    <sys:String x:Key="PlanCreator">创建人</sys:String>
+    <sys:String x:Key="PlanCreateTime">创建时间</sys:String>
+    <sys:String x:Key="PlanPlanDate">计划日期</sys:String>
+    <sys:String x:Key="PlanVHPDeviceCode">设备</sys:String>
+    <sys:String x:Key="PlanPlanLot">批次</sys:String>
+    <sys:String x:Key="PlanPlanType">计划类型</sys:String>
+    <sys:String x:Key="PlanMoldType">模具类型</sys:String>
+    <sys:String x:Key="PlanCalculationDensity">密度</sys:String>
+    <sys:String x:Key="PlanMoldDiameter">内径</sys:String>
+    <sys:String x:Key="PlanThickness">厚度</sys:String>
+    <sys:String x:Key="PlanQuantity">数量</sys:String>
+    <sys:String x:Key="PlanSinglePowderWeight">单片</sys:String>
+    <sys:String x:Key="PlanAllPowderWeight">全部</sys:String>
+    <sys:String x:Key="PlanGrainSize">粉末粒度</sys:String>
+    <sys:String x:Key="PlanRoomTemperature">温度</sys:String>
+    <sys:String x:Key="PlanRoomHumidity">湿度</sys:String>
+    <sys:String x:Key="PlanPreTemperature">预压温度</sys:String>
+    <sys:String x:Key="PlanPrePressure">预压压力</sys:String>
+    <sys:String x:Key="PlanTemperature">温度</sys:String>
+    <sys:String x:Key="PlanPressure">压力</sys:String>
+    <sys:String x:Key="PlanVaccum">真空度</sys:String>
+    <sys:String x:Key="PlanKeepTempTime">保温时间</sys:String>
+    <sys:String x:Key="PlanProcessCode">工艺代码</sys:String>
+    <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
+    <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>
+    <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>
+    <sys:String x:Key="PlanSpecialRequirement">特殊要求</sys:String>
+    <sys:String x:Key="PlanRemark">备注信息</sys:String>
+
+    <!--MaterialNeed-->
+    <sys:String x:Key="MNState">需求状态</sys:String>
+    <sys:String x:Key="MNCreator">创建者</sys:String>
+    <sys:String x:Key="MNCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MNComposition">原料成分</sys:String>
+    <sys:String x:Key="MNPurity">纯度</sys:String>
+    <sys:String x:Key="MNWeight">重量</sys:String>
+    <sys:String x:Key="MNSupplier">供应商</sys:String>
+    <sys:String x:Key="MNSpecialNeeds">特殊要求</sys:String>
+    <sys:String x:Key="MNPMINumber">内部编号</sys:String>
+
+    <!--MaterialOrder-->
+    <sys:String x:Key="MOState">状态</sys:String>
+    <sys:String x:Key="MOCreator">创建者</sys:String>
+    <sys:String x:Key="MOCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MOOrderPO">订单PO</sys:String>
+    <sys:String x:Key="MOSupplier">供应商</sys:String>
+    <sys:String x:Key="MOSupplierAbbr">缩写</sys:String>
+    <sys:String x:Key="MOSupplierReceiver">联系人</sys:String>
+    <sys:String x:Key="MOSupplierEmail">电子邮件</sys:String>
+    <sys:String x:Key="MOSupplierAddress">地址</sys:String>
+    <sys:String x:Key="MORemark">订单备注</sys:String>
+    <sys:String x:Key="MOShipFee">运输费</sys:String>
+    <sys:String x:Key="MOPriority">优先级</sys:String>
+
+
+
+    <!--MaterialOrderItem-->
+    <sys:String x:Key="MOIState">状态</sys:String>
+    <sys:String x:Key="MOICreator">创建者</sys:String>
+    <sys:String x:Key="MOICreateTime">创建时间</sys:String>
+    <sys:String x:Key="MOIOrderItemNumber">材料编号</sys:String>
+    <sys:String x:Key="MOIPMINumber">内部编号</sys:String>
+    <sys:String x:Key="MOIComposition">成分</sys:String>
+    <sys:String x:Key="MOIPurity">纯度</sys:String>
+    <sys:String x:Key="MOIDescription">描述</sys:String>
+    <sys:String x:Key="MOIProvideRawMaterial">提供原料</sys:String>
+    <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
+    <sys:String x:Key="MOIUnitPrice">单价</sys:String>
+    <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
+
+
+    <!--Plate-->
+    <sys:String x:Key="PlateState">状态</sys:String>
+    <sys:String x:Key="PlateCreator">创建者</sys:String>
+    <sys:String x:Key="PlateCreateTime">创建时间</sys:String>
+
+    <sys:String x:Key="PlateLot">批号</sys:String>
+    <sys:String x:Key="PlateMaterial">材料</sys:String>
+    <sys:String x:Key="PlateBelong">归属</sys:String>
+    <sys:String x:Key="PlateDimension">规格</sys:String>
+    <sys:String x:Key="PlateUseCount">使用次数</sys:String>
+    <sys:String x:Key="PlateHardness">硬度</sys:String>
+    <sys:String x:Key="PlateSupplier">供应商</sys:String>
+    <sys:String x:Key="PlateLastWeldMaterial">上次焊接材料</sys:String>
+    <sys:String x:Key="PlateWeight">重量</sys:String>
+    <sys:String x:Key="PlateAppearance">外观</sys:String>
+    <sys:String x:Key="PlateDefects">缺陷</sys:String>
+    <sys:String x:Key="PlateRemark">备注</sys:String>
+
+
+
+    <!--RecordMilling-->
+    <sys:String x:Key="RMState">状态</sys:String>
+    <sys:String x:Key="RMCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RMCreator">创建者</sys:String>
+    <sys:String x:Key="RMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RMComposition">成分</sys:String>
+    <sys:String x:Key="RMPMINumber">内部编号</sys:String>
+    <sys:String x:Key="RMRoomTemperatureHumidity">温度湿度</sys:String>
+    <sys:String x:Key="RMRoomTemperature">温度</sys:String>
+    <sys:String x:Key="RMRoomHumidity">湿度</sys:String>
+    <sys:String x:Key="RMMaterialSource">原料来源</sys:String>
+    <sys:String x:Key="RMRemark">备注</sys:String>
+    <sys:String x:Key="RMMillingTool">制粉方式</sys:String>
+    <sys:String x:Key="RMGasProtection">气体保护</sys:String>
+    <sys:String x:Key="RMMillingTime">制粉时长</sys:String>
+    <sys:String x:Key="RMWeightIn">进料重量</sys:String>
+    <sys:String x:Key="RMWeightOut">出料重量</sys:String>
+    <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
+    <sys:String x:Key="RMRatio">损失率</sys:String>
+
+
+    <!--RecordVHP-->
+    <sys:String x:Key="RVHPState">状态</sys:String>
+    <sys:String x:Key="RVHPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RVHPCreator">创建者</sys:String>
+    <sys:String x:Key="RVHPCurrentTime">记录时间</sys:String>
+    <sys:String x:Key="RVHPPV1">PV1</sys:String>
+    <sys:String x:Key="RVHPPV2">PV2</sys:String>
+    <sys:String x:Key="RVHPPV3">PV3</sys:String>
+    <sys:String x:Key="RVHPSV">SV</sys:String>
+    <sys:String x:Key="RVHPTon">吨位</sys:String>
+    <sys:String x:Key="RVHPVaccum">真空度</sys:String>
+    <sys:String x:Key="RVHPShift1">位移1</sys:String>
+    <sys:String x:Key="RVHPShift2">位移2</sys:String>
+    <sys:String x:Key="RVHPOmega">Omega</sys:String>
+    <sys:String x:Key="RVHPWaterTemperatureOut">进水温度</sys:String>
+    <sys:String x:Key="RVHPWaterTemperatureIn">出水温度</sys:String>
+    <sys:String x:Key="RVHPExtraInformation">其他信息</sys:String>
+
+    <!--RecordDeMold-->
+    <sys:String x:Key="RDMCreator">创建者</sys:String>
+    <sys:String x:Key="RDMCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RDMState">状态</sys:String>
+    <sys:String x:Key="RDMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RDMPMINumber">内部编号</sys:String>
+    <sys:String x:Key="RDMComposition">成分</sys:String>
+    <sys:String x:Key="RDMTemperature1">取模温度</sys:String>
+    <sys:String x:Key="RDMTemperature2">脱模温度</sys:String>
+    <sys:String x:Key="RDMDeMoldType">脱模类型</sys:String>
+    <sys:String x:Key="RDMPlanType">计划类型</sys:String>
+    <sys:String x:Key="RDMDimension">产品尺寸</sys:String>
+    <sys:String x:Key="RDMCalculateDimension">设计毛坯</sys:String>
+    <sys:String x:Key="RDMCalculationDensity">计算密度</sys:String>
+    <sys:String x:Key="RDMDensity">密度</sys:String>
+    <sys:String x:Key="RDMRatioDensity">密度%</sys:String>
+    <sys:String x:Key="RDMWeight">重量</sys:String>
+    <sys:String x:Key="RDMDiameter1">直径1</sys:String>
+    <sys:String x:Key="RDMDiameter2">直径2</sys:String>
+    <sys:String x:Key="RDMThickness1">厚度1</sys:String>
+    <sys:String x:Key="RDMThickness2">厚度2</sys:String>
+    <sys:String x:Key="RDMThickness3">厚度3</sys:String>
+    <sys:String x:Key="RDMThickness4">厚度4</sys:String>
+    <sys:String x:Key="RDMRemark">备注</sys:String>
+
+    <!--RecordDeMachine-->
+    <sys:String x:Key="RMMCreator">创建者</sys:String>
+    <sys:String x:Key="RMMCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RMMState">状态</sys:String>
+    <sys:String x:Key="RMMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RMMPMINumber">内部编号</sys:String>
+    <sys:String x:Key="RMMComposition">成分</sys:String>
+    <sys:String x:Key="RMMDimension">尺寸要求</sys:String>
+    <sys:String x:Key="RMMExtraRequirement">额外要求</sys:String>
+    <sys:String x:Key="RMMBlankDimension">毛坯尺寸</sys:String>
+    <sys:String x:Key="RMMDiameter1">直径1</sys:String>
+    <sys:String x:Key="RMMDiameter2">直径2</sys:String>
+    <sys:String x:Key="RMMThickness1">厚度1</sys:String>
+    <sys:String x:Key="RMMThickness2">厚度2</sys:String>
+    <sys:String x:Key="RMMThickness3">厚度3</sys:String>
+    <sys:String x:Key="RMMThickness4">厚度4</sys:String>
+    <sys:String x:Key="RMMDefects">缺陷</sys:String>
+
+    <!--RecordTest-->
+    <sys:String x:Key="RTCreator">创建者</sys:String>
+    <sys:String x:Key="RTCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RTState">状态</sys:String>
+    <sys:String x:Key="RTTestType">测试类型</sys:String>
+    <sys:String x:Key="RTProductID">产品ID</sys:String>
+    <sys:String x:Key="RTComposition">成分</sys:String>
+    <sys:String x:Key="RTCompositionAbbr">缩写</sys:String>
+    <sys:String x:Key="RTPO">PO</sys:String>
+    <sys:String x:Key="RTPMINumber">内部编号</sys:String>
+    <sys:String x:Key="RTCustomer">客户</sys:String>
+    <sys:String x:Key="RTDimension">要求尺寸</sys:String>
+    <sys:String x:Key="RTDensity">密度</sys:String>
+    <sys:String x:Key="RTWeight">重量</sys:String>
+    <sys:String x:Key="RTResistance">电阻率</sys:String>
+    <sys:String x:Key="RTCompositionXRF">XRF成分</sys:String>
+    <sys:String x:Key="RTDimensionActual">实际尺寸</sys:String>
+    <sys:String x:Key="RTRemark">备注</sys:String>
+    <sys:String x:Key="RTSample">样品</sys:String>
+    <sys:String x:Key="RTDefects">缺陷</sys:String>
+    <!--Delivery-->
+    <sys:String x:Key="RDCreator">创建者</sys:String>
+    <sys:String x:Key="RDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RDState">状态</sys:String>
+    <sys:String x:Key="RDDeliveryName">发货名</sys:String>
+    <sys:String x:Key="RDInvoiceNumber">发票号</sys:String>
+    <sys:String x:Key="RDDeliveryNumber">物流信息</sys:String>
+    <sys:String x:Key="RDCountry">国家</sys:String>
+    <sys:String x:Key="RDAddress">地址</sys:String>
+    <sys:String x:Key="RDShipTime">发货时间</sys:String>
+    <sys:String x:Key="RDRemark">备注</sys:String>
+    <sys:String x:Key="RDPackageType">包装类型</sys:String>
+    <sys:String x:Key="RDPackageInformation">包装信息</sys:String>
+
+    <sys:String x:Key="RDProductType">产品类型</sys:String>
+    <sys:String x:Key="RDProductID">产品ID</sys:String>
+    <sys:String x:Key="RDComposition">成分</sys:String>
+    <sys:String x:Key="RDPO">PO</sys:String>
+    <sys:String x:Key="RDAbbr">缩写</sys:String>
+    <sys:String x:Key="RDCustomer">客户</sys:String>
+    <sys:String x:Key="RDDetailRecord">记录细节</sys:String>
+    <sys:String x:Key="RDWeight">重量</sys:String>
+    <sys:String x:Key="RDPackNumber">装箱号</sys:String>
+    <sys:String x:Key="RDPosition">货架位置</sys:String>
+    <sys:String x:Key="RDItemState">状态</sys:String>
+    <sys:String x:Key="RDDimension">尺寸</sys:String>
+    <!--Product-->
+    <sys:String x:Key="RPCreator">创建者</sys:String>
+    <sys:String x:Key="RPCreateTime">创建时间</sys:String>
+    <sys:String x:Key="RPState">状态</sys:String>
+    <sys:String x:Key="RPProductType">产品类型</sys:String>
+    <sys:String x:Key="RPProductID">产品ID</sys:String>
+    <sys:String x:Key="RPComposition">成分</sys:String>
+    <sys:String x:Key="RPPO">PO</sys:String>
+    <sys:String x:Key="RPAbbr">缩写</sys:String>
+    <sys:String x:Key="RPCustomer">客户</sys:String>
+    <sys:String x:Key="RPWeight">重量</sys:String>
+    <sys:String x:Key="RPPosition">货架位置</sys:String>
+    <sys:String x:Key="RPRemark">备注</sys:String>
+    <sys:String x:Key="RPDimension">尺寸</sys:String>
+    <sys:String x:Key="RPDimensionActual">实际尺寸</sys:String>
+    <sys:String x:Key="RPDefects">缺陷</sys:String>
+
+
+    <!--MaterialInventoryInAndOut-->
+    <sys:String x:Key="MIIState">状态</sys:String>
+    <sys:String x:Key="MIICreator">创建者</sys:String>
+    <sys:String x:Key="MIICreateTime">创建时间</sys:String>
+    <sys:String x:Key="MIIPMINumber">内部编号</sys:String>
+    <sys:String x:Key="MIIMaterialLot">材料批号</sys:String>
+    <sys:String x:Key="MIIComposition">成分</sys:String>
+    <sys:String x:Key="MIIPurity">纯度</sys:String>
+    <sys:String x:Key="MIISupplier">供应商</sys:String>
+    <sys:String x:Key="MIIWeight">重量</sys:String>
+    <sys:String x:Key="MIIRemark">备注</sys:String>
+    <!--材料出库-->
+    <sys:String x:Key="MIOState">状态</sys:String>
+    <sys:String x:Key="MIOCreator">创建者</sys:String>
+    <sys:String x:Key="MIOCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MIOPMINumber">内部编号</sys:String>
+    <sys:String x:Key="MIOMaterialLot">材料批号</sys:String>
+    <sys:String x:Key="MIOComposition">成分</sys:String>
+    <sys:String x:Key="MIOPurity">纯度</sys:String>
+    <sys:String x:Key="MIOReceiver">接受者</sys:String>
+    <sys:String x:Key="MIOWeight">重量</sys:String>
+    <sys:String x:Key="MIORemark">备注</sys:String>
+
+    <!--绑定-->
+    <sys:String x:Key="BDState">状态</sys:String>
+    <sys:String x:Key="BDCreator">创建者</sys:String>
+    <sys:String x:Key="BDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
+    <sys:String x:Key="BDRemark">备注</sys:String>
+
+    <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
+    <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>
+    <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
+    <sys:String x:Key="BDTargetCustomer">靶材客户</sys:String>
+    <sys:String x:Key="BDTargetPO">靶材批号</sys:String>
+    <sys:String x:Key="BDTargetPMINumber">内部编号</sys:String>
+    <sys:String x:Key="BDTargetWeight">靶材重量</sys:String>
+    <sys:String x:Key="BDTargetDimension">靶材尺寸</sys:String>
+    <sys:String x:Key="BDTargetCoverPlateNumber">盖板编号</sys:String>
+    <sys:String x:Key="BDTargetDImensionActual">靶材实际尺寸</sys:String>
+    <sys:String x:Key="BDTargetDefects">靶材缺陷</sys:String>
+    <sys:String x:Key="BDTargetDetailRecord">靶材细节记录</sys:String>
+    <sys:String x:Key="BDTargetApperance">靶材外观</sys:String>
+    <sys:String x:Key="BDTargetWarpageCheck">靶材翘曲检查</sys:String>
+    <sys:String x:Key="BDTargetThicknessCheck">靶材厚度检查</sys:String>
+    <sys:String x:Key="BDTargetDiameterCheck">靶材直径检查</sys:String>
+    <sys:String x:Key="BDTargetPerson">检查人</sys:String>
+    <sys:String x:Key="BDTargetCheckTime">检查时间</sys:String>
+
+
+
+    <sys:String x:Key="BDPlateLot">背板批号</sys:String>
+    <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
+    <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
+    <sys:String x:Key="BDPlateDimension">背板直径</sys:String>
+    <sys:String x:Key="BDPlateUseCount">背板使用次数</sys:String>
+    <sys:String x:Key="BDPlateHardness">背板硬度</sys:String>
+    <sys:String x:Key="BDPlateSupplier">背板供应商</sys:String>
+    <sys:String x:Key="BDPlateLastWeldMaterial">上次焊接材料</sys:String>
+    <sys:String x:Key="BDPlateOtherRecord">背板其他记录</sys:String>
+    <sys:String x:Key="BDPlateAppearance">背板外观</sys:String>
+    <sys:String x:Key="BDPlatePerson">背板检查人</sys:String>
+    <sys:String x:Key="BDPlateCheckTime">背板检查时间</sys:String>
+
+
+
+    <sys:String x:Key="BDTargetPreProcessRecord">预处理记录</sys:String>
+    <sys:String x:Key="BDTargetPreProcessPerson">记录人</sys:String>
+    <sys:String x:Key="BDTargetPreProcessCheckTime">记录检查时间</sys:String>
+
+
+    <sys:String x:Key="BDPlatePreProcessRecord">预处理记录</sys:String>
+    <sys:String x:Key="BDPlatePreProcessPerson">背板预处理人</sys:String>
+    <sys:String x:Key="BDPlatePreProcessCheckTime">背板预处理时间</sys:String>
+
+
+
+    <sys:String x:Key="BDWeldMaterial">焊接材料</sys:String>
+    <sys:String x:Key="BDWeldCuStringDiameter">Cu丝直径</sys:String>
+    <sys:String x:Key="BDWeldHold">焊接重物</sys:String>
+    <sys:String x:Key="BDWeldPerson">焊接检查人</sys:String>
+    <sys:String x:Key="BDWeldCheckTime">焊接检查时间</sys:String>
+
+
+    <sys:String x:Key="BDWarpageFix">翘曲修正</sys:String>
+    <sys:String x:Key="BDWarpagePerson">翘曲检查人</sys:String>
+    <sys:String x:Key="BDWarpageCheckTime">翘曲检查时间</sys:String>
+
+
+    <sys:String x:Key="BDDimensionCheck">尺寸检查</sys:String>
+    <sys:String x:Key="BDDimensionWarpageCheck">尺寸翘曲检查</sys:String>
+    <sys:String x:Key="BDDimensionPerson">尺寸检查人</sys:String>
+    <sys:String x:Key="BDDimensionCheckTime">尺寸检查时间</sys:String>
+
+
+    <sys:String x:Key="BDBindingCheck">结合检查</sys:String>
+    <sys:String x:Key="BDBindingPerson">结合检查人</sys:String>
+    <sys:String x:Key="BDBindingCheckTime">结合检查时间</sys:String>
+
+
+    <sys:String x:Key="BDSprayCheck">喷砂检查</sys:String>
+    <sys:String x:Key="BDSprayPerson">喷砂检查人</sys:String>
+    <sys:String x:Key="BDSprayCheckTime">喷砂检查时间</sys:String>
+
+    <sys:String x:Key="BDCleanCheck">清洁检查</sys:String>
+    <sys:String x:Key="BDCleanPerson">清洁检查人</sys:String>
+    <sys:String x:Key="BDCleanCheckTime">清洁检查时间</sys:String>
+
+
+    <sys:String x:Key="BDApperanceCheck">外观检查</sys:String>
+    <sys:String x:Key="BDApperancePerson">外观检查人</sys:String>
+    <sys:String x:Key="BDApperanceCheckTime">外观检查时间</sys:String>
+
+    <sys:String x:Key="BDPackCheck">包装检查</sys:String>
+    <sys:String x:Key="BDPackPerson">包装检查人</sys:String>
+    <sys:String x:Key="BDPackCheckTime">包装检查时间</sys:String>
+
+    <!--Customer-->
+    <sys:String x:Key="CustomerState">状态</sys:String>
+    <sys:String x:Key="CustomerCustomerName">客户名称</sys:String>
+    <sys:String x:Key="CustomerAddress">地址</sys:String>
+    <sys:String x:Key="CustomerContactPerson">联系人</sys:String>
+    <sys:String x:Key="CustomerPhone1">电话</sys:String>
+    <sys:String x:Key="CustomerPhone2">手机</sys:String>
+    <sys:String x:Key="CustomerFax">传真</sys:String>
+    <sys:String x:Key="CustomerEmail">Email</sys:String>
+    <sys:String x:Key="CustomerMemo">备注</sys:String>
+
+    <!--OutSource-->
+    <sys:String x:Key="OSState">状态</sys:String>
+    <sys:String x:Key="OSCreator">创建者</sys:String>
+    <sys:String x:Key="OSCreateTime">创建时间</sys:String>
+    <sys:String x:Key="OSOrderLot">编号</sys:String>
+    <sys:String x:Key="OSOrderType">类型</sys:String>
+    <sys:String x:Key="OSOrderName">名称</sys:String>
+    <sys:String x:Key="OSSupplier">供应商</sys:String>
+    <sys:String x:Key="OSDimension">规格</sys:String>
+    <sys:String x:Key="OSQuantity">数量</sys:String>
+    <sys:String x:Key="OSQuantityUnit">单位</sys:String>
+    <sys:String x:Key="OSCost">费用</sys:String>
+    <sys:String x:Key="OSRemark">备注</sys:String>
+
+    <!--Feedback-->
+    <sys:String x:Key="FBState">状态</sys:String>
+    <sys:String x:Key="FBCreator">创建者</sys:String>
+    <sys:String x:Key="FBCreateTime">创建时间</sys:String>
+    <sys:String x:Key="FBProductID">产品ID</sys:String>
+    <sys:String x:Key="FBProductType">产品类型</sys:String>
+    <sys:String x:Key="FBComposition">成分</sys:String>
+    <sys:String x:Key="FBCustomer">客户</sys:String>
+    <sys:String x:Key="FBFeedbackPerson">反馈人</sys:String>
+    <sys:String x:Key="FBReceivedDate">反馈日期</sys:String>
+    <sys:String x:Key="FBProcessWay">处理结果</sys:String>
+    <sys:String x:Key="FBRemark">备注</sys:String>
+
+    <!--ItemDebit-->
+    <sys:String x:Key="IDState">状态</sys:String>
+    <sys:String x:Key="IDCreator">创建者</sys:String>
+    <sys:String x:Key="IDCreateTime">创建时间</sys:String>
+    <sys:String x:Key="IDItemType">类型</sys:String>
+    <sys:String x:Key="IDItemLot">批号</sys:String>
+    <sys:String x:Key="IDItemName">名称</sys:String>
+    <sys:String x:Key="IDItemProperty">属性</sys:String>
+    <sys:String x:Key="IDQuantity">数量</sys:String>
+    <sys:String x:Key="IDUnitPrice">单价</sys:String>
+    <sys:String x:Key="IDUnit">单位</sys:String>
+    <sys:String x:Key="IDCreditor">债权人</sys:String>
+    <sys:String x:Key="IDRemark">备注</sys:String>
+
+
+    <sys:String x:Key="OutputOrder">销售订单</sys:String>
+    <sys:String x:Key="OutputMaterialOrder">原料订单</sys:String>
+    <sys:String x:Key="OutputMaterialInventoryIn">原料入库</sys:String>
+    <sys:String x:Key="OutputMaterialInventoryOut">原料出库</sys:String>
+    <sys:String x:Key="OutputDeliveryItem">发货数据</sys:String>
+    <sys:String x:Key="OutputItemCredit">借记数据</sys:String>
+
+    <!--每个页面最前面的提示信息-->
+    <sys:String x:Key="HelpTipOrderEdit">
+        注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范
+    </sys:String>
+    <sys:String x:Key="HelpTipOrderCheckEdit">
+        注意：请核验一下每个属性，如果有问题，通知订单输入者修改；没问题请选择合适的策略，状态和优先级
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialNeedEdit">
+        注意：可以自行输入原料需求数据，但推荐利用任务信息填写，原料计算器计算的结果仅供参考
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderEdit">
+        注意：尽量通过选择的方式输入
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderItemEdit">
+        注意：可以自行输入，但最好通过选择[原料需求列表]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryInEdit">
+        注意：可以自行输入，但最好通过选择[原料订单项目]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryOutEdit">
+        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
+    </sys:String>
+
+
+    <sys:String x:Key="HelpTipPlanVHPEdit">
+        注意：尽量选择，没有自己输入，不需要的项目填充0，同批次同台设备压多个成分任务的时候，要注意设置装料和热压参数相同
+    </sys:String>
+    <sys:String x:Key="HelpTipPlanVHPQuickEdit">
+        注意：尽量选择，没有自己输入，不需要的项目填充0,保存前要认真检查有无错误，有错误及时修改
+    </sys:String>
+    <sys:String x:Key="HelpTipMisson">
+        黄色标记的项目为未核验，核验后该计划才会公布
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMillingEdit">
+        注意：填写一定要规范，可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordVHPQuickEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordDeMoldEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMachineEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordBondingEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductSelect">
+        注意：发货的意思不光使用，还将这个记录的库存状态从库存变成发货
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestSelect">
+        注意：下面黄色的记录就是还没有最终完成和确定的测试记录，最好不要选择;
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryItemEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+
+
+    <sys:String x:Key="HelpTipStatisticOrder">
+        统计的是订单的数目，不是靶材的数目
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticPlan">
+        统计的是热压次数
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticDelivery">
+        统计的是发货的数目（靶材背板样品各类发货均统计在内）
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticProduct">
+        统计的是产品的数目
+    </sys:String>
+    <sys:String x:Key="HelpTipOutSourceEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipOutputEdit">
+        请先选择年份，然后点击对应导出功能的按钮
+    </sys:String>
+</ResourceDictionary>

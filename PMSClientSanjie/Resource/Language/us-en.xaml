@@ -1,0 +1,817 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--规范化后的命名-->
+    <!--AppName-->
+    <sys:String x:Key="AppNameDesktop">Production Management System[Test Edtion]</sys:String>
+
+    <!--Navigation Title-->
+    <sys:String x:Key="NavigationOrder">Order Management</sys:String>
+    <sys:String x:Key="NavigationOrderCheck">Order Check</sys:String>
+    <sys:String x:Key="NavigationMisson">Misson</sys:String>
+    <sys:String x:Key="NavigationPlan">Plan</sys:String>
+    <sys:String x:Key="NavigationMaterialNeed">Material Need</sys:String>
+    <sys:String x:Key="NavigationMaterialOrder">Material Order</sys:String>
+    <sys:String x:Key="NavigationMaterialInventory">Material Inventory</sys:String>
+    <sys:String x:Key="NavigationRecordMilling">Record Milling</sys:String>
+    <sys:String x:Key="NavigationRecordVHP">Record VHP</sys:String>
+    <sys:String x:Key="NavigationRecordBlank">Record Blank</sys:String>
+    <sys:String x:Key="NavigationRecordMachine">Record Machine</sys:String>
+    <sys:String x:Key="NavigationRecordTestResult">Record Test</sys:String>
+    <sys:String x:Key="NavigationDelivery">Record Delivery</sys:String>
+    <sys:String x:Key="NavigationRecordBonding">Record Bonding</sys:String>
+    <sys:String x:Key="NavigationMaintenance">Maintenance</sys:String>
+
+
+    <!--PageAndNavigationName-->
+    <sys:String x:Key="PageStart">Start</sys:String>
+    <sys:String x:Key="PageSetting">Setting</sys:String>
+    <sys:String x:Key="PageBasicData">Data</sys:String>
+    <sys:String x:Key="PageAuthority">Authority</sys:String>
+    <sys:String x:Key="PageStatistic">Statistic</sys:String>
+    <sys:String x:Key="PageExit">Exit</sys:String>
+    <sys:String x:Key="PageLogOut">Log Out</sys:String>
+    <sys:String x:Key="PageAbout">About</sys:String>
+    <sys:String x:Key="PageInstruct">Manual</sys:String>
+    <sys:String x:Key="PageHelp">Help</sys:String>
+    <sys:String x:Key="PageWebSite">WebSite</sys:String>
+    <sys:String x:Key="PageAdmin">Admin</sys:String>
+    <sys:String x:Key="PageDebug">Debug</sys:String>
+    <sys:String x:Key="PageNaivgation">Navigation</sys:String>
+    <sys:String x:Key="PageNaivgationWorkFlow">WorkFlow</sys:String>
+
+
+    <sys:String x:Key="PageSales">Sales</sys:String>
+    <sys:String x:Key="PageMaterial">Material</sys:String>
+    <sys:String x:Key="PageProduction">Production</sys:String>
+    <sys:String x:Key="PageRecord">Record</sys:String>
+    <sys:String x:Key="PageOther">Other</sys:String>
+    <sys:String x:Key="PageTool">Tool</sys:String>
+
+    <sys:String x:Key="PageCustomer">Customer</sys:String>
+    <sys:String x:Key="PageCompound">Compound</sys:String>
+    <sys:String x:Key="PageElement">Element</sys:String>
+    <sys:String x:Key="PageVHPDevice">VHP Device</sys:String>
+    <sys:String x:Key="PageMold">Mold</sys:String>
+    <sys:String x:Key="PageDeliveryAddress">Delivery Address</sys:String>
+    <sys:String x:Key="PageProcess">Process</sys:String>
+    <sys:String x:Key="PageSupplier">Supplier</sys:String>
+    <sys:String x:Key="PageSieve">Sieve</sys:String>
+
+    <sys:String x:Key="PageOutput">Output</sys:String>
+
+    <sys:String x:Key="PageUser">User</sys:String>
+    <sys:String x:Key="PageRole">Role</sys:String>
+    <sys:String x:Key="PageAccess">Access</sys:String>
+
+    <sys:String x:Key="PageWorkFlow">WorkFlow</sys:String>
+
+    <sys:String x:Key="PageOrder">Order</sys:String>
+    <sys:String x:Key="PageOrderEdit">Order Edit</sys:String>
+    <sys:String x:Key="PageOrderCheck">Order Check</sys:String>
+    <sys:String x:Key="PageOrderCheckEdit">Order Check Edit</sys:String>
+
+    <sys:String x:Key="PageOutSource">OutSource</sys:String>
+    <sys:String x:Key="PageOutSourceEdit">OutSource Edit</sys:String>
+
+
+    <sys:String x:Key="PageMisson">Misson</sys:String>
+    <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
+    <sys:String x:Key="PagePlan">Plan</sys:String>
+    <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
+    <sys:String x:Key="PageMaterialNeed">Material Need</sys:String>
+    <sys:String x:Key="PageMaterialNeedEdit">Material Need Edit</sys:String>
+    <sys:String x:Key="PageMaterialOrder">Material Order</sys:String>
+    <sys:String x:Key="PageMaterialOrderEdit">Material Order Edit</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemEdit">Material Order Item Edit</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemList">Material Order Item List</sys:String>
+
+
+    <sys:String x:Key="PageMaterialInventory">Material Inventory</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">Material In</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInSelect">Material In Select</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">Material Out</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInEdit">Material In Edit</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOutEdit">Mateiral Out Edit</sys:String>
+
+
+    <sys:String x:Key="PageRecordMilling">Record Milling</sys:String>
+    <sys:String x:Key="PageRecordMillingEdit">Record Milling Edit</sys:String>
+    <sys:String x:Key="PageRecordMachine">Record Machine</sys:String>
+    <sys:String x:Key="PageRecordMachineEdit">Record Machine Edit</sys:String>
+    <sys:String x:Key="PageRecordVHP">Record VHP</sys:String>
+    <sys:String x:Key="PageRecordVHPEditPage">Record VHP Edit</sys:String>
+    <sys:String x:Key="PageRecordVHPQuickEditPage">Record VHP Quick Edit</sys:String>
+    <sys:String x:Key="PageRecordDeMold">Record DeMold</sys:String>
+    <sys:String x:Key="PageRecordDeMoldEdit">Record DeMold Edit</sys:String>
+    <sys:String x:Key="PageRecordBonding">Record Bonding</sys:String>
+    <sys:String x:Key="PageRecordBondingEdit">Record Bonding Edit</sys:String>
+    <sys:String x:Key="PageRecordTest">Record Test</sys:String>
+    <sys:String x:Key="PageRecordTestEdit">Record Test Edit</sys:String>
+    <sys:String x:Key="PageRecordTestDoc">Record Test Doc</sys:String>
+
+
+    <sys:String x:Key="PageProductTitle">Product</sys:String>
+    <sys:String x:Key="PageProduct">Product</sys:String>
+    <sys:String x:Key="PageProductEdit">Product Edit</sys:String>
+
+    <sys:String x:Key="PagePlate">Plate</sys:String>
+    <sys:String x:Key="PagePlateEdit">Plate Edit</sys:String>
+
+
+    <sys:String x:Key="PageDelivery">Delivery</sys:String>
+    <sys:String x:Key="PageDeliveryEdit">Delivery Edit</sys:String>
+    <sys:String x:Key="PageDeliveryItemEdit">Delivery Item Edit</sys:String>
+    <sys:String x:Key="PageDeliveryItemList">Delivery Item List</sys:String>
+
+    <sys:String x:Key="PageStatisticOrder">Statistic Order</sys:String>
+    <sys:String x:Key="PageStatisticDelivery">Statistic Delivery</sys:String>
+    <sys:String x:Key="PageStatisticPlan">Statistic Plan</sys:String>
+    <sys:String x:Key="PageStatisticProduct">Statistic Product</sys:String>
+
+
+    <sys:String x:Key="PageCustomerService">Customer</sys:String>
+    <sys:String x:Key="PageCustomerServiceEdit">Customer Edit</sys:String>
+
+    <sys:String x:Key="PageFeedBack">FeedBack</sys:String>
+    <sys:String x:Key="PageFeedBackEdit">FeedBack Edit</sys:String>
+
+    <sys:String x:Key="PageMaintenance">Maintenance</sys:String>
+
+    <sys:String x:Key="PageCheckList">Check List</sys:String>
+    <sys:String x:Key="PageCheckListEdit">Check List Edit</sys:String>
+
+    <sys:String x:Key="PageProductSelect">Select Product</sys:String>
+    <sys:String x:Key="PageRecordDeMoldSelect">Select Record DeMold</sys:String>
+    <sys:String x:Key="PageRecordBondingSelect">Select Record Bonding</sys:String>
+    <sys:String x:Key="PageMaterialNeedSelect">Select Material Need</sys:String>
+    <sys:String x:Key="PageTestResultSelect">Select Test Result</sys:String>
+    <sys:String x:Key="PagePlanSelect">Select Plan</sys:String>
+    <sys:String x:Key="PageOrderSelect">Select Order</sys:String>
+    <sys:String x:Key="PageMissonSelect">Select Misson</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemSelect">Select Material Order Item</sys:String>
+    <sys:String x:Key="PageSelectPlate">Select Plate</sys:String>
+    <sys:String x:Key="PageSelectRecordBonding">Select Record Bonding</sys:String>
+
+
+    <!--TXT-->
+    <sys:String x:Key="TxtWelcome">Welcome to use Production Management System</sys:String>
+    <sys:String x:Key="TxtUserName">User Name</sys:String>
+    <sys:String x:Key="TxtPassWord">Password</sys:String>
+    <sys:String x:Key="TxtRemindUIDPWD">Remember User Name and Password</sys:String>
+
+    <!--Button-->
+    <sys:String x:Key="ButtonNavigation">Navigation</sys:String>
+    <sys:String x:Key="ButtonGiveUp">Give Up</sys:String>
+    <sys:String x:Key="ButtonLogin">Log In</sys:String>
+    <sys:String x:Key="ButtonLogOut">Log Out</sys:String>
+    <sys:String x:Key="ButtonBack">Back</sys:String>
+    <sys:String x:Key="ButtonCheck">Check</sys:String>
+    <sys:String x:Key="ButtonRefresh">Refresh</sys:String>
+    <sys:String x:Key="ButtonSearch">Search</sys:String>
+    <sys:String x:Key="ButtonAll">All</sys:String>
+    <sys:String x:Key="ButtonSave">Save</sys:String>
+    <sys:String x:Key="ButtonAdd">Add</sys:String>
+    <sys:String x:Key="ButtonEdit">Edit</sys:String>
+    <sys:String x:Key="ButtonDuplicate">Dup</sys:String>
+    <sys:String x:Key="ButtonBatchDuplicate">Dup</sys:String>
+    <sys:String x:Key="ButtonDelete">Delete</sys:String>
+    <sys:String x:Key="ButtonAddItem">Item</sys:String>
+    <sys:String x:Key="ButtonAddChild">Child</sys:String>
+    <sys:String x:Key="ButtonEditItem">Edit</sys:String>
+    <sys:String x:Key="ButtonEmpty">Empty</sys:String>
+    <sys:String x:Key="ButtonQuick">Quick Edit</sys:String>
+    <sys:String x:Key="ButtonPrint">Print</sys:String>
+    <sys:String x:Key="ButtonSelectEmpty">Select Empty</sys:String>
+    <sys:String x:Key="ButtonFill">Fill</sys:String>
+    <sys:String x:Key="ButtonSelect">Select</sys:String>
+    <sys:String x:Key="ButtonSelectBatch">Batch Select</sys:String>
+    <sys:String x:Key="ButtonSend">Send</sys:String>
+    <sys:String x:Key="ButtonChart">Chart</sys:String>
+    <sys:String x:Key="ButtonLabel">Label</sys:String>
+    <sys:String x:Key="ButtonDeliverySheet">Sheet</sys:String>
+    <sys:String x:Key="ButtonMisson">Misson</sys:String>
+    <sys:String x:Key="ButtonSearchMisson">Misson Search</sys:String>
+    <sys:String x:Key="ButtonPlan">Plan</sys:String>
+    <sys:String x:Key="ButtonMaterialNeed">Material Need</sys:String>
+    <sys:String x:Key="ButtonSearchPlan">Search Plan</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryIn">Material In</sys:String>
+    <sys:String x:Key="ButtonMaterialInventoryOut">Material Out</sys:String>
+    <sys:String x:Key="ButtonNewMode">New Mode</sys:String>
+    <sys:String x:Key="ButtonOpenFile">Open File</sys:String>
+    <sys:String x:Key="ButtonCalculate">Calculate</sys:String>
+    <sys:String x:Key="ButtonTempRecordSheet">Record Sheet</sys:String>
+    <sys:String x:Key="ButtonSign">Sign</sys:String>
+    <sys:String x:Key="ButtonLocation">Locate</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemList">Material List</sys:String>
+    <sys:String x:Key="ButtonNotice">Notice</sys:String>
+
+
+    <sys:String x:Key="ButtonCalculator">Calculator</sys:String>
+    <sys:String x:Key="ButtonSmallCalculator"> Small Calculator</sys:String>
+    <sys:String x:Key="ButtonInventoryOut">Inventory Out</sys:String>
+    <sys:String x:Key="ButtonDetail">Details</sys:String>
+    <sys:String x:Key="ButtonBrowse">Browse</sys:String>
+    <sys:String x:Key="ButtonInput">Input</sys:String>
+    <sys:String x:Key="ButtonOutput">Output</sys:String>
+    <sys:String x:Key="ButtonDoc">Doc</sys:String>
+    <sys:String x:Key="ButtonDocTest">Doc Test</sys:String>
+    <sys:String x:Key="ButtonDocCoA">Doc CoA</sys:String>
+    <sys:String x:Key="ButtonDocCoABridgeLine">Doc Coa-BridgeLine</sys:String>
+    <sys:String x:Key="ButtonDocOpticraftGrinding">Opticraft Order</sys:String>
+    <sys:String x:Key="ButtonDocTCB">TCB Order</sys:String>
+
+
+    <sys:String x:Key="ButtonSelectMisson">Select Misson</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialNeed">Select Material Need</sys:String>
+    <sys:String x:Key="ButtonSelectVHPPlan">Select VHP Plan</sys:String>
+    <sys:String x:Key="ButtonSelectTest">Select Test</sys:String>
+    <sys:String x:Key="ButtonSelectProduct">Select Product</sys:String>
+    <sys:String x:Key="ButtonSelectPlate">Select Plate</sys:String>
+    <sys:String x:Key="ButtonSelectBonding">Select Bonding</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialOrderItem">Select Material Order</sys:String>
+    <sys:String x:Key="ButtonSelectMaterialInventoryIn">Select Material In</sys:String>
+    <sys:String x:Key="ButtonDeliveryItemList">Delivery List</sys:String>
+    <sys:String x:Key="ButtonRecordTest">Report</sys:String>
+    <sys:String x:Key="ButtonSelectRecordDeMold">Select Record DeMold</sys:String>
+
+    <sys:String x:Key="ButtonStatisticByYear">All By Year</sys:String>
+    <sys:String x:Key="ButtonStatisticByMonth">This Year By Month</sys:String>
+    <sys:String x:Key="ButtonStatisticBySeason">This Year By Season</sys:String>
+    <sys:String x:Key="ButtonStatisticByCustomer">This Year By Customer</sys:String>
+    <sys:String x:Key="ButtonStatisticByProductType">This Year By ProductType</sys:String>
+    <sys:String x:Key="ButtonStatisticByDevice">This Year By Device</sys:String>
+    <sys:String x:Key="ButtonStatisticByCountry">This Year By Country</sys:String>
+
+
+
+    <!--Indicator-->
+    <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
+    <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>
+    <sys:String x:Key="IndicatorToday">Today</sys:String>
+    <sys:String x:Key="IndicatorTomorrow">Tomorrow</sys:String>
+
+    <sys:String x:Key="IndicatorUnChecked">UnChecked</sys:String>
+    <sys:String x:Key="IndicatorUnCompleted">UnCompleted</sys:String>
+    <sys:String x:Key="IndicatorCompleted">Completed</sys:String>
+    <sys:String x:Key="IndicatorPaused">Paused</sys:String>
+    <sys:String x:Key="IndicatorEmergency">Emergency</sys:String>
+    <sys:String x:Key="IndicatorFailed">Failded</sys:String>
+
+
+    <sys:String x:Key="IndicatorStored">Stored</sys:String>
+    <sys:String x:Key="IndicatorDelivered">Delivered</sys:String>
+
+    <!--Paging-->
+    <sys:String x:Key="PagingCurrentPageIndex">Current</sys:String>
+    <sys:String x:Key="PagingPageCount">Total Count</sys:String>
+    <sys:String x:Key="PagingPageSize">Page Size</sys:String>
+    <sys:String x:Key="PagingRecordCount">Total Record</sys:String>
+
+
+    <!--公共-->
+    <sys:String x:Key="DGOperate">Operate</sys:String>
+    <sys:String x:Key="SearchDateStart">Start Date</sys:String>
+    <sys:String x:Key="SearchDateEnd">End Date</sys:String>
+    <sys:String x:Key="SearchComposition">Composition</sys:String>
+    <sys:String x:Key="SearchVHPDate">VHP Date</sys:String>
+    <sys:String x:Key="SearchProductID">Product ID</sys:String>
+    <sys:String x:Key="SearchPlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="SearchCustomer">Customer</sys:String>
+
+
+
+    <!--LogIn-->
+    <sys:String x:Key="LogInWelcome">Welcome</sys:String>
+    <sys:String x:Key="LogInLogInButton">Log In</sys:String>
+
+    <!--Order-->
+    <sys:String x:Key="OrderCreator">Creator</sys:String>
+    <sys:String x:Key="OrderCreateTime">Create Time</sys:String>
+    <sys:String x:Key="OrderDeadLine">Dead Line</sys:String>
+    <sys:String x:Key="OrderPolicy">Policy</sys:String>
+    <sys:String x:Key="OrderCustomer">Customer</sys:String>
+    <sys:String x:Key="OrderPO">PO</sys:String>
+    <sys:String x:Key="OrderProductType">Product Type</sys:String>
+    <sys:String x:Key="OrderPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="OrderStandardComposition">Composition Std</sys:String>
+    <sys:String x:Key="OrderOriginalComposition">Composition Original</sys:String>
+    <sys:String x:Key="OrderAbbrComposition">Abbr</sys:String>
+    <sys:String x:Key="OrderPurity">Purity</sys:String>
+    <sys:String x:Key="OrderQuantity">Quantity</sys:String>
+    <sys:String x:Key="OrderQuantityUnit">Unit</sys:String>
+    <sys:String x:Key="OrderDimension">Dimension</sys:String>
+    <sys:String x:Key="OrderDimensionDetails">Details</sys:String>
+    <sys:String x:Key="OrderSampleNeed">Sample</sys:String>
+    <sys:String x:Key="OrderMIniummAcceptDefect">Accept Defect</sys:String>
+    <sys:String x:Key="OrderRemark">Remark</sys:String>
+    <sys:String x:Key="OrderPriority">Priority</sys:String>
+    <sys:String x:Key="OrderState">State</sys:String>
+    <sys:String x:Key="OrderChecker">Checker</sys:String>
+    <sys:String x:Key="OrderCheckContent">Check Content</sys:String>
+    <sys:String x:Key="OrderCheckDate">Check Date</sys:String>
+
+    <!--Plan-->
+    <sys:String x:Key="PlanState">State</sys:String>
+    <sys:String x:Key="PlanCreator">Creator</sys:String>
+    <sys:String x:Key="PlanCreateTime">Create Time</sys:String>
+    <sys:String x:Key="PlanPlanDate">Plan Date</sys:String>
+    <sys:String x:Key="PlanVHPDeviceCode">Device</sys:String>
+    <sys:String x:Key="PlanPlanLot">Plan Lot</sys:String>
+    <sys:String x:Key="PlanPlanType">Plan Type</sys:String>
+    <sys:String x:Key="PlanMoldType">Mold Type</sys:String>
+    <sys:String x:Key="PlanCalculationDensity">Density</sys:String>
+    <sys:String x:Key="PlanMoldDiameter">Diameter</sys:String>
+    <sys:String x:Key="PlanThickness">Thickness</sys:String>
+    <sys:String x:Key="PlanQuantity">Quantity</sys:String>
+    <sys:String x:Key="PlanSinglePowderWeight">SingleW</sys:String>
+    <sys:String x:Key="PlanAllPowderWeight">AllW</sys:String>
+    <sys:String x:Key="PlanGrainSize">Mesh</sys:String>
+    <sys:String x:Key="PlanRoomTemperature">Room Temp</sys:String>
+    <sys:String x:Key="PlanRoomHumidity">Room Humidity</sys:String>
+    <sys:String x:Key="PlanPreTemperature">Pre Temp</sys:String>
+    <sys:String x:Key="PlanPrePressure">Pre Pressure</sys:String>
+    <sys:String x:Key="PlanTemperature">Temp</sys:String>
+    <sys:String x:Key="PlanPressure">Pressure</sys:String>
+    <sys:String x:Key="PlanVaccum">Vaccum</sys:String>
+    <sys:String x:Key="PlanKeepTempTime">Keep Time</sys:String>
+    <sys:String x:Key="PlanProcessCode">Process</sys:String>
+    <sys:String x:Key="PlanMillingRequirement">Milling Details</sys:String>
+    <sys:String x:Key="PlanFillingRequirement">Filling Details</sys:String>
+    <sys:String x:Key="PlanMachineRequirement">Machine Details</sys:String>
+    <sys:String x:Key="PlanSpecialRequirement">Special Details</sys:String>
+    <sys:String x:Key="PlanRemark">Remark</sys:String>
+
+    <!--MaterialNeed-->
+    <sys:String x:Key="MNState">State</sys:String>
+    <sys:String x:Key="MNCreator">Creator</sys:String>
+    <sys:String x:Key="MNCreateTime">Create Time</sys:String>
+    <sys:String x:Key="MNComposition">Composition</sys:String>
+    <sys:String x:Key="MNPurity">Purity</sys:String>
+    <sys:String x:Key="MNWeight">Weight</sys:String>
+    <sys:String x:Key="MNSupplier">Supplier</sys:String>
+    <sys:String x:Key="MNSpecialNeeds">Special Needs</sys:String>
+    <sys:String x:Key="MNPMINumber">PMI Number</sys:String>
+
+    <!--MaterialOrder-->
+    <sys:String x:Key="MOState">State</sys:String>
+    <sys:String x:Key="MOCreator">Creator</sys:String>
+    <sys:String x:Key="MOCreateTime">Create Time</sys:String>
+    <sys:String x:Key="MOOrderPO">Order PO</sys:String>
+    <sys:String x:Key="MOSupplier">Supplier</sys:String>
+    <sys:String x:Key="MOSupplierAbbr">Abbr</sys:String>
+    <sys:String x:Key="MOSupplierReceiver">Receiver</sys:String>
+    <sys:String x:Key="MOSupplierEmail">Email</sys:String>
+    <sys:String x:Key="MOSupplierAddress">Address</sys:String>
+    <sys:String x:Key="MORemark">Remark</sys:String>
+    <sys:String x:Key="MOShipFee">Ship Fee</sys:String>
+    <sys:String x:Key="MOPriority">Priority</sys:String>
+
+
+
+    <!--MaterialOrderItem-->
+    <sys:String x:Key="MOIState">State</sys:String>
+    <sys:String x:Key="MOICreator">Creator</sys:String>
+    <sys:String x:Key="MOICreateTime">Create Time</sys:String>
+    <sys:String x:Key="MOIOrderItemNumber">Item Number</sys:String>
+    <sys:String x:Key="MOIPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="MOIComposition">Composition</sys:String>
+    <sys:String x:Key="MOIPurity">Purity</sys:String>
+    <sys:String x:Key="MOIDescription">Description</sys:String>
+    <sys:String x:Key="MOIProvideRawMaterial">Raw Material</sys:String>
+    <sys:String x:Key="MOIDeliveryDate">Delivery Date</sys:String>
+    <sys:String x:Key="MOIUnitPrice">Unit Price</sys:String>
+    <sys:String x:Key="MOIWeight">Weight</sys:String>
+
+
+    <!--Plate-->
+    <sys:String x:Key="PlateState">State</sys:String>
+    <sys:String x:Key="PlateCreator">Creator</sys:String>
+    <sys:String x:Key="PlateCreateTime">Create Time</sys:String>
+
+    <sys:String x:Key="PlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="PlateMaterial">Material</sys:String>
+    <sys:String x:Key="PlateBelong">Belong</sys:String>
+    <sys:String x:Key="PlateDimension">Dimension</sys:String>
+    <sys:String x:Key="PlateUseCount">Use Count</sys:String>
+    <sys:String x:Key="PlateHardness">HardNess</sys:String>
+    <sys:String x:Key="PlateSupplier">Supplier</sys:String>
+    <sys:String x:Key="PlateLastWeldMaterial">Last Welding Material</sys:String>
+    <sys:String x:Key="PlateWeight">Weight</sys:String>
+    <sys:String x:Key="PlateAppearance">Appearance</sys:String>
+    <sys:String x:Key="PlateDefects">Defects</sys:String>
+    <sys:String x:Key="PlateRemark">Remark</sys:String>
+
+
+
+    <!--RecordMilling-->
+    <sys:String x:Key="RMState">State</sys:String>
+    <sys:String x:Key="RMCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RMCreator">Creator</sys:String>
+    <sys:String x:Key="RMVHPPlanLot">Plan Lot</sys:String>
+    <sys:String x:Key="RMComposition">Composition</sys:String>
+    <sys:String x:Key="RMPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="RMRoomTemperatureHumidity">Humidity Temp</sys:String>
+    <sys:String x:Key="RMRoomTemperature">Temp</sys:String>
+    <sys:String x:Key="RMRoomHumidity">Humidy</sys:String>
+    <sys:String x:Key="RMMaterialSource">Source</sys:String>
+    <sys:String x:Key="RMRemark">Remark</sys:String>
+    <sys:String x:Key="RMMillingTool">Milling Tool</sys:String>
+    <sys:String x:Key="RMGasProtection">Gas Protection</sys:String>
+    <sys:String x:Key="RMMillingTime">Milling Time</sys:String>
+    <sys:String x:Key="RMWeightIn">Weight In</sys:String>
+    <sys:String x:Key="RMWeightOut">Weight Out</sys:String>
+    <sys:String x:Key="RMWeightRemain">Weigth Left</sys:String>
+    <sys:String x:Key="RMRatio">Loss Rate</sys:String>
+
+
+    <!--RecordVHP-->
+    <sys:String x:Key="RVHPState">State</sys:String>
+    <sys:String x:Key="RVHPCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RVHPCreator">Creator</sys:String>
+    <sys:String x:Key="RVHPCurrentTime">Current Time</sys:String>
+    <sys:String x:Key="RVHPPV1">PV1</sys:String>
+    <sys:String x:Key="RVHPPV2">PV2</sys:String>
+    <sys:String x:Key="RVHPPV3">PV3</sys:String>
+    <sys:String x:Key="RVHPSV">SV</sys:String>
+    <sys:String x:Key="RVHPTon">Ton</sys:String>
+    <sys:String x:Key="RVHPVaccum">Vaccum</sys:String>
+    <sys:String x:Key="RVHPShift1">Shift1</sys:String>
+    <sys:String x:Key="RVHPShift2">Shift2</sys:String>
+    <sys:String x:Key="RVHPOmega">Omega</sys:String>
+    <sys:String x:Key="RVHPWaterTemperatureOut">WaterIn</sys:String>
+    <sys:String x:Key="RVHPWaterTemperatureIn">WaterOut</sys:String>
+    <sys:String x:Key="RVHPExtraInformation">Remark</sys:String>
+
+    <!--RecordDeMold-->
+    <sys:String x:Key="RDMCreator">Creator</sys:String>
+    <sys:String x:Key="RDMCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RDMState">State</sys:String>
+    <sys:String x:Key="RDMVHPPlanLot">Plan Lot</sys:String>
+    <sys:String x:Key="RDMPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="RDMComposition">Composition</sys:String>
+    <sys:String x:Key="RDMTemperature1">Temperature1</sys:String>
+    <sys:String x:Key="RDMTemperature2">Temperature2</sys:String>
+    <sys:String x:Key="RDMDeMoldType">DeMold Type</sys:String>
+    <sys:String x:Key="RDMPlanType">Plan Type</sys:String>
+    <sys:String x:Key="RDMDimension">Dimension</sys:String>
+    <sys:String x:Key="RDMCalculateDimension">Blank Dimension</sys:String>
+    <sys:String x:Key="RDMCalculationDensity">Calculate Density</sys:String>
+    <sys:String x:Key="RDMDensity">Density</sys:String>
+    <sys:String x:Key="RDMRatioDensity">Density%</sys:String>
+    <sys:String x:Key="RDMWeight">Weight</sys:String>
+    <sys:String x:Key="RDMDiameter1">Diameter1</sys:String>
+    <sys:String x:Key="RDMDiameter2">Diameter2</sys:String>
+    <sys:String x:Key="RDMThickness1">Thickness1</sys:String>
+    <sys:String x:Key="RDMThickness2">Thickness2</sys:String>
+    <sys:String x:Key="RDMThickness3">Thickness3</sys:String>
+    <sys:String x:Key="RDMThickness4">Thickness4</sys:String>
+    <sys:String x:Key="RDMRemark">Remark</sys:String>
+
+    <!--RecordDeMachine-->
+    <sys:String x:Key="RMMCreator">Creator</sys:String>
+    <sys:String x:Key="RMMCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RMMState">State</sys:String>
+    <sys:String x:Key="RMMVHPPlanLot">Plan Lot</sys:String>
+    <sys:String x:Key="RMMPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="RMMComposition">Composition</sys:String>
+    <sys:String x:Key="RMMDimension">Dimension</sys:String>
+    <sys:String x:Key="RMMExtraRequirement">Details</sys:String>
+    <sys:String x:Key="RMMBlankDimension">Blank Dimension</sys:String>
+    <sys:String x:Key="RMMDiameter1">Diameter1</sys:String>
+    <sys:String x:Key="RMMDiameter2">Diameter2</sys:String>
+    <sys:String x:Key="RMMThickness1">Thickness1</sys:String>
+    <sys:String x:Key="RMMThickness2">Thickness2</sys:String>
+    <sys:String x:Key="RMMThickness3">Thickness3</sys:String>
+    <sys:String x:Key="RMMThickness4">Thickness4</sys:String>
+    <sys:String x:Key="RMMDefects">Defects</sys:String>
+
+    <!--RecordTest-->
+    <sys:String x:Key="RTCreator">Creator</sys:String>
+    <sys:String x:Key="RTCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RTState">State</sys:String>
+    <sys:String x:Key="RTTestType">Test Type</sys:String>
+    <sys:String x:Key="RTProductID">Product ID</sys:String>
+    <sys:String x:Key="RTComposition">Composition</sys:String>
+    <sys:String x:Key="RTCompositionAbbr">Abbr</sys:String>
+    <sys:String x:Key="RTPO">PO</sys:String>
+    <sys:String x:Key="RTPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="RTCustomer">Customer</sys:String>
+    <sys:String x:Key="RTDimension">Dimension</sys:String>
+    <sys:String x:Key="RTDensity">Density</sys:String>
+    <sys:String x:Key="RTWeight">Weight</sys:String>
+    <sys:String x:Key="RTResistance">Resitance</sys:String>
+    <sys:String x:Key="RTCompositionXRF">XRF</sys:String>
+    <sys:String x:Key="RTDimensionActual">Dimension Actual</sys:String>
+    <sys:String x:Key="RTRemark">Remark</sys:String>
+    <sys:String x:Key="RTSample">Sample</sys:String>
+    <sys:String x:Key="RTDefects">Defects</sys:String>
+    <!--Delivery-->
+    <sys:String x:Key="RDCreator">Creator</sys:String>
+    <sys:String x:Key="RDCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RDState">State</sys:String>
+    <sys:String x:Key="RDDeliveryName">Delivery Name</sys:String>
+    <sys:String x:Key="RDInvoiceNumber">Invoice Number</sys:String>
+    <sys:String x:Key="RDDeliveryNumber">Delivery Number</sys:String>
+    <sys:String x:Key="RDCountry">Country</sys:String>
+    <sys:String x:Key="RDAddress">Address</sys:String>
+    <sys:String x:Key="RDShipTime">Ship Time</sys:String>
+    <sys:String x:Key="RDRemark">Remark</sys:String>
+    <sys:String x:Key="RDPackageType">Package Type</sys:String>
+    <sys:String x:Key="RDPackageInformation">Package Information</sys:String>
+
+    <sys:String x:Key="RDProductType">Product Type</sys:String>
+    <sys:String x:Key="RDProductID">Product ID</sys:String>
+    <sys:String x:Key="RDComposition">Composition</sys:String>
+    <sys:String x:Key="RDPO">PO</sys:String>
+    <sys:String x:Key="RDAbbr">Abbr</sys:String>
+    <sys:String x:Key="RDCustomer">Customer</sys:String>
+    <sys:String x:Key="RDDetailRecord">Details</sys:String>
+    <sys:String x:Key="RDWeight">Weight</sys:String>
+    <sys:String x:Key="RDPackNumber">Pack Number</sys:String>
+    <sys:String x:Key="RDPosition">Position</sys:String>
+    <sys:String x:Key="RDItemState">Item State</sys:String>
+    <sys:String x:Key="RDDimension">Dimension</sys:String>
+    <!--Product-->
+    <sys:String x:Key="RPCreator">Creator</sys:String>
+    <sys:String x:Key="RPCreateTime">Create Time</sys:String>
+    <sys:String x:Key="RPState">State</sys:String>
+    <sys:String x:Key="RPProductType">Product Type</sys:String>
+    <sys:String x:Key="RPProductID">Product ID</sys:String>
+    <sys:String x:Key="RPComposition">Composition</sys:String>
+    <sys:String x:Key="RPPO">PO</sys:String>
+    <sys:String x:Key="RPAbbr">Abbr</sys:String>
+    <sys:String x:Key="RPCustomer">Customer</sys:String>
+    <sys:String x:Key="RPWeight">Weight</sys:String>
+    <sys:String x:Key="RPPosition">Position</sys:String>
+    <sys:String x:Key="RPRemark">Remark</sys:String>
+    <sys:String x:Key="RPDimension">Dimension</sys:String>
+    <sys:String x:Key="RPDimensionActual">Dimension Actual</sys:String>
+    <sys:String x:Key="RPDefects">Defects</sys:String>
+
+
+    <!--MaterialInventoryInAndOut-->
+    <sys:String x:Key="MIIState">State</sys:String>
+    <sys:String x:Key="MIICreator">Creator</sys:String>
+    <sys:String x:Key="MIICreateTime">Create Time</sys:String>
+    <sys:String x:Key="MIIPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="MIIMaterialLot">Material Lot</sys:String>
+    <sys:String x:Key="MIIComposition">Composition</sys:String>
+    <sys:String x:Key="MIIPurity">Purity</sys:String>
+    <sys:String x:Key="MIISupplier">Supplier</sys:String>
+    <sys:String x:Key="MIIWeight">Weight</sys:String>
+    <sys:String x:Key="MIIRemark">Remark</sys:String>
+    <!--材料出库-->
+    <sys:String x:Key="MIOState">State</sys:String>
+    <sys:String x:Key="MIOCreator">Creator</sys:String>
+    <sys:String x:Key="MIOCreateTime">Create Time</sys:String>
+    <sys:String x:Key="MIOPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="MIOMaterialLot">Material Lot</sys:String>
+    <sys:String x:Key="MIOComposition">Composition</sys:String>
+    <sys:String x:Key="MIOPurity">PUrity</sys:String>
+    <sys:String x:Key="MIOReceiver">Receiver</sys:String>
+    <sys:String x:Key="MIOWeight">Weight</sys:String>
+    <sys:String x:Key="MIORemark">Remark</sys:String>
+
+    <!--绑定-->
+    <sys:String x:Key="BDState">State</sys:String>
+    <sys:String x:Key="BDCreator">Creator</sys:String>
+    <sys:String x:Key="BDCreateTime">Create Time</sys:String>
+    <sys:String x:Key="BDInstructionCode">Operation Code</sys:String>
+    <sys:String x:Key="BDRemark">Remark</sys:String>
+
+    <sys:String x:Key="BDTargetProductID">Product ID</sys:String>
+    <sys:String x:Key="BDTargetComposition">Composition</sys:String>
+    <sys:String x:Key="BDTargetAbbr">Abbr</sys:String>
+    <sys:String x:Key="BDTargetCustomer">Customer</sys:String>
+    <sys:String x:Key="BDTargetPO">PO</sys:String>
+    <sys:String x:Key="BDTargetPMINumber">PMI Number</sys:String>
+    <sys:String x:Key="BDTargetWeight">Weight</sys:String>
+    <sys:String x:Key="BDTargetDimension">Dimension</sys:String>
+    <sys:String x:Key="BDTargetCoverPlateNumber">Cover Plate Number</sys:String>
+    <sys:String x:Key="BDTargetDImensionActual">Dimensiona Actual</sys:String>
+    <sys:String x:Key="BDTargetDefects">Defects</sys:String>
+    <sys:String x:Key="BDTargetDetailRecord">Details</sys:String>
+    <sys:String x:Key="BDTargetApperance">Appearance</sys:String>
+    <sys:String x:Key="BDTargetWarpageCheck">Warpage Check</sys:String>
+    <sys:String x:Key="BDTargetThicknessCheck">Thickness Check</sys:String>
+    <sys:String x:Key="BDTargetDiameterCheck">Diameter Check x </sys:String>
+    <sys:String x:Key="BDTargetPerson">Checker</sys:String>
+    <sys:String x:Key="BDTargetCheckTime">Check Time</sys:String>
+
+
+
+    <sys:String x:Key="BDPlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="BDPlateMaterial">Plate Material</sys:String>
+    <sys:String x:Key="BDPlateBelong">Plate Belong</sys:String>
+    <sys:String x:Key="BDPlateDimension">Dimension</sys:String>
+    <sys:String x:Key="BDPlateUseCount">Use Count</sys:String>
+    <sys:String x:Key="BDPlateHardness">HardNess</sys:String>
+    <sys:String x:Key="BDPlateSupplier">Supplier</sys:String>
+    <sys:String x:Key="BDPlateLastWeldMaterial">Last Weld Material</sys:String>
+    <sys:String x:Key="BDPlateOtherRecord">Other Record</sys:String>
+    <sys:String x:Key="BDPlateAppearance">Appereance</sys:String>
+    <sys:String x:Key="BDPlatePerson">Checker</sys:String>
+    <sys:String x:Key="BDPlateCheckTime">Check Time</sys:String>
+
+
+
+    <sys:String x:Key="BDTargetPreProcessRecord">PreProcess</sys:String>
+    <sys:String x:Key="BDTargetPreProcessPerson">Checker</sys:String>
+    <sys:String x:Key="BDTargetPreProcessCheckTime">Check Time</sys:String>
+
+
+    <sys:String x:Key="BDPlatePreProcessRecord">PreProcess</sys:String>
+    <sys:String x:Key="BDPlatePreProcessPerson">Checker</sys:String>
+    <sys:String x:Key="BDPlatePreProcessCheckTime">Check Time</sys:String>
+
+
+
+    <sys:String x:Key="BDWeldMaterial">WeldMaterial</sys:String>
+    <sys:String x:Key="BDWeldCuStringDiameter">Cu String Diameter</sys:String>
+    <sys:String x:Key="BDWeldHold">Weld Hold</sys:String>
+    <sys:String x:Key="BDWeldPerson">Checker</sys:String>
+    <sys:String x:Key="BDWeldCheckTime">Check Time</sys:String>
+
+
+    <sys:String x:Key="BDWarpageFix">WarpageFix</sys:String>
+    <sys:String x:Key="BDWarpagePerson">Checker</sys:String>
+    <sys:String x:Key="BDWarpageCheckTime">Check Time</sys:String>
+
+
+    <sys:String x:Key="BDDimensionCheck">Dimension Check</sys:String>
+    <sys:String x:Key="BDDimensionWarpageCheck">Dimension Warpage Check</sys:String>
+    <sys:String x:Key="BDDimensionPerson">Chekcer</sys:String>
+    <sys:String x:Key="BDDimensionCheckTime">Check Time</sys:String>
+
+
+    <sys:String x:Key="BDBindingCheck">Bond Check</sys:String>
+    <sys:String x:Key="BDBindingPerson">Checker</sys:String>
+    <sys:String x:Key="BDBindingCheckTime">Check Time</sys:String>
+
+
+    <sys:String x:Key="BDSprayCheck">Spray Check</sys:String>
+    <sys:String x:Key="BDSprayPerson">Checker</sys:String>
+    <sys:String x:Key="BDSprayCheckTime">Check Time</sys:String>
+
+    <sys:String x:Key="BDCleanCheck">Clean Check</sys:String>
+    <sys:String x:Key="BDCleanPerson">Checker</sys:String>
+    <sys:String x:Key="BDCleanCheckTime">Check Time</sys:String>
+
+
+    <sys:String x:Key="BDApperanceCheck">Apperance Check</sys:String>
+    <sys:String x:Key="BDApperancePerson">Checker</sys:String>
+    <sys:String x:Key="BDApperanceCheckTime">Check Time</sys:String>
+
+    <sys:String x:Key="BDPackCheck">Pack Check</sys:String>
+    <sys:String x:Key="BDPackPerson">Checker</sys:String>
+    <sys:String x:Key="BDPackCheckTime">Check Time</sys:String>
+
+    <!--Customer-->
+    <sys:String x:Key="CustomerState">State</sys:String>
+    <sys:String x:Key="CustomerCustomerName">CustomerName</sys:String>
+    <sys:String x:Key="CustomerAddress">Address</sys:String>
+    <sys:String x:Key="CustomerContactPerson">Contact</sys:String>
+    <sys:String x:Key="CustomerPhone1">Phone</sys:String>
+    <sys:String x:Key="CustomerPhone2">Cell Phone</sys:String>
+    <sys:String x:Key="CustomerFax">Fax</sys:String>
+    <sys:String x:Key="CustomerEmail">Email</sys:String>
+    <sys:String x:Key="CustomerMemo">Remark</sys:String>
+
+    <!--OutSource-->
+    <sys:String x:Key="OSState">State</sys:String>
+    <sys:String x:Key="OSCreator">Creator</sys:String>
+    <sys:String x:Key="OSCreateTime">Create Time</sys:String>
+    <sys:String x:Key="OSOrderLot">Order Lot</sys:String>
+    <sys:String x:Key="OSOrderType">Order Type</sys:String>
+    <sys:String x:Key="OSOrderName">Order Name</sys:String>
+    <sys:String x:Key="OSSupplier">Supplier</sys:String>
+    <sys:String x:Key="OSDimension">Dimension</sys:String>
+    <sys:String x:Key="OSQuantity">Quantiy</sys:String>
+    <sys:String x:Key="OSQuantityUnit">Unit</sys:String>
+    <sys:String x:Key="OSCost">Cost</sys:String>
+    <sys:String x:Key="OSRemark">Remark</sys:String>
+
+    <!--Feedback-->
+    <sys:String x:Key="FBState">State</sys:String>
+    <sys:String x:Key="FBCreator">Creator</sys:String>
+    <sys:String x:Key="FBCreateTime">Create Time</sys:String>
+    <sys:String x:Key="FBProductID">Product ID</sys:String>
+    <sys:String x:Key="FBProductType">Product Type</sys:String>
+    <sys:String x:Key="FBComposition">Composition</sys:String>
+    <sys:String x:Key="FBCustomer">Customer</sys:String>
+    <sys:String x:Key="FBFeedbackPerson">Person</sys:String>
+    <sys:String x:Key="FBReceivedDate">Date</sys:String>
+    <sys:String x:Key="FBProcessWay">Process</sys:String>
+    <sys:String x:Key="FBRemark">Remark</sys:String>
+
+    <!--ItemDebit-->
+    <sys:String x:Key="IDState">State</sys:String>
+    <sys:String x:Key="IDCreator">Creator</sys:String>
+    <sys:String x:Key="IDCreateTime">Create Time</sys:String>
+    <sys:String x:Key="IDItemType">Type</sys:String>
+    <sys:String x:Key="IDItemLot">Lot</sys:String>
+    <sys:String x:Key="IDItemName">Name</sys:String>
+    <sys:String x:Key="IDItemProperty">Property</sys:String>
+    <sys:String x:Key="IDQuantity">Quantity</sys:String>
+    <sys:String x:Key="IDUnitPrice">UnitPrice</sys:String>
+    <sys:String x:Key="IDUnit">Unit</sys:String>
+    <sys:String x:Key="IDCreditor">Creditor</sys:String>
+    <sys:String x:Key="IDRemark">Remark</sys:String>
+
+
+    <sys:String x:Key="OutputOrder">Sales Order</sys:String>
+    <sys:String x:Key="OutputMaterialOrder">Material Order</sys:String>
+    <sys:String x:Key="OutputMaterialInventoryIn">Material In</sys:String>
+    <sys:String x:Key="OutputMaterialInventoryOut">Material Out</sys:String>
+    <sys:String x:Key="OutputDeliveryItem">Delivery</sys:String>
+    <sys:String x:Key="OutputItemCredit">Item Debit</sys:String>
+
+    <!--每个页面最前面的提示信息-->
+    <sys:String x:Key="HelpTipOrderEdit">
+        注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范
+    </sys:String>
+    <sys:String x:Key="HelpTipOrderCheckEdit">
+        注意：请核验一下每个属性，如果有问题，通知订单输入者修改；没问题请选择合适的策略，状态和优先级
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialNeedEdit">
+        注意：可以自行输入原料需求数据，但推荐利用任务信息填写，原料计算器计算的结果仅供参考
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderEdit">
+        注意：尽量通过选择的方式输入
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialOrderItemEdit">
+        注意：可以自行输入，但最好通过选择[原料需求列表]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryInEdit">
+        注意：可以自行输入，但最好通过选择[原料订单项目]来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipMaterialInventoryOutEdit">
+        注意：可以自行输入，但最好通过选择[原料入库项目]来减少输入时间和错误
+    </sys:String>
+
+
+    <sys:String x:Key="HelpTipPlanVHPEdit">
+        注意：尽量选择，没有自己输入，不需要的项目填充0，同批次同台设备压多个成分任务的时候，要注意设置装料和热压参数相同
+    </sys:String>
+    <sys:String x:Key="HelpTipPlanVHPQuickEdit">
+        注意：尽量选择，没有自己输入，不需要的项目填充0,保存前要认真检查有无错误，有错误及时修改
+    </sys:String>
+    <sys:String x:Key="HelpTipMisson">
+        黄色标记的项目为未核验，核验后该计划才会公布
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMillingEdit">
+        注意：填写一定要规范，可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordVHPQuickEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordDeMoldEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordMachineEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordBondingEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipProductSelect">
+        注意：发货的意思不光使用，还将这个记录的库存状态从库存变成发货
+    </sys:String>
+    <sys:String x:Key="HelpTipRecordTestSelect">
+        注意：下面黄色的记录就是还没有最终完成和确定的测试记录，最好不要选择;
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipDeliveryItemEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+
+
+    <sys:String x:Key="HelpTipStatisticOrder">
+        统计的是订单的数目，不是靶材的数目
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticPlan">
+        统计的是热压次数
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticDelivery">
+        统计的是发货的数目（靶材背板样品各类发货均统计在内）
+    </sys:String>
+    <sys:String x:Key="HelpTipStatisticProduct">
+        统计的是产品的数目
+    </sys:String>
+    <sys:String x:Key="HelpTipOutSourceEdit">
+        注意：可以自行输入，但最好通过选择来减少输入时间和错误
+    </sys:String>
+    <sys:String x:Key="HelpTipOutputEdit">
+        请先选择年份，然后点击对应导出功能的按钮
+    </sys:String>
+</ResourceDictionary>
