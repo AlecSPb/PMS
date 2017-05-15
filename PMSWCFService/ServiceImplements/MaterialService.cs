@@ -7,6 +7,7 @@ using PMSDAL;
 using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using PMSCommon;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -396,12 +397,59 @@ namespace PMSWCFService
 
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtraByYear(int skip, int take, int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSMaterialOrderItemExtra, DcMaterialOrderItemExtra>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && DbFunctions.DiffYears(m.CreateTime, date) == 0
+                                orderby m.CreateTime descending
+                                select new PMSMaterialOrderItemExtra
+                                {
+                                    MaterialOrder = mm,
+                                    MaterialOrderItem = m
+                                };
+                    return mapper.Map<List<PMSMaterialOrderItemExtra>, List<DcMaterialOrderItemExtra>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                 && DbFunctions.DiffYears(m.CreateTime, date) == 0
+                                orderby m.CreateTime descending
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition,

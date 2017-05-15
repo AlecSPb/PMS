@@ -1,1 +1,1 @@
-﻿when use this libs, copy DocTemplate to the root fold of the project.
+﻿Set file type to content and copy when new

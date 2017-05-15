@@ -20,7 +20,6 @@
         <TextBlock Text="{StaticResource PageMaterialOrder}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource MOOrderPO}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  StyleTextBoxSearch}" Width="150"/>
             <TextBlock Text="{StaticResource MOSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
@@ -52,12 +51,6 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
-                                            Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                            CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonAddChild}" Style="{StaticResource StyleDGButton}" 
-                                            Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                            CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                             </StackPanel>
@@ -147,7 +140,7 @@
         <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGridCommon}"
                           ItemsSource="{Binding MaterialOrderItems}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                <!--<DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -157,7 +150,7 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTemplateColumn Header="{StaticResource MOICreateTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

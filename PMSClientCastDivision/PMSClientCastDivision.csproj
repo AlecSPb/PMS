@@ -184,9 +184,6 @@
     <Compile Include="View\MaterialOrderItemListView.xaml.cs">
       <DependentUpon>MaterialOrderItemListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaterialOrderListView.xaml.cs">
-      <DependentUpon>MaterialOrderListView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MaterialOrderView.xaml.cs">
       <DependentUpon>MaterialOrderView.xaml</DependentUpon>
     </Compile>
@@ -303,10 +300,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MaterialOrderItemListView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialOrderListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -463,54 +456,54 @@
     <None Include="Service References\UserSimpleService\UserSimpleService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Resource Include="Resource\Images\main.png">
+    <Content Include="Resource\Images\main.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\main.ico">
+    </Content>
+    <Content Include="Resource\Images\main.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\funnyfacebig.jpg">
+    </Content>
+    <Content Include="Resource\Images\funnyfacebig.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\funnyface.png">
+    </Content>
+    <Content Include="Resource\Images\funnyface.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\funnyface.ico">
+    </Content>
+    <Content Include="Resource\Images\funnyface.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\crm.png">
+    </Content>
+    <Content Include="Resource\Images\crm.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\crm.ico">
+    </Content>
+    <Content Include="Resource\Images\crm.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\chart.png">
+    </Content>
+    <Content Include="Resource\Images\chart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\Images\chart.ico">
+    </Content>
+    <Content Include="Resource\Images\chart.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="Resource\Icons\lightbulb.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resource\HelpImages\workflow2.png">
+    <Content Include="Resource\HelpImages\workflow2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\workflow.png">
+    </Content>
+    <Content Include="Resource\HelpImages\workflow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\productionlabel.png">
+    </Content>
+    <Content Include="Resource\HelpImages\productionlabel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\materialorder.png">
+    </Content>
+    <Content Include="Resource\HelpImages\materialorder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\deliverysheet.png">
+    </Content>
+    <Content Include="Resource\HelpImages\deliverysheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\blanktarget.jpg">
+    </Content>
+    <Content Include="Resource\HelpImages\blanktarget.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="Resource\DocTemplate\Reports\Temp\DoNotDeleteThisFolder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -525,43 +518,10 @@
     </None>
     <AppDesigner Include="Properties\" />
     <Resource Include="ReadMe.txt" />
-    <Content Include="Resource\DocTemplate\BarTender101\产品标签.btw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\BarTender101\发货单.btw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\BarTender101\毛坯标签.btw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Doc\加工临时记录单.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\COA.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\COABridgeLine.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\DeliverySheet.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resource\DocTemplate\Reports\MaterialOrder.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\MaterialOrderHorizontal.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\RecordTest.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\ReportOpticraft440.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\ReportRecordVHP.docx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resource\DocTemplate\Reports\ReportTCB440.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -569,56 +529,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Documents\notices.txt">
+    <Content Include="Documents\notices.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Documents\stdcomposition.txt">
+    <Content Include="Documents\stdcomposition.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Documents\updates.txt">
+    <Content Include="Documents\updates.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\10.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\20.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\30.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\40.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\50.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\52.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\60.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\70.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\71.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resource\Bondings\80.PNG" />
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\DocTemplate\Attention.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resource\Bondings\" />
+    <Folder Include="Resource\DocTemplate\BarTender101\" />
+    <Folder Include="Resource\DocTemplate\Doc\" />
     <Folder Include="Resource\Files\" />
     <Folder Include="ViewModel\Model\" />
     <Folder Include="ViewModel\VMHelper\" />

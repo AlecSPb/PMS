@@ -53,56 +53,10 @@ namespace PMSClient.ViewModel
         {
             Notice = new RelayCommand(ActionNotice);
 
-
-
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
-            GoToNavigationWorkFlow = new RelayCommand(() => NavigationService.GoTo(PMSViews.NavigationWorkFlow));
-
-            GoToOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order), () => _session.IsAuthorized(PMSAccess.ReadOrder));
-            GoToOrderCheck = new RelayCommand(() => NavigationService.GoTo(PMSViews.OrderCheck), () => _session.IsAuthorized(PMSAccess.ReadOrderCheck));
-            GoToOutSource = new RelayCommand(() => NavigationService.GoTo(PMSViews.OutSource), () => _session.IsAuthorized(PMSAccess.ReadOutSource));
-
-            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed), () => _session.IsAuthorized(PMSAccess.ReadMaterialNeed));
             GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder));
             GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn), () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
 
-            GoToPlate = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate), () => _session.IsAuthorized(PMSAccess.ReadPlate));
-
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), () => _session.IsAuthorized(PMSAccess.ReadMisson));
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), () => _session.IsAuthorized(PMSAccess.ReadPlan));
-
-
-            GoToRecordMilling = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling), () => _session.IsAuthorized(PMSAccess.ReadRecordMilling));
-            GoToRecordVHP = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHP), () => _session.IsAuthorized(PMSAccess.ReadRecordVHP));
-            GoToRecordDeMold = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordDeMold), () => _session.IsAuthorized(PMSAccess.ReadRecordDeMold));
-            GoToRecordMachine = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMachine), () => _session.IsAuthorized(PMSAccess.ReadRecordMachine));
-            GoToRecordTest = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordTest), () => _session.IsAuthorized(PMSAccess.ReadRecordTest));
-            GoToRecordBonding = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordBonding), () => _session.IsAuthorized(PMSAccess.ReadRecordBonding));
-
-
-            GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product), () => _session.IsAuthorized(PMSAccess.ReadProduct));
-            GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
-
-            GoToMaintenance = new RelayCommand(() => NavigationService.GoTo(PMSViews.Maintanence), () => _session.IsAuthorized(PMSAccess.ReadMaintenance));
-            GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer));
-
-            #region 临时
-            //GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound), () => _session.IsAuthorized("浏览化合物信息"));
-            //GoToBDVHPDevice = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDVHPDevice), () => _session.IsAuthorized("浏览热压设备信息"));
-            //GoToBDMold = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDMold), () => _session.IsAuthorized("浏览模具信息"));
-            //GoToBDDeliveryAddress = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDDeliveryAddress), () => _session.IsAuthorized("浏览发货地址信息"));
-            //GoToBDSupplier = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDSupplier), () => _session.IsAuthorized("浏览供应商信息"));
-
-            //GoToAdminUser = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminUser), () => _session.IsAuthorized("浏览用户信息"));
-            //GoToAdminRole = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminRole), () => _session.IsAuthorized("浏览角色信息"));
-            //GoToAdminAccess = new RelayCommand(() => NavigationService.GoTo(PMSViews.AdminAccess), () => _session.IsAuthorized("浏览权限信息"));
-            #endregion
-            GoToStatisticOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticOrder), () => _session.IsAuthorized(PMSAccess.ReadStatisticOrder));
-            GoToStatisticPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticPlan), () => _session.IsAuthorized(PMSAccess.ReadStatisticPlan));
-            GoToStatisticDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticDelivery), () => _session.IsAuthorized(PMSAccess.ReadStatisticDelivery));
-            GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(PMSAccess.ReadStatisticProduct));
-
-            GoToFeedBack = new RelayCommand(() => NavigationService.GoTo(PMSViews.FeedBack), () => _session.IsAuthorized(PMSAccess.ReadFeedback));
             GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
 
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
@@ -114,51 +68,11 @@ namespace PMSClient.ViewModel
         }
 
         public RelayCommand GoToNavigation { get; set; }
-        public RelayCommand GoToNavigationWorkFlow { get; set; }
-        public RelayCommand GoToOrder { get; private set; }
-        public RelayCommand GoToOrderCheck { get; private set; }
-        public RelayCommand GoToOutSource { get; private set; }
-
-        public RelayCommand GoToMisson { get; private set; }
-        public RelayCommand GoToPlan { get; private set; }
-
-
-        public RelayCommand GoToPlate { get; private set; }
-
-        public RelayCommand GoToMaterialNeed { get; private set; }
         public RelayCommand GoToMaterialOrder { get; private set; }
         public RelayCommand GoToMaterialInventory { get; private set; }
 
-        public RelayCommand GoToRecordMilling { get; private set; }
-        public RelayCommand GoToRecordVHP { get; private set; }
-        public RelayCommand GoToRecordDeMold { get; private set; }
-        public RelayCommand GoToRecordMachine { get; private set; }
-        public RelayCommand GoToRecordTest { get; private set; }
-        public RelayCommand GoToRecordBonding { get; private set; }
-
-
-        public RelayCommand GoToProduct { get; private set; }
-        public RelayCommand GoToDelivery { get; private set; }
-
-        public RelayCommand GoToStatisticOrder { get; private set; }
-        public RelayCommand GoToStatisticDelivery { get; private set; }
-        public RelayCommand GoToStatisticPlan { get; private set; }
-        public RelayCommand GoToStatisticProduct { get; private set; }
-
-        public RelayCommand GoToMaintenance { get; set; }
-        public RelayCommand GoToBDCustomer { get; set; }
-        public RelayCommand GoToBDCompound { get; set; }
-        public RelayCommand GoToBDVHPDevice { get; set; }
-        public RelayCommand GoToBDMold { get; set; }
-        public RelayCommand GoToBDDeliveryAddress { get; set; }
-        public RelayCommand GoToBDSupplier { get; set; }
-
         public RelayCommand GoToFeedBack { get; set; }
         public RelayCommand GoToOutput { get; set; }
-
-        //public RelayCommand GoToAdminUser { get; set; }
-        //public RelayCommand GoToAdminRole { get; set; }
-        //public RelayCommand GoToAdminAccess { get; set; }
         #endregion
 
         public RelayCommand Notice { get; set; }

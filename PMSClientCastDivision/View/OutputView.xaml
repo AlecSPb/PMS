@@ -32,21 +32,16 @@
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="200"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Background="Wheat">
-                    <Button Content="{StaticResource OutputOrder}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputOrder}"/>
+                    <!--<Button Content="{StaticResource OutputOrder}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputOrder}"/>-->
                     <!--<Button Content="{StaticResource OutputMaterialOrder}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialOrder}"/>
                     <Button Content="{StaticResource OutputMaterialInventoryIn}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialInventoryIn}"/>
                     <Button Content="{StaticResource OutputMaterialInventoryOut}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputMaterialInventoryOut}"/>
                     <Button Content="{StaticResource OutputDeliveryItem}" Style="{StaticResource StyleButtonStretch}" Command="{Binding OutputDeliveryItem}"/>-->
-
-                </StackPanel>
-                <StackPanel Grid.Column="1" Background="Wheat">
                     <!--<Button Content="{StaticResource OutputItemCredit}" Style="{StaticResource StyleButtonStretch}"/>-->
-
                 </StackPanel>
             </Grid>
         </Grid>

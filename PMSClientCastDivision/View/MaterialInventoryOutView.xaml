@@ -17,7 +17,6 @@
         <TextBlock Text="{StaticResource PageMaterialInventoryOut}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource MIOComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
@@ -36,7 +35,7 @@
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryOuts}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                <!--<DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -46,7 +45,7 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="{StaticResource MIOCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MIOMaterialLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"

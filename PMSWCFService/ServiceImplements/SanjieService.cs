@@ -68,6 +68,7 @@ namespace PMSWCFService
 
                     var query = from o in dc.MaterialInventoryIns
                                 where o.State != PMSCommon.InventoryState.作废.ToString()
+                                && o.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                  && DbFunctions.DiffYears(o.CreateTime, date) == 0
                                 orderby o.CreateTime descending
                                 select o;
@@ -80,7 +81,28 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        public int GetMaterialInventoryInCountByYear(int year)
+        {
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.MaterialInventoryIns
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
+                                && o.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
         public int GetMaterialInventoryInCount(string composition, string batchnumber, string pminumber)
         {
             try
@@ -105,27 +127,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMaterialInventoryInCountByYear(int year)
-        {
-            try
-            {
-                var date = new DateTime(year, 1, 1);
-                using (var dc = new PMSDbContext())
-                {
-                    var query = from o in dc.MaterialInventoryIns
-                                where o.State != PMSCommon.InventoryState.作废.ToString()
-                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
-                                orderby o.CreateTime descending
-                                select o;
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
+
 
         public List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber)
         {
@@ -179,30 +181,6 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMaterialInventoryOutCountByYear(int year)
-        {
-            try
-            {
-                var date = new DateTime(year, 1, 1);
-                using (var dc = new PMSDbContext())
-                {
-                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
-
-                    var query = from o in dc.MaterialInventoryOuts
-                                where o.State != PMSCommon.SimpleState.作废.ToString()
-                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
-                                orderby o.CreateTime descending
-                                select o;
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
-
         public List<DcMaterialInventoryOut> GetMaterialInventoryOuts(int skip, int take, string composition, string batchnumber, string pminumber)
         {
             try
@@ -229,6 +207,31 @@ namespace PMSWCFService
             }
         }
 
+        public int GetMaterialInventoryOutCountByYear(int year)
+        {
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
+
+                    var query = from o in dc.MaterialInventoryOuts
+                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                && o.Receiver.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year)
         {
             try
@@ -240,6 +243,7 @@ namespace PMSWCFService
 
                     var query = from o in dc.MaterialInventoryOuts
                                 where o.State != PMSCommon.SimpleState.作废.ToString()
+                                && o.Receiver.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 && DbFunctions.DiffYears(o.CreateTime, date) == 0
                                 orderby o.CreateTime descending
                                 select o;
@@ -327,12 +331,61 @@ namespace PMSWCFService
 
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtraByYear(int skip, int take, int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSMaterialOrderItemExtra, DcMaterialOrderItemExtra>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && DbFunctions.DiffYears(m.CreateTime, date) == 0
+                                && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                orderby m.CreateTime descending
+                                select new PMSMaterialOrderItemExtra
+                                {
+                                    MaterialOrder = mm,
+                                    MaterialOrderItem = m
+                                };
+                    return mapper.Map<List<PMSMaterialOrderItemExtra>, List<DcMaterialOrderItemExtra>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetMaterialOrderItemExtraCountByYear(string composition, string pminumber, int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                 && DbFunctions.DiffYears(m.CreateTime, date) == 0
+                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                orderby m.CreateTime descending
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber)
