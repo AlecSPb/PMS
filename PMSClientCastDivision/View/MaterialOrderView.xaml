@@ -21,7 +21,7 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource MOOrderPO}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  StyleTextBoxSearch}" Width="150"/>
+            <TextBox Text="{Binding SearchOrderPO,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource  StyleTextBoxSearch}" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonMaterialOrderItemList}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialOrderItemList}"/>
@@ -132,11 +132,18 @@
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock Text="注意:每个订单的项目尽量不要超过5" Style="{StaticResource StyleTextBlockWarning}"
+            <TextBlock Text="注意:项目数尽量不要超过13" Style="{StaticResource StyleTextBlockWarning}"
                        Foreground="Black"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}"
+                           Background="{StaticResource CompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
+
         </StackPanel>
         <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGridCommon}"
-                          ItemsSource="{Binding MaterialOrderItems}">
+                          ItemsSource="{Binding MaterialOrderItems}" LoadingRow="DataGrid_LoadingRow_1">
             <DataGrid.Columns>
                 <!--<DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>

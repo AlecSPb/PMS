@@ -21,10 +21,10 @@
             <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding GiveUp}"/>
             <TextBlock Text="{StaticResource SearchVHPDate}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchVHPDate,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <TextBlock Text="{StaticResource SearchComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
             <!--<Button Content="{StaticResource ButtonMisson}" Style="{StaticResource  StyleButtonSpecial}"  Command="{Binding GoToMisson}"/>-->

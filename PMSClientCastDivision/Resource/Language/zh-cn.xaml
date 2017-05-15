@@ -89,9 +89,9 @@
 
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
-    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]-从三杰到先锋</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]-从先锋到三杰</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
     <sys:String x:Key="PageMaterialInventoryOutEdit">原料库存[出库]编辑</sys:String>
 

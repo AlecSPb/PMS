@@ -19,16 +19,16 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource MIOComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIOMaterialLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchMaterialLot,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchMaterialLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIOReceiver}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchReceiver,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchReceiver,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIOPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>

@@ -23,10 +23,10 @@
                     Command="{Binding  Add}"/>
             <TextBlock Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <TextBlock Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStd,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

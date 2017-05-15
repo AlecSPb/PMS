@@ -20,10 +20,10 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="{StaticResource PlateLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource PlateSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>

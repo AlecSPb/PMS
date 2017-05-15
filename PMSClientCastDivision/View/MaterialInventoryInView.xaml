@@ -18,20 +18,17 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource MIIComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIIMaterialLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchMaterialLot,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchMaterialLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIIPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonMaterialInventoryOut}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialInventoryOut}"/>
-            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
-            <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>
 
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryIns}"
@@ -50,8 +47,6 @@
                 </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="{StaticResource MIICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource MIIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource MIIMaterialLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding MaterialLot}"/>
                 <DataGridTextColumn Header="{StaticResource MIIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

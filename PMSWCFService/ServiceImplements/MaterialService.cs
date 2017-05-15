@@ -269,7 +269,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.State != OrderState.作废.ToString()
+                                where m.State != CommonState.作废.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
@@ -291,7 +291,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != OrderState.作废.ToString()).Count();
+                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != CommonState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)

@@ -21,7 +21,7 @@
                     Command="{Binding GiveUp}" />
             <TextBlock Text="{StaticResource RMMVHPPlanLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding  SearchVHPPlanLot,UpdateSourceTrigger=PropertyChanged}"
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
             <!--图例-->

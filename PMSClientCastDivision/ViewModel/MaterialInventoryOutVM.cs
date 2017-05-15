@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            searchComposition = searchMaterialLot = searchPMINumber = searchReceiver = "";
+            searchComposition = searchMaterialLot = searchPMINumber = "";
             MaterialInventoryOuts = new ObservableCollection<DcMaterialInventoryOut>();
         }
         private void InitializeCommands()
@@ -37,48 +37,20 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
 
-            Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcMaterialInventoryOut>(ActionEdit, CanEdit);
-
             GoToMaterialInventoryIn = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn),
-                () => PMSHelper.CurrentSession.IsAuthorized("浏览原料库存"));
+                () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
 
-        }
-
-        private bool CanEdit(DcMaterialInventoryOut arg)
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料库存");
-        }
-
-        private bool CanAdd()
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料库存");
-        }
-
-        private void ActionEdit(DcMaterialInventoryOut model)
-        {
-            if (model != null)
-            {
-                //PMSHelper.ViewModels.MaterialInventoryOutEdit.SetEdit(model);
-                //NavigationService.GoTo(PMSViews.MaterialInventoryOutEdit);
-            }
-        }
-
-        private void ActionAdd()
-        {
-            //PMSHelper.ViewModels.MaterialInventoryOutEdit.SetNew();
-            //NavigationService.GoTo(PMSViews.MaterialInventoryOutEdit);
         }
 
         private bool CanSearch()
         {
             return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchMaterialLot)
-                && string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchReceiver));
+                && string.IsNullOrEmpty(SearchPMINumber));
         }
 
         private void ActionAll()
         {
-            SearchComposition = SearchMaterialLot = SearchPMINumber = SearchReceiver = "";
+            SearchComposition = SearchMaterialLot = SearchPMINumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -92,8 +64,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new SanjieServiceClient();
-            //RecordCount = service.GetMaterialInventoryOutCountBySearch(SearchReceiver, SearchComposition,
-                //SearchMaterialLot, SearchPMINumber);
+            RecordCount = service.GetMaterialInventoryOutCount(SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -106,11 +77,10 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new SanjieServiceClient();
-            //var result = service.GetMaterialInventoryOutsBySearch(skip, take, SearchReceiver, SearchComposition,
-                //SearchMaterialLot, SearchPMINumber);
+            var result = service.GetMaterialInventoryOuts(skip, take, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             MaterialInventoryOuts.Clear();
-            //result.ToList().ForEach(o => MaterialInventoryOuts.Add(o));
+            result.ToList().ForEach(o => MaterialInventoryOuts.Add(o));
         }
 
         #region Proeperties
@@ -132,14 +102,6 @@ namespace PMSClient.ViewModel
             get { return searchMaterialLot; }
             set { searchMaterialLot = value; RaisePropertyChanged(nameof(SearchMaterialLot)); }
         }
-
-        private string searchReceiver;
-        public string SearchReceiver
-        {
-            get { return searchReceiver; }
-            set { searchReceiver = value; RaisePropertyChanged(nameof(SearchReceiver)); }
-        }
-
         private string searchPMINumber;
         public string SearchPMINumber
         {
@@ -161,8 +123,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Add { get; private set; }
-        public RelayCommand<DcMaterialInventoryOut> Edit { get; private set; }
 
         public RelayCommand GoToMaterialInventoryIn { get; set; }
         #endregion

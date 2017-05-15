@@ -50,7 +50,7 @@ namespace PMSClient.View
                     default:
                         break;
                 }
-                if (order.State==OrderState.未完成.ToString() && order.Priority ==OrderPriority.紧急.ToString())
+                if (order.State == OrderState.未完成.ToString() && order.Priority == OrderPriority.紧急.ToString())
                 {
                     e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }
@@ -58,8 +58,32 @@ namespace PMSClient.View
             }
         }
 
-
-
-
+        private void DataGrid_LoadingRow_1(object sender, DataGridRowEventArgs e)
+        {
+            DcMaterialOrderItem order = (DcMaterialOrderItem)e.Row.DataContext;
+            if (order != null)
+            {
+                switch (order.State)
+                {
+                    case "未核验":
+                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                        break;
+                    case "暂停":
+                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                        break;
+                    case "未完成":
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                        break;
+                    case "完成":
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                        break;
+                    case "紧急":
+                        e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

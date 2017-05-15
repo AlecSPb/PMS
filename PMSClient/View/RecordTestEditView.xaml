@@ -116,7 +116,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxBig}"
-                          Width="150"/>
+                          Width="160"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="btnResistance_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm"/>

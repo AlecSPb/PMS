@@ -282,7 +282,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="{StaticResource RVHPCurrentTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Width="150"
+                        <DataGridTextColumn Header="{StaticResource RVHPCurrentTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Width="160"
                                         Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                         <DataGridTextColumn Header="{StaticResource RVHPPV1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                         Binding="{Binding PV1}"/>

@@ -243,6 +243,7 @@
 
     <Style x:Key="StyleTextBoxSearch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="Background" Value="White"/>
+        <Setter Property="Width" Value="100"/>
     </Style>
 
     <Style x:Key="StyleTextBoxBig" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">

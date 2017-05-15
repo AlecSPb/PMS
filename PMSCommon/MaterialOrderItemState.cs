@@ -10,6 +10,7 @@ namespace PMSCommon
     public enum MaterialOrderItemState
     {
         作废,
+        紧急,
         未完成,
         暂停,
         完成

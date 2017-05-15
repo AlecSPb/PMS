@@ -20,10 +20,10 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource SearchVHPDate}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchVHPDate,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <TextBlock Text="{StaticResource SearchComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
-                     Style="{StaticResource StyleTextBoxSearch }" Width="150"/>
+                     Style="{StaticResource StyleTextBoxSearch }" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
             <Button Content="{StaticResource ButtonQuick}" Style="{StaticResource StyleButtonSpecial}"
@@ -110,7 +110,7 @@
             <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
                       ItemsSource="{Binding RecordVHPs}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="{StaticResource RVHPCurrentTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Width="150"
+                    <DataGridTextColumn Header="{StaticResource RVHPCurrentTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}" Width="160"
                                         Binding="{Binding CurrentTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                     <DataGridTextColumn Header="{StaticResource RVHPPV1}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                         Binding="{Binding PV1}"/>

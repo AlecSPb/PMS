@@ -19,13 +19,13 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
             <TextBlock Text="{StaticResource MOIOrderItemNumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchOrderItemNumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchOrderItemNumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MOIPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MOIComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" Width="150"
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
@@ -33,6 +33,8 @@
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
+
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
                           ItemsSource="{Binding MaterialOrderItemExtras}" LoadingRow="DataGrid_LoadingRow">
