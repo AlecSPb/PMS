@@ -504,9 +504,9 @@
     <Content Include="Resource\HelpImages\blanktarget.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resource\DocTemplate\Reports\Temp\DoNotDeleteThisFolder.txt">
+    <Content Include="Resource\DocTemplate\Reports\Temp\DoNotDeleteThisFolder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

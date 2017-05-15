@@ -62,6 +62,10 @@ namespace PMSClient.ReportsHelper
         {
             try
             {
+                if (!Directory.Exists(ReportsTemplateTempFolder))
+                {
+                    Directory.CreateDirectory(ReportsTemplateTempFolder);
+                }
                 if (File.Exists(targetFile))
                 {
                     File.Delete(targetFile);

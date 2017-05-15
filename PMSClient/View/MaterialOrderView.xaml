@@ -158,6 +158,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOICreateTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
