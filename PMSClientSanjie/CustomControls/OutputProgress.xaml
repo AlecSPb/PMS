@@ -1,0 +1,21 @@
+﻿<Window x:Class="PMSClient.CustomControls.OutputProgress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.CustomControls"
+        mc:Ignorable="d"
+        Title="OutputProgress" Height="100" Width="300" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" TextWrapping="WrapWithOverflow" Style="{StaticResource StyleDGTextBlockCommon}">
+            正在导出数据，请耐心等候
+        </TextBlock>
+        <ProgressBar Grid.Row="1" Name="pb" Height="20" Margin="2" Value="30" Maximum="100"/>
+    </Grid>
+</Window>

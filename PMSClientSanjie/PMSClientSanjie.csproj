@@ -78,6 +78,60 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
+      <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\BondingEditItem.xaml.cs">
+      <DependentUpon>BondingEditItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\NoticeWindow.xaml.cs">
+      <DependentUpon>NoticeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\OutputProgress.xaml.cs">
+      <DependentUpon>OutputProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\PMSMessageBox.xaml.cs">
+      <DependentUpon>PMSMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
+      <DependentUpon>ProgressIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Converter\VisibilityConverter.cs" />
+    <Compile Include="Helpers\MsgObject.cs" />
+    <Compile Include="Helpers\OK\BasicData.cs" />
+    <Compile Include="Helpers\OK\ILog.cs" />
+    <Compile Include="Helpers\OK\LocalLog.cs" />
+    <Compile Include="Helpers\OK\LogInformation.cs" />
+    <Compile Include="Helpers\OK\MainNavigationToken.cs" />
+    <Compile Include="Helpers\OK\NavigationService.cs" />
+    <Compile Include="Helpers\OK\PMSAccess.cs" />
+    <Compile Include="Helpers\OK\PMSBasicDataService.cs" />
+    <Compile Include="Helpers\OK\PMSDialogService.cs" />
+    <Compile Include="Helpers\OK\PMSFolderPath.cs" />
+    <Compile Include="Helpers\OK\PMSMethods.cs" />
+    <Compile Include="Helpers\OK\PMSNotice.cs" />
+    <Compile Include="Helpers\OK\PMSViews.cs" />
+    <Compile Include="Helpers\PMSStatus.cs" />
+    <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculation.cs" />
+    <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculationItem.cs" />
+    <Compile Include="Helpers\UserfullPackage\PMSTranslate.cs" />
+    <Compile Include="Helpers\UserfullPackage\StateProcess.cs" />
+    <Compile Include="Helpers\UserfullPackage\TargetDensity.cs" />
+    <Compile Include="Helpers\UserfullPackage\TargetDensityCalculation.cs" />
+    <Compile Include="Helpers\UserfullPackage\TargetDensityCalculationItem.cs" />
+    <Compile Include="Helpers\VToken.cs" />
+    <Compile Include="ReportsHelper\ExcelOrder.cs" />
+    <Compile Include="ReportsHelper\ReportBase.cs" />
+    <Compile Include="ReportsHelper\ReportHelper.cs" />
+    <Compile Include="ReportsHelper\WordCOA.cs" />
+    <Compile Include="ReportsHelper\WordCOABridgeLine.cs" />
+    <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
+    <Compile Include="ReportsHelper\WordMaterialOrder.cs" />
+    <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
+    <Compile Include="ReportsHelper\WordOpticraft440.cs" />
+    <Compile Include="ReportsHelper\WordRecordTest.cs" />
+    <Compile Include="ReportsHelper\WordTCB440.cs" />
+    <Compile Include="ReportsHelper\WordVHP.cs" />
     <Compile Include="Service References\SanjieService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +160,30 @@
     </Compile>
     <Compile Include="View\SanjieViewLocator.cs" />
     <Compile Include="ViewModel\SanjieViewModelLocator.cs" />
+    <Page Include="CustomControls\BatchDuplicateDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\BondingEditItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\NoticeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\OutputProgress.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\PMSMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomControls\ProgressIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -169,6 +247,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcItemDebit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialInventoryIn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialInventoryOut.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrderItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SanjieService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SanjieService\configuration.svcinfo" />
+    <None Include="Service References\SanjieService\configuration91.svcinfo" />
+    <None Include="Service References\SanjieService\SanjieService.disco" />
+    <None Include="Service References\SanjieService\SanjieService.wsdl" />
+    <None Include="Service References\SanjieService\SanjieService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUserAccess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUserRole.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserSimpleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserSimpleService\configuration.svcinfo" />
+    <None Include="Service References\UserSimpleService\configuration91.svcinfo" />
+    <None Include="Service References\UserSimpleService\UserSimpleService.disco" />
+    <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
+    <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\UserSimpleService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSimpleService\UserSimpleService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <Resource Include="Resource\Images\main.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -230,6 +369,15 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="Documents\notices.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Documents\stdcomposition.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Documents\updates.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resource\DocTemplate\BarTender101\产品标签.btw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -269,53 +417,6 @@
     <Content Include="Resource\DocTemplate\Reports\ReportTCB440.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcItemDebit.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialInventoryIn.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialInventoryOut.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrder.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrderItem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SanjieService\PMSClientSanjie.SanjieService.DcMaterialOrderItemExtra.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SanjieService\SanjieService.wsdl" />
-    <None Include="Service References\SanjieService\SanjieService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SanjieService\SanjieService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SanjieService\SanjieService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUser.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUserAccess.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserSimpleService\PMSClientSanjie.UserSimpleService.DcUserRole.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
-    <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -326,36 +427,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\SanjieService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SanjieService\SanjieService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SanjieService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SanjieService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SanjieService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSimpleService\UserSimpleService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSimpleService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSimpleService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSimpleService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Bondings\10.png">

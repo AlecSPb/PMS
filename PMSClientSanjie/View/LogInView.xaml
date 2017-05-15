@@ -30,8 +30,6 @@
                     <TextBlock  Style="{StaticResource StyleLogInWaterPrint}" Text="密码" Foreground="{StaticResource ControlBorderBrush}" HorizontalAlignment="Right"/>
                     <PasswordBox Name="txtPassword"  Style="{StaticResource StyleLogInPwd}" Background="Transparent"/>
                 </Grid>
-
-
                 <CheckBox Name="chkRemember" Grid.Row="2" Content="记住用户名和密码" Style="{StaticResource StyleLogInCheckBox}"
                       Click="chkRemember_Click"/>
                 <Button Grid.Row="3" Content="登录" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
@@ -44,7 +42,7 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
-            <TextBlock Name="txtInformation" Text="PMS生产管理系统"
+            <TextBlock Name="txtInformation" Text="PMS生产管理系统-三杰专用"
                        FontSize="20" Margin="5"/>
             <TextBox  Name="txtNotice" Grid.Row="1" Margin="5" Background="Transparent" Foreground="Gray" VerticalScrollBarVisibility="Visible"
                       AcceptsReturn="True" Text="" IsReadOnly="True" FontSize="14"/>

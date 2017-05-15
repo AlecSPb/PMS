@@ -1,0 +1,16 @@
+﻿成分
+标准的写法[要]：
+Cu22.7In20Ga7Se50.2
+Cu22.7In20Ga7Se50.2+Na2S2%+NaF2%
+In2Se3
+
+
+非标准的写法[不要]:
+Ge(21.1)Sb(21.1)Te(47.6)Se(10.2) atomic%
+As9Te7   AS56.25Te43.75
+GaSe Ga50Se50 (Line#2)
+Cu2S-替换
+Cu0.88In0.7Ga0.3Se2(Cu22.68In18.04Ga7.73Se51.55)
+Se51.0As30.6Ge12.7Si5.7  V12
+C(3.0)Ge(20.5)Sb(19.4)Bi(1.2)Te(46.4)Se(9.5)at
+Cu22.8In23Ga4Se50.2+RbF-2%[mol]+Na2S-2%[mol]
