@@ -7,6 +7,7 @@ using PMSWCFService.DataContracts;
 using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSCommon;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -58,7 +59,26 @@ namespace PMSWCFService
 
         public List<DcMaterialInventoryIn> GetMaterialInventoryInByYear(int skip, int take, int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
+
+                    var query = from o in dc.MaterialInventoryIns
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
+                                 && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+                    return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetMaterialInventoryInCount(string composition, string batchnumber, string pminumber)
@@ -87,7 +107,24 @@ namespace PMSWCFService
 
         public int GetMaterialInventoryInCountByYear(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.MaterialInventoryIns
+                                where o.State != PMSCommon.InventoryState.作废.ToString()
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber)
@@ -144,7 +181,26 @@ namespace PMSWCFService
 
         public int GetMaterialInventoryOutCountByYear(int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
+
+                    var query = from o in dc.MaterialInventoryOuts
+                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcMaterialInventoryOut> GetMaterialInventoryOuts(int skip, int take, string composition, string batchnumber, string pminumber)
@@ -175,7 +231,26 @@ namespace PMSWCFService
 
         public List<DcMaterialInventoryOut> GetMaterialInventoryOutsByYear(int skip, int take, int year)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var date = new DateTime(year, 1, 1);
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>());
+
+                    var query = from o in dc.MaterialInventoryOuts
+                                where o.State != PMSCommon.SimpleState.作废.ToString()
+                                && DbFunctions.DiffYears(o.CreateTime, date) == 0
+                                orderby o.CreateTime descending
+                                select o;
+                    return Mapper.Map<List<MaterialInventoryOut>, List<DcMaterialInventoryOut>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public List<DcMaterialOrder> GetMaterialOrder(int skip, int take, string orderPo)
