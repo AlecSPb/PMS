@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft;
 using GalaSoft.MvvmLight;
-using PMSClient.MainService;
+using PMSClient.SanjieService;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.ReportsHelper;
 
@@ -32,9 +32,9 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            ExcelOrder report = new ExcelOrder();
-            report.Year = CurrentYear;
-            report.Output();
+            //ExcelOrder report = new ExcelOrder();
+            //report.Year = CurrentYear;
+            //report.Output();
         }
 
         public RelayCommand OutputOrder { get; set; }

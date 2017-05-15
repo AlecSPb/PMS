@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:PMSClient"
-                    xmlns:tool="clr-namespace:PMSClient.Tool"
-                    xmlns:vm="clr-namespace:PMSClient.ViewModel">
-    <vm:ViewModelLocator x:Key="Locator"/>
+                    xmlns:vm="clr-namespace:PMSClient.ViewModel"
+                    xmlns:tool="clr-namespace:PMSClient.Tool">
     <tool:ToolViewModelLocator x:Key="ToolLocator"/>
+    <vm:ViewModelLocator x:Key="Locator"/>
 </ResourceDictionary>

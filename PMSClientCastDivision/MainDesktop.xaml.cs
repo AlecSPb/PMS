@@ -20,6 +20,7 @@ using PMSClient.Tool;
 using System.Timers;
 using fm = System.Windows.Forms;
 using System.Windows.Threading;
+using PMSClientCastDivision;
 
 namespace PMSClient
 {
@@ -136,7 +137,7 @@ namespace PMSClient
         private void InitializeTray()
         {
             _notifyIcon = new fm.NotifyIcon();
-            _notifyIcon.Text = "PMS生产管理系统";
+            _notifyIcon.Text = "PMS生产管理系统_三杰";
             _notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
             _notifyIcon.Visible = true;
 

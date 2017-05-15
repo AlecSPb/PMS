@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
-using PMSClient.MainService;
+using PMSClient.SanjieService;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

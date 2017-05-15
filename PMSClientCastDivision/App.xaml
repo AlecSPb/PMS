@@ -7,6 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="VMLocator.xaml"/>
                 <ResourceDictionary Source="Resource/CommonBrushes.xaml" />
                 <ResourceDictionary Source="Resource/Language/zh-cn.xaml" />
                 <ResourceDictionary Source="Resource/Styles/XSStyle.xaml"/>

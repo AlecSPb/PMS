@@ -35,6 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
       <Private>True</Private>
@@ -47,12 +59,41 @@
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.6\lib\net45\LiveCharts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.6.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.6\lib\net45\LiveCharts.Wpf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
@@ -81,18 +122,22 @@
     <Compile Include="MainDesktop.xaml.cs">
       <DependentUpon>MainDesktop.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReportsHelper\ExcelOrder.cs" />
+    <Compile Include="PMSHelper.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\ReportHelper.cs" />
-    <Compile Include="ReportsHelper\WordCOA.cs" />
-    <Compile Include="ReportsHelper\WordCOABridgeLine.cs" />
-    <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrder.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
-    <Compile Include="ReportsHelper\WordOpticraft440.cs" />
-    <Compile Include="ReportsHelper\WordRecordTest.cs" />
-    <Compile Include="ReportsHelper\WordTCB440.cs" />
-    <Compile Include="ReportsHelper\WordVHP.cs" />
+    <Compile Include="Service References\BasicService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\HeartBeatService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SanjieService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,19 +147,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Tool\DensityEstamatorView.xaml.cs">
-      <DependentUpon>DensityEstamatorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tool\DensityEstamatorVM.cs" />
-    <Compile Include="Tool\HelpImagePathConverter.cs" />
-    <Compile Include="Tool\LabelOutPutView.xaml.cs">
-      <DependentUpon>LabelOutPutView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tool\LabelOutPutVM.cs" />
-    <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
-    <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
-      <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
@@ -126,125 +158,26 @@
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
-    <Compile Include="ViewModel\CustomerEditVM.cs" />
-    <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
-    <Compile Include="ViewModel\DeliveryEditVM.cs" />
-    <Compile Include="ViewModel\DeliveryItemEditVM.cs" />
-    <Compile Include="ViewModel\DeliveryItemListVM.cs" />
-    <Compile Include="ViewModel\DeliveryStatisticVM.cs" />
-    <Compile Include="ViewModel\DeliveryVM.cs" />
-    <Compile Include="ViewModel\FeedBackEditVM.cs" />
-    <Compile Include="ViewModel\FeedBackVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MaterialInventoryInEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInSelectVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
-    <Compile Include="ViewModel\MaterialNeedEditVM.cs" />
-    <Compile Include="ViewModel\MaterialNeedSelectVM.cs" />
-    <Compile Include="ViewModel\MaterialNeedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemEditVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemSelectVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
-    <Compile Include="ViewModel\MissonSelectVM.cs" />
-    <Compile Include="ViewModel\MissonVM.cs" />
-    <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
-    <Compile Include="ViewModel\Model\PlateExtra.cs" />
-    <Compile Include="ViewModel\Model\ProductExtra.cs" />
-    <Compile Include="ViewModel\Model\RecordBondingExtra.cs" />
-    <Compile Include="ViewModel\Model\RecordTestExtra.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
-    <Compile Include="ViewModel\OrderCheckEditVM.cs" />
-    <Compile Include="ViewModel\OrderCheckVM.cs" />
-    <Compile Include="ViewModel\OrderEditVM.cs" />
-    <Compile Include="ViewModel\OrderStatisticVM.cs" />
-    <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
-    <Compile Include="ViewModel\OutSourceEditVM.cs" />
-    <Compile Include="ViewModel\OutSourceVM.cs" />
-    <Compile Include="ViewModel\PlanEditVM.cs" />
-    <Compile Include="ViewModel\PlanSearchVM.cs" />
-    <Compile Include="ViewModel\PlanSelectVM.cs" />
-    <Compile Include="ViewModel\PlanStatisticVM.cs" />
-    <Compile Include="ViewModel\PlanVM.cs" />
-    <Compile Include="ViewModel\PlateEditVM.cs" />
-    <Compile Include="ViewModel\PlateSelectVM.cs" />
-    <Compile Include="ViewModel\PlateVM.cs" />
-    <Compile Include="ViewModel\ProductEditVM.cs" />
-    <Compile Include="ViewModel\ProductSelectVM.cs" />
-    <Compile Include="ViewModel\ProductStatisticVM.cs" />
-    <Compile Include="ViewModel\ProductVM.cs" />
-    <Compile Include="ViewModel\RecordBondingEditVM.cs" />
-    <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
-    <Compile Include="ViewModel\RecordBondingVM.cs" />
-    <Compile Include="ViewModel\RecordDeMoldEditVM.cs" />
-    <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
-    <Compile Include="ViewModel\RecordDeMoldVM.cs" />
-    <Compile Include="ViewModel\RecordMachineEditVM.cs" />
-    <Compile Include="ViewModel\RecordMachineSelectVM.cs" />
-    <Compile Include="ViewModel\RecordMachineVM.cs" />
-    <Compile Include="ViewModel\RecordMillingEditVM.cs" />
-    <Compile Include="ViewModel\RecordMillingVM.cs" />
-    <Compile Include="ViewModel\RecordTestDocVM.cs" />
-    <Compile Include="ViewModel\RecordTestEditVM.cs" />
-    <Compile Include="ViewModel\RecordTestSelectVM.cs" />
-    <Compile Include="ViewModel\RecordTestVM.cs" />
-    <Compile Include="ViewModel\RecordVHPQuickEditVM.cs" />
-    <Compile Include="ViewModel\RecordVHPVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
-    <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
-    <Compile Include="View\CustomerEditView.xaml.cs">
-      <DependentUpon>CustomerEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\CustomerView.xaml.cs">
-      <DependentUpon>CustomerView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DataOutputCenterView.xaml.cs">
-      <DependentUpon>DataOutputCenterView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\DeliveryEditView.xaml.cs">
-      <DependentUpon>DeliveryEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryItemEditView.xaml.cs">
-      <DependentUpon>DeliveryItemEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryItemListView.xaml.cs">
-      <DependentUpon>DeliveryItemListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryStatisticView.xaml.cs">
-      <DependentUpon>DeliveryStatisticView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\DeliveryView.xaml.cs">
-      <DependentUpon>DeliveryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FeedBackEditView.xaml.cs">
-      <DependentUpon>FeedBackEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FeedBackView.xaml.cs">
-      <DependentUpon>FeedBackView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaintenanceEditView.xaml.cs">
-      <DependentUpon>MaintenanceEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaintenanceItemEditView.xaml.cs">
-      <DependentUpon>MaintenanceItemEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaintenanceItemView.xaml.cs">
-      <DependentUpon>MaintenanceItemView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaintenanceView.xaml.cs">
-      <DependentUpon>MaintenanceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialInventoryInEditView.xaml.cs">
       <DependentUpon>MaterialInventoryInEditView.xaml</DependentUpon>
@@ -260,15 +193,6 @@
     </Compile>
     <Compile Include="View\MaterialInventoryOutView.xaml.cs">
       <DependentUpon>MaterialInventoryOutView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialNeedEditView.xaml.cs">
-      <DependentUpon>MaterialNeedEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialNeedSelectView.xaml.cs">
-      <DependentUpon>MaterialNeedSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MaterialNeedView.xaml.cs">
-      <DependentUpon>MaterialNeedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialOrderEditView.xaml.cs">
       <DependentUpon>MaterialOrderEditView.xaml</DependentUpon>
@@ -288,131 +212,11 @@
     <Compile Include="View\MaterialOrderView.xaml.cs">
       <DependentUpon>MaterialOrderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MissonSelectView.xaml.cs">
-      <DependentUpon>MissonSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MissonView.xaml.cs">
-      <DependentUpon>MissonView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NavigationWorkFlowView.xaml.cs">
-      <DependentUpon>NavigationWorkFlowView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderCheckEditView.xaml.cs">
-      <DependentUpon>OrderCheckEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderCheckView.xaml.cs">
-      <DependentUpon>OrderCheckView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderEditView.xaml.cs">
-      <DependentUpon>OrderEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderStatisticView.xaml.cs">
-      <DependentUpon>OrderStatisticVIew.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OrderView.xaml.cs">
-      <DependentUpon>OrderView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\OutputView.xaml.cs">
       <DependentUpon>OutputView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OutSourceEditView.xaml.cs">
-      <DependentUpon>OutSourceEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\OutSourceView.xaml.cs">
-      <DependentUpon>OutSourceView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanEditView.xaml.cs">
-      <DependentUpon>PlanEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanSearchView.xaml.cs">
-      <DependentUpon>PlanSearchView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanSelectView.xaml.cs">
-      <DependentUpon>PlanSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanStatisticView.xaml.cs">
-      <DependentUpon>PlanStatisticView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlanView.xaml.cs">
-      <DependentUpon>PlanView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlateEditView.xaml.cs">
-      <DependentUpon>PlateEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlateSelectView.xaml.cs">
-      <DependentUpon>PlateSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PlateView.xaml.cs">
-      <DependentUpon>PlateView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductEditView.xaml.cs">
-      <DependentUpon>ProductEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductSelectView.xaml.cs">
-      <DependentUpon>ProductSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductStatisticView.xaml.cs">
-      <DependentUpon>ProductStatisticView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ProductView.xaml.cs">
-      <DependentUpon>ProductView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RawMaterialReceiveView.xaml.cs">
-      <DependentUpon>RawMaterialReceiveView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordBondingEditView.xaml.cs">
-      <DependentUpon>RecordBondingEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordBondingSelectView.xaml.cs">
-      <DependentUpon>RecordBondingSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordBondingView.xaml.cs">
-      <DependentUpon>RecordBondingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordDeMoldEditView.xaml.cs">
-      <DependentUpon>RecordDeMoldEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordDeMoldSelectView.xaml.cs">
-      <DependentUpon>RecordDeMoldSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordDeMoldView.xaml.cs">
-      <DependentUpon>RecordDeMoldView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordMachineEditView.xaml.cs">
-      <DependentUpon>RecordMachineEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordMachineSelectView.xaml.cs">
-      <DependentUpon>RecordMachineSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordMachineView.xaml.cs">
-      <DependentUpon>RecordMachineView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordMillingEditView.xaml.cs">
-      <DependentUpon>RecordMillingEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordMillingView.xaml.cs">
-      <DependentUpon>RecordMillingView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordTestDocView.xaml.cs">
-      <DependentUpon>RecordTestDocView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordTestEditView.xaml.cs">
-      <DependentUpon>RecordTestEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordTestSelectView.xaml.cs">
-      <DependentUpon>RecordTestSelectView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordTestView.xaml.cs">
-      <DependentUpon>RecordTestView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordVHPQuickEditView.xaml.cs">
-      <DependentUpon>RecordVHPQuickEditView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\RecordVHPView.xaml.cs">
-      <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLocator.cs" />
     <Page Include="CustomControls\BatchDuplicateDialog.xaml">
@@ -505,79 +309,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tool\DensityEstamatorView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tool\LabelOutPutView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tool\MaterialNeedCalculationView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\CustomerEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\CustomerView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DataOutputCenterView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\DebugView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\DeliveryEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DeliveryItemEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DeliveryItemListView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DeliveryStatisticView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\DeliveryView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\FeedBackEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\FeedBackView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\LogInView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaintenanceEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaintenanceItemEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaintenanceItemView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaintenanceView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -598,18 +334,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MaterialInventoryOutView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialNeedEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialNeedSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MaterialNeedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -637,39 +361,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MissonSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\MissonView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\NavigationView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\NavigationWorkFlowView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OrderCheckEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OrderCheckView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OrderEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OrderStatisticVIew.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OrderView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -677,131 +369,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\OutSourceEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\OutSourceView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlanEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlanSearchView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlanSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlanStatisticView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlanView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlateEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlateSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\PlateView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ProductEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ProductSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ProductStatisticView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ProductView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RawMaterialReceiveView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordBondingEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordBondingSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordBondingView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordDeMoldEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordDeMoldSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordDeMoldView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordMachineEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordMachineSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordMachineView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordMillingEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordMillingView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordTestDocView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordTestEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordTestSelectView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordTestView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordVHPQuickEditView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\RecordVHPView.xaml">
+    <Page Include="VMLocator.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -820,6 +388,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCustomer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDDeliveryAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElementGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDElementGroupItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDSupplier.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPDevice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPMold.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\PMSClient.BasicService.DcBDVHPProcess.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BasicService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\BasicService\configuration.svcinfo" />
+    <None Include="Service References\BasicService\configuration91.svcinfo" />
+    <None Include="Service References\BasicService\BasicDataService.disco" />
+    <None Include="Service References\BasicService\BasicDataService.wsdl" />
+    <None Include="Service References\BasicService\BasicDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\BasicDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\BasicDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HeartBeatService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\HeartBeatService\configuration.svcinfo" />
+    <None Include="Service References\HeartBeatService\configuration91.svcinfo" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -942,6 +571,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Resource Include="ReadMe.txt" />
     <Content Include="Resource\DocTemplate\BarTender101\产品标签.btw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1037,13 +667,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resource\Files\" />
+    <Folder Include="ViewModel\Model\" />
+    <Folder Include="ViewModel\VMHelper\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BasicService\" />
+    <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\SanjieService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMSCommon\PMSCommon.csproj">
+      <Project>{0bb4a729-ac1e-4973-a915-f857fd75740d}</Project>
+      <Name>PMSCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControls\WpfControls.csproj">
+      <Project>{b34d1e0a-02b9-4512-a07f-0603ad29ad3a}</Project>
+      <Name>WpfControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

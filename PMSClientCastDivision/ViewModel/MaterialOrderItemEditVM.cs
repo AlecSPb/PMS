@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using PMSClient.MainService;
+using PMSClient.SanjieService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
         {
             if (order!=null)
             {
-                using (var service = new MaterialOrderServiceClient())
+                using (var service = new SanjieServiceClient())
                 {
                     return service.GetMaterialOrderItemCountByMaterialID(order.ID);
                 }
@@ -125,8 +125,8 @@ namespace PMSClient.ViewModel
 
         private void ActionCalculator()
         {
-            PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.MaterialOrderItemEdit);
-            NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
+            //PMSHelper.ToolViewModels.MaterialNeedCalcualtion.SetRequestView(PMSViews.MaterialOrderItemEdit);
+            //NavigationService.GoTo(PMSViews.MaterialNeedCalcuationTool);
         }
         public void SetByCalculate(double weight)
         {
@@ -136,10 +136,10 @@ namespace PMSClient.ViewModel
         }
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialOrderItemEdit);
-            PMSBatchHelper.SetMaterialNeedBatchEnable(IsNew);
-            PMSHelper.ViewModels.MaterialNeedSelect.RefreshData();
-            NavigationService.GoTo(PMSViews.MaterialNeedSelect);
+            //PMSHelper.ViewModels.MaterialNeedSelect.SetRequestView(PMSViews.MaterialOrderItemEdit);
+            //PMSBatchHelper.SetMaterialNeedBatchEnable(IsNew);
+            //PMSHelper.ViewModels.MaterialNeedSelect.RefreshData();
+            //NavigationService.GoTo(PMSViews.MaterialNeedSelect);
         }
 
         private void ActionSave()

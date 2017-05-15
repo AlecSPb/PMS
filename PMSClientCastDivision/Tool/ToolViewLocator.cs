@@ -13,27 +13,8 @@ namespace PMSClient.Tool
         public ToolViewLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-            SimpleIoc.Default.Register<MaterialNeedCalculationView>();
-            SimpleIoc.Default.Register<LabelOutPutView>();
-            SimpleIoc.Default.Register<DensityEstamatorView>();
+  
         }
 
-        public MaterialNeedCalculationView MaterialNeedCalculation
-        {
-            get { return SimpleIoc.Default.GetInstance<MaterialNeedCalculationView>(); }
-        }
-
-        public LabelOutPutView LabelOutPut
-        {
-            get { return SimpleIoc.Default.GetInstance<LabelOutPutView>(); }
-        }
-
-        public DensityEstamatorView DensityEstamator
-        {
-            get
-            {
-                return SimpleIoc.Default.GetInstance<DensityEstamatorView>();
-            }
-        }
     }
 }

@@ -7,7 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSCommon;
-using PMSClient.MainService;
+using PMSClient.SanjieService;
 using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
