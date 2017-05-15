@@ -23,9 +23,6 @@
             <TextBlock Text="{StaticResource MIOMaterialLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchMaterialLot,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource MIOReceiver}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchReceiver,UpdateSourceTrigger=PropertyChanged}" Width="150"
-                     Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource MIOPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" Width="150"
                      Style="{StaticResource  StyleTextBoxSearch}"/>

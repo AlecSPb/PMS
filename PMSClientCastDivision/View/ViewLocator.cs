@@ -17,8 +17,10 @@ namespace PMSClient.View
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<LogInView>(true);
+            SimpleIoc.Default.Register<NavigationView>(true);
+            SimpleIoc.Default.Register<MaterialOrderView>();
             SimpleIoc.Default.Register<MaterialOrderItemListView>();
-
+            SimpleIoc.Default.Register<MaterialInventoryInView>();
             SimpleIoc.Default.Register<MaterialInventoryOutView>();
             SimpleIoc.Default.Register<OutputView>();
 

@@ -37,7 +37,6 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             searchOrderPO = "";
-            searchSupplier = "";
             totalCost = 0;
             MaterialOrders = new ObservableCollection<DcMaterialOrder>();
             MaterialOrderItems = new ObservableCollection<DcMaterialOrderItem>();
@@ -49,12 +48,6 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
 
-            Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcMaterialOrder>(ActionEdit, CanEdit);
-
-            AddItem = new RelayCommand<DcMaterialOrder>(ActionAddItem, CanAddItem);
-            EditItem = new RelayCommand<DcMaterialOrderItem>(ActionEditItem, CanEditItem);
-
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
@@ -64,7 +57,6 @@ namespace PMSClient.ViewModel
         public void SetSearch(string orderPO, string supplier)
         {
             SearchOrderPO = orderPO;
-            SearchSupplier = supplier;
             SetPageParametersWhenConditionChange();
         }
 
@@ -73,26 +65,6 @@ namespace PMSClient.ViewModel
         private void ActionGoToMaterialOrderItemList()
         {
             NavigationService.GoTo(PMSViews.MaterialOrderItemList);
-        }
-        private bool CanEditItem(DcMaterialOrderItem arg)
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
-        }
-
-        private bool CanAddItem(DcMaterialOrder arg)
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
-
-        }
-
-        private bool CanEdit(DcMaterialOrder arg)
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
-        }
-
-        private bool CanAdd()
-        {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
         }
 
         private void ActionSelectionChanged(DcMaterialOrder model)
@@ -189,13 +161,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchOrderPO) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchOrderPO));
         }
 
         private void ActionAll()
         {
             SearchOrderPO = "";
-            SearchSupplier = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -209,7 +180,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 10;
             var service = new SanjieServiceClient();
-            //RecordCount = service.GetMaterialOrderCountBySearch(SearchOrderPO, SearchSupplier);
+            RecordCount = service.GetMaterialOrderCount(SearchOrderPO);
             service.Close();
             ActionPaging();
         }
@@ -223,10 +194,10 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new SanjieServiceClient();
-            //var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
-            //service.Close();
-            //MaterialOrders.Clear();
-            //orders.ToList().ForEach(o => MaterialOrders.Add(o));
+            var orders = service.GetMaterialOrder(skip, take, SearchOrderPO);
+            service.Close();
+            MaterialOrders.Clear();
+            orders.ToList().ForEach(o => MaterialOrders.Add(o));
 
             CurrentSelectIndex = 0;
             CurrentSelectItem = MaterialOrders.FirstOrDefault();
@@ -245,18 +216,6 @@ namespace PMSClient.ViewModel
                     return;
                 searchOrderPO = value;
                 RaisePropertyChanged(() => SearchOrderPO);
-            }
-        }
-        private string searchSupplier;
-        public string SearchSupplier
-        {
-            get { return searchSupplier; }
-            set
-            {
-                if (searchSupplier == value)
-                    return;
-                searchSupplier = value;
-                RaisePropertyChanged(() => SearchSupplier);
             }
         }
         private double totalCost;
@@ -287,14 +246,10 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Add { get; private set; }
-        public RelayCommand<DcMaterialOrder> Edit { get; set; }
         public RelayCommand<DcMaterialOrder> Doc { get; private set; }
         public RelayCommand<DcMaterialOrder> Refresh { get; set; }
         public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }
         public RelayCommand GoToMaterialOrderItemList { get; set; }
-        public RelayCommand<DcMaterialOrder> AddItem { get; private set; }
-        public RelayCommand<DcMaterialOrderItem> EditItem { get; private set; }
         #endregion
     }
 }
