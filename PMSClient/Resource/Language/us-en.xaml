@@ -602,71 +602,71 @@
 
 
 
-    <sys:String x:Key="BDPlateLot">背板批号</sys:String>
-    <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
-    <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
-    <sys:String x:Key="BDPlateDimension">背板直径</sys:String>
-    <sys:String x:Key="BDPlateUseCount">背板使用次数</sys:String>
-    <sys:String x:Key="BDPlateHardness">背板硬度</sys:String>
-    <sys:String x:Key="BDPlateSupplier">背板供应商</sys:String>
-    <sys:String x:Key="BDPlateLastWeldMaterial">上次焊接材料</sys:String>
-    <sys:String x:Key="BDPlateOtherRecord">背板其他记录</sys:String>
-    <sys:String x:Key="BDPlateAppearance">背板外观</sys:String>
-    <sys:String x:Key="BDPlatePerson">背板检查人</sys:String>
-    <sys:String x:Key="BDPlateCheckTime">背板检查时间</sys:String>
+    <sys:String x:Key="BDPlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="BDPlateMaterial">Plate Material</sys:String>
+    <sys:String x:Key="BDPlateBelong">Plate Belong</sys:String>
+    <sys:String x:Key="BDPlateDimension">Dimension</sys:String>
+    <sys:String x:Key="BDPlateUseCount">Use Count</sys:String>
+    <sys:String x:Key="BDPlateHardness">HardNess</sys:String>
+    <sys:String x:Key="BDPlateSupplier">Supplier</sys:String>
+    <sys:String x:Key="BDPlateLastWeldMaterial">Last Weld Material</sys:String>
+    <sys:String x:Key="BDPlateOtherRecord">Other Record</sys:String>
+    <sys:String x:Key="BDPlateAppearance">Appereance</sys:String>
+    <sys:String x:Key="BDPlatePerson">Checker</sys:String>
+    <sys:String x:Key="BDPlateCheckTime">Check Time</sys:String>
 
 
 
-    <sys:String x:Key="BDTargetPreProcessRecord">预处理记录</sys:String>
-    <sys:String x:Key="BDTargetPreProcessPerson">记录人</sys:String>
-    <sys:String x:Key="BDTargetPreProcessCheckTime">记录检查时间</sys:String>
+    <sys:String x:Key="BDTargetPreProcessRecord">PreProcess</sys:String>
+    <sys:String x:Key="BDTargetPreProcessPerson">Checker</sys:String>
+    <sys:String x:Key="BDTargetPreProcessCheckTime">Check Time</sys:String>
 
 
-    <sys:String x:Key="BDPlatePreProcessRecord">预处理记录</sys:String>
-    <sys:String x:Key="BDPlatePreProcessPerson">背板预处理人</sys:String>
-    <sys:String x:Key="BDPlatePreProcessCheckTime">背板预处理时间</sys:String>
+    <sys:String x:Key="BDPlatePreProcessRecord">PreProcess</sys:String>
+    <sys:String x:Key="BDPlatePreProcessPerson">Checker</sys:String>
+    <sys:String x:Key="BDPlatePreProcessCheckTime">Check Time</sys:String>
 
 
 
-    <sys:String x:Key="BDWeldMaterial">焊接材料</sys:String>
-    <sys:String x:Key="BDWeldCuStringDiameter">Cu丝直径</sys:String>
-    <sys:String x:Key="BDWeldHold">焊接重物</sys:String>
-    <sys:String x:Key="BDWeldPerson">焊接检查人</sys:String>
-    <sys:String x:Key="BDWeldCheckTime">焊接检查时间</sys:String>
+    <sys:String x:Key="BDWeldMaterial">WeldMaterial</sys:String>
+    <sys:String x:Key="BDWeldCuStringDiameter">Cu String Diameter</sys:String>
+    <sys:String x:Key="BDWeldHold">Weld Hold</sys:String>
+    <sys:String x:Key="BDWeldPerson">Checker</sys:String>
+    <sys:String x:Key="BDWeldCheckTime">Check Time</sys:String>
 
 
-    <sys:String x:Key="BDWarpageFix">翘曲修正</sys:String>
-    <sys:String x:Key="BDWarpagePerson">翘曲检查人</sys:String>
-    <sys:String x:Key="BDWarpageCheckTime">翘曲检查时间</sys:String>
+    <sys:String x:Key="BDWarpageFix">WarpageFix</sys:String>
+    <sys:String x:Key="BDWarpagePerson">Checker</sys:String>
+    <sys:String x:Key="BDWarpageCheckTime">Check Time</sys:String>
 
 
-    <sys:String x:Key="BDDimensionCheck">尺寸检查</sys:String>
-    <sys:String x:Key="BDDimensionWarpageCheck">尺寸翘曲检查</sys:String>
-    <sys:String x:Key="BDDimensionPerson">尺寸检查人</sys:String>
-    <sys:String x:Key="BDDimensionCheckTime">尺寸检查时间</sys:String>
+    <sys:String x:Key="BDDimensionCheck">Dimension Check</sys:String>
+    <sys:String x:Key="BDDimensionWarpageCheck">Dimension Warpage Check</sys:String>
+    <sys:String x:Key="BDDimensionPerson">Chekcer</sys:String>
+    <sys:String x:Key="BDDimensionCheckTime">Check Time</sys:String>
 
 
-    <sys:String x:Key="BDBindingCheck">结合检查</sys:String>
-    <sys:String x:Key="BDBindingPerson">结合检查人</sys:String>
-    <sys:String x:Key="BDBindingCheckTime">结合检查时间</sys:String>
+    <sys:String x:Key="BDBindingCheck">Bond Check</sys:String>
+    <sys:String x:Key="BDBindingPerson">Checker</sys:String>
+    <sys:String x:Key="BDBindingCheckTime">Check Time</sys:String>
 
 
-    <sys:String x:Key="BDSprayCheck">喷砂检查</sys:String>
-    <sys:String x:Key="BDSprayPerson">喷砂检查人</sys:String>
-    <sys:String x:Key="BDSprayCheckTime">喷砂检查时间</sys:String>
+    <sys:String x:Key="BDSprayCheck">Spray Check</sys:String>
+    <sys:String x:Key="BDSprayPerson">Checker</sys:String>
+    <sys:String x:Key="BDSprayCheckTime">Check Time</sys:String>
 
-    <sys:String x:Key="BDCleanCheck">清洁检查</sys:String>
-    <sys:String x:Key="BDCleanPerson">清洁检查人</sys:String>
-    <sys:String x:Key="BDCleanCheckTime">清洁检查时间</sys:String>
+    <sys:String x:Key="BDCleanCheck">Clean Check</sys:String>
+    <sys:String x:Key="BDCleanPerson">Checker</sys:String>
+    <sys:String x:Key="BDCleanCheckTime">Check Time</sys:String>
 
 
-    <sys:String x:Key="BDApperanceCheck">外观检查</sys:String>
-    <sys:String x:Key="BDApperancePerson">外观检查人</sys:String>
-    <sys:String x:Key="BDApperanceCheckTime">外观检查时间</sys:String>
+    <sys:String x:Key="BDApperanceCheck">Apperance Check</sys:String>
+    <sys:String x:Key="BDApperancePerson">Checker</sys:String>
+    <sys:String x:Key="BDApperanceCheckTime">Check Time</sys:String>
 
-    <sys:String x:Key="BDPackCheck">包装检查</sys:String>
-    <sys:String x:Key="BDPackPerson">包装检查人</sys:String>
-    <sys:String x:Key="BDPackCheckTime">包装检查时间</sys:String>
+    <sys:String x:Key="BDPackCheck">Pack Check</sys:String>
+    <sys:String x:Key="BDPackPerson">Checker</sys:String>
+    <sys:String x:Key="BDPackCheckTime">Check Time</sys:String>
 
     <!--Customer-->
     <sys:String x:Key="CustomerState">State</sys:String>
@@ -707,18 +707,18 @@
     <sys:String x:Key="FBRemark">Remark</sys:String>
 
     <!--ItemDebit-->
-    <sys:String x:Key="IDState">状态</sys:String>
-    <sys:String x:Key="IDCreator">创建者</sys:String>
-    <sys:String x:Key="IDCreateTime">创建时间</sys:String>
-    <sys:String x:Key="IDItemType">类型</sys:String>
-    <sys:String x:Key="IDItemLot">批号</sys:String>
-    <sys:String x:Key="IDItemName">名称</sys:String>
-    <sys:String x:Key="IDItemProperty">属性</sys:String>
-    <sys:String x:Key="IDQuantity">数量</sys:String>
-    <sys:String x:Key="IDUnitPrice">单价</sys:String>
-    <sys:String x:Key="IDUnit">单位</sys:String>
-    <sys:String x:Key="IDCreditor">债权人</sys:String>
-    <sys:String x:Key="IDRemark">备注</sys:String>
+    <sys:String x:Key="IDState">State</sys:String>
+    <sys:String x:Key="IDCreator">Creator</sys:String>
+    <sys:String x:Key="IDCreateTime">Create Time</sys:String>
+    <sys:String x:Key="IDItemType">Type</sys:String>
+    <sys:String x:Key="IDItemLot">Lot</sys:String>
+    <sys:String x:Key="IDItemName">Name</sys:String>
+    <sys:String x:Key="IDItemProperty">Property</sys:String>
+    <sys:String x:Key="IDQuantity">Quantity</sys:String>
+    <sys:String x:Key="IDUnitPrice">UnitPrice</sys:String>
+    <sys:String x:Key="IDUnit">Unit</sys:String>
+    <sys:String x:Key="IDCreditor">Creditor</sys:String>
+    <sys:String x:Key="IDRemark">Remark</sys:String>
 
 
     <sys:String x:Key="OutputOrder">Sales Order</sys:String>
