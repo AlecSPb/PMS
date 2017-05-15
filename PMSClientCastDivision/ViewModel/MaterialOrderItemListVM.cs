@@ -48,6 +48,31 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(this.ActionAll);
             SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
             Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
+            Finish = new RelayCommand<DcMaterialOrderItemExtra>(ActionFinish);
+        }
+
+        private void ActionFinish(DcMaterialOrderItemExtra model)
+        {
+            if (model != null)
+            {
+                try
+                {
+                    if (!PMSDialogService.ShowYesNo("请问", "确定完成这个项目了吗？"))
+                    {
+                        return;
+                    }
+                    using (var service = new SanjieServiceClient())
+                    {
+                        service.FinishMaterialOrderItem(model.MaterialOrderItem.ID);
+                    }
+                    SetPageParametersWhenConditionChange();
+                    NavigationService.Status("保存完毕");
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
         }
 
         private void ActionLocation(DcMaterialOrderItemExtra model)
@@ -72,7 +97,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPMINumber)&& string.IsNullOrEmpty(SearchOrderItemNumber)&& string.IsNullOrEmpty(SearchComposition));
+            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchOrderItemNumber) && string.IsNullOrEmpty(SearchComposition));
         }
 
         private void ActionAll()
@@ -175,6 +200,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcMaterialOrderItemExtra> SelectionChanged { get; set; }
 
         public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }
+        public RelayCommand<DcMaterialOrderItemExtra> Finish { get; set; }
         #endregion
     }
 }

@@ -1245,6 +1245,12 @@ namespace PMSClient.SanjieService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
+        int FinishMaterialOrderItem(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
+        System.Threading.Tasks.Task<int> FinishMaterialOrderItemAsync(System.Guid id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInsResponse")]
         PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber);
         
@@ -1383,6 +1389,14 @@ namespace PMSClient.SanjieService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber) {
             return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber);
+        }
+        
+        public int FinishMaterialOrderItem(System.Guid id) {
+            return base.Channel.FinishMaterialOrderItem(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> FinishMaterialOrderItemAsync(System.Guid id) {
+            return base.Channel.FinishMaterialOrderItemAsync(id);
         }
         
         public PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber) {

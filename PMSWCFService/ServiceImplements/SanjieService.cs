@@ -446,5 +446,24 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int FinishMaterialOrderItem(Guid id)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var item = dc.MaterialOrderItems.Find(id);
+                    item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
+                    dc.Entry(item).State = EntityState.Modified;
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

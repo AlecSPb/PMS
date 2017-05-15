@@ -46,6 +46,9 @@
                                 <Button Content="{StaticResource ButtonLocation}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Location,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -56,8 +59,12 @@
                                     Binding="{Binding MaterialOrderItem.State}"/>
                 <DataGridTextColumn Header="{StaticResource MOICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Creator}"/>
+                <DataGridTextColumn Header="{StaticResource MOIOrderItemNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.OrderItemNumber}"/>
                 <DataGridTextColumn Header="{StaticResource MOIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Composition}"/>
+                <DataGridTextColumn Header="{StaticResource MOIPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.PMINumber}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.Purity}"/>
                 <DataGridTextColumn Header="{StaticResource MOIWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"

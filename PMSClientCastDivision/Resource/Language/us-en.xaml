@@ -203,6 +203,7 @@
     <sys:String x:Key="ButtonCalculate">Calculate</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">Record Sheet</sys:String>
     <sys:String x:Key="ButtonSign">Sign</sys:String>
+    <sys:String x:Key="ButtonFinish">Finish</sys:String>
     <sys:String x:Key="ButtonLocation">Locate</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">Material List</sys:String>
     <sys:String x:Key="ButtonNotice">Notice</sys:String>

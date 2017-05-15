@@ -25,7 +25,11 @@ namespace PMSWCFService.ServiceContracts
         List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition, string pminumber, string orderitemnumber);
         [OperationContract]
         int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
-        
+
+        //Finish Order Item
+        [OperationContract]
+        int FinishMaterialOrderItem(Guid id);
+
         //Inventory
         [OperationContract]
         List<DcMaterialInventoryIn> GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber);
