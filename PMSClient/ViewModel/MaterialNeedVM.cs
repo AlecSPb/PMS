@@ -46,7 +46,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcMaterialNeed arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料需求");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialNeed);
         }
 
         private void ActionDuplicate(DcMaterialNeed model)
@@ -64,12 +64,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcMaterialNeed arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料需求");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialNeed);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料需求");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialNeed);
         }
 
         private void ActionEdit(DcMaterialNeed model)

@@ -61,7 +61,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDeliverySheet(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录") || PMSHelper.CurrentSession.IsAuthorized("生成发货单标签");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
         }
 
         private void ActionDeliverySheet(DcDelivery model)
@@ -84,7 +84,7 @@ namespace PMSClient.ViewModel
 
         private bool CanRecordTest(DcDeliveryItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("浏览测试记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest);
         }
 
         private void ActionRecordTest(DcDeliveryItem model)
@@ -109,17 +109,17 @@ namespace PMSClient.ViewModel
 
         private bool CanLabel(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录")|| PMSHelper.CurrentSession.IsAuthorized("生成发货单标签"); 
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
         }
 
         private bool CanEditItem(DcDeliveryItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
 
         private bool CanAddItem(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
         /// <summary>
         /// 权限代码=编辑发货记录
@@ -127,12 +127,12 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
 
         private bool CanEdit(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑发货记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
 
         private void ActionAll()

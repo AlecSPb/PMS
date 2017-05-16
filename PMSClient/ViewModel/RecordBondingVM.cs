@@ -32,7 +32,7 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcRecordBonding arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑绑定记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
         }
 
         private void ActionEdit(DcRecordBonding model)
@@ -62,7 +62,7 @@ namespace PMSClient.ViewModel
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑绑定记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
         }
 
         private void ActionAdd()

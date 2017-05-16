@@ -41,18 +41,18 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcMaterialInventoryOut>(ActionEdit, CanEdit);
 
             GoToMaterialInventoryIn = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn),
-                () => PMSHelper.CurrentSession.IsAuthorized("浏览原料库存"));
+                () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
 
         }
 
         private bool CanEdit(DcMaterialInventoryOut arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料库存");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryOut));
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料库存");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryOut));
         }
 
         private void ActionEdit(DcMaterialInventoryOut model)

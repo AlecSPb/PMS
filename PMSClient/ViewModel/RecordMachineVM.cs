@@ -76,17 +76,17 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcRecordMachine arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑加工记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMachine);
         }
 
         private bool CanEdit(DcRecordMachine arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑加工记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMachine);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑加工记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMachine);
         }
 
         public void RefreshData()

@@ -76,22 +76,22 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcRecordTest arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
         private bool CanDoc(DcRecordTest arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录") || PMSHelper.CurrentSession.IsAuthorized("生成测试报告");
+            return    PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest)|| PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocRecordTest);
         }
 
         private bool CanEdit(DcRecordTest arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑测试记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
         private void ActionSelectionChanged(DcRecordTest model)

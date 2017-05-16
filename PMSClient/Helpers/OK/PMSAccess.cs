@@ -73,6 +73,10 @@ namespace PMSClient
         public static string ReadStatisticDelivery { get; set; } = "浏览发货统计";
         public static string ReadStatisticProduct { get; set; } = "浏览产品统计";
 
+        public static string CanDocDeliverySheet { get; set; } = "生成发货单标签";
+        public static string CanDocRecordTest { get; set; } = "生成测试报告";
+
+
         public static string ReadMaintenance { get; set; } = "浏览维护计划";
 
         public static string CanOutput { get; set; } = "数据导出";

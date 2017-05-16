@@ -22,12 +22,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcBDCustomer arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑客户记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditCustomer);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑客户记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditCustomer);
         }
 
         private void ActionEdit(DcBDCustomer model)

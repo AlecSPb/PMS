@@ -22,7 +22,7 @@ namespace PMSClient.ViewModel
 
         private void IntializeProperties()
         {
-            searchComposition=searchVHPDate = "";
+            searchComposition = searchVHPDate = "";
             PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
             RecordVHPs = new ObservableCollection<DcRecordVHP>();
         }
@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             QuickEdit = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordVHPQuickEdit),
-                () => PMSHelper.CurrentSession.IsAuthorized("编辑热压记录"));
+                () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordVHP));
 
             Doc = new RelayCommand<MainService.DcPlanWithMisson>(ActionDoc, CanDoc);
         }
@@ -46,14 +46,14 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcPlanWithMisson arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("浏览热压记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadPlan);
         }
 
         private void ActionDoc(DcPlanWithMisson model)
         {
             if (model != null)
             {
-                if (PMSDialogService.ShowYesNo("请问","确定要在桌面生成热压报表吗？"))
+                if (PMSDialogService.ShowYesNo("请问", "确定要在桌面生成热压报表吗？"))
                 {
                     try
                     {
@@ -122,7 +122,7 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetPlanExtra(skip,take,SearchVHPDate, SearchComposition);
+                var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
                 PlanWithMissons.Clear();
                 orders.ToList().ForEach(o => PlanWithMissons.Add(o));
                 LoadRecordVHPsByRecordVHPID(PlanWithMissons.FirstOrDefault());

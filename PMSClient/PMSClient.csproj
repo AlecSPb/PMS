@@ -488,7 +488,6 @@
     <Compile Include="ViewModel\BaseViewModelEdit.cs" />
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
     <Compile Include="ViewModel\DeliveryItemListVM.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MaterialInventoryInSelectVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInEditVM.cs" />

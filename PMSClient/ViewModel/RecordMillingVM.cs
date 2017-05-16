@@ -79,12 +79,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcRecordMilling arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑制粉记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMilling);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑制粉记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMilling);
         }
 
         private void ActionAll()

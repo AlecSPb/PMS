@@ -60,17 +60,17 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicate(DcRecordDeMold arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordDeMold);
         }
 
         private bool CanEdit(DcRecordDeMold arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordDeMold);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑取模记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordDeMold);
         }
 
         public void RefreshData()

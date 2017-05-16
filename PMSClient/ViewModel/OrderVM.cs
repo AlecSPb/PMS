@@ -71,7 +71,7 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanCheck(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑订单核验");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOrderCheck);
         }
 
         private void ActionCheck(DcOrder order)

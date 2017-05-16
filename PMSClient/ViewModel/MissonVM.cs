@@ -71,12 +71,12 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicatePlan(DcPlanVHP arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑计划安排");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
         }
 
         private bool CanEditPlan(DcPlanVHP arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑计划安排");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
         }
         /// <summary>
         /// 权限控制=编辑任务
@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAddNewPlan(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑计划安排");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
         }
 
         private void ActionRefresh()

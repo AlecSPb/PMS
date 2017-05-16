@@ -76,23 +76,23 @@ namespace PMSClient.ViewModel
         }
         private bool CanEditItem(DcMaterialOrderItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
         }
 
         private bool CanAddItem(DcMaterialOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
 
         }
 
         private bool CanEdit(DcMaterialOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑原料订单");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
         }
 
         private void ActionSelectionChanged(DcMaterialOrder model)

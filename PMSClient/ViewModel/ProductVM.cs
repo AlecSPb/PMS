@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSelect(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
         }
 
         private void ActionSelectAndSend(DcProduct model)
@@ -63,7 +63,7 @@ namespace PMSClient.ViewModel
 
         private bool CanRecordTest(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("浏览测试记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest);
         }
 
         private void ActionRecordTest(DcProduct model)
@@ -76,17 +76,17 @@ namespace PMSClient.ViewModel
         }
         private bool CanDoc(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
         }
 
         private bool CanEdit(DcProduct arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑成品记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
         }
 
 

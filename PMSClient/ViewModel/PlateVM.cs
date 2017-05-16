@@ -119,12 +119,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcPlate arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized("编辑背板记录");
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
         }
 
 
