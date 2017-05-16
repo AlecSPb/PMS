@@ -47,12 +47,12 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcMaterialInventoryOut arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryOut));
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryOut);
         }
 
         private bool CanAdd()
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryOut));
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryOut);
         }
 
         private void ActionEdit(DcMaterialInventoryOut model)
