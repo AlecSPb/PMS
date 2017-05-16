@@ -36,6 +36,19 @@ namespace PMSClient
         public MainDesktop()
         {
             InitializeComponent();
+            LanguageSet();
+        }
+
+        private void LanguageSet()
+        {
+            string lang = Properties.Settings.Default.Language;
+            if (string.IsNullOrEmpty(lang))
+            {
+                lang = "zh-cn";
+            }
+            string langPath = "Resource/Language/" + lang + ".xaml";
+            App.Current.Resources.MergedDictionaries[2].Source = new Uri(langPath,UriKind.Relative);
+            cboLanguage.SelectedIndex = lang == "zh-cn" ? 0 : 1;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -463,5 +476,14 @@ namespace PMSClient
             PMSHelper.ViewModels.Navigation.SetLogInformation(logNavigationBar);
         }
         #endregion
+
+        private void cboLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboLanguage.SelectedItem != null)
+            {
+                Properties.Settings.Default.Language = cboLanguage.SelectedItem.ToString() == "中文" ? "zh-cn" : "us-en";
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 }
