@@ -133,6 +133,7 @@
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\ReportHelper.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrder.cs" />
+    <Compile Include="ReportsHelper\WordMaterialDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
     <Compile Include="Service References\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -174,6 +175,7 @@
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\MaterialOrderVM.cs" />
+    <Compile Include="ViewModel\Model\MaterialOrderItemExtraSelect.cs" />
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -349,7 +351,9 @@
     <Content Include="Resource\DocTemplate\BarTender101\CastLabel.btw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Resource\DocTemplate\Reports\MaterialDeliverySheet.docx" />
+    <Content Include="Resource\DocTemplate\Reports\MaterialDeliverySheet.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -566,7 +570,6 @@
     <Folder Include="Resource\Bondings\" />
     <Folder Include="Resource\DocTemplate\Doc\" />
     <Folder Include="Resource\Files\" />
-    <Folder Include="ViewModel\Model\" />
     <Folder Include="ViewModel\VMHelper\" />
   </ItemGroup>
   <ItemGroup>

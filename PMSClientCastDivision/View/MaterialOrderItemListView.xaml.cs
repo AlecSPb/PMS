@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using PMSClient.SanjieService;
 using PMSCommon;
 using PMSClient.ViewModel;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.View
 {
@@ -30,10 +31,10 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            DcMaterialOrderItemExtra order = (DcMaterialOrderItemExtra)e.Row.DataContext;
+            var order = (MaterialOrderItemExtraSelect)e.Row.DataContext;
             if (order != null)
             {
-                switch (order.MaterialOrderItem.State)
+                switch (order.Item.MaterialOrderItem.State)
                 {
                     case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;

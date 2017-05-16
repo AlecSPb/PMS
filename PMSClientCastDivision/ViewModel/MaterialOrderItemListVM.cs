@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Messaging;
-using PMSCommon;
 using PMSClient.SanjieService;
 using System.Collections.ObjectModel;
-using AutoMapper;
-using System.Windows;
-using PMSClient;
-using Novacode;
+using PMSClient.ViewModel.Model;
+using System.Collections.Generic;
 using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
@@ -39,36 +32,69 @@ namespace PMSClient.ViewModel
             searchPMINumber = "";
             searchComposition = "";
             searchOrderItemNumber = "";
-            MaterialOrderItemExtras = new ObservableCollection<DcMaterialOrderItemExtra>();
+            MaterialOrderItemExtraSelects = new ObservableCollection<MaterialOrderItemExtraSelect>();
         }
         private void InitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
-            All = new RelayCommand(this.ActionAll);
-            SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
-            Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
-            Finish = new RelayCommand<DcMaterialOrderItemExtra>(ActionFinish);
-            Label = new RelayCommand<DcMaterialOrderItemExtra>(ActionLabel);
+            All = new RelayCommand(ActionAll);
+            SelectionChanged = new RelayCommand<MaterialOrderItemExtraSelect>(ActionSelectionChanged);
+            Location = new RelayCommand<MaterialOrderItemExtraSelect>(ActionLocation);
+            Finish = new RelayCommand<MaterialOrderItemExtraSelect>(ActionFinish);
+            Label = new RelayCommand<MaterialOrderItemExtraSelect>(ActionLabel);
+            Doc = new RelayCommand(ActionDoc);
         }
 
-        private void ActionLabel(DcMaterialOrderItemExtra model)
+        private void ActionDoc()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定以选中的项目创建发货单吗？"))
+            {
+                return;
+            }
+            try
+            {
+                if (MaterialOrderItemExtraSelects.Where(i=>i.IsSelected).Count()==0)
+                {
+                    PMSDialogService.ShowYes("选中数目为0，请至少选择一个");
+                    return;
+                }
+
+                List<DcMaterialOrderItemExtra> selectedItems = new List<DcMaterialOrderItemExtra>();
+                selectedItems.Clear();
+                MaterialOrderItemExtraSelects.Where(i => i.IsSelected).ToList().ForEach(i =>
+                {
+                    selectedItems.Add(i.Item);
+                });
+
+                var report = new WordMaterialDeliverySheet();
+                report.SetModel(selectedItems);
+                report.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
+        }
+
+        private void ActionLabel(MaterialOrderItemExtraSelect model)
         {
             if (model != null)
             {
 
                 var sb = new StringBuilder();
                 sb.Append("条目编号:");
-                sb.AppendLine(model.MaterialOrderItem.OrderItemNumber);
+                sb.AppendLine(model.Item.MaterialOrderItem.OrderItemNumber);
                 sb.Append("材料成分:");
-                sb.AppendLine(model.MaterialOrderItem.Composition);
+                sb.AppendLine(model.Item.MaterialOrderItem.Composition);
                 sb.Append("材料净重:");
-                sb.AppendLine($"{model.MaterialOrderItem.Weight.ToString("F3")}kg");
+                sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
                 sb.Append("内部编号:");
-                sb.AppendLine(model.MaterialOrderItem.PMINumber);
+                sb.AppendLine(model.Item.MaterialOrderItem.PMINumber);
                 sb.Append("采购订单:");
-                sb.AppendLine(model.MaterialOrder.OrderPO);
-                sb.AppendLine(model.MaterialOrder.Supplier);
+                sb.AppendLine(model.Item.MaterialOrder.OrderPO);
+                sb.AppendLine(model.Item.MaterialOrder.Supplier);
 
                 var mainContent = sb.ToString();
 
@@ -82,7 +108,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionFinish(DcMaterialOrderItemExtra model)
+        private void ActionFinish(MaterialOrderItemExtraSelect model)
         {
             if (model != null)
             {
@@ -94,7 +120,7 @@ namespace PMSClient.ViewModel
                     }
                     using (var service = new SanjieServiceClient())
                     {
-                        service.FinishMaterialOrderItem(model.MaterialOrderItem.ID,PMSHelper.CurrentSession.CurrentUser.UserName);
+                        service.FinishMaterialOrderItem(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                     SetPageParametersWhenConditionChange();
                     NavigationService.Status("保存完毕");
@@ -106,13 +132,13 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionLocation(DcMaterialOrderItemExtra model)
+        private void ActionLocation(MaterialOrderItemExtraSelect model)
         {
-            PMSHelper.ViewModels.MaterialOrder.SetSearch(model.MaterialOrder.OrderPO, "");
+            PMSHelper.ViewModels.MaterialOrder.SetSearch(model.Item.MaterialOrder.OrderPO, "");
             NavigationService.GoTo(PMSViews.MaterialOrder);
         }
 
-        private void ActionSelectionChanged(DcMaterialOrderItemExtra model)
+        private void ActionSelectionChanged(MaterialOrderItemExtraSelect model)
         {
             if (model != null)
             {
@@ -165,10 +191,11 @@ namespace PMSClient.ViewModel
             var service = new SanjieServiceClient();
             var orders = service.GetMaterialOrderItemExtras(skip, take, SearchComposition, SearchPMINumber, SearchOrderItemNumber);
             service.Close();
-            MaterialOrderItemExtras.Clear();
-            orders.ToList().ForEach(o => MaterialOrderItemExtras.Add(o));
+            MaterialOrderItemExtraSelects.Clear();
+            orders.ToList().ForEach(o => MaterialOrderItemExtraSelects.Add(
+                new MaterialOrderItemExtraSelect { IsSelected = false, Item = o }));
 
-            CurrentSelectItem = MaterialOrderItemExtras.FirstOrDefault();
+            CurrentSelectItem = MaterialOrderItemExtraSelects.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);
         }
 
@@ -211,10 +238,10 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(() => SearchComposition);
             }
         }
-        public ObservableCollection<DcMaterialOrderItemExtra> MaterialOrderItemExtras { get; set; }
+        public ObservableCollection<MaterialOrderItemExtraSelect> MaterialOrderItemExtraSelects { get; set; }
 
-        private DcMaterialOrderItemExtra currentSelectItem;
-        public DcMaterialOrderItemExtra CurrentSelectItem
+        private MaterialOrderItemExtraSelect currentSelectItem;
+        public MaterialOrderItemExtraSelect CurrentSelectItem
         {
             get { return currentSelectItem; }
             set
@@ -228,11 +255,12 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand<DcMaterialOrderItemExtra> SelectionChanged { get; set; }
+        public RelayCommand<MaterialOrderItemExtraSelect> SelectionChanged { get; set; }
+        public RelayCommand<MaterialOrderItemExtraSelect> Location { get; set; }
+        public RelayCommand<MaterialOrderItemExtraSelect> Finish { get; set; }
+        public RelayCommand<MaterialOrderItemExtraSelect> Label { get; set; }
 
-        public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }
-        public RelayCommand<DcMaterialOrderItemExtra> Finish { get; set; }
-        public RelayCommand<DcMaterialOrderItemExtra> Label { get; set; }
+        public RelayCommand Doc { get; set; }
         #endregion
     }
 }
