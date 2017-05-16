@@ -143,39 +143,6 @@ namespace PMSClient.ViewModel
             TotalCost = sumCost;
         }
 
-        private void ActionEditItem(DcMaterialOrderItem item)
-        {
-            if (item != null)
-            {
-                //PMSHelper.ViewModels.MaterialOrderItemEdit.SetEdit(item);
-                //NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
-            }
-        }
-
-        private void ActionAddItem(DcMaterialOrder order)
-        {
-            if (order != null)
-            {
-                //PMSHelper.ViewModels.MaterialOrderItemEdit.SetNew(order);
-                //NavigationService.GoTo(PMSViews.MaterialOrderItemEdit);
-            }
-        }
-
-        private void ActionEdit(DcMaterialOrder order)
-        {
-            if (order != null)
-            {
-                //PMSHelper.ViewModels.MaterialOrderEdit.SetEdit(order);
-                //NavigationService.GoTo(PMSViews.MaterialOrderEdit);
-            }
-        }
-
-        private void ActionAdd()
-        {
-            //PMSHelper.ViewModels.MaterialOrderEdit.SetNew();
-            //NavigationService.GoTo(PMSViews.MaterialOrderEdit);
-        }
-
         /// <summary>
         /// 生成报告部分
         /// </summary>
