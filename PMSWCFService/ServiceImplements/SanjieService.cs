@@ -477,20 +477,20 @@ namespace PMSWCFService
                 {
                     var item = dc.MaterialOrderItems.Find(id);
                     #region 存储入库数据
-                    var materialIn = new DcMaterialInventoryIn();
-                    materialIn.Id = Guid.NewGuid();
-                    materialIn.Creator = uid;
-                    materialIn.CreateTime = DateTime.Now;
-                    materialIn.State = PMSCommon.InventoryState.库存.ToString();
-                    materialIn.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
-                    materialIn.MaterialLot = item.OrderItemNumber;
-                    materialIn.PMINumber = item.PMINumber;
-                    materialIn.Composition = item.Composition;
-                    materialIn.Weight = item.Weight;
-                    materialIn.Purity = item.Purity;
-                    materialIn.Remark = "";
+                    //var materialIn = new DcMaterialInventoryIn();
+                    //materialIn.Id = Guid.NewGuid();
+                    //materialIn.Creator = uid;
+                    //materialIn.CreateTime = DateTime.Now;
+                    //materialIn.State = PMSCommon.InventoryState.库存.ToString();
+                    //materialIn.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
+                    //materialIn.MaterialLot = item.OrderItemNumber;
+                    //materialIn.PMINumber = item.PMINumber;
+                    //materialIn.Composition = item.Composition;
+                    //materialIn.Weight = item.Weight;
+                    //materialIn.Purity = item.Purity;
+                    //materialIn.Remark = "";
 
-                    AddMaterialInventoryInByUID(materialIn, uid);
+                    //AddMaterialInventoryInByUID(materialIn, uid);
                     #endregion
                     item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
                     dc.Entry(item).State = EntityState.Modified;

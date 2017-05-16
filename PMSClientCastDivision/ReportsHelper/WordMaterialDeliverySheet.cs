@@ -66,13 +66,13 @@ namespace PMSClient.ReportsHelper
                             p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
                             p.Append(item.MaterialOrderItem.OrderItemNumber).FontSize(8);
                             p = mainTable.Rows[i + 1].Cells[1].Paragraphs[0];
-                            p.Append(item.MaterialOrderItem.Composition).FontSize(8);
+                            p.Append(item.MaterialOrderItem.Composition).FontSize(8).Bold();
                             p = mainTable.Rows[i + 1].Cells[2].Paragraphs[0];
-                            p.Append(item.MaterialOrderItem.Purity).FontSize(8);
+                            p.Append(item.MaterialOrderItem.Purity).FontSize(8).Alignment=Alignment.center;
                             p = mainTable.Rows[i + 1].Cells[3].Paragraphs[0];
-                            p.Append(item.MaterialOrderItem.Weight.ToString("F3")).FontSize(8);
+                            p.Append(item.MaterialOrderItem.Weight.ToString("F3")).FontSize(8).Bold().Alignment = Alignment.right;
                             p = mainTable.Rows[i + 1].Cells[4].Paragraphs[0];
-                            p.Append(item.MaterialOrderItem.PMINumber).FontSize(8);
+                            p.Append(item.MaterialOrderItem.PMINumber).FontSize(8).Bold();
                             p = mainTable.Rows[i + 1].Cells[5].Paragraphs[0];
                             p.Append(item.MaterialOrder.OrderPO).FontSize(8);
                             if (i > 13)
