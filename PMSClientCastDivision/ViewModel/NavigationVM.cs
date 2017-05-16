@@ -55,6 +55,7 @@ namespace PMSClient.ViewModel
 
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder));
+            GoToMaterialOrderItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrderItemList), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder));
             GoToMaterialInventory = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn), () => _session.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
 
             GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
@@ -69,6 +70,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToNavigation { get; set; }
         public RelayCommand GoToMaterialOrder { get; private set; }
+
+        public RelayCommand GoToMaterialOrderItemList { get; private set; }
         public RelayCommand GoToMaterialInventory { get; private set; }
 
         public RelayCommand GoToFeedBack { get; set; }

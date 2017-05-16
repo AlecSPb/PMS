@@ -51,8 +51,13 @@ namespace PMSClient.ViewModel
             FinishItem = new RelayCommand<DcMaterialOrderItem>(ActionFinishItem);
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
-            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
+            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList,CanGoToMaterialOrderItemList);
 
+        }
+
+        private bool CanGoToMaterialOrderItemList()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialOrder);
         }
 
         private void ActionFinishItem(DcMaterialOrderItem model)
