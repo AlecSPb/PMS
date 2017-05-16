@@ -337,6 +337,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="Resource\DocTemplate\BarTender101\CastLabel.btw" />
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -551,7 +552,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resource\Bondings\" />
-    <Folder Include="Resource\DocTemplate\BarTender101\" />
     <Folder Include="Resource\DocTemplate\Doc\" />
     <Folder Include="Resource\Files\" />
     <Folder Include="ViewModel\Model\" />
