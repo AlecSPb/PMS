@@ -154,6 +154,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Tool\HelpImagePathConverter.cs" />
+    <Compile Include="Tool\LabelOutPutView.xaml.cs">
+      <DependentUpon>LabelOutPutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tool\LabelOutPutVM.cs" />
     <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
@@ -286,6 +291,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Tool\LabelOutPutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\DebugView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -337,7 +346,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="Resource\DocTemplate\BarTender101\CastLabel.btw" />
+    <Content Include="Resource\DocTemplate\BarTender101\CastLabel.btw">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resource\DocTemplate\Reports\MaterialDeliverySheet.docx" />
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

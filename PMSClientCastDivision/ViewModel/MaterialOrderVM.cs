@@ -47,11 +47,60 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
-
+            Finish = new RelayCommand<DcMaterialOrder>(ActionFinish);
+            FinishItem = new RelayCommand<DcMaterialOrderItem>(ActionFinishItem);
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
 
+        }
+
+        private void ActionFinishItem(DcMaterialOrderItem model)
+        {
+            if (model != null)
+            {
+                try
+                {
+                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个项目了吗？"))
+                    {
+                        return;
+                    }
+                    using (var service = new SanjieServiceClient())
+                    {
+                        service.FinishMaterialOrderItem(model.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                    SetPageParametersWhenConditionChange();
+                    NavigationService.Status("保存完毕");
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
+        }
+
+        private void ActionFinish(DcMaterialOrder model)
+        {
+            if (model != null)
+            {
+                try
+                {
+                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个订单了吗？"))
+                    {
+                        return;
+                    }
+                    using (var service = new SanjieServiceClient())
+                    {
+                        service.FinishMaterialOrder(model.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                    SetPageParametersWhenConditionChange();
+                    NavigationService.Status("保存完毕");
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
         }
 
         public void SetSearch(string orderPO, string supplier)
@@ -245,6 +294,8 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
+        public RelayCommand<DcMaterialOrderItem> FinishItem { get; private set; }
+        public RelayCommand<DcMaterialOrder> Finish { get; private set; }
         public RelayCommand<DcMaterialOrder> Doc { get; private set; }
         public RelayCommand<DcMaterialOrder> Refresh { get; set; }
         public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }

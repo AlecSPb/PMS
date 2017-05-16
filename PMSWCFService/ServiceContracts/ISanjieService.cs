@@ -28,7 +28,10 @@ namespace PMSWCFService.ServiceContracts
 
         //Finish Order Item
         [OperationContract]
-        int FinishMaterialOrderItem(Guid id);
+        int FinishMaterialOrderItem(Guid id,string uid);
+
+        [OperationContract]
+        int FinishMaterialOrder(Guid id, string uid);
 
         //Inventory
         [OperationContract]

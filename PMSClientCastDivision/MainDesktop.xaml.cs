@@ -201,6 +201,9 @@ namespace PMSClient
                 case PMSViews.MaterialInventoryOut:
                     NavigateTo(_views.MaterialInventoryOut);
                     break;
+                case PMSViews.LabelOutPut:
+                    NavigateTo(_toolviews.LabelOutPut);
+                    break;
                 case PMSViews.Output:
                     NavigateTo(_views.Output);
                     break;

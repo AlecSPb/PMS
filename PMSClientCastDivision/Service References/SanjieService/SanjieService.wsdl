@@ -43,6 +43,12 @@
   <wsdl:message name="ISanjieService_FinishMaterialOrderItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:FinishMaterialOrderItemResponse" />
   </wsdl:message>
+  <wsdl:message name="ISanjieService_FinishMaterialOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishMaterialOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_FinishMaterialOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishMaterialOrderResponse" />
+  </wsdl:message>
   <wsdl:message name="ISanjieService_GetMaterialInventoryIns_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryIns" />
   </wsdl:message>
@@ -139,6 +145,10 @@
     <wsdl:operation name="FinishMaterialOrderItem">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" message="tns:ISanjieService_FinishMaterialOrderItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse" message="tns:ISanjieService_FinishMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishMaterialOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrder" message="tns:ISanjieService_FinishMaterialOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderResponse" message="tns:ISanjieService_FinishMaterialOrder_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryIns">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryIns" message="tns:ISanjieService_GetMaterialInventoryIns_InputMessage" />
@@ -238,6 +248,15 @@
     </wsdl:operation>
     <wsdl:operation name="FinishMaterialOrderItem">
       <soap:operation soapAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishMaterialOrder">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/FinishMaterialOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

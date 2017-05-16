@@ -49,6 +49,37 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
             Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
             Finish = new RelayCommand<DcMaterialOrderItemExtra>(ActionFinish);
+            Label = new RelayCommand<DcMaterialOrderItemExtra>(ActionLabel);
+        }
+
+        private void ActionLabel(DcMaterialOrderItemExtra model)
+        {
+            if (model != null)
+            {
+
+                var sb = new StringBuilder();
+                sb.Append("条目编号:");
+                sb.AppendLine(model.MaterialOrderItem.OrderItemNumber);
+                sb.Append("材料成分:");
+                sb.AppendLine(model.MaterialOrderItem.Composition);
+                sb.Append("材料净重:");
+                sb.AppendLine($"{model.MaterialOrderItem.Weight.ToString("F3")}kg");
+                sb.Append("内部编号:");
+                sb.AppendLine(model.MaterialOrderItem.PMINumber);
+                sb.Append("采购订单:");
+                sb.AppendLine(model.MaterialOrder.OrderPO);
+                sb.AppendLine(model.MaterialOrder.Supplier);
+
+                var mainContent = sb.ToString();
+
+                var pageTitle = "原料标签打印输出";
+                var tips = @"点击打开模板按钮，粘贴不同内容到模板合适位置，可以再自行修改，然后打印标签";
+                var template = "CastLabel";
+                var helpimage = "productionlabel.png";
+                PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.MaterialOrderItemList, pageTitle,
+                    tips, template, mainContent, helpimage);
+                NavigationService.GoTo(PMSViews.LabelOutPut);
+            }
         }
 
         private void ActionFinish(DcMaterialOrderItemExtra model)
@@ -57,13 +88,13 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    if (!PMSDialogService.ShowYesNo("请问", "确定完成这个项目了吗？"))
+                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个项目了吗？"))
                     {
                         return;
                     }
                     using (var service = new SanjieServiceClient())
                     {
-                        service.FinishMaterialOrderItem(model.MaterialOrderItem.ID);
+                        service.FinishMaterialOrderItem(model.MaterialOrderItem.ID,PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                     SetPageParametersWhenConditionChange();
                     NavigationService.Status("保存完毕");
@@ -201,6 +232,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }
         public RelayCommand<DcMaterialOrderItemExtra> Finish { get; set; }
+        public RelayCommand<DcMaterialOrderItemExtra> Label { get; set; }
         #endregion
     }
 }

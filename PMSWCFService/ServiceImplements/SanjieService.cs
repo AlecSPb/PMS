@@ -270,6 +270,7 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
                                 where m.State != OrderState.作废.ToString()
+                                && m.State != OrderState.未核验.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 orderby m.CreateTime descending
@@ -293,6 +294,7 @@ namespace PMSWCFService
                 {
                     var query = from m in dc.MaterialOrders
                                 where m.State != OrderState.作废.ToString()
+                                && m.State != OrderState.未核验.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 select m;
@@ -447,15 +449,16 @@ namespace PMSWCFService
             }
         }
 
-        public int FinishMaterialOrderItem(Guid id)
+        public int FinishMaterialOrder(Guid id, string uid)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var item = dc.MaterialOrderItems.Find(id);
-                    item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
+                    var item = dc.MaterialOrders.Find(id);
+                    item.State = PMSCommon.OrderState.完成.ToString();
                     dc.Entry(item).State = EntityState.Modified;
+                    SaveHistory(item, uid);
                     return dc.SaveChanges();
                 }
             }
@@ -465,5 +468,154 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int FinishMaterialOrderItem(Guid id, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var item = dc.MaterialOrderItems.Find(id);
+                    #region 存储入库数据
+                    var materialIn = new DcMaterialInventoryIn();
+                    materialIn.Id = Guid.NewGuid();
+                    materialIn.Creator = uid;
+                    materialIn.CreateTime = DateTime.Now;
+                    materialIn.State = PMSCommon.InventoryState.库存.ToString();
+                    materialIn.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
+                    materialIn.MaterialLot = item.OrderItemNumber;
+                    materialIn.PMINumber = item.PMINumber;
+                    materialIn.Composition = item.Composition;
+                    materialIn.Weight = item.Weight;
+                    materialIn.Purity = item.Purity;
+                    materialIn.Remark = "";
+
+                    AddMaterialInventoryInByUID(materialIn, uid);
+                    #endregion
+                    item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
+                    dc.Entry(item).State = EntityState.Modified;
+                    SaveHistory(item, uid);
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        private int AddMaterialInventoryIn(DcMaterialInventoryIn model)
+        {
+            try
+            {
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryIn, MaterialInventoryIn>());
+                    var item = Mapper.Map<MaterialInventoryIn>(model);
+                    dc.MaterialInventoryIns.Add(item);
+                    result = dc.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        private int AddMaterialInventoryInByUID(DcMaterialInventoryIn model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddMaterialInventoryIn(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        private void SaveHistory(DcMaterialInventoryIn model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DcMaterialInventoryIn, MaterialInventoryInHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<MaterialInventoryInHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.MaterialInventoryInHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        private void SaveHistory(MaterialOrder model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<MaterialOrder, MaterialOrderHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<MaterialOrderHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.MaterialOrderHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        private void SaveHistory(MaterialOrderItem model, string uid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<MaterialOrderItem, MaterialOrderItemHistory>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var history = mapper.Map<MaterialOrderItemHistory>(model);
+                    history.OperateTime = DateTime.Now;
+                    history.Operator = uid;
+                    history.HistoryID = Guid.NewGuid();
+                    dc.MaterialOrderItemHistorys.Add(history);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+            }
+        }
+
+
     }
 }

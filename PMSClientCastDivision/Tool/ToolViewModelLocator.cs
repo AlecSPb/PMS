@@ -13,10 +13,13 @@ namespace PMSClient.Tool
         public ToolViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
-
+            SimpleIoc.Default.Register<LabelOutPutVM>();
         }
 
-
+        public LabelOutPutVM LabelOutPut
+        {
+            get { return SimpleIoc.Default.GetInstance<LabelOutPutVM>(); }
+        }
 
     }
 }

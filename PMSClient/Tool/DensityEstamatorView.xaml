@@ -7,9 +7,6 @@
              xmlns:local="clr-namespace:PMSClient.Tool"
              mc:Ignorable="d"  
              d:DesignHeight="600" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource ToolLocator},Path=DensityEstamator}">
-    <UserControl.Resources>
-        <ResourceDictionary Source="../Resource/Styles/Desktop.xaml"/>
-    </UserControl.Resources>
     <Grid  Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
