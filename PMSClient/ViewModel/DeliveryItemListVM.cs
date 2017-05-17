@@ -35,12 +35,28 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             SelectionChanged = new RelayCommand<DcDeliveryItemExtra>(ActionSelectionChanged);
-            SearchRecordTest = new RelayCommand<MainService.DcDeliveryItemExtra>(ActionSearchRecordTest);
+            SearchRecordTest = new RelayCommand<DcDeliveryItemExtra>(ActionSearchRecordTest);
+            SearchDelivery = new RelayCommand<DcDeliveryItemExtra>(ActionSearchDelivery);
+            GiveUp = new RelayCommand(ActionGiveUp);
+        }
+
+        private void ActionGiveUp()
+        {
+            NavigationService.GoTo(PMSViews.Delivery);
+        }
+
+        private void ActionSearchDelivery(DcDeliveryItemExtra model)
+        {
+            if (model != null)
+            {
+                PMSHelper.ViewModels.Delivery.SetSearch(model.Delivery.DeliveryName);
+                NavigationService.GoTo(PMSViews.Delivery);
+            }
         }
 
         private void ActionSearchRecordTest(DcDeliveryItemExtra model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 PMSHelper.ViewModels.RecordTest.SetSearch("", model.DeliveryItem.ProductID);
                 NavigationService.GoTo(PMSViews.RecordTest);
@@ -49,7 +65,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectionChanged(DcDeliveryItemExtra model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentDeliveryItemExtra = model;
             }
@@ -117,6 +133,9 @@ namespace PMSClient.ViewModel
         }
         public RelayCommand<DcDeliveryItemExtra> SelectionChanged { get; set; }
         public RelayCommand<DcDeliveryItemExtra> SearchRecordTest { get; set; }
+        public RelayCommand<DcDeliveryItemExtra> SearchDelivery { get; set; }
+
+        public RelayCommand GiveUp { get; set; }
         #endregion
 
 

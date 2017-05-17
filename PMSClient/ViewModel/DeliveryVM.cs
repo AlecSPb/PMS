@@ -59,6 +59,13 @@ namespace PMSClient.ViewModel
 
         }
 
+        public void SetSearch(string deliveryName)
+        {
+            SearchDeliveryName = deliveryName;
+            SetPageParametersWhenConditionChange();
+        }
+
+
         private bool CanDeliverySheet(DcDelivery arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
