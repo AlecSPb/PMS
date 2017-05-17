@@ -81,7 +81,7 @@ namespace PMSClient
             #region 设置主定时器
             //设置主定时器
             _timerMain = new DispatcherTimer();
-            _timerMain.Interval = new TimeSpan(0, 0, 20);
+            _timerMain.Interval = new TimeSpan(0, 0, 10);
             _timerMain.Tick += _timerMain_Tick; ;
             _timerMain.Start();
             #endregion
@@ -133,24 +133,33 @@ namespace PMSClient
             }
         }
 
-        public bool isFirstTime = true;
+        public int noticeCount = 0;
         private void NoticeCheck()
         {
+            System.Diagnostics.Debug.WriteLine(noticeCount);
             //循环检测是否有新消息
             PMSNotice.CheckIt();
-            //只有第一次打开客户端的时候才会显示气泡信息
-            if (PMSNotice.HasNewNotice && isFirstTime)
+            if (!PMSNotice.HasNewNotice)
             {
+                noticeCount = 0;
+                return;
+            }
+            //每循环n次显示气泡信息一次
+            if (noticeCount % 6 == 0 && PMSNotice.HasNewNotice)
+            {
+                #region NotifyIcon
                 if (cboLanguage.SelectedIndex == 0)
                 {
-                    SetNotifyIcon("有新消息", "有新消息,请到导航界面->新消息 \r\n点击[我知道了]按钮", 6000);
+                    SetNotifyIcon("PMS", "有新消息,请到导航界面->新消息 \r\n点击[我知道了]按钮", 6000);
                 }
                 else
                 {
-                    SetNotifyIcon("New Message", "There are New Messages. Please Go To Navigation -> New Message\r\nClick Button I Know", 6000);
+                    SetNotifyIcon("PMS", "There are New Messages. Please Go To Navigation -> New Message\r\nClick Button [I Know]", 6000);
                 }
-                isFirstTime = false;
+                #endregion
+                noticeCount = 0;
             }
+            noticeCount++;
         }
 
         #endregion
