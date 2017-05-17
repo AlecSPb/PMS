@@ -150,7 +150,7 @@ namespace PMSClient
             if (noticeCount % 60 == 0)
             {
                 #region NotifyIcon
-                if (PMSHelper.Language=="zh-cn")
+                if (PMSHelper.Language == "zh-cn")
                 {
                     SetNotifyIcon("PMS", "有新消息,请到导航界面->新消息 \r\n点击[我知道了]按钮", 6000);
                 }
@@ -457,7 +457,15 @@ namespace PMSClient
         }
         private void Window_Closing(object sender, CancelEventArgs e)
         {
-            var result = PMSDialogService.ShowYesNo("请问", "确定要退出吗？");
+            bool result = false;
+            if (PMSHelper.Language == "zh-cn")
+            {
+                result = PMSDialogService.ShowYesNo("请问", "确定要退出吗？");
+            }
+            else
+            {
+                result = PMSDialogService.ShowYesNo("Quit", "Are you sure to quit?");
+            }
             if (!result)
             {
                 //this.WindowState = WindowState.Minimized;
@@ -485,7 +493,7 @@ namespace PMSClient
             string logStatusBar = "";
             if (_logInformation.CurrentUser != null)
             {
-                if (PMSHelper.Language=="zh-cn")
+                if (PMSHelper.Language == "zh-cn")
                 {
                     logNavigationBar = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
                     logStatusBar = $"[{ _logInformation.CurrentUser.RealName}]";
