@@ -7,6 +7,8 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.Helper;
+using System.IO;
+
 
 namespace PMSClient.ViewModel
 {
@@ -51,8 +53,8 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
-            Notice = new RelayCommand(ActionNotice);
-
+            Notice = new RelayCommand(ActionNotice,CanNotice);
+            Help = new RelayCommand(ActionHelp);
 
 
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
@@ -85,7 +87,6 @@ namespace PMSClient.ViewModel
 
             GoToMaintenance = new RelayCommand(() => NavigationService.GoTo(PMSViews.Maintanence), () => _session.IsAuthorized(PMSAccess.ReadMaintenance));
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer));
-
             #region 临时
             //GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound), () => _session.IsAuthorized("浏览化合物信息"));
             //GoToBDVHPDevice = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDVHPDevice), () => _session.IsAuthorized("浏览热压设备信息"));
@@ -106,6 +107,27 @@ namespace PMSClient.ViewModel
             GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
 
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
+        }
+
+        private bool CanNotice()
+        {
+            return PMSNotice.HasNewNotice;
+        }
+
+        private void ActionHelp()
+        {
+            try
+            {
+                string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", "pmshelp.pptx");
+                if (File.Exists(helpFile))
+                {
+                    System.Diagnostics.Process.Start(helpFile);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionNotice()
@@ -162,7 +184,7 @@ namespace PMSClient.ViewModel
         #endregion
 
         public RelayCommand Notice { get; set; }
-
+        public RelayCommand Help { get;  set; }
         public RelayCommand GoToDebug { get; set; }
     }
 }

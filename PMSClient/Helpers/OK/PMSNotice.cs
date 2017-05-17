@@ -77,6 +77,7 @@ namespace PMSClient
             SetXMLCounter(MaterialOrder, CurrentCount[MaterialOrder]);
             SetXMLCounter(Plan, CurrentCount[Plan]);
             SetXMLCounter(Delivery, CurrentCount[Delivery]);
+            Notices.Clear();
         }
         private static void CheckNotices()
         {

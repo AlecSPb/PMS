@@ -65,7 +65,7 @@ namespace PMSClient.ViewModel
             model.Weight = "0";
             model.Remark = "";
             model.Resistance = "0";
-            model.Sample = "无需样品";
+            model.Sample = "";
             model.CompositionXRF = "暂无";
             model.Density = "0";
             model.Defects = "无";

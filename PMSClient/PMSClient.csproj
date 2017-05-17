@@ -936,11 +936,25 @@
     <Content Include="Resource\DocTemplate\Reports\ReportTCB440.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\Files\pmshelp.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\StatisticService\MainStatisticService.wsdl" />
+    <None Include="Service References\StatisticService\StatisticService.disco" />
+    <None Include="Service References\HeartBeatService\HeartBeatService1.disco" />
+    <None Include="Service References\BasicService\BasicDataService1.disco" />
     <Resource Include="Resource\Icons\notice.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resource\Icons\noticeblue.png" />
-    <Resource Include="Resource\Icons\noticegreen.png" />
+    <Resource Include="Resource\Icons\noticeblue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Icons\noticegreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Icons\help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resource\NoticeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -995,6 +1009,16 @@
     <Resource Include="Resource\DocTemplate\Reports\Temp\DoNotDeleteThisFolder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <None Include="Service References\BasicService\BasicDataService1.wsdl" />
+    <None Include="Service References\BasicService\BasicDataService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\BasicDataService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BasicService\BasicDataService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1033,6 +1057,13 @@
     </None>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcItemDebit.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HeartBeatService\HeartBeatService1.wsdl" />
+    <None Include="Service References\HeartBeatService\HeartBeatService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HeartBeatService\HeartBeatService21.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcDelivery.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1166,6 +1197,15 @@
     <None Include="Service References\MainService\PMSService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\StatisticService\StatisticService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatisticService\StatisticService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\StatisticService\StatisticService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSimpleService\PMSClient.UserSimpleService.DcUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1192,35 +1232,8 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\BasicService\BasicDataService.wsdl" />
-    <None Include="Service References\BasicService\BasicDataService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BasicService\BasicDataService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\BasicService\BasicDataService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
-    <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\PMSClient.StatisticService.DcStatistic.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\StatisticService\StatisticService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\StatisticService\StatisticService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\StatisticService\StatisticService32.xsd">
-      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
     <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
@@ -1238,9 +1251,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resource\Files\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
@@ -1328,12 +1339,6 @@
     <None Include="Note\updates-real.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\BasicService\BasicDataService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Documents\stdcomposition.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1355,9 +1360,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\StatisticService\StatisticService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

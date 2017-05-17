@@ -62,6 +62,8 @@
 
                 <Button Content="{StaticResource PageProduct}"   Command="{Binding GoToProduct}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="440" Margin="0" Canvas.Top="437"/>
                 <Button Content="{StaticResource PageDelivery}"  Command="{Binding GoToDelivery}" Style="{DynamicResource StyleButtonNavigationFixed}" Canvas.Left="21" Margin="0" Canvas.Top="437"/>
+                <Button Style="{StaticResource StyleButtonNavigationFixed}" Content="{StaticResource PageOutSource}"
+                    Command="{Binding GoToOutSource}" Canvas.Left="183" Canvas.Top="134"  Margin="0" />
             </Canvas>
         </ScrollViewer>
     </Grid>

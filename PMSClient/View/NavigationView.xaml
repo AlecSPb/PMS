@@ -26,7 +26,13 @@
                 <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Notice}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{StaticResource ButtonNotice}"/>
-                        <Image Source="../Resource/Icons/noticegreen.png"  Style="{StaticResource StyleImageIcon}" Margin="5 0 0 0"/>
+                        <Image Source="../Resource/Icons/noticegreen.png"  Style="{StaticResource StyleImageIcon}"/>
+                    </StackPanel>
+                </Button>
+                <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Help}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{StaticResource ButtonHelp}"/>
+                        <Image Source="../Resource/Icons/help.png"  Style="{StaticResource StyleImageIcon}"/>
                     </StackPanel>
                 </Button>
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>

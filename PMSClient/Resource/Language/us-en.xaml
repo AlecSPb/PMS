@@ -207,7 +207,7 @@
     <sys:String x:Key="ButtonLocation">Locate</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">Material List</sys:String>
     <sys:String x:Key="ButtonNotice">Notice</sys:String>
-
+    <sys:String x:Key="ButtonHelp">Help</sys:String>
 
     <sys:String x:Key="ButtonCalculator">Calculator</sys:String>
     <sys:String x:Key="ButtonSmallCalculator"> Small Calculator</sys:String>

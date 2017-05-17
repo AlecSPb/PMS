@@ -28,11 +28,11 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.State = PMSCommon.OrderState.未完成.ToString();
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.Supplier = "Sanjie";
-            model.SupplierAbbr = "SJ";
-            model.SupplierEmail = "sj_materials@163.com";
-            model.SupplierReceiver = "Mr. Wang";
-            model.SupplierAddress = "Chengdu, Sichuan CHINA";
+            model.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
+            model.SupplierAbbr = "";
+            model.SupplierEmail = "";
+            model.SupplierReceiver = "";
+            model.SupplierAddress = "";
             model.ShipFee = 0;
             model.Priority = PMSCommon.OrderPriority.普通.ToString();
             model.Remark = "";
