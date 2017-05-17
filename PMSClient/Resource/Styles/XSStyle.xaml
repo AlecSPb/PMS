@@ -149,7 +149,7 @@
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
         <Setter Property="FontSize" Value="{StaticResource FontLG}"/>
-        <Setter Property="Height" Value="50"/>
+        <Setter Property="Height" Value="45"/>
     </Style>
     <Style x:Key="StyleButtonNavigationFixed" TargetType="Button"  BasedOn="{StaticResource StyleButtonNavigation}">
         <Setter Property="HorizontalAlignment" Value="Center"/>

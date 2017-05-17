@@ -1,4 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Notice>
-  
+  <Counter Name="Order">
+    0
+  </Counter>
+  <Counter Name="MaterialOrder">
+    0
+  </Counter>
+  <Counter Name="Plan">
+    0
+  </Counter>
+  <Counter Name="Delivery">
+    0
+  </Counter>
 </Notice>
