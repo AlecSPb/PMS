@@ -74,7 +74,14 @@ namespace PMSClient
             int current = CurrentCount[keyName];
             if (current > last)
             {
-                Notices.Add($"有{current - last}个新{keyName}");
+                if (PMSHelper.Language == "zh-cn")
+                {
+                    Notices.Add($"有{current - last}个新{keyName}");
+                }
+                else
+                {
+                    Notices.Add($"There are  {current - last} New {keyName}");
+                }
             }
         }
         private static void GetAllCurrentCount()

@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0" Name="NoticeList" Background="LightYellow"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="btnReadAll" Content="全部已读" Style="{StaticResource StyleButtonCommon}" Click="btnReadAll_Click"/>
+            <Button Name="btnReadAll" Content="{StaticResource ButtonIKnow}" Style="{StaticResource StyleButtonCommon}" Click="btnReadAll_Click"/>
         </StackPanel>
     </Grid>
 </Window>
