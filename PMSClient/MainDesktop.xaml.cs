@@ -156,7 +156,7 @@ namespace PMSClient
                 }
                 else
                 {
-                    SetNotifyIcon("PMS", "There are New Messages. Please Go To Navigation -> New Message\r\nClick Button [I Know]", 6000);
+                    SetNotifyIcon("PMS", "There are New Messages. Please Go To Navigation -> Notice\r\nClick Button [I Know]", 6000);
                 }
                 #endregion
                 noticeCount = 0;
