@@ -81,7 +81,7 @@ namespace PMSClient
             #region 设置主定时器
             //设置主定时器
             _timerMain = new DispatcherTimer();
-            _timerMain.Interval = new TimeSpan(0, 0, 10);
+            _timerMain.Interval = new TimeSpan(0, 0, 30);
             _timerMain.Tick += _timerMain_Tick; ;
             _timerMain.Start();
             #endregion
@@ -145,7 +145,7 @@ namespace PMSClient
                 return;
             }
             //每循环n次显示气泡信息一次
-            if (noticeCount % 6 == 0 && PMSNotice.HasNewNotice)
+            if (noticeCount % 60 == 0)
             {
                 #region NotifyIcon
                 if (cboLanguage.SelectedIndex == 0)

@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.Helper;
+using PMSClient.CustomControls;
 
 namespace PMSClient.ViewModel
 {
@@ -51,7 +52,7 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
-            Notice = new RelayCommand(ActionNotice);
+            Notice = new RelayCommand(ActionNotice,CanNotice);
 
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder));
@@ -63,9 +64,26 @@ namespace PMSClient.ViewModel
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
         }
 
+        private bool CanNotice()
+        {
+            return PMSNotice.HasNewNotice;
+        }
+
         private void ActionNotice()
         {
-            PMSNotice.ShowNoticeWindow();
+            if (PMSNotice.HasNewNotice)
+            {
+                NoticeWindow win = new NoticeWindow();
+                win.NoticeData = PMSNotice.Notices;
+                if (win.ShowDialog() == true)
+                {
+                    PMSNotice.SaveCurrentCount();
+                }
+            }
+            else
+            {
+                PMSDialogService.ShowYes("暂无消息");
+            }
         }
 
         public RelayCommand GoToNavigation { get; set; }

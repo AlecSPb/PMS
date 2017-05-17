@@ -68,17 +68,18 @@ namespace PMSClient
             #region 设置主定时器
             //设置主定时器
             _timerMain = new DispatcherTimer();
-            _timerMain.Interval = new TimeSpan(0, 0, 20);
+            _timerMain.Interval = new TimeSpan(0, 0, 30);
             _timerMain.Tick += _timerMain_Tick; ;
             _timerMain.Start();
             #endregion
-
             #region 托盘部分
             InitializeTray();
             #endregion
             //首次检测心跳
             HeartBeatCheck();
         }
+
+
         #region 定时器设定
         /// <summary>
         /// 主定时器
@@ -87,11 +88,13 @@ namespace PMSClient
         /// <param name="e"></param>
         private void _timerMain_Tick(object sender, EventArgs e)
         {
-            HeartBeatCheck();
-            //NoticeCheck();
+            if (HeartBeatCheck())
+            {
+                NoticeCheck();
+            }
         }
 
-        private void HeartBeatCheck()
+        private bool HeartBeatCheck()
         {
             try
             {
@@ -103,10 +106,9 @@ namespace PMSClient
                         {
                             txtHeartBeat.Text = "服务器通信正常";
                         });
-                        //txtHeartBeat.Text = "服务器通信正常";
                     }
                 }
-
+                return true;
             }
             catch (Exception ex)
             {
@@ -115,24 +117,31 @@ namespace PMSClient
                     txtHeartBeat.Text = ex.Message;
                 });
                 PMSHelper.CurrentLog.Error(ex);
+                return false;
             }
         }
 
+        public int noticeCount = 0;
         private void NoticeCheck()
         {
-            if (PMSHelper.CurrentSession.CurrentUser != null)
+            System.Diagnostics.Debug.WriteLine(noticeCount);
+            //循环检测是否有新消息
+            PMSNotice.CheckIt();
+            if (!PMSNotice.HasNewNotice)
             {
-                string msg = PMSNotice.NoticeMessage();
-                if (string.IsNullOrEmpty(msg))
-                {
-                    return;
-                }
-                SetNotifyIcon("新消息", msg, 3000);
+                noticeCount = 0;
+                return;
             }
+            //每循环n次显示气泡信息一次
+            if (noticeCount % 60 == 0)
+            {
+                SetNotifyIcon("PMS", "有新消息,请到导航界面->新消息 \r\n点击[我知道了]按钮", 6000);
+                noticeCount = 0;
+            }
+            noticeCount++;
         }
 
         #endregion
-
         #region 托盘通知
         private void InitializeTray()
         {

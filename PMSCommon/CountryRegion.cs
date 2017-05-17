@@ -21,7 +21,8 @@ namespace PMSCommon
         北京,
         成都,
         上海,
-        昆明
+        昆明,
+        其他
 
     }
 }

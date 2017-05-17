@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Notice>
+  <Counter Name="销售订单">
+    <LastTimeValue>0</LastTimeValue>
+  </Counter>
+  <Counter Name="原料订单">
+    <LastTimeValue>0</LastTimeValue>
+  </Counter>
+  <Counter Name="生产计划">
+    <LastTimeValue>0</LastTimeValue>
+  </Counter>
+  <Counter Name="发货计划">
+    <LastTimeValue>0</LastTimeValue>
+  </Counter>
+</Notice>
