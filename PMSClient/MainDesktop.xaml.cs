@@ -47,7 +47,7 @@ namespace PMSClient
                 lang = "zh-cn";
             }
             string langPath = "Resource/Language/" + lang + ".xaml";
-            App.Current.Resources.MergedDictionaries[2].Source = new Uri(langPath,UriKind.Relative);
+            App.Current.Resources.MergedDictionaries[2].Source = new Uri(langPath, UriKind.Relative);
             cboLanguage.SelectedIndex = lang == "zh-cn" ? 0 : 1;
         }
 
@@ -481,7 +481,7 @@ namespace PMSClient
         {
             if (cboLanguage.SelectedItem != null)
             {
-                Properties.Settings.Default.Language = cboLanguage.SelectedItem.ToString() == "中文" ? "zh-cn" : "us-en";
+                Properties.Settings.Default.Language = cboLanguage.SelectedIndex == 0 ? "zh-cn" : "us-en";
                 Properties.Settings.Default.Save();
             }
         }

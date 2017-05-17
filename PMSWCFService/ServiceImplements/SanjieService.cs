@@ -348,6 +348,8 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != OrderState.未核验.ToString()
+                                 && mm.State != OrderState.作废.ToString()
                                 && DbFunctions.DiffYears(m.CreateTime, date) == 0
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 orderby m.CreateTime descending
@@ -376,6 +378,8 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != OrderState.未核验.ToString()
+                                 && mm.State != OrderState.作废.ToString()
                                  && DbFunctions.DiffYears(m.CreateTime, date) == 0
                                  && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 orderby m.CreateTime descending
@@ -406,6 +410,8 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != OrderState.未核验.ToString()
+                                && mm.State != OrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
@@ -434,6 +440,8 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != OrderState.未核验.ToString()
+                                && mm.State != OrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
@@ -477,20 +485,20 @@ namespace PMSWCFService
                 {
                     var item = dc.MaterialOrderItems.Find(id);
                     #region 存储入库数据
-                    //var materialIn = new DcMaterialInventoryIn();
-                    //materialIn.Id = Guid.NewGuid();
-                    //materialIn.Creator = uid;
-                    //materialIn.CreateTime = DateTime.Now;
-                    //materialIn.State = PMSCommon.InventoryState.库存.ToString();
-                    //materialIn.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
-                    //materialIn.MaterialLot = item.OrderItemNumber;
-                    //materialIn.PMINumber = item.PMINumber;
-                    //materialIn.Composition = item.Composition;
-                    //materialIn.Weight = item.Weight;
-                    //materialIn.Purity = item.Purity;
-                    //materialIn.Remark = "";
+                    var materialIn = new DcMaterialInventoryIn();
+                    materialIn.Id = Guid.NewGuid();
+                    materialIn.Creator = uid;
+                    materialIn.CreateTime = DateTime.Now;
+                    materialIn.State = PMSCommon.InventoryState.暂入库.ToString();
+                    materialIn.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
+                    materialIn.MaterialLot = item.OrderItemNumber;
+                    materialIn.PMINumber = item.PMINumber;
+                    materialIn.Composition = item.Composition;
+                    materialIn.Weight = item.Weight;
+                    materialIn.Purity = item.Purity;
+                    materialIn.Remark = "";
 
-                    //AddMaterialInventoryInByUID(materialIn, uid);
+                    AddMaterialInventoryInByUID(materialIn, uid);
                     #endregion
                     item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
                     dc.Entry(item).State = EntityState.Modified;

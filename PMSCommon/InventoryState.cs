@@ -9,6 +9,7 @@ namespace PMSCommon
     public enum InventoryState
     {
         作废,
+        暂入库,
         库存,
         发货
     }
