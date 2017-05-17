@@ -485,12 +485,28 @@ namespace PMSClient
             string logStatusBar = "";
             if (_logInformation.CurrentUser != null)
             {
-                logNavigationBar = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
-                logStatusBar = $"[{ _logInformation.CurrentUser.RealName}]";
+                if (PMSHelper.Language=="zh-cn")
+                {
+                    logNavigationBar = $"当前用户:[{ _logInformation.CurrentUser.RealName}] 角色:[{_logInformation.CurrentUserRole.GroupName}]";
+                    logStatusBar = $"[{ _logInformation.CurrentUser.RealName}]";
+                }
+                else
+                {
+                    logNavigationBar = $"Current User:[{ _logInformation.CurrentUser.RealName}] Role:[{_logInformation.CurrentUserRole.GroupName}]";
+                    logStatusBar = $"[{ _logInformation.CurrentUser.RealName}]";
+                }
             }
             else
             {
-                logNavigationBar = logStatusBar = "未登录";
+                if (PMSHelper.Language == "zh-cn")
+                {
+                    logNavigationBar = logStatusBar = "未登录";
+                }
+                else
+                {
+                    logNavigationBar = logStatusBar = "no user";
+                }
+
             }
             txtCurrentUserName.Text = logStatusBar;
             PMSHelper.ViewModels.Navigation.SetLogInformation(logNavigationBar);
