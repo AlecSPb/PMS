@@ -8,7 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.Helper;
 using System.IO;
-
+using PMSClient.CustomControls;
 
 namespace PMSClient.ViewModel
 {
@@ -132,7 +132,19 @@ namespace PMSClient.ViewModel
 
         private void ActionNotice()
         {
-            PMSNotice.ShowNoticeWindow();
+            if (PMSNotice.HasNewNotice)
+            {
+                NoticeWindow win = new NoticeWindow();
+                win.NoticeData = PMSNotice.Notices;
+                if (win.ShowDialog() == true)
+                {
+                    PMSNotice.SaveCurrentCount();
+                }
+            }
+            else
+            {
+                PMSDialogService.ShowYes("暂无消息");
+            }
         }
 
         public RelayCommand GoToNavigation { get; set; }

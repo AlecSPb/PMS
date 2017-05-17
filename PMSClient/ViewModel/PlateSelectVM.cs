@@ -67,7 +67,7 @@ namespace PMSClient.ViewModel
         {
             var serviceDelivery = new DeliveryServiceClient();
             var servicePlate = new PlateServiceClient();
-            PlateExtras.ToList().ForEach(i =>
+            PlateExtras.Where(i=>i.IsSelected).ToList().ForEach(i =>
             {
                 var deliveryItem = PMSNewModelCollection.NewDeliveryItem(id);
                 deliveryItem.ProductType = PMSCommon.ProductType.背板.ToString();

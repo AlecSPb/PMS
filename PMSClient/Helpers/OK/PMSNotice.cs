@@ -25,26 +25,7 @@ namespace PMSClient
 
         private static Dictionary<string, int> CurrentCount;
         private static Dictionary<string, int> LastTimeCount;
-
-        private static List<string> Notices;
-        public static void ShowNoticeWindow()
-        {
-            CheckIt();
-            if (Notices.Count > 0)
-            {
-                NoticeWindow win = new NoticeWindow();
-                win.NoticeData = Notices;
-                if (win.ShowDialog()==true)
-                {
-                    SaveCurrentCount();
-                }
-            }
-            else
-            {
-                PMSDialogService.ShowYes("暂无消息");
-            }
-
-        }
+        public static List<string> Notices { get; set; }
 
         private const string Order = "销售订单";
         private const string MaterialOrder = "原料订单";
@@ -71,7 +52,7 @@ namespace PMSClient
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        private static void SaveCurrentCount()
+        public static void SaveCurrentCount()
         {
             SetXMLCounter(Order, CurrentCount[Order]);
             SetXMLCounter(MaterialOrder, CurrentCount[MaterialOrder]);

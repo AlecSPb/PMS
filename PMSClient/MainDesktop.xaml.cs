@@ -100,11 +100,9 @@ namespace PMSClient
         /// <param name="e"></param>
         private void _timerMain_Tick(object sender, EventArgs e)
         {
-            if (HeartBeatCheck() && isFirstTimeNoticeCheck)
+            if (HeartBeatCheck())
             {
                 NoticeCheck();
-                //消息在程序启动后只通知一次
-                isFirstTimeNoticeCheck = false;
             }
         }
         private bool HeartBeatCheck()
@@ -135,13 +133,23 @@ namespace PMSClient
             }
         }
 
-        private bool isFirstTimeNoticeCheck = true;
+        public bool isFirstTime = true;
         private void NoticeCheck()
         {
+            //循环检测是否有新消息
             PMSNotice.CheckIt();
-            if (PMSNotice.HasNewNotice)
+            //只有第一次打开客户端的时候才会显示气泡信息
+            if (PMSNotice.HasNewNotice && isFirstTime)
             {
-                SetNotifyIcon("新消息", "请到导航新消息窗口查看新消息", 3000);
+                if (cboLanguage.SelectedIndex == 0)
+                {
+                    SetNotifyIcon("有新消息", "有新消息,请到导航界面->新消息 \r\n点击[我知道了]按钮", 6000);
+                }
+                else
+                {
+                    SetNotifyIcon("New Message", "There are New Messages. Please Go To Navigation -> New Message\r\nClick Button I Know", 6000);
+                }
+                isFirstTime = false;
             }
         }
 
