@@ -99,11 +99,11 @@ namespace PMSClient
                 {
                     if (heartbeat.Beat() == "ok")
                     {
-                        //this.Dispatcher.Invoke(() =>
-                        //{
-                        //    txtHeartBeat.Text = "服务器通信正常";
-                        //});
-                        txtHeartBeat.Text = "服务器通信正常";
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            txtHeartBeat.Text = "服务器通信正常";
+                        });
+                        //txtHeartBeat.Text = "服务器通信正常";
                     }
                 }
 

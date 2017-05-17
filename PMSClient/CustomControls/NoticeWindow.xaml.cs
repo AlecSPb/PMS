@@ -23,15 +23,17 @@ namespace PMSClient.CustomControls
         {
             InitializeComponent();
         }
-        public string NoticeMessage
+        public List<string> NoticeData
         {
             set
             {
-                this.txtNotice.Text = value;
+                this.NoticeList.ItemsSource = value;
             }
         }
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+
+        private void btnReadAll_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = true;
             this.Close();
         }
     }

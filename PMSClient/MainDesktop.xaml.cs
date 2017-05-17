@@ -100,11 +100,14 @@ namespace PMSClient
         /// <param name="e"></param>
         private void _timerMain_Tick(object sender, EventArgs e)
         {
-            HeartBeatCheck();
-            //NoticeCheck();
+            if (HeartBeatCheck() && isFirstTimeNoticeCheck)
+            {
+                NoticeCheck();
+                //消息在程序启动后只通知一次
+                isFirstTimeNoticeCheck = false;
+            }
         }
-
-        private void HeartBeatCheck()
+        private bool HeartBeatCheck()
         {
             try
             {
@@ -112,14 +115,14 @@ namespace PMSClient
                 {
                     if (heartbeat.Beat() == "ok")
                     {
-                        //this.Dispatcher.Invoke(() =>
-                        //{
-                        //    txtHeartBeat.Text = "服务器通信正常";
-                        //});
-                        txtHeartBeat.Text = "服务器通信正常";
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            txtHeartBeat.Text = "服务器通信正常";
+                        });
+                        //txtHeartBeat.Text = "服务器通信正常";
                     }
                 }
-
+                return true;
             }
             catch (Exception ex)
             {
@@ -128,19 +131,17 @@ namespace PMSClient
                     txtHeartBeat.Text = ex.Message;
                 });
                 PMSHelper.CurrentLog.Error(ex);
+                return false;
             }
         }
 
+        private bool isFirstTimeNoticeCheck = true;
         private void NoticeCheck()
         {
-            if (PMSHelper.CurrentSession.CurrentUser != null)
+            PMSNotice.CheckIt();
+            if (PMSNotice.HasNewNotice)
             {
-                string msg = PMSNotice.NoticeMessage();
-                if (string.IsNullOrEmpty(msg))
-                {
-                    return;
-                }
-                SetNotifyIcon("新消息", msg, 3000);
+                SetNotifyIcon("新消息", "请到导航新消息窗口查看新消息", 3000);
             }
         }
 

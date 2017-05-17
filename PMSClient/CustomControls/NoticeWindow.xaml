@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="PMS通知消息" Height="300" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize"> 
+        Title="PMS通知消息" Height="300" Width="400" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBox Name="txtNotice" Margin="2" Padding="5" Background="LightYellow" />
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="btnClose" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnClose_Click"/>
+        <ListBox Grid.Row="0" Name="NoticeList" Background="LightYellow"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnReadAll" Content="全部已读" Style="{StaticResource StyleButtonCommon}" Click="btnReadAll_Click"/>
         </StackPanel>
     </Grid>
 </Window>
