@@ -83,5 +83,9 @@ namespace PMSClient
             }
         }
         #endregion
+
+        #region 语言
+        public static string Language { get; set; } = "zh-cn";
+        #endregion
     }
 }

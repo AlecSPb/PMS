@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
-            Notice = new RelayCommand(ActionNotice,CanNotice);
+            Notice = new RelayCommand(ActionNotice, CanNotice);
             Help = new RelayCommand(ActionHelp);
 
 
@@ -118,7 +118,17 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", "pmshelp.pptx");
+                string helpFileName = "";
+                if (PMSHelper.Language == "zh-cn")
+                {
+                    helpFileName = "pmshelp_ch.pptx";
+                }
+                else
+                {
+                    helpFileName = "pmshelp_en.pptx";
+                }
+
+                string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
                 if (File.Exists(helpFile))
                 {
                     System.Diagnostics.Process.Start(helpFile);
@@ -196,7 +206,7 @@ namespace PMSClient.ViewModel
         #endregion
 
         public RelayCommand Notice { get; set; }
-        public RelayCommand Help { get;  set; }
+        public RelayCommand Help { get; set; }
         public RelayCommand GoToDebug { get; set; }
     }
 }

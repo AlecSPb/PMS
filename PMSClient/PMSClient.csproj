@@ -936,7 +936,10 @@
     <Content Include="Resource\DocTemplate\Reports\ReportTCB440.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\Files\pmshelp.pptx">
+    <Content Include="Resource\Files\pmshelp_ch.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Files\pmshelp_en.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\StatisticService\MainStatisticService.wsdl" />

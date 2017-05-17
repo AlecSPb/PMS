@@ -46,6 +46,8 @@ namespace PMSClient
             {
                 lang = "zh-cn";
             }
+            //设定当前程序的语言类型，供其他程序使用
+            PMSHelper.Language = lang;
             string langPath = "Resource/Language/" + lang + ".xaml";
             App.Current.Resources.MergedDictionaries[2].Source = new Uri(langPath, UriKind.Relative);
             cboLanguage.SelectedIndex = lang == "zh-cn" ? 0 : 1;
@@ -148,7 +150,7 @@ namespace PMSClient
             if (noticeCount % 60 == 0)
             {
                 #region NotifyIcon
-                if (cboLanguage.SelectedIndex == 0)
+                if (PMSHelper.Language=="zh-cn")
                 {
                     SetNotifyIcon("PMS", "有新消息,请到导航界面->新消息 \r\n点击[我知道了]按钮", 6000);
                 }
