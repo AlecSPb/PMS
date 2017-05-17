@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         Title="信息" Height="400" Width="500" WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <ResourceDictionary Source="..\Resource\Styles\Desktop.xaml"/>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,7 +17,7 @@
                    FontSize="20" HorizontalAlignment="Center" FontWeight="Bold"/>
         <TextBox Name="txtMessageContent" Grid.Row="1" Margin="2" IsReadOnly="True" AcceptsReturn="True" Background="LightYellow"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="btnClose" Content="晓得了" Style="{StaticResource StyleButtonCommon}" Click="btnClose_Click"
+            <Button Name="btnClose" Content="{StaticResource ButtonIKnow}" Style="{StaticResource StyleButtonCommon}" Click="btnClose_Click"
                     HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>

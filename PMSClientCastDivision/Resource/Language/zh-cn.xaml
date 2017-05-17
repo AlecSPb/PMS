@@ -4,7 +4,7 @@
 
     <!--规范化后的命名-->
     <!--AppName-->
-    <sys:String x:Key="AppNameDesktop">PMS生产管理系统_三杰专用[测试版本]</sys:String>
+    <sys:String x:Key="AppNameDesktop">PMS生产管理系统[正式版本]</sys:String>
 
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">订单管理</sys:String>
@@ -89,9 +89,9 @@
 
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
-    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]-从三杰到先锋</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]-从先锋到三杰</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
     <sys:String x:Key="PageMaterialInventoryOutEdit">原料库存[出库]编辑</sys:String>
 
@@ -203,11 +203,13 @@
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
-    <sys:String x:Key="ButtonLocation">定位</sys:String>
     <sys:String x:Key="ButtonFinish">完成</sys:String>
+    <sys:String x:Key="ButtonLocation">定位</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">原料流水</sys:String>
     <sys:String x:Key="ButtonNotice">新消息</sys:String>
-    
+    <sys:String x:Key="ButtonHelp">帮助</sys:String>
+    <sys:String x:Key="ButtonIKnow">知道了</sys:String>
+
     
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>

@@ -208,7 +208,9 @@
     <sys:String x:Key="ButtonMaterialOrderItemList">原料流水</sys:String>
     <sys:String x:Key="ButtonNotice">新消息</sys:String>
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
+    <sys:String x:Key="ButtonIKnow">知道了</sys:String>
 
+    
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
     <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>

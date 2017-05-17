@@ -4,7 +4,7 @@
 
     <!--规范化后的命名-->
     <!--AppName-->
-    <sys:String x:Key="AppNameDesktop">Production Management System[Test Edtion]</sys:String>
+    <sys:String x:Key="AppNameDesktop">Production Management System[Formal Edtion]</sys:String>
 
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">Order Management</sys:String>
@@ -116,8 +116,8 @@
     <sys:String x:Key="PageProduct">Product</sys:String>
     <sys:String x:Key="PageProductEdit">Product Edit</sys:String>
 
-    <sys:String x:Key="PagePlate">Plate</sys:String>
-    <sys:String x:Key="PagePlateEdit">Plate Edit</sys:String>
+    <sys:String x:Key="PagePlate">Back Plate</sys:String>
+    <sys:String x:Key="PagePlateEdit">Back Plate Edit</sys:String>
 
 
     <sys:String x:Key="PageDelivery">Delivery</sys:String>
@@ -207,8 +207,9 @@
     <sys:String x:Key="ButtonLocation">Locate</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">Material List</sys:String>
     <sys:String x:Key="ButtonNotice">Notice</sys:String>
-
-
+    <sys:String x:Key="ButtonHelp">Help</sys:String>
+    <sys:String x:Key="ButtonIKnow">I Know</sys:String>
+    
     <sys:String x:Key="ButtonCalculator">Calculator</sys:String>
     <sys:String x:Key="ButtonSmallCalculator"> Small Calculator</sys:String>
     <sys:String x:Key="ButtonInventoryOut">Inventory Out</sys:String>
