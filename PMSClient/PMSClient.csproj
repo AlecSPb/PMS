@@ -958,6 +958,9 @@
     <Resource Include="Resource\Icons\help.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Resource\HelpImages\materialorder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resource\NoticeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -991,24 +994,24 @@
     <Resource Include="Resource\Icons\lightbulb.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resource\HelpImages\workflow2.png">
+    <Content Include="Resource\HelpImages\workflow2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\workflow.png">
+    </Content>
+    <Content Include="Resource\HelpImages\workflow.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\productionlabel.png">
+    </Content>
+    <Content Include="Resource\HelpImages\productionlabel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\materialorder.png">
+    </Content>
+    <Content Include="Resource\HelpImages\materialorderold.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\deliverysheet.png">
+    </Content>
+    <Content Include="Resource\HelpImages\deliverysheet.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\HelpImages\blanktarget.jpg">
+    </Content>
+    <Content Include="Resource\HelpImages\blanktarget.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Resource Include="Resource\DocTemplate\Reports\Temp\DoNotDeleteThisFolder.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
