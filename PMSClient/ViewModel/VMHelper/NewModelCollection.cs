@@ -137,7 +137,7 @@ namespace PMSClient.ViewModel
             model.Abbr = "缩写";
             model.Weight = "";
             model.Customer = "客户";
-            model.Position = PMSCommon.GoodPosition.A1.ToString();
+            model.Position = PMSCommon.GoodPosition.A2.ToString();
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
             model.State = PMSCommon.InventoryState.库存.ToString();
             model.Remark = "";
@@ -165,7 +165,7 @@ namespace PMSClient.ViewModel
             model.DetailRecord = "细节";
             model.Remark = "无";
             model.PackNumber = 1;
-            model.Position = "A2";
+            model.Position = "B2";
             model.Dimension = "";
             model.DimensionActual = "";
             model.Defects = "无";

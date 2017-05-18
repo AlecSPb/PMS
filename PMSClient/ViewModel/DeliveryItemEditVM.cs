@@ -57,7 +57,7 @@ namespace PMSClient.ViewModel
             model.DetailRecord = "细节";
             model.Remark = "无";
             model.PackNumber = 1;
-            model.Position = "A2";
+            model.Position = "B2";
             model.Dimension = "";
             model.DimensionActual = "";
             model.Defects = "无";
