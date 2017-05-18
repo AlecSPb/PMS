@@ -33,8 +33,13 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcPlate>(ActionEdit, CanEdit);
             Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
-            BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate);
+            BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate,CanBatchDuplicate);
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
+        }
+
+        private bool CanBatchDuplicate(DcPlate arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
         }
 
         private bool CanSelect(DcPlate arg)

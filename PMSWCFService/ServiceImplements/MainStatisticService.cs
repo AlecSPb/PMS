@@ -292,6 +292,7 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.VHPPlans
                                 where i.State != PMSCommon.VHPPlanState.作废.ToString()
+                                &&i.CreateTime.Year==year
                                 group i by ((i.PlanDate.Month - 1) / 3 + 1) into g
                                 orderby g.Key
                                 select new DcStatistic { Key = g.Key.ToString(), Value = g.Count() };
