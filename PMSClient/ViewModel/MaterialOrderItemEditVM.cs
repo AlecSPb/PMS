@@ -34,8 +34,8 @@ namespace PMSClient.ViewModel
                 item.State = PMSCommon.MaterialOrderItemState.未完成.ToString();
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
-                var prefix = order.OrderPO.Substring(0, order.OrderPO.Length - 3);
-                item.OrderItemNumber = prefix+"-"+ (GetNowItemCount(order)+1).ToString();
+                var prefix = order.OrderPO;
+                item.OrderItemNumber = prefix+ (GetNowItemCount(order)+1).ToString();
                 item.Composition = "需求成分";
                 item.PMINumber = DateTime.Now.ToString("yyMMdd");
                 item.Purity = "5N";
@@ -95,17 +95,6 @@ namespace PMSClient.ViewModel
 
         private void ActionCheck()
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
-            {
-                return;
-            }
-            if (CurrentMaterialOrderItem.State == "作废")
-            {
-                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
-                {
-                    return;
-                }
-            }
             try
             {
                 using (var service=new MaterialOrderServiceClient())

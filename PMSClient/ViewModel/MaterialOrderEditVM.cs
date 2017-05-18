@@ -28,15 +28,15 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.State = PMSCommon.OrderState.未完成.ToString();
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
-            model.SupplierAbbr = "";
+            model.Supplier ="";
+            model.SupplierAbbr = "SJ";
             model.SupplierEmail = "";
             model.SupplierReceiver = "";
             model.SupplierAddress = "";
             model.ShipFee = 0;
             model.Priority = PMSCommon.OrderPriority.普通.ToString();
             model.Remark = "";
-            model.OrderPO = DateTime.Now.ToString("yyMMdd") + "_" + model.SupplierAbbr;
+            model.OrderPO = DateTime.Now.ToString("yyMMdd") + model.SupplierAbbr;
             #endregion
 
             IsNew = true;

@@ -38,6 +38,7 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(txtReceiver, selectSupplier.ContactPerson);
                 PMSMethods.SetTextBox(txtEmail, selectSupplier.Email);
                 PMSMethods.SetTextBox(txtAddress, selectSupplier.Address);
+                PMSMethods.SetTextBox(txtOrderPO, $"{DateTime.Now.ToString("yyMMdd")}{selectSupplier.Abbr}");
             }
         }
     }

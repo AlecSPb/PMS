@@ -60,8 +60,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MOOrderPO}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding OrderPO}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                    <TextBox Name="txtOrderPO" Grid.Row="0" Grid.Column="1" Text="{Binding OrderPO}" Style="{StaticResource StyleTextBoxCommon}" />
                     <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单PO，自动生成的不一定合适，可以自行修改，但最好确保唯一"/>
 
