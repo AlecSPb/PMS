@@ -30,6 +30,9 @@
                     Command="{Binding GoToDeliveryItemList}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
+
         </StackPanel>
         <DataGrid x:Name="mainDg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" LoadingRow="DataGrid_LoadingRow"
                       SelectedIndex="{Binding CurrentSelectIndex}"
@@ -55,6 +58,9 @@
                                                 Command="{Binding Path=DataContext.DeliverySheet,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Label,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                                Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -124,6 +130,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource RDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
+                <DataGridTextColumn Header="{StaticResource RDState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

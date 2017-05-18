@@ -16,6 +16,7 @@ namespace PMSDAL
         public string Creator { get; set; }
         public string State { get; set; }//取消，未审核，审核通过，已发货
 
+        public DateTime FinishTime { get; set; }
 
         public string DeliveryName { get; set; }
         public string InvoiceNumber { get; set; }

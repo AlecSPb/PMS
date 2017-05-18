@@ -514,6 +514,7 @@
     <sys:String x:Key="RDCreator">创建者</sys:String>
     <sys:String x:Key="RDCreateTime">创建时间</sys:String>
     <sys:String x:Key="RDState">状态</sys:String>
+    <sys:String x:Key="RDFinishTime">完成时间</sys:String>
     <sys:String x:Key="RDDeliveryName">发货名</sys:String>
     <sys:String x:Key="RDInvoiceNumber">发票号</sys:String>
     <sys:String x:Key="RDDeliveryNumber">物流信息</sys:String>

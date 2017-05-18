@@ -135,7 +135,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.Deliverys
-                                where d.State != PMSCommon.CommonState.作废.ToString()
+                                where d.State != PMSCommon.DeliveryState.作废.ToString()
                                 orderby d.CreateTime descending
                                 select d;
                     Mapper.Initialize(cfg =>
@@ -162,7 +162,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.Deliverys
-                                where d.State != PMSCommon.CommonState.作废.ToString()
+                                where d.State != PMSCommon.DeliveryState.作废.ToString()
                                 &&d.DeliveryName.Contains(deliveryName)
                                 orderby d.CreateTime descending
                                 select d;
@@ -190,7 +190,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.Deliverys
-                                where d.State != PMSCommon.CommonState.作废.ToString()
+                                where d.State != PMSCommon.DeliveryState.作废.ToString()
                                 select d;
                     return query.Count();
                 }
@@ -210,7 +210,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from d in dc.Deliverys
-                                where d.State != PMSCommon.CommonState.作废.ToString()
+                                where d.State != PMSCommon.DeliveryState.作废.ToString()
                                 && d.DeliveryName.Contains(deliveryName)
                                 select d;
                     return query.Count();
@@ -256,7 +256,7 @@ namespace PMSWCFService
                                  join dd in dc.Deliverys
                                  on d.DeliveryID equals dd.ID
                                  where d.State != PMSCommon.SimpleState.作废.ToString()
-                                 && dd.State!=PMSCommon.CommonState.作废.ToString()
+                                 && dd.State!=PMSCommon.DeliveryState.作废.ToString()
                                  && d.ProductID.Contains(productid)
                                  && d.Composition.Contains(composition)
                                  orderby  dd.CreateTime descending,d.CreateTime descending
@@ -284,10 +284,6 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year)
-        {
-            throw new NotImplementedException();
-        }
 
         public int GetDeliveryItemExtraCount(string productid, string composition)
         {
@@ -299,7 +295,7 @@ namespace PMSWCFService
                                 join dd in dc.Deliverys
                                 on d.DeliveryID equals dd.ID
                                 where d.State != PMSCommon.SimpleState.作废.ToString()
-                                && dd.State != PMSCommon.CommonState.作废.ToString()
+                                && dd.State != PMSCommon.DeliveryState.作废.ToString()
                                 && d.ProductID.Contains(productid)
                                 && d.Composition.Contains(composition)
                                 select new PMSDeliveryItemExtra()
@@ -316,7 +312,10 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year)
+        {
+            throw new NotImplementedException();
+        }
         public int GetDeliveryItemExtraCountByYear(string productid, int year)
         {
             throw new NotImplementedException();

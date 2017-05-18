@@ -234,6 +234,7 @@
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DeliveryNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackageInformation" nillable="true" type="xs:string" />

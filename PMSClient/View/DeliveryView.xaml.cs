@@ -38,8 +38,11 @@ namespace PMSClient.View
                     case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
                         break;
-                    case "已核验":
-                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
+                    case "未完成":
+                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                        break;
+                    case "完成":
+                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;

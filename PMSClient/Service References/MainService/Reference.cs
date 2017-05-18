@@ -2222,6 +2222,9 @@ namespace PMSClient.MainService {
         private string DeliveryNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2326,6 +2329,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.DeliveryNumberField, value) != true)) {
                     this.DeliveryNumberField = value;
                     this.RaisePropertyChanged("DeliveryNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
                 }
             }
         }

@@ -27,7 +27,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.CommonState.已核验.ToString();
+            model.State = PMSCommon.DeliveryState.未核验.ToString();
             model.DeliveryName = $"FH{DateTime.Now.ToString("yyMMdd")}";
             model.InvoiceNumber = "无";
             model.DeliveryNumber = "UPS";
@@ -36,6 +36,7 @@ namespace PMSClient.ViewModel
             model.Remark = "";
             model.ShipTime = DateTime.Now;
             model.Address = "无";
+            model.FinishTime = DateTime.Now;
             model.Country = PMSCommon.CountryRegion.美国.ToString();
             #endregion
             CurrentDelivery = model;
@@ -55,7 +56,7 @@ namespace PMSClient.ViewModel
         private void InitialProperties()
         {
             OrderStates = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.CommonState>(OrderStates);
+            PMSBasicDataService.SetListDS<PMSCommon.DeliveryState>(OrderStates);
 
             Countries = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.CountryRegion>(Countries);

@@ -48,6 +48,7 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcDelivery>(ActionEdit, CanEdit);
             Label = new RelayCommand<DcDelivery>(ActionLabel, CanLabel);
+            Finish = new RelayCommand<DcDelivery>(ActionFinish, CanFinish);
             AddItem = new RelayCommand<DcDelivery>(ActionAddItem, CanAddItem);
             EditItem = new RelayCommand<DcDeliveryItem>(ActionEditItem, CanEditItem);
             SearchRecordTest = new RelayCommand<DcDeliveryItem>(ActionRecordTest, CanRecordTest);
@@ -57,6 +58,37 @@ namespace PMSClient.ViewModel
             GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
 
 
+        }
+
+        private bool CanFinish(DcDelivery arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
+        }
+
+        private void ActionFinish(DcDelivery model)
+        {
+            if (model != null)
+            {
+                if (!PMSDialogService.ShowYesNo("请问","确定完成发货吗?"))
+                {
+                    return;
+                }
+                try
+                {
+                    using (var service=new DeliveryServiceClient())
+                    {
+                        model.State = PMSCommon.DeliveryState.完成.ToString();
+                        model.ShipTime = DateTime.Now;
+                        service.UpdateDeliveryByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                    NavigationService.Status("发货完成");
+                    SetPageParametersWhenConditionChange();
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
         }
 
         public void SetSearch(string deliveryName)
@@ -73,7 +105,7 @@ namespace PMSClient.ViewModel
 
         private void ActionDeliverySheet(DcDelivery model)
         {
-            if (PMSDialogService.ShowYesNo("请问","确定要在桌面生成发货清单吗？"))
+            if (PMSDialogService.ShowYesNo("请问", "确定要在桌面生成发货清单吗？"))
             {
                 try
                 {
@@ -96,7 +128,7 @@ namespace PMSClient.ViewModel
 
         private void ActionRecordTest(DcDeliveryItem model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 PMSHelper.ViewModels.RecordTest.SetSearch("", model.ProductID);
                 NavigationService.GoTo(PMSViews.RecordTest);
@@ -326,6 +358,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Add { get; set; }
         public RelayCommand<DcDelivery> Edit { get; set; }
         public RelayCommand<DcDelivery> Label { get; set; }
+        public RelayCommand<DcDelivery> Finish { get; set; }
         public RelayCommand<DcDelivery> DeliverySheet { get; set; }
         public RelayCommand<DcDelivery> AddItem { get; set; }
         public RelayCommand<DcDeliveryItem> EditItem { get; set; }

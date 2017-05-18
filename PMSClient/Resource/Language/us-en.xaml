@@ -513,6 +513,7 @@
     <sys:String x:Key="RDCreator">Creator</sys:String>
     <sys:String x:Key="RDCreateTime">Create Time</sys:String>
     <sys:String x:Key="RDState">State</sys:String>
+    <sys:String x:Key="RDFinishTime">FinishTime</sys:String>
     <sys:String x:Key="RDDeliveryName">Delivery Name</sys:String>
     <sys:String x:Key="RDInvoiceNumber">Invoice Number</sys:String>
     <sys:String x:Key="RDDeliveryNumber">Delivery Number</sys:String>
