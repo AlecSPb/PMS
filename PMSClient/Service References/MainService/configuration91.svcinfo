@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ebsh33yVUCBCq0fDHEc9DrqDLxc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="mGcikVYg+8D5U3KI1ne3JPJqJwE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="order">
       <properties>
@@ -1747,10 +1747,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="order" contract="MainService.IOrderService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="order">
+    <endpoint name="order" contract="MainService.IOrderService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="order">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1832,10 +1832,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="planvhp" contract="MainService.IPlanVHPService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="planvhp">
+    <endpoint name="planvhp" contract="MainService.IPlanVHPService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="planvhp">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1917,10 +1917,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="materialneed" contract="MainService.IMaterialNeedService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="materialneed">
+    <endpoint name="materialneed" contract="MainService.IMaterialNeedService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialneed">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2002,10 +2002,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="materialorder" contract="MainService.IMaterialOrderService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="materialorder">
+    <endpoint name="materialorder" contract="MainService.IMaterialOrderService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialorder">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2087,10 +2087,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="materialinventory" contract="MainService.IMaterialInventoryService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="materialinventory">
+    <endpoint name="materialinventory" contract="MainService.IMaterialInventoryService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="materialinventory">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2172,10 +2172,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="misson" contract="MainService.IMissonService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="misson">
+    <endpoint name="misson" contract="MainService.IMissonService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="misson">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2257,10 +2257,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="delivery" contract="MainService.IDeliveryService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="delivery">
+    <endpoint name="delivery" contract="MainService.IDeliveryService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="delivery">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2342,10 +2342,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="plate" contract="MainService.IPlateService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="plate">
+    <endpoint name="plate" contract="MainService.IPlateService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="plate">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2427,10 +2427,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="product" contract="MainService.IProductService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="product">
+    <endpoint name="product" contract="MainService.IProductService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="product">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2512,10 +2512,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordtest" contract="MainService.IRecordTestService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="recordtest">
+    <endpoint name="recordtest" contract="MainService.IRecordTestService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordtest">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2597,10 +2597,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordvhp" contract="MainService.IRecordVHPService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="recordvhp">
+    <endpoint name="recordvhp" contract="MainService.IRecordVHPService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordvhp">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2682,10 +2682,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordmilling" contract="MainService.IRecordMillingService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="recordmilling">
+    <endpoint name="recordmilling" contract="MainService.IRecordMillingService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordmilling">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2767,10 +2767,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordmachine" contract="MainService.IRecordMachineService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="recordmachine">
+    <endpoint name="recordmachine" contract="MainService.IRecordMachineService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordmachine">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2852,10 +2852,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recorddemold" contract="MainService.IRecordDeMoldService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="recorddemold">
+    <endpoint name="recorddemold" contract="MainService.IRecordDeMoldService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recorddemold">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2937,10 +2937,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="recordbonding" contract="MainService.IRecordBondingService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="recordbonding">
+    <endpoint name="recordbonding" contract="MainService.IRecordBondingService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="recordbonding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3022,10 +3022,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="outsource" contract="MainService.IOutSourceService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSService.svc" bindingConfiguration="outsource">
+    <endpoint name="outsource" contract="MainService.IOutSourceService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSService.svc" bindingConfiguration="outsource">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

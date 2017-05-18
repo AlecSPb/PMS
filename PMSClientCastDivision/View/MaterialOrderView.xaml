@@ -51,8 +51,8 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.Doc,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
-                                                Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                <!--<Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                                Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>-->
 
                             </StackPanel>
                         </DataTemplate>

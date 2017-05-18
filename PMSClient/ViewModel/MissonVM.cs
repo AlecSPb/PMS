@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan));
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan),CanGoToPlan);
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
 
             Search = new RelayCommand(ActionSearch, CanSearch);
@@ -56,6 +56,11 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+        }
+
+        private bool CanGoToPlan()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadPlan);
         }
 
         private bool CanSearch()

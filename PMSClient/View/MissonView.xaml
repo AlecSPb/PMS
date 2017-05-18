@@ -32,7 +32,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
-            <!--<Button Content="{StaticResource ButtonPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToPlan}"/>-->
+            <Button Content="{StaticResource ButtonPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToPlan}"/>
             <!--<Button Content="{StaticResource ButtonMaterialNeed}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialNeed}"/>-->
             <!--图例-->
             <StackPanel Orientation="Horizontal">
@@ -144,10 +144,10 @@
         </DataGrid>
         <StackPanel Grid.Row="3" Orientation="Horizontal">
             <control:SimplePager  Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}" LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
-            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMisson}" Foreground="Black"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipMisson}" Foreground="Black"/>
         </StackPanel>
         <DataGrid Name="dgplans" Grid.Row="4" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanVHPs}" LoadingRow="dgplans_LoadingRow">
             <DataGrid.Columns>

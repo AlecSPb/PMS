@@ -127,14 +127,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\LargeScreenService\LargeScreenService.wsdl" />
-    <None Include="Service References\LargeScreenService\LargeScreenService.xsd">
+    <None Include="Service References\LargeScreenService\LargeScreenService1.wsdl" />
+    <None Include="Service References\LargeScreenService\LargeScreenService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LargeScreenService\LargeScreenService1.xsd">
+    <None Include="Service References\LargeScreenService\LargeScreenService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LargeScreenService\LargeScreenService2.xsd">
+    <None Include="Service References\LargeScreenService\LargeScreenService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\LargeScreenService\PMSLargeScreenBonding.LargeScreenService.DcPlanExtra.datasource">
@@ -157,9 +157,6 @@
     <WCFMetadataStorage Include="Service References\LargeScreenService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\LargeScreenService\LargeScreenService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\LargeScreenService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +171,9 @@
   <ItemGroup>
     <Resource Include="Resources\Images\tv.png" />
     <Resource Include="Resources\Images\tv.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LargeScreenService\LargeScreenService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

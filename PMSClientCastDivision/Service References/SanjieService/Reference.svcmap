@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/SanjieService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/SanjieService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SanjieService.xsd" MetadataType="Schema" ID="5c7df39a-5739-4ae7-9e68-daee92e9b778" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SanjieService.wsdl" MetadataType="Wsdl" ID="b76513db-5436-4f31-a378-c2378c3866af" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?wsdl" />
-    <MetadataFile FileName="SanjieService1.xsd" MetadataType="Schema" ID="9596d86d-4d75-444d-bb74-c2ed1f83f034" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SanjieService.disco" MetadataType="Disco" ID="0c4c8d9e-02fc-4c46-b254-2761142a5af6" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?disco" />
-    <MetadataFile FileName="SanjieService2.xsd" MetadataType="Schema" ID="e0a70782-1961-4838-a4b3-de8dd8097d22" SourceId="1" SourceUrl="http://localhost:8002/SanjieService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SanjieService1.disco" MetadataType="Disco" ID="fe53dc3e-c54a-484b-beb9-07505b3d2324" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?disco" />
+    <MetadataFile FileName="SanjieService1.wsdl" MetadataType="Wsdl" ID="3c06bc7a-27e8-4f98-8777-2d213c9267d0" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?wsdl" />
+    <MetadataFile FileName="SanjieService3.xsd" MetadataType="Schema" ID="e046f3c0-b3e0-45af-a9bf-e9734617525e" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SanjieService31.xsd" MetadataType="Schema" ID="006263bc-017a-4dd2-9921-6a6195521f57" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SanjieService32.xsd" MetadataType="Schema" ID="d16f5b42-3b23-4a72-b5a3-b9ec9442a768" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

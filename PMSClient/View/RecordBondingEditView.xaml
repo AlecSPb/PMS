@@ -91,9 +91,11 @@
                                 <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}" Style="{StaticResource StyleComboBoxCommon}"
                                           SelectedItem="{Binding State}" FontSize="{StaticResource TabletFontLG}"/>
                                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="设定绑定状态"/>
-                                
+
                                 <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
-                                <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxBig}" Text="{Binding Remark}"/>
+                                <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+                                          ItemsSource="{Binding DataContext.BondingDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                          Text="{Binding Remark}"/>
                                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="绑定备注，比如裂缝失败等"/>
                                 
                                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>

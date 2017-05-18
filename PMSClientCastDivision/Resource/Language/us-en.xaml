@@ -4,7 +4,7 @@
 
     <!--规范化后的命名-->
     <!--AppName-->
-    <sys:String x:Key="AppNameDesktop">Production Management System[Formal Edtion]</sys:String>
+    <sys:String x:Key="AppNameDesktop">Production Management System_For Sanjie[Test Edtion]</sys:String>
 
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">Order Management</sys:String>

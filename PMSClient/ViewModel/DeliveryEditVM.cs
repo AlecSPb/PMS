@@ -82,7 +82,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentDelivery.State=="作废")
+            if (CurrentDelivery.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
                 {
@@ -94,11 +94,11 @@ namespace PMSClient.ViewModel
                 var service = new DeliveryServiceClient();
                 if (IsNew)
                 {
-                    service.AddDelivery(CurrentDelivery);
+                    service.AddDeliveryByUID(CurrentDelivery, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
                 else
                 {
-                    service.UpdateDelivery(CurrentDelivery);
+                    service.UpdateDeliveryByUID(CurrentDelivery, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
                 service.Close();
                 PMSHelper.ViewModels.Delivery.RefreshData();

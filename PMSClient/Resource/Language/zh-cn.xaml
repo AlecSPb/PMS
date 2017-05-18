@@ -763,7 +763,7 @@
         注意：尽量选择，没有自己输入，不需要的项目填充0,保存前要认真检查有无错误，有错误及时修改
     </sys:String>
     <sys:String x:Key="HelpTipMisson">
-        黄色标记的项目为未核验，核验后该计划才会公布
+        核验后才会正式进入生产
     </sys:String>
     <sys:String x:Key="HelpTipRecordMillingEdit">
         注意：填写一定要规范，可以自行输入，但最好通过选择来减少输入时间和错误

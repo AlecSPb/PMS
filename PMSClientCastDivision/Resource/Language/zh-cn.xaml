@@ -4,7 +4,7 @@
 
     <!--规范化后的命名-->
     <!--AppName-->
-    <sys:String x:Key="AppNameDesktop">PMS生产管理系统[正式版本]</sys:String>
+    <sys:String x:Key="AppNameDesktop">PMS生产管理系统_三杰专用[测试版本]</sys:String>
 
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">订单管理</sys:String>

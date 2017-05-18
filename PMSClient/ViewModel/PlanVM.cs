@@ -33,7 +33,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson),CanGoToMisson);
             Search = new RelayCommand(ActionSearch,CanSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
@@ -41,6 +41,11 @@ namespace PMSClient.ViewModel
             Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
+        }
+
+        private bool CanGoToMisson()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMisson);
         }
 
         private bool CanSearch()

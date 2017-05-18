@@ -21,6 +21,9 @@ namespace PMSClient.ViewModel
 
             States = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.BondingState>(States);
+
+            BondingDefects = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.BondingDefects, BondingDefects);
         }
 
         private void ActionSelectPlate()
@@ -289,6 +292,7 @@ namespace PMSClient.ViewModel
         }
 
         public List<string> States { get; set; }
+        public List<string> BondingDefects { get; set; }
 
         private DcRecordBonding currentRecordBonding;
 

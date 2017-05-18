@@ -287,5 +287,22 @@ namespace PMSCommon
             }
         }
 
+        public static List<string> BondingDefects
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("裂缝");
+                data.Add("花纹");
+                data.Add("小缺口");
+                data.Add("大缺口");
+                data.Add("分层");
+                data.Add("未焊合");
+                #endregion
+                return data;
+            }
+        }
+
     }
 }

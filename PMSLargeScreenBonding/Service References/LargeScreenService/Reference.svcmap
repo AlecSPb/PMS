@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/LargeScreenService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/LargeScreenService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LargeScreenService.wsdl" MetadataType="Wsdl" ID="d05159a7-87df-4702-9741-b0f3c3fea4a7" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?wsdl" />
-    <MetadataFile FileName="LargeScreenService.xsd" MetadataType="Schema" ID="ecec6d68-113c-44b2-a243-60efa85214d7" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?xsd=xsd0" />
-    <MetadataFile FileName="LargeScreenService1.xsd" MetadataType="Schema" ID="cbf45109-02b1-4ac7-a978-844a39e0f858" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?xsd=xsd2" />
-    <MetadataFile FileName="LargeScreenService2.xsd" MetadataType="Schema" ID="be11ad63-9bc8-4bca-b264-69d5499766b1" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?xsd=xsd1" />
-    <MetadataFile FileName="LargeScreenService.disco" MetadataType="Disco" ID="35cdd442-29a3-467a-acd3-d7495713de35" SourceId="1" SourceUrl="http://localhost:8002/LargeScreenService.svc?disco" />
+    <MetadataFile FileName="LargeScreenService3.xsd" MetadataType="Schema" ID="5aaebf09-4dde-4c27-a5a4-219ac295060c" SourceId="1" SourceUrl="http://192.168.16.254:8002/LargeScreenService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LargeScreenService31.xsd" MetadataType="Schema" ID="42874724-3f48-4532-8d39-2f7b9c1025cd" SourceId="1" SourceUrl="http://192.168.16.254:8002/LargeScreenService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LargeScreenService32.xsd" MetadataType="Schema" ID="e4564e03-50ac-475b-8b3d-d48179c89c13" SourceId="1" SourceUrl="http://192.168.16.254:8002/LargeScreenService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LargeScreenService1.disco" MetadataType="Disco" ID="70997d91-63c8-4b61-8cbc-0af4dd9fc590" SourceId="1" SourceUrl="http://192.168.16.254:8002/LargeScreenService.svc?disco" />
+    <MetadataFile FileName="LargeScreenService1.wsdl" MetadataType="Wsdl" ID="ab45c25c-9fdc-4747-866a-b1d5aef0ee26" SourceId="1" SourceUrl="http://192.168.16.254:8002/LargeScreenService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

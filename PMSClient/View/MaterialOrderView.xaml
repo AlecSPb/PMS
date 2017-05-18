@@ -71,6 +71,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MOPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Priority}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOOrderPO}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
