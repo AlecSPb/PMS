@@ -49,8 +49,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource BDState}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
@@ -71,6 +69,8 @@
                                     Binding="{Binding PlateLot}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}" LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>

@@ -264,10 +264,12 @@ namespace PMSClient.ViewModel
                 }
 
                 NavigationService.Status("保存成功，请刷新列表");
-                if (!PMSDialogService.ShowYesNo("请问", "留在本页Yes，返回列表No？"))
-                {
-                    GoBack();
-                }
+                PMSHelper.ViewModels.RecordBonding.Refresh();
+                GoBack();
+                //if (!PMSDialogService.ShowYesNo("请问", "留在本页Yes，返回列表No？"))
+                //{
+                //    GoBack();
+                //}
 
             }
             catch (Exception ex)

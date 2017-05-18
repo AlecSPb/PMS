@@ -20,6 +20,10 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        public void Refresh()
+        {
+            SetPageParametersWhenConditionChange();
+        }
         private void InitializeCommands()
         {
             Add = new RelayCommand(ActionAdd, CanAdd);
