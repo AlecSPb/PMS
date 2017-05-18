@@ -63,10 +63,22 @@ namespace PMSClient
         private static void CheckNotices()
         {
             Notices.Clear();
-            CheckCounter(Order);
-            CheckCounter(MaterialOrder);
-            CheckCounter(Plan);
-            CheckCounter(Delivery);
+            if (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadOrder)) 
+            {
+                CheckCounter(Order);
+            }
+            if (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialOrder))
+            {
+                CheckCounter(MaterialOrder);
+            }
+            if (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMisson))
+            {
+                CheckCounter(Plan);
+            }
+            if (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadDelivery))
+            {
+                CheckCounter(Delivery);
+            }
         }
         private static void CheckCounter(string keyName)
         {
