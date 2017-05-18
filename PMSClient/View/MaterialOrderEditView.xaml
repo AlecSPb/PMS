@@ -67,8 +67,7 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOSupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                        <TextBox x:Name="txtSupplier"  Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                        <TextBox x:Name="txtSupplier"  Text="{Binding Supplier}" Style="{StaticResource StyleTextBoxReadOnly}"/>
                         <ComboBox x:Name="cboSuppliers" Grid.Row="1" Grid.Column="2" 
                           ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           DisplayMemberPath="SupplierName"
