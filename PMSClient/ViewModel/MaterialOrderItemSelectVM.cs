@@ -18,7 +18,7 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             GiveUp = new RelayCommand(GoBack);
             Select = new RelayCommand<DcMaterialOrderItem>(ActionSelect);
-
+            PageChanged = new RelayCommand(ActionPaging);
 
             SetPageParametersWhenConditionChange();
         }
