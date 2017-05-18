@@ -159,7 +159,7 @@
                     RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                          SelectedItem="{Binding Priority,Mode=TwoWay}"
                          Style="{StaticResource StyleComboBoxCommon}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Text="选择优先级，默认普通"
+                <TextBlock Grid.Row="20" Grid.Column="2" Text="选择优先级，默认普通,紧急数字越大，优先级越高"
                            Style="{StaticResource StyleTextBlockTip}" />
 
             </Grid>

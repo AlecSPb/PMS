@@ -78,6 +78,8 @@
                                             Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPolicy}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding PolicyType}"/>
+                    <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding Priority}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding PMINumber}"/>
                     <DataGridTextColumn Header="{StaticResource OrderCustomer}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"

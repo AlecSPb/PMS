@@ -66,7 +66,6 @@
 
                 <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-
                 <DataGridTemplateColumn Header="{StaticResource OrderDeadLine}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -74,6 +73,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding Priority}"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderPMINumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

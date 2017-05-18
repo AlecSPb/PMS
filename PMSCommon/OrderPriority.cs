@@ -11,7 +11,16 @@ namespace PMSCommon
     /// </summary>
     public enum OrderPriority
     {
-        普通 = 1,
-        紧急 = 2
+        普通,
+        紧急1,
+        紧急2,
+        紧急3,
+        紧急4,
+        紧急5,
+        紧急6,
+        紧急7,
+        紧急8,
+        紧急9,
+        紧急10
     }
 }

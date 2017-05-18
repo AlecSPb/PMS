@@ -70,6 +70,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                            Binding="{Binding Priority}"/>
                 <DataGridTemplateColumn Header="{StaticResource OrderCustomer}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
