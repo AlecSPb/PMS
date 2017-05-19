@@ -78,7 +78,7 @@ namespace PMSClient.ViewModel
                     using (var service=new DeliveryServiceClient())
                     {
                         model.State = PMSCommon.DeliveryState.完成.ToString();
-                        model.ShipTime = DateTime.Now;
+                        model.FinishTime = DateTime.Now;
                         service.UpdateDeliveryByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                     NavigationService.Status("发货完成");
