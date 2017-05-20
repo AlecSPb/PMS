@@ -104,5 +104,9 @@ namespace PMSDAL
         public DbSet<ItemDebitHistory> ItemDebitHistorys { get; set; }
 
         public DbSet<FeedBack> FeedBacks { get; set; }
+
+
+        //PMSIndex
+        public DbSet<PMSIndex> PMSIndexs { get; set; }
     }
 }
