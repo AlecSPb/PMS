@@ -901,6 +901,9 @@
     <Content Include="Resource\Files\pmshelp_en.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\DocTemplate\Doc\取模临时记录单.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\StatisticService1.disco" />
