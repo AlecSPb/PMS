@@ -51,7 +51,6 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.PMINumber);
                 sb.AppendLine(model.VHPPlanLot);
                 sb.AppendLine("重量:");
-                sb.AppendLine(model.VHPPlanLot);
 
                 var mainContent = sb.ToString();
 
