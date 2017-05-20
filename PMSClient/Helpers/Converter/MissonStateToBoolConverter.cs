@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Windows;
 
 namespace PMSClient.Converter
 {
-    public class VisibilityConverter : IValueConverter
+    public class MissonStateToBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool flag = (bool)value;
-            return flag ? Visibility.Visible : Visibility.Collapsed;
+            string missonState = value.ToString();
+            var result = missonState == PMSCommon.OrderState.未完成.ToString();
+            return result;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
