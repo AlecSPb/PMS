@@ -136,11 +136,13 @@
     <Compile Include="DataContracts\DcProduct.cs" />
     <Compile Include="DataContracts\DcDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\DcPlate.cs" />
+    <Compile Include="DataContracts\DcPMSIndex.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
+    <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
     <Compile Include="ServiceContracts\IItemDebitService.cs" />
@@ -168,6 +170,7 @@
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
     <Compile Include="ServiceImplements\OutSourceService.cs" />
     <Compile Include="ServiceImplements\PlateService.cs" />
+    <Compile Include="ServiceImplements\PMSIndexService.cs" />
     <Compile Include="ServiceImplements\ProductService.cs" />
     <Compile Include="ServiceImplements\RecordBondingService.cs" />
     <Compile Include="ServiceImplements\DeliveryService.cs" />
