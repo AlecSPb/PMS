@@ -44,7 +44,6 @@
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
-                  SelectedIndex="{Binding CurrentSelectIndex}"
                   ItemsSource="{Binding Missons}" LoadingRow="DataGrid_LoadingRow">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
@@ -58,7 +57,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonAddItem}" Style="{StaticResource StyleDGButton}"
-                                        Command="{Binding DataContext.AddNewPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
+                                        Command="{Binding DataContext.AddPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

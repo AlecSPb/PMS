@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace PMSClient.Converter
+namespace PMSClient.Helpers.Converter
 {
     public class MissonStateToBoolConverter : IValueConverter
     {

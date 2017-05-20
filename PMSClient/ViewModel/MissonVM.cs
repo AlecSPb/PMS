@@ -45,12 +45,12 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan),CanGoToPlan);
+            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), CanGoToPlan);
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
 
             Search = new RelayCommand(ActionSearch, CanSearch);
             PageChanged = new RelayCommand(ActionPaging);
-            AddNewPlan = new RelayCommand<DcOrder>(ActionAddNewPlan, CanAddNewPlan);
+            AddPlan = new RelayCommand<DcOrder>(ActionAddPlan, CanAddPlan);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan, CanEditPlan);
             DuplicatePlan = new RelayCommand<DcPlanVHP>(ActionDuplicatePlan, CanDuplicatePlan);
 
@@ -65,7 +65,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(String.IsNullOrEmpty(SearchPMINumber) && 
+            return !(String.IsNullOrEmpty(SearchPMINumber) &&
                 string.IsNullOrEmpty(SearchCompositionStandard));
         }
 
@@ -76,21 +76,30 @@ namespace PMSClient.ViewModel
 
         private bool CanDuplicatePlan(DcPlanVHP arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State);
         }
 
         private bool CanEditPlan(DcPlanVHP arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(CurrentSelectItem.State);
         }
         /// <summary>
         /// 权限控制=编辑任务
         /// </summary>
         /// <param name="arg"></param>
         /// <returns></returns>
-        private bool CanAddNewPlan(DcOrder arg)
+        private bool CanAddPlan(DcOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
+            if (arg==null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(arg.State);
+        }
+
+        private bool MissonStateConverter(string state)
+        {
+            return state == PMSCommon.OrderState.未完成.ToString();
         }
 
         private void ActionRefresh()
@@ -108,9 +117,8 @@ namespace PMSClient.ViewModel
                     var result = service.GetVHPPlansByOrderID(model.ID);
                     PlanVHPs.Clear();
                     result.ToList().ForEach(i => PlanVHPs.Add(i));
-
-                    CurrentSelectItem = model;
                 }
+                CurrentSelectItem = model;
             }
         }
 
@@ -137,7 +145,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void ActionAddNewPlan(DcOrder order)
+        private void ActionAddPlan(DcOrder order)
         {
             if (order != null)
             {
@@ -178,7 +186,6 @@ namespace PMSClient.ViewModel
             Missons.Clear();
             orders.ToList().ForEach(o => Missons.Add(o));
 
-            CurrentSelectIndex = 0;
             CurrentSelectItem = orders.FirstOrDefault();
             ActionSelectionChanged(CurrentSelectItem);
         }
@@ -188,12 +195,6 @@ namespace PMSClient.ViewModel
         public ObservableCollection<DcOrder> Missons { get; set; }
         public ObservableCollection<DcPlanVHP> PlanVHPs { get; set; }
 
-        private int currentSelectIndex;
-        public int CurrentSelectIndex
-        {
-            get { return currentSelectIndex; }
-            set { currentSelectIndex = value; RaisePropertyChanged(nameof(CurrentSelectIndex)); }
-        }
         private DcOrder currentSelectItem;
         public DcOrder CurrentSelectItem
         {
@@ -231,9 +232,8 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand GoToPlan { get; private set; }
         public RelayCommand GoToMaterialNeed { get; private set; }
-        public RelayCommand Add { get; private set; }
         public RelayCommand Refresh { get; set; }
-        public RelayCommand<DcOrder> AddNewPlan { get; set; }
+        public RelayCommand<DcOrder> AddPlan { get; set; }
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }

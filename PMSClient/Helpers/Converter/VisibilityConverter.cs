@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows;
 
-namespace PMSClient.Converter
+namespace PMSClient.Helpers.Converter
 {
     public class VisibilityConverter : IValueConverter
     {
