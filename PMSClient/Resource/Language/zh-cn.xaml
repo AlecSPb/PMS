@@ -358,7 +358,7 @@
     <sys:String x:Key="MNPurity">纯度</sys:String>
     <sys:String x:Key="MNWeight">重量</sys:String>
     <sys:String x:Key="MNSupplier">供应商</sys:String>
-    <sys:String x:Key="MNSpecialNeeds">特殊要求</sys:String>
+    <sys:String x:Key="MNSpecialNeeds">备注</sys:String>
     <sys:String x:Key="MNPMINumber">内部编号</sys:String>
 
     <!--MaterialOrder-->

@@ -83,8 +83,7 @@
                     <TextBox  Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
                             />
                     <Button Grid.Row="3" Grid.Column="2" Content="原料需求计算器" Style="{StaticResource StyleButtonCommon}" 
-                            Command="{Binding DataContext.Calculator,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                            />
+                            Command="{Binding DataContext.Calculator,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"  />
                 </StackPanel>
 
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
@@ -92,10 +91,9 @@
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MNSpecialNeeds}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding SpecialNeeds}" Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="特殊要求可以填写在这里"/>
+                           Text=""/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MNState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

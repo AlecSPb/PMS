@@ -357,7 +357,7 @@
     <sys:String x:Key="MNPurity">Purity</sys:String>
     <sys:String x:Key="MNWeight">Weight</sys:String>
     <sys:String x:Key="MNSupplier">Supplier</sys:String>
-    <sys:String x:Key="MNSpecialNeeds">Special Needs</sys:String>
+    <sys:String x:Key="MNSpecialNeeds">Remark</sys:String>
     <sys:String x:Key="MNPMINumber">PMI Number</sys:String>
 
     <!--MaterialOrder-->
