@@ -10,16 +10,16 @@ namespace PMSClient.ViewModel
     public static class PMSNewModelCollection
     {
 
-        public static DcMaterialOrderItem NewMaterialOrderItem(Guid id)
+        public static DcMaterialOrderItem NewMaterialOrderItem(DcMaterialOrder order)
         {
             var item = new DcMaterialOrderItem();
             #region 初始化
             item.ID = Guid.NewGuid();
-            item.MaterialOrderID = id;
+            item.MaterialOrderID = order.ID;
             item.State = PMSCommon.MaterialOrderItemState.未完成.ToString();
             item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             item.CreateTime = DateTime.Now;
-            item.OrderItemNumber = DateTime.Now.ToString("yyMMdd") + "-" + 1;
+            item.OrderItemNumber = DateTime.Now.ToString("yyMMdd") + order.SupplierAbbr + 1;
             item.Composition = "需求成分";
             item.PMINumber = DateTime.Now.ToString("yyMMdd");
             item.Purity = "5N";

@@ -61,8 +61,8 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.MaterialOrderItemEdit:
-                        var id = PMSHelper.ViewModels.MaterialOrderItemEdit.CurrentMaterialOrderItem.MaterialOrderID;
-                        BatchSaveMaterialOrderItem(id);
+                        var currentMaterialOrder = PMSHelper.ViewModels.MaterialOrderItemEdit.CurrentMaterialOrder;
+                        BatchSaveMaterialOrderItem(currentMaterialOrder);
                         NavigationService.GoTo(PMSViews.MaterialOrder);
                         PMSDialogService.ShowYes("成功", "批量添加成功，请刷新列表,并修改材料批号\r\n因为批量添加的是相同的材料批号");
                         break;
@@ -76,7 +76,7 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private void BatchSaveMaterialOrderItem(Guid id)
+        private void BatchSaveMaterialOrderItem(DcMaterialOrder curentMaterialOrder)
         {
             using (var service = new MaterialOrderServiceClient())
             {
@@ -84,7 +84,7 @@ namespace PMSClient.ViewModel
                 {
                     if (i.IsSelected)
                     {
-                        var temp = PMSNewModelCollection.NewMaterialOrderItem(id);
+                        var temp = PMSNewModelCollection.NewMaterialOrderItem(curentMaterialOrder);
                         temp.Composition = i.MaterialNeed.Composition;
                         temp.PMINumber = i.MaterialNeed.PMINumber;
                         temp.Weight = i.MaterialNeed.Weight;

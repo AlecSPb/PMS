@@ -21,10 +21,12 @@ namespace PMSClient.ViewModel
             InitialCommmands();
         }
 
+        public DcMaterialOrder CurrentMaterialOrder { get; set; }
         public void SetNew(DcMaterialOrder order)
         {
             if (order != null)
             {
+                CurrentMaterialOrder = order;
                 IsNew = true;
 
                 var item = new DcMaterialOrderItem();
