@@ -61,7 +61,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PMSClient.Program</StartupObject>
+    <StartupObject>PMSClient.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resource\Images\chart.ico</ApplicationIcon>
@@ -187,7 +187,6 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
@@ -903,6 +902,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <SplashScreen Include="spalsh.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
     <Content Include="Resource\Files\pmshelp_en.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

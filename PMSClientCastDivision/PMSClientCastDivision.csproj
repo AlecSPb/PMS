@@ -60,7 +60,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>PMSClient.Program</StartupObject>
+    <StartupObject>PMSClientCastDivision.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resource\Images\chart.ico</ApplicationIcon>
@@ -166,7 +166,6 @@
       <DependentUpon>MainDesktop.xaml</DependentUpon>
     </Compile>
     <Compile Include="PMSHelper.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\ReportHelper.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrder.cs" />
