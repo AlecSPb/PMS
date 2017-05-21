@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.Composition = "";
-            model.Customer = "";
+            model.Customer = "Midsummer";
             model.ProductType = PMSCommon.ProductType.靶材.ToString();
             model.ProductID = "";
             model.ProcessWay = "未处理";

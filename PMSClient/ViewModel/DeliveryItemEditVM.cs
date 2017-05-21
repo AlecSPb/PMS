@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
             model.Composition = "填写成分";
             model.Abbr = "缩写";
             model.PO = "PO";
-            model.Customer = "客户";
+            model.Customer = "Midsummer";
             model.Weight = "重量";
             model.DetailRecord = "细节";
             model.Remark = "无";
