@@ -57,6 +57,8 @@
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource FBCustomer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Customer}"/>
+                <DataGridTextColumn Header="{StaticResource FBProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Problem}"/>
                 <DataGridTextColumn Header="{StaticResource FBProcessWay}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding ProcessWay}"/>
                 <DataGridTextColumn Header="{StaticResource FBRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -709,6 +709,7 @@
     <sys:String x:Key="FBProductType">产品类型</sys:String>
     <sys:String x:Key="FBComposition">成分</sys:String>
     <sys:String x:Key="FBCustomer">客户</sys:String>
+    <sys:String x:Key="FBProblem">问题描述</sys:String>
     <sys:String x:Key="FBFeedbackPerson">反馈人</sys:String>
     <sys:String x:Key="FBReceivedDate">反馈日期</sys:String>
     <sys:String x:Key="FBProcessWay">处理结果</sys:String>

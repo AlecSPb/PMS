@@ -708,6 +708,7 @@
     <sys:String x:Key="FBProductType">Product Type</sys:String>
     <sys:String x:Key="FBComposition">Composition</sys:String>
     <sys:String x:Key="FBCustomer">Customer</sys:String>
+    <sys:String x:Key="FBProblem">Problem Description</sys:String>
     <sys:String x:Key="FBFeedbackPerson">Person</sys:String>
     <sys:String x:Key="FBReceivedDate">Date</sys:String>
     <sys:String x:Key="FBProcessWay">Process</sys:String>
