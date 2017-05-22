@@ -27,7 +27,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Customer { get; set; }
         [DataMember]
-        public string Problem { get; ; set; }
+        public string Problem { get; set; }
         [DataMember]
         public string ProcessWay { get; set; }
         [DataMember]
