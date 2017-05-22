@@ -15,7 +15,8 @@ namespace PMSClient.ViewModel
         public PlanStatisticVM()
         {
             Initialize();
-            ActionByYear();
+            //ActionByYear();
+            ActionByMonth();
         }
 
         private void Initialize()

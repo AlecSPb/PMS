@@ -17,7 +17,8 @@ namespace PMSClient.ViewModel
         {
 
             Initialize();
-            ActionByYear();
+            //ActionByYear();
+            ActionByMonth();
         }
 
         private void Initialize()
