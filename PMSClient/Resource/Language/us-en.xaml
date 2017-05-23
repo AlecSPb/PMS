@@ -403,6 +403,7 @@
     <sys:String x:Key="PlateCreateTime">Create Time</sys:String>
 
     <sys:String x:Key="PlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="PlatePrintNumber">Print Number</sys:String>
     <sys:String x:Key="PlateMaterial">Material</sys:String>
     <sys:String x:Key="PlateBelong">Belong</sys:String>
     <sys:String x:Key="PlateDimension">Dimension</sys:String>

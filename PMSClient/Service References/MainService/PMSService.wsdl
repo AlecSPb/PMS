@@ -325,6 +325,18 @@
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountBySearchResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCountUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInCountUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialInventoryInCountUnCompletedResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryInByYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryInByYear" />
   </wsdl:message>
@@ -667,6 +679,18 @@
   <wsdl:message name="IPlateService_GetPlateCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlateCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateCountUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateCountUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateCountUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateCountUnCompletedResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlateService_AddPlate_InputMessage">
     <wsdl:part name="parameters" element="tns:AddPlate" />
   </wsdl:message>
@@ -708,6 +732,18 @@
   </wsdl:message>
   <wsdl:message name="IProductService_GetProductCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCountUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCountUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductCountUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCountUnCompletedResponse" />
   </wsdl:message>
   <wsdl:message name="IProductService_GetProductsByYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsByYear" />
@@ -1302,6 +1338,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearch" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountBySearchResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountBySearch_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInUnCompleted" message="tns:IMaterialInventoryService_GetMaterialInventoryInUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInUnCompletedResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCountUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountUnCompleted" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountUnCompletedResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInCountUnCompleted_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryInByYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYear" message="tns:IMaterialInventoryService_GetMaterialInventoryInByYear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYearResponse" message="tns:IMaterialInventoryService_GetMaterialInventoryInByYear_OutputMessage" />
@@ -1536,6 +1580,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/GetPlateCount" message="tns:IPlateService_GetPlateCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/GetPlateCountResponse" message="tns:IPlateService_GetPlateCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetPlateUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/GetPlateUnCompleted" message="tns:IPlateService_GetPlateUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/GetPlateUnCompletedResponse" message="tns:IPlateService_GetPlateUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateCountUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/GetPlateCountUnCompleted" message="tns:IPlateService_GetPlateCountUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/GetPlateCountUnCompletedResponse" message="tns:IPlateService_GetPlateCountUnCompleted_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddPlate">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/AddPlate" message="tns:IPlateService_AddPlate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/AddPlateResponse" message="tns:IPlateService_AddPlate_OutputMessage" />
@@ -1565,6 +1617,14 @@
     <wsdl:operation name="GetProductCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCount" message="tns:IProductService_GetProductCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountResponse" message="tns:IProductService_GetProductCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductUnCompleted" message="tns:IProductService_GetProductUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductUnCompletedResponse" message="tns:IProductService_GetProductUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCountUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductCountUnCompleted" message="tns:IProductService_GetProductCountUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductCountUnCompletedResponse" message="tns:IProductService_GetProductCountUnCompleted_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductsByYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductsByYear" message="tns:IProductService_GetProductsByYear_InputMessage" />
@@ -2320,6 +2380,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialInventoryInCountUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInCountUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryInByYear">
       <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetMaterialInventoryInByYear" style="document" />
       <wsdl:input>
@@ -2842,6 +2920,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetPlateUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/GetPlateUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateCountUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/GetPlateCountUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddPlate">
       <soap:operation soapAction="http://tempuri.org/IPlateService/AddPlate" style="document" />
       <wsdl:input>
@@ -2901,6 +2997,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductCount">
       <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCountUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductCountUnCompleted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

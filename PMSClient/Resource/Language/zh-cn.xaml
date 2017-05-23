@@ -404,6 +404,7 @@
     <sys:String x:Key="PlateCreateTime">创建时间</sys:String>
 
     <sys:String x:Key="PlateLot">批号</sys:String>
+    <sys:String x:Key="PlatePrintNumber">刻号</sys:String>
     <sys:String x:Key="PlateMaterial">材料</sys:String>
     <sys:String x:Key="PlateBelong">归属</sys:String>
     <sys:String x:Key="PlateDimension">规格</sys:String>

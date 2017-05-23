@@ -163,7 +163,7 @@ namespace PMSClient.ViewModel
                 var service = new MissonServiceClient();
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
 
-                MissonTarget = service.GetMissonUnCompletedCount();
+                MissonTarget = service.GetMissonUnCompletedCount("","");
                 service.Close();
                 ActionPaging();
             }
