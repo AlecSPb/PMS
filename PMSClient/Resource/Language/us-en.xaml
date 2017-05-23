@@ -68,6 +68,7 @@
     <sys:String x:Key="PageWorkFlow">WorkFlow</sys:String>
 
     <sys:String x:Key="PageOrder">Order</sys:String>
+    <sys:String x:Key="PageOrderUnCompleted">Order[UnCompleted]</sys:String>
     <sys:String x:Key="PageOrderEdit">Order Edit</sys:String>
     <sys:String x:Key="PageOrderCheck">Order Check</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">Order Check Edit</sys:String>
@@ -77,6 +78,7 @@
 
 
     <sys:String x:Key="PageMisson">Misson</sys:String>
+    <sys:String x:Key="PageMissonUnCompleted">Misson[UnCompleted]</sys:String>
     <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
     <sys:String x:Key="PagePlan">Plan</sys:String>
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
@@ -90,6 +92,7 @@
 
     <sys:String x:Key="PageMaterialInventory">Material Inventory</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">Material In</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInUnCompleted">Material In[Stored]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">Material In Select</sys:String>
     <sys:String x:Key="PageMaterialInventoryOut">Material Out</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">Material In Edit</sys:String>
@@ -114,9 +117,11 @@
 
     <sys:String x:Key="PageProductTitle">Product</sys:String>
     <sys:String x:Key="PageProduct">Product</sys:String>
+    <sys:String x:Key="PageProductUnCompleted">Product[Stored]</sys:String>
     <sys:String x:Key="PageProductEdit">Product Edit</sys:String>
 
     <sys:String x:Key="PagePlate">Back Plate</sys:String>
+    <sys:String x:Key="PagePlateUnCompleted">Back Plate[Stored]</sys:String>
     <sys:String x:Key="PagePlateEdit">Back Plate Edit</sys:String>
 
 
@@ -175,6 +180,7 @@
     <sys:String x:Key="ButtonRefresh">Refresh</sys:String>
     <sys:String x:Key="ButtonSearch">Search</sys:String>
     <sys:String x:Key="ButtonAll">All</sys:String>
+    <sys:String x:Key="ButtonUnCompleted">UnCompleted</sys:String>
     <sys:String x:Key="ButtonSave">Save</sys:String>
     <sys:String x:Key="ButtonAdd">Add</sys:String>
     <sys:String x:Key="ButtonEdit">Edit</sys:String>

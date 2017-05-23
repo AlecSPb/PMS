@@ -168,7 +168,9 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from o in dc.Orders
-                                where o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) && o.State != OrderState.作废.ToString()
+                                where o.CustomerName.Contains(customer)
+                                && o.CompositionStandard.Contains(compositionstd)
+                                && o.State != OrderState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
 
@@ -195,8 +197,9 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.Orders.Where(o => o.CustomerName.Contains(customer) && o.CompositionStandard.Contains(compositionstd) &&
-                    o.State != OrderState.作废.ToString()).Count();
+                    return dc.Orders.Where(o => o.CustomerName.Contains(customer)
+                    && o.CompositionStandard.Contains(compositionstd)
+                    && o.State != OrderState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -205,6 +208,54 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+
+        public List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from o in dc.Orders
+                                where o.CustomerName.Contains(customer)
+                                && o.CompositionStandard.Contains(compositionstd)
+                                && o.State == OrderState.未完成.ToString()
+                                orderby o.CreateTime descending
+                                select o;
+
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetOrderCountrUnCompleted(string customer, string compositionstd)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Orders.Where(o => o.CustomerName.Contains(customer)
+                    && o.CompositionStandard.Contains(compositionstd)
+                    && o.State == OrderState.未完成.ToString()
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int GetOrderCountByYear(int year)

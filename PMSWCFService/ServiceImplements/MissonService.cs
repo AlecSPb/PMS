@@ -67,7 +67,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion, string pminumber)
+        public List<DcOrder> GetMissonsBySearch(int skip, int take, string composition, string pminumber)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace PMSWCFService
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
-                                 && o.CompositionStandard.Contains(compostion)
+                                 && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
                                  orderby o.CreateTime descending
                                  select o;
@@ -101,7 +101,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMissonsCountBySearch(string compostion, string pminumber)
+        public int GetMissonsCountBySearch(string composition, string pminumber)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace PMSWCFService
                 {
                     var query = from o in dc.Orders
                                 where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
-                                 && o.CompositionStandard.Contains(compostion)
+                                 && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
@@ -124,6 +124,63 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcOrder> GetMissonUnCompleted(int skip, int take, string composition, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = from o in dc.Orders
+                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString())
+                                 && o.CompositionStandard.Contains(composition)
+                                 && o.PMINumber.Contains(pminumber)
+                                 orderby o.CreateTime descending
+                                 select o;
+
+                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(skip).Take(take).ToList());
+
+                    return missons;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMissonUnCompletedCount(string composition, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.CompositionStandard.Contains(composition)
+                                 && o.PMINumber.Contains(pminumber)
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString())
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
 
         /// <summary>
         /// 分页获取
@@ -316,28 +373,6 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-        /// <summary>
-        /// 返回未完成订单的数目
-        /// </summary>
-        /// <returns></returns>
-        public int GetMissonUnCompletedCount()
-        {
-            try
-            {
-                using (var dc = new PMSDAL.PMSDbContext())
-                {
-                    var query = from o in dc.Orders
-                                where o.State == PMSCommon.OrderState.未完成.ToString()
-                                select o;
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
 
         public List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange2(int skip, int take, DateTime dateStart, DateTime dateEnd, string composition)
         {
@@ -463,5 +498,6 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
     }
 }

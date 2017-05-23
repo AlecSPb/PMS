@@ -293,6 +293,9 @@
     <Compile Include="View\FeedBackView.xaml.cs">
       <DependentUpon>FeedBackView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MissonUnCompletedView.xaml.cs">
+      <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OutputView.xaml.cs">
       <DependentUpon>OutputView.xaml</DependentUpon>
     </Compile>
@@ -626,6 +629,10 @@
     <Page Include="View\FeedBackView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MissonUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\OutputView.xaml">
       <SubType>Designer</SubType>

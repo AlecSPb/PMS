@@ -16,6 +16,15 @@ namespace PMSWCFService.ServiceContracts
         List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
         [OperationContract]
         int GetOrderCountBySearch(string customer, string compositionstd);
+
+        [OperationContract]
+        List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd);
+        [OperationContract]
+        int GetOrderCountrUnCompleted(string customer, string compositionstd);
+
+
+
+
         [OperationContract]
         List<DcOrder> GetOrderByYear(int skip, int take, int year);
         [OperationContract]

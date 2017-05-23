@@ -19,12 +19,15 @@ namespace PMSWCFService.ServiceContracts
 
 
         [OperationContract]
-        List<DcOrder> GetMissonsBySearch(int skip, int take, string compostion,string pminumber);
+        List<DcOrder> GetMissonsBySearch(int skip, int take, string composition, string pminumber);
         [OperationContract]
-        int GetMissonsCountBySearch(string compostion, string pminumber);
+        int GetMissonsCountBySearch(string composition, string pminumber);
+
 
         [OperationContract]
-        int GetMissonUnCompletedCount();
+        List<DcOrder> GetMissonUnCompleted(int skip, int take, string composition, string pminumber);
+        [OperationContract]
+        int GetMissonUnCompletedCount(string composition, string pminumber);
 
 
         #endregion
@@ -52,9 +55,9 @@ namespace PMSWCFService.ServiceContracts
 
         //按照日期范围内材料名称获取获取
         [OperationContract]
-        List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange2(int skip, int take, DateTime dateStart, DateTime dateEnd,string composition);
+        List<DcPlanWithMisson> GetPlanWithMissonCheckedByDateRange2(int skip, int take, DateTime dateStart, DateTime dateEnd, string composition);
         [OperationContract]
-        int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd,string composition);
+        int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd, string composition);
 
 
         [OperationContract]

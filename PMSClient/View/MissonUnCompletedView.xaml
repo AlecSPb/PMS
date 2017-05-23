@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PMSClient.View.MissonView"
+﻿<UserControl x:Class="PMSClient.View.MissonUnCompletedView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,7 +8,7 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=Misson}">
+             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=MissonUnCompleted}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -32,7 +32,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
-            <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnFinished}"/>
+            <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnCompleted}"/>
             <Button Content="{StaticResource ButtonPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToPlan}"/>
             <!--<Button Content="{StaticResource ButtonMaterialNeed}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialNeed}"/>-->
             <!--图例-->
