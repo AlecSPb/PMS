@@ -90,7 +90,7 @@
     <Compile Include="Entities\RecordMillingHistory.cs" />
     <Compile Include="Entities\RecordTestHistory.cs" />
     <Compile Include="Entities\RecordVHPHistory.cs" />
-    <Compile Include="Entities\VHPConclusion.cs" />
+    <Compile Include="Entities\PlanVHPConclusion.cs" />
     <Compile Include="Migrations\201701090708208_new.cs" />
     <Compile Include="Migrations\201701090708208_new.Designer.cs">
       <DependentUpon>201701090708208_new.cs</DependentUpon>

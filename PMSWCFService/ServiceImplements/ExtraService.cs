@@ -9,7 +9,7 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public class ExtraService : ICheckListService, IItemDebitService, IFeedBackService
+    public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService
     {
         public int AddCheckList(DcCheckList model, string uid)
         {
@@ -138,8 +138,8 @@ namespace PMSWCFService
                     Mapper.Initialize(cfg => cfg.CreateMap<ItemDebit, DcItemDebit>());
                     var query = from i in dc.ItemDebits
                                 where i.State == PMSCommon.SimpleState.正常.ToString()
-                                &&i.ItemName.Contains(itemName)
-                                &&i.Creditor.Contains(creditor)
+                                && i.ItemName.Contains(itemName)
+                                && i.Creditor.Contains(creditor)
                                 orderby i.CreateTime descending
                                 select i;
                     return Mapper.Map<List<ItemDebit>, List<DcItemDebit>>(query.Skip(s).Take(t).ToList());

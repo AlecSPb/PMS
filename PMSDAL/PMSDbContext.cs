@@ -109,6 +109,6 @@ namespace PMSDAL
         //PMSIndex
         public DbSet<PMSIndex> PMSIndexs { get; set; }
 
-        public DbSet<VHPConclusion> VHPConclusions { get; set; }
+        public DbSet<PlanVHPConclusion> PlanVHPConclusions { get; set; }
     }
 }
