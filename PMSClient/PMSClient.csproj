@@ -294,8 +294,14 @@
     <Compile Include="View\FeedBackView.xaml.cs">
       <DependentUpon>FeedBackView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaterialInventoryInUnCompletedView.xaml.cs">
+      <DependentUpon>MaterialInventoryInUnCompletedView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MissonUnCompletedView.xaml.cs">
       <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderUnCompletedView.xaml.cs">
+      <DependentUpon>OrderUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OutputView.xaml.cs">
       <DependentUpon>OutputView.xaml</DependentUpon>
@@ -305,6 +311,9 @@
     </Compile>
     <Compile Include="View\OutSourceView.xaml.cs">
       <DependentUpon>OutSourceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlateUnCompletedView.xaml.cs">
+      <DependentUpon>PlateUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductStatisticView.xaml.cs">
       <DependentUpon>ProductStatisticView.xaml</DependentUpon>
@@ -338,6 +347,9 @@
     </Compile>
     <Compile Include="View\PlateView.xaml.cs">
       <DependentUpon>PlateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductUnCompletedView.xaml.cs">
+      <DependentUpon>ProductUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
@@ -631,7 +643,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MaterialInventoryInUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MissonUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrderUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -646,6 +666,10 @@
     <Page Include="View\OutSourceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlateUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ProductStatisticView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -688,6 +712,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PlateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ProductUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
