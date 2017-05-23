@@ -13,10 +13,12 @@ namespace PMSWCFService.ServiceContracts
     {
 
         [OperationContract]
-        List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier);
+        List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier,string printnumber);
 
         [OperationContract]
-        int GetPlateCount(string platelot, string supplier);
+        int GetPlateCount(string platelot, string supplier,string printnumber);
+
+
         [OperationContract]
         int AddPlate(DcPlate model);
         [OperationContract]

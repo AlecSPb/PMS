@@ -71,7 +71,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetPlateCount(string platelot, string supplier)
+        public int GetPlateCount(string platelot, string supplier, string printnumber)
         {
             try
             {
@@ -80,6 +80,7 @@ namespace PMSWCFService
                     var query = from p in dc.Plates
                                 where p.PlateLot.Contains(platelot)
                                 && p.Supplier.Contains(supplier)
+                                &&p.PrintNumber.Contains(printnumber)
                                 && p.State != InventoryState.作废.ToString()
                                 orderby p.CreateTime descending
                                 select p;
@@ -93,7 +94,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier)
+        public List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier,string printnumber)
         {
             try
             {
@@ -102,6 +103,7 @@ namespace PMSWCFService
                     var query = from p in dc.Plates
                                 where p.PlateLot.Contains(platelot)
                                 && p.Supplier.Contains(supplier)
+                                && p.PrintNumber.Contains(printnumber)
                                 && p.State != InventoryState.作废.ToString()
                                 orderby p.CreateTime descending
                                 select p;

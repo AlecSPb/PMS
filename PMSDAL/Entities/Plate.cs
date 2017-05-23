@@ -13,6 +13,7 @@ namespace PMSDAL
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
         public string PlateLot { get; set; }
+        public string PrintNumber { get; set; }
         public string PlateMaterial { get; set; }
         public string Dimension { get; set; }
         public string Supplier { get; set; }
