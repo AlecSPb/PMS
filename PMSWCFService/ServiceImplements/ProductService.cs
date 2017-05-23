@@ -98,6 +98,28 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
+        public int GetProductCountUnCompleted(string productid, string composition)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Products
+                                where p.ProductID.Contains(productid)
+                                && p.Composition.Contains(composition)
+                                && p.State == InventoryState.库存.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcProduct> GetProducts(int skip, int take, string productid, string composition)
         {
             try
@@ -125,6 +147,30 @@ namespace PMSWCFService
         public List<DcProduct> GetProductsByYear(int skip, int take, int year)
         {
             throw new NotImplementedException();
+        }
+
+        public List<DcProduct> GetProductUnCompleted(int skip, int take, string productid, string composition)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Products
+                                where p.ProductID.Contains(productid)
+                                && p.Composition.Contains(composition)
+                                && p.State == InventoryState.库存.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<Product, DcProduct>());
+                    var products = Mapper.Map<List<Product>, List<DcProduct>>(query.Skip(skip).Take(take).ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateProduct(DcProduct model)

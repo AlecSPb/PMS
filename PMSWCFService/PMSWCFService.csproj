@@ -79,6 +79,7 @@
     <Content Include="HistoryService.svc" />
     <Content Include="LargeScreenService.svc" />
     <Content Include="ExtraService.svc" />
+    <Content Include="PMSIndexService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />

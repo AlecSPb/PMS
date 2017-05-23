@@ -21,6 +21,12 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMaterialInventoryInCountBySearch(string supplier, string composition, string batchnumber, string pminumber);
 
+
+        [OperationContract]
+        List<DcMaterialInventoryIn> GetMaterialInventoryInUnCompleted(int skip, int take, string supplier, string composition, string batchnumber, string pminumber);
+        [OperationContract]
+        int GetMaterialInventoryInCountUnCompleted(string supplier, string composition, string batchnumber, string pminumber);
+
         [OperationContract]
         List<DcMaterialInventoryIn> GetMaterialInventoryInByYear(int skip, int take,int year);
         [OperationContract]

@@ -94,6 +94,29 @@ namespace PMSWCFService
             }
         }
 
+        public int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Plates
+                                where p.PlateLot.Contains(platelot)
+                                && p.Supplier.Contains(supplier)
+                                && p.PrintNumber.Contains(printnumber)
+                                && p.State == InventoryState.库存.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier,string printnumber)
         {
             try
@@ -105,6 +128,31 @@ namespace PMSWCFService
                                 && p.Supplier.Contains(supplier)
                                 && p.PrintNumber.Contains(printnumber)
                                 && p.State != InventoryState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<Plate, DcPlate>());
+                    var products = Mapper.Map<List<Plate>, List<DcPlate>>(query.Skip(skip).Take(take).ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcPlate> GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Plates
+                                where p.PlateLot.Contains(platelot)
+                                && p.Supplier.Contains(supplier)
+                                && p.PrintNumber.Contains(printnumber)
+                                && p.State == InventoryState.库存.ToString()
                                 orderby p.CreateTime descending
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<Plate, DcPlate>());

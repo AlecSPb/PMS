@@ -18,6 +18,11 @@ namespace PMSWCFService.ServiceContracts
         int GetProductCount(string productid, string composition);
 
         [OperationContract]
+        List<DcProduct> GetProductUnCompleted(int skip, int take, string productid, string composition);
+        [OperationContract]
+        int GetProductCountUnCompleted(string productid, string composition);
+
+        [OperationContract]
         List<DcProduct> GetProductsByYear(int skip, int take, int year);
         [OperationContract]
         int GetProductCountByYear(string productid, int year);

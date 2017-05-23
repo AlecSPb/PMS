@@ -519,5 +519,55 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcMaterialInventoryIn> GetMaterialInventoryInUnCompleted(int skip, int take, string supplier, string composition, string batchnumber, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>());
+
+                    var query = from o in dc.MaterialInventoryIns
+                                where o.State == PMSCommon.InventoryState.库存.ToString()
+                                && o.Supplier.Contains(supplier)
+                                && o.Composition.Contains(composition)
+                                && o.MaterialLot.Contains(batchnumber)
+                                && o.PMINumber.Contains(pminumber)
+                                orderby o.CreateTime descending
+                                select o;
+                    return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMaterialInventoryInCountUnCompleted(string supplier, string composition, string batchnumber, string pminumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.MaterialInventoryIns
+                                where o.State == PMSCommon.InventoryState.库存.ToString()
+                                && o.Supplier.Contains(supplier)
+                                && o.Composition.Contains(composition)
+                                && o.MaterialLot.Contains(batchnumber)
+                                && o.PMINumber.Contains(pminumber)
+                                orderby o.CreateTime descending
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }
