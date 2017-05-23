@@ -180,7 +180,6 @@
     <sys:String x:Key="ButtonRefresh">刷新</sys:String>
     <sys:String x:Key="ButtonSearch">搜索</sys:String>
     <sys:String x:Key="ButtonAll">全部</sys:String>
-    <sys:String x:Key="ButtonUnCompleted">只看未完成</sys:String>
     <sys:String x:Key="ButtonSave">保存</sys:String>
     <sys:String x:Key="ButtonAdd">添加</sys:String>
     <sys:String x:Key="ButtonEdit">编辑</sys:String>
@@ -201,9 +200,10 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
-    <sys:String x:Key="ButtonMisson">生产任务</sys:String>
+    <sys:String x:Key="ButtonMisson">任务</sys:String>
+    <sys:String x:Key="ButtonMissonUnCompleted">任务[未完成]</sys:String>
     <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
-    <sys:String x:Key="ButtonPlan">计划安排</sys:String>
+    <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
     <sys:String x:Key="ButtonSearchPlan">搜索计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
