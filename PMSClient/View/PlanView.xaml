@@ -163,7 +163,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource PlanPlanDate}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Plan.PlanDate,StringFormat={}{0:yyyy-MM-dd DDDD}}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Plan.PlanDate,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
