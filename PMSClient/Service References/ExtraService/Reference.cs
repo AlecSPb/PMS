@@ -432,6 +432,9 @@ namespace PMSClient.ExtraService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProblemField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProcessWayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -517,6 +520,19 @@ namespace PMSClient.ExtraService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Problem {
+            get {
+                return this.ProblemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProblemField, value) != true)) {
+                    this.ProblemField = value;
+                    this.RaisePropertyChanged("Problem");
                 }
             }
         }

@@ -2881,6 +2881,9 @@ namespace PMSClient.MainService {
         private string PlateMaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrintNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3031,6 +3034,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PlateMaterialField, value) != true)) {
                     this.PlateMaterialField = value;
                     this.RaisePropertyChanged("PlateMaterial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PrintNumber {
+            get {
+                return this.PrintNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrintNumberField, value) != true)) {
+                    this.PrintNumberField = value;
+                    this.RaisePropertyChanged("PrintNumber");
                 }
             }
         }
@@ -6484,6 +6500,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
         System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnCompletedResponse")]
+        PMSClient.MainService.DcOrder[] GetOrderUnCompleted(int skip, int take, string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnCompletedResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompletedAsync(int skip, int take, string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountrUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountrUnCompletedResponse")]
+        int GetOrderCountrUnCompleted(string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountrUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountrUnCompletedResponse")]
+        System.Threading.Tasks.Task<int> GetOrderCountrUnCompletedAsync(string customer, string compositionstd);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByYear", ReplyAction="http://tempuri.org/IOrderService/GetOrderByYearResponse")]
         PMSClient.MainService.DcOrder[] GetOrderByYear(int skip, int take, int year);
         
@@ -6582,6 +6610,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd) {
             return base.Channel.GetOrderCountBySearchAsync(customer, compositionstd);
+        }
+        
+        public PMSClient.MainService.DcOrder[] GetOrderUnCompleted(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderUnCompleted(skip, take, customer, compositionstd);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompletedAsync(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderUnCompletedAsync(skip, take, customer, compositionstd);
+        }
+        
+        public int GetOrderCountrUnCompleted(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountrUnCompleted(customer, compositionstd);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOrderCountrUnCompletedAsync(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountrUnCompletedAsync(customer, compositionstd);
         }
         
         public PMSClient.MainService.DcOrder[] GetOrderByYear(int skip, int take, int year) {
@@ -7642,22 +7686,28 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetMissonsCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsBySearchResponse")]
-        PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string compostion, string pminumber);
+        PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsBySearchResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string compostion, string pminumber);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse")]
-        int GetMissonsCountBySearch(string compostion, string pminumber);
+        int GetMissonsCountBySearch(string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch", ReplyAction="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber);
+        System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompleted", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedResponse")]
+        PMSClient.MainService.DcOrder[] GetMissonUnCompleted(int skip, int take, string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompleted", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonUnCompletedAsync(int skip, int take, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
-        int GetMissonUnCompletedCount();
+        int GetMissonUnCompletedCount(string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
-        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync(string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
         PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
@@ -7767,28 +7817,36 @@ namespace PMSClient.MainService {
             return base.Channel.GetMissonsCountAsync();
         }
         
-        public PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string compostion, string pminumber) {
-            return base.Channel.GetMissonsBySearch(skip, take, compostion, pminumber);
+        public PMSClient.MainService.DcOrder[] GetMissonsBySearch(int skip, int take, string composition, string pminumber) {
+            return base.Channel.GetMissonsBySearch(skip, take, composition, pminumber);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string compostion, string pminumber) {
-            return base.Channel.GetMissonsBySearchAsync(skip, take, compostion, pminumber);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonsBySearchAsync(int skip, int take, string composition, string pminumber) {
+            return base.Channel.GetMissonsBySearchAsync(skip, take, composition, pminumber);
         }
         
-        public int GetMissonsCountBySearch(string compostion, string pminumber) {
-            return base.Channel.GetMissonsCountBySearch(compostion, pminumber);
+        public int GetMissonsCountBySearch(string composition, string pminumber) {
+            return base.Channel.GetMissonsCountBySearch(composition, pminumber);
         }
         
-        public System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string compostion, string pminumber) {
-            return base.Channel.GetMissonsCountBySearchAsync(compostion, pminumber);
+        public System.Threading.Tasks.Task<int> GetMissonsCountBySearchAsync(string composition, string pminumber) {
+            return base.Channel.GetMissonsCountBySearchAsync(composition, pminumber);
         }
         
-        public int GetMissonUnCompletedCount() {
-            return base.Channel.GetMissonUnCompletedCount();
+        public PMSClient.MainService.DcOrder[] GetMissonUnCompleted(int skip, int take, string composition, string pminumber) {
+            return base.Channel.GetMissonUnCompleted(skip, take, composition, pminumber);
         }
         
-        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
-            return base.Channel.GetMissonUnCompletedCountAsync();
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonUnCompletedAsync(int skip, int take, string composition, string pminumber) {
+            return base.Channel.GetMissonUnCompletedAsync(skip, take, composition, pminumber);
+        }
+        
+        public int GetMissonUnCompletedCount(string composition, string pminumber) {
+            return base.Channel.GetMissonUnCompletedCount(composition, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync(string composition, string pminumber) {
+            return base.Channel.GetMissonUnCompletedCountAsync(composition, pminumber);
         }
         
         public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {
@@ -8204,16 +8262,16 @@ namespace PMSClient.MainService {
     public interface IPlateService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlates", ReplyAction="http://tempuri.org/IPlateService/GetPlatesResponse")]
-        PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier);
+        PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier, string printnumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlates", ReplyAction="http://tempuri.org/IPlateService/GetPlatesResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier, string printnumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCount", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountResponse")]
-        int GetPlateCount(string platelot, string supplier);
+        int GetPlateCount(string platelot, string supplier, string printnumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCount", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountResponse")]
-        System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier);
+        System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier, string printnumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/AddPlate", ReplyAction="http://tempuri.org/IPlateService/AddPlateResponse")]
         int AddPlate(PMSClient.MainService.DcPlate model);
@@ -8273,20 +8331,20 @@ namespace PMSClient.MainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier) {
-            return base.Channel.GetPlates(skip, take, platelot, supplier);
+        public PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier, string printnumber) {
+            return base.Channel.GetPlates(skip, take, platelot, supplier, printnumber);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier) {
-            return base.Channel.GetPlatesAsync(skip, take, platelot, supplier);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier, string printnumber) {
+            return base.Channel.GetPlatesAsync(skip, take, platelot, supplier, printnumber);
         }
         
-        public int GetPlateCount(string platelot, string supplier) {
-            return base.Channel.GetPlateCount(platelot, supplier);
+        public int GetPlateCount(string platelot, string supplier, string printnumber) {
+            return base.Channel.GetPlateCount(platelot, supplier, printnumber);
         }
         
-        public System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier) {
-            return base.Channel.GetPlateCountAsync(platelot, supplier);
+        public System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier, string printnumber) {
+            return base.Channel.GetPlateCountAsync(platelot, supplier, printnumber);
         }
         
         public int AddPlate(PMSClient.MainService.DcPlate model) {

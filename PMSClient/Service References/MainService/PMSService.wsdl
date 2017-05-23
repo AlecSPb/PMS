@@ -25,6 +25,18 @@
   <wsdl:message name="IOrderService_GetOrderCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderCountBySearchResponse" />
   </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderCountrUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountrUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderCountrUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountrUnCompletedResponse" />
+  </wsdl:message>
   <wsdl:message name="IOrderService_GetOrderByYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderByYear" />
   </wsdl:message>
@@ -444,6 +456,12 @@
   </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonsCountBySearch_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonsCountBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedResponse" />
   </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonUnCompletedCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount" />
@@ -1076,6 +1094,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountBySearch" message="tns:IOrderService_GetOrderCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse" message="tns:IOrderService_GetOrderCountBySearch_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetOrderUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderUnCompleted" message="tns:IOrderService_GetOrderUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderUnCompletedResponse" message="tns:IOrderService_GetOrderUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountrUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountrUnCompleted" message="tns:IOrderService_GetOrderCountrUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountrUnCompletedResponse" message="tns:IOrderService_GetOrderCountrUnCompleted_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetOrderByYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderByYear" message="tns:IOrderService_GetOrderByYear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderByYearResponse" message="tns:IOrderService_GetOrderByYear_OutputMessage" />
@@ -1365,6 +1391,10 @@
     <wsdl:operation name="GetMissonsCountBySearch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountBySearch" message="tns:IMissonService_GetMissonsCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonsCountBySearchResponse" message="tns:IMissonService_GetMissonsCountBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompleted" message="tns:IMissonService_GetMissonUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedResponse" message="tns:IMissonService_GetMissonUnCompleted_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetMissonUnCompletedCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount" message="tns:IMissonService_GetMissonUnCompletedCount_InputMessage" />
@@ -1821,6 +1851,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetOrderCountBySearch">
       <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderCountrUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountrUnCompleted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2466,6 +2514,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMissonsCountBySearch">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonsCountBySearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompleted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

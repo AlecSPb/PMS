@@ -306,6 +306,7 @@
       <xs:element minOccurs="0" name="LastWeldMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateMaterial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrintNumber" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Supplier" nillable="true" type="xs:string" />

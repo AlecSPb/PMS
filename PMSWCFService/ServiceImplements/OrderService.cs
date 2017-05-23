@@ -248,7 +248,7 @@ namespace PMSWCFService
                 {
                     return dc.Orders.Where(o => o.CustomerName.Contains(customer)
                     && o.CompositionStandard.Contains(compositionstd)
-                    && o.State == OrderState.未完成.ToString()
+                    && o.State == OrderState.未完成.ToString()).Count();
                 }
             }
             catch (Exception ex)

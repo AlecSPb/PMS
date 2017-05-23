@@ -57,6 +57,7 @@
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Problem" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProcessWay" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
