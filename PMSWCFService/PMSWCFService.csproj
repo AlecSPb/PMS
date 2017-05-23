@@ -138,6 +138,7 @@
     <Compile Include="DataContracts\DcDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\DcPlate.cs" />
     <Compile Include="DataContracts\DcPMSIndex.cs" />
+    <Compile Include="DataContracts\DcVHPConclusion.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
