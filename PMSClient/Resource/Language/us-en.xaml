@@ -151,6 +151,10 @@
     <sys:String x:Key="PageBluePrint">Drawings</sys:String>
     <sys:String x:Key="PageBluePrintEdit">Drawings Edit</sys:String>
     
+    <sys:String x:Key="PageIntegratedSearch">Integrated Search</sys:String>
+    <sys:String x:Key="PagePlanConclusion">Plan Conclusion</sys:String>
+    <sys:String x:Key="PagePlanConclusionEdit">Plan Conclusion Edit</sys:String>
+    
     <sys:String x:Key="PageProductSelect">Select Product</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">Select Record DeMold</sys:String>
     <sys:String x:Key="PageRecordBondingSelect">Select Record Bonding</sys:String>
