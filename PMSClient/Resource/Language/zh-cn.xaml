@@ -78,7 +78,7 @@
     
     
     <sys:String x:Key="PageMisson">生产任务</sys:String>
-    <sys:String x:Key="PageMissonUnCompleted">生产任务[未完成]</sys:String>
+    <sys:String x:Key="PageMissonUnCompleted">生产任务[未完成]-这个视图只显示未完成的任务</sys:String>
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
@@ -201,7 +201,7 @@
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
-    <sys:String x:Key="ButtonMissonUnCompleted">任务[未完成]</sys:String>
+    <sys:String x:Key="ButtonMissonUnCompleted">未完成任务</sys:String>
     <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>

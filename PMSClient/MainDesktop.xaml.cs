@@ -288,6 +288,9 @@ namespace PMSClient
                 case PMSViews.Misson:
                     NavigateTo(_views.Misson);
                     break;
+                case PMSViews.MissonUnCompleted:
+                    NavigateTo(_views.MissonUnCompleted);
+                    break;
                 case PMSViews.Plan:
                     NavigateTo(_views.Plan);
                     break;

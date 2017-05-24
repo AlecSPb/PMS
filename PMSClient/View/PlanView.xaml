@@ -27,7 +27,6 @@
                      Style="{StaticResource StyleTextBoxSearch }" />
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource  StyleButtonCommon}"  Command="{Binding All}" />
-            <Button Content="{StaticResource ButtonMissonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnCompleted}"/>
             <Button Content="{StaticResource ButtonMisson}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMisson}"/>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

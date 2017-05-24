@@ -46,6 +46,7 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), CanGoToPlan);
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), CanGoToMisson);
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
 
             Search = new RelayCommand(ActionSearch, CanSearch);
@@ -56,6 +57,11 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+        }
+
+        private bool CanGoToMisson()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadPlan);
         }
 
         private bool CanGoToPlan()
@@ -90,7 +96,7 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAddPlan(DcOrder arg)
         {
-            if (arg==null)
+            if (arg == null)
             {
                 return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
             }
@@ -161,9 +167,9 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 15;
                 var service = new MissonServiceClient();
-                RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
+                RecordCount = service.GetMissonUnCompletedCount(SearchCompositionStandard, SearchPMINumber);
 
-                MissonTarget = service.GetMissonUnCompletedCount("","");
+                MissonTarget = RecordCount;
                 service.Close();
                 ActionPaging();
             }
@@ -181,7 +187,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MissonServiceClient();
-            var orders = service.GetMissonsBySearch(skip, take, SearchCompositionStandard, SearchPMINumber);
+            var orders = service.GetMissonUnCompleted(skip, take, SearchCompositionStandard, SearchPMINumber);
             service.Close();
             Missons.Clear();
             orders.ToList().ForEach(o => Missons.Add(o));
@@ -230,6 +236,7 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
+        public RelayCommand GoToMisson { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
         public RelayCommand GoToMaterialNeed { get; private set; }
         public RelayCommand Refresh { get; set; }
