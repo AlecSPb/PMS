@@ -47,12 +47,34 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
-            Finish = new RelayCommand<DcMaterialOrder>(ActionFinish);
-            FinishItem = new RelayCommand<DcMaterialOrderItem>(ActionFinishItem);
+            Finish = new RelayCommand<DcMaterialOrder>(ActionFinish, CanFinish);
+            FinishItem = new RelayCommand<DcMaterialOrderItem>(ActionFinishItem, CanFinishItem);
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
-            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList,CanGoToMaterialOrderItemList);
+            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList, CanGoToMaterialOrderItemList);
 
+        }
+
+        private bool CanFinishItem(DcMaterialOrderItem arg)
+        {
+            if (arg != null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrderItem) && CheckOrderItemState(arg.State);
+            }
+            else
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrderItem);
+            }
+        }
+        private bool CheckOrderItemState(string state)
+        {
+            return state == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                || state == PMSCommon.MaterialOrderItemState.紧急.ToString();
+        }
+
+        private bool CanFinish(DcMaterialOrder arg)
+        {
+            return true;
         }
 
         private bool CanGoToMaterialOrderItemList()

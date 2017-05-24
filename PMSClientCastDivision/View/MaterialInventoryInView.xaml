@@ -29,6 +29,8 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonMaterialInventoryOut}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialInventoryOut}"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="Orange"/>
 
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryIns}"
