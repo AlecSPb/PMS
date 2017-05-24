@@ -103,16 +103,16 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.Append("条目编号:");
-                sb.AppendLine(model.Item.MaterialOrderItem.OrderItemNumber);
-                sb.Append("材料成分:");
-                sb.AppendLine(model.Item.MaterialOrderItem.Composition);
-                sb.Append("材料净重:");
-                sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
-                sb.Append("内部编号:");
+                sb.Append("编号:");
                 sb.AppendLine(model.Item.MaterialOrderItem.PMINumber);
-                sb.Append("采购订单:");
+                sb.Append("订单:");
                 sb.AppendLine(model.Item.MaterialOrder.OrderPO);
+                sb.Append("条目:");
+                sb.AppendLine(model.Item.MaterialOrderItem.OrderItemNumber);
+                sb.Append("成分:");
+                sb.AppendLine(model.Item.MaterialOrderItem.Composition);
+                sb.Append("净重:");
+                sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
                 sb.AppendLine(model.Item.MaterialOrder.Supplier);
 
                 var mainContent = sb.ToString();

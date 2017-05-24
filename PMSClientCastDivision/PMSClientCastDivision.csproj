@@ -390,27 +390,40 @@
     <Content Include="Resource\DocTemplate\Reports\MaterialDeliverySheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\BasicService\BasicDataService.disco" />
-    <None Include="Service References\BasicService\BasicDataService.wsdl" />
-    <None Include="Service References\BasicService\BasicDataService.xsd">
+    <None Include="Service References\SanjieService\SanjieService1.disco" />
+    <None Include="Service References\HeartBeatService\HeartBeatService1.disco" />
+    <None Include="Service References\BasicService\BasicDataService1.disco" />
+    <SplashScreen Include="SplashScreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
+    <None Include="Service References\BasicService\BasicDataService1.wsdl" />
+    <None Include="Service References\BasicService\BasicDataService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\BasicDataService1.xsd">
+    <None Include="Service References\BasicService\BasicDataService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\BasicDataService2.xsd">
+    <None Include="Service References\BasicService\BasicDataService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
-    <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
-    <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
+    <None Include="Service References\HeartBeatService\HeartBeatService1.wsdl" />
+    <None Include="Service References\HeartBeatService\HeartBeatService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
+    <None Include="Service References\HeartBeatService\HeartBeatService21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService1.wsdl" />
+    <None Include="Service References\SanjieService\SanjieService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SanjieService\SanjieService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserSimpleService\UserSimpleService.disco" />
-    <None Include="Service References\SanjieService\SanjieService.disco" />
     <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
     <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
       <SubType>Designer</SubType>
@@ -427,16 +440,6 @@
     <Content Include="Resource\NoticeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\SanjieService\SanjieService.wsdl" />
-    <None Include="Service References\SanjieService\SanjieService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SanjieService\SanjieService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SanjieService\SanjieService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\BasicService\PMSClient.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
