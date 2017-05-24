@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="DcBDElementGroupItem" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>PMSClient.BasicService.DcBDElementGroupItem, PMSClient, Version=4.0.10.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>PMSClient.BasicService.DcBDElementGroupItem, PMSClient, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>
