@@ -938,7 +938,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <SplashScreen Include="spalsh.jpg" />
+    <SplashScreen Include="SplashScreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
     <Content Include="Resource\Files\pmshelp_en.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

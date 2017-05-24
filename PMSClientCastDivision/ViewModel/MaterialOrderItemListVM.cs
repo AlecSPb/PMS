@@ -142,6 +142,7 @@ namespace PMSClient.ViewModel
                         service.FinishMaterialOrderItem(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                     SetPageParametersWhenConditionChange();
+                    PMSDialogService.ShowYes("项目已完成，并暂入库，万一有操作失误，联系先锋材料进行修正");
                     NavigationService.Status("保存完毕");
                 }
                 catch (Exception ex)
