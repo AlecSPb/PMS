@@ -68,7 +68,7 @@
     <sys:String x:Key="PageWorkFlow">工作流</sys:String>
 
     <sys:String x:Key="PageOrder">订单管理</sys:String>
-    <sys:String x:Key="PageOrderUnCompleted">订单管理[未完成]</sys:String>
+    <sys:String x:Key="PageOrderUnCompleted">订单管理[未完成]-这个视图只显示未完成的销售订单</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
@@ -205,7 +205,7 @@
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
-    <sys:String x:Key="ButtonMissonUnCompleted">未完成任务</sys:String>
+    <sys:String x:Key="ButtonUnCompleted">只看未完成</sys:String>
     <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>

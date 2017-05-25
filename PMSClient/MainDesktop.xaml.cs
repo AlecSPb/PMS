@@ -231,6 +231,9 @@ namespace PMSClient
                 case PMSViews.OrderEdit:
                     NavigateTo(_views.OrderEdit);
                     break;
+                case PMSViews.OrderUnCompleted:
+                    NavigateTo(_views.OrderUnCompleted);
+                    break;
                 case PMSViews.OutSource:
                     NavigateTo(_views.OutSource);
                     break;

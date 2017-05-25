@@ -23,6 +23,7 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<OrderView>();
             SimpleIoc.Default.Register<OrderEditView>();
+            SimpleIoc.Default.Register<OrderUnCompletedView>();
             SimpleIoc.Default.Register<OrderCheckView>();
             SimpleIoc.Default.Register<OrderCheckEditView>();
 
@@ -136,6 +137,13 @@ namespace PMSClient.View
             get
             {
                 return SimpleIoc.Default.GetInstance<OrderView>();
+            }
+        }
+        public OrderUnCompletedView OrderUnCompleted
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderUnCompletedView>();
             }
         }
         public OrderEditView OrderEdit

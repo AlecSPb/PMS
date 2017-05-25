@@ -36,6 +36,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<OrderVM>();
             SimpleIoc.Default.Register<OrderEditVM>();
+            SimpleIoc.Default.Register<OrderUnCompletedVM>();
 
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<OrderCheckEditVM>();
@@ -133,6 +134,10 @@ namespace PMSClient.ViewModel
         public OrderEditVM OrderEdit
         {
             get { return SimpleIoc.Default.GetInstance<OrderEditVM>(); }
+        }
+        public OrderUnCompletedVM OrderUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderUnCompletedVM>(); }
         }
         public OrderCheckVM OrderCheck
         {

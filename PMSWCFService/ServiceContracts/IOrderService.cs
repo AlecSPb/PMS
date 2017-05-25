@@ -20,7 +20,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd);
         [OperationContract]
-        int GetOrderCountrUnCompleted(string customer, string compositionstd);
+        int GetOrderCountUnCompleted(string customer, string compositionstd);
 
 
 

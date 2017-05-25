@@ -31,11 +31,11 @@
   <wsdl:message name="IOrderService_GetOrderUnCompleted_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderUnCompletedResponse" />
   </wsdl:message>
-  <wsdl:message name="IOrderService_GetOrderCountrUnCompleted_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetOrderCountrUnCompleted" />
+  <wsdl:message name="IOrderService_GetOrderCountUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountUnCompleted" />
   </wsdl:message>
-  <wsdl:message name="IOrderService_GetOrderCountrUnCompleted_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetOrderCountrUnCompletedResponse" />
+  <wsdl:message name="IOrderService_GetOrderCountUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderCountUnCompletedResponse" />
   </wsdl:message>
   <wsdl:message name="IOrderService_GetOrderByYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderByYear" />
@@ -1134,9 +1134,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderUnCompleted" message="tns:IOrderService_GetOrderUnCompleted_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderUnCompletedResponse" message="tns:IOrderService_GetOrderUnCompleted_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetOrderCountrUnCompleted">
-      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountrUnCompleted" message="tns:IOrderService_GetOrderCountrUnCompleted_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountrUnCompletedResponse" message="tns:IOrderService_GetOrderCountrUnCompleted_OutputMessage" />
+    <wsdl:operation name="GetOrderCountUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountUnCompleted" message="tns:IOrderService_GetOrderCountUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderCountUnCompletedResponse" message="tns:IOrderService_GetOrderCountUnCompleted_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetOrderByYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderByYear" message="tns:IOrderService_GetOrderByYear_InputMessage" />
@@ -1927,8 +1927,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOrderCountrUnCompleted">
-      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountrUnCompleted" style="document" />
+    <wsdl:operation name="GetOrderCountUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderCountUnCompleted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
