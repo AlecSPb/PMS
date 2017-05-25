@@ -173,7 +173,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new PlateServiceClient())
             {
-                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber);
+                RecordCount = service.GetPlateCountUnCompleted(SearchPlateLot, SearchSupplier, SearchPrintNumber);
             }
             ActionPaging();
         }
@@ -184,7 +184,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new PlateServiceClient())
             {
-                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier,SearchPrintNumber);
+                var orders = service.GetPlateUnCompleted(skip, take, SearchPlateLot, SearchSupplier,SearchPrintNumber);
                 Plates.Clear();
                 orders.ToList().ForEach(o => Plates.Add(o));
             }

@@ -140,7 +140,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new ProductServiceClient())
             {
-                RecordCount = service.GetProductCount(SearchProductID, SearchCompositionStd);
+                RecordCount = service.GetProductCountUnCompleted(SearchProductID, SearchCompositionStd);
             }
             ActionPaging();
         }
@@ -151,7 +151,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new ProductServiceClient())
             {
-                var orders = service.GetProducts(skip, take, SearchProductID, SearchCompositionStd);
+                var orders = service.GetProductUnCompleted(skip, take, SearchProductID, SearchCompositionStd);
                 Products.Clear();
                 orders.ToList().ForEach(o => Products.Add(o));
             }
