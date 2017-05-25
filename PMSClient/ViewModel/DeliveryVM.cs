@@ -62,20 +62,30 @@ namespace PMSClient.ViewModel
 
         private bool CanFinish(DcDelivery arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
+            if (arg != null)
+            {
+                return (PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet)) && CheckDeliveryState(arg.State);
+            }
+            else
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocDeliverySheet);
+            }
         }
-
+        private bool CheckDeliveryState(string state)
+        {
+            return state == PMSCommon.DeliveryState.未完成.ToString();
+        }
         private void ActionFinish(DcDelivery model)
         {
             if (model != null)
             {
-                if (!PMSDialogService.ShowYesNo("请问","确定完成发货吗?"))
+                if (!PMSDialogService.ShowYesNo("请问", "确定完成发货吗?"))
                 {
                     return;
                 }
                 try
                 {
-                    using (var service=new DeliveryServiceClient())
+                    using (var service = new DeliveryServiceClient())
                     {
                         model.State = PMSCommon.DeliveryState.完成.ToString();
                         model.FinishTime = DateTime.Now;

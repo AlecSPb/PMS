@@ -23,6 +23,7 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<OrderView>();
             SimpleIoc.Default.Register<OrderEditView>();
+            SimpleIoc.Default.Register<OrderUnCompletedView>();
             SimpleIoc.Default.Register<OrderCheckView>();
             SimpleIoc.Default.Register<OrderCheckEditView>();
 
@@ -53,6 +54,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<MaterialInventoryInView>();
             SimpleIoc.Default.Register<MaterialInventoryInEditView>();
             SimpleIoc.Default.Register<MaterialInventoryInSelectView>();
+            SimpleIoc.Default.Register<MaterialInventoryInUnCompletedView>();
             SimpleIoc.Default.Register<MaterialInventoryOutView>();
             SimpleIoc.Default.Register<MaterialInventoryOutEditView>();
 
@@ -73,10 +75,12 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<ProductView>();
             SimpleIoc.Default.Register<ProductEditView>();
             SimpleIoc.Default.Register<ProductSelectView>();
+            SimpleIoc.Default.Register<ProductUnCompletedView>();
 
             SimpleIoc.Default.Register<PlateView>();
             SimpleIoc.Default.Register<PlateEditView>();
             SimpleIoc.Default.Register<PlateSelectView>();
+            SimpleIoc.Default.Register<PlateUnCompletedView>();
 
             SimpleIoc.Default.Register<DeliveryView>();
             SimpleIoc.Default.Register<DeliveryEditView>();
@@ -136,6 +140,13 @@ namespace PMSClient.View
             get
             {
                 return SimpleIoc.Default.GetInstance<OrderView>();
+            }
+        }
+        public OrderUnCompletedView OrderUnCompleted
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OrderUnCompletedView>();
             }
         }
         public OrderEditView OrderEdit
@@ -250,6 +261,10 @@ namespace PMSClient.View
         public MaterialInventoryInSelectView MaterialInventoryInSelect
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectView>(); }
+        }
+        public MaterialInventoryInUnCompletedView MaterialInventoryInUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInUnCompletedView>(); }
         }
         public MaterialInventoryOutView MaterialInventoryOut
         {
@@ -369,6 +384,11 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<ProductSelectView>(); }
         }
+        public ProductUnCompletedView ProductUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductUnCompletedView>(); }
+        }
+
 
         public PlateView Plate
         {
@@ -382,6 +402,11 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<PlateSelectView>(); }
         }
+        public PlateUnCompletedView PlateUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateUnCompletedView>(); }
+        }
+
 
         public DeliveryView Delivery
         {

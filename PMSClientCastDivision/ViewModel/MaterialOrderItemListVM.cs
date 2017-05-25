@@ -113,7 +113,7 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.Item.MaterialOrderItem.Composition);
                 sb.Append("净重:");
                 sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
-                sb.AppendLine(model.Item.MaterialOrder.Supplier);
+                sb.AppendLine("批号:");
 
                 var mainContent = sb.ToString();
 
@@ -133,7 +133,7 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个项目了吗？"))
+                    if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Item.MaterialOrderItem.Composition}了吗？"))
                     {
                         return;
                     }

@@ -13,9 +13,9 @@ using System.Windows;
 
 namespace PMSClient.ViewModel
 {
-    public class OrderVM : BaseViewModelPage
+    public class OrderUnCompletedVM : BaseViewModelPage
     {
-        public OrderVM()
+        public OrderUnCompletedVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -54,12 +54,6 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
-            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
-        }
-
-        private void ActionOnlyUnCompleted()
-        {
-            NavigationService.GoTo(PMSViews.OrderUnCompleted);
         }
 
         private void ActionSelectionChanged(DcOrder model)
@@ -143,7 +137,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 20;
                 var service = new OrderServiceClient();
-                RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositoinStandard);
+                RecordCount = service.GetOrderCountUnCompleted(SearchCustomer, SearchCompositoinStandard);
                 service.Close();
                 ActionPaging();
             }
@@ -163,7 +157,7 @@ namespace PMSClient.ViewModel
                 skip = (PageIndex - 1) * PageSize;
                 take = PageSize;
                 var service = new OrderServiceClient();
-                var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositoinStandard);
+                var orders = service.GetOrderUnCompleted(skip, take, SearchCustomer, SearchCompositoinStandard);
                 service.Close();
                 MainOrders.Clear();
                 orders.ToList().ForEach(o => MainOrders.Add(o));
@@ -226,10 +220,10 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcOrder> Edit { get; private set; }
+
         public RelayCommand<DcOrder> Duplicate { get; private set; }
         public RelayCommand<DcOrder> Check { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
-        public RelayCommand OnlyUnCompleted { get; set; }
         #endregion
     }
 }

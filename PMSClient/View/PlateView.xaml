@@ -30,6 +30,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnCompleted}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
             <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>

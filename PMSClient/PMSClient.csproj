@@ -253,13 +253,16 @@
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
+    <Compile Include="ViewModel\MaterialInventoryInUnCompletedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
     <Compile Include="ViewModel\MissonUnCompletedVM.cs" />
+    <Compile Include="ViewModel\OrderUnCompletedVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\OutSourceEditVM.cs" />
     <Compile Include="ViewModel\FeedBackVM.cs" />
     <Compile Include="ViewModel\OutSourceVM.cs" />
+    <Compile Include="ViewModel\PlateUnCompletedVM.cs" />
     <Compile Include="ViewModel\ProductStatisticVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
     <Compile Include="ViewModel\Model\PlateExtra.cs" />
@@ -269,6 +272,7 @@
     <Compile Include="ViewModel\OrderStatisticVM.cs" />
     <Compile Include="ViewModel\DeliveryStatisticVM.cs" />
     <Compile Include="ViewModel\PlanStatisticVM.cs" />
+    <Compile Include="ViewModel\ProductUnCompletedVM.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />

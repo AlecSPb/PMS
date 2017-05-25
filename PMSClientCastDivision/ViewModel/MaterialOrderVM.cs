@@ -88,7 +88,7 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个项目了吗？"))
+                    if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Composition}了吗？"))
                     {
                         return;
                     }

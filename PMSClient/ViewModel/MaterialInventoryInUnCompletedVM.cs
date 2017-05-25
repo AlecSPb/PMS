@@ -12,9 +12,9 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class MaterialInventoryInVM : BaseViewModelPage
+    public class MaterialInventoryInUnCompletedVM : BaseViewModelPage
     {
-        public MaterialInventoryInVM()
+        public MaterialInventoryInUnCompletedVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -42,12 +42,7 @@ namespace PMSClient.ViewModel
 
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
-            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
-        }
 
-        private void ActionOnlyUnCompleted()
-        {
-            NavigationService.GoTo(PMSViews.MaterialInventoryInUnCompleted);
         }
 
         private bool CanAdd()
@@ -97,7 +92,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialInventoryServiceClient();
-            RecordCount = service.GetMaterialInventoryInCountBySearch(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
+            RecordCount = service.GetMaterialInventoryInCountUnCompleted(SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -111,7 +106,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialInventoryServiceClient();
-            var result = service.GetMaterialInventoryInsBySearch(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
+            var result = service.GetMaterialInventoryInUnCompleted(skip, take, SearchSupplier, SearchComposition, SearchMaterialLot, SearchPMINumber);
             service.Close();
             MaterialInventoryIns.Clear();
             result.ToList().ForEach(o => MaterialInventoryIns.Add(o));
@@ -166,9 +161,9 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialInventoryIn> Edit { get; private set; }
-        public RelayCommand GoToMaterialInventoryOut { get; set; }
 
-        public RelayCommand OnlyUnCompleted { get; set; }
+
+        public RelayCommand GoToMaterialInventoryOut { get; set; }
         #endregion
 
 

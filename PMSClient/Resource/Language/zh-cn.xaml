@@ -68,7 +68,7 @@
     <sys:String x:Key="PageWorkFlow">工作流</sys:String>
 
     <sys:String x:Key="PageOrder">订单管理</sys:String>
-    <sys:String x:Key="PageOrderUnCompleted">订单管理[未完成]</sys:String>
+    <sys:String x:Key="PageOrderUnCompleted">订单管理[未完成]-这个视图只显示未完成的销售订单</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
@@ -92,7 +92,7 @@
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
-    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]-这个视图只显示库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
     <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
@@ -117,11 +117,11 @@
 
     <sys:String x:Key="PageProductTitle">成品</sys:String>
     <sys:String x:Key="PageProduct">成品库存</sys:String>
-    <sys:String x:Key="PageProductUnCompleted">成品库存[库存]</sys:String>
+    <sys:String x:Key="PageProductUnCompleted">成品库存[库存]-这个视图只显示成品库存</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
 
     <sys:String x:Key="PagePlate">背板库存</sys:String>
-    <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]</sys:String>
+    <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]-这个视图只显示背板库存</sys:String>
     <sys:String x:Key="PagePlateEdit">背板库存编辑</sys:String>
 
 
@@ -205,7 +205,7 @@
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
-    <sys:String x:Key="ButtonMissonUnCompleted">未完成任务</sys:String>
+    <sys:String x:Key="ButtonUnCompleted">只看未完成</sys:String>
     <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
     <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
