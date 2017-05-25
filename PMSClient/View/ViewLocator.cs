@@ -54,6 +54,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<MaterialInventoryInView>();
             SimpleIoc.Default.Register<MaterialInventoryInEditView>();
             SimpleIoc.Default.Register<MaterialInventoryInSelectView>();
+            SimpleIoc.Default.Register<MaterialInventoryInUnCompletedView>();
             SimpleIoc.Default.Register<MaterialInventoryOutView>();
             SimpleIoc.Default.Register<MaterialInventoryOutEditView>();
 
@@ -74,10 +75,12 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<ProductView>();
             SimpleIoc.Default.Register<ProductEditView>();
             SimpleIoc.Default.Register<ProductSelectView>();
+            SimpleIoc.Default.Register<ProductUnCompletedView>();
 
             SimpleIoc.Default.Register<PlateView>();
             SimpleIoc.Default.Register<PlateEditView>();
             SimpleIoc.Default.Register<PlateSelectView>();
+            SimpleIoc.Default.Register<PlateUnCompletedView>();
 
             SimpleIoc.Default.Register<DeliveryView>();
             SimpleIoc.Default.Register<DeliveryEditView>();
@@ -259,6 +262,10 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectView>(); }
         }
+        public MaterialInventoryInUnCompletedView MaterialInventoryInUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInUnCompletedView>(); }
+        }
         public MaterialInventoryOutView MaterialInventoryOut
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryOutView>(); }
@@ -377,6 +384,11 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<ProductSelectView>(); }
         }
+        public ProductUnCompletedView ProductUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductUnCompletedView>(); }
+        }
+
 
         public PlateView Plate
         {
@@ -390,6 +402,11 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<PlateSelectView>(); }
         }
+        public PlateUnCompletedView PlateUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateUnCompletedView>(); }
+        }
+
 
         public DeliveryView Delivery
         {

@@ -92,7 +92,7 @@
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
-    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]-这个视图只显示库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
     <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
@@ -117,11 +117,11 @@
 
     <sys:String x:Key="PageProductTitle">成品</sys:String>
     <sys:String x:Key="PageProduct">成品库存</sys:String>
-    <sys:String x:Key="PageProductUnCompleted">成品库存[库存]</sys:String>
+    <sys:String x:Key="PageProductUnCompleted">成品库存[库存]-这个视图只显示成品库存</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
 
     <sys:String x:Key="PagePlate">背板库存</sys:String>
-    <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]</sys:String>
+    <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]-这个视图只显示背板库存</sys:String>
     <sys:String x:Key="PagePlateEdit">背板库存编辑</sys:String>
 
 

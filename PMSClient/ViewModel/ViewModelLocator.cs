@@ -67,6 +67,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MaterialInventoryInVM>();
             SimpleIoc.Default.Register<MaterialInventoryInEditVM>();
             SimpleIoc.Default.Register<MaterialInventoryInSelectVM>();
+            SimpleIoc.Default.Register<MaterialInventoryInUnCompletedVM>();
 
             SimpleIoc.Default.Register<MaterialInventoryOutVM>();
             SimpleIoc.Default.Register<MaterialInventoryOutEditVM>();
@@ -83,10 +84,13 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<ProductVM>();
             SimpleIoc.Default.Register<ProductEditVM>();
             SimpleIoc.Default.Register<ProductSelectVM>();
+            SimpleIoc.Default.Register<ProductUnCompletedVM>();
 
             SimpleIoc.Default.Register<PlateVM>();
             SimpleIoc.Default.Register<PlateEditVM>();
             SimpleIoc.Default.Register<PlateSelectVM>();
+            SimpleIoc.Default.Register<PlateUnCompletedVM>();
+
 
             SimpleIoc.Default.Register<DeliveryVM>();
             SimpleIoc.Default.Register<DeliveryEditVM>();
@@ -229,6 +233,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectVM>(); }
         }
+        public MaterialInventoryInUnCompletedVM MaterialInventoryInUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInUnCompletedVM>(); }
+        }
 
         public MaterialInventoryOutVM MaterialInventoryOut
         {
@@ -366,6 +374,11 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<ProductSelectVM>(); }
         }
+        public ProductUnCompletedVM ProductUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductUnCompletedVM>(); }
+        }
+
 
         public PlateVM Plate
         {
@@ -379,7 +392,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlateSelectVM>(); }
         }
-
+        public PlateUnCompletedVM PlateUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateUnCompletedVM>(); }
+        }
 
         public DeliveryVM Delivery
         {

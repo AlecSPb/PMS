@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class PlateVM : BaseViewModelPage
+    public class PlateUnCompletedVM : BaseViewModelPage
     {
-        public PlateVM()
+        public PlateUnCompletedVM()
         {
             InitializeProperties();
             InitializeCommands();
@@ -35,12 +35,6 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
             BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate,CanBatchDuplicate);
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
-            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
-        }
-
-        private void ActionOnlyUnCompleted()
-        {
-            NavigationService.GoTo(PMSViews.PlateUnCompleted);
         }
 
         private bool CanBatchDuplicate(DcPlate arg)
@@ -250,6 +244,5 @@ namespace PMSClient.ViewModel
         #endregion
         public RelayCommand<DcPlate> Duplicate { get; set; }
         public RelayCommand<DcPlate> BatchDuplicate { get; set; }
-        public RelayCommand OnlyUnCompleted { get; set; }
     }
 }

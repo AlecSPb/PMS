@@ -282,6 +282,9 @@ namespace PMSClient
                 case PMSViews.MaterialInventoryInSelect:
                     NavigateTo(_views.MaterialInventoryInSelect);
                     break;
+                case PMSViews.MaterialInventoryInUnCompleted:
+                    NavigateTo(_views.MaterialInventoryInUnCompleted);
+                    break;
                 case PMSViews.MaterialInventoryOut:
                     NavigateTo(_views.MaterialInventoryOut);
                     break;
@@ -375,6 +378,9 @@ namespace PMSClient
                 case PMSViews.ProductEdit:
                     NavigateTo(_views.ProductEdit);
                     break;
+                case PMSViews.ProductUnCompleted:
+                    NavigateTo(_views.ProductUnCompleted);
+                    break;
                 case PMSViews.ProductSelect:
                     NavigateTo(_views.ProductSelect);
                     break;
@@ -386,6 +392,9 @@ namespace PMSClient
                     break;
                 case PMSViews.PlateSelect:
                     NavigateTo(_views.PlateSelect);
+                    break;
+                case PMSViews.PlateUnCompleted:
+                    NavigateTo(_views.PlateUnCompleted);
                     break;
                 case PMSViews.MaterialNeedCalcuationTool:
                     NavigateTo(_toolviews.MaterialNeedCalculation);

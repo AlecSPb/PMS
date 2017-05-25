@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace PMSClient.ViewModel
 {
-    public class ProductVM : BaseViewModelPage
+    public class ProductUnCompletedVM : BaseViewModelPage
     {
-        public ProductVM()
+        public ProductUnCompletedVM()
         {
             InitializeCommands();
             InitializeProperties();
@@ -35,12 +35,7 @@ namespace PMSClient.ViewModel
 
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
 
-            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
-        }
-
-        private void ActionOnlyUnCompleted()
-        {
-            NavigationService.GoTo(PMSViews.ProductUnCompleted);
+            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend,CanSelect);
         }
 
         private bool CanSelect(DcProduct arg)
@@ -168,7 +163,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcProduct> Doc { get; set; }
         public RelayCommand<DcProduct> SearchRecordTest { get; set; }
         public RelayCommand<DcProduct> SelectAndSend { get; set; }
-        public RelayCommand OnlyUnCompleted { get; set; }
+
 
         private string searchProductID;
         public string SearchProductID
