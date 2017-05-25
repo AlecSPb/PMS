@@ -113,7 +113,7 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.Item.MaterialOrderItem.Composition);
                 sb.Append("净重:");
                 sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
-                sb.AppendLine(model.Item.MaterialOrder.Supplier);
+                sb.AppendLine("批号:");
 
                 var mainContent = sb.ToString();
 
