@@ -22,8 +22,7 @@
             <TextBlock Text="{Binding MissonTarget,StringFormat=共有{0}个新订单需要完成}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}"
-                    Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource  ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
             <TextBlock Text="{StaticResource OrderStandardComposition}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchCompositionStandard,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>

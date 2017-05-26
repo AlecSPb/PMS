@@ -259,7 +259,7 @@
     <Compile Include="ViewModel\CheckListEditVM.cs" />
     <Compile Include="ViewModel\CheckListVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInUnCompletedVM.cs" />
-    <Compile Include="ViewModel\MaterialOrderItemListFlagVM.cs" />
+    <Compile Include="ViewModel\MaterialOrderItemListUnCompletedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
     <Compile Include="ViewModel\MissonUnCompletedVM.cs" />
@@ -316,8 +316,8 @@
     <Compile Include="View\MaterialInventoryInUnCompletedView.xaml.cs">
       <DependentUpon>MaterialInventoryInUnCompletedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaterialOrderItemListFlagView.xaml.cs">
-      <DependentUpon>MaterialOrderItemListFlagView.xaml</DependentUpon>
+    <Compile Include="View\MaterialOrderItemListUnCompletedView.xaml.cs">
+      <DependentUpon>MaterialOrderItemListUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MissonUnCompletedView.xaml.cs">
       <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
@@ -681,7 +681,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaterialOrderItemListFlagView.xaml">
+    <Page Include="View\MaterialOrderItemListUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

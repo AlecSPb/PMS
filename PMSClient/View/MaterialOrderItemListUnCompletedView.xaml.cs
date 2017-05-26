@@ -21,9 +21,9 @@ namespace PMSClient.View
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑
     /// </summary>
-    public partial class MaterialOrderItemListFlagView : UserControl
+    public partial class MaterialOrderItemListUnCompletedView : UserControl
     {
-        public MaterialOrderItemListFlagView()
+        public MaterialOrderItemListUnCompletedView()
         {
             InitializeComponent();
         }

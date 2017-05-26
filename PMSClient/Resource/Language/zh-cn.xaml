@@ -88,7 +88,7 @@
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemList">原料订单流水</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemListFlag">原料订单流水未交付-这个视图显示未交付的原料流水</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">原料订单流水未交付-这个视图显示未交付的原料流水</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>

@@ -88,7 +88,7 @@
     <sys:String x:Key="PageMaterialOrderEdit">Material Order Edit</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">Material Order Item Edit</sys:String>
     <sys:String x:Key="PageMaterialOrderItemList">Material Order Item List</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemListFlag">Material Order Item List-Only Not Delivery Item will show here</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemLisUnCompleted">Material Order Item List-Only Not Delivery Item will show here</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">Material Inventory</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">Material In</sys:String>

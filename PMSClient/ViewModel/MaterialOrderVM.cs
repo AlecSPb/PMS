@@ -63,7 +63,7 @@ namespace PMSClient.ViewModel
 
         private void ActionGoToMaterialOrderItemListFlag()
         {
-            NavigationService.GoTo(PMSViews.MaterialOrderItemListFlag);
+            NavigationService.GoTo(PMSViews.MaterialOrderItemListUnCompleted);
         }
 
         public void SetSearch(string orderPO, string supplier)
