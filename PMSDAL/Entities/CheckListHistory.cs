@@ -18,6 +18,7 @@ namespace PMSDAL
         public string Updator { get; set; }
 
         public string Title { get; set; }
+        public string Introduction { get; set; }
         public string Content { get; set; }
 
         //操作者和操作时间
