@@ -35,7 +35,12 @@ namespace PMSClient.ViewModel
 
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
 
-            SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend,CanSelect);
+            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+        }
+
+        private void ActionOnlyUnCompleted()
+        {
+            NavigationService.GoTo(PMSViews.ProductUnCompleted);
         }
 
         private bool CanSelect(DcProduct arg)
@@ -163,7 +168,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcProduct> Doc { get; set; }
         public RelayCommand<DcProduct> SearchRecordTest { get; set; }
         public RelayCommand<DcProduct> SelectAndSend { get; set; }
-
+        public RelayCommand OnlyUnCompleted { get; set; }
 
         private string searchProductID;
         public string SearchProductID

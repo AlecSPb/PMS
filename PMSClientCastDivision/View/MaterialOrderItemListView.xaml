@@ -29,7 +29,7 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Doc}"/>
+            <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Doc}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>

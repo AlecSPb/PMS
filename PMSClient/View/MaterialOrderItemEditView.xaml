@@ -127,7 +127,7 @@
                     <DatePicker Grid.Row="7" Grid.Column="1" SelectedDate="{Binding DeliveryDate,Mode=TwoWay}"
                             Style="{StaticResource StyleDatePickerCommon}"/>
                     <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="提供原料"/>
+                           Text="设定交付日期，默认一周时间"/>
 
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MOIUnitPrice}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

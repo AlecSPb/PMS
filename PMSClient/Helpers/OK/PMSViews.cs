@@ -29,8 +29,9 @@ namespace PMSClient
         MaterialOrderItemEdit,
         MaterialOrderItemSelect,
         MaterialOrderItemList,
+        MaterialOrderItemListUnCompleted,
         MaterialInventoryIn,
-        MaterialIventoryInUnCompleted,
+        MaterialInventoryInUnCompleted,
         MaterialInventoryInEdit,
         MaterialInventoryInSelect,
         MaterialInventoryOut,
@@ -68,7 +69,7 @@ namespace PMSClient
         ProductEdit,
         ProductSelect,
         Plate,
-        PlateUnComplated,
+        PlateUnCompleted,
         PlateEdit,
         PlateSelect,
         StatisticOrder,
@@ -93,6 +94,7 @@ namespace PMSClient
         AdminRole,
         FeedBack,
         FeedBackEdit,
+        IntegretedSearch,
         Output,
         Debug
     }

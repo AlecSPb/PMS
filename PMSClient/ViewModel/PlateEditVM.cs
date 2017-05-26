@@ -52,11 +52,12 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.InventoryState.库存.ToString();
             model.PlateLot = UsefulPackage.PMSTranslate.PlateLot();
+            model.PrintNumber = "无";
             model.PlateMaterial = PMSCommon.PlateMaterial.Cu.ToString();
             model.Dimension = PMSCommon.CustomData.PlateDimension[0];
             model.Supplier = PMSCommon.CustomData.PlateSupplier[0];
             model.UseCount = "0";
-            model.Hardness = "65HRB";
+            model.Hardness = "未知";
             model.LastWeldMaterial = PMSCommon.CustomData.PlateLastWeldMaterial[0].ToString();
             model.Weight = "未知";
             model.Appearance = "正常";

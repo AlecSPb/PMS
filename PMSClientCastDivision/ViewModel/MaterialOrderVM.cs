@@ -47,12 +47,34 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Doc = new RelayCommand<DcMaterialOrder>(ActionGenerateDoc);
-            Finish = new RelayCommand<DcMaterialOrder>(ActionFinish);
-            FinishItem = new RelayCommand<DcMaterialOrderItem>(ActionFinishItem);
+            Finish = new RelayCommand<DcMaterialOrder>(ActionFinish, CanFinish);
+            FinishItem = new RelayCommand<DcMaterialOrderItem>(ActionFinishItem, CanFinishItem);
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
-            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList,CanGoToMaterialOrderItemList);
+            GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList, CanGoToMaterialOrderItemList);
 
+        }
+
+        private bool CanFinishItem(DcMaterialOrderItem arg)
+        {
+            if (arg != null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrderItem) && CheckOrderItemState(arg.State);
+            }
+            else
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrderItem);
+            }
+        }
+        private bool CheckOrderItemState(string state)
+        {
+            return state == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                || state == PMSCommon.MaterialOrderItemState.紧急.ToString();
+        }
+
+        private bool CanFinish(DcMaterialOrder arg)
+        {
+            return true;
         }
 
         private bool CanGoToMaterialOrderItemList()
@@ -66,7 +88,7 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个项目了吗？"))
+                    if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Composition}了吗？"))
                     {
                         return;
                     }
@@ -75,6 +97,7 @@ namespace PMSClient.ViewModel
                         service.FinishMaterialOrderItem(model.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                     SetPageParametersWhenConditionChange();
+                    PMSDialogService.ShowYes("项目已完成，并暂入库，万一有操作失误，联系先锋材料进行修正");
                     NavigationService.Status("保存完毕");
                 }
                 catch (Exception ex)

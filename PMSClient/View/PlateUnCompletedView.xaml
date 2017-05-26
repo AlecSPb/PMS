@@ -1,0 +1,130 @@
+﻿<UserControl x:Class="PMSClient.View.PlateUnCompletedView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:PMSClient.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=PlateUnCompleted}">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{StaticResource PagePlateUnCompleted}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource  ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GiveUp}"/>
+            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+            <TextBlock Text="{StaticResource PlateLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource PlatePrintNumber}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPrintNumber,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource PlateSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Plates}" LoadingRow="DataGrid_LoadingRow">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <!--<Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>-->
+                                <Button Content="{StaticResource ButtonBatchDuplicate}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.BatchDuplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonSend}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.SelectAndSend,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlateCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource PlateState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
+                <DataGridTemplateColumn Header="{StaticResource PlateLot}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PlateLot}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlatePrintNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PrintNumber}"/>
+                <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PlateMaterial}"/>
+                <DataGridTemplateColumn Header="{StaticResource PlateDimension}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Dimension}" Style="{StaticResource StyleDGTextBlockSpecial}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource PlateSupplier}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Supplier}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource PlateUseCount}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding UseCount}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource PlateHardness}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Hardness}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlateLastWeldMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding LastWeldMaterial}"/>
+                <DataGridTemplateColumn Header="{StaticResource PlateWeight}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Weight}" Style="{StaticResource StyleDGTextBlockRight}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="{StaticResource PlateAppearance}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Appearance}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlateDefects}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Defects}"/>
+                <DataGridTextColumn Header="{StaticResource PlateRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource RPCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
+                             LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
+
+    </Grid>
+</UserControl>

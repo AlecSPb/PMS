@@ -159,6 +159,8 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Converter\LastDayConverter.cs" />
+    <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\OK\PMSAccess.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
@@ -250,15 +252,24 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\IntegretedSearchVM.cs" />
+    <Compile Include="ViewModel\CheckListReadVM.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
+    <Compile Include="ViewModel\CheckListEditVM.cs" />
+    <Compile Include="ViewModel\CheckListVM.cs" />
+    <Compile Include="ViewModel\MaterialInventoryInUnCompletedVM.cs" />
+    <Compile Include="ViewModel\MaterialOrderItemListUnCompletedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
+    <Compile Include="ViewModel\MissonUnCompletedVM.cs" />
+    <Compile Include="ViewModel\OrderUnCompletedVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\OutSourceEditVM.cs" />
     <Compile Include="ViewModel\FeedBackVM.cs" />
     <Compile Include="ViewModel\OutSourceVM.cs" />
+    <Compile Include="ViewModel\PlateUnCompletedVM.cs" />
     <Compile Include="ViewModel\ProductStatisticVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />
     <Compile Include="ViewModel\Model\PlateExtra.cs" />
@@ -268,6 +279,7 @@
     <Compile Include="ViewModel\OrderStatisticVM.cs" />
     <Compile Include="ViewModel\DeliveryStatisticVM.cs" />
     <Compile Include="ViewModel\PlanStatisticVM.cs" />
+    <Compile Include="ViewModel\ProductUnCompletedVM.cs" />
     <Compile Include="ViewModel\VMHelper\NewModelCollection.cs" />
     <Compile Include="ViewModel\PlateVM.cs" />
     <Compile Include="ViewModel\PlateSelectVM.cs" />
@@ -275,6 +287,12 @@
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
+    <Compile Include="View\IntegretedSearchView.xaml.cs">
+      <DependentUpon>IntegretedSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckListReadView.xaml.cs">
+      <DependentUpon>CheckListReadView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomerEditView.xaml.cs">
       <DependentUpon>CustomerEditView.xaml</DependentUpon>
     </Compile>
@@ -287,14 +305,29 @@
     <Compile Include="View\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CheckListEditView.xaml.cs">
+      <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FeedBackEditView.xaml.cs">
       <DependentUpon>FeedBackEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckListView.xaml.cs">
+      <DependentUpon>CheckListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FeedBackView.xaml.cs">
       <DependentUpon>FeedBackView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaterialInventoryInUnCompletedView.xaml.cs">
+      <DependentUpon>MaterialInventoryInUnCompletedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialOrderItemListUnCompletedView.xaml.cs">
+      <DependentUpon>MaterialOrderItemListUnCompletedView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MissonUnCompletedView.xaml.cs">
       <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderUnCompletedView.xaml.cs">
+      <DependentUpon>OrderUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OutputView.xaml.cs">
       <DependentUpon>OutputView.xaml</DependentUpon>
@@ -304,6 +337,9 @@
     </Compile>
     <Compile Include="View\OutSourceView.xaml.cs">
       <DependentUpon>OutSourceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlateUnCompletedView.xaml.cs">
+      <DependentUpon>PlateUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductStatisticView.xaml.cs">
       <DependentUpon>ProductStatisticView.xaml</DependentUpon>
@@ -337,6 +373,9 @@
     </Compile>
     <Compile Include="View\PlateView.xaml.cs">
       <DependentUpon>PlateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductUnCompletedView.xaml.cs">
+      <DependentUpon>ProductUnCompletedView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ProductView.xaml.cs">
       <DependentUpon>ProductView.xaml</DependentUpon>
@@ -606,6 +645,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\IntegretedSearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CheckListReadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\CustomerEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -622,15 +669,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\FeedBackEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CheckListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\FeedBackView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\MaterialInventoryInUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MaterialOrderItemListUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MissonUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OrderUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -645,6 +712,10 @@
     <Page Include="View\OutSourceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlateUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ProductStatisticView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -687,6 +758,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PlateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ProductUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -909,7 +984,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <SplashScreen Include="spalsh.jpg" />
+    <SplashScreen Include="SplashScreen.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
     <Content Include="Resource\Files\pmshelp_en.pptx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1037,6 +1114,7 @@
     <Content Include="Resource\HelpImages\materialorder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resource\Icons\flag.png" />
     <Content Include="Resource\NoticeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

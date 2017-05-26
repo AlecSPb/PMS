@@ -22,11 +22,11 @@
     <MetadataSource Address="http://192.168.16.254:8002/SanjieService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SanjieService1.disco" MetadataType="Disco" ID="fe53dc3e-c54a-484b-beb9-07505b3d2324" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?disco" />
-    <MetadataFile FileName="SanjieService1.wsdl" MetadataType="Wsdl" ID="3c06bc7a-27e8-4f98-8777-2d213c9267d0" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?wsdl" />
-    <MetadataFile FileName="SanjieService3.xsd" MetadataType="Schema" ID="e046f3c0-b3e0-45af-a9bf-e9734617525e" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SanjieService31.xsd" MetadataType="Schema" ID="006263bc-017a-4dd2-9921-6a6195521f57" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SanjieService32.xsd" MetadataType="Schema" ID="d16f5b42-3b23-4a72-b5a3-b9ec9442a768" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SanjieService1.disco" MetadataType="Disco" ID="8579abef-c6f2-4a3e-b7da-babb7e02775c" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?disco" />
+    <MetadataFile FileName="SanjieService1.wsdl" MetadataType="Wsdl" ID="2579c71a-f06b-4e86-956a-32a828d56e97" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?wsdl" />
+    <MetadataFile FileName="SanjieService3.xsd" MetadataType="Schema" ID="9458283f-a75a-47f4-98bf-6a9470bacabb" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SanjieService31.xsd" MetadataType="Schema" ID="c678e9fa-069b-4d98-962c-383f4ce37bbe" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SanjieService32.xsd" MetadataType="Schema" ID="6406a91a-a221-4fb4-94f6-c1ef629017ea" SourceId="1" SourceUrl="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

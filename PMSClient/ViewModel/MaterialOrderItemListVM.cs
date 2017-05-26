@@ -50,6 +50,7 @@ namespace PMSClient.ViewModel
             Doc = new RelayCommand<DcMaterialOrderItemExtra>(ActionGenerateDoc);
             SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
             Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder));
         }
 
         private void ActionLocation(DcMaterialOrderItemExtra model)
@@ -222,7 +223,7 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand<DcMaterialOrderItemExtra> Doc { get; private set; }
         public RelayCommand<DcMaterialOrderItemExtra> SelectionChanged { get; set; }
-
+        public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }
         #endregion
     }

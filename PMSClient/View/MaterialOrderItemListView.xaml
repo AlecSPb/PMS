@@ -17,7 +17,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageMaterialOrderItemList}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>
+            <Button Content="{StaticResource ButtonGiveUp}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding GiveUp}"/>
             <TextBlock Text="{StaticResource MOIOrderItemNumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchOrderItemNumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
@@ -70,7 +71,7 @@
                                     Binding="{Binding MaterialOrderItem.Weight,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
-
+                
                 <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.OrderPO}"/>
                 <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

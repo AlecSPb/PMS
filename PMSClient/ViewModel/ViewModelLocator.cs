@@ -36,6 +36,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<OrderVM>();
             SimpleIoc.Default.Register<OrderEditVM>();
+            SimpleIoc.Default.Register<OrderUnCompletedVM>();
 
             SimpleIoc.Default.Register<OrderCheckVM>();
             SimpleIoc.Default.Register<OrderCheckEditVM>();
@@ -44,6 +45,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OutSourceEditVM>();
 
             SimpleIoc.Default.Register<MissonVM>();
+            SimpleIoc.Default.Register<MissonUnCompletedVM>();
             SimpleIoc.Default.Register<MissonSelectVM>();
 
             SimpleIoc.Default.Register<PlanVM>();
@@ -61,10 +63,13 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
             SimpleIoc.Default.Register<MaterialOrderItemSelectVM>();
             SimpleIoc.Default.Register<MaterialOrderItemListVM>();
+            SimpleIoc.Default.Register<MaterialOrderItemListUnCompletedVM>();
+
 
             SimpleIoc.Default.Register<MaterialInventoryInVM>();
             SimpleIoc.Default.Register<MaterialInventoryInEditVM>();
             SimpleIoc.Default.Register<MaterialInventoryInSelectVM>();
+            SimpleIoc.Default.Register<MaterialInventoryInUnCompletedVM>();
 
             SimpleIoc.Default.Register<MaterialInventoryOutVM>();
             SimpleIoc.Default.Register<MaterialInventoryOutEditVM>();
@@ -81,10 +86,13 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<ProductVM>();
             SimpleIoc.Default.Register<ProductEditVM>();
             SimpleIoc.Default.Register<ProductSelectVM>();
+            SimpleIoc.Default.Register<ProductUnCompletedVM>();
 
             SimpleIoc.Default.Register<PlateVM>();
             SimpleIoc.Default.Register<PlateEditVM>();
             SimpleIoc.Default.Register<PlateSelectVM>();
+            SimpleIoc.Default.Register<PlateUnCompletedVM>();
+
 
             SimpleIoc.Default.Register<DeliveryVM>();
             SimpleIoc.Default.Register<DeliveryEditVM>();
@@ -116,6 +124,11 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FeedBackVM>();
             SimpleIoc.Default.Register<FeedBackEditVM>();
 
+            SimpleIoc.Default.Register<CheckListVM>();
+            SimpleIoc.Default.Register<CheckListEditVM>();
+            SimpleIoc.Default.Register<CheckListReadVM>();
+
+            SimpleIoc.Default.Register<IntegretedSearchVM>();
             SimpleIoc.Default.Register<OutputVM>();
 
             SimpleIoc.Default.Register<DebugVM>();
@@ -132,6 +145,10 @@ namespace PMSClient.ViewModel
         public OrderEditVM OrderEdit
         {
             get { return SimpleIoc.Default.GetInstance<OrderEditVM>(); }
+        }
+        public OrderUnCompletedVM OrderUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<OrderUnCompletedVM>(); }
         }
         public OrderCheckVM OrderCheck
         {
@@ -153,6 +170,10 @@ namespace PMSClient.ViewModel
         public MissonVM Misson
         {
             get { return SimpleIoc.Default.GetInstance<MissonVM>(); }
+        }
+        public MissonUnCompletedVM MissonUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<MissonUnCompletedVM>(); }
         }
         public MissonSelectVM MissonSelect
         {
@@ -207,6 +228,12 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemListVM>(); }
         }
+
+        public MaterialOrderItemListUnCompletedVM MaterialOrderItemListUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemListUnCompletedVM>(); }
+        }
+
         public MaterialInventoryInVM MaterialInventoryIn
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInVM>(); }
@@ -218,6 +245,10 @@ namespace PMSClient.ViewModel
         public MaterialInventoryInSelectVM MaterialInventoryInSelect
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInSelectVM>(); }
+        }
+        public MaterialInventoryInUnCompletedVM MaterialInventoryInUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialInventoryInUnCompletedVM>(); }
         }
 
         public MaterialInventoryOutVM MaterialInventoryOut
@@ -356,6 +387,11 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<ProductSelectVM>(); }
         }
+        public ProductUnCompletedVM ProductUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<ProductUnCompletedVM>(); }
+        }
+
 
         public PlateVM Plate
         {
@@ -369,7 +405,10 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlateSelectVM>(); }
         }
-
+        public PlateUnCompletedVM PlateUnCompleted
+        {
+            get { return SimpleIoc.Default.GetInstance<PlateUnCompletedVM>(); }
+        }
 
         public DeliveryVM Delivery
         {
@@ -419,6 +458,22 @@ namespace PMSClient.ViewModel
         public FeedBackEditVM FeedBackEdit
         {
             get { return SimpleIoc.Default.GetInstance<FeedBackEditVM>(); }
+        }
+        public CheckListVM CheckList
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListVM>(); }
+        }
+        public CheckListEditVM CheckListEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListEditVM>(); }
+        }
+        public CheckListReadVM CheckListRead
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListReadVM>(); }
+        }
+        public IntegretedSearchVM IntegretedSearch
+        {
+            get { return SimpleIoc.Default.GetInstance<IntegretedSearchVM>(); }
         }
         public OutputVM Output
         {

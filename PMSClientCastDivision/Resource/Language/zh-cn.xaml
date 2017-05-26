@@ -74,8 +74,8 @@
 
     <sys:String x:Key="PageOutSource">外购管理</sys:String>
     <sys:String x:Key="PageOutSourceEdit">外购管理编辑</sys:String>
-    
-    
+
+
     <sys:String x:Key="PageMisson">生产任务</sys:String>
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
@@ -89,9 +89,9 @@
 
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
-    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">原料入库-从三杰到先锋</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">原料出库-从先锋到三杰</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
     <sys:String x:Key="PageMaterialInventoryOutEdit">原料库存[出库]编辑</sys:String>
 
@@ -133,10 +133,10 @@
 
     <sys:String x:Key="PageCustomerService">售后</sys:String>
     <sys:String x:Key="PageCustomerServiceEdit">售后编辑</sys:String>
-    
+
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
     <sys:String x:Key="PageFeedBackEdit">客户反馈编辑</sys:String>
-    
+
     <sys:String x:Key="PageMaintenance">设备维护</sys:String>
 
     <sys:String x:Key="PageCheckList">检查清单</sys:String>
@@ -159,8 +159,8 @@
     <sys:String x:Key="TxtUserName">用户名</sys:String>
     <sys:String x:Key="TxtPassWord">密码</sys:String>
     <sys:String x:Key="TxtRemindUIDPWD">记住用户名和密码</sys:String>
-    
-    
+
+
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
@@ -210,7 +210,7 @@
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>
 
-    
+
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
     <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>

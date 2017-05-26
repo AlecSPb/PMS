@@ -42,7 +42,12 @@ namespace PMSClient.ViewModel
 
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
+            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+        }
 
+        private void ActionOnlyUnCompleted()
+        {
+            NavigationService.GoTo(PMSViews.MaterialInventoryInUnCompleted);
         }
 
         private bool CanAdd()
@@ -161,9 +166,9 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcMaterialInventoryIn> Edit { get; private set; }
-
-
         public RelayCommand GoToMaterialInventoryOut { get; set; }
+
+        public RelayCommand OnlyUnCompleted { get; set; }
         #endregion
 
 

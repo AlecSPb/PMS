@@ -225,7 +225,9 @@ namespace PMSWCFService
                     var query = from o in dc.Orders
                                 where o.CustomerName.Contains(customer)
                                 && o.CompositionStandard.Contains(compositionstd)
-                                && o.State == OrderState.未完成.ToString()
+                                && (o.State == OrderState.未完成.ToString()
+                                || o.State == OrderState.暂停.ToString()
+                                || o.State == OrderState.未核验.ToString() )
                                 orderby o.CreateTime descending
                                 select o;
 
@@ -240,7 +242,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetOrderCountrUnCompleted(string customer, string compositionstd)
+        public int GetOrderCountUnCompleted(string customer, string compositionstd)
         {
             try
             {
@@ -248,7 +250,9 @@ namespace PMSWCFService
                 {
                     return dc.Orders.Where(o => o.CustomerName.Contains(customer)
                     && o.CompositionStandard.Contains(compositionstd)
-                    && o.State == OrderState.未完成.ToString()).Count();
+                     && (o.State == OrderState.未完成.ToString()
+                                || o.State == OrderState.暂停.ToString()
+                                || o.State == OrderState.未核验.ToString())).Count();
                 }
             }
             catch (Exception ex)

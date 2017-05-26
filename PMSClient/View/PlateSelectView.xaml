@@ -21,6 +21,9 @@
             <TextBlock Text="{StaticResource PlateLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource PlatePrintNumber}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPrintNumber,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource PlateSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
@@ -58,8 +61,6 @@
                                     Binding="{Binding Plate.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource PlateState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Plate.State}"/>
-                <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Plate.PlateMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateLot}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -67,6 +68,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlatePrintNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PrintNumber}"/>
+                <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PlateMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

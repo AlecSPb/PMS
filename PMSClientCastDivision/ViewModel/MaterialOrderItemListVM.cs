@@ -41,9 +41,28 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             SelectionChanged = new RelayCommand<MaterialOrderItemExtraSelect>(ActionSelectionChanged);
             Location = new RelayCommand<MaterialOrderItemExtraSelect>(ActionLocation);
-            Finish = new RelayCommand<MaterialOrderItemExtraSelect>(ActionFinish);
+            Finish = new RelayCommand<MaterialOrderItemExtraSelect>(ActionFinish, CanFinish);
             Label = new RelayCommand<MaterialOrderItemExtraSelect>(ActionLabel);
             Doc = new RelayCommand(ActionDoc);
+        }
+
+        private bool CanFinish(MaterialOrderItemExtraSelect arg)
+        {
+            if (arg != null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder) 
+                    && CheckOrderItemState(arg.Item.MaterialOrderItem.State);
+            }
+            else
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
+            }
+        }
+
+        private bool CheckOrderItemState(string state)
+        {
+            return state == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                || state == PMSCommon.MaterialOrderItemState.紧急.ToString();
         }
 
         private void ActionDoc()
@@ -54,7 +73,7 @@ namespace PMSClient.ViewModel
             }
             try
             {
-                if (MaterialOrderItemExtraSelects.Where(i=>i.IsSelected).Count()==0)
+                if (MaterialOrderItemExtraSelects.Where(i => i.IsSelected).Count() == 0)
                 {
                     PMSDialogService.ShowYes("选中数目为0，请至少选择一个");
                     return;
@@ -84,17 +103,17 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.Append("条目编号:");
-                sb.AppendLine(model.Item.MaterialOrderItem.OrderItemNumber);
-                sb.Append("材料成分:");
-                sb.AppendLine(model.Item.MaterialOrderItem.Composition);
-                sb.Append("材料净重:");
-                sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
-                sb.Append("内部编号:");
+                sb.Append("编号:");
                 sb.AppendLine(model.Item.MaterialOrderItem.PMINumber);
-                sb.Append("采购订单:");
+                sb.Append("订单:");
                 sb.AppendLine(model.Item.MaterialOrder.OrderPO);
-                sb.AppendLine(model.Item.MaterialOrder.Supplier);
+                sb.Append("条目:");
+                sb.AppendLine(model.Item.MaterialOrderItem.OrderItemNumber);
+                sb.Append("成分:");
+                sb.AppendLine(model.Item.MaterialOrderItem.Composition);
+                sb.Append("净重:");
+                sb.AppendLine($"{model.Item.MaterialOrderItem.Weight.ToString("F3")}kg");
+                sb.AppendLine("批号:");
 
                 var mainContent = sb.ToString();
 
@@ -114,7 +133,7 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    if (!PMSDialogService.ShowYesNo("请问", "确定已经完成这个项目了吗？"))
+                    if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Item.MaterialOrderItem.Composition}了吗？"))
                     {
                         return;
                     }
@@ -123,6 +142,7 @@ namespace PMSClient.ViewModel
                         service.FinishMaterialOrderItem(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                     SetPageParametersWhenConditionChange();
+                    PMSDialogService.ShowYes("项目已完成，并暂入库，万一有操作失误，联系先锋材料进行修正");
                     NavigationService.Status("保存完毕");
                 }
                 catch (Exception ex)
@@ -142,13 +162,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                //using (var service = new MaterialOrderServiceClient())
-                //{
-                //    var result = service.GetMaterialOrderItembyMaterialID(model.ID);
-                //    MaterialOrderItems.Clear();
-                //    result.ToList().ForEach(i => MaterialOrderItems.Add(i));
-                //    CurrentSelectItem = model;
-                //}
+                CurrentSelectItem = model;
             }
         }
 

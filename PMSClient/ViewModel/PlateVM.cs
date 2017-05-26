@@ -35,6 +35,12 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
             BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate,CanBatchDuplicate);
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
+            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+        }
+
+        private void ActionOnlyUnCompleted()
+        {
+            NavigationService.GoTo(PMSViews.PlateUnCompleted);
         }
 
         private bool CanBatchDuplicate(DcPlate arg)
@@ -140,7 +146,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchPlateLot = SearchSupplier = "";
+            SearchPlateLot = SearchSupplier = SearchPrintNumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -164,7 +170,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             Plates = new ObservableCollection<DcPlate>();
-            SearchSupplier = searchPlateLot = "";
+            searchSupplier = searchPlateLot =searchPrintNumber= "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -173,7 +179,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new PlateServiceClient())
             {
-                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier);
+                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber);
             }
             ActionPaging();
         }
@@ -184,7 +190,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new PlateServiceClient())
             {
-                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier);
+                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier,SearchPrintNumber);
                 Plates.Clear();
                 orders.ToList().ForEach(o => Plates.Add(o));
             }
@@ -220,7 +226,18 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(() => SearchSupplier);
             }
         }
-
+        private string searchPrintNumber;
+        public string SearchPrintNumber
+        {
+            get { return searchPrintNumber; }
+            set
+            {
+                if (searchPrintNumber == value)
+                    return;
+                searchPrintNumber = value;
+                RaisePropertyChanged(() => SearchPrintNumber);
+            }
+        }
         public ObservableCollection<DcPlate> Plates { get; set; }
 
         private DcPlate currentSelectItem;
@@ -233,5 +250,6 @@ namespace PMSClient.ViewModel
         #endregion
         public RelayCommand<DcPlate> Duplicate { get; set; }
         public RelayCommand<DcPlate> BatchDuplicate { get; set; }
+        public RelayCommand OnlyUnCompleted { get; set; }
     }
 }

@@ -68,7 +68,7 @@
     <sys:String x:Key="PageWorkFlow">工作流</sys:String>
 
     <sys:String x:Key="PageOrder">订单管理</sys:String>
-    <sys:String x:Key="PageOrderUnCompleted">订单管理[未完成]</sys:String>
+    <sys:String x:Key="PageOrderUnCompleted">订单管理[未完成]-这个视图只显示未完成的销售订单</sys:String>
     <sys:String x:Key="PageOrderEdit">订单编辑</sys:String>
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
@@ -78,7 +78,7 @@
     
     
     <sys:String x:Key="PageMisson">生产任务</sys:String>
-    <sys:String x:Key="PageMissonUnCompleted">生产任务[未完成]</sys:String>
+    <sys:String x:Key="PageMissonUnCompleted">生产任务[未完成]-这个视图只显示未完成的任务</sys:String>
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
@@ -88,11 +88,11 @@
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemList">原料订单流水</sys:String>
-
+    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">原料订单流水未交付-这个视图显示未交付的原料流水</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
-    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]-这个视图只显示库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
     <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
@@ -117,11 +117,11 @@
 
     <sys:String x:Key="PageProductTitle">成品</sys:String>
     <sys:String x:Key="PageProduct">成品库存</sys:String>
-    <sys:String x:Key="PageProductUnCompleted">成品库存[库存]</sys:String>
+    <sys:String x:Key="PageProductUnCompleted">成品库存[库存]-这个视图只显示成品库存</sys:String>
     <sys:String x:Key="PageProductEdit">成品库编辑</sys:String>
 
     <sys:String x:Key="PagePlate">背板库存</sys:String>
-    <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]</sys:String>
+    <sys:String x:Key="PagePlateUnCompleted">背板库存[库存]-这个视图只显示背板库存</sys:String>
     <sys:String x:Key="PagePlateEdit">背板库存编辑</sys:String>
 
 
@@ -149,7 +149,11 @@
     <sys:String x:Key="PageCheckListEdit">工序清单编辑</sys:String>
     
     <sys:String x:Key="PageBluePrint">图纸库</sys:String>
-    <sys:String x:Key="PageBluePrintEdit">图纸库</sys:String>
+    <sys:String x:Key="PageBluePrintEdit">图纸库编辑</sys:String>
+
+    <sys:String x:Key="PageIntegratedSearch">综合查询</sys:String>
+    <sys:String x:Key="PagePlanConclusion">计划总结</sys:String>
+    <sys:String x:Key="PagePlanConclusionEdit">计划总结编辑</sys:String>
 
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
@@ -180,7 +184,6 @@
     <sys:String x:Key="ButtonRefresh">刷新</sys:String>
     <sys:String x:Key="ButtonSearch">搜索</sys:String>
     <sys:String x:Key="ButtonAll">全部</sys:String>
-    <sys:String x:Key="ButtonUnCompleted">只看未完成</sys:String>
     <sys:String x:Key="ButtonSave">保存</sys:String>
     <sys:String x:Key="ButtonAdd">添加</sys:String>
     <sys:String x:Key="ButtonEdit">编辑</sys:String>
@@ -201,9 +204,10 @@
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
-    <sys:String x:Key="ButtonMisson">生产任务</sys:String>
+    <sys:String x:Key="ButtonMisson">任务</sys:String>
+    <sys:String x:Key="ButtonUnCompleted">只看未完成</sys:String>
     <sys:String x:Key="ButtonSearchMisson">任务</sys:String>
-    <sys:String x:Key="ButtonPlan">计划安排</sys:String>
+    <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
     <sys:String x:Key="ButtonSearchPlan">搜索计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
@@ -216,6 +220,7 @@
     <sys:String x:Key="ButtonFinish">完成</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">原料流水</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemListFlag">未完成流水</sys:String>
     <sys:String x:Key="ButtonNotice">新消息</sys:String>
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>
@@ -394,6 +399,7 @@
     <sys:String x:Key="MOIDescription">描述</sys:String>
     <sys:String x:Key="MOIProvideRawMaterial">提供原料</sys:String>
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
+    <sys:String x:Key="MOILastDay">剩余天数</sys:String>
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
 
@@ -404,6 +410,7 @@
     <sys:String x:Key="PlateCreateTime">创建时间</sys:String>
 
     <sys:String x:Key="PlateLot">批号</sys:String>
+    <sys:String x:Key="PlatePrintNumber">刻号</sys:String>
     <sys:String x:Key="PlateMaterial">材料</sys:String>
     <sys:String x:Key="PlateBelong">归属</sys:String>
     <sys:String x:Key="PlateDimension">规格</sys:String>

@@ -100,7 +100,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchPlateLot = SearchSupplier = "";
+            SearchPlateLot = SearchSupplier =SearchPrintNumber = "";
             SetPageParametersWhenConditionChange();
         }
         private PMSViews requestView;
@@ -164,7 +164,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             PlateExtras = new ObservableCollection<PlateExtra>();
-            SearchSupplier = searchPlateLot = "";
+            searchSupplier = searchPlateLot =searchPrintNumber = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -173,7 +173,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new PlateServiceClient())
             {
-                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier);
+                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber);
             }
             ActionPaging();
         }
@@ -184,7 +184,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new PlateServiceClient())
             {
-                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier);
+                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier, SearchPrintNumber);
                 PlateExtras.Clear();
                 orders.ToList().ForEach(o => PlateExtras.Add(new PlateExtra { Plate = o }));
             }
@@ -217,7 +217,18 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(() => SearchSupplier);
             }
         }
-
+        private string searchPrintNumber;
+        public string SearchPrintNumber
+        {
+            get { return searchPrintNumber; }
+            set
+            {
+                if (searchPrintNumber == value)
+                    return;
+                searchPrintNumber = value;
+                RaisePropertyChanged(() => SearchPrintNumber);
+            }
+        }
         public ObservableCollection<PlateExtra> PlateExtras { get; set; }
         private PlateExtra currentSelectItem;
 

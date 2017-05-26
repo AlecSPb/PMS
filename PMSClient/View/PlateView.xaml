@@ -22,11 +22,15 @@
             <TextBlock Text="{StaticResource PlateLot}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPlateLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource  StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource PlatePrintNumber}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPrintNumber,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <TextBlock Text="{StaticResource PlateSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnCompleted}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
             <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>
@@ -57,8 +61,6 @@
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource PlateState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
-                <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PlateMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateLot}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -66,6 +68,10 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource PlatePrintNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PrintNumber}"/>
+                <DataGridTextColumn Header="{StaticResource PlateMaterial}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PlateMaterial}"/>
                 <DataGridTemplateColumn Header="{StaticResource PlateDimension}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

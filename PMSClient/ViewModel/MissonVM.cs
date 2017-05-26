@@ -56,6 +56,17 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+            OnlyUnFinished = new RelayCommand(ActionOnlyUnFinished, CanOnlyUnFinished);
+        }
+
+        private bool CanOnlyUnFinished()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadPlan);
+        }
+
+        private void ActionOnlyUnFinished()
+        {
+            NavigationService.GoTo(PMSViews.MissonUnCompleted);
         }
 
         private bool CanGoToPlan()
@@ -90,7 +101,7 @@ namespace PMSClient.ViewModel
         /// <returns></returns>
         private bool CanAddPlan(DcOrder arg)
         {
-            if (arg==null)
+            if (arg == null)
             {
                 return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
             }
@@ -163,7 +174,7 @@ namespace PMSClient.ViewModel
                 var service = new MissonServiceClient();
                 RecordCount = service.GetMissonsCountBySearch(SearchCompositionStandard, SearchPMINumber);
 
-                MissonTarget = service.GetMissonUnCompletedCount();
+                MissonTarget = service.GetMissonUnCompletedCount("", "");
                 service.Close();
                 ActionPaging();
             }
@@ -237,6 +248,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
+        public RelayCommand OnlyUnFinished { get; set; }
         #endregion
     }
 }

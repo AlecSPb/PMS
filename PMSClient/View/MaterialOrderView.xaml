@@ -28,6 +28,8 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonMaterialOrderItemList}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialOrderItemList}"/>
+            <Button Content="{StaticResource ButtonMaterialOrderItemListFlag}" Style="{StaticResource StyleButtonSpecial}"
+                    Command="{Binding GoToMaterialOrderItemListFlag}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

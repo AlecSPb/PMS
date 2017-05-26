@@ -54,6 +54,12 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
+            OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+        }
+
+        private void ActionOnlyUnCompleted()
+        {
+            NavigationService.GoTo(PMSViews.OrderUnCompleted);
         }
 
         private void ActionSelectionChanged(DcOrder model)
@@ -220,10 +226,10 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; private set; }
         public RelayCommand<DcOrder> Edit { get; private set; }
-
         public RelayCommand<DcOrder> Duplicate { get; private set; }
         public RelayCommand<DcOrder> Check { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
+        public RelayCommand OnlyUnCompleted { get; set; }
         #endregion
     }
 }
