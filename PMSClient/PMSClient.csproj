@@ -252,6 +252,7 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\IntegretedSearchVM.cs" />
     <Compile Include="ViewModel\CheckListReadVM.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
@@ -286,6 +287,9 @@
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
+    <Compile Include="View\IntegretedSearchView.xaml.cs">
+      <DependentUpon>IntegretedSearchView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CheckListReadView.xaml.cs">
       <DependentUpon>CheckListReadView.xaml</DependentUpon>
     </Compile>
@@ -638,6 +642,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\MaterialNeedCalculationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\IntegretedSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
