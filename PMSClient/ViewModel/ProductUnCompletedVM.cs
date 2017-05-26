@@ -32,10 +32,9 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcProduct>(ActionEdit, CanEdit);
             Doc = new RelayCommand<DcProduct>(ActionDoc, CanDoc);
-
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
-
             SelectAndSend = new RelayCommand<DcProduct>(ActionSelectAndSend,CanSelect);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product));
         }
 
         private bool CanSelect(DcProduct arg)
@@ -157,13 +156,6 @@ namespace PMSClient.ViewModel
             }
             CurrentSelectItem = Products.FirstOrDefault();
         }
-        #region Commands
-        public RelayCommand Add { get; set; }
-        public RelayCommand<DcProduct> Edit { get; set; }
-        public RelayCommand<DcProduct> Doc { get; set; }
-        public RelayCommand<DcProduct> SearchRecordTest { get; set; }
-        public RelayCommand<DcProduct> SelectAndSend { get; set; }
-
 
         private string searchProductID;
         public string SearchProductID
@@ -198,6 +190,14 @@ namespace PMSClient.ViewModel
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
+
+        #region Commands
+        public RelayCommand Add { get; set; }
+        public RelayCommand<DcProduct> Edit { get; set; }
+        public RelayCommand<DcProduct> Doc { get; set; }
+        public RelayCommand<DcProduct> SearchRecordTest { get; set; }
+        public RelayCommand<DcProduct> SelectAndSend { get; set; }
+        public RelayCommand GiveUp { get; set; }
 
         #endregion
 

@@ -35,6 +35,7 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
             BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate,CanBatchDuplicate);
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plate));
         }
 
         private bool CanBatchDuplicate(DcPlate arg)
@@ -190,10 +191,6 @@ namespace PMSClient.ViewModel
             }
             CurrentSelectItem = Plates.FirstOrDefault();
         }
-        #region Commands
-        public RelayCommand Add { get; set; }
-        public RelayCommand<DcPlate> Edit { get; set; }
-        public RelayCommand<DcPlate> SelectAndSend { get; set; }
 
 
         private string searchPlateLot;
@@ -241,8 +238,14 @@ namespace PMSClient.ViewModel
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
 
-        #endregion
+        #region Commands
+        public RelayCommand Add { get; set; }
+        public RelayCommand<DcPlate> Edit { get; set; }
+        public RelayCommand<DcPlate> SelectAndSend { get; set; }
         public RelayCommand<DcPlate> Duplicate { get; set; }
         public RelayCommand<DcPlate> BatchDuplicate { get; set; }
+        public RelayCommand GiveUp { get; set; }
+        #endregion
+
     }
 }

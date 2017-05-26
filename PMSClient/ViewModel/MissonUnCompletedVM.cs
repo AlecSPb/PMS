@@ -57,6 +57,7 @@ namespace PMSClient.ViewModel
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
         }
 
         private bool CanGoToMisson()
@@ -244,6 +245,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
+        public RelayCommand GiveUp { get; set; }
         #endregion
     }
 }

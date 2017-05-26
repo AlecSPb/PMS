@@ -54,6 +54,7 @@ namespace PMSClient.ViewModel
             Duplicate = new RelayCommand<DcOrder>(ActionDuplicate, CanEdit);
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
+            GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Order));
         }
 
         private void ActionSelectionChanged(DcOrder model)
@@ -224,6 +225,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Duplicate { get; private set; }
         public RelayCommand<DcOrder> Check { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
+        public RelayCommand GiveUp { get; set; }
         #endregion
     }
 }
