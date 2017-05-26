@@ -110,6 +110,10 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<FeedBackView>();
             SimpleIoc.Default.Register<FeedBackEditView>();
 
+            SimpleIoc.Default.Register<CheckListView>();
+            SimpleIoc.Default.Register<CheckListEditView>();
+            SimpleIoc.Default.Register<CheckListReadView>();
+
             SimpleIoc.Default.Register<OutputView>();
 
             SimpleIoc.Default.Register<DebugView>();
@@ -464,6 +468,19 @@ namespace PMSClient.View
         public FeedBackEditView FeedBackEdit
         {
             get { return SimpleIoc.Default.GetInstance<FeedBackEditView>(); }
+        }
+
+        public CheckListView CheckList
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListView>(); }
+        }
+        public CheckListEditView CheckListEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListEditView>(); }
+        }
+        public CheckListReadView CheckListtRead
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListReadView>(); }
         }
         public OutputView Output
         {

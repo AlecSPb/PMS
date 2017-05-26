@@ -124,6 +124,10 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<FeedBackVM>();
             SimpleIoc.Default.Register<FeedBackEditVM>();
 
+            SimpleIoc.Default.Register<CheckListVM>();
+            SimpleIoc.Default.Register<CheckListEditVM>();
+            SimpleIoc.Default.Register<CheckListReadVM>();
+
             SimpleIoc.Default.Register<OutputVM>();
 
             SimpleIoc.Default.Register<DebugVM>();
@@ -453,6 +457,18 @@ namespace PMSClient.ViewModel
         public FeedBackEditVM FeedBackEdit
         {
             get { return SimpleIoc.Default.GetInstance<FeedBackEditVM>(); }
+        }
+        public CheckListVM CheckList
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListVM>(); }
+        }
+        public CheckListEditVM CheckListEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListEditVM>(); }
+        }
+        public CheckListReadVM CheckListRead
+        {
+            get { return SimpleIoc.Default.GetInstance<CheckListReadVM>(); }
         }
         public OutputVM Output
         {

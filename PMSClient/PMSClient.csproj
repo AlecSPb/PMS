@@ -252,9 +252,12 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\CheckListReadVM.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
+    <Compile Include="ViewModel\CheckListEditVM.cs" />
+    <Compile Include="ViewModel\CheckListVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInUnCompletedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListFlagVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
@@ -283,6 +286,9 @@
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
+    <Compile Include="View\CheckListReadView.xaml.cs">
+      <DependentUpon>CheckListReadView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomerEditView.xaml.cs">
       <DependentUpon>CustomerEditView.xaml</DependentUpon>
     </Compile>
@@ -295,8 +301,14 @@
     <Compile Include="View\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CheckListEditView.xaml.cs">
+      <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FeedBackEditView.xaml.cs">
       <DependentUpon>FeedBackEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CheckListView.xaml.cs">
+      <DependentUpon>CheckListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FeedBackView.xaml.cs">
       <DependentUpon>FeedBackView.xaml</DependentUpon>
@@ -629,6 +641,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\CheckListReadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\CustomerEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -645,9 +661,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\FeedBackEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CheckListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\FeedBackView.xaml">
       <SubType>Designer</SubType>
