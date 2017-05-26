@@ -128,6 +128,7 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<CheckListEditVM>();
             SimpleIoc.Default.Register<CheckListReadVM>();
 
+            SimpleIoc.Default.Register<IntegretedSearchVM>();
             SimpleIoc.Default.Register<OutputVM>();
 
             SimpleIoc.Default.Register<DebugVM>();
@@ -469,6 +470,10 @@ namespace PMSClient.ViewModel
         public CheckListReadVM CheckListRead
         {
             get { return SimpleIoc.Default.GetInstance<CheckListReadVM>(); }
+        }
+        public IntegretedSearchVM IntegretedSearch
+        {
+            get { return SimpleIoc.Default.GetInstance<IntegretedSearchVM>(); }
         }
         public OutputVM Output
         {

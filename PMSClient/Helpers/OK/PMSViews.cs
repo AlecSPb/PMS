@@ -94,6 +94,7 @@ namespace PMSClient
         AdminRole,
         FeedBack,
         FeedBackEdit,
+        IntegretedSearch,
         Output,
         Debug
     }

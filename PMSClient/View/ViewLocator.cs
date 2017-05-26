@@ -114,6 +114,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<CheckListEditView>();
             SimpleIoc.Default.Register<CheckListReadView>();
 
+            SimpleIoc.Default.Register<IntegretedSearchView>();
             SimpleIoc.Default.Register<OutputView>();
 
             SimpleIoc.Default.Register<DebugView>();
@@ -478,13 +479,17 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<CheckListEditView>(); }
         }
-        public CheckListReadView CheckListtRead
+        public CheckListReadView CheckListRead
         {
             get { return SimpleIoc.Default.GetInstance<CheckListReadView>(); }
         }
         public OutputView Output
         {
             get { return SimpleIoc.Default.GetInstance<OutputView>(); }
+        }
+        public IntegretedSearchView IntegretedSearch
+        {
+            get { return SimpleIoc.Default.GetInstance<IntegretedSearchView>(); }
         }
         public DebugView Debug
         {

@@ -432,6 +432,9 @@ namespace PMSClient
                 case PMSViews.FeedBackEdit:
                     NavigateTo(_views.FeedBackEdit);
                     break;
+                case PMSViews.IntegretedSearch:
+                    NavigateTo(_views.IntegretedSearch);
+                    break;
                 case PMSViews.Output:
                     NavigateTo(_views.Output);
                     break;
