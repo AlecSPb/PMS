@@ -70,6 +70,17 @@
                                     Binding="{Binding MaterialOrderItem.Weight,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource MOILastDay}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
+                                    Binding="{Binding MaterialOrderItem.DeliveryDate,Converter={StaticResource LastDayConverter}}"/>
+                <DataGridTemplateColumn Header="还没交付">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding  MaterialOrderItem.DeliveryDate,Converter={StaticResource LastDayImageConverter}}"
+                                   Height="8" Width="8"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
 
                 <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.OrderPO}"/>

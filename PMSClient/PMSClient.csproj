@@ -159,6 +159,8 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Converter\LastDayConverter.cs" />
+    <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
     <Compile Include="Helpers\OK\PMSAccess.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
@@ -1072,6 +1074,7 @@
     <Content Include="Resource\HelpImages\materialorder.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resource\Icons\flag.png" />
     <Content Include="Resource\NoticeData.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

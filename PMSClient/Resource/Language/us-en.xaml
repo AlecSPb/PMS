@@ -397,6 +397,7 @@
     <sys:String x:Key="MOIDescription">Description</sys:String>
     <sys:String x:Key="MOIProvideRawMaterial">Raw Material</sys:String>
     <sys:String x:Key="MOIDeliveryDate">Delivery Date</sys:String>
+    <sys:String x:Key="MOILastDay">Last Day</sys:String>
     <sys:String x:Key="MOIUnitPrice">Unit Price</sys:String>
     <sys:String x:Key="MOIWeight">Weight</sys:String>
 
@@ -587,7 +588,7 @@
     <sys:String x:Key="MIOPMINumber">PMI Number</sys:String>
     <sys:String x:Key="MIOMaterialLot">Material Lot</sys:String>
     <sys:String x:Key="MIOComposition">Composition</sys:String>
-    <sys:String x:Key="MIOPurity">PUrity</sys:String>
+    <sys:String x:Key="MIOPurity">Purity</sys:String>
     <sys:String x:Key="MIOReceiver">Receiver</sys:String>
     <sys:String x:Key="MIOWeight">Weight</sys:String>
     <sys:String x:Key="MIORemark">Remark</sys:String>
