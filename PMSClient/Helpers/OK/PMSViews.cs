@@ -29,6 +29,7 @@ namespace PMSClient
         MaterialOrderItemEdit,
         MaterialOrderItemSelect,
         MaterialOrderItemList,
+        MaterialOrderItemListFlag,
         MaterialInventoryIn,
         MaterialInventoryInUnCompleted,
         MaterialInventoryInEdit,

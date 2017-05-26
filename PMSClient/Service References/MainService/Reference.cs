@@ -7069,6 +7069,24 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber, string supplier);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompleted", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompletedRes" +
+            "ponse")]
+        PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompleted", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompletedRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasUnCompletedAsync(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnComplet" +
+            "ed", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnComplet" +
+            "edResponse")]
+        int GetMaterialOrderItemExtrasCountUnCompleted(string composition, string pminumber, string orderitemnumber, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnComplet" +
+            "ed", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnComplet" +
+            "edResponse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountUnCompletedAsync(string composition, string pminumber, string orderitemnumber, string supplier);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYear", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYearResponse")]
         PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtraByYear(int skip, int take, int year);
         
@@ -7275,6 +7293,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber, string supplier) {
             return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber, supplier);
+        }
+        
+        public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasUnCompleted(skip, take, composition, pminumber, orderitemnumber, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasUnCompletedAsync(int skip, int take, string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasUnCompletedAsync(skip, take, composition, pminumber, orderitemnumber, supplier);
+        }
+        
+        public int GetMaterialOrderItemExtrasCountUnCompleted(string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasCountUnCompleted(composition, pminumber, orderitemnumber, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountUnCompletedAsync(string composition, string pminumber, string orderitemnumber, string supplier) {
+            return base.Channel.GetMaterialOrderItemExtrasCountUnCompletedAsync(composition, pminumber, orderitemnumber, supplier);
         }
         
         public PMSClient.MainService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtraByYear(int skip, int take, int year) {

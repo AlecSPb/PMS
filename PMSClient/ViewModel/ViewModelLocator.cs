@@ -63,6 +63,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MaterialOrderItemEditVM>();
             SimpleIoc.Default.Register<MaterialOrderItemSelectVM>();
             SimpleIoc.Default.Register<MaterialOrderItemListVM>();
+            SimpleIoc.Default.Register<MaterialOrderItemListFlagVM>();
+
 
             SimpleIoc.Default.Register<MaterialInventoryInVM>();
             SimpleIoc.Default.Register<MaterialInventoryInEditVM>();
@@ -221,6 +223,12 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<MaterialOrderItemListVM>(); }
         }
+
+        public MaterialOrderItemListFlagVM MaterialOrderItemListFlag
+        {
+            get { return SimpleIoc.Default.GetInstance<MaterialOrderItemListFlagVM>(); }
+        }
+
         public MaterialInventoryInVM MaterialInventoryIn
         {
             get { return SimpleIoc.Default.GetInstance<MaterialInventoryInVM>(); }

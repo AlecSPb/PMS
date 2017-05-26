@@ -88,7 +88,7 @@
     <sys:String x:Key="PageMaterialOrderEdit">Material Order Edit</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">Material Order Item Edit</sys:String>
     <sys:String x:Key="PageMaterialOrderItemList">Material Order Item List</sys:String>
-
+    <sys:String x:Key="PageMaterialOrderItemListFlag">Material Order Item List-Only Not Delivery Item will show here</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">Material Inventory</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">Material In</sys:String>
@@ -220,6 +220,7 @@
     <sys:String x:Key="ButtonFinish">Finish</sys:String>
     <sys:String x:Key="ButtonLocation">Locate</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">Material List</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemListFlag">UnFinished Material List</sys:String>
     <sys:String x:Key="ButtonNotice">Notice</sys:String>
     <sys:String x:Key="ButtonHelp">Help</sys:String>
     <sys:String x:Key="ButtonIKnow">I Know</sys:String>

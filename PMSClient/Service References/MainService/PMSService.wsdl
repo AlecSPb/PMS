@@ -283,6 +283,18 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasCountUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCountUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtrasCountUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCountUnCompletedResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderItemExtraByYear_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtraByYear" />
   </wsdl:message>
@@ -1308,6 +1320,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompleted" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompletedResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasCountUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnCompleted" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCountUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnCompletedResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtrasCountUnCompleted_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderItemExtraByYear">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYear" message="tns:IMaterialOrderService_GetMaterialOrderItemExtraByYear_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtraByYearResponse" message="tns:IMaterialOrderService_GetMaterialOrderItemExtraByYear_OutputMessage" />
@@ -2307,6 +2327,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderItemExtrasCount">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasCountUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderItemExtrasCountUnCompleted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
