@@ -487,6 +487,12 @@
   <wsdl:message name="IMissonService_GetMissonUnCompleted_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonUnCompletedResponse" />
   </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedCount2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount2" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedCount2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount2Response" />
+  </wsdl:message>
   <wsdl:message name="IMissonService_GetMissonUnCompletedCount_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCount" />
   </wsdl:message>
@@ -1459,6 +1465,10 @@
     <wsdl:operation name="GetMissonUnCompleted">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompleted" message="tns:IMissonService_GetMissonUnCompleted_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedResponse" message="tns:IMissonService_GetMissonUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCount2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2" message="tns:IMissonService_GetMissonUnCompletedCount2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2Response" message="tns:IMissonService_GetMissonUnCompletedCount2_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetMissonUnCompletedCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount" message="tns:IMissonService_GetMissonUnCompletedCount_InputMessage" />
@@ -2639,6 +2649,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMissonUnCompleted">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCount2">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1206,12 +1206,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMissonUnCompletedCount">
+  <xs:element name="GetMissonUnCompletedCount2">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pminumber" nillable="true" type="xs:string" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonUnCompletedCount2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMissonUnCompletedCount2Result" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMissonUnCompletedCount">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetMissonUnCompletedCountResponse">

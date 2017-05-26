@@ -180,7 +180,26 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
+        public int GetMissonUnCompletedCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString())
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
 
         /// <summary>
         /// 分页获取

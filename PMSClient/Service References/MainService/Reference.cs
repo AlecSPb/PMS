@@ -7771,11 +7771,17 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompleted", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonUnCompletedAsync(int skip, int take, string composition, string pminumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
-        int GetMissonUnCompletedCount(string composition, string pminumber);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2Response")]
+        int GetMissonUnCompletedCount2(string composition, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCount2Response")]
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCount2Async(string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
-        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync(string composition, string pminumber);
+        int GetMissonUnCompletedCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
         PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
@@ -7909,12 +7915,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetMissonUnCompletedAsync(skip, take, composition, pminumber);
         }
         
-        public int GetMissonUnCompletedCount(string composition, string pminumber) {
-            return base.Channel.GetMissonUnCompletedCount(composition, pminumber);
+        public int GetMissonUnCompletedCount2(string composition, string pminumber) {
+            return base.Channel.GetMissonUnCompletedCount2(composition, pminumber);
         }
         
-        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync(string composition, string pminumber) {
-            return base.Channel.GetMissonUnCompletedCountAsync(composition, pminumber);
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCount2Async(string composition, string pminumber) {
+            return base.Channel.GetMissonUnCompletedCount2Async(composition, pminumber);
+        }
+        
+        public int GetMissonUnCompletedCount() {
+            return base.Channel.GetMissonUnCompletedCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
+            return base.Channel.GetMissonUnCompletedCountAsync();
         }
         
         public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {

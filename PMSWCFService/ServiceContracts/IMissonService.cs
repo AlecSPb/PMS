@@ -26,9 +26,10 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcOrder> GetMissonUnCompleted(int skip, int take, string composition, string pminumber);
-        [OperationContract]
+        [OperationContract(Name ="GetMissonUnCompletedCount2")]
         int GetMissonUnCompletedCount(string composition, string pminumber);
-
+        [OperationContract]
+        int GetMissonUnCompletedCount();
 
         #endregion
 
