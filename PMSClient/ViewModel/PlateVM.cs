@@ -87,6 +87,7 @@ namespace PMSClient.ViewModel
                             temp.Supplier = model.Supplier;
                             temp.UseCount = model.UseCount;
                             temp.Weight = model.Weight;
+                            temp.PrintNumber = "无";
 
                             service.AddPlateByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                         }
