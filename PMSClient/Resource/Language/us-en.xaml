@@ -601,7 +601,8 @@
     <sys:String x:Key="BDCreateTime">Create Time</sys:String>
     <sys:String x:Key="BDInstructionCode">Operation Code</sys:String>
     <sys:String x:Key="BDRemark">Remark</sys:String>
-
+    <sys:String x:Key="BDCoverPlateCode">CoverPlateNumber</sys:String>
+    
     <sys:String x:Key="BDTargetProductID">Product ID</sys:String>
     <sys:String x:Key="BDTargetComposition">Composition</sys:String>
     <sys:String x:Key="BDTargetAbbr">Abbr</sys:String>
