@@ -37,6 +37,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public double Weight { get; set; }
         [DataMember]
+        public string Priority { get; set; }
+        [DataMember]
         public Guid MaterialOrderID { get; set; }
     }
 }

@@ -219,8 +219,8 @@
     <sys:String x:Key="ButtonSign">签名</sys:String>
     <sys:String x:Key="ButtonFinish">完成</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>
-    <sys:String x:Key="ButtonMaterialOrderItemList">原料流水</sys:String>
-    <sys:String x:Key="ButtonMaterialOrderItemListFlag">未完成流水</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemList">流水</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemListUnCompleted">未完成</sys:String>
     <sys:String x:Key="ButtonNotice">新消息</sys:String>
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>

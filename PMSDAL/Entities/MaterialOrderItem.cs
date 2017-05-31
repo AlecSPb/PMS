@@ -21,7 +21,7 @@ namespace PMSDAL
         public DateTime DeliveryDate { get; set; }
         public double UnitPrice { get; set; }
         public double Weight { get; set; }
-
+        public string Priority { get; set; }
         public Guid? MaterialOrderID { get; set; }
     }
 }

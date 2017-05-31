@@ -269,7 +269,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.State != CommonState.作废.ToString()
+                                where m.State != MaterialOrderState.作废.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
@@ -291,7 +291,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != CommonState.作废.ToString()).Count();
+                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != MaterialOrderState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -308,10 +308,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrders
-                                where m.OrderPO.Contains(orderPo) &&
-                                (m.State == OrderState.暂停.ToString()
-                                || m.State == OrderState.完成.ToString()
-                                || m.State == OrderState.未完成.ToString())
+                                where m.OrderPO.Contains(orderPo) &&m.State == MaterialOrderState.已核验.ToString()
                                 select m;
                     return query.Count();
                 }
@@ -335,10 +332,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.OrderPO.Contains(orderPo) && m.SupplierAbbr.Contains("SJ") &&
-                                (m.State == OrderState.暂停.ToString()
-                                || m.State == OrderState.完成.ToString()
-                                || m.State == OrderState.未完成.ToString())
+                                where m.OrderPO.Contains(orderPo) && m.SupplierAbbr.Contains("SJ") && m.State == MaterialOrderState.已核验.ToString()
                                 orderby m.CreateTime descending
                                 select m;
                     return mapper.Map<List<MaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());

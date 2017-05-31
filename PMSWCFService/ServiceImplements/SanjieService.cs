@@ -269,8 +269,7 @@ namespace PMSWCFService
                     });
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrders
-                                where m.State != OrderState.作废.ToString()
-                                && m.State != OrderState.未核验.ToString()
+                                where m.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 orderby m.CreateTime descending
@@ -293,8 +292,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrders
-                                where m.State != OrderState.作废.ToString()
-                                && m.State != OrderState.未核验.ToString()
+                                where m.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 select m;
@@ -348,8 +346,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
-                                && mm.State != OrderState.未核验.ToString()
-                                 && mm.State != OrderState.作废.ToString()
+                                && m.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && DbFunctions.DiffYears(m.CreateTime, date) == 0
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 orderby m.CreateTime descending
@@ -378,8 +375,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
-                                && mm.State != OrderState.未核验.ToString()
-                                 && mm.State != OrderState.作废.ToString()
+                                && m.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                  && DbFunctions.DiffYears(m.CreateTime, date) == 0
                                  && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 orderby m.CreateTime descending
@@ -410,8 +406,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
-                                && mm.State != OrderState.未核验.ToString()
-                                && mm.State != OrderState.作废.ToString()
+                                && m.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
@@ -441,8 +436,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
-                                && mm.State != OrderState.未核验.ToString()
-                                && mm.State != OrderState.作废.ToString()
+                                && m.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
@@ -466,7 +460,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var item = dc.MaterialOrders.Find(id);
-                    item.State = PMSCommon.OrderState.完成.ToString();
+                    item.State = PMSCommon.MaterialOrderState.已核验.ToString();
                     dc.Entry(item).State = EntityState.Modified;
                     SaveHistory(item, uid);
                     return dc.SaveChanges();

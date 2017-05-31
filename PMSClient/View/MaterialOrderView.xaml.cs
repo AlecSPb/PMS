@@ -38,23 +38,12 @@ namespace PMSClient.View
                     case "未核验":
                         e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
                         break;
-                    case "暂停":
-                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
-                        break;
-                    case "未完成":
-                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
-                        break;
-                    case "完成":
-                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                    case "已核验":
+                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
                         break;
                     default:
                         break;
                 }
-                if (order.State == OrderState.未完成.ToString() && order.Priority.Contains("紧急"))
-                {
-                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
-                }
-
             }
         }
 
@@ -77,12 +66,14 @@ namespace PMSClient.View
                     case "完成":
                         e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
-                    case "紧急":
-                        e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
-                        break;
                     default:
                         break;
                 }
+
+                //if (order.State=="未完成"&&order)
+                //{
+
+                //}
 
             }
         }
