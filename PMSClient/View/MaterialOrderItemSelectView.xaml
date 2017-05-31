@@ -87,13 +87,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="{StaticResource MOIDeliveryDate}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource MOIProvideRawMaterial}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -108,8 +101,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
-
+                <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"

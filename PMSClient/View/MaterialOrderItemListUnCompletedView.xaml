@@ -71,11 +71,16 @@
                                     Binding="{Binding MaterialOrderItem.Purity}"/>
                 <DataGridTextColumn Header="{StaticResource MOIWeight}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
                                     Binding="{Binding MaterialOrderItem.Weight,StringFormat={}{0:F2}}"/>
+
+                <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrder.OrderPO}"/>
+                <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrder.Supplier}"/>
                 <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MOILastDay}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding MaterialOrderItem.DeliveryDate,Converter={StaticResource LastDayConverter}}"/>
-                <DataGridTemplateColumn Header="还没交付">
+                <DataGridTemplateColumn Header="交付标记">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Image Source="{Binding  MaterialOrderItem.DeliveryDate,Converter={StaticResource LastDayImageConverter}}"
@@ -83,12 +88,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
-
-                <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrder.OrderPO}"/>
-                <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrder.Supplier}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
