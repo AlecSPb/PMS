@@ -84,6 +84,7 @@ namespace PMSClient.ViewModel
             order.Priority = PMSCommon.OrderPriority.普通.ToString();
             order.Reviewer = "";
             order.ReviewTime = DateTime.Now;
+            order.FinishTime = DateTime.Now;
             #endregion
             CurrentOrder = order;
         }
@@ -105,6 +106,7 @@ namespace PMSClient.ViewModel
                 CurrentOrder.ID = Guid.NewGuid();
                 CurrentOrder.State = PMSCommon.OrderState.未核验.ToString();
                 currentOrder.CreateTime = DateTime.Now;
+                currentOrder.FinishTime = DateTime.Now;
                 CurrentOrder.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             }
         }
@@ -130,6 +132,11 @@ namespace PMSClient.ViewModel
                 }
                 else
                 {
+                    if (CurrentOrder.State=="完成")
+                    {
+                        CurrentOrder.FinishTime = DateTime.Now;
+                    }
+
                     service.UpdateOrderByUID(CurrentOrder, uid);
                 }
                 service.Close();
