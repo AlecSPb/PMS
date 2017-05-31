@@ -58,7 +58,7 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList);
-            GoToMaterialOrderItemListFlag = new RelayCommand(ActionGoToMaterialOrderItemListFlag);
+            GoToMaterialOrderItemListUnCompleted = new RelayCommand(ActionGoToMaterialOrderItemListFlag);
         }
 
         private void ActionGoToMaterialOrderItemListFlag()
@@ -298,7 +298,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcMaterialOrder> Refresh { get; set; }
         public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }
         public RelayCommand GoToMaterialOrderItemList { get; set; }
-        public RelayCommand GoToMaterialOrderItemListFlag { get; set; }
+        public RelayCommand GoToMaterialOrderItemListUnCompleted { get; set; }
         public RelayCommand<DcMaterialOrder> AddItem { get; private set; }
         public RelayCommand<DcMaterialOrderItem> EditItem { get; private set; }
         #endregion
