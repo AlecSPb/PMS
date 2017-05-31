@@ -147,6 +147,8 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource OrderFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                        Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">

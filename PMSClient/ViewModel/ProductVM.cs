@@ -31,13 +31,26 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcProduct>(ActionEdit, CanEdit);
+            Duplicate = new RelayCommand<DcProduct>(ActionDuplicate, CanDuplicate);
             Doc = new RelayCommand<DcProduct>(ActionDoc, CanDoc);
 
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
 
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
         }
+        private bool CanDuplicate(DcProduct arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
+        }
 
+        private void ActionDuplicate(DcProduct model)
+        {
+            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            {
+                PMSHelper.ViewModels.ProductEdit.SetDuplicate(model);
+                NavigationService.GoTo(PMSViews.ProductEdit);
+            }
+        }
         private void ActionOnlyUnCompleted()
         {
             NavigationService.GoTo(PMSViews.ProductUnCompleted);
@@ -50,14 +63,14 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectAndSend(DcProduct model)
         {
-            if (!PMSDialogService.ShowYesNo("请问","确定设置为发货状态吗？"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定设置为发货状态吗？"))
             {
                 return;
             }
 
-            if (model!=null)
+            if (model != null)
             {
-                using (var service=new ProductServiceClient())
+                using (var service = new ProductServiceClient())
                 {
                     model.State = PMSCommon.InventoryState.发货.ToString();
                     service.UpdateProduct(model);
@@ -165,6 +178,7 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand Add { get; set; }
         public RelayCommand<DcProduct> Edit { get; set; }
+        public RelayCommand<DcProduct> Duplicate { get; set; }
         public RelayCommand<DcProduct> Doc { get; set; }
         public RelayCommand<DcProduct> SearchRecordTest { get; set; }
         public RelayCommand<DcProduct> SelectAndSend { get; set; }

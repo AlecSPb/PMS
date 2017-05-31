@@ -168,7 +168,7 @@ namespace PMSClient.ViewModel
         {
             if (model!=null)
             {
-                CurrentRecordBonding.PlateLot = model.PlateLot;
+                CurrentRecordBonding.PlateLot = model.PrintNumber;
                 CurrentRecordBonding.PlateMaterial = model.PlateMaterial;
                 CurrentRecordBonding.PlateDimension = model.Dimension;
                 CurrentRecordBonding.PlateUseCount = model.UseCount;

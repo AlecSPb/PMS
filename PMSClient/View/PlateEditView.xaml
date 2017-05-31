@@ -60,13 +60,13 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="批号"/>
+                           Text="按规则编写的批号"/>
 
                 <TextBlock  Grid.Row="1"  Grid.Column="0" Text="{StaticResource PlatePrintNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding PrintNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="背板上刻写的编号"/>
+                           Text="背板上刻写的编号,没有写无"/>
                 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlateMaterial}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -74,7 +74,7 @@
                           ItemsSource="{Binding DataContext.PlateMaterials,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding PlateMaterial}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="#背板材料"/>
 
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlateDimension}"
@@ -84,7 +84,7 @@
                           Text="{Binding Dimension}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="#"/>
+                           Text="#背板规格"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlateSupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

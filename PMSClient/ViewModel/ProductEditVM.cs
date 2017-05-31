@@ -72,7 +72,18 @@ namespace PMSClient.ViewModel
                 CurrentProduct = model;
             }
         }
-
+        public void SetDuplicate(DcProduct model)
+        {
+            if (model != null)
+            {
+                IsNew = true;
+                CurrentProduct = model;
+                CurrentProduct.ID = Guid.NewGuid();
+                CurrentProduct.CreateTime = DateTime.Now;
+                CurrentProduct.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                CurrentProduct.State = PMSCommon.InventoryState.库存.ToString();
+            }
+        }
         public void SetBySelect(DcRecordTest model)
         {
             if (model != null)

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDcItemDebit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcItemDebit" nillable="true" type="tns:DcItemDebit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcItemDebit" nillable="true" type="tns:ArrayOfDcItemDebit" />
+  <xs:complexType name="DcItemDebit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Creditor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ItemLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemProperty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+      <xs:element minOccurs="0" name="Remark" type="xs:double" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" type="xs:double" />
+      <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcItemDebit" nillable="true" type="tns:DcItemDebit" />
+  <xs:complexType name="ArrayOfDcCheckList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcCheckList" nillable="true" type="tns:DcCheckList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcCheckList" nillable="true" type="tns:ArrayOfDcCheckList" />
+  <xs:complexType name="DcCheckList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Introduction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Updator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcCheckList" nillable="true" type="tns:DcCheckList" />
+  <xs:complexType name="ArrayOfDcFeedBack">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcFeedBack" nillable="true" type="tns:DcFeedBack" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcFeedBack" nillable="true" type="tns:ArrayOfDcFeedBack" />
+  <xs:complexType name="DcFeedBack">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Problem" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessWay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcFeedBack" nillable="true" type="tns:DcFeedBack" />
+</xs:schema>

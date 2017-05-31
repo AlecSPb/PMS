@@ -33,3 +33,7 @@ MaterialItem  State有了自己专用的字段
 给所有的Order添加了FinishTime
 OutSource 添加了FinishTime，PaidState
 MaterialOrder 的状态是CommonState
+
+
+1705312146备份生产数据库
+1705312155迁徙到生产数据库+上传新的服务+修正字段

@@ -147,6 +147,7 @@ namespace PMSClient.ViewModel
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new MaterialOrderServiceClient();
+                CurrentMaterialOrderItem.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 if (IsNew)
                 {
                     service.AddMaterialOrderItemByUID(CurrentMaterialOrderItem,uid);

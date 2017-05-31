@@ -328,7 +328,8 @@
     <sys:String x:Key="OrderChecker">Checker</sys:String>
     <sys:String x:Key="OrderCheckContent">Check Content</sys:String>
     <sys:String x:Key="OrderCheckDate">Check Date</sys:String>
-
+    <sys:String x:Key="OrderFinishTime">Finish Time</sys:String>
+    
     <!--Plan-->
     <sys:String x:Key="PlanState">State</sys:String>
     <sys:String x:Key="PlanCreator">Creator</sys:String>

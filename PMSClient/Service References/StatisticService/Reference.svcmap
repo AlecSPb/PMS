@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/StatisticService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/StatisticService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StatisticService.xsd" MetadataType="Schema" ID="4140bb53-d58f-4cb8-a5c2-ac7ba8314fce" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?xsd=xsd0" />
-    <MetadataFile FileName="StatisticService.disco" MetadataType="Disco" ID="5f95c3bd-cd8f-4959-bd24-d58e705008b7" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?disco" />
-    <MetadataFile FileName="StatisticService1.xsd" MetadataType="Schema" ID="90d4e161-e142-49e9-9b31-164e9a0a6d20" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?xsd=xsd1" />
-    <MetadataFile FileName="MainStatisticService.wsdl" MetadataType="Wsdl" ID="bac2a174-f1b2-4f31-8ec0-38adefb65707" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?wsdl" />
-    <MetadataFile FileName="StatisticService2.xsd" MetadataType="Schema" ID="b91858c3-d4a0-4c48-9a44-219cb62485f3" SourceId="1" SourceUrl="http://localhost:8002/StatisticService.svc?xsd=xsd2" />
+    <MetadataFile FileName="StatisticService3.xsd" MetadataType="Schema" ID="61a7e7c4-97ed-45c7-9c08-2dc4e8a0771c" SourceId="1" SourceUrl="http://192.168.16.254:8002/StatisticService.svc?xsd=xsd2" />
+    <MetadataFile FileName="StatisticService31.xsd" MetadataType="Schema" ID="51425d09-d98c-475b-a90e-6f0f38caf3af" SourceId="1" SourceUrl="http://192.168.16.254:8002/StatisticService.svc?xsd=xsd1" />
+    <MetadataFile FileName="StatisticService1.disco" MetadataType="Disco" ID="e3c3971f-bae8-4d63-9ce7-9fee6826b7be" SourceId="1" SourceUrl="http://192.168.16.254:8002/StatisticService.svc?disco" />
+    <MetadataFile FileName="MainStatisticService1.wsdl" MetadataType="Wsdl" ID="959b3e28-e937-4c86-8a03-21d9a66d804c" SourceId="1" SourceUrl="http://192.168.16.254:8002/StatisticService.svc?wsdl" />
+    <MetadataFile FileName="StatisticService32.xsd" MetadataType="Schema" ID="0b44941f-b3ec-4f75-8020-d02062bc2a88" SourceId="1" SourceUrl="http://192.168.16.254:8002/StatisticService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

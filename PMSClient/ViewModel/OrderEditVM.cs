@@ -105,8 +105,8 @@ namespace PMSClient.ViewModel
                 CurrentOrder = order;
                 CurrentOrder.ID = Guid.NewGuid();
                 CurrentOrder.State = PMSCommon.OrderState.未核验.ToString();
-                currentOrder.CreateTime = DateTime.Now;
-                currentOrder.FinishTime = DateTime.Now;
+                CurrentOrder.CreateTime = DateTime.Now;
+                CurrentOrder.FinishTime = DateTime.Now;
                 CurrentOrder.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             }
         }
