@@ -18,6 +18,9 @@ namespace PMSClient.ViewModel
             checkResult = "";
             OrderStates = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.MaterialOrderItemState>(OrderStates);
+            Priorities = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.MaterialOrderItemPriority>(Priorities);
+
             InitialCommmands();
         }
 
@@ -46,6 +49,7 @@ namespace PMSClient.ViewModel
                 item.UnitPrice = 0;
                 item.Weight = 0;
                 item.DeliveryDate = DateTime.Now.AddDays(7);
+                item.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
                 #endregion
 
                 CurrentMaterialOrderItem = item;
@@ -167,6 +171,8 @@ namespace PMSClient.ViewModel
         }
 
         public List<string> OrderStates { get; set; }
+        public List<string> Priorities { get; set; }
+
 
         private DcMaterialOrderItem currentMaterialOrderItem;
         public DcMaterialOrderItem CurrentMaterialOrderItem

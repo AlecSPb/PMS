@@ -61,8 +61,7 @@ namespace PMSClient.ViewModel
 
         private bool CheckOrderItemState(string state)
         {
-            return state == PMSCommon.MaterialOrderItemState.未完成.ToString()
-                || state == PMSCommon.MaterialOrderItemState.紧急.ToString();
+            return state == PMSCommon.MaterialOrderItemState.未完成.ToString();
         }
 
         private void ActionDoc()

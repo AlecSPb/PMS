@@ -1478,6 +1478,9 @@ namespace PMSClient.MainService {
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProvideRawMaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1615,6 +1618,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
                     this.PMINumberField = value;
                     this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
                 }
             }
         }

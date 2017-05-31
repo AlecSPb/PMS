@@ -36,6 +36,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
+                <DataGridTextColumn Header="{StaticResource MOIPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Priority}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOICreateTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

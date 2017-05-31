@@ -70,10 +70,10 @@ namespace PMSClient.View
                         break;
                 }
 
-                //if (order.State=="未完成"&&order)
-                //{
-
-                //}
+                if (order.State == "未完成" && order.Priority.Contains("紧急"))
+                {
+                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
+                }
 
             }
         }

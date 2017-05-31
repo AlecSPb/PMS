@@ -401,7 +401,7 @@
     <sys:String x:Key="MOILastDay">Last Day</sys:String>
     <sys:String x:Key="MOIUnitPrice">Unit Price</sys:String>
     <sys:String x:Key="MOIWeight">Weight</sys:String>
-
+    <sys:String x:Key="MOIPriority">Priority</sys:String>
 
     <!--Plate-->
     <sys:String x:Key="PlateState">State</sys:String>

@@ -102,7 +102,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Cost}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="RMB"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource OSState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -110,7 +110,7 @@
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                 <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态,发货代表该产品已发货，库存代表该产品还在仓库中"/>
+                           Text="外包状态"/>
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource OSPaidState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -118,7 +118,7 @@
                           ItemsSource="{Binding DataContext.PaidStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PaidState}"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="付款状态"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource OSRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

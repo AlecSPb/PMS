@@ -8,7 +8,6 @@ namespace PMSCommon
 {
     public enum OutSourcePaidState
     {
-        作废,
         未付款,
         已付款
     }

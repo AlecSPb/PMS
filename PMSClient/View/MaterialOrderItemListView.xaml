@@ -57,6 +57,8 @@
                                     Binding="{Binding MaterialOrderItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.State}"/>
+                <DataGridTextColumn Header="{StaticResource MOIPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.Priority}"/>
                 <DataGridTextColumn Header="{StaticResource MOIOrderItemNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.OrderItemNumber}"/>
                 <DataGridTextColumn Header="{StaticResource MOICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -76,8 +78,6 @@
                                     Binding="{Binding MaterialOrder.OrderPO}"/>
                 <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.Supplier}"/>
-                <DataGridTextColumn Header="{StaticResource MOPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrder.Priority}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"

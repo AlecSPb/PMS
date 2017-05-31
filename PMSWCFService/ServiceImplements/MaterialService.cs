@@ -523,13 +523,12 @@ namespace PMSWCFService
                     var mapper = config.CreateMapper();
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
-                                where ( m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
-                                || m.State == PMSCommon.MaterialOrderItemState.紧急.ToString())
+                                where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
                                 && mm.Supplier.Contains(supplier)
-                                orderby m.CreateTime descending
+                                orderby m.CreateTime 
                                 select new PMSMaterialOrderItemExtra
                                 {
                                     MaterialOrder = mm,
@@ -553,8 +552,7 @@ namespace PMSWCFService
                 {
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
-                                where (m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
-                                || m.State == PMSCommon.MaterialOrderItemState.紧急.ToString())
+                                where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)

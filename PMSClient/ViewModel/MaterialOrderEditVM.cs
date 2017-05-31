@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
             model.SupplierReceiver = "";
             model.SupplierAddress = "";
             model.ShipFee = 0;
-            model.Priority = PMSCommon.MaterialOrderPriority.普通.ToString();
+            model.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + model.SupplierAbbr;
             #endregion

@@ -47,11 +47,12 @@ namespace PMSClient.View
                     case "完成":
                         e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
                         break;
-                    case "紧急":
-                        e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
-                        break;
                     default:
                         break;
+                }
+                if (order.MaterialOrderItem.State=="未完成"&&order.MaterialOrderItem.Priority.Contains("紧急"))
+                {
+                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }
             }
         }

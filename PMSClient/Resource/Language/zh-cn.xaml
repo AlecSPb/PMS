@@ -402,7 +402,7 @@
     <sys:String x:Key="MOILastDay">剩余天数</sys:String>
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
-
+    <sys:String x:Key="MOIPriority">优先级</sys:String>
 
     <!--Plate-->
     <sys:String x:Key="PlateState">状态</sys:String>
