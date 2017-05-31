@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.16.254:8002/BasicDataService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8002/BasicDataService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BasicDataService1.disco" MetadataType="Disco" ID="bef6eeeb-a4ce-4bb4-b85c-8cbf3ff70147" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?disco" />
-    <MetadataFile FileName="BasicDataService3.xsd" MetadataType="Schema" ID="adbf0a6e-f031-42d7-a08a-c1ae0808a75a" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?xsd=xsd1" />
-    <MetadataFile FileName="BasicDataService1.wsdl" MetadataType="Wsdl" ID="cb97931f-6689-453e-9922-13e8580f9f1c" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?wsdl" />
-    <MetadataFile FileName="BasicDataService31.xsd" MetadataType="Schema" ID="12653140-4ffd-47cd-b759-fc52ec2fb73b" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?xsd=xsd2" />
-    <MetadataFile FileName="BasicDataService32.xsd" MetadataType="Schema" ID="ff990e72-49aa-4b27-8876-3c98a2239534" SourceId="1" SourceUrl="http://192.168.16.254:8002/BasicDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BasicDataService.xsd" MetadataType="Schema" ID="eaac2a07-1cd9-4362-b035-17681107a1e5" SourceId="1" SourceUrl="http://localhost:8002/BasicDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BasicDataService.wsdl" MetadataType="Wsdl" ID="5b8b216a-b6b3-4a3b-8d55-0d267dd7d12a" SourceId="1" SourceUrl="http://localhost:8002/BasicDataService.svc?wsdl" />
+    <MetadataFile FileName="BasicDataService1.xsd" MetadataType="Schema" ID="3d0d95d8-7401-42be-92c7-6a4d8f5e3ca7" SourceId="1" SourceUrl="http://localhost:8002/BasicDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BasicDataService.disco" MetadataType="Disco" ID="9a9b6983-63d7-493c-bab8-6173046a9f04" SourceId="1" SourceUrl="http://localhost:8002/BasicDataService.svc?disco" />
+    <MetadataFile FileName="BasicDataService2.xsd" MetadataType="Schema" ID="c6aa81ba-6cdf-4066-bf06-9b2ef38d6f73" SourceId="1" SourceUrl="http://localhost:8002/BasicDataService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

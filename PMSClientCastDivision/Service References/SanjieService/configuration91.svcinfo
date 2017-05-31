@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/S8yjY11wdQ9oYwt1FAcrhl+XvI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="i5ZluBXB6AA1Jpc/zam700/RG6M=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="sanjie">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="sanjie" contract="SanjieService.ISanjieService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/SanjieService.svc" bindingConfiguration="sanjie">
+    <endpoint name="sanjie" contract="SanjieService.ISanjieService" bindingType="basicHttpBinding" address="http://localhost:8002/SanjieService.svc" bindingConfiguration="sanjie">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.16.254:8002/SanjieService.svc</serializedValue>
+          <serializedValue>http://localhost:8002/SanjieService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

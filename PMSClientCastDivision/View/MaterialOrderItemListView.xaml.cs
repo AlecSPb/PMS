@@ -54,6 +54,10 @@ namespace PMSClient.View
                     default:
                         break;
                 }
+                if (order.Item.MaterialOrderItem.State == "未完成" && order.Item.MaterialOrderItem.Priority.Contains("紧急"))
+                {
+                    e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
+                }
             }
         }
     }

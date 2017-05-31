@@ -29,11 +29,6 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}"
-                           Background="{StaticResource CompletedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="mainDg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
@@ -159,6 +154,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
+                <DataGridTextColumn Header="{StaticResource MOIPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Priority}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOICreateTime}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

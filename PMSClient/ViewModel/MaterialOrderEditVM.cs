@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             OrderStates = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.OrderState>(OrderStates);
+            PMSBasicDataService.SetListDS<PMSCommon.MaterialOrderState>(OrderStates);
 
 
             OrderPriorities = new List<string>();

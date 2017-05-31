@@ -79,6 +79,10 @@ namespace PMSClient.ViewModel
                     }
                     else
                     {
+                        if (CurrentOrder.State=="完成")
+                        {
+                            CurrentOrder.FinishTime = DateTime.Now;
+                        }
                         service.UpdateOrderByUID(CurrentOrder, uid);
                     }
                     service.Close();

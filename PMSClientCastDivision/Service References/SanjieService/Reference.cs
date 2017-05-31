@@ -29,6 +29,9 @@ namespace PMSClient.SanjieService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -93,6 +96,19 @@ namespace PMSClient.SanjieService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
                 }
             }
         }
@@ -287,6 +303,9 @@ namespace PMSClient.SanjieService {
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProvideRawMaterialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -424,6 +443,19 @@ namespace PMSClient.SanjieService {
                 if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
                     this.PMINumberField = value;
                     this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
                 }
             }
         }
