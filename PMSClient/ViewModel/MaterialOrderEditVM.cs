@@ -37,6 +37,7 @@ namespace PMSClient.ViewModel
             model.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
             model.Remark = "";
             model.OrderPO = DateTime.Now.ToString("yyMMdd") + model.SupplierAbbr;
+            model.FinishTime = DateTime.Now;
             #endregion
 
             IsNew = true;
