@@ -71,6 +71,7 @@ namespace PMSWCFService.DataContracts
         //决策部分
         [DataMember]
         public string PolicyType { get; set; }
-
+        [DataMember]
+        public DateTime FinishTime { get; set; }
     }
 }

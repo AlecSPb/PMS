@@ -37,6 +37,8 @@ namespace PMSWCFService.DataContracts
         public double ShipFee { get; set; }
         [DataMember]
         public string Priority { get; set; }
+        [DataMember]
+        public DateTime FinishTime { get; set; }
 
     }
 }

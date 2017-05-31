@@ -51,6 +51,7 @@ namespace PMSDAL
         public string Reviewer { get; set; }
         //决策部分
         public string PolicyType { get; set; }//热压，代工，库存，其他,只有热压订单才会进入任务
+        public DateTime FinishTime { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

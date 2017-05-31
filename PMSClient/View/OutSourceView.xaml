@@ -70,6 +70,12 @@
                                     Binding="{Binding Creator}"/>
                 <DataGridTextColumn Header="{StaticResource OSCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource OSState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
+                <DataGridTextColumn Header="{StaticResource OSPaidState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PaidState}"/>
+                <DataGridTextColumn Header="{StaticResource OSFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"

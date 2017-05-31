@@ -27,6 +27,7 @@ namespace PMSDAL
 
         public string Priority { get; set; }
 
+        public DateTime FinishTime { get; set; }
         public virtual List<MaterialOrderItem> MaterialOrderItems { get; set; }
     }
 }

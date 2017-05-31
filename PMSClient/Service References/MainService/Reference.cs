@@ -50,6 +50,9 @@ namespace PMSClient.MainService {
         private string DimensionDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -220,6 +223,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.DimensionDetailsField, value) != true)) {
                     this.DimensionDetailsField = value;
                     this.RaisePropertyChanged("DimensionDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
                 }
             }
         }
@@ -1188,6 +1204,9 @@ namespace PMSClient.MainService {
         private string CreatorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1252,6 +1271,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
                     this.CreatorField = value;
                     this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
                 }
             }
         }
@@ -6263,6 +6295,9 @@ namespace PMSClient.MainService {
         private string DimensionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -6273,6 +6308,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaidStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double QuantityField;
@@ -6352,6 +6390,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
             get {
                 return this.IDField;
@@ -6399,6 +6450,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.OrderTypeField, value) != true)) {
                     this.OrderTypeField = value;
                     this.RaisePropertyChanged("OrderType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PaidState {
+            get {
+                return this.PaidStateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaidStateField, value) != true)) {
+                    this.PaidStateField = value;
+                    this.RaisePropertyChanged("PaidState");
                 }
             }
         }

@@ -36,6 +36,10 @@ namespace PMSWCFService.DataContracts
         public double Cost { get; set; }
         [DataMember]
         public string Remark { get; set; }
+        [DataMember]
+        public DateTime FinishTime { get; set; }
+        [DataMember]
+        public string PaidState { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,9 @@ namespace PMSDAL
         public string QuantityUnit { get; set; }
         public double Cost { get; set; }
 
+        public DateTime FinishTime { get; set; }
+        [DefaultValue("未付款")]
+        public string PaidState { get; set; }
         public string Remark { get; set; }
 
 

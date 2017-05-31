@@ -18,6 +18,7 @@
       <xs:element minOccurs="0" name="DeadLine" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DimensionDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MinimumAcceptDefect" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
@@ -111,6 +112,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="OrderPO" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
@@ -586,10 +588,12 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Dimension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="OrderLot" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PaidState" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />

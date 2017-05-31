@@ -22,6 +22,9 @@ namespace PMSClient.ViewModel
             Suppliers = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.OutSourceSupplier>(Suppliers);
 
+            PaidStates = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.OutSourcePaidState>(PaidStates);
+
             InitializeCommands();
         }
 
@@ -51,6 +54,8 @@ namespace PMSClient.ViewModel
             model.OrderName = "";
             model.Cost = 0;
             model.Remark = "";
+            model.PaidState = PMSCommon.OutSourcePaidState.未付款.ToString();
+            model.FinishTime = DateTime.Now;
 
             #endregion
             CurrentOutSource = model;
@@ -74,6 +79,8 @@ namespace PMSClient.ViewModel
                 CurrentOutSource.QuantityUnit = model.QuantityUnit;
                 CurrentOutSource.Cost = model.Cost;
                 CurrentOutSource.Remark = model.Remark;
+                CurrentOutSource.FinishTime = model.FinishTime;
+                CurrentOutSource.PaidState = model.PaidState;
             }
         }
         public void SetEdit(DcOutSource model)
@@ -113,6 +120,10 @@ namespace PMSClient.ViewModel
                 }
                 else
                 {
+                    if (CurrentOutSource.State==PMSCommon.OrderState.完成.ToString())
+                    {
+                        CurrentOutSource.FinishTime = DateTime.Now;
+                    }
                     service.UpdateOutSource(CurrentOutSource, uid);
                 }
                 service.Close();
@@ -125,6 +136,7 @@ namespace PMSClient.ViewModel
             }
         }
         public List<string> OutSourceTypes { get; set; }
+        public List<string> PaidStates { get; set; }
         public List<string> States { get; set; }
         public List<string> Suppliers { get; set; }
 

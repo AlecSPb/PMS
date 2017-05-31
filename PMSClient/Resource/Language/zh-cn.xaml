@@ -701,7 +701,7 @@
     <sys:String x:Key="CustomerMemo">备注</sys:String>
 
     <!--OutSource-->
-    <sys:String x:Key="OSState">状态</sys:String>
+    <sys:String x:Key="OSState">外包状态</sys:String>
     <sys:String x:Key="OSCreator">创建者</sys:String>
     <sys:String x:Key="OSCreateTime">创建时间</sys:String>
     <sys:String x:Key="OSOrderLot">编号</sys:String>
@@ -713,7 +713,8 @@
     <sys:String x:Key="OSQuantityUnit">单位</sys:String>
     <sys:String x:Key="OSCost">费用</sys:String>
     <sys:String x:Key="OSRemark">备注</sys:String>
-
+    <sys:String x:Key="OSPaidState">费用状态 </sys:String>
+    <sys:String x:Key="OSFinishTime">完成时间</sys:String>
     <!--Feedback-->
     <sys:String x:Key="FBState">状态</sys:String>
     <sys:String x:Key="FBCreator">创建者</sys:String>

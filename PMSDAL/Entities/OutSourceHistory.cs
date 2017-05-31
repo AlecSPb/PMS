@@ -22,6 +22,8 @@ namespace PMSDAL
         public string QuantityUnit { get; set; }
         public double Cost { get; set; }
 
+        public DateTime FinishTime { get; set; }
+        public string PaidState { get; set; }
         public string Remark { get; set; }
 
         //操作者和操作时间

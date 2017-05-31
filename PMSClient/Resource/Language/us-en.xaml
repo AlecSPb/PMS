@@ -712,7 +712,9 @@
     <sys:String x:Key="OSQuantityUnit">Unit</sys:String>
     <sys:String x:Key="OSCost">Cost</sys:String>
     <sys:String x:Key="OSRemark">Remark</sys:String>
-
+    <sys:String x:Key="OSPaidState">Paid State</sys:String>
+    <sys:String x:Key="OSFinishTime">Finish Time</sys:String>
+    
     <!--Feedback-->
     <sys:String x:Key="FBState">State</sys:String>
     <sys:String x:Key="FBCreator">Creator</sys:String>

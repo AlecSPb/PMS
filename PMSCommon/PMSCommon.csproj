@@ -54,6 +54,8 @@
     <Compile Include="BondingState.cs" />
     <Compile Include="DeliveryState.cs" />
     <Compile Include="MaterialOrderItemState.cs" />
+    <Compile Include="MaterialOrderState.cs" />
+    <Compile Include="OutSourcePaidState.cs" />
     <Compile Include="OutSourceSupplier.cs" />
     <Compile Include="OutSourceType.cs" />
     <Compile Include="PlateMaterial.cs" />
