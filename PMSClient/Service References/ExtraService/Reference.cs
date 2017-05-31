@@ -272,6 +272,9 @@ namespace PMSClient.ExtraService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IntroductionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -341,6 +344,19 @@ namespace PMSClient.ExtraService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Introduction {
+            get {
+                return this.IntroductionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IntroductionField, value) != true)) {
+                    this.IntroductionField = value;
+                    this.RaisePropertyChanged("Introduction");
                 }
             }
         }

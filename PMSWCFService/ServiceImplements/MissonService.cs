@@ -143,7 +143,7 @@ namespace PMSWCFService
                                  || o.State == OrderState.暂停.ToString())
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
-                                 orderby o.CreateTime descending
+                                 orderby o.CreateTime
                                  select o;
 
                     var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(skip).Take(take).ToList());

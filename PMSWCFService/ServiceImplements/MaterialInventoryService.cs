@@ -534,7 +534,7 @@ namespace PMSWCFService
                                 && o.Composition.Contains(composition)
                                 && o.MaterialLot.Contains(batchnumber)
                                 && o.PMINumber.Contains(pminumber)
-                                orderby o.CreateTime descending
+                                orderby o.CreateTime
                                 select o;
                     return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
                 }

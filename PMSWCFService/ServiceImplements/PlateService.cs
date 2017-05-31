@@ -153,7 +153,7 @@ namespace PMSWCFService
                                 && p.Supplier.Contains(supplier)
                                 && p.PrintNumber.Contains(printnumber)
                                 && p.State == InventoryState.库存.ToString()
-                                orderby p.CreateTime descending
+                                orderby p.CreateTime
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<Plate, DcPlate>());
                     var products = Mapper.Map<List<Plate>, List<DcPlate>>(query.Skip(skip).Take(take).ToList());

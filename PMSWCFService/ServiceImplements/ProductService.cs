@@ -159,7 +159,7 @@ namespace PMSWCFService
                                 where p.ProductID.Contains(productid)
                                 && p.Composition.Contains(composition)
                                 && p.State == InventoryState.库存.ToString()
-                                orderby p.CreateTime descending
+                                orderby p.CreateTime
                                 select p;
                     Mapper.Initialize(cfg => cfg.CreateMap<Product, DcProduct>());
                     var products = Mapper.Map<List<Product>, List<DcProduct>>(query.Skip(skip).Take(take).ToList());
