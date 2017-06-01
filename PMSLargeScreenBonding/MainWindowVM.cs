@@ -25,7 +25,7 @@ namespace PMSLargeScreenBonding
             RecordBondings = new ObservableCollection<DcRecordBonding>();
 
 
-            IntervalLoadDataTime = 30000;
+            IntervalLoadDataTime = 10000;
             _Loadtimer = new Timer();
             _Loadtimer.Interval = IntervalLoadDataTime;
             _Loadtimer.Elapsed += _Loadtimer_Elapsed;
@@ -34,28 +34,31 @@ namespace PMSLargeScreenBonding
             CenterMessage = $"准备数据中，请等待，{IntervalLoadDataTime / 1000}s后显示";
         }
 
-        private int pageIndex = 0;
+        private int pageIndex = 1;
         private int PageSize = 8;
+        private int PageCount = 0;
         private int dataCount = 0;
         private void _Loadtimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             try
             {
-                using (var service=new LargeScreenServiceClient())
+                using (var service = new LargeScreenServiceClient())
                 {
                     dataCount = service.GetBondingUnCompleteCount();
+                    PageCount = dataCount / PageSize + dataCount%PageSize==0?0:1;
                 }
-                int skip = pageIndex * PageSize;
+                int skip = (pageIndex - 1) * PageSize;
                 int take = PageSize;
-
-                Status2 = $"每次显示{PageSize}条，这是第{pageIndex+1}页，共{dataCount}条数据";
-                LoadData(skip,take);
+                
+                Status2 = $"每次显示{PageSize}条，这是第{pageIndex}页，共{dataCount}条数据";
+                LoadData(skip, take);
 
                 pageIndex++;
-                if (pageIndex*PageSize>dataCount)
+                if (pageIndex>=PageCount)
                 {
-                    pageIndex = 0;
+                    pageIndex = 1;
                 }
+                System.Diagnostics.Debug.WriteLine(pageIndex);
             }
             catch (Exception ex)
             {
@@ -63,7 +66,7 @@ namespace PMSLargeScreenBonding
             }
         }
 
-        private void LoadData(int skip,int take)
+        private void LoadData(int skip, int take)
         {
             try
             {
@@ -77,9 +80,11 @@ namespace PMSLargeScreenBonding
                 if (result.Count() == 0)
                 {
                     CenterMessage = "今日没有绑定计划";
-                    return;
                 }
-                CenterMessage = "";
+                else
+                {
+                    CenterMessage = "";
+                }
                 App.Current.Dispatcher.Invoke(() =>
                 {
                     RecordBondings.Clear();
