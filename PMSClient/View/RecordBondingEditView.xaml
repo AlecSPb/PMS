@@ -67,6 +67,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
@@ -101,18 +102,22 @@
                                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
                                 <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding InstructionCode}" Style="{StaticResource StyleTextBoxBig}"/>
                                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作SOP文件代码"/>
+                                
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDCoverPlateCode}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CoverPlateNumber}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="盖板编号"/>
 
-                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材ID"/>
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材ID"/>
 
-                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材成分"/>
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材成分"/>
 
-                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
 
                             </Grid>
                         </Grid>

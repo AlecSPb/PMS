@@ -602,7 +602,8 @@
     <sys:String x:Key="BDCreateTime">创建时间</sys:String>
     <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
     <sys:String x:Key="BDRemark">备注</sys:String>
-
+    <sys:String x:Key="BDCoverPlateCode">盖板编号</sys:String>
+    
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>
     <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
