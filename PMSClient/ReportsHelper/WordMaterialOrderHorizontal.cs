@@ -92,7 +92,7 @@ namespace PMSClient.ReportsHelper
                             var descriptionMesseage = "";
                             if (!string.IsNullOrEmpty(item.ProvideRawMaterial.Trim()))
                             {
-                                descriptionMesseage = $"PMI to provide { item.ProvideRawMaterial}";
+                                descriptionMesseage = $"PMI to provide { item.ProvideRawMaterial}；{item.Description}";
                             }
                             descriptionMesseage += item.Description;
 
