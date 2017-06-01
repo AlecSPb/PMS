@@ -116,6 +116,12 @@ namespace PMSClient.ViewModel
                     return;
                 }
             }
+
+            if (CurrentMaterialNeed.Composition.Contains("Si"))
+            {
+                PMSDialogService.ShowYes("请注意成分中含有[Si]");
+            }
+
             try
             {
                 var service = new MaterialNeedServiceClient();
