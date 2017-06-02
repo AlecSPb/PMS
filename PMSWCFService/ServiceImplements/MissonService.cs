@@ -26,7 +26,7 @@ namespace PMSWCFService
                     });
 
                     var result = from o in dc.Orders
-                                 where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
+                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -52,7 +52,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
-                                where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -80,7 +80,7 @@ namespace PMSWCFService
                     });
 
                     var result = from o in dc.Orders
-                                 where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
+                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
                                  || o.State == OrderState.完成.ToString())
@@ -108,7 +108,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from o in dc.Orders
-                                where o.PolicyType==PMSCommon.OrderPolicyType.VHP.ToString()
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
@@ -143,7 +143,7 @@ namespace PMSWCFService
                                  || o.State == OrderState.暂停.ToString())
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
-                                 orderby o.CreateTime
+                                 orderby o.Priority, o.CreateTime
                                  select o;
 
                     var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(skip).Take(take).ToList());
@@ -473,7 +473,7 @@ namespace PMSWCFService
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
                                      && o.CompositionStandard.Contains(composition)
-                                orderby DbFunctions.TruncateTime(p.PlanDate) descending,p.PlanLot descending,p.VHPDeviceCode descending
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending
                                 select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
 
                     var final = query.Skip(skip).Take(take).ToList();
