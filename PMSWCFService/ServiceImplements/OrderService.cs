@@ -228,7 +228,7 @@ namespace PMSWCFService
                                 && (o.State == OrderState.未完成.ToString()
                                 || o.State == OrderState.暂停.ToString()
                                 || o.State == OrderState.未核验.ToString() )
-                                orderby o.CreateTime
+                                orderby o.Priority,o.CreateTime
                                 select o;
 
                     var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());

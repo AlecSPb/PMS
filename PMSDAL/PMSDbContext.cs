@@ -110,5 +110,7 @@ namespace PMSDAL
         public DbSet<PMSIndex> PMSIndexs { get; set; }
 
         public DbSet<PlanVHPConclusion> PlanVHPConclusions { get; set; }
+
+        public DbSet<Purchase> Purchases { get; set; }
     }
 }

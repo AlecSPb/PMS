@@ -15,6 +15,7 @@ namespace PMSDAL
         public string Creator { get; set; }
         public string State { get; set; }//取消，未审核，审核通过，已发货
 
+        public string ItemType { get; set; }
         public string ItemName { get; set; }
         public string Specification { get; set; }
         public double Quantity { get; set; }
