@@ -93,12 +93,12 @@ namespace PMSClient.ViewModel
 
             ProcessCodes = new List<string>();
             ProcessCodes.Clear();
-            PMSBasicDataService.VHPProcesses.ToList().ForEach(p => ProcessCodes.Add(p.CodeName));
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.ProcessCode,ProcessCodes);
 
 
             DeviceCodes = new List<string>();
             DeviceCodes.Clear();
-            PMSBasicDataService.VHPDevices.ToList().ForEach(d => DeviceCodes.Add(d.CodeName));
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.VHPDevice, DeviceCodes);
 
             Compounds = new List<DcBDCompound>();
             Compounds.Clear();

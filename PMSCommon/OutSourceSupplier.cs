@@ -12,6 +12,7 @@ namespace PMSCommon
         广汉,
         超纯,
         西安,
+        佛山钜仕泰,
         六九
     }
 }

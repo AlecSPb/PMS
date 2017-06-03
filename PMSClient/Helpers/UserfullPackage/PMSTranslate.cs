@@ -83,11 +83,8 @@ namespace UsefulPackage
                     case "C":
                         CodeName = "O";
                         break;
-                    case "D":
-                        CodeName = "D";
-                        break;
                     default:
-                        CodeName = "A";
+                        CodeName = code;
                         break;
                 }
                 return CodeName;
@@ -113,16 +110,16 @@ namespace UsefulPackage
 
 
 
-        public static double Average(double w1,double w2,double w3=0,double w4=0)
+        public static double Average(double w1, double w2, double w3 = 0, double w4 = 0)
         {
             double sum = 0;
             double count = 0;
-            if (w1>0)
+            if (w1 > 0)
             {
                 sum += w1;
                 count++;
             }
-            if (w2> 0)
+            if (w2 > 0)
             {
                 sum += w2;
                 count++;
@@ -137,7 +134,7 @@ namespace UsefulPackage
                 sum += w4;
                 count++;
             }
-            if (count==0)
+            if (count == 0)
             {
                 count = 1;
             }

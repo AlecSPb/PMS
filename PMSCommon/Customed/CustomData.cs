@@ -31,8 +31,9 @@ namespace PMSCommon
                 #region 数据
                 data.Add("无需样品");
                 data.Add("65gx1+15gx2");
-                data.Add("65gX1,15gx3");
+                data.Add("65gx1+15gx3");
                 data.Add("15gx2");
+                data.Add("15gx3");
                 data.Add("1cm大小x2");
                 #endregion
                 return data;
@@ -74,6 +75,7 @@ namespace PMSCommon
             {
                 var data = new List<string>();
                 #region 数据
+                data.Add("粗抽凸高");
                 data.Add("粗抽开扩散凸高");
                 data.Add("关门");
                 data.Add("凸高");
@@ -109,7 +111,7 @@ namespace PMSCommon
                 data.Add(105);
                 data.Add(128);
                 data.Add(155);
-                data.Add(160);
+                data.Add(168);
                 data.Add(205);
                 data.Add(206);
                 data.Add(233);
@@ -236,6 +238,8 @@ namespace PMSCommon
                 var data = new List<string>();
                 #region 数据
                 data.Add("无");
+                data.Add("50.8mm OD x 2mm");
+                data.Add("76.2mm OD x 2mm");
                 data.Add("237mm OD x 11mm");
                 data.Add("158mm OD x 11mm");
                 #endregion
@@ -304,5 +308,45 @@ namespace PMSCommon
             }
         }
 
+        public static List<string> ProcessCode
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("F1");
+                data.Add("W1");
+                data.Add("W2");
+                data.Add("W3");
+                data.Add("W4");
+                data.Add("KL");
+                data.Add("UK");
+                #endregion
+                return data;
+            }
+        }
+        public static List<string> VHPDevice
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("A");
+                data.Add("B");
+                data.Add("C");
+                data.Add("D");
+                data.Add("E");
+                data.Add("F");
+                data.Add("G");
+                data.Add("H");
+                data.Add("I");
+                data.Add("J");
+                data.Add("HIP");
+                data.Add("S");
+                data.Add("UK");
+                #endregion
+                return data;
+            }
+        }
     }
 }
