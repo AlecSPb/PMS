@@ -9,7 +9,29 @@ namespace PMSClient.ViewModel
 {
     public static class PMSNewModelCollection
     {
-
+        public static DcRecordMilling NewRecordMilling()
+        {
+            var model = new DcRecordMilling();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.RoomHumidity = 0;
+            model.RoomTemperature = 0;
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
+            model.Composition = "填入成分";
+            model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
+            model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
+            model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
+            model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
+            model.Remark = "";
+            model.WeightIn = 0;
+            model.WeightOut = 0;
+            model.WeightRemain = 0;
+            model.Ratio = 0;
+            return model;
+        }
         public static DcMaterialOrderItem NewMaterialOrderItem(DcMaterialOrder order)
         {
             var item = new DcMaterialOrderItem();

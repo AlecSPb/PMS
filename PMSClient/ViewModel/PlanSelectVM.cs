@@ -77,7 +77,7 @@ namespace PMSClient.ViewModel
         private void ActionBatchSelect()
         {
             int count = PlanWithMissons.Where(i => i.IsSelected == true).Count();
-            if (!PMSDialogService.ShowYesNo("请问",$"确定添加选定的{count}个项目到记录？"))
+            if (!PMSDialogService.ShowYesNo("请问", $"确定添加选定的{count}个项目到记录？"))
             {
                 return;
             }
@@ -108,7 +108,22 @@ namespace PMSClient.ViewModel
         #region BatchSaveArea
         private void BatchSaveMillingRecords()
         {
-
+            using (var service = new RecordMillingServiceClient())
+            {
+                foreach (var item in PlanWithMissons)
+                {
+                    if (item.IsSelected)
+                    {
+                        var temp = PMSNewModelCollection.NewRecordMilling();
+                        temp.Composition = item.PlanMisson.Misson.CompositionStandard;
+                        temp.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
+                        temp.PMINumber = item.PlanMisson.Misson.PMINumber;
+                        temp.RoomTemperature = item.PlanMisson.Plan.RoomTemperature;
+                        temp.RoomHumidity = item.PlanMisson.Plan.RoomHumidity;
+                        service.AddRecordMillingByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+            }
         }
         private void BatchSaveDeMoldRecords()
         {
