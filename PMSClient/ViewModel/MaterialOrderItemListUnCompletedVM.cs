@@ -107,7 +107,8 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchSupplier)
+                && string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchOrderItemNumber));
         }
 
         private void ActionAll()

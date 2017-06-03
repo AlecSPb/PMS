@@ -264,6 +264,7 @@
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
     <Compile Include="ViewModel\MissonUnCompletedVM.cs" />
+    <Compile Include="ViewModel\Model\PlanExtra.cs" />
     <Compile Include="ViewModel\OrderUnCompletedVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\OutSourceEditVM.cs" />
