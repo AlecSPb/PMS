@@ -71,10 +71,10 @@ namespace PMSClient.ViewModel
             Select = new RelayCommand<PlanWithMissonExtra>(ActionSelect);
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
-            BatchSelect = new RelayCommand(ActionBatchSelect);
+            SelectBatch = new RelayCommand(ActionSelectBatch);
         }
 
-        private void ActionBatchSelect()
+        private void ActionSelectBatch()
         {
             int count = PlanWithMissons.Where(i => i.IsSelected == true).Count();
             if (!PMSDialogService.ShowYesNo("请问", $"确定添加选定的{count}个项目到记录？"))
@@ -101,8 +101,7 @@ namespace PMSClient.ViewModel
                 default:
                     break;
             }
-
-            NavigationService.GoTo(requestView);
+            PMSDialogService.ShowYes("成功", "记录导入完成，请刷新列表");
         }
 
         #region BatchSaveArea
@@ -116,13 +115,14 @@ namespace PMSClient.ViewModel
                     {
                         var temp = PMSNewModelCollection.NewRecordMilling();
                         temp.Composition = item.PlanMisson.Misson.CompositionStandard;
-                        temp.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(plan);
+                        temp.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(item.PlanMisson);
                         temp.PMINumber = item.PlanMisson.Misson.PMINumber;
                         temp.RoomTemperature = item.PlanMisson.Plan.RoomTemperature;
                         temp.RoomHumidity = item.PlanMisson.Plan.RoomHumidity;
                         service.AddRecordMillingByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 }
+                NavigationService.GoTo(PMSViews.RecordMilling);
             }
         }
         private void BatchSaveDeMoldRecords()
@@ -189,7 +189,7 @@ namespace PMSClient.ViewModel
         #region Commands
         public RelayCommand<PlanWithMissonExtra> Select { get; set; }
 
-        public RelayCommand BatchSelect { get; set; }
+        public RelayCommand SelectBatch { get; set; }
         #endregion
 
         #region Properties
