@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.ViewModel
 {
@@ -19,25 +20,25 @@ namespace PMSClient.ViewModel
             IntitializeCommands();
             SetPageParametersWhenConditionChange();
         }
-        private void ActionSelect(DcPlanWithMisson plan)
+        private void ActionSelect(PlanWithMissonExtra plan)
         {
             if (plan != null)
             {
                 switch (requestView)
                 {
                     case PMSViews.RecordMillingEdit:
-                        PMSHelper.ViewModels.RecordMillingEdit.SetBySelect(plan);
+                        PMSHelper.ViewModels.RecordMillingEdit.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.RecordVHPQuickEdit:
                         break;
                     case PMSViews.RecordDeMoldEdit:
-                        PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan);
+                        PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.RecordMachineEdit:
-                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan);
+                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan.PlanMisson);
                         break;
                     case PMSViews.RecordTestEdit:
-                        PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan);
+                        PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan.PlanMisson);
                         break;
                     default:
                         break;
@@ -59,18 +60,69 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
-            PlanWithMissons = new ObservableCollection<DcPlanWithMisson>();
-            SearchComposition =SearchVHPDate= "";
+            PlanWithMissons = new ObservableCollection<PlanWithMissonExtra>();
+            SearchComposition = SearchVHPDate = "";
         }
 
         private void IntitializeCommands()
         {
             PageChanged = new RelayCommand(ActionPaging);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(requestView));
-            Select = new RelayCommand<DcPlanWithMisson>(ActionSelect);
-            Search = new RelayCommand(ActionSearch,CanSearch);
+            Select = new RelayCommand<PlanWithMissonExtra>(ActionSelect);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
+            BatchSelect = new RelayCommand(ActionBatchSelect);
         }
+
+        private void ActionBatchSelect()
+        {
+            int count = PlanWithMissons.Where(i => i.IsSelected == true).Count();
+            if (!PMSDialogService.ShowYesNo("请问",$"确定添加选定的{count}个项目到记录？"))
+            {
+                return;
+            }
+
+            switch (requestView)
+            {
+                case PMSViews.RecordMillingEdit:
+                    BatchSaveMillingRecords();
+                    break;
+                case PMSViews.RecordVHPQuickEdit:
+                    break;
+                case PMSViews.RecordDeMoldEdit:
+                    BatchSaveDeMoldRecords();
+                    break;
+                case PMSViews.RecordMachineEdit:
+                    BatchSaveMachineRecords();
+                    break;
+                case PMSViews.RecordTestEdit:
+                    BatchSaveTestRecords();
+                    break;
+                default:
+                    break;
+            }
+
+            NavigationService.GoTo(requestView);
+        }
+
+        #region BatchSaveArea
+        private void BatchSaveMillingRecords()
+        {
+
+        }
+        private void BatchSaveDeMoldRecords()
+        {
+
+        }
+        private void BatchSaveMachineRecords()
+        {
+
+        }
+        private void BatchSaveTestRecords()
+        {
+
+        }
+        #endregion
 
         private void ActionAll()
         {
@@ -111,7 +163,7 @@ namespace PMSClient.ViewModel
             {
                 var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
                 PlanWithMissons.Clear();
-                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
+                orders.ToList().ForEach(o => PlanWithMissons.Add(new PlanWithMissonExtra { IsSelected = false, PlanMisson = o }));
             }
         }
 
@@ -120,11 +172,13 @@ namespace PMSClient.ViewModel
 
 
         #region Commands
-        public RelayCommand<DcPlanWithMisson> Select { get; set; }
+        public RelayCommand<PlanWithMissonExtra> Select { get; set; }
+
+        public RelayCommand BatchSelect { get; set; }
         #endregion
 
         #region Properties
-        public ObservableCollection<DcPlanWithMisson> PlanWithMissons { get; set; }
+        public ObservableCollection<PlanWithMissonExtra> PlanWithMissons { get; set; }
 
 
         private string searchComposition;

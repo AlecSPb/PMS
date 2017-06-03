@@ -7,9 +7,9 @@ using PMSClient.MainService;
 
 namespace PMSClient.ViewModel.Model
 {
-    public class PlanExtra
+    public class PlanWithMissonExtra
     {
-        public PlanExtra()
+        public PlanWithMissonExtra()
         {
             IsSelected = false;
         }
