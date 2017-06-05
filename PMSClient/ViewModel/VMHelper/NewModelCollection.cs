@@ -9,6 +9,84 @@ namespace PMSClient.ViewModel
 {
     public static class PMSNewModelCollection
     {
+        public static DcRecordTest NewRecordTest()
+        {
+            var model = new DcRecordTest();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.PMINumber = "";
+            model.Composition = "成分";
+            model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
+            model.CompositionXRF = "暂无";
+            model.Dimension = "要求尺寸";
+            model.DimensionActual = "实际尺寸";
+            model.PO = "PO";
+            model.CompositionAbbr = "成分缩写";
+            model.Customer = "客户信息";
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.TestType = PMSCommon.TestType.靶材.ToString();
+            model.State = PMSCommon.CommonState.未核验.ToString();
+            model.Weight = "0";
+            model.Remark = "";
+            model.Resistance = "0";
+            model.Sample = "";
+            model.CompositionXRF = "暂无";
+            model.Density = "0";
+            model.Defects = "无";
+            model.OrderDate = DateTime.Now.AddDays(-30);
+            return model;
+        }
+        public static DcRecordMachine NewRecordMachine()
+        {
+            var model = new DcRecordMachine();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.PMINumber = "";
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
+            model.Composition = "成分";
+            model.Diameter1 = 0;
+            model.Diameter2 = 0;
+            model.Dimension = "230mm OD x 4mm";
+            model.BlankDimension = "无";
+            model.Thickness1 = 0;
+            model.Thickness2 = 0;
+            model.Thickness3 = 0;
+            model.Thickness4 = 0;
+            model.ExtraRequirement = "正常要求";
+            model.Defects = PMSCommon.TestDefectsTypes.无缺陷.ToString();
+            return model;
+        }
+        public static DcRecordDeMold NewRecordDeMold()
+        {
+            var model = new DcRecordDeMold();
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
+            model.DeMoldType = PMSCommon.DeMoldType.手动轻松.ToString();
+            model.PlanType = PMSCommon.VHPPlanType.加工.ToString();
+            model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
+            model.Dimension = "无";
+            model.CalculateDimension = "无";
+            model.CalculationDensity = 0;
+            model.Density = 0;
+            model.RatioDensity = 0;
+            model.Composition = "成分";
+            model.Temperature1 = "100";
+            model.Temperature2 = "25";
+            model.Weight = 0;
+            model.Diameter1 = 0;
+            model.Diameter2 = 0;
+            model.Thickness1 = 0;
+            model.Thickness2 = 0;
+            model.Thickness3 = 0;
+            model.Thickness4 = 0;
+            model.Remark = "无";
+            return model;
+        }
         public static DcRecordMilling NewRecordMilling()
         {
             var model = new DcRecordMilling();

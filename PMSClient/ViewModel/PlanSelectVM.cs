@@ -20,33 +20,6 @@ namespace PMSClient.ViewModel
             IntitializeCommands();
             SetPageParametersWhenConditionChange();
         }
-        private void ActionSelect(PlanWithMissonExtra plan)
-        {
-            if (plan != null)
-            {
-                switch (requestView)
-                {
-                    case PMSViews.RecordMillingEdit:
-                        PMSHelper.ViewModels.RecordMillingEdit.SetBySelect(plan.PlanMisson);
-                        break;
-                    case PMSViews.RecordVHPQuickEdit:
-                        break;
-                    case PMSViews.RecordDeMoldEdit:
-                        PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan.PlanMisson);
-                        break;
-                    case PMSViews.RecordMachineEdit:
-                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan.PlanMisson);
-                        break;
-                    case PMSViews.RecordTestEdit:
-                        PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan.PlanMisson);
-                        break;
-                    default:
-                        break;
-                }
-
-                NavigationService.GoTo(requestView);
-            }
-        }
 
         public void RefreshData()
         {
@@ -132,18 +105,99 @@ namespace PMSClient.ViewModel
         }
         private void BatchSaveDeMoldRecords()
         {
-
+            using (var service = new RecordDeMoldServiceClient())
+            {
+                foreach (var item in PlanWithMissons)
+                {
+                    if (item.IsSelected)
+                    {
+                        var temp = PMSNewModelCollection.NewRecordDeMold();
+                        temp.Composition = item.PlanMisson.Misson.CompositionStandard;
+                        temp.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(item.PlanMisson);
+                        temp.PMINumber = item.PlanMisson.Misson.PMINumber;
+                        temp.Dimension = item.PlanMisson.Misson.Dimension;
+                        temp.PlanType = item.PlanMisson.Plan.PlanType;
+                        temp.CalculationDensity = item.PlanMisson.Plan.CalculationDensity;
+                        temp.CalculateDimension = $"{item.PlanMisson.Plan.MoldDiameter.ToString("F2")}mm OD x {item.PlanMisson.Plan.Thickness}mm";
+                        service.AddRecordDeMoldByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+                NavigationService.GoTo(PMSViews.RecordDeMold);
+            }
         }
         private void BatchSaveMachineRecords()
         {
-
+            using (var service = new RecordMachineServiceClient())
+            {
+                foreach (var item in PlanWithMissons)
+                {
+                    if (item.IsSelected)
+                    {
+                        var temp = PMSNewModelCollection.NewRecordMachine();
+                        temp.PMINumber = item.PlanMisson.Misson.PMINumber;
+                        temp.Composition = item.PlanMisson.Misson.CompositionStandard;
+                        temp.Dimension = item.PlanMisson.Misson.Dimension;
+                        temp.BlankDimension = "";
+                        temp.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot(item.PlanMisson);//粗略设定
+                        service.AddRecordMachineByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+                NavigationService.GoTo(PMSViews.RecordMilling);
+            }
         }
         private void BatchSaveTestRecords()
         {
-
+            using (var service = new RecordTestServiceClient())
+            {
+                foreach (var item in PlanWithMissons)
+                {
+                    if (item.IsSelected)
+                    {
+                        var temp = PMSNewModelCollection.NewRecordTest();
+                        temp.PMINumber = item.PlanMisson.Misson.PMINumber;
+                        temp.Composition =item.PlanMisson.Misson.CompositionStandard;
+                        temp.CompositionAbbr =item.PlanMisson.Misson.CompositionAbbr;
+                        temp.PO =item.PlanMisson.Misson.PO;
+                        temp.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
+                        temp.Customer =item.PlanMisson.Misson.CustomerName;
+                        temp.Dimension =item.PlanMisson.Misson.Dimension;
+                        temp.DimensionActual =item.PlanMisson.Misson.Dimension;
+                        temp.CompositionAbbr =item.PlanMisson.Misson.CompositionAbbr;
+                        temp.OrderDate = item.PlanMisson.Misson.CreateTime;
+                        service.AddRecordTestByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+                NavigationService.GoTo(PMSViews.RecordMilling);
+            }
         }
         #endregion
+        private void ActionSelect(PlanWithMissonExtra plan)
+        {
+            if (plan != null)
+            {
+                switch (requestView)
+                {
+                    case PMSViews.RecordMillingEdit:
+                        PMSHelper.ViewModels.RecordMillingEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    case PMSViews.RecordVHPQuickEdit:
+                        break;
+                    case PMSViews.RecordDeMoldEdit:
+                        PMSHelper.ViewModels.RecordDeMoldEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    case PMSViews.RecordMachineEdit:
+                        PMSHelper.ViewModels.RecordMachineEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    case PMSViews.RecordTestEdit:
+                        PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    default:
+                        break;
+                }
 
+                NavigationService.GoTo(requestView);
+            }
+        }
         private void ActionAll()
         {
             SearchComposition = SearchVHPDate = "";

@@ -93,7 +93,7 @@
                 <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.PlanTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PlanType}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Text="#计划类型,即热压目的，后续工作" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="#计划类型,即热压目的，热压后续工作是什么" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldType}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
