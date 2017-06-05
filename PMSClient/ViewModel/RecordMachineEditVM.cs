@@ -28,13 +28,13 @@ namespace PMSClient.ViewModel
         private void ActionSelectPlan()
         {
             PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMachineEdit);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
         private void ActionSelectDeMold()
         {
             PMSHelper.ViewModels.RecordDeMoldSelect.SetRequestView(PMSViews.RecordMachineEdit);
-            PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.RecordDeMoldSelect);
         }
 
