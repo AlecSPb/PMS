@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/ExtraService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/ExtraService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ExtraService.wsdl" MetadataType="Wsdl" ID="9beef33c-b5ed-4b0e-8362-10164487c946" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?wsdl" />
-    <MetadataFile FileName="ExtraService.xsd" MetadataType="Schema" ID="3d26a198-7d49-4e10-a379-573af3c298e2" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ExtraService.disco" MetadataType="Disco" ID="37a15795-364e-4494-b98a-f4fc481eddf0" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?disco" />
-    <MetadataFile FileName="ExtraService1.xsd" MetadataType="Schema" ID="90dca002-4c67-4d85-8e74-da8d4019f9d0" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ExtraService2.xsd" MetadataType="Schema" ID="9f42375c-db5d-42f8-9c60-89dfa269fc76" SourceId="1" SourceUrl="http://localhost:8002/ExtraService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExtraService3.xsd" MetadataType="Schema" ID="14af671a-66a0-4bb5-b181-4eb5fab5d1dc" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExtraService31.xsd" MetadataType="Schema" ID="24076a82-9e2b-4dd1-afc8-3c16a3469203" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExtraService32.xsd" MetadataType="Schema" ID="f3845194-3249-4d51-84c1-98a5fd4db709" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExtraService1.disco" MetadataType="Disco" ID="f1dce525-3e90-4382-be53-971442f57789" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?disco" />
+    <MetadataFile FileName="ExtraService1.wsdl" MetadataType="Wsdl" ID="6ea2b9e8-c5e8-4d55-88fc-7f3c13061470" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
