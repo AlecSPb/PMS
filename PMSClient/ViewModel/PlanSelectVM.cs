@@ -48,6 +48,11 @@ namespace PMSClient.ViewModel
             }
         }
 
+        public void RefreshData()
+        {
+            SetPageParametersWhenConditionChange();
+        }
+
         private PMSViews requestView;
         /// <summary>
         /// 设置请求视图的token，返回或者选择后返回用

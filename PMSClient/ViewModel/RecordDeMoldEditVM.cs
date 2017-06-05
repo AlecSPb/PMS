@@ -47,6 +47,7 @@ namespace PMSClient.ViewModel
         private void ActionSelect()
         {
             PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordDeMoldEdit);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
 

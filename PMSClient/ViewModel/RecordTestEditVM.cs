@@ -40,6 +40,7 @@ namespace PMSClient.ViewModel
         private void ActionSelectDimensionActual()
         {
             PMSHelper.ViewModels.RecordMachineSelect.SetRequestView(PMSViews.RecordTestEdit);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
             NavigationService.GoTo(PMSViews.RecordMachineSelect);
         }
 

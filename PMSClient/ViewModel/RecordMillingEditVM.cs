@@ -22,6 +22,7 @@ namespace PMSClient.ViewModel
             Select = new RelayCommand(() =>
             {
                 PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMillingEdit);
+                PMSHelper.ViewModels.PlanSelect.RefreshData();
                 NavigationService.GoTo(PMSViews.PlanSelect);
             });
             Calculator = new RelayCommand(ActionCalculator);
