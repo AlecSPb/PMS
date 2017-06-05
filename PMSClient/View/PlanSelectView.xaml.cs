@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSClient.MainService;
 using PMSClient.ViewModel;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.View
 {
@@ -29,11 +30,11 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var row = e.Row.DataContext as DcPlanWithMisson;
+            var row = e.Row.DataContext as PlanWithMissonExtra;
             if (row != null)
             {
                 var today = DateTime.Now.Date;
-                var rowDate = row.Plan.PlanDate.Date;
+                var rowDate = row.PlanMisson.Plan.PlanDate.Date;
                 if (rowDate == today.Date)
                 {
                     e.Row.Background = this.FindResource("TodayBrush") as SolidColorBrush;
