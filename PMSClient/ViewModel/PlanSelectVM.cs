@@ -158,7 +158,7 @@ namespace PMSClient.ViewModel
                         temp.Composition =item.PlanMisson.Misson.CompositionStandard;
                         temp.CompositionAbbr =item.PlanMisson.Misson.CompositionAbbr;
                         temp.PO =item.PlanMisson.Misson.PO;
-                        temp.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
+                        temp.ProductID = UsefulPackage.PMSTranslate.PlanLot(item.PlanMisson);
                         temp.Customer =item.PlanMisson.Misson.CustomerName;
                         temp.Dimension =item.PlanMisson.Misson.Dimension;
                         temp.DimensionActual =item.PlanMisson.Misson.Dimension;

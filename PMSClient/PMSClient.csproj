@@ -339,6 +339,12 @@
     <Compile Include="View\OutSourceView.xaml.cs">
       <DependentUpon>OutSourceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PlanConclusionView.xaml.cs">
+      <DependentUpon>PlanConclusionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanConclusionEditView.xaml.cs">
+      <DependentUpon>PlanConclusionEditView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PlateUnCompletedView.xaml.cs">
       <DependentUpon>PlateUnCompletedView.xaml</DependentUpon>
     </Compile>
@@ -713,6 +719,14 @@
     <Page Include="View\OutSourceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanConclusionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanConclusionEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PlateUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>

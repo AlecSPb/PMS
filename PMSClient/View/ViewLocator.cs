@@ -39,6 +39,8 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<PlanEditView>();
 
+            SimpleIoc.Default.Register<PlanConclusionView>();
+            SimpleIoc.Default.Register<PlanConclusionEditView>();
 
             SimpleIoc.Default.Register<MaterialNeedView>();
             SimpleIoc.Default.Register<MaterialNeedEditView>();
@@ -219,6 +221,15 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<PlanSelectView>(); }
         }
+        public PlanConclusionView PlanConclusion
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanConclusionView>(); }
+        }
+        public PlanConclusionEditView PlanConclusionEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanConclusionEditView>(); }
+        }
+
         public MaterialNeedView MaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<MaterialNeedView>(); }
