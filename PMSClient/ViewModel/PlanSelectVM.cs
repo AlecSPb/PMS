@@ -142,7 +142,7 @@ namespace PMSClient.ViewModel
                         service.AddRecordMachineByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 }
-                NavigationService.GoTo(PMSViews.RecordMilling);
+                NavigationService.GoTo(PMSViews.RecordMachine);
             }
         }
         private void BatchSaveTestRecords()
@@ -167,7 +167,7 @@ namespace PMSClient.ViewModel
                         service.AddRecordTestByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 }
-                NavigationService.GoTo(PMSViews.RecordMilling);
+                NavigationService.GoTo(PMSViews.RecordTest);
             }
         }
         #endregion
