@@ -76,8 +76,8 @@ namespace PMSClient.ViewModel
             model.Density = 0;
             model.RatioDensity = 0;
             model.Composition = "成分";
-            model.Temperature1 = "100";
-            model.Temperature2 = "25";
+            model.Temperature1 = "0";
+            model.Temperature2 = "0";
             model.Weight = 0;
             model.Diameter1 = 0;
             model.Diameter2 = 0;
