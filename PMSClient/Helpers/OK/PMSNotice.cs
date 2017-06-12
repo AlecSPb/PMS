@@ -101,7 +101,7 @@ namespace PMSClient
             CurrentCount.Clear();
             using (var service = new OrderServiceClient())
             {
-                int counter = service.GetOrderCountBySearch(string.Empty, string.Empty);
+                int counter = service.GetOrderCountBySearch(string.Empty, string.Empty,string.Empty);
                 CurrentCount.Add(Order, counter);
             }
 

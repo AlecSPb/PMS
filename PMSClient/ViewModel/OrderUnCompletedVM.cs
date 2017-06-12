@@ -33,8 +33,9 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCustomer = "";
-            SearchCompositoinStandard = "";
+            searchCustomer = "";
+            searchCompositionStandard = "";
+            searchPMINumber = "";
             MainOrders = new ObservableCollection<DcOrder>();
         }
         private void InitializeCommands()
@@ -116,13 +117,14 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositoinStandard));
+            return !(string.IsNullOrEmpty(SearchCustomer) && string.IsNullOrEmpty(SearchCompositionStandard) && string.IsNullOrEmpty(SearchPMINumber));
         }
 
         private void ActionAll()
         {
             SearchCustomer = "";
-            SearchCompositoinStandard = "";
+            SearchCompositionStandard = "";
+            SearchPMINumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -138,7 +140,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 20;
                 var service = new OrderServiceClient();
-                RecordCount = service.GetOrderCountUnCompleted(SearchCustomer, SearchCompositoinStandard);
+                RecordCount = service.GetOrderCountUnCompleted(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                 service.Close();
                 ActionPaging();
             }
@@ -158,7 +160,7 @@ namespace PMSClient.ViewModel
                 skip = (PageIndex - 1) * PageSize;
                 take = PageSize;
                 var service = new OrderServiceClient();
-                var orders = service.GetOrderUnCompleted(skip, take, SearchCustomer, SearchCompositoinStandard);
+                var orders = service.GetOrderUnCompleted(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                 service.Close();
                 MainOrders.Clear();
                 orders.ToList().ForEach(o => MainOrders.Add(o));
@@ -173,6 +175,18 @@ namespace PMSClient.ViewModel
 
 
         #region Proeperties
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set
+            {
+                if (searchPMINumber == value)
+                    return;
+                searchPMINumber = value;
+                RaisePropertyChanged(() => SearchPMINumber);
+            }
+        }
         private string searchCustomer;
         public string SearchCustomer
         {
@@ -186,7 +200,7 @@ namespace PMSClient.ViewModel
             }
         }
         private string searchCompositionStandard;
-        public string SearchCompositoinStandard
+        public string SearchCompositionStandard
         {
             get { return searchCompositionStandard; }
             set
@@ -194,7 +208,7 @@ namespace PMSClient.ViewModel
                 if (searchCompositionStandard == value)
                     return;
                 searchCompositionStandard = value;
-                RaisePropertyChanged(() => SearchCompositoinStandard);
+                RaisePropertyChanged(() => SearchCompositionStandard);
             }
         }
 

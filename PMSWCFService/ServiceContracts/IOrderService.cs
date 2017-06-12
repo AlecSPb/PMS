@@ -13,14 +13,14 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcOrder> GetAllOrderInPage(int skip, int take);
         [OperationContract]
-        List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
+        List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd, string pminumber);
         [OperationContract]
-        int GetOrderCountBySearch(string customer, string compositionstd);
+        int GetOrderCountBySearch(string customer, string compositionstd, string pminumber);
 
         [OperationContract]
-        List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd);
+        List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd, string pminumber);
         [OperationContract]
-        int GetOrderCountUnCompleted(string customer, string compositionstd);
+        int GetOrderCountUnCompleted(string customer, string compositionstd, string pminumber);
 
 
 
@@ -33,11 +33,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int AddOrder(DcOrder order);
         [OperationContract]
-        int AddOrderByUID(DcOrder order,string uid);
+        int AddOrderByUID(DcOrder order, string uid);
         [OperationContract]
         int UpdateOrder(DcOrder order);
         [OperationContract]
-        int UpdateOrderByUID(DcOrder order,string uid);
+        int UpdateOrderByUID(DcOrder order, string uid);
         [OperationContract]
         int DeleteOrder(Guid id);
 

@@ -156,7 +156,7 @@ namespace PMSWCFService
         /// <param name="customer"></param>
         /// <param name="compositionstd"></param>
         /// <returns></returns>
-        public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd)
+        public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd, string pminumber)
         {
             try
             {
@@ -170,6 +170,7 @@ namespace PMSWCFService
                     var query = from o in dc.Orders
                                 where o.CustomerName.Contains(customer)
                                 && o.CompositionStandard.Contains(compositionstd)
+                                && o.PMINumber.Contains(pminumber)
                                 && o.State != OrderState.作废.ToString()
                                 orderby o.CreateTime descending
                                 select o;
@@ -191,7 +192,7 @@ namespace PMSWCFService
         /// <param name="customer"></param>
         /// <param name="compositionstd"></param>
         /// <returns></returns>
-        public int GetOrderCountBySearch(string customer, string compositionstd)
+        public int GetOrderCountBySearch(string customer, string compositionstd, string pminumber)
         {
             try
             {
@@ -199,6 +200,7 @@ namespace PMSWCFService
                 {
                     return dc.Orders.Where(o => o.CustomerName.Contains(customer)
                     && o.CompositionStandard.Contains(compositionstd)
+                    && o.PMINumber.Contains(pminumber)
                     && o.State != OrderState.作废.ToString()).Count();
                 }
             }
@@ -211,7 +213,7 @@ namespace PMSWCFService
         }
 
 
-        public List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd)
+        public List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd, string pminumber)
         {
             try
             {
@@ -225,10 +227,11 @@ namespace PMSWCFService
                     var query = from o in dc.Orders
                                 where o.CustomerName.Contains(customer)
                                 && o.CompositionStandard.Contains(compositionstd)
+                                && o.PMINumber.Contains(pminumber)
                                 && (o.State == OrderState.未完成.ToString()
                                 || o.State == OrderState.暂停.ToString()
-                                || o.State == OrderState.未核验.ToString() )
-                                orderby o.Priority,o.CreateTime
+                                || o.State == OrderState.未核验.ToString())
+                                orderby o.Priority, o.CreateTime
                                 select o;
 
                     var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());
@@ -242,7 +245,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetOrderCountUnCompleted(string customer, string compositionstd)
+        public int GetOrderCountUnCompleted(string customer, string compositionstd, string pminumber)
         {
             try
             {
@@ -250,6 +253,7 @@ namespace PMSWCFService
                 {
                     return dc.Orders.Where(o => o.CustomerName.Contains(customer)
                     && o.CompositionStandard.Contains(compositionstd)
+                    && o.PMINumber.Contains(pminumber)
                      && (o.State == OrderState.未完成.ToString()
                                 || o.State == OrderState.暂停.ToString()
                                 || o.State == OrderState.未核验.ToString())).Count();

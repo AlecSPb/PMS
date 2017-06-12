@@ -2,9 +2,9 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8002/PMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IOrderService_GetAllOrderInPage_InputMessage">
@@ -3661,52 +3661,52 @@
   </wsdl:binding>
   <wsdl:service name="PMSService">
     <wsdl:port name="order" binding="tns:order">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="planvhp" binding="tns:planvhp">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="materialneed" binding="tns:materialneed">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="materialorder" binding="tns:materialorder">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="materialinventory" binding="tns:materialinventory">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="misson" binding="tns:misson">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="delivery" binding="tns:delivery">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="plate" binding="tns:plate">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="product" binding="tns:product">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordtest" binding="tns:recordtest">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordvhp" binding="tns:recordvhp">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordmilling" binding="tns:recordmilling">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordmachine" binding="tns:recordmachine">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recorddemold" binding="tns:recorddemold">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="recordbonding" binding="tns:recordbonding">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
     <wsdl:port name="outsource" binding="tns:outsource">
-      <soap:address location="http://192.168.16.254:8002/PMSService.svc" />
+      <soap:address location="http://localhost:8002/PMSService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

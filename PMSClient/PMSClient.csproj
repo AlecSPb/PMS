@@ -999,10 +999,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\MainService\PMSService.disco" />
+    <None Include="Service References\MainService\PMSService.wsdl" />
+    <None Include="Service References\MainService\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\StatisticService1.disco" />
-    <None Include="Service References\MainService\PMSService1.disco" />
     <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
     <None Include="Service References\ExtraService\ExtraService1.disco" />
     <None Include="Service References\BasicService\BasicDataService.disco" />
@@ -1031,16 +1041,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService1.wsdl" />
-    <None Include="Service References\MainService\PMSService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\StatisticService\StatisticService3.xsd">
