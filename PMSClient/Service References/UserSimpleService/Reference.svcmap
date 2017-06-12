@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://192.168.16.254:8002/UserSimpleService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8002/UserSimpleService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserSimpleService3.xsd" MetadataType="Schema" ID="152f531e-75f8-42b5-a93f-a69389117ac4" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserSimpleService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserSimpleService1.wsdl" MetadataType="Wsdl" ID="7e5849d5-afaf-4662-9e02-cbd2f86c7785" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserSimpleService.svc?wsdl" />
-    <MetadataFile FileName="UserSimpleService1.disco" MetadataType="Disco" ID="42fd37d3-093f-4193-a135-cdb270b83faa" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserSimpleService.svc?disco" />
-    <MetadataFile FileName="UserSimpleService31.xsd" MetadataType="Schema" ID="08c2d5d4-0f63-44b0-9074-1cdf8521cc28" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserSimpleService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserSimpleService32.xsd" MetadataType="Schema" ID="6cdae1b7-b760-4ca0-bed1-6521c0ba0f7d" SourceId="1" SourceUrl="http://192.168.16.254:8002/UserSimpleService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserSimpleService.xsd" MetadataType="Schema" ID="23b12088-c160-418e-9585-96ab1854f0d8" SourceId="1" SourceUrl="http://localhost:8002/UserSimpleService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserSimpleService.disco" MetadataType="Disco" ID="d6691894-a161-481f-a7c6-b627cc514556" SourceId="1" SourceUrl="http://localhost:8002/UserSimpleService.svc?disco" />
+    <MetadataFile FileName="UserSimpleService.wsdl" MetadataType="Wsdl" ID="5d28c271-ad63-4587-a93b-e2129c75cd9f" SourceId="1" SourceUrl="http://localhost:8002/UserSimpleService.svc?wsdl" />
+    <MetadataFile FileName="UserSimpleService1.xsd" MetadataType="Schema" ID="86d3e49a-a633-4f0d-bd44-1134fdc7f6de" SourceId="1" SourceUrl="http://localhost:8002/UserSimpleService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserSimpleService2.xsd" MetadataType="Schema" ID="9d037b04-af3a-472c-9d71-0a03770b274c" SourceId="1" SourceUrl="http://localhost:8002/UserSimpleService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="tudGiwfQiGlnZYV8P89hEZPWmEM=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="FC8ODnErLM6ff+o7X8uCxK6X1YM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="itemdebit">
       <properties>
@@ -330,10 +330,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="itemdebit" contract="ExtraService.IItemDebitService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="itemdebit">
+    <endpoint name="itemdebit" contract="ExtraService.IItemDebitService" bindingType="basicHttpBinding" address="http://localhost:8002/ExtraService.svc" bindingConfiguration="itemdebit">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
+          <serializedValue>http://localhost:8002/ExtraService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -415,10 +415,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="checklist" contract="ExtraService.ICheckListService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="checklist">
+    <endpoint name="checklist" contract="ExtraService.ICheckListService" bindingType="basicHttpBinding" address="http://localhost:8002/ExtraService.svc" bindingConfiguration="checklist">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
+          <serializedValue>http://localhost:8002/ExtraService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -500,10 +500,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="feedback" contract="ExtraService.IFeedBackService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/ExtraService.svc" bindingConfiguration="feedback">
+    <endpoint name="feedback" contract="ExtraService.IFeedBackService" bindingType="basicHttpBinding" address="http://localhost:8002/ExtraService.svc" bindingConfiguration="feedback">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://192.168.16.254:8002/ExtraService.svc</serializedValue>
+          <serializedValue>http://localhost:8002/ExtraService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
