@@ -86,7 +86,6 @@ namespace PMSClient.ViewModel
                         service.UpdateOrderByUID(CurrentOrder, uid);
                     }
                     service.Close();
-                    PMSHelper.ViewModels.OrderCheck.RefreshData();
                     GoBack();
                 }
             }

@@ -243,9 +243,6 @@ namespace PMSClient
                 case PMSViews.MissonSelect:
                     NavigateTo(_views.MissonSelect);
                     break;
-                case PMSViews.OrderCheck:
-                    NavigateTo(_views.OrderCheck);
-                    break;
                 case PMSViews.OrderCheckEdit:
                     NavigateTo(_views.OrderCheckEdit);
                     break;
