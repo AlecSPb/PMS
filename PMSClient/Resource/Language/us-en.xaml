@@ -9,7 +9,7 @@
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">Order Management</sys:String>
     <sys:String x:Key="NavigationOrderCheck">Order Check</sys:String>
-    <sys:String x:Key="NavigationMisson">Misson</sys:String>
+    <sys:String x:Key="NavigationMisson">Task</sys:String>
     <sys:String x:Key="NavigationPlan">Plan</sys:String>
     <sys:String x:Key="NavigationMaterialNeed">Material Need</sys:String>
     <sys:String x:Key="NavigationMaterialOrder">Material Order</sys:String>
@@ -77,8 +77,8 @@
     <sys:String x:Key="PageOutSourceEdit">OutSource Edit</sys:String>
 
 
-    <sys:String x:Key="PageMisson">Misson</sys:String>
-    <sys:String x:Key="PageMissonUnCompleted">Misson[UnCompleted]</sys:String>
+    <sys:String x:Key="PageMisson">Task</sys:String>
+    <sys:String x:Key="PageMissonUnCompleted">Task[UnCompleted]</sys:String>
     <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
     <sys:String x:Key="PagePlan">Plan</sys:String>
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
@@ -162,7 +162,7 @@
     <sys:String x:Key="PageTestResultSelect">Select Test Result</sys:String>
     <sys:String x:Key="PagePlanSelect">Select Plan</sys:String>
     <sys:String x:Key="PageOrderSelect">Select Order</sys:String>
-    <sys:String x:Key="PageMissonSelect">Select Misson</sys:String>
+    <sys:String x:Key="PageMissonSelect">Select Task</sys:String>
     <sys:String x:Key="PageMaterialOrderItemSelect">Select Material Order Item</sys:String>
     <sys:String x:Key="PageSelectPlate">Select Plate</sys:String>
     <sys:String x:Key="PageSelectRecordBonding">Select Record Bonding</sys:String>
@@ -204,9 +204,9 @@
     <sys:String x:Key="ButtonChart">Chart</sys:String>
     <sys:String x:Key="ButtonLabel">Label</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">Sheet</sys:String>
-    <sys:String x:Key="ButtonMisson">Misson</sys:String>
+    <sys:String x:Key="ButtonMisson">Task</sys:String>
     <sys:String x:Key="ButtonUnCompleted">UnCompleted</sys:String>
-    <sys:String x:Key="ButtonSearchMisson">Misson Search</sys:String>
+    <sys:String x:Key="ButtonSearchMisson">Task Search</sys:String>
     <sys:String x:Key="ButtonPlan">Plan</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">Material Need</sys:String>
     <sys:String x:Key="ButtonSearchPlan">Search Plan</sys:String>
@@ -240,7 +240,7 @@
     <sys:String x:Key="ButtonDocTCB">TCB Order</sys:String>
 
 
-    <sys:String x:Key="ButtonSelectMisson">Select Misson</sys:String>
+    <sys:String x:Key="ButtonSelectMisson">Select Task</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">Select Material Need</sys:String>
     <sys:String x:Key="ButtonSelectVHPPlan">Select VHP Plan</sys:String>
     <sys:String x:Key="ButtonSelectTest">Select Test</sys:String>
