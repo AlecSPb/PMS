@@ -52,12 +52,43 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             PageChanged = new RelayCommand(ActionPaging);
             AddPlan = new RelayCommand<DcOrder>(ActionAddPlan, CanAddPlan);
+            Finish = new RelayCommand<DcOrder>(ActionFinish, CanFinish);
             EditPlan = new RelayCommand<DcPlanVHP>(ActionEditPlan, CanEditPlan);
             DuplicatePlan = new RelayCommand<DcPlanVHP>(ActionDuplicatePlan, CanDuplicatePlan);
 
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
+        }
+
+        private bool CanFinish(DcOrder arg)
+        {
+            if (arg == null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan) && MissonStateConverter(arg.State);
+        }
+
+        private void ActionFinish(DcOrder model)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "请问确定完成了这个任务了吗？"))
+            {
+                return;
+            }
+            try
+            {
+                model.FinishTime = DateTime.Now;
+                model.State = PMSCommon.OrderState.完成.ToString();
+                using (var service = new OrderServiceClient())
+                {
+                    service.UpdateOrderByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanGoToMisson()
@@ -242,6 +273,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMaterialNeed { get; private set; }
         public RelayCommand Refresh { get; set; }
         public RelayCommand<DcOrder> AddPlan { get; set; }
+        public RelayCommand<DcOrder> Finish { get; set; }
         public RelayCommand<DcPlanVHP> EditPlan { get; set; }
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
