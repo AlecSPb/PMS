@@ -101,6 +101,7 @@ namespace PMSClient.ViewModel
                     }
                 }
                 NavigationService.GoTo(PMSViews.RecordMilling);
+                PMSHelper.ViewModels.RecordMilling.RefreshData();
             }
         }
         private void BatchSaveDeMoldRecords()
@@ -123,6 +124,7 @@ namespace PMSClient.ViewModel
                     }
                 }
                 NavigationService.GoTo(PMSViews.RecordDeMold);
+                PMSHelper.ViewModels.RecordDeMold.RefreshData();
             }
         }
         private void BatchSaveMachineRecords()
@@ -143,6 +145,7 @@ namespace PMSClient.ViewModel
                     }
                 }
                 NavigationService.GoTo(PMSViews.RecordMachine);
+                PMSHelper.ViewModels.RecordMachine.RefreshData();
             }
         }
         private void BatchSaveTestRecords()
@@ -168,6 +171,7 @@ namespace PMSClient.ViewModel
                     }
                 }
                 NavigationService.GoTo(PMSViews.RecordTest);
+                PMSHelper.ViewModels.RecordTest.RefreshData();
             }
         }
         #endregion
