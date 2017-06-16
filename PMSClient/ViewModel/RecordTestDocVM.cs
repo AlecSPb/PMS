@@ -73,6 +73,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
+                //TODO:完成创建缺陷报告
                 PMSDialogService.ShowYes("Defects");
             }
             catch (Exception ex)
