@@ -238,7 +238,7 @@
     <sys:String x:Key="ButtonDocCoABridgeLine">Doc Coa-BridgeLine</sys:String>
     <sys:String x:Key="ButtonDocOpticraftGrinding">Opticraft Order</sys:String>
     <sys:String x:Key="ButtonDocTCB">TCB Order</sys:String>
-
+    <sys:String x:Key="ButtonDocDefect">Defects</sys:String>
 
     <sys:String x:Key="ButtonSelectMisson">Select Task</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">Select Material Need</sys:String>

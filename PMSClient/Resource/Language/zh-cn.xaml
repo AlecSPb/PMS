@@ -239,7 +239,7 @@
     <sys:String x:Key="ButtonDocCoABridgeLine">普通CoA测试报告-BridgeLine</sys:String>
     <sys:String x:Key="ButtonDocOpticraftGrinding">Opticraft加工订单</sys:String>
     <sys:String x:Key="ButtonDocTCB">TCB加工订单</sys:String>
-
+    <sys:String x:Key="ButtonDocDefect">缺陷报告单</sys:String>
 
     <sys:String x:Key="ButtonSelectMisson">选择任务</sys:String>
     <sys:String x:Key="ButtonSelectMaterialNeed">选择材料需求</sys:String>

@@ -45,6 +45,9 @@ namespace PMSClient.ViewModel
                     case "TCB":
                         CreateReportGASElastomer440Blank();
                         break;
+                    case "Defect":
+                        CreateDefects();
+                        break;
                     default:
                         break;
                 }
@@ -65,6 +68,20 @@ namespace PMSClient.ViewModel
         }
 
         #region 创建报告
+
+        private void CreateDefects()
+        {
+            try
+            {
+                PMSDialogService.ShowYes("Defects");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.Status(ex.Message);
+            }
+        }
+
         private void CreateRecordTest()
         {
             try

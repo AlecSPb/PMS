@@ -145,7 +145,8 @@
                                 Command="{Binding CreateDoc}" CommandParameter="Opticraft"/>
                         <Button Content="{StaticResource ButtonDocTCB}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
                                 Command="{Binding CreateDoc}" CommandParameter="TCB"/>
-
+                        <Button Content="{StaticResource ButtonDocDefect}" Style="{StaticResource  StyleButtonCommon}"  HorizontalAlignment="Stretch"
+                                Command="{Binding CreateDoc}" CommandParameter="Defect"/>
 
                     </StackPanel>
                 </Grid>
