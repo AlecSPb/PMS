@@ -19,6 +19,7 @@ namespace PMSCommon
         未核验,
         未完成,
         暂停,
+        生产完成,
         完成 
     }
 }
