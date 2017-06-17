@@ -205,6 +205,7 @@
     <sys:String x:Key="ButtonLabel">Label</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">Sheet</sys:String>
     <sys:String x:Key="ButtonMisson">Task</sys:String>
+    <sys:String x:Key="ButtonHistory">History</sys:String>
     <sys:String x:Key="ButtonUnCompleted">UnCompleted</sys:String>
     <sys:String x:Key="ButtonSearchMisson">Task Search</sys:String>
     <sys:String x:Key="ButtonPlan">Plan</sys:String>
