@@ -124,7 +124,9 @@
                         Command="{Binding GoToProduct}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PageDelivery}" Grid.Row="4" Grid.Column="2"
                         Command="{Binding GoToDelivery}" Style="{DynamicResource StyleButtonNavigation}"/>
-
+                <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="4" Grid.Column="3"
+                        Command="{Binding GoToDeliveryItemList}" Style="{DynamicResource StyleButtonNavigation}"/>
+                
                 <Button Content="{StaticResource PageStatistic}" Grid.Row="5" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageStatisticOrder}" Grid.Row="5" Grid.Column="1"
                         Command="{Binding GoToStatisticOrder}" Style="{DynamicResource StyleButtonNavigation}"/>

@@ -84,6 +84,7 @@ namespace PMSClient.ViewModel
 
             GoToProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.Product), () => _session.IsAuthorized(PMSAccess.ReadProduct));
             GoToDelivery = new RelayCommand(() => NavigationService.GoTo(PMSViews.Delivery), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
+            GoToDeliveryItemList = new RelayCommand(() => NavigationService.GoTo(PMSViews.DeliveryItemList), () => _session.IsAuthorized(PMSAccess.ReadDelivery));
 
             GoToMaintenance = new RelayCommand(() => NavigationService.GoTo(PMSViews.Maintanence), () => _session.IsAuthorized(PMSAccess.ReadMaintenance));
             GoToBDCustomer = new RelayCommand(() => NavigationService.GoTo(PMSViews.Customer), () => _session.IsAuthorized(PMSAccess.ReadCustomer));
@@ -183,6 +184,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToProduct { get; private set; }
         public RelayCommand GoToDelivery { get; private set; }
+        public RelayCommand GoToDeliveryItemList { get; private set; }
 
         public RelayCommand GoToStatisticOrder { get; private set; }
         public RelayCommand GoToStatisticDelivery { get; private set; }
