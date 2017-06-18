@@ -78,7 +78,14 @@ namespace PMSWCFService.DataContracts
         public string SpecialRequirement { get; set; }
         [DataMember]
         public string Remark { get; set; }
-
+        [DataMember]
+        public int Grade { get; set; }
+        [DataMember]
+        public string Conclusion { get; set; }
+        [DataMember]
+        public DateTime UpdateTime { get; set; }
+        [DataMember]
+        public string Updator { get; set; }
         //public  DcOrder Order { get; set; }
     }
 }
