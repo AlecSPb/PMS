@@ -58,6 +58,12 @@ namespace PMSDAL
 
 
         public string Remark { get; set; }
+
+        public int Grade { get; set; }
+        public string Conclusion { get; set; }
+
+        public DateTime UpdateTime { get; set; }
+        public string Updator { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

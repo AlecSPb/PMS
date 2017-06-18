@@ -61,6 +61,12 @@ namespace PMSDAL
 
         public string Remark { get; set; }
 
+        public int Grade { get; set; }
+        public string Conclusion{ get; set; }
+
+        public DateTime UpdateTime { get; set; }
+        public string Updator { get; set; }
+
         [ForeignKey("OrderID")]
         public virtual PMSOrder Order { get; set; }
 
