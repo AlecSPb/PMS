@@ -28,6 +28,8 @@ namespace PMSCommon
         成都,
         上海,
         昆明,
+        香港,
+        深圳,
         其他
     }
 }
