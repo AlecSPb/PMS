@@ -21,6 +21,7 @@ namespace PMSClient
         OrderCheckEdit,
         OutSource,
         OutSourceEdit,
+        OutSourceSelect,
         MaterialNeed,
         MaterialNeedEdit,
         MaterialNeedSelect,

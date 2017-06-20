@@ -240,6 +240,9 @@ namespace PMSClient
                 case PMSViews.OutSourceEdit:
                     NavigateTo(_views.OutSourceEdit);
                     break;
+                case PMSViews.OutSourceSelect:
+                    NavigateTo(_views.OutSourceSelect);
+                    break;
                 case PMSViews.MissonSelect:
                     NavigateTo(_views.MissonSelect);
                     break;
