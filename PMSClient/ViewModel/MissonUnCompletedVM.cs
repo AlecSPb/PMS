@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
             try
             {
                 model.FinishTime = DateTime.Now;
-                model.State = PMSCommon.OrderState.完成.ToString();
+                model.State = PMSCommon.OrderState.生产完成.ToString();
                 using (var service = new OrderServiceClient())
                 {
                     service.UpdateOrderByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);

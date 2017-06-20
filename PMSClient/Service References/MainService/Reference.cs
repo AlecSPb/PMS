@@ -474,6 +474,9 @@ namespace PMSClient.MainService {
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ConclusionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -481,6 +484,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FillingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GradeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GrainSizeField;
@@ -558,6 +564,12 @@ namespace PMSClient.MainService {
         private double ThicknessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UpdatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VHPDeviceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -603,6 +615,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Conclusion {
+            get {
+                return this.ConclusionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ConclusionField, value) != true)) {
+                    this.ConclusionField = value;
+                    this.RaisePropertyChanged("Conclusion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
@@ -637,6 +662,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.FillingRequirementField, value) != true)) {
                     this.FillingRequirementField = value;
                     this.RaisePropertyChanged("FillingRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Grade {
+            get {
+                return this.GradeField;
+            }
+            set {
+                if ((this.GradeField.Equals(value) != true)) {
+                    this.GradeField = value;
+                    this.RaisePropertyChanged("Grade");
                 }
             }
         }
@@ -962,6 +1000,32 @@ namespace PMSClient.MainService {
                 if ((this.ThicknessField.Equals(value) != true)) {
                     this.ThicknessField = value;
                     this.RaisePropertyChanged("Thickness");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime UpdateTime {
+            get {
+                return this.UpdateTimeField;
+            }
+            set {
+                if ((this.UpdateTimeField.Equals(value) != true)) {
+                    this.UpdateTimeField = value;
+                    this.RaisePropertyChanged("UpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Updator {
+            get {
+                return this.UpdatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UpdatorField, value) != true)) {
+                    this.UpdatorField = value;
+                    this.RaisePropertyChanged("Updator");
                 }
             }
         }

@@ -269,6 +269,7 @@
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\OutSourceEditVM.cs" />
     <Compile Include="ViewModel\FeedBackVM.cs" />
+    <Compile Include="ViewModel\OutSourceSelectVM.cs" />
     <Compile Include="ViewModel\OutSourceVM.cs" />
     <Compile Include="ViewModel\PlateUnCompletedVM.cs" />
     <Compile Include="ViewModel\ProductStatisticVM.cs" />
@@ -335,6 +336,9 @@
     </Compile>
     <Compile Include="View\OutSourceEditView.xaml.cs">
       <DependentUpon>OutSourceEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OutSourceSelectView.xaml.cs">
+      <DependentUpon>OutSourceSelectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OutSourceView.xaml.cs">
       <DependentUpon>OutSourceView.xaml</DependentUpon>
@@ -711,6 +715,10 @@
     <Page Include="View\OutSourceEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OutSourceSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\OutSourceView.xaml">
       <SubType>Designer</SubType>

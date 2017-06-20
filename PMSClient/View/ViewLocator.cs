@@ -28,6 +28,7 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<OutSourceView>();
             SimpleIoc.Default.Register<OutSourceEditView>();
+            SimpleIoc.Default.Register<OutSourceSelectView>();
 
             SimpleIoc.Default.Register<MissonSelectView>();
             SimpleIoc.Default.Register<MissonView>();
@@ -179,6 +180,13 @@ namespace PMSClient.View
             get
             {
                 return SimpleIoc.Default.GetInstance<OutSourceEditView>();
+            }
+        }
+        public OutSourceSelectView OutSourceSelect
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<OutSourceSelectView>();
             }
         }
         public MissonSelectView MissonSelect

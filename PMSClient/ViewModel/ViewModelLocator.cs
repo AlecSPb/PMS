@@ -42,6 +42,8 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<OutSourceVM>();
             SimpleIoc.Default.Register<OutSourceEditVM>();
+            SimpleIoc.Default.Register<OutSourceSelectVM>();
+
 
             SimpleIoc.Default.Register<MissonVM>();
             SimpleIoc.Default.Register<MissonUnCompletedVM>();
@@ -160,6 +162,10 @@ namespace PMSClient.ViewModel
         public OutSourceEditVM OutSourceEdit
         {
             get { return SimpleIoc.Default.GetInstance<OutSourceEditVM>(); }
+        }
+        public OutSourceSelectVM OutSourceSelect
+        {
+            get { return SimpleIoc.Default.GetInstance<OutSourceSelectVM>(); }
         }
 
         public MissonVM Misson

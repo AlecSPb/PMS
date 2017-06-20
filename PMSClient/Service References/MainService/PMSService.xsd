@@ -48,9 +48,11 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="AllWeight" type="xs:double" />
       <xs:element minOccurs="0" name="CalculationDensity" type="xs:double" />
+      <xs:element minOccurs="0" name="Conclusion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FillingRequirement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grade" type="xs:int" />
       <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="KeepTempTime" type="xs:double" />
@@ -76,6 +78,8 @@
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Temperature" type="xs:double" />
       <xs:element minOccurs="0" name="Thickness" type="xs:double" />
+      <xs:element minOccurs="0" name="UpdateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Updator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VHPDeviceCode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VHPRequirement" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Vaccum" type="xs:double" />

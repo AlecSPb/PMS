@@ -248,6 +248,7 @@
     <sys:String x:Key="ButtonSelectTest">选择检测结果</sys:String>
     <sys:String x:Key="ButtonSelectProduct">选择产品库存</sys:String>
     <sys:String x:Key="ButtonSelectPlate">选择背板库存</sys:String>
+    <sys:String x:Key="ButtonSelectOutSource">选择外购记录</sys:String>
     <sys:String x:Key="ButtonSelectBonding">选择绑定结果</sys:String>
     <sys:String x:Key="ButtonSelectMaterialOrderItem">选择原料订单项目</sys:String>
     <sys:String x:Key="ButtonSelectMaterialInventoryIn">选择原料入库项目</sys:String>
