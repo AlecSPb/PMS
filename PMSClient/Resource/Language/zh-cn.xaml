@@ -273,6 +273,7 @@
 
     <sys:String x:Key="IndicatorUnChecked">未核验</sys:String>
     <sys:String x:Key="IndicatorUnCompleted">未完成</sys:String>
+    <sys:String x:Key="IndicatorVHPCompleted">生产完成</sys:String>
     <sys:String x:Key="IndicatorCompleted">完成</sys:String>
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>

@@ -35,10 +35,11 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorVHPCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource VHPCompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="2">
