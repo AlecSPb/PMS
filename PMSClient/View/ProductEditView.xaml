@@ -27,6 +27,8 @@
                     Command="{Binding SelectTest}" Width="100"/>
             <Button Content="{StaticResource ButtonSelectBonding}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding SelectBonding}" Width="100"/>
+            <Button Content="{StaticResource ButtonSelectOutSource}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding SelectOutSource}" Width="100"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
         </StackPanel>

@@ -53,6 +53,18 @@ namespace PMSClient.ViewModel
 
         public void SetBySelect(DcMaterialInventoryIn model)
         {
+            try
+            {
+                using (var service=new MaterialInventoryServiceClient())
+                {
+                    model.State = PMSCommon.InventoryState.发货.ToString();
+                    service.UpdateMaterialInventoryInByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
             if (model != null)
             {
                 CurrentMaterialInventoryOut.Composition = model.Composition;

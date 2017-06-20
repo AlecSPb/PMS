@@ -26,8 +26,6 @@
                     Command="{Binding SelectProduct}" Width="100"/>
             <Button Content="{StaticResource ButtonSelectPlate}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding SelectPlate}" Width="100"/>
-            <Button Content="{StaticResource ButtonSelectOutSource}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding SelectOutSource}" Width="100"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipDeliveryItemEdit}"/>
         </StackPanel>
