@@ -229,6 +229,7 @@ namespace PMSWCFService
                                 && o.CompositionStandard.Contains(compositionstd)
                                 && o.PMINumber.Contains(pminumber)
                                 && (o.State == OrderState.未完成.ToString()
+                                || o.State == OrderState.生产完成.ToString()
                                 || o.State == OrderState.暂停.ToString()
                                 || o.State == OrderState.未核验.ToString())
                                 orderby o.Priority, o.CreateTime
@@ -255,6 +256,7 @@ namespace PMSWCFService
                     && o.CompositionStandard.Contains(compositionstd)
                     && o.PMINumber.Contains(pminumber)
                      && (o.State == OrderState.未完成.ToString()
+                                || o.State == OrderState.生产完成.ToString()
                                 || o.State == OrderState.暂停.ToString()
                                 || o.State == OrderState.未核验.ToString())).Count();
                 }

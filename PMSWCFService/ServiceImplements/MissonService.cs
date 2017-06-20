@@ -55,6 +55,7 @@ namespace PMSWCFService
                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.生产完成.ToString()
                                  || o.State == OrderState.完成.ToString())
                                 select o;
                     return query.Count();
@@ -83,6 +84,7 @@ namespace PMSWCFService
                                  where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.生产完成.ToString()
                                  || o.State == OrderState.完成.ToString())
                                  && o.CompositionStandard.Contains(composition)
                                  && o.PMINumber.Contains(pminumber)
@@ -113,6 +115,7 @@ namespace PMSWCFService
                                  && o.PMINumber.Contains(pminumber)
                                  && (o.State == OrderState.未完成.ToString()
                                  || o.State == OrderState.暂停.ToString()
+                                 || o.State == OrderState.生产完成.ToString()
                                  || o.State == OrderState.完成.ToString())
                                 select o;
                     return query.Count();
