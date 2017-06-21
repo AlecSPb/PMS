@@ -25,7 +25,7 @@ namespace UsefulPackage
         /// </summary>
         public static string PlanLot()
         {
-            return DateTime.Now.ToString("yyMMdd") + "-M-1";
+            return DateTime.Now.ToString("yyMMdd") + "-A-1";
         }
         /// <summary>
         /// 利用传递日期和代码来构造
@@ -63,33 +63,37 @@ namespace UsefulPackage
         /// <returns></returns>
         public static string PlanLot(DcPlanWithMisson plan)
         {
-            if (plan == null)
-            {
-                return PlanLot();
-            }
-
-            string deviceStr = plan.Plan.VHPDeviceCode;
-            return PlanLot(plan, "1", code =>
-            {
-                string CodeName = "";
-                switch (code)
-                {
-                    case "A":
-                        CodeName = "M";
-                        break;
-                    case "B":
-                        CodeName = "N";
-                        break;
-                    case "C":
-                        CodeName = "O";
-                        break;
-                    default:
-                        CodeName = code;
-                        break;
-                }
-                return CodeName;
-            });
+            return PlanLot(plan.Plan.PlanDate, plan.Plan.VHPDeviceCode, "1");
         }
+        //public static string PlanLot(DcPlanWithMisson plan)
+        //{
+        //    if (plan == null)
+        //    {
+        //        return PlanLot();
+        //    }
+
+        //    string deviceStr = plan.Plan.VHPDeviceCode;
+        //    return PlanLot(plan, "1", code =>
+        //    {
+        //        string CodeName = "";
+        //        switch (code)
+        //        {
+        //            case "A":
+        //                CodeName = "M";
+        //                break;
+        //            case "B":
+        //                CodeName = "N";
+        //                break;
+        //            case "C":
+        //                CodeName = "O";
+        //                break;
+        //            default:
+        //                CodeName = code;
+        //                break;
+        //        }
+        //        return CodeName;
+        //    });
+        //}
         /// <summary>
         /// 带有设备代码转换委托
         /// </summary>
