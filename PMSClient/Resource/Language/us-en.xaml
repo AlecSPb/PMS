@@ -82,6 +82,8 @@
     <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
     <sys:String x:Key="PagePlan">Plan</sys:String>
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
+    <sys:String x:Key="PagePlanConclusion">Plan Conclusion</sys:String>
+    <sys:String x:Key="PagePlanConclusionEdit">Plan Conclusion Edit</sys:String>
     <sys:String x:Key="PageMaterialNeed">Material Need</sys:String>
     <sys:String x:Key="PageMaterialNeedEdit">Material Need Edit</sys:String>
     <sys:String x:Key="PageMaterialOrder">Material Order</sys:String>
@@ -364,7 +366,8 @@
     <sys:String x:Key="PlanMachineRequirement">Machine Details</sys:String>
     <sys:String x:Key="PlanSpecialRequirement">Special Details</sys:String>
     <sys:String x:Key="PlanRemark">Remark</sys:String>
-
+    <sys:String x:Key="PlanGrade">Grade</sys:String>
+    <sys:String x:Key="PlanConclusion">Conclusion</sys:String>
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">State</sys:String>
     <sys:String x:Key="MNCreator">Creator</sys:String>

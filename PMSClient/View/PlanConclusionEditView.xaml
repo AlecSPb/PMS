@@ -13,7 +13,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PagePlanEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="{StaticResource PagePlanConclusionEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
@@ -32,6 +32,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -65,200 +67,140 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource PlanPlanDate}"
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource PlanGrade}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <DatePicker Grid.Row="0" Grid.Column="1"
-                            SelectedDate="{Binding PlanDate,Mode=TwoWay}"
-                            Style="{StaticResource StyleDatePickerCommon}"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Text="#请选择热压日期" Style="{StaticResource StyleTextBlockTip}"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" SelectedItem="{Binding Grade}" Style="{StaticResource StyleComboBoxCommon}"/>
 
-
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanVHPDeviceCode}"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanConclusion}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.DeviceCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding VHPDeviceCode,Mode=TwoWay}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Text="#请选择热压机代号" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Conclusion}" Style="{StaticResource StyleTextBoxCommon}"
+                         VerticalAlignment="Stretch"/>
+                
+                
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanDate}"
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding PlanDate}" Style="{StaticResource StyleTextBlockCommon}"/>
 
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanVHPDeviceCode}"
+                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding VHPDeviceCode}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.PlanLots,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding PlanLot}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Text="#请选择热压批次号，如果当天该热压机只有一个批次，默认为1,依次累加" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding PlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanPlanType}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlanPlanType}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.PlanTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding PlanType}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Text="#计划类型,即热压目的，热压后续工作是什么" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldType}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanMoldType}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.MoldTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding MoldType}"/>
-                <TextBlock Grid.Row="4" Grid.Column="2" Text="#模具类型" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Name="cboMoldDiameter" Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
-                          ItemsSource="{Binding DataContext.MoldDiameters,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding MoldDiameter}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Text="#单位：mm" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding MoldDiameter}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanCalculationDensity}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanCalculationDensity}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox x:Name="txtCalculationDensity"  Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}"
-                         Style="{StaticResource StyleTextBoxCommon}" />
-                    <ComboBox x:Name="cboCompounds"
-                        ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                        SelectionChanged="cboCompounds_SelectionChanged"
-                        Style="{StaticResource StyleComboBoxCommon}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding MaterialName,StringFormat=[{0}]}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Density,StringFormat={}{0:F2}}" Foreground="Blue"/>
-                                </Grid>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                <TextBlock Grid.Row="8" Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}"
+                         Style="{StaticResource StyleTextBlockCommon}" />
+
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanThickness}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Name="txtThickness" Grid.Row="9" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlanQuantity}"
+                           Style="{StaticResource StyleTextBlockSpecial}" />
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource PlanSinglePowderWeight}"
+                           Style="{StaticResource StyleTextBlockSpecial}" />
+                <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Name="txtSingleWeight"  Text="{Binding SingleWeight}" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
-                <TextBlock Grid.Row="6" Grid.Column="2" Text="#单位：g/cm3可以选择材料密度，或者直接输入均可，必须是数字" Style="{StaticResource StyleTextBlockTip}"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanThickness}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Name="txtThickness" Grid.Row="7" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Text="#单位：mm" Style="{StaticResource StyleTextBlockTip}"/>
-                
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanQuantity}"
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource PlanAllPowderWeight}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Name="cboQuantity" Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.Quantities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding Quantity}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Text="#单位：mm" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Name="txtAllWeight" Grid.Row="12" Grid.Column="1" Text="{Binding AllWeight}" Style="{StaticResource StyleTextBlockCommon}"  HorizontalAlignment="Left"/>
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanSinglePowderWeight}"
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding GrainSize}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource PlanRoomTemperature}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource PlanRoomHumidity}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource PlanProcessCode}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource PlanPreTemperature}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource PlanPrePressure}"
+                           Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="18" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanTemperature}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtSingleWeight"  Text="{Binding SingleWeight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    <Button Name="btnCalculate" Content="{StaticResource ButtonCalculate}"  Click="btnCalculate_Click"
-                            Style="{StaticResource StyleButtonCommon}"/>
-                </StackPanel>
-                <TextBlock Grid.Row="9" Grid.Column="2" Text="单位：g，点击计算按钮计算用料" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlanAllPowderWeight}"
+
+
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource PlanPressure}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Name="txtAllWeight" Grid.Row="10" Grid.Column="1" Text="{Binding AllWeight}" Style="{StaticResource StyleTextBoxReadOnly}"  HorizontalAlignment="Left"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Text="单位：g" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
+                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource PlanVaccum}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox Grid.Row="11" Grid.Column="1" 
-                          Style="{StaticResource StyleComboBoxEditable}"  HorizontalAlignment="Left"
-                          ItemsSource="{Binding DataContext.GrainSizes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding GrainSize}"/>
-                <TextBlock Grid.Row="11" Grid.Column="2" Text="#单位：mesh" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="21" Grid.Column="1" Text="{Binding Vaccum,StringFormat={}{0:#.##E00}}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource PlanRoomTemperature}"
+                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanKeepTempTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="12" Grid.Column="2" Text="单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
-                
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource PlanRoomHumidity}"
+                <TextBlock Grid.Row="22" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+
+                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="13" Grid.Column="2" Text="单位：%" Style="{StaticResource StyleTextBlockTip}"/>
-                
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource PlanProcessCode}"
+                <TextBlock Grid.Row="23" Grid.Column="1" Text="{Binding MillingRequirement}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+
+                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.ProcessCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding ProcessCode,Mode=TwoWay}"/>
+                <TextBlock Grid.Row="24" Grid.Column="1" Text="{Binding FillingRequirement}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource PlanPreTemperature}"
+
+                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Text="单位：（℃）" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="25" Grid.Column="1" Text="{Binding MachineRequirement}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource PlanPrePressure}"
+                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="16" Grid.Column="2" Text="单位：（℃）" Style="{StaticResource StyleTextBlockTip}"/>
-                
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource PlanTemperature}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Text="单位：（℃）热压温度" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
-
-                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource PlanPressure}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="18" Grid.Column="2" Text="单位：ton，热压压力" Style="{StaticResource StyleTextBlockTip}"/>
-
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanVaccum}"
+                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanState}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Vaccum,StringFormat={}{0:#.##E00}}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="19" Grid.Column="2" Text="单位：分钟，保温保压时间" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource PlanKeepTempTime}"
+
+
+                <TextBlock Grid.Row="28" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="20" Grid.Column="2" Text="单位min，默认120" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="28" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-
-                <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource PlanMillingRequirement}"
+                <TextBlock Grid.Row="29" Grid.Column="0" Text="{StaticResource PlanCreator}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox  Grid.Row="21" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
-                          ItemsSource="{Binding DataContext.MillingRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding MillingRequirement}"/>
-
-
-                <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox  Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
-                          ItemsSource="{Binding DataContext.FillingRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding FillingRequirement}"/>
-
-                <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox  Grid.Row="23" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
-                          ItemsSource="{Binding DataContext.MachineRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding MachineRequirement}"/>
-
-                <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxCommon}"  />
-                <ComboBox  Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
-                          ItemsSource="{Binding DataContext.SpecialRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding SpecialRequirement}"/>
-
-                <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanState}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox Grid.Row="25" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding State,Mode=TwoWay}"/>
-                <TextBlock Grid.Row="25" Grid.Column="2" Text="状态含义,已核验的才会公布" Style="{StaticResource StyleTextBlockTip}"/>
-
-
-                <TextBlock Grid.Row="26" Grid.Column="0" Text="{StaticResource PlanCreateTime}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="26" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                <TextBlock Grid.Row="27" Grid.Column="0" Text="{StaticResource PlanCreator}"
-                           Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="27" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="29" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
 
             </Grid>
         </ScrollViewer>
