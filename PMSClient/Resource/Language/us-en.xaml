@@ -186,6 +186,7 @@
     <sys:String x:Key="ButtonAll">All</sys:String>
     <sys:String x:Key="ButtonSave">Save</sys:String>
     <sys:String x:Key="ButtonAdd">Add</sys:String>
+    <sys:String x:Key="ButtonQuickAdd">Quick Add</sys:String>
     <sys:String x:Key="ButtonEdit">Edit</sys:String>
     <sys:String x:Key="ButtonDuplicate">Dup</sys:String>
     <sys:String x:Key="ButtonBatchDuplicate">Dup</sys:String>
