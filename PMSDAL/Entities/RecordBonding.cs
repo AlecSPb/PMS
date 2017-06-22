@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace PMSDAL
         public string InstructionCode { get; set; }//操作手册代码
 
         public string CoverPlateNumber { get; set; }
+        [DefaultValue("旧背板")]
+        public string PlateType { get; set; }
 
         //1.0靶材入料检查
         //基本信息，从测试直接录入

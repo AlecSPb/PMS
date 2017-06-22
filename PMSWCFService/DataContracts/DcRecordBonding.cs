@@ -23,7 +23,8 @@ namespace PMSWCFService.DataContracts
 
         [DataMember]
         public string InstructionCode { get; set; }//操作手册代码
-
+        [DataMember]
+        public string PlateType { get; set; }
         //1.0靶材入料检查
         //基本信息，从测试直接录入
         [DataMember]
