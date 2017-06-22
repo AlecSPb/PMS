@@ -72,6 +72,7 @@ namespace PMSClient.ViewModel
 
             GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), () => _session.IsAuthorized(PMSAccess.ReadMisson));
             GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), () => _session.IsAuthorized(PMSAccess.ReadPlan));
+            GoToPlanConclusion = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanConclusion), () => _session.IsAuthorized(PMSAccess.ReadPlan));
 
 
             GoToRecordMilling = new RelayCommand(() => NavigationService.GoTo(PMSViews.RecordMilling), () => _session.IsAuthorized(PMSAccess.ReadRecordMilling));
@@ -166,7 +167,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToMisson { get; private set; }
         public RelayCommand GoToPlan { get; private set; }
-
+        public RelayCommand GoToPlanConclusion { get; private set; }
 
         public RelayCommand GoToPlate { get; private set; }
 
