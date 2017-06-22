@@ -200,6 +200,7 @@
   <xs:element name="ArrayOfDcMaterialInventoryOut" nillable="true" type="tns:ArrayOfDcMaterialInventoryOut" />
   <xs:complexType name="DcMaterialInventoryOut">
     <xs:sequence>
+      <xs:element minOccurs="0" name="ActualWeight" type="xs:double" />
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
@@ -544,6 +545,7 @@
       <xs:element minOccurs="0" name="PlatePreProcessPerson" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlatePreProcessRecord" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateSuplier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateUseCount" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SprayCheck" nillable="true" type="xs:string" />

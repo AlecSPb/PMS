@@ -2050,6 +2050,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ActualWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2089,6 +2092,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ActualWeight {
+            get {
+                return this.ActualWeightField;
+            }
+            set {
+                if ((this.ActualWeightField.Equals(value) != true)) {
+                    this.ActualWeightField = value;
+                    this.RaisePropertyChanged("ActualWeight");
+                }
             }
         }
         
@@ -5335,6 +5351,9 @@ namespace PMSClient.MainService {
         private string PlateSuplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateUseCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5897,6 +5916,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PlateSuplierField, value) != true)) {
                     this.PlateSuplierField = value;
                     this.RaisePropertyChanged("PlateSuplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateType {
+            get {
+                return this.PlateTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateTypeField, value) != true)) {
+                    this.PlateTypeField = value;
+                    this.RaisePropertyChanged("PlateType");
                 }
             }
         }

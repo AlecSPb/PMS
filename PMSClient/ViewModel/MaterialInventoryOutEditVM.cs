@@ -36,6 +36,7 @@ namespace PMSClient.ViewModel
             empty.Weight = 1;
             empty.Purity = "5N";
             empty.Remark = "无";
+            empty.ActualWeight = 0;
             #endregion
 
             IsNew = true;

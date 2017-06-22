@@ -42,6 +42,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -59,34 +60,29 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource  MIOMaterialLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MaterialLot}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MaterialLot}" Style="{StaticResource StyleTextBoxCommon}"  />
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="材料订单编号"/>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MIOComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="这是来自选择任务的成分，可以自行更改"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource  MIOPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}" />
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="内部编号,指示用于哪个订单"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MIOPurity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Purity}" Style="{StaticResource StyleTextBoxCommon}"  />
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource MIOWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Weight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料重量，单位kg"/>
 
@@ -98,32 +94,34 @@
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="接受者"/>
 
-
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MIORemark}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MIOWeightActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ActualWeight,StringFormat={}{0:F3}}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="实际收到原料的净重，单位kg"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIORemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"  />
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="需订购原料纯度"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIOState}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIOState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
 
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIOCreator}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MIOCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"
-                            />
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MIOCreateTime}"
+                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MIOCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"
-                            />
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}" />
 
 
 

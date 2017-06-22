@@ -601,6 +601,7 @@
     <sys:String x:Key="MIOReceiver">Receiver</sys:String>
     <sys:String x:Key="MIOWeight">Weight</sys:String>
     <sys:String x:Key="MIORemark">Remark</sys:String>
+    <sys:String x:Key="MIOWeightActual">Actual Weight</sys:String>
 
     <!--绑定-->
     <sys:String x:Key="BDState">State</sys:String>

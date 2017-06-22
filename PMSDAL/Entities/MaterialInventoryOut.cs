@@ -19,5 +19,6 @@ namespace PMSDAL
         public string Receiver { get; set; }
         public double Weight { get; set; }
         public string Remark { get; set; }
+        public double ActualWeight { get; set; }
     }
 }

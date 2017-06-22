@@ -27,33 +27,5 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-        private void cboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var selectedCompound = cboCompounds.SelectedItem as DcBDCompound;
-            if (selectedCompound!=null)
-            {
-                PMSMethods.SetTextBox(txtCalculationDensity, selectedCompound.Density.ToString());
-            }
-        }
-
-
-        private void btnCalculate_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                double diameter = double.Parse(cboMoldDiameter.Text.Trim());
-                double thickness = double.Parse(txtThickness.Text);
-                double quantity = double.Parse(cboQuantity.SelectedItem.ToString());
-                double density = double.Parse(txtCalculationDensity.Text);
-
-                double singleWeight = Math.PI * diameter * diameter * thickness / 4 / 1000 * density;
-
-                PMSMethods.SetTextBox(txtSingleWeight, singleWeight.ToString("F3"));
-                PMSMethods.SetTextBox(txtAllWeight, (singleWeight * quantity).ToString("F3"));
-            }
-            catch (Exception)
-            {
-            }
-        }
     }
 }
