@@ -27,11 +27,25 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             Add = new RelayCommand(ActionAdd, CanAdd);
+            QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Detail = new RelayCommand<DcRecordBonding>(ActionDetail);
             Edit = new RelayCommand<DcRecordBonding>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
+        }
+
+        private bool CanQuickAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
+        }
+
+        private void ActionQuickAdd()
+        {
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            PMSHelper.ViewModels.RecordTestSelect.RefreshData();
+            PMSBatchHelper.SetRecordTestBatchEnable(true);
+            NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
 
         private bool CanEdit(DcRecordBonding arg)
@@ -119,6 +133,7 @@ namespace PMSClient.ViewModel
 
 
         public RelayCommand Add { get; set; }
+        public RelayCommand QuickAdd { get; set; }
         public RelayCommand<DcRecordBonding> Detail { get; set; }
         public RelayCommand<DcRecordBonding> Edit { get; set; }
 
