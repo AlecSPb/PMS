@@ -8265,16 +8265,16 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
-        PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition);
+        PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
-        int GetDeliveryItemExtraCount(string productid, string composition);
+        int GetDeliveryItemExtraCount(string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
-        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition);
+        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYear", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYearResponse")]
         PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtraByYear(int skip, int take, int year);
@@ -8442,20 +8442,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetDeliveryItemsCountAsync(productid, composition);
         }
         
-        public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtra(skip, take, productid, composition);
+        public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtra(skip, take, productid, composition, customer);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtraAsync(skip, take, productid, composition);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtraAsync(skip, take, productid, composition, customer);
         }
         
-        public int GetDeliveryItemExtraCount(string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtraCount(productid, composition);
+        public int GetDeliveryItemExtraCount(string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtraCount(productid, composition, customer);
         }
         
-        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition);
+        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition, customer);
         }
         
         public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtraByYear(int skip, int take, int year) {

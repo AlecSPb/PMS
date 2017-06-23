@@ -1571,6 +1571,7 @@
         <xs:element minOccurs="0" name="take" type="xs:int" />
         <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1586,6 +1587,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="productid" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customer" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
