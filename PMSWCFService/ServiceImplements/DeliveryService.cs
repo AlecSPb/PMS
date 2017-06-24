@@ -246,7 +246,7 @@ namespace PMSWCFService
 
         }
 
-        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip, int take, string productid, string composition)
+        public List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip, int take, string productid, string composition,string customer)
         {
             try
             {
@@ -259,7 +259,8 @@ namespace PMSWCFService
                                  && dd.State!=PMSCommon.DeliveryState.作废.ToString()
                                  && d.ProductID.Contains(productid)
                                  && d.Composition.Contains(composition)
-                                 orderby  dd.CreateTime descending,d.CreateTime descending
+                                 && d.Customer.Contains(customer)
+                                orderby  dd.CreateTime descending,d.CreateTime descending
                                  select new PMSDeliveryItemExtra()
                                  {
                                      Delivery = dd,
@@ -285,7 +286,7 @@ namespace PMSWCFService
         }
 
 
-        public int GetDeliveryItemExtraCount(string productid, string composition)
+        public int GetDeliveryItemExtraCount(string productid, string composition,string customer)
         {
             try
             {
@@ -298,6 +299,7 @@ namespace PMSWCFService
                                 && dd.State != PMSCommon.DeliveryState.作废.ToString()
                                 && d.ProductID.Contains(productid)
                                 && d.Composition.Contains(composition)
+                                &&d.Customer.Contains(customer)
                                 select new PMSDeliveryItemExtra()
                                 {
                                     Delivery = dd,

@@ -239,7 +239,6 @@
 
                 <TextBlock Grid.Row="24" Grid.Column="0" Text="{StaticResource PlanSpecialRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="24" Grid.Column="1" Text="{Binding SpecialRequirement}" Style="{StaticResource StyleTextBoxCommon}"  />
                 <ComboBox  Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
                           ItemsSource="{Binding DataContext.SpecialRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding SpecialRequirement}"/>

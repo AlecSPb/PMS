@@ -2050,6 +2050,9 @@ namespace PMSClient.MainService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ActualWeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CompositionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2089,6 +2092,19 @@ namespace PMSClient.MainService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ActualWeight {
+            get {
+                return this.ActualWeightField;
+            }
+            set {
+                if ((this.ActualWeightField.Equals(value) != true)) {
+                    this.ActualWeightField = value;
+                    this.RaisePropertyChanged("ActualWeight");
+                }
             }
         }
         
@@ -5335,6 +5351,9 @@ namespace PMSClient.MainService {
         private string PlateSuplierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateUseCountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5897,6 +5916,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PlateSuplierField, value) != true)) {
                     this.PlateSuplierField = value;
                     this.RaisePropertyChanged("PlateSuplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateType {
+            get {
+                return this.PlateTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateTypeField, value) != true)) {
+                    this.PlateTypeField = value;
+                    this.RaisePropertyChanged("PlateType");
                 }
             }
         }
@@ -8233,16 +8265,16 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetDeliveryItemsCountAsync(string productid, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
-        PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition);
+        PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtra", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
-        int GetDeliveryItemExtraCount(string productid, string composition);
+        int GetDeliveryItemExtraCount(string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCount", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraCountResponse")]
-        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition);
+        System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYear", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemExtraByYearResponse")]
         PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtraByYear(int skip, int take, int year);
@@ -8410,20 +8442,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetDeliveryItemsCountAsync(productid, composition);
         }
         
-        public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtra(skip, take, productid, composition);
+        public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtra(int skip, int take, string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtra(skip, take, productid, composition, customer);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtraAsync(skip, take, productid, composition);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItemExtra[]> GetDeliveryItemExtraAsync(int skip, int take, string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtraAsync(skip, take, productid, composition, customer);
         }
         
-        public int GetDeliveryItemExtraCount(string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtraCount(productid, composition);
+        public int GetDeliveryItemExtraCount(string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtraCount(productid, composition, customer);
         }
         
-        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition) {
-            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition);
+        public System.Threading.Tasks.Task<int> GetDeliveryItemExtraCountAsync(string productid, string composition, string customer) {
+            return base.Channel.GetDeliveryItemExtraCountAsync(productid, composition, customer);
         }
         
         public PMSClient.MainService.DcDeliveryItemExtra[] GetDeliveryItemExtraByYear(int skip, int take, int year) {

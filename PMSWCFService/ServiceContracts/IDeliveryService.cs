@@ -17,7 +17,7 @@ namespace PMSWCFService.ServiceContracts
         int GetDeliveryCount();
 
         [OperationContract]
-        List<DcDelivery> GetDeliveryBySearch(int skip, int take,string deliveryName);
+        List<DcDelivery> GetDeliveryBySearch(int skip, int take, string deliveryName);
         [OperationContract]
         int GetDeliveryCountBySearch(string deliveryName);
 
@@ -28,9 +28,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateDelivery(DcDelivery model);
         [OperationContract]
-        int AddDeliveryByUID(DcDelivery model,string uid);
+        int AddDeliveryByUID(DcDelivery model, string uid);
         [OperationContract]
-        int UpdateDeliveryByUID(DcDelivery model,string uid);
+        int UpdateDeliveryByUID(DcDelivery model, string uid);
 
         [OperationContract]
         int DeleteDelivery(Guid id);
@@ -39,15 +39,15 @@ namespace PMSWCFService.ServiceContracts
         List<DcDeliveryItem> GetDeliveryItemByDeliveryID(Guid id);
 
         [OperationContract]
-        List<DcDeliveryItem> GetDeliveryItems(int skip ,int take,string productid,string composition);
+        List<DcDeliveryItem> GetDeliveryItems(int skip, int take, string productid, string composition);
         [OperationContract]
         int GetDeliveryItemsCount(string productid, string composition);
 
 
         [OperationContract]
-        List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip,int take,string productid, string composition);
+        List<DcDeliveryItemExtra> GetDeliveryItemExtra(int skip, int take, string productid, string composition, string customer);
         [OperationContract]
-        int GetDeliveryItemExtraCount(string productid, string composition);
+        int GetDeliveryItemExtraCount(string productid, string composition, string customer);
 
         [OperationContract]
         List<DcDeliveryItemExtra> GetDeliveryItemExtraByYear(int skip, int take, int year);
@@ -59,9 +59,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int UpdateDeliveryItem(DcDeliveryItem model);
         [OperationContract]
-        int AddDeliveryItemByUID(DcDeliveryItem model,string uid);
+        int AddDeliveryItemByUID(DcDeliveryItem model, string uid);
         [OperationContract]
-        int UpdateDeliveryItemByUID(DcDeliveryItem model,string uid);
+        int UpdateDeliveryItemByUID(DcDeliveryItem model, string uid);
         [OperationContract]
         int DeleteDeliveryItem(Guid id);
 

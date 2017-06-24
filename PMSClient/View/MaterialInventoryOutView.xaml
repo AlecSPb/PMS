@@ -67,7 +67,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
+                <DataGridTextColumn Header="{StaticResource MIOWeightActual}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding ActualWeight}"/>
                 <DataGridTextColumn Header="{StaticResource MIORemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource MIOCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

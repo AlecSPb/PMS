@@ -82,6 +82,8 @@
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
+    <sys:String x:Key="PagePlanConclusion">生产计划总结</sys:String>
+    <sys:String x:Key="PagePlanConclusionEdit">生产计划总结编辑</sys:String>
     <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
     <sys:String x:Key="PageMaterialNeedEdit">材料需求编辑</sys:String>
     <sys:String x:Key="PageMaterialOrder">原料订单</sys:String>
@@ -152,8 +154,6 @@
     <sys:String x:Key="PageBluePrintEdit">图纸库编辑</sys:String>
 
     <sys:String x:Key="PageIntegratedSearch">综合查询</sys:String>
-    <sys:String x:Key="PagePlanConclusion">计划总结</sys:String>
-    <sys:String x:Key="PagePlanConclusionEdit">计划总结编辑</sys:String>
 
     <sys:String x:Key="PageProductSelect">请选择成品项目</sys:String>
     <sys:String x:Key="PageRecordDeMoldSelect">请选择取模记录</sys:String>
@@ -186,6 +186,7 @@
     <sys:String x:Key="ButtonAll">全部</sys:String>
     <sys:String x:Key="ButtonSave">保存</sys:String>
     <sys:String x:Key="ButtonAdd">添加</sys:String>
+    <sys:String x:Key="ButtonQuickAdd">快速添加</sys:String>
     <sys:String x:Key="ButtonEdit">编辑</sys:String>
     <sys:String x:Key="ButtonDuplicate">复用</sys:String>
     <sys:String x:Key="ButtonBatchDuplicate">复用</sys:String>
@@ -364,7 +365,8 @@
     <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>
     <sys:String x:Key="PlanSpecialRequirement">特殊要求</sys:String>
     <sys:String x:Key="PlanRemark">备注信息</sys:String>
-
+    <sys:String x:Key="PlanGrade">计划得分</sys:String>
+    <sys:String x:Key="PlanConclusion">计划总结</sys:String>
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">需求状态</sys:String>
     <sys:String x:Key="MNCreator">创建者</sys:String>
@@ -448,7 +450,6 @@
     <sys:String x:Key="RMWeightOut">出料重量</sys:String>
     <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
     <sys:String x:Key="RMRatio">损失率</sys:String>
-
 
     <!--RecordVHP-->
     <sys:String x:Key="RVHPState">状态</sys:String>
@@ -596,9 +597,9 @@
     <sys:String x:Key="MIOComposition">成分</sys:String>
     <sys:String x:Key="MIOPurity">纯度</sys:String>
     <sys:String x:Key="MIOReceiver">接受者</sys:String>
-    <sys:String x:Key="MIOWeight">重量</sys:String>
+    <sys:String x:Key="MIOWeight">订购重量</sys:String>
     <sys:String x:Key="MIORemark">备注</sys:String>
-
+    <sys:String x:Key="MIOWeightActual">实际重量</sys:String>
     <!--绑定-->
     <sys:String x:Key="BDState">状态</sys:String>
     <sys:String x:Key="BDCreator">创建者</sys:String>
@@ -606,6 +607,7 @@
     <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
     <sys:String x:Key="BDRemark">备注</sys:String>
     <sys:String x:Key="BDCoverPlateCode">盖板编号</sys:String>
+    <sys:String x:Key="BDPlateType">盖板类型</sys:String>
     
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>

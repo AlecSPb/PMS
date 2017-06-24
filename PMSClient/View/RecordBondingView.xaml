@@ -21,6 +21,8 @@
                     Command="{Binding GoToNavigation}" />
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  Add}"/>
+            <Button Content="{StaticResource ButtonQuickAdd}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding  QuickAdd}"/>
             <TextBlock Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" />
@@ -44,6 +46,9 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>

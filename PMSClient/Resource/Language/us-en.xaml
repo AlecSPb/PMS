@@ -82,6 +82,8 @@
     <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
     <sys:String x:Key="PagePlan">Plan</sys:String>
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
+    <sys:String x:Key="PagePlanConclusion">Plan Conclusion</sys:String>
+    <sys:String x:Key="PagePlanConclusionEdit">Plan Conclusion Edit</sys:String>
     <sys:String x:Key="PageMaterialNeed">Material Need</sys:String>
     <sys:String x:Key="PageMaterialNeedEdit">Material Need Edit</sys:String>
     <sys:String x:Key="PageMaterialOrder">Material Order</sys:String>
@@ -186,6 +188,7 @@
     <sys:String x:Key="ButtonAll">All</sys:String>
     <sys:String x:Key="ButtonSave">Save</sys:String>
     <sys:String x:Key="ButtonAdd">Add</sys:String>
+    <sys:String x:Key="ButtonQuickAdd">Quick Add</sys:String>
     <sys:String x:Key="ButtonEdit">Edit</sys:String>
     <sys:String x:Key="ButtonDuplicate">Dup</sys:String>
     <sys:String x:Key="ButtonBatchDuplicate">Dup</sys:String>
@@ -363,7 +366,8 @@
     <sys:String x:Key="PlanMachineRequirement">Machine Details</sys:String>
     <sys:String x:Key="PlanSpecialRequirement">Special Details</sys:String>
     <sys:String x:Key="PlanRemark">Remark</sys:String>
-
+    <sys:String x:Key="PlanGrade">Grade</sys:String>
+    <sys:String x:Key="PlanConclusion">Conclusion</sys:String>
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">State</sys:String>
     <sys:String x:Key="MNCreator">Creator</sys:String>
@@ -597,6 +601,7 @@
     <sys:String x:Key="MIOReceiver">Receiver</sys:String>
     <sys:String x:Key="MIOWeight">Weight</sys:String>
     <sys:String x:Key="MIORemark">Remark</sys:String>
+    <sys:String x:Key="MIOWeightActual">Actual Weight</sys:String>
 
     <!--绑定-->
     <sys:String x:Key="BDState">State</sys:String>
@@ -605,6 +610,7 @@
     <sys:String x:Key="BDInstructionCode">Operation Code</sys:String>
     <sys:String x:Key="BDRemark">Remark</sys:String>
     <sys:String x:Key="BDCoverPlateCode">CoverPlateNumber</sys:String>
+    <sys:String x:Key="BDPlateType">Plate Type</sys:String>
     
     <sys:String x:Key="BDTargetProductID">Product ID</sys:String>
     <sys:String x:Key="BDTargetComposition">Composition</sys:String>

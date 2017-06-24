@@ -27,6 +27,7 @@ namespace PMSClient.ViewModel
         {
             searchProductID = "";
             searchCompositionStd = "";
+            searchCustomer = "";
             DeliveryItemExtras = new ObservableCollection<DcDeliveryItemExtra>();
         }
         private void InitializeCommands()
@@ -77,7 +78,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
-            SearchProductID = SearchCompositionStd = "";
+            SearchProductID = SearchCompositionStd =SearchCustomer = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -87,7 +88,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new DeliveryServiceClient();
-            RecordCount = service.GetDeliveryItemExtraCount(SearchProductID, SearchCompositionStd);
+            RecordCount = service.GetDeliveryItemExtraCount(SearchProductID, SearchCompositionStd, SearchCustomer);
             service.Close();
             ActionPaging();
         }
@@ -98,7 +99,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new DeliveryServiceClient();
-            var models = service.GetDeliveryItemExtra(skip, take, SearchProductID, SearchCompositionStd);
+            var models = service.GetDeliveryItemExtra(skip, take, SearchProductID, SearchCompositionStd,SearchCustomer);
             service.Close();
             DeliveryItemExtras.Clear();
             models.ToList().ForEach(o => DeliveryItemExtras.Add(o));
@@ -121,6 +122,14 @@ namespace PMSClient.ViewModel
         {
             get { return searchProductID; }
             set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
+        }
+
+        private string searchCustomer;
+
+        public string SearchCustomer
+        {
+            get { return searchCustomer; }
+            set { searchCustomer = value; RaisePropertyChanged(nameof(SearchCustomer)); }
         }
         #endregion
         #region Commands
