@@ -16,9 +16,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageOutSource}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
-                    Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+            <Button Content="{StaticResource ButtonBack}" Style="{StaticResource StyleButtonCommon}" 
+                    Command="{Binding GiveUp}"/>
             <TextBlock Text="{StaticResource OSOrderLot}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchOrderLot,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
@@ -40,11 +39,8 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                                <Button Content="{StaticResource ButtonDuplicate}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Duplicate,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                <Button Content="{StaticResource ButtonSelect}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Select,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
