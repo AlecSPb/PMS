@@ -72,6 +72,8 @@
                                     Binding="{Binding CoverPlateNumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
+                <DataGridTextColumn Header="{StaticResource BDPlateType}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding PlateType}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"

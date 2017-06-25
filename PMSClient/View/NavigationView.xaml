@@ -35,6 +35,7 @@
                         <Image Source="../Resource/Icons/help.png"  Style="{StaticResource StyleImageIcon}"/>
                     </StackPanel>
                 </Button>
+                <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommon}" Command="{Binding CodeRule}"/>
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>
                 <TextBlock  Style="{StaticResource StyleTextBlockNavigationBar}"
                        Text="{StaticResource TxtWelcome}"/>

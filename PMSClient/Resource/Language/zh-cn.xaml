@@ -226,7 +226,7 @@
     <sys:String x:Key="ButtonNotice">新消息</sys:String>
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>
-
+    <sys:String x:Key="ButtonCodeRule">编码规则</sys:String>
     
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
@@ -607,7 +607,7 @@
     <sys:String x:Key="BDInstructionCode">操作代码</sys:String>
     <sys:String x:Key="BDRemark">备注</sys:String>
     <sys:String x:Key="BDCoverPlateCode">盖板编号</sys:String>
-    <sys:String x:Key="BDPlateType">盖板类型</sys:String>
+    <sys:String x:Key="BDPlateType">背板类型</sys:String>
     
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>

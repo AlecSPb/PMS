@@ -24,6 +24,10 @@ namespace PMSClient.ViewModel
 
             BondingDefects = new List<string>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.BondingDefects, BondingDefects);
+
+            PlateTypes = new List<string>();
+            PlateTypes.Clear();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.PlateTypes, PlateTypes);
         }
 
         private void ActionSelectPlate()
@@ -56,6 +60,7 @@ namespace PMSClient.ViewModel
             model.TargetProductID = "尚未安排";
             model.TargetComposition = "尚未安排";
             model.TargetDimension = "尚未安排";
+            model.PlateType = "新背板";
             //暂时用不到
             model.TargetAbbr = "";
             model.TargetPO = "";
@@ -166,7 +171,7 @@ namespace PMSClient.ViewModel
 
         public void SetBySelect(DcPlate model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentRecordBonding.PlateLot = model.PrintNumber;
                 CurrentRecordBonding.PlateMaterial = model.PlateMaterial;
@@ -293,6 +298,8 @@ namespace PMSClient.ViewModel
 
         public List<string> States { get; set; }
         public List<string> BondingDefects { get; set; }
+
+        public List<string> PlateTypes { get; set; }
 
         private DcRecordBonding currentRecordBonding;
 

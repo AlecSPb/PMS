@@ -109,6 +109,25 @@ namespace PMSClient.ViewModel
             GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
 
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
+
+            CodeRule = new RelayCommand(ActionCodeRule);
+        }
+
+        private void ActionCodeRule()
+        {
+            try
+            {
+                string helpFileName = "CodeRule.docx";
+                string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                if (File.Exists(helpFile))
+                {
+                    System.Diagnostics.Process.Start(helpFile);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanNotice()
@@ -202,6 +221,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToFeedBack { get; set; }
         public RelayCommand GoToOutput { get; set; }
+
+        public RelayCommand CodeRule { get; set; }
 
         //public RelayCommand GoToAdminUser { get; set; }
         //public RelayCommand GoToAdminRole { get; set; }

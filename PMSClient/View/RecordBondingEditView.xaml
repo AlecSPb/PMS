@@ -46,7 +46,7 @@
         </Grid>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel DataContext="{Binding CurrentRecordBonding}">
-                <uc:BondingEditItem Title="0.0准备绑定" IsExpanded="True">
+                <uc:BondingEditItem Title="0.0绑定靶材信息" IsExpanded="True" Background="LightGreen">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -66,12 +66,11 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="0*"/>
                                 </Grid.RowDefinitions>
@@ -80,45 +79,43 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDCreator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDCreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDState}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}" Style="{StaticResource StyleComboBoxCommon}"
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDState}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}" Style="{StaticResource StyleComboBoxCommon}"
                                           SelectedItem="{Binding State}" FontSize="{StaticResource TabletFontLG}"/>
-                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="设定绑定状态"/>
+                                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="设定绑定状态"/>
 
-                                <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
-                                <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+                                <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
+                                <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
                                           ItemsSource="{Binding DataContext.BondingDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
                                           Text="{Binding Remark}"/>
-                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="绑定备注，比如裂缝失败等"/>
-                                
-                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding InstructionCode}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作SOP文件代码"/>
-                                
-                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDCoverPlateCode}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CoverPlateNumber}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="盖板编号"/>
+                                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="绑定备注，比如裂缝失败等"/>
 
-                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材ID"/>
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource BDInstructionCode}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding InstructionCode}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="操作SOP文件代码"/>
 
-                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材成分"/>
+                                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource BDCoverPlateCode}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CoverPlateNumber}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="盖板编号"/>
 
-                                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
-                                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxBig}"/>
-                                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
+                                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材ID"/>
 
+                                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="靶材成分"/>
+
+                                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDTargetDimension}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding TargetDimension}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="规格尺寸"/>
+
+                                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDPlateType}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+                                          ItemsSource="{Binding DataContext.PlateTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
+                                          Text="{Binding PlateType}"/>
+                                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="选择背板类型"/>
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>

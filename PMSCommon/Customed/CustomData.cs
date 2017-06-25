@@ -255,7 +255,7 @@ namespace PMSCommon
                 #region 数据
                 data.Add("广汉");
                 data.Add("六九");
-                data.Add("未知");
+                data.Add("其他");
                 #endregion
                 return data;
             }
@@ -303,6 +303,21 @@ namespace PMSCommon
                 data.Add("大缺口");
                 data.Add("分层");
                 data.Add("未焊合");
+                #endregion
+                return data;
+            }
+        }
+
+        public static List<string> PlateTypes
+        {
+            get
+            {
+                var data = new List<string>();
+                #region 数据
+                data.Add("新背板");
+                data.Add("旧背板");
+                data.Add("钼背板");
+                data.Add("镍背板");
                 #endregion
                 return data;
             }

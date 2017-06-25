@@ -1008,7 +1008,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Content Include="Resource\Files\热压产品编号新规则.docx">
+    <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\HeartBeatService\HeartBeatService1.disco" />

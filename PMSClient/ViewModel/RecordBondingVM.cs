@@ -33,6 +33,34 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
+            Finish = new RelayCommand<MainService.DcRecordBonding>(ActionFinish, CanFinish);
+        }
+
+        private bool CanFinish(DcRecordBonding arg)
+        {
+            if (arg==null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding)&&RecordBondingStateTransfer(arg);
+        }
+
+        private bool RecordBondingStateTransfer(DcRecordBonding arg)
+        {
+            return arg.State == PMSCommon.BondingState.未完成.ToString();
+        }
+
+        private void ActionFinish(DcRecordBonding model)
+        {
+            if (PMSDialogService.ShowYesNo("请问", "确定这个绑定完成了吗？"))
+            {
+                using (var service=new RecordBondingServiceClient())
+                {
+                    model.State = PMSCommon.BondingState.完成.ToString();
+                    service.UpdateRecordBongdingByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                }
+                SetPageParametersWhenConditionChange();
+            }
         }
 
         private bool CanQuickAdd()
@@ -55,7 +83,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEdit(DcRecordBonding model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 PMSHelper.ViewModels.RecordBondingEdit.SetEdit(model);
                 NavigationService.GoTo(PMSViews.RecordBondingEdit);
@@ -136,6 +164,6 @@ namespace PMSClient.ViewModel
         public RelayCommand QuickAdd { get; set; }
         public RelayCommand<DcRecordBonding> Detail { get; set; }
         public RelayCommand<DcRecordBonding> Edit { get; set; }
-
+        public RelayCommand<DcRecordBonding> Finish { get; set; }
     }
 }
