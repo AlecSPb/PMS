@@ -123,10 +123,10 @@
             </DataGrid>
             <Grid Grid.Column="1"   DataContext="{Binding CurrentPlanWithMisson}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Background="LightGreen">
+                <Grid Grid.Row="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
@@ -138,11 +138,11 @@
                     <TextBlock  Grid.Row="0"  Grid.Column="0" Text="{StaticResource PlanGrade}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Plan.Grade}" Style="{StaticResource StyleTextBoxReadOnly}"
-                              HorizontalAlignment="Left" FontWeight="Bold"/>
+                              HorizontalAlignment="Left" FontWeight="Bold" Background="LightGreen"/>
                     <TextBlock  Grid.Row="1"  Grid.Column="0" Text="{StaticResource PlanConclusion}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
+                           Style="{StaticResource StyleTextBlockCommon}" />
                     <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Plan.Conclusion}" Style="{StaticResource StyleTextBoxReadOnly}"
-                              TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+                              TextWrapping="Wrap" VerticalAlignment="Stretch"  Background="LightGreen"/>
 
                 </Grid>
                 <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">

@@ -16,6 +16,13 @@ namespace PMSClient.ViewModel
     {
         public PlanConclusionEditVM()
         {
+            Grades = new List<int>();
+            Grades.Clear();
+            Grades.Add(100);
+            Grades.Add(80);
+            Grades.Add(60);
+            Grades.Add(30);
+
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
         }
@@ -67,8 +74,9 @@ namespace PMSClient.ViewModel
 
         private static void GoBack()
         {
-            NavigationService.GoTo(PMSViews.Misson);
+            NavigationService.GoTo(PMSViews.PlanConclusion);
         }
+        public List<int> Grades { get; set; }
 
         private DcPlanVHP currentPlan;
         public DcPlanVHP CurrentPlan

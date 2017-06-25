@@ -68,42 +68,43 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource PlanGrade}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
-                <ComboBox Grid.Row="0" Grid.Column="1" SelectedItem="{Binding Grade}" Style="{StaticResource StyleComboBoxCommon}"/>
+                           Style="{StaticResource  StyleTextBlockCommon}"/>
+                <ComboBox ItemsSource="{Binding DataContext.Grades,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          Grid.Row="0" Grid.Column="1" SelectedItem="{Binding Grade}" Style="{StaticResource StyleComboBoxCommon}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanConclusion}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                           Style="{StaticResource  StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Conclusion}" Style="{StaticResource StyleTextBoxCommon}"
                          VerticalAlignment="Stretch"/>
                 
                 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanDate}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                           Style="{StaticResource  StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding PlanDate}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanVHPDeviceCode}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
+                           Style="{StaticResource  StyleTextBlockCommon}"/>
                 <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding VHPDeviceCode}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding PlanLot}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource PlanPlanType}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource PlanMoldType}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource PlanMoldDiameter}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding MoldDiameter}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanCalculationDensity}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBlock Grid.Row="8" Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}"
+                <TextBlock Grid.Row="8" Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}" Grid.Column="1"
                          Style="{StaticResource StyleTextBlockCommon}" />
 
                     <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource PlanThickness}"
@@ -111,18 +112,18 @@
                 <TextBlock Name="txtThickness" Grid.Row="9" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource PlanQuantity}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource PlanSinglePowderWeight}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
                     <TextBlock Name="txtSingleWeight"  Text="{Binding SingleWeight}" Style="{StaticResource StyleTextBlockCommon}"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource PlanAllPowderWeight}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Name="txtAllWeight" Grid.Row="12" Grid.Column="1" Text="{Binding AllWeight}" Style="{StaticResource StyleTextBlockCommon}"  HorizontalAlignment="Left"/>
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource PlanGrainSize}"
@@ -151,13 +152,13 @@
                 <TextBlock Grid.Row="18" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanTemperature}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBlockCommon}"/>
 
 
 
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource PlanPressure}"
-                           Style="{StaticResource StyleTextBlockSpecial}" />
+                           Style="{StaticResource  StyleTextBlockCommon}" />
                 <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBlockCommon}"/>
 
                 <TextBlock Grid.Row="21" Grid.Column="0" Text="{StaticResource PlanVaccum}"

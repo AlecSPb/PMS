@@ -33,13 +33,25 @@ namespace PMSClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson),CanGoToMisson);
-            Search = new RelayCommand(ActionSearch,CanSearch);
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), CanGoToMisson);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
+
+            Edit = new RelayCommand<DcPlanWithMisson>(ActionEdit);
+        }
+
+        private void ActionEdit(DcPlanWithMisson model)
+        {
+            DcPlanVHP plan = model.Plan;
+            if (plan!=null)
+            {
+                PMSHelper.ViewModels.PlanConclusionEdit.SetEdit(plan);
+                NavigationService.GoTo(PMSViews.PlanConclusionEdit);
+            }
         }
 
         private bool CanGoToMisson()
@@ -49,7 +61,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchComposition)&&string.IsNullOrEmpty(SearchVHPDate));
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate));
         }
 
         private void ActionSearch()
@@ -59,7 +71,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectionChanged(DcPlanWithMisson model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentPlanWithMisson = model;
             }
@@ -133,7 +145,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMisson { get; set; }
         public RelayCommand GoToSearchPlan { get; set; }
         public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
-        public RelayCommand<DcPlanWithMisson> SelectionChanged{ get; set; }
+        public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
+        public RelayCommand<DcPlanWithMisson> Edit { get; set; }
         #endregion
 
         #region Properties
