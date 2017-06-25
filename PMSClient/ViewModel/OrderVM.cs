@@ -145,7 +145,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 20;
                 var service = new OrderServiceClient();
-                RecordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositionStandard,SearchPMINumber);
+                RecordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard,SearchPMINumber);
                 service.Close();
                 ActionPaging();
             }
@@ -165,7 +165,7 @@ namespace PMSClient.ViewModel
                 skip = (PageIndex - 1) * PageSize;
                 take = PageSize;
                 var service = new OrderServiceClient();
-                var orders = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
+                var orders = service.GetOrders(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                 service.Close();
                 MainOrders.Clear();
                 orders.ToList().ForEach(o => MainOrders.Add(o));

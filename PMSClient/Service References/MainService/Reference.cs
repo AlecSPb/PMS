@@ -6665,28 +6665,52 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetAllOrderInPageAsync(int skip, int take);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
-        PMSClient.MainService.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd, string pminumber);
+        PMSClient.MainService.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderBySearchInPage", ReplyAction="http://tempuri.org/IOrderService/GetOrderBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd, string pminumber);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
-        int GetOrderCountBySearch(string customer, string compositionstd, string pminumber);
+        int GetOrderCountBySearch(string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountBySearch", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd, string pminumber);
+        System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnCompletedResponse")]
-        PMSClient.MainService.DcOrder[] GetOrderUnCompleted(int skip, int take, string customer, string compositionstd, string pminumber);
+        PMSClient.MainService.DcOrder[] GetOrderUnCompleted(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnCompletedResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompletedAsync(int skip, int take, string customer, string compositionstd, string pminumber);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompletedAsync(int skip, int take, string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountUnCompletedResponse")]
-        int GetOrderCountUnCompleted(string customer, string compositionstd, string pminumber);
+        int GetOrderCountUnCompleted(string customer, string compositionstd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountUnCompleted", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountUnCompletedResponse")]
-        System.Threading.Tasks.Task<int> GetOrderCountUnCompletedAsync(string customer, string compositionstd, string pminumber);
+        System.Threading.Tasks.Task<int> GetOrderCountUnCompletedAsync(string customer, string compositionstd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrders", ReplyAction="http://tempuri.org/IOrderService/GetOrdersResponse")]
+        PMSClient.MainService.DcOrder[] GetOrders(int skip, int take, string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrders", ReplyAction="http://tempuri.org/IOrderService/GetOrdersResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrdersAsync(int skip, int take, string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCount", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountResponse")]
+        int GetOrderCount(string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCount", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountResponse")]
+        System.Threading.Tasks.Task<int> GetOrderCountAsync(string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnCompleted2", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnCompleted2Response")]
+        PMSClient.MainService.DcOrder[] GetOrderUnCompleted2(int skip, int take, string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderUnCompleted2", ReplyAction="http://tempuri.org/IOrderService/GetOrderUnCompleted2Response")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompleted2Async(int skip, int take, string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountUnCompleted2", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountUnCompleted2Response")]
+        int GetOrderCountUnCompleted2(string customer, string compositionstd, string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderCountUnCompleted2", ReplyAction="http://tempuri.org/IOrderService/GetOrderCountUnCompleted2Response")]
+        System.Threading.Tasks.Task<int> GetOrderCountUnCompleted2Async(string customer, string compositionstd, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderByYear", ReplyAction="http://tempuri.org/IOrderService/GetOrderByYearResponse")]
         PMSClient.MainService.DcOrder[] GetOrderByYear(int skip, int take, int year);
@@ -6772,36 +6796,68 @@ namespace PMSClient.MainService {
             return base.Channel.GetAllOrderInPageAsync(skip, take);
         }
         
-        public PMSClient.MainService.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderBySearchInPage(skip, take, customer, compositionstd, pminumber);
+        public PMSClient.MainService.DcOrder[] GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderBySearchInPage(skip, take, customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderBySearchInPageAsync(skip, take, customer, compositionstd, pminumber);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderBySearchInPageAsync(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderBySearchInPageAsync(skip, take, customer, compositionstd);
         }
         
-        public int GetOrderCountBySearch(string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderCountBySearch(customer, compositionstd, pminumber);
+        public int GetOrderCountBySearch(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountBySearch(customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderCountBySearchAsync(customer, compositionstd, pminumber);
+        public System.Threading.Tasks.Task<int> GetOrderCountBySearchAsync(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountBySearchAsync(customer, compositionstd);
         }
         
-        public PMSClient.MainService.DcOrder[] GetOrderUnCompleted(int skip, int take, string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderUnCompleted(skip, take, customer, compositionstd, pminumber);
+        public PMSClient.MainService.DcOrder[] GetOrderUnCompleted(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderUnCompleted(skip, take, customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompletedAsync(int skip, int take, string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderUnCompletedAsync(skip, take, customer, compositionstd, pminumber);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompletedAsync(int skip, int take, string customer, string compositionstd) {
+            return base.Channel.GetOrderUnCompletedAsync(skip, take, customer, compositionstd);
         }
         
-        public int GetOrderCountUnCompleted(string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderCountUnCompleted(customer, compositionstd, pminumber);
+        public int GetOrderCountUnCompleted(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountUnCompleted(customer, compositionstd);
         }
         
-        public System.Threading.Tasks.Task<int> GetOrderCountUnCompletedAsync(string customer, string compositionstd, string pminumber) {
-            return base.Channel.GetOrderCountUnCompletedAsync(customer, compositionstd, pminumber);
+        public System.Threading.Tasks.Task<int> GetOrderCountUnCompletedAsync(string customer, string compositionstd) {
+            return base.Channel.GetOrderCountUnCompletedAsync(customer, compositionstd);
+        }
+        
+        public PMSClient.MainService.DcOrder[] GetOrders(int skip, int take, string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrders(skip, take, customer, compositionstd, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrdersAsync(int skip, int take, string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrdersAsync(skip, take, customer, compositionstd, pminumber);
+        }
+        
+        public int GetOrderCount(string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrderCount(customer, compositionstd, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOrderCountAsync(string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrderCountAsync(customer, compositionstd, pminumber);
+        }
+        
+        public PMSClient.MainService.DcOrder[] GetOrderUnCompleted2(int skip, int take, string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrderUnCompleted2(skip, take, customer, compositionstd, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetOrderUnCompleted2Async(int skip, int take, string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrderUnCompleted2Async(skip, take, customer, compositionstd, pminumber);
+        }
+        
+        public int GetOrderCountUnCompleted2(string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrderCountUnCompleted2(customer, compositionstd, pminumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetOrderCountUnCompleted2Async(string customer, string compositionstd, string pminumber) {
+            return base.Channel.GetOrderCountUnCompleted2Async(customer, compositionstd, pminumber);
         }
         
         public PMSClient.MainService.DcOrder[] GetOrderByYear(int skip, int take, int year) {

@@ -140,7 +140,7 @@ namespace PMSClient.ViewModel
                 PageIndex = 1;
                 PageSize = 20;
                 var service = new OrderServiceClient();
-                RecordCount = service.GetOrderCountUnCompleted(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
+                RecordCount = service.GetOrderCountUnCompleted2(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                 service.Close();
                 ActionPaging();
             }
@@ -160,7 +160,7 @@ namespace PMSClient.ViewModel
                 skip = (PageIndex - 1) * PageSize;
                 take = PageSize;
                 var service = new OrderServiceClient();
-                var orders = service.GetOrderUnCompleted(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
+                var orders = service.GetOrderUnCompleted2(skip, take, SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                 service.Close();
                 MainOrders.Clear();
                 orders.ToList().ForEach(o => MainOrders.Add(o));

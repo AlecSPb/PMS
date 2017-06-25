@@ -12,6 +12,7 @@ namespace PMSWCFService.ServiceContracts
     {
         [OperationContract]
         List<DcOrder> GetAllOrderInPage(int skip, int take);
+        #region 过时
         [OperationContract]
         List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd);
         [OperationContract]
@@ -21,6 +22,7 @@ namespace PMSWCFService.ServiceContracts
         List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd);
         [OperationContract]
         int GetOrderCountUnCompleted(string customer, string compositionstd);
+        #endregion
 
         [OperationContract]
         List<DcOrder> GetOrders(int skip, int take, string customer, string compositionstd, string pminumber);

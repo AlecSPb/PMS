@@ -148,6 +148,7 @@ namespace PMSWCFService
         }
 
 
+        #region 过时
         /// <summary>
         /// 返回不包含删除标记的其他记录
         /// </summary>
@@ -156,8 +157,129 @@ namespace PMSWCFService
         /// <param name="customer"></param>
         /// <param name="compositionstd"></param>
         /// <returns></returns>
-        public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd, string pminumber)
+        public List<DcOrder> GetOrderBySearchInPage(int skip, int take, string customer, string compositionstd)
         {
+            Checker.CheckIfCanRun();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from o in dc.Orders
+                                where o.CustomerName.Contains(customer)
+                                && o.CompositionStandard.Contains(compositionstd)
+                                && o.State != OrderState.作废.ToString()
+                                orderby o.CreateTime descending
+                                select o;
+
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        ///  获取搜索结果数量
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <param name="compositionstd"></param>
+        /// <returns></returns>
+        public int GetOrderCountBySearch(string customer, string compositionstd)
+        {
+            Checker.CheckIfCanRun();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Orders.Where(o => o.CustomerName.Contains(customer)
+                    && o.CompositionStandard.Contains(compositionstd)
+                    && o.State != OrderState.作废.ToString()).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
+        }
+
+
+        public List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd)
+        {
+            Checker.CheckIfCanRun();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from o in dc.Orders
+                                where o.CustomerName.Contains(customer)
+                                && o.CompositionStandard.Contains(compositionstd)
+                                && (o.State == OrderState.未完成.ToString()
+                                || o.State == OrderState.生产完成.ToString()
+                                || o.State == OrderState.暂停.ToString()
+                                || o.State == OrderState.未核验.ToString())
+                                orderby o.Priority, o.CreateTime
+                                select o;
+
+                    var result = mapper.Map<List<PMSOrder>, List<DcOrder>>(query.Skip(skip).Take(take).ToList());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetOrderCountUnCompleted(string customer, string compositionstd)
+        {
+            Checker.CheckIfCanRun();
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.Orders.Where(o => o.CustomerName.Contains(customer)
+                    && o.CompositionStandard.Contains(compositionstd)
+                     && (o.State == OrderState.未完成.ToString()
+                                || o.State == OrderState.生产完成.ToString()
+                                || o.State == OrderState.暂停.ToString()
+                                || o.State == OrderState.未核验.ToString())).Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+        #endregion
+        /// <summary>
+        /// 返回不包含删除标记的其他记录
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <param name="customer"></param>
+        /// <param name="compositionstd"></param>
+        /// <returns></returns>
+        public List<DcOrder> GetOrders(int skip, int take, string customer, string compositionstd, string pminumber)
+        {
+            Checker.CheckIfCanRun();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -192,8 +314,9 @@ namespace PMSWCFService
         /// <param name="customer"></param>
         /// <param name="compositionstd"></param>
         /// <returns></returns>
-        public int GetOrderCountBySearch(string customer, string compositionstd, string pminumber)
+        public int GetOrderCount(string customer, string compositionstd, string pminumber)
         {
+            Checker.CheckIfCanRun();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -213,8 +336,9 @@ namespace PMSWCFService
         }
 
 
-        public List<DcOrder> GetOrderUnCompleted(int skip, int take, string customer, string compositionstd, string pminumber)
+        public List<DcOrder> GetOrderUnCompleted2(int skip, int take, string customer, string compositionstd, string pminumber)
         {
+            Checker.CheckIfCanRun();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -246,8 +370,9 @@ namespace PMSWCFService
             }
         }
 
-        public int GetOrderCountUnCompleted(string customer, string compositionstd, string pminumber)
+        public int GetOrderCountUnCompleted2(string customer, string compositionstd, string pminumber)
         {
+            Checker.CheckIfCanRun();
             try
             {
                 using (var dc = new PMSDbContext())
@@ -267,7 +392,6 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
         public int GetOrderCountByYear(int year)
         {
             try
