@@ -365,7 +365,7 @@
     <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>
     <sys:String x:Key="PlanSpecialRequirement">特殊要求</sys:String>
     <sys:String x:Key="PlanRemark">备注信息</sys:String>
-    <sys:String x:Key="PlanGrade">计划得分</sys:String>
+    <sys:String x:Key="PlanGrade">得分</sys:String>
     <sys:String x:Key="PlanConclusion">计划总结</sys:String>
     <!--MaterialNeed-->
     <sys:String x:Key="MNState">需求状态</sys:String>

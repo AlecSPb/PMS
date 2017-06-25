@@ -59,6 +59,8 @@ namespace PMSClient.ViewModel
             plan.MachineRequirement = "无";
             plan.FillingRequirement = PMSCommon.CustomData.FillingRequirement[2];
             plan.SpecialRequirement = "无";
+            plan.Grade = 60;
+            plan.Conclusion = "无";
             #endregion
             CurrentPlan = plan;
         }

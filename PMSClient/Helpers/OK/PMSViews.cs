@@ -44,6 +44,7 @@ namespace PMSClient
         PlanSelect,
         PlanEdit,
         PlanConclusion,
+        PlanConclusionEdit,
         PlanSearch,
         RecordMilling,
         RecordMillingEdit,

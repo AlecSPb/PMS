@@ -274,6 +274,8 @@
     <Compile Include="ViewModel\FeedBackVM.cs" />
     <Compile Include="ViewModel\OutSourceSelectVM.cs" />
     <Compile Include="ViewModel\OutSourceVM.cs" />
+    <Compile Include="ViewModel\PlanConclusionVM.cs" />
+    <Compile Include="ViewModel\PlanConclusionEditVM.cs" />
     <Compile Include="ViewModel\PlateUnCompletedVM.cs" />
     <Compile Include="ViewModel\ProductStatisticVM.cs" />
     <Compile Include="ViewModel\Model\MaterialNeedExtra.cs" />

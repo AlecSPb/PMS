@@ -312,6 +312,12 @@ namespace PMSClient
                 case PMSViews.PlanSearch:
                     NavigateTo(_views.PlanSearch);
                     break;
+                case PMSViews.PlanConclusion:
+                    NavigateTo(_views.PlanConclusion);
+                    break;
+                case PMSViews.PlanConclusionEdit:
+                    NavigateTo(_views.PlanConclusionEdit);
+                    break;
                 case PMSViews.RecordMilling:
                     NavigateTo(_views.RecordMilling);
                     break;

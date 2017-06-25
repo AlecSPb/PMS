@@ -53,7 +53,8 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<PlanSearchVM>();
             SimpleIoc.Default.Register<PlanEditVM>();
             SimpleIoc.Default.Register<PlanSelectVM>();
-
+            SimpleIoc.Default.Register<PlanConclusionVM>();
+            SimpleIoc.Default.Register<PlanConclusionEditVM>();
 
             SimpleIoc.Default.Register<MaterialNeedVM>();
             SimpleIoc.Default.Register<MaterialNeedEditVM>();
@@ -196,7 +197,14 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<PlanSelectVM>(); }
         }
-
+        public PlanConclusionVM PlanConclusion
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanConclusionVM>(); }
+        }
+        public PlanConclusionEditVM PlanConclusionEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<PlanConclusionEditVM>(); }
+        }
         public MaterialNeedVM MaterialNeed
         {
             get { return SimpleIoc.Default.GetInstance<MaterialNeedVM>(); }

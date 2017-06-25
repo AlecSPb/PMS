@@ -75,7 +75,9 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanMoldDiameter}" Binding="{Binding Plan.MoldDiameter}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanThickness}" Binding="{Binding Plan.Thickness}"
+                    <DataGridTextColumn Header="{StaticResource PlanGrade}" Binding="{Binding Plan.Grade}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <!--<DataGridTextColumn Header="{StaticResource PlanThickness}" Binding="{Binding Plan.Thickness}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanQuantity}" Binding="{Binding Plan.Quantity}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
@@ -116,7 +118,7 @@
                     <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreator}" Binding="{Binding Plan.Creator}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>-->
                 </DataGrid.Columns>
             </DataGrid>
             <Grid Grid.Column="1"   DataContext="{Binding CurrentPlanWithMisson}">
