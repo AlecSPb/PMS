@@ -79,7 +79,6 @@ namespace PMSClient.ViewModel
             orders.ToList().ForEach(o => MaterialOrderItems.Add(o));
         }
         public ObservableCollection<DcMaterialOrderItem> MaterialOrderItems { get; set; }
-
         public RelayCommand<DcMaterialOrderItem> Select { get; set; }
   
     }

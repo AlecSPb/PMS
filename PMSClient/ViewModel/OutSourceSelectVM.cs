@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace PMSClient.ViewModel
 {
-    public class OutSourceSelectVM : BaseViewModelPage
+    public class OutSourceSelectVM : BaseViewModelSelect
     {
         public OutSourceSelectVM()
         {
@@ -29,11 +29,15 @@ namespace PMSClient.ViewModel
         {
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
+            Select = new RelayCommand<DcMaterialInventoryIn>(ActionSelect);
             All = new RelayCommand(ActionAll);
-            Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcOutSource>(ActionEdit, CanEdit);
-            Duplicate = new RelayCommand<DcOutSource>(ActionDuplicate, CanDuplicate);
         }
+
+        private void ActionSelect(DcMaterialInventoryIn model)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool CanDuplicate(DcOutSource arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
@@ -117,10 +121,6 @@ namespace PMSClient.ViewModel
             }
         }
         #region Commands
-        public RelayCommand Add { get; set; }
-        public RelayCommand<DcOutSource> Edit { get; set; }
-
-
         private string searchOrderLot;
         public string SearchOrderLot
         {
@@ -160,7 +160,6 @@ namespace PMSClient.ViewModel
 
         public ObservableCollection<DcOutSource> OutSources { get; set; }
         #endregion
-        public RelayCommand<DcOutSource> Duplicate { get; set; }
-
+        public RelayCommand<DcMaterialInventoryIn> Select { get; set; }
     }
 }

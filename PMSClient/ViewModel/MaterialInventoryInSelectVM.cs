@@ -160,9 +160,6 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Commands
-        public RelayCommand Add { get; private set; }
-        public RelayCommand<DcMaterialInventoryIn> Edit { get; private set; }
-
         public RelayCommand<DcMaterialInventoryIn> Select { get; set; }
         #endregion
 

@@ -14,7 +14,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{StaticResource PageOutSource}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <TextBlock Text="{StaticResource PageOutSourceSelect}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonBack}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GiveUp}"/>

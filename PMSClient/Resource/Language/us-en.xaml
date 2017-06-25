@@ -75,7 +75,7 @@
 
     <sys:String x:Key="PageOutSource">OutSource</sys:String>
     <sys:String x:Key="PageOutSourceEdit">OutSource Edit</sys:String>
-
+    <sys:String x:Key="PageOutSourceSelect">Select a OutSource Record</sys:String>
 
     <sys:String x:Key="PageMisson">Task</sys:String>
     <sys:String x:Key="PageMissonUnCompleted">Task[UnCompleted]</sys:String>
