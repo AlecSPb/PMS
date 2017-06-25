@@ -22,6 +22,7 @@ namespace PMSClient.ViewModel
             Grades.Add(80);
             Grades.Add(60);
             Grades.Add(30);
+            Grades.Add(0);
 
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
