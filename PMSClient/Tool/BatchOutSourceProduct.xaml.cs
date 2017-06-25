@@ -36,6 +36,7 @@ namespace PMSClient.Tool
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
+            this.DialogResult = false;
             this.Close();
         }
 
@@ -43,11 +44,6 @@ namespace PMSClient.Tool
         {
             this.DialogResult = true;
             this.Close();
-        }
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            this.DialogResult = false;
-            base.OnClosing(e);
         }
     }
 }

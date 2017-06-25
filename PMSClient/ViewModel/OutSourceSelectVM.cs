@@ -58,12 +58,13 @@ namespace PMSClient.ViewModel
         private void BatchProduct(DcOutSource para)
         {
             var window = new BatchOutSourceProduct();
-            if (window.ShowDialog()==true)
+            bool? result = window.ShowDialog();
+            if (result == true)
             {
                 string first = window.txtFirst.Text;
                 string mid = window.txtMid.Text;
                 int count = int.Parse(window.cboLast.SelectedItem.ToString());
-                using (var service=new ProductServiceClient())
+                using (var service = new ProductServiceClient())
                 {
                     for (int i = 0; i < count; i++)
                     {
@@ -75,6 +76,7 @@ namespace PMSClient.ViewModel
                         model.Composition = para.OrderName;
                         model.Abbr = para.OrderName;
                         model.Weight = "无";
+                        model.PO = "无";
                         model.Customer = "无";
                         model.Position = PMSCommon.GoodPosition.A1.ToString();
                         model.ProductType = PMSCommon.ProductType.靶材.ToString();
@@ -82,7 +84,7 @@ namespace PMSClient.ViewModel
                         model.Remark = "";
 
                         model.Dimension = para.Dimension;
-                        model.DimensionActual =para.Dimension;
+                        model.DimensionActual = para.Dimension;
                         model.Defects = "无";
 
                         service.AddProductByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
