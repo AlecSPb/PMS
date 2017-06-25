@@ -38,6 +38,19 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcRecordMilling>(ActionSelectionChanged);
             Label = new RelayCommand<DcRecordMilling>(ActionLabel);
             Calculator = new RelayCommand(ActionCalculator);
+            QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
+        }
+
+        private bool CanQuickAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMilling);
+        }
+
+        private void ActionQuickAdd()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMilling);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
         private void ActionLabel(DcRecordMilling model)
@@ -72,7 +85,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectionChanged(DcRecordMilling model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentRecordMilling = model;
             }
@@ -164,6 +177,8 @@ namespace PMSClient.ViewModel
         public RelayCommand Calculator { get; set; }
 
         public RelayCommand<DcRecordMilling> Label { get; set; }
+
+        public RelayCommand QuickAdd { get; set; }
         #endregion
     }
 }

@@ -28,7 +28,21 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcRecordDeMold>(ActionSelectionChanged);
             Duplicate = new RelayCommand<DcRecordDeMold>(ActionDuplicate, CanDuplicate);
             TempRecordSheet = new RelayCommand(ActionTempRecordSheet);
+            QuickAdd = new RelayCommand(ActionQuickAdd,CanQuickAdd);
         }
+
+        private bool CanQuickAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordDeMold);
+        }
+
+        private void ActionQuickAdd()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordDeMold);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
+        }
+
         private void ActionSelectionChanged(DcRecordDeMold model)
         {
             if (model != null)
@@ -185,5 +199,6 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordDeMold> Duplicate { get; set; }
         public RelayCommand<DcRecordDeMold> Label { get; set; }
         public RelayCommand TempRecordSheet { get; set; }
+        public RelayCommand QuickAdd { get; set; }
     }
 }

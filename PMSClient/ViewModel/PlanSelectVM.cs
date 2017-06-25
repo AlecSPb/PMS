@@ -62,17 +62,19 @@ namespace PMSClient.ViewModel
 
             switch (requestView)
             {
+                case PMSViews.RecordMilling:
                 case PMSViews.RecordMillingEdit:
                     BatchSaveMillingRecords();
                     break;
-                case PMSViews.RecordVHPQuickEdit:
-                    break;
+                case PMSViews.RecordDeMold:
                 case PMSViews.RecordDeMoldEdit:
                     BatchSaveDeMoldRecords();
                     break;
+                case PMSViews.RecordMachine:
                 case PMSViews.RecordMachineEdit:
                     BatchSaveMachineRecords();
                     break;
+                case PMSViews.RecordTest:
                 case PMSViews.RecordTestEdit:
                     BatchSaveTestRecords();
                     break;

@@ -23,9 +23,22 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             Duplicate = new RelayCommand<DcRecordMachine>(ActionDuplicate, CanDuplicate);
             Label = new RelayCommand<DcRecordMachine>(ActionLabel);
+            QuickAdd = new RelayCommand(ActionQuickAdd,CanQuickAdd);
 
             TempRecordSheet = new RelayCommand(ActionTempRecordSheet);
             SetPageParametersWhenConditionChange();
+        }
+
+        private bool CanQuickAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMachine);
+        }
+
+        private void ActionQuickAdd()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordMachine);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
         private void ActionLabel(DcRecordMachine model)
@@ -169,5 +182,6 @@ namespace PMSClient.ViewModel
         public RelayCommand TempRecordSheet { get; set; }
 
         public RelayCommand<DcRecordMachine> Label { get; set; }
+        public RelayCommand QuickAdd { get; set; }
     }
 }

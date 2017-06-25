@@ -50,6 +50,19 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
             Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate, CanDuplicate);
             Label = new RelayCommand<DcRecordTest>(ActionLabel);
+            QuickAdd = new RelayCommand(ActionQuickAdd,CanQuickAdd);
+        }
+
+        private bool CanQuickAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
+        }
+
+        private void ActionQuickAdd()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.RecordTest);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
         private void ActionLabel(DcRecordTest model)
@@ -222,6 +235,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordTest> SelectionChanged { get; set; }
         public RelayCommand<DcRecordTest> Duplicate { get; set; }
         public RelayCommand<DcRecordTest> Label { get; set; }
+        public RelayCommand QuickAdd { get; set; }
         #endregion
     }
 }

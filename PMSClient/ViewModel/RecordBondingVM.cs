@@ -137,6 +137,5 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordBonding> Detail { get; set; }
         public RelayCommand<DcRecordBonding> Edit { get; set; }
 
-
     }
 }
