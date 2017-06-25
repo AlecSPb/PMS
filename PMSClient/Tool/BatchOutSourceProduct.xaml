@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.Tool"
         mc:Ignorable="d"
-        Title="BatchOutSourceProduct" Height="100" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="BatchOutSourceProduct" Height="150" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -17,7 +19,13 @@
             <TextBox Name="txtMid" Style="{StaticResource StyleTextBoxCommon}" Text="OS"/>
             <ComboBox Name="cboLast" Style="{StaticResource StyleComboBoxCommon}"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="客户"/>
+            <ComboBox Name="cboCustomer" Style="{StaticResource StyleComboBoxCommon}"/>
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="PO"/>
+            <TextBox Name="txtPO" Style="{StaticResource StyleTextBoxCommon}" Text="无"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Style="{StaticResource StyleButtonCommon}" Content="取消" Click="btnCancel_Click"/>
             <Button Name="btnConfirm" Style="{StaticResource StyleButtonCommon}" Content="确定" Click="btnConfirm_Click"/>
         </StackPanel>

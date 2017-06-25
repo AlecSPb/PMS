@@ -64,6 +64,8 @@ namespace PMSClient.ViewModel
                 string first = window.txtFirst.Text;
                 string mid = window.txtMid.Text;
                 int count = int.Parse(window.cboLast.SelectedItem.ToString());
+                string customer = window.cboCustomer.Text;
+                string po = window.txtPO.Text;
                 using (var service = new ProductServiceClient())
                 {
                     for (int i = 0; i < count; i++)
@@ -76,8 +78,8 @@ namespace PMSClient.ViewModel
                         model.Composition = para.OrderName;
                         model.Abbr = para.OrderName;
                         model.Weight = "无";
-                        model.PO = "无";
-                        model.Customer = "无";
+                        model.PO = po;
+                        model.Customer = customer;
                         model.Position = PMSCommon.GoodPosition.A1.ToString();
                         model.ProductType = PMSCommon.ProductType.靶材.ToString();
                         model.State = PMSCommon.InventoryState.库存.ToString();

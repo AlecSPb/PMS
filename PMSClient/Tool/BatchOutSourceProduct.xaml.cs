@@ -32,6 +32,10 @@ namespace PMSClient.Tool
             }
             this.cboLast.ItemsSource = numbers;
             cboLast.SelectedItem = 1;
+
+
+            cboCustomer.ItemsSource = BasicData.Customers;
+            cboCustomer.DisplayMemberPath = "CustomerName";
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
