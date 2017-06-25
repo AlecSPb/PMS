@@ -129,18 +129,36 @@ namespace PMSClient.ReportsHelper
                     xrfTable.Design = TableDesign.TableGrid;
                     xrfTable.Alignment = Alignment.center;
                     xrfTable.AutoFit = AutoFit.Contents;
+                    StringBuilder sb1 = new StringBuilder();
+                    StringBuilder sb2 = new StringBuilder();
 
                     for (int i = 0; i < lines.Count(); i++)
                     {
                         string[] items = lines[i].Split(',');
+
+                        sb1.Clear();
+                        sb2.Clear();
                         for (int j = 0; j < items.Count(); j++)
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
                             cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new FontFamily("Calibri"));
+                            if (j == 0)
+                            {
+                                continue;
+                            }
+                            sb1.Append(items[j] + "\r");
+                            sb2.Append("Atm%" + "\r");
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
+
+                    //添加平均成分到表格中
+                    Table mainTable = document.Tables[1];
+                    Paragraph average = mainTable.Rows[4].Cells[3].Paragraphs[0];
+                    Paragraph units = mainTable.Rows[4].Cells[4].Paragraphs[0];
+                    average.Append(sb1.ToString()).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                    units.Append(sb2.ToString()).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
                 }
 
             }
