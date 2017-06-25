@@ -38,9 +38,5 @@ namespace PMSClient
             Messenger.Default.Send<MsgObject>(null, refreshtoken);
         }
 
-        internal static void GoTo(object goBack)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

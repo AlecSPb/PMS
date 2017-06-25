@@ -41,7 +41,8 @@
                 <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
                 <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource EmergencyBrush}"/>
-                <TextBlock Text="{StaticResource IndicatorVHPCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource VHPCompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorVHPCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
+                <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             </StackPanel>
         </StackPanel>
         <DataGrid x:Name="dgMisson" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"

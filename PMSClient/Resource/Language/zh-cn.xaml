@@ -82,8 +82,8 @@
     <sys:String x:Key="PagePlanSearch">生产计划[搜索]</sys:String>
     <sys:String x:Key="PagePlan">生产计划</sys:String>
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
-    <sys:String x:Key="PagePlanConclusion">生产计划总结</sys:String>
-    <sys:String x:Key="PagePlanConclusionEdit">生产计划总结编辑</sys:String>
+    <sys:String x:Key="PagePlanConclusion">生产总结</sys:String>
+    <sys:String x:Key="PagePlanConclusionEdit">生产总结编辑</sys:String>
     <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
     <sys:String x:Key="PageMaterialNeedEdit">材料需求编辑</sys:String>
     <sys:String x:Key="PageMaterialOrder">原料订单</sys:String>

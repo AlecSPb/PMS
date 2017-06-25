@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.Tool;
 
 namespace PMSClient.ViewModel
 {
@@ -20,6 +21,7 @@ namespace PMSClient.ViewModel
         }
 
 
+
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
@@ -29,40 +31,66 @@ namespace PMSClient.ViewModel
         {
             PageChanged = new RelayCommand(ActionPaging);
             Search = new RelayCommand(ActionSearch, CanSearch);
-            Select = new RelayCommand<DcMaterialInventoryIn>(ActionSelect);
+            Select = new RelayCommand<DcOutSource>(ActionSelect);
             All = new RelayCommand(ActionAll);
+            GiveUp = new RelayCommand(ActionGiveUp);
         }
 
-        private void ActionSelect(DcMaterialInventoryIn model)
+        private void ActionGiveUp()
         {
-            throw new NotImplementedException();
+            NavigationService.GoTo(RequestView);
         }
 
-        private bool CanDuplicate(DcOutSource arg)
-        {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
-        }
+        public PMSViews RequestView { get; set; }
 
-        private void ActionDuplicate(DcOutSource model)
+        private void ActionSelect(DcOutSource model)
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定复用这条记录吗？"))
+            switch (RequestView)
             {
-                return;
+                case PMSViews.ProductEdit:
+                    BatchProduct(model);
+                    break;
+                default:
+                    break;
             }
-            PMSHelper.ViewModels.OutSourceEdit.SetDuplicate(model);
-            NavigationService.GoTo(PMSViews.OutSourceEdit);
         }
 
-        private bool CanEdit(DcOutSource arg)
+        private void BatchProduct(DcOutSource para)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
-        }
+            var window = new BatchOutSourceProduct();
+            if (window.ShowDialog()==true)
+            {
+                string first = window.txtFirst.Text;
+                string mid = window.txtMid.Text;
+                int count = int.Parse(window.cboLast.SelectedItem.ToString());
+                using (var service=new ProductServiceClient())
+                {
+                    for (int i = 0; i < count; i++)
+                    {
+                        var model = new DcProduct();
+                        model.ID = Guid.NewGuid();
+                        model.ProductID = $"{first}-{mid}-{i + 1}";
+                        model.CreateTime = DateTime.Now;
+                        model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                        model.Composition = para.OrderName;
+                        model.Abbr = para.OrderName;
+                        model.Weight = "无";
+                        model.Customer = "无";
+                        model.Position = PMSCommon.GoodPosition.A1.ToString();
+                        model.ProductType = PMSCommon.ProductType.靶材.ToString();
+                        model.State = PMSCommon.InventoryState.库存.ToString();
+                        model.Remark = "";
 
-        private bool CanAdd()
-        {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditOutSource);
-        }
+                        model.Dimension = para.Dimension;
+                        model.DimensionActual =para.Dimension;
+                        model.Defects = "无";
 
+                        service.AddProductByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    }
+                }
+            }
+            NavigationService.GoTo(PMSViews.Product);
+        }
 
         private bool CanSearch()
         {
@@ -78,18 +106,6 @@ namespace PMSClient.ViewModel
         private void ActionSearch()
         {
             SetPageParametersWhenConditionChange();
-        }
-
-        private void ActionEdit(DcOutSource model)
-        {
-            PMSHelper.ViewModels.OutSourceEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.OutSourceEdit);
-        }
-
-        private void ActionAdd()
-        {
-            PMSHelper.ViewModels.OutSourceEdit.SetNew();
-            NavigationService.GoTo(PMSViews.OutSourceEdit);
         }
 
         private void InitializeProperties()
@@ -160,6 +176,6 @@ namespace PMSClient.ViewModel
 
         public ObservableCollection<DcOutSource> OutSources { get; set; }
         #endregion
-        public RelayCommand<DcMaterialInventoryIn> Select { get; set; }
+        public RelayCommand<DcOutSource> Select { get; set; }
     }
 }

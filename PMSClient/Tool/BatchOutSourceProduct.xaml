@@ -1,0 +1,25 @@
+﻿<Window x:Class="PMSClient.Tool.BatchOutSourceProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Tool"
+        mc:Ignorable="d"
+        Title="BatchOutSourceProduct" Height="100" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="编号规则"/>
+            <TextBox Name="txtFirst" Style="{StaticResource StyleTextBoxCommon}" Text="170625"/>
+            <TextBox Name="txtMid" Style="{StaticResource StyleTextBoxCommon}" Text="OS"/>
+            <ComboBox Name="cboLast" Style="{StaticResource StyleComboBoxCommon}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnCancel" Style="{StaticResource StyleButtonCommon}" Content="取消" Click="btnCancel_Click"/>
+            <Button Name="btnConfirm" Style="{StaticResource StyleButtonCommon}" Content="确定" Click="btnConfirm_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

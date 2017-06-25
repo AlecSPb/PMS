@@ -33,8 +33,9 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
-            SelectTest = new RelayCommand(ActionSelect1);
-            SelectBonding = new RelayCommand(ActionSelect2);
+            SelectTest = new RelayCommand(ActionSelectTest);
+            SelectBonding = new RelayCommand(ActionSelectBonding);
+            SelectOutSource = new RelayCommand(ActionSelectOutSource);
         }
 
         public void SetNew()
@@ -121,7 +122,14 @@ namespace PMSClient.ViewModel
                 //RaisePropertyChanged(nameof(CurrentProduct));
             }
         }
-        private void ActionSelect1()
+        private void ActionSelectOutSource()
+        {
+            var vm = PMSHelper.ViewModels.OutSourceSelect;
+            vm.RequestView = PMSViews.ProductEdit;
+            vm.RefreshData();
+            NavigationService.GoTo(PMSViews.OutSourceSelect);
+        }
+        private void ActionSelectTest()
         {
             var vm = PMSHelper.ViewModels.RecordTestSelect;
             vm.SetRequestView(PMSViews.ProductEdit);
@@ -129,7 +137,7 @@ namespace PMSClient.ViewModel
             PMSBatchHelper.SetRecordTestBatchEnable(IsNew);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
         }
-        private void ActionSelect2()
+        private void ActionSelectBonding()
         {
             PMSHelper.ViewModels.RecordBondingSelect.SetRequestView(PMSViews.ProductEdit);
             PMSHelper.ViewModels.RecordBondingSelect.RefreshData();
@@ -194,5 +202,6 @@ namespace PMSClient.ViewModel
         }
         public RelayCommand SelectTest { get; set; }
         public RelayCommand SelectBonding { get; set; }
+        public RelayCommand SelectOutSource { get; set; }
     }
 }
