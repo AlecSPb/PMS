@@ -86,11 +86,13 @@
                         Command="{Binding GoToMaterialNeed}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PageMaterialOrder}" Grid.Row="1" Grid.Column="2"
                         Command="{Binding GoToMaterialOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
-                <Button Content="{StaticResource PageMaterialInventory}" Grid.Row="1" Grid.Column="3"
+                <Button Content="{StaticResource PageMaterialInventoryIn}" Grid.Row="1" Grid.Column="3"
                         Command="{Binding GoToMaterialInventory}" Style="{DynamicResource StyleButtonNavigation}"/>
-                <Button Content="{StaticResource PagePlate}"  Grid.Row="1" Grid.Column="4"
+                <Button Content="{StaticResource PageMaterialInventoryOut}" Grid.Row="1" Grid.Column="4"
+                        Command="{Binding GoToMaterialInventoryOut}" Style="{DynamicResource StyleButtonNavigation}"/>
+                <Button Content="{StaticResource PagePlate}"  Grid.Row="1" Grid.Column="5"
                         Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigation}" />
-                <Button Content="{StaticResource PageSupplier}" Grid.Row="1" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
+                <Button Content="{StaticResource PageSupplier}" Grid.Row="1" Grid.Column="6" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToBDSupplier}" Visibility="Hidden"/>
 
 

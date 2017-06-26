@@ -93,12 +93,12 @@
     <sys:String x:Key="PageMaterialOrderItemListUnCompleted">原料订单流水未交付-这个视图显示未交付的原料流水</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
-    <sys:String x:Key="PageMaterialInventoryIn">原料库存[入库]</sys:String>
-    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料库存[入库-库存]-这个视图只显示库存</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">原料入库</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInUnCompleted">原料入库-这个视图只显示库存</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOut">原料库存[出库]</sys:String>
-    <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOutEdit">原料库存[出库]编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">原料出库</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInEdit">原料入库编辑</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOutEdit">原料出库编辑</sys:String>
 
 
     <sys:String x:Key="PageRecordMilling">制粉记录</sys:String>
