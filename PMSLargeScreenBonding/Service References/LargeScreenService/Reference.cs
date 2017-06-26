@@ -111,6 +111,9 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         private string DimensionDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -281,6 +284,19 @@ namespace PMSLargeScreenBonding.LargeScreenService {
                 if ((object.ReferenceEquals(this.DimensionDetailsField, value) != true)) {
                     this.DimensionDetailsField = value;
                     this.RaisePropertyChanged("DimensionDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
                 }
             }
         }
@@ -519,6 +535,9 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         private double CalculationDensityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ConclusionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime CreateTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -526,6 +545,9 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FillingRequirementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int GradeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GrainSizeField;
@@ -603,6 +625,12 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         private double ThicknessField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime UpdateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UpdatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VHPDeviceCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -648,6 +676,19 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Conclusion {
+            get {
+                return this.ConclusionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ConclusionField, value) != true)) {
+                    this.ConclusionField = value;
+                    this.RaisePropertyChanged("Conclusion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime CreateTime {
             get {
                 return this.CreateTimeField;
@@ -682,6 +723,19 @@ namespace PMSLargeScreenBonding.LargeScreenService {
                 if ((object.ReferenceEquals(this.FillingRequirementField, value) != true)) {
                     this.FillingRequirementField = value;
                     this.RaisePropertyChanged("FillingRequirement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Grade {
+            get {
+                return this.GradeField;
+            }
+            set {
+                if ((this.GradeField.Equals(value) != true)) {
+                    this.GradeField = value;
+                    this.RaisePropertyChanged("Grade");
                 }
             }
         }
@@ -1012,6 +1066,32 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime UpdateTime {
+            get {
+                return this.UpdateTimeField;
+            }
+            set {
+                if ((this.UpdateTimeField.Equals(value) != true)) {
+                    this.UpdateTimeField = value;
+                    this.RaisePropertyChanged("UpdateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Updator {
+            get {
+                return this.UpdatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UpdatorField, value) != true)) {
+                    this.UpdatorField = value;
+                    this.RaisePropertyChanged("Updator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string VHPDeviceCode {
             get {
                 return this.VHPDeviceCodeField;
@@ -1234,6 +1314,9 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateSuplierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlateTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateUseCountField;
@@ -1798,6 +1881,19 @@ namespace PMSLargeScreenBonding.LargeScreenService {
                 if ((object.ReferenceEquals(this.PlateSuplierField, value) != true)) {
                     this.PlateSuplierField = value;
                     this.RaisePropertyChanged("PlateSuplier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlateType {
+            get {
+                return this.PlateTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlateTypeField, value) != true)) {
+                    this.PlateTypeField = value;
+                    this.RaisePropertyChanged("PlateType");
                 }
             }
         }

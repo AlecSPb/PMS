@@ -225,7 +225,8 @@
                 <DataGridTemplateColumn Header="{StaticResource MOIProvideRawMaterial}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBox Text="{Binding ProvideRawMaterial}" Margin="0" Padding="2"  MinWidth="80"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Center" IsReadOnly="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

@@ -45,7 +45,7 @@ namespace PMSLargeScreenBonding
                 using (var service = new LargeScreenServiceClient())
                 {
                     dataCount = service.GetBondingUnCompleteCount();
-                    PageCount = dataCount / PageSize + dataCount%PageSize==0?0:1;
+                    PageCount = dataCount / PageSize + (dataCount%PageSize==0?0:1);
                 }
                 int skip = (pageIndex - 1) * PageSize;
                 int take = PageSize;
@@ -54,11 +54,12 @@ namespace PMSLargeScreenBonding
                 LoadData(skip, take);
 
                 pageIndex++;
-                if (pageIndex>=PageCount)
+                if (pageIndex>PageCount)
                 {
                     pageIndex = 1;
                 }
                 System.Diagnostics.Debug.WriteLine(pageIndex);
+                Status3 = "";
             }
             catch (Exception ex)
             {
@@ -92,6 +93,7 @@ namespace PMSLargeScreenBonding
                 });
 
                 Status1 = $"全部数据刷新于{DateTime.Now.ToString("HH:mm:ss")}";
+                Status3 = "";
             }
             catch (Exception ex)
             {

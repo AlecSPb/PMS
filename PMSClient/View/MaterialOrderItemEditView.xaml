@@ -111,8 +111,7 @@
 
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MOIDescription}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Description}" Style="{StaticResource StyleTextBoxCommon}"/>
                     <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="要求描述,在报告中会显示在每一个订单项目描述内容的最后面"/>
 

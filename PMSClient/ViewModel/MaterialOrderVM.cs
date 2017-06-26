@@ -73,23 +73,33 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-
-
         private void ActionGoToMaterialOrderItemList()
         {
             NavigationService.GoTo(PMSViews.MaterialOrderItemList);
         }
+        //核验后不能修改，只能整体作废
         private bool CanEditItem(DcMaterialOrderItem arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
+            if (arg == null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder)&&CheckOrderState();
         }
-
+        //核验后不能修改，只能整体作废
         private bool CanAddItem(DcMaterialOrder arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
-
+            if (arg == null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder) && 
+                arg.State==PMSCommon.MaterialOrderState.未核验.ToString();
         }
-
+        private bool CheckOrderState()
+        {
+            return CurrentSelectItem.State == PMSCommon.MaterialOrderState.未核验.ToString();
+        }
         private bool CanEdit(DcMaterialOrder arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);

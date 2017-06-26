@@ -402,7 +402,7 @@
     <sys:String x:Key="MOIPMINumber">内部编号</sys:String>
     <sys:String x:Key="MOIComposition">成分</sys:String>
     <sys:String x:Key="MOIPurity">纯度</sys:String>
-    <sys:String x:Key="MOIDescription">描述</sys:String>
+    <sys:String x:Key="MOIDescription">订单描述</sys:String>
     <sys:String x:Key="MOIProvideRawMaterial">提供原料</sys:String>
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
     <sys:String x:Key="MOILastDay">剩余天数</sys:String>
