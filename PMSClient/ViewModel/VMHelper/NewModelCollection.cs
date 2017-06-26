@@ -146,6 +146,7 @@ namespace PMSClient.ViewModel
             model.TargetComposition = "靶材成分";
             model.TargetDimension = "靶材尺寸";
             model.PlateType = "新背板";
+            model.CoverPlateNumber = "无";
             //暂时用不到
             model.TargetAbbr = "尚未确定";
             model.TargetPO = "尚未确定";

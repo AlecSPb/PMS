@@ -41,7 +41,7 @@ namespace PMSClient.ViewModel
             Edit = new RelayCommand<DcMaterialInventoryIn>(ActionEdit, CanEdit);
 
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
-                () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryIn));
+                () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn));
         }
 

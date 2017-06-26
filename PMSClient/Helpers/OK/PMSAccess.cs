@@ -29,11 +29,11 @@ namespace PMSClient
         public static string EditMaterialOrder { get; set; } = "编辑原料订单";
         public static string EditMaterialOrderItem { get; set; } = "编辑原料订单项";
 
-        public static string ReadMaterialInventoryIn { get; set; } = "浏览原料库存";
-        public static string EditMaterialInventoryIn { get; set; } = "编辑原料库存";
+        public static string ReadMaterialInventoryIn { get; set; } = "浏览原料入库";
+        public static string EditMaterialInventoryIn { get; set; } = "编辑原料入库";
 
-        public static string ReadMaterialInventoryOut { get; set; } = "浏览原料库存";
-        public static string EditMaterialInventoryOut { get; set; } = "编辑原料库存";
+        public static string ReadMaterialInventoryOut { get; set; } = "浏览原料出库";
+        public static string EditMaterialInventoryOut { get; set; } = "编辑原料出库";
 
         public static string ReadPlate { get; set; } = "浏览背板记录";
         public static string EditPlate { get; set; } = "编辑背板记录";
@@ -41,7 +41,7 @@ namespace PMSClient
         public static string ReadMisson { get; set; } = "浏览任务";
         public static string ReadPlan { get; set; } = "浏览计划安排";
         public static string EditPlan { get; set; } = "编辑计划安排";
-
+        public static string EditPlanConclusion { get; set; } = "编辑计划结论";
 
         public static string ReadRecordMilling { get; set; } = "浏览制粉记录";
         public static string EditRecordMilling { get; set; } = "编辑制粉记录";

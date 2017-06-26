@@ -51,7 +51,6 @@ namespace PMSClient.ViewModel
             #region 初始化
             var model = new DcRecordBonding();
             model.ID = Guid.NewGuid();
-            model.CoverPlateNumber = "无";
             //0.0
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
@@ -61,6 +60,7 @@ namespace PMSClient.ViewModel
             model.TargetComposition = "尚未安排";
             model.TargetDimension = "尚未安排";
             model.PlateType = "新背板";
+            model.CoverPlateNumber = "无";
             //暂时用不到
             model.TargetAbbr = "";
             model.TargetPO = "";

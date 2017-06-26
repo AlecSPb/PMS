@@ -1011,67 +1011,67 @@
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\HeartBeatService\HeartBeatService1.disco" />
-    <None Include="Service References\HeartBeatService\HeartBeatService1.wsdl" />
-    <None Include="Service References\HeartBeatService\HeartBeatService2.xsd">
+    <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
+    <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
+    <None Include="Service References\StatisticService\StatisticService1.disco" />
+    <None Include="Service References\MainService\PMSService1.disco" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
+    <None Include="Service References\ExtraService\ExtraService1.disco" />
+    <None Include="Service References\BasicService\BasicDataService.disco" />
+    <None Include="Service References\BasicService\BasicDataService.wsdl" />
+    <None Include="Service References\BasicService\BasicDataService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\HeartBeatService\HeartBeatService21.xsd">
+    <None Include="Service References\BasicService\BasicDataService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService.disco" />
-    <None Include="Service References\StatisticService\MainStatisticService.wsdl" />
-    <None Include="Service References\StatisticService\StatisticService.disco" />
-    <None Include="Service References\ExtraService\ExtraService.disco" />
-    <None Include="Service References\BasicService\BasicDataService1.disco" />
-    <None Include="Service References\BasicService\BasicDataService1.wsdl" />
-    <None Include="Service References\BasicService\BasicDataService3.xsd">
+    <None Include="Service References\BasicService\BasicDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\BasicDataService31.xsd">
+    <None Include="Service References\ExtraService\ExtraService1.wsdl" />
+    <None Include="Service References\ExtraService\ExtraService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\BasicService\BasicDataService32.xsd">
+    <None Include="Service References\ExtraService\ExtraService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExtraService\ExtraService.wsdl" />
-    <None Include="Service References\ExtraService\ExtraService.xsd">
+    <None Include="Service References\ExtraService\ExtraService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExtraService\ExtraService1.xsd">
+    <None Include="Service References\HeartBeatService\HeartBeatService.wsdl" />
+    <None Include="Service References\HeartBeatService\HeartBeatService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExtraService\ExtraService2.xsd">
+    <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService.disco" />
-    <None Include="Service References\MainService\PMSService.wsdl" />
-    <None Include="Service References\MainService\PMSService.xsd">
+    <None Include="Service References\MainService\PMSService1.wsdl" />
+    <None Include="Service References\MainService\PMSService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService1.xsd">
+    <None Include="Service References\MainService\PMSService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\MainService\PMSService2.xsd">
+    <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisticService\StatisticService.xsd">
+    <None Include="Service References\StatisticService\StatisticService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisticService\StatisticService1.xsd">
+    <None Include="Service References\StatisticService\StatisticService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\StatisticService\StatisticService2.xsd">
+    <None Include="Service References\StatisticService\StatisticService32.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService.wsdl" />
-    <None Include="Service References\UserSimpleService\UserSimpleService.xsd">
+    <None Include="Service References\UserSimpleService\UserSimpleService1.wsdl" />
+    <None Include="Service References\UserSimpleService\UserSimpleService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService1.xsd">
+    <None Include="Service References\UserSimpleService\UserSimpleService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSimpleService\UserSimpleService2.xsd">
+    <None Include="Service References\UserSimpleService\UserSimpleService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <SplashScreen Include="SplashScreen.png">

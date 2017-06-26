@@ -41,13 +41,13 @@ namespace PMSClient.ViewModel
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
 
-            Edit = new RelayCommand<DcPlanWithMisson>(ActionEdit);
+            Edit = new RelayCommand<DcPlanWithMisson>(ActionEdit, arg => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlanConclusion));
         }
 
         private void ActionEdit(DcPlanWithMisson model)
         {
             DcPlanVHP plan = model.Plan;
-            if (plan!=null)
+            if (plan != null)
             {
                 PMSHelper.ViewModels.PlanConclusionEdit.SetEdit(plan);
                 NavigationService.GoTo(PMSViews.PlanConclusionEdit);
