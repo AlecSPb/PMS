@@ -157,10 +157,10 @@ namespace PMSClient.ViewModel
                     series.Values = orderByMonth;
                     StatisticChartData.Add(series);
 
-                    var seriesLine = new LineSeries();
-                    seriesLine.Title = "订单数-曲线";
-                    seriesLine.Values = orderByMonth;
-                    StatisticChartData.Add(seriesLine);
+                    //var seriesLine = new LineSeries();
+                    //seriesLine.Title = "订单数-曲线";
+                    //seriesLine.Values = orderByMonth;
+                    //StatisticChartData.Add(seriesLine);
 
                     labelByMonth.ForEach(i => StatisticChartLabels.Add(i));
 
@@ -209,10 +209,10 @@ namespace PMSClient.ViewModel
                     seriesColumn.Values = orderByYear;
                     StatisticChartData.Add(seriesColumn);
 
-                    var seriesLine = new LineSeries();
-                    seriesLine.Title = "订单数-曲线";
-                    seriesLine.Values = orderByYear;
-                    StatisticChartData.Add(seriesLine);
+                    //var seriesLine = new LineSeries();
+                    //seriesLine.Title = "订单数-曲线";
+                    //seriesLine.Values = orderByYear;
+                    //StatisticChartData.Add(seriesLine);
 
                     labelByYear.ForEach(i => StatisticChartLabels.Add(i));
                     StatisticTextData = sb.ToString();
