@@ -84,6 +84,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateOrderByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
+                SetPageParametersWhenConditionChange();
             }
             catch (Exception ex)
             {
