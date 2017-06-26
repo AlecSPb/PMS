@@ -93,9 +93,9 @@
 
                 <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource MIISupplier}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+                <ComboBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                            ItemsSource="{Binding DataContext.Suppliers,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           Text="{Binding Supplier}"/>
+                           SelectedItem="{Binding Supplier}"/>
                 <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="订单状态"/>
 

@@ -12,6 +12,7 @@ namespace PMSCommon
         汉普,
         南京,
         深圳,
-        广西
+        广西,
+        其他
     }
 }
