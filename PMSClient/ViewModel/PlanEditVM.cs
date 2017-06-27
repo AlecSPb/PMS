@@ -59,8 +59,10 @@ namespace PMSClient.ViewModel
             plan.MachineRequirement = "无";
             plan.FillingRequirement = PMSCommon.CustomData.FillingRequirement[2];
             plan.SpecialRequirement = "无";
-            plan.Grade = 60;
+            plan.Grade = 0;
             plan.Conclusion = "无";
+            plan.UpdateTime = DateTime.Now;
+            plan.Updator = PMSHelper.CurrentSession.CurrentUser.UserName;
             #endregion
             CurrentPlan = plan;
         }
@@ -95,7 +97,7 @@ namespace PMSClient.ViewModel
 
             ProcessCodes = new List<string>();
             ProcessCodes.Clear();
-            PMSBasicDataService.SetListDS(PMSCommon.CustomData.ProcessCode,ProcessCodes);
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.ProcessCode, ProcessCodes);
 
 
             DeviceCodes = new List<string>();
@@ -160,6 +162,8 @@ namespace PMSClient.ViewModel
                 }
                 else
                 {
+                    CurrentPlan.UpdateTime = DateTime.Now;
+                    CurrentPlan.Updator = PMSHelper.CurrentSession.CurrentUser.UserName;
                     service.UpdateVHPPlanByUID(CurrentPlan, uid);
                 }
                 service.Close();
