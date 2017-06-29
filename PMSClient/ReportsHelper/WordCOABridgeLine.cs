@@ -15,7 +15,7 @@ namespace PMSClient.ReportsHelper
     /// </summary>
     public class WordCOABridgeLine : ReportBase
     {
-        private string prefix = "COABL";
+        private string prefix = "COA";
         public WordCOABridgeLine()
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
