@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="PlateNumber" Height="200" Width="300" WindowStyle="ToolWindow" >
+        Title="请选择要添加背板的数量" Height="200" Width="300" WindowStyle="ToolWindow"  WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
