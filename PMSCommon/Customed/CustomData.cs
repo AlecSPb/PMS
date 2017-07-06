@@ -254,7 +254,11 @@ namespace PMSCommon
                 var data = new List<string>();
                 #region 数据
                 data.Add("广汉");
-                data.Add("六九");
+                data.Add("西安");
+                data.Add("瑞典");
+                data.Add("美国");
+                data.Add("台湾");
+                data.Add("日本");
                 data.Add("其他");
                 #endregion
                 return data;

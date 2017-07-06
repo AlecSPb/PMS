@@ -33,7 +33,7 @@ namespace PMSClient.ViewModel
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcPlate>(ActionEdit, CanEdit);
             Duplicate = new RelayCommand<DcPlate>(ActionDuplicate, CanDuplicate);
-            BatchDuplicate = new RelayCommand<DcPlate>(ActionBatchDuplicate,CanBatchDuplicate);
+
             SelectAndSend = new RelayCommand<DcPlate>(ActionSelectAndSend, CanSelect);
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
         }
@@ -41,11 +41,6 @@ namespace PMSClient.ViewModel
         private void ActionOnlyUnCompleted()
         {
             NavigationService.GoTo(PMSViews.PlateUnCompleted);
-        }
-
-        private bool CanBatchDuplicate(DcPlate arg)
-        {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
         }
 
         private bool CanSelect(DcPlate arg)
@@ -56,49 +51,6 @@ namespace PMSClient.ViewModel
         private bool CanDuplicate(DcPlate arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlate);
-        }
-
-        private void ActionBatchDuplicate(DcPlate model)
-        {
-            BatchDuplicateDialog dialog = new BatchDuplicateDialog();
-            if (dialog.ShowDialog() == true)
-            {
-                int number = dialog.DuplicateNumber;
-                string prefix = dialog.DuplicatePrefix;
-                try
-                {
-                    using (var service = new PlateServiceClient())
-                    {
-                        for (int i = 0; i < number; i++)
-                        {
-                            var temp = new DcPlate();
-                            temp.ID = Guid.NewGuid();
-                            temp.CreateTime = DateTime.Now;
-                            temp.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                            temp.State = PMSCommon.InventoryState.库存.ToString();
-                            temp.Appearance = model.Appearance;
-                            temp.Defects = model.Defects;
-                            temp.Dimension = model.Dimension;
-                            temp.Hardness = model.Hardness;
-                            temp.LastWeldMaterial = model.LastWeldMaterial;
-                            temp.PlateLot = prefix + (i + 1).ToString("00");
-                            temp.PlateMaterial = model.PlateMaterial;
-                            temp.Remark = model.Remark;
-                            temp.Supplier = model.Supplier;
-                            temp.UseCount = model.UseCount;
-                            temp.Weight = model.Weight;
-                            temp.PrintNumber = "无";
-
-                            service.AddPlateByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
-                        }
-                    }
-                    PMSDialogService.ShowYes("批量复制已完成，请刷新列表查看");
-                }
-                catch (Exception ex)
-                {
-                    PMSHelper.CurrentLog.Error(ex);
-                }
-            }
         }
 
         private void ActionDuplicate(DcPlate model)
@@ -250,7 +202,6 @@ namespace PMSClient.ViewModel
 
         #endregion
         public RelayCommand<DcPlate> Duplicate { get; set; }
-        public RelayCommand<DcPlate> BatchDuplicate { get; set; }
         public RelayCommand OnlyUnCompleted { get; set; }
     }
 }

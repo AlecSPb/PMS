@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSClient.CustomControls;
 using PMSClient.MainService;
 using System;
 using System.Collections.Generic;
@@ -112,7 +113,18 @@ namespace PMSClient.ViewModel
                 var service = new PlateServiceClient();
                 if (IsNew)
                 {
-                    service.AddPlateByUID(CurrentPlate, uid);
+                    //新建的时候可以选择数目
+                    PlateNumber dialog = new PlateNumber();
+                    dialog.ShowDialog();
+                    int number = dialog.CurrentPlateNumber;
+                    string prefix = CurrentPlate.PlateLot.Substring(0, 10);
+                    for (int i = 0; i < number; i++)
+                    {
+                        CurrentPlate.ID = Guid.NewGuid();
+                        CurrentPlate.CreateTime = DateTime.Now;
+                        CurrentPlate.PlateLot = prefix + (i + 1).ToString();
+                        service.AddPlateByUID(CurrentPlate, uid);
+                    }
                 }
                 else
                 {

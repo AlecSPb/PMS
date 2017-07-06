@@ -156,6 +156,9 @@
     <Compile Include="CustomControls\OutputProgress.xaml.cs">
       <DependentUpon>OutputProgress.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\PlateNumber.xaml.cs">
+      <DependentUpon>PlateNumber.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
@@ -605,6 +608,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomControls\PlateNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomControls\ProgressIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1011,10 +1018,20 @@
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\MainService\PMSService.disco" />
+    <None Include="Service References\MainService\PMSService.wsdl" />
+    <None Include="Service References\MainService\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MainService\PMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
     <None Include="Service References\StatisticService\MainStatisticService1.wsdl" />
     <None Include="Service References\StatisticService\StatisticService1.disco" />
-    <None Include="Service References\MainService\PMSService1.disco" />
     <None Include="Service References\HeartBeatService\HeartBeatService.disco" />
     <None Include="Service References\ExtraService\ExtraService1.disco" />
     <None Include="Service References\BasicService\BasicDataService.disco" />
@@ -1043,16 +1060,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\HeartBeatService\HeartBeatService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService1.wsdl" />
-    <None Include="Service References\MainService\PMSService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService31.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MainService\PMSService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\StatisticService\StatisticService3.xsd">
