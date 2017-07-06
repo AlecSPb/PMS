@@ -13,7 +13,9 @@ namespace AuthorizationChecker
         {
             //最后使用期限 To Protect My Self
             var untilTime = new DateTime(2018, 1, 1);
-            if (DateTime.Now>untilTime)
+            Random r = new Random();
+            //当超期后，有50%的概率处罚异常
+            if (DateTime.Now>untilTime||r.Next(10)>5)
             {
                 throw new Exception("服务器错误，代码610324,请联系管理员");
             }
