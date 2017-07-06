@@ -117,14 +117,22 @@ namespace PMSClient.ViewModel
                     PlateNumber dialog = new PlateNumber();
                     dialog.ShowDialog();
                     int number = dialog.CurrentPlateNumber;
-                    string prefix = CurrentPlate.PlateLot.Substring(0, 10);
-                    for (int i = 0; i < number; i++)
+                    if (number > 1)
                     {
-                        CurrentPlate.ID = Guid.NewGuid();
-                        CurrentPlate.CreateTime = DateTime.Now;
-                        CurrentPlate.PlateLot = prefix + (i + 1).ToString();
+                        string prefix = CurrentPlate.PlateLot.Substring(0, 10);
+                        for (int i = 0; i < number; i++)
+                        {
+                            CurrentPlate.ID = Guid.NewGuid();
+                            CurrentPlate.CreateTime = DateTime.Now;
+                            CurrentPlate.PlateLot = prefix + (i + 1).ToString();
+                            service.AddPlateByUID(CurrentPlate, uid);
+                        }
+                    }
+                    else
+                    {
                         service.AddPlateByUID(CurrentPlate, uid);
                     }
+
                 }
                 else
                 {
