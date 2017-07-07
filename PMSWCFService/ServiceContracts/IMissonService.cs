@@ -65,13 +65,6 @@ namespace PMSWCFService.ServiceContracts
         List<DcPlanWithMisson> GetPlanExtra(int skip, int take, string searchCode, string composition);
         [OperationContract]
         int GetPlanExtraCount(string searchCode, string composition);
-
-        #endregion
-
-
-        #region 热压指数计算
-        [OperationContract]
-        void CalculateProductionIndex(Guid orderid);
         #endregion
     }
 }

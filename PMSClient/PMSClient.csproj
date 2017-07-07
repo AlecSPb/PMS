@@ -225,6 +225,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PMSIndexService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\StatisticService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1018,6 +1023,13 @@
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\PMSIndexService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PMSIndexService\configuration.svcinfo" />
+    <None Include="Service References\PMSIndexService\configuration91.svcinfo" />
+    <None Include="Service References\PMSIndexService\PMSIndexService.disco" />
     <None Include="Service References\MainService\PMSService.disco" />
     <None Include="Service References\MainService\PMSService.wsdl" />
     <None Include="Service References\MainService\PMSService.xsd">
@@ -1027,6 +1039,13 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\MainService\PMSService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSIndexService\PMSIndexService.wsdl" />
+    <None Include="Service References\PMSIndexService\PMSIndexService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PMSIndexService\PMSIndexService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
@@ -1406,6 +1425,7 @@
     <WCFMetadataStorage Include="Service References\ExtraService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
+    <WCFMetadataStorage Include="Service References\PMSIndexService\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
   </ItemGroup>

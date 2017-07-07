@@ -799,30 +799,5 @@ namespace PMSWCFService
             }
         }
 
-        public void CalculateMaterialIndex(Guid orderid)
-        {
-            try
-            {
-                using (var dc=new PMSDbContext())
-                {
-                    var currentOrder = dc.Orders.Find(orderid);
-                    if (currentOrder!=null)
-                    {
-                        string pminumber = currentOrder.PMINumber;
-                        double materialWeight = dc.MaterialOrderItems.Where(i => i.PMINumber.Contains(pminumber)).Sum(i => i.Weight);
-                        double materialIndex = materialWeight / currentOrder.Quantity;
-
-                        currentOrder.MaterialIndex = materialIndex;
-
-                        dc.Entry(currentOrder).State = EntityState.Modified;
-                        dc.SaveChanges();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-            }
-        }
     }
 }

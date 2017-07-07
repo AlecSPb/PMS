@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSClient.BasicService;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.PMSIndexService;
 
 namespace PMSClient.ViewModel
 {
@@ -168,7 +169,7 @@ namespace PMSClient.ViewModel
                 }
                 service.Close();
                 //计算并保存热压指数
-                using (var serviceCalc = new MissonServiceClient())
+                using (var serviceCalc = new PMSIndexServiceClient())
                 {
                     serviceCalc.CalculateProductionIndex(CurrentPlan.OrderID);
                 }

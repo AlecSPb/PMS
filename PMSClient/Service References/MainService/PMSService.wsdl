@@ -337,12 +337,6 @@
   <wsdl:message name="IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckOrderItemNumberExistResponse" />
   </wsdl:message>
-  <wsdl:message name="IMaterialOrderService_CalculateMaterialIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:CalculateMaterialIndex" />
-  </wsdl:message>
-  <wsdl:message name="IMaterialOrderService_CalculateMaterialIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CalculateMaterialIndexResponse" />
-  </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryIns_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryIns" />
   </wsdl:message>
@@ -588,12 +582,6 @@
   </wsdl:message>
   <wsdl:message name="IMissonService_GetPlanExtraCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanExtraCountResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMissonService_CalculateProductionIndex_InputMessage">
-    <wsdl:part name="parameters" element="tns:CalculateProductionIndex" />
-  </wsdl:message>
-  <wsdl:message name="IMissonService_CalculateProductionIndex_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CalculateProductionIndexResponse" />
   </wsdl:message>
   <wsdl:message name="IDeliveryService_GetDelivery_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDelivery" />
@@ -1398,10 +1386,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CalculateMaterialIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndex" message="tns:IMaterialOrderService_CalculateMaterialIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndexResponse" message="tns:IMaterialOrderService_CalculateMaterialIndex_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMaterialInventoryService">
     <wsdl:operation name="GetMaterialInventoryIns">
@@ -1569,10 +1553,6 @@
     <wsdl:operation name="GetPlanExtraCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraCount" message="tns:IMissonService_GetPlanExtraCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetPlanExtraCountResponse" message="tns:IMissonService_GetPlanExtraCount_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CalculateProductionIndex">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/CalculateProductionIndex" message="tns:IMissonService_CalculateProductionIndex_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/CalculateProductionIndexResponse" message="tns:IMissonService_CalculateProductionIndex_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IDeliveryService">
@@ -2485,15 +2465,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CalculateMaterialIndex">
-      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndex" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="materialinventory" type="tns:IMaterialInventoryService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2862,15 +2833,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetPlanExtraCount">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetPlanExtraCount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CalculateProductionIndex">
-      <soap:operation soapAction="http://tempuri.org/IMissonService/CalculateProductionIndex" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

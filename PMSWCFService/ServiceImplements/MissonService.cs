@@ -521,37 +521,5 @@ namespace PMSWCFService
             }
         }
 
-        public void CalculateProductionIndex(Guid orderid)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    double planCount = dc.VHPPlans.Where(i => i.OrderID == orderid).Count();
-                    double targetCount = 0;
-                    var currentOrder = dc.Orders.Find(orderid);
-                    if (currentOrder != null)
-                    {
-                        targetCount = currentOrder.Quantity;
-                        double productIndex = 0;
-                        if (targetCount > 0)
-                        {
-                            productIndex = planCount / targetCount;
-                        }
-                        //设置值并保存
-                        currentOrder.ProductionIndex = productIndex;
-                        dc.Entry(currentOrder).State = EntityState.Modified;
-                        dc.SaveChanges();
-                    }
-
-
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
     }
 }

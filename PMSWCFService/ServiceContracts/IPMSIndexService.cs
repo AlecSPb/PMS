@@ -13,26 +13,12 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IPMSIndexService
     {
+        #region 热压指数计算
         [OperationContract]
-        List<DcPMSIndex> GetPMSIndexByType(string pmsIndexType);
-
+        void CalculateProductionIndex(Guid orderid);
         [OperationContract]
-        DcPMSIndex GetBestInHistory(string pmsIndexType);
-
-        [OperationContract]
-        DcPMSIndex GetWorstInHistory(string pmsIndexType);
-
-        [OperationContract]
-        DcPMSIndex GetAverageInHistory(string pmsIndexType);
-
-
-        /// <summary>
-        /// 每天计算一下
-        /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        [OperationContract]
-        int AddPMSIndex(DcPMSIndex index);
+        void CalculateMaterialIndex(Guid orderid);
+        #endregion
 
     }
 }
