@@ -67,5 +67,11 @@ namespace PMSWCFService.ServiceContracts
         int GetPlanExtraCount(string searchCode, string composition);
 
         #endregion
+
+
+        #region 热压指数计算
+        [OperationContract]
+        void CalculateProductionIndex(Guid orderid);
+        #endregion
     }
 }

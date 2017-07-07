@@ -167,6 +167,12 @@ namespace PMSClient.ViewModel
                     service.UpdateVHPPlanByUID(CurrentPlan, uid);
                 }
                 service.Close();
+                //计算并保存热压指数
+                using (var serviceCalc = new MissonServiceClient())
+                {
+                    serviceCalc.CalculateProductionIndex(CurrentPlan.OrderID);
+                }
+
                 PMSHelper.ViewModels.Misson.RefreshData();
                 NavigationService.Status("保存成功，请刷新列表");
                 GoBack();

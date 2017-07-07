@@ -8094,6 +8094,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanExtraCount", ReplyAction="http://tempuri.org/IMissonService/GetPlanExtraCountResponse")]
         System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/CalculateProductionIndex", ReplyAction="http://tempuri.org/IMissonService/CalculateProductionIndexResponse")]
+        void CalculateProductionIndex(System.Guid orderid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/CalculateProductionIndex", ReplyAction="http://tempuri.org/IMissonService/CalculateProductionIndexResponse")]
+        System.Threading.Tasks.Task CalculateProductionIndexAsync(System.Guid orderid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8257,6 +8263,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetPlanExtraCountAsync(string searchCode, string composition) {
             return base.Channel.GetPlanExtraCountAsync(searchCode, composition);
+        }
+        
+        public void CalculateProductionIndex(System.Guid orderid) {
+            base.Channel.CalculateProductionIndex(orderid);
+        }
+        
+        public System.Threading.Tasks.Task CalculateProductionIndexAsync(System.Guid orderid) {
+            return base.Channel.CalculateProductionIndexAsync(orderid);
         }
     }
     

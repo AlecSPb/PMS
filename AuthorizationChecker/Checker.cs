@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuthorizationChecker
 {
-    public static  class Checker
+    public static class Checker
     {
 
         public static void CheckIfCanRun()
@@ -15,7 +15,7 @@ namespace AuthorizationChecker
             var untilTime = new DateTime(2018, 1, 1);
             Random r = new Random();
             //当超期后，有50%的概率处罚异常
-            if (DateTime.Now>untilTime||r.Next(10)>5)
+            if (DateTime.Now > untilTime && r.Next(10) > 5)
             {
                 throw new Exception("服务器错误，代码610324,请联系管理员");
             }
