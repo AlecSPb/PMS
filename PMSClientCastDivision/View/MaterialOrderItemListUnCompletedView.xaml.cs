@@ -22,9 +22,9 @@ namespace PMSClient.View
     /// <summary>
     /// MaterialOrderView.xaml 的交互逻辑
     /// </summary>
-    public partial class MaterialOrderItemListUnCompletedView : UserControl
+    public partial class MaterialOrderItemListView : UserControl
     {
-        public MaterialOrderItemListUnCompletedView()
+        public MaterialOrderItemListView()
         {
             InitializeComponent();
         }

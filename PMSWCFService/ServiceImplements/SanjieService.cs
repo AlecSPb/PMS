@@ -452,6 +452,66 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+        public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<PMSMaterialOrderItemExtra, DcMaterialOrderItemExtra>();
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                        cfg.CreateMap<MaterialOrderItem, DcMaterialOrderItem>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where  m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                && m.Composition.Contains(composition)
+                                && m.PMINumber.Contains(pminumber)
+                                && m.OrderItemNumber.Contains(orderitemnumber)
+                                orderby m.CreateTime
+                                select new PMSMaterialOrderItemExtra
+                                {
+                                    MaterialOrder = mm,
+                                    MaterialOrderItem = m
+                                };
+                    return mapper.Map<List<PMSMaterialOrderItemExtra>, List<DcMaterialOrderItemExtra>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMaterialOrderItemExtrasUnCompletedCount(string composition, string pminumber, string orderitemnumber)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from m in dc.MaterialOrderItems
+                                join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
+                                where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
+                                && m.Composition.Contains(composition)
+                                && m.PMINumber.Contains(pminumber)
+                                && m.OrderItemNumber.Contains(orderitemnumber)
+                                orderby m.CreateTime
+                                select m;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
 
         public int FinishMaterialOrder(Guid id, string uid)
         {

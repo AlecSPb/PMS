@@ -26,6 +26,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber);
 
+        [OperationContract]
+        List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        [OperationContract]
+        int GetMaterialOrderItemExtrasUnCompletedCount(string composition, string pminumber, string orderitemnumber);
+
         //Finish Order Item
         [OperationContract]
         int FinishMaterialOrderItem(Guid id,string uid);

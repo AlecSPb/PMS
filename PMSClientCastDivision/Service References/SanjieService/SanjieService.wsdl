@@ -2,9 +2,9 @@
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SanjieService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://192.168.16.254:8002/SanjieService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:8002/SanjieService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8002/SanjieService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8002/SanjieService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISanjieService_GetMaterialOrder_InputMessage">
@@ -36,6 +36,18 @@
   </wsdl:message>
   <wsdl:message name="ISanjieService_GetMaterialOrderItemExtrasCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtrasUnCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtrasUnCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompletedCount" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompletedCountResponse" />
   </wsdl:message>
   <wsdl:message name="ISanjieService_FinishMaterialOrderItem_InputMessage">
     <wsdl:part name="parameters" element="tns:FinishMaterialOrderItem" />
@@ -142,6 +154,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCount" message="tns:ISanjieService_GetMaterialOrderItemExtrasCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCountResponse" message="tns:ISanjieService_GetMaterialOrderItemExtrasCount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasUnCompleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompleted" message="tns:ISanjieService_GetMaterialOrderItemExtrasUnCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedResponse" message="tns:ISanjieService_GetMaterialOrderItemExtrasUnCompleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasUnCompletedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCount" message="tns:ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCountResponse" message="tns:ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="FinishMaterialOrderItem">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" message="tns:ISanjieService_FinishMaterialOrderItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse" message="tns:ISanjieService_FinishMaterialOrderItem_OutputMessage" />
@@ -239,6 +259,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderItemExtrasCount">
       <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasUnCompleted">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompleted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderItemExtrasUnCompletedCount">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -375,7 +413,7 @@
   </wsdl:binding>
   <wsdl:service name="SanjieService">
     <wsdl:port name="sanjie" binding="tns:sanjie">
-      <soap:address location="http://192.168.16.254:8002/SanjieService.svc" />
+      <soap:address location="http://localhost:8002/SanjieService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

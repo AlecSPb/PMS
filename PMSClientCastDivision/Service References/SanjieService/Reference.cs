@@ -1293,6 +1293,20 @@ namespace PMSClient.SanjieService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCount", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasCountResponse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompleted", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedResponse")]
+        PMSClient.SanjieService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompleted", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedResponse")]
+        System.Threading.Tasks.Task<PMSClient.SanjieService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasUnCompletedAsync(int skip, int take, string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCount", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCountRespo" +
+            "nse")]
+        int GetMaterialOrderItemExtrasUnCompletedCount(string composition, string pminumber, string orderitemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCount", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCountRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasUnCompletedCountAsync(string composition, string pminumber, string orderitemnumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
         int FinishMaterialOrderItem(System.Guid id, string uid);
         
@@ -1443,6 +1457,22 @@ namespace PMSClient.SanjieService {
         
         public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasCountAsync(string composition, string pminumber, string orderitemnumber) {
             return base.Channel.GetMaterialOrderItemExtrasCountAsync(composition, pminumber, orderitemnumber);
+        }
+        
+        public PMSClient.SanjieService.DcMaterialOrderItemExtra[] GetMaterialOrderItemExtrasUnCompleted(int skip, int take, string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasUnCompleted(skip, take, composition, pminumber, orderitemnumber);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.SanjieService.DcMaterialOrderItemExtra[]> GetMaterialOrderItemExtrasUnCompletedAsync(int skip, int take, string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasUnCompletedAsync(skip, take, composition, pminumber, orderitemnumber);
+        }
+        
+        public int GetMaterialOrderItemExtrasUnCompletedCount(string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasUnCompletedCount(composition, pminumber, orderitemnumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasUnCompletedCountAsync(string composition, string pminumber, string orderitemnumber) {
+            return base.Channel.GetMaterialOrderItemExtrasUnCompletedCountAsync(composition, pminumber, orderitemnumber);
         }
         
         public int FinishMaterialOrderItem(System.Guid id, string uid) {

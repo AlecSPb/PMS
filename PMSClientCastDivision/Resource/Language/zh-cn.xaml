@@ -4,7 +4,7 @@
 
     <!--规范化后的命名-->
     <!--AppName-->
-    <sys:String x:Key="AppNameDesktop">PMS生产管理系统_三杰专用[测试版本]</sys:String>
+    <sys:String x:Key="AppNameDesktop">PMS生产管理系统_三杰专用[正式版本]</sys:String>
 
     <!--Navigation Title-->
     <sys:String x:Key="NavigationOrder">订单管理</sys:String>
@@ -82,16 +82,16 @@
     <sys:String x:Key="PagePlanEdit">计划编辑</sys:String>
     <sys:String x:Key="PageMaterialNeed">材料需求</sys:String>
     <sys:String x:Key="PageMaterialNeedEdit">材料需求编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrder">原料订单</sys:String>
+    <sys:String x:Key="PageMaterialOrder">订单</sys:String>
     <sys:String x:Key="PageMaterialOrderEdit">原料订单编辑</sys:String>
     <sys:String x:Key="PageMaterialOrderItemEdit">原料订单项编辑</sys:String>
-    <sys:String x:Key="PageMaterialOrderItemList">原料订单流水</sys:String>
-
+    <sys:String x:Key="PageMaterialOrderItemList">流水</sys:String>
+    <sys:String x:Key="PageMaterialOrderItemListUnCompleted">流水[未完成]</sys:String>
 
     <sys:String x:Key="PageMaterialInventory">原料库存</sys:String>
-    <sys:String x:Key="PageMaterialInventoryIn">原料入库-从三杰到先锋</sys:String>
+    <sys:String x:Key="PageMaterialInventoryIn">入库-SJ到PM</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">请选择原料入库信息</sys:String>
-    <sys:String x:Key="PageMaterialInventoryOut">原料出库-从先锋到三杰</sys:String>
+    <sys:String x:Key="PageMaterialInventoryOut">出库-PM到SJ</sys:String>
     <sys:String x:Key="PageMaterialInventoryInEdit">原料库存[入库]编辑</sys:String>
     <sys:String x:Key="PageMaterialInventoryOutEdit">原料库存[出库]编辑</sys:String>
 
@@ -205,7 +205,8 @@
     <sys:String x:Key="ButtonSign">签名</sys:String>
     <sys:String x:Key="ButtonFinish">完成</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>
-    <sys:String x:Key="ButtonMaterialOrderItemList">原料流水</sys:String>
+    <sys:String x:Key="ButtonMaterialOrderItemList">流水</sys:String>
+    <sys:String x:Key="ButtonUnCompleted">未完成</sys:String>
     <sys:String x:Key="ButtonNotice">新消息</sys:String>
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>

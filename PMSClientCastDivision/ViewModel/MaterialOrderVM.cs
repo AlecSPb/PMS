@@ -52,7 +52,17 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcMaterialOrder>(ActionSelectionChanged);
 
             GoToMaterialOrderItemList = new RelayCommand(ActionGoToMaterialOrderItemList, CanGoToMaterialOrderItemList);
+            GoToMaterialOrderItemListUnCompleted = new RelayCommand(ActionGoToMaterialOrderItemListUnCompleted, CanGoToMaterialOrderItemListUnCompleted);
+        }
 
+        private bool CanGoToMaterialOrderItemListUnCompleted()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialOrder);
+        }
+
+        private void ActionGoToMaterialOrderItemListUnCompleted()
+        {
+            NavigationService.GoTo(PMSViews.MaterialOrderItemListUnCompleted);
         }
 
         private bool CanFinishItem(DcMaterialOrderItem arg)
@@ -294,6 +304,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcMaterialOrder> Refresh { get; set; }
         public RelayCommand<DcMaterialOrder> SelectionChanged { get; set; }
         public RelayCommand GoToMaterialOrderItemList { get; set; }
+        public RelayCommand GoToMaterialOrderItemListUnCompleted { get; set; }
         #endregion
     }
 }
