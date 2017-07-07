@@ -158,7 +158,7 @@ namespace PMSClient.ViewModel
                     service.UpdateRecordTestByUID(CurrentRecordTest, uid);
                 }
                 service.Close();
-                //PMSHelper.ViewModels.RecordTest.RefreshData();
+                PMSHelper.ViewModels.RecordTest.RefreshData();
                 NavigationService.Status("保存成功，请刷新列表");
                 GoBack();
             }
