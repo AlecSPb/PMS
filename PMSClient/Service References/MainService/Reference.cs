@@ -74,6 +74,9 @@ namespace PMSClient.MainService {
         private string ProductTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ProductionIndexField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -327,6 +330,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.ProductTypeField, value) != true)) {
                     this.ProductTypeField = value;
                     this.RaisePropertyChanged("ProductType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ProductionIndex {
+            get {
+                return this.ProductionIndexField;
+            }
+            set {
+                if ((this.ProductionIndexField.Equals(value) != true)) {
+                    this.ProductionIndexField = value;
+                    this.RaisePropertyChanged("ProductionIndex");
                 }
             }
         }

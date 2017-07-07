@@ -137,6 +137,13 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="PMI Index">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ProductionIndex,StringFormat={}{0:F3}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="3" Orientation="Horizontal">

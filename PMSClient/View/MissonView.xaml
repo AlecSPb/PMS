@@ -138,6 +138,13 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="PMI Index">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ProductionIndex,StringFormat={}{0:F3}}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource CustomerCustomerName}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -194,7 +201,7 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanAllPowderWeight}" Binding="{Binding AllWeight,StringFormat={}{0:N2}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                
+
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanProcessCode}" Binding="{Binding ProcessCode}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockCenter}"
@@ -226,7 +233,7 @@
                                     Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding SpecialRequirement}"/>
                 <!--<DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanRemark}" Binding="{Binding Remark}"/>-->
-                
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

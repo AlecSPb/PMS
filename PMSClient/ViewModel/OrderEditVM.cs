@@ -85,6 +85,7 @@ namespace PMSClient.ViewModel
             order.Reviewer = "";
             order.ReviewTime = DateTime.Now;
             order.FinishTime = DateTime.Now;
+            order.ProductionIndex = 0;
             #endregion
             CurrentOrder = order;
         }

@@ -26,6 +26,7 @@
       <xs:element minOccurs="0" name="PolicyType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProductType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductionIndex" type="xs:double" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Quantity" type="xs:double" />
       <xs:element minOccurs="0" name="QuantityUnit" nillable="true" type="xs:string" />
