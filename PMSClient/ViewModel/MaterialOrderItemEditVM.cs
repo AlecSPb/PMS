@@ -139,6 +139,14 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            if (CurrentMaterialOrderItem.Composition.Contains("Si"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[Si],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+
             if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
             {
                 return;
