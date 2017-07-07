@@ -43,7 +43,7 @@ namespace PMSDAL
 
         //热压指数
         public double ProductionIndex { get; set; }
-
+        public double MaterialIndex { get; set; }
 
         //状态部分
         public string Priority { get; set; }//紧急，一般，不着急

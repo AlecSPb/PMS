@@ -77,5 +77,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         bool CheckOrderItemNumberExist(string orderItemnumber);
 
+
+
+        [OperationContract]
+        void CalculateMaterialIndex(Guid orderid);
     }
 }

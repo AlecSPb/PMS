@@ -56,6 +56,9 @@ namespace PMSClient.MainService {
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MaterialIndexField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MinimumAcceptDefectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -252,6 +255,19 @@ namespace PMSClient.MainService {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MaterialIndex {
+            get {
+                return this.MaterialIndexField;
+            }
+            set {
+                if ((this.MaterialIndexField.Equals(value) != true)) {
+                    this.MaterialIndexField = value;
+                    this.RaisePropertyChanged("MaterialIndex");
                 }
             }
         }
@@ -7354,6 +7370,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist", ReplyAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse")]
         System.Threading.Tasks.Task<bool> CheckOrderItemNumberExistAsync(string orderItemnumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndex", ReplyAction="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndexResponse")]
+        void CalculateMaterialIndex(string pminumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndex", ReplyAction="http://tempuri.org/IMaterialOrderService/CalculateMaterialIndexResponse")]
+        System.Threading.Tasks.Task CalculateMaterialIndexAsync(string pminumber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7581,6 +7603,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<bool> CheckOrderItemNumberExistAsync(string orderItemnumber) {
             return base.Channel.CheckOrderItemNumberExistAsync(orderItemnumber);
+        }
+        
+        public void CalculateMaterialIndex(string pminumber) {
+            base.Channel.CalculateMaterialIndex(pminumber);
+        }
+        
+        public System.Threading.Tasks.Task CalculateMaterialIndexAsync(string pminumber) {
+            return base.Channel.CalculateMaterialIndexAsync(pminumber);
         }
     }
     

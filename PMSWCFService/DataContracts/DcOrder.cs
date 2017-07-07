@@ -59,7 +59,8 @@ namespace PMSWCFService.DataContracts
         //热压指数
         [DataMember]
         public double ProductionIndex { get; set; }
-
+        [DataMember]
+        public double MaterialIndex { get; set; }
         //创建者和审核部分
         [DataMember]
         public DateTime CreateTime { get; set; }
