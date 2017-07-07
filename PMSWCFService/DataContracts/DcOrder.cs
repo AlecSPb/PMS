@@ -56,6 +56,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string StateRemark { get; set; }
 
+        //热压指数
+        public double ProductionIndex { get; set; }
 
         //创建者和审核部分
         [DataMember]

@@ -41,6 +41,8 @@ namespace PMSDAL
         public string MinimumAcceptDefect { get; set; }//密度要求，加工要求，表面洁净度，多大的缺口可以接受，多大的裂缝可以接受，表面有花纹是否可以接受，表面有坑是否可以接受
         public string Remark { get; set; }
 
+        //热压指数
+        public double ProductionIndex { get; set; }
 
 
         //状态部分
