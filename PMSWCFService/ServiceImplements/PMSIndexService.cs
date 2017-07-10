@@ -22,12 +22,13 @@ namespace PMSWCFService
                     {
                         string pminumber = currentOrder.PMINumber;
                         double materialWeight = dc.MaterialOrderItems.Where(i => i.PMINumber.Contains(pminumber)).Sum(i => i.Weight);
-                        double materialIndex = materialWeight / currentOrder.Quantity;
-
-                        currentOrder.MaterialIndex = materialIndex;
-
-                        dc.Entry(currentOrder).State = EntityState.Modified;
-                        dc.SaveChanges();
+                        if (materialWeight > 0)
+                        {
+                            double materialIndex = materialWeight / currentOrder.Quantity;
+                            currentOrder.MaterialIndex = materialIndex;
+                            dc.Entry(currentOrder).State = EntityState.Modified;
+                            dc.SaveChanges();
+                        }
                     }
                 }
             }
@@ -54,10 +55,14 @@ namespace PMSWCFService
                         {
                             productIndex = planCount / targetCount;
                         }
-                        //设置值并保存
-                        currentOrder.ProductionIndex = productIndex;
-                        dc.Entry(currentOrder).State = EntityState.Modified;
-                        dc.SaveChanges();
+                        if (planCount > 0)
+                        {
+                            //设置值并保存
+                            currentOrder.ProductionIndex = productIndex;
+                            dc.Entry(currentOrder).State = EntityState.Modified;
+                            dc.SaveChanges();
+                        }
+
                     }
 
 

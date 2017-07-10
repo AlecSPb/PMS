@@ -172,6 +172,7 @@ namespace PMSClient.ViewModel
                 using (var serviceCalc = new PMSIndexServiceClient())
                 {
                     serviceCalc.CalculateProductionIndex(CurrentPlan.OrderID);
+                    serviceCalc.CalculateMaterialIndex(CurrentPlan.OrderID);
                 }
 
                 PMSHelper.ViewModels.Misson.RefreshData();
