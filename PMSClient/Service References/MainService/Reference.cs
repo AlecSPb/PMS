@@ -3611,6 +3611,9 @@ namespace PMSClient.MainService {
         private string DimensionActualField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FollowUpsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3779,6 +3782,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.DimensionActualField, value) != true)) {
                     this.DimensionActualField = value;
                     this.RaisePropertyChanged("DimensionActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FollowUps {
+            get {
+                return this.FollowUpsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FollowUpsField, value) != true)) {
+                    this.FollowUpsField = value;
+                    this.RaisePropertyChanged("FollowUps");
                 }
             }
         }
