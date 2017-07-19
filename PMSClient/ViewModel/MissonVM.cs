@@ -181,7 +181,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEditPlan(DcPlanVHP plan)
         {
-            if (PMSDialogService.ShowYesNo("请问","你现在准备编辑这条记录，确定继续编辑吗？"))
+            if (PMSDialogService.ShowYesNo("请问","你现在准备编辑更改这条记录，确定继续编辑吗？"))
             {
                 if (plan != null)
                 {

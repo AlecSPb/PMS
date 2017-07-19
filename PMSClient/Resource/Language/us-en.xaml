@@ -334,6 +334,8 @@
     <sys:String x:Key="OrderCheckContent">Check Content</sys:String>
     <sys:String x:Key="OrderCheckDate">Check Date</sys:String>
     <sys:String x:Key="OrderFinishTime">Finish Time</sys:String>
+    <sys:String x:Key="OrderPlanIndex">Plan Index</sys:String>
+    <sys:String x:Key="OrderMaterialIndex">Material Index</sys:String>
     
     <!--Plan-->
     <sys:String x:Key="PlanState">State</sys:String>
