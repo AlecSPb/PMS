@@ -30,6 +30,9 @@ namespace PMSClient.ViewModel
             TestTypes = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.TestType>(TestTypes);
 
+            TestFollowUps = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.TestFollowUps>(TestFollowUps);
+
             TestDefects = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.TestDefectsTypes>(TestDefects);
 
@@ -169,6 +172,7 @@ namespace PMSClient.ViewModel
         }
         public List<string> TestDefects { get; set; }
         public List<string> TestTypes { get; set; }
+        public List<string> TestFollowUps { get; set; }
         public List<string> States { get; set; }
         public List<string> CustomerNames { get; set; }
 

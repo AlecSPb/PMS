@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,5 +33,7 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string Sample { get; set; }
         public DateTime OrderDate { get; set; }
+        [DefaultValue("未定")]
+        public string FollowUps { get; set; }
     }
 }

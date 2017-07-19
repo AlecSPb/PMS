@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,8 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string Sample { get; set; }
         public DateTime OrderDate { get; set; }
+        [DefaultValue("未定")]
+        public string FollowUps { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

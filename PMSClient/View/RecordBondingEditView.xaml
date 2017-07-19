@@ -46,7 +46,7 @@
         </Grid>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel DataContext="{Binding CurrentRecordBonding}">
-                <uc:BondingEditItem Title="0.0绑定靶材信息" IsExpanded="True" Background="LightGreen">
+                <uc:BondingEditItem Title="0.0绑定靶材信息" IsExpanded="True" Background="Wheat">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -182,7 +182,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="2.0背板检查"  IsExpanded="True">
+                <uc:BondingEditItem Title="2.0背板检查"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -265,7 +265,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="3.0靶材预处理"  IsExpanded="True">
+                <uc:BondingEditItem Title="3.0靶材预处理"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -309,7 +309,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="4.0背板预处理"  IsExpanded="True">
+                <uc:BondingEditItem Title="4.0背板预处理"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -357,7 +357,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="5.0接合"  IsExpanded="True">
+                <uc:BondingEditItem Title="5.0接合"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -411,7 +411,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="6.0翘曲修正"  IsExpanded="True">
+                <uc:BondingEditItem Title="6.0翘曲修正"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -458,7 +458,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="7.0尺寸检查"  IsExpanded="True">
+                <uc:BondingEditItem Title="7.0尺寸检查"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -510,7 +510,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="8.0接合率检查"  IsExpanded="True">
+                <uc:BondingEditItem Title="8.0接合率检查"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -558,7 +558,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="9.0喷砂和清洁处理"  IsExpanded="True">
+                <uc:BondingEditItem Title="9.0喷砂和清洁处理"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -609,7 +609,7 @@
                         </Grid>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="10.0外观处理和封装"  IsExpanded="True">
+                <uc:BondingEditItem Title="10.0外观处理和封装"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>

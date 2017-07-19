@@ -52,6 +52,7 @@ namespace PMSWCFService.DataContracts
         public string Sample { get; set; }
         [DataMember]
         public DateTime OrderDate { get; set; }
-
+        [DataMember]
+        public string FollowUps { get; set; }
     }
 }
