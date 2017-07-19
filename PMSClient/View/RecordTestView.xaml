@@ -24,7 +24,7 @@
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  Add}"/>
             <Button Content="{StaticResource ButtonQuickAdd}" Style="{StaticResource  StyleButtonSpecial}"
-                    Command="{Binding  QuickAdd}"/>
+                    <!--Command="{Binding  QuickAdd}"/>-->
             <TextBlock Text="{StaticResource RTProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding  SearchProductID,UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource StyleTextBoxSearch }" />
