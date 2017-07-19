@@ -70,7 +70,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox  Grid.Row="1" Grid.Column="1"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.TestFollowUps,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding FollowUp,Mode=TwoWay}"
+                          SelectedItem="{Binding FollowUps,Mode=TwoWay}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#后续工作类型"/>
                 

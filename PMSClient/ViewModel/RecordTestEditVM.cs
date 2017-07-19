@@ -73,6 +73,7 @@ namespace PMSClient.ViewModel
             model.Density = "0";
             model.Defects = "无";
             model.OrderDate = DateTime.Now.AddDays(-30);
+            model.FollowUps = PMSCommon.TestFollowUps.发货.ToString();
             #endregion
             CurrentRecordTest = model;
         }
