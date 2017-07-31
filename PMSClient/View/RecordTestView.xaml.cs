@@ -29,22 +29,30 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var order = (DcRecordTest)e.Row.DataContext;
-            if (order != null)
+            try
             {
-                switch (order.State)
+                var order = (DcRecordTest)e.Row.DataContext;
+                if (order != null)
                 {
-                    case "未核验":
-                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
-                        break;
-                    case "已核验":
-                        e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
-                        break;
-                    default:
-                        break;
-                }
+                    switch (order.State)
+                    {
+                        case "未核验":
+                            e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                            break;
+                        case "已核验":
+                            e.Row.Background = this.FindResource("CheckedBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
 
+                }
             }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
 
     }

@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8002/PMSIndexService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://192.168.16.254:8002/PMSIndexService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PMSIndexService.disco" MetadataType="Disco" ID="3e7df65a-825c-4516-bd02-5c92fe37dede" SourceId="1" SourceUrl="http://localhost:8002/PMSIndexService.svc?disco" />
-    <MetadataFile FileName="PMSIndexService.xsd" MetadataType="Schema" ID="56383260-cbea-47fc-83a6-d82b4be45806" SourceId="1" SourceUrl="http://localhost:8002/PMSIndexService.svc?xsd=xsd1" />
-    <MetadataFile FileName="PMSIndexService1.xsd" MetadataType="Schema" ID="a25c19b7-0637-467e-8e84-91702c5ddf5e" SourceId="1" SourceUrl="http://localhost:8002/PMSIndexService.svc?xsd=xsd0" />
-    <MetadataFile FileName="PMSIndexService.wsdl" MetadataType="Wsdl" ID="c3e645f5-b559-43d8-a04e-3dbabc701efa" SourceId="1" SourceUrl="http://localhost:8002/PMSIndexService.svc?wsdl" />
+    <MetadataFile FileName="PMSIndexService1.disco" MetadataType="Disco" ID="62008567-792a-4718-bc99-791903df264c" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSIndexService.svc?disco" />
+    <MetadataFile FileName="PMSIndexService1.wsdl" MetadataType="Wsdl" ID="15b80442-f0a1-40f9-8d75-3190d7931a0f" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSIndexService.svc?wsdl" />
+    <MetadataFile FileName="PMSIndexService2.xsd" MetadataType="Schema" ID="9e2e260b-1731-4154-8d1b-183215291d8a" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSIndexService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PMSIndexService21.xsd" MetadataType="Schema" ID="42d30071-12cb-401a-9129-9d12a243e26d" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSIndexService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

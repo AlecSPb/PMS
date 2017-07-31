@@ -30,25 +30,35 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var order = (DcDelivery)e.Row.DataContext;
-            if (order != null)
+            try
             {
-                switch (order.State)
+                var order = (DcDelivery)e.Row.DataContext;
+                if (order != null)
                 {
-                    case "未核验":
-                        e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
-                        break;
-                    case "未完成":
-                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
-                        break;
-                    case "完成":
-                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
-                        break;
-                    default:
-                        break;
+                    switch (order.State)
+                    {
+                        case "未核验":
+                            e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                            break;
+                        case "未完成":
+                            e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                            break;
+                        case "完成":
+                            e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
                 }
-
             }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
+
     }
+
+
 }

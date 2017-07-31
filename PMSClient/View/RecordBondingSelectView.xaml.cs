@@ -28,28 +28,36 @@ namespace PMSClient.View
         }
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var order = (RecordBondingExtra)e.Row.DataContext;
-            if (order != null)
+            try
             {
-                switch (order.RecordBonding.State)
+                var order = (RecordBondingExtra)e.Row.DataContext;
+                if (order != null)
                 {
-                    case "未完成":
-                        e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
-                        break;
-                    case "暂停":
-                        e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
-                        break;
-                    case "失败":
-                        e.Row.Background = this.FindResource("FailedBrush") as SolidColorBrush;
-                        break;
-                    case "完成":
-                        e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
-                        break;
-                    default:
-                        break;
-                }
+                    switch (order.RecordBonding.State)
+                    {
+                        case "未完成":
+                            e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                            break;
+                        case "暂停":
+                            e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
+                            break;
+                        case "失败":
+                            e.Row.Background = this.FindResource("FailedBrush") as SolidColorBrush;
+                            break;
+                        case "完成":
+                            e.Row.Background = this.FindResource("CompletedBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
 
+                }
             }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
     }
 }

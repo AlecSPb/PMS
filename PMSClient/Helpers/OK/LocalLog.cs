@@ -52,7 +52,7 @@ namespace PMSClient.Helper
                     sw.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }
@@ -86,7 +86,7 @@ namespace PMSClient.Helper
                     sw.Close();
                 }
             }
-            catch (Exception)
+            catch (Exception exx)
             {
 
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="s9GJ8ZtK5SfejDcnR+6Z+cXquZc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="5Tuwc4Yomg5jBNvNfyNG/VjR724=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="pmiindex">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="pmiindex" contract="PMSIndexService.IPMSIndexService" bindingType="basicHttpBinding" address="http://localhost:8002/PMSIndexService.svc" bindingConfiguration="pmiindex">
+    <endpoint name="pmiindex" contract="PMSIndexService.IPMSIndexService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/PMSIndexService.svc" bindingConfiguration="pmiindex">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:8002/PMSIndexService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/PMSIndexService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -62,7 +62,7 @@ namespace PMSClient
                 var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 Title = $"{titleName}-{versonName}";
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
             }

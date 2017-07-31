@@ -31,22 +31,30 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
-            var order = (PlateExtra)e.Row.DataContext;
-            if (order != null)
+            try
             {
-                switch (order.Plate.State)
+                var order = (PlateExtra)e.Row.DataContext;
+                if (order != null)
                 {
-                    case "库存":
-                        e.Row.Background = this.FindResource("StoredBrush") as SolidColorBrush;
-                        break;
-                    case "发货":
-                        e.Row.Background = this.FindResource("DeliveredBrush") as SolidColorBrush;
-                        break;
-                    default:
-                        break;
-                }
+                    switch (order.Plate.State)
+                    {
+                        case "库存":
+                            e.Row.Background = this.FindResource("StoredBrush") as SolidColorBrush;
+                            break;
+                        case "发货":
+                            e.Row.Background = this.FindResource("DeliveredBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
 
+                }
             }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
 
 
