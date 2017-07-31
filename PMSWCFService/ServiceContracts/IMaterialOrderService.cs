@@ -48,6 +48,7 @@ namespace PMSWCFService.ServiceContracts
         int UpdateMaterialOrderItemByUID(DcMaterialOrderItem model,string uid);
         [OperationContract]
         int DeleteMaterialOrderItem(Guid id);
+
         /// <summary>
         /// 用来给原料入库提供选择
         /// </summary>
