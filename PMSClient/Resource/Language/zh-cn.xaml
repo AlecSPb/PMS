@@ -447,6 +447,7 @@
     <sys:String x:Key="RMRemark">备注</sys:String>
     <sys:String x:Key="RMMillingTool">制粉方式</sys:String>
     <sys:String x:Key="RMGasProtection">气体保护</sys:String>
+    <sys:String x:Key="RMGrainSize">粒径</sys:String>
     <sys:String x:Key="RMMillingTime">制粉时长</sys:String>
     <sys:String x:Key="RMWeightIn">进料重量</sys:String>
     <sys:String x:Key="RMWeightOut">出料重量</sys:String>

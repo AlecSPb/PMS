@@ -44,6 +44,9 @@ namespace PMSClient.ViewModel
 
             MillingMaterialSources = new List<string>();
             PMSBasicDataService.SetListDS<MillingMaterialSource>(MillingMaterialSources);
+
+            GrainSizes = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.GrainSize, GrainSizes);
         }
         private void ActionCalculator()
         {
@@ -65,6 +68,7 @@ namespace PMSClient.ViewModel
             model.VHPPlanLot = UsefulPackage.PMSTranslate.PlanLot();
             model.Composition = "填入成分";
             model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
+            model.GrainSize = "未知";
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
             model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
@@ -171,6 +175,7 @@ namespace PMSClient.ViewModel
         public List<string> MillingTimes { get; set; }
         public List<string> MillingTools { get; set; }
         public List<string> GasProtections { get; set; }
+        public List<string> GrainSizes { get; set; }
 
         public RelayCommand Select { get; set; }
         public RelayCommand Calculator { get; set; }

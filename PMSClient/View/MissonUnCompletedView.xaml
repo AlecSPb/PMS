@@ -193,6 +193,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanAllPowderWeight}" Binding="{Binding AllWeight,StringFormat={}{0:N2}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                <DataGridTextColumn Header="{StaticResource PlanGrainSize}" Binding="{Binding GrainSize}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanProcessCode}" Binding="{Binding ProcessCode}"/>

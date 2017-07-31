@@ -41,6 +41,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string GasProtection { get; set; }
         [DataMember]
+        public string GrainSize { get; set; }
+        [DataMember]
         public double WeightIn { get; set; }
         [DataMember]
         public double WeightOut { get; set; }

@@ -4275,6 +4275,9 @@ namespace PMSClient.MainService {
         private string GasProtectionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GrainSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4374,6 +4377,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.GasProtectionField, value) != true)) {
                     this.GasProtectionField = value;
                     this.RaisePropertyChanged("GasProtection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GrainSize {
+            get {
+                return this.GrainSizeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GrainSizeField, value) != true)) {
+                    this.GrainSizeField = value;
+                    this.RaisePropertyChanged("GrainSize");
                 }
             }
         }

@@ -26,6 +26,7 @@ namespace PMSDAL
         public string Remark { get; set; }
         public string MillingTool { get; set; }
         public string GasProtection { get; set; }
+        public string GrainSize { get; set; }
         public double WeightIn { get; set; }
         public double WeightOut { get; set; }
         public double WeightRemain { get; set; }

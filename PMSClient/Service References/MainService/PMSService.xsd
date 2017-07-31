@@ -425,6 +425,7 @@
       <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GasProtection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingTime" nillable="true" type="xs:string" />

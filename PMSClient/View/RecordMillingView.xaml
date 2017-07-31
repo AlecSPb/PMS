@@ -82,6 +82,8 @@
                                     Binding="{Binding MillingTool}"/>
                     <DataGridTextColumn Header="{StaticResource RMGasProtection}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding GasProtection}"/>
+                    <DataGridTextColumn Header="{StaticResource RMGrainSize}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding GrainSize}"/>
                     <DataGridTextColumn Header="{StaticResource RMMillingTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MillingTime}"/>
                     <DataGridTextColumn Header="{StaticResource RMWeightIn}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
