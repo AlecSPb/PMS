@@ -238,7 +238,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialOrderServiceClient();
-            var orders = service.GetMaterialOrderBySearchInPage(skip, take, SearchOrderPO, SearchSupplier);
+            var orders = service.GetMaterialOrderBySearch(skip, take, SearchOrderPO, SearchSupplier);
             service.Close();
             MaterialOrders.Clear();
             orders.ToList().ForEach(o => MaterialOrders.Add(o));

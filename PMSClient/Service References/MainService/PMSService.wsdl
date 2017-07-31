@@ -193,6 +193,12 @@
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderBySearchInPage_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderBySearchInPageResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderBySearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderBySearch" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetMaterialOrderBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialOrderBySearchResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialOrderService_GetMaterialOrderCountBySearch_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderCountBySearch" />
   </wsdl:message>
@@ -1290,6 +1296,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage" message="tns:IMaterialOrderService_GetMaterialOrderBySearchInPage_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPageResponse" message="tns:IMaterialOrderService_GetMaterialOrderBySearchInPage_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderBySearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearch" message="tns:IMaterialOrderService_GetMaterialOrderBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchResponse" message="tns:IMaterialOrderService_GetMaterialOrderBySearch_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetMaterialOrderCountBySearch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch" message="tns:IMaterialOrderService_GetMaterialOrderCountBySearch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse" message="tns:IMaterialOrderService_GetMaterialOrderCountBySearch_OutputMessage" />
@@ -2242,6 +2252,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetMaterialOrderBySearchInPage">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterialOrderBySearch">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearch" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

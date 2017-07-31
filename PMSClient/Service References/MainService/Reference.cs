@@ -7231,6 +7231,12 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPage", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchInPageResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchResponse")]
+        PMSClient.MainService.DcMaterialOrder[] GetMaterialOrderBySearch(int skip, int take, string orderPo, string supplier);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderBySearchResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder[]> GetMaterialOrderBySearchAsync(int skip, int take, string orderPo, string supplier);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearch", ReplyAction="http://tempuri.org/IMaterialOrderService/GetMaterialOrderCountBySearchResponse")]
         int GetMaterialOrderCountBySearch(string orderPo, string supplier);
         
@@ -7421,6 +7427,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder[]> GetMaterialOrderBySearchInPageAsync(int skip, int take, string orderPo, string supplier) {
             return base.Channel.GetMaterialOrderBySearchInPageAsync(skip, take, orderPo, supplier);
+        }
+        
+        public PMSClient.MainService.DcMaterialOrder[] GetMaterialOrderBySearch(int skip, int take, string orderPo, string supplier) {
+            return base.Channel.GetMaterialOrderBySearch(skip, take, orderPo, supplier);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialOrder[]> GetMaterialOrderBySearchAsync(int skip, int take, string orderPo, string supplier) {
+            return base.Channel.GetMaterialOrderBySearchAsync(skip, take, orderPo, supplier);
         }
         
         public int GetMaterialOrderCountBySearch(string orderPo, string supplier) {

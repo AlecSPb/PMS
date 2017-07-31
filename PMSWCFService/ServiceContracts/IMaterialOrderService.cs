@@ -10,8 +10,11 @@ namespace PMSWCFService.ServiceContracts
     [ServiceContract]
     public interface IMaterialOrderService
     {
+        //后面作废
         [OperationContract]
         List<DcMaterialOrder> GetMaterialOrderBySearchInPage(int skip, int take, string orderPo, string supplier);
+        [OperationContract]
+        List<DcMaterialOrder> GetMaterialOrderBySearch(int skip, int take, string orderPo, string supplier);
         [OperationContract]
         int GetMaterialOrderCountBySearch(string orderPo, string supplier);
 

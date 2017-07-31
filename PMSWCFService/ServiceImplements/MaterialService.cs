@@ -285,13 +285,47 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcMaterialOrder> GetMaterialOrderBySearch(int skip, int take, string orderPo, string supplier)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<MaterialOrder, DcMaterialOrder>();
+                    });
+                    var mapper = config.CreateMapper();
+                    var query = from m in dc.MaterialOrders
+                                where m.State != MaterialOrderState.作废.ToString()
+                                && m.OrderPO.Contains(orderPo)
+                                && m.Supplier.Contains(supplier)
+                                orderby m.CreateTime descending
+                                select m;
+                    return mapper.Map<List<MaterialOrder>, List<DcMaterialOrder>>(query.Skip(skip).Take(take).ToList());
+
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int GetMaterialOrderCountBySearch(string orderPo, string supplier)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialOrders.Where(m => m.OrderPO.Contains(supplier) && m.State != MaterialOrderState.作废.ToString()).Count();
+                     var query = from m in dc.MaterialOrders
+                                where m.State != MaterialOrderState.作废.ToString()
+                                && m.OrderPO.Contains(orderPo)
+                                && m.Supplier.Contains(supplier)
+                                orderby m.CreateTime descending
+                                select m;
+                    return query.Count();
                 }
             }
             catch (Exception ex)
