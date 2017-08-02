@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -394,15 +394,15 @@
     <Content Include="Resource\DocTemplate\Reports\MaterialDeliverySheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Service References\SanjieService\SanjieService.disco" />
-    <None Include="Service References\SanjieService\SanjieService.wsdl" />
-    <None Include="Service References\SanjieService\SanjieService.xsd">
+    <None Include="Service References\SanjieService\SanjieService1.disco" />
+    <None Include="Service References\SanjieService\SanjieService1.wsdl" />
+    <None Include="Service References\SanjieService\SanjieService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SanjieService\SanjieService1.xsd">
+    <None Include="Service References\SanjieService\SanjieService31.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SanjieService\SanjieService2.xsd">
+    <None Include="Service References\SanjieService\SanjieService32.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserSimpleService\UserSimpleService1.disco" />
