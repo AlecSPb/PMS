@@ -77,6 +77,8 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Header="{StaticResource RTState}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                             Binding="{Binding State}"/>
+                        <DataGridTextColumn Header="{StaticResource RTFollowUp}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                            Binding="{Binding FollowUps}"/>
                         <DataGridTemplateColumn Header="{StaticResource RTProductID}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate >

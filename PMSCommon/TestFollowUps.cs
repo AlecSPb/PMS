@@ -13,6 +13,7 @@ namespace PMSCommon
     {
         绑定,
         发货,
+        报废,
         未定
     }
 }
