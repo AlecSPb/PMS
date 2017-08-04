@@ -83,11 +83,10 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.Dimension);
                 sb.AppendLine(model.PlanType);
                 sb.AppendLine(model.VHPPlanLot);
-                sb.AppendLine();
                 sb.AppendLine("++++++一般标签复制上面内容，样品标签复制下面内容+++++++");
-                sb.AppendLine(model.Misson.CompositionStandard);
+                sb.AppendLine(model.Composition);
                 sb.AppendLine("样品      g");
-                sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+                sb.AppendLine(model.VHPPlanLot);
                 var mainContent = sb.ToString();
 
                 var pageTitle = "热压毛坯标签打印输出";
