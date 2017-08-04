@@ -64,6 +64,9 @@ namespace PMSLargeScreen
 
             if (AllModels.Count == 0)
             {
+                Model1 = null;
+                Model2 = null;
+                Model3 = null;
                 CenterMessage = "没有计划";
                 return;
             }
