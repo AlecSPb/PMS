@@ -85,7 +85,9 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.Misson.Dimension);
                 sb.AppendLine(model.Plan.PlanType);
                 sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+                sb.AppendLine();
                 sb.AppendLine("++++++一般标签复制上面内容，样品标签复制下面内容+++++++");
+                sb.AppendLine();
                 sb.AppendLine(model.Misson.CompositionStandard);
                 sb.AppendLine("样品      g");
                 sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
