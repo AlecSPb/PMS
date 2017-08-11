@@ -13,22 +13,22 @@ namespace PMSWCFService.ServiceContracts
     {
 
         [OperationContract]
-        List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier,string printnumber);
+        List<DcPlate> GetPlates(int skip, int take, string platelot, string supplier, string printnumber, string dimension);
         [OperationContract]
-        int GetPlateCount(string platelot, string supplier,string printnumber);
+        int GetPlateCount(string platelot, string supplier, string printnumber, string dimension);
         [OperationContract]
-        List<DcPlate> GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber);
+        List<DcPlate> GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber, string dimension);
         [OperationContract]
-        int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber);
+        int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber, string dimension);
 
         [OperationContract]
         int AddPlate(DcPlate model);
         [OperationContract]
         int UpdatePlate(DcPlate model);
         [OperationContract]
-        int AddPlateByUID(DcPlate model,string uid);
+        int AddPlateByUID(DcPlate model, string uid);
         [OperationContract]
-        int UpdatePlateByUID(DcPlate model,string uid);
+        int UpdatePlateByUID(DcPlate model, string uid);
 
         [OperationContract]
         int DeletePlate(Guid id);

@@ -168,8 +168,8 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="{StaticResource RTFollowUp}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                            Binding="{Binding FollowUps}"/>
+                        <!--<DataGridTextColumn Header="{StaticResource RTFollowUp}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                            Binding="{Binding FollowUps}"/>-->
                         <DataGridTemplateColumn Header="{StaticResource RTCreator}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate >
