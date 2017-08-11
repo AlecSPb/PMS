@@ -99,7 +99,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchPlateLot = SearchSupplier = SearchPrintNumber = "";
+            SearchPlateLot = SearchSupplier = SearchPrintNumber = searchDimension = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -123,7 +123,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             Plates = new ObservableCollection<DcPlate>();
-            searchSupplier = searchPlateLot =searchPrintNumber= "";
+            searchSupplier = searchPlateLot =searchPrintNumber=searchDimension= "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -177,6 +177,18 @@ namespace PMSClient.ViewModel
                     return;
                 searchSupplier = value;
                 RaisePropertyChanged(() => SearchSupplier);
+            }
+        }
+        private string searchDimension;
+        public string SearchDimension
+        {
+            get { return searchDimension; }
+            set
+            {
+                if (searchDimension == value)
+                    return;
+                searchDimension = value;
+                RaisePropertyChanged(() => SearchDimension);
             }
         }
         private string searchPrintNumber;
