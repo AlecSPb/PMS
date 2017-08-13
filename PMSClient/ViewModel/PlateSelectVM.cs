@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectBatch()
         {
-            if (!PMSDialogService.ShowYesNo("请问","请问要批量添加选定记录？"))
+            if (!PMSDialogService.ShowYesNo("请问", "请问要批量添加选定记录？"))
             {
                 return;
             }
@@ -67,27 +67,27 @@ namespace PMSClient.ViewModel
         {
             var serviceDelivery = new DeliveryServiceClient();
             var servicePlate = new PlateServiceClient();
-            PlateExtras.Where(i=>i.IsSelected).ToList().ForEach(i =>
-            {
-                var deliveryItem = PMSNewModelCollection.NewDeliveryItem(id);
-                deliveryItem.ProductType = PMSCommon.ProductType.背板.ToString();
-                deliveryItem.ProductID = i.Plate.PlateLot;
-                deliveryItem.Composition = i.Plate.PlateMaterial;
-                deliveryItem.Abbr = i.Plate.PlateMaterial;
-                deliveryItem.Customer = "无";
-                deliveryItem.Weight = i.Plate.Weight;
-                deliveryItem.PO = "无";
-                deliveryItem.Dimension = i.Plate.Dimension;
-                deliveryItem.DimensionActual = i.Plate.Dimension;
-                deliveryItem.Defects = i.Plate.Defects;
-                deliveryItem.Remark = i.Plate.Appearance;
-                //System.Diagnostics.Debug.Print(item.IsSelected.ToString() + item.Product.ProductID);
-                var uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                serviceDelivery.AddDeliveryItemByUID(deliveryItem, uid);
+            PlateExtras.Where(i => i.IsSelected).ToList().ForEach(i =>
+              {
+                  var deliveryItem = PMSNewModelCollection.NewDeliveryItem(id);
+                  deliveryItem.ProductType = PMSCommon.ProductType.背板.ToString();
+                  deliveryItem.ProductID = i.Plate.PlateLot;
+                  deliveryItem.Composition = i.Plate.PlateMaterial;
+                  deliveryItem.Abbr = i.Plate.PlateMaterial;
+                  deliveryItem.Customer = "无";
+                  deliveryItem.Weight = i.Plate.Weight;
+                  deliveryItem.PO = "无";
+                  deliveryItem.Dimension = i.Plate.Dimension;
+                  deliveryItem.DimensionActual = i.Plate.Dimension;
+                  deliveryItem.Defects = i.Plate.Defects;
+                  deliveryItem.Remark = i.Plate.Appearance;
+                  //System.Diagnostics.Debug.Print(item.IsSelected.ToString() + item.Product.ProductID);
+                  var uid = PMSHelper.CurrentSession.CurrentUser.UserName;
+                  serviceDelivery.AddDeliveryItemByUID(deliveryItem, uid);
 
-                i.Plate.State = PMSCommon.InventoryState.发货.ToString();
-                servicePlate.UpdatePlateByUID(i.Plate, uid);
-            });
+                  i.Plate.State = PMSCommon.InventoryState.发货.ToString();
+                  servicePlate.UpdatePlateByUID(i.Plate, uid);
+              });
             serviceDelivery.Close();
             servicePlate.Close();
 
@@ -95,12 +95,12 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPlateLot) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchPlateLot) && string.IsNullOrEmpty(SearchSupplier) && string.IsNullOrEmpty(SearchDimension));
         }
 
         private void ActionAll()
         {
-            SearchPlateLot = SearchSupplier =SearchPrintNumber = "";
+            SearchPlateLot = SearchSupplier = SearchPrintNumber = SearchDimension = "";
             SetPageParametersWhenConditionChange();
         }
         private PMSViews requestView;
@@ -164,7 +164,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             PlateExtras = new ObservableCollection<PlateExtra>();
-            searchSupplier = searchPlateLot =searchPrintNumber = "";
+            searchSupplier = searchPlateLot = searchPrintNumber = searchDimension = "";
 
         }
         private void SetPageParametersWhenConditionChange()
@@ -173,7 +173,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new PlateServiceClient())
             {
-                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber);
+                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber, SearchDimension);
             }
             ActionPaging();
         }
@@ -184,7 +184,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new PlateServiceClient())
             {
-                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier, SearchPrintNumber);
+                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier, SearchPrintNumber, SearchDimension);
                 PlateExtras.Clear();
                 orders.ToList().ForEach(o => PlateExtras.Add(new PlateExtra { Plate = o }));
             }
@@ -227,6 +227,18 @@ namespace PMSClient.ViewModel
                     return;
                 searchPrintNumber = value;
                 RaisePropertyChanged(() => SearchPrintNumber);
+            }
+        }
+        private string searchDimension;
+        public string SearchDimension
+        {
+            get { return searchDimension; }
+            set
+            {
+                if (searchDimension == value)
+                    return;
+                searchDimension = value;
+                RaisePropertyChanged(() => SearchDimension);
             }
         }
         public ObservableCollection<PlateExtra> PlateExtras { get; set; }

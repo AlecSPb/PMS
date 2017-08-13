@@ -17,7 +17,7 @@ namespace PMSClient.ViewModel
         public RecordMillingVM()
         {
 
-            searchVHPPlanLot = "";
+            searchVHPPlanLot = searchComposition = "";
 
             RecordMillings = new ObservableCollection<DcRecordMilling>();
             SetPageParametersWhenConditionChange();
@@ -103,7 +103,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchVHPPlanLot = "";
+            SearchVHPPlanLot = SearchComposition = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new RecordMillingServiceClient();
-            RecordCount = service.GetRecordMillingCountByVHPPlanLot(SearchVHPPlanLot);
+            RecordCount = service.GetRecordMillingCountByVHPPlanLot(SearchVHPPlanLot, SearchComposition);
             service.Close();
             ActionPaging();
         }
@@ -143,7 +143,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new RecordMillingServiceClient();
-            var models = service.GetRecordMillingsByVHPPlanLot(skip, take, SearchVHPPlanLot);
+            var models = service.GetRecordMillingsByVHPPlanLot(skip, take, SearchVHPPlanLot, SearchComposition);
             service.Close();
             RecordMillings.Clear();
             models.ToList().ForEach(o => RecordMillings.Add(o));
@@ -158,7 +158,12 @@ namespace PMSClient.ViewModel
             set { searchVHPPlanLot = value; RaisePropertyChanged(nameof(SearchVHPPlanLot)); }
         }
 
-
+        private string searchComposition;
+        public string SearchComposition
+        {
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
+        }
         #region DerivedPart
         private DcRecordMilling currentRecordMilling;
 

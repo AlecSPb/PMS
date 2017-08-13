@@ -8654,28 +8654,28 @@ namespace PMSClient.MainService {
     public interface IPlateService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlates", ReplyAction="http://tempuri.org/IPlateService/GetPlatesResponse")]
-        PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier, string printnumber);
+        PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlates", ReplyAction="http://tempuri.org/IPlateService/GetPlatesResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier, string printnumber);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCount", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountResponse")]
-        int GetPlateCount(string platelot, string supplier, string printnumber);
+        int GetPlateCount(string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCount", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountResponse")]
-        System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier, string printnumber);
+        System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateUnCompleted", ReplyAction="http://tempuri.org/IPlateService/GetPlateUnCompletedResponse")]
-        PMSClient.MainService.DcPlate[] GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber);
+        PMSClient.MainService.DcPlate[] GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateUnCompleted", ReplyAction="http://tempuri.org/IPlateService/GetPlateUnCompletedResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlateUnCompletedAsync(int skip, int take, string platelot, string supplier, string printnumber);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlateUnCompletedAsync(int skip, int take, string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCountUnCompleted", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountUnCompletedResponse")]
-        int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber);
+        int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateCountUnCompleted", ReplyAction="http://tempuri.org/IPlateService/GetPlateCountUnCompletedResponse")]
-        System.Threading.Tasks.Task<int> GetPlateCountUnCompletedAsync(string platelot, string supplier, string printnumber);
+        System.Threading.Tasks.Task<int> GetPlateCountUnCompletedAsync(string platelot, string supplier, string printnumber, string dimension);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/AddPlate", ReplyAction="http://tempuri.org/IPlateService/AddPlateResponse")]
         int AddPlate(PMSClient.MainService.DcPlate model);
@@ -8735,36 +8735,36 @@ namespace PMSClient.MainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlates(skip, take, platelot, supplier, printnumber);
+        public PMSClient.MainService.DcPlate[] GetPlates(int skip, int take, string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlates(skip, take, platelot, supplier, printnumber, dimension);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlatesAsync(skip, take, platelot, supplier, printnumber);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlatesAsync(int skip, int take, string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlatesAsync(skip, take, platelot, supplier, printnumber, dimension);
         }
         
-        public int GetPlateCount(string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlateCount(platelot, supplier, printnumber);
+        public int GetPlateCount(string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlateCount(platelot, supplier, printnumber, dimension);
         }
         
-        public System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlateCountAsync(platelot, supplier, printnumber);
+        public System.Threading.Tasks.Task<int> GetPlateCountAsync(string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlateCountAsync(platelot, supplier, printnumber, dimension);
         }
         
-        public PMSClient.MainService.DcPlate[] GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlateUnCompleted(skip, take, platelot, supplier, printnumber);
+        public PMSClient.MainService.DcPlate[] GetPlateUnCompleted(int skip, int take, string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlateUnCompleted(skip, take, platelot, supplier, printnumber, dimension);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlateUnCompletedAsync(int skip, int take, string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlateUnCompletedAsync(skip, take, platelot, supplier, printnumber);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlateUnCompletedAsync(int skip, int take, string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlateUnCompletedAsync(skip, take, platelot, supplier, printnumber, dimension);
         }
         
-        public int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlateCountUnCompleted(platelot, supplier, printnumber);
+        public int GetPlateCountUnCompleted(string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlateCountUnCompleted(platelot, supplier, printnumber, dimension);
         }
         
-        public System.Threading.Tasks.Task<int> GetPlateCountUnCompletedAsync(string platelot, string supplier, string printnumber) {
-            return base.Channel.GetPlateCountUnCompletedAsync(platelot, supplier, printnumber);
+        public System.Threading.Tasks.Task<int> GetPlateCountUnCompletedAsync(string platelot, string supplier, string printnumber, string dimension) {
+            return base.Channel.GetPlateCountUnCompletedAsync(platelot, supplier, printnumber, dimension);
         }
         
         public int AddPlate(PMSClient.MainService.DcPlate model) {
@@ -9302,18 +9302,18 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetRecordMillingCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse")]
-        PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingsByVHPPlanLotResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotRespons" +
             "e")]
-        int GetRecordMillingCountByVHPPlanLot(string vhpplanlot);
+        int GetRecordMillingCountByVHPPlanLot(string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotRespons" +
             "e")]
-        System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot);
+        System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/AddRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/AddRecordMillingResponse")]
         int AddRecordMilling(PMSClient.MainService.DcRecordMilling model);
@@ -9389,20 +9389,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetRecordMillingCountAsync();
         }
         
-        public PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot) {
-            return base.Channel.GetRecordMillingsByVHPPlanLot(skip, take, vhpplanlot);
+        public PMSClient.MainService.DcRecordMilling[] GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot, string composition) {
+            return base.Channel.GetRecordMillingsByVHPPlanLot(skip, take, vhpplanlot, composition);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
-            return base.Channel.GetRecordMillingsByVHPPlanLotAsync(skip, take, vhpplanlot);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingsByVHPPlanLotAsync(int skip, int take, string vhpplanlot, string composition) {
+            return base.Channel.GetRecordMillingsByVHPPlanLotAsync(skip, take, vhpplanlot, composition);
         }
         
-        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot) {
-            return base.Channel.GetRecordMillingCountByVHPPlanLot(vhpplanlot);
+        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot, string composition) {
+            return base.Channel.GetRecordMillingCountByVHPPlanLot(vhpplanlot, composition);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot) {
-            return base.Channel.GetRecordMillingCountByVHPPlanLotAsync(vhpplanlot);
+        public System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot, string composition) {
+            return base.Channel.GetRecordMillingCountByVHPPlanLotAsync(vhpplanlot, composition);
         }
         
         public int AddRecordMilling(PMSClient.MainService.DcRecordMilling model) {
@@ -9624,18 +9624,18 @@ namespace PMSClient.MainService {
         System.Threading.Tasks.Task<int> GetRecordDeMoldsCountAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse")]
-        PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsByVHPPlanLotResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" +
             "")]
-        int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot);
+        int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLot", ReplyAction="http://tempuri.org/IRecordDeMoldService/GetRecordDeMoldsCountByVHPPlanLotResponse" +
             "")]
-        System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot);
+        System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot, string composition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordDeMoldService/AddRecordDeMold", ReplyAction="http://tempuri.org/IRecordDeMoldService/AddRecordDeMoldResponse")]
         int AddRecordDeMold(PMSClient.MainService.DcRecordDeMold model);
@@ -9711,20 +9711,20 @@ namespace PMSClient.MainService {
             return base.Channel.GetRecordDeMoldsCountAsync();
         }
         
-        public PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot) {
-            return base.Channel.GetRecordDeMoldsByVHPPlanLot(skip, take, vhpplanlot);
+        public PMSClient.MainService.DcRecordDeMold[] GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot, string composition) {
+            return base.Channel.GetRecordDeMoldsByVHPPlanLot(skip, take, vhpplanlot, composition);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot) {
-            return base.Channel.GetRecordDeMoldsByVHPPlanLotAsync(skip, take, vhpplanlot);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordDeMold[]> GetRecordDeMoldsByVHPPlanLotAsync(int skip, int take, string vhpplanlot, string composition) {
+            return base.Channel.GetRecordDeMoldsByVHPPlanLotAsync(skip, take, vhpplanlot, composition);
         }
         
-        public int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot) {
-            return base.Channel.GetRecordDeMoldsCountByVHPPlanLot(vhpplanlot);
+        public int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot, string composition) {
+            return base.Channel.GetRecordDeMoldsCountByVHPPlanLot(vhpplanlot, composition);
         }
         
-        public System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot) {
-            return base.Channel.GetRecordDeMoldsCountByVHPPlanLotAsync(vhpplanlot);
+        public System.Threading.Tasks.Task<int> GetRecordDeMoldsCountByVHPPlanLotAsync(string vhpplanlot, string composition) {
+            return base.Channel.GetRecordDeMoldsCountByVHPPlanLotAsync(vhpplanlot, composition);
         }
         
         public int AddRecordDeMold(PMSClient.MainService.DcRecordDeMold model) {

@@ -16,9 +16,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetRecordMillingCount();
         [OperationContract]
-        List<DcRecordMilling> GetRecordMillingsByVHPPlanLot(int skip, int take,string vhpplanlot);
+        List<DcRecordMilling> GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot, string composition);
         [OperationContract]
-        int GetRecordMillingCountByVHPPlanLot(string vhpplanlot);
+        int GetRecordMillingCountByVHPPlanLot(string vhpplanlot, string composition);
 
         [OperationContract]
         int AddRecordMilling(DcRecordMilling model);

@@ -18,10 +18,10 @@ namespace PMSWCFService.ServiceContracts
         int GetRecordDeMoldsCount();
 
         [OperationContract]
-        List<DcRecordDeMold> GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot);
+        List<DcRecordDeMold> GetRecordDeMoldsByVHPPlanLot(int skip, int take, string vhpplanlot,string  composition);
 
         [OperationContract]
-        int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot);
+        int GetRecordDeMoldsCountByVHPPlanLot(string vhpplanlot, string composition);
 
 
 

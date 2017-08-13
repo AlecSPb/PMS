@@ -27,6 +27,9 @@
             <TextBlock Text="{StaticResource PlateSupplier}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchSupplier,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
+            <TextBlock Text="{StaticResource PlateDimension}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchDimension,UpdateSourceTrigger=PropertyChanged}" 
+                     Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonSelectBatch}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding SelectBatch}"

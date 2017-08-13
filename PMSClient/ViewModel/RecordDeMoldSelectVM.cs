@@ -15,7 +15,7 @@ namespace PMSClient.ViewModel
     {
         public RecordDeMoldSelectVM()
         {
-            searchVHPPlanLot = "";
+            searchVHPPlanLot = searchComposition = "";
             PageChanged = new RelayCommand(ActionPaging);
 
             RecordDeMolds = new ObservableCollection<DcRecordDeMold>();
@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect(DcRecordDeMold model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 switch (requestView)
                 {
@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
         }
         private void ActionAll()
         {
-            SearchVHPPlanLot = "";
+            SearchVHPPlanLot = SearchComposition = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -100,7 +100,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new RecordDeMoldServiceClient();
-            RecordCount = service.GetRecordDeMoldsCountByVHPPlanLot(SearchVHPPlanLot);
+            RecordCount = service.GetRecordDeMoldsCountByVHPPlanLot(SearchVHPPlanLot, SearchComposition);
             service.Close();
             ActionPaging();
         }
@@ -111,7 +111,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new RecordDeMoldServiceClient();
-            var models = service.GetRecordDeMoldsByVHPPlanLot(skip, take, SearchVHPPlanLot);
+            var models = service.GetRecordDeMoldsByVHPPlanLot(skip, take, SearchVHPPlanLot, SearchComposition);
             service.Close();
             RecordDeMolds.Clear();
             models.ToList().ForEach(o => RecordDeMolds.Add(o));
@@ -123,6 +123,12 @@ namespace PMSClient.ViewModel
         {
             get { return searchVHPPlanLot; }
             set { searchVHPPlanLot = value; RaisePropertyChanged(nameof(SearchVHPPlanLot)); }
+        }
+        private string searchComposition;
+        public string SearchComposition
+        {
+            get { return searchComposition; }
+            set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
         }
         public ObservableCollection<DcRecordDeMold> RecordDeMolds { get; set; }
 

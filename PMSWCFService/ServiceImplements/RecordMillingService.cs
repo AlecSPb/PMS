@@ -85,24 +85,6 @@ namespace PMSWCFService
 
         }
 
-        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    var query = from r in dc.RecordMillings
-                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
-                                select r;
-                    return query.Count();
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
 
         public List<DcRecordMilling> GetRecordMillings(int skip, int take)
         {
@@ -125,7 +107,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordMilling> GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot)
+        public List<DcRecordMilling> GetRecordMillingsByVHPPlanLot(int skip, int take, string vhpplanlot, string composition)
         {
             try
             {
@@ -133,10 +115,33 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
                     var query = from r in dc.RecordMillings
-                                where r.VHPPlanLot.Contains(vhpplanlot) && r.State != PMSCommon.SimpleState.作废.ToString()
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                && r.Composition.Contains(composition)
+                                && r.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby r.CreateTime descending
                                 select r;
                     return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetRecordMillingCountByVHPPlanLot(string vhpplanlot, string composition)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from r in dc.RecordMillings
+                                where r.VHPPlanLot.Contains(vhpplanlot)
+                                && r.Composition.Contains(composition)
+                                && r.State != PMSCommon.SimpleState.作废.ToString()
+                                select r;
+                    return query.Count();
                 }
             }
             catch (Exception ex)

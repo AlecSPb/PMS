@@ -94,7 +94,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPlateLot) && string.IsNullOrEmpty(SearchSupplier));
+            return !(string.IsNullOrEmpty(SearchPlateLot) && string.IsNullOrEmpty(SearchSupplier) && string.IsNullOrEmpty(SearchDimension));
         }
 
         private void ActionAll()
@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new PlateServiceClient())
             {
-                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber);
+                RecordCount = service.GetPlateCount(SearchPlateLot, SearchSupplier, SearchPrintNumber,SearchDimension);
             }
             ActionPaging();
         }
@@ -143,7 +143,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new PlateServiceClient())
             {
-                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier,SearchPrintNumber);
+                var orders = service.GetPlates(skip, take, SearchPlateLot, SearchSupplier,SearchPrintNumber, SearchDimension);
                 Plates.Clear();
                 orders.ToList().ForEach(o => Plates.Add(o));
             }

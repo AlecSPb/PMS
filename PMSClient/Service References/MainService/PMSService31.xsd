@@ -1790,6 +1790,7 @@
         <xs:element minOccurs="0" name="platelot" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="printnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dimension" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1806,6 +1807,7 @@
         <xs:element minOccurs="0" name="platelot" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="printnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dimension" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1824,6 +1826,7 @@
         <xs:element minOccurs="0" name="platelot" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="printnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dimension" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1840,6 +1843,7 @@
         <xs:element minOccurs="0" name="platelot" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="supplier" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="printnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dimension" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2356,6 +2360,7 @@
         <xs:element minOccurs="0" name="skip" type="xs:int" />
         <xs:element minOccurs="0" name="take" type="xs:int" />
         <xs:element minOccurs="0" name="vhpplanlot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2370,6 +2375,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="vhpplanlot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2614,6 +2620,7 @@
         <xs:element minOccurs="0" name="skip" type="xs:int" />
         <xs:element minOccurs="0" name="take" type="xs:int" />
         <xs:element minOccurs="0" name="vhpplanlot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2628,6 +2635,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="vhpplanlot" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="composition" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
