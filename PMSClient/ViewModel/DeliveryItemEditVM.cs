@@ -127,12 +127,37 @@ namespace PMSClient.ViewModel
             }
         }
 
+        public void SetBySelect(DcPlanWithMisson model)
+        {
+            if (model != null)
+            {
+                CurrentDeliveryItem.ProductType = PMSCommon.ProductType.其他.ToString();
+                CurrentDeliveryItem.ProductID = model.Plan.SearchCode;
+                CurrentDeliveryItem.Composition = model.Misson.CompositionStandard;
+                CurrentDeliveryItem.Abbr = model.Misson.CompositionAbbr;
+                CurrentDeliveryItem.Customer = "未知";
+                CurrentDeliveryItem.Weight = model.Misson.PO;
+                CurrentDeliveryItem.PO = "无";
+                CurrentDeliveryItem.Dimension = model.Misson.Dimension;
+                CurrentDeliveryItem.DimensionActual = model.Misson.Dimension;
+                CurrentDeliveryItem.Defects = "";
+            }
+        }
+
         private void InitialCommands()
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             SelectProduct = new RelayCommand(ActionSelectProduct);
             SelectPlate = new RelayCommand(ActionSelectPlate);
+            SelectOther = new RelayCommand(ActionSelectOther);
+        }
+
+        private void ActionSelectOther()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.DeliveryItemEdit);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
         private void ActionSelectPlate()
@@ -214,5 +239,6 @@ namespace PMSClient.ViewModel
 
         public RelayCommand SelectProduct { get; set; }
         public RelayCommand SelectPlate { get; set; }
+        public RelayCommand SelectOther { get; set; }
     }
 }

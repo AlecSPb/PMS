@@ -78,6 +78,10 @@ namespace PMSClient.ViewModel
                 case PMSViews.RecordTestEdit:
                     BatchSaveTestRecords();
                     break;
+                case PMSViews.ProductEdit:
+                case PMSViews.DeliveryItemEdit:
+                    PMSDialogService.ShowYes("产品库和发货在此处无法使用多选功能");
+                    break;
                 default:
                     break;
             }
@@ -160,14 +164,14 @@ namespace PMSClient.ViewModel
                     {
                         var temp = PMSNewModelCollection.NewRecordTest();
                         temp.PMINumber = item.PlanMisson.Misson.PMINumber;
-                        temp.Composition =item.PlanMisson.Misson.CompositionStandard;
-                        temp.CompositionAbbr =item.PlanMisson.Misson.CompositionAbbr;
-                        temp.PO =item.PlanMisson.Misson.PO;
+                        temp.Composition = item.PlanMisson.Misson.CompositionStandard;
+                        temp.CompositionAbbr = item.PlanMisson.Misson.CompositionAbbr;
+                        temp.PO = item.PlanMisson.Misson.PO;
                         temp.ProductID = UsefulPackage.PMSTranslate.PlanLot(item.PlanMisson);
-                        temp.Customer =item.PlanMisson.Misson.CustomerName;
-                        temp.Dimension =item.PlanMisson.Misson.Dimension;
-                        temp.DimensionActual =item.PlanMisson.Misson.Dimension;
-                        temp.CompositionAbbr =item.PlanMisson.Misson.CompositionAbbr;
+                        temp.Customer = item.PlanMisson.Misson.CustomerName;
+                        temp.Dimension = item.PlanMisson.Misson.Dimension;
+                        temp.DimensionActual = item.PlanMisson.Misson.Dimension;
+                        temp.CompositionAbbr = item.PlanMisson.Misson.CompositionAbbr;
                         temp.OrderDate = item.PlanMisson.Misson.CreateTime;
                         service.AddRecordTestByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
@@ -196,6 +200,12 @@ namespace PMSClient.ViewModel
                         break;
                     case PMSViews.RecordTestEdit:
                         PMSHelper.ViewModels.RecordTestEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    case PMSViews.ProductEdit:
+                        PMSHelper.ViewModels.ProductEdit.SetBySelect(plan.PlanMisson);
+                        break;
+                    case PMSViews.DeliveryItemEdit:
+                        PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(plan.PlanMisson);
                         break;
                     default:
                         break;

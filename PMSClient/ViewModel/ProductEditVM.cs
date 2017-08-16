@@ -36,6 +36,7 @@ namespace PMSClient.ViewModel
             SelectTest = new RelayCommand(ActionSelectTest);
             SelectBonding = new RelayCommand(ActionSelectBonding);
             SelectOutSource = new RelayCommand(ActionSelectOutSource);
+            SelectOther = new RelayCommand(ActionSelectOther);
         }
 
         public void SetNew()
@@ -122,6 +123,26 @@ namespace PMSClient.ViewModel
                 //RaisePropertyChanged(nameof(CurrentProduct));
             }
         }
+
+        public void SetBySelect(DcPlanWithMisson model)
+        {
+            if (model != null)
+            {
+                CurrentProduct.ProductType = PMSCommon.ProductType.其他.ToString();
+                CurrentProduct.ProductID = model.Plan.SearchCode;
+                CurrentProduct.Customer = model.Misson.CustomerName;
+                CurrentProduct.Composition = model.Misson.CompositionStandard;
+                CurrentProduct.Abbr = model.Misson.CompositionAbbr;
+                CurrentProduct.PO = model.Misson.PO;
+                CurrentProduct.Weight = "未知";
+                CurrentProduct.Dimension = model.Misson.Dimension;
+                CurrentProduct.DimensionActual = model.Misson.Dimension;
+                CurrentProduct.Defects = "无";
+                CurrentProduct.Remark = "";
+            }
+        }
+
+
         private void ActionSelectOutSource()
         {
             var vm = PMSHelper.ViewModels.OutSourceSelect;
@@ -143,6 +164,13 @@ namespace PMSClient.ViewModel
             PMSHelper.ViewModels.RecordBondingSelect.RefreshData();
             PMSBatchHelper.SetRecordBondingBatchEnable(IsNew);
             NavigationService.GoTo(PMSViews.RecordBondingSelect);
+        }
+
+        private void ActionSelectOther()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.ProductEdit);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
         }
         private static void GoBack()
         {
@@ -203,5 +231,6 @@ namespace PMSClient.ViewModel
         public RelayCommand SelectTest { get; set; }
         public RelayCommand SelectBonding { get; set; }
         public RelayCommand SelectOutSource { get; set; }
+        public RelayCommand SelectOther { get; set; }
     }
 }
