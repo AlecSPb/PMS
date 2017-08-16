@@ -249,6 +249,7 @@
     <sys:String x:Key="ButtonSelectTest">Select Test</sys:String>
     <sys:String x:Key="ButtonSelectProduct">Select Product</sys:String>
     <sys:String x:Key="ButtonSelectPlate">Select Plate</sys:String>
+    <sys:String x:Key="ButtonSelectOther">Select Other</sys:String>
     <sys:String x:Key="ButtonSelectBonding">Select Bonding</sys:String>
     <sys:String x:Key="ButtonSelectOutSource">选择外购记录</sys:String>
     <sys:String x:Key="ButtonSelectMaterialOrderItem">Select Material Order</sys:String>
