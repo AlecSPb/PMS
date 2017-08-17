@@ -128,6 +128,7 @@ namespace PMSClient.ViewModel
             item.UnitPrice = 0;
             item.Weight = 0;
             item.DeliveryDate = DateTime.Now.AddDays(7);
+            item.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
             #endregion
             return item;
         }

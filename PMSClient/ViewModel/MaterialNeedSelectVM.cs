@@ -88,7 +88,6 @@ namespace PMSClient.ViewModel
                         temp.Composition = i.MaterialNeed.Composition;
                         temp.PMINumber = i.MaterialNeed.PMINumber;
                         temp.Weight = i.MaterialNeed.Weight;
-
                         service.AddMaterialOrderItemByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 });
