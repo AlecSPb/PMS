@@ -80,11 +80,14 @@ namespace PMSClient.ViewModel
         {
             using (var service = new MaterialOrderServiceClient())
             {
+                int index = 1;
                 MainMaterialNeedExtras.ToList().ForEach(i =>
                 {
                     if (i.IsSelected)
                     {
                         var temp = PMSNewModelCollection.NewMaterialOrderItem(curentMaterialOrder);
+                        temp.OrderItemNumber = DateTime.Now.ToString("yyMMdd") + curentMaterialOrder.SupplierAbbr + index.ToString();
+                        index++;
                         temp.Composition = i.MaterialNeed.Composition;
                         temp.PMINumber = i.MaterialNeed.PMINumber;
                         temp.Weight = i.MaterialNeed.Weight;
