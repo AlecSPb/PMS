@@ -38,15 +38,15 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxReadOnly}" FontWeight="Bold" Foreground="Blue" FontSize="20"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TargetProductID}" Style="{StaticResource StyleTextBoxReadOnly}" FontWeight="Bold" Foreground="Blue" />
             <TextBlock Grid.Row="0" Grid.Column="2" Text="{StaticResource BDTargetComposition}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold" FontSize="20"/>
+            <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding TargetComposition}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold"/>
             <TextBlock Grid.Row="0" Grid.Column="4" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold" FontSize="20"/>
+            <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxReadOnly}"  FontWeight="Bold"/>
         </Grid>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
             <StackPanel DataContext="{Binding CurrentRecordBonding}">
-                <uc:BondingEditItem Title="0.0绑定靶材信息" IsExpanded="True" Background="Wheat">
+                <uc:BondingEditItem Title="0.0基本简要信息" IsExpanded="True">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>
@@ -71,6 +71,7 @@
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="auto"/>
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition Height="0*"/>
                                 </Grid.RowDefinitions>
@@ -116,6 +117,10 @@
                                           ItemsSource="{Binding DataContext.PlateTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl,AncestorLevel=2}}"
                                           Text="{Binding PlateType}"/>
                                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="选择背板类型"/>
+                                
+                                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
+                                <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxBig}"/>
+                                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
                             </Grid>
                         </Grid>
                     </uc:BondingEditItem.LeftArea>
@@ -127,7 +132,7 @@
                         </StackPanel>
                     </uc:BondingEditItem.RightArea>
                 </uc:BondingEditItem>
-                <uc:BondingEditItem Title="1.0靶材检查"  IsExpanded="True">
+                <uc:BondingEditItem Title="1.0靶材检查"  IsExpanded="False">
                     <uc:BondingEditItem.LeftArea>
                         <Grid>
                             <Grid.RowDefinitions>

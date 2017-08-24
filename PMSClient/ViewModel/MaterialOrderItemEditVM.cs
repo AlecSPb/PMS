@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
                 item.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 item.CreateTime = DateTime.Now;
                 var prefix = order.OrderPO;
-                item.OrderItemNumber = prefix+ (GetNowItemCount(order)+1).ToString();
+                item.OrderItemNumber = prefix + (GetNowItemCount(order) + 1).ToString();
                 item.Composition = "需求成分";
                 item.PMINumber = DateTime.Now.ToString("yyMMdd");
                 item.Purity = "5N";
@@ -59,7 +59,7 @@ namespace PMSClient.ViewModel
         }
         private int GetNowItemCount(DcMaterialOrder order)
         {
-            if (order!=null)
+            if (order != null)
             {
                 using (var service = new MaterialOrderServiceClient())
                 {
@@ -103,9 +103,9 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                using (var service=new MaterialOrderServiceClient())
+                using (var service = new MaterialOrderServiceClient())
                 {
-                    if (CurrentMaterialOrderItem!=null)
+                    if (CurrentMaterialOrderItem != null)
                     {
                         var result = service.CheckOrderItemNumberExist(CurrentMaterialOrderItem.OrderItemNumber);
                         CheckResult = result ? "被占用" : "可以用";
@@ -147,6 +147,14 @@ namespace PMSClient.ViewModel
                 };
             }
 
+            if (CurrentMaterialOrderItem.Composition.Contains("F"))
+            {
+                if (!PMSDialogService.ShowYesNo("请注意", "请注意成分中含有[F],确定使用这个成分？"))
+                {
+                    return;
+                };
+            }
+
             if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
             {
                 return;
@@ -158,11 +166,11 @@ namespace PMSClient.ViewModel
                 CurrentMaterialOrderItem.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
                 if (IsNew)
                 {
-                    service.AddMaterialOrderItemByUID(CurrentMaterialOrderItem,uid);
+                    service.AddMaterialOrderItemByUID(CurrentMaterialOrderItem, uid);
                 }
                 else
                 {
-                    service.UpdateMaterialOrderItemByUID(CurrentMaterialOrderItem,uid);
+                    service.UpdateMaterialOrderItemByUID(CurrentMaterialOrderItem, uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialOrder.RefreshDataItem();
