@@ -79,10 +79,13 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.AppendLine(model.Composition);
-                sb.AppendLine(model.Dimension);
-                sb.AppendLine(model.PlanType);
+                sb.Append(model.PlanType);
                 sb.AppendLine(model.VHPPlanLot);
+                sb.AppendLine(model.Composition);
+                sb.Append("模具:");
+                sb.AppendLine(model.CalculateDimension);
+                sb.Append("产品:");
+                sb.AppendLine(model.Dimension);
                 sb.AppendLine();
                 sb.AppendLine("++++++一般标签复制上面内容，样品标签复制下面内容+++++++");
                 sb.AppendLine();

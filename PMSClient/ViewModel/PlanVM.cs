@@ -81,10 +81,13 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.AppendLine(model.Misson.CompositionStandard);
-                sb.AppendLine(model.Misson.Dimension);
-                sb.AppendLine(model.Plan.PlanType);
+                sb.Append(model.Plan.PlanType);
                 sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+                sb.AppendLine(model.Misson.CompositionStandard);
+                sb.Append("模具:");
+                sb.AppendLine(model.Plan.MoldDiameter.ToString());
+                sb.Append("产品:");
+                sb.AppendLine(model.Misson.Dimension);
                 sb.AppendLine();
                 sb.AppendLine("++++++一般标签复制上面内容，样品标签复制下面内容+++++++");
                 sb.AppendLine();

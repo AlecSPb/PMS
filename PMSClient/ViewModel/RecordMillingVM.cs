@@ -59,10 +59,12 @@ namespace PMSClient.ViewModel
             {
 
                 var sb = new StringBuilder();
-                sb.AppendLine("制粉");
+                sb.AppendLine("粉末");
                 sb.AppendLine(model.Composition);
                 sb.AppendLine(model.PMINumber);
                 sb.AppendLine(model.VHPPlanLot);
+                sb.Append("粒径");
+                sb.AppendLine(model.GrainSize);
                 sb.AppendLine("重量:");
 
                 var mainContent = sb.ToString();
