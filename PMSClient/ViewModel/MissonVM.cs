@@ -75,7 +75,7 @@ namespace PMSClient.ViewModel
             //样品信息提示
             if (!model.SampleNeed.Contains("无需样品"))
             {
-                PMSDialogService.ShowYes("提示：请注意，该任务可能有【样品要求】，请确定准备了样品");
+                PMSDialogService.ShowWarning("提示：请注意，该任务可能有【样品要求】，请确定准备了样品");
             }
 
             if (!PMSDialogService.ShowYesNo("请问", "请问确定完成了这个任务了吗？"))

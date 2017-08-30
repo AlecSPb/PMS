@@ -25,7 +25,7 @@ namespace PMSClient.Helpers
             bool checker2 = CheckMaterialOrderUnChecked();
             if (checker1 && checker2)
             {
-                PMSDialogService.ShowYes("提示：原料订单里有【未核验】的订单，这些订单供应商无法看到");
+                PMSDialogService.ShowWarning("提示：原料订单里有【未核验】的订单，这些订单供应商无法看到");
             }
         }
 
