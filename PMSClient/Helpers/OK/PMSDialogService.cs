@@ -25,5 +25,11 @@ namespace PMSClient
         {
             ShowYes("消息", content);
         }
+
+        public static void ShowWarning(string content)
+        {
+            MessageBox.Show(content,"Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+        }
+
     }
 }
