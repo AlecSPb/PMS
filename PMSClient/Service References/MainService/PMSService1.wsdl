@@ -109,6 +109,12 @@
   <wsdl:message name="IOrderService_CheckPMINumberExisit_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckPMINumberExisitResponse" />
   </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderHistoryTop10_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderHistoryTop10" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderHistoryTop10_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderHistoryTop10Response" />
+  </wsdl:message>
   <wsdl:message name="IPlanVHPService_GetVHPPlansByOrderID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetVHPPlansByOrderID" />
   </wsdl:message>
@@ -342,6 +348,18 @@
   </wsdl:message>
   <wsdl:message name="IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckOrderItemNumberExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetPlanHistoryTop10_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanHistoryTop10" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_GetPlanHistoryTop10_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanHistoryTop10Response" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_CheckMaterialOrderUnChecked_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMaterialOrderUnChecked" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialOrderService_CheckMaterialOrderUnChecked_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMaterialOrderUnCheckedResponse" />
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_GetMaterialInventoryIns_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryIns" />
@@ -1234,6 +1252,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/CheckPMINumberExisit" message="tns:IOrderService_CheckPMINumberExisit_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/CheckPMINumberExisitResponse" message="tns:IOrderService_CheckPMINumberExisit_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryTop10">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderHistoryTop10" message="tns:IOrderService_GetOrderHistoryTop10_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderHistoryTop10Response" message="tns:IOrderService_GetOrderHistoryTop10_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlanVHPService">
     <wsdl:operation name="GetVHPPlansByOrderID">
@@ -1395,6 +1417,14 @@
     <wsdl:operation name="CheckOrderItemNumberExist">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExistResponse" message="tns:IMaterialOrderService_CheckOrderItemNumberExist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanHistoryTop10">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/GetPlanHistoryTop10" message="tns:IMaterialOrderService_GetPlanHistoryTop10_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/GetPlanHistoryTop10Response" message="tns:IMaterialOrderService_GetPlanHistoryTop10_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaterialOrderUnChecked">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckMaterialOrderUnChecked" message="tns:IMaterialOrderService_CheckMaterialOrderUnChecked_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialOrderService/CheckMaterialOrderUnCheckedResponse" message="tns:IMaterialOrderService_CheckMaterialOrderUnChecked_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMaterialInventoryService">
@@ -2124,6 +2154,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetOrderHistoryTop10">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderHistoryTop10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="planvhp" type="tns:IPlanVHPService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2477,6 +2516,24 @@
     </wsdl:operation>
     <wsdl:operation name="CheckOrderItemNumberExist">
       <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/CheckOrderItemNumberExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanHistoryTop10">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/GetPlanHistoryTop10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMaterialOrderUnChecked">
+      <soap:operation soapAction="http://tempuri.org/IMaterialOrderService/CheckMaterialOrderUnChecked" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

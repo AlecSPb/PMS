@@ -171,7 +171,8 @@
                         Style="{DynamicResource StyleButtonNavigationTitle}" />
                 <Button Content="{StaticResource PageDebug}" Grid.Row="10" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToDebug}"/>
-
+                <Button Content="{StaticResource PageHistory}" Grid.Row="10" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToHistory}"/>
 
 
             </Grid>

@@ -167,6 +167,7 @@
     <sys:String x:Key="PageSelectPlate">选择背板库存</sys:String>
     <sys:String x:Key="PageSelectRecordBonding">选择绑定记录</sys:String>
 
+    <sys:String x:Key="PageHistory">历史记录</sys:String>
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">欢迎使用PMS生产管理系统</sys:String>
     <sys:String x:Key="TxtUserName">用户名</sys:String>
@@ -265,8 +266,9 @@
     <sys:String x:Key="ButtonStatisticByProductType">该年按产品类型</sys:String>
     <sys:String x:Key="ButtonStatisticByDevice">该年按设备</sys:String>
     <sys:String x:Key="ButtonStatisticByCountry">该年按国家</sys:String>
-
-
+    
+    <sys:String x:Key="ButtonOrderHistory">订单历史</sys:String>
+    <sys:String x:Key="ButtonPlanHistory">计划历史</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>

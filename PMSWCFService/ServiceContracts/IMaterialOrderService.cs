@@ -84,5 +84,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcPlanHistory> GetPlanHistoryTop10(string searchCode, string deviceCode);
 
+
+        [OperationContract]
+        bool CheckMaterialOrderUnChecked();
     }
 }

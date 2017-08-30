@@ -473,7 +473,7 @@ namespace PMSWCFService
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
-                                orderby m.CreateTime
+                                orderby m.Priority,m.CreateTime
                                 select new PMSMaterialOrderItemExtra
                                 {
                                     MaterialOrder = mm,

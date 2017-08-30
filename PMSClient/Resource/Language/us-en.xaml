@@ -167,7 +167,7 @@
     <sys:String x:Key="PageSelectPlate">Select Plate</sys:String>
     <sys:String x:Key="PageSelectRecordBonding">Select Record Bonding</sys:String>
 
-
+    <sys:String x:Key="PageHistory">History</sys:String>
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">Welcome to use Production Management System</sys:String>
     <sys:String x:Key="TxtUserName">User Name</sys:String>
@@ -266,7 +266,8 @@
     <sys:String x:Key="ButtonStatisticByDevice">This Year By Device</sys:String>
     <sys:String x:Key="ButtonStatisticByCountry">This Year By Country</sys:String>
 
-
+    <sys:String x:Key="ButtonOrderHistory">Order History</sys:String>
+    <sys:String x:Key="ButtonPlanHistory">Plan History</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>

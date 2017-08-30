@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.State = PMSCommon.MaterialOrderState.未核验.ToString();
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.Supplier ="";
+            model.Supplier = "";
             model.SupplierAbbr = "SJ";
             model.SupplierEmail = "";
             model.SupplierReceiver = "";
@@ -99,8 +99,15 @@ namespace PMSClient.ViewModel
                 }
                 else
                 {
-                    service.UpdateMaterialOrderByUID(CurrentMaterialOrder, uid);
-                                        
+                    //如果是作废更新，直接使用作废API，连同相关MaterialOrderItem一起做废掉
+                    if (CurrentMaterialOrder.State == "作废")
+                    {
+                        service.DeleteMaterialOrder(CurrentMaterialOrder.ID);
+                    }
+                    else
+                    {
+                        service.UpdateMaterialOrderByUID(CurrentMaterialOrder, uid);
+                    }
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialOrder.RefreshData();

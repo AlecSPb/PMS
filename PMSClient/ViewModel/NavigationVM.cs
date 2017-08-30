@@ -112,6 +112,8 @@ namespace PMSClient.ViewModel
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
 
             CodeRule = new RelayCommand(ActionCodeRule);
+
+            GoToHistory = new RelayCommand(() => NavigationService.GoTo(PMSViews.History), () => _session.IsAuthorized(PMSAccess.CanHistory));
         }
 
         private void ActionCodeRule()
@@ -222,7 +224,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToFeedBack { get; set; }
         public RelayCommand GoToOutput { get; set; }
-
+        public RelayCommand GoToHistory { get; set; }
         public RelayCommand CodeRule { get; set; }
 
         //public RelayCommand GoToAdminUser { get; set; }

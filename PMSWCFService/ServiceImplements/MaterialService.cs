@@ -854,7 +854,21 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
-
+        public bool CheckMaterialOrderUnChecked()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    return dc.MaterialOrders.Where(i => i.State == MaterialOrderState.未核验.ToString()).Count() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                return false;
+            }
+        }
 
 
 

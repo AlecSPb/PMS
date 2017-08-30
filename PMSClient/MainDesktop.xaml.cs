@@ -21,6 +21,7 @@ using PMSClient.Tool;
 using System.Timers;
 using fm = System.Windows.Forms;
 using System.Windows.Threading;
+using PMSClient.Helpers;
 
 namespace PMSClient
 {
@@ -62,7 +63,7 @@ namespace PMSClient
                 var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 Title = $"{titleName}-{versonName}";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -447,6 +448,9 @@ namespace PMSClient
                 case PMSViews.Debug:
                     NavigateTo(_views.Debug);
                     break;
+                case PMSViews.History:
+                    //TODO:实现历史页面导航
+                    break;
                 default:
                     break;
             }
@@ -484,6 +488,11 @@ namespace PMSClient
         }
         private void Window_Closing(object sender, CancelEventArgs e)
         {
+            //执行一些警示通知
+            var warningMe = new ExitHelper();
+            warningMe.ProcessWhenExitApp();
+
+
             bool result = false;
             if (PMSHelper.Language == "zh-cn")
             {

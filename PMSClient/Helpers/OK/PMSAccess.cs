@@ -83,6 +83,8 @@ namespace PMSClient
         public static string ReadFeedback { get; set; } = "浏览客户反馈";
         public static string EditFeedback { get; set; } = "编辑客户反馈";
 
+        public static string CanHistory { get; set; } = "浏览历史记录";
+
         public static string CanDebug { get; set; } = "调试";
 
 
