@@ -72,6 +72,12 @@ namespace PMSClient.ViewModel
 
         private void ActionFinish(DcOrder model)
         {
+            //样品信息提示
+            if (!model.SampleNeed.Contains("无需样品"))
+            {
+                PMSDialogService.ShowYes("提示：请注意，该任务可能有样品要求！");
+            }
+
             if (!PMSDialogService.ShowYesNo("请问", "请问确定完成了这个任务了吗？"))
             {
                 return;
