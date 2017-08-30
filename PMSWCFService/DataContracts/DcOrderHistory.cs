@@ -24,7 +24,6 @@ namespace PMSWCFService.DataContracts
         public string PO { get; set; }
         [DataMember]
         public string PMINumber { get; set; }
-        [DataMember]
 
         [DataMember]
         public string CompositionStandard { get; set; }//成分规范表示

@@ -529,7 +529,7 @@ namespace PMSWCFService
         //2017-8-31补充API
         public List<DcOrderHistory> GetOrderHistoryTop10(string pmiNumber)
         {
-
+            throw new NotImplementedException();
         }
 
     }
