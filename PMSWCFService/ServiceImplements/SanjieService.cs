@@ -468,6 +468,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where  m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                && mm.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
@@ -497,6 +498,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                && mm.State == PMSCommon.MaterialOrderState.已核验.ToString()
                                 && mm.Supplier.Contains(PMSCommon.MaterialSupplier.三杰.ToString())
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)

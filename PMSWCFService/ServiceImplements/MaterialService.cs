@@ -466,6 +466,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && DbFunctions.DiffYears(m.CreateTime, date) == 0
                                 orderby m.CreateTime descending
                                 select new PMSMaterialOrderItemExtra
@@ -493,6 +494,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                  && DbFunctions.DiffYears(m.CreateTime, date) == 0
                                 orderby m.CreateTime descending
                                 select m;

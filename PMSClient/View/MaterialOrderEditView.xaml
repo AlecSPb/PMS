@@ -126,7 +126,7 @@
                           ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
                     <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="注意:只有[已核验]状态会显示给供应商。核验后将不能添加和修改订单项目" Foreground="Blue"/>
+                           Text="只有[已核验]状态会显示给供应商。核验后将不能添加和修改订单项目" Foreground="Blue" FontWeight="Bold"/>
 
                     <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

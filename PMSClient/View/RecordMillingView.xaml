@@ -198,7 +198,7 @@
                     <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
-                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    
 
                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
