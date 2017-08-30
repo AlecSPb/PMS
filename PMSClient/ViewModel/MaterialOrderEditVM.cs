@@ -84,7 +84,7 @@ namespace PMSClient.ViewModel
             }
             if (CurrentMaterialOrder.State == "作废")
             {
-                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
+                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条订单记录？"))
                 {
                     return;
                 }
@@ -100,6 +100,7 @@ namespace PMSClient.ViewModel
                 else
                 {
                     service.UpdateMaterialOrderByUID(CurrentMaterialOrder, uid);
+                                        
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialOrder.RefreshData();

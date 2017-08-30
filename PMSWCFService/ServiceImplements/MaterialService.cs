@@ -216,6 +216,32 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+        public int DeleteMaterialOrderItemByMaterialOrderID(Guid orderId)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    int result = 0;
+                    var models = dc.MaterialOrderItems.Where(i => i.MaterialOrderID == orderId);
+
+                    if (models.Count() > 0)
+                    {
+                        foreach (var item in models)
+                        {
+                            item.State = SimpleState.作废.ToString();
+                        }
+                        result = dc.SaveChanges();
+                    }
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
 
         public List<DcMaterialNeed> GetMaterialNeedBySearchInPage(int skip, int take, string composition)
         {
@@ -319,7 +345,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                     var query = from m in dc.MaterialOrders
+                    var query = from m in dc.MaterialOrders
                                 where m.State != MaterialOrderState.作废.ToString()
                                 && m.OrderPO.Contains(orderPo)
                                 && m.Supplier.Contains(supplier)
@@ -342,7 +368,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from m in dc.MaterialOrders
-                                where m.OrderPO.Contains(orderPo) &&m.State == MaterialOrderState.已核验.ToString()
+                                where m.OrderPO.Contains(orderPo) && m.State == MaterialOrderState.已核验.ToString()
                                 select m;
                     return query.Count();
                 }
@@ -481,7 +507,7 @@ namespace PMSWCFService
         }
 
         public List<DcMaterialOrderItemExtra> GetMaterialOrderItemExtras(int skip, int take, string composition,
-            string pminumber, string orderitemnumber,string supplier)
+            string pminumber, string orderitemnumber, string supplier)
         {
             try
             {
@@ -497,15 +523,16 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
-                                &&mm.Supplier.Contains(supplier)
+                                && mm.Supplier.Contains(supplier)
                                 orderby m.CreateTime descending
                                 select new PMSMaterialOrderItemExtra
                                 {
-                                    MaterialOrder=mm,
-                                    MaterialOrderItem=m
+                                    MaterialOrder = mm,
+                                    MaterialOrderItem = m
                                 };
                     return mapper.Map<List<PMSMaterialOrderItemExtra>, List<DcMaterialOrderItemExtra>>(query.Skip(skip).Take(take).ToList());
                 }
@@ -517,7 +544,7 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber,string supplier)
+        public int GetMaterialOrderItemExtrasCount(string composition, string pminumber, string orderitemnumber, string supplier)
         {
             try
             {
@@ -526,6 +553,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State != PMSCommon.MaterialOrderItemState.作废.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
@@ -558,11 +586,12 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)
                                 && mm.Supplier.Contains(supplier)
-                                orderby m.CreateTime 
+                                orderby m.CreateTime
                                 select new PMSMaterialOrderItemExtra
                                 {
                                     MaterialOrder = mm,
@@ -587,6 +616,7 @@ namespace PMSWCFService
                     var query = from m in dc.MaterialOrderItems
                                 join mm in dc.MaterialOrders on m.MaterialOrderID equals mm.ID
                                 where m.State == PMSCommon.MaterialOrderItemState.未完成.ToString()
+                                && mm.State != PMSCommon.MaterialOrderState.作废.ToString()
                                 && m.Composition.Contains(composition)
                                 && m.PMINumber.Contains(pminumber)
                                 && m.OrderItemNumber.Contains(orderitemnumber)

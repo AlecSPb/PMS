@@ -52,6 +52,9 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int DeleteMaterialOrderItem(Guid id);
 
+        [OperationContract]
+        int DeleteMaterialOrderItemByMaterialOrderID(Guid orderId);
+
         /// <summary>
         /// 用来给原料入库提供选择
         /// </summary>
