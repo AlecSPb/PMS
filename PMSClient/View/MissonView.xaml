@@ -71,6 +71,14 @@
                                             Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding Priority}"/>
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Ellipse Width="10" Height="10" Fill="Red"
+                                     Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource OrderPMINumber}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -210,8 +218,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                 <DataGridTextColumn Header="{StaticResource PlanGrainSize}" Binding="{Binding GrainSize}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                
-                
+
+
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Header="{StaticResource PlanProcessCode}" Binding="{Binding ProcessCode}"/>
                 <DataGridTextColumn ElementStyle="{StaticResource StyleDGTextBlockCenter}"

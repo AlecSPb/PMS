@@ -4,4 +4,5 @@
     <local:MissonStateToBoolConverter x:Key="ConverterMissonStateToBool"/>
     <local:LastDayConverter x:Key="LastDayConverter"/>
     <local:LastDayImageConverter x:Key="LastDayImageConverter"/>
+    <local:VisibilityConverter2 x:Key="VisibilityConverter2"/>
 </ResourceDictionary>

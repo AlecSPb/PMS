@@ -165,6 +165,7 @@
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
     <Compile Include="Helpers\Converter\MissonStateToBoolConverter.cs" />
+    <Compile Include="Helpers\Converter\VisibilityConverter2.cs" />
     <Compile Include="Helpers\ExitHelper.cs" />
     <Compile Include="Helpers\OK\PMSAccess.cs" />
     <Compile Include="Helpers\OK\BasicData.cs" />
