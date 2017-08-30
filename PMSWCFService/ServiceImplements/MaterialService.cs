@@ -181,7 +181,14 @@ namespace PMSWCFService
                     var model = dc.MaterialOrders.Find(id);
                     if (model != null)
                     {
-                        model.State = OrderState.作废.ToString();
+                        model.State = MaterialOrderState.作废.ToString();
+                        //同时作废改订单下面的所有项目
+                        var items = dc.MaterialOrderItems.Where(i => i.MaterialOrderID == id);
+                        foreach (var item in items)
+                        {
+                            item.State = PMSCommon.MaterialOrderItemState.作废.ToString();
+                        }
+
                         result = dc.SaveChanges();
                     }
                     return result;
@@ -204,7 +211,7 @@ namespace PMSWCFService
                     var model = dc.MaterialOrderItems.Find(id);
                     if (model != null)
                     {
-                        model.State = SimpleState.作废.ToString();
+                        model.State = MaterialOrderItemState.作废.ToString();
                         result = dc.SaveChanges();
                     }
                     return result;
@@ -216,32 +223,7 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-        public int DeleteMaterialOrderItemByMaterialOrderID(Guid orderId)
-        {
-            try
-            {
-                using (var dc = new PMSDbContext())
-                {
-                    int result = 0;
-                    var models = dc.MaterialOrderItems.Where(i => i.MaterialOrderID == orderId);
 
-                    if (models.Count() > 0)
-                    {
-                        foreach (var item in models)
-                        {
-                            item.State = SimpleState.作废.ToString();
-                        }
-                        result = dc.SaveChanges();
-                    }
-                    return result;
-                }
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
 
         public List<DcMaterialNeed> GetMaterialNeedBySearchInPage(int skip, int take, string composition)
         {
@@ -864,6 +846,23 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
             }
         }
+
+        //2017-8-31补充API
+        public List<DcPlanHistory> GetPlanHistoryTop10(string searchCode, string deviceCode)
+        {
+            //TODO:获取计划历史纪录
+            throw new NotImplementedException();
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }

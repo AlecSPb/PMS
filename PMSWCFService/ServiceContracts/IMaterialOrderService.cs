@@ -52,9 +52,6 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int DeleteMaterialOrderItem(Guid id);
 
-        [OperationContract]
-        int DeleteMaterialOrderItemByMaterialOrderID(Guid orderId);
-
         /// <summary>
         /// 用来给原料入库提供选择
         /// </summary>
@@ -83,6 +80,9 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         bool CheckOrderItemNumberExist(string orderItemnumber);
+
+        [OperationContract]
+        List<DcPlanHistory> GetPlanHistoryTop10(string searchCode, string deviceCode);
 
     }
 }

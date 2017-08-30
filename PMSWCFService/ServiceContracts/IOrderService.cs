@@ -54,5 +54,8 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         bool CheckPMINumberExisit(string pminumber);
+
+        [OperationContract]
+        List<DcOrderHistory> GetOrderHistoryTop10(string pmiNumber);
     }
 }
