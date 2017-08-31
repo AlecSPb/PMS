@@ -128,7 +128,7 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                CurrentProduct.ProductType = PMSCommon.ProductType.其他.ToString();
+                CurrentProduct.ProductType = PMSCommon.ProductType.样品.ToString();
                 CurrentProduct.ProductID = model.Plan.SearchCode;
                 CurrentProduct.Customer = model.Misson.CustomerName;
                 CurrentProduct.Composition = model.Misson.CompositionStandard;

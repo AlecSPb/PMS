@@ -118,7 +118,7 @@ namespace PMSClient.ViewModel
                 CurrentDeliveryItem.Composition = $"{model.PlateMaterial}背板";
                 CurrentDeliveryItem.Abbr = model.PlateMaterial;
                 CurrentDeliveryItem.Customer = "无";
-                CurrentDeliveryItem.Weight = model.Weight;
+                CurrentDeliveryItem.Weight = "未知";
                 CurrentDeliveryItem.PO = "无";
                 CurrentDeliveryItem.Dimension = model.Dimension;
                 CurrentDeliveryItem.DimensionActual = model.Dimension;
@@ -131,12 +131,12 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                CurrentDeliveryItem.ProductType = PMSCommon.ProductType.其他.ToString();
+                CurrentDeliveryItem.ProductType = PMSCommon.ProductType.样品.ToString();
                 CurrentDeliveryItem.ProductID = model.Plan.SearchCode;
                 CurrentDeliveryItem.Composition = model.Misson.CompositionStandard;
                 CurrentDeliveryItem.Abbr = model.Misson.CompositionAbbr;
                 CurrentDeliveryItem.Customer = "未知";
-                CurrentDeliveryItem.Weight = model.Misson.PO;
+                CurrentDeliveryItem.Weight = "未知";
                 CurrentDeliveryItem.PO = "无";
                 CurrentDeliveryItem.Dimension = model.Misson.Dimension;
                 CurrentDeliveryItem.DimensionActual = model.Misson.Dimension;
