@@ -30,9 +30,9 @@ namespace PMSClient.ViewModel
 
         private void ActionCheckPMINumber()
         {
-            if (CurrentOrder!=null)
+            if (CurrentOrder != null)
             {
-                using (var service=new OrderServiceClient())
+                using (var service = new OrderServiceClient())
                 {
                     CanUseThisPMINumber = service.CheckPMINumberExisit(CurrentOrder.PMINumber) ? "被占用" : "可以用";
                 }
@@ -134,7 +134,7 @@ namespace PMSClient.ViewModel
                 }
                 else
                 {
-                    if (CurrentOrder.State==PMSCommon.OrderState.完成.ToString())
+                    if (CurrentOrder.State == PMSCommon.OrderState.完成.ToString())
                     {
                         CurrentOrder.FinishTime = DateTime.Now;
                     }

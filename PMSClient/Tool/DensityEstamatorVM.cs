@@ -24,11 +24,17 @@ namespace PMSClient.Tool
             Save = new RelayCommand(ActionSave);
             GiveUp = new RelayCommand(GoBack);
             SelectionChanged = new RelayCommand<GraphitePaper>(ActionSelecitonChanged);
+            RefreshCalculation = new RelayCommand(ActionRefreshCalculation);
+        }
+
+        private void ActionRefreshCalculation()
+        {
+            CalculateDensity();
         }
 
         private void ActionSelecitonChanged(GraphitePaper model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentCalculationItem.GraphiteDiameter = model.Diameter;
                 CurrentCalculationItem.GraphiteThickness = model.Thickness;
@@ -39,24 +45,31 @@ namespace PMSClient.Tool
 
         public void CalculateDensity()
         {
-            var t = CurrentCalculationItem;
-            double diameterAverage = UsefulPackage.PMSTranslate.Average(t.D1, t.D2);
-            double thicknessAverage = UsefulPackage.PMSTranslate.Average(t.T1, t.T2, t.T3, t.T4);
-            t.TAverage = thicknessAverage - t.GraphiteThickness;
+            try
+            {
+                var t = CurrentCalculationItem;
+                double diameterAverage = UsefulPackage.PMSTranslate.Average(t.D1, t.D2);
+                double thicknessAverage = UsefulPackage.PMSTranslate.Average(t.T1, t.T2, t.T3, t.T4);
+                t.TAverage = thicknessAverage - t.GraphiteThickness;
 
-            double volumn = Math.PI * diameterAverage * diameterAverage * t.TAverage / 4 / 1000;
-            double targetWeight = t.Weight - t.GraphiteWeight;
-            if (t.CalculateDensity > 0 && volumn > 0)
-            {
-                t.Density = targetWeight / volumn;
-                t.RatioDensity = t.Density / t.CalculateDensity;
+                double volumn = Math.PI * diameterAverage * diameterAverage * t.TAverage / 4 / 1000;
+                double targetWeight = t.Weight - t.GraphiteWeight;
+                if (t.CalculateDensity > 0 && volumn > 0)
+                {
+                    t.Density = targetWeight / volumn;
+                    t.RatioDensity = t.Density / t.CalculateDensity;
+                }
+                else
+                {
+                    t.Density = 0;
+                    t.RatioDensity = 0;
+                }
+                CurrentCalculationItem.RaiseAll();
             }
-            else
+            catch (Exception ex)
             {
-                t.Density = 0;
-                t.RatioDensity = 0;
+                PMSHelper.CurrentLog.Error(ex);
             }
-            CurrentCalculationItem.RaiseAll();
         }
 
         private void ActionSave()
@@ -86,7 +99,7 @@ namespace PMSClient.Tool
 
         public void SetCalculationItem(DcRecordDeMold model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentCalculationItem.Weight = model.Weight;
                 CurrentCalculationItem.CalculateDensity = model.CalculationDensity;
@@ -96,7 +109,7 @@ namespace PMSClient.Tool
                 CurrentCalculationItem.T2 = model.Thickness2;
                 CurrentCalculationItem.T3 = model.Thickness3;
                 CurrentCalculationItem.T4 = model.Thickness4;
-                
+
             }
         }
 
@@ -114,5 +127,7 @@ namespace PMSClient.Tool
 
         public RelayCommand GiveUp { get; set; }
         public RelayCommand Save { get; set; }
+
+        public RelayCommand RefreshCalculation { get; set; }
     }
 }

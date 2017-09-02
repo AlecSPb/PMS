@@ -55,6 +55,12 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
+            //订单完成警告
+            if (CurrentOrder.State == PMSCommon.OrderState.完成.ToString())
+            {
+                PMSDialogService.ShowWarning("将该订单状态设定为【完成】后，生产经理将无法安排新的热压计划到该订单任务下\r\n请确定所有靶材和样品都完成了再设置【完成】");
+            }
+
             if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
             {
                 return;

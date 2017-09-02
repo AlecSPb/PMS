@@ -190,8 +190,8 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
                           ItemsSource="{Binding DataContext.DeMoldRemarks,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding Remark}" FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                          Text="{Binding Remark}" FontSize="{StaticResource TabletFontLG}" Background="LightBlue"/>
+                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" FontWeight="Bold"
                            Text="备注信息，比如有无石墨纸等等"/>
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDMState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

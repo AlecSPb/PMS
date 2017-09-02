@@ -32,7 +32,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="1.请选择石墨纸规格（双层）" TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="1.请选择石墨纸规格（双层）" TextWrapping="Wrap" FontWeight="Bold"/>
                     <DataGrid  Name="dg" Grid.Row="1" ItemsSource="{Binding GraphitePapers}" HorizontalContentAlignment="Stretch" Style="{StaticResource StyleDataGridCommon}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
@@ -83,7 +83,7 @@
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="重量" />
                     <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding Weight,StringFormat={}{0:F2}}"/>
-                    
+
                     <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="直径1" />
                     <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding D1,StringFormat={}{0:F2}}"/>
                     <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="直径2" />
@@ -103,8 +103,14 @@
                     <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding Density,StringFormat={}{0:F2}}"/>
                     <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度%" />
                     <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding RatioDensity,StringFormat={}{0:P2}}"/>
-
+                    <Button Grid.Row="13" Grid.Column="0" Style="{StaticResource StyleButtonCommon}" Command="{Binding DataContext.RefreshCalculation,
+                        RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                            Content="刷新计算"/>
                 </Grid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleBorderCommon}">
+                <TextBlock Text="注意：请务必确定是否有石墨纸包含在厚度内，否则计算结果将会出现很大的偏差." FontSize="20"
+                           TextWrapping="Wrap"/>
             </Border>
         </Grid>
     </Grid>

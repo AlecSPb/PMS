@@ -187,25 +187,25 @@
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource PlanPreTemperature}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Text="单位：（℃）" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="15" Grid.Column="2" Text="单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
 
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource PlanPrePressure}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="16" Grid.Column="2" Text="单位：（℃）" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBlock Grid.Row="16" Grid.Column="2" Text="单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
                 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource PlanTemperature}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Text="单位：（℃）热压温度" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBoxLeft}" Background="Yellow"/>
+                <TextBlock Grid.Row="17" Grid.Column="2" Text="！！！非常重要，请反复核对。单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
 
 
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource PlanPressure}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"/>
-                <TextBlock Grid.Row="18" Grid.Column="2" Text="单位：ton，热压压力" Style="{StaticResource StyleTextBlockTip}"/>
+                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"  Background="Yellow"/>
+                <TextBlock Grid.Row="18" Grid.Column="2" Text="！！！非常重要，请反复核对。单位：ton" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanVaccum}"
                            Style="{StaticResource StyleTextBlockCommon}" />

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.ExtraService;
+using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
-    public class FeedBackEditVM:BaseViewModelEdit
+    public class FeedBackEditVM : BaseViewModelEdit
     {
         public FeedBackEditVM()
         {
@@ -32,8 +33,25 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+            Select = new RelayCommand(ActionSelect);
         }
 
+        private void ActionSelect()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.FeedBackEdit);
+            PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
+        }
+        public void SetBySelect(DcPlanWithMisson plan)
+        {
+            if (plan != null)
+            {
+                CurrentFeedBack.Composition = plan.Misson.CompositionStandard;
+                CurrentFeedBack.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
+                CurrentFeedBack.Customer = plan.Misson.CustomerName;
+                //RaisePropertyChanged(nameof(CurrentRecordTest));
+            }
+        }
         public void SetNew()
         {
             IsNew = true;
@@ -135,6 +153,8 @@ namespace PMSClient.ViewModel
                 RaisePropertyChanged(nameof(CurrentFeedBack));
             }
         }
+
+        public RelayCommand Select { get; set; }
 
     }
 }

@@ -38,14 +38,14 @@ namespace PMSClient.View
                     {
                         e.Row.Background = this.FindResource("TodayBrush") as SolidColorBrush;
                     }
-                    else if (rowDate == today.Date.AddDays(-1))
-                    {
-                        e.Row.Background = this.FindResource("YesterdayBrush") as SolidColorBrush;
-                    }
-                    else if (rowDate == today.Date.AddDays(1))
-                    {
-                        e.Row.Background = this.FindResource("TomorrowBrush") as SolidColorBrush;
-                    }
+                    //else if (rowDate == today.Date.AddDays(-1))
+                    //{
+                    //    e.Row.Background = this.FindResource("YesterdayBrush") as SolidColorBrush;
+                    //}
+                    //else if (rowDate == today.Date.AddDays(1))
+                    //{
+                    //    e.Row.Background = this.FindResource("TomorrowBrush") as SolidColorBrush;
+                    //}
                 }
             }
             catch (Exception ex)

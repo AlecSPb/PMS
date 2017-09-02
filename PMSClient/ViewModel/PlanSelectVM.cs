@@ -207,6 +207,9 @@ namespace PMSClient.ViewModel
                     case PMSViews.DeliveryItemEdit:
                         PMSHelper.ViewModels.DeliveryItemEdit.SetBySelect(plan.PlanMisson);
                         break;
+                    case PMSViews.FeedBackEdit:
+                        PMSHelper.ViewModels.FeedBackEdit.SetBySelect(plan.PlanMisson);
+                        break;
                     default:
                         break;
                 }

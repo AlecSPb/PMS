@@ -81,6 +81,18 @@
                                             Binding="{Binding State}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding Priority}"/>
+                    <DataGridTemplateColumn Header="">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Ellipse Width="10" Height="10" Fill="Red"
+                                     Visibility="{Binding SampleNeed,Converter={StaticResource VisibilityConverter2}}">
+                                    <Ellipse.ToolTip>
+                                        <TextBlock Text="样品标识"/>
+                                    </Ellipse.ToolTip>
+                                </Ellipse>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource OrderCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                             Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource OrderDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

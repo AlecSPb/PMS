@@ -149,12 +149,14 @@
                 <Button Content="{StaticResource PageOther}" Grid.Row="7" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageOutput}" Grid.Row="7" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToOutput}"/>
-                <Button Content="{StaticResource PageCheckList}" Grid.Row="7" Grid.Column="2"
+                <Button Content="{StaticResource PageHistory}" Grid.Row="7" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToHistory}"/>
+                <!--<Button Content="{StaticResource PageCheckList}" Grid.Row="7" Grid.Column="2"
                         Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigation}" Visibility="Hidden"/>
                 <Button Content="{StaticResource PageBluePrint}" Grid.Row="7" Grid.Column="3"
                         Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigation}"  Visibility="Hidden"/>
                 <Button Content="{StaticResource PageMaintenance}" Grid.Row="7" Grid.Column="4" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToMaintenance}"  Visibility="Hidden"/>
+                        Command="{Binding GoToMaintenance}"  Visibility="Hidden"/>-->
 
                 <Button Content="{StaticResource PageBasicData}" Grid.Row="8" Grid.Column="0" Grid.RowSpan="2"
                         Style="{DynamicResource StyleButtonNavigationTitle}" Visibility="Collapsed"/>
@@ -171,8 +173,6 @@
                         Style="{DynamicResource StyleButtonNavigationTitle}" />
                 <Button Content="{StaticResource PageDebug}" Grid.Row="10" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToDebug}"/>
-                <Button Content="{StaticResource PageHistory}" Grid.Row="10" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToHistory}"/>
 
 
             </Grid>
