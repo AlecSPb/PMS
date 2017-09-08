@@ -144,9 +144,11 @@
     
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
     <sys:String x:Key="PageFeedBackEdit">客户反馈编辑</sys:String>
-    
-    <sys:String x:Key="PageMaintenance">设备维护</sys:String>
 
+    <sys:String x:Key="PageMaintenance">维护</sys:String>
+    <sys:String x:Key="PageMaintenancePlan">维护计划</sys:String>
+    <sys:String x:Key="PageMaintenanceRecord">维护记录</sys:String>
+    
     <sys:String x:Key="PageCheckList">工序清单</sys:String>
     <sys:String x:Key="PageCheckListEdit">工序清单编辑</sys:String>
     
