@@ -137,7 +137,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
+            if (!PMSDialogService.ShowYesNo("请问", "仔细核对每项数据是否准确\r\n确定保存这条记录？"))
             {
                 return;
             }
