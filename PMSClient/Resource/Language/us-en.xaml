@@ -146,6 +146,8 @@
     <sys:String x:Key="PageFeedBackEdit">FeedBack Edit</sys:String>
 
     <sys:String x:Key="PageMaintenance">Maintenance</sys:String>
+    <sys:String x:Key="PageMaintenancePlan">Maintenance Plan</sys:String>
+    <sys:String x:Key="PageMaintenanceRecord">Maintenance Record</sys:String>
 
     <sys:String x:Key="PageCheckList">Check List</sys:String>
     <sys:String x:Key="PageCheckListEdit">Check List Edit</sys:String>
