@@ -242,6 +242,7 @@
                 <ComboBox  Grid.Row="24" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
                           ItemsSource="{Binding DataContext.SpecialRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding SpecialRequirement}"/>
+                <TextBlock Grid.Row="24" Grid.Column="2" Text="如果此次计划产生的毛坯用于其他订单，请在此处填写其他的订单的内部编号" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="25" Grid.Column="0" Text="{StaticResource PlanState}"
                            Style="{StaticResource StyleTextBlockCommon}" />

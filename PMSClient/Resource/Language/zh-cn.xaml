@@ -370,7 +370,7 @@
     <sys:String x:Key="PlanMillingRequirement">制粉要求</sys:String>
     <sys:String x:Key="PlanFillingRequirement">装料要求</sys:String>
     <sys:String x:Key="PlanMachineRequirement">加工要求</sys:String>
-    <sys:String x:Key="PlanSpecialRequirement">特殊要求</sys:String>
+    <sys:String x:Key="PlanSpecialRequirement">转单</sys:String>
     <sys:String x:Key="PlanRemark">备注信息</sys:String>
     <sys:String x:Key="PlanGrade">得分</sys:String>
     <sys:String x:Key="PlanConclusion">计划总结</sys:String>

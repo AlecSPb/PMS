@@ -33,8 +33,8 @@ namespace PMSClient.ViewModel
 
         private void IntitializeCommands()
         {
-            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson),CanGoToMisson);
-            Search = new RelayCommand(ActionSearch,CanSearch);
+            GoToMisson = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson), CanGoToMisson);
+            Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             GoToSearchPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.PlanSearch));
@@ -50,7 +50,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchComposition)&&string.IsNullOrEmpty(SearchVHPDate));
+            return !(string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchVHPDate));
         }
 
         private void ActionSearch()
@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectionChanged(DcPlanWithMisson model)
         {
-            if (model!=null)
+            if (model != null)
             {
                 CurrentPlanWithMisson = model;
             }
@@ -88,6 +88,8 @@ namespace PMSClient.ViewModel
                 sb.AppendLine(model.Plan.MoldDiameter.ToString());
                 sb.Append("产品:");
                 sb.AppendLine(model.Misson.Dimension);
+                sb.Append("订单:");
+                sb.AppendLine(model.Misson.PMINumber);
                 sb.AppendLine();
                 sb.AppendLine("++++++一般标签复制上面内容，样品标签复制下面内容+++++++");
                 sb.AppendLine();
@@ -166,7 +168,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToSearchPlan { get; set; }
         public RelayCommand<DcPlanWithMisson> Label { get; set; }
         public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
-        public RelayCommand<DcPlanWithMisson> SelectionChanged{ get; set; }
+        public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
         #endregion
 
         #region Properties
