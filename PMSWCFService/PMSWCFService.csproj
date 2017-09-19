@@ -139,6 +139,7 @@
     <Compile Include="DataContracts\DcPlate.cs" />
     <Compile Include="DataContracts\DcPMSIndex.cs" />
     <Compile Include="DataContracts\DcPlanHistory.cs" />
+    <Compile Include="DataContracts\DcTaskPlan.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
+    <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
     <Compile Include="ServiceContracts\IItemDebitService.cs" />

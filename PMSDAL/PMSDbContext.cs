@@ -110,5 +110,7 @@ namespace PMSDAL
         public DbSet<PMSIndex> PMSIndexs { get; set; }
 
         public DbSet<Purchase> Purchases { get; set; }
+
+        public DbSet<TaskPlan> TaskPlans { get; set; }
     }
 }
