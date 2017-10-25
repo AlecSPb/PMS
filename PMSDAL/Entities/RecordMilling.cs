@@ -33,6 +33,8 @@ namespace PMSDAL
         public double WeightRemain { get; set; }
         public double Ratio { get; set; }
         public string MillingTime { get; set; }
-
+        //2017-10-25
+        public  string Oxygen { get; set; }
+        public string Water { get; set; }
     }
 }

@@ -52,5 +52,9 @@ namespace PMSWCFService.DataContracts
         public double Ratio { get; set; }
         [DataMember]
         public string MillingTime { get; set; }
+        [DataMember]
+        public string Oxygen { get; set; }
+        [DataMember]
+        public string Water { get; set; }
     }
 }
