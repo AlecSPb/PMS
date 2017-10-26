@@ -97,6 +97,10 @@
                                     Binding="{Binding WeightRemain}"/>
                     <DataGridTextColumn Header="{StaticResource RMRatio}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Ratio,StringFormat={}{0:P}}"/>
+                    <DataGridTextColumn Header="{StaticResource RMOxygen}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Oxygen}"/>
+                    <DataGridTextColumn Header="{StaticResource RMWater}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Water}"/>
                     <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                     <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -194,19 +198,28 @@
                         <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxReadOnly}"  Width="80"/>
                     </StackPanel>
 
-
-                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMRemark}"
+                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMOxygen}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    <TextBox  Grid.Row="13" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMWater}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
                     
 
-                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMCreator}"
+                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="14" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
 
-                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                    <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="15" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                    
+                    
                 </Grid>
             </ScrollViewer>
         </Grid>
