@@ -458,7 +458,8 @@
     <sys:String x:Key="RMWeightOut">出料重量</sys:String>
     <sys:String x:Key="RMWeightRemain">余料重量</sys:String>
     <sys:String x:Key="RMRatio">损失率</sys:String>
-
+    <sys:String x:Key="RMOxygen">含氧量</sys:String>
+    <sys:String x:Key="RMWater">含水量</sys:String>
     <!--RecordVHP-->
     <sys:String x:Key="RVHPState">状态</sys:String>
     <sys:String x:Key="RVHPCreateTime">创建时间</sys:String>
