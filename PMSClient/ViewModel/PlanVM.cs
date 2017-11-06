@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,55 @@ namespace PMSClient.ViewModel
             Label = new RelayCommand<DcPlanWithMisson>(ActionLabel);
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
+            Output = new RelayCommand<MainService.DcPlanWithMisson>(ActionOutput);
+        }
+
+        private void ActionOutput(DcPlanWithMisson model)
+        {
+            //先得到总记录
+            int pageIndex = 1;
+            int pageSize = 20;
+            int recordCount = 0;
+            using (var service = new MissonServiceClient())
+            {
+                recordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
+            }
+
+            int pageCount = recordCount / PageSize + recordCount % PageSize == 0 ? 0 : 1;
+
+            int skip = 0, take = 0;
+            take = pageSize;
+            skip = (pageIndex - 1) * pageSize;
+
+            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "计划导出数据.csv");
+            StreamWriter sw = new StreamWriter(outputfile);
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("计划数据导出");
+
+            using (var service = new MissonServiceClient())
+            {
+                while (pageIndex < pageCount)
+                {
+                    var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
+                    orders.ToList().ForEach(o =>
+                    {
+                        sb.Append(o.Plan.PlanLot);
+                        sb.Append(";");
+                        sb.Append(o.Misson.CompositionStandard);
+                        sb.Append(";");
+
+
+                    });
+                    sw.WriteLine(sb.ToString());
+
+                    pageIndex++;
+                }
+            }
+            sw.Close();
+
+
+
         }
 
         private bool CanGoToMisson()
@@ -169,6 +219,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanWithMisson> Label { get; set; }
         public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
         public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
+        public RelayCommand<DcPlanWithMisson> Output { get; set; }
         #endregion
 
         #region Properties
