@@ -47,7 +47,8 @@ namespace PMSClient.ViewModel
 
         private void ActionOutput(DcPlanWithMisson model)
         {
-            //先得到总记录
+            PMSDialogService.ShowYes("计划数据导出时间会比较长，请再完成之前不要进行其他操作");
+
             int pageIndex = 1;
             int pageSize = 20;
             int recordCount = 0;
@@ -56,40 +57,68 @@ namespace PMSClient.ViewModel
                 recordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);
             }
 
-            int pageCount = recordCount / PageSize + recordCount % PageSize == 0 ? 0 : 1;
+            int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
 
             int skip = 0, take = 0;
             take = pageSize;
             skip = (pageIndex - 1) * pageSize;
 
             string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "计划导出数据.csv");
-            StreamWriter sw = new StreamWriter(outputfile);
+            StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("计划数据导出");
-
             using (var service = new MissonServiceClient())
             {
-                while (pageIndex < pageCount)
+                try
                 {
-                    var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
-                    orders.ToList().ForEach(o =>
+                    while (pageIndex <= pageCount)
                     {
-                        sb.Append(o.Plan.PlanLot);
-                        sb.Append(";");
-                        sb.Append(o.Misson.CompositionStandard);
-                        sb.Append(";");
+                        var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
+                        orders.ToList().ForEach(o =>
+                        {
+                            #region 需要导出的数据列
+                            sb.Append(o.Plan.SearchCode);
+                            sb.Append(",");
+                            sb.Append(o.Misson.CompositionStandard);
+                            sb.Append(",");
+                            sb.Append(o.Plan.MoldDiameter);
+                            sb.Append(",");
+                            sb.Append(o.Plan.Thickness);
+                            sb.Append(",");
+                            sb.Append(o.Plan.Quantity);
+                            sb.Append(",");
+                            sb.Append(o.Plan.CalculationDensity);
+                            sb.Append(",");
+                            sb.Append(o.Plan.SingleWeight);
+                            sb.Append(",");
+                            sb.Append(o.Plan.Temperature);
+                            sb.Append(",");
+                            sb.Append(o.Plan.Pressure);
+                            sb.Append(",");
+                            sb.Append(o.Plan.FillingRequirement);
+                            sb.Append(",");
+                            sb.Append(o.Plan.MillingRequirement);
+                            #endregion
 
+                            sb.AppendLine();
+                        });
 
-                    });
-                    sw.WriteLine(sb.ToString());
+                        sw.Write(sb.ToString());
+                        sw.Flush();
+                        sb.Clear();
 
-                    pageIndex++;
+                        pageIndex++;
+                        skip = (pageIndex - 1) * pageSize;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
                 }
             }
             sw.Close();
 
-
+            PMSDialogService.ShowYes("计划数据导出完成");
 
         }
 
