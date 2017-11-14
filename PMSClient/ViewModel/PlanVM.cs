@@ -161,6 +161,9 @@ namespace PMSClient.ViewModel
 
                 var sb = new StringBuilder();
                 sb.Append(model.Plan.PlanType);
+                sb.Append(" ");
+                sb.Append(model.Plan.ProcessCode);
+                sb.Append(" ");
                 sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
                 sb.AppendLine(model.Misson.CompositionStandard);
                 sb.Append("模具:");

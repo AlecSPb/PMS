@@ -126,7 +126,7 @@
                                         <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{Binding MaterialName,StringFormat=[{0}]}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding Density,StringFormat={}{0:F2}}" Foreground="Blue"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Density,StringFormat=->{0:F2}}" Foreground="Blue"/>
                                 </Grid>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
