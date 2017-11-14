@@ -192,7 +192,9 @@
 
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource PlanPrePressure}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding PrePressure}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <StackPanel Grid.Row="16" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox  Text="{Binding PrePressure}" Style="{StaticResource StyleTextBoxLeft}"/>
+                </StackPanel>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
                 
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource PlanTemperature}"
@@ -204,7 +206,11 @@
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource PlanPressure}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"  Background="Yellow"/>
+                <StackPanel Grid.Row="18" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox  Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"  Background="Yellow"/>
+                    <Button Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ShowPressureChangeTool}"/>
+                </StackPanel>
+
                 <TextBlock Grid.Row="18" Grid.Column="2" Text="！！！非常重要，请反复核对。单位：ton" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource PlanVaccum}"
