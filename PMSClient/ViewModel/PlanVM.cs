@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
         /// <param name="model"></param>
         private void ActionOutput(DcPlanWithMisson model)
         {
-            PMSDialogService.ShowYes("计划数据导出时间会比较长，请再完成之前不要进行其他操作");
+            PMSDialogService.ShowYes("计划数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作");
 
             int pageIndex = 1;
             int pageSize = 20;
