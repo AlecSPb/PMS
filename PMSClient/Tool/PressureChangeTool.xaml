@@ -1,0 +1,58 @@
+﻿<Window x:Class="PMSClient.Tool.PressureChangeTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Tool"
+        mc:Ignorable="d"
+        Title="压力计算工具 v1.0 xs.zhou" Height="300" Width="400"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="3" Text="输入数据" Style="{StaticResource StyleDGTextBlockCommon}"
+                   HorizontalAlignment="Stretch" Background="LightBlue" TextAlignment="Center"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="压头直径1:" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox x:Name="diameter1" Grid.Row="1" Grid.Column="1" Text="80" Style="{StaticResource StyleTextBoxCommon}" TextChanged="diameter1_TextChanged"/>
+        <TextBlock Grid.Row="1" Grid.Column="2" Text="(mm)" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="压力1:" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox x:Name="ton1" Grid.Row="2" Grid.Column="1" Text="30" Style="{StaticResource StyleTextBoxCommon}" TextChanged="diameter1_TextChanged"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Text="(ton)" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="压头直径2:" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox  x:Name="diameter2" Grid.Row="3" Grid.Column="1" Text="230" Style="{StaticResource StyleTextBoxCommon}" TextChanged="diameter1_TextChanged"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Text="(mm)" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="压力2:" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox x:Name="ton2" Grid.Row="4" Grid.Column="1" Text="0" Style="{StaticResource StyleTextBoxReadOnly}"/>
+        <TextBlock Grid.Row="4" Grid.Column="2" Text="(ton)" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="3" Text="压强数据" Style="{StaticResource StyleDGTextBlockCommon}"
+                   HorizontalAlignment="Stretch" Background="LightBlue" TextAlignment="Center"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="压强:" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox x:Name="pressure1" Grid.Row="6" Grid.Column="1" Text="0" Style="{StaticResource StyleTextBoxReadOnly}"/>
+        <TextBlock Grid.Row="6" Grid.Column="2" Text="MPa" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="压强:" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox x:Name="pressure2" Grid.Row="7" Grid.Column="1" Text="0" Style="{StaticResource StyleTextBoxReadOnly}"/>
+        <TextBlock Grid.Row="7" Grid.Column="2" Text="kg/cm2" Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+    </Grid>
+</Window>

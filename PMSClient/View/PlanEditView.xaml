@@ -208,7 +208,8 @@
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="18" Grid.Column="1" Orientation="Horizontal">
                     <TextBox  Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"  Background="Yellow"/>
-                    <Button Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonCommon}" Command="{Binding ShowPressureChangeTool}"/>
+                    <Button x:Name="btnPressureTool" Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonCommon}"
+                            Click="btnPressureTool_Click"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="18" Grid.Column="2" Text="！！！非常重要，请反复核对。单位：ton" Style="{StaticResource StyleTextBlockTip}"/>

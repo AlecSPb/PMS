@@ -76,5 +76,11 @@ namespace PMSClient.View
 
 
         }
+
+        private void btnPressureTool_Click(object sender, RoutedEventArgs e)
+        {
+            PMSClient.Tool.PressureChangeTool tool = new Tool.PressureChangeTool();
+            tool.ShowDialog();
+        }
     }
 }

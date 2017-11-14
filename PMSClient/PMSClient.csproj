@@ -262,6 +262,9 @@
     <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
+    <Compile Include="Tool\PressureChangeTool.xaml.cs">
+      <DependentUpon>PressureChangeTool.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\ToolViewLocator.cs" />
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
@@ -675,6 +678,10 @@
     <Page Include="Tool\MaterialNeedCalculationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\PressureChangeTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\IntegretedSearchView.xaml">
       <Generator>MSBuild:Compile</Generator>
