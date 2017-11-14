@@ -22,7 +22,6 @@ namespace PMSClient.Tool
         public PressureChangeTool()
         {
             InitializeComponent();
-            Calculate();
         }
 
         private void diameter1_TextChanged(object sender, TextChangedEventArgs e)
@@ -52,6 +51,11 @@ namespace PMSClient.Tool
             {
                 //throw;
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Calculate();
         }
     }
 }

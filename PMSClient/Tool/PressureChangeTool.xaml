@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSClient.Tool"
         mc:Ignorable="d"
         Title="压力计算工具 v1.0 xs.zhou" Height="300" Width="400"
-        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize">
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
