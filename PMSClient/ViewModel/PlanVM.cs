@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
         /// <param name="model"></param>
         private void ActionOutput(DcPlanWithMisson model)
         {
-            PMSDialogService.ShowYes("计划数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作");
+            PMSDialogService.ShowYes("计划数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
 
             int pageIndex = 1;
             int pageSize = 20;
@@ -67,9 +67,11 @@ namespace PMSClient.ViewModel
             take = pageSize;
             skip = (pageIndex - 1) * pageSize;
 
-            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "导出数据-计划.csv");
+            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+                , "导出数据-计划"+DateTime.Now.ToString("yyyyMMddmmhhss")+".csv");
             StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
-
+            string titleString = "计划日期,批次,设备,计划类型,标准成分,内部编号,模具类型,内径,厚度,数量,密度,粉末粒径,单片,全部,湿度,室温,预压温度,预压压力,温度,压力,真空度,保温时间,工艺代码,制粉要求,装料要求,加工要求,转单,创建者,创建时间";
+            sw.WriteLine(titleString);
             using (var service = new MissonServiceClient())
             {
                 try
