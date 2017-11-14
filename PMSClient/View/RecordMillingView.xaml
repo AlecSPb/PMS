@@ -200,11 +200,11 @@
 
                     <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMOxygen}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="13" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    <TextBox  Grid.Row="13" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
 
                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMWater}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxReadOnly}" />
+                    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
 
                     <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
