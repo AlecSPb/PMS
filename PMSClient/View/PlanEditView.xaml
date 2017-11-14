@@ -97,7 +97,7 @@
 
                 <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource PlanMoldType}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                           ItemsSource="{Binding DataContext.MoldTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding MoldType}"/>
                 <TextBlock Grid.Row="4" Grid.Column="2" Text="#模具类型" Style="{StaticResource StyleTextBlockTip}"/>
@@ -180,7 +180,7 @@
                 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource PlanProcessCode}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                           ItemsSource="{Binding DataContext.ProcessCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding ProcessCode,Mode=TwoWay}"/>
 
@@ -214,7 +214,7 @@
 
                 <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource PlanKeepTempTime}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource StyleTextBoxLeft}"/>
+                <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding KeepTempTime}" Style="{StaticResource StyleTextBoxLeft}" Background="Yellow"/>
                 <TextBlock Grid.Row="20" Grid.Column="2" Text="单位min，默认120" Style="{StaticResource StyleTextBlockTip}"/>
 
 
