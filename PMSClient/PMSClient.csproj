@@ -176,6 +176,7 @@
     <Compile Include="Helpers\OK\PMSMethods.cs" />
     <Compile Include="Helpers\OK\PMSNotice.cs" />
     <Compile Include="Helpers\OK\PMSFolderPath.cs" />
+    <Compile Include="Helpers\PMSOuputHelper.cs" />
     <Compile Include="Helpers\PMSStatus.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculation.cs" />
     <Compile Include="Helpers\UserfullPackage\MaterialDensityCalculationItem.cs" />

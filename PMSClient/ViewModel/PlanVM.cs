@@ -45,6 +45,10 @@ namespace PMSClient.ViewModel
             Output = new RelayCommand<MainService.DcPlanWithMisson>(ActionOutput);
         }
 
+        /// <summary>
+        /// 导出计划数据
+        /// </summary>
+        /// <param name="model"></param>
         private void ActionOutput(DcPlanWithMisson model)
         {
             PMSDialogService.ShowYes("计划数据导出时间会比较长，请再完成之前不要进行其他操作");
@@ -63,49 +67,22 @@ namespace PMSClient.ViewModel
             take = pageSize;
             skip = (pageIndex - 1) * pageSize;
 
-            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "计划导出数据.csv");
+            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "导出数据-计划.csv");
             StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
 
-            StringBuilder sb = new StringBuilder();
             using (var service = new MissonServiceClient())
             {
                 try
                 {
+                    string outputString = "";
                     while (pageIndex <= pageCount)
                     {
-                        var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
-                        orders.ToList().ForEach(o =>
-                        {
-                            #region 需要导出的数据列
-                            sb.Append(o.Plan.SearchCode);
-                            sb.Append(",");
-                            sb.Append(o.Misson.CompositionStandard);
-                            sb.Append(",");
-                            sb.Append(o.Plan.MoldDiameter);
-                            sb.Append(",");
-                            sb.Append(o.Plan.Thickness);
-                            sb.Append(",");
-                            sb.Append(o.Plan.Quantity);
-                            sb.Append(",");
-                            sb.Append(o.Plan.CalculationDensity);
-                            sb.Append(",");
-                            sb.Append(o.Plan.SingleWeight);
-                            sb.Append(",");
-                            sb.Append(o.Plan.Temperature);
-                            sb.Append(",");
-                            sb.Append(o.Plan.Pressure);
-                            sb.Append(",");
-                            sb.Append(o.Plan.FillingRequirement);
-                            sb.Append(",");
-                            sb.Append(o.Plan.MillingRequirement);
-                            #endregion
+                        var plans = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
 
-                            sb.AppendLine();
-                        });
+                        outputString = PMSOuputHelper.GetPlanOutput(plans);
 
-                        sw.Write(sb.ToString());
+                        sw.Write(outputString.ToString());
                         sw.Flush();
-                        sb.Clear();
 
                         pageIndex++;
                         skip = (pageIndex - 1) * pageSize;
