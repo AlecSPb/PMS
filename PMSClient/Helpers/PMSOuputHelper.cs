@@ -9,6 +9,21 @@ namespace PMSClient
 {
     public static class PMSOuputHelper
     {
+        public static string GetOrderOupput(IList<DcOrder> models)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Clear();
+
+            return sb.ToString();
+        }
+        public static string GetRecordTestOupput(IList<DcRecordTest> models)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Clear();
+
+            return sb.ToString();
+        }
+
         public static string GetPlanOutput(IList<DcPlanWithMisson> models)
         {
             StringBuilder sb = new StringBuilder();

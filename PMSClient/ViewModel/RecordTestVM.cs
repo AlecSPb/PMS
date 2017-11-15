@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
+using System.IO;
 
 namespace PMSClient.ViewModel
 {
@@ -50,7 +51,58 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
             Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate, CanDuplicate);
             Label = new RelayCommand<DcRecordTest>(ActionLabel);
-            QuickAdd = new RelayCommand(ActionQuickAdd,CanQuickAdd);
+            QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+            PMSDialogService.ShowYes("数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
+
+            int pageIndex = 1;
+            int pageSize = 20;
+            int recordCount = 0;
+            using (var service = new RecordTestServiceClient())
+            {
+                recordCount = service.GetRecordTestCountBySearchInPage(SearchProductID, SearchCompositionStd);
+            }
+
+            int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
+
+            int skip = 0, take = 0;
+            take = pageSize;
+            skip = (pageIndex - 1) * pageSize;
+
+            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+                , "导出数据-测试" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
+            StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
+            string titleString = "";
+            sw.WriteLine(titleString);
+            using (var service = new RecordTestServiceClient())
+            {
+                try
+                {
+                    string outputString = "";
+                    while (pageIndex <= pageCount)
+                    {
+                        var models = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
+                        outputString = PMSOuputHelper.GetRecordTestOupput(models);
+                        sw.Write(outputString.ToString());
+                        sw.Flush();
+
+                        pageIndex++;
+                        skip = (pageIndex - 1) * pageSize;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
+            sw.Close();
+
+            PMSDialogService.ShowYes("计划数据导出完成到桌面，请右键-打开方式-Excel打开文件");
+
         }
 
         private bool CanQuickAdd()
@@ -94,7 +146,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcRecordTest arg)
         {
-            return    PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest)|| PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocRecordTest);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocRecordTest);
         }
 
         private bool CanEdit(DcRecordTest arg)
@@ -236,6 +288,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordTest> Duplicate { get; set; }
         public RelayCommand<DcRecordTest> Label { get; set; }
         public RelayCommand QuickAdd { get; set; }
+
+        public RelayCommand Output { get; set; }
         #endregion
     }
 }

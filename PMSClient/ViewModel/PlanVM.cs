@@ -51,7 +51,7 @@ namespace PMSClient.ViewModel
         /// <param name="model"></param>
         private void ActionOutput(DcPlanWithMisson model)
         {
-            PMSDialogService.ShowYes("计划数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
+            PMSDialogService.ShowYes("数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
 
             int pageIndex = 1;
             int pageSize = 20;
@@ -79,9 +79,9 @@ namespace PMSClient.ViewModel
                     string outputString = "";
                     while (pageIndex <= pageCount)
                     {
-                        var plans = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
+                        var models = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
 
-                        outputString = PMSOuputHelper.GetPlanOutput(plans);
+                        outputString = PMSOuputHelper.GetPlanOutput(models);
 
                         sw.Write(outputString.ToString());
                         sw.Flush();
@@ -97,7 +97,7 @@ namespace PMSClient.ViewModel
             }
             sw.Close();
 
-            PMSDialogService.ShowYes("计划数据导出完成到桌面，请右键-打开方式-Excel打开文件");
+            PMSDialogService.ShowYes("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
 
         }
 
