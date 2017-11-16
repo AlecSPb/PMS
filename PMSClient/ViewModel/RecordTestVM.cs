@@ -101,7 +101,7 @@ namespace PMSClient.ViewModel
             }
             sw.Close();
 
-            PMSDialogService.ShowYes("计划数据导出完成到桌面，请右键-打开方式-Excel打开文件");
+            PMSDialogService.ShowYes("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
 
         }
 

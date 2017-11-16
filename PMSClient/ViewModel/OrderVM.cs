@@ -10,6 +10,7 @@ using PMSCommon;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.IO;
 
 namespace PMSClient.ViewModel
 {
@@ -56,6 +57,57 @@ namespace PMSClient.ViewModel
             Check = new RelayCommand<DcOrder>(ActionCheck, CanCheck);
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+            PMSDialogService.ShowYes("数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
+
+            int pageIndex = 1;
+            int pageSize = 20;
+            int recordCount = 0;
+            using (var service = new OrderServiceClient())
+            {
+                recordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositionStandard);
+            }
+
+            int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
+
+            int skip = 0, take = 0;
+            take = pageSize;
+            skip = (pageIndex - 1) * pageSize;
+
+            string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
+                , "导出数据-订单" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
+            StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
+            string titleString = "";
+            sw.WriteLine(titleString);
+            using (var service = new OrderServiceClient())
+            {
+                try
+                {
+                    string outputString = "";
+                    while (pageIndex <= pageCount)
+                    {
+                        var models = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositionStandard);
+                        outputString = PMSOuputHelper.GetRecordTestOupput(models);
+                        sw.Write(outputString.ToString());
+                        sw.Flush();
+
+                        pageIndex++;
+                        skip = (pageIndex - 1) * pageSize;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+            }
+            sw.Close();
+
+            PMSDialogService.ShowYes("数据导出完成到桌面，请右键-打开方式-Excel打开文件");
         }
 
         private void ActionOnlyUnCompleted()
@@ -244,6 +296,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> Check { get; private set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand OnlyUnCompleted { get; set; }
+
+        public RelayCommand Output { get; set; }
         #endregion
     }
 }
