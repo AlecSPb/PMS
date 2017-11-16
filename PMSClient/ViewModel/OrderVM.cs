@@ -92,7 +92,7 @@ namespace PMSClient.ViewModel
                     while (pageIndex <= pageCount)
                     {
                         var models = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositionStandard);
-                        outputString = PMSOuputHelper.GetRecordTestOupput(models);
+                        outputString = PMSOuputHelper.GetOrderOupput(models);
                         sw.Write(outputString.ToString());
                         sw.Flush();
 

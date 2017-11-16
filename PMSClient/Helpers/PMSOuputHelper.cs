@@ -13,14 +13,22 @@ namespace PMSClient
         {
             StringBuilder sb = new StringBuilder();
             sb.Clear();
+            models.ToList().ForEach(o =>
+            {
+                #region 需要导出的数据列
 
+            });
             return sb.ToString();
         }
         public static string GetRecordTestOupput(IList<DcRecordTest> models)
         {
             StringBuilder sb = new StringBuilder();
             sb.Clear();
+            models.ToList().ForEach(o =>
+            {
+                #region 需要导出的数据列
 
+            });
             return sb.ToString();
         }
 
