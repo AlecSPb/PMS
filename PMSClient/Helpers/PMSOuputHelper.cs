@@ -16,7 +16,45 @@ namespace PMSClient
             models.ToList().ForEach(o =>
             {
                 #region 需要导出的数据列
+                sb.Append(o.State);
+                sb.Append(",");
+                sb.Append(o.Priority);
+                sb.Append(",");
+                sb.Append(o.CreateTime);
+                sb.Append(",");
+                sb.Append(o.DeadLine);
+                sb.Append(",");
+                sb.Append(o.PolicyType);
+                sb.Append(",");
+                sb.Append(o.PMINumber);
+                sb.Append(",");
+                sb.Append(o.CustomerName);
+                sb.Append(",");
+                string com = o.CompositionStandard.Replace(",", "");
+                sb.Append(com);
+                sb.Append(",");
+                sb.Append(o.CompositionAbbr);
+                sb.Append(",");
+                sb.Append(o.Purity);
+                sb.Append(",");
+                sb.Append(o.PO);
+                sb.Append(",");
+                sb.Append(o.ProductType);
+                sb.Append(",");
+                sb.Append(o.Quantity);
+                sb.Append(",");
+                sb.Append(o.QuantityUnit);
+                sb.Append(",");
+                sb.Append(o.Dimension);
+                sb.Append(",");
+                sb.Append(o.DimensionDetails);
+                sb.Append(",");
+                sb.Append(o.SampleNeed);
+                sb.Append(",");
+                sb.Append(o.MinimumAcceptDefect);
 
+                sb.AppendLine();
+                #endregion
             });
             return sb.ToString();
         }
@@ -27,6 +65,8 @@ namespace PMSClient
             models.ToList().ForEach(o =>
             {
                 #region 需要导出的数据列
+
+                #endregion
 
             });
             return sb.ToString();

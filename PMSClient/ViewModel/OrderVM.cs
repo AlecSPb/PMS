@@ -73,7 +73,7 @@ namespace PMSClient.ViewModel
             int recordCount = 0;
             using (var service = new OrderServiceClient())
             {
-                recordCount = service.GetOrderCountBySearch(SearchCustomer, SearchCompositionStandard);
+                recordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard,SearchPMINumber);
             }
 
             int pageCount = recordCount / PageSize + (recordCount % PageSize == 0 ? 0 : 1);
@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
             string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
                 , "导出数据-订单" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
             StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
-            string titleString = "订单状态,优先级,创建时间,交付日期,";
+            string titleString = "订单状态,优先级,创建时间,交付日期,策略,内部编号,客户,标准成分,缩写,纯度,PO,产品类型,数量,单位,加工尺寸,加工要求,样品要求,可接受缺陷,完成日期";
             sw.WriteLine(titleString);
             using (var service = new OrderServiceClient())
             {
@@ -94,7 +94,7 @@ namespace PMSClient.ViewModel
                     string outputString = "";
                     while (pageIndex <= pageCount)
                     {
-                        var models = service.GetOrderBySearchInPage(skip, take, SearchCustomer, SearchCompositionStandard);
+                        var models = service.GetOrders(skip, take, SearchCustomer, SearchCompositionStandard,SearchPMINumber);
                         outputString = PMSOuputHelper.GetOrderOupput(models);
                         sw.Write(outputString.ToString());
                         sw.Flush();
