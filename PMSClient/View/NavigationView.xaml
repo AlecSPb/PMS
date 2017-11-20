@@ -146,9 +146,9 @@
 
                 <Button Content="{StaticResource PageMaintenance}" Grid.Row="6" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageMaintenancePlan}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToMaintenancePlan}"/>
+                        Command="{Binding GoToMaintenancePlan}" IsEnabled="False"/>
                 <Button Content="{StaticResource PageMaintenanceRecord}" Grid.Row="6" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToMaintenanceRecord}"/>
+                        Command="{Binding GoToMaintenanceRecord}" IsEnabled="False"/>
                 
                 
                 <Button Content="{StaticResource PageOther}" Grid.Row="7" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>

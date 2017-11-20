@@ -60,7 +60,8 @@ namespace PMSClient
             try
             {
                 var titleName = (App.Current as App).FindResource("AppNameDesktop").ToString();
-                var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                //var versonName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                var versonName = "4.0.8.30";
                 Title = $"{titleName}-{versonName}";
             }
             catch (Exception)
