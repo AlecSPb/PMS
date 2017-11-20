@@ -208,7 +208,7 @@
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="18" Grid.Column="1" Orientation="Horizontal">
                     <TextBox  Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"  Background="Yellow"/>
-                    <Button x:Name="btnPressureTool" Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonCommon}"
+                    <Button x:Name="btnPressureTool" Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonSpecial}"
                             Click="btnPressureTool_Click"/>
                 </StackPanel>
 
