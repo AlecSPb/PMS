@@ -65,9 +65,43 @@ namespace PMSClient
             models.ToList().ForEach(o =>
             {
                 #region 需要导出的数据列
-
+                sb.Append(o.State);
+                sb.Append(",");
+                sb.Append(o.FollowUps);
+                sb.Append(",");
+                sb.Append(o.ProductID);
+                sb.Append(",");
+                sb.Append(o.TestType);
+                sb.Append(",");
+                sb.Append(o.Composition);
+                sb.Append(",");
+                sb.Append(o.CompositionAbbr);
+                sb.Append(",");
+                sb.Append(o.PMINumber);
+                sb.Append(",");
+                sb.Append(o.PO);
+                sb.Append(",");
+                sb.Append(o.Customer);
+                sb.Append(",");
+                sb.Append(o.Dimension);
+                sb.Append(",");
+                sb.Append(o.Weight);
+                sb.Append(",");
+                sb.Append(o.Density);
+                sb.Append(",");
+                sb.Append(o.Resistance);
+                sb.Append(",");
+                sb.Append(o.Defects);
+                sb.Append(",");
+                sb.Append(o.DimensionActual);
+                sb.Append(",");
+                sb.Append(o.Sample);
+                sb.Append(",");
+                sb.Append(o.CreateTime);
+                sb.Append(",");
+                sb.Append(o.Creator);
                 #endregion
-
+                sb.AppendLine();
             });
             return sb.ToString();
         }
