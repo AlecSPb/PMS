@@ -57,7 +57,10 @@ namespace PMSClient.ViewModel
 
         private void ActionOutput()
         {
-            PMSDialogService.ShowYes("数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
+            if (!PMSDialogService.ShowYesNo("询问", "数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
+            {
+                return;
+            }
 
             int pageIndex = 1;
             int pageSize = 20;

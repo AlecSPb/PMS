@@ -63,7 +63,10 @@ namespace PMSClient.ViewModel
 
         private void ActionOutput()
         {
-            PMSDialogService.ShowYes("数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始");
+            if (!PMSDialogService.ShowYesNo("询问","数据导出时间会比较长，请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
+            {
+                return;
+            }
 
             int pageIndex = 1;
             int pageSize = 20;
@@ -82,7 +85,7 @@ namespace PMSClient.ViewModel
             string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
                 , "导出数据-订单" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
             StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
-            string titleString = "";
+            string titleString = "订单状态,优先级,创建时间,交付日期,";
             sw.WriteLine(titleString);
             using (var service = new OrderServiceClient())
             {
