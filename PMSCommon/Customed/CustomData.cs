@@ -160,6 +160,7 @@ namespace PMSCommon
                 data.Add("+Na2S");
                 data.Add("+KF");
                 data.Add("+NaF");
+                data.Add("+RbF");
                 data.Add("注意防潮");
                 data.Add("N气保护");
                 data.Add("Ar气保护");
@@ -179,6 +180,7 @@ namespace PMSCommon
                 data.Add("BN+石墨纸");
                 data.Add("BN+石墨纸+Al2O3纸");
                 data.Add("BN+Al2O3纸");
+                data.Add("SiC隔板");
                 #endregion
                 return data;
             }

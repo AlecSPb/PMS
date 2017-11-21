@@ -75,7 +75,7 @@
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource PlanVHPDeviceCode}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                           ItemsSource="{Binding DataContext.DeviceCodes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding VHPDeviceCode,Mode=TwoWay}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Text="#请选择热压机代号" Style="{StaticResource StyleTextBlockTip}"/>
@@ -83,14 +83,14 @@
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource PlanPlanLot}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                           ItemsSource="{Binding DataContext.PlanLots,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PlanLot}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Text="#请选择热压批次号，如果当天该热压机只有一个批次，默认为1,依次累加" Style="{StaticResource StyleTextBlockTip}"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource PlanPlanType}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
-                <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
                           ItemsSource="{Binding DataContext.PlanTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding PlanType}"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="#计划类型,即热压目的，热压后续工作是什么" Style="{StaticResource StyleTextBlockTip}"/>
