@@ -19,13 +19,15 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string State { get; set; }//Run,Stop,Paused
         [DataMember]
-        public string DeviceCode { get; set; }
+        public string Device { get; set; }//设备
         [DataMember]
-        public string PlanItem { get; set; }
+        public string Item { get; set; }//部件
         [DataMember]
-        public int IntervalCount { get; set; }
+        public string Grade { get; set; }//保养级别
         [DataMember]
-        public int CurrentCount { get; set; }
+        public int Interval { get; set; }//保养周期，单位天
+        [DataMember]
+        public string Content { get; set; }//保养具体内容
         [DataMember]
         public string Remark { get; set; }
     }
