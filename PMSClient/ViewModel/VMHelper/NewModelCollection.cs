@@ -15,6 +15,7 @@ namespace PMSClient.ViewModel
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.PMINumber = "";
+            model.FollowUps = "发货";
             model.Composition = "成分";
             model.ProductID = UsefulPackage.PMSTranslate.PlanLot();
             model.CompositionXRF = "暂无";
@@ -92,6 +93,8 @@ namespace PMSClient.ViewModel
             var model = new DcRecordMilling();
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
+            model.Water = "无";
+            model.Oxygen = "无";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
             model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();

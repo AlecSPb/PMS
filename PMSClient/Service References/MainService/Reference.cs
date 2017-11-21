@@ -5484,6 +5484,9 @@ namespace PMSClient.MainService {
         private string MillingToolField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OxygenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5503,6 +5506,9 @@ namespace PMSClient.MainService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VHPPlanLotField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WaterField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double WeightInField;
@@ -5641,6 +5647,19 @@ namespace PMSClient.MainService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Oxygen {
+            get {
+                return this.OxygenField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OxygenField, value) != true)) {
+                    this.OxygenField = value;
+                    this.RaisePropertyChanged("Oxygen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string PMINumber {
             get {
                 return this.PMINumberField;
@@ -5727,6 +5746,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.VHPPlanLotField, value) != true)) {
                     this.VHPPlanLotField = value;
                     this.RaisePropertyChanged("VHPPlanLot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Water {
+            get {
+                return this.WaterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WaterField, value) != true)) {
+                    this.WaterField = value;
+                    this.RaisePropertyChanged("Water");
                 }
             }
         }

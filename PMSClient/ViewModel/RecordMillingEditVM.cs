@@ -77,6 +77,8 @@ namespace PMSClient.ViewModel
             model.WeightOut = 0;
             model.WeightRemain = 0;
             model.Ratio = 0;
+            model.Water = "无";
+            model.Oxygen = "无";
             #endregion
             CurrentRecordMilling = model;
         }
