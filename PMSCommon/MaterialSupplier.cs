@@ -13,6 +13,7 @@ namespace PMSCommon
         南京,
         深圳,
         广西,
+        江西,
         其他
     }
 }

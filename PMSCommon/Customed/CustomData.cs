@@ -242,6 +242,8 @@ namespace PMSCommon
                 data.Add("76.2mm OD x 2mm");
                 data.Add("237mm OD x 11mm");
                 data.Add("158mm OD x 11mm");
+                data.Add("82.855mm OD x 3.048mm for 50.8mm");
+                data.Add("160mm OD x 5mm for 124.5mm");
                 #endregion
                 return data;
             }
