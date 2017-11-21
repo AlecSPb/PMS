@@ -1030,9 +1030,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Documents\维护.txt" />
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Note\2016.docx" />
     <None Include="Service References\MainService\PMSClient.MainService.DcOrderHistory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
