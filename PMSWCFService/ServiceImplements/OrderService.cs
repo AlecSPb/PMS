@@ -532,5 +532,9 @@ namespace PMSWCFService
             throw new NotImplementedException();
         }
 
+        public string GetOrderStatus()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

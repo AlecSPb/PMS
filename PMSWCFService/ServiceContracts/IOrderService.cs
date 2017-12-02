@@ -57,5 +57,9 @@ namespace PMSWCFService.ServiceContracts
 
         [OperationContract]
         List<DcOrderHistory> GetOrderHistoryTop10(string pmiNumber);
+
+
+        [OperationContract]
+        string GetOrderStatus();
     }
 }
