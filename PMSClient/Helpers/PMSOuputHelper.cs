@@ -175,5 +175,11 @@ namespace PMSClient
             });
             return sb.ToString();
         }
+
+        public static string GetRecordMilling(IList<DcRecordMilling> models)
+        {
+            //TODO:完成导出部分
+            return "";
+        }
     }
 }

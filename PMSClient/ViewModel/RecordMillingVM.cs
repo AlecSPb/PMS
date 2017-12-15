@@ -39,6 +39,12 @@ namespace PMSClient.ViewModel
             Label = new RelayCommand<DcRecordMilling>(ActionLabel);
             Calculator = new RelayCommand(ActionCalculator);
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+
         }
 
         private bool CanQuickAdd()
@@ -186,6 +192,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordMilling> Label { get; set; }
 
         public RelayCommand QuickAdd { get; set; }
+
+        public RelayCommand Output { get; set; }
         #endregion
     }
 }

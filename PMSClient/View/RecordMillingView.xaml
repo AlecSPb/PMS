@@ -33,6 +33,7 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonCalculator}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding Calculator}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonSpecial}" Command="{Binding Output}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -76,6 +77,8 @@
                                     Binding="{Binding Composition}"/>
                     <DataGridTextColumn Header="{StaticResource RMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PMINumber}"/>
+                    <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MeltingPoint}"/>
                     <DataGridTextColumn Header="{StaticResource RMRoomTemperature}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding RoomTemperature}"/>
                     <DataGridTextColumn Header="{StaticResource RMRoomHumidity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -133,6 +136,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -150,19 +154,19 @@
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    
+
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RMPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    
+
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding MaterialSource}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    
+
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMRoomTemperature}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    
+
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMRoomHumidity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBoxReadOnly}"/>
@@ -205,21 +209,25 @@
                     <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMWater}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
-
-                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
                     
-
-                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMCreator}"
+                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMMeltingPoint}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="16" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-
-                    <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                    <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding MeltingPoint}" Style="{StaticResource StyleTextBoxReadOnly}" HorizontalAlignment="Left" />
+                    
+                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                    
-                    
+                    <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}" />
+
+
+                    <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="17" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+                    <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBlock Grid.Row="18" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+
+
                 </Grid>
             </ScrollViewer>
         </Grid>
