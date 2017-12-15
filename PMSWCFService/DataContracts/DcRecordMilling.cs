@@ -56,5 +56,8 @@ namespace PMSWCFService.DataContracts
         public string Oxygen { get; set; }
         [DataMember]
         public string Water { get; set; }
+        //2017-12-15
+        [DataMember]
+        public string MeltingPoint { get; set; }
     }
 }
