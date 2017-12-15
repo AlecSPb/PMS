@@ -460,6 +460,7 @@
     <sys:String x:Key="RMRatio">Loss Rate</sys:String>
     <sys:String x:Key="RMOxygen">Oxygen</sys:String>
     <sys:String x:Key="RMWater">Water</sys:String>
+    <sys:String x:Key="RMMeltingPoint">M-Point-</sys:String>
 
     <!--RecordVHP-->
     <sys:String x:Key="RVHPState">State</sys:String>
