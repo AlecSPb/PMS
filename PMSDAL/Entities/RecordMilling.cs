@@ -36,5 +36,7 @@ namespace PMSDAL
         //2017-10-25
         public  string Oxygen { get; set; }
         public string Water { get; set; }
+        //2017-12-15
+        public string MeltingPoint { get; set; }
     }
 }

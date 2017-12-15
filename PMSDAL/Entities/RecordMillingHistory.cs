@@ -35,6 +35,9 @@ namespace PMSDAL
         //2017-10-25
         public string Oxygen { get; set; }
         public string Water { get; set; }
+
+        //2017-12-15
+        public string MeltingPoint { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }
