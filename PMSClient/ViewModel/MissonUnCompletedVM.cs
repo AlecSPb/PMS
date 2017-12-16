@@ -59,6 +59,17 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.Misson));
+            FindMaterial = new RelayCommand(ActionFindMaterial, CanFindMaterial);
+        }
+
+        private bool CanFindMaterial()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditPlan);
+        }
+
+        private void ActionFindMaterial()
+        {
+            //TODO:FINDMaterial
         }
 
         private bool CanFinish(DcOrder arg)
@@ -285,6 +296,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanVHP> DuplicatePlan { get; set; }
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand GiveUp { get; set; }
+        public RelayCommand FindMaterial { get; set; }
         #endregion
     }
 }
