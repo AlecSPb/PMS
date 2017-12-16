@@ -227,6 +227,7 @@
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
+    <sys:String x:Key="ButtonMaterial">原料</sys:String>
     <sys:String x:Key="ButtonFinish">完成</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">流水</sys:String>
