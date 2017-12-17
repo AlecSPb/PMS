@@ -32,7 +32,7 @@
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Output}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Output}" IsEnabled="False"/>
             <!--<Button Content="{StaticResource ButtonMaterialInventoryIn}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialInventoryIn}"/>-->
         </StackPanel>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryOuts}">

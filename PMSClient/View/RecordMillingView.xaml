@@ -33,7 +33,8 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonCalculator}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding Calculator}"/>
-            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonSpecial}" Command="{Binding Output}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonSpecial}" Command="{Binding Output}"
+                    IsEnabled="False"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>

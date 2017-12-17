@@ -32,7 +32,7 @@
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonMaterialInventoryOut}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialInventoryOut}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Output}" IsEnabled="False"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorStored}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource StoredBrush}"/>
             <TextBlock Text="{StaticResource IndicatorDelivered}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource DeliveredBrush}"/>
