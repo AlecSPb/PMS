@@ -50,7 +50,7 @@ namespace PMSClient.ViewModel
                 item.Weight = 0;
                 item.DeliveryDate = DateTime.Now.AddDays(7);
                 item.Priority = PMSCommon.MaterialOrderItemPriority.普通.ToString();
-                item.SJIngredient = "";
+                item.SJIngredient = "无";
                 #endregion
 
                 CurrentMaterialOrderItem = item;
