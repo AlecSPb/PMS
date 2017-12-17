@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-                 d:DesignHeight="600" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordMillingEdit}">
+                 d:DesignHeight="800" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=RecordMillingEdit}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -178,7 +178,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="15" Grid.Column="1" Text="{Binding MeltingPoint}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="供应商提供的材料熔点信息，单位℃"/>
                 <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
