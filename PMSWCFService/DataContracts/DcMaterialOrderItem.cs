@@ -40,5 +40,8 @@ namespace PMSWCFService.DataContracts
         public string Priority { get; set; }
         [DataMember]
         public Guid MaterialOrderID { get; set; }
+        //2017-12-17
+        [DataMember]
+        public string SJIngredient { get; set; }
     }
 }
