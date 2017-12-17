@@ -35,7 +35,7 @@
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <ApplicationRevision>30</ApplicationRevision>
-    <ApplicationVersion>4.0.8.%2a</ApplicationVersion>
+    <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
