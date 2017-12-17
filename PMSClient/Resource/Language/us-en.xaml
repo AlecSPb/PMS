@@ -417,7 +417,7 @@
     <sys:String x:Key="MOIUnitPrice">Unit Price</sys:String>
     <sys:String x:Key="MOIWeight">Weight</sys:String>
     <sys:String x:Key="MOIPriority">Priority</sys:String>
-
+    <sys:String x:Key="MOSJIngredient">Sanjie Ingredient</sys:String>
     <!--Plate-->
     <sys:String x:Key="PlateState">State</sys:String>
     <sys:String x:Key="PlateCreator">Creator</sys:String>
