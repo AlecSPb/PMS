@@ -79,7 +79,7 @@ namespace PMSClient.ViewModel
             model.Ratio = 0;
             model.Water = "无";
             model.Oxygen = "无";
-            model.MeltingPoint = "";
+            model.MeltingPoint = "无";
             #endregion
             CurrentRecordMilling = model;
         }
