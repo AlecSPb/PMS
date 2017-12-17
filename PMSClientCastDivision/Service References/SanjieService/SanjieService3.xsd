@@ -46,6 +46,7 @@
       <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SJIngredient" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />

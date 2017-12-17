@@ -195,6 +195,7 @@
       <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ProvideRawMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Purity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SJIngredient" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UnitPrice" type="xs:double" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />
@@ -521,6 +522,7 @@
       <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="ser:guid" />
       <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeltingPoint" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingTime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Oxygen" nillable="true" type="xs:string" />

@@ -312,6 +312,9 @@ namespace PMSClient.SanjieService {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SJIngredientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -482,6 +485,19 @@ namespace PMSClient.SanjieService {
                 if ((object.ReferenceEquals(this.PurityField, value) != true)) {
                     this.PurityField = value;
                     this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SJIngredient {
+            get {
+                return this.SJIngredientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SJIngredientField, value) != true)) {
+                    this.SJIngredientField = value;
+                    this.RaisePropertyChanged("SJIngredient");
                 }
             }
         }

@@ -2108,6 +2108,9 @@ namespace PMSClient.MainService {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SJIngredientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2278,6 +2281,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PurityField, value) != true)) {
                     this.PurityField = value;
                     this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SJIngredient {
+            get {
+                return this.SJIngredientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SJIngredientField, value) != true)) {
+                    this.SJIngredientField = value;
+                    this.RaisePropertyChanged("SJIngredient");
                 }
             }
         }
@@ -5478,6 +5494,9 @@ namespace PMSClient.MainService {
         private string MaterialSourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MeltingPointField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MillingTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5616,6 +5635,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
                     this.MaterialSourceField = value;
                     this.RaisePropertyChanged("MaterialSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MeltingPoint {
+            get {
+                return this.MeltingPointField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MeltingPointField, value) != true)) {
+                    this.MeltingPointField = value;
+                    this.RaisePropertyChanged("MeltingPoint");
                 }
             }
         }
@@ -8055,6 +8087,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderHistoryTop10", ReplyAction="http://tempuri.org/IOrderService/GetOrderHistoryTop10Response")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcOrderHistory[]> GetOrderHistoryTop10Async(string pmiNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderStatus", ReplyAction="http://tempuri.org/IOrderService/GetOrderStatusResponse")]
+        string GetOrderStatus();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOrderService/GetOrderStatus", ReplyAction="http://tempuri.org/IOrderService/GetOrderStatusResponse")]
+        System.Threading.Tasks.Task<string> GetOrderStatusAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8226,6 +8264,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcOrderHistory[]> GetOrderHistoryTop10Async(string pmiNumber) {
             return base.Channel.GetOrderHistoryTop10Async(pmiNumber);
+        }
+        
+        public string GetOrderStatus() {
+            return base.Channel.GetOrderStatus();
+        }
+        
+        public System.Threading.Tasks.Task<string> GetOrderStatusAsync() {
+            return base.Channel.GetOrderStatusAsync();
         }
     }
     
