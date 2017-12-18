@@ -58,7 +58,7 @@ namespace PMSClient.ReportsHelper
                 document.Save();
             }
             //复制到临时文件
-            var targetName = $"PMI_{prefix}_{model.Customer}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
+            var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
             PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");

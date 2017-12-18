@@ -8,6 +8,10 @@ namespace PMSClient.ReportsHelper
 {
     public static class StringUtil
     {
+        public static string RemoveSlash(string str)
+        {
+            return str.Replace("\\","").Replace("/","");
 
+        }
     }
 }
