@@ -51,8 +51,8 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                PMSHelper.ViewModels.MaterialInventoryInEdit.SetEdit(model);
-                NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+                PMSHelper.ViewModels.Misson.SetSearchCondition("", model.PMINumber);
+                NavigationService.GoTo(PMSViews.Misson);
             }
         }
 
