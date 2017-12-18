@@ -43,6 +43,17 @@ namespace PMSClient.ViewModel
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn));
+
+            FindMisson = new RelayCommand<MainService.DcMaterialInventoryIn>(ActionFindMisson);
+        }
+
+        private void ActionFindMisson(DcMaterialInventoryIn model)
+        {
+            if (model != null)
+            {
+                PMSHelper.ViewModels.MaterialInventoryInEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+            }
         }
 
         private bool CanAdd()
@@ -164,6 +175,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToMaterialInventoryOut { get; set; }
         public RelayCommand GiveUp { get; set; }
+        public RelayCommand<DcMaterialInventoryIn> FindMisson { get; set; }
         #endregion
 
 

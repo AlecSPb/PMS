@@ -62,7 +62,7 @@
                                         Command="{Binding DataContext.AddPlan,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
                                 <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
-                                <Button Content="{StaticResource ButtonMaterial}" Style="{StaticResource StyleDGButton}"
+                                <Button Content="{StaticResource ButtonFindMaterial}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.FindMaterial,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding}" />
 
                             </StackPanel>

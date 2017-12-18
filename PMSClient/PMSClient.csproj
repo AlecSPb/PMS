@@ -196,6 +196,7 @@
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
+    <Compile Include="ReportsHelper\StringUtil.cs" />
     <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
     <Compile Include="ReportsHelper\WordOpticraft440.cs" />

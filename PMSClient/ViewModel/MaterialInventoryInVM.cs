@@ -43,7 +43,18 @@ namespace PMSClient.ViewModel
             GoToMaterialInventoryOut = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryOut),
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+            FindMisson = new RelayCommand<MainService.DcMaterialInventoryIn>(ActionFindMisson);
         }
+
+        private void ActionFindMisson(DcMaterialInventoryIn model)
+        {
+            if (model != null)
+            {
+                PMSHelper.ViewModels.Misson.SetSearchCondition("", model.PMINumber);
+                NavigationService.GoTo(PMSViews.Misson);
+            }
+        }
+
         //用于任务定位调用
         public void SetSearchCondition(string composition, string pminumber)
         {
@@ -185,6 +196,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToMaterialInventoryOut { get; set; }
 
         public RelayCommand OnlyUnCompleted { get; set; }
+        public RelayCommand<DcMaterialInventoryIn> FindMisson { get; set; }
         #endregion
 
 
