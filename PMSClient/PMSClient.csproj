@@ -251,6 +251,9 @@
     </Compile>
     <Compile Include="Tool\DensityEstamatorVM.cs" />
     <Compile Include="Tool\HelpImagePathConverter.cs" />
+    <Compile Include="Tool\LabelCopyWindow.xaml.cs">
+      <DependentUpon>LabelCopyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\LabelOutPutView.xaml.cs">
       <DependentUpon>LabelOutPutView.xaml</DependentUpon>
     </Compile>
@@ -670,6 +673,10 @@
     <Page Include="Tool\DensityEstamatorView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tool\LabelCopyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tool\LabelOutPutView.xaml">
       <Generator>MSBuild:Compile</Generator>
