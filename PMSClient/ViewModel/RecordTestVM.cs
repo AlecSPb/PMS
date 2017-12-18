@@ -139,6 +139,11 @@ namespace PMSClient.ViewModel
                 //PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.RecordTest, pageTitle,
                 //    tips, template, mainContent, helpimage);
                 //NavigationService.GoTo(PMSViews.LabelOutPut);
+
+                //2017-12-18
+                PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow();
+                lcw.LabelInformation = mainContent;
+                lcw.ShowDialog();
             }
         }
 
