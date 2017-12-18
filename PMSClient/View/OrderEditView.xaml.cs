@@ -85,6 +85,9 @@ namespace PMSClient.View
             return s.Contains("cu") && s.Contains("in") && s.Contains("ga") && s.Contains("se");
         }
 
+        private void btnToOne_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
