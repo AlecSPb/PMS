@@ -11,9 +11,9 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button Name="btnGo" Content="计算" Style="{StaticResource StyleButtonCommon}" Click="btnGo_Click"/>
             <TextBlock Style="{StaticResource StyleTextBlockTip2}" Text="请在从上到下输入需要归一的各个元素，然后点击计算"/>
         </StackPanel>
         <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding Elements}">
@@ -37,6 +37,10 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox Grid.Row="2" Name="txtResult" Text="结果显示" Style="{StaticResource  StyleTextBoxBig}"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <!--<Button Name="btnReset" Content="复位" Style="{StaticResource StyleButtonCommon}" Click="btnReset_Click"/>-->
+            <Button Name="btnGo" Content="计算" Style="{StaticResource StyleButtonCommon}" Click="btnGo_Click"/>
+        </StackPanel>
+        <TextBox Grid.Row="3" Name="txtResult" Text="结果显示" Style="{StaticResource  StyleTextBoxBig}"/>
     </Grid>
 </Window>

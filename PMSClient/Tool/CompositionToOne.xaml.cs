@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace PMSClient.Tool
     /// <summary>
     /// CompositionToOne.xaml 的交互逻辑
     /// </summary>
-    public partial class CompositionToOne : Window
+    public partial class CompositionToOne : Window, INotifyPropertyChanged
     {
         public CompositionToOne()
         {
@@ -40,6 +41,15 @@ namespace PMSClient.Tool
 
         public ObservableCollection<Element> Elements { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged!=null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
         private void btnGo_Click(object sender, RoutedEventArgs e)
         {
             double sumAt = Elements.Sum(i => i.At);
@@ -54,6 +64,16 @@ namespace PMSClient.Tool
                 }
             }
             txtResult.Text = sb.ToString();
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            //foreach (var item in Elements)
+            //{
+            //    item.Name = "无";
+            //    item.At = 0;
+            //}
+            //OnPropertyChanged("Elements");
         }
     }
 }
