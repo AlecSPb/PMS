@@ -44,6 +44,22 @@ namespace PMSClient.ViewModel
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
         }
+        //用于任务定位调用
+        public void SetSearchCondition(string composition, string pminumber)
+        {
+            SearchComposition= composition;
+            SearchPMINumber = pminumber;
+            SearchSupplier = "";
+            SearchMaterialLot = "";
+            //需要重新激发一下
+            RaisePropertyChanged(nameof(SearchComposition));
+            RaisePropertyChanged(nameof(SearchPMINumber));
+            RaisePropertyChanged(nameof(SearchSupplier));
+            RaisePropertyChanged(nameof(SearchMaterialLot));
+
+            SetPageParametersWhenConditionChange();
+        }
+
 
         private void ActionOnlyUnCompleted()
         {
