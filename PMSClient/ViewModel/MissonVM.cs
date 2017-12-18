@@ -77,7 +77,9 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 PMSHelper.ViewModels.MaterialInventoryIn.SetSearchCondition("", model.PMINumber);
-                NavigationService.GoTo(PMSViews.MaterialInventoryIn);
+                //NavigationService.GoTo(PMSViews.MaterialInventoryIn);
+                View.MaterialInventoryInWindow miw = new View.MaterialInventoryInWindow();
+                miw.Show();
             }
         }
 

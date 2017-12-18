@@ -344,6 +344,9 @@
     <Compile Include="View\MaterialInventoryInUnCompletedView.xaml.cs">
       <DependentUpon>MaterialInventoryInUnCompletedView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaterialInventoryInWindow.xaml.cs">
+      <DependentUpon>MaterialInventoryInWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MaterialOrderItemListUnCompletedView.xaml.cs">
       <DependentUpon>MaterialOrderItemListUnCompletedView.xaml</DependentUpon>
     </Compile>
@@ -734,6 +737,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MaterialInventoryInUnCompletedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MaterialInventoryInWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

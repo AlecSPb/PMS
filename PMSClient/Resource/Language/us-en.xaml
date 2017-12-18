@@ -95,6 +95,7 @@
 
     <sys:String x:Key="PageMaterialInventory">Material Inventory</sys:String>
     <sys:String x:Key="PageMaterialInventoryIn">Material In</sys:String>
+    <sys:String x:Key="PageMaterialInventoryInWindow">Material In-Window</sys:String>
     <sys:String x:Key="PageMaterialInventoryInUnCompleted">Material In[Stored]</sys:String>
     <sys:String x:Key="PageMaterialInventoryInSelect">Material In Select</sys:String>
     <sys:String x:Key="PageMaterialInventoryOut">Material Out</sys:String>
