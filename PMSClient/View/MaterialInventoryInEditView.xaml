@@ -69,8 +69,12 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          />
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="成分归一工具" Style="{StaticResource StyleButtonSpecial}" Name="btnToOne"
+                            Click="btnToOne_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text="这是来自选择任务的成分，可以自行更改"/>
+                </StackPanel>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MIIPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"

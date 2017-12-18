@@ -60,8 +60,12 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
                          />
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="成分归一工具" Style="{StaticResource StyleButtonSpecial}" Name="btnToOne"
+                            Click="btnToOne_Click"/>
+                    <TextBlock Style="{StaticResource StyleTextBlockTip}"
                            Text="需求原料成分，可从上面任任务信息选择，也可以直接输入"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MNPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

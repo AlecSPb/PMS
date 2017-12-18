@@ -247,6 +247,9 @@
     <Compile Include="Tool\BatchOutSourceProduct.xaml.cs">
       <DependentUpon>BatchOutSourceProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tool\CompositionToOne.xaml.cs">
+      <DependentUpon>CompositionToOne.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\DensityEstamatorView.xaml.cs">
       <DependentUpon>DensityEstamatorView.xaml</DependentUpon>
     </Compile>
@@ -264,6 +267,7 @@
       <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\Models\DensityEstamatorModel.cs" />
+    <Compile Include="Tool\Models\Element.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
     <Compile Include="Tool\PressureChangeTool.xaml.cs">
@@ -674,6 +678,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\BatchOutSourceProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tool\CompositionToOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

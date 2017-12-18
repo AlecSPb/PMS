@@ -1,0 +1,42 @@
+﻿<Window x:Class="PMSClient.Tool.CompositionToOne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.Tool"
+        mc:Ignorable="d"
+        Title="成分归一工具" Height="400" Width="500" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Name="btnGo" Content="计算" Style="{StaticResource StyleButtonCommon}" Click="btnGo_Click"/>
+            <TextBlock Style="{StaticResource StyleTextBlockTip2}" Text="请在从上到下输入需要归一的各个元素，然后点击计算"/>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Style="{StaticResource StyleDataGridNotReadOnly}" ItemsSource="{Binding Elements}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="序号" Binding="{Binding Number}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                <DataGridTemplateColumn Header="元素">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                                     Foreground="White" Background="DarkBlue"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="元素比例">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding At,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
+                                    Foreground="White" Background="DarkBlue"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Grid.Row="2" Name="txtResult" Text="结果显示" Style="{StaticResource  StyleTextBoxBig}"/>
+    </Grid>
+</Window>

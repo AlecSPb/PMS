@@ -86,7 +86,7 @@
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Foreground="Red"
                            Text="*订单成分原始表示，不会显示给其他人，只存作备忘"/>
                 <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-                    <Button Content="自动生成标准成分和缩写" Style="{StaticResource StyleButtonSpecial}" Name="btnAutoTransferComposition"
+                    <Button Content="自动生成标准成分和缩写" Style="{StaticResource StyleButtonCommon}" Name="btnAutoTransferComposition"
                             Click="btnAutoTransferComposition_Click"/>
                     <Button Content="成分归一工具" Style="{StaticResource StyleButtonSpecial}" Name="btnToOne"
                             Click="btnToOne_Click"/>

@@ -87,7 +87,15 @@ namespace PMSClient.View
 
         private void btnToOne_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                PMSClient.Tool.CompositionToOne cto = new Tool.CompositionToOne();
+                cto.Show();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }
