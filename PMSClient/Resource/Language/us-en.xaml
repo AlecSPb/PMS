@@ -81,6 +81,7 @@
     <sys:String x:Key="PageMissonUnCompleted">Task[UnCompleted]</sys:String>
     <sys:String x:Key="PagePlanSearch">Plan Search</sys:String>
     <sys:String x:Key="PagePlan">Plan</sys:String>
+    <sys:String x:Key="PagePlanWindow">Plan-Window Style</sys:String>
     <sys:String x:Key="PagePlanEdit">Plan Edit</sys:String>
     <sys:String x:Key="PagePlanConclusion">Plan Conclusion</sys:String>
     <sys:String x:Key="PagePlanConclusionEdit">Plan Conclusion Edit</sys:String>
@@ -213,6 +214,7 @@
     <sys:String x:Key="ButtonUnCompleted">UnCompleted</sys:String>
     <sys:String x:Key="ButtonSearchMisson">Task Search</sys:String>
     <sys:String x:Key="ButtonPlan">Plan</sys:String>
+    <sys:String x:Key="ButtonPlanWindow">Plan Window</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">Material Need</sys:String>
     <sys:String x:Key="ButtonSearchPlan">Search Plan</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">Material In</sys:String>

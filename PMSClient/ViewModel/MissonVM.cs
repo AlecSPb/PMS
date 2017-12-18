@@ -45,7 +45,7 @@ namespace PMSClient.ViewModel
         }
         private void InitializeCommands()
         {
-            GoToPlan = new RelayCommand(() => NavigationService.GoTo(PMSViews.Plan), CanGoToPlan);
+            GoToPlan = new RelayCommand(ActionGoToPlan, CanGoToPlan);
             GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
 
             Search = new RelayCommand(ActionSearch, CanSearch);
@@ -59,6 +59,12 @@ namespace PMSClient.ViewModel
             Refresh = new RelayCommand(ActionRefresh);
             OnlyUnFinished = new RelayCommand(ActionOnlyUnFinished, CanOnlyUnFinished);
             FindMaterial = new RelayCommand(ActionFindMaterial,CanFindMaterial);
+        }
+
+        private void ActionGoToPlan()
+        {
+            View.PlanWindow pw = new View.PlanWindow();
+            pw.Show();
         }
 
         private bool CanFindMaterial()

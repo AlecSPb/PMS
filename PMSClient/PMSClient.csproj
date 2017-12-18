@@ -371,6 +371,9 @@
     <Compile Include="View\PlanConclusionEditView.xaml.cs">
       <DependentUpon>PlanConclusionEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PlanWindow.xaml.cs">
+      <DependentUpon>PlanWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PlateUnCompletedView.xaml.cs">
       <DependentUpon>PlateUnCompletedView.xaml</DependentUpon>
     </Compile>
@@ -767,6 +770,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PlanConclusionEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

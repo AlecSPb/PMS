@@ -32,7 +32,7 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
             <!--<Button Content="{StaticResource ButtonMisson}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMisson}"/>-->
-            <Button Content="{StaticResource ButtonPlan}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToPlan}"/>
+            <Button Content="{StaticResource ButtonPlanWindow}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToPlan}"/>
             <!--<Button Content="{StaticResource ButtonMaterialNeed}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialNeed}"/>-->
             <!--图例-->
             <StackPanel Orientation="Horizontal">
