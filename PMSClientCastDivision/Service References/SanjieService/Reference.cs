@@ -1335,6 +1335,12 @@ namespace PMSClient.SanjieService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrder", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderResponse")]
         System.Threading.Tasks.Task<int> FinishMaterialOrderAsync(System.Guid id, string uid);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredient", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredientResponse")]
+        int FinishMaterialOrderItemWithIngredient(System.Guid id, string uid, string ingredient);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredient", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredientResponse")]
+        System.Threading.Tasks.Task<int> FinishMaterialOrderItemWithIngredientAsync(System.Guid id, string uid, string ingredient);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInsResponse")]
         PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber);
         
@@ -1505,6 +1511,14 @@ namespace PMSClient.SanjieService {
         
         public System.Threading.Tasks.Task<int> FinishMaterialOrderAsync(System.Guid id, string uid) {
             return base.Channel.FinishMaterialOrderAsync(id, uid);
+        }
+        
+        public int FinishMaterialOrderItemWithIngredient(System.Guid id, string uid, string ingredient) {
+            return base.Channel.FinishMaterialOrderItemWithIngredient(id, uid, ingredient);
+        }
+        
+        public System.Threading.Tasks.Task<int> FinishMaterialOrderItemWithIngredientAsync(System.Guid id, string uid, string ingredient) {
+            return base.Channel.FinishMaterialOrderItemWithIngredientAsync(id, uid, ingredient);
         }
         
         public PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber) {

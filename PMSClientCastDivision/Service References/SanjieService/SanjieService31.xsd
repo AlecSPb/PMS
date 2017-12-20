@@ -144,6 +144,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="FinishMaterialOrderItemWithIngredient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q8:guid" />
+        <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ingredient" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishMaterialOrderItemWithIngredientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FinishMaterialOrderItemWithIngredientResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetMaterialInventoryIns">
     <xs:complexType>
       <xs:sequence>
@@ -158,7 +174,7 @@
   <xs:element name="GetMaterialInventoryInsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInsResult" nillable="true" type="q8:ArrayOfDcMaterialInventoryIn" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInsResult" nillable="true" type="q9:ArrayOfDcMaterialInventoryIn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -192,7 +208,7 @@
   <xs:element name="GetMaterialInventoryOutsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryOutsResult" nillable="true" type="q9:ArrayOfDcMaterialInventoryOut" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryOutsResult" nillable="true" type="q10:ArrayOfDcMaterialInventoryOut" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -225,7 +241,7 @@
   <xs:element name="GetItemDebitResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetItemDebitResult" nillable="true" type="q10:ArrayOfDcItemDebit" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetItemDebitResult" nillable="true" type="q11:ArrayOfDcItemDebit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -256,7 +272,7 @@
   <xs:element name="GetMaterialOrderItemExtraByYearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialOrderItemExtraByYearResult" nillable="true" type="q11:ArrayOfDcMaterialOrderItemExtra" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialOrderItemExtraByYearResult" nillable="true" type="q12:ArrayOfDcMaterialOrderItemExtra" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -288,7 +304,7 @@
   <xs:element name="GetMaterialInventoryInByYearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInByYearResult" nillable="true" type="q12:ArrayOfDcMaterialInventoryIn" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryInByYearResult" nillable="true" type="q13:ArrayOfDcMaterialInventoryIn" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -318,7 +334,7 @@
   <xs:element name="GetMaterialInventoryOutsByYearResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryOutsByYearResult" nillable="true" type="q13:ArrayOfDcMaterialInventoryOut" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetMaterialInventoryOutsByYearResult" nillable="true" type="q14:ArrayOfDcMaterialInventoryOut" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
