@@ -17,8 +17,8 @@
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Style="{StaticResource StyleDGTextBlockSpecial}" TextWrapping="WrapWithOverflow"
                     Text="可以在下方文本框中输入配料信息." />
-        <TextBox Grid.Row="1" Style="{StaticResource StyleTextBoxCommon}" Text=""/>
-        <TextBlock Name="txtMsg" Grid.Row="2" Style="{StaticResource StyleDGTextBlockSpecial}" TextWrapping="WrapWithOverflow"
+        <TextBox  Name="txtMsg" Grid.Row="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"/>
+        <TextBlock  Grid.Row="2" Style="{StaticResource StyleDGTextBlockSpecial}" TextWrapping="WrapWithOverflow"
                     Text="*如果完成后发现操作错误，请联系先锋材料改正。" />
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnYes" Content="完成" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"/>
