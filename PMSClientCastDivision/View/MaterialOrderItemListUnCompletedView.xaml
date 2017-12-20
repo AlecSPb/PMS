@@ -89,6 +89,8 @@
                                     Binding="{Binding Item.MaterialOrder.OrderPO}"/>
                 <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Item.MaterialOrder.Supplier}"/>
+                <DataGridTextColumn Header="{StaticResource MOISJIngredient}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Item.MaterialOrderItem.SJIngredient}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
