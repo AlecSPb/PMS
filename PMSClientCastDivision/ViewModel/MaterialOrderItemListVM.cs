@@ -132,13 +132,21 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Item.MaterialOrderItem.Composition}了吗？"))
+                    Tool.IngredientDialog dialog = new Tool.IngredientDialog();
+                    dialog.MessageTitle = model.Item.MaterialOrderItem.Composition;
+                    if (dialog.ShowDialog() == false)
                     {
                         return;
                     }
+                    string ingredient = dialog.Message;
+                    //if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Item.MaterialOrderItem.Composition}了吗？"))
+                    //{
+                    //    return;
+                    //}
                     using (var service = new SanjieServiceClient())
                     {
-                        service.FinishMaterialOrderItem(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
+                        //service.FinishMaterialOrderItem(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
+                        service.FinishMaterialOrderItemWithIngredient(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName, ingredient);
                     }
                     SetPageParametersWhenConditionChange();
                     PMSDialogService.ShowYes("项目已完成，并暂入库，万一有操作失误，联系先锋材料进行修正");

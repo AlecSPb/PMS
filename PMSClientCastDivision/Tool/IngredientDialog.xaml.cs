@@ -24,6 +24,13 @@ namespace PMSClient.Tool
             InitializeComponent();
             Message = "";
         }
+        public string MessageTitle
+        {
+            set
+            {
+                this.Title = $"确定完成了[{value}]项目了吗？";
+            }
+        }
         public string Message { get; set; }
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {

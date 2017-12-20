@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.Tool"
         mc:Ignorable="d"
-        Title="确定该条目完成了吗？" Height="150" Width="600" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow">
-    <Grid>
+        Title="确定该条目完成了吗？" Height="150" Width="550"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+    <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
