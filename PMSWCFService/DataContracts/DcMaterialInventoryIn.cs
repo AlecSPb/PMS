@@ -33,5 +33,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Remark { get; set; }
 
+        [DataMember]
+        public string MeltingPoint { get; set; }
     }
 }
