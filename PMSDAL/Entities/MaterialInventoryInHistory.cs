@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -25,5 +26,8 @@ namespace PMSDAL
         public Guid HistoryID { get; set; }
         public string Operator { get; set; }
         public DateTime OperateTime { get; set; }
+
+        [DefaultValue("")]
+        public string MeltingPoint { get; set; }
     }
 }

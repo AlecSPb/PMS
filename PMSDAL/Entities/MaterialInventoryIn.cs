@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,5 +21,8 @@ namespace PMSDAL
         public double Weight { get; set; }
         public string Remark { get; set; }
 
+
+        [DefaultValue("")]
+        public string MeltingPoint { get; set; }
     }
 }
