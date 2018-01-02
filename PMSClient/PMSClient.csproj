@@ -316,6 +316,12 @@
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
+    <Compile Include="View\CompoundEditWindow.xaml.cs">
+      <DependentUpon>CompoundEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompoundWindow.xaml.cs">
+      <DependentUpon>CompoundWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\IntegretedSearchView.xaml.cs">
       <DependentUpon>IntegretedSearchView.xaml</DependentUpon>
     </Compile>
@@ -702,6 +708,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\PressureChangeTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CompoundEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CompoundWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
