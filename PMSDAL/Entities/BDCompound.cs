@@ -17,6 +17,8 @@ namespace PMSDAL
 
         public string InformationSource { get; set; }
 
+        public string Remark { get; set; }
+
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string State { get; set; }

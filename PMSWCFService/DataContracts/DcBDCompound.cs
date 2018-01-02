@@ -25,6 +25,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string InformationSource { get; set; }
         [DataMember]
+        public string Remark { get; set; }
+        [DataMember]
         public string Creator { get; set; }
         [DataMember]
         public DateTime CreateTime { get; set; }
