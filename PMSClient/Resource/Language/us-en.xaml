@@ -277,6 +277,7 @@
     <sys:String x:Key="ButtonOrderHistory">Order History</sys:String>
     <sys:String x:Key="ButtonPlanHistory">Plan History</sys:String>
 
+    <sys:String x:Key="ButtonCompoundLib">CompoundLib</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
     <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>
