@@ -21,8 +21,5 @@ namespace PMSDAL
         public double Weight { get; set; }
         public string Remark { get; set; }
 
-
-        [DefaultValue("")]
-        public string MeltingPoint { get; set; }
     }
 }
