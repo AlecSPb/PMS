@@ -106,8 +106,8 @@
                         Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="3"
                         Command="{Binding GoToPlanConclusion}" Style="{DynamicResource StyleButtonNavigation}"/>
-                <Button Content="{StaticResource PageIntegratedSearch}" Grid.Row="2" Grid.Column="4"
-                        Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigation}" Visibility="Hidden"/>
+                <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
+                        Command="{Binding GoToCompound}" Style="{DynamicResource StyleButtonNavigation}"/>
 
 
                 <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{DynamicResource StyleButtonNavigationTitle}" />

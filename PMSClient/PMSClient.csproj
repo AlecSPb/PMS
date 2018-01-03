@@ -316,8 +316,11 @@
     <Compile Include="ViewModel\RecordBondingSelectVM.cs" />
     <Compile Include="ViewModel\RecordDeMoldSelectVM.cs" />
     <Compile Include="ViewModel\VMHelper\PMSBatchHelper.cs" />
-    <Compile Include="View\CompoundEditWindow.xaml.cs">
-      <DependentUpon>CompoundEditWindow.xaml</DependentUpon>
+    <Compile Include="View\CompoundEditView.xaml.cs">
+      <DependentUpon>CompoundEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CompoundView.xaml.cs">
+      <DependentUpon>CompoundView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CompoundWindow.xaml.cs">
       <DependentUpon>CompoundWindow.xaml</DependentUpon>
@@ -711,9 +714,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\CompoundEditWindow.xaml">
+    <Page Include="View\CompoundEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CompoundView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\CompoundWindow.xaml">
       <SubType>Designer</SubType>
