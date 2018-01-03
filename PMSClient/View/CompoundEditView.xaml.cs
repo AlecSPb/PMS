@@ -17,9 +17,9 @@ namespace PMSClient.View
     /// <summary>
     /// CompoundEditWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class CompoundEditWindow : Window
+    public partial class CompoundEditView : UserControl
     {
-        public CompoundEditWindow()
+        public CompoundEditView()
         {
             InitializeComponent();
         }

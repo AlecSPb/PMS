@@ -70,6 +70,10 @@ namespace PMSClient.ReportsHelper
                     {
                         for (int i = 0; i < OrderItems.Count; i++)
                         {
+                            if (i > 5)
+                            {
+                                break;
+                            }
                             var item = OrderItems[i];
                             Paragraph p;
                             p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
@@ -99,10 +103,6 @@ namespace PMSClient.ReportsHelper
                             double total = item.UnitPrice * item.Weight;
                             p.Append(total.ToString("N0") + "RMB");
                             subTotalMoney += total;
-                            if (i > 5)
-                            {
-                                break;
-                            }
                         }
                     }
                     var remark = _order.Remark ?? "";

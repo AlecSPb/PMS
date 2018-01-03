@@ -134,8 +134,20 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OutputVM>();
 
             SimpleIoc.Default.Register<DebugVM>();
+
+
+            SimpleIoc.Default.Register<CompoundVM>();
+            SimpleIoc.Default.Register<CompoundEditVM>();
         }
         #region Properties
+        public CompoundVM Compound
+        {
+            get { return SimpleIoc.Default.GetInstance<CompoundVM>(); }
+        }
+        public CompoundEditVM CompoundEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CompoundEditVM>(); }
+        }
         public NavigationVM Navigation
         {
             get { return SimpleIoc.Default.GetInstance<NavigationVM>(); }

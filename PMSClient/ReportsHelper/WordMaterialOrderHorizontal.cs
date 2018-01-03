@@ -70,6 +70,11 @@ namespace PMSClient.ReportsHelper
                     {
                         for (int i = 0; i < OrderItems.Count; i++)
                         {
+                            //最多不超过13个记录
+                            if (i > 13)
+                            {
+                                break;
+                            }
                             var item = OrderItems[i];
                             Paragraph p;
                             p = mainTable.Rows[i + 1].Cells[0].Paragraphs[0];
@@ -105,10 +110,6 @@ namespace PMSClient.ReportsHelper
                             double total = item.UnitPrice * item.Weight;
                             p.Append(total.ToString("N0")).FontSize(8);
                             subTotalMoney += total;
-                            if (i > 13)
-                            {
-                                break;
-                            }
                         }
                     }
                     var remark = _order.Remark ?? "";

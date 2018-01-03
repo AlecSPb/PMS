@@ -138,7 +138,7 @@
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
-            <TextBlock Text="注意:项目数尽量不要超过13" Style="{StaticResource StyleTextBlockWarning}"
+            <TextBlock Text="注意:项目数不要超过13" Style="{StaticResource StyleTextBlockWarning2}" Background="Yellow"
                        Foreground="Black"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockCommon}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}"
