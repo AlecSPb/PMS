@@ -284,7 +284,9 @@
     <Compile Include="ViewModel\DebugVM.cs" />
     <Compile Include="ViewModel\CheckListEditVM.cs" />
     <Compile Include="ViewModel\CheckListVM.cs" />
+    <Compile Include="ViewModel\CompoundEditVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInUnCompletedVM.cs" />
+    <Compile Include="ViewModel\CompoundVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListUnCompletedVM.cs" />
     <Compile Include="ViewModel\MaterialOrderItemListVM.cs" />
     <Compile Include="ViewModel\FeedBackEditVM.cs" />
