@@ -586,6 +586,25 @@ namespace PMSWCFService
 
         }
 
+        public bool IsCompoundExist(string materialName)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from c in dc.Compounds
+                                where c.MaterialName == materialName
+                                select c;
+                    return query.Count() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int UpdateCompound(DcBDCompound model)
         {
             try
