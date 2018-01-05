@@ -24,19 +24,19 @@
                    Text="请选择合适内容后确认"/>
         <TextBlock Grid.Row="1" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="状态"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"/>
+        <TextBox Name="txtStatus" Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="背板"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"/>
+        <TextBox Name="txtPlateNumber"  Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="缺陷"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"/>
+        <TextBox Name="txtDefects" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"/>
 
         <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="取消" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="确定" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
     </Grid>
 </Window>
