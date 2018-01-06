@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a3c337ad-d032-40b8-a898-7e4921fd9705" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/ExtraService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExtraService.xsd" MetadataType="Schema" ID="6bc64c07-24cc-46c3-a62b-76337dd0fc49" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExtraService1.xsd" MetadataType="Schema" ID="a52a02f2-44bf-493b-b027-09aa9d2bf837" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExtraService2.xsd" MetadataType="Schema" ID="15c92986-749f-42e9-9eb9-9bb9d5f1a98f" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExtraService.disco" MetadataType="Disco" ID="977f4daa-49cb-4e26-acbe-75299262441a" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?disco" />
+    <MetadataFile FileName="ExtraService.wsdl" MetadataType="Wsdl" ID="88016d0f-0dbc-41b2-9617-c9c9532b77e2" SourceId="1" SourceUrl="http://192.168.16.254:8002/ExtraService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

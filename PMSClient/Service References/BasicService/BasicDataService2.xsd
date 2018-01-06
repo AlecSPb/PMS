@@ -326,6 +326,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="IsCompoundExist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="materialName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsCompoundExistResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsCompoundExistResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddSupplier">
     <xs:complexType>
       <xs:sequence>

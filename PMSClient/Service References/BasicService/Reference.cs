@@ -992,6 +992,9 @@ namespace PMSClient.BasicService {
         private string MeltingPointField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialPropertyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1107,6 +1110,19 @@ namespace PMSClient.BasicService {
                 if ((object.ReferenceEquals(this.MeltingPointField, value) != true)) {
                     this.MeltingPointField = value;
                     this.RaisePropertyChanged("MeltingPoint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -2135,6 +2151,12 @@ namespace PMSClient.BasicService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/DeleteCompound", ReplyAction="http://tempuri.org/ICompoundService/DeleteCompoundResponse")]
         System.Threading.Tasks.Task<int> DeleteCompoundAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/IsCompoundExist", ReplyAction="http://tempuri.org/ICompoundService/IsCompoundExistResponse")]
+        bool IsCompoundExist(string materialName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/IsCompoundExist", ReplyAction="http://tempuri.org/ICompoundService/IsCompoundExistResponse")]
+        System.Threading.Tasks.Task<bool> IsCompoundExistAsync(string materialName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2194,6 +2216,14 @@ namespace PMSClient.BasicService {
         
         public System.Threading.Tasks.Task<int> DeleteCompoundAsync(System.Guid id) {
             return base.Channel.DeleteCompoundAsync(id);
+        }
+        
+        public bool IsCompoundExist(string materialName) {
+            return base.Channel.IsCompoundExist(materialName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> IsCompoundExistAsync(string materialName) {
+            return base.Channel.IsCompoundExistAsync(materialName);
         }
     }
     

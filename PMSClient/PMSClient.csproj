@@ -1098,6 +1098,9 @@
     <Content Include="Resource\DocTemplate\Reports\DeliverySheet_zh_cn.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcOrderHistory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

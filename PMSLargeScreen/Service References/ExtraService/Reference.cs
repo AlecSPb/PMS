@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMSClient.ExtraService {
+namespace PMSLargeScreen.ExtraService {
     using System.Runtime.Serialization;
     using System;
     
@@ -742,10 +742,10 @@ namespace PMSClient.ExtraService {
     public interface IItemDebitService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/GetItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/GetItemDebitResponse")]
-        PMSClient.ExtraService.DcItemDebit[] GetItemDebit(int s, int t, string itemType, string itemName, string creaditor);
+        PMSLargeScreen.ExtraService.DcItemDebit[] GetItemDebit(int s, int t, string itemType, string itemName, string creaditor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/GetItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/GetItemDebitResponse")]
-        System.Threading.Tasks.Task<PMSClient.ExtraService.DcItemDebit[]> GetItemDebitAsync(int s, int t, string itemType, string itemName, string creaditor);
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcItemDebit[]> GetItemDebitAsync(int s, int t, string itemType, string itemName, string creaditor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/GetItemDebitCount", ReplyAction="http://tempuri.org/IItemDebitService/GetItemDebitCountResponse")]
         int GetItemDebitCount(string itemType, string itemName, string creaditor);
@@ -754,16 +754,16 @@ namespace PMSClient.ExtraService {
         System.Threading.Tasks.Task<int> GetItemDebitCountAsync(string itemType, string itemName, string creaditor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/AddItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/AddItemDebitResponse")]
-        int AddItemDebit(PMSClient.ExtraService.DcItemDebit model, string uid);
+        int AddItemDebit(PMSLargeScreen.ExtraService.DcItemDebit model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/AddItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/AddItemDebitResponse")]
-        System.Threading.Tasks.Task<int> AddItemDebitAsync(PMSClient.ExtraService.DcItemDebit model, string uid);
+        System.Threading.Tasks.Task<int> AddItemDebitAsync(PMSLargeScreen.ExtraService.DcItemDebit model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/UpdateItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/UpdateItemDebitResponse")]
-        int UpdateItemDebit(PMSClient.ExtraService.DcItemDebit model, string uid);
+        int UpdateItemDebit(PMSLargeScreen.ExtraService.DcItemDebit model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/UpdateItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/UpdateItemDebitResponse")]
-        System.Threading.Tasks.Task<int> UpdateItemDebitAsync(PMSClient.ExtraService.DcItemDebit model, string uid);
+        System.Threading.Tasks.Task<int> UpdateItemDebitAsync(PMSLargeScreen.ExtraService.DcItemDebit model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IItemDebitService/DeleteItemDebit", ReplyAction="http://tempuri.org/IItemDebitService/DeleteItemDebitResponse")]
         int DeleteItemDebit(System.Guid id, string uid);
@@ -773,12 +773,12 @@ namespace PMSClient.ExtraService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IItemDebitServiceChannel : PMSClient.ExtraService.IItemDebitService, System.ServiceModel.IClientChannel {
+    public interface IItemDebitServiceChannel : PMSLargeScreen.ExtraService.IItemDebitService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ItemDebitServiceClient : System.ServiceModel.ClientBase<PMSClient.ExtraService.IItemDebitService>, PMSClient.ExtraService.IItemDebitService {
+    public partial class ItemDebitServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.IItemDebitService>, PMSLargeScreen.ExtraService.IItemDebitService {
         
         public ItemDebitServiceClient() {
         }
@@ -799,11 +799,11 @@ namespace PMSClient.ExtraService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.ExtraService.DcItemDebit[] GetItemDebit(int s, int t, string itemType, string itemName, string creaditor) {
+        public PMSLargeScreen.ExtraService.DcItemDebit[] GetItemDebit(int s, int t, string itemType, string itemName, string creaditor) {
             return base.Channel.GetItemDebit(s, t, itemType, itemName, creaditor);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.ExtraService.DcItemDebit[]> GetItemDebitAsync(int s, int t, string itemType, string itemName, string creaditor) {
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcItemDebit[]> GetItemDebitAsync(int s, int t, string itemType, string itemName, string creaditor) {
             return base.Channel.GetItemDebitAsync(s, t, itemType, itemName, creaditor);
         }
         
@@ -815,19 +815,19 @@ namespace PMSClient.ExtraService {
             return base.Channel.GetItemDebitCountAsync(itemType, itemName, creaditor);
         }
         
-        public int AddItemDebit(PMSClient.ExtraService.DcItemDebit model, string uid) {
+        public int AddItemDebit(PMSLargeScreen.ExtraService.DcItemDebit model, string uid) {
             return base.Channel.AddItemDebit(model, uid);
         }
         
-        public System.Threading.Tasks.Task<int> AddItemDebitAsync(PMSClient.ExtraService.DcItemDebit model, string uid) {
+        public System.Threading.Tasks.Task<int> AddItemDebitAsync(PMSLargeScreen.ExtraService.DcItemDebit model, string uid) {
             return base.Channel.AddItemDebitAsync(model, uid);
         }
         
-        public int UpdateItemDebit(PMSClient.ExtraService.DcItemDebit model, string uid) {
+        public int UpdateItemDebit(PMSLargeScreen.ExtraService.DcItemDebit model, string uid) {
             return base.Channel.UpdateItemDebit(model, uid);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateItemDebitAsync(PMSClient.ExtraService.DcItemDebit model, string uid) {
+        public System.Threading.Tasks.Task<int> UpdateItemDebitAsync(PMSLargeScreen.ExtraService.DcItemDebit model, string uid) {
             return base.Channel.UpdateItemDebitAsync(model, uid);
         }
         
@@ -845,10 +845,10 @@ namespace PMSClient.ExtraService {
     public interface ICheckListService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/GetCheckList", ReplyAction="http://tempuri.org/ICheckListService/GetCheckListResponse")]
-        PMSClient.ExtraService.DcCheckList[] GetCheckList(int s, int t, string title);
+        PMSLargeScreen.ExtraService.DcCheckList[] GetCheckList(int s, int t, string title);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/GetCheckList", ReplyAction="http://tempuri.org/ICheckListService/GetCheckListResponse")]
-        System.Threading.Tasks.Task<PMSClient.ExtraService.DcCheckList[]> GetCheckListAsync(int s, int t, string title);
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcCheckList[]> GetCheckListAsync(int s, int t, string title);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/GetCheckListCount", ReplyAction="http://tempuri.org/ICheckListService/GetCheckListCountResponse")]
         int GetCheckListCount(string title);
@@ -857,16 +857,16 @@ namespace PMSClient.ExtraService {
         System.Threading.Tasks.Task<int> GetCheckListCountAsync(string title);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/AddCheckList", ReplyAction="http://tempuri.org/ICheckListService/AddCheckListResponse")]
-        int AddCheckList(PMSClient.ExtraService.DcCheckList model, string uid);
+        int AddCheckList(PMSLargeScreen.ExtraService.DcCheckList model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/AddCheckList", ReplyAction="http://tempuri.org/ICheckListService/AddCheckListResponse")]
-        System.Threading.Tasks.Task<int> AddCheckListAsync(PMSClient.ExtraService.DcCheckList model, string uid);
+        System.Threading.Tasks.Task<int> AddCheckListAsync(PMSLargeScreen.ExtraService.DcCheckList model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/UpdateCheckList", ReplyAction="http://tempuri.org/ICheckListService/UpdateCheckListResponse")]
-        int UpdateCheckList(PMSClient.ExtraService.DcCheckList model, string uid);
+        int UpdateCheckList(PMSLargeScreen.ExtraService.DcCheckList model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/UpdateCheckList", ReplyAction="http://tempuri.org/ICheckListService/UpdateCheckListResponse")]
-        System.Threading.Tasks.Task<int> UpdateCheckListAsync(PMSClient.ExtraService.DcCheckList model, string uid);
+        System.Threading.Tasks.Task<int> UpdateCheckListAsync(PMSLargeScreen.ExtraService.DcCheckList model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICheckListService/DeleteCheckList", ReplyAction="http://tempuri.org/ICheckListService/DeleteCheckListResponse")]
         int DeleteCheckList(System.Guid id, string uid);
@@ -876,12 +876,12 @@ namespace PMSClient.ExtraService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICheckListServiceChannel : PMSClient.ExtraService.ICheckListService, System.ServiceModel.IClientChannel {
+    public interface ICheckListServiceChannel : PMSLargeScreen.ExtraService.ICheckListService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CheckListServiceClient : System.ServiceModel.ClientBase<PMSClient.ExtraService.ICheckListService>, PMSClient.ExtraService.ICheckListService {
+    public partial class CheckListServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.ICheckListService>, PMSLargeScreen.ExtraService.ICheckListService {
         
         public CheckListServiceClient() {
         }
@@ -902,11 +902,11 @@ namespace PMSClient.ExtraService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.ExtraService.DcCheckList[] GetCheckList(int s, int t, string title) {
+        public PMSLargeScreen.ExtraService.DcCheckList[] GetCheckList(int s, int t, string title) {
             return base.Channel.GetCheckList(s, t, title);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.ExtraService.DcCheckList[]> GetCheckListAsync(int s, int t, string title) {
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcCheckList[]> GetCheckListAsync(int s, int t, string title) {
             return base.Channel.GetCheckListAsync(s, t, title);
         }
         
@@ -918,19 +918,19 @@ namespace PMSClient.ExtraService {
             return base.Channel.GetCheckListCountAsync(title);
         }
         
-        public int AddCheckList(PMSClient.ExtraService.DcCheckList model, string uid) {
+        public int AddCheckList(PMSLargeScreen.ExtraService.DcCheckList model, string uid) {
             return base.Channel.AddCheckList(model, uid);
         }
         
-        public System.Threading.Tasks.Task<int> AddCheckListAsync(PMSClient.ExtraService.DcCheckList model, string uid) {
+        public System.Threading.Tasks.Task<int> AddCheckListAsync(PMSLargeScreen.ExtraService.DcCheckList model, string uid) {
             return base.Channel.AddCheckListAsync(model, uid);
         }
         
-        public int UpdateCheckList(PMSClient.ExtraService.DcCheckList model, string uid) {
+        public int UpdateCheckList(PMSLargeScreen.ExtraService.DcCheckList model, string uid) {
             return base.Channel.UpdateCheckList(model, uid);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateCheckListAsync(PMSClient.ExtraService.DcCheckList model, string uid) {
+        public System.Threading.Tasks.Task<int> UpdateCheckListAsync(PMSLargeScreen.ExtraService.DcCheckList model, string uid) {
             return base.Channel.UpdateCheckListAsync(model, uid);
         }
         
@@ -948,10 +948,10 @@ namespace PMSClient.ExtraService {
     public interface IFeedBackService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/GetFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/GetFeedBackResponse")]
-        PMSClient.ExtraService.DcFeedBack[] GetFeedBack(int s, int t, string productId, string composition, string customer);
+        PMSLargeScreen.ExtraService.DcFeedBack[] GetFeedBack(int s, int t, string productId, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/GetFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/GetFeedBackResponse")]
-        System.Threading.Tasks.Task<PMSClient.ExtraService.DcFeedBack[]> GetFeedBackAsync(int s, int t, string productId, string composition, string customer);
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcFeedBack[]> GetFeedBackAsync(int s, int t, string productId, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/GetFeedBackCount", ReplyAction="http://tempuri.org/IFeedBackService/GetFeedBackCountResponse")]
         int GetFeedBackCount(string productId, string composition, string customer);
@@ -960,16 +960,16 @@ namespace PMSClient.ExtraService {
         System.Threading.Tasks.Task<int> GetFeedBackCountAsync(string productId, string composition, string customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/AddFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/AddFeedBackResponse")]
-        int AddFeedBack(PMSClient.ExtraService.DcFeedBack model, string uid);
+        int AddFeedBack(PMSLargeScreen.ExtraService.DcFeedBack model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/AddFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/AddFeedBackResponse")]
-        System.Threading.Tasks.Task<int> AddFeedBackAsync(PMSClient.ExtraService.DcFeedBack model, string uid);
+        System.Threading.Tasks.Task<int> AddFeedBackAsync(PMSLargeScreen.ExtraService.DcFeedBack model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/UpdateFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/UpdateFeedBackResponse")]
-        int UpdateFeedBack(PMSClient.ExtraService.DcFeedBack model, string uid);
+        int UpdateFeedBack(PMSLargeScreen.ExtraService.DcFeedBack model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/UpdateFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/UpdateFeedBackResponse")]
-        System.Threading.Tasks.Task<int> UpdateFeedBackAsync(PMSClient.ExtraService.DcFeedBack model, string uid);
+        System.Threading.Tasks.Task<int> UpdateFeedBackAsync(PMSLargeScreen.ExtraService.DcFeedBack model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedBackService/DeleteFeedBack", ReplyAction="http://tempuri.org/IFeedBackService/DeleteFeedBackResponse")]
         int DeleteFeedBack(System.Guid id, string uid);
@@ -979,12 +979,12 @@ namespace PMSClient.ExtraService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IFeedBackServiceChannel : PMSClient.ExtraService.IFeedBackService, System.ServiceModel.IClientChannel {
+    public interface IFeedBackServiceChannel : PMSLargeScreen.ExtraService.IFeedBackService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class FeedBackServiceClient : System.ServiceModel.ClientBase<PMSClient.ExtraService.IFeedBackService>, PMSClient.ExtraService.IFeedBackService {
+    public partial class FeedBackServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.IFeedBackService>, PMSLargeScreen.ExtraService.IFeedBackService {
         
         public FeedBackServiceClient() {
         }
@@ -1005,11 +1005,11 @@ namespace PMSClient.ExtraService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.ExtraService.DcFeedBack[] GetFeedBack(int s, int t, string productId, string composition, string customer) {
+        public PMSLargeScreen.ExtraService.DcFeedBack[] GetFeedBack(int s, int t, string productId, string composition, string customer) {
             return base.Channel.GetFeedBack(s, t, productId, composition, customer);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.ExtraService.DcFeedBack[]> GetFeedBackAsync(int s, int t, string productId, string composition, string customer) {
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcFeedBack[]> GetFeedBackAsync(int s, int t, string productId, string composition, string customer) {
             return base.Channel.GetFeedBackAsync(s, t, productId, composition, customer);
         }
         
@@ -1021,19 +1021,19 @@ namespace PMSClient.ExtraService {
             return base.Channel.GetFeedBackCountAsync(productId, composition, customer);
         }
         
-        public int AddFeedBack(PMSClient.ExtraService.DcFeedBack model, string uid) {
+        public int AddFeedBack(PMSLargeScreen.ExtraService.DcFeedBack model, string uid) {
             return base.Channel.AddFeedBack(model, uid);
         }
         
-        public System.Threading.Tasks.Task<int> AddFeedBackAsync(PMSClient.ExtraService.DcFeedBack model, string uid) {
+        public System.Threading.Tasks.Task<int> AddFeedBackAsync(PMSLargeScreen.ExtraService.DcFeedBack model, string uid) {
             return base.Channel.AddFeedBackAsync(model, uid);
         }
         
-        public int UpdateFeedBack(PMSClient.ExtraService.DcFeedBack model, string uid) {
+        public int UpdateFeedBack(PMSLargeScreen.ExtraService.DcFeedBack model, string uid) {
             return base.Channel.UpdateFeedBack(model, uid);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateFeedBackAsync(PMSClient.ExtraService.DcFeedBack model, string uid) {
+        public System.Threading.Tasks.Task<int> UpdateFeedBackAsync(PMSLargeScreen.ExtraService.DcFeedBack model, string uid) {
             return base.Channel.UpdateFeedBackAsync(model, uid);
         }
         
@@ -1051,25 +1051,25 @@ namespace PMSClient.ExtraService {
     public interface IEnvironmentInfoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfo", ReplyAction="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfoResponse")]
-        PMSClient.ExtraService.DcEnvironmentInfo GetEnvironmentInfo(string position);
+        PMSLargeScreen.ExtraService.DcEnvironmentInfo GetEnvironmentInfo(string position);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfo", ReplyAction="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfoResponse")]
-        System.Threading.Tasks.Task<PMSClient.ExtraService.DcEnvironmentInfo> GetEnvironmentInfoAsync(string position);
+        System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcEnvironmentInfo> GetEnvironmentInfoAsync(string position);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInfor", ReplyAction="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInforResponse")]
-        int UpdateEnvironmentInfor(PMSClient.ExtraService.DcEnvironmentInfo data);
+        int UpdateEnvironmentInfor(PMSLargeScreen.ExtraService.DcEnvironmentInfo data);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInfor", ReplyAction="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInforResponse")]
-        System.Threading.Tasks.Task<int> UpdateEnvironmentInforAsync(PMSClient.ExtraService.DcEnvironmentInfo data);
+        System.Threading.Tasks.Task<int> UpdateEnvironmentInforAsync(PMSLargeScreen.ExtraService.DcEnvironmentInfo data);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IEnvironmentInfoServiceChannel : PMSClient.ExtraService.IEnvironmentInfoService, System.ServiceModel.IClientChannel {
+    public interface IEnvironmentInfoServiceChannel : PMSLargeScreen.ExtraService.IEnvironmentInfoService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class EnvironmentInfoServiceClient : System.ServiceModel.ClientBase<PMSClient.ExtraService.IEnvironmentInfoService>, PMSClient.ExtraService.IEnvironmentInfoService {
+    public partial class EnvironmentInfoServiceClient : System.ServiceModel.ClientBase<PMSLargeScreen.ExtraService.IEnvironmentInfoService>, PMSLargeScreen.ExtraService.IEnvironmentInfoService {
         
         public EnvironmentInfoServiceClient() {
         }
@@ -1090,19 +1090,19 @@ namespace PMSClient.ExtraService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.ExtraService.DcEnvironmentInfo GetEnvironmentInfo(string position) {
+        public PMSLargeScreen.ExtraService.DcEnvironmentInfo GetEnvironmentInfo(string position) {
             return base.Channel.GetEnvironmentInfo(position);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.ExtraService.DcEnvironmentInfo> GetEnvironmentInfoAsync(string position) {
+        public System.Threading.Tasks.Task<PMSLargeScreen.ExtraService.DcEnvironmentInfo> GetEnvironmentInfoAsync(string position) {
             return base.Channel.GetEnvironmentInfoAsync(position);
         }
         
-        public int UpdateEnvironmentInfor(PMSClient.ExtraService.DcEnvironmentInfo data) {
+        public int UpdateEnvironmentInfor(PMSLargeScreen.ExtraService.DcEnvironmentInfo data) {
             return base.Channel.UpdateEnvironmentInfor(data);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateEnvironmentInforAsync(PMSClient.ExtraService.DcEnvironmentInfo data) {
+        public System.Threading.Tasks.Task<int> UpdateEnvironmentInforAsync(PMSLargeScreen.ExtraService.DcEnvironmentInfo data) {
             return base.Channel.UpdateEnvironmentInforAsync(data);
         }
     }
