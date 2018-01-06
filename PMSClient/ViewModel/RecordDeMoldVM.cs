@@ -105,7 +105,7 @@ namespace PMSClient.ViewModel
                 //2017-12-18
                 PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow();
                 lcw.LabelInformation = mainContent;
-                lcw.ShowDialog();
+                lcw.Show();
             }
         }
 

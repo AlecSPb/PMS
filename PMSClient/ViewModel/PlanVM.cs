@@ -175,7 +175,7 @@ namespace PMSClient.ViewModel
                 //更改为显示在新的独立窗口中，取代以前的页面
                 PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow();
                 lcw.LabelInformation = mainContent;
-                lcw.ShowDialog();
+                lcw.Show();
 
             }
         }

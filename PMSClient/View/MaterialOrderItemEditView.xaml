@@ -80,16 +80,17 @@
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource MOIComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxCommon}"
+                             Background="Yellow"/>
                     <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="可以选择原料需求的成分，可以自行更改"/>
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource MOIPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}"
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxCommon}" Background="Yellow"
                             />
                     <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="内部工作号"/>
+                           Text="内部工作号,需要和订单需求一致"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource MOIPurity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
