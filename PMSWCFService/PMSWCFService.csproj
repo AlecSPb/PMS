@@ -130,6 +130,7 @@
     <Compile Include="DataContracts\DcMaterialInventoryOut.cs" />
     <Compile Include="DataContracts\DcFeedBack.cs" />
     <Compile Include="DataContracts\DcItemDebit.cs" />
+    <Compile Include="DataContracts\DcEnvironmentInfo.cs" />
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
+    <Compile Include="ServiceContracts\IEnvironmentInfoService.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />

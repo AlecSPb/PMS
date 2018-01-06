@@ -9,7 +9,7 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService
+    public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService, IEnvironmentInfoService
     {
         public int AddCheckList(DcCheckList model, string uid)
         {
@@ -363,7 +363,41 @@ namespace PMSWCFService
             }
         }
 
+        public DcEnvironmentInfo GetEnvironmentInfo(string position)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<EnvironmentInfo, DcEnvironmentInfo>());
+                    var query = dc.EnvironmentInfos.Where(i => i.Position == position).FirstOrDefault();
+                    return Mapper.Map<DcEnvironmentInfo>(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
 
-
+        public int UpdateEnvironmentInfor(DcEnvironmentInfo data)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcEnvironmentInfo, EnvironmentInfo>());
+                    var entity = Mapper.Map<EnvironmentInfo>(data);
+                    dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }
