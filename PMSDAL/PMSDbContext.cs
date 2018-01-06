@@ -112,5 +112,9 @@ namespace PMSDAL
         public DbSet<Purchase> Purchases { get; set; }
 
         public DbSet<TaskPlan> TaskPlans { get; set; }
+
+        public DbSet<EnvironmentInfo> EnvironmentInfos { get; set; }
+
+
     }
 }
