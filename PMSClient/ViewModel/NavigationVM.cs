@@ -114,6 +114,8 @@ namespace PMSClient.ViewModel
             CodeRule = new RelayCommand(ActionCodeRule);
 
             GoToHistory = new RelayCommand(() => NavigationService.GoTo(PMSViews.History), () => _session.IsAuthorized(PMSAccess.CanHistory));
+
+            GoToBDCompound = new RelayCommand(()=>NavigationService.GoTo(PMSViews.BDCompound));
         }
 
         private void ActionCodeRule()

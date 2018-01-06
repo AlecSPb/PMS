@@ -120,9 +120,21 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<OutputView>();
 
             SimpleIoc.Default.Register<DebugView>();
+
+            SimpleIoc.Default.Register<CompoundView>();
+            SimpleIoc.Default.Register<CompoundEditView>();
         }
 
         #region NavigationProperties
+        public CompoundView Compound
+        {
+            get { return SimpleIoc.Default.GetInstance<CompoundView>(); }
+        }
+        public CompoundEditView CompoundEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<CompoundEditView>(); }
+        }
+
         public LogInView LogIn
         {
             get { return SimpleIoc.Default.GetInstance<LogInView>(); }

@@ -284,10 +284,40 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCompound">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="skip" type="xs:int" />
+        <xs:element minOccurs="0" name="take" type="xs:int" />
+        <xs:element minOccurs="0" name="searchComposition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompoundResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetCompoundResult" nillable="true" type="q22:ArrayOfDcBDCompound" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompoundCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="searchComposition" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompoundCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCompoundCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddCompound">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q22:DcBDCompound" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q23:DcBDCompound" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -301,7 +331,7 @@
   <xs:element name="UpdateCompound">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q23:DcBDCompound" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q24:DcBDCompound" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -315,7 +345,7 @@
   <xs:element name="DeleteCompound">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q24:guid" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q25:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -343,7 +373,7 @@
   <xs:element name="AddSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q25:DcBDSupplier" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q26:DcBDSupplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -357,7 +387,7 @@
   <xs:element name="UpdateSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q26:DcBDSupplier" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q27:DcBDSupplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -371,7 +401,7 @@
   <xs:element name="DeleteSupplier">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q27:guid" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q28:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -390,7 +420,7 @@
   <xs:element name="GetSuppliersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q28:ArrayOfDcBDSupplier" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetSuppliersResult" nillable="true" type="q29:ArrayOfDcBDSupplier" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -402,14 +432,14 @@
   <xs:element name="GetElementsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetElementsResult" nillable="true" type="q29:ArrayOfDcBDElement" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetElementsResult" nillable="true" type="q30:ArrayOfDcBDElement" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddElement">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q30:DcBDElement" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q31:DcBDElement" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -423,7 +453,7 @@
   <xs:element name="UpdateElement">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q31:DcBDElement" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q32:DcBDElement" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -437,7 +467,7 @@
   <xs:element name="DeleteElement">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q32:guid" />
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q33:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -456,21 +486,21 @@
   <xs:element name="GetElementGroupResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetElementGroupResult" nillable="true" type="q33:ArrayOfDcBDElementGroup" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetElementGroupResult" nillable="true" type="q34:ArrayOfDcBDElementGroup" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetElementGroupItem">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q34:guid" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q35:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetElementGroupItemResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetElementGroupItemResult" nillable="true" type="q35:ArrayOfDcBDElementGroupItem" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetElementGroupItemResult" nillable="true" type="q36:ArrayOfDcBDElementGroupItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -478,7 +508,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="groupName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="elements" nillable="true" type="q36:ArrayOfDcBDElementGroupItem" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="elements" nillable="true" type="q37:ArrayOfDcBDElementGroupItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -131,7 +131,7 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <Button Content="{StaticResource ButtonCompoundLib}" Style="{StaticResource StyleButtonSpecial}"/>
+                    <Button Name="txtCompound" Click="txtCompound_Click" Content="{StaticResource ButtonCompoundLib}" Style="{StaticResource StyleButtonSpecial}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="6" Grid.Column="2" Text="#单位：g/cm3可以选择材料密度，或者直接输入均可，必须是数字" Style="{StaticResource StyleTextBlockTip}"/>
 

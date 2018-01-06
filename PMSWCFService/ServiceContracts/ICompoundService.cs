@@ -13,6 +13,12 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcBDCompound> GetAllCompounds();
         [OperationContract]
+        List<DcBDCompound> GetCompound(int skip, int take, string searchComposition);
+        [OperationContract]
+        int GetCompoundCount(string searchComposition);
+
+
+        [OperationContract]
         int AddCompound(DcBDCompound model);
         [OperationContract]
         int UpdateCompound(DcBDCompound model);

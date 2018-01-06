@@ -133,6 +133,18 @@
   <wsdl:message name="ICompoundService_GetAllCompounds_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCompoundsResponse" />
   </wsdl:message>
+  <wsdl:message name="ICompoundService_GetCompound_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompound" />
+  </wsdl:message>
+  <wsdl:message name="ICompoundService_GetCompound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompoundResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompoundService_GetCompoundCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompoundCount" />
+  </wsdl:message>
+  <wsdl:message name="ICompoundService_GetCompoundCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompoundCountResponse" />
+  </wsdl:message>
   <wsdl:message name="ICompoundService_AddCompound_InputMessage">
     <wsdl:part name="parameters" element="tns:AddCompound" />
   </wsdl:message>
@@ -317,6 +329,14 @@
     <wsdl:operation name="GetAllCompounds">
       <wsdl:input wsaw:Action="http://tempuri.org/ICompoundService/GetAllCompounds" message="tns:ICompoundService_GetAllCompounds_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICompoundService/GetAllCompoundsResponse" message="tns:ICompoundService_GetAllCompounds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompound">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompoundService/GetCompound" message="tns:ICompoundService_GetCompound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompoundService/GetCompoundResponse" message="tns:ICompoundService_GetCompound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompoundCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompoundService/GetCompoundCount" message="tns:ICompoundService_GetCompoundCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompoundService/GetCompoundCountResponse" message="tns:ICompoundService_GetCompoundCount_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddCompound">
       <wsdl:input wsaw:Action="http://tempuri.org/ICompoundService/AddCompound" message="tns:ICompoundService_AddCompound_InputMessage" />
@@ -582,6 +602,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllCompounds">
       <soap:operation soapAction="http://tempuri.org/ICompoundService/GetAllCompounds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompound">
+      <soap:operation soapAction="http://tempuri.org/ICompoundService/GetCompound" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompoundCount">
+      <soap:operation soapAction="http://tempuri.org/ICompoundService/GetCompoundCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

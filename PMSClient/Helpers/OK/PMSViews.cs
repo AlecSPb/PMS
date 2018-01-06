@@ -87,6 +87,7 @@ namespace PMSClient
         Customer,
         CustomerEdit,
         BDCompound,
+        BDCompoundEdit,
         BDVHPDevice,
         BDMold,
         BDDeliveryAddress,

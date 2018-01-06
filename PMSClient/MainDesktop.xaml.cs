@@ -446,6 +446,12 @@ namespace PMSClient
                 case PMSViews.Output:
                     NavigateTo(_views.Output);
                     break;
+                case PMSViews.BDCompound:
+                    NavigateTo(_views.Compound);
+                    break;
+                case PMSViews.BDCompoundEdit:
+                    NavigateTo(_views.CompoundEdit);
+                    break;
                 case PMSViews.Debug:
                     NavigateTo(_views.Debug);
                     break;

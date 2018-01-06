@@ -6,6 +6,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
+            Title="化合物信息库"
              d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=Compound}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
@@ -23,9 +24,9 @@
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
 
         </StackPanel>
-        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryIns}">
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Compounds}">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                <!--<DataGridTemplateColumn Header="{StaticResource DGOperate}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -35,11 +36,11 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
                 <DataGridTextColumn Header="{StaticResource BDCMaterialName}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialName}"/>
-                <DataGridTextColumn Header="{StaticResource BDCDensity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Density}"/>
+                <DataGridTextColumn Header="{StaticResource BDCDensity}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Density,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource BDCMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding MeltingPoint}"/>
                 <DataGridTextColumn Header="{StaticResource BDCSpecialProperty}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -49,7 +50,7 @@
                 <DataGridTextColumn Header="{StaticResource BDCRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource BDCCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime}"/>
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"/>
                 <DataGridTextColumn Header="{StaticResource BDCCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>

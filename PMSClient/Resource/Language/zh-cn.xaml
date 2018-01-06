@@ -283,7 +283,7 @@
     <sys:String x:Key="ButtonOrderHistory">订单历史</sys:String>
     <sys:String x:Key="ButtonPlanHistory">计划历史</sys:String>
 
-    <sys:String x:Key="ButtonCompoundLib">成分库</sys:String>
+    <sys:String x:Key="ButtonCompoundLib">化合物库</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>

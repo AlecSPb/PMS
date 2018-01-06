@@ -416,6 +416,41 @@ namespace PMSWCFService
 
         }
 
+        public List<DcBDCompound> GetCompound(int skip, int take, string searchComposition)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
+                    var model = dc.Compounds.Where(i => i.MaterialName.Contains(searchComposition)).OrderBy(i => i.MaterialName);
+                    return Mapper.Map<List<BDCompound>, List<DcBDCompound>>(model.Skip(skip).Take(take).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetCompoundCount(string searchComposition)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var model = dc.Compounds.Where(i => i.MaterialName.Contains(searchComposition));
+                    return model.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcBDCustomer> GetCustomer()
         {
             try

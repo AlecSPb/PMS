@@ -61,5 +61,11 @@ namespace PMSClient.View
             PMSClient.Tool.PressureChangeTool tool = new Tool.PressureChangeTool();
             tool.ShowDialog();
         }
+
+        private void txtCompound_Click(object sender, RoutedEventArgs e)
+        {
+            CompoundWindow win = new View.CompoundWindow();
+            win.ShowDialog();
+        }
     }
 }
