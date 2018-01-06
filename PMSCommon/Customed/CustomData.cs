@@ -364,8 +364,23 @@ namespace PMSCommon
                 data.Add("H");
                 data.Add("I");
                 data.Add("J");
-                data.Add("HIP");
+                data.Add("K");
+                data.Add("L");
+                data.Add("M");
+                data.Add("N");
+                data.Add("O");
+                data.Add("P");
+                data.Add("Q");
+                data.Add("R");
                 data.Add("S");
+                data.Add("T");
+                data.Add("U");
+                data.Add("V");
+                data.Add("W");
+                data.Add("X");
+                data.Add("Y");
+                data.Add("Z");
+                data.Add("HIP");
                 data.Add("UK");
                 #endregion
                 return data;
