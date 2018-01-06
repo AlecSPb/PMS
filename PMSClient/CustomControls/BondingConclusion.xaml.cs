@@ -22,12 +22,24 @@ namespace PMSClient.CustomControls
         public BondingConclusion()
         {
             InitializeComponent();
-            State = "完成";
-            PlateNumber = "";
-            Defects = "无";
+            var ds = new string[] { "完成", "暂停", "失败" };
+            cboState.ItemsSource = ds;
+            cboState.SelectedIndex = 0;
         }
-        public string State { get; set; }
-        public string PlateNumber { get; set; }
-        public string Defects { get; set; }
+        public string State { get { return cboState.SelectedItem.ToString(); } }
+        public string PlateNumber { get { return txtPlateNumber.Text; } }
+        public string Defects { get { return txtDefects.Text; } }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnYes_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.DialogResult = true;
+            this.Close();
+        }
     }
 }

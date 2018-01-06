@@ -38,11 +38,11 @@ namespace PMSClient.ViewModel
 
         private bool CanFinish(DcRecordBonding arg)
         {
-            if (arg==null)
+            if (arg == null)
             {
                 return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
             }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding)&&RecordBondingStateTransfer(arg);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) && RecordBondingStateTransfer(arg);
         }
 
         private bool RecordBondingStateTransfer(DcRecordBonding arg)
@@ -52,15 +52,29 @@ namespace PMSClient.ViewModel
 
         private void ActionFinish(DcRecordBonding model)
         {
-            if (PMSDialogService.ShowYesNo("请问", "确定这个绑定完成了吗？"))
+            CustomControls.BondingConclusion dialog = new CustomControls.BondingConclusion();
+            if (dialog.ShowDialog() == true)
             {
-                using (var service=new RecordBondingServiceClient())
+                using (var service = new RecordBondingServiceClient())
                 {
-                    model.State = PMSCommon.BondingState.完成.ToString();
+                    model.State =dialog.State;
+                    model.PlateLot = dialog.PlateNumber;
+                    model.Remark = dialog.Defects;
                     service.UpdateRecordBongdingByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
                 SetPageParametersWhenConditionChange();
             }
+
+
+            //if (PMSDialogService.ShowYesNo("请问", "确定这个绑定完成了吗？"))
+            //{
+            //    using (var service = new RecordBondingServiceClient())
+            //    {
+            //        model.State = PMSCommon.BondingState.完成.ToString();
+            //        service.UpdateRecordBongdingByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+            //    }
+            //    SetPageParametersWhenConditionChange();
+            //}
         }
 
         private bool CanQuickAdd()
