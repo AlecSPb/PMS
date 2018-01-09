@@ -443,8 +443,8 @@ namespace PMSClient
                 case PMSViews.IntegretedSearch:
                     NavigateTo(_views.IntegretedSearch);
                     break;
-                case PMSViews.Output:
-                    NavigateTo(_views.Output);
+                case PMSViews.Tool:
+                    NavigateTo(_views.Tool);
                     break;
                 case PMSViews.BDCompound:
                     NavigateTo(_views.Compound);

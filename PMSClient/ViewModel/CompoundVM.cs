@@ -74,15 +74,15 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-                //PMSHelper.ViewModels.MaterialInventoryInEdit.SetEdit(model);
-                //NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+                PMSHelper.ViewModels.CompoundEdit.SetEdit(model);
+                NavigationService.GoTo(PMSViews.BDCompoundEdit);
             }
         }
 
         private void ActionAdd()
         {
-            //PMSHelper.ViewModels.MaterialInventoryInEdit.SetNew();
-            //NavigationService.GoTo(PMSViews.MaterialInventoryInEdit);
+            PMSHelper.ViewModels.CompoundEdit.SetNew();
+            NavigationService.GoTo(PMSViews.BDCompoundEdit);
         }
 
         private bool CanSearch()

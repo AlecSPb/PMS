@@ -423,7 +423,10 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<BDCompound, DcBDCompound>());
-                    var model = dc.Compounds.Where(i => i.MaterialName.Contains(searchComposition)).OrderBy(i => i.MaterialName);
+                    var model = from m in dc.Compounds
+                                where m.MaterialName.Contains(searchComposition) && m.State == PMSCommon.SimpleState.正常.ToString()
+                                orderby m.CreateTime descending, m.MaterialName
+                                select m;
                     return Mapper.Map<List<BDCompound>, List<DcBDCompound>>(model.Skip(skip).Take(take).ToList());
                 }
             }

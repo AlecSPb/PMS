@@ -30,7 +30,7 @@
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="可以从计划中选择材料成分输入"/>
         </StackPanel>
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  DataContext="{Binding CurrentMaterialInventoryIn}">
+            <Grid  DataContext="{Binding CurrentCompound}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>

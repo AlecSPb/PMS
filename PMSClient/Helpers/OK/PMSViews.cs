@@ -100,6 +100,7 @@ namespace PMSClient
         FeedBackEdit,
         IntegretedSearch,
         Output,
+        Tool,
         Debug,
         History
     }

@@ -114,7 +114,7 @@
                 <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
                     <TextBox x:Name="txtCalculationDensity"  Text="{Binding CalculationDensity,UpdateSourceTrigger=LostFocus}"
                          Style="{StaticResource StyleTextBoxCommon}" />
-                    <ComboBox x:Name="cboCompounds"
+                    <ComboBox x:Name="cboCompounds"  
                         ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                         SelectionChanged="cboCompounds_SelectionChanged"
                         Style="{StaticResource StyleComboBoxCommon}">

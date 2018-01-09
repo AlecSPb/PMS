@@ -18,7 +18,7 @@
         <TextBlock Text="{StaticResource PageCompound}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <TextBlock Text="{StaticResource MIIComposition}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBox Text="{Binding SearchComposition,UpdateSourceTrigger=PropertyChanged}"   Width="200"
                      Style="{StaticResource  StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>

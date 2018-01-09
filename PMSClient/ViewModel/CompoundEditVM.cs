@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.BasicService;
 
 
 namespace PMSClient.ViewModel
@@ -23,31 +24,31 @@ namespace PMSClient.ViewModel
         public void SetNew()
         {
 
-            var empty = new DcMaterialInventoryIn();
+            var empty = new DcBDCompound();
             #region 初始化
-            empty.Id = Guid.NewGuid();
-            empty.PMINumber = DateTime.Now.ToString("yyMMdd");
-            empty.MaterialLot = DateTime.Now.ToString("yyMMdd") + "A";
-            empty.Composition = "成分";
-            empty.State = PMSCommon.InventoryState.库存.ToString();
+            empty.ID = Guid.NewGuid();
+            empty.MaterialName = "材料名称";
+            empty.Density = 0.0;
+            empty.MeltingPoint = "无";
+            empty.BoilingPoint = "无";
+            empty.SpecialProperty = "无";
+            empty.InformationSource = "其他";
+            empty.State = PMSCommon.SimpleState.正常.ToString();
             empty.CreateTime = DateTime.Now;
             empty.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            empty.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
-            empty.Weight = 1;
-            empty.Purity = "4.5N";
             empty.Remark = "无";
             #endregion
 
             IsNew = true;
-            CurrentMaterialInventoryIn = empty;
+            CurrentCompound = empty;
         }
 
-        public void SetEdit(DcMaterialInventoryIn model)
+        public void SetEdit(DcBDCompound model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentMaterialInventoryIn = model;
+                CurrentCompound = model;
             }
         }
 
@@ -55,11 +56,11 @@ namespace PMSClient.ViewModel
         {
             if (item != null)
             {
-                CurrentMaterialInventoryIn.Composition = item.Composition;
-                CurrentMaterialInventoryIn.MaterialLot = item.OrderItemNumber;
-                CurrentMaterialInventoryIn.PMINumber = item.PMINumber;
-                CurrentMaterialInventoryIn.Weight = item.Weight;
-                CurrentMaterialInventoryIn.Purity = item.Purity;
+                //CurrentCompound.Composition = item.Composition;
+                //CurrentCompound.MaterialLot = item.OrderItemNumber;
+                //CurrentCompound.PMINumber = item.PMINumber;
+                //CurrentCompound.Weight = item.Weight;
+                //CurrentCompound.Purity = item.Purity;
                 //RaisePropertyChanged(nameof(CurrentMaterialInventoryIn));
             }
         }
@@ -68,10 +69,10 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.InventoryState>(States);
+            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
 
-            Suppliers = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.MaterialSupplier>(Suppliers);
+            InformationSources = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.InformationSources, InformationSources);
         }
 
         private void InitialCommands()
@@ -83,13 +84,19 @@ namespace PMSClient.ViewModel
 
         private void GoBack()
         {
-            NavigationService.GoTo(PMSViews.MaterialInventoryIn);
+            NavigationService.GoTo(PMSViews.BDCompound);
+        }
+
+        public void SetBySelect(DcMaterialInventoryIn materialIn)
+        {
+            CurrentCompound.MaterialName = materialIn.Composition;    
         }
 
         private void ActionSelect()
         {
-            PMSHelper.ViewModels.MaterialOrderItemSelect.SetRequestView(PMSViews.MaterialInventoryInEdit);
-            NavigationService.GoTo(PMSViews.MaterialOrderItemSelect);
+            //转到材料入库界面,选择材料
+            PMSHelper.ViewModels.MaterialInventoryInSelect.SetRequestView(PMSViews.BDCompoundEdit);
+            NavigationService.GoTo(PMSViews.MaterialInventoryInSelect);
         }
 
         private void ActionSave()
@@ -98,7 +105,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentMaterialInventoryIn.State == "作废")
+            if (CurrentCompound.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
                 {
@@ -108,17 +115,18 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                var service = new MaterialInventoryServiceClient();
+                CurrentCompound.Creator = uid;
+                var service = new CompoundServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialInventoryInByUID(CurrentMaterialInventoryIn,uid);
+                    service.AddCompound(CurrentCompound);
                 }
                 else
                 {
-                    service.UpdateMaterialInventoryInByUID(CurrentMaterialInventoryIn,uid);
+                    service.UpdateCompound(CurrentCompound);
                 }
                 service.Close();
-                PMSHelper.ViewModels.MaterialInventoryIn.RefreshData();
+                PMSHelper.ViewModels.Compound.RefreshData();
                 GoBack();
             }
             catch (Exception ex)
@@ -127,18 +135,18 @@ namespace PMSClient.ViewModel
             }
         }
 
-        private DcMaterialInventoryIn currentMaterialInventoryIn;
-        public DcMaterialInventoryIn CurrentMaterialInventoryIn
+        private DcBDCompound currentCompound;
+        public DcBDCompound CurrentCompound
         {
-            get { return currentMaterialInventoryIn; }
+            get { return currentCompound; }
             set
             {
-                currentMaterialInventoryIn = value;
-                RaisePropertyChanged(nameof(CurrentMaterialInventoryIn));
+                currentCompound = value;
+                RaisePropertyChanged(nameof(CurrentCompound));
             }
         }
         public List<string> States { get; set; }
-        public List<string> Suppliers { get; set; }
+        public List<string> InformationSources { get; set; }
         public RelayCommand Select { get; set; }
     }
 }

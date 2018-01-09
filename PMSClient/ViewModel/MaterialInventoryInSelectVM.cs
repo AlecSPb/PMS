@@ -57,16 +57,19 @@ namespace PMSClient.ViewModel
 
         private void ActionSelect(DcMaterialInventoryIn model)
         {
-            if (!PMSDialogService.ShowYesNo("请问","确定出库这个原料记录？"))
-            {
-                return;
-            }
             if (model != null)
             {
                 switch (requestView)
                 {
                     case PMSViews.MaterialInventoryOutEdit:
+                        if (!PMSDialogService.ShowYesNo("请问", "确定出库这个原料记录？"))
+                        {
+                            return;
+                        }
                         PMSHelper.ViewModels.MaterialInventoryOutEdit.SetBySelect(model);
+                        break;
+                    case PMSViews.BDCompoundEdit:
+                        PMSHelper.ViewModels.CompoundEdit.SetBySelect(model);
                         break;
                     default:
                         break;

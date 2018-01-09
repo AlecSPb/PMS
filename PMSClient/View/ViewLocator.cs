@@ -117,7 +117,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<CheckListReadView>();
 
             SimpleIoc.Default.Register<IntegretedSearchView>();
-            SimpleIoc.Default.Register<OutputView>();
+            SimpleIoc.Default.Register<ToolView>();
 
             SimpleIoc.Default.Register<DebugView>();
 
@@ -506,9 +506,9 @@ namespace PMSClient.View
         {
             get { return SimpleIoc.Default.GetInstance<CheckListReadView>(); }
         }
-        public OutputView Output
+        public ToolView Tool
         {
-            get { return SimpleIoc.Default.GetInstance<OutputView>(); }
+            get { return SimpleIoc.Default.GetInstance<ToolView>(); }
         }
         public IntegretedSearchView IntegretedSearch
         {

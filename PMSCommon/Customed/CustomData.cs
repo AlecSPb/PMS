@@ -8,6 +8,18 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        public static List<String> InformationSources
+        {
+            get
+            {
+                var data = new List<string>();
+                data.Add("维基百科");
+                data.Add("三杰");
+                data.Add("资料书");
+                data.Add("其他");
+                return data;
+            }
+        }
         public static List<string> MillingTime
         {
             get

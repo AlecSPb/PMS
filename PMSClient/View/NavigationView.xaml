@@ -108,7 +108,8 @@
                         Command="{Binding GoToPlanConclusion}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
                         Command="{Binding GoToBDCompound}" Style="{DynamicResource StyleButtonNavigation}"/>
-
+                <Button Content="{StaticResource PageTool}" Grid.Row="2" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToTool}"/>
 
                 <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{DynamicResource StyleButtonNavigationTitle}" />
                 <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
@@ -149,12 +150,10 @@
                         Command="{Binding GoToMaintenancePlan}" IsEnabled="False"/>
                 <Button Content="{StaticResource PageMaintenanceRecord}" Grid.Row="6" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToMaintenanceRecord}" IsEnabled="False"/>
-                
-                
+
+
                 <Button Content="{StaticResource PageOther}" Grid.Row="7" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
-                <Button Content="{StaticResource PageOutput}" Grid.Row="7" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToOutput}"/>
-                <Button Content="{StaticResource PageHistory}" Grid.Row="7" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                <Button Content="{StaticResource PageHistory}" Grid.Row="7" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToHistory}"/>
                 <!--<Button Content="{StaticResource PageCheckList}" Grid.Row="7" Grid.Column="2"
                         Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigation}" Visibility="Hidden"/>

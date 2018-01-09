@@ -107,7 +107,7 @@ namespace PMSClient.ViewModel
             GoToStatisticProduct = new RelayCommand(() => NavigationService.GoTo(PMSViews.StatisticProduct), () => _session.IsAuthorized(PMSAccess.ReadStatisticProduct));
 
             GoToFeedBack = new RelayCommand(() => NavigationService.GoTo(PMSViews.FeedBack), () => _session.IsAuthorized(PMSAccess.ReadFeedback));
-            GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
+            GoToTool= new RelayCommand(() => NavigationService.GoTo(PMSViews.Tool));
 
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
 
@@ -115,7 +115,7 @@ namespace PMSClient.ViewModel
 
             GoToHistory = new RelayCommand(() => NavigationService.GoTo(PMSViews.History), () => _session.IsAuthorized(PMSAccess.CanHistory));
 
-            GoToBDCompound = new RelayCommand(()=>NavigationService.GoTo(PMSViews.BDCompound));
+            GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound));
         }
 
         private void ActionCodeRule()
@@ -225,7 +225,7 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToBDSupplier { get; set; }
 
         public RelayCommand GoToFeedBack { get; set; }
-        public RelayCommand GoToOutput { get; set; }
+        public RelayCommand GoToTool { get; set; }
         public RelayCommand GoToHistory { get; set; }
         public RelayCommand CodeRule { get; set; }
 
