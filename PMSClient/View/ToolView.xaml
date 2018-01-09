@@ -20,11 +20,16 @@
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipOutputEdit}"/>
         </StackPanel>
         <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button Name="btnCompositionToOne" Click="btnCompositionToOneWindow_Click" Content="成分归一化工具" Style="{StaticResource StyleButtonStrench}"/>
+                <Button Name="btnPressureTransmission" Click="btnPressureTransmissionWindow_Click" Content="压机压力换算工具" Style="{StaticResource StyleButtonStrench}"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>
