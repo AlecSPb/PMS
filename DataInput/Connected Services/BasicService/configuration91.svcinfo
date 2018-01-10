@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="jMI8yyLazRyQSstbZINfqFPX7to=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="caleH9Q/10qmgVGE0RGxpkPRnEk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="customer">
       <properties>
@@ -875,10 +875,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="customer" contract="BasicDataService.ICustomerService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="customer">
+    <endpoint name="customer" contract="BasicService.ICustomerService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="customer">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -890,7 +890,7 @@
           <serializedValue>customer</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.ICustomerService</serializedValue>
+          <serializedValue>BasicService.ICustomerService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -960,10 +960,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="deliveryAddress" contract="BasicDataService.IDeliveryAddressService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="deliveryAddress">
+    <endpoint name="deliveryAddress" contract="BasicService.IDeliveryAddressService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="deliveryAddress">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -975,7 +975,7 @@
           <serializedValue>deliveryAddress</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.IDeliveryAddressService</serializedValue>
+          <serializedValue>BasicService.IDeliveryAddressService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1045,10 +1045,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpdevice" contract="BasicDataService.IVHPDeviceService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="vhpdevice">
+    <endpoint name="vhpdevice" contract="BasicService.IVHPDeviceService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpdevice">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1060,7 +1060,7 @@
           <serializedValue>vhpdevice</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.IVHPDeviceService</serializedValue>
+          <serializedValue>BasicService.IVHPDeviceService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1130,10 +1130,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpmold" contract="BasicDataService.IVHPMoldService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="vhpmold">
+    <endpoint name="vhpmold" contract="BasicService.IVHPMoldService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpmold">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1145,7 +1145,7 @@
           <serializedValue>vhpmold</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.IVHPMoldService</serializedValue>
+          <serializedValue>BasicService.IVHPMoldService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1215,10 +1215,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="vhpprocess" contract="BasicDataService.IVHPProcessService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="vhpprocess">
+    <endpoint name="vhpprocess" contract="BasicService.IVHPProcessService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="vhpprocess">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1230,7 +1230,7 @@
           <serializedValue>vhpprocess</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.IVHPProcessService</serializedValue>
+          <serializedValue>BasicService.IVHPProcessService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1300,10 +1300,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="compound" contract="BasicDataService.ICompoundService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="compound">
+    <endpoint name="compound" contract="BasicService.ICompoundService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="compound">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1315,7 +1315,7 @@
           <serializedValue>compound</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.ICompoundService</serializedValue>
+          <serializedValue>BasicService.ICompoundService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1385,10 +1385,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="supplier" contract="BasicDataService.ISupplierService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="supplier">
+    <endpoint name="supplier" contract="BasicService.ISupplierService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="supplier">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1400,7 +1400,7 @@
           <serializedValue>supplier</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.ISupplierService</serializedValue>
+          <serializedValue>BasicService.ISupplierService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -1470,10 +1470,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="element" contract="BasicDataService.IElementService" bindingType="basicHttpBinding" address="http://localhost:63549/BasicDataService.svc" bindingConfiguration="element">
+    <endpoint name="element" contract="BasicService.IElementService" bindingType="basicHttpBinding" address="http://192.168.16.254:8002/BasicDataService.svc" bindingConfiguration="element">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:63549/BasicDataService.svc</serializedValue>
+          <serializedValue>http://192.168.16.254:8002/BasicDataService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1485,7 +1485,7 @@
           <serializedValue>element</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicDataService.IElementService</serializedValue>
+          <serializedValue>BasicService.IElementService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

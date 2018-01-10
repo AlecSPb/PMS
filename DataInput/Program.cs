@@ -10,7 +10,13 @@ namespace DataInput
     {
         static void Main(string[] args)
         {
+            CompoundBatchOperate op = new CompoundBatchOperate();
+            op.ReadAll();
+            Console.WriteLine("执行完毕");
 
+
+
+            Console.Read();
         }
     }
 }

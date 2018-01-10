@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataInput.BasicDataService {
+namespace DataInput.BasicService {
     using System.Runtime.Serialization;
     using System;
     
@@ -1680,26 +1680,26 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.ICustomerService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.ICustomerService")]
     public interface ICustomerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
-        DataInput.BasicDataService.DcBDCustomer[] GetCustomer();
+        DataInput.BasicService.DcBDCustomer[] GetCustomer();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/GetCustomer", ReplyAction="http://tempuri.org/ICustomerService/GetCustomerResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDCustomer[]> GetCustomerAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDCustomer[]> GetCustomerAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/AddCustomer", ReplyAction="http://tempuri.org/ICustomerService/AddCustomerResponse")]
-        int AddCustomer(DataInput.BasicDataService.DcBDCustomer model);
+        int AddCustomer(DataInput.BasicService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/AddCustomer", ReplyAction="http://tempuri.org/ICustomerService/AddCustomerResponse")]
-        System.Threading.Tasks.Task<int> AddCustomerAsync(DataInput.BasicDataService.DcBDCustomer model);
+        System.Threading.Tasks.Task<int> AddCustomerAsync(DataInput.BasicService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
-        int UpdateCustomer(DataInput.BasicDataService.DcBDCustomer model);
+        int UpdateCustomer(DataInput.BasicService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
-        System.Threading.Tasks.Task<int> UpdateCustomerAsync(DataInput.BasicDataService.DcBDCustomer model);
+        System.Threading.Tasks.Task<int> UpdateCustomerAsync(DataInput.BasicService.DcBDCustomer model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/DeleteCustomer", ReplyAction="http://tempuri.org/ICustomerService/DeleteCustomerResponse")]
         int DeleteCustomer(System.Guid id);
@@ -1709,12 +1709,12 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICustomerServiceChannel : DataInput.BasicDataService.ICustomerService, System.ServiceModel.IClientChannel {
+    public interface ICustomerServiceChannel : DataInput.BasicService.ICustomerService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.ICustomerService>, DataInput.BasicDataService.ICustomerService {
+    public partial class CustomerServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.ICustomerService>, DataInput.BasicService.ICustomerService {
         
         public CustomerServiceClient() {
         }
@@ -1735,27 +1735,27 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDCustomer[] GetCustomer() {
+        public DataInput.BasicService.DcBDCustomer[] GetCustomer() {
             return base.Channel.GetCustomer();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDCustomer[]> GetCustomerAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDCustomer[]> GetCustomerAsync() {
             return base.Channel.GetCustomerAsync();
         }
         
-        public int AddCustomer(DataInput.BasicDataService.DcBDCustomer model) {
+        public int AddCustomer(DataInput.BasicService.DcBDCustomer model) {
             return base.Channel.AddCustomer(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddCustomerAsync(DataInput.BasicDataService.DcBDCustomer model) {
+        public System.Threading.Tasks.Task<int> AddCustomerAsync(DataInput.BasicService.DcBDCustomer model) {
             return base.Channel.AddCustomerAsync(model);
         }
         
-        public int UpdateCustomer(DataInput.BasicDataService.DcBDCustomer model) {
+        public int UpdateCustomer(DataInput.BasicService.DcBDCustomer model) {
             return base.Channel.UpdateCustomer(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateCustomerAsync(DataInput.BasicDataService.DcBDCustomer model) {
+        public System.Threading.Tasks.Task<int> UpdateCustomerAsync(DataInput.BasicService.DcBDCustomer model) {
             return base.Channel.UpdateCustomerAsync(model);
         }
         
@@ -1769,26 +1769,26 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.IDeliveryAddressService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.IDeliveryAddressService")]
     public interface IDeliveryAddressService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddressResponse")]
-        DataInput.BasicDataService.DcBDDeliveryAddress[] GetDeliveryAddress();
+        DataInput.BasicService.DcBDDeliveryAddress[] GetDeliveryAddress();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/GetDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDDeliveryAddress[]> GetDeliveryAddressAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDDeliveryAddress[]> GetDeliveryAddressAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddressResponse")]
-        int AddDeliveryAddress(DataInput.BasicDataService.DcBDDeliveryAddress model);
+        int AddDeliveryAddress(DataInput.BasicService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/AddDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(DataInput.BasicDataService.DcBDDeliveryAddress model);
+        System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(DataInput.BasicService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddressResponse")]
-        int UpdateDeliveryAddress(DataInput.BasicDataService.DcBDDeliveryAddress model);
+        int UpdateDeliveryAddress(DataInput.BasicService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/UpdateDeliveryAddressResponse")]
-        System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(DataInput.BasicDataService.DcBDDeliveryAddress model);
+        System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(DataInput.BasicService.DcBDDeliveryAddress model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryAddressService/DeleteDeliveryAddress", ReplyAction="http://tempuri.org/IDeliveryAddressService/DeleteDeliveryAddressResponse")]
         int DeleteDeliveryAddress(System.Guid id);
@@ -1798,12 +1798,12 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IDeliveryAddressServiceChannel : DataInput.BasicDataService.IDeliveryAddressService, System.ServiceModel.IClientChannel {
+    public interface IDeliveryAddressServiceChannel : DataInput.BasicService.IDeliveryAddressService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DeliveryAddressServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.IDeliveryAddressService>, DataInput.BasicDataService.IDeliveryAddressService {
+    public partial class DeliveryAddressServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.IDeliveryAddressService>, DataInput.BasicService.IDeliveryAddressService {
         
         public DeliveryAddressServiceClient() {
         }
@@ -1824,27 +1824,27 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDDeliveryAddress[] GetDeliveryAddress() {
+        public DataInput.BasicService.DcBDDeliveryAddress[] GetDeliveryAddress() {
             return base.Channel.GetDeliveryAddress();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDDeliveryAddress[]> GetDeliveryAddressAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDDeliveryAddress[]> GetDeliveryAddressAsync() {
             return base.Channel.GetDeliveryAddressAsync();
         }
         
-        public int AddDeliveryAddress(DataInput.BasicDataService.DcBDDeliveryAddress model) {
+        public int AddDeliveryAddress(DataInput.BasicService.DcBDDeliveryAddress model) {
             return base.Channel.AddDeliveryAddress(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(DataInput.BasicDataService.DcBDDeliveryAddress model) {
+        public System.Threading.Tasks.Task<int> AddDeliveryAddressAsync(DataInput.BasicService.DcBDDeliveryAddress model) {
             return base.Channel.AddDeliveryAddressAsync(model);
         }
         
-        public int UpdateDeliveryAddress(DataInput.BasicDataService.DcBDDeliveryAddress model) {
+        public int UpdateDeliveryAddress(DataInput.BasicService.DcBDDeliveryAddress model) {
             return base.Channel.UpdateDeliveryAddress(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(DataInput.BasicDataService.DcBDDeliveryAddress model) {
+        public System.Threading.Tasks.Task<int> UpdateDeliveryAddressAsync(DataInput.BasicService.DcBDDeliveryAddress model) {
             return base.Channel.UpdateDeliveryAddressAsync(model);
         }
         
@@ -1858,26 +1858,26 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.IVHPDeviceService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.IVHPDeviceService")]
     public interface IVHPDeviceService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/GetVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/GetVHPDeviceResponse")]
-        DataInput.BasicDataService.DcBDVHPDevice[] GetVHPDevice();
+        DataInput.BasicService.DcBDVHPDevice[] GetVHPDevice();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/GetVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/GetVHPDeviceResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDVHPDevice[]> GetVHPDeviceAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDVHPDevice[]> GetVHPDeviceAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/AddVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/AddVHPDeviceResponse")]
-        int AddVHPDevice(DataInput.BasicDataService.DcBDVHPDevice model);
+        int AddVHPDevice(DataInput.BasicService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/AddVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/AddVHPDeviceResponse")]
-        System.Threading.Tasks.Task<int> AddVHPDeviceAsync(DataInput.BasicDataService.DcBDVHPDevice model);
+        System.Threading.Tasks.Task<int> AddVHPDeviceAsync(DataInput.BasicService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/UpdateVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/UpdateVHPDeviceResponse")]
-        int UpdateVHPDevice(DataInput.BasicDataService.DcBDVHPDevice model);
+        int UpdateVHPDevice(DataInput.BasicService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/UpdateVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/UpdateVHPDeviceResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(DataInput.BasicDataService.DcBDVHPDevice model);
+        System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(DataInput.BasicService.DcBDVHPDevice model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPDeviceService/DeleteVHPDevice", ReplyAction="http://tempuri.org/IVHPDeviceService/DeleteVHPDeviceResponse")]
         int DeleteVHPDevice(System.Guid id);
@@ -1887,12 +1887,12 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVHPDeviceServiceChannel : DataInput.BasicDataService.IVHPDeviceService, System.ServiceModel.IClientChannel {
+    public interface IVHPDeviceServiceChannel : DataInput.BasicService.IVHPDeviceService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VHPDeviceServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.IVHPDeviceService>, DataInput.BasicDataService.IVHPDeviceService {
+    public partial class VHPDeviceServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.IVHPDeviceService>, DataInput.BasicService.IVHPDeviceService {
         
         public VHPDeviceServiceClient() {
         }
@@ -1913,27 +1913,27 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDVHPDevice[] GetVHPDevice() {
+        public DataInput.BasicService.DcBDVHPDevice[] GetVHPDevice() {
             return base.Channel.GetVHPDevice();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDVHPDevice[]> GetVHPDeviceAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDVHPDevice[]> GetVHPDeviceAsync() {
             return base.Channel.GetVHPDeviceAsync();
         }
         
-        public int AddVHPDevice(DataInput.BasicDataService.DcBDVHPDevice model) {
+        public int AddVHPDevice(DataInput.BasicService.DcBDVHPDevice model) {
             return base.Channel.AddVHPDevice(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPDeviceAsync(DataInput.BasicDataService.DcBDVHPDevice model) {
+        public System.Threading.Tasks.Task<int> AddVHPDeviceAsync(DataInput.BasicService.DcBDVHPDevice model) {
             return base.Channel.AddVHPDeviceAsync(model);
         }
         
-        public int UpdateVHPDevice(DataInput.BasicDataService.DcBDVHPDevice model) {
+        public int UpdateVHPDevice(DataInput.BasicService.DcBDVHPDevice model) {
             return base.Channel.UpdateVHPDevice(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(DataInput.BasicDataService.DcBDVHPDevice model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPDeviceAsync(DataInput.BasicService.DcBDVHPDevice model) {
             return base.Channel.UpdateVHPDeviceAsync(model);
         }
         
@@ -1947,26 +1947,26 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.IVHPMoldService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.IVHPMoldService")]
     public interface IVHPMoldService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/GetVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/GetVHPMoldResponse")]
-        DataInput.BasicDataService.DcBDVHPMold[] GetVHPMold();
+        DataInput.BasicService.DcBDVHPMold[] GetVHPMold();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/GetVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/GetVHPMoldResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDVHPMold[]> GetVHPMoldAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDVHPMold[]> GetVHPMoldAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/AddVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/AddVHPMoldResponse")]
-        int AddVHPMold(DataInput.BasicDataService.DcBDVHPMold model);
+        int AddVHPMold(DataInput.BasicService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/AddVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/AddVHPMoldResponse")]
-        System.Threading.Tasks.Task<int> AddVHPMoldAsync(DataInput.BasicDataService.DcBDVHPMold model);
+        System.Threading.Tasks.Task<int> AddVHPMoldAsync(DataInput.BasicService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/UpdateVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/UpdateVHPMoldResponse")]
-        int UpdateVHPMold(DataInput.BasicDataService.DcBDVHPMold model);
+        int UpdateVHPMold(DataInput.BasicService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/UpdateVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/UpdateVHPMoldResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(DataInput.BasicDataService.DcBDVHPMold model);
+        System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(DataInput.BasicService.DcBDVHPMold model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPMoldService/DeleteVHPMold", ReplyAction="http://tempuri.org/IVHPMoldService/DeleteVHPMoldResponse")]
         int DeleteVHPMold(System.Guid id);
@@ -1976,12 +1976,12 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVHPMoldServiceChannel : DataInput.BasicDataService.IVHPMoldService, System.ServiceModel.IClientChannel {
+    public interface IVHPMoldServiceChannel : DataInput.BasicService.IVHPMoldService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VHPMoldServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.IVHPMoldService>, DataInput.BasicDataService.IVHPMoldService {
+    public partial class VHPMoldServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.IVHPMoldService>, DataInput.BasicService.IVHPMoldService {
         
         public VHPMoldServiceClient() {
         }
@@ -2002,27 +2002,27 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDVHPMold[] GetVHPMold() {
+        public DataInput.BasicService.DcBDVHPMold[] GetVHPMold() {
             return base.Channel.GetVHPMold();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDVHPMold[]> GetVHPMoldAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDVHPMold[]> GetVHPMoldAsync() {
             return base.Channel.GetVHPMoldAsync();
         }
         
-        public int AddVHPMold(DataInput.BasicDataService.DcBDVHPMold model) {
+        public int AddVHPMold(DataInput.BasicService.DcBDVHPMold model) {
             return base.Channel.AddVHPMold(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPMoldAsync(DataInput.BasicDataService.DcBDVHPMold model) {
+        public System.Threading.Tasks.Task<int> AddVHPMoldAsync(DataInput.BasicService.DcBDVHPMold model) {
             return base.Channel.AddVHPMoldAsync(model);
         }
         
-        public int UpdateVHPMold(DataInput.BasicDataService.DcBDVHPMold model) {
+        public int UpdateVHPMold(DataInput.BasicService.DcBDVHPMold model) {
             return base.Channel.UpdateVHPMold(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(DataInput.BasicDataService.DcBDVHPMold model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPMoldAsync(DataInput.BasicService.DcBDVHPMold model) {
             return base.Channel.UpdateVHPMoldAsync(model);
         }
         
@@ -2036,26 +2036,26 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.IVHPProcessService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.IVHPProcessService")]
     public interface IVHPProcessService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/GetVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/GetVHPProcessResponse")]
-        DataInput.BasicDataService.DcBDVHPProcess[] GetVHPProcess();
+        DataInput.BasicService.DcBDVHPProcess[] GetVHPProcess();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/GetVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/GetVHPProcessResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDVHPProcess[]> GetVHPProcessAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDVHPProcess[]> GetVHPProcessAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/AddVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/AddVHPProcessResponse")]
-        int AddVHPProcess(DataInput.BasicDataService.DcBDVHPProcess model);
+        int AddVHPProcess(DataInput.BasicService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/AddVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/AddVHPProcessResponse")]
-        System.Threading.Tasks.Task<int> AddVHPProcessAsync(DataInput.BasicDataService.DcBDVHPProcess model);
+        System.Threading.Tasks.Task<int> AddVHPProcessAsync(DataInput.BasicService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/UpdateVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/UpdateVHPProcessResponse")]
-        int UpdateVHPProcess(DataInput.BasicDataService.DcBDVHPProcess model);
+        int UpdateVHPProcess(DataInput.BasicService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/UpdateVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/UpdateVHPProcessResponse")]
-        System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(DataInput.BasicDataService.DcBDVHPProcess model);
+        System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(DataInput.BasicService.DcBDVHPProcess model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVHPProcessService/DeleteVHPProcess", ReplyAction="http://tempuri.org/IVHPProcessService/DeleteVHPProcessResponse")]
         int DeleteVHPProcess(System.Guid id);
@@ -2065,12 +2065,12 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVHPProcessServiceChannel : DataInput.BasicDataService.IVHPProcessService, System.ServiceModel.IClientChannel {
+    public interface IVHPProcessServiceChannel : DataInput.BasicService.IVHPProcessService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VHPProcessServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.IVHPProcessService>, DataInput.BasicDataService.IVHPProcessService {
+    public partial class VHPProcessServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.IVHPProcessService>, DataInput.BasicService.IVHPProcessService {
         
         public VHPProcessServiceClient() {
         }
@@ -2091,27 +2091,27 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDVHPProcess[] GetVHPProcess() {
+        public DataInput.BasicService.DcBDVHPProcess[] GetVHPProcess() {
             return base.Channel.GetVHPProcess();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDVHPProcess[]> GetVHPProcessAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDVHPProcess[]> GetVHPProcessAsync() {
             return base.Channel.GetVHPProcessAsync();
         }
         
-        public int AddVHPProcess(DataInput.BasicDataService.DcBDVHPProcess model) {
+        public int AddVHPProcess(DataInput.BasicService.DcBDVHPProcess model) {
             return base.Channel.AddVHPProcess(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddVHPProcessAsync(DataInput.BasicDataService.DcBDVHPProcess model) {
+        public System.Threading.Tasks.Task<int> AddVHPProcessAsync(DataInput.BasicService.DcBDVHPProcess model) {
             return base.Channel.AddVHPProcessAsync(model);
         }
         
-        public int UpdateVHPProcess(DataInput.BasicDataService.DcBDVHPProcess model) {
+        public int UpdateVHPProcess(DataInput.BasicService.DcBDVHPProcess model) {
             return base.Channel.UpdateVHPProcess(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(DataInput.BasicDataService.DcBDVHPProcess model) {
+        public System.Threading.Tasks.Task<int> UpdateVHPProcessAsync(DataInput.BasicService.DcBDVHPProcess model) {
             return base.Channel.UpdateVHPProcessAsync(model);
         }
         
@@ -2125,20 +2125,20 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.ICompoundService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.ICompoundService")]
     public interface ICompoundService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetAllCompounds", ReplyAction="http://tempuri.org/ICompoundService/GetAllCompoundsResponse")]
-        DataInput.BasicDataService.DcBDCompound[] GetAllCompounds();
+        DataInput.BasicService.DcBDCompound[] GetAllCompounds();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetAllCompounds", ReplyAction="http://tempuri.org/ICompoundService/GetAllCompoundsResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDCompound[]> GetAllCompoundsAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDCompound[]> GetAllCompoundsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompound", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundResponse")]
-        DataInput.BasicDataService.DcBDCompound[] GetCompound(int skip, int take, string searchComposition);
+        DataInput.BasicService.DcBDCompound[] GetCompound(int skip, int take, string searchComposition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompound", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDCompound[]> GetCompoundAsync(int skip, int take, string searchComposition);
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDCompound[]> GetCompoundAsync(int skip, int take, string searchComposition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompoundCount", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundCountResponse")]
         int GetCompoundCount(string searchComposition);
@@ -2147,16 +2147,16 @@ namespace DataInput.BasicDataService {
         System.Threading.Tasks.Task<int> GetCompoundCountAsync(string searchComposition);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/AddCompound", ReplyAction="http://tempuri.org/ICompoundService/AddCompoundResponse")]
-        int AddCompound(DataInput.BasicDataService.DcBDCompound model);
+        int AddCompound(DataInput.BasicService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/AddCompound", ReplyAction="http://tempuri.org/ICompoundService/AddCompoundResponse")]
-        System.Threading.Tasks.Task<int> AddCompoundAsync(DataInput.BasicDataService.DcBDCompound model);
+        System.Threading.Tasks.Task<int> AddCompoundAsync(DataInput.BasicService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/UpdateCompound", ReplyAction="http://tempuri.org/ICompoundService/UpdateCompoundResponse")]
-        int UpdateCompound(DataInput.BasicDataService.DcBDCompound model);
+        int UpdateCompound(DataInput.BasicService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/UpdateCompound", ReplyAction="http://tempuri.org/ICompoundService/UpdateCompoundResponse")]
-        System.Threading.Tasks.Task<int> UpdateCompoundAsync(DataInput.BasicDataService.DcBDCompound model);
+        System.Threading.Tasks.Task<int> UpdateCompoundAsync(DataInput.BasicService.DcBDCompound model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/DeleteCompound", ReplyAction="http://tempuri.org/ICompoundService/DeleteCompoundResponse")]
         int DeleteCompound(System.Guid id);
@@ -2172,12 +2172,12 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICompoundServiceChannel : DataInput.BasicDataService.ICompoundService, System.ServiceModel.IClientChannel {
+    public interface ICompoundServiceChannel : DataInput.BasicService.ICompoundService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CompoundServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.ICompoundService>, DataInput.BasicDataService.ICompoundService {
+    public partial class CompoundServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.ICompoundService>, DataInput.BasicService.ICompoundService {
         
         public CompoundServiceClient() {
         }
@@ -2198,19 +2198,19 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDCompound[] GetAllCompounds() {
+        public DataInput.BasicService.DcBDCompound[] GetAllCompounds() {
             return base.Channel.GetAllCompounds();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDCompound[]> GetAllCompoundsAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDCompound[]> GetAllCompoundsAsync() {
             return base.Channel.GetAllCompoundsAsync();
         }
         
-        public DataInput.BasicDataService.DcBDCompound[] GetCompound(int skip, int take, string searchComposition) {
+        public DataInput.BasicService.DcBDCompound[] GetCompound(int skip, int take, string searchComposition) {
             return base.Channel.GetCompound(skip, take, searchComposition);
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDCompound[]> GetCompoundAsync(int skip, int take, string searchComposition) {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDCompound[]> GetCompoundAsync(int skip, int take, string searchComposition) {
             return base.Channel.GetCompoundAsync(skip, take, searchComposition);
         }
         
@@ -2222,19 +2222,19 @@ namespace DataInput.BasicDataService {
             return base.Channel.GetCompoundCountAsync(searchComposition);
         }
         
-        public int AddCompound(DataInput.BasicDataService.DcBDCompound model) {
+        public int AddCompound(DataInput.BasicService.DcBDCompound model) {
             return base.Channel.AddCompound(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddCompoundAsync(DataInput.BasicDataService.DcBDCompound model) {
+        public System.Threading.Tasks.Task<int> AddCompoundAsync(DataInput.BasicService.DcBDCompound model) {
             return base.Channel.AddCompoundAsync(model);
         }
         
-        public int UpdateCompound(DataInput.BasicDataService.DcBDCompound model) {
+        public int UpdateCompound(DataInput.BasicService.DcBDCompound model) {
             return base.Channel.UpdateCompound(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateCompoundAsync(DataInput.BasicDataService.DcBDCompound model) {
+        public System.Threading.Tasks.Task<int> UpdateCompoundAsync(DataInput.BasicService.DcBDCompound model) {
             return base.Channel.UpdateCompoundAsync(model);
         }
         
@@ -2256,20 +2256,20 @@ namespace DataInput.BasicDataService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.ISupplierService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.ISupplierService")]
     public interface ISupplierService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/AddSupplier", ReplyAction="http://tempuri.org/ISupplierService/AddSupplierResponse")]
-        int AddSupplier(DataInput.BasicDataService.DcBDSupplier model);
+        int AddSupplier(DataInput.BasicService.DcBDSupplier model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/AddSupplier", ReplyAction="http://tempuri.org/ISupplierService/AddSupplierResponse")]
-        System.Threading.Tasks.Task<int> AddSupplierAsync(DataInput.BasicDataService.DcBDSupplier model);
+        System.Threading.Tasks.Task<int> AddSupplierAsync(DataInput.BasicService.DcBDSupplier model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/UpdateSupplier", ReplyAction="http://tempuri.org/ISupplierService/UpdateSupplierResponse")]
-        int UpdateSupplier(DataInput.BasicDataService.DcBDSupplier model);
+        int UpdateSupplier(DataInput.BasicService.DcBDSupplier model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/UpdateSupplier", ReplyAction="http://tempuri.org/ISupplierService/UpdateSupplierResponse")]
-        System.Threading.Tasks.Task<int> UpdateSupplierAsync(DataInput.BasicDataService.DcBDSupplier model);
+        System.Threading.Tasks.Task<int> UpdateSupplierAsync(DataInput.BasicService.DcBDSupplier model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/DeleteSupplier", ReplyAction="http://tempuri.org/ISupplierService/DeleteSupplierResponse")]
         int DeleteSupplier(System.Guid id);
@@ -2278,19 +2278,19 @@ namespace DataInput.BasicDataService {
         System.Threading.Tasks.Task<int> DeleteSupplierAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/GetSuppliers", ReplyAction="http://tempuri.org/ISupplierService/GetSuppliersResponse")]
-        DataInput.BasicDataService.DcBDSupplier[] GetSuppliers();
+        DataInput.BasicService.DcBDSupplier[] GetSuppliers();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISupplierService/GetSuppliers", ReplyAction="http://tempuri.org/ISupplierService/GetSuppliersResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDSupplier[]> GetSuppliersAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDSupplier[]> GetSuppliersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISupplierServiceChannel : DataInput.BasicDataService.ISupplierService, System.ServiceModel.IClientChannel {
+    public interface ISupplierServiceChannel : DataInput.BasicService.ISupplierService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SupplierServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.ISupplierService>, DataInput.BasicDataService.ISupplierService {
+    public partial class SupplierServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.ISupplierService>, DataInput.BasicService.ISupplierService {
         
         public SupplierServiceClient() {
         }
@@ -2311,19 +2311,19 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public int AddSupplier(DataInput.BasicDataService.DcBDSupplier model) {
+        public int AddSupplier(DataInput.BasicService.DcBDSupplier model) {
             return base.Channel.AddSupplier(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddSupplierAsync(DataInput.BasicDataService.DcBDSupplier model) {
+        public System.Threading.Tasks.Task<int> AddSupplierAsync(DataInput.BasicService.DcBDSupplier model) {
             return base.Channel.AddSupplierAsync(model);
         }
         
-        public int UpdateSupplier(DataInput.BasicDataService.DcBDSupplier model) {
+        public int UpdateSupplier(DataInput.BasicService.DcBDSupplier model) {
             return base.Channel.UpdateSupplier(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateSupplierAsync(DataInput.BasicDataService.DcBDSupplier model) {
+        public System.Threading.Tasks.Task<int> UpdateSupplierAsync(DataInput.BasicService.DcBDSupplier model) {
             return base.Channel.UpdateSupplierAsync(model);
         }
         
@@ -2335,36 +2335,36 @@ namespace DataInput.BasicDataService {
             return base.Channel.DeleteSupplierAsync(id);
         }
         
-        public DataInput.BasicDataService.DcBDSupplier[] GetSuppliers() {
+        public DataInput.BasicService.DcBDSupplier[] GetSuppliers() {
             return base.Channel.GetSuppliers();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDSupplier[]> GetSuppliersAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDSupplier[]> GetSuppliersAsync() {
             return base.Channel.GetSuppliersAsync();
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicDataService.IElementService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BasicService.IElementService")]
     public interface IElementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/GetElements", ReplyAction="http://tempuri.org/IElementService/GetElementsResponse")]
-        DataInput.BasicDataService.DcBDElement[] GetElements();
+        DataInput.BasicService.DcBDElement[] GetElements();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/GetElements", ReplyAction="http://tempuri.org/IElementService/GetElementsResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDElement[]> GetElementsAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDElement[]> GetElementsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/AddElement", ReplyAction="http://tempuri.org/IElementService/AddElementResponse")]
-        int AddElement(DataInput.BasicDataService.DcBDElement model);
+        int AddElement(DataInput.BasicService.DcBDElement model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/AddElement", ReplyAction="http://tempuri.org/IElementService/AddElementResponse")]
-        System.Threading.Tasks.Task<int> AddElementAsync(DataInput.BasicDataService.DcBDElement model);
+        System.Threading.Tasks.Task<int> AddElementAsync(DataInput.BasicService.DcBDElement model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/UpdateElement", ReplyAction="http://tempuri.org/IElementService/UpdateElementResponse")]
-        int UpdateElement(DataInput.BasicDataService.DcBDElement model);
+        int UpdateElement(DataInput.BasicService.DcBDElement model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/UpdateElement", ReplyAction="http://tempuri.org/IElementService/UpdateElementResponse")]
-        System.Threading.Tasks.Task<int> UpdateElementAsync(DataInput.BasicDataService.DcBDElement model);
+        System.Threading.Tasks.Task<int> UpdateElementAsync(DataInput.BasicService.DcBDElement model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/DeleteElement", ReplyAction="http://tempuri.org/IElementService/DeleteElementResponse")]
         int DeleteElement(System.Guid id);
@@ -2373,31 +2373,31 @@ namespace DataInput.BasicDataService {
         System.Threading.Tasks.Task<int> DeleteElementAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/GetElementGroup", ReplyAction="http://tempuri.org/IElementService/GetElementGroupResponse")]
-        DataInput.BasicDataService.DcBDElementGroup[] GetElementGroup();
+        DataInput.BasicService.DcBDElementGroup[] GetElementGroup();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/GetElementGroup", ReplyAction="http://tempuri.org/IElementService/GetElementGroupResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDElementGroup[]> GetElementGroupAsync();
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDElementGroup[]> GetElementGroupAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/GetElementGroupItem", ReplyAction="http://tempuri.org/IElementService/GetElementGroupItemResponse")]
-        DataInput.BasicDataService.DcBDElementGroupItem[] GetElementGroupItem(System.Guid id);
+        DataInput.BasicService.DcBDElementGroupItem[] GetElementGroupItem(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/GetElementGroupItem", ReplyAction="http://tempuri.org/IElementService/GetElementGroupItemResponse")]
-        System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDElementGroupItem[]> GetElementGroupItemAsync(System.Guid id);
+        System.Threading.Tasks.Task<DataInput.BasicService.DcBDElementGroupItem[]> GetElementGroupItemAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/AddElementGroupAndItems", ReplyAction="http://tempuri.org/IElementService/AddElementGroupAndItemsResponse")]
-        int AddElementGroupAndItems(string groupName, DataInput.BasicDataService.DcBDElementGroupItem[] elements);
+        int AddElementGroupAndItems(string groupName, DataInput.BasicService.DcBDElementGroupItem[] elements);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IElementService/AddElementGroupAndItems", ReplyAction="http://tempuri.org/IElementService/AddElementGroupAndItemsResponse")]
-        System.Threading.Tasks.Task<int> AddElementGroupAndItemsAsync(string groupName, DataInput.BasicDataService.DcBDElementGroupItem[] elements);
+        System.Threading.Tasks.Task<int> AddElementGroupAndItemsAsync(string groupName, DataInput.BasicService.DcBDElementGroupItem[] elements);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IElementServiceChannel : DataInput.BasicDataService.IElementService, System.ServiceModel.IClientChannel {
+    public interface IElementServiceChannel : DataInput.BasicService.IElementService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ElementServiceClient : System.ServiceModel.ClientBase<DataInput.BasicDataService.IElementService>, DataInput.BasicDataService.IElementService {
+    public partial class ElementServiceClient : System.ServiceModel.ClientBase<DataInput.BasicService.IElementService>, DataInput.BasicService.IElementService {
         
         public ElementServiceClient() {
         }
@@ -2418,27 +2418,27 @@ namespace DataInput.BasicDataService {
                 base(binding, remoteAddress) {
         }
         
-        public DataInput.BasicDataService.DcBDElement[] GetElements() {
+        public DataInput.BasicService.DcBDElement[] GetElements() {
             return base.Channel.GetElements();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDElement[]> GetElementsAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDElement[]> GetElementsAsync() {
             return base.Channel.GetElementsAsync();
         }
         
-        public int AddElement(DataInput.BasicDataService.DcBDElement model) {
+        public int AddElement(DataInput.BasicService.DcBDElement model) {
             return base.Channel.AddElement(model);
         }
         
-        public System.Threading.Tasks.Task<int> AddElementAsync(DataInput.BasicDataService.DcBDElement model) {
+        public System.Threading.Tasks.Task<int> AddElementAsync(DataInput.BasicService.DcBDElement model) {
             return base.Channel.AddElementAsync(model);
         }
         
-        public int UpdateElement(DataInput.BasicDataService.DcBDElement model) {
+        public int UpdateElement(DataInput.BasicService.DcBDElement model) {
             return base.Channel.UpdateElement(model);
         }
         
-        public System.Threading.Tasks.Task<int> UpdateElementAsync(DataInput.BasicDataService.DcBDElement model) {
+        public System.Threading.Tasks.Task<int> UpdateElementAsync(DataInput.BasicService.DcBDElement model) {
             return base.Channel.UpdateElementAsync(model);
         }
         
@@ -2450,27 +2450,27 @@ namespace DataInput.BasicDataService {
             return base.Channel.DeleteElementAsync(id);
         }
         
-        public DataInput.BasicDataService.DcBDElementGroup[] GetElementGroup() {
+        public DataInput.BasicService.DcBDElementGroup[] GetElementGroup() {
             return base.Channel.GetElementGroup();
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDElementGroup[]> GetElementGroupAsync() {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDElementGroup[]> GetElementGroupAsync() {
             return base.Channel.GetElementGroupAsync();
         }
         
-        public DataInput.BasicDataService.DcBDElementGroupItem[] GetElementGroupItem(System.Guid id) {
+        public DataInput.BasicService.DcBDElementGroupItem[] GetElementGroupItem(System.Guid id) {
             return base.Channel.GetElementGroupItem(id);
         }
         
-        public System.Threading.Tasks.Task<DataInput.BasicDataService.DcBDElementGroupItem[]> GetElementGroupItemAsync(System.Guid id) {
+        public System.Threading.Tasks.Task<DataInput.BasicService.DcBDElementGroupItem[]> GetElementGroupItemAsync(System.Guid id) {
             return base.Channel.GetElementGroupItemAsync(id);
         }
         
-        public int AddElementGroupAndItems(string groupName, DataInput.BasicDataService.DcBDElementGroupItem[] elements) {
+        public int AddElementGroupAndItems(string groupName, DataInput.BasicService.DcBDElementGroupItem[] elements) {
             return base.Channel.AddElementGroupAndItems(groupName, elements);
         }
         
-        public System.Threading.Tasks.Task<int> AddElementGroupAndItemsAsync(string groupName, DataInput.BasicDataService.DcBDElementGroupItem[] elements) {
+        public System.Threading.Tasks.Task<int> AddElementGroupAndItemsAsync(string groupName, DataInput.BasicService.DcBDElementGroupItem[] elements) {
             return base.Channel.AddElementGroupAndItemsAsync(groupName, elements);
         }
     }

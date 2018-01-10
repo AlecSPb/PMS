@@ -47,54 +47,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\BasicDataService\Reference.cs">
+    <Compile Include="CompoundBatchOperate.cs" />
+    <Compile Include="Connected Services\BasicService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Model\CompoundCsvModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\BasicDataService\BasicDataService.wsdl" />
-    <None Include="Connected Services\BasicDataService\BasicDataService.xsd">
+    <None Include="Connected Services\BasicService\BasicDataService.wsdl" />
+    <None Include="Connected Services\BasicService\BasicDataService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BasicDataService\BasicDataService1.xsd">
+    <None Include="Connected Services\BasicService\BasicDataService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BasicDataService\BasicDataService2.xsd">
+    <None Include="Connected Services\BasicService\BasicDataService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDCompound.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDCompound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDCustomer.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDCustomer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDDeliveryAddress.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDDeliveryAddress.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDElement.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDElement.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDElementGroup.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDElementGroup.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDElementGroupItem.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDElementGroupItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDSupplier.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDSupplier.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDVHPDevice.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDVHPDevice.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDVHPMold.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDVHPMold.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BasicDataService\DataInput.BasicDataService.DcBDVHPProcess.datasource">
+    <None Include="Connected Services\BasicService\DataInput.BasicService.DcBDVHPProcess.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -106,19 +108,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\BasicDataService\" />
+    <WCFMetadataStorage Include="Connected Services\BasicService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BasicDataService\BasicDataService.disco" />
+    <None Include="Connected Services\BasicService\BasicDataService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BasicDataService\configuration91.svcinfo" />
+    <None Include="Connected Services\BasicService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BasicDataService\configuration.svcinfo" />
+    <None Include="Connected Services\BasicService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\BasicDataService\Reference.svcmap">
+    <None Include="Connected Services\BasicService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
