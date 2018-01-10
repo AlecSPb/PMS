@@ -109,7 +109,7 @@
                 <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
                         Command="{Binding GoToBDCompound}" Style="{DynamicResource StyleButtonNavigation}"/>
                 <Button Content="{StaticResource PageTool}" Grid.Row="2" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToTool}"/>
+                        Command="{Binding GoToTool}" IsEnabled="False"/>
 
                 <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{DynamicResource StyleButtonNavigationTitle}" />
                 <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
