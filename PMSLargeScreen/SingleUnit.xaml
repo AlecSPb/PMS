@@ -11,23 +11,24 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">
                 <TextBlock Text="{Binding PlanLot,StringFormat=批次{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Red"/>
                 <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Blue"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
-                <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig3}"/>
-                <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig3}"/>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <TextBlock Text="{Binding Temp,StringFormat=温度{0}℃}" Style="{StaticResource StyleTextBlockBig}"/>
-                <TextBlock Text="{Binding Pressure,StringFormat=压力{0}t}" Style="{StaticResource StyleTextBlockBig}"/>
-                <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig}"/>
-            </StackPanel>
-            <ListBox Grid.Row="3" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
+
+            <Border Grid.Row="1" Style="{StaticResource StyleBorder}" Background="LightBlue">
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig3}" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig3}" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBig3}"/>
+                    <TextBlock Text="{Binding Pressure,StringFormat={}{0}t}" Style="{StaticResource StyleTextBlockBig3}"/>
+                    <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig3}"/>
+                </StackPanel>
+            </Border>
+
+            <ListBox Grid.Row="2" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
                      BorderThickness="0" HorizontalAlignment="Stretch">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -42,12 +43,12 @@
                                 </Grid.RowDefinitions>
                                 <TextBlock Grid.Row="0" Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig3}" Foreground="Blue"
                                            TextWrapping="WrapWithOverflow"/>
-                                <TextBlock Grid.Row="1" Text="{Binding PMINumber,StringFormat=工作号{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
                                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                                     <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding SingleWeight,StringFormat=单片{0:F2}g}" Style="{StaticResource StyleTextBlockBig}"/>
                                     <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
+                                    <TextBlock Text="{Binding PMINumber,StringFormat=任务{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
                                 </StackPanel>
                                 <TextBlock Grid.Row="3" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"
                                            TextWrapping="WrapWithOverflow"/>

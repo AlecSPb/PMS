@@ -16,6 +16,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border >
             <Grid Background="{StaticResource BG}">
@@ -46,7 +47,8 @@
             </Grid>
         </Border>
         <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BG2}">
+        <TextBlock Grid.Row="2" Text="消息栏:消息内容" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding Status2}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>
