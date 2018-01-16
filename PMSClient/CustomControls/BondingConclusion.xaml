@@ -32,7 +32,7 @@
 
         <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="缺陷"/>
-        <TextBox Name="txtDefects" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="缺陷"/>
+        <TextBox Name="txtDefects" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"/>
 
         <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnCancel_Click"/>

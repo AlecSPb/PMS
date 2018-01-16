@@ -11,6 +11,7 @@ namespace PMSCommon
         无缺陷,
         花纹,
         斑点,
+        网状斑点,
         裂纹,
         崩边,
         缺口,

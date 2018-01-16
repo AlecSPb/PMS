@@ -12,8 +12,10 @@ namespace PMSCommon
     /// </summary>
     public enum VHPPlanType
     {
-        加工,
+
         回收,
+        加工,
+        发货,
         烤料,
         代工,
         其他
