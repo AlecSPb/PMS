@@ -47,7 +47,14 @@
             </Grid>
         </Border>
         <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Grid.Row="2" Text="消息栏:消息内容" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="消息" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue"/>
+            <TextBlock Grid.Column="1" Text="温度湿度" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue" HorizontalAlignment="Right"/>
+        </Grid>
         <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding Status2}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
