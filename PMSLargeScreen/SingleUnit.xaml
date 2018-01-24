@@ -18,7 +18,7 @@
                 <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Blue"/>
             </StackPanel>
 
-            <Border Grid.Row="1" Style="{StaticResource StyleBorder}" Background="LightBlue">
+            <Border Grid.Row="1" Style="{StaticResource StyleBorder}" Background="LightGreen">
                 <StackPanel  Orientation="Horizontal">
                     <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig3}" VerticalAlignment="Bottom"/>
                     <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig3}" VerticalAlignment="Bottom"/>

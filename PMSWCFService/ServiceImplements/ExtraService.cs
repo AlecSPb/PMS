@@ -9,7 +9,9 @@ using AutoMapper;
 
 namespace PMSWCFService
 {
-    public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService, IEnvironmentInfoService
+    public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService, IEnvironmentInfoService,
+        INoticeService
+
     {
         public int AddCheckList(DcCheckList model, string uid)
         {
@@ -381,14 +383,14 @@ namespace PMSWCFService
             }
         }
 
-        public int UpdateEnvironmentInfor(DcEnvironmentInfo data)
+        public int UpdateEnvironmentInfor(DcEnvironmentInfo model)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcEnvironmentInfo, EnvironmentInfo>());
-                    var entity = Mapper.Map<EnvironmentInfo>(data);
+                    var entity = Mapper.Map<EnvironmentInfo>(model);
                     dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
                     return dc.SaveChanges();
                 }
@@ -398,6 +400,44 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
+
+        public DcNotice GetCurrentNotice()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<Notice, DcNotice>());
+                    var query = dc.Notices.FirstOrDefault();
+                    return Mapper.Map<DcNotice>(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int UpdateNotice(DcNotice model)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcNotice, Notice>());
+                    var entity = Mapper.Map<Notice>(model);
+                    dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+
         }
     }
 }
