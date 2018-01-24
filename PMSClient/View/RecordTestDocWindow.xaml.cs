@@ -39,5 +39,10 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(txtCurrentFolder, fbd.SelectedPath);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

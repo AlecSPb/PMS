@@ -209,7 +209,9 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 PMSHelper.ViewModels.RecordTestDoc.SetModel(model);
-                NavigationService.GoTo(PMSViews.RecordTestDoc);
+                var docWindow = new PMSClient.View.RecordTestDocWindow();
+                docWindow.Show();
+                //NavigationService.GoTo(PMSViews.RecordTestDoc);
             }
 
         }
