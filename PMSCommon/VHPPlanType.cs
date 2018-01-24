@@ -18,6 +18,7 @@ namespace PMSCommon
         发货,
         烤料,
         代工,
+        试机,
         其他
     }
 }
