@@ -154,7 +154,7 @@ namespace PMSClient.ViewModel
 
         private bool CanDoc(DcRecordTest arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest) || PMSHelper.CurrentSession.IsAuthorized(PMSAccess.CanDocRecordTest);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest);
         }
 
         private bool CanEdit(DcRecordTest arg)
