@@ -21,11 +21,6 @@ namespace PMSClient.ReportsHelper
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
 
-        public void SetTargetFolder(string targetFolder)
-        {
-            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
-        }
         public void SetModel(DcPlanWithMisson model)
         {
             if (model != null)

@@ -23,22 +23,23 @@ namespace PMSClient.ReportsHelper
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
 
-        public void SetTargetFolder(string targetFolder)
-        {
-            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
-        }
 
-        private DcMaterialOrder _order;
+        private DcMaterialOrder model;
         public void SetModel(DcMaterialOrder order)
         {
-            _order = order;
+            if (model!=null)
+            {
+                model = order;
+                CreateFolderOnDesktop();
+                var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
+                targetFile = Path.Combine(targetDir, targetName);
+            }
         }
         public override void Output()
         {
             try
             {
-                if (_order == null)
+                if (model == null)
                 {
                     return;
                 }
@@ -47,20 +48,20 @@ namespace PMSClient.ReportsHelper
                 #region 创建文档
                 using (var doc = DocX.Load(tempFile))
                 {
-                    doc.ReplaceText("[OrderPO]", _order.OrderPO ?? "");
-                    doc.ReplaceText("[SupplierName]", _order.Supplier ?? "");
-                    doc.ReplaceText("[SupplierReceiver]", _order.SupplierReceiver ?? "");
-                    doc.ReplaceText("[SupplierEmail]", _order.SupplierEmail ?? "");
-                    doc.ReplaceText("[SupplierAddress]", _order.SupplierAddress ?? "");
-                    doc.ReplaceText("[OrderDate]", _order.CreateTime.ToString("MM/dd/yyyy"));
-                    doc.ReplaceText("[Creator]", _order.Creator ?? "Leon.Chiu");
+                    doc.ReplaceText("[OrderPO]", model.OrderPO ?? "");
+                    doc.ReplaceText("[SupplierName]", model.Supplier ?? "");
+                    doc.ReplaceText("[SupplierReceiver]", model.SupplierReceiver ?? "");
+                    doc.ReplaceText("[SupplierEmail]", model.SupplierEmail ?? "");
+                    doc.ReplaceText("[SupplierAddress]", model.SupplierAddress ?? "");
+                    doc.ReplaceText("[OrderDate]", model.CreateTime.ToString("MM/dd/yyyy"));
+                    doc.ReplaceText("[Creator]", model.Creator ?? "Leon.Chiu");
 
 
                     List<DcMaterialOrderItem> OrderItems;
 
                     using (var service = new MaterialOrderServiceClient())
                     {
-                        var result = service.GetMaterialOrderItembyMaterialID(_order.ID);
+                        var result = service.GetMaterialOrderItembyMaterialID(model.ID);
                         OrderItems = result.OrderBy(i => i.CreateTime).ToList();
                     }
                     //插入表格
@@ -112,15 +113,15 @@ namespace PMSClient.ReportsHelper
                             subTotalMoney += total;
                         }
                     }
-                    var remark = _order.Remark ?? "";
+                    var remark = model.Remark ?? "";
                     if (remark != "")
                     {
                         remark = $"PMI to provide:{remark}";
                     }
                     doc.ReplaceText("[Remark]", remark);
                     doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0"));
-                    doc.ReplaceText("[ShipFee]", _order.ShipFee.ToString("N0") );
-                    double totalMoney = subTotalMoney + _order.ShipFee;
+                    doc.ReplaceText("[ShipFee]", model.ShipFee.ToString("N0") );
+                    double totalMoney = subTotalMoney + model.ShipFee;
                     doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") );
 
                     doc.Save();

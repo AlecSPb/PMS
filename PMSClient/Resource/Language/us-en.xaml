@@ -244,6 +244,7 @@
     <sys:String x:Key="ButtonBrowse">Browse</sys:String>
     <sys:String x:Key="ButtonInput">Input</sys:String>
     <sys:String x:Key="ButtonOutput">Output</sys:String>
+    <sys:String x:Key="ButtonBatchDoc">Batch Doc</sys:String>
     <sys:String x:Key="ButtonDoc">Doc</sys:String>
     <sys:String x:Key="ButtonDocTest">Doc Test</sys:String>
     <sys:String x:Key="ButtonDocCoA">Doc CoA</sys:String>

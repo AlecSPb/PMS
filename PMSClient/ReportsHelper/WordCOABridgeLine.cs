@@ -23,16 +23,18 @@ namespace PMSClient.ReportsHelper
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COABridgeLine_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
-        public void SetTargetFolder(string targetFolder)
+        public void SetTargetFileName(string targetFileName)
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
+            targetFile = Path.Combine(targetFileName, targetName);
         }
         public void SetModel(DcRecordTest test)
         {
             if (test != null)
             {
                 model = test;
+                var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
+                targetFile = Path.Combine(targetDir, targetName);
             }
         }
         private DcRecordTest model;
@@ -99,10 +101,8 @@ namespace PMSClient.ReportsHelper
                 }
                 #endregion
                 //复制到临时文件
-                var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
-                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
+                //PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {

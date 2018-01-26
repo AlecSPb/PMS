@@ -23,10 +23,10 @@ namespace PMSClient.ReportsHelper
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
 
-        public void SetTargetFolder(string targetFolder)
+        public void SetTargetFileName(string targetFileName)
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
+            targetFile = Path.Combine(targetFileName, targetName);
         }
 
         private DcMaterialOrder _order;

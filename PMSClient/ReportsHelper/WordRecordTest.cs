@@ -19,16 +19,15 @@ namespace PMSClient.ReportsHelper
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "RecordTest_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
-        public void SetTargetFolder(string targetFolder)
-        {
-            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
-        }
+
         public void SetModel(DcRecordTest test)
         {
             if (test != null)
             {
                 model = test;
+                CreateFolderOnDesktop();
+                var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
+                targetFile = Path.Combine(targetDir, targetName);
             }
         }
         private DcRecordTest model;
@@ -96,10 +95,8 @@ namespace PMSClient.ReportsHelper
                 }
                 #endregion
                 //复制到临时文件
-                var targetName = $"{prefix}_{model.CompositionAbbr}_{model.ProductID}.docx";
-                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
+                //PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {

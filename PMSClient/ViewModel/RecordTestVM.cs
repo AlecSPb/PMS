@@ -9,6 +9,8 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight.Messaging;
 using System.IO;
+using PMSClient.ViewModel.Model;
+using PMSClient.ReportsHelper;
 
 namespace PMSClient.ViewModel
 {
@@ -46,13 +48,42 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch, CanSearch);
             All = new RelayCommand(ActionAll);
             Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcRecordTest>(ActionEdit, CanEdit);
-            Doc = new RelayCommand<DcRecordTest>(ActionDoc, CanDoc);
-            SelectionChanged = new RelayCommand<DcRecordTest>(ActionSelectionChanged);
-            Duplicate = new RelayCommand<DcRecordTest>(ActionDuplicate, CanDuplicate);
-            Label = new RelayCommand<DcRecordTest>(ActionLabel);
+            Edit = new RelayCommand<RecordTestExtra>(ActionEdit, CanEdit);
+            Doc = new RelayCommand<RecordTestExtra>(ActionDoc, CanDoc);
+            SelectionChanged = new RelayCommand<RecordTestExtra>(ActionSelectionChanged);
+            Duplicate = new RelayCommand<RecordTestExtra>(ActionDuplicate, CanDuplicate);
+            Label = new RelayCommand<RecordTestExtra>(ActionLabel);
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
+            BatchDoc = new RelayCommand(ActionBatchDoc);
+        }
+
+        /// <summary>
+        /// 批量生成COA
+        /// </summary>
+        private void ActionBatchDoc()
+        {
+
+            try
+            {
+                WordCOA report = new WordCOA();
+                foreach (var item in RecordTestExtras)
+                {
+                    if (item.IsSelected)
+                    {
+                        report.SetModel(item.RecordTest);
+                        report.Output();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+                NavigationService.Status(ex.Message);
+            }
+            PMSDialogService.ShowYes("提示", "创建完毕，请打开报告仔细检查内容是否正确");
+            NavigationService.Status("创建完毕！");
         }
 
         private void ActionOutput()
@@ -120,15 +151,15 @@ namespace PMSClient.ViewModel
             NavigationService.GoTo(PMSViews.PlanSelect);
         }
 
-        private void ActionLabel(DcRecordTest model)
+        private void ActionLabel(RecordTestExtra model)
         {
             if (model != null)
             {
 
                 var sb = new StringBuilder();
-                sb.AppendLine(model.Composition);
-                sb.AppendLine(model.ProductID);
-                sb.AppendLine(model.Dimension);
+                sb.AppendLine(model.RecordTest.Composition);
+                sb.AppendLine(model.RecordTest.ProductID);
+                sb.AppendLine(model.RecordTest.Dimension);
 
                 var mainContent = sb.ToString();
 
@@ -141,23 +172,25 @@ namespace PMSClient.ViewModel
                 //NavigationService.GoTo(PMSViews.LabelOutPut);
 
                 //2017-12-18
-                PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow();
-                lcw.LabelInformation = mainContent;
+                PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow
+                {
+                    LabelInformation = mainContent
+                };
                 lcw.Show();
             }
         }
 
-        private bool CanDuplicate(DcRecordTest arg)
+        private bool CanDuplicate(RecordTestExtra arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
-        private bool CanDoc(DcRecordTest arg)
+        private bool CanDoc(RecordTestExtra arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadRecordTest);
         }
 
-        private bool CanEdit(DcRecordTest arg)
+        private bool CanEdit(RecordTestExtra arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
@@ -167,7 +200,7 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
-        private void ActionSelectionChanged(DcRecordTest model)
+        private void ActionSelectionChanged(RecordTestExtra model)
         {
             CurrentSelectItem = model;
         }
@@ -188,27 +221,27 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private void ActionDuplicate(DcRecordTest model)
+        private void ActionDuplicate(RecordTestExtra model)
         {
             if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
             {
-                PMSHelper.ViewModels.RecordTestEdit.SetDuplicate(model);
+                PMSHelper.ViewModels.RecordTestEdit.SetDuplicate(model.RecordTest);
                 NavigationService.GoTo(PMSViews.RecordTestEdit);
             }
 
         }
 
-        private void ActionEdit(DcRecordTest model)
+        private void ActionEdit(RecordTestExtra model)
         {
-            PMSHelper.ViewModels.RecordTestEdit.SetEdit(model);
+            PMSHelper.ViewModels.RecordTestEdit.SetEdit(model.RecordTest);
             NavigationService.GoTo(PMSViews.RecordTestEdit);
         }
 
-        private void ActionDoc(DcRecordTest model)
+        private void ActionDoc(RecordTestExtra model)
         {
             if (model != null)
             {
-                PMSHelper.ViewModels.RecordTestDoc.SetModel(model);
+                PMSHelper.ViewModels.RecordTestDoc.SetModel(model.RecordTest);
                 var docWindow = new PMSClient.View.RecordTestDocWindow();
                 docWindow.Show();
                 //NavigationService.GoTo(PMSViews.RecordTestDoc);
@@ -224,7 +257,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            RecordProducts = new ObservableCollection<DcRecordTest>();
+            RecordTestExtras = new ObservableCollection<RecordTestExtra>();
             SearchCompositionStd = searchProductID = "";
 
         }
@@ -248,17 +281,17 @@ namespace PMSClient.ViewModel
             using (var service = new RecordTestServiceClient())
             {
                 var orders = service.GetRecordTestBySearchInPage(skip, take, SearchProductID, SearchCompositionStd);
-                RecordProducts.Clear();
-                orders.ToList().ForEach(o => RecordProducts.Add(o));
+                RecordTestExtras.Clear();
+                orders.ToList().ForEach(o => RecordTestExtras.Add(new RecordTestExtra { RecordTest = o }));
             }
 
-            CurrentSelectItem = RecordProducts.FirstOrDefault();
+            CurrentSelectItem = RecordTestExtras.FirstOrDefault();
         }
         #region Commands
         public RelayCommand Report { get; set; }
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcRecordTest> Edit { get; set; }
-        public RelayCommand<DcRecordTest> Doc { get; set; }
+        public RelayCommand<RecordTestExtra> Edit { get; set; }
+        public RelayCommand<RecordTestExtra> Doc { get; set; }
 
         private string searchProductID;
         public string SearchProductID
@@ -285,19 +318,21 @@ namespace PMSClient.ViewModel
             }
         }
 
-        public ObservableCollection<DcRecordTest> RecordProducts { get; set; }
-        private DcRecordTest currentSelectItem;
+        public ObservableCollection<RecordTestExtra> RecordTestExtras { get; set; }
+        private RecordTestExtra currentSelectItem;
 
-        public DcRecordTest CurrentSelectItem
+        public RecordTestExtra CurrentSelectItem
         {
             get { return currentSelectItem; }
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
 
-        public RelayCommand<DcRecordTest> SelectionChanged { get; set; }
-        public RelayCommand<DcRecordTest> Duplicate { get; set; }
-        public RelayCommand<DcRecordTest> Label { get; set; }
+        public RelayCommand<RecordTestExtra> SelectionChanged { get; set; }
+        public RelayCommand<RecordTestExtra> Duplicate { get; set; }
+        public RelayCommand<RecordTestExtra> Label { get; set; }
         public RelayCommand QuickAdd { get; set; }
+
+        public RelayCommand BatchDoc { get; set; }
 
         public RelayCommand Output { get; set; }
         #endregion

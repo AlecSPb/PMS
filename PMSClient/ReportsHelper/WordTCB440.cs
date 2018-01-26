@@ -24,16 +24,13 @@ namespace PMSClient.ReportsHelper
         }
 
 
-        public void SetTargetFolder(string targetFolder)
-        {
-            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
-        }
         public void SetModel(DcRecordTest test)
         {
             if (test != null)
             {
                 model = test;
+                var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
+                targetFile = Path.Combine(targetDir, targetName);
             }
         }
         private DcRecordTest model;
@@ -58,10 +55,8 @@ namespace PMSClient.ReportsHelper
                 document.Save();
             }
             //复制到临时文件
-            var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
-            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
             ReportHelper.FileCopy(tempFile, targetFile);
-            PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
+            //PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
         }
 
 

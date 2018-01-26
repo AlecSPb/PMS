@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSClient.MainService;
 using PMSCommon;
+using PMSClient.ViewModel.Model;
 
 namespace PMSClient.View
 {
@@ -31,7 +32,7 @@ namespace PMSClient.View
         {
             try
             {
-                var order = (DcRecordTest)e.Row.DataContext;
+                var order = ((RecordTestExtra)e.Row.DataContext).RecordTest;
                 if (order != null)
                 {
                     switch (order.State)

@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
                 }
 
 
-
+                PMSDialogService.ShowYes("报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {
@@ -89,7 +89,6 @@ namespace PMSClient.ViewModel
             {
                 WordRecordTest report = new WordRecordTest();
                 report.SetModel(CurrentRecordTest);
-                report.SetTargetFolder(CurrentFolder);
                 report.Output();
 
                 ShowMessageAfterCreateDoc("测试记录报告");
@@ -107,7 +106,6 @@ namespace PMSClient.ViewModel
             {
                 WordCOA report = new WordCOA();
                 report.SetModel(CurrentRecordTest);
-                report.SetTargetFolder(CurrentFolder);
                 report.Output();
 
                 ShowMessageAfterCreateDoc("COA报告");
@@ -125,7 +123,6 @@ namespace PMSClient.ViewModel
             {
                 WordCOABridgeLine report = new WordCOABridgeLine();
                 report.SetModel(CurrentRecordTest);
-                report.SetTargetFolder(CurrentFolder);
                 report.Output();
                 ShowMessageAfterCreateDoc("COABridgeLine报告");
             }
@@ -142,7 +139,6 @@ namespace PMSClient.ViewModel
             {
                 WordTCB440 report = new WordTCB440();
                 report.SetModel(CurrentRecordTest);
-                report.SetTargetFolder(CurrentFolder);
                 report.Output();
                 ShowMessageAfterCreateDoc("TCB440绑定报告");
             }
@@ -159,7 +155,6 @@ namespace PMSClient.ViewModel
             {
                 WordOpticraft440 report = new WordOpticraft440();
                 report.SetModel(CurrentRecordTest);
-                report.SetTargetFolder(CurrentFolder);
                 report.Output();
                 ShowMessageAfterCreateDoc("Opticraft440绑定报告");
             }

@@ -23,17 +23,16 @@ namespace PMSClient.ReportsHelper
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COA_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
-        public void SetTargetFolder(string targetFolder)
-        {
-            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            targetFile = Path.Combine(targetFolder, targetName);
-        }
         public void SetModel(DcRecordTest test)
         {
             if (test != null)
             {
                 model = test;
+                CreateFolderOnDesktop();
+                var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
+                targetFile = Path.Combine(targetDir, targetName);
             }
+
         }
         private DcRecordTest model;
         public override void Output()
@@ -52,7 +51,7 @@ namespace PMSClient.ReportsHelper
                     #region 基本字段
                     document.ReplaceText("[Customer]", model.Customer ?? "");
                     string productid = (model.CompositionAbbr ?? "") + "-" + (model.ProductID ?? "");
-                    document.ReplaceText("[ProductID]", productid??"");
+                    document.ReplaceText("[ProductID]", productid ?? "");
                     document.ReplaceText("[PO]", model.PO ?? "");
                     document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
                     document.ReplaceText("[Composition]", model.Composition ?? "");
@@ -99,10 +98,8 @@ namespace PMSClient.ReportsHelper
                 }
                 #endregion
                 //复制到临时文件
-                var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
-                targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
+                //PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {
