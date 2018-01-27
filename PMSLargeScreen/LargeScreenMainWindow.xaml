@@ -25,11 +25,12 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}" Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
+                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}"
+                           Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
                 <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=自2011年到现在，已进行热压计划{0}次}" Style="{StaticResource StyleTextBlockLightBig}"/>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
-                    <TextBlock Text="{Binding IntervalRefreshDistribute,StringFormat=显示轮换间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                    <TextBlock Text="{Binding IntervalRefreshDistribute,StringFormat=轮换显示间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
                     <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
                 </StackPanel>
             </Grid>
@@ -51,9 +52,13 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="消息" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue"/>
             <TextBlock Grid.Column="1" Text="温度湿度" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="2" Text="{Binding CurrentDate,StringFormat={}{0:HH:mm}}" Background="Black"
+                       Style="{StaticResource StyleTextBlockBig3}"  Foreground="Yellow" HorizontalAlignment="Right"/>
+
         </Grid>
         <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>

@@ -81,6 +81,7 @@
     <Content Include="LargeScreenService.svc" />
     <Content Include="ExtraService.svc" />
     <Content Include="PMSIndexService.svc" />
+    <Content Include="ComplexQueryService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
@@ -147,12 +148,14 @@
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
+    <Compile Include="ServiceContracts\IComplexQuery.cs" />
     <Compile Include="ServiceContracts\IEnvironmentInfoService.cs" />
     <Compile Include="ServiceContracts\INoticeService.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
+    <Compile Include="ServiceImplements\ComplexQueryService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
     <Compile Include="ServiceContracts\IItemDebitService.cs" />
