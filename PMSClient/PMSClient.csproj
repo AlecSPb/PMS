@@ -1115,6 +1115,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="Documents\维护.txt" />
+    <Resource Include="CsvOutputHelper\目录介绍.txt" />
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

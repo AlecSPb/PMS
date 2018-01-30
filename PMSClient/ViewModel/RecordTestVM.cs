@@ -63,6 +63,8 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionBatchDoc()
         {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要为选择的项目生成COA报告吗"))
+                return;
 
             try
             {
@@ -82,7 +84,7 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
                 NavigationService.Status(ex.Message);
             }
-            PMSDialogService.ShowYes("提示", "创建完毕，请打开报告仔细检查内容是否正确");
+            PMSDialogService.ShowYes("提示", "创建完毕，请打开桌面的文件夹，仔细检查内容是否正确");
             NavigationService.Status("创建完毕！");
         }
 
