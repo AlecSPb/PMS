@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.BasicService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,23 @@ namespace PMSClient.View
         public CompoundEditView()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string composition = txtCompoundName.Text.Trim();
+            using (var service = new CompoundServiceClient())
+            {
+                if (service.GetCompoundCount(composition) > 0)
+                {
+                    PMSDialogService.ShowYes($"已经存在[{composition}]，无需继续添加");
+                }
+                else
+                {
+                    PMSDialogService.ShowYes($"可以添加[{composition}]");
+
+                }
+            }
         }
     }
 }

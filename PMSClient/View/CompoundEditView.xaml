@@ -58,12 +58,16 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource  BDCMaterialName}"
+                <TextBlock  Grid.Row="0" Grid.Column="0" Text="{StaticResource  BDCMaterialName}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MaterialName}" Style="{StaticResource StyleTextBoxCommon}"
-                            />
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Name="txtCompoundName"  Grid.Row="0" Grid.Column="1" Text="{Binding MaterialName}" Style="{StaticResource StyleTextBoxCommon}" />
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="检查是否存在" Style="{StaticResource StyleButtonCommon}"
+                            Click="Button_Click"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="材料名称"/>
+                </StackPanel>
+
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource BDCDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
