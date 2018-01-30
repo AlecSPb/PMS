@@ -54,8 +54,8 @@
                 <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="消息" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue"/>
-            <TextBlock Grid.Column="1" Text="温度湿度" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="0" Text="" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue"/>
+            <TextBlock Grid.Column="1" Text="" Style="{StaticResource StyleTextBlockBig3}"  Foreground="Blue" HorizontalAlignment="Right"/>
             <TextBlock Grid.Column="2" Text="{Binding CurrentDate,StringFormat={}{0:HH:mm}}" Background="Black"
                        Style="{StaticResource StyleTextBlockBig3}"  Foreground="Yellow" HorizontalAlignment="Right"/>
 
