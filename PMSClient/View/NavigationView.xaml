@@ -48,7 +48,7 @@
         <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -81,7 +81,9 @@
                         Command="{Binding GoToOutSource}"/>
                 <Button Content="{StaticResource PageFeedBack}" Grid.Row="0" Grid.Column="4" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToFeedBack }"/>
-
+                <Button Content="{StaticResource PageIntegratedSearch}" Grid.Row="0" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToFeedBack }"/>
+                
                 <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"
                         Style="{DynamicResource StyleButtonNavigationTitle}"/>
                 <Button Content="{StaticResource PageMaterialNeed}" Grid.Row="1" Grid.Column="1"
