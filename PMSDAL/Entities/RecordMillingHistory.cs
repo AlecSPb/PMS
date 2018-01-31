@@ -22,6 +22,7 @@ namespace PMSDAL
 
         public string Composition { get; set; }
         public string VHPPlanLot { get; set; }
+        public string MaterialType { get; set; }
         public string MaterialSource { get; set; }//MaterialSource
         public string Remark { get; set; }
         public string MillingTool { get; set; }

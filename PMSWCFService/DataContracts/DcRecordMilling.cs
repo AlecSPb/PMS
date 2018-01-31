@@ -33,6 +33,8 @@ namespace PMSWCFService.DataContracts
         //需要记录的信息
         public string Composition { get; set; }
         [DataMember]
+        public string MaterialType { get; set; }
+        [DataMember]
         public string MaterialSource { get; set; }//MaterialSource
         [DataMember]
         public string Remark { get; set; }

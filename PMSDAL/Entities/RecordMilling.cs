@@ -22,6 +22,7 @@ namespace PMSDAL
 
         public string Composition { get; set; }
         public string VHPPlanLot { get; set; }
+        public string MaterialType { get; set; }
         public string MaterialSource { get; set; }//MaterialSource
         public string Remark { get; set; }
 
@@ -34,7 +35,7 @@ namespace PMSDAL
         public double Ratio { get; set; }
         public string MillingTime { get; set; }
         //2017-10-25
-        public  string Oxygen { get; set; }
+        public string Oxygen { get; set; }
         public string Water { get; set; }
         //2017-12-15
         public string MeltingPoint { get; set; }
