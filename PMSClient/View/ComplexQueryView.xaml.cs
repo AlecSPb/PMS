@@ -18,9 +18,9 @@ namespace PMSClient.View
     /// <summary>
     /// FeedBackEditView.xaml 的交互逻辑
     /// </summary>
-    public partial class IntegretedSearchView : UserControl
+    public partial class ComplexQueryView : UserControl
     {
-        public IntegretedSearchView()
+        public ComplexQueryView()
         {
             InitializeComponent();
         }

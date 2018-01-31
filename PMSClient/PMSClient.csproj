@@ -333,8 +333,8 @@
     <Compile Include="View\CompoundWindow.xaml.cs">
       <DependentUpon>CompoundWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\IntegretedSearchView.xaml.cs">
-      <DependentUpon>IntegretedSearchView.xaml</DependentUpon>
+    <Compile Include="View\ComplexQueryView.xaml.cs">
+      <DependentUpon>ComplexQueryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CheckListReadView.xaml.cs">
       <DependentUpon>CheckListReadView.xaml</DependentUpon>
@@ -750,7 +750,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\IntegretedSearchView.xaml">
+    <Page Include="View\ComplexQueryView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
