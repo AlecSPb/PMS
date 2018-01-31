@@ -99,6 +99,7 @@
     <Compile Include="DataContracts\DcBDCustomer.cs" />
     <Compile Include="DataContracts\DcBDCompound.cs" />
     <Compile Include="DataContracts\DcBDSupplier.cs" />
+    <Compile Include="DataContracts\DcComplexQueryResult.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcNotice.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />

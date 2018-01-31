@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSWCFService.DataContracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -19,6 +20,15 @@ namespace PMSWCFService.ServiceContracts
         /// <param name="pmiNumber"></param>
         /// <returns></returns>
         [OperationContract]
-        Dictionary<string, bool> GetCurrentOrderStatus(string pmiNumber);
+        List<DcComplexQueryResult> GetAllStatusByPMINumber(string pmiNumber);
+        
+        /// <summary>
+        ///通过计划编号来查询进度 
+        /// </summary>
+        /// <param name="planNumber"></param>
+        /// <returns></returns>
+        [OperationContract]
+        List<DcComplexQueryResult> GetAllStatusByPlanNumber(string planNumber);
+
     }
 }

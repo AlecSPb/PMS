@@ -7,7 +7,7 @@ using PMSDAL;
 
 namespace PMSWCFService
 {
-    public class ComplexQueryService : IComplexQuery
+    public class ComplexQueryService 
     {
         public Dictionary<string, bool> GetCurrentOrderStatus(string pmiNumber)
         {
