@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
 namespace PMSDAL
 {
     /// <summary>
@@ -22,6 +24,7 @@ namespace PMSDAL
 
         public string Composition { get; set; }
         public string VHPPlanLot { get; set; }
+        [DefaultValue("未知")]
         public string MaterialType { get; set; }
         public string MaterialSource { get; set; }//MaterialSource
         public string Remark { get; set; }

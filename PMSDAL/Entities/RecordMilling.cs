@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace PMSDAL
 
         public string Composition { get; set; }
         public string VHPPlanLot { get; set; }
+        [DefaultValue("未知")]
         public string MaterialType { get; set; }
         public string MaterialSource { get; set; }//MaterialSource
         public string Remark { get; set; }
