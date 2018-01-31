@@ -8,6 +8,22 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        public static List<String> MaterialTypes
+        {
+            get
+            {
+                var data = new List<string>
+                {
+                    "新料",
+                    "回收料",
+                    "旧料",
+                    "外来料",
+                    "其他"
+                };
+                return data;
+            }
+        }
+
         public static List<String> InformationSources
         {
             get

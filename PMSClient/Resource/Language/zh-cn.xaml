@@ -461,6 +461,7 @@
     <sys:String x:Key="RMRoomTemperatureHumidity">温度湿度</sys:String>
     <sys:String x:Key="RMRoomTemperature">温度</sys:String>
     <sys:String x:Key="RMRoomHumidity">湿度</sys:String>
+    <sys:String x:Key="RMMaterialType">原料类型</sys:String>
     <sys:String x:Key="RMMaterialSource">原料来源</sys:String>
     <sys:String x:Key="RMRemark">备注</sys:String>
     <sys:String x:Key="RMMillingTool">制粉方式</sys:String>

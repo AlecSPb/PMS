@@ -456,6 +456,7 @@
     <sys:String x:Key="RMRoomTemperatureHumidity">Humidity Temp</sys:String>
     <sys:String x:Key="RMRoomTemperature">Temp</sys:String>
     <sys:String x:Key="RMRoomHumidity">Humidy</sys:String>
+    <sys:String x:Key="RMMaterialType">Material Type</sys:String>
     <sys:String x:Key="RMMaterialSource">Source</sys:String>
     <sys:String x:Key="RMRemark">Remark</sys:String>
     <sys:String x:Key="RMMillingTool">Milling Tool</sys:String>

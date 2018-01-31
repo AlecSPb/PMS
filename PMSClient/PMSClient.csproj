@@ -375,6 +375,9 @@
     <Compile Include="View\MissonUnCompletedView.xaml.cs">
       <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\NewMaterialUsed.xaml.cs">
+      <DependentUpon>NewMaterialUsed.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrderUnCompletedView.xaml.cs">
       <DependentUpon>OrderUnCompletedView.xaml</DependentUpon>
     </Compile>
@@ -803,6 +806,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\NewMaterialUsed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OrderUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1116,6 +1123,8 @@
     </Compile>
     <Resource Include="Documents\维护.txt" />
     <Resource Include="CsvOutputHelper\目录介绍.txt" />
+    <Resource Include="Note\综合查询思路.txt" />
+    <Resource Include="Note\新料查询.txt" />
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
