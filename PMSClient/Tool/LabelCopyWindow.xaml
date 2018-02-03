@@ -11,10 +11,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <Button Style="{StaticResource StyleButtonCommon}" Content="打开标签模版" Name="btnOpenBarTender" Click="btnOpenBarTender_Click"/>
-            <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="请复制需要的信息到标签打印机软件中"/>
-        </StackPanel>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource StyleButtonCommon}" Content="打开标签模版" Name="btnOpenBarTender" Click="btnOpenBarTender_Click"/>
+                <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="请复制需要的信息到标签打印机软件中"/>
+            </StackPanel>
+            <Button Name="btnCloseIt" Click="btnCloseIt_Click" Content="关闭"  Style="{StaticResource StyleButtonCommon}" Grid.Column="1"/>
+        </Grid>
+
         <TextBox Grid.Row="1"  TextWrapping="WrapWithOverflow" VerticalScrollBarVisibility="Visible" 
                  Text="{Binding LabelInformation }" FontSize="18"/>
     </Grid>

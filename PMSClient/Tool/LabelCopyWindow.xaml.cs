@@ -50,5 +50,10 @@ namespace PMSClient.Tool
                 NavigationService.Status(ex.Message);
             }
         }
+
+        private void btnCloseIt_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
