@@ -80,6 +80,10 @@
                                     Binding="{Binding PMINumber}"/>
                     <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MeltingPoint}"/>
+                    <DataGridTextColumn Header="{StaticResource RMMaterialType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialType}"/>
+                    <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialSource}"/>
                     <DataGridTextColumn Header="{StaticResource RMRoomTemperature}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding RoomTemperature}"/>
                     <DataGridTextColumn Header="{StaticResource RMRoomHumidity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -109,10 +113,6 @@
                                     Binding="{Binding Remark}"/>
                     <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
-                    <DataGridTextColumn Header="{StaticResource RMMaterialType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialType}"/>
-                    <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialSource}"/>
                     <DataGridTextColumn Header="{StaticResource RMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 </DataGrid.Columns>

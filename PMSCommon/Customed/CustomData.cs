@@ -8,6 +8,9 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public static List<String> MaterialTypes
         {
             get
@@ -16,7 +19,7 @@ namespace PMSCommon
                 {
                     "新料",
                     "回收料",
-                    "旧料",
+                    "陈旧料",
                     "外来料",
                     "其他"
                 };

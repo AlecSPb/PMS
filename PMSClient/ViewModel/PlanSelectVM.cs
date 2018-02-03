@@ -103,7 +103,7 @@ namespace PMSClient.ViewModel
                         temp.PMINumber = item.PlanMisson.Misson.PMINumber;
                         temp.RoomTemperature = item.PlanMisson.Plan.RoomTemperature;
                         temp.RoomHumidity = item.PlanMisson.Plan.RoomHumidity;
-                        //TODO:添加新字段MaterialType
+                        temp.MaterialType = PMSCommon.CustomData.MaterialTypes[3];//默认其他
                         service.AddRecordMillingByUID(temp, PMSHelper.CurrentSession.CurrentUser.UserName);
                     }
                 }

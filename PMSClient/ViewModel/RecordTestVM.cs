@@ -11,6 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using System.IO;
 using PMSClient.ViewModel.Model;
 using PMSClient.ReportsHelper;
+using PMSClient.Tool;
 
 namespace PMSClient.ViewModel
 {
@@ -63,18 +64,49 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionBatchDoc()
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定要为选择的项目生成COA报告吗"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定要为选择的项目生成报告吗"))
                 return;
+
+            var dtWindow = new DocumentTypeSelect();
+            dtWindow.ShowDialog();
+            string documentType = dtWindow.DocumentType;
 
             try
             {
-                WordCOA report = new WordCOA();
-                foreach (var item in RecordTestExtras)
+                if (documentType=="COA")
                 {
-                    if (item.IsSelected)
+                    WordCOA report = new WordCOA();
+                    foreach (var item in RecordTestExtras)
                     {
-                        report.SetModel(item.RecordTest);
-                        report.Output();
+                        if (item.IsSelected)
+                        {
+                            report.SetModel(item.RecordTest);
+                            report.Output();
+                        }
+                    }
+                }
+                else if(documentType=="COABL")
+                {
+                    WordCOABridgeLine report = new WordCOABridgeLine();
+                    foreach (var item in RecordTestExtras)
+                    {
+                        if (item.IsSelected)
+                        {
+                            report.SetModel(item.RecordTest);
+                            report.Output();
+                        }
+                    }
+                }
+                else if (documentType == "TEST")
+                {
+                    WordRecordTest report = new WordRecordTest();
+                    foreach (var item in RecordTestExtras)
+                    {
+                        if (item.IsSelected)
+                        {
+                            report.SetModel(item.RecordTest);
+                            report.Output();
+                        }
                     }
                 }
 

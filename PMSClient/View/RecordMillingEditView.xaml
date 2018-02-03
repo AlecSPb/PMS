@@ -36,6 +36,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
@@ -79,127 +80,136 @@
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#确保唯一"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RMMaterialType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="3" Grid.Column="1"
+                          ItemsSource="{Binding DataContext.MillingMaterialTypes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding MaterialType}"
+                          Style="{StaticResource StyleComboBoxCommon}" FontSize="{StaticResource TabletFontLG}"/>
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="原料类型"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMMaterialSource}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="4" Grid.Column="1"
                           ItemsSource="{Binding DataContext.MillingMaterialSources,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding MaterialSource}"
                           Style="{StaticResource StyleComboBoxEditable}" FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="原料来源"/>
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="原料备注"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RMRoomTemperatureHumidity}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMRoomTemperatureHumidity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
                     <TextBox  Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxBig}"/>
                     <TextBox Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBoxBig}"/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="温度单位℃，湿度单位%"/>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RMMillingTool}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMMillingTool}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="5" Grid.Column="1"
+                <ComboBox Grid.Row="6" Grid.Column="1"
                           ItemsSource="{Binding DataContext.MillingTools,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding MillingTool}" 
                           Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="制粉方式"/>
 
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RMGasProtection}"
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMGasProtection}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="6" Grid.Column="1" 
+                <ComboBox Grid.Row="7" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.GasProtections,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding GasProtection}"
                           Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="气体保护"/>
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RMGrainSize}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMGrainSize}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" 
+                <ComboBox Grid.Row="8" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.GrainSizes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding GrainSize}"
                           Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="粉末粒径"/>
 
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RMMillingTime}"
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMMillingTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="8" Grid.Column="1" 
+                <ComboBox Grid.Row="9" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.MillingTimes,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding MillingTime}"
                           Style="{StaticResource StyleComboBoxEditable}"  FontSize="{StaticResource TabletFontLG}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="填写制粉时间次数信息"/>
 
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RMWeightIn}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMWeightIn}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightIn" Grid.Row="9" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxBig}" />
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Name="txtWeightIn" Grid.Row="10" Grid.Column="1" Text="{Binding WeightIn}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="来料重量(g)"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RMWeightOut}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMWeightOut}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightOut" Grid.Row="10" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxBig}" />
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Name="txtWeightOut" Grid.Row="11" Grid.Column="1" Text="{Binding WeightOut}" Style="{StaticResource StyleTextBoxBig}" />
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="出料重量(g)"/>
 
-                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMWeightRemain}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="txtWeightRemain" Grid.Row="11" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Name="txtWeightRemain" Grid.Row="12" Grid.Column="1" Text="{Binding WeightRemain}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="余料重量(g)"/>
 
-                <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RMRatio}"
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMRatio}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
+                <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxBig}"  Width="80"/>
                     <Button Name="btnCalculation" Content="{StaticResource ButtonCalculate}" Style="{StaticResource StyleButtonCommon}"
                             Click="btnCalculation_Click"/>
                 </StackPanel>
-                <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="损失率计算,确保进料，出料，预料填写正常才能计算，否则填1，即100%"/>
 
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RMOxygen}"
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMOxygen}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RMWater}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="14" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Oxygen}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMMeltingPoint}"
+
+                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RMWater}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="15" Grid.Column="1" Text="{Binding MeltingPoint}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox  Grid.Row="15" Grid.Column="1" Text="{Binding Water}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="供应商提供的材料熔点信息，单位℃"/>
-                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMRemark}"
+                           Text=""/>
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RMMeltingPoint}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBox  Grid.Row="16" Grid.Column="1" Text="{Binding MeltingPoint}" Style="{StaticResource StyleTextBoxBig}"/>
                 <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="供应商提供的材料熔点信息，单位℃"/>
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息"/>
 
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMState}"
+                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RMState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="17" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
+                <ComboBox Grid.Row="18" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"
                           ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding State}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="18" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 
-                <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RMCreator}"
+                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="18" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
+                <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}" />
 
-                <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RMCreateTime}"
+                <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="19" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                <TextBlock Grid.Row="20" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -45,6 +45,9 @@ namespace PMSClient.ViewModel
             MillingMaterialSources = new List<string>();
             PMSBasicDataService.SetListDS<MillingMaterialSource>(MillingMaterialSources);
 
+            MillingMaterialTypes = new List<string>();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.MaterialTypes, MillingMaterialTypes);
+
             GrainSizes = new List<string>();
             PMSBasicDataService.SetListDS(PMSCommon.CustomData.GrainSize, GrainSizes);
         }
@@ -69,7 +72,7 @@ namespace PMSClient.ViewModel
             model.Composition = "填入成分";
             model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
             model.GrainSize = "未知";
-            //TODO:添加新字段MaterialType
+            model.MaterialType = PMSCommon.CustomData.MaterialTypes[3];//默认其他
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
             model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
@@ -141,11 +144,11 @@ namespace PMSClient.ViewModel
                     {
                         if (IsNew)
                         {
-                            service.AddRecordMillingByUID(CurrentRecordMilling,uid);
+                            service.AddRecordMillingByUID(CurrentRecordMilling, uid);
                         }
                         else
                         {
-                            service.UpdateRecordMillingByUID(CurrentRecordMilling,uid);
+                            service.UpdateRecordMillingByUID(CurrentRecordMilling, uid);
                         }
                         PMSHelper.ViewModels.RecordMilling.RefreshData();
                         GoBack();
@@ -176,6 +179,7 @@ namespace PMSClient.ViewModel
         }
         public List<string> States { get; set; }
         public List<string> MillingMaterialSources { get; set; }
+        public List<string> MillingMaterialTypes { get; set; }
         public List<string> MillingTimes { get; set; }
         public List<string> MillingTools { get; set; }
         public List<string> GasProtections { get; set; }
