@@ -147,6 +147,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CsvOutputHelper\CsvOutputBase.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputFeedback.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputOutSource.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputDeliveryItem.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputMaterialOut.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputMaterialIn.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputMaterialOrderItem.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputOrder.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputRecordBonding.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputRecordTest.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputRecordMachine.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputRecordDeMold.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputRecordVHP.cs" />
+    <Compile Include="CsvOutputHelper\ICsvOutput.cs" />
+    <Compile Include="CsvOutputHelper\CsvOutputRecordMilling.cs" />
     <Compile Include="CustomControls\BatchDuplicateDialog.xaml.cs">
       <DependentUpon>BatchDuplicateDialog.xaml</DependentUpon>
     </Compile>
