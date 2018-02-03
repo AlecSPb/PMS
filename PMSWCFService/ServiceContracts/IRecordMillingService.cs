@@ -21,6 +21,9 @@ namespace PMSWCFService.ServiceContracts
         int GetRecordMillingCountByVHPPlanLot(string vhpplanlot, string composition);
 
         [OperationContract]
+        List<DcRecordMilling> GetRecordMillingByMaterialType(string materialType, int topCount);
+
+        [OperationContract]
         int AddRecordMilling(DcRecordMilling model);
         [OperationContract]
         int UpdateRecordMilling(DcRecordMilling model);

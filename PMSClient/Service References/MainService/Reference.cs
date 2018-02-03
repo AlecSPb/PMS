@@ -5494,6 +5494,9 @@ namespace PMSClient.MainService {
         private string MaterialSourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MeltingPointField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -5635,6 +5638,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
                     this.MaterialSourceField = value;
                     this.RaisePropertyChanged("MaterialSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialType {
+            get {
+                return this.MaterialTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialTypeField, value) != true)) {
+                    this.MaterialTypeField = value;
+                    this.RaisePropertyChanged("MaterialType");
                 }
             }
         }
@@ -10629,6 +10645,12 @@ namespace PMSClient.MainService {
             "e")]
         System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot, string composition);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialType", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialTypeResponse")]
+        PMSClient.MainService.DcRecordMilling[] GetRecordMillingByMaterialType(string materialType, int topCount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialType", ReplyAction="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialTypeResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingByMaterialTypeAsync(string materialType, int topCount);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordMillingService/AddRecordMilling", ReplyAction="http://tempuri.org/IRecordMillingService/AddRecordMillingResponse")]
         int AddRecordMilling(PMSClient.MainService.DcRecordMilling model);
         
@@ -10717,6 +10739,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetRecordMillingCountByVHPPlanLotAsync(string vhpplanlot, string composition) {
             return base.Channel.GetRecordMillingCountByVHPPlanLotAsync(vhpplanlot, composition);
+        }
+        
+        public PMSClient.MainService.DcRecordMilling[] GetRecordMillingByMaterialType(string materialType, int topCount) {
+            return base.Channel.GetRecordMillingByMaterialType(materialType, topCount);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordMilling[]> GetRecordMillingByMaterialTypeAsync(string materialType, int topCount) {
+            return base.Channel.GetRecordMillingByMaterialTypeAsync(materialType, topCount);
         }
         
         public int AddRecordMilling(PMSClient.MainService.DcRecordMilling model) {

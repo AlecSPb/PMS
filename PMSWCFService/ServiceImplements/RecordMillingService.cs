@@ -207,5 +207,27 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
             }
         }
+
+        public List<DcRecordMilling> GetRecordMillingByMaterialType(string materialType, int topCount)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
+                    var query = from r in dc.RecordMillings
+                                where r.State != PMSCommon.SimpleState.作废.ToString()
+                                && r.MaterialType==materialType
+                                orderby r.CreateTime descending
+                                select r;
+                    return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.Take(topCount).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

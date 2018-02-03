@@ -979,6 +979,12 @@
   <wsdl:message name="IRecordMillingService_GetRecordMillingCountByVHPPlanLot_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordMillingCountByVHPPlanLotResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingByMaterialType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingByMaterialType" />
+  </wsdl:message>
+  <wsdl:message name="IRecordMillingService_GetRecordMillingByMaterialType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingByMaterialTypeResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordMillingService_AddRecordMilling_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecordMilling" />
   </wsdl:message>
@@ -1859,6 +1865,10 @@
     <wsdl:operation name="GetRecordMillingCountByVHPPlanLot">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot" message="tns:IRecordMillingService_GetRecordMillingCountByVHPPlanLot_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLotResponse" message="tns:IRecordMillingService_GetRecordMillingCountByVHPPlanLot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingByMaterialType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialType" message="tns:IRecordMillingService_GetRecordMillingByMaterialType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialTypeResponse" message="tns:IRecordMillingService_GetRecordMillingByMaterialType_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecordMilling">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordMillingService/AddRecordMilling" message="tns:IRecordMillingService_AddRecordMilling_InputMessage" />
@@ -3495,6 +3505,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetRecordMillingCountByVHPPlanLot">
       <soap:operation soapAction="http://tempuri.org/IRecordMillingService/GetRecordMillingCountByVHPPlanLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMillingByMaterialType">
+      <soap:operation soapAction="http://tempuri.org/IRecordMillingService/GetRecordMillingByMaterialType" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
