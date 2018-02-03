@@ -25,7 +25,7 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-        private void btnCalculation_Click(object sender, RoutedEventArgs e)
+        private void BtnCalculation_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace PMSClient.View
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

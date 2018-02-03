@@ -86,7 +86,7 @@ namespace PMSClient.Helper
                     sw.Close();
                 }
             }
-            catch (Exception exx)
+            catch (Exception)
             {
 
             }

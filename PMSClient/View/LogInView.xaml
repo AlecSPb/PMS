@@ -33,8 +33,8 @@
 
 
                 <CheckBox Name="chkRemember" Grid.Row="2" Content="{StaticResource TxtRemindUIDPWD}" Style="{StaticResource StyleLogInCheckBox}"
-                      Click="chkRemember_Click"/>
-                <Button Grid.Row="3" Content="{StaticResource ButtonLogin}" Click="btnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
+                      Click="ChkRemember_Click"/>
+                <Button Grid.Row="3" Content="{StaticResource ButtonLogin}" Click="BtnLogIn_Click" Style="{StaticResource StyleLogInButton}" IsDefault="True"/>
                 <TextBlock Name="txtLogInStatus" Grid.Row="4" Text="" Style="{StaticResource StyleLogInInformation}"/>
             </Grid>
         </Border>

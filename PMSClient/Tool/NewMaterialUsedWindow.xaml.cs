@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSClient.View
+namespace PMSClient.Tool
 {
     /// <summary>
     /// NewMaterialUsed.xaml 的交互逻辑
     /// </summary>
-    public partial class NewMaterialUsed : UserControl
+    public partial class NewMaterialUsedWindow : Window
     {
-        public NewMaterialUsed()
+        public NewMaterialUsedWindow()
         {
             InitializeComponent();
         }

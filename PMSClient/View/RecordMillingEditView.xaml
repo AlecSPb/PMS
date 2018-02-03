@@ -168,7 +168,7 @@
                 <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtRatio"  Text="{Binding Ratio,StringFormat={}{0:P}}" Style="{StaticResource StyleTextBoxBig}"  Width="80"/>
                     <Button Name="btnCalculation" Content="{StaticResource ButtonCalculate}" Style="{StaticResource StyleButtonCommon}"
-                            Click="btnCalculation_Click"/>
+                            Click="BtnCalculation_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="损失率计算,确保进料，出料，预料填写正常才能计算，否则填1，即100%"/>

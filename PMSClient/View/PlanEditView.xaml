@@ -116,7 +116,7 @@
                          Style="{StaticResource StyleTextBoxCommon}" />
                     <ComboBox x:Name="cboCompounds"  
                         ItemsSource="{Binding DataContext.Compounds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                        SelectionChanged="cboCompounds_SelectionChanged"
+                        SelectionChanged="CboCompounds_SelectionChanged"
                         Style="{StaticResource StyleComboBoxCommon}">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
@@ -131,7 +131,7 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <Button Name="txtCompound" Click="txtCompound_Click" Content="{StaticResource ButtonCompoundLib}" Style="{StaticResource StyleButtonSpecial}"/>
+                    <Button Name="txtCompound" Click="TxtCompound_Click" Content="{StaticResource ButtonCompoundLib}" Style="{StaticResource StyleButtonSpecial}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="6" Grid.Column="2" Text="#单位：g/cm3可以选择材料密度，或者直接输入均可，必须是数字" Style="{StaticResource StyleTextBlockTip}"/>
 
@@ -151,7 +151,7 @@
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtSingleWeight"  Text="{Binding SingleWeight}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    <Button Name="btnCalculate" Content="{StaticResource ButtonCalculate}"  Click="btnCalculate_Click"
+                    <Button Name="btnCalculate" Content="{StaticResource ButtonCalculate}"  Click="BtnCalculate_Click"
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="9" Grid.Column="2" Text="单位：g，点击计算按钮计算用料" Style="{StaticResource StyleTextBlockTip}"/>
@@ -210,7 +210,7 @@
                 <StackPanel Grid.Row="18" Grid.Column="1" Orientation="Horizontal">
                     <TextBox  Text="{Binding Pressure}" Style="{StaticResource StyleTextBoxLeft}"  Background="Yellow"/>
                     <Button x:Name="btnPressureTool" Content="{StaticResource PressureChangeTool}" Style="{StaticResource StyleButtonSpecial}"
-                            Click="btnPressureTool_Click"/>
+                            Click="BtnPressureTool_Click"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="18" Grid.Column="2" Text="！！！非常重要，请反复核对。单位：ton" Style="{StaticResource StyleTextBlockTip}"/>

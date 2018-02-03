@@ -27,17 +27,16 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-        private void cboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CboCompounds_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedCompound = cboCompounds.SelectedItem as DcBDCompound;
-            if (selectedCompound!=null)
+            if (cboCompounds.SelectedItem is DcBDCompound selectedCompound)
             {
                 PMSMethods.SetTextBox(txtCalculationDensity, selectedCompound.Density.ToString());
             }
         }
 
 
-        private void btnCalculate_Click(object sender, RoutedEventArgs e)
+        private void BtnCalculate_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -51,18 +50,18 @@ namespace PMSClient.View
                 PMSMethods.SetTextBox(txtSingleWeight, singleWeight.ToString("F3"));
                 PMSMethods.SetTextBox(txtAllWeight, (singleWeight * quantity).ToString("F3"));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
 
-        private void btnPressureTool_Click(object sender, RoutedEventArgs e)
+        private void BtnPressureTool_Click(object sender, RoutedEventArgs e)
         {
             PMSClient.Tool.PressureChangeTool tool = new Tool.PressureChangeTool();
             tool.ShowDialog();
         }
 
-        private void txtCompound_Click(object sender, RoutedEventArgs e)
+        private void TxtCompound_Click(object sender, RoutedEventArgs e)
         {
             CompoundWindow win = new View.CompoundWindow();
             win.ShowDialog();

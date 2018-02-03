@@ -33,7 +33,7 @@ namespace PMSClient.View
             //forget uid and pwd
             SaveUIDandPWD("", "", false);
         }
-        private void btnLogIn_Click(object sender, RoutedEventArgs e)
+        private void BtnLogIn_Click(object sender, RoutedEventArgs e)
         {
             //记住密码功能
             if (chkRemember.IsChecked == true)
@@ -109,7 +109,7 @@ namespace PMSClient.View
                     txtNotice.Text = System.IO.File.ReadAllText(noticeFile);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }
@@ -124,7 +124,7 @@ namespace PMSClient.View
             }
         }
 
-        private void chkRemember_Click(object sender, RoutedEventArgs e)
+        private void ChkRemember_Click(object sender, RoutedEventArgs e)
         {
             if (chkRemember.IsChecked == false)
             {
