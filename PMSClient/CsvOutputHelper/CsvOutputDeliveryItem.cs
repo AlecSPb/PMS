@@ -7,7 +7,7 @@ using PMSClient.MainService;
 
 namespace PMSClient.CsvOutputHelper
 {
-    class CsvOutputMaterialIn:CsvOutputBase
+    class CsvOutputDeliveryItem:CsvOutputBase
     {
         public override void Output()
         {

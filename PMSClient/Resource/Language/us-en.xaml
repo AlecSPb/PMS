@@ -280,6 +280,9 @@
     <sys:String x:Key="ButtonPlanHistory">Plan History</sys:String>
 
     <sys:String x:Key="ButtonCompoundLib">CompoundLib</sys:String>
+
+    <sys:String x:Key="ButtonComplexQueryForOrder">Search Integrated Info For This Order</sys:String>
+    <sys:String x:Key="ButtonComplexQueryForPlan">Search Integrated Info For This Plan</sys:String>
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
     <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>
