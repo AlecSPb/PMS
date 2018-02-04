@@ -32,6 +32,11 @@ namespace PMSClient.ToolWindow
             //TODO:设置好权限
         }
 
+        private void BtnNavigation_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoTo(PMSViews.Navigation);
+        }
+
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
             string pminumber = TxtPMINumber.Text.Trim();

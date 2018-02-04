@@ -8,10 +8,12 @@
         Title="综合查询工具(Search Tool)" Height="600" Width="300">
     <StackPanel Background="{StaticResource BGBrushWindow}">
         <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最上" IsChecked="True"/>
-        <TextBlock Text="PMI Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBlock Text="*以下查询编号输入部分即可" Style="{StaticResource StyleDGTextBlockSpecial}"/>
+        <TextBlock Text="[内部编号]PMI Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="TxtPMINumber" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        <TextBlock Text="VHP Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBlock Text="[热压编号]VHP Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="TxtVHPNumber" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        <Button Name="BtnNavigation" Click="BtnNavigation_Click" Content="{StaticResource PageNaivgation}" Style="{StaticResource StyleButtonStrench}"/>
         <Button Name="BtnOrder" Click="BtnOrder_Click" Content="{StaticResource PageOrder}" Style="{StaticResource StyleButtonStrench}"/>
         <Button Name="BtnMaterialOrderItem" Click="BtnMaterialOrderItem_Click"
                 Content="{StaticResource PageMaterialOrderItemList}" Style="{StaticResource StyleButtonStrench}"/>
