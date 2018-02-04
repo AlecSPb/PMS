@@ -173,7 +173,7 @@ namespace PMSClient.ViewModel
                 
                 //2017-12-18
                 //更改为显示在新的独立窗口中，取代以前的页面
-                PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow();
+                PMSClient.ToolWindow.LabelCopyWindow lcw = new ToolWindow.LabelCopyWindow();
                 lcw.LabelInformation = mainContent;
                 lcw.Show();
 

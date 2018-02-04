@@ -271,7 +271,7 @@
     <Compile Include="ToolWindow\ComplexQueryTool.xaml.cs">
       <DependentUpon>ComplexQueryTool.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tool\CompositionToOne.xaml.cs">
+    <Compile Include="ToolWindow\CompositionToOne.xaml.cs">
       <DependentUpon>CompositionToOne.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\DensityEstamatorView.xaml.cs">
@@ -279,7 +279,7 @@
     </Compile>
     <Compile Include="Tool\DensityEstamatorVM.cs" />
     <Compile Include="Tool\HelpImagePathConverter.cs" />
-    <Compile Include="Tool\LabelCopyWindow.xaml.cs">
+    <Compile Include="ToolWindow\LabelCopyWindow.xaml.cs">
       <DependentUpon>LabelCopyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\LabelOutPutView.xaml.cs">
@@ -294,7 +294,7 @@
     <Compile Include="Tool\Models\Element.cs" />
     <Compile Include="Tool\Models\GraphitePaper.cs" />
     <Compile Include="Tool\Models\MaterialNeedCalculationItem.cs" />
-    <Compile Include="Tool\PressureChangeTool.xaml.cs">
+    <Compile Include="ToolWindow\PressureChangeTool.xaml.cs">
       <DependentUpon>PressureChangeTool.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tool\ToolViewLocator.cs" />
@@ -392,9 +392,6 @@
     </Compile>
     <Compile Include="View\MissonUnCompletedView.xaml.cs">
       <DependentUpon>MissonUnCompletedView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tool\NewMaterialUsedWindow.xaml.cs">
-      <DependentUpon>NewMaterialUsedWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderUnCompletedView.xaml.cs">
       <DependentUpon>OrderUnCompletedView.xaml</DependentUpon>
@@ -615,7 +612,7 @@
     <Compile Include="View\RecordVHPView.xaml.cs">
       <DependentUpon>RecordVHPView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tool\DocumentTypeSelect.xaml.cs">
+    <Compile Include="ToolWindow\DocumentTypeSelect.xaml.cs">
       <DependentUpon>DocumentTypeSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLocator.cs" />
@@ -739,7 +736,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tool\CompositionToOne.xaml">
+    <Page Include="ToolWindow\CompositionToOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -747,7 +744,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tool\LabelCopyWindow.xaml">
+    <Page Include="ToolWindow\LabelCopyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -759,7 +756,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tool\PressureChangeTool.xaml">
+    <Page Include="ToolWindow\PressureChangeTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -830,10 +827,6 @@
     <Page Include="View\MissonUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Tool\NewMaterialUsedWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OrderUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1127,7 +1120,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Tool\DocumentTypeSelect.xaml">
+    <Page Include="ToolWindow\DocumentTypeSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using System.IO;
 
-namespace PMSClient.Tool
+namespace PMSClient.ToolWindow
 {
     /// <summary>
     /// LabelCopyWindow.xaml 的交互逻辑

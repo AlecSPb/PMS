@@ -11,7 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using System.IO;
 using PMSClient.ViewModel.Model;
 using PMSClient.ReportsHelper;
-using PMSClient.Tool;
+using PMSClient.ToolWindow;
 
 namespace PMSClient.ViewModel
 {
@@ -212,7 +212,7 @@ namespace PMSClient.ViewModel
                 //NavigationService.GoTo(PMSViews.LabelOutPut);
 
                 //2017-12-18
-                PMSClient.Tool.LabelCopyWindow lcw = new Tool.LabelCopyWindow
+                PMSClient.ToolWindow.LabelCopyWindow lcw = new ToolWindow.LabelCopyWindow
                 {
                     LabelInformation = mainContent
                 };

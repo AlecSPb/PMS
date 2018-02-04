@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PMSClient.Tool
+namespace PMSClient.ToolWindow
 {
     /// <summary>
     /// PressureChangeTool.xaml 的交互逻辑

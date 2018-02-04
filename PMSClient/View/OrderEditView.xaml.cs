@@ -89,7 +89,7 @@ namespace PMSClient.View
         {
             try
             {
-                PMSClient.Tool.CompositionToOne cto = new Tool.CompositionToOne();
+                PMSClient.ToolWindow.CompositionToOne cto = new ToolWindow.CompositionToOne();
                 cto.Show();
             }
             catch (Exception ex)
