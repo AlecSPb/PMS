@@ -37,16 +37,23 @@ namespace PMSClient.ToolWindow
             NavigationService.GoTo(PMSViews.Navigation);
         }
 
+        private string pminumber;
+        private string vhpnumber;
+        private void GetTextBox()
+        {
+            pminumber = TxtPMINumber.Text.Trim();
+            vhpnumber = TxtVHPNumber.Text.Trim();
+        }
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
         {
-            string pminumber = TxtPMINumber.Text.Trim();
+            GetTextBox();
             PMSHelper.ViewModels.Order.SetSearch(pminumber);
             NavigationService.GoTo(PMSViews.Order);
         }
 
         private void BtnMaterialOrderItem_Click(object sender, RoutedEventArgs e)
         {
-            string pminumber = TxtPMINumber.Text.Trim();
+            GetTextBox();
             PMSHelper.ViewModels.MaterialOrderItemList.SetSearch(pminumber);
             NavigationService.GoTo(PMSViews.MaterialOrderItemList);
         }

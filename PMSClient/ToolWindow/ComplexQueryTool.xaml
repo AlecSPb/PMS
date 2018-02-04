@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
-        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="ToolWindow" Topmost="True"
-        Title="综合查询工具(Search Tool)" Height="600" Width="300">
+        mc:Ignorable="d"  WindowStyle="ToolWindow" Topmost="True"
+        Title="综合查询工具(Search Tool)" Height="700" Width="300">
     <StackPanel Background="{StaticResource BGBrushWindow}">
         <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最上" IsChecked="True"/>
         <TextBlock Text="*以下查询编号输入部分即可" Style="{StaticResource StyleDGTextBlockSpecial}"/>

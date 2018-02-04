@@ -27,7 +27,11 @@ namespace PMSClient.ViewModel
         /// <param name="pminumber"></param>
         public void SetSearch(string pminumber)
         {
-
+            SearchComposition = "";
+            SearchMaterialLot = "";
+            SearchPMINumber = pminumber;
+            SearchSupplier = "";
+            SetPageParametersWhenConditionChange();
         }
 
         public void RefreshData()
@@ -67,7 +71,7 @@ namespace PMSClient.ViewModel
         //用于任务定位调用
         public void SetSearchCondition(string composition, string pminumber)
         {
-            SearchComposition= composition;
+            SearchComposition = composition;
             SearchPMINumber = pminumber;
             SearchSupplier = "";
             SearchMaterialLot = "";
