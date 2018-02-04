@@ -24,6 +24,20 @@ namespace PMSClient.ViewModel
         }
 
         /// <summary>
+        ///综合搜索
+        /// </summary>
+        /// <param name="pminumber"></param>
+        public void SetSearch(string pminumber)
+        {
+            SearchCustomer = "";
+            SearchCompositionStandard ="";
+            SearchPMINumber = pminumber;
+            SetPageParametersWhenConditionChange();
+        }
+
+
+
+        /// <summary>
         /// 用于编辑后刷新订单调用
         /// </summary>
         public void RefreshData()

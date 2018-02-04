@@ -572,5 +572,18 @@ namespace PMSClient
                 Properties.Settings.Default.Save();
             }
         }
+
+        private void BtnMainLog_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string errorPath = System.IO.Path.Combine(Environment.CurrentDirectory, "Error");
+                System.Diagnostics.Process.Start(errorPath);
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

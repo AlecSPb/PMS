@@ -18,20 +18,22 @@
         </Border>
         <Grid Grid.Row="1"  Background="{StaticResource BGBrushStatusBar}">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White"/>
-            <TextBlock Grid.Column="1" Name="txtHeartBeat" Text="心跳检测" Style="{StaticResource StyleTextBlockCommon}"
+            <Button Name="BtnMainLog" Click="BtnMainLog_Click" Content="日志" Height="25" Width="40"/>
+            <TextBlock Name="txtStateMessage" Text="状态栏" Style="{StaticResource StyleTextBlockCommon}" Foreground="White" Grid.Column="1"/>
+            <TextBlock Grid.Column="2" Name="txtHeartBeat" Text="心跳检测" Style="{StaticResource StyleTextBlockCommon}"
                        Foreground="White"/>
-            <TextBlock x:Name="txtCurrentUserName" Grid.Column="2"
+            <TextBlock x:Name="txtCurrentUserName" Grid.Column="3"
                        Text="" Style="{StaticResource StyleTextBlockCommon}" Foreground="Yellow"/>
-            <TextBlock Grid.Column="3"  Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}"
+            <TextBlock Grid.Column="4"  Text="designed by xs.zhou" Style="{StaticResource StyleTextBlockCommon}"
                        Foreground="LightGray"/>
-            <ComboBox Grid.Column="4" Name="cboLanguage" Style="{StaticResource StyleComboBoxCommon}" SelectionChanged="cboLanguage_SelectionChanged">
+            <ComboBox Grid.Column="5" Name="cboLanguage" Style="{StaticResource StyleComboBoxCommon}" SelectionChanged="cboLanguage_SelectionChanged">
                 <ComboBoxItem>中文</ComboBoxItem>
                 <ComboBoxItem>English</ComboBoxItem>
             </ComboBox>

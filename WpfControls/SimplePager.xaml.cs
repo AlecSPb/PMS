@@ -69,8 +69,7 @@ namespace WPFControls
 
         private static void PageSizePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            SimplePager pager = d as SimplePager;
-            if (pager != null)
+            if (d is SimplePager pager)
             {
                 //pager.CalulatePagingParameter();
             }
@@ -102,8 +101,7 @@ namespace WPFControls
 
         private static void RecordCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            SimplePager pager = d as SimplePager;
-            if (pager != null)
+            if (d is SimplePager pager)
             {
                 pager.CalulatePagingParameter();
             }
@@ -221,13 +219,13 @@ namespace WPFControls
         #endregion
 
         #region 按钮事件
-   private void btnFirst_Click(object sender, RoutedEventArgs e)
+   private void BtnFirst_Click(object sender, RoutedEventArgs e)
         {
             PageIndex = 1;
             OnCommandExecute();
         }
 
-        private void btnPrev_Click(object sender, RoutedEventArgs e)
+        private void BtnPrev_Click(object sender, RoutedEventArgs e)
         {
             if (PageIndex > 0)
             {
@@ -236,7 +234,7 @@ namespace WPFControls
             OnCommandExecute();
         }
 
-        private void btnNext_Click(object sender, RoutedEventArgs e)
+        private void BtnNext_Click(object sender, RoutedEventArgs e)
         {
             if (PageIndex < PageCount)
             {
@@ -245,7 +243,7 @@ namespace WPFControls
             OnCommandExecute();
         }
 
-        private void btnLast_Click(object sender, RoutedEventArgs e)
+        private void BtnLast_Click(object sender, RoutedEventArgs e)
         {
             PageIndex = PageCount;
             OnCommandExecute();

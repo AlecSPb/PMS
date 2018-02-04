@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PMSClient.MainService;
 using PMSCommon;
+using PMSClient.ToolWindow;
 
 namespace PMSClient.View
 {
@@ -68,6 +69,12 @@ namespace PMSClient.View
                 PMSHelper.CurrentLog.Error(ex);
             }
 
+        }
+
+        private void BtnComplexQuery_Click(object sender, RoutedEventArgs e)
+        {
+            ComplexQueryTool tool = new ComplexQueryTool();
+            tool.Show();
         }
     }
 }

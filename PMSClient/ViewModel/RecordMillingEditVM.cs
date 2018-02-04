@@ -75,7 +75,7 @@ namespace PMSClient.ViewModel
             model.MaterialType = PMSCommon.CustomData.MaterialTypes[3];//默认其他
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
-            model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
+            model.MillingTime = "无";
             model.Remark = "";
             model.WeightIn = 0;
             model.WeightOut = 0;

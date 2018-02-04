@@ -105,7 +105,7 @@ namespace PMSClient.ViewModel
             model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
-            model.MillingTime = PMSCommon.MillingTime.每次20min共2次.ToString();
+            model.MillingTime = "无";
             model.Remark = "";
             model.WeightIn = 0;
             model.WeightOut = 0;

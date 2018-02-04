@@ -12,10 +12,22 @@ namespace PMSWCFService.DataContracts
     [DataContract]
     public class DcComplexQueryResult
     {
+        public DcComplexQueryResult()
+        {
+            PlanVHPWithMissons = new List<DcPlanWithMisson>();
+            MaterialInventoryIns = new List<DcMaterialInventoryIn>();
+            MaterialInventoryOuts = new List<DcMaterialInventoryOut>();
+            MaterialOrderItemExtras = new List<DcMaterialOrderItemExtra>();
+            RecordMillings = new List<DcRecordMilling>();
+            RecordVHPs = new List<DcRecordVHP>();
+            RecordDemolds = new List<DcRecordDeMold>();
+            RecordMachines = new List<DcRecordMachine>();
+            RecordTests = new List<DcRecordTest>();
+        }
         [DataMember]
         public List<DcPlanWithMisson> PlanVHPWithMissons { get; set; }
         [DataMember]
-        public List<DcMaterialOrderItemExtra> MaterialOrderItemExtra { get; set; }
+        public List<DcMaterialOrderItemExtra> MaterialOrderItemExtras { get; set; }
 
         [DataMember]
         public List<DcMaterialInventoryIn> MaterialInventoryIns { get; set; }

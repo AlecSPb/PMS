@@ -25,6 +25,21 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             SetPageParametersWhenConditionChange();
         }
+
+        /// <summary>
+        /// 综合搜索
+        /// </summary>
+        /// <param name="pminumber"></param>
+        public void SetSearch(string pminumber)
+        {
+            SearchPMINumber = pminumber;
+            SearchSupplier = "";
+            SearchComposition = "";
+            SearchOrderItemNumber = "";
+            SetPageParametersWhenConditionChange();
+        }
+
+
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();

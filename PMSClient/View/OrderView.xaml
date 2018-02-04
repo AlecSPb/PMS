@@ -198,7 +198,8 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Content="{StaticResource ButtonComplexQueryForOrder}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                    <Button Name="BtnComplexQuery" Click="BtnComplexQuery_Click"  Content="{StaticResource ButtonComplexQueryForOrder}"
+                            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                             Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"/>
                     
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource OrderCustomer}"

@@ -268,6 +268,9 @@
     <Compile Include="Tool\BatchOutSourceProduct.xaml.cs">
       <DependentUpon>BatchOutSourceProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\ComplexQueryTool.xaml.cs">
+      <DependentUpon>ComplexQueryTool.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\CompositionToOne.xaml.cs">
       <DependentUpon>CompositionToOne.xaml</DependentUpon>
     </Compile>
@@ -729,6 +732,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\BatchOutSourceProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\ComplexQueryTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

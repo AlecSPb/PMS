@@ -4,12 +4,41 @@ using System.Linq;
 using System.Web;
 using PMSWCFService.ServiceContracts;
 using PMSDAL;
+using PMSWCFService.DataContracts;
 
 namespace PMSWCFService
 {
-    public class ComplexQueryService 
+    public class ComplexQueryService :IComplexQuery
     {
-        public Dictionary<string, bool> GetCurrentOrderStatus(string pmiNumber)
+        public List<DcComplexQueryResult> GetAllStatusByPlanNumber(string planNumber)
+        {
+            DcComplexQueryResult result = new DcComplexQueryResult();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+            }
+            return null;
+        }
+
+        public List<DcComplexQueryResult> GetAllStatusByPMINumber(string pmiNumber)
+        {
+            DcComplexQueryResult result = new DcComplexQueryResult();
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+            }
+            return null;
+        }
+
+        public Dictionary<string, bool> GetCurrentOrderStatus(string pmiNumber,string p)
         {
             Dictionary<string, bool> dict = new Dictionary<string, bool>();
             if (pmiNumber.Length != 8)
