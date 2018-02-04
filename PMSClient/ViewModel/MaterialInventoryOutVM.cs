@@ -18,18 +18,19 @@ namespace PMSClient.ViewModel
         {
             InitializeProperties();
             InitializeCommands();
-            SetPageParametersWhenConditionChange();
+            DoAllGetJob();
         }
 
         public void RefreshData()
         {
-            SetPageParametersWhenConditionChange();
+            DoAllGetJob();
         }
 
         private void InitializeProperties()
         {
             searchComposition = searchMaterialLot = searchPMINumber = searchReceiver = "";
             MaterialInventoryOuts = new ObservableCollection<DcMaterialInventoryOut>();
+            NewMaterialUsedList = new ObservableCollection<DcRecordMilling>();
         }
         private void InitializeCommands()
         {
@@ -79,12 +80,37 @@ namespace PMSClient.ViewModel
         private void ActionAll()
         {
             SearchComposition = SearchMaterialLot = SearchPMINumber = SearchReceiver = "";
-            SetPageParametersWhenConditionChange();
+            DoAllGetJob();
         }
 
         private void ActionSearch()
         {
+            DoAllGetJob();
+        }
+
+        private void DoAllGetJob()
+        {
             SetPageParametersWhenConditionChange();
+            GetNewMaterialUsed();
+        }
+
+        private void GetNewMaterialUsed()
+        {
+            try
+            {
+                using (var service = new RecordMillingServiceClient())
+                {
+                    string materialType = PMSCommon.CustomData.MaterialTypes[0];
+                    int take = 20;
+                    var tempStored = service.GetRecordMillingByMaterialType(materialType, take);
+                    NewMaterialUsedList.Clear();
+                    tempStored.ToList().ForEach(i => NewMaterialUsedList.Add(i));
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -156,6 +182,14 @@ namespace PMSClient.ViewModel
         {
             get { return materialInventoryOuts; }
             set { materialInventoryOuts = value; RaisePropertyChanged(nameof(MaterialInventoryOuts)); }
+        }
+
+        private ObservableCollection<DcRecordMilling> newMaterialUsedList;
+
+        public ObservableCollection<DcRecordMilling> NewMaterialUsedList
+        {
+            get { return newMaterialUsedList; }
+            set { newMaterialUsedList = value; }
         }
 
         #endregion
