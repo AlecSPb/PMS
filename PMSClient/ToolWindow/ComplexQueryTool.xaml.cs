@@ -22,6 +22,14 @@ namespace PMSClient.ToolWindow
         public ComplexQueryTool()
         {
             InitializeComponent();
+            SetAll();
+        }
+
+        private void SetAll()
+        {
+            this.Left = SystemParameters.WorkArea.Left;
+            this.Top = SystemParameters.WorkArea.Top + 100;
+            //TODO:设置好权限
         }
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)

@@ -4,13 +4,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
-        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="ToolWindow"
-        Title="综合查询工具" Height="300" Width="300">
-    <StackPanel>
-        <TextBlock Text="输入PMI Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        mc:Ignorable="d" ResizeMode="NoResize" WindowStyle="ToolWindow" Topmost="True"
+        Title="综合查询工具(Search Tool)" Height="600" Width="300">
+    <StackPanel Background="{StaticResource BGBrushWindow}">
+        <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最上" IsChecked="True"/>
+        <TextBlock Text="PMI Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="TxtPMINumber" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        <Button Name="BtnOrder" Click="BtnOrder_Click" Content="订单" Style="{StaticResource StyleButtonCommon}"/>
-        <Button Name="BtnMaterialOrderItem" Click="BtnMaterialOrderItem_Click" Content="原料订单"
-                Style="{StaticResource StyleButtonCommon}"/>
+        <TextBlock Text="VHP Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="TxtVHPNumber" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        <Button Name="BtnOrder" Click="BtnOrder_Click" Content="{StaticResource PageOrder}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnMaterialOrderItem" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageMaterialOrderItemList}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnMaterialIn" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageMaterialInventoryIn}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnMaterialOut" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageMaterialInventoryOut}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnMisson" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageMisson}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnPlan" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PagePlan}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordMilling" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageRecordMilling}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordVHP" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageRecordVHP}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordDeMold" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageRecordDeMold}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordMachine" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageRecordMachine}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordTest" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageRecordTest}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordBonding" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageRecordBonding}" Style="{StaticResource StyleButtonStrench}"/>
+        <Button Name="BtnRecordDeliveryItemList" Click="BtnMaterialOrderItem_Click"
+                Content="{StaticResource PageDeliveryItemList}" Style="{StaticResource StyleButtonStrench}"/>
     </StackPanel>
 </Window>

@@ -82,7 +82,7 @@
                 <Button Content="{StaticResource PageFeedBack}" Grid.Row="0" Grid.Column="4" Style="{DynamicResource StyleButtonNavigation}"
                         Command="{Binding GoToFeedBack }"/>
                 <Button Content="{StaticResource PageIntegratedSearch}" Grid.Row="0" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
-                        Command="{Binding GoToFeedBack }"/>
+                        Command="{Binding GoToIntegratedSearch }"/>
                 
                 <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"
                         Style="{DynamicResource StyleButtonNavigationTitle}"/>
