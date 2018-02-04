@@ -20,6 +20,14 @@ namespace PMSClient.ViewModel
             InitializeCommands();
             DoAllGetJob();
         }
+        /// <summary>
+        /// 综合查询
+        /// </summary>
+        /// <param name="pminumber"></param>
+        public void SetSearch(string pminumber)
+        {
+
+        }
 
         public void RefreshData()
         {
