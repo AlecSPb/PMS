@@ -265,6 +265,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\PlainTextWindow.xaml.cs">
+      <DependentUpon>PlainTextWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\BatchOutSourceProduct.xaml.cs">
       <DependentUpon>BatchOutSourceProduct.xaml</DependentUpon>
     </Compile>
@@ -728,6 +731,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ToolWindow\PlainTextWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tool\BatchOutSourceProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -1148,6 +1155,7 @@
     <Resource Include="Note\综合查询思路.txt" />
     <Resource Include="Note\新料查询.txt" />
     <Resource Include="ReportsHelper\这个地方以后要重构.txt" />
+    <Resource Include="Documents\keycodeInformaton.txt" />
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

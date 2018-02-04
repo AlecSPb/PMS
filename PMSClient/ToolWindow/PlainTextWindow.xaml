@@ -1,0 +1,20 @@
+﻿<Window x:Class="PMSClient.ToolWindow.PlainTextWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="PlainTextWindow" Height="300" Width="400">
+    <Grid Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Name="BtnClose" Click="BtnClose_Click" Content="退出" Style="{StaticResource StyleButtonCommon}"/>
+        </StackPanel>
+        <TextBox Name="RtxtContent" Grid.Row="1" IsReadOnly="True" AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Visible"></TextBox>
+    </Grid>
+</Window>

@@ -1,0 +1,3 @@
+﻿编码含义Code Meaning：
+内部编号PMINumber=订单编号Order ID
+产品编号Product ID=热压编号 VHP Number

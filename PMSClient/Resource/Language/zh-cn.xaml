@@ -144,17 +144,17 @@
 
     <sys:String x:Key="PageCustomerService">售后</sys:String>
     <sys:String x:Key="PageCustomerServiceEdit">售后编辑</sys:String>
-    
+
     <sys:String x:Key="PageFeedBack">客户反馈</sys:String>
     <sys:String x:Key="PageFeedBackEdit">客户反馈编辑</sys:String>
 
     <sys:String x:Key="PageMaintenance">维护</sys:String>
     <sys:String x:Key="PageMaintenancePlan">维护计划</sys:String>
     <sys:String x:Key="PageMaintenanceRecord">维护记录</sys:String>
-    
+
     <sys:String x:Key="PageCheckList">工序清单</sys:String>
     <sys:String x:Key="PageCheckListEdit">工序清单编辑</sys:String>
-    
+
     <sys:String x:Key="PageBluePrint">图纸库</sys:String>
     <sys:String x:Key="PageBluePrintEdit">图纸库编辑</sys:String>
 
@@ -183,8 +183,8 @@
     <sys:String x:Key="TxtUserName">用户名</sys:String>
     <sys:String x:Key="TxtPassWord">密码</sys:String>
     <sys:String x:Key="TxtRemindUIDPWD">记住用户名和密码</sys:String>
-    
-    
+
+
     <!--Button-->
     <sys:String x:Key="ButtonNavigation">导航</sys:String>
     <sys:String x:Key="ButtonGiveUp">返回</sys:String>
@@ -241,6 +241,7 @@
     <sys:String x:Key="ButtonHelp">帮助</sys:String>
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>
     <sys:String x:Key="ButtonCodeRule">编码规则</sys:String>
+    <sys:String x:Key="ButtonImportantCode">重要编号</sys:String>
     
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
@@ -280,7 +281,7 @@
     <sys:String x:Key="ButtonStatisticByProductType">该年按产品类型</sys:String>
     <sys:String x:Key="ButtonStatisticByDevice">该年按设备</sys:String>
     <sys:String x:Key="ButtonStatisticByCountry">该年按国家</sys:String>
-    
+
     <sys:String x:Key="ButtonOrderHistory">订单历史</sys:String>
     <sys:String x:Key="ButtonPlanHistory">计划历史</sys:String>
 
@@ -638,7 +639,7 @@
     <sys:String x:Key="BDRemark">备注</sys:String>
     <sys:String x:Key="BDCoverPlateCode">盖板编号</sys:String>
     <sys:String x:Key="BDPlateType">背板类型</sys:String>
-    
+
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>
     <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>
@@ -750,7 +751,7 @@
     <sys:String x:Key="OSQuantityUnit">单位</sys:String>
     <sys:String x:Key="OSCost">费用</sys:String>
     <sys:String x:Key="OSRemark">备注</sys:String>
-    <sys:String x:Key="OSPaidState">费用状态 </sys:String>
+    <sys:String x:Key="OSPaidState">费用状态</sys:String>
     <sys:String x:Key="OSFinishTime">完成时间</sys:String>
     <!--Feedback-->
     <sys:String x:Key="FBState">状态</sys:String>
@@ -798,7 +799,7 @@
     <sys:String x:Key="BDCRemark">备注信息</sys:String>
     <sys:String x:Key="BDCCreateTime">创建时间</sys:String>
     <sys:String x:Key="BDCCreator">创建者</sys:String>
-    
+
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">
         注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范

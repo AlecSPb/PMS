@@ -9,6 +9,7 @@ using GalaSoft.MvvmLight.Messaging;
 using PMSClient.Helper;
 using System.IO;
 using PMSClient.CustomControls;
+using PMSClient.ToolWindow;
 
 namespace PMSClient.ViewModel
 {
@@ -121,6 +122,15 @@ namespace PMSClient.ViewModel
               {
                   ToolWindow.ComplexQueryTool tool = new ToolWindow.ComplexQueryTool();
                   tool.Show();
+              });
+
+            ImportantCode = new RelayCommand(() =>
+              {
+                  string fileContent = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "Documents", "keycodeInformaton.txt"));
+                  PlainTextWindow win = new PlainTextWindow();
+                  win.Title = "重要编码";
+                  win.ContentText =fileContent;
+                  win.ShowDialog();
               });
         }
 
@@ -245,5 +255,7 @@ namespace PMSClient.ViewModel
         public RelayCommand Notice { get; set; }
         public RelayCommand Help { get; set; }
         public RelayCommand GoToDebug { get; set; }
+
+        public RelayCommand ImportantCode { get; set; }
     }
 }
