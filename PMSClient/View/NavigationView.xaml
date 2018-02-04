@@ -39,11 +39,11 @@
                         <Image Source="../Resource/Icons/help.png"  Style="{StaticResource StyleImageIcon}"/>
                     </StackPanel>
                 </Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>
                 <TextBlock  Style="{StaticResource StyleTextBlockNavigationBar}"
                        Text="{StaticResource TxtWelcome}"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
                 <Button Content="{StaticResource ButtonLogOut}" Style="{StaticResource StyleButtonCommon}" Command="{Binding LogOut}" />
             </StackPanel>

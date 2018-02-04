@@ -1155,9 +1155,9 @@
     <Resource Include="Note\综合查询思路.txt" />
     <Resource Include="Note\新料查询.txt" />
     <Resource Include="ReportsHelper\这个地方以后要重构.txt" />
-    <Resource Include="Documents\keycodeInformaton.txt">
+    <Content Include="Documents\keycodeInformaton.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
     <Content Include="Resource\Files\CodeRule.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
