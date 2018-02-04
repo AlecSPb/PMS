@@ -64,6 +64,12 @@ namespace PMSClient.ViewModel
         /// </summary>
         private void ActionBatchDoc()
         {
+            if (RecordTestExtras.ToList().Count(i => i.IsSelected) == 0)
+            {
+                PMSDialogService.ShowWarning("没有选中任何项目");
+                return;
+            }
+
             if (!PMSDialogService.ShowYesNo("请问", "确定要为选择的项目生成报告吗"))
                 return;
 
