@@ -14,7 +14,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <CheckBox Name="CboTopMost" Style="{StaticResource StyleCheckBoxCommon}" Content="保持最上"
-                          IsChecked="True" Checked="CboTopMost_Checked"/>
+                          IsChecked="True"  Click="CboTopMost_Checked"/>
                 <Button Grid.Column="1" Name="BtnMoveRight" Click="BtnMoveRight_Click"
                         Content="移动到右边" Style="{StaticResource StyleButtonCommon}"/>
             </Grid>
