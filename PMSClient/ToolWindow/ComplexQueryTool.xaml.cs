@@ -95,7 +95,7 @@ namespace PMSClient.ToolWindow
                     NavigationService.GoTo(PMSViews.MaterialInventoryOut);
                     break;
                 case "BtnMisson":
-                    PMSHelper.ViewModels.Misson.SetSearch(vhpnumber);
+                    PMSHelper.ViewModels.Misson.SetSearch(pminumber);
                     NavigationService.GoTo(PMSViews.Misson);
                     break;
                 case "BtnPlan":
@@ -140,8 +140,17 @@ namespace PMSClient.ToolWindow
         private void CboTopMost_Checked(object sender, RoutedEventArgs e)
         {
             bool currentState = (bool)CboTopMost.IsChecked;
-            CboTopMost.IsChecked = !currentState;
-            this.Topmost = !currentState;
+            this.Topmost = currentState;
+        }
+
+        private void BtnClearVHPNumber_Click(object sender, RoutedEventArgs e)
+        {
+            TxtVHPNumber.Clear();
+        }
+
+        private void BtnClearPMINumber_Click(object sender, RoutedEventArgs e)
+        {
+            TxtPMINumber.Clear();
         }
     }
 }
