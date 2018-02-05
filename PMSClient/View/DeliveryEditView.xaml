@@ -77,8 +77,8 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="3" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.Countries,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding Country}"
-                          Style="{StaticResource StyleComboBoxCommon}"/>
+                          Text="{Binding Country}"
+                          Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"/>
                 <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="发往哪个国家地区"/>
 

@@ -24,6 +24,18 @@ namespace PMSClient.ViewModel
             InitializeCommands();
         }
 
+        /// <summary>
+        /// 综合查询
+        /// </summary>
+        /// <param name="vhpnumber"></param>
+        public void SetSearch(string vhpnumber)
+        {
+            SearchVHPPlanLot = vhpnumber;
+            searchComposition = "";
+            SetPageParametersWhenConditionChange();
+        }
+
+
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
@@ -44,7 +56,15 @@ namespace PMSClient.ViewModel
 
         private void ActionOutput()
         {
+            if (!PMSDialogService.ShowYesNo("询问", "数据导出时间会比较长，" +
+                "请在弹出完成对话框之前不要进行其他操作。\r\n确定明白请点确定开始"))
+            {
+                return;
+            }
 
+            CsvOutputHelper.CsvOutputRecordMilling csv = new CsvOutputHelper.CsvOutputRecordMilling();
+            csv.Output();
+            PMSDialogService.ShowYes("OK");
         }
 
         private bool CanQuickAdd()

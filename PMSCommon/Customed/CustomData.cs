@@ -277,6 +277,7 @@ namespace PMSCommon
                 data.Add("158mm OD x 11mm");
                 data.Add("82.855mm OD x 3.048mm for 50.8mm");
                 data.Add("160mm OD x 5mm for 124.5mm");
+                data.Add("132mm OD for Sony101");
                 #endregion
                 return data;
             }

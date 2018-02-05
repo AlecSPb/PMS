@@ -58,6 +58,49 @@ namespace PMSClient
             });
             return sb.ToString();
         }
+
+        public static string GetRecordMillingOupput(DcRecordMilling[] models)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Clear();
+            models.ToList().ForEach(o =>
+            {
+                #region 需要导出的数据列
+                sb.Append(o.VHPPlanLot);
+                sb.Append(",");
+                sb.Append(o.Composition.Replace(",", ""));
+                sb.Append(",");
+                sb.Append(o.PMINumber);
+                sb.Append(",");
+                sb.Append(o.RoomTemperature);
+                sb.Append(",");
+                sb.Append(o.RoomHumidity);
+                sb.Append(",");
+                sb.Append(o.MillingTool);
+                sb.Append(",");
+                string com = o.MillingTime;
+                sb.Append(com);
+                sb.Append(",");
+                sb.Append(o.WeightIn);
+                sb.Append(",");
+                sb.Append(o.WeightOut);
+                sb.Append(",");
+                sb.Append(o.WeightRemain);
+                sb.Append(",");
+                sb.Append(o.Ratio);
+                sb.Append(",");
+                sb.Append(o.Remark);
+                sb.Append(",");
+                sb.Append(o.CreateTime);
+                sb.Append(",");
+                sb.Append(o.Creator);
+
+                sb.AppendLine();
+                #endregion
+            });
+            return sb.ToString();
+        }
+
         public static string GetRecordTestOupput(IList<DcRecordTest> models)
         {
             StringBuilder sb = new StringBuilder();
