@@ -26,6 +26,12 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        public void SetSearch(string vhpnumber)
+        {
+            SearchVHPDate = vhpnumber;
+            SetPageParametersWhenConditionChange();
+        }
+
         private void IntitializeProperties()
         {
             searchComposition = searchVHPDate = "";

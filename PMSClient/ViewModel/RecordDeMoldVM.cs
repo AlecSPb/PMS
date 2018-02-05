@@ -30,6 +30,16 @@ namespace PMSClient.ViewModel
             TempRecordSheet = new RelayCommand(ActionTempRecordSheet);
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
         }
+        /// <summary>
+        /// 综合查询
+        /// </summary>
+        /// <param name="vhpnumber"></param>
+        public void SetSearch(string vhpnumber)
+        {
+            SearchComposition = "";
+            SearchVHPPlanLot = vhpnumber;
+            SetPageParametersWhenConditionChange();
+        }
 
         private bool CanQuickAdd()
         {

@@ -26,7 +26,11 @@ namespace PMSClient.ViewModel
         /// <param name="pminumber"></param>
         public void SetSearch(string pminumber)
         {
-
+            SearchComposition = "";
+            SearchMaterialLot = "";
+            SearchPMINumber = pminumber;
+            SearchReceiver = "";
+            SetPageParametersWhenConditionChange();
         }
 
         public void RefreshData()

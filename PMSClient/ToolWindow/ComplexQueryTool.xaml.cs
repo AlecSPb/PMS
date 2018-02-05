@@ -87,37 +87,48 @@ namespace PMSClient.ToolWindow
                     NavigationService.GoTo(PMSViews.MaterialOrderItemList);
                     break;
                 case "BtnMaterialIn":
-
+                    PMSHelper.ViewModels.MaterialInventoryIn.SetSearch(pminumber);
+                    NavigationService.GoTo(PMSViews.MaterialInventoryIn);
                     break;
                 case "BtnMaterialOut":
-
+                    PMSHelper.ViewModels.MaterialInventoryOut.SetSearch(pminumber);
+                    NavigationService.GoTo(PMSViews.MaterialInventoryOut);
                     break;
                 case "BtnMisson":
-
+                    PMSHelper.ViewModels.Misson.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.Misson);
                     break;
                 case "BtnPlan":
-
+                    PMSHelper.ViewModels.Plan.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.Plan);
                     break;
                 case "BtnRecordMilling":
-
+                    PMSHelper.ViewModels.RecordMilling.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.RecordMilling);
                     break;
                 case "BtnRecordVHP":
-
+                    PMSHelper.ViewModels.RecordVHP.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.RecordVHP);
                     break;
                 case "BtnRecordDeMold":
-
+                    PMSHelper.ViewModels.RecordDeMold.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.RecordDeMold);
                     break;
                 case "BtnRecordMachine":
-
+                    PMSHelper.ViewModels.RecordMachine.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.RecordMachine);
                     break;
                 case "BtnRecordTest":
-
+                    PMSHelper.ViewModels.RecordTest.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.RecordTest);
                     break;
                 case "BtnRecordBonding":
-
+                    PMSHelper.ViewModels.RecordBonding.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.RecordBonding);
                     break;
                 case "BtnDeliveryItemList":
-
+                    PMSHelper.ViewModels.DeliveryItemList.SetSearch(vhpnumber);
+                    NavigationService.GoTo(PMSViews.DeliveryItemList);
                     break;
                 default:
                     NavigationService.GoTo(PMSViews.Navigation);
@@ -126,6 +137,11 @@ namespace PMSClient.ToolWindow
             #endregion
         }
 
-
+        private void CboTopMost_Checked(object sender, RoutedEventArgs e)
+        {
+            bool currentState = (bool)CboTopMost.IsChecked;
+            CboTopMost.IsChecked = !currentState;
+            this.Topmost = !currentState;
+        }
     }
 }

@@ -20,6 +20,18 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        /// <summary>
+        /// 综合查询
+        /// </summary>
+        /// <param name="vhpnumber"></param>
+        public void SetSearch(string vhpnumber)
+        {
+            SearchComposition = "";
+            SearchVHPDate = vhpnumber;
+            SetPageParametersWhenConditionChange();
+
+        }
+
         private void IntializeProperties()
         {
             searchComposition = searchVHPDate = "";

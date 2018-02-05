@@ -13,15 +13,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最上" IsChecked="True"/>
+                <CheckBox Name="CboTopMost" Style="{StaticResource StyleCheckBoxCommon}" Content="保持最上"
+                          IsChecked="True" Checked="CboTopMost_Checked"/>
                 <Button Grid.Column="1" Name="BtnMoveRight" Click="BtnMoveRight_Click"
                         Content="移动到右边" Style="{StaticResource StyleButtonCommon}"/>
             </Grid>
             <TextBlock Text="*以下查询编号输入部分即可" Style="{StaticResource StyleDGTextBlockSpecial}"/>
-            <TextBlock Text="[内部编号]PMI Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <TextBox Name="TxtPMINumber" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-            <TextBlock Text="[热压编号]VHP Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <TextBox Name="TxtVHPNumber" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+            <TextBlock Text="A[内部编号]PMI Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <TextBox Name="TxtPMINumber" Text="" Style="{StaticResource StyleTextBoxCommon}" Background="White"/>
+            <TextBlock Text="B[热压编号]VHP Number" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <TextBox Name="TxtVHPNumber" Text="" Style="{StaticResource StyleTextBoxCommon}" Background="White"/>
             <Button Name="BtnNavigation" Click="Process_Click" Foreground="Blue"
                 Content="{StaticResource PageNaivgation}" Style="{StaticResource StyleButtonStrench}"/>
             <Button Name="BtnOrder" Click="Process_Click" Content="{StaticResource PageOrder}" Style="{StaticResource StyleButtonStrench}"/>

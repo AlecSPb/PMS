@@ -29,6 +29,13 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
+        public void SetSearch(string vhpnumber)
+        {
+            SearchVHPPlanLot = vhpnumber;
+            SetPageParametersWhenConditionChange();
+        }
+
+
         private bool CanQuickAdd()
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordMachine);

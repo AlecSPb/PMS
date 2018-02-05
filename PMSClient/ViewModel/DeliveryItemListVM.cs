@@ -30,6 +30,15 @@ namespace PMSClient.ViewModel
             searchCustomer = "";
             DeliveryItemExtras = new ObservableCollection<DcDeliveryItemExtra>();
         }
+
+        public void SetSearch(string vhpnumber)
+        {
+            SearchProductID = vhpnumber;
+            SearchCompositionStd = "";
+            SearchCustomer = "";
+            SetPageParametersWhenConditionChange();
+        }
+
         private void InitializeCommands()
         {
             Search = new RelayCommand(ActionSearch);

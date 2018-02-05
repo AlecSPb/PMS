@@ -38,6 +38,14 @@ namespace PMSClient.ViewModel
             RaisePropertyChanged(nameof(SearchProductID));
             SetPageParametersWhenConditionChange();
         }
+
+        public void SetSearch(string vhpnumber)
+        {
+            SearchCompositionStd = "";
+            SearchProductID = vhpnumber;
+            SetPageParametersWhenConditionChange();
+        }
+
         public void RefreshData()
         {
             SetPageParametersWhenConditionChange();
