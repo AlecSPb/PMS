@@ -30,7 +30,7 @@
                 <Button Grid.Column="1" Name="BtnClearPMINumber" Click="BtnClearPMINumber_Click"
                         Content="清除"  Style="{StaticResource StyleButton}" />
             </Grid>
-            <TextBlock Text="B[热压编号]VHP Number" Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Red"/>
+            <TextBlock Text="B[热压编号]VHP Number" Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Green"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

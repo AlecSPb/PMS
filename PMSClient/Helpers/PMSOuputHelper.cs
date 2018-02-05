@@ -78,6 +78,8 @@ namespace PMSClient
                 sb.Append(",");
                 sb.Append(o.MillingTool);
                 sb.Append(",");
+                sb.Append(o.GrainSize);
+                sb.Append(",");
                 string com = o.MillingTime;
                 sb.Append(com);
                 sb.Append(",");
@@ -89,7 +91,7 @@ namespace PMSClient
                 sb.Append(",");
                 sb.Append(o.Ratio);
                 sb.Append(",");
-                sb.Append(o.Remark);
+                sb.Append(o.Remark.Replace(",", ""));
                 sb.Append(",");
                 sb.Append(o.CreateTime);
                 sb.Append(",");

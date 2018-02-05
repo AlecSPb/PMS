@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
             model.Composition = "填入成分";
             model.GasProtection = PMSCommon.MillingGas.Ar气.ToString();
             model.GrainSize = "未知";
-            model.MaterialType = PMSCommon.CustomData.MaterialTypes[3];//默认其他
+            model.MaterialType = PMSCommon.CustomData.MaterialTypes[4];//默认其他
             model.MaterialSource = PMSCommon.MillingMaterialSource.SJ.ToString();
             model.MillingTool = PMSCommon.MillingTool.行星球磨.ToString();
             model.MillingTime = "无";
