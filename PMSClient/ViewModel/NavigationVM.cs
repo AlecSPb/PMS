@@ -132,6 +132,24 @@ namespace PMSClient.ViewModel
                   win.ContentText =fileContent;
                   win.ShowDialog();
               });
+            LaserRule = new RelayCommand(ActionLaserRule);
+        }
+
+        private void ActionLaserRule()
+        {
+            try
+            {
+                string helpFileName = "LaserRule.docx";
+                string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                if (File.Exists(helpFile))
+                {
+                    System.Diagnostics.Process.Start(helpFile);
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionCodeRule()
@@ -257,5 +275,6 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToDebug { get; set; }
 
         public RelayCommand ImportantCode { get; set; }
+        public RelayCommand LaserRule { get; set; }
     }
 }

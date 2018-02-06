@@ -31,6 +31,8 @@
                 </Button>
                 <Button Content="{StaticResource ButtonImportantCode}" Style="{StaticResource StyleButtonCommon}"
                        Command="{Binding ImportantCode}" />
+                <Button Content="{StaticResource ButtonLaserRule}" Style="{StaticResource StyleButtonCommon}"
+                       Command="{Binding LaserRule}" />
                 <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CodeRule}"/>
                 <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Help}">

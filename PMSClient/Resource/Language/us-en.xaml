@@ -237,6 +237,7 @@
     <sys:String x:Key="ButtonIKnow">I Know</sys:String>
     <sys:String x:Key="ButtonCodeRule">Code Rule</sys:String>
     <sys:String x:Key="ButtonImportantCode">Key Code</sys:String>
+    <sys:String x:Key="ButtonLaserRule">Laser Rule</sys:String>
     
     <sys:String x:Key="ButtonCalculator">Calculator</sys:String>
     <sys:String x:Key="ButtonSmallCalculator"> Small Calculator</sys:String>

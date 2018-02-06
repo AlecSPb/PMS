@@ -242,7 +242,8 @@
     <sys:String x:Key="ButtonIKnow">知道了</sys:String>
     <sys:String x:Key="ButtonCodeRule">编码规则</sys:String>
     <sys:String x:Key="ButtonImportantCode">重要编号</sys:String>
-    
+    <sys:String x:Key="ButtonLaserRule">标刻规则</sys:String>
+
     <sys:String x:Key="ButtonCalculator">计算器</sys:String>
     <sys:String x:Key="ButtonSmallCalculator">小计算器</sys:String>
     <sys:String x:Key="ButtonInventoryOut">出库所选</sys:String>
