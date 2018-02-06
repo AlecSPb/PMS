@@ -2,6 +2,7 @@
 本次更新Updates==
 2018-2-7
 版本version:
+添加了标刻规则LaserRule
 更改了大屏幕显示方式
 change the way of  display for large screen
 增加集成查询工具
