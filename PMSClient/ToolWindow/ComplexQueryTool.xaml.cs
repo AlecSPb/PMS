@@ -34,7 +34,7 @@ namespace PMSClient.ToolWindow
         private void BtnMoveRight_Click(object sender, RoutedEventArgs e)
         {
             this.Left = SystemParameters.WorkArea.Width - this.ActualWidth - 50;
-            this.Top = SystemParameters.WorkArea.Top + 80;
+            //this.Top = SystemParameters.WorkArea.Top + 80;
         }
 
         private void CheckTheAutherize()
