@@ -28,7 +28,7 @@ namespace PMSLargeScreen
         private void InitializeAll()
         {
             CurrentDate = DateTime.Now;
-            SetFinishedPlanCount();
+            GetFinishedPlanCount();
             ShowModels = new ObservableCollection<UnitModel>();
             AllModels = new List<UnitModel>();
             status1 = "状态栏1";
@@ -49,16 +49,69 @@ namespace PMSLargeScreen
             #endregion
 
             //首次加载数据
-            LoadData();
+            GetDataFromService();
         }
 
         private void _timerDistributeData_Elapsed(object sender, ElapsedEventArgs e)
         {
-            ShowData();
+            //    ShowDataOneByOne();
+            ShowDataInPage();
+        }
+
+        private int pageIndex = 1;
+        private int pageSize = 3;
+        private int pageCount = 0;
+
+        /// <summary>
+        /// ABC,D  ABC, D
+        /// </summary>
+        private void ShowDataInPage()
+        {
+            int s = (pageIndex - 1) * pageSize;
+            var displayModels = AllModels.Skip(s).Take(pageSize).ToList();
+
+            ShowModels.Clear();
+
+            CenterMessage = "";
+
+            if (displayModels.Count == 1)
+            {
+                Model1 = displayModels[0];
+                Model2 = null;
+                Model3 = null;
+            }
+            if (displayModels.Count == 2)
+            {
+                Model1 = displayModels[0];
+                Model2 = displayModels[1];
+                Model3 = null;
+            }
+
+            if (displayModels.Count == 3)
+            {
+                Model1 = displayModels[0];
+                Model2 = displayModels[1];
+                Model3 = displayModels[2];
+            }
+            Status2 = $"第{pageIndex}页数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
+            pageIndex++;
+            if (pageIndex > pageCount)
+            {
+                pageIndex = 1;
+            }
+
+        }
+        private void SetPagingParameters()
+        {
+            pageCount = AllModels.Count / pageSize + (AllModels.Count % pageSize == 0 ? 0 : 1);
+            System.Diagnostics.Debug.WriteLine($"PageCount={pageCount}");
         }
 
         private int counter = 0;
-        private void ShowData()
+        /// <summary>
+        /// 显示方式ABC,BCD,ABC
+        /// </summary>
+        private void ShowDataOneByOne()
         {
             ShowModels.Clear();
 
@@ -115,11 +168,11 @@ namespace PMSLargeScreen
         private void _timerLoadData_Elapsed(object sender, ElapsedEventArgs e)
         {
             CurrentDate = DateTime.Now;
-            SetFinishedPlanCount();
-            LoadData();
+            GetFinishedPlanCount();
+            GetDataFromService();
         }
 
-        private void LoadData()
+        private void GetDataFromService()
         {
             try
             {
@@ -189,8 +242,13 @@ namespace PMSLargeScreen
                 ErrorMessage = ex.Message;
             }
 
+            SetPagingParameters();
         }
-        private void SetFinishedPlanCount()
+
+        /// <summary>
+        /// 获取已完成计划数量
+        /// </summary>
+        private void GetFinishedPlanCount()
         {
             try
             {
