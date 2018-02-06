@@ -112,7 +112,7 @@ namespace PMSClient.ViewModel
             {
                 using (var service = new RecordMillingServiceClient())
                 {
-                    string materialType = PMSCommon.CustomData.MaterialTypes[4];
+                    string materialType = PMSCommon.CustomData.MaterialTypes[0];
                     int take = 20;
                     var tempStored = service.GetRecordMillingByMaterialType(materialType, take);
                     NewMaterialUsedList.Clear();
