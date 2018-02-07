@@ -27,7 +27,7 @@ namespace PMSClient.ReportsHelper
         private DcMaterialOrder model;
         public void SetModel(DcMaterialOrder order)
         {
-            if (model!=null)
+            if (order!=null)
             {
                 model = order;
                 CreateFolderOnDesktop();
