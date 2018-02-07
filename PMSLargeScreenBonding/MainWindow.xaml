@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="{Binding CurrentDate,StringFormat=今天是 {0:yyyy-MM-dd dddd}}" Grid.Column="0" Foreground="Yellow"
                        Style="{StaticResource StyleTextBlockLightBig}"/>
-            <TextBlock Text="{Binding FinishedCount,StringFormat=从2017年04月起已完成绑定计划{0}次}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
+            <TextBlock Text="{Binding FinishedCount,StringFormat=从2017年04月起已完成绑定计划{0}片}" Grid.Column="1"  Style="{StaticResource StyleTextBlockLightBig}"/>
             <TextBlock Text="{Binding IntervalRefreshDataTime,StringFormat=数据更新时间{0}s}" Grid.Column="2"  Style="{StaticResource StyleTextBlockLightBig}"/>
             <Button Name="btnClose" Content="退出" Grid.Column="3"  Style="{StaticResource StyleButton}" Click="btnClose_Click"/>
         </Grid>

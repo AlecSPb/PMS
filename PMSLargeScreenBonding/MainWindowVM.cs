@@ -35,7 +35,7 @@ namespace PMSLargeScreenBonding
         }
 
         private int pageIndex = 1;
-        private int PageSize = 8;
+        private int PageSize = 16;
         private int PageCount = 0;
         private int dataCount = 0;
         private void _Loadtimer_Elapsed(object sender, ElapsedEventArgs e)
