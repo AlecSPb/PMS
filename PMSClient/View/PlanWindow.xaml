@@ -48,20 +48,20 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
                 <DataGrid.Columns>
-                    <!--<DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                    <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonLocation}" 
-                                        Command="{Binding DataContext.SearchMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        Command="{Binding DataContext.SearchMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
                                         CommandParameter="{Binding}"/>
-                                    <Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonLabel}" 
+                                    <!--<Button Style="{StaticResource StyleDGButton}" Content="{StaticResource ButtonLabel}" 
                                         Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
+                                        CommandParameter="{Binding}"/>-->
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>-->
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
                     <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"

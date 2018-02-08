@@ -8,6 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using PMSClient.ReportsHelper;
+using System.IO;
 
 namespace PMSClient.ViewModel
 {
@@ -51,15 +52,15 @@ namespace PMSClient.ViewModel
                     default:
                         break;
                 }
+                //TODO:这里设置生成完毕后打开对应文件夹
 
-
-                PMSDialogService.ShowYes("报告创建成功，请在桌面查看");
             }
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
+
 
         private void ShowMessageAfterCreateDoc(string reportName)
         {
