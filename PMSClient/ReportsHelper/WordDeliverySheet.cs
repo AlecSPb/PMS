@@ -27,6 +27,7 @@ namespace PMSClient.ReportsHelper
             if (model != null)
             {
                 this.model = model;
+                CreateFolderOnDesktop();
                 var targetName = $"{prefix}_{model.DeliveryName}.docx";
                 targetFile = Path.Combine(targetDir, targetName);
             }

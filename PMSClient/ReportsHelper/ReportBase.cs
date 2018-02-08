@@ -14,6 +14,7 @@ namespace PMSClient.ReportsHelper
         protected string targetFile;
         protected string tempFile;
         protected string targetDir;
+
         public void CreateFolderOnDesktop()
         {
             targetDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop),

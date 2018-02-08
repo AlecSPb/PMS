@@ -29,6 +29,7 @@ namespace PMSClient.ReportsHelper
             if (test != null)
             {
                 model = test;
+                CreateFolderOnDesktop();
                 var targetName = $"PMI_{prefix}_{StringUtil.RemoveSlash(model.Customer)}_{model.CompositionAbbr}_{model.ProductID}.docx".Replace('-', '_');
                 targetFile = Path.Combine(targetDir, targetName);
             }
