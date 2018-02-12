@@ -4,16 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace DataOutputTempProgram
 {
-    class Program
+    public static class Helper
     {
-        static void Main(string[] args)
+        public static string Process(string input)
         {
-            DataProcess dp = new DataProcess();
-            dp.Process();
-            Console.Read();
+            return input.Substring(0, 8).Replace("M", "A").Replace("N", "B").Replace("O", "C");
         }
     }
 }
