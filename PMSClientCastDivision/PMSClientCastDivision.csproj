@@ -191,6 +191,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\ConfirmCompleteWindow.xaml.cs">
+      <DependentUpon>ConfirmCompleteWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\HelpImagePathConverter.cs" />
     <Compile Include="Tool\IngredientDialog.xaml.cs">
       <DependentUpon>IngredientDialog.xaml</DependentUpon>
@@ -219,6 +222,9 @@
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\CompoundView.xaml.cs">
+      <DependentUpon>CompoundView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
@@ -332,6 +338,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="ToolWindow\ConfirmCompleteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tool\IngredientDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -339,6 +349,10 @@
     <Page Include="Tool\LabelOutPutView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CompoundView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DebugView.xaml">
       <Generator>MSBuild:Compile</Generator>
