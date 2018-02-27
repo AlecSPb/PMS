@@ -41,7 +41,9 @@ namespace PMSClient.ViewModel
             vm.SetRequestView(PMSViews.RecordDeMoldEdit);
             vm.SetCalculationItem(CurrentRecordDeMold);
             vm.CalculateDensity();
-            NavigationService.GoTo(PMSViews.DensityEstamator);
+
+            new PMSClient.Tool.DensityEstamatorWindow().ShowDialog();
+            //NavigationService.GoTo(PMSViews.DensityEstamator);
         }
 
         private void ActionSelect()

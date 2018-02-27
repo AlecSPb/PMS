@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="材料编号"  Style="{StaticResource StyleDGTextBlockCommon}"/>
@@ -30,7 +31,9 @@
         <TextBox Grid.Row="3" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxLeft}"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Text="熔点信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
-        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
+        <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Style="{StaticResource StyleButtonCommon}" Content="部分交付"/>
             <Button Style="{StaticResource StyleButtonCommon}" Content="全部交付"/>
         </StackPanel>

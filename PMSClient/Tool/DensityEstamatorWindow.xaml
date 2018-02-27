@@ -1,0 +1,115 @@
+﻿<Window x:Class="PMSClient.Tool.DensityEstamatorWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:local="clr-namespace:PMSClient.Tool"
+             mc:Ignorable="d"  
+            Title="毛坯密度估算"
+             WindowStyle="ToolWindow"
+            WindowStartupLocation="CenterScreen"
+             Height="600" Width="500" DataContext="{Binding Source={StaticResource ToolLocator},Path=DensityEstamator}">
+    <Grid  Background="{StaticResource BGBrushWindow}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="欢迎热压毛坯密度估算程序"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
+            <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="不需要每个尺寸都有，没有的是0就行了"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Border Style="{StaticResource StyleBorderCommon}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource StyleTextBlockCommon}" Text="1.请选择石墨纸规格（双层）" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <DataGrid  Name="dg" Grid.Row="1" ItemsSource="{Binding GraphitePapers}" HorizontalContentAlignment="Stretch" Style="{StaticResource StyleDataGridCommon}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding SelectionChanged}" CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="直径" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                                Binding="{Binding Diameter,StringFormat={}{0:F2}}"/>
+                            <DataGridTextColumn Header="重量" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                                Binding="{Binding Weight,StringFormat={}{0:F2}}"/>
+                            <DataGridTextColumn Header="厚度" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                                Binding="{Binding Thickness,StringFormat={}{0:F2}}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Style="{StaticResource StyleBorderCommon}">
+                <Grid  DataContext="{Binding CurrentCalculationItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="石墨纸直径" />
+                    <TextBox Name="txtGraphiteDiameter" Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"   Text="{Binding GraphiteDiameter,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="石墨纸重量" />
+                    <TextBox Name="txtGraphiteWeight" Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding GraphiteWeight,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="石墨纸厚度" />
+                    <TextBox Name="txtGraphiteThickness" Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding GraphiteThickness,StringFormat={}{0:F2}}"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="重量" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding Weight,StringFormat={}{0:F2}}"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="直径1" />
+                    <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding D1,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="直径2" />
+                    <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding D2,StringFormat={}{0:F2}}"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="厚度1" />
+                    <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding T1,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="厚度2" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding T2,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="厚度3" />
+                    <TextBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding T3,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="9" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="厚度4" />
+                    <TextBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"    Text="{Binding T4,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="去纸平均厚度" />
+                    <TextBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding TAverage,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="11" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度" />
+                    <TextBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding Density,StringFormat={}{0:F2}}"/>
+                    <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度%" />
+                    <TextBox Grid.Row="12" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}"    Text="{Binding RatioDensity,StringFormat={}{0:P2}}"/>
+                    <Button Grid.Row="13" Grid.Column="0" Style="{StaticResource StyleButtonCommon}" Command="{Binding DataContext.RefreshCalculation,
+                        RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                            Content="刷新计算"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleBorderCommon}"/>
+        </Grid>
+    </Grid>
+</Window>

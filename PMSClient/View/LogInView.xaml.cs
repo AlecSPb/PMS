@@ -109,8 +109,9 @@ namespace PMSClient.View
                     txtNotice.Text = System.IO.File.ReadAllText(noticeFile);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                PMSHelper.CurrentLog.Error(ex);
             }
         }
 

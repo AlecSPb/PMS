@@ -83,6 +83,11 @@ namespace PMSClient.ViewModel
 
             var dtWindow = new DocumentTypeSelect();
             dtWindow.ShowDialog();
+            if (dtWindow.DialogResult!=true)
+            {
+                return;
+            }
+
             string documentType = dtWindow.DocumentType;
 
             try

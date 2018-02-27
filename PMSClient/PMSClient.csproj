@@ -278,6 +278,9 @@
     <Compile Include="ToolWindow\CompositionToOne.xaml.cs">
       <DependentUpon>CompositionToOne.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tool\DensityEstamatorWindow.xaml.cs">
+      <DependentUpon>DensityEstamatorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\DensityEstamatorView.xaml.cs">
       <DependentUpon>DensityEstamatorView.xaml</DependentUpon>
     </Compile>
@@ -747,6 +750,10 @@
     <Page Include="ToolWindow\CompositionToOne.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tool\DensityEstamatorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Tool\DensityEstamatorView.xaml">
       <Generator>MSBuild:Compile</Generator>

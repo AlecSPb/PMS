@@ -30,18 +30,21 @@ namespace PMSClient.ToolWindow
         private void btnCOA_Click(object sender, RoutedEventArgs e)
         {
             DocumentType = "COA";
+            this.DialogResult = true;
             Close();
         }
 
         private void btnCOABL_Click(object sender, RoutedEventArgs e)
         {
             DocumentType = "COABL";
+            this.DialogResult = true;
             Close();
         }
 
         private void btnTest_Click(object sender, RoutedEventArgs e)
         {
             DocumentType = "TEST";
+            this.DialogResult = true;
             Close();
         }
     }
