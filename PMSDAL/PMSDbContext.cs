@@ -116,5 +116,7 @@ namespace PMSDAL
         public DbSet<EnvironmentInfo> EnvironmentInfos { get; set; }
 
         public DbSet<Notice> Notices { get; set; }
+
+        public DbSet<ToDo> ToDoes { get; set; }
     }
 }

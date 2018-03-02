@@ -94,6 +94,7 @@
     <Compile Include="Entities\RecordTestHistory.cs" />
     <Compile Include="Entities\RecordVHPHistory.cs" />
     <Compile Include="Entities\TaskPlan.cs" />
+    <Compile Include="Entities\ToDo.cs" />
     <Compile Include="Migrations\201701090708208_new.cs" />
     <Compile Include="Migrations\201701090708208_new.Designer.cs">
       <DependentUpon>201701090708208_new.cs</DependentUpon>
