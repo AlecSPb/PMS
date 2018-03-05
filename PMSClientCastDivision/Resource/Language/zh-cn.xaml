@@ -387,7 +387,7 @@
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>
     <sys:String x:Key="MOIWeight">重量(kg)</sys:String>
     <sys:String x:Key="MOIPriority">优先级</sys:String>
-    <sys:String x:Key="MOISJIngredient">配料信息</sys:String>
+    <sys:String x:Key="MOISJIngredient">备注信息</sys:String>
     <!--Plate-->
     <sys:String x:Key="PlateState">状态</sys:String>
     <sys:String x:Key="PlateCreator">创建者</sys:String>

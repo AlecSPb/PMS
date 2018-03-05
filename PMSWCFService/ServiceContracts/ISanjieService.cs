@@ -33,13 +33,19 @@ namespace PMSWCFService.ServiceContracts
 
         //Finish Order Item
         [OperationContract]
-        int FinishMaterialOrderItem(Guid id,string uid);
-
-        [OperationContract]
         int FinishMaterialOrder(Guid id, string uid);
 
         [OperationContract]
-        int FinishMaterialOrderItemWithIngredient(Guid id, string uid,string ingredient);
+        int FinishMaterialOrderItem(Guid id, string uid);
+
+        [OperationContract]
+        int UpdateMaterialOrderItem(DcMaterialOrderItem model, string uid);
+
+        [OperationContract]
+        int AddToMaterialIn(DcMaterialInventoryIn model, string uid);
+
+        [OperationContract]
+        int AddToCompound(DcBDCompound model, string uid);
 
         //Inventory
         [OperationContract]

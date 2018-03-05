@@ -239,7 +239,7 @@ namespace PMSClient
                 }
             }
         }
-        public static DcBDCompound[] Compounds
+        public static BasicService.DcBDCompound[] Compounds
         {
             get
             {

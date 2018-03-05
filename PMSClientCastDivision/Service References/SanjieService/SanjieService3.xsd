@@ -66,12 +66,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialOrderItemExtra" nillable="true" type="tns:DcMaterialOrderItemExtra" />
-  <xs:complexType name="ArrayOfDcMaterialInventoryIn">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDcMaterialInventoryIn" nillable="true" type="tns:ArrayOfDcMaterialInventoryIn" />
   <xs:complexType name="DcMaterialInventoryIn">
     <xs:sequence>
       <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
@@ -88,6 +82,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />
+  <xs:complexType name="DcBDCompound">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoilingPoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Density" type="xs:double" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="InformationSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeltingPoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecialProperty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcBDCompound" nillable="true" type="tns:DcBDCompound" />
+  <xs:complexType name="ArrayOfDcMaterialInventoryIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaterialInventoryIn" nillable="true" type="tns:ArrayOfDcMaterialInventoryIn" />
   <xs:complexType name="ArrayOfDcMaterialInventoryOut">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryOut" nillable="true" type="tns:DcMaterialInventoryOut" />

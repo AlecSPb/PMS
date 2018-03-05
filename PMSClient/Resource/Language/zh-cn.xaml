@@ -419,7 +419,7 @@
     <sys:String x:Key="MORemark">订单备注</sys:String>
     <sys:String x:Key="MOShipFee">运输费</sys:String>
     <sys:String x:Key="MOPriority">优先级</sys:String>
-    <sys:String x:Key="MOSJIngredient">三杰配料</sys:String>
+    <sys:String x:Key="MOSJIngredient">备注信息</sys:String>
 
 
     <!--MaterialOrderItem-->

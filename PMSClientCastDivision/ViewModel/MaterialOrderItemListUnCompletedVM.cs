@@ -132,24 +132,73 @@ namespace PMSClient.ViewModel
             {
                 try
                 {
-                    Tool.IngredientDialog dialog = new Tool.IngredientDialog();
-                    dialog.MessageTitle = model.Item.MaterialOrderItem.Composition;
-                    if (dialog.ShowDialog()==false)
+                    ToolWindow.ConfirmCompleteWindow dialog = new ToolWindow.ConfirmCompleteWindow();
+                    dialog.Model = new ToolWindow.ConfirmModel()
+                    {
+                        MaterialItemLot = model.Item.MaterialOrderItem.OrderItemNumber,
+                        Composition = model.Item.MaterialOrderItem.Composition,
+                        PMINumber = model.Item.MaterialOrderItem.PMINumber,
+                        Weight = model.Item.MaterialOrderItem.Weight,
+                        ActualWeight=model.Item.MaterialOrderItem.Weight
+                    };
+
+                    if (dialog.ShowDialog() == false)
                     {
                         return;
                     }
-                    string ingredient = dialog.Message;
-                    //if (!PMSDialogService.ShowYesNo("请问", $"确定已经完成这个项目{model.Item.MaterialOrderItem.Composition}了吗？"))
-                    //{
-                    //    return;
-                    //}
+
+                    var m = dialog.Model;
+                    string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                     using (var service = new SanjieServiceClient())
                     {
-                        //service.FinishMaterialOrderItem(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName);
-                        service.FinishMaterialOrderItemWithIngredient(model.Item.MaterialOrderItem.ID, PMSHelper.CurrentSession.CurrentUser.UserName, ingredient);
+                        /*设置MaterialOrderItem项目状态为完成
+                            如果是部分完成则另行处理
+                         */
+                        string materialInRemark = "";
+                        if (m.Weight == m.ActualWeight)
+                        {
+                            materialInRemark = "全部交付";
+                            model.Item.MaterialOrderItem.State = PMSCommon.MaterialOrderItemState.完成.ToString();
+                            service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
+                        }
+                        else
+                        {
+                            materialInRemark = "部分交付";
+                            model.Item.MaterialOrderItem.SJIngredient += DateTime.Now.ToString("yyMmdd")
+                                + "交付" + m.ActualWeight.ToString("F3");
+                            service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
+                        }
+                        //保存材料入库信息
+                        DcMaterialInventoryIn materialInModel = new DcMaterialInventoryIn();
+                        materialInModel.Id = Guid.NewGuid();
+                        materialInModel.Composition = m.Composition;
+                        materialInModel.Weight = m.ActualWeight;
+                        materialInModel.MaterialLot = m.MaterialItemLot;
+                        materialInModel.PMINumber = m.PMINumber;
+                        materialInModel.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
+                        materialInModel.Purity = model.Item.MaterialOrderItem.Purity;
+                        materialInModel.CreateTime = DateTime.Now;
+                        materialInModel.Creator = uid;
+                        materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
+                        materialInModel.Remark = materialInRemark;
+
+                        service.AddToMaterialIn(materialInModel, uid);
+
+                        //保存原料熔点信息
+                        DcBDCompound compound = new DcBDCompound();
+                        compound.ID = Guid.NewGuid();
+                        compound.MaterialName = model.Item.MaterialOrderItem.Composition;
+                        compound.MeltingPoint = m.MeltingPoint;
+                        compound.InformationSource = PMSCommon.CustomData.InformationSources[0];
+                        compound.Density = 0;
+                        compound.BoilingPoint = "";
+                        compound.SpecialProperty = "";
+                        compound.State = PMSCommon.SimpleState.正常.ToString();
+                        service.AddToCompound(compound, uid);
+
                     }
                     SetPageParametersWhenConditionChange();
-                    PMSDialogService.ShowYes("项目已完成，并暂入库，万一有操作失误，联系先锋材料进行修正");
+                    PMSDialogService.ShowYes("项目已完成，并暂入库，如有操作失误，联系先锋材料进行修正");
                     NavigationService.Status("保存完毕");
                 }
                 catch (Exception ex)

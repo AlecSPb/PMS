@@ -49,23 +49,35 @@
   <wsdl:message name="ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialOrderItemExtrasUnCompletedCountResponse" />
   </wsdl:message>
-  <wsdl:message name="ISanjieService_FinishMaterialOrderItem_InputMessage">
-    <wsdl:part name="parameters" element="tns:FinishMaterialOrderItem" />
-  </wsdl:message>
-  <wsdl:message name="ISanjieService_FinishMaterialOrderItem_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FinishMaterialOrderItemResponse" />
-  </wsdl:message>
   <wsdl:message name="ISanjieService_FinishMaterialOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:FinishMaterialOrder" />
   </wsdl:message>
   <wsdl:message name="ISanjieService_FinishMaterialOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:FinishMaterialOrderResponse" />
   </wsdl:message>
-  <wsdl:message name="ISanjieService_FinishMaterialOrderItemWithIngredient_InputMessage">
-    <wsdl:part name="parameters" element="tns:FinishMaterialOrderItemWithIngredient" />
+  <wsdl:message name="ISanjieService_FinishMaterialOrderItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishMaterialOrderItem" />
   </wsdl:message>
-  <wsdl:message name="ISanjieService_FinishMaterialOrderItemWithIngredient_OutputMessage">
-    <wsdl:part name="parameters" element="tns:FinishMaterialOrderItemWithIngredientResponse" />
+  <wsdl:message name="ISanjieService_FinishMaterialOrderItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishMaterialOrderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_UpdateMaterialOrderItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialOrderItem" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_UpdateMaterialOrderItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMaterialOrderItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_AddToMaterialIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToMaterialIn" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_AddToMaterialIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToMaterialInResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_AddToCompound_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCompound" />
+  </wsdl:message>
+  <wsdl:message name="ISanjieService_AddToCompound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToCompoundResponse" />
   </wsdl:message>
   <wsdl:message name="ISanjieService_GetMaterialInventoryIns_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialInventoryIns" />
@@ -168,17 +180,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCount" message="tns:ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialOrderItemExtrasUnCompletedCountResponse" message="tns:ISanjieService_GetMaterialOrderItemExtrasUnCompletedCount_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FinishMaterialOrderItem">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" message="tns:ISanjieService_FinishMaterialOrderItem_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse" message="tns:ISanjieService_FinishMaterialOrderItem_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="FinishMaterialOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrder" message="tns:ISanjieService_FinishMaterialOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderResponse" message="tns:ISanjieService_FinishMaterialOrder_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="FinishMaterialOrderItemWithIngredient">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredient" message="tns:ISanjieService_FinishMaterialOrderItemWithIngredient_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredientResponse" message="tns:ISanjieService_FinishMaterialOrderItemWithIngredient_OutputMessage" />
+    <wsdl:operation name="FinishMaterialOrderItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" message="tns:ISanjieService_FinishMaterialOrderItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse" message="tns:ISanjieService_FinishMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialOrderItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/UpdateMaterialOrderItem" message="tns:ISanjieService_UpdateMaterialOrderItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/UpdateMaterialOrderItemResponse" message="tns:ISanjieService_UpdateMaterialOrderItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToMaterialIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/AddToMaterialIn" message="tns:ISanjieService_AddToMaterialIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/AddToMaterialInResponse" message="tns:ISanjieService_AddToMaterialIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToCompound">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/AddToCompound" message="tns:ISanjieService_AddToCompound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISanjieService/AddToCompoundResponse" message="tns:ISanjieService_AddToCompound_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetMaterialInventoryIns">
       <wsdl:input wsaw:Action="http://tempuri.org/ISanjieService/GetMaterialInventoryIns" message="tns:ISanjieService_GetMaterialInventoryIns_InputMessage" />
@@ -294,15 +314,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="FinishMaterialOrderItem">
-      <soap:operation soapAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="FinishMaterialOrder">
       <soap:operation soapAction="http://tempuri.org/ISanjieService/FinishMaterialOrder" style="document" />
       <wsdl:input>
@@ -312,8 +323,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="FinishMaterialOrderItemWithIngredient">
-      <soap:operation soapAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredient" style="document" />
+    <wsdl:operation name="FinishMaterialOrderItem">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMaterialOrderItem">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/UpdateMaterialOrderItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToMaterialIn">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/AddToMaterialIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToCompound">
+      <soap:operation soapAction="http://tempuri.org/ISanjieService/AddToCompound" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -819,6 +819,211 @@ namespace PMSClient.SanjieService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcBDCompound", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcBDCompound : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoilingPointField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DensityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InformationSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaterialNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MeltingPointField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SpecialPropertyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BoilingPoint {
+            get {
+                return this.BoilingPointField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoilingPointField, value) != true)) {
+                    this.BoilingPointField = value;
+                    this.RaisePropertyChanged("BoilingPoint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Density {
+            get {
+                return this.DensityField;
+            }
+            set {
+                if ((this.DensityField.Equals(value) != true)) {
+                    this.DensityField = value;
+                    this.RaisePropertyChanged("Density");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InformationSource {
+            get {
+                return this.InformationSourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InformationSourceField, value) != true)) {
+                    this.InformationSourceField = value;
+                    this.RaisePropertyChanged("InformationSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaterialName {
+            get {
+                return this.MaterialNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialNameField, value) != true)) {
+                    this.MaterialNameField = value;
+                    this.RaisePropertyChanged("MaterialName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MeltingPoint {
+            get {
+                return this.MeltingPointField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MeltingPointField, value) != true)) {
+                    this.MeltingPointField = value;
+                    this.RaisePropertyChanged("MeltingPoint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SpecialProperty {
+            get {
+                return this.SpecialPropertyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SpecialPropertyField, value) != true)) {
+                    this.SpecialPropertyField = value;
+                    this.RaisePropertyChanged("SpecialProperty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StateField, value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DcMaterialInventoryOut", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
     [System.SerializableAttribute()]
     public partial class DcMaterialInventoryOut : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1323,23 +1528,35 @@ namespace PMSClient.SanjieService {
             "nse")]
         System.Threading.Tasks.Task<int> GetMaterialOrderItemExtrasUnCompletedCountAsync(string composition, string pminumber, string orderitemnumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
-        int FinishMaterialOrderItem(System.Guid id, string uid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
-        System.Threading.Tasks.Task<int> FinishMaterialOrderItemAsync(System.Guid id, string uid);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrder", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderResponse")]
         int FinishMaterialOrder(System.Guid id, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrder", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderResponse")]
         System.Threading.Tasks.Task<int> FinishMaterialOrderAsync(System.Guid id, string uid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredient", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredientResponse")]
-        int FinishMaterialOrderItemWithIngredient(System.Guid id, string uid, string ingredient);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
+        int FinishMaterialOrderItem(System.Guid id, string uid);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredient", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemWithIngredientResponse")]
-        System.Threading.Tasks.Task<int> FinishMaterialOrderItemWithIngredientAsync(System.Guid id, string uid, string ingredient);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/FinishMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/FinishMaterialOrderItemResponse")]
+        System.Threading.Tasks.Task<int> FinishMaterialOrderItemAsync(System.Guid id, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/UpdateMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/UpdateMaterialOrderItemResponse")]
+        int UpdateMaterialOrderItem(PMSClient.SanjieService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/UpdateMaterialOrderItem", ReplyAction="http://tempuri.org/ISanjieService/UpdateMaterialOrderItemResponse")]
+        System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSClient.SanjieService.DcMaterialOrderItem model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/AddToMaterialIn", ReplyAction="http://tempuri.org/ISanjieService/AddToMaterialInResponse")]
+        int AddToMaterialIn(PMSClient.SanjieService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/AddToMaterialIn", ReplyAction="http://tempuri.org/ISanjieService/AddToMaterialInResponse")]
+        System.Threading.Tasks.Task<int> AddToMaterialInAsync(PMSClient.SanjieService.DcMaterialInventoryIn model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/AddToCompound", ReplyAction="http://tempuri.org/ISanjieService/AddToCompoundResponse")]
+        int AddToCompound(PMSClient.SanjieService.DcBDCompound model, string uid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/AddToCompound", ReplyAction="http://tempuri.org/ISanjieService/AddToCompoundResponse")]
+        System.Threading.Tasks.Task<int> AddToCompoundAsync(PMSClient.SanjieService.DcBDCompound model, string uid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISanjieService/GetMaterialInventoryIns", ReplyAction="http://tempuri.org/ISanjieService/GetMaterialInventoryInsResponse")]
         PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber);
@@ -1497,14 +1714,6 @@ namespace PMSClient.SanjieService {
             return base.Channel.GetMaterialOrderItemExtrasUnCompletedCountAsync(composition, pminumber, orderitemnumber);
         }
         
-        public int FinishMaterialOrderItem(System.Guid id, string uid) {
-            return base.Channel.FinishMaterialOrderItem(id, uid);
-        }
-        
-        public System.Threading.Tasks.Task<int> FinishMaterialOrderItemAsync(System.Guid id, string uid) {
-            return base.Channel.FinishMaterialOrderItemAsync(id, uid);
-        }
-        
         public int FinishMaterialOrder(System.Guid id, string uid) {
             return base.Channel.FinishMaterialOrder(id, uid);
         }
@@ -1513,12 +1722,36 @@ namespace PMSClient.SanjieService {
             return base.Channel.FinishMaterialOrderAsync(id, uid);
         }
         
-        public int FinishMaterialOrderItemWithIngredient(System.Guid id, string uid, string ingredient) {
-            return base.Channel.FinishMaterialOrderItemWithIngredient(id, uid, ingredient);
+        public int FinishMaterialOrderItem(System.Guid id, string uid) {
+            return base.Channel.FinishMaterialOrderItem(id, uid);
         }
         
-        public System.Threading.Tasks.Task<int> FinishMaterialOrderItemWithIngredientAsync(System.Guid id, string uid, string ingredient) {
-            return base.Channel.FinishMaterialOrderItemWithIngredientAsync(id, uid, ingredient);
+        public System.Threading.Tasks.Task<int> FinishMaterialOrderItemAsync(System.Guid id, string uid) {
+            return base.Channel.FinishMaterialOrderItemAsync(id, uid);
+        }
+        
+        public int UpdateMaterialOrderItem(PMSClient.SanjieService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.UpdateMaterialOrderItem(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateMaterialOrderItemAsync(PMSClient.SanjieService.DcMaterialOrderItem model, string uid) {
+            return base.Channel.UpdateMaterialOrderItemAsync(model, uid);
+        }
+        
+        public int AddToMaterialIn(PMSClient.SanjieService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.AddToMaterialIn(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddToMaterialInAsync(PMSClient.SanjieService.DcMaterialInventoryIn model, string uid) {
+            return base.Channel.AddToMaterialInAsync(model, uid);
+        }
+        
+        public int AddToCompound(PMSClient.SanjieService.DcBDCompound model, string uid) {
+            return base.Channel.AddToCompound(model, uid);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddToCompoundAsync(PMSClient.SanjieService.DcBDCompound model, string uid) {
+            return base.Channel.AddToCompoundAsync(model, uid);
         }
         
         public PMSClient.SanjieService.DcMaterialInventoryIn[] GetMaterialInventoryIns(int skip, int take, string composition, string batchnumber, string pminumber) {

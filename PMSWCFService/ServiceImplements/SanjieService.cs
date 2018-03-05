@@ -556,7 +556,6 @@ namespace PMSWCFService
                     materialIn.Purity = item.Purity;
                     materialIn.Remark = "";
 
-                    AddMaterialInventoryInByUID(materialIn, uid);
                     #endregion
                     item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
                     dc.Entry(item).State = EntityState.Modified;
@@ -571,35 +570,20 @@ namespace PMSWCFService
             }
         }
 
-        public int FinishMaterialOrderItemWithIngredient(Guid id, string uid,string ingredient)
+        public int UpdateMaterialOrderItem(DcMaterialOrderItem model, string uid)
         {
             try
             {
+                int result = 0;
                 using (var dc = new PMSDbContext())
                 {
-                    var item = dc.MaterialOrderItems.Find(id);
-                    #region 存储入库数据
-                    var materialIn = new DcMaterialInventoryIn();
-                    materialIn.Id = Guid.NewGuid();
-                    materialIn.Creator = uid;
-                    materialIn.CreateTime = DateTime.Now;
-                    materialIn.State = PMSCommon.InventoryState.暂入库.ToString();
-                    materialIn.Supplier = PMSCommon.MaterialSupplier.三杰.ToString();
-                    materialIn.MaterialLot = item.OrderItemNumber;
-                    materialIn.PMINumber = item.PMINumber;
-                    materialIn.Composition = item.Composition;
-                    materialIn.Weight = item.Weight;
-                    materialIn.Purity = item.Purity;
-                    materialIn.Remark = "";
-
-                    AddMaterialInventoryInByUID(materialIn, uid);
-                    #endregion
-                    item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
-                    item.SJIngredient = ingredient;
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialOrderItem, MaterialOrderItem>());
+                    var item = Mapper.Map<MaterialOrderItem>(model);
                     dc.Entry(item).State = EntityState.Modified;
-                    SaveHistory(item, uid);
-                    return dc.SaveChanges();
+                    result = dc.SaveChanges();
                 }
+
+                return result;
             }
             catch (Exception ex)
             {
@@ -608,6 +592,52 @@ namespace PMSWCFService
             }
         }
 
+
+        public int AddToMaterialIn(DcMaterialInventoryIn model, string uid)
+        {
+            try
+            {
+                SaveHistory(model, uid);
+                return AddMaterialInventoryIn(model);
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int AddToCompound(DcBDCompound model, string uid)
+        {
+            try
+            {
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    //判断当前成分是否存在，不存在再写入
+                    var count = dc.Compounds.Where(i => i.MaterialName == model.MaterialName).Count();
+                    if (count == 0)
+                    {
+                        Mapper.Initialize(cfg => cfg.CreateMap<DcBDCompound, BDCompound>());
+                        var item = Mapper.Map<BDCompound>(model);
+                        dc.Compounds.Add(item);
+                        result = dc.SaveChanges();
+                    }
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 添加材料到暂入库
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         private int AddMaterialInventoryIn(DcMaterialInventoryIn model)
         {
             try
@@ -628,20 +658,7 @@ namespace PMSWCFService
                 throw ex;
             }
         }
-
-        private int AddMaterialInventoryInByUID(DcMaterialInventoryIn model, string uid)
-        {
-            try
-            {
-                SaveHistory(model, uid);
-                return AddMaterialInventoryIn(model);
-            }
-            catch (Exception ex)
-            {
-                LocalService.CurrentLog.Error(ex);
-                throw ex;
-            }
-        }
+        
 
         private void SaveHistory(DcMaterialInventoryIn model, string uid)
         {
@@ -718,6 +735,7 @@ namespace PMSWCFService
                 LocalService.CurrentLog.Error(ex);
             }
         }
+
 
 
     }
