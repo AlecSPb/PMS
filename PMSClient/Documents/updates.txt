@@ -2,8 +2,8 @@
 本次更新Updates==
 更改了取模密度估算计算器为窗口并调整了项目顺序方便输入
 添加了报告批量导出功能
-添加了ToDoList
-
+添加了ToDoList模块
+大幅更改了三杰客户端的订单确认功能和对应服务
 
 未来更新Furture Plan
 添加了测试报告批量导出add test report output in batch

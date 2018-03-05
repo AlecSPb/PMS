@@ -556,6 +556,8 @@ namespace PMSWCFService
                     materialIn.Purity = item.Purity;
                     materialIn.Remark = "";
 
+                    AddMaterialInventoryIn(materialIn);
+
                     #endregion
                     item.State = PMSCommon.MaterialOrderItemState.完成.ToString();
                     dc.Entry(item).State = EntityState.Modified;
