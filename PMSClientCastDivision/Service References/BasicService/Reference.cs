@@ -992,6 +992,9 @@ namespace PMSClient.BasicService {
         private string MeltingPointField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SpecialPropertyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1107,6 +1110,19 @@ namespace PMSClient.BasicService {
                 if ((object.ReferenceEquals(this.MeltingPointField, value) != true)) {
                     this.MeltingPointField = value;
                     this.RaisePropertyChanged("MeltingPoint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
                 }
             }
         }
@@ -2118,6 +2134,18 @@ namespace PMSClient.BasicService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetAllCompounds", ReplyAction="http://tempuri.org/ICompoundService/GetAllCompoundsResponse")]
         System.Threading.Tasks.Task<PMSClient.BasicService.DcBDCompound[]> GetAllCompoundsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompound", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundResponse")]
+        PMSClient.BasicService.DcBDCompound[] GetCompound(int skip, int take, string searchComposition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompound", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundResponse")]
+        System.Threading.Tasks.Task<PMSClient.BasicService.DcBDCompound[]> GetCompoundAsync(int skip, int take, string searchComposition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompoundCount", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundCountResponse")]
+        int GetCompoundCount(string searchComposition);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/GetCompoundCount", ReplyAction="http://tempuri.org/ICompoundService/GetCompoundCountResponse")]
+        System.Threading.Tasks.Task<int> GetCompoundCountAsync(string searchComposition);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/AddCompound", ReplyAction="http://tempuri.org/ICompoundService/AddCompoundResponse")]
         int AddCompound(PMSClient.BasicService.DcBDCompound model);
         
@@ -2135,6 +2163,12 @@ namespace PMSClient.BasicService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/DeleteCompound", ReplyAction="http://tempuri.org/ICompoundService/DeleteCompoundResponse")]
         System.Threading.Tasks.Task<int> DeleteCompoundAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/IsCompoundExist", ReplyAction="http://tempuri.org/ICompoundService/IsCompoundExistResponse")]
+        bool IsCompoundExist(string materialName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICompoundService/IsCompoundExist", ReplyAction="http://tempuri.org/ICompoundService/IsCompoundExistResponse")]
+        System.Threading.Tasks.Task<bool> IsCompoundExistAsync(string materialName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2172,6 +2206,22 @@ namespace PMSClient.BasicService {
             return base.Channel.GetAllCompoundsAsync();
         }
         
+        public PMSClient.BasicService.DcBDCompound[] GetCompound(int skip, int take, string searchComposition) {
+            return base.Channel.GetCompound(skip, take, searchComposition);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.BasicService.DcBDCompound[]> GetCompoundAsync(int skip, int take, string searchComposition) {
+            return base.Channel.GetCompoundAsync(skip, take, searchComposition);
+        }
+        
+        public int GetCompoundCount(string searchComposition) {
+            return base.Channel.GetCompoundCount(searchComposition);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetCompoundCountAsync(string searchComposition) {
+            return base.Channel.GetCompoundCountAsync(searchComposition);
+        }
+        
         public int AddCompound(PMSClient.BasicService.DcBDCompound model) {
             return base.Channel.AddCompound(model);
         }
@@ -2194,6 +2244,14 @@ namespace PMSClient.BasicService {
         
         public System.Threading.Tasks.Task<int> DeleteCompoundAsync(System.Guid id) {
             return base.Channel.DeleteCompoundAsync(id);
+        }
+        
+        public bool IsCompoundExist(string materialName) {
+            return base.Channel.IsCompoundExist(materialName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> IsCompoundExistAsync(string materialName) {
+            return base.Channel.IsCompoundExistAsync(materialName);
         }
     }
     

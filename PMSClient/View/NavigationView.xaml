@@ -35,6 +35,8 @@
                        Command="{Binding LaserRule}" />
                 <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CodeRule}"/>
+                <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonCommon}"
+                        Command="{Binding ToDoList}"/>
                 <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Help}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{StaticResource ButtonHelp}"/>

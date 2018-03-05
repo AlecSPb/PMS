@@ -122,6 +122,7 @@
       <xs:element minOccurs="0" name="InformationSource" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaterialName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MeltingPoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SpecialProperty" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
     </xs:sequence>

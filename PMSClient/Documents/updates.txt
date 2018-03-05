@@ -1,5 +1,18 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
+更改了取模密度估算计算器为窗口并调整了项目顺序方便输入
+添加了报告批量导出功能
+添加了ToDoList
+
+
+未来更新Furture Plan
+添加了测试报告批量导出add test report output in batch
+添加了三杰配料信息到订单项目 add ingredient records In Sanjie modules
+添加设备保养维护模块add machine matainence module
+添加了小工具集合页面(开放)add small tools page
+更多数据导出功能 refacter the data output functions
+
+以往更新History
 2018-2-7
 版本version:
 添加了标刻规则LaserRule
@@ -21,14 +34,7 @@ add for delivery in vhp plan types
 add net-like dots in defects
 主窗体状态栏添加了日志查看按钮
 add log view button in the main window
-未来更新Furture Plan
-添加了测试报告批量导出add test report output in batch
-添加了三杰配料信息到订单项目 add ingredient records In Sanjie modules
-添加设备保养维护模块add machine matainence module
-添加了小工具集合页面(开放)add small tools page
-更多数据导出功能 refacter the data output functions
 
-以往更新History
 2018-1-11
 添加了化合物数据仓库模块，规范了化合物成分，密度，熔点等性质的存放（查询开发）
 修改了绑定完成窗口对话框
