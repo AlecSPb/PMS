@@ -194,6 +194,7 @@
     <Compile Include="ToolWindow\ConfirmCompleteWindow.xaml.cs">
       <DependentUpon>ConfirmCompleteWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\ConfirmModel.cs" />
     <Compile Include="Tool\HelpImagePathConverter.cs" />
     <Compile Include="Tool\IngredientDialog.xaml.cs">
       <DependentUpon>IngredientDialog.xaml</DependentUpon>
