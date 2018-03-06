@@ -569,5 +569,41 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public int CheckMaterialIn(string pmiNumber)
+        {
+            try
+            {
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    result = dc.MaterialInventoryIns.Where(i => i.PMINumber == pmiNumber).Count();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int CheckMaterialOut(string pmiNumber)
+        {
+            try
+            {
+                int result = 0;
+                using (var dc = new PMSDbContext())
+                {
+                    result = dc.MaterialInventoryOuts.Where(i => i.PMINumber == pmiNumber).Count();
+                }
+                return result ;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }

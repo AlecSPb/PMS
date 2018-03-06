@@ -32,7 +32,11 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int GetMaterialInventoryInCountByYear(int year);
 
-
+        //检查内部编号原料是否在库,返回记录数目
+        [OperationContract]
+        int CheckMaterialIn(string pmiNumber);
+        [OperationContract]
+        int CheckMaterialOut(string pmiNumber);
 
 
         [OperationContract]
