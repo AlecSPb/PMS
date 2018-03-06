@@ -77,29 +77,18 @@ namespace PMSClient.ViewModel
         {
             NavigationService.GoTo(PMSViews.MaterialOrderItemList);
         }
-        //核验后不能修改，只能整体作废
+
         private bool CanEditItem(DcMaterialOrderItem arg)
         {
-            if (arg == null)
-            {
-                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
-            }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder)&&CheckOrderState();
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
         }
-        //核验后不能修改，只能整体作废
+
         private bool CanAddItem(DcMaterialOrder arg)
         {
-            if (arg == null)
-            {
-                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
-            }
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder) && 
-                arg.State==PMSCommon.MaterialOrderState.未核验.ToString();
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder) ;
         }
-        private bool CheckOrderState()
-        {
-            return CurrentSelectItem.State == PMSCommon.MaterialOrderState.未核验.ToString();
-        }
+
+
         private bool CanEdit(DcMaterialOrder arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialOrder);
@@ -139,6 +128,10 @@ namespace PMSClient.ViewModel
 
         private void ActionEditItem(DcMaterialOrderItem item)
         {
+            //修改提示
+            if (!PMSDialogService.ShowYesNo("请问", "确定要【修改】这个订单项吗？"))
+                return;
+
             if (item != null)
             {
                 PMSHelper.ViewModels.MaterialOrderItemEdit.SetEdit(item);

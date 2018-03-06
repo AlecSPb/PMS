@@ -48,6 +48,9 @@ namespace PMSClient.ViewModel
 
             Edit = new RelayCommand<DcOrder>(order =>
             {
+                //修改提示
+                if (!PMSDialogService.ShowYesNo("请问", "确定要【修改】这个订单吗？"))
+                    return;
                 PMSHelper.ViewModels.OrderEdit.SetEdit(order);
                 NavigationService.GoTo(PMSViews.OrderEdit);
             }, CanEdit);

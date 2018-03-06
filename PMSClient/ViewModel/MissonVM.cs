@@ -204,7 +204,7 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicatePlan(DcPlanVHP plan)
         {
-            if (PMSDialogService.ShowYesNo("请问", "确定复用这条记录？"))
+            if (PMSDialogService.ShowYesNo("请问", "确定【复用】这条记录？"))
             {
                 if (plan != null)
                 {
@@ -218,7 +218,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEditPlan(DcPlanVHP plan)
         {
-            if (PMSDialogService.ShowYesNo("请问","你现在准备编辑更改这条记录，确定继续编辑吗？"))
+            if (PMSDialogService.ShowYesNo("请问","你现在准备【编辑】更改这条记录，确定继续编辑吗？"))
             {
                 if (plan != null)
                 {

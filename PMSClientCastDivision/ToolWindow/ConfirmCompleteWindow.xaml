@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
         Title="确定完成该项目吗？" Height="300" Width="450">
-    <Grid Background="{StaticResource BGBrushWindow}">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
@@ -30,11 +30,12 @@
         <TextBlock Name="txtComposition" Grid.Row="1" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="内部编号" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Name="txtPMINumber" Grid.Row="2" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
-        
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="目标重量"  Style="{StaticResource StyleDGTextBlockCommon}"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="目标重量(kg)"  Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBlock Name="txtWeight" Grid.Row="3" Grid.Column="1" Text=""  Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="实际提交重量"  Style="{StaticResource StyleDGTextBlockCommon}"/>
-        <TextBox Name="txtActualWeight" Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxLeft}"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="此次重量(kg)"  Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <TextBox Name="txtActualWeight" Grid.Row="4" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxLeft}"
+                 FontSize="20" FontWeight="Bold"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Text="熔点信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
         <TextBox Name="txtMeltingPoint" Grid.Row="5" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         <TextBlock Grid.Row="6" Grid.Column="0" Text="备注信息" Style="{StaticResource StyleDGTextBlockCommon}"/>

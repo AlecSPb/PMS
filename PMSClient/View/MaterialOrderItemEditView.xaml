@@ -52,6 +52,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
@@ -63,7 +64,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition/>
+                        <RowDefinition Height="0*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource MOIOrderItemNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -135,28 +136,34 @@
                     <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="kg/RMB"/>
 
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOIState}"
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource MOSJIngredient}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <ComboBox Grid.Row="9" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding State}"/>
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding SJIngredient}" Style="{StaticResource StyleTextBoxCommon}"  />
                     <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="订单状态"/>
+                           Text="备注信息"/>
 
-                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOIPriority}"
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource MOIState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <ComboBox Grid.Row="10" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                          ItemsSource="{Binding DataContext.OrderStates,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding State}"/>
+                    <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="订单状态"/>
+
+                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOIPriority}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <ComboBox Grid.Row="11" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.Priorities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding Priority}"/>
-                    <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                    <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="优先级"/>
 
-                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource MOICreator}"
+                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource MOICreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"  />
-                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource MOICreateTime}"
+                    <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"  />
+                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource MOICreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBlock Grid.Row="12" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
+                    <TextBlock Grid.Row="13" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBlockCommon}"  />
 
 
 

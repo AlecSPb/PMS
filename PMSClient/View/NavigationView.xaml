@@ -36,7 +36,7 @@
                 <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CodeRule}"/>
                 <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonCommon}"
-                        Command="{Binding ToDoList}"/>
+                        Command="{Binding ToDoList}" IsEnabled="False"/>
                 <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Help}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{StaticResource ButtonHelp}"/>
