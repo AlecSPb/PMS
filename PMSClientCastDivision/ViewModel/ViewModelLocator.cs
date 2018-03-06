@@ -45,6 +45,8 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<OutputVM>();
 
+            SimpleIoc.Default.Register<CompoundVM>();
+
             SimpleIoc.Default.Register<DebugVM>();
         }
         #region Properties
@@ -80,6 +82,12 @@ namespace PMSClient.ViewModel
         {
             get { return SimpleIoc.Default.GetInstance<OutputVM>(); }
         }
+
+        public CompoundVM Compound
+        {
+            get { return SimpleIoc.Default.GetInstance<CompoundVM>(); }
+        }
+
         public DebugVM Debug
         {
             get { return SimpleIoc.Default.GetInstance<DebugVM>(); }

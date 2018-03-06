@@ -90,6 +90,7 @@ namespace PMSClient
        FeedBack,
        FeedBackEdit,
        Output,
+       Compound,
        Debug
     }
 }

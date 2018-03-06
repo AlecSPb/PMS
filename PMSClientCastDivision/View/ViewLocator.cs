@@ -24,6 +24,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<MaterialInventoryInView>();
             SimpleIoc.Default.Register<MaterialInventoryOutView>();
             SimpleIoc.Default.Register<OutputView>();
+            SimpleIoc.Default.Register<CompoundView>();
 
             SimpleIoc.Default.Register<DebugView>();
         }
@@ -67,6 +68,10 @@ namespace PMSClient.View
         public OutputView Output
         {
             get { return SimpleIoc.Default.GetInstance<OutputView>(); }
+        }
+        public CompoundView Compound
+        {
+            get { return SimpleIoc.Default.GetInstance<CompoundView>(); }
         }
         public DebugView Debug
         {

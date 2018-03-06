@@ -223,6 +223,9 @@ namespace PMSClient
                 case PMSViews.Debug:
                     NavigateTo(_views.Debug);
                     break;
+                case PMSViews.Compound:
+                    NavigateTo(_views.Compound);
+                    break;
                 default:
                     break;
             }

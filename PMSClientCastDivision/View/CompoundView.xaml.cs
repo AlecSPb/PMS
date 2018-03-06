@@ -10,13 +10,12 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PMSClient.View
 {
     /// <summary>
-    /// CompoundView.xaml 的交互逻辑
+    /// CompoundWindow.xaml 的交互逻辑
     /// </summary>
     public partial class CompoundView : UserControl
     {

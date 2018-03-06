@@ -213,6 +213,7 @@
     <Compile Include="ViewModel\BaseViewModelPage.cs" />
     <Compile Include="ViewModel\BaseViewModelSelect.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\CompoundVM.cs" />
     <Compile Include="ViewModel\DebugVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryInVM.cs" />
     <Compile Include="ViewModel\MaterialInventoryOutVM.cs" />
@@ -223,37 +224,37 @@
     <Compile Include="ViewModel\NavigationVM.cs" />
     <Compile Include="ViewModel\OutputVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="ViewModel\View\CompoundView.xaml.cs">
+    <Compile Include="View\CompoundView.xaml.cs">
       <DependentUpon>CompoundView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\DebugView.xaml.cs">
+    <Compile Include="View\DebugView.xaml.cs">
       <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\LogInView.xaml.cs">
+    <Compile Include="View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\MaterialInventoryInView.xaml.cs">
+    <Compile Include="View\MaterialInventoryInView.xaml.cs">
       <DependentUpon>MaterialInventoryInView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\MaterialInventoryOutView.xaml.cs">
+    <Compile Include="View\MaterialInventoryOutView.xaml.cs">
       <DependentUpon>MaterialInventoryOutView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\MaterialOrderItemListUnCompletedView.xaml.cs">
+    <Compile Include="View\MaterialOrderItemListUnCompletedView.xaml.cs">
       <DependentUpon>MaterialOrderItemListUnCompletedView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\MaterialOrderItemListView.xaml.cs">
+    <Compile Include="View\MaterialOrderItemListView.xaml.cs">
       <DependentUpon>MaterialOrderItemListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\MaterialOrderView.xaml.cs">
+    <Compile Include="View\MaterialOrderView.xaml.cs">
       <DependentUpon>MaterialOrderView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\NavigationView.xaml.cs">
+    <Compile Include="View\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\OutputView.xaml.cs">
+    <Compile Include="View\OutputView.xaml.cs">
       <DependentUpon>OutputView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\View\ViewLocator.cs" />
+    <Compile Include="View\ViewLocator.cs" />
     <Page Include="CustomControls\BatchDuplicateDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -351,43 +352,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\CompoundView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewModel\View\DebugView.xaml">
+    <Page Include="View\CompoundView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\LogInView.xaml">
+    <Page Include="View\DebugView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\MaterialInventoryInView.xaml">
+    <Page Include="View\LogInView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\MaterialInventoryOutView.xaml">
+    <Page Include="View\MaterialInventoryInView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\MaterialOrderItemListUnCompletedView.xaml">
+    <Page Include="View\MaterialInventoryOutView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\MaterialOrderItemListView.xaml">
+    <Page Include="View\MaterialOrderItemListUnCompletedView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\MaterialOrderView.xaml">
+    <Page Include="View\MaterialOrderItemListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\NavigationView.xaml">
+    <Page Include="View\MaterialOrderView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModel\View\OutputView.xaml">
+    <Page Include="View\NavigationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\OutputView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

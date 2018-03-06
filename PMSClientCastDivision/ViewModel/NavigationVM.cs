@@ -52,7 +52,7 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
-            Notice = new RelayCommand(ActionNotice,CanNotice);
+            Notice = new RelayCommand(ActionNotice, CanNotice);
 
             GoToNavigation = new RelayCommand(() => NavigationService.GoTo(PMSViews.Navigation));
             GoToMaterialOrder = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder), () => _session.IsAuthorized(PMSAccess.ReadMaterialOrder));
@@ -64,7 +64,7 @@ namespace PMSClient.ViewModel
 
 
             GoToOutput = new RelayCommand(() => NavigationService.GoTo(PMSViews.Output), () => _session.IsAuthorized(PMSAccess.CanOutput));
-
+            GoToCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.Compound));
             GoToDebug = new RelayCommand(() => NavigationService.GoTo(PMSViews.Debug), () => _session.IsAuthorized(PMSAccess.CanDebug));
         }
 
@@ -100,6 +100,8 @@ namespace PMSClient.ViewModel
 
         public RelayCommand GoToFeedBack { get; set; }
         public RelayCommand GoToOutput { get; set; }
+
+        public RelayCommand GoToCompound { get; set; }
         #endregion
 
         public RelayCommand Notice { get; set; }
