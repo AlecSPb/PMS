@@ -25,6 +25,13 @@ namespace PMSClient.ViewModel
 
         }
         private PMSViews requestView;
+
+        public void RefreshData()
+        {
+            searchPMINumber = "";
+            searchCompositionStandard = "";
+            SetPageParametersWhenConditionChange();
+        }
         /// <summary>
         /// 设置请求视图的token，返回或者选择后返回用
         /// </summary>
@@ -43,6 +50,9 @@ namespace PMSClient.ViewModel
                     case PMSViews.MaterialNeedEdit:
                         PMSHelper.ViewModels.MaterialNeedEdit.SetBySelect(order);
                         break;
+                    case PMSViews.RecordTestEdit:
+                        PMSHelper.ViewModels.RecordTestEdit.SetBySelectMisson(order);
+                        break;
                     default:
                         break;
                 }
@@ -50,6 +60,7 @@ namespace PMSClient.ViewModel
             }
         }
         public RelayCommand<DcOrder> Select { get; set; }
+
         private void ActionRefresh(Object obj)
         {
             SetPageParametersWhenConditionChange();

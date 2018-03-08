@@ -19,6 +19,7 @@ namespace PMSClient.ViewModel
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
             Select = new RelayCommand(ActionSelect);
+            SelectMisson = new RelayCommand(ActionSelectMisson);
             SelectDimensionActual = new RelayCommand(ActionSelectDimensionActual);
         }
 
@@ -107,6 +108,23 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest = model;
             }
         }
+
+        public void SetBySelectMisson(DcOrder order)
+        {
+            if (order != null)
+            {
+                CurrentRecordTest.PMINumber = order.PMINumber;
+                CurrentRecordTest.Composition = order.CompositionStandard;
+                CurrentRecordTest.CompositionAbbr = order.CompositionAbbr;
+                CurrentRecordTest.PO = order.PO;
+                CurrentRecordTest.ProductID = "请手动输入";
+                CurrentRecordTest.Customer = order.CustomerName;
+                CurrentRecordTest.Dimension = order.Dimension;
+                CurrentRecordTest.DimensionActual = order.Dimension;
+                CurrentRecordTest.OrderDate = order.CreateTime;
+            }
+        }
+
         public void SetBySelect(DcPlanWithMisson plan)
         {
             if (plan != null)
@@ -122,6 +140,13 @@ namespace PMSClient.ViewModel
                 CurrentRecordTest.OrderDate = plan.Misson.CreateTime;
                 //RaisePropertyChanged(nameof(CurrentRecordTest));
             }
+        }
+
+        private void ActionSelectMisson()
+        {
+            PMSHelper.ViewModels.MissonSelect.SetRequestView(PMSViews.RecordTestEdit);
+            PMSHelper.ViewModels.MissonSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.MissonSelect);
         }
 
         private void ActionSelect()
@@ -187,6 +212,8 @@ namespace PMSClient.ViewModel
             }
         }
         public RelayCommand Select { get; set; }
+        public RelayCommand SelectMisson { get; set; }
+
         public RelayCommand SelectDimensionActual { get; set; }
     }
 }
