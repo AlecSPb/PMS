@@ -139,7 +139,9 @@ namespace PMSClient.ViewModel
                         Composition = model.Item.MaterialOrderItem.Composition,
                         PMINumber = model.Item.MaterialOrderItem.PMINumber,
                         Weight = model.Item.MaterialOrderItem.Weight,
-                        ActualWeight= model.Item.MaterialOrderItem.Weight
+                        ActualWeight= model.Item.MaterialOrderItem.Weight,
+                        MeltingPoint="",
+                        Remark=""
                     };
 
                     if (dialog.ShowDialog() == false)
@@ -155,17 +157,17 @@ namespace PMSClient.ViewModel
                         /*设置MaterialOrderItem项目状态为完成
                             如果是部分完成则另行处理
                          */
-                        string materialInRemark = "";
+                        string preFix = "";
                         if (dialog.SureType == "All")
                         {
-                            materialInRemark = "全部交付";
+                            preFix = "全部交付";
                             model.Item.MaterialOrderItem.State = PMSCommon.MaterialOrderItemState.完成.ToString();
                             service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
                         }
                         else
                         {
-                            materialInRemark = "部分交付";
-                            model.Item.MaterialOrderItem.SJIngredient += DateTime.Now.ToString("yyMmdd")
+                            preFix = "部分交付";
+                            model.Item.MaterialOrderItem.SJIngredient += DateTime.Now.ToString("yyMMdd")
                                 + "交付" + m.ActualWeight.ToString("F3");
                             service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
                         }
@@ -181,7 +183,7 @@ namespace PMSClient.ViewModel
                         materialInModel.CreateTime = DateTime.Now;
                         materialInModel.Creator = uid;
                         materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
-                        materialInModel.Remark = materialInRemark+" "+m.Remark;
+                        materialInModel.Remark = preFix+" "+m.Remark;
 
                         service.AddToMaterialIn(materialInModel, uid);
 
