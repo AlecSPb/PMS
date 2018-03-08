@@ -52,15 +52,22 @@ namespace PMSClient.ToolWindow
             }
 
         }
-
+        public string SureType { get; set; } = "All";
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
             this.Close();
         }
 
-        private void btnSure_Click(object sender, RoutedEventArgs e)
+        private void btnSurePart_Click(object sender, RoutedEventArgs e)
         {
+            SureType = "Part";
+            this.DialogResult = true;
+            this.Close();
+        }
+        private void btnSureAll_Click(object sender, RoutedEventArgs e)
+        {
+            SureType = "All";
             this.DialogResult = true;
             this.Close();
         }

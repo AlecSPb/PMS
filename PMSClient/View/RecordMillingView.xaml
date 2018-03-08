@@ -78,8 +78,7 @@
                                     Binding="{Binding Composition}"/>
                     <DataGridTextColumn Header="{StaticResource RMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PMINumber}"/>
-                    <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MeltingPoint}"/>
+
                     <DataGridTextColumn Header="{StaticResource RMMaterialType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialType}"/>
                     <DataGridTextColumn Header="{StaticResource RMMaterialSource}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -109,6 +108,8 @@
                                     Binding="{Binding Oxygen}"/>
                     <DataGridTextColumn Header="{StaticResource RMWater}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Water}"/>
+                    <DataGridTextColumn Header="{StaticResource RMMeltingPoint}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MeltingPoint}"/>
                     <DataGridTextColumn Header="{StaticResource RMRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
                     <DataGridTextColumn Header="{StaticResource RMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -155,7 +155,7 @@ namespace PMSClient.ViewModel
                             如果是部分完成则另行处理
                          */
                         string materialInRemark = "";
-                        if (m.Weight == m.ActualWeight)
+                        if (dialog.SureType == "All")
                         {
                             materialInRemark = "全部交付";
                             model.Item.MaterialOrderItem.State = PMSCommon.MaterialOrderItemState.完成.ToString();
@@ -180,7 +180,7 @@ namespace PMSClient.ViewModel
                         materialInModel.CreateTime = DateTime.Now;
                         materialInModel.Creator = uid;
                         materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
-                        materialInModel.Remark = materialInRemark;
+                        materialInModel.Remark = materialInRemark + " " + m.Remark;
 
                         service.AddToMaterialIn(materialInModel, uid);
 

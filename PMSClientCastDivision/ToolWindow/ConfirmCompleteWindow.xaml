@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
         Title="确定完成该项目吗？" Height="300" Width="450">
-    <Grid>
+    <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
@@ -42,7 +42,8 @@
         <TextBox Name="txtRemark" Grid.Row="6" Grid.Column="1" Text="" Style="{StaticResource StyleTextBoxCommon}"/>
         <StackPanel Grid.Row="7" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Style="{StaticResource StyleButtonCommon}" Content="取消" Click="btnCancel_Click"/>
-            <Button Name="btnSure" Style="{StaticResource StyleButtonCommon}" Content="确定交付" Click="btnSure_Click"/>
+            <Button Name="btnSurePart" Style="{StaticResource StyleButtonCommon}" Content="交付部分" Click="btnSurePart_Click"/>
+            <Button Name="btnSureAll" Style="{StaticResource StyleButtonCommon}" Content="最终完成" Click="btnSureAll_Click" FontWeight="Bold"/>
         </StackPanel>
     </Grid>
 </Window>
