@@ -218,7 +218,7 @@
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
-                            <RowDefinition Height="0*"/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RTProductID}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -273,7 +273,7 @@
                     </Grid>
                 </ScrollViewer>
                 <control:BindableCSVTable Grid.Row="1"  CSVContent="{Binding  CurrentSelectItem.RecordTest.CompositionXRF}"
-                                          Margin="5" Height="320" VerticalAlignment="Top"/>
+                                          Margin="5" Height="220" VerticalAlignment="Top"/>
             </Grid>
 
         </Grid>
