@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PMSWCFService.DataContracts
 {
     [DataContract]
-    public class ToDo
+    public class DcToDo
     {
         [DataMember]
         public Guid ID { get; set; }

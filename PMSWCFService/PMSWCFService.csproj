@@ -157,6 +157,7 @@
     <Compile Include="ServiceContracts\IOutSourceService.cs" />
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
+    <Compile Include="ServiceContracts\IToDoService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
