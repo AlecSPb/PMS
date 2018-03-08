@@ -191,9 +191,7 @@
                            Text="供应商提供的材料熔点信息，单位℃"/>
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="备注信息"/>
+                <TextBox Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RMState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
