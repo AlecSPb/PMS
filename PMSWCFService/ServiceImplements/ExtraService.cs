@@ -10,7 +10,7 @@ using AutoMapper;
 namespace PMSWCFService
 {
     public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService, IEnvironmentInfoService,
-        INoticeService
+        INoticeService,IToDoService
 
     {
         public int AddCheckList(DcCheckList model, string uid)
@@ -438,6 +438,105 @@ namespace PMSWCFService
                 throw ex;
             }
 
+        }
+
+        public List<DcToDo> GetToDo(string title, int s, int t)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<ToDo, DcToDo>());
+                    var query = from i in dc.ToDoes
+                                where i.Title.Contains(title)
+                                orderby i.CreateTime descending
+                                select i;
+
+                    return Mapper.Map<List<ToDo>, List<DcToDo>>(query.Skip(s).Take(t).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetToDoCount(string title)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from i in dc.ToDoes
+                                where i.Title.Contains(title)
+                                orderby i.CreateTime descending
+                                select i;
+
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int AddToDo(DcToDo model)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcToDo, ToDo>());
+                    var entity = Mapper.Map<ToDo>(model);
+                    dc.ToDoes.Add(entity);
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int UpdateToDo(DcToDo model)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg => cfg.CreateMap<DcToDo, ToDo>());
+                    var entity = Mapper.Map<ToDo>(model);
+                    dc.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int DeleteToDo(Guid id)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var entity = dc.ToDoes.Find(id);
+                    dc.ToDoes.Remove(entity);
+                    return dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }

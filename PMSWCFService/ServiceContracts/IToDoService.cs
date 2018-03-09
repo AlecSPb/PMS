@@ -18,12 +18,12 @@ namespace PMSWCFService.ServiceContracts
         int GetToDoCount(string title);
 
         [OperationContract]
-        int Add(DcToDo model);
+        int AddToDo(DcToDo model);
 
         [OperationContract]
-        int Update(DcToDo model);
+        int UpdateToDo(DcToDo model);
 
         [OperationContract]
-        int Delete(Guid id);
+        int DeleteToDo(Guid id);
     }
 }
