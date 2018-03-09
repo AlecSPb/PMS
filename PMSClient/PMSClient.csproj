@@ -308,6 +308,8 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\ToDoEditVm.cs" />
+    <Compile Include="ViewModel\ToDoVM.cs" />
     <Compile Include="ViewModel\IntegretedSearchVM.cs" />
     <Compile Include="ViewModel\CheckListReadVM.cs" />
     <Compile Include="ViewModel\CustomerEditVM.cs" />
@@ -378,6 +380,9 @@
     </Compile>
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ToDoEditView.xaml.cs">
+      <DependentUpon>ToDoEditView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FeedBackEditView.xaml.cs">
       <DependentUpon>FeedBackEditView.xaml</DependentUpon>
@@ -815,6 +820,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ToDoEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

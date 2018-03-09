@@ -19,11 +19,11 @@
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
-            <TextBlock Text="{StaticResource FBProductID}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource TDTitle}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchTitle,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
-            <TextBlock Text="{StaticResource FBCustomer}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
-            <TextBox Text="{Binding SearchCustomer,UpdateSourceTrigger=PropertyChanged}" 
+            <TextBlock Text="{StaticResource TDPersonInCharge}" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
+            <TextBox Text="{Binding SearchPersonInCharge,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
@@ -33,7 +33,7 @@
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}"
                        Background="{StaticResource PausedBrush}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding FeedBacks}"
+        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding ToDoList}"
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="{StaticResource DGOperate}">
@@ -47,24 +47,24 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource FBCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource FBProductID}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding ProductID}"/>
-                <DataGridTextColumn Header="{StaticResource FBProductType}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ProductType}"/>
-                <DataGridTextColumn Header="{StaticResource FBComposition}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding Composition}"/>
-                <DataGridTextColumn Header="{StaticResource FBCustomer}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Customer}"/>
-                <DataGridTextColumn Header="{StaticResource FBProblem}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Problem}"/>
-                <DataGridTextColumn Header="{StaticResource FBProcessWay}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding ProcessWay}"/>
-                <DataGridTextColumn Header="{StaticResource FBRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="{StaticResource FBCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
+                <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Status}"/>
+                <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="{StaticResource TDPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding TDPriority}"/>
+                <DataGridTextColumn Header="{StaticResource TDDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource TDPersonInCharge}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding PersonInCharge}"/>
+                <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                <DataGridTextColumn Header="{StaticResource TDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Remark}"/>
             </DataGrid.Columns>
         </DataGrid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
