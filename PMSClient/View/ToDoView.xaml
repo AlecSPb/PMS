@@ -6,7 +6,7 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=ToDo}">
+             d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=ToDo}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -33,40 +33,109 @@
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}"
                        Background="{StaticResource PausedBrush}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding ToDoList}"
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding ToDoList}"
                   LoadingRow="DataGrid_LoadingRow">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="{StaticResource DGOperate}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                    <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
-                <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Status}"/>
-                <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                    <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding State}"/>
+                    <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Title}"/>
-                <DataGridTextColumn Header="{StaticResource TDPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding TDPriority}"/>
-                <DataGridTextColumn Header="{StaticResource TDDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                    <DataGridTextColumn Header="{StaticResource TDPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Priority}"/>
+                    <DataGridTextColumn Header="{StaticResource TDDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource TDPersonInCharge}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                    <DataGridTextColumn Header="{StaticResource TDPersonInCharge}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PersonInCharge}"/>
-                <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                    <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource TDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                    <DataGridTextColumn Header="{StaticResource TDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                </DataGrid.Columns>
+            </DataGrid>
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                <Grid  DataContext="{Binding CurrentRecordMilling}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource TDCreateTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource TDCreator}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TDStatus}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TDTitle}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TDContent}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Content}"
+                             Style="{StaticResource StyleTextBoxReadOnly}" AcceptsReturn="True" Height="100" VerticalScrollBarVisibility="Visible"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TDPriority}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TDFinishTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 
