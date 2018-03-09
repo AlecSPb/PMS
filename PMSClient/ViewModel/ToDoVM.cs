@@ -15,8 +15,9 @@ namespace PMSClient.ViewModel
     {
         public ToDoVM()
         {
-            searchProductID = searchComposition = searchCustomer = "";
-            FeedBacks = new ObservableCollection<DcFeedBack>();
+            searchTitle = searchPersonInCharge = "";
+            ToDoList = new ObservableCollection<DcToDo>();
+            CurrentToDoItem = new DcToDo();
 
             InitializeCommands();
 
@@ -26,15 +27,21 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             Add = new RelayCommand(ActionAdd, CanAdd);
-            Edit = new RelayCommand<DcFeedBack>(ActionEdit, CanEdit);
+            Edit = new RelayCommand<DcToDo>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
+            SelectionChanged = new RelayCommand<DcToDo>(ActionSelectionChanged);
+        }
+
+        private void ActionSelectionChanged(DcToDo model)
+        {
+            CurrentToDoItem = model;
         }
 
         private void ActionAll()
         {
-            SearchProductID = SearchComposition = SearchCustomer = "";
+            SearchTitle = SearchPersonInCharge = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -43,7 +50,7 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
         }
 
-        private bool CanEdit(DcFeedBack arg)
+        private bool CanEdit(DcToDo arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditFeedback);
         }
@@ -53,16 +60,16 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditFeedback);
         }
 
-        private void ActionEdit(DcFeedBack model)
+        private void ActionEdit(DcToDo model)
         {
-            PMSHelper.ViewModels.FeedBackEdit.SetEdit(model);
-            NavigationService.GoTo(PMSViews.FeedBackEdit);
+            PMSHelper.ViewModels.ToDoEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.ToDoEdit);
         }
 
         private void ActionAdd()
         {
-            PMSHelper.ViewModels.FeedBackEdit.SetNew();
-            NavigationService.GoTo(PMSViews.FeedBackEdit);
+            PMSHelper.ViewModels.ToDoEdit.SetNew();
+            NavigationService.GoTo(PMSViews.ToDoEdit);
         }
 
         public void RefreshData()
@@ -71,32 +78,26 @@ namespace PMSClient.ViewModel
         }
 
 
-        private string searchProductID;
-        public string SearchProductID
+        private string searchTitle;
+        public string SearchTitle
         {
-            get { return searchProductID; }
-            set { searchProductID = value; RaisePropertyChanged(nameof(SearchProductID)); }
+            get { return searchTitle; }
+            set { searchTitle = value; RaisePropertyChanged(nameof(SearchTitle)); }
         }
-        private string searchComposition;
-        public string SearchComposition
+        private string searchPersonInCharge;
+        public string SearchPersonInCharge
         {
-            get { return searchComposition; }
-            set { searchComposition = value; RaisePropertyChanged(nameof(SearchComposition)); }
-        }
-        private string searchCustomer;
-        public string SearchCustomer
-        {
-            get { return searchCustomer; }
-            set { searchCustomer = value; RaisePropertyChanged(nameof(SearchCustomer)); }
+            get { return searchPersonInCharge; }
+            set { searchPersonInCharge = value; RaisePropertyChanged(nameof(SearchPersonInCharge)); }
         }
 
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
             PageSize = 20;
-            using (var service = new FeedBackServiceClient())
+            using (var service = new ToDoServiceClient())
             {
-                RecordCount = service.GetFeedBackCount(SearchProductID, SearchComposition, SearchCustomer);
+                RecordCount = service.GetToDoCount(SearchTitle, SearchPersonInCharge);
             }
             ActionPaging();
         }
@@ -105,19 +106,31 @@ namespace PMSClient.ViewModel
             int skip, take = 0;
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
-            using (var service = new FeedBackServiceClient())
+            using (var service = new ToDoServiceClient())
             {
-                var orders = service.GetFeedBack(skip,take,SearchProductID, SearchComposition, SearchCustomer);
-                FeedBacks.Clear();
-                orders.ToList().ForEach(o => FeedBacks.Add(o));
+                var orders = service.GetToDo(SearchTitle, SearchPersonInCharge,skip, take);
+                ToDoList.Clear();
+                orders.ToList().ForEach(o => ToDoList.Add(o));
+                CurrentToDoItem = orders.FirstOrDefault();
             }
         }
         #region Commands
-        public ObservableCollection<DcFeedBack> FeedBacks { get; set; }
+
+        private DcToDo currentToDoItem;
+
+        public DcToDo CurrentToDoItem
+        {
+            get { return currentToDoItem; }
+            set { currentToDoItem = value; }
+        }
+
+
+
+        public ObservableCollection<DcToDo> ToDoList { get; set; }
 
         public RelayCommand Add { get; set; }
-        public RelayCommand<DcFeedBack> Edit { get; set; }
-
+        public RelayCommand<DcToDo> Edit { get; set; }
+        public RelayCommand<DcToDo> SelectionChanged { get; set; }
         #endregion
 
     }

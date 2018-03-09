@@ -102,6 +102,8 @@ namespace PMSClient
         Output,
         Tool,
         Debug,
-        History
+        History,
+        ToDo,
+        ToDoEdit
     }
 }

@@ -9042,6 +9042,18 @@ namespace PMSClient.MainService {
             "ponse")]
         System.Threading.Tasks.Task<int> GetMaterialInventoryInCountByYearAsync(int year);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/CheckMaterialIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/CheckMaterialInResponse")]
+        int CheckMaterialIn(string pmiNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/CheckMaterialIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/CheckMaterialInResponse")]
+        System.Threading.Tasks.Task<int> CheckMaterialInAsync(string pmiNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/CheckMaterialOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/CheckMaterialOutResponse")]
+        int CheckMaterialOut(string pmiNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/CheckMaterialOut", ReplyAction="http://tempuri.org/IMaterialInventoryService/CheckMaterialOutResponse")]
+        System.Threading.Tasks.Task<int> CheckMaterialOutAsync(string pmiNumber);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn", ReplyAction="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryInResponse")]
         int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model);
         
@@ -9246,6 +9258,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMaterialInventoryInCountByYearAsync(int year) {
             return base.Channel.GetMaterialInventoryInCountByYearAsync(year);
+        }
+        
+        public int CheckMaterialIn(string pmiNumber) {
+            return base.Channel.CheckMaterialIn(pmiNumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckMaterialInAsync(string pmiNumber) {
+            return base.Channel.CheckMaterialInAsync(pmiNumber);
+        }
+        
+        public int CheckMaterialOut(string pmiNumber) {
+            return base.Channel.CheckMaterialOut(pmiNumber);
+        }
+        
+        public System.Threading.Tasks.Task<int> CheckMaterialOutAsync(string pmiNumber) {
+            return base.Channel.CheckMaterialOutAsync(pmiNumber);
         }
         
         public int AddMaterialInventoryIn(PMSClient.MainService.DcMaterialInventoryIn model) {

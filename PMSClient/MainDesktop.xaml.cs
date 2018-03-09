@@ -455,6 +455,12 @@ namespace PMSClient
                 case PMSViews.Debug:
                     NavigateTo(_views.Debug);
                     break;
+                case PMSViews.ToDo:
+                    NavigateTo(_views.ToDo);
+                    break;
+                case PMSViews.ToDoEdit:
+                    NavigateTo(_views.ToDoEdit);
+                    break;
                 case PMSViews.History:
                     //TODO:实现历史页面导航
                     break;

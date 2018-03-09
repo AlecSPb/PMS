@@ -10,21 +10,16 @@ using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
-    public class ToDoEditVmVM : BaseViewModelEdit
+    public class ToDoEditVM : BaseViewModelEdit
     {
         public ToDoEditVM()
         {
 
-            States = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.SimpleState>(States);
+            Statuses = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ToDoStatus>(Statuses);
 
-            ProductTypes = new List<string>();
-            PMSBasicDataService.SetListDS<PMSCommon.ProductType>(ProductTypes);
-
-            CustomerNames = new List<string>();
-            PMSBasicDataService.SetListDS(BasicData.Customers, CustomerNames, i => i.CustomerName);
-
-
+            Priorities = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ToDoPriority>(Priorities);
             InitializeCommands();
         }
 
@@ -33,76 +28,45 @@ namespace PMSClient.ViewModel
         {
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
-            Select = new RelayCommand(ActionSelect);
         }
 
-        private void ActionSelect()
-        {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.FeedBackEdit);
-            PMSHelper.ViewModels.PlanSelect.RefreshData();
-            NavigationService.GoTo(PMSViews.PlanSelect);
-        }
-        public void SetBySelect(DcPlanWithMisson plan)
-        {
-            if (plan != null)
-            {
-                CurrentFeedBack.Composition = plan.Misson.CompositionStandard;
-                CurrentFeedBack.ProductID = UsefulPackage.PMSTranslate.PlanLot(plan);
-                CurrentFeedBack.Customer = plan.Misson.CustomerName;
-                //RaisePropertyChanged(nameof(CurrentRecordTest));
-            }
-        }
+   
         public void SetNew()
         {
             IsNew = true;
-            var model = new DcFeedBack();
+            var model = new DcToDo();
             #region 初始化
             IsNew = true;
             model.ID = Guid.NewGuid();
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-            model.State = PMSCommon.SimpleState.正常.ToString();
-            model.Composition = "";
-            model.Customer = "Midsummer";
-            model.ProductType = PMSCommon.ProductType.靶材.ToString();
-            model.ProductID = "";
-            model.ProcessWay = "未处理";
+            model.Status = PMSCommon.ToDoStatus.未完成.ToString();
+
+            model.Title = "";
+            model.Content = "无";
+            model.Priority = PMSCommon.ToDoPriority.普通.ToString();
+            model.DeadLine = DateTime.Now.AddDays(7);
+            model.PersonInCharge = "无";
+
+            model.FinishTime=DateTime.Now.AddDays(7);
             model.Remark = "";
 
             #endregion
-            CurrentFeedBack = model;
+            CurrentToDo = model;
         }
-        public void SetDuplicate(DcFeedBack model)
-        {
-            if (model != null)
-            {
-                IsNew = true;
-                CurrentFeedBack = model;
-                CurrentFeedBack.ID = Guid.NewGuid();
-                CurrentFeedBack.CreateTime = DateTime.Now;
-                CurrentFeedBack.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
-                CurrentFeedBack.State = PMSCommon.SimpleState.正常.ToString();
-                CurrentFeedBack.ProductType = model.ProductType;
-                CurrentFeedBack.Composition = model.Composition;
-                CurrentFeedBack.Customer = model.Customer;
-                CurrentFeedBack.ProcessWay = model.ProcessWay;
-
-
-                CurrentFeedBack.Remark = model.Remark;
-            }
-        }
-        public void SetEdit(DcFeedBack model)
+   
+        public void SetEdit(DcToDo model)
         {
             if (model != null)
             {
                 IsNew = false;
-                CurrentFeedBack = model;
+                CurrentToDo = model;
             }
         }
 
         private static void GoBack()
         {
-            NavigationService.GoTo(PMSViews.FeedBack);
+            NavigationService.GoTo(PMSViews.ToDo);
         }
 
         private void ActionSave()
@@ -111,7 +75,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentFeedBack.State == "作废")
+            if (CurrentToDo.Status == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
                 {
@@ -121,17 +85,17 @@ namespace PMSClient.ViewModel
             try
             {
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
-                var service = new FeedBackServiceClient();
+                var service = new ToDoServiceClient();
                 if (IsNew)
                 {
-                    service.AddFeedBack(CurrentFeedBack, uid);
+                    service.AddToDo(CurrentToDo);
                 }
                 else
                 {
-                    service.UpdateFeedBack(CurrentFeedBack, uid);
+                    service.UpdateToDo(CurrentToDo);
                 }
                 service.Close();
-                PMSHelper.ViewModels.FeedBack.RefreshData();
+                PMSHelper.ViewModels.ToDo.RefreshData();
                 GoBack();
             }
             catch (Exception ex)
@@ -139,18 +103,17 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
             }
         }
-        public List<string> ProductTypes { get; set; }
-        public List<string> States { get; set; }
-        public List<string> CustomerNames { get; set; }
+        public List<string> Priorities { get; set; }
+        public List<string> Statuses { get; set; }
 
-        private DcFeedBack currentFeedBack;
-        public DcFeedBack CurrentFeedBack
+        private DcToDo currentToDo;
+        public DcToDo CurrentToDo
         {
-            get { return currentFeedBack; }
+            get { return currentToDo; }
             set
             {
-                currentFeedBack = value;
-                RaisePropertyChanged(nameof(CurrentFeedBack));
+                currentToDo = value;
+                RaisePropertyChanged(nameof(CurrentToDo));
             }
         }
 

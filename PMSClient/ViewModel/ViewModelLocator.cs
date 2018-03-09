@@ -138,8 +138,20 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<CompoundVM>();
             SimpleIoc.Default.Register<CompoundEditVM>();
+
+            SimpleIoc.Default.Register<ToDoVM>();
+            SimpleIoc.Default.Register<ToDoEditVM>();
         }
         #region Properties
+        public ToDoVM ToDo
+        {
+            get { return SimpleIoc.Default.GetInstance<ToDoVM>(); }
+        }
+        public ToDoEditVM ToDoEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<ToDoEditVM>(); }
+        }
+
         public CompoundVM Compound
         {
             get { return SimpleIoc.Default.GetInstance<CompoundVM>(); }

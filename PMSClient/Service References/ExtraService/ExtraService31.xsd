@@ -77,4 +77,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcEnvironmentInfo" nillable="true" type="tns:DcEnvironmentInfo" />
+  <xs:complexType name="ArrayOfDcToDo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcToDo" nillable="true" type="tns:DcToDo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcToDo" nillable="true" type="tns:ArrayOfDcToDo" />
+  <xs:complexType name="DcToDo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeadLine" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FinishTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersonInCharge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcToDo" nillable="true" type="tns:DcToDo" />
 </xs:schema>

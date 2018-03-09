@@ -737,6 +737,211 @@ namespace PMSClient.ExtraService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DcToDo", Namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts")]
+    [System.SerializableAttribute()]
+    public partial class DcToDo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ContentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreatorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DeadLineField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime FinishTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PersonInChargeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PriorityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Content {
+            get {
+                return this.ContentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContentField, value) != true)) {
+                    this.ContentField = value;
+                    this.RaisePropertyChanged("Content");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateTime {
+            get {
+                return this.CreateTimeField;
+            }
+            set {
+                if ((this.CreateTimeField.Equals(value) != true)) {
+                    this.CreateTimeField = value;
+                    this.RaisePropertyChanged("CreateTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Creator {
+            get {
+                return this.CreatorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreatorField, value) != true)) {
+                    this.CreatorField = value;
+                    this.RaisePropertyChanged("Creator");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DeadLine {
+            get {
+                return this.DeadLineField;
+            }
+            set {
+                if ((this.DeadLineField.Equals(value) != true)) {
+                    this.DeadLineField = value;
+                    this.RaisePropertyChanged("DeadLine");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime FinishTime {
+            get {
+                return this.FinishTimeField;
+            }
+            set {
+                if ((this.FinishTimeField.Equals(value) != true)) {
+                    this.FinishTimeField = value;
+                    this.RaisePropertyChanged("FinishTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PersonInCharge {
+            get {
+                return this.PersonInChargeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PersonInChargeField, value) != true)) {
+                    this.PersonInChargeField = value;
+                    this.RaisePropertyChanged("PersonInCharge");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Priority {
+            get {
+                return this.PriorityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
+                    this.PriorityField = value;
+                    this.RaisePropertyChanged("Priority");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Remark {
+            get {
+                return this.RemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemarkField, value) != true)) {
+                    this.RemarkField = value;
+                    this.RaisePropertyChanged("Remark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IItemDebitService")]
     public interface IItemDebitService {
@@ -1104,6 +1309,109 @@ namespace PMSClient.ExtraService {
         
         public System.Threading.Tasks.Task<int> UpdateEnvironmentInforAsync(PMSClient.ExtraService.DcEnvironmentInfo data) {
             return base.Channel.UpdateEnvironmentInforAsync(data);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ExtraService.IToDoService")]
+    public interface IToDoService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/GetToDo", ReplyAction="http://tempuri.org/IToDoService/GetToDoResponse")]
+        PMSClient.ExtraService.DcToDo[] GetToDo(string title, string personInCharge, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/GetToDo", ReplyAction="http://tempuri.org/IToDoService/GetToDoResponse")]
+        System.Threading.Tasks.Task<PMSClient.ExtraService.DcToDo[]> GetToDoAsync(string title, string personInCharge, int s, int t);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/GetToDoCount", ReplyAction="http://tempuri.org/IToDoService/GetToDoCountResponse")]
+        int GetToDoCount(string title, string personInCharge);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/GetToDoCount", ReplyAction="http://tempuri.org/IToDoService/GetToDoCountResponse")]
+        System.Threading.Tasks.Task<int> GetToDoCountAsync(string title, string personInCharge);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/AddToDo", ReplyAction="http://tempuri.org/IToDoService/AddToDoResponse")]
+        int AddToDo(PMSClient.ExtraService.DcToDo model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/AddToDo", ReplyAction="http://tempuri.org/IToDoService/AddToDoResponse")]
+        System.Threading.Tasks.Task<int> AddToDoAsync(PMSClient.ExtraService.DcToDo model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/UpdateToDo", ReplyAction="http://tempuri.org/IToDoService/UpdateToDoResponse")]
+        int UpdateToDo(PMSClient.ExtraService.DcToDo model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/UpdateToDo", ReplyAction="http://tempuri.org/IToDoService/UpdateToDoResponse")]
+        System.Threading.Tasks.Task<int> UpdateToDoAsync(PMSClient.ExtraService.DcToDo model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/DeleteToDo", ReplyAction="http://tempuri.org/IToDoService/DeleteToDoResponse")]
+        int DeleteToDo(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IToDoService/DeleteToDo", ReplyAction="http://tempuri.org/IToDoService/DeleteToDoResponse")]
+        System.Threading.Tasks.Task<int> DeleteToDoAsync(System.Guid id);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IToDoServiceChannel : PMSClient.ExtraService.IToDoService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ToDoServiceClient : System.ServiceModel.ClientBase<PMSClient.ExtraService.IToDoService>, PMSClient.ExtraService.IToDoService {
+        
+        public ToDoServiceClient() {
+        }
+        
+        public ToDoServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ToDoServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ToDoServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ToDoServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public PMSClient.ExtraService.DcToDo[] GetToDo(string title, string personInCharge, int s, int t) {
+            return base.Channel.GetToDo(title, personInCharge, s, t);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.ExtraService.DcToDo[]> GetToDoAsync(string title, string personInCharge, int s, int t) {
+            return base.Channel.GetToDoAsync(title, personInCharge, s, t);
+        }
+        
+        public int GetToDoCount(string title, string personInCharge) {
+            return base.Channel.GetToDoCount(title, personInCharge);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetToDoCountAsync(string title, string personInCharge) {
+            return base.Channel.GetToDoCountAsync(title, personInCharge);
+        }
+        
+        public int AddToDo(PMSClient.ExtraService.DcToDo model) {
+            return base.Channel.AddToDo(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddToDoAsync(PMSClient.ExtraService.DcToDo model) {
+            return base.Channel.AddToDoAsync(model);
+        }
+        
+        public int UpdateToDo(PMSClient.ExtraService.DcToDo model) {
+            return base.Channel.UpdateToDo(model);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateToDoAsync(PMSClient.ExtraService.DcToDo model) {
+            return base.Channel.UpdateToDoAsync(model);
+        }
+        
+        public int DeleteToDo(System.Guid id) {
+            return base.Channel.DeleteToDo(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteToDoAsync(System.Guid id) {
+            return base.Channel.DeleteToDoAsync(id);
         }
     }
 }

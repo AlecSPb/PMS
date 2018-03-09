@@ -89,6 +89,8 @@
     <Compile Include="TestDefectsTypes.cs" />
     <Compile Include="TestFollowUps.cs" />
     <Compile Include="TestType.cs" />
+    <Compile Include="ToDoPriority.cs" />
+    <Compile Include="ToDoStatus.cs" />
     <Compile Include="UserState.cs" />
     <Compile Include="VHPPlanState.cs" />
     <Compile Include="VHPPlanType.cs" />

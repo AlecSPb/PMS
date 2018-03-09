@@ -123,9 +123,22 @@ namespace PMSClient.View
 
             SimpleIoc.Default.Register<CompoundView>();
             SimpleIoc.Default.Register<CompoundEditView>();
+
+            SimpleIoc.Default.Register<ToDoView>();
+            SimpleIoc.Default.Register<ToDoEditView>();
+
         }
 
         #region NavigationProperties
+        public ToDoView ToDo
+        {
+            get { return SimpleIoc.Default.GetInstance<ToDoView>(); }
+        }
+        public ToDoEditView ToDoEdit
+        {
+            get { return SimpleIoc.Default.GetInstance<ToDoEditView>(); }
+        }
+
         public CompoundView Compound
         {
             get { return SimpleIoc.Default.GetInstance<CompoundView>(); }

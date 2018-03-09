@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=FeedBackEdit}">
+             d:DesignHeight="1000" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=ToDoEdit}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -25,7 +25,7 @@
                     Command="{Binding Save}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  DataContext="{Binding CurrentFeedBack}">
+            <Grid  DataContext="{Binding CurrentToDo}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
@@ -82,7 +82,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="选择" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Content="选择" Style="{StaticResource StyleButtonCommon}" Visibility="Hidden"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 </StackPanel>
@@ -103,8 +103,8 @@
                 <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RPState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
-                          ItemsSource="{Binding DataContext.States,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          SelectedItem="{Binding State}"/>
+                          ItemsSource="{Binding DataContext.Statuses,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                          SelectedItem="{Binding Status}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="状态"/>
 

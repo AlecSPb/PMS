@@ -109,6 +109,36 @@
   <wsdl:message name="IEnvironmentInfoService_UpdateEnvironmentInfor_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateEnvironmentInforResponse" />
   </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDoCount" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_AddToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_AddToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_UpdateToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_UpdateToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_DeleteToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_DeleteToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToDoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IItemDebitService">
     <wsdl:operation name="GetItemDebit">
       <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebit" message="tns:IItemDebitService_GetItemDebit_InputMessage" />
@@ -183,6 +213,28 @@
     <wsdl:operation name="UpdateEnvironmentInfor">
       <wsdl:input wsaw:Action="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInfor" message="tns:IEnvironmentInfoService_UpdateEnvironmentInfor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInforResponse" message="tns:IEnvironmentInfoService_UpdateEnvironmentInfor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IToDoService">
+    <wsdl:operation name="GetToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/GetToDo" message="tns:IToDoService_GetToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/GetToDoResponse" message="tns:IToDoService_GetToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/GetToDoCount" message="tns:IToDoService_GetToDoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/GetToDoCountResponse" message="tns:IToDoService_GetToDoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/AddToDo" message="tns:IToDoService_AddToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/AddToDoResponse" message="tns:IToDoService_AddToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/UpdateToDo" message="tns:IToDoService_UpdateToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/UpdateToDoResponse" message="tns:IToDoService_UpdateToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/DeleteToDo" message="tns:IToDoService_DeleteToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/DeleteToDoResponse" message="tns:IToDoService_DeleteToDo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="itemdebit" type="tns:IItemDebitService">
@@ -350,6 +402,54 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="todo" type="tns:IToDoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/GetToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoCount">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/GetToDoCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/AddToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/UpdateToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/DeleteToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ExtraService">
     <wsdl:port name="itemdebit" binding="tns:itemdebit">
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
@@ -361,6 +461,9 @@
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
     </wsdl:port>
     <wsdl:port name="environment" binding="tns:environment">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="todo" binding="tns:todo">
       <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
     </wsdl:port>
   </wsdl:service>

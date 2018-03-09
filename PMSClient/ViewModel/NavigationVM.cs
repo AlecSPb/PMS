@@ -133,6 +133,8 @@ namespace PMSClient.ViewModel
                   win.ShowDialog();
               });
             LaserRule = new RelayCommand(ActionLaserRule);
+
+            ToDoList = new RelayCommand(() => NavigationService.GoTo(PMSViews.ToDo), () => _session.IsAuthorized(PMSAccess.ReadFeedback));
         }
 
         private void ActionLaserRule()
@@ -276,5 +278,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand ImportantCode { get; set; }
         public RelayCommand LaserRule { get; set; }
+
+        public RelayCommand ToDoList { get; set; }
     }
 }

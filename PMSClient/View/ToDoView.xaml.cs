@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PMSClient.ExtraService;
+using PMSClient.ViewModel.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +29,28 @@ namespace PMSClient.View
 
         private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
+            try
+            {
+                var model = (DcToDo)e.Row.DataContext;
+                if (model != null)
+                {
+                    switch (model.Status)
+                    {
+                        case "未完成":
+                            e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                            break;
+                        default:
+                            break;
+                    }
 
+                    if (model.Priority.Contains("优先"))
+                        e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }

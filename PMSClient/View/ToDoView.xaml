@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=ToDo}">
@@ -38,8 +39,16 @@
                 <ColumnDefinition />
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
-            <DataGrid x:Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding ToDoList}"
+            <DataGrid x:Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}"
+                      ItemsSource="{Binding ToDoList}"
                   LoadingRow="DataGrid_LoadingRow">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,
+                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                           CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="{StaticResource DGOperate}">
                         <DataGridTemplateColumn.CellTemplate>
@@ -57,7 +66,7 @@
                     <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
                     <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding State}"/>
+                                    Binding="{Binding Status}"/>
                     <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Title}"/>
                     <DataGridTextColumn Header="{StaticResource TDPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -73,7 +82,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-                <Grid  DataContext="{Binding CurrentRecordMilling}">
+                <Grid  DataContext="{Binding CurrentToDoItem}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="300"/>
@@ -106,7 +115,7 @@
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TDStatus}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding State}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Status}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TDTitle}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

@@ -35,14 +35,14 @@
                        Command="{Binding LaserRule}" />
                 <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommon}"
                         Command="{Binding CodeRule}"/>
-                <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonCommon}"
-                        Command="{Binding ToDoList}" IsEnabled="False"/>
                 <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Help}">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{StaticResource ButtonHelp}"/>
                         <Image Source="../Resource/Icons/help.png"  Style="{StaticResource StyleImageIcon}"/>
                     </StackPanel>
                 </Button>
+                <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonSpecial}"
+                        Command="{Binding ToDoList}"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>

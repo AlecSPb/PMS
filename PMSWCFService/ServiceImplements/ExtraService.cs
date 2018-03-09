@@ -448,7 +448,9 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<ToDo, DcToDo>());
                     var query = from i in dc.ToDoes
-                                where i.Title.Contains(title) && i.PersonInCharge..Contains(personInCharge)
+                                where i.Title.Contains(title) 
+                                && i.PersonInCharge.Contains(personInCharge)
+                                && i.Status!=PMSCommon.ToDoStatus.作废.ToString()
                                 orderby i.CreateTime descending
                                 select i;
 
@@ -469,7 +471,9 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.ToDoes
-                                where i.Title.Contains(title) && i.PersonInCharge..Contains(personInCharge)
+                                where i.Title.Contains(title) 
+                                && i.PersonInCharge.Contains(personInCharge)
+                                && i.Status != PMSCommon.ToDoStatus.作废.ToString()
                                 orderby i.CreateTime descending
                                 select i;
 
