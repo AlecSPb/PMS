@@ -174,7 +174,8 @@
 
     <sys:String x:Key="PageHistory">历史记录</sys:String>
 
-
+    <sys:String x:Key="PageToDo">任务目标</sys:String>
+    <sys:String x:Key="PageToDoEdit">任务目标编辑</sys:String>
 
 
     <sys:String x:Key="PressureChangeTool">压力换算</sys:String>

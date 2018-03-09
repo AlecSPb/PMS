@@ -440,7 +440,7 @@ namespace PMSWCFService
 
         }
 
-        public List<DcToDo> GetToDo(string title, int s, int t)
+        public List<DcToDo> GetToDo(string title,string personInCharge, int s, int t)
         {
             try
             {
@@ -448,7 +448,7 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<ToDo, DcToDo>());
                     var query = from i in dc.ToDoes
-                                where i.Title.Contains(title)
+                                where i.Title.Contains(title) && i.PersonInCharge..Contains(personInCharge)
                                 orderby i.CreateTime descending
                                 select i;
 
@@ -462,14 +462,14 @@ namespace PMSWCFService
             }
         }
 
-        public int GetToDoCount(string title)
+        public int GetToDoCount(string title, string personInCharge)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.ToDoes
-                                where i.Title.Contains(title)
+                                where i.Title.Contains(title) && i.PersonInCharge..Contains(personInCharge)
                                 orderby i.CreateTime descending
                                 select i;
 

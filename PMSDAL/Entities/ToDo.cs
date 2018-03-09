@@ -17,7 +17,7 @@ namespace PMSDAL
         public string Content { get; set; }
         public int Priority { get; set; }
         public DateTime DeadLine { get; set; }
-        public DateTime PersonInCharge { get; set; }
+        public string PersonInCharge { get; set; }
 
         public DateTime FinishTime { get; set; }
         public string Remark { get; set; }

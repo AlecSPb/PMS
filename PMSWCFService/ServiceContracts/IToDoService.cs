@@ -12,10 +12,10 @@ namespace PMSWCFService.ServiceContracts
     public interface IToDoService
     {
         [OperationContract]
-        List<DcToDo> GetToDo(string title, int s, int t);
+        List<DcToDo> GetToDo(string title,string personInCharge, int s, int t);
 
         [OperationContract]
-        int GetToDoCount(string title);
+        int GetToDoCount(string title,string personInCharge);
 
         [OperationContract]
         int AddToDo(DcToDo model);

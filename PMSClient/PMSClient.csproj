@@ -385,6 +385,9 @@
     <Compile Include="View\CheckListView.xaml.cs">
       <DependentUpon>CheckListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ToDoView.xaml.cs">
+      <DependentUpon>ToDoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FeedBackView.xaml.cs">
       <DependentUpon>FeedBackView.xaml</DependentUpon>
     </Compile>
@@ -820,6 +823,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CheckListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ToDoView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -28,7 +28,7 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public DateTime DeadLine { get; set; }
         [DataMember]
-        public DateTime PersonInCharge { get; set; }
+        public string PersonInCharge { get; set; }
 
         [DataMember]
         public DateTime FinishTime { get; set; }
