@@ -47,9 +47,9 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
@@ -74,7 +74,7 @@
                           SelectedItem="{Binding FollowUps,Mode=TwoWay}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#后续工作类型"/>
-                
+
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RTProductID}"  Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ProductID}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"   Text="#产品ID"/>
@@ -139,37 +139,39 @@
                 </StackPanel>
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
-                
-                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTRemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="13" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"   Text=""/>
 
-                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTDefects}"
+                <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox  Grid.Row="14" Grid.Column="1" 
+                <ComboBox  Grid.Row="13" Grid.Column="1" 
                           ItemsSource="{Binding DataContext.TestDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            Text="{Binding Defects}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
 
-                <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
+                <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <StackPanel Grid.Row="15" Grid.Column="1" Orientation="Horizontal">
+                <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
                     <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommon}" Click="btnCsv_Click"/>
                 </StackPanel>
-                
-                <TextBox  x:Name="txtCompositionXRF" Grid.Row="16" Grid.Column="1"
+
+                <TextBox  x:Name="txtCompositionXRF" Grid.Row="15" Grid.Column="1"
                          Text="{Binding CompositionXRF,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource StyleTextBoxCommon}"
                           AcceptsReturn="True"
                           VerticalScrollBarVisibility="Auto" Background="Yellow"
                          Height="120"/>
-                <TextBlock Grid.Row="15" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="需要选择CSV格式的文件"/>
+                <TextBlock Grid.Row="14" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="需要选择CSV格式的文件"/>
 
-                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTSample}"
+                <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RTSample}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxBig}"/>
-                <TextBlock Grid.Row="17" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Sample}" Style="{StaticResource StyleTextBoxBig}"/>
+                <TextBlock Grid.Row="16" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
+                <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RTRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox Name="txtRemark" Grid.Row="17" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
+                <StackPanel Grid.Row="17" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="附有背板" Name="btnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="btnAddPlate_Click"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"   Text=""/>
+                </StackPanel>
                 
                 <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RTState}"  Style="{StaticResource StyleTextBlockCommon}"/>
                 <ComboBox Grid.Row="18" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"  FontSize="{StaticResource TabletFontLG}"

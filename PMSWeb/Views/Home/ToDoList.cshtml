@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PMSWeb.ExtraService.DcToDo>
+@{
+    ViewBag.Title = "ToDoList";
+}
+
+<h2>To Do List</h2>
+<table class="table table-bordered table-condensed table-striped">
+    @for(var item in Model)
+    {
+    <tr>
+        <td>@item.Title</td>
+        <td>@item.DeadLine</td>
+        <td>@item.PersonInCharge</td>
+        <td>@item.Creator</td>
+        <td>@item.CreateTime</td>
+    </tr>
+    }
+</table>
+

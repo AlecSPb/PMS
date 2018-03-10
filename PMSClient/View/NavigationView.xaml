@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Style="{StaticResource StyleStackPanelNavigationBar}">
                 <Button Content="{StaticResource PageNaivgationWorkFlow}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigationWorkFlow}"/>
-                <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Notice}">
+                <Button  Style="{StaticResource StyleButtonCommon}" Command="{Binding Notice}" Visibility="Collapsed">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{StaticResource ButtonNotice}"/>
                         <Image Source="../Resource/Icons/noticegreen.png"  Style="{StaticResource StyleImageIcon}"/>

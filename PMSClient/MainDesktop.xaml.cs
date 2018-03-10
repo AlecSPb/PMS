@@ -91,7 +91,7 @@ namespace PMSClient
             #endregion
 
             #region 托盘部分
-            InitializeTray();
+            // InitializeTray();
             #endregion
             //首次检测心跳
             HeartBeatCheck();
@@ -106,7 +106,7 @@ namespace PMSClient
         {
             if (HeartBeatCheck())
             {
-                NoticeCheck();
+                //NoticeCheck();
             }
         }
         private bool HeartBeatCheck()

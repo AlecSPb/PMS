@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PMSWeb.ExtraService;
 
 namespace PMSWeb.Controllers
 {
@@ -11,6 +12,24 @@ namespace PMSWeb.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult ToDoList()
+        {
+
+            try
+            {
+                using (var service = new ToDoServiceClient())
+                {
+                    var dataList = service.GetToDo("", "", 0, 10).ToList();
+                    return View(dataList);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return HttpNotFound();
         }
 
         public ActionResult About()

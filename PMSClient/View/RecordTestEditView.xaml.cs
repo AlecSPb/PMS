@@ -48,5 +48,10 @@ namespace PMSClient.View
         {
             PMSMethods.SetTextBox(txtResistance, "OutOfRange");
         }
+
+        private void btnAddPlate_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBox(txtRemark, "附有背板");
+        }
     }
 }
