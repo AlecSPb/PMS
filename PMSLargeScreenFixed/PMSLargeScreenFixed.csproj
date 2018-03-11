@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FDE2BDA6-E7B8-4EFD-8B64-57787F9F9524}</ProjectGuid>
+    <ProjectGuid>{AB5C58C2-F791-473A-B37A-23441BF7ADC7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PMSLargeScreen</RootNamespace>
-    <AssemblyName>PMSLargeScreen</AssemblyName>
+    <AssemblyName>PMSLargeScreenFixed</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

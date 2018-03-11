@@ -1,6 +1,7 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
 2017-3-16
+添加从以往计划中选择填充新计划功能。can fill the new plan with old plan parameters
 制作了新版的热压大屏幕显示程序
 重构了系统重要模块，提升了性能和稳定性。refactor import module, make a progress of performance and stability.
 修正三杰模块bug fix the bug of sanjie module
