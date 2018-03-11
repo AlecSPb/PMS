@@ -11,7 +11,7 @@ using PMSClient.ExtraService;
 
 namespace PMSClient.ViewModel
 {
-    public class ToDoVM:BaseViewModelPage
+    public class ToDoVM : BaseViewModelPage
     {
         public ToDoVM()
         {
@@ -108,7 +108,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new ToDoServiceClient())
             {
-                var orders = service.GetToDo(SearchTitle, SearchPersonInCharge,skip, take);
+                var orders = service.GetToDo(SearchTitle, SearchPersonInCharge, skip, take);
                 ToDoList.Clear();
                 orders.ToList().ForEach(o => ToDoList.Add(o));
                 CurrentToDoItem = orders.FirstOrDefault();
@@ -121,7 +121,7 @@ namespace PMSClient.ViewModel
         public DcToDo CurrentToDoItem
         {
             get { return currentToDoItem; }
-            set { currentToDoItem = value; }
+            set { currentToDoItem = value; RaisePropertyChanged(nameof(CurrentToDoItem)); }
         }
 
 

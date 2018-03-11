@@ -1,6 +1,8 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
 2017-3-16
+制作了新版的热压大屏幕显示程序
+重构了系统重要模块，提升了性能和稳定性。refactor import module, make a progress of performance and stability.
 修正三杰模块bug fix the bug of sanjie module
 添加了ToDoList模块add to do list
 其他小细节的更改other small details fixed

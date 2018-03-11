@@ -101,6 +101,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="Auto"/>
@@ -136,17 +137,21 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding DeadLine}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TDFinishTime}"
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource TDFinishTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDRemark}"
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" AcceptsReturn="True" Height="100"
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" AcceptsReturn="True" Height="100"
                              Style="{StaticResource StyleTextBoxReadOnly}"/>
                 </Grid>
             </ScrollViewer>
