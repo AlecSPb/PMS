@@ -61,8 +61,6 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Status}"/>
                     <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
@@ -73,8 +71,6 @@
                                     Binding="{Binding DeadLine,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource TDPersonInCharge}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PersonInCharge}"/>
-                    <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTemplateColumn Header="{StaticResource TDProgress}" Width="250">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -83,8 +79,12 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                     <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
+                    <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">

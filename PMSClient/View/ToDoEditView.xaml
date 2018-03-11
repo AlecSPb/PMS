@@ -114,7 +114,7 @@
                           ItemsSource="{Binding DataContext.Statuses,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding Status}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="状态"/>
+                           Text="设置进度为100的时候，状态会自动设置为完成"/>
 
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RPCreateTime}"

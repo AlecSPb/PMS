@@ -89,7 +89,10 @@ namespace PMSClient.ViewModel
                     CurrentToDo.Progress = 100;
 
                 if (CurrentToDo.Progress == 100)
+                {
                     CurrentToDo.Status = PMSCommon.ToDoStatus.完成.ToString();
+                    CurrentToDo.FinishTime = DateTime.Now;
+                }
 
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new ToDoServiceClient();
