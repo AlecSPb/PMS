@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,7 @@ namespace PMSDAL
         public DateTime DeadLine { get; set; }
         public string PersonInCharge { get; set; }
 
+        [DefaultValue(0)]
         public int Progress { get; set; }
 
         public DateTime FinishTime { get; set; }

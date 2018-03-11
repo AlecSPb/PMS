@@ -34,17 +34,16 @@ namespace PMSClient.View
                 var model = (DcToDo)e.Row.DataContext;
                 if (model != null)
                 {
+                    if (model.Priority.Contains("优先"))
+                        e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                     switch (model.Status)
                     {
-                        case "未完成":
-                            e.Row.Background = this.FindResource("UnCompletedBrush") as SolidColorBrush;
+                        case "暂停":
+                            e.Row.Background = this.FindResource("PausedBrush") as SolidColorBrush;
                             break;
                         default:
                             break;
                     }
-
-                    if (model.Priority.Contains("优先"))
-                        e.Row.Background = this.FindResource("EmergencyBrush") as SolidColorBrush;
                 }
             }
             catch (Exception ex)

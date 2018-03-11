@@ -29,8 +29,8 @@
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding All}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
-            <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}"
-                       Background="{StaticResource UnCompletedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorEmergency}" Style="{StaticResource StyleTextBlockCommon}"
+                       Background="{StaticResource EmergencyBrush}"/>
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}"
                        Background="{StaticResource PausedBrush}"/>
         </StackPanel>
@@ -78,13 +78,11 @@
                     <DataGridTemplateColumn Header="{StaticResource TDProgress}" Width="250">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <ProgressBar Value="30" Height="10" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                <ProgressBar Value="{Binding Progress}" Height="10" VerticalAlignment="Center" HorizontalAlignment="Stretch"
                                              Margin="10 0"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="{StaticResource TDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Remark}"/>
                     <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
@@ -132,7 +130,7 @@
                     <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TDContent}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Content}"
-                             Style="{StaticResource StyleTextBoxReadOnly}" AcceptsReturn="True" Height="100" VerticalScrollBarVisibility="Visible"/>
+                             Style="{StaticResource StyleTextBoxReadOnly}" AcceptsReturn="True" Height="100"/>
 
                     <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TDPriority}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
@@ -148,7 +146,8 @@
 
                     <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Remark}" AcceptsReturn="True" Height="100"
+                             Style="{StaticResource StyleTextBoxReadOnly}"/>
                 </Grid>
             </ScrollViewer>
         </Grid>

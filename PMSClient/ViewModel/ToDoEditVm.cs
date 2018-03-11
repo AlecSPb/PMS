@@ -30,7 +30,7 @@ namespace PMSClient.ViewModel
             Save = new RelayCommand(ActionSave);
         }
 
-   
+
         public void SetNew()
         {
             IsNew = true;
@@ -42,19 +42,20 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.Status = PMSCommon.ToDoStatus.未完成.ToString();
 
-            model.Title = "";
+            model.Title = "无";
             model.Content = "无";
             model.Priority = PMSCommon.ToDoPriority.普通.ToString();
             model.DeadLine = DateTime.Now.AddDays(7);
-            model.PersonInCharge = "无";
+            model.Progress = 0;
+            model.PersonInCharge = "暂无";
 
-            model.FinishTime=DateTime.Now.AddDays(7);
+            model.FinishTime = DateTime.Now.AddDays(7);
             model.Remark = "";
 
             #endregion
             CurrentToDo = model;
         }
-   
+
         public void SetEdit(DcToDo model)
         {
             if (model != null)
@@ -75,7 +76,7 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
-            if (CurrentToDo.Status == "作废")
+            if (CurrentToDo.Status == PMSCommon.ToDoStatus.作废.ToString())
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定要作废吗？"))
                 {
@@ -84,6 +85,12 @@ namespace PMSClient.ViewModel
             }
             try
             {
+                if (CurrentToDo.Progress > 100)
+                    CurrentToDo.Progress = 100;
+
+                if (CurrentToDo.Progress == 100)
+                    CurrentToDo.Status = PMSCommon.ToDoStatus.完成.ToString();
+
                 string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
                 var service = new ToDoServiceClient();
                 if (IsNew)
