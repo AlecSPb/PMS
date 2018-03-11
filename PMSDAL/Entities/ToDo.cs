@@ -19,6 +19,8 @@ namespace PMSDAL
         public DateTime DeadLine { get; set; }
         public string PersonInCharge { get; set; }
 
+        public int Progress { get; set; }
+
         public DateTime FinishTime { get; set; }
         public string Remark { get; set; }
     }

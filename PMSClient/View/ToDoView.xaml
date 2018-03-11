@@ -63,8 +63,6 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                    <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding Creator}"/>
                     <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Status}"/>
                     <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
@@ -77,8 +75,18 @@
                                     Binding="{Binding PersonInCharge}"/>
                     <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <DataGridTemplateColumn Header="{StaticResource TDProgress}" Width="250">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ProgressBar Value="30" Height="10" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                             Margin="10 0"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource TDRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                    <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">

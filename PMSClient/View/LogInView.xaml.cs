@@ -60,10 +60,9 @@ namespace PMSClient.View
             }
             try
             {
-                var logInformation = PMSHelper.CurrentSession;
-                logInformation.LogIn(uid, pwd);
+                PMSHelper.CurrentSession.LogIn(uid, pwd);
 
-                if (logInformation.CurrentUser != null)
+                if (PMSHelper.CurrentSession.CurrentUser != null)
                 {
                     PMSHelper.CurrentLog.Log("登录成功");
                     NavigationService.GoTo(PMSViews.Navigation);
