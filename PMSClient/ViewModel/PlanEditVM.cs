@@ -20,7 +20,47 @@ namespace PMSClient.ViewModel
             InitializeProperties();
             GiveUp = new RelayCommand(GoBack);
             Save = new RelayCommand(ActionSave);
+            SelectMisson = new RelayCommand(ActionSelectMisson);
         }
+
+        private void ActionSelectMisson()
+        {
+            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.PlanEdit);
+            //PMSHelper.ViewModels.PlanSelect.RefreshData();
+            NavigationService.GoTo(PMSViews.PlanSelect);
+        }
+
+        public void SetBySelect(DcPlanVHP model)
+        {
+            if (model != null && CurrentPlan != null)
+            {
+                CurrentPlan.PlanLot = model.PlanLot;
+                CurrentPlan.PlanType = model.PlanType;
+                CurrentPlan.MoldType = model.MoldType;
+                CurrentPlan.VHPDeviceCode = model.VHPDeviceCode;
+                CurrentPlan.Temperature = model.Temperature;
+                CurrentPlan.Pressure = model.Temperature;
+                CurrentPlan.Vaccum = model.Vaccum;
+                CurrentPlan.ProcessCode = model.ProcessCode;
+                CurrentPlan.PrePressure = model.PrePressure;
+                CurrentPlan.PreTemperature = model.PreTemperature;
+                CurrentPlan.Quantity = model.Quantity;
+                CurrentPlan.AllWeight = model.AllWeight;
+                CurrentPlan.SingleWeight = model.SingleWeight;
+                CurrentPlan.MoldDiameter = model.MoldDiameter;
+                CurrentPlan.Thickness = model.Thickness;
+                CurrentPlan.CalculationDensity = model.CalculationDensity;
+                CurrentPlan.GrainSize = model.GrainSize;
+                CurrentPlan.RoomHumidity = model.RoomHumidity;
+                CurrentPlan.RoomTemperature = model.RoomTemperature;
+                CurrentPlan.KeepTempTime = model.KeepTempTime;
+                CurrentPlan.MillingRequirement = model.MillingRequirement;
+                CurrentPlan.MachineRequirement = model.MachineRequirement;
+                CurrentPlan.FillingRequirement = model.FillingRequirement;
+                CurrentPlan.SpecialRequirement = model.SpecialRequirement;
+            }
+        }
+
 
         public void SetNew(DcOrder order)
         {
@@ -219,6 +259,11 @@ namespace PMSClient.ViewModel
                 Set<DcPlanVHP>(ref currentPlan, value);
             }
         }
+
+
+        public RelayCommand SelectMisson { get; set; }
+
+
 
     }
 }
