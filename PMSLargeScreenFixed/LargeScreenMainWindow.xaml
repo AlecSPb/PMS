@@ -7,13 +7,14 @@
         Language="zh-cn"
         Icon="Images/screen.png"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"  WindowState="Maximized" ShowInTaskbar="True"
-        Title="热压安排大屏幕显示程序" Height="1000" Width="1600">
+        Title="热压安排大屏幕显示程序-固定6格版" Height="1000" Width="1600">
     <Window.DataContext>
         <local:LargeScreenMainWindowVM/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -30,7 +31,7 @@
                 <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=自2011年到现在，已进行热压计划{0}次}" Style="{StaticResource StyleTextBlockLightBig}"/>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
-                    <TextBlock Text="{Binding IntervalRefreshDistribute,StringFormat=轮换显示间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                    <!--<TextBlock Text="{Binding IntervalRefreshDistribute,StringFormat=轮换显示间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>-->
                     <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
                 </StackPanel>
             </Grid>
@@ -47,8 +48,20 @@
                 <local:SingleUnit  Grid.Column="2" x:Name="unit3" CurrentModel="{Binding Model3}" />
             </Grid>
         </Border>
-        <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Grid Grid.Row="2">
+        <Border Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <local:SingleUnit  Grid.Column="0" x:Name="unit4" CurrentModel="{Binding Model4}" />
+                <local:SingleUnit  Grid.Column="1" x:Name="unit5" CurrentModel="{Binding Model5}" />
+                <local:SingleUnit  Grid.Column="2" x:Name="unit6" CurrentModel="{Binding Model6}" />
+            </Grid>
+        </Border>
+        <TextBlock Grid.Row="1" Grid.RowSpan="2" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="300"/>
@@ -60,7 +73,7 @@
                        Style="{StaticResource StyleTextBlockBig3}"  Foreground="Yellow" HorizontalAlignment="Right"/>
 
         </Grid>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BG2}">
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status1}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding Status2}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>

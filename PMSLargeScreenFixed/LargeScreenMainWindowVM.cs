@@ -15,14 +15,12 @@ namespace PMSLargeScreen
     public class LargeScreenMainWindowVM : ViewModelBase
     {
         private Timer _timerLoadData;
-        private Timer _timerDistributeData;
         public LargeScreenMainWindowVM()
         {
             InitializeAll();
             IntervalLoadData = Properties.Settings.Default.UpdateInterval;
         }
 
-        private const double IntervalDistributeData = 10000;
         private double IntervalLoadData = 120000;
 
         private void InitializeAll()
@@ -35,7 +33,7 @@ namespace PMSLargeScreen
             status2 = "状态栏2";
             errorMessage = "其他信息";
 
-            CenterMessage = $"准备数据中，请等待，{IntervalDistributeData / 1000}s后显示";
+            CenterMessage = $"准备数据中，请等待，{IntervalLoadData/ 1000}s后显示";
 
             #region 设定定时器
             _timerLoadData = new Timer();
@@ -43,70 +41,12 @@ namespace PMSLargeScreen
             _timerLoadData.Elapsed += _timerLoadData_Elapsed;
             _timerLoadData.Start();
 
-            _timerDistributeData = new Timer();
-            _timerDistributeData.Interval = IntervalDistributeData;
-            _timerDistributeData.Elapsed += _timerDistributeData_Elapsed;
             #endregion
 
             //首次加载数据
             GetDataFromService();
         }
-
-        private void _timerDistributeData_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            //    ShowDataOneByOne();
-            ShowDataInPage();
-        }
-
-        private int pageIndex = 1;
-        private int pageSize = 3;
-        private int pageCount = 0;
-
-        /// <summary>
-        /// ABC,D  ABC, D
-        /// </summary>
-        private void ShowDataInPage()
-        {
-            int s = (pageIndex - 1) * pageSize;
-            var displayModels = AllModels.Skip(s).Take(pageSize).ToList();
-
-            ShowModels.Clear();
-
-            CenterMessage = "";
-
-            if (displayModels.Count == 1)
-            {
-                Model1 = displayModels[0];
-                Model2 = null;
-                Model3 = null;
-            }
-            if (displayModels.Count == 2)
-            {
-                Model1 = displayModels[0];
-                Model2 = displayModels[1];
-                Model3 = null;
-            }
-
-            if (displayModels.Count == 3)
-            {
-                Model1 = displayModels[0];
-                Model2 = displayModels[1];
-                Model3 = displayModels[2];
-            }
-            Status2 = $"第{pageIndex}页数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
-            pageIndex++;
-            if (pageIndex > pageCount)
-            {
-                pageIndex = 1;
-            }
-
-        }
-        private void SetPagingParameters()
-        {
-            pageCount = AllModels.Count / pageSize + (AllModels.Count % pageSize == 0 ? 0 : 1);
-            System.Diagnostics.Debug.WriteLine($"PageCount={pageCount}");
-        }
-
+   
         private int counter = 0;
         /// <summary>
         /// 显示方式ABC,BCD,ABC
@@ -120,6 +60,10 @@ namespace PMSLargeScreen
                 Model1 = null;
                 Model2 = null;
                 Model3 = null;
+                Model4 = null;
+                Model5 = null;
+                Model6 = null;
+
                 CenterMessage = "没有计划";
                 return;
             }
@@ -131,14 +75,19 @@ namespace PMSLargeScreen
                 Model1 = AllModels[0];
                 Model2 = null;
                 Model3 = null;
-                Status2 = $"数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
+                Model4 = null;
+                Model5 = null;
+                Model6 = null;
             }
+
             if (AllModels.Count == 2)
             {
                 Model1 = AllModels[0];
                 Model2 = AllModels[1];
                 Model3 = null;
-                Status2 = $"数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
+                Model4 = null;
+                Model5 = null;
+                Model6 = null;
             }
 
             if (AllModels.Count == 3)
@@ -146,22 +95,38 @@ namespace PMSLargeScreen
                 Model1 = AllModels[0];
                 Model2 = AllModels[1];
                 Model3 = AllModels[2];
-                Status2 = $"数据已刷新于{DateTime.Now.ToString("HH:mm:ss")}";
+                Model4 = null;
+                Model5 = null;
+                Model6 = null;
             }
 
-            if (AllModels.Count > 3)
+            if (AllModels.Count == 4)
             {
-                System.Diagnostics.Debug.Print($"======显示的是第{counter + 1}批");
-                System.Diagnostics.Debug.Print($"显示的是第{counter },{counter + 1},{ counter + 2}");
-                Status2 = $"第{counter + 1}批数据已轮换于{DateTime.Now.ToString("HH:mm:ss")}";
-                Model1 = AllModels[counter];
-                Model2 = AllModels[counter + 1];
-                Model3 = AllModels[counter + 2];
-                counter++;
-                if (counter + 3 > AllModels.Count)
-                {
-                    counter = 0;
-                }
+                Model1 = AllModels[0];
+                Model2 = AllModels[1];
+                Model3 = AllModels[2];
+                Model4 = AllModels[3];
+                Model5 = null;
+                Model6 = null;
+            }
+
+            if (AllModels.Count == 5)
+            {
+                Model1 = AllModels[0];
+                Model2 = AllModels[1];
+                Model3 = AllModels[2];
+                Model4 = AllModels[3];
+                Model5 = AllModels[4];
+                Model6 = null;
+            }
+            if (AllModels.Count >= 6)
+            {
+                Model1 = AllModels[0];
+                Model2 = AllModels[1];
+                Model3 = AllModels[2];
+                Model4 = AllModels[3];
+                Model5 = AllModels[4];
+                Model6 = AllModels[5];
             }
         }
 
@@ -176,8 +141,7 @@ namespace PMSLargeScreen
         {
             try
             {
-                _timerDistributeData.Stop();
-                #region 读取规范化数据
+                  #region 读取规范化数据
                 DcPlanExtra[] result;
                 using (var service = new LargeScreenServiceClient())
                 {
@@ -233,16 +197,14 @@ namespace PMSLargeScreen
                     }
                 }
                 #endregion
-                Status1 = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")}";
+                Status1 = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")},今日共有{AllModels.Count}个计划安排";
                 counter = 0;
-                _timerDistributeData.Start();
-            }
+                ShowDataOneByOne();
+               }
             catch (Exception ex)
             {
                 ErrorMessage = ex.Message;
             }
-
-            SetPagingParameters();
         }
 
         /// <summary>
@@ -271,11 +233,12 @@ namespace PMSLargeScreen
                 ErrorMessage = ex.Message;
             }
         }
+
         public ObservableCollection<UnitModel> ShowModels { get; set; }
 
         private List<UnitModel> AllModels { get; set; }
 
-
+        #region Models
         private UnitModel model1;
 
         public UnitModel Model1
@@ -297,6 +260,26 @@ namespace PMSLargeScreen
             get { return model3; }
             set { model3 = value; RaisePropertyChanged(nameof(Model3)); }
         }
+
+        private UnitModel model4;
+        public UnitModel Model4
+        {
+            get { return model4; }
+            set { model4 = value; RaisePropertyChanged(nameof(Model4)); }
+        }
+        private UnitModel model5;
+        public UnitModel Model5
+        {
+            get { return model5; }
+            set { model5 = value; RaisePropertyChanged(nameof(Model5)); }
+        }
+        private UnitModel model6;
+        public UnitModel Model6
+        {
+            get { return model6; }
+            set { model6 = value; RaisePropertyChanged(nameof(Model6)); }
+        }
+        #endregion
 
         private DateTime currentDate;
 
@@ -349,12 +332,5 @@ namespace PMSLargeScreen
             }
         }
 
-        public double IntervalRefreshDistribute
-        {
-            get
-            {
-                return IntervalDistributeData / 1000;
-            }
-        }
     }
 }
