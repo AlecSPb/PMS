@@ -224,6 +224,8 @@
     <sys:String x:Key="ButtonPlan">计划</sys:String>
     <sys:String x:Key="ButtonPlanWindow">计划窗口</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">原料需求</sys:String>
+    <sys:String x:Key="ButtonMaterialOrder">原料订单</sys:String>
+    
     <sys:String x:Key="ButtonSearchPlan">搜索计划</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">材料入库</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryOut">材料出库</sys:String>

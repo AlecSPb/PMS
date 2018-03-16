@@ -192,11 +192,14 @@ namespace PMSClient.ViewModel
                         compound.ID = Guid.NewGuid();
                         compound.MaterialName = model.Item.MaterialOrderItem.Composition;
                         compound.MeltingPoint = m.MeltingPoint;
-                        compound.InformationSource = PMSCommon.CustomData.InformationSources[0];
+                        compound.InformationSource = PMSCommon.CustomData.InformationSources[1];
                         compound.Density = 0;
                         compound.BoilingPoint = "";
                         compound.SpecialProperty = "";
                         compound.State = PMSCommon.SimpleState.正常.ToString();
+                        compound.CreateTime = DateTime.Now;
+                        compound.Creator = uid;
+                        compound.Remark = "";
                         service.AddToCompound(compound, uid);
 
                     }

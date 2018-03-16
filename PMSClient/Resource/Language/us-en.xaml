@@ -222,6 +222,7 @@
     <sys:String x:Key="ButtonPlan">Plan</sys:String>
     <sys:String x:Key="ButtonPlanWindow">Plan Window</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">Material Need</sys:String>
+    <sys:String x:Key="ButtonMaterialOrder">Material Order</sys:String>
     <sys:String x:Key="ButtonSearchPlan">Search Plan</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryIn">Material In</sys:String>
     <sys:String x:Key="ButtonMaterialInventoryOut">Material Out</sys:String>

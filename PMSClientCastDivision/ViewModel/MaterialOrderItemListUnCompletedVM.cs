@@ -168,7 +168,7 @@ namespace PMSClient.ViewModel
                             preFix = "部分交付";
                             model.Item.MaterialOrderItem.SJIngredient += DateTime.Now.ToString("yyMMdd")
                                 + "交付" + m.ActualWeight.ToString("F3");
-                            service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
+                           service.UpdateMaterialOrderItem(model.Item.MaterialOrderItem, uid);
                         }
                         //保存材料入库信息
                         DcMaterialInventoryIn materialInModel = new DcMaterialInventoryIn();
@@ -184,21 +184,26 @@ namespace PMSClient.ViewModel
                         materialInModel.State = PMSCommon.InventoryState.暂入库.ToString();
                         materialInModel.Remark = preFix + " " + m.Remark;
 
-                        service.AddToMaterialIn(materialInModel, uid);
+                       service.AddToMaterialIn(materialInModel, uid);
 
                         //保存原料熔点信息
                         DcBDCompound compound = new DcBDCompound();
                         compound.ID = Guid.NewGuid();
                         compound.MaterialName = model.Item.MaterialOrderItem.Composition;
                         compound.MeltingPoint = m.MeltingPoint;
-                        compound.InformationSource = PMSCommon.CustomData.InformationSources[0];
+                        compound.InformationSource = PMSCommon.CustomData.InformationSources[1];
                         compound.Density = 0;
                         compound.BoilingPoint = "";
                         compound.SpecialProperty = "";
                         compound.State = PMSCommon.SimpleState.正常.ToString();
+                        compound.CreateTime = DateTime.Now;
+                        compound.Creator =uid;
+                        compound.Remark = "";
                         service.AddToCompound(compound, uid);
 
                     }
+
+
                     SetPageParametersWhenConditionChange();
                     PMSDialogService.ShowYes("项目已完成，并暂入库，如有操作失误，联系先锋材料进行修正");
                     NavigationService.Status("保存完毕");
