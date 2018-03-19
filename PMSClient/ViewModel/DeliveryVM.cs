@@ -152,7 +152,6 @@ namespace PMSClient.ViewModel
 
         private void ActionSearch()
         {
-            SearchDeliveryName = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -186,6 +185,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
+            SearchDeliveryName = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -314,7 +314,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             var service = new DeliveryServiceClient();
             RecordCount = service.GetDeliveryCountBySearch(SearchDeliveryName);
             service.Close();
