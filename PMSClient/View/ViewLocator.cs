@@ -21,7 +21,7 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<NavigationView>(true);
             SimpleIoc.Default.Register<NavigationWorkFlowView>(true);
 
-            SimpleIoc.Default.Register<OrderView>();
+            SimpleIoc.Default.Register<OrderView>(true);
             SimpleIoc.Default.Register<OrderEditView>();
             SimpleIoc.Default.Register<OrderUnCompletedView>();
             SimpleIoc.Default.Register<OrderCheckEditView>();
@@ -31,10 +31,10 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<OutSourceSelectView>();
 
             SimpleIoc.Default.Register<MissonSelectView>();
-            SimpleIoc.Default.Register<MissonView>();
+            SimpleIoc.Default.Register<MissonView>(true);
             SimpleIoc.Default.Register<MissonUnCompletedView>();
 
-            SimpleIoc.Default.Register<PlanView>();
+            SimpleIoc.Default.Register<PlanView>(true);
             SimpleIoc.Default.Register<PlanSearchView>();
             SimpleIoc.Default.Register<PlanSelectView>();
             SimpleIoc.Default.Register<PlanEditView>();
@@ -42,18 +42,18 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<PlanConclusionView>();
             SimpleIoc.Default.Register<PlanConclusionEditView>();
 
-            SimpleIoc.Default.Register<MaterialNeedView>();
+            SimpleIoc.Default.Register<MaterialNeedView>(true);
             SimpleIoc.Default.Register<MaterialNeedEditView>();
             SimpleIoc.Default.Register<MaterialNeedSelectView>();
 
-            SimpleIoc.Default.Register<MaterialOrderView>();
+            SimpleIoc.Default.Register<MaterialOrderView>(true);
             SimpleIoc.Default.Register<MaterialOrderEditView>();
             SimpleIoc.Default.Register<MaterialOrderItemEditView>();
             SimpleIoc.Default.Register<MaterialOrderItemSelectView>();
             SimpleIoc.Default.Register<MaterialOrderItemListView>();
             SimpleIoc.Default.Register<MaterialOrderItemListUnCompletedView>();
 
-            SimpleIoc.Default.Register<MaterialInventoryInView>();
+            SimpleIoc.Default.Register<MaterialInventoryInView>(true);
             SimpleIoc.Default.Register<MaterialInventoryInEditView>();
             SimpleIoc.Default.Register<MaterialInventoryInSelectView>();
             SimpleIoc.Default.Register<MaterialInventoryInUnCompletedView>();

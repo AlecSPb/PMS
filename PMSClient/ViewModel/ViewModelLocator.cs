@@ -34,7 +34,7 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<NavigationVM>(true);
 
-            SimpleIoc.Default.Register<OrderVM>();
+            SimpleIoc.Default.Register<OrderVM>(true);
             SimpleIoc.Default.Register<OrderEditVM>();
             SimpleIoc.Default.Register<OrderUnCompletedVM>();
 
@@ -45,11 +45,11 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<OutSourceSelectVM>();
 
 
-            SimpleIoc.Default.Register<MissonVM>();
+            SimpleIoc.Default.Register<MissonVM>(true);
             SimpleIoc.Default.Register<MissonUnCompletedVM>();
             SimpleIoc.Default.Register<MissonSelectVM>();
 
-            SimpleIoc.Default.Register<PlanVM>();
+            SimpleIoc.Default.Register<PlanVM>(true);
             SimpleIoc.Default.Register<PlanSearchVM>();
             SimpleIoc.Default.Register<PlanEditVM>();
             SimpleIoc.Default.Register<PlanSelectVM>();
@@ -68,12 +68,12 @@ namespace PMSClient.ViewModel
             SimpleIoc.Default.Register<MaterialOrderItemListUnCompletedVM>();
 
 
-            SimpleIoc.Default.Register<MaterialInventoryInVM>();
+            SimpleIoc.Default.Register<MaterialInventoryInVM>(true);
             SimpleIoc.Default.Register<MaterialInventoryInEditVM>();
             SimpleIoc.Default.Register<MaterialInventoryInSelectVM>();
             SimpleIoc.Default.Register<MaterialInventoryInUnCompletedVM>();
 
-            SimpleIoc.Default.Register<MaterialInventoryOutVM>();
+            SimpleIoc.Default.Register<MaterialInventoryOutVM>(true);
             SimpleIoc.Default.Register<MaterialInventoryOutEditVM>();
 
             SimpleIoc.Default.Register<RecordTestVM>();

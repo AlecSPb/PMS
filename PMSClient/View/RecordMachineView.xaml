@@ -87,8 +87,10 @@
                 <DataGridTextColumn Header="{StaticResource RMMDefects}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Defects}"/>
 
-
-
+                <DataGridTextColumn Header="{StaticResource RMMCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding CreateTime}"/>
+                <DataGridTextColumn Header="{StaticResource RMMCreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Creator}"/>
 
             </DataGrid.Columns>
         </DataGrid>
