@@ -4,16 +4,35 @@
 }
 
 <h2>To Do List</h2>
-<table class="table table-bordered table-condensed table-striped">
-    @for(var item in Model)
-    {
-    <tr>
-        <td>@item.Title</td>
-        <td>@item.DeadLine</td>
-        <td>@item.PersonInCharge</td>
-        <td>@item.Creator</td>
-        <td>@item.CreateTime</td>
-    </tr>
-    }
+<table class="table table-responsive table-bordered table-condensed table-striped table-hover">
+    <thead>
+        <tr>
+            <td>标题</td>
+            <td>最后期限</td>
+            <td>负责人</td>
+            <td style="width:300px">进度</td>
+            <td>创建者</td>
+            <td>创建时间</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td class="text-right">@item.DeadLine.ToString("yyyy-MM-dd")</td>
+                <td>@item.PersonInCharge</td>
+                <td>
+                    <div class="progress progress-striped" style="margin-bottom:0px">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                             aria-valuemax="100" aria-valuemin="0" style="width:@item.Progress%">
+                        </div>
+                    </div>
+                </td>
+                <td class="text-right">@item.Creator</td>
+                <td class="text-right">@item.CreateTime.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
 </table>
 

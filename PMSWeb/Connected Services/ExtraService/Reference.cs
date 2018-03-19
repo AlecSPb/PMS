@@ -771,6 +771,9 @@ namespace PMSWeb.ExtraService {
         private string PriorityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProgressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -889,6 +892,19 @@ namespace PMSWeb.ExtraService {
                 if ((object.ReferenceEquals(this.PriorityField, value) != true)) {
                     this.PriorityField = value;
                     this.RaisePropertyChanged("Priority");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Progress {
+            get {
+                return this.ProgressField;
+            }
+            set {
+                if ((this.ProgressField.Equals(value) != true)) {
+                    this.ProgressField = value;
+                    this.RaisePropertyChanged("Progress");
                 }
             }
         }
