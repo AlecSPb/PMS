@@ -8,72 +8,73 @@
     <thead>
         <tr>
             <td>标题</td>
-            <td>最后期限</td>
+            <td>类型</td>
             <td>负责人</td>
-            <td style="width:300px">进度</td>
-            <td>创建者</td>
-            <td>创建时间</td>
+            <td>最后期限</td>
+            <td style="width:250px">进度</td>
             <td>操作</td>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.Title</td>
-                <td class="text-right">@item.DeadLine.ToString("yyyy-MM-dd")</td>
-                <td>@item.PersonInCharge</td>
-                <td>
-                    <div class="progress progress-striped" style="margin-bottom:0px">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
-                             aria-valuemax="100" aria-valuemin="0" style="width:@item.Progress%">
-                        </div>
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Type</td>
+            <td>@item.PersonInCharge</td>
+            <td class="text-right">@item.DeadLine.ToString("yyyy-MM-dd")</td>
+            <td>
+                <div class="progress progress-striped" style="margin-bottom:0px">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                         aria-valuemax="100" aria-valuemin="0" style="width:@item.Progress%">
                     </div>
-                </td>
-                <td class="text-right">@item.Creator</td>
-                <td class="text-right">@item.CreateTime.ToString("yyyy-MM-dd")</td>
-
-                <td class="text-center">
-                    <button class="btn  btn-warning btn-xs"
-                            data-toggle="modal" data-target="#@item.ID">
-                        细节
-                    </button>
-                    <div class="modal fade" id="@item.ID" tabindex="-1"
-                         role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                    <h4 class="modal-title" id="myModalLabel">@item.Title</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <table class="table table-condensed">
-                                        <tr>
-                                            <td class="text-left">标题</td>
-                                            <td class="text-left">@item.Title</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left">内容</td>
-                                            <td class="text-left">@item.Content</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left">负责人</td>
-                                            <td class="text-left">@item.PersonInCharge</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-left">计划期限</td>
-                                            <td class="text-left">@item.DeadLine.ToString("yyyy-MM-dd")</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                </div>
+                </div>
+            </td>
+            <td class="text-center">
+                <button class="btn  btn-warning btn-xs"
+                        data-toggle="modal" data-target="#@item.ID">
+                    细节
+                </button>
+                <div class="modal fade" id="@item.ID" tabindex="-1"
+                     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title" id="myModalLabel">@item.Title</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-condensed">
+                                    <tr>
+                                        <td class="text-left">标题</td>
+                                        <td class="text-left">@item.Title</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">类型</td>
+                                        <td class="text-left">@item.Type</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">内容</td>
+                                        <td class="text-left">@item.Content</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">负责人</td>
+                                        <td class="text-left">@item.PersonInCharge</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left">计划期限</td>
+                                        <td class="text-left">@item.DeadLine.ToString("yyyy-MM-dd")</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                             </div>
                         </div>
                     </div>
-                </td>
-            </tr>
+                </div>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -14,13 +14,14 @@ namespace PMSClient.ViewModel
     {
         public ToDoEditVM()
         {
-
+            InitializeCommands();
             Statuses = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.ToDoStatus>(Statuses);
 
             Priorities = new List<string>();
             PMSBasicDataService.SetListDS<PMSCommon.ToDoPriority>(Priorities);
-            InitializeCommands();
+            Types = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.ToDoType>(Types);
         }
 
 
@@ -115,6 +116,7 @@ namespace PMSClient.ViewModel
         }
         public List<string> Priorities { get; set; }
         public List<string> Statuses { get; set; }
+        public List<string> Types { get; set; }
 
         private DcToDo currentToDo;
         public DcToDo CurrentToDo

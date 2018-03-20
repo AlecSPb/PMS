@@ -24,6 +24,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string Content { get; set; }
         [DataMember]
+        public string Type { get; set; }
+        [DataMember]
         public string Priority { get; set; }
         [DataMember]
         public DateTime DeadLine { get; set; }

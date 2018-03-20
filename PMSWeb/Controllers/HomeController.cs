@@ -21,7 +21,7 @@ namespace PMSWeb.Controllers
             {
                 using (var service = new ToDoServiceClient())
                 {
-                    var dataList = service.GetToDo("", "", 0, 20).ToList();
+                    var dataList = service.GetToDo("", "", 0, 50).ToList();
                     return View(dataList);
                 }
             }

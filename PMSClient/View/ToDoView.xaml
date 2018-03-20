@@ -61,10 +61,12 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Status}"/>
+                    <!--<DataGridTextColumn Header="{StaticResource TDStatus}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding Status}"/>-->
                     <DataGridTextColumn Header="{StaticResource TDTitle}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Title}"/>
+                    <DataGridTextColumn Header="{StaticResource TDType}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding Type}"/>
                     <DataGridTextColumn Header="{StaticResource TDPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Priority}"/>
                     <DataGridTextColumn Header="{StaticResource TDDeadLine}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -81,10 +83,10 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource TDFinishTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding FinishTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                    <DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding Creator}"/>
-                    <DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                    <!--<DataGridTextColumn Header="{StaticResource TDCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding Creator}"/>-->
+                    <!--<DataGridTextColumn Header="{StaticResource TDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>-->
                 </DataGrid.Columns>
             </DataGrid>
             <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
@@ -96,6 +98,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="auto"/>
@@ -127,31 +130,35 @@
                     <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TDTitle}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TDContent}"
+                    
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TDType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Content}"
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Type}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TDContent}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Content}"
                              Style="{StaticResource StyleTextBoxReadOnly}" AcceptsReturn="True" Height="100"/>
 
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TDPriority}"
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDPriority}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Priority}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDDeadLine}"
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TDDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding DeadLine}" Style="{StaticResource StyleTextBoxReadOnly}"/>
-                    
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding DeadLine}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource TDFinishTime}"
+                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxReadOnly}"/>
 
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDRemark}"
+                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource TDFinishTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Remark}" AcceptsReturn="True" Height="100"
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBoxReadOnly}"/>
+
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDRemark}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Remark}" AcceptsReturn="True" Height="100"
                              Style="{StaticResource StyleTextBoxReadOnly}"/>
                 </Grid>
             </ScrollViewer>

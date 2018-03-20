@@ -33,6 +33,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -56,77 +57,86 @@
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="计划标题"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource TDContent}"
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource TDType}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Name="cboTypes"
+                      Style="{StaticResource StyleComboBoxEditable}" 
+                      ItemsSource="{Binding DataContext.Types,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                      Text="{Binding Type}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="类型"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TDContent}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Content}"
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Content}"
                           Style="{StaticResource StyleTextBoxMultiline}"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="计划内容"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource TDPriority}"
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TDPriority}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="2" Grid.Column="1" Name="cboCustomerNames"
+                <ComboBox Grid.Row="3" Grid.Column="1" Name="cboCustomerNames"
                       Style="{StaticResource StyleComboBoxCommon}" HorizontalAlignment="Left"
                       ItemsSource="{Binding DataContext.Priorities,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                       SelectedItem="{Binding Priority}"/>
-                <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="优先级"/>
 
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource TDDeadLine}"
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TDDeadLine}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <DatePicker Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleDatePickerCommon}"
+                <DatePicker Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleDatePickerCommon}"
                             SelectedDate="{Binding DeadLine,Mode=TwoWay}"/>
-                <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="4" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="#预计期限"/>
 
-                <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TDPersonInCharge}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding PersonInCharge}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal">
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}" Visibility="Hidden"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
                 </StackPanel>
 
-                <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource TDRemark}"
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"/>
-                <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="计划执行中有什么需要记录的可以写在这里"/>
-                
-                <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource TDProgress}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Progress}" Style="{StaticResource StyleTextBoxCommon}" 
-                         HorizontalAlignment="Left"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxMultiline}"/>
                 <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="最小0，最大100"/>
-                
-                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource TDFinishTime}"
+                           Text="计划执行中有什么需要记录的可以写在这里"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource TDProgress}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock  Grid.Row="8" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Progress}" Style="{StaticResource StyleTextBoxCommon}" 
+                         HorizontalAlignment="Left"/>
+                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                           Text="最小0，最大100"/>
+
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource TDFinishTime}"
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock  Grid.Row="9" Grid.Column="1" Text="{Binding FinishTime}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
 
 
-                <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RPState}"
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RPState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
                           ItemsSource="{Binding DataContext.Statuses,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding Status}"/>
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="8" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="设置进度为100的时候，状态会自动设置为完成"/>
 
 
-                <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RPCreateTime}"
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RPCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建时间"/>
 
-                <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RPCreator}"
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RPCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
+                <TextBlock Grid.Row="11" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="创建者"/>
             </Grid>
         </ScrollViewer>

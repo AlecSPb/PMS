@@ -782,6 +782,9 @@ namespace PMSWeb.ExtraService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TitleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -944,6 +947,19 @@ namespace PMSWeb.ExtraService {
                 if ((object.ReferenceEquals(this.TitleField, value) != true)) {
                     this.TitleField = value;
                     this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
                 }
             }
         }
