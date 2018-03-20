@@ -33,6 +33,11 @@
                        Background="{StaticResource EmergencyBrush}"/>
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}"
                        Background="{StaticResource PausedBrush}"/>
+            <TextBlock Style="{StaticResource StyleDGTextBlockCommon}">
+                <Hyperlink NavigateUri="http://192.168.16.254:8003"  Click="Hyperlink_Click">
+                    Web版本浏览(内网可用)
+                </Hyperlink>
+            </TextBlock>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

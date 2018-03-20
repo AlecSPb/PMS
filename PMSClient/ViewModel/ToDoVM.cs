@@ -94,7 +94,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 50;
             using (var service = new ToDoServiceClient())
             {
                 RecordCount = service.GetToDoCount(SearchTitle, SearchPersonInCharge);
