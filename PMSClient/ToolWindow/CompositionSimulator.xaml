@@ -1,0 +1,34 @@
+﻿<Window x:Class="PMSClient.ToolWindow.CompositionSimulator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        Title="CSV成分格式模拟器" Height="400" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="txtCondition" Grid.Column="0" Margin="3"/>
+            <TextBlock Grid.Column="1" Margin="3">
+                输入格式：
+                <LineBreak/>
+                成分+比例
+            </TextBlock>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal"  Background="Orange">
+            <Button Name="btnCreate" Content="模拟" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="btnFill" Content="填入" Style="{StaticResource StyleButtonCommon}"/>
+        </StackPanel>
+        <TextBox Name="txtCsv" Grid.Row="2" Margin="3"/>
+    </Grid>
+</Window>

@@ -119,7 +119,12 @@
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}"   Background="Yellow"/>
+                <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}" 
+                             HorizontalAlignment="Left"
+                             Background="Yellow"/>
+                    <Button Name="btnCalculator" Click="btnCalculator_Click" Content="Calculator" Style="{StaticResource StyleButtonCommon}"/>
+                </StackPanel>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位:g/cm3"/>
 
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTResistance}"
@@ -151,6 +156,9 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
                     <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommon}" Click="btnCsv_Click"/>
+                    <Button Name="btnSimulator" Click="btnSimulator_Click" Content="Sim"
+                            MinWidth="30"
+                            Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
 
                 <TextBox  x:Name="txtCompositionXRF" Grid.Row="15" Grid.Column="1"

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Microsoft.Win32;
+using PMSClient.ToolWindow;
 
 namespace PMSClient.View
 {
@@ -33,7 +34,7 @@ namespace PMSClient.View
             dialog.Filter = "CSV|*.csv";
             dialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
-            if (dialog.ShowDialog()==true)
+            if (dialog.ShowDialog() == true)
             {
                 string filename = dialog.FileName;
                 if (File.Exists(filename))
@@ -52,6 +53,18 @@ namespace PMSClient.View
         private void btnAddPlate_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBox(txtRemark, "附有背板");
+        }
+
+        private void btnSimulator_Click(object sender, RoutedEventArgs e)
+        {
+            CompositionSimulator simulator = new CompositionSimulator();
+            simulator.Show();
+        }
+
+        private void btnCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            DensityCalculation calculator = new DensityCalculation();
+            calculator.Show();
         }
     }
 }

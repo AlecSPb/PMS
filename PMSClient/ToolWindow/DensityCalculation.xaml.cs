@@ -23,5 +23,24 @@ namespace PMSClient.ToolWindow
         {
             InitializeComponent();
         }
+
+        private void Calculate_Click(object sender, RoutedEventArgs e)
+        {
+            double w = 0, d = 0, t = 0;
+            try
+            {
+                double.TryParse(Weight.Text.Trim(), out w);
+                double.TryParse(Diameter.Text.Trim(), out d);
+                double.TryParse(Thickness.Text.Trim(), out t);
+
+                double v = Math.PI * d * d / 4 * t/1000;
+                double density = w / v;
+                Density.Text = density.ToString("F2");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
