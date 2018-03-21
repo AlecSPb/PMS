@@ -28,7 +28,7 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
-        private void btnCsv_Click(object sender, RoutedEventArgs e)
+        private void BtnCsv_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new OpenFileDialog();
             dialog.Filter = "CSV|*.csv";
@@ -45,23 +45,27 @@ namespace PMSClient.View
             }
         }
 
-        private void btnResistance_Click(object sender, RoutedEventArgs e)
+        private void BtnResistance_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBox(txtResistance, "OutOfRange");
         }
 
-        private void btnAddPlate_Click(object sender, RoutedEventArgs e)
+        private void BtnAddPlate_Click(object sender, RoutedEventArgs e)
         {
             PMSMethods.SetTextBox(txtRemark, "附有背板");
         }
 
-        private void btnSimulator_Click(object sender, RoutedEventArgs e)
+        private void BtnSimulator_Click(object sender, RoutedEventArgs e)
         {
             CompositionSimulator simulator = new CompositionSimulator();
+            simulator.FillIn += (s, args) =>
+            {
+                txtCompositionXRF.Text = args;
+            };
             simulator.Show();
         }
 
-        private void btnCalculator_Click(object sender, RoutedEventArgs e)
+        private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
             DensityCalculation calculator = new DensityCalculation();
             calculator.TargetWeight = TargetWeight.Text;

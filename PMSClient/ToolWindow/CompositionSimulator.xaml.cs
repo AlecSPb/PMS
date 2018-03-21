@@ -24,6 +24,10 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
         }
 
+        public event EventHandler<string> FillIn;
+
+
+
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -42,7 +46,18 @@ namespace PMSClient.ToolWindow
 
         private void BtnFill_Click(object sender, RoutedEventArgs e)
         {
+            //trigger event
+            OnFillIn();
+        }
 
+        private void OnFillIn()
+        {
+            string csv = txtCsv.Text;
+            if (string.IsNullOrEmpty(csv))
+                return;
+            //if (FillIn != null)
+            //    FillIn(this, csv);
+            FillIn?.Invoke(this, csv);
         }
     }
 }

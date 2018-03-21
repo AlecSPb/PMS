@@ -123,7 +123,7 @@
                     <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}" 
                              HorizontalAlignment="Left"
                              Background="Yellow"/>
-                    <Button Name="btnCalculator" Click="btnCalculator_Click" Content="Calculator" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="btnCalculator" Click="BtnCalculator_Click" Content="Calculator" Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="10" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位:g/cm3"/>
 
@@ -132,7 +132,7 @@
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"
                           Width="160"/>
-                    <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="btnResistance_Click"/>
+                    <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm"/>
 
@@ -155,8 +155,8 @@
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
-                    <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommon}" Click="btnCsv_Click"/>
-                    <Button Name="btnSimulator" Click="btnSimulator_Click" Content="Sim"
+                    <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommon}" Click="BtnCsv_Click"/>
+                    <Button Name="btnSimulator" Click="BtnSimulator_Click" Content="Sim"
                             MinWidth="30"
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>
@@ -177,7 +177,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Name="txtRemark" Grid.Row="17" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxBig}"/>
                 <StackPanel Grid.Row="17" Grid.Column="2" Orientation="Horizontal">
-                    <Button Content="附有背板" Name="btnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="btnAddPlate_Click"/>
+                    <Button Content="附有背板" Name="btnAddPlate" Style="{StaticResource StyleButtonCommon}" Click="BtnAddPlate_Click"/>
                     <TextBlock  Style="{StaticResource StyleTextBlockTip}"   Text=""/>
                 </StackPanel>
                 
