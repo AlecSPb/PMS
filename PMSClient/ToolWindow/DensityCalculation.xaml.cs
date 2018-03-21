@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +25,23 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
         }
 
+        public string TargetWeight
+        {
+            set
+            {
+                Weight.Text = value;
+            }
+        }
+
+        public string TargetDimension
+        {
+            set
+            {
+                RawDimension.Text = value;
+            }
+        }
+
+
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
             double w = 0, d = 0, t = 0;
@@ -37,9 +55,27 @@ namespace PMSClient.ToolWindow
                 double density = w / v;
                 Density.Text = density.ToString("F2");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void TransformDimension_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
+                var results =Regex.Matches(RawDimension.Text.Trim(),pattern);
+                if (results.Count >= 2)
+                {
+                    Diameter.Text = results[0].Value;
+                    Thickness.Text = results[1].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

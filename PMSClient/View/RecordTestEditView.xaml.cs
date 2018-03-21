@@ -64,6 +64,8 @@ namespace PMSClient.View
         private void btnCalculator_Click(object sender, RoutedEventArgs e)
         {
             DensityCalculation calculator = new DensityCalculation();
+            calculator.TargetWeight = TargetWeight.Text;
+            calculator.TargetDimension = TargetDimension.Text;
             calculator.Show();
         }
     }
