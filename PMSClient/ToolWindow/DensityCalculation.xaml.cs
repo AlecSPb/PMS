@@ -54,6 +54,10 @@ namespace PMSClient.ToolWindow
                 double v = Math.PI * d * d / 4 * t/1000;
                 double density = w / v;
                 Density.Text = density.ToString("F2");
+
+                //trigger event
+                FillIn?.Invoke(this, Density.Text);
+
             }
             catch (Exception ex)
             {
@@ -78,5 +82,8 @@ namespace PMSClient.ToolWindow
                 MessageBox.Show(ex.Message);
             }
         }
+
+
+        public event EventHandler<string> FillIn;
     }
 }

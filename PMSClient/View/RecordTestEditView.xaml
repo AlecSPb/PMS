@@ -120,7 +120,7 @@
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}" 
+                    <TextBox Name="TxtDensity" Grid.Row="10" Grid.Column="1" Text="{Binding Density}" Style="{StaticResource StyleTextBoxBig}" 
                              HorizontalAlignment="Left"
                              Background="Yellow"/>
                     <Button Name="btnCalculator" Click="BtnCalculator_Click" Content="Calculator" Style="{StaticResource StyleButtonCommon}"/>

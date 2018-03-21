@@ -60,7 +60,7 @@ namespace PMSClient.View
             CompositionSimulator simulator = new CompositionSimulator();
             simulator.FillIn += (s, args) =>
             {
-                txtCompositionXRF.Text = args;
+                PMSMethods.SetTextBox(txtCompositionXRF, args);
             };
             simulator.Show();
         }
@@ -70,6 +70,10 @@ namespace PMSClient.View
             DensityCalculation calculator = new DensityCalculation();
             calculator.TargetWeight = TargetWeight.Text;
             calculator.TargetDimension = TargetDimension.Text;
+            calculator.FillIn += (s, arg) =>
+            {
+                PMSMethods.SetTextBox(TxtDensity, arg);
+            };
             calculator.Show();
         }
     }
