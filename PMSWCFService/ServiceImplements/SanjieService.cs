@@ -616,6 +616,9 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
+                    //如果熔点信息为空，也不写入
+                    if (string.IsNullOrEmpty(model.MeltingPoint.Trim()))
+                        return result;
                     //判断当前成分是否存在，不存在再写入
                     var count = dc.Compounds.Where(i => i.MaterialName == model.MaterialName).Count();
                     if (count == 0)

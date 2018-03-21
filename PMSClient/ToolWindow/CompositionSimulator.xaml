@@ -18,7 +18,10 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Name="txtCondition" Grid.Column="0" Margin="3"/>
+            <TextBox Name="txtCondition" Grid.Column="0" Margin="3"
+                     AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
+                     Text="5&#13;Cu+22.8&#13;In+20&#13;Ga+7&#13;Se+50.2">
+            </TextBox>
             <TextBlock Grid.Column="1" Margin="3">
                 输入格式：
                 <LineBreak/>
@@ -26,9 +29,9 @@
             </TextBlock>
         </Grid>
         <StackPanel Grid.Row="1" Orientation="Horizontal"  Background="Orange">
-            <Button Name="btnCreate" Content="模拟" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Name="btnFill" Content="填入" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnCreate" Click="BtnCreate_Click" Content="模拟" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Name="BtnFill" Click="BtnFill_Click" Content="填入" Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>
-        <TextBox Name="txtCsv" Grid.Row="2" Margin="3"/>
+        <TextBox Name="txtCsv" Grid.Row="2" Margin="3" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
     </Grid>
 </Window>

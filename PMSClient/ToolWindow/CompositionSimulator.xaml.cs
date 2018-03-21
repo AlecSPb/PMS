@@ -24,5 +24,25 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
         }
 
+        private void BtnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string input = txtCondition.Text;
+                if (string.IsNullOrEmpty(input)) return;
+                CompositionSimulatorHelper helper = new CompositionSimulatorHelper();
+                string csv = helper.SimulateCompositionToCsvFormat(input);
+                txtCsv.Text = csv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnFill_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

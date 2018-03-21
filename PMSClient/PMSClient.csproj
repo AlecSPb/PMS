@@ -272,9 +272,11 @@
     <Compile Include="ToolWindow\CompositionSimulator.xaml.cs">
       <DependentUpon>CompositionSimulator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\CompositionSimulatorHelper.cs" />
     <Compile Include="ToolWindow\DensityCalculation.xaml.cs">
       <DependentUpon>DensityCalculation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\Model\SingleElement.cs" />
     <Compile Include="ToolWindow\PlainTextWindow.xaml.cs">
       <DependentUpon>PlainTextWindow.xaml</DependentUpon>
     </Compile>
