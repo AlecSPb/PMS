@@ -114,7 +114,7 @@
 
                 <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RTWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox Name="TargetWeight" Grid.Row="9" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"/>
+                <TextBox Name="TxtWeight" Grid.Row="9" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"/>
                 <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="单位：g"/>
 
                 <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RTDensity}"
@@ -139,7 +139,7 @@
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="TargetDimension" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxBig}" Width="200"   Background="Yellow"/>
+                    <TextBox Name="TxtDimension" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxBig}" Width="200"   Background="Yellow"/>
                     <Button Content="选择" Style="{StaticResource StyleButtonCommon}" Command="{Binding DataContext.SelectDimensionActual,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
@@ -156,7 +156,9 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
                     <Button Content="{StaticResource ButtonInput}" Style="{StaticResource StyleButtonCommon}" Click="BtnCsv_Click"/>
-                    <Button Name="btnSimulator" Click="BtnSimulator_Click" Content="Sim"
+                    <Button Name="btnSimulator"
+                            MouseDoubleClick="btnSimulator_MouseDoubleClick"
+                            Content="Sim"
                             MinWidth="30"
                             Style="{StaticResource StyleButtonCommon}"/>
                 </StackPanel>

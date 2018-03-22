@@ -28,6 +28,21 @@ namespace PMSClient.View
             InitializeComponent();
         }
 
+        public string TargetWeight
+        {
+            get
+            {
+               return TxtWeight.Text;
+            }
+        }
+
+        public string TargetDimension
+        {
+            get
+            {
+                return TxtDimension.Text;
+            }
+        }
         private void BtnCsv_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new OpenFileDialog();
@@ -57,24 +72,29 @@ namespace PMSClient.View
 
         private void BtnSimulator_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void BtnCalculator_Click(object sender, RoutedEventArgs e)
+        {
+            DensityCalculation calculator = new DensityCalculation();
+            calculator.TargetWeight = TxtWeight.Text;
+            calculator.TargetDimension = TxtDimension.Text;
+            calculator.FillIn += (s, arg) =>
+            {
+                PMSMethods.SetTextBox(TxtDensity, arg);
+            };
+            calculator.Show();
+        }
+
+        private void btnSimulator_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
             CompositionSimulator simulator = new CompositionSimulator();
             simulator.FillIn += (s, args) =>
             {
                 PMSMethods.SetTextBox(txtCompositionXRF, args);
             };
             simulator.Show();
-        }
-
-        private void BtnCalculator_Click(object sender, RoutedEventArgs e)
-        {
-            DensityCalculation calculator = new DensityCalculation();
-            calculator.TargetWeight = TargetWeight.Text;
-            calculator.TargetDimension = TargetDimension.Text;
-            calculator.FillIn += (s, arg) =>
-            {
-                PMSMethods.SetTextBox(TxtDensity, arg);
-            };
-            calculator.Show();
         }
     }
 }

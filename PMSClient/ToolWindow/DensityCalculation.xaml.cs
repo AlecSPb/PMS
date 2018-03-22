@@ -54,10 +54,6 @@ namespace PMSClient.ToolWindow
                 double v = Math.PI * d * d / 4 * t/1000;
                 double density = w / v;
                 Density.Text = density.ToString("F2");
-
-                //trigger event
-                FillIn?.Invoke(this, Density.Text);
-
             }
             catch (Exception ex)
             {
@@ -69,6 +65,12 @@ namespace PMSClient.ToolWindow
         {
             try
             {
+                UserControl edit = PMSHelper.DesktopViews.RecordTestEdit;
+                //Weight.Text=edit
+
+
+
+
                 string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
                 var results =Regex.Matches(RawDimension.Text.Trim(),pattern);
                 if (results.Count >= 2)
@@ -89,6 +91,12 @@ namespace PMSClient.ToolWindow
         private void KeepTop_Click(object sender, RoutedEventArgs e)
         {
             this.Topmost = (bool)KeepTop.IsChecked;
+        }
+
+        private void BtnFillIn_Click(object sender, RoutedEventArgs e)
+        {
+            //trigger event
+            FillIn?.Invoke(this, Density.Text);
         }
     }
 }

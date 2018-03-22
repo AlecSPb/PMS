@@ -1,0 +1,20 @@
+﻿<Window x:Class="PMSClient.ToolWindow.BigFontWarningWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        Title="提醒窗口" Height="400" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="提醒信息" Name="TxtWarningText"
+                   FontSize="40" Foreground="Blue"/>
+        <Button Name="BtnOK" Grid.Row="1" Content="知道了" Margin="5" Padding="0 20"
+                FontSize="30"
+                Click="BtnOK_Click"/>
+    </Grid>
+</Window>

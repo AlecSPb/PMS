@@ -1,6 +1,12 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
-2017-3-16
+2018-3-22
+修改了目标计划模块，添加了Web（内网）.modify the to-do list module,add web application for it.
+修正了三杰模块问题，fix bugs in sanjie modules and services.
+改变了大屏幕显示方式，change the display way of large screen.
+一些小细节的修改，fix bugs and add more details.
+
+2018-3-16
 添加从以往计划中选择填充新计划功能。can fill the new plan with old plan parameters
 制作了新版的热压大屏幕显示程序
 重构了系统重要模块，提升了性能和稳定性。refactor import module, make a progress of performance and stability.
@@ -15,7 +21,7 @@
 
 以往更新History
 
-2017-3-9
+2018-3-9
 更改了取模密度估算计算器为窗口并调整了项目顺序方便输入add the density calculation window
 大幅更改了三杰客户端的订单确认功能和对应服务change confirm window in pms cast division module
 添加了测试报告批量导出add test report output in batch
