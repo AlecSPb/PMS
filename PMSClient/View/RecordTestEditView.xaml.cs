@@ -78,8 +78,7 @@ namespace PMSClient.View
         private void BtnCalculator_Click(object sender, RoutedEventArgs e)
         {
             DensityCalculation calculator = new DensityCalculation();
-            calculator.TargetWeight = TxtWeight.Text;
-            calculator.TargetDimension = TxtDimension.Text;
+
             calculator.FillIn += (s, arg) =>
             {
                 PMSMethods.SetTextBox(TxtDensity, arg);

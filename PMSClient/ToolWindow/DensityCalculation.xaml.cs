@@ -33,14 +33,6 @@ namespace PMSClient.ToolWindow
             }
         }
 
-        public string TargetDimension
-        {
-            set
-            {
-                RawDimension.Text = value;
-            }
-        }
-
 
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
@@ -65,14 +57,13 @@ namespace PMSClient.ToolWindow
         {
             try
             {
-                UserControl edit = PMSHelper.DesktopViews.RecordTestEdit;
-                //Weight.Text=edit
-
-
-
+                //read from edit view
+                PMSClient.View.RecordTestEditView edit = PMSHelper.DesktopViews.RecordTestEdit;
+                Weight.Text = edit.TargetWeight;
+                string dimension = edit.TargetDimension;
 
                 string pattern = @"[1-9]\d*.\d*|0.\d*[1-9]\d*";
-                var results =Regex.Matches(RawDimension.Text.Trim(),pattern);
+                var results =Regex.Matches(dimension,pattern);
                 if (results.Count >= 2)
                 {
                     Diameter.Text = results[0].Value;
