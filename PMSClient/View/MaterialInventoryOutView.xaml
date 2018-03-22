@@ -37,7 +37,7 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryOuts}">
                 <DataGrid.Columns>
@@ -92,6 +92,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource StyleButtonCommon}" Content="检查出库"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding CreateTime,StringFormat={}{0:yyyyMMdd}}"
                                           FontSize="9" Foreground="Blue"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding PMINumber}"

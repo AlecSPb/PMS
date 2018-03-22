@@ -37,8 +37,8 @@
                 <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3A}"/>
                 <DataGridTextColumn Header="尺寸" Binding="{Binding TargetDimension}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="背板" Binding="{Binding PlateType}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
-                <!--<DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
-                                    ElementStyle="{StaticResource StyleTextBlockBig3}"/>-->
+                <DataGridTextColumn Header="创建时间" Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"
+                                    ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <!--<DataGridTextColumn Header="盖板" Binding="{Binding CoverPlateNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="背板编号" Binding="{Binding PlateLot}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>-->
             </DataGrid.Columns>
