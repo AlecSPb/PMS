@@ -146,6 +146,15 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
+                //如果是50.8mm的靶材且类型为加工，弹出打印多张的警告窗口
+                if(model.Plan.PlanType.Contains("加工")
+                    &&model.Misson.Dimension.Contains("50.8"))
+                {
+                    PMSClient.ToolWindow.BigFontWarningWindow warnning = new ToolWindow.BigFontWarningWindow();
+                    warnning.WarningText = "50.8mm可能会切割多块，也许需要多个产品标签+样品标签";
+                    warnning.ShowDialog();
+                }
+
 
                 var sb = new StringBuilder();
                 sb.Append(model.Plan.PlanType);

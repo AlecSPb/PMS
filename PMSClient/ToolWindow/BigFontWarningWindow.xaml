@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
         Title="提醒窗口" Height="400" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="提醒信息" Name="TxtWarningText"
-                   FontSize="40" Foreground="Blue"/>
+        <TextBox Grid.Row="0" Text="提醒信息" Name="TxtWarningText" TextWrapping="WrapWithOverflow"
+                 AcceptsReturn="True"
+                 FontSize="40" Foreground="Blue"/>
         <Button Name="BtnOK" Grid.Row="1" Content="知道了" Margin="5" Padding="0 20"
                 FontSize="30"
                 Click="BtnOK_Click"/>

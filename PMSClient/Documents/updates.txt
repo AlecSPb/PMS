@@ -4,6 +4,7 @@
 修改了目标计划模块，添加了Web（内网）.modify the to-do list module,add web application for it.
 修正了三杰模块问题，fix bugs in sanjie modules and services.
 改变了大屏幕显示方式，change the display way of large screen.
+添加了50.8mm靶材标签提醒,add warning when making 50.8mm target labels.
 一些小细节的修改，fix bugs and add more details.
 
 2018-3-16
