@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Topmost="True"
         WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
-        Title="密度计算" Height="300" Width="300">
+        Title="密度计算" Height="350" Width="300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -20,22 +20,25 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="0*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="重量"/>
-        <TextBox Name="Weight" Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="950"/>
+        <CheckBox Name="KeepTop" Click="KeepTop_Click"  Grid.Row="0" Grid.ColumnSpan="2" Content="保持最前" IsChecked="True"
+                  Style="{StaticResource StyleCheckBoxCommon}"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="重量"/>
+        <TextBox Name="Weight" Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="950"/>
 
-        <TextBox Name="RawDimension" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource StyleTextBoxCommon}" Text=""/>
-        <Button Name="TransformDimension" Grid.Row="2" Grid.ColumnSpan="2"  Margin="5" Padding="0 10"
+        <TextBox Name="RawDimension" Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource StyleTextBoxCommon}" Text=""/>
+        <Button Name="TransformDimension" Grid.Row="3" Grid.ColumnSpan="2"  Margin="5" Padding="0 10"
                  Content="转换" Click="TransformDimension_Click"/>
-        
-        <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="直径"/>
-        <TextBox Name="Diameter" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="230"/>
-        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="厚度"/>
-        <TextBox Name="Thickness" Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="4.02"/>
-        <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度"/>
-        <TextBox Name="Density" Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="0.0"/>
-        <Button Grid.Row="6" Grid.ColumnSpan="2" Name="Calculate" Margin="5" Padding="0 10"
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="直径"/>
+        <TextBox Name="Diameter" Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="230"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="厚度"/>
+        <TextBox Name="Thickness" Grid.Row="5" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="4.02"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="密度"/>
+        <TextBox Name="Density" Grid.Row="6" Grid.Column="1" Style="{StaticResource StyleTextBoxReadOnly}" Text="0.0"/>
+        <Button Grid.Row="7" Grid.ColumnSpan="2" Name="Calculate" Margin="5" Padding="0 10"
                  Content="计算" Click="Calculate_Click"/>
     </Grid>
 </Window>

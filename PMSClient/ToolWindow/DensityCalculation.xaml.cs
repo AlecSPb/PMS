@@ -85,5 +85,10 @@ namespace PMSClient.ToolWindow
 
 
         public event EventHandler<string> FillIn;
+
+        private void KeepTop_Click(object sender, RoutedEventArgs e)
+        {
+            this.Topmost = (bool)KeepTop.IsChecked;
+        }
     }
 }
