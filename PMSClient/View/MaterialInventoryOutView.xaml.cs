@@ -24,5 +24,6 @@ namespace PMSClient.View
         {
             InitializeComponent();
         }
+
     }
 }

@@ -62,7 +62,7 @@ namespace PMSClient.ToolWindow
 
         private void KeepTop_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Topmost = (bool)KeepTop.IsChecked;
         }
     }
 }
