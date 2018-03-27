@@ -56,6 +56,29 @@ namespace PMSClient.ViewModel
             GoToMaterialInventoryIn = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialInventoryIn),
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
 
+            CheckMaterial = new RelayCommand<DcRecordMilling>(ActionCheckMaterial);
+
+        }
+
+        private void ActionCheckMaterial(DcRecordMilling model)
+        {
+            if (model == null)
+                return;
+            try
+            {
+                int inCount = 0, outCount = 0;
+                using (var service = new MaterialInventoryServiceClient())
+                {
+                    inCount = service.CheckMaterialIn(model.PMINumber);
+                    outCount = service.CheckMaterialOut(model.PMINumber);
+                }
+                string msg = $"{model.PMINumber}-入库数据中找到{inCount}条，出库数据中找到{outCount}条";
+                PMSDialogService.ShowYes(msg);
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanEdit(DcMaterialInventoryOut arg)
@@ -211,6 +234,9 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcMaterialInventoryOut> Edit { get; private set; }
 
         public RelayCommand GoToMaterialInventoryIn { get; set; }
+
+
+        public RelayCommand<DcRecordMilling> CheckMaterial { get; set; }
         #endregion
 
 

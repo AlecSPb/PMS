@@ -92,7 +92,10 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource StyleButtonCommon}" Content="检查出库"/>
+                                <Button Style="{StaticResource StyleButtonCommon}" Content="检查出库"
+                                        Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
+                                    AncestorType=UserControl},
+                                    Path=DataContext.CheckMaterial}" CommandParameter="{Binding}"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding CreateTime,StringFormat={}{0:yyyyMMdd}}"
                                           FontSize="9" Foreground="Blue"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding PMINumber}"
