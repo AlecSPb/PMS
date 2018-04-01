@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="标签信息拷贝窗口" Height="400" Width="600" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+        Title="标签信息拷贝窗口" Height="500" Width="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
@@ -22,8 +26,9 @@
             </StackPanel>
             <Button Name="btnCloseIt" Click="btnCloseIt_Click" Content="关闭"  Style="{StaticResource StyleButtonCommon}" Grid.Column="1"/>
         </Grid>
-
         <TextBox Grid.Row="1"  TextWrapping="WrapWithOverflow" VerticalScrollBarVisibility="Visible" 
                  Text="{Binding LabelInformation }" FontSize="18"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BasicInformation}" VerticalScrollBarVisibility="Visible"
+                 FontSize="18" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
     </Grid>
 </Window>

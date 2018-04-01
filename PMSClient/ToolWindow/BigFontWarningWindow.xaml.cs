@@ -24,12 +24,18 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
         }
 
-
+        public string BasicInformation
+        {
+            set
+            {
+                TxtBasic.Text = value;
+            }
+        }
         public string WarningText
         {
             set
             {
-                TxtWarningText.Text = value;
+                TxtWarning.Text = value;
             }
         }
 

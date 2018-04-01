@@ -24,10 +24,12 @@ namespace PMSClient.ToolWindow
         {
             InitializeComponent();
             LabelInformation = "无";
+            BasicInformation = "无";
             this.DataContext = this;
         }
 
         public string LabelInformation { get; set; }
+        public string BasicInformation { get; set; }
 
         private void btnOpenBarTender_Click(object sender, RoutedEventArgs e)
         {

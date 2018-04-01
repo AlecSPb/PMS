@@ -1,5 +1,10 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
+2018-4-3
+更改了标签提示信息显示change the way of displaying the label tips information
+其他bug的修正 fix some bugs
+
+以往更新History
 2018-3-22
 修改了目标计划模块，添加了Web（内网）.modify the to-do list module,add web application for it.
 修正了三杰模块问题，fix bugs in sanjie modules and services.
@@ -14,13 +19,6 @@
 修正三杰模块bug fix the bug of sanjie module
 添加了ToDoList模块add to do list
 其他小细节的更改other small details fixed
-
-未来更新Furture Plan
-添加设备保养维护模块add machine matainence module
-添加了小工具集合页面(开放)add small tools page
-更多数据导出功能 refacter the data output functions
-
-以往更新History
 
 2018-3-9
 更改了取模密度估算计算器为窗口并调整了项目顺序方便输入add the density calculation window

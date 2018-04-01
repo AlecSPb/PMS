@@ -77,7 +77,7 @@ namespace PMSClient.ViewModel
             skip = (pageIndex - 1) * pageSize;
 
             string outputfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory)
-                , "导出数据-计划"+DateTime.Now.ToString("yyyyMMddmmhhss")+".csv");
+                , "导出数据-计划" + DateTime.Now.ToString("yyyyMMddmmhhss") + ".csv");
             StreamWriter sw = new StreamWriter(new FileStream(outputfile, FileMode.Append), System.Text.Encoding.GetEncoding("GB2312"));
             string titleString = "计划日期,批次,设备,计划类型,标准成分,内部编号,模具类型,内径,厚度,数量,密度,粉末粒径,单片,全部,湿度,室温,预压温度,预压压力,温度,压力,真空度,保温时间,工艺代码,制粉要求,装料要求,加工要求,转单,创建者,创建时间";
             sw.WriteLine(titleString);
@@ -146,50 +146,50 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
+                //显示提示框给标签打印者
+                StringBuilder basic = new StringBuilder();
+                basic.Append("共");
+                basic.Append(model.Plan.Quantity);
+                basic.Append("片");
+                basic.AppendLine();
+                basic.Append("制粉:");
+                basic.Append(model.Plan.MillingRequirement);
+                basic.AppendLine();
+                basic.Append("装模:");
+                basic.Append(model.Plan.FillingRequirement);
+                basic.AppendLine();
+
                 //如果是50.8mm的靶材且类型为加工，弹出打印多张的警告窗口
-                if(model.Plan.PlanType.Contains("加工")
-                    &&model.Misson.Dimension.Contains("50.8"))
+                if (model.Plan.PlanType.Contains("加工")
+                    && model.Misson.Dimension.Contains("50.8"))
                 {
-                    PMSClient.ToolWindow.BigFontWarningWindow warnning = new ToolWindow.BigFontWarningWindow();
-                    warnning.WarningText = "50.8mm可能会切割多块，也许需要多个产品标签+样品标签";
-                    warnning.ShowDialog();
+                    basic.Append("50.8mm可能会切割多块，需要多个产品标签+样品标签");
                 }
 
+                var lb = new StringBuilder();
+                lb.Append(UsefulPackage.PMSTranslate.PlanLot(model));
+                lb.Append(" ");
+                lb.Append(model.Plan.PlanType);
+                lb.Append(" ");
+                lb.AppendLine(model.Plan.ProcessCode);
 
-                var sb = new StringBuilder();
-                sb.Append(model.Plan.PlanType);
-                sb.Append(" ");
-                sb.Append(model.Plan.ProcessCode);
-                sb.Append(" ");
-                sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
-                sb.AppendLine(model.Misson.CompositionStandard);
-                sb.Append("模具:");
-                sb.AppendLine(model.Plan.MoldDiameter.ToString());
-                sb.Append("产品:");
-                sb.AppendLine(model.Misson.Dimension);
-                sb.Append("订单:");
-                sb.AppendLine(model.Misson.PMINumber);
-                sb.AppendLine();
-                sb.AppendLine("++++++一般标签复制上面内容，样品标签复制下面内容+++++++");
-                sb.AppendLine();
-                sb.AppendLine(model.Misson.CompositionStandard);
-                sb.AppendLine("样品      g");
-                sb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
+                lb.AppendLine(model.Misson.CompositionStandard);
+                lb.Append("模具:");
+                lb.AppendLine(model.Plan.MoldDiameter.ToString()+"mm OD x "+model.Plan.Thickness+"mm");
+                lb.Append("产品:");
+                lb.AppendLine(model.Misson.Dimension);
+                lb.Append("订单:");
+                lb.AppendLine(model.Misson.PMINumber);
+                lb.AppendLine();
+                lb.AppendLine("=====  一般标签↑，样品标签↓  =====");
+                lb.AppendLine();
+                lb.AppendLine(model.Misson.CompositionStandard);
+                lb.AppendLine("样品      g");
+                lb.AppendLine(UsefulPackage.PMSTranslate.PlanLot(model));
 
-                var mainContent = sb.ToString();
-
-                //var pageTitle = "热压毛坯标签打印输出";
-                //var tips = @"点击打开模板按钮，粘贴不同内容到模板合适位置，热压编号是自动生成的，可能不正确，请再自行修改，然后打印标签";
-                //var template = "毛坯标签";
-                //var helpimage = "productionlabel.png";
-                //PMSHelper.ToolViewModels.LabelOutPut.SetAllParameters(PMSViews.Plan, pageTitle,
-                //    tips, template, mainContent, helpimage);
-                //NavigationService.GoTo(PMSViews.LabelOutPut);
-                
-                //2017-12-18
-                //更改为显示在新的独立窗口中，取代以前的页面
-                PMSClient.ToolWindow.LabelCopyWindow lcw = new ToolWindow.LabelCopyWindow();
-                lcw.LabelInformation = mainContent;
+                var lcw = new ToolWindow.LabelCopyWindow();
+                lcw.LabelInformation = lb.ToString();
+                lcw.BasicInformation = basic.ToString();
                 lcw.Show();
 
             }
