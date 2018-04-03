@@ -7,6 +7,7 @@
               xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
+             Language="zh-cn"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
     <Grid Background="{StaticResource BGBrushWindow}">
@@ -62,8 +63,9 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockSpecial}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanPlanDate}"
+                                        Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockSpecialBlue}"/>
                     <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                     <DataGridTextColumn Header="{StaticResource PlanVHPDeviceCode}" Binding="{Binding Plan.VHPDeviceCode}"

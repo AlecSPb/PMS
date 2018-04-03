@@ -1,5 +1,7 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
+2018-4-4
+添加了星期到计划显示窗口
 2018-4-3
 更改了标签提示信息显示change the way of displaying the label tips information
 其他bug的修正 fix some bugs

@@ -349,6 +349,10 @@
     <Style x:Key="StyleDGTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Red"/>
     </Style>
+    <Style x:Key="StyleDGTextBlockSpecialBlue" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
+        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
     <Style x:Key="StyleDGTextBlockSpecial2" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
     </Style>
