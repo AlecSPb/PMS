@@ -21,7 +21,21 @@ namespace PMSClient.ReportsHelper
             tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
-
+        public WordDeliverySheet(string deliverySheetType)
+        {
+            var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
+            if (deliverySheetType == "English")
+            {
+                sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet.docx");
+                tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_Temp.docx");
+            }
+            else
+            {
+                sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "DeliverySheet_zh_cn.docx");
+                tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "DeliverySheet_zh_cn_Temp.docx");
+            }
+            targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
+        }
         public void SetModel(DcDelivery model)
         {
             if (model != null)
