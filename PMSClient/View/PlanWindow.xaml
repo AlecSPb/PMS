@@ -72,6 +72,8 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
                     <DataGridTextColumn Header="{StaticResource PlanPlanType}" Binding="{Binding Plan.PlanType}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource OrderStandardComposition}" Binding="{Binding Misson.CompositionStandard}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource OrderPMINumber}" Binding="{Binding Misson.PMINumber}"
@@ -92,24 +94,12 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanAllPowderWeight}" Binding="{Binding Plan.AllWeight}"
                                     ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanRoomHumidity}" Binding="{Binding Plan.RoomHumidity}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanRoomTemperature}" Binding="{Binding Plan.RoomTemperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanPreTemperature}" Binding="{Binding Plan.PreTemperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanPrePressure}" Binding="{Binding Plan.PrePressure}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanTemperature}" Binding="{Binding Plan.Temperature}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
                     <DataGridTextColumn Header="{StaticResource PlanPressure}" Binding="{Binding Plan.Pressure}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum,StringFormat={}{0:#.##E00}}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
                     <DataGridTextColumn Header="{StaticResource PlanKeepTempTime}" Binding="{Binding Plan.KeepTempTime}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
-                    <DataGridTextColumn Header="{StaticResource PlanProcessCode}" Binding="{Binding Plan.ProcessCode}"
-                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                                    ElementStyle="{StaticResource StyleDGTextBlockRightBlue}"/>
                     <DataGridTextColumn Header="{StaticResource PlanMillingRequirement}" Binding="{Binding Plan.MillingRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanFillingRequirement}" Binding="{Binding Plan.FillingRequirement}"
@@ -118,6 +108,16 @@
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanSpecialRequirement}" Binding="{Binding Plan.SpecialRequirement}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanRoomHumidity}" Binding="{Binding Plan.RoomHumidity}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanRoomTemperature}" Binding="{Binding Plan.RoomTemperature}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanPreTemperature}" Binding="{Binding Plan.PreTemperature}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanPrePressure}" Binding="{Binding Plan.PrePressure}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
+                    <DataGridTextColumn Header="{StaticResource PlanVaccum}" Binding="{Binding Plan.Vaccum,StringFormat={}{0:#.##E00}}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockRight}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreateTime}" Binding="{Binding Plan.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                     <DataGridTextColumn Header="{StaticResource PlanCreator}" Binding="{Binding Plan.Creator}"

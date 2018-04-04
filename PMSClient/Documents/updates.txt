@@ -1,7 +1,9 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
+2018-4-8
+更改Plan项目显示顺序，change the display order of plan items.
 2018-4-4
-添加了星期到计划显示窗口
+添加了星期到计划显示窗口,add weekday display on plan view
 2018-4-3
 更改了标签提示信息显示change the way of displaying the label tips information
 其他bug的修正 fix some bugs

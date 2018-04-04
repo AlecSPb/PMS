@@ -346,6 +346,10 @@
     <Style x:Key="StyleDGTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
+    <Style x:Key="StyleDGTextBlockRightBlue" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
     <Style x:Key="StyleDGTextBlockSpecial" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Red"/>
     </Style>
