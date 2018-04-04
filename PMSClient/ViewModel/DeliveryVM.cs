@@ -314,7 +314,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 10;
             var service = new DeliveryServiceClient();
             RecordCount = service.GetDeliveryCountBySearch(SearchDeliveryName);
             service.Close();

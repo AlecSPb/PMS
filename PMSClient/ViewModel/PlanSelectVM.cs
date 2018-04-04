@@ -38,7 +38,7 @@ namespace PMSClient.ViewModel
 
         private void IntitializeProperties()
         {
-            PlanWithMissons = new ObservableCollection<PlanWithMissonExtra>();
+            PlanWithMissonExtras = new ObservableCollection<PlanWithMissonExtra>();
             SearchComposition = SearchVHPDate = "";
         }
 
@@ -54,7 +54,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectBatch()
         {
-            int count = PlanWithMissons.Where(i => i.IsSelected == true).Count();
+            int count = PlanWithMissonExtras.Where(i => i.IsSelected == true).Count();
             if (!PMSDialogService.ShowYesNo("请问", $"确定添加选定的{count}个项目到记录？"))
             {
                 return;
@@ -93,7 +93,7 @@ namespace PMSClient.ViewModel
         {
             using (var service = new RecordMillingServiceClient())
             {
-                foreach (var item in PlanWithMissons)
+                foreach (var item in PlanWithMissonExtras)
                 {
                     if (item.IsSelected)
                     {
@@ -115,7 +115,7 @@ namespace PMSClient.ViewModel
         {
             using (var service = new RecordDeMoldServiceClient())
             {
-                foreach (var item in PlanWithMissons)
+                foreach (var item in PlanWithMissonExtras)
                 {
                     if (item.IsSelected)
                     {
@@ -138,7 +138,7 @@ namespace PMSClient.ViewModel
         {
             using (var service = new RecordMachineServiceClient())
             {
-                foreach (var item in PlanWithMissons)
+                foreach (var item in PlanWithMissonExtras)
                 {
                     if (item.IsSelected)
                     {
@@ -159,7 +159,7 @@ namespace PMSClient.ViewModel
         {
             using (var service = new RecordTestServiceClient())
             {
-                foreach (var item in PlanWithMissons)
+                foreach (var item in PlanWithMissonExtras)
                 {
                     if (item.IsSelected)
                     {
@@ -260,8 +260,8 @@ namespace PMSClient.ViewModel
             using (var service = new MissonServiceClient())
             {
                 var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
-                PlanWithMissons.Clear();
-                orders.ToList().ForEach(o => PlanWithMissons.Add(new PlanWithMissonExtra { IsSelected = false, PlanMisson = o }));
+                PlanWithMissonExtras.Clear();
+                orders.ToList().ForEach(o => PlanWithMissonExtras.Add(new PlanWithMissonExtra { IsSelected = false, PlanMisson = o }));
             }
         }
 
@@ -276,7 +276,7 @@ namespace PMSClient.ViewModel
         #endregion
 
         #region Properties
-        public ObservableCollection<PlanWithMissonExtra> PlanWithMissons { get; set; }
+        public ObservableCollection<PlanWithMissonExtra> PlanWithMissonExtras { get; set; }
 
 
         private string searchComposition;
