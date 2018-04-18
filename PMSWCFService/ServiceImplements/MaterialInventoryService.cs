@@ -577,7 +577,8 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
-                    result = dc.MaterialInventoryIns.Where(i => i.PMINumber == pmiNumber).Count();
+                    result = dc.MaterialInventoryIns.Where(i => i.PMINumber == pmiNumber
+                    &&i.State!=PMSCommon.InventoryState.作废.ToString()).Count();
                 }
                 return result;
             }
@@ -595,7 +596,8 @@ namespace PMSWCFService
                 int result = 0;
                 using (var dc = new PMSDbContext())
                 {
-                    result = dc.MaterialInventoryOuts.Where(i => i.PMINumber == pmiNumber).Count();
+                    result = dc.MaterialInventoryOuts.Where(i => i.PMINumber == pmiNumber
+                    &&i.State!=PMSCommon.InventoryState.作废.ToString()).Count();
                 }
                 return result ;
             }

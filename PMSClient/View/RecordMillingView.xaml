@@ -32,7 +32,6 @@
                      Style="{StaticResource StyleTextBoxSearch}"/>
             <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource   StyleButtonCommon}" Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding All}"/>
-            <Button Content="{StaticResource ButtonCalculator}" Style="{StaticResource    StyleButtonCommon}" Command="{Binding Calculator}"/>
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonSpecial}" Command="{Binding Output}"
                    />
             <!--图例-->
