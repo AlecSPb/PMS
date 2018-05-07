@@ -146,6 +146,8 @@
     <Compile Include="DataContracts\DcPlanHistory.cs" />
     <Compile Include="DataContracts\DcTaskPlan.cs" />
     <Compile Include="DataContracts\DcToDo.cs" />
+    <Compile Include="DataContracts\Model\PMSReadyOutMaterialModelRaw.cs" />
+    <Compile Include="DataContracts\Model\PMSReadyOutMaterialModel.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />

@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using PMSWCFService.DataContracts;
+using PMSWCFService.DataContracts.Model;
 
 namespace PMSWCFService.ServiceContracts
 {
@@ -37,6 +38,10 @@ namespace PMSWCFService.ServiceContracts
         int CheckMaterialIn(string pmiNumber);
         [OperationContract]
         int CheckMaterialOut(string pmiNumber);
+
+        [OperationContract]
+        List<PMSReadyOutMaterialModel> GetReadyOutMaterialList(int take);
+
 
 
         [OperationContract]

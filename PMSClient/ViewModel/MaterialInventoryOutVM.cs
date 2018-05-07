@@ -60,6 +60,10 @@ namespace PMSClient.ViewModel
 
         }
 
+        /// <summary>
+        /// 检查新料使用情况
+        /// </summary>
+        /// <param name="model"></param>
         private void ActionCheckMaterial(DcRecordMilling model)
         {
             if (model == null)
@@ -129,6 +133,9 @@ namespace PMSClient.ViewModel
             GetNewMaterialUsed();
         }
 
+        /// <summary>
+        /// 获取新出库的材料
+        /// </summary>
         private void GetNewMaterialUsed()
         {
             try
@@ -209,23 +216,9 @@ namespace PMSClient.ViewModel
         }
 
 
+        public ObservableCollection<DcMaterialInventoryOut> MaterialInventoryOuts { get; set; }
 
-
-
-        private ObservableCollection<DcMaterialInventoryOut> materialInventoryOuts;
-        public ObservableCollection<DcMaterialInventoryOut> MaterialInventoryOuts
-        {
-            get { return materialInventoryOuts; }
-            set { materialInventoryOuts = value; RaisePropertyChanged(nameof(MaterialInventoryOuts)); }
-        }
-
-        private ObservableCollection<DcRecordMilling> newMaterialUsedList;
-
-        public ObservableCollection<DcRecordMilling> NewMaterialUsedList
-        {
-            get { return newMaterialUsedList; }
-            set { newMaterialUsedList = value; }
-        }
+        public ObservableCollection<DcRecordMilling> NewMaterialUsedList { get; set; }
 
         #endregion
 

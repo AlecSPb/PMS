@@ -7,6 +7,7 @@ using PMSWCFService.ServiceContracts;
 using PMSDAL;
 using AutoMapper;
 using System.Data.Entity;
+using PMSWCFService.DataContracts.Model;
 
 namespace PMSWCFService
 {
@@ -17,7 +18,7 @@ namespace PMSWCFService
             try
             {
                 int result = 0;
-                using (var dc=new PMSDbContext())
+                using (var dc = new PMSDbContext())
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<DcMaterialInventoryIn, MaterialInventoryIn>());
                     var item = Mapper.Map<MaterialInventoryIn>(model);
@@ -103,7 +104,7 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    return dc.MaterialInventoryIns.Where(o=> o.State != PMSCommon.InventoryState.作废.ToString()).Count();
+                    return dc.MaterialInventoryIns.Where(o => o.State != PMSCommon.InventoryState.作废.ToString()).Count();
                 }
             }
             catch (Exception ex)
@@ -228,10 +229,10 @@ namespace PMSWCFService
 
                     var query = from o in dc.MaterialInventoryIns
                                 where o.State != PMSCommon.InventoryState.作废.ToString()
-                                &&o.Supplier.Contains(supplier)
-                                &&o.Composition.Contains(composition)
-                                &&o.MaterialLot.Contains(batchnumber)
-                                &&o.PMINumber.Contains(pminumber)
+                                && o.Supplier.Contains(supplier)
+                                && o.Composition.Contains(composition)
+                                && o.MaterialLot.Contains(batchnumber)
+                                && o.PMINumber.Contains(pminumber)
                                 orderby o.CreateTime descending
                                 select o;
                     return Mapper.Map<List<MaterialInventoryIn>, List<DcMaterialInventoryIn>>(query.Skip(skip).Take(take).ToList());
@@ -578,7 +579,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     result = dc.MaterialInventoryIns.Where(i => i.PMINumber == pmiNumber
-                    &&i.State!=PMSCommon.InventoryState.作废.ToString()).Count();
+                    && i.State != PMSCommon.InventoryState.作废.ToString()).Count();
                 }
                 return result;
             }
@@ -597,14 +598,46 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     result = dc.MaterialInventoryOuts.Where(i => i.PMINumber == pmiNumber
-                    &&i.State!=PMSCommon.InventoryState.作废.ToString()).Count();
+                    && i.State != PMSCommon.InventoryState.作废.ToString()).Count();
                 }
-                return result ;
+                return result;
             }
             catch (Exception ex)
             {
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
+            }
+        }
+
+
+        public List<PMSReadyOutMaterialModel> GetReadyOutMaterialList(int take)
+        {
+            using (var dc = new PMSDbContext())
+            {
+                Mapper.Initialize(cfg =>
+                {
+                    cfg.CreateMap<List<PMSReadyOutMaterialModelRaw>, List<PMSReadyOutMaterialModel>>();
+                    cfg.CreateMap<MaterialInventoryIn, DcMaterialInventoryIn>();
+                    cfg.CreateMap<MaterialInventoryOut, DcMaterialInventoryOut>();
+                    cfg.CreateMap<RecordMilling, DcRecordMilling>();
+                });
+
+                var rmList = dc.RecordMillings.Where(i => i.MaterialType == PMSCommon.CustomData.MaterialTypes[0])
+                  .OrderByDescending(i => i.CreateTime).Take(take);
+                var result = from rm in rmList
+                             join mi in dc.MaterialInventoryIns
+                             on rm.PMINumber equals mi.PMINumber
+                             join mo in dc.MaterialInventoryOuts
+                             on rm.PMINumber equals mo.PMINumber
+                             select new PMSReadyOutMaterialModelRaw
+                             {
+                                 RecordMillingModel = rm,
+                                 MaterialInModel = mi,
+                                 MaterialOutModel = mo
+                             };
+
+                return Mapper.Map<List<PMSReadyOutMaterialModelRaw>,
+                    List<PMSReadyOutMaterialModel>>(result.ToList());
             }
         }
     }
