@@ -1,5 +1,9 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
+2018-5-20
+添加标准产品特性库 add standard product properties library
+
+以往更新History
 2018-4-8
 更改Plan项目显示顺序，change the display order of plan items.
 2018-4-4
@@ -8,7 +12,6 @@
 更改了标签提示信息显示change the way of displaying the label tips information
 其他bug的修正 fix some bugs
 
-以往更新History
 2018-3-22
 修改了目标计划模块，添加了Web（内网）.modify the to-do list module,add web application for it.
 修正了三杰模块问题，fix bugs in sanjie modules and services.
