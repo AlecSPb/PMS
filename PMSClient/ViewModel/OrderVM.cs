@@ -11,6 +11,7 @@ using PMSClient.MainService;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.IO;
+using PMSClient.ToolWindow;
 
 namespace PMSClient.ViewModel
 {
@@ -157,8 +158,12 @@ namespace PMSClient.ViewModel
         {
             if (order != null)
             {
-                PMSHelper.ViewModels.OrderCheckEdit.SetEdit(order);
-                NavigationService.GoTo(PMSViews.OrderCheckEdit);
+                //PMSHelper.ViewModels.OrderCheckEdit.SetEdit(order);
+                //NavigationService.GoTo(PMSViews.OrderCheckEdit);
+                //使用窗口的方式进行核验
+                OrderCheckDialog dg = new OrderCheckDialog();
+                dg.CurrentOrder = order;
+                dg.ShowDialog();
             }
         }
         #region 权限控制代码=编辑订单
