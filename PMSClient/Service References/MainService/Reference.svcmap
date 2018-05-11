@@ -26,6 +26,7 @@
     <MetadataFile FileName="PMSService31.xsd" MetadataType="Schema" ID="06510372-4d3a-424d-98bf-35c7a0bb12a2" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" />
     <MetadataFile FileName="PMSService32.xsd" MetadataType="Schema" ID="5b0e1c55-6798-4c16-9d66-8d329293cfaf" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" />
     <MetadataFile FileName="PMSService1.wsdl" MetadataType="Wsdl" ID="478afe9d-3077-47ba-af5e-850d0e519aa1" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?wsdl" />
+    <MetadataFile FileName="PMSService.xsd" MetadataType="Schema" ID="4c93e968-771e-432e-aa75-6f3f4fe09a42" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?xsd=xsd3" />
     <MetadataFile FileName="PMSService1.disco" MetadataType="Disco" ID="34d71dd6-e28e-4bb2-b3a5-289b62609d83" SourceId="1" SourceUrl="http://192.168.16.254:8002/PMSService.svc?disco" />
   </Metadata>
   <Extensions>

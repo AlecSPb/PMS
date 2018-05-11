@@ -1264,6 +1264,12 @@
     <None Include="Service References\MainService\PMSClient.MainService.DcPlanHistory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\MainService\PMSClient.MainService.PMSReadyOutMaterialModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MainService\PMSService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\PMSIndexService\PMSIndexService1.disco" />
     <None Include="Service References\MainService\PMSService1.disco" />
     <None Include="Service References\MainService\PMSService1.wsdl" />

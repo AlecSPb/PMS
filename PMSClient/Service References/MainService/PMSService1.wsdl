@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/PMSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IOrderService_GetAllOrderInPage_InputMessage">
@@ -120,6 +121,12 @@
   </wsdl:message>
   <wsdl:message name="IOrderService_GetOrderStatus_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderUnFinishedCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedCount" />
+  </wsdl:message>
+  <wsdl:message name="IOrderService_GetOrderUnFinishedCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderUnFinishedCountResponse" />
   </wsdl:message>
   <wsdl:message name="IPlanVHPService_GetVHPPlansByOrderID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetVHPPlansByOrderID" />
@@ -426,6 +433,12 @@
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_CheckMaterialOut_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckMaterialOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetReadyOutMaterialList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadyOutMaterialList" />
+  </wsdl:message>
+  <wsdl:message name="IMaterialInventoryService_GetReadyOutMaterialList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReadyOutMaterialListResponse" />
   </wsdl:message>
   <wsdl:message name="IMaterialInventoryService_AddMaterialInventoryIn_InputMessage">
     <wsdl:part name="parameters" element="tns:AddMaterialInventoryIn" />
@@ -1284,6 +1297,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderStatus" message="tns:IOrderService_GetOrderStatus_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderStatusResponse" message="tns:IOrderService_GetOrderStatus_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOrderService/GetOrderUnFinishedCount" message="tns:IOrderService_GetOrderUnFinishedCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOrderService/GetOrderUnFinishedCountResponse" message="tns:IOrderService_GetOrderUnFinishedCount_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlanVHPService">
     <wsdl:operation name="GetVHPPlansByOrderID">
@@ -1495,6 +1512,10 @@
     <wsdl:operation name="CheckMaterialOut">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/CheckMaterialOut" message="tns:IMaterialInventoryService_CheckMaterialOut_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/CheckMaterialOutResponse" message="tns:IMaterialInventoryService_CheckMaterialOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReadyOutMaterialList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetReadyOutMaterialList" message="tns:IMaterialInventoryService_GetReadyOutMaterialList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaterialInventoryService/GetReadyOutMaterialListResponse" message="tns:IMaterialInventoryService_GetReadyOutMaterialList_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddMaterialInventoryIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaterialInventoryService/AddMaterialInventoryIn" message="tns:IMaterialInventoryService_AddMaterialInventoryIn_InputMessage" />
@@ -2212,6 +2233,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetOrderUnFinishedCount">
+      <soap:operation soapAction="http://tempuri.org/IOrderService/GetOrderUnFinishedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="planvhp" type="tns:IPlanVHPService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2676,6 +2706,15 @@
     </wsdl:operation>
     <wsdl:operation name="CheckMaterialOut">
       <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/CheckMaterialOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReadyOutMaterialList">
+      <soap:operation soapAction="http://tempuri.org/IMaterialInventoryService/GetReadyOutMaterialList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

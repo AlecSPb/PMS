@@ -288,12 +288,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialInventoryIn" nillable="true" type="tns:DcMaterialInventoryIn" />
-  <xs:complexType name="ArrayOfDcMaterialInventoryOut">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryOut" nillable="true" type="tns:DcMaterialInventoryOut" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfDcMaterialInventoryOut" nillable="true" type="tns:ArrayOfDcMaterialInventoryOut" />
   <xs:complexType name="DcMaterialInventoryOut">
     <xs:sequence>
       <xs:element minOccurs="0" name="ActualWeight" type="xs:double" />
@@ -311,6 +305,40 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcMaterialInventoryOut" nillable="true" type="tns:DcMaterialInventoryOut" />
+  <xs:complexType name="DcRecordMilling">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GasProtection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaterialType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MeltingPoint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MillingTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Oxygen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ratio" type="xs:double" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
+      <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Water" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightIn" type="xs:double" />
+      <xs:element minOccurs="0" name="WeightOut" type="xs:double" />
+      <xs:element minOccurs="0" name="WeightRemain" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcRecordMilling" nillable="true" type="tns:DcRecordMilling" />
+  <xs:complexType name="ArrayOfDcMaterialInventoryOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcMaterialInventoryOut" nillable="true" type="tns:DcMaterialInventoryOut" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcMaterialInventoryOut" nillable="true" type="tns:ArrayOfDcMaterialInventoryOut" />
   <xs:complexType name="ArrayOfDcPlanWithMisson">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcPlanWithMisson" nillable="true" type="tns:DcPlanWithMisson" />
@@ -513,34 +541,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDcRecordMilling" nillable="true" type="tns:ArrayOfDcRecordMilling" />
-  <xs:complexType name="DcRecordMilling">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Composition" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CreateTime" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Creator" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="GasProtection" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="GrainSize" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ID" type="ser:guid" />
-      <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MaterialType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MeltingPoint" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MillingTime" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Oxygen" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ratio" type="xs:double" />
-      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
-      <xs:element minOccurs="0" name="RoomTemperature" type="xs:double" />
-      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="VHPPlanLot" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Water" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WeightIn" type="xs:double" />
-      <xs:element minOccurs="0" name="WeightOut" type="xs:double" />
-      <xs:element minOccurs="0" name="WeightRemain" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="DcRecordMilling" nillable="true" type="tns:DcRecordMilling" />
   <xs:complexType name="ArrayOfDcRecordMachine">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="DcRecordMachine" nillable="true" type="tns:DcRecordMachine" />
