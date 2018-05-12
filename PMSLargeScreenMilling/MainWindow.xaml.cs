@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace PMSLargeScreen
 {
     /// <summary>
-    /// LargeScreenMainWindow.xaml 的交互逻辑
+    /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class LargeScreenMainWindow : Window
+    public partial class MainWindow : Window
     {
-        public LargeScreenMainWindow()
+        public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -134,5 +134,29 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcRecordMilling> GetRecordMillings()
+        {
+            try
+            {
+                using (var dc=new PMSDbContext())
+                {
+                    List<DcRecordMilling> result = new List<DcRecordMilling>();
+
+                    var query = from m in dc.RecordMillings
+                                where m.State != PMSCommon.SimpleState.作废.ToString()
+                                && m.CreateTime.Date >= DateTime.Now.Date
+                                orderby m.CreateTime descending,m.VHPPlanLot descending
+                                select m;
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
+
+                    return Mapper.Map<List<RecordMilling>,List<DcRecordMilling>>(query.ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }
