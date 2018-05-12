@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ExtraService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.16.254:8002/ExtraService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IItemDebitService_GetItemDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDebit" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_GetItemDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_GetItemDebitCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDebitCount" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_GetItemDebitCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemDebitCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_AddItemDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemDebit" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_AddItemDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_UpdateItemDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateItemDebit" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_UpdateItemDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateItemDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_DeleteItemDebit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemDebit" />
+  </wsdl:message>
+  <wsdl:message name="IItemDebitService_DeleteItemDebit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemDebitResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_GetCheckList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckList" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_GetCheckList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_GetCheckListCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckListCount" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_GetCheckListCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckListCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_AddCheckList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCheckList" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_AddCheckList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCheckListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_UpdateCheckList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCheckList" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_UpdateCheckList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCheckListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_DeleteCheckList_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCheckList" />
+  </wsdl:message>
+  <wsdl:message name="ICheckListService_DeleteCheckList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCheckListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_GetFeedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedBack" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_GetFeedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_GetFeedBackCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedBackCount" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_GetFeedBackCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFeedBackCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_AddFeedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFeedBack" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_AddFeedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFeedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_UpdateFeedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFeedBack" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_UpdateFeedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFeedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_DeleteFeedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFeedBack" />
+  </wsdl:message>
+  <wsdl:message name="IFeedBackService_DeleteFeedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFeedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEnvironmentInfoService_GetEnvironmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnvironmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IEnvironmentInfoService_GetEnvironmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnvironmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEnvironmentInfoService_UpdateEnvironmentInfor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEnvironmentInfor" />
+  </wsdl:message>
+  <wsdl:message name="IEnvironmentInfoService_UpdateEnvironmentInfor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEnvironmentInforResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDoCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDoCount" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_GetToDoCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetToDoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_AddToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_AddToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_UpdateToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_UpdateToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateToDoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_DeleteToDo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToDo" />
+  </wsdl:message>
+  <wsdl:message name="IToDoService_DeleteToDo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteToDoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IItemDebitService">
+    <wsdl:operation name="GetItemDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebit" message="tns:IItemDebitService_GetItemDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebitResponse" message="tns:IItemDebitService_GetItemDebit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDebitCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebitCount" message="tns:IItemDebitService_GetItemDebitCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IItemDebitService/GetItemDebitCountResponse" message="tns:IItemDebitService_GetItemDebitCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItemDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/AddItemDebit" message="tns:IItemDebitService_AddItemDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IItemDebitService/AddItemDebitResponse" message="tns:IItemDebitService_AddItemDebit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateItemDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/UpdateItemDebit" message="tns:IItemDebitService_UpdateItemDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IItemDebitService/UpdateItemDebitResponse" message="tns:IItemDebitService_UpdateItemDebit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemDebit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IItemDebitService/DeleteItemDebit" message="tns:IItemDebitService_DeleteItemDebit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IItemDebitService/DeleteItemDebitResponse" message="tns:IItemDebitService_DeleteItemDebit_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICheckListService">
+    <wsdl:operation name="GetCheckList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheckListService/GetCheckList" message="tns:ICheckListService_GetCheckList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheckListService/GetCheckListResponse" message="tns:ICheckListService_GetCheckList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckListCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheckListService/GetCheckListCount" message="tns:ICheckListService_GetCheckListCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheckListService/GetCheckListCountResponse" message="tns:ICheckListService_GetCheckListCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCheckList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheckListService/AddCheckList" message="tns:ICheckListService_AddCheckList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheckListService/AddCheckListResponse" message="tns:ICheckListService_AddCheckList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheckListService/UpdateCheckList" message="tns:ICheckListService_UpdateCheckList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheckListService/UpdateCheckListResponse" message="tns:ICheckListService_UpdateCheckList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheckList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheckListService/DeleteCheckList" message="tns:ICheckListService_DeleteCheckList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheckListService/DeleteCheckListResponse" message="tns:ICheckListService_DeleteCheckList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IFeedBackService">
+    <wsdl:operation name="GetFeedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedBackService/GetFeedBack" message="tns:IFeedBackService_GetFeedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedBackService/GetFeedBackResponse" message="tns:IFeedBackService_GetFeedBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedBackCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedBackService/GetFeedBackCount" message="tns:IFeedBackService_GetFeedBackCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedBackService/GetFeedBackCountResponse" message="tns:IFeedBackService_GetFeedBackCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedBackService/AddFeedBack" message="tns:IFeedBackService_AddFeedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedBackService/AddFeedBackResponse" message="tns:IFeedBackService_AddFeedBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFeedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedBackService/UpdateFeedBack" message="tns:IFeedBackService_UpdateFeedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedBackService/UpdateFeedBackResponse" message="tns:IFeedBackService_UpdateFeedBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFeedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedBackService/DeleteFeedBack" message="tns:IFeedBackService_DeleteFeedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedBackService/DeleteFeedBackResponse" message="tns:IFeedBackService_DeleteFeedBack_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IEnvironmentInfoService">
+    <wsdl:operation name="GetEnvironmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfo" message="tns:IEnvironmentInfoService_GetEnvironmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfoResponse" message="tns:IEnvironmentInfoService_GetEnvironmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvironmentInfor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInfor" message="tns:IEnvironmentInfoService_UpdateEnvironmentInfor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInforResponse" message="tns:IEnvironmentInfoService_UpdateEnvironmentInfor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IToDoService">
+    <wsdl:operation name="GetToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/GetToDo" message="tns:IToDoService_GetToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/GetToDoResponse" message="tns:IToDoService_GetToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/GetToDoCount" message="tns:IToDoService_GetToDoCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/GetToDoCountResponse" message="tns:IToDoService_GetToDoCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/AddToDo" message="tns:IToDoService_AddToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/AddToDoResponse" message="tns:IToDoService_AddToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/UpdateToDo" message="tns:IToDoService_UpdateToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/UpdateToDoResponse" message="tns:IToDoService_UpdateToDo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToDo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToDoService/DeleteToDo" message="tns:IToDoService_DeleteToDo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToDoService/DeleteToDoResponse" message="tns:IToDoService_DeleteToDo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="itemdebit" type="tns:IItemDebitService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetItemDebit">
+      <soap:operation soapAction="http://tempuri.org/IItemDebitService/GetItemDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemDebitCount">
+      <soap:operation soapAction="http://tempuri.org/IItemDebitService/GetItemDebitCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemDebit">
+      <soap:operation soapAction="http://tempuri.org/IItemDebitService/AddItemDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateItemDebit">
+      <soap:operation soapAction="http://tempuri.org/IItemDebitService/UpdateItemDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItemDebit">
+      <soap:operation soapAction="http://tempuri.org/IItemDebitService/DeleteItemDebit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="checklist" type="tns:ICheckListService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCheckList">
+      <soap:operation soapAction="http://tempuri.org/ICheckListService/GetCheckList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckListCount">
+      <soap:operation soapAction="http://tempuri.org/ICheckListService/GetCheckListCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCheckList">
+      <soap:operation soapAction="http://tempuri.org/ICheckListService/AddCheckList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCheckList">
+      <soap:operation soapAction="http://tempuri.org/ICheckListService/UpdateCheckList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheckList">
+      <soap:operation soapAction="http://tempuri.org/ICheckListService/DeleteCheckList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="feedback" type="tns:IFeedBackService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFeedBack">
+      <soap:operation soapAction="http://tempuri.org/IFeedBackService/GetFeedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFeedBackCount">
+      <soap:operation soapAction="http://tempuri.org/IFeedBackService/GetFeedBackCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFeedBack">
+      <soap:operation soapAction="http://tempuri.org/IFeedBackService/AddFeedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFeedBack">
+      <soap:operation soapAction="http://tempuri.org/IFeedBackService/UpdateFeedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFeedBack">
+      <soap:operation soapAction="http://tempuri.org/IFeedBackService/DeleteFeedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="environment" type="tns:IEnvironmentInfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEnvironmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IEnvironmentInfoService/GetEnvironmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEnvironmentInfor">
+      <soap:operation soapAction="http://tempuri.org/IEnvironmentInfoService/UpdateEnvironmentInfor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="todo" type="tns:IToDoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/GetToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToDoCount">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/GetToDoCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/AddToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/UpdateToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteToDo">
+      <soap:operation soapAction="http://tempuri.org/IToDoService/DeleteToDo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExtraService">
+    <wsdl:port name="itemdebit" binding="tns:itemdebit">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="checklist" binding="tns:checklist">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="feedback" binding="tns:feedback">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="environment" binding="tns:environment">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+    <wsdl:port name="todo" binding="tns:todo">
+      <soap:address location="http://192.168.16.254:8002/ExtraService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
