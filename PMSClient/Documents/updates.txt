@@ -2,6 +2,10 @@
 本次更新Updates==
 2018-5-20
 添加标准产品特性库 add standard product properties library
+添加未完成订单数目到订单标题栏 add unfinished order count to order title
+更改订单核验为对话框 change order check from page to dialog
+修改发货流水返回为导航 change return button of delivery item list to navigation button
+
 
 以往更新History
 2018-4-8
