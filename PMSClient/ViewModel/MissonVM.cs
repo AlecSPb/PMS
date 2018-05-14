@@ -53,7 +53,7 @@ namespace PMSClient.ViewModel
         private void InitializeCommands()
         {
             GoToPlan = new RelayCommand(ActionGoToPlan, CanGoToPlan);
-            GoToMaterialNeed = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialNeed));
+            GoToMaterialNeed = new RelayCommand(ActionGoToMaterialNeed, CanGoToMaterialNeed);
 
             Search = new RelayCommand(ActionSearch, CanSearch);
             PageChanged = new RelayCommand(ActionPaging);
@@ -65,7 +65,18 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcOrder>(ActionSelectionChanged);
             Refresh = new RelayCommand(ActionRefresh);
             OnlyUnFinished = new RelayCommand(ActionOnlyUnFinished, CanOnlyUnFinished);
-            FindMaterial = new RelayCommand<DcOrder>(ActionFindMaterial,CanFindMaterial);
+            FindMaterial = new RelayCommand<DcOrder>(ActionFindMaterial, CanFindMaterial);
+        }
+
+        private void ActionGoToMaterialNeed()
+        {
+            var mw = new View.MaterialInventoryInUnCompletedWindow();
+            mw.Show();
+        }
+
+        private bool CanGoToMaterialNeed()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryIn);
         }
 
         private void ActionGoToPlan()
@@ -218,7 +229,7 @@ namespace PMSClient.ViewModel
 
         private void ActionEditPlan(DcPlanVHP plan)
         {
-            if (PMSDialogService.ShowYesNo("请问","你现在准备【编辑】更改这条记录，确定继续编辑吗？"))
+            if (PMSDialogService.ShowYesNo("请问", "你现在准备【编辑】更改这条记录，确定继续编辑吗？"))
             {
                 if (plan != null)
                 {

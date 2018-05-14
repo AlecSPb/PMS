@@ -9,7 +9,8 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              Language="zh-cn"
              mc:Ignorable="d" 
-             d:DesignHeight="1000" d:DesignWidth="1000" DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
+             d:DesignHeight="600" d:DesignWidth="1000"
+            DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

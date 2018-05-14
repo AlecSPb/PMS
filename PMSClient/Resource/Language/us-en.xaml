@@ -221,6 +221,7 @@
     <sys:String x:Key="ButtonSearchMisson">Task Search</sys:String>
     <sys:String x:Key="ButtonPlan">Plan</sys:String>
     <sys:String x:Key="ButtonPlanWindow">Plan Window</sys:String>
+    <sys:String x:Key="ButtonMaterialWindow">Material Window</sys:String>
     <sys:String x:Key="ButtonMaterialNeed">Material Need</sys:String>
     <sys:String x:Key="ButtonMaterialOrder">Material Order</sys:String>
     <sys:String x:Key="ButtonSearchPlan">Search Plan</sys:String>

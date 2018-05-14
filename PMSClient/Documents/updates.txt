@@ -1,11 +1,15 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
 2018-5-20
-添加标准产品特性库 add standard product properties library
+添加独立原料入库窗口到任务页面 add material inventory window to task window
 添加未完成订单数目到订单标题栏 add unfinished order count to order title
 更改订单核验为对话框 change order check from page to dialog
 修改发货流水返回为导航 change return button of delivery item list to navigation button
+简化绑定计划模型，simplify the bonding plan models
+添加绑定计划文档输出 add output document to bonding plan
 
+将要进行的重要更新
+添加标准产品特性库 add standard product properties library
 
 以往更新History
 2018-4-8

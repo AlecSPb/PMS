@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageOrder}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="{Binding UnFinishedOrderCount,StringFormat=目前待完成订单数是{0}}"
+            <TextBlock Text="{Binding UnFinishedOrderCount,StringFormat=共有{0}个订单等待完成}"
                        Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">

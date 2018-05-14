@@ -417,6 +417,9 @@
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MaterialInventoryInUnCompletedWindow.xaml.cs">
+      <DependentUpon>MaterialInventoryInUnCompletedWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ToDoEditView.xaml.cs">
       <DependentUpon>ToDoEditView.xaml</DependentUpon>
     </Compile>
@@ -880,6 +883,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CheckListEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MaterialInventoryInUnCompletedWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
