@@ -29,9 +29,9 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            searchPMINumber = "";
-            searchComposition = "";
-            searchOrderItemNumber = "";
+            SearchPMINumber = "";
+            SearchComposition = "";
+            SearchOrderItemNumber = "";
             MaterialOrderItemExtraSelects = new ObservableCollection<MaterialOrderItemExtraSelect>();
         }
         private void InitializeCommands()
@@ -236,9 +236,9 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            searchPMINumber = "";
-            searchOrderItemNumber = "";
-            searchComposition = "";
+            SearchPMINumber = "";
+            SearchOrderItemNumber = "";
+            SearchComposition = "";
             SetPageParametersWhenConditionChange();
         }
 

@@ -28,7 +28,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            searchComposition = searchMaterialLot = searchPMINumber = "";
+            SearchComposition = SearchMaterialLot = SearchPMINumber = "";
             MaterialInventoryOuts = new ObservableCollection<DcMaterialInventoryOut>();
         }
         private void InitializeCommands()

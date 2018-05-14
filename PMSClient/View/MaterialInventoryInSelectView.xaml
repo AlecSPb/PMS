@@ -51,7 +51,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MIICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm}}"/>
                 <DataGridTextColumn Header="{StaticResource MIIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource MIIMaterialLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"

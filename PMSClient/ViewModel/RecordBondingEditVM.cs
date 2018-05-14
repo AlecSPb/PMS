@@ -39,7 +39,7 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectTest()
         {
-            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingSimpleEdit);
             PMSHelper.ViewModels.RecordTestSelect.RefreshData();
             PMSBatchHelper.SetRecordTestBatchEnable(true);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
@@ -56,10 +56,10 @@ namespace PMSClient.ViewModel
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.BondingState.未完成.ToString();
             model.InstructionCode = "无";
-            model.TargetProductID = "尚未安排";
-            model.TargetComposition = "尚未安排";
-            model.TargetDimension = "尚未安排";
-            model.PlateType = "新背板";
+            model.TargetProductID = "无";
+            model.TargetComposition = "无";
+            model.TargetDimension = "无";
+            model.PlateType = "新背板230";
             model.CoverPlateNumber = "无";
             //暂时用不到
             model.TargetAbbr = "";

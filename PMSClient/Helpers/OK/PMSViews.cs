@@ -62,6 +62,7 @@ namespace PMSClient
         RecordTestDoc,
         RecordBonding,
         RecordBondingEdit,
+        RecordBondingSimpleEdit,
         RecordBondingSelect,
         Delivery,
         DeliveryEdit,

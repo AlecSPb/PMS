@@ -54,7 +54,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource MOICreateTime}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding MaterialOrderItem.CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding MaterialOrderItem.CreateTime,StringFormat={}{0:yyyy-MM-dd HH:mm}}"/>
                 <DataGridTextColumn Header="{StaticResource MOIState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrderItem.State}"/>
                 <DataGridTextColumn Header="{StaticResource MOIPriority}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

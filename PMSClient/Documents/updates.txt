@@ -6,7 +6,9 @@
 更改订单核验为对话框 change order check from page to dialog
 修改发货流水返回为导航 change return button of delivery item list to navigation button
 简化绑定计划模型，simplify the bonding plan models
+修复了批量添加绑定信息问题 fix bugs in batch-add bonding plans
 添加绑定计划文档输出 add output document to bonding plan
+更改材料订单，入库出库创建时间的显示到小时分钟change the format of create time from day to hour
 
 将要进行的重要更新
 添加标准产品特性库 add standard product properties library

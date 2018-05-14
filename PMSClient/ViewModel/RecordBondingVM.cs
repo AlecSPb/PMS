@@ -91,7 +91,7 @@ namespace PMSClient.ViewModel
 
         private void ActionQuickAdd()
         {
-            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBondingEdit);
+            PMSHelper.ViewModels.RecordTestSelect.SetRequestView(PMSViews.RecordBonding);
             PMSHelper.ViewModels.RecordTestSelect.RefreshData();
             PMSBatchHelper.SetRecordTestBatchEnable(true);
             NavigationService.GoTo(PMSViews.RecordTestSelect);
@@ -107,7 +107,7 @@ namespace PMSClient.ViewModel
             if (model != null)
             {
                 PMSHelper.ViewModels.RecordBondingEdit.SetEdit(model);
-                NavigationService.GoTo(PMSViews.RecordBondingEdit);
+                NavigationService.GoTo(PMSViews.RecordBondingSimpleEdit);
             }
         }
 
@@ -135,7 +135,7 @@ namespace PMSClient.ViewModel
         private void ActionAdd()
         {
             PMSHelper.ViewModels.RecordBondingEdit.SetNew();
-            NavigationService.GoTo(PMSViews.RecordBondingEdit);
+            NavigationService.GoTo(PMSViews.RecordBondingSimpleEdit);
         }
 
         private void SetPageParametersWhenConditionChange()

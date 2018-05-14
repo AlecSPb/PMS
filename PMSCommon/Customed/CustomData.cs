@@ -355,10 +355,15 @@ namespace PMSCommon
             {
                 var data = new List<string>();
                 #region 数据
-                data.Add("新背板");
-                data.Add("旧背板");
-                data.Add("钼背板");
-                data.Add("镍背板");
+                data.Add("新背板230");
+                data.Add("旧背板230");
+                data.Add("钼背板230");
+                data.Add("镍背板230");
+                data.Add("小背板50.8");
+                data.Add("小背板50");
+                data.Add("小背板76.2");
+                data.Add("小背板186");
+
                 #endregion
                 return data;
             }
