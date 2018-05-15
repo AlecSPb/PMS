@@ -64,7 +64,7 @@ namespace PMSClient.View
 
                 if (PMSHelper.CurrentSession.CurrentUser != null)
                 {
-                    PMSHelper.CurrentLog.Log("登录成功");
+                    //PMSHelper.CurrentLog.Log("登录成功");
                     NavigationService.GoTo(PMSViews.Navigation);
                 }
                 else
