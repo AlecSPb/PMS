@@ -17,7 +17,8 @@ namespace PMSWCFService.DataContracts
         public DateTime CreateTime { get; set; }
         [DataMember]
         public string State { get; set; }
-
+        [DataMember]
+        public int PlanBatchNumber { get; set; }
         [DataMember]
         public string CoverPlateNumber { get; set; }
 

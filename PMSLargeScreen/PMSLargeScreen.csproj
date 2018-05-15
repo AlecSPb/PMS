@@ -207,6 +207,9 @@
     <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcRecordBonding.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcRecordMilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\LargeScreenService\PMSLargeScreen.LargeScreenService.DcStatistic.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

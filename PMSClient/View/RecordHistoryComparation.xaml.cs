@@ -10,22 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PMSLargeScreen
+namespace PMSClient.View
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// RecordHistoryComparation.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RecordHistoryComparation : UserControl
     {
-        public MainWindow()
+        public RecordHistoryComparation()
         {
             InitializeComponent();
-        }
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

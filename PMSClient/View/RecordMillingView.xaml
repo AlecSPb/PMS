@@ -73,6 +73,8 @@
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{StaticResource RMVHPPlanLot}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding VHPPlanLot}"/>
+                    <DataGridTextColumn Header="{StaticResource RMPlanBatchNumber}" ElementStyle="{StaticResource StyleDGTextBlockCenter}"
+                                    Binding="{Binding PlanBatchNumber}"/>
                     <DataGridTextColumn Header="{StaticResource RMComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                     <DataGridTextColumn Header="{StaticResource RMPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

@@ -24,6 +24,8 @@ namespace PMSWCFService.DataContracts
         [DataMember]
         public string VHPPlanLot { get; set; }
         [DataMember]
+        public int PlanBatchNumber { get; set; }
+        [DataMember]
         public double RoomTemperature { get; set; }
         [DataMember]
         public double RoomHumidity { get; set; }

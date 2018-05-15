@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
+using PMSClient.ReportsHelper;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -41,6 +42,29 @@ namespace PMSClient.ViewModel
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
             Finish = new RelayCommand<MainService.DcRecordBonding>(ActionFinish, CanFinish);
+            RecordSheet = new RelayCommand(ActionRecordSheet);
+        }
+
+        private void ActionRecordSheet()
+        {
+            if (!PMSDialogService.ShowYesNo("警告", "确定要生成未完成的绑定计划的记录单吗？"))
+                return;
+            try
+            {
+                using (var service = new RecordBondingServiceClient())
+                {
+                    //int count = service.GetUnFinishedRecordBondings().Count();
+                    //PMSDialogService.ShowYes($"共有{count}条绑定记录");
+                    var report = new WordBondingSheet();
+                    var models = service.GetUnFinishedRecordBondings();
+                    report.SetModel(models.ToList());
+                    report.Output();
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private bool CanFinish(DcRecordBonding arg)
@@ -64,7 +88,7 @@ namespace PMSClient.ViewModel
             {
                 using (var service = new RecordBondingServiceClient())
                 {
-                    model.State =dialog.State;
+                    model.State = dialog.State;
                     model.PlateLot = dialog.PlateNumber;
                     model.Remark = dialog.Defects;
                     service.UpdateRecordBongdingByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
@@ -186,5 +210,6 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordBonding> Detail { get; set; }
         public RelayCommand<DcRecordBonding> Edit { get; set; }
         public RelayCommand<DcRecordBonding> Finish { get; set; }
+        public RelayCommand RecordSheet { get; set; }
     }
 }

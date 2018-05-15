@@ -97,6 +97,7 @@ namespace PMSClient.ViewModel
             model.Oxygen = "无";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
+            model.PlanBatchNumber = 1;
             model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
             model.RoomHumidity = 0;
             model.RoomTemperature = 0;
@@ -153,6 +154,8 @@ namespace PMSClient.ViewModel
             model.TargetDimension = "靶材尺寸";
             model.PlateType = "新背板";
             model.CoverPlateNumber = "无";
+            model.PlanBatchNumber = 1;
+
             //暂时用不到
             model.TargetAbbr = "尚未确定";
             model.TargetPO = "尚未确定";

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
 namespace PMSDAL
 {
     /// <summary>
@@ -16,6 +18,8 @@ namespace PMSDAL
         public DateTime CreateTime { get;  set; }
         public string State { get; set; }
 
+        [DefaultValue(1)]
+        public int PlanBatchNumber { get; set; }
         public string InstructionCode { get; set; }//操作手册代码
         //1.0靶材入料检查
         //基本信息，从测试直接录入

@@ -16,6 +16,9 @@ namespace PMSDAL
         public string Creator { get; set; }
         public DateTime CreateTime { get; set; }
         public string State { get; set; }
+
+        [DefaultValue(1)]
+        public int PlanBatchNumber { get; set; }
         //需要记录的信息
         public double RoomTemperature { get; set; }
         public double RoomHumidity { get; set; }

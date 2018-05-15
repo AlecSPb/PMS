@@ -31,6 +31,10 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int DeleteRecordBongding(Guid id);
 
+        [OperationContract]
+        List<DcRecordBonding> GetUnFinishedRecordBondings();
+
+
 
     }
 }

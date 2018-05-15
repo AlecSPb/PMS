@@ -213,6 +213,7 @@
     <sys:String x:Key="ButtonSelectBatch">Batch Select</sys:String>
     <sys:String x:Key="ButtonSend">Send</sys:String>
     <sys:String x:Key="ButtonChart">Chart</sys:String>
+    <sys:String x:Key="ButtonRecordSheet">RecordSheet</sys:String>
     <sys:String x:Key="ButtonLabel">Label</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">Sheet</sys:String>
     <sys:String x:Key="ButtonMisson">Task</sys:String>
@@ -464,6 +465,7 @@
     <sys:String x:Key="RMCreator">Creator</sys:String>
     <sys:String x:Key="RMVHPPlanLot">Plan Lot</sys:String>
     <sys:String x:Key="RMComposition">Composition</sys:String>
+    <sys:String x:Key="RMPlanBatchNumber">Batch</sys:String>
     <sys:String x:Key="RMPMINumber">PMI Number</sys:String>
     <sys:String x:Key="RMRoomTemperatureHumidity">Humidity Temp</sys:String>
     <sys:String x:Key="RMRoomTemperature">Temp</sys:String>
@@ -642,7 +644,10 @@
     <sys:String x:Key="BDRemark">Remark</sys:String>
     <sys:String x:Key="BDCoverPlateCode">CoverPlateNumber</sys:String>
     <sys:String x:Key="BDPlateType">Plate Type</sys:String>
-    
+
+
+    <sys:String x:Key="BDPlanBatchNumber">Batch</sys:String>
+
     <sys:String x:Key="BDTargetProductID">Product ID</sys:String>
     <sys:String x:Key="BDTargetComposition">Composition</sys:String>
     <sys:String x:Key="BDTargetAbbr">Abbr</sys:String>

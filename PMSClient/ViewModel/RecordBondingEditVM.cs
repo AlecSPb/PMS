@@ -55,6 +55,7 @@ namespace PMSClient.ViewModel
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.BondingState.未完成.ToString();
+            model.PlanBatchNumber = 1;
             model.InstructionCode = "无";
             model.TargetProductID = "无";
             model.TargetComposition = "无";

@@ -57,7 +57,14 @@ namespace PMSClient.ViewModel
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
 
             CheckMaterial = new RelayCommand<DcRecordMilling>(ActionCheckMaterial);
+            RefreshRecordMillingByNewMaterial = new RelayCommand(ActionRefreshRecordMillingByNewMaterial);
 
+
+        }
+
+        private void ActionRefreshRecordMillingByNewMaterial()
+        {
+            GetNewMaterialUsed();
         }
 
         /// <summary>
@@ -230,6 +237,8 @@ namespace PMSClient.ViewModel
 
 
         public RelayCommand<DcRecordMilling> CheckMaterial { get; set; }
+
+        public RelayCommand RefreshRecordMillingByNewMaterial { get; set; }
         #endregion
 
 

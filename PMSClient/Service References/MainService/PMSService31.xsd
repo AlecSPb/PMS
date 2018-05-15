@@ -2945,6 +2945,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetUnFinishedRecordBondings">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnFinishedRecordBondingsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetUnFinishedRecordBondingsResult" nillable="true" type="q147:ArrayOfDcRecordBonding" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetOutSources">
     <xs:complexType>
       <xs:sequence>
@@ -2959,7 +2971,7 @@
   <xs:element name="GetOutSourcesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOutSourcesResult" nillable="true" type="q147:ArrayOfDcOutSource" />
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="GetOutSourcesResult" nillable="true" type="q148:ArrayOfDcOutSource" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2982,7 +2994,7 @@
   <xs:element name="AddOutSource">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q148:DcOutSource" />
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q149:DcOutSource" />
         <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -2997,7 +3009,7 @@
   <xs:element name="UpdateOutSource">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q149:DcOutSource" />
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/PMSWCFService.DataContracts" minOccurs="0" name="model" nillable="true" type="q150:DcOutSource" />
         <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -3012,7 +3024,7 @@
   <xs:element name="DeleteOutSource">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q150="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q150:guid" />
+        <xs:element xmlns:q151="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q151:guid" />
         <xs:element minOccurs="0" name="uid" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

@@ -3629,6 +3629,9 @@ namespace PMSClient.MainService {
         private string PMINumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlanBatchNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RatioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3833,6 +3836,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PMINumberField, value) != true)) {
                     this.PMINumberField = value;
                     this.RaisePropertyChanged("PMINumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlanBatchNumber {
+            get {
+                return this.PlanBatchNumberField;
+            }
+            set {
+                if ((this.PlanBatchNumberField.Equals(value) != true)) {
+                    this.PlanBatchNumberField = value;
+                    this.RaisePropertyChanged("PlanBatchNumber");
                 }
             }
         }
@@ -6724,6 +6740,9 @@ namespace PMSClient.MainService {
         private string PackPersonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PlanBatchNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlateAppearanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7149,6 +7168,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.PackPersonField, value) != true)) {
                     this.PackPersonField = value;
                     this.RaisePropertyChanged("PackPerson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PlanBatchNumber {
+            get {
+                return this.PlanBatchNumberField;
+            }
+            set {
+                if ((this.PlanBatchNumberField.Equals(value) != true)) {
+                    this.PlanBatchNumberField = value;
+                    this.RaisePropertyChanged("PlanBatchNumber");
                 }
             }
         }
@@ -11290,6 +11322,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/DeleteRecordBongding", ReplyAction="http://tempuri.org/IRecordBondingService/DeleteRecordBongdingResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordBongdingAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondingsResponse")]
+        PMSClient.MainService.DcRecordBonding[] GetUnFinishedRecordBondings();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondingsResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetUnFinishedRecordBondingsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11373,6 +11411,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordBongdingAsync(System.Guid id) {
             return base.Channel.DeleteRecordBongdingAsync(id);
+        }
+        
+        public PMSClient.MainService.DcRecordBonding[] GetUnFinishedRecordBondings() {
+            return base.Channel.GetUnFinishedRecordBondings();
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetUnFinishedRecordBondingsAsync() {
+            return base.Channel.GetUnFinishedRecordBondingsAsync();
         }
     }
     

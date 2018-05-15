@@ -31,8 +31,10 @@
             <Button Name="btnClose" Content="退出" Grid.Column="3"  Style="{StaticResource StyleButton}" Click="btnClose_Click"/>
         </Grid>
         <DataGrid Grid.Row="1" ItemsSource="{Binding RecordBondings}" IsReadOnly="True" SelectionUnit="Cell"  GridLinesVisibility="Horizontal"
-                  HorizontalGridLinesBrush="Wheat" SelectionMode="Single" AutoGenerateColumns="False" Background="{StaticResource BG3}">
+                  HorizontalGridLinesBrush="Wheat" SelectionMode="Single" AutoGenerateColumns="False"
+                  Background="{StaticResource BG3}" CanUserSortColumns="False" CanUserReorderColumns="False">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="批次" Binding="{Binding PlanBatchNumber}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding TargetProductID}" ElementStyle="{StaticResource StyleTextBlockBig3B}"/>
                 <DataGridTextColumn Header="成分" Binding="{Binding TargetComposition}" ElementStyle="{StaticResource StyleTextBlockBig3A}"/>
                 <DataGridTextColumn Header="尺寸" Binding="{Binding TargetDimension}" ElementStyle="{StaticResource StyleTextBlockBig3}"/>

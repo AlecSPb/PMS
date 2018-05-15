@@ -7,6 +7,7 @@ using PMSWCFService.ServiceContracts;
 using AutoMapper;
 using PMSWCFService.DataContracts;
 using PMSCommon;
+using System.Data.Entity;
 
 namespace PMSWCFService
 {
@@ -94,8 +95,34 @@ namespace PMSWCFService
             {
                 using (var dc = new PMSDbContext())
                 {
-                    var result = dc.RecordBondings.Where(p => p.TargetProductID.Contains(productid) && p.TargetComposition.Contains(composition)
-                      && p.State != BondingState.作废.ToString()).OrderByDescending(p => p.CreateTime).Skip(skip).Take(take).ToList();
+                    var query = from p in dc.RecordBondings
+                                where p.TargetProductID.Contains(productid)
+                                && p.TargetComposition.Contains(composition)
+                                && p.State != BondingState.作废.ToString()
+                                orderby DbFunctions.TruncateTime(p.CreateTime) descending,
+                                    p.PlanBatchNumber descending, p.TargetProductID descending
+                                select p;
+                    var result = query.Skip(skip).Take(take).ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
+                    var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public List<DcRecordBonding> GetUnFinishedRecordBondings()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var result = dc.RecordBondings.Where(p => p.State == BondingState.未完成.ToString())
+                        .OrderByDescending(p => p.CreateTime).ToList();
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
                     var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);
                     return products;

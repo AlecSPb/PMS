@@ -85,10 +85,16 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="最近20条制粉用到的新原料,如果没有出库请出库" Style="{StaticResource StyleDGTextBlockCommon}" Grid.Row="0"/>
+                <StackPanel Orientation="Horizontal">
+                    <!--<Button Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
+                        Content="{StaticResource ButtonRefresh}"
+                        Command="{Binding DataContext.RefreshRecordMillingByNewMaterial,
+                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>-->
+                    <TextBlock Text="最近20条制粉用到的新原料,如果没有出库请出库" Style="{StaticResource StyleDGTextBlockCommon}" Grid.Row="0"/>
+                </StackPanel>
                 <ListBox Grid.Row="1" 
                          ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl},
-                    Path=DataContext.NewMaterialUsedList}">
+                    Path=DataContext.NewMaterialUsedList}" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -98,11 +104,11 @@
                                     Path=DataContext.CheckMaterial}" CommandParameter="{Binding}"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding CreateTime,StringFormat={}{0:yyyyMMdd}}"
                                           FontSize="9" Foreground="Blue"/>
-                                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding PMINumber}"
-                                          FontSize="9" Foreground="Blue"/>
+                                <TextBox Style="{StaticResource StyleTextBoxCommon}" Text="{Binding PMINumber}"
+                                          FontSize="9" Foreground="Blue" IsReadOnly="True"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding Composition}" FontSize="9"/>
                                 <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
-                                           Text="{Binding WeightIn,StringFormat={}{0}g}" FontSize="9"/>
+                                           Text="{Binding WeightIn,StringFormat={}{0}g}" FontSize="9" Foreground="Blue"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

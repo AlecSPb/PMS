@@ -9,9 +9,6 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary>
-                    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:PMSLargeScreen.ViewModel" />
-                </ResourceDictionary>
                 <ResourceDictionary Source="Resources/SimpleStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

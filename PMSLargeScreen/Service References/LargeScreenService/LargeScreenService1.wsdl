@@ -37,6 +37,12 @@
   <wsdl:message name="ILargeScreenService_GetBondingCompleteStatistic_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBondingCompleteStatisticResponse" />
   </wsdl:message>
+  <wsdl:message name="ILargeScreenService_GetRecordMillings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillings" />
+  </wsdl:message>
+  <wsdl:message name="ILargeScreenService_GetRecordMillings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordMillingsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILargeScreenService">
     <wsdl:operation name="GetPlanByDate">
       <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetPlanByDate" message="tns:ILargeScreenService_GetPlanByDate_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="GetBondingCompleteStatistic">
       <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic" message="tns:ILargeScreenService_GetBondingCompleteStatistic_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatisticResponse" message="tns:ILargeScreenService_GetBondingCompleteStatistic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMillings">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILargeScreenService/GetRecordMillings" message="tns:ILargeScreenService_GetRecordMillings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILargeScreenService/GetRecordMillingsResponse" message="tns:ILargeScreenService_GetRecordMillings_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="largescreen" type="tns:ILargeScreenService">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetBondingCompleteStatistic">
       <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetBondingCompleteStatistic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordMillings">
+      <soap:operation soapAction="http://tempuri.org/ILargeScreenService/GetRecordMillings" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

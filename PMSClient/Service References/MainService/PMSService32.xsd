@@ -320,6 +320,7 @@
       <xs:element minOccurs="0" name="MillingTool" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Oxygen" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PMINumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanBatchNumber" type="xs:int" />
       <xs:element minOccurs="0" name="Ratio" type="xs:double" />
       <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="RoomHumidity" type="xs:double" />
@@ -633,6 +634,7 @@
       <xs:element minOccurs="0" name="PackCheck" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PackCheckTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="PackPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlanBatchNumber" type="xs:int" />
       <xs:element minOccurs="0" name="PlateAppearance" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateBelong" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PlateCheckTime" type="xs:dateTime" />

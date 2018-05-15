@@ -58,6 +58,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource BDPlanBatchNumber}" ElementStyle="{StaticResource StyleDGTextBlockCenter}" 
+                                    Binding="{Binding RecordBonding.PlanBatchNumber}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetProductID}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding RecordBonding.TargetProductID}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetComposition}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 

@@ -25,7 +25,7 @@ namespace PMSWeb.Controllers
                     return View(dataList);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

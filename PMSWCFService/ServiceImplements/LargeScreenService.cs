@@ -21,7 +21,8 @@ namespace PMSWCFService
                 {
                     var query = from i in dc.RecordBondings
                                 where i.State == PMSCommon.BondingState.未完成.ToString()
-                                orderby i.CreateTime descending,i.TargetProductID
+                                orderby DbFunctions.TruncateTime(i.CreateTime) descending,
+                                    i.PlanBatchNumber, i.TargetProductID
                                 select i;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
                     return Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(query.Skip(s).Take(t).ToList());
@@ -138,18 +139,18 @@ namespace PMSWCFService
         {
             try
             {
-                using (var dc=new PMSDbContext())
+                using (var dc = new PMSDbContext())
                 {
                     List<DcRecordMilling> result = new List<DcRecordMilling>();
 
                     var query = from m in dc.RecordMillings
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.CreateTime.Date >= DateTime.Now.Date
-                                orderby m.CreateTime descending,m.VHPPlanLot descending
+                                orderby m.CreateTime descending, m.VHPPlanLot descending
                                 select m;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
 
-                    return Mapper.Map<List<RecordMilling>,List<DcRecordMilling>>(query.ToList());
+                    return Mapper.Map<List<RecordMilling>, List<DcRecordMilling>>(query.ToList());
                 }
             }
             catch (Exception ex)

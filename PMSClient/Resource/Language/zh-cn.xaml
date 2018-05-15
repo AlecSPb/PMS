@@ -215,6 +215,7 @@
     <sys:String x:Key="ButtonSelectBatch">批量选择</sys:String>
     <sys:String x:Key="ButtonSend">发出</sys:String>
     <sys:String x:Key="ButtonChart">曲线图</sys:String>
+    <sys:String x:Key="ButtonRecordSheet">记录单</sys:String>
     <sys:String x:Key="ButtonLabel">标签</sys:String>
     <sys:String x:Key="ButtonDeliverySheet">清单</sys:String>
     <sys:String x:Key="ButtonMisson">任务</sys:String>
@@ -468,6 +469,7 @@
     <sys:String x:Key="RMCreateTime">创建时间</sys:String>
     <sys:String x:Key="RMCreator">创建者</sys:String>
     <sys:String x:Key="RMVHPPlanLot">热压编号</sys:String>
+    <sys:String x:Key="RMPlanBatchNumber">制粉批次</sys:String>
     <sys:String x:Key="RMComposition">成分</sys:String>
     <sys:String x:Key="RMPMINumber">内部编号</sys:String>
     <sys:String x:Key="RMRoomTemperatureHumidity">温度湿度</sys:String>
@@ -646,6 +648,7 @@
     <sys:String x:Key="BDCoverPlateCode">盖板编号</sys:String>
     <sys:String x:Key="BDPlateType">背板类型</sys:String>
 
+    <sys:String x:Key="BDPlanBatchNumber">绑定批次</sys:String>
     <sys:String x:Key="BDTargetProductID">靶材ID</sys:String>
     <sys:String x:Key="BDTargetComposition">靶材成分</sys:String>
     <sys:String x:Key="BDTargetAbbr">靶材缩写</sys:String>

@@ -56,10 +56,11 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                using (var service=new MaterialInventoryServiceClient())
+                using (var service = new MaterialInventoryServiceClient())
                 {
                     model.State = PMSCommon.InventoryState.发货.ToString();
                     service.UpdateMaterialInventoryInByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
+                    PMSDialogService.ShowYes("请问", $"[{model.PMINumber}{model.Composition}{model.MaterialLot}]的入库记录已标记为出库");
                 }
             }
             catch (Exception ex)
@@ -119,11 +120,11 @@ namespace PMSClient.ViewModel
                 var service = new MaterialInventoryServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialInventoryOutByUID(CurrentMaterialInventoryOut,uid);
+                    service.AddMaterialInventoryOutByUID(CurrentMaterialInventoryOut, uid);
                 }
                 else
                 {
-                    service.UpdateMaterialInventoryOutByUID(CurrentMaterialInventoryOut,uid);
+                    service.UpdateMaterialInventoryOutByUID(CurrentMaterialInventoryOut, uid);
                 }
                 service.Close();
                 PMSHelper.ViewModels.MaterialInventoryOut.RefreshData();

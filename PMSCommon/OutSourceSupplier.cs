@@ -8,6 +8,7 @@ namespace PMSCommon
 {
     public enum OutSourceSupplier
     {
+        海宸光电,
         三杰,
         广汉,
         超纯,

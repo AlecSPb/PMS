@@ -34,7 +34,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>45</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -234,6 +234,7 @@
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\StringUtil.cs" />
+    <Compile Include="ReportsHelper\WordBondingSheet.cs" />
     <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
     <Compile Include="ReportsHelper\WordOpticraft440.cs" />
@@ -419,6 +420,9 @@
     </Compile>
     <Compile Include="View\MaterialInventoryInUnCompletedWindow.xaml.cs">
       <DependentUpon>MaterialInventoryInUnCompletedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RecordHistoryComparation.xaml.cs">
+      <DependentUpon>RecordHistoryComparation.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ToDoEditView.xaml.cs">
       <DependentUpon>ToDoEditView.xaml</DependentUpon>
@@ -890,6 +894,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\RecordHistoryComparation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ToDoEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1257,6 +1265,9 @@
     </Content>
     <None Include="Note\2016.docx" />
     <Content Include="Resource\DocTemplate\Reports\DeliverySheet_zh_cn.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\BondingSheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">
