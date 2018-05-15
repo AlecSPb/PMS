@@ -74,8 +74,8 @@
                                     Binding="{Binding TargetPO}"/>
                 <DataGridTextColumn Header="{StaticResource BDTargetDimension}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding TargetDimension}"/>
-                <DataGridTextColumn Header="{StaticResource BDTargetCoverPlateNumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
-                                    Binding="{Binding CoverPlateNumber}"/>
+                <!--<DataGridTextColumn Header="{StaticResource BDTargetCoverPlateNumber}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
+                                    Binding="{Binding CoverPlateNumber}"/>-->
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
                 <DataGridTextColumn Header="{StaticResource BDPlateType}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 

@@ -1,6 +1,11 @@
 ﻿[更新说明]Updates Briefs
 本次更新Updates==
-2018-5-20
+
+2018-5-16
+更改绑定和制粉底层服务，提供计划批次功能
+添加绑定记录单输出功能
+
+2018-5-6
 添加独立原料入库窗口到任务页面 add material inventory window to task window
 添加未完成订单数目到订单标题栏 add unfinished order count to order title
 更改订单核验为对话框 change order check from page to dialog
@@ -12,6 +17,7 @@
 
 将要进行的重要更新
 添加标准产品特性库 add standard product properties library
+添加制粉大屏幕显示
 
 以往更新History
 2018-4-8
