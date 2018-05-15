@@ -59,7 +59,25 @@ namespace PMSClient.ViewModel
             CheckMaterial = new RelayCommand<DcRecordMilling>(ActionCheckMaterial);
             RefreshRecordMillingByNewMaterial = new RelayCommand(ActionRefreshRecordMillingByNewMaterial);
 
+            Output = new RelayCommand(ActionOutput);
+        }
 
+        private void ActionOutput()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelOutputMaterialOut();
+                excel.Intialize("原料出库导出记录", "原料出库");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionRefreshRecordMillingByNewMaterial()
@@ -239,6 +257,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordMilling> CheckMaterial { get; set; }
 
         public RelayCommand RefreshRecordMillingByNewMaterial { get; set; }
+
+        public RelayCommand Output { get; set; }
         #endregion
 
 

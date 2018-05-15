@@ -57,6 +57,25 @@ namespace PMSClient.ViewModel
                 () => PMSHelper.CurrentSession.IsAuthorized(PMSAccess.ReadMaterialInventoryOut));
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
             FindMisson = new RelayCommand<MainService.DcMaterialInventoryIn>(ActionFindMisson);
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelOutputMaterialIn();
+                excel.Intialize("原料入库导出记录", "原料入库");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionFindMisson(DcMaterialInventoryIn model)
@@ -210,6 +229,7 @@ namespace PMSClient.ViewModel
 
         public RelayCommand OnlyUnCompleted { get; set; }
         public RelayCommand<DcMaterialInventoryIn> FindMisson { get; set; }
+        public RelayCommand Output { get; set; }
         #endregion
 
 
