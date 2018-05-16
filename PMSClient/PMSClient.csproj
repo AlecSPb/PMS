@@ -199,9 +199,14 @@
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOrderItemList.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOut.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputOrder.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputPlan.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputRecordMilling.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputRecordTest.cs" />
     <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
     <Compile Include="Helpers\Converter\LastDayImageConverter.cs" />
