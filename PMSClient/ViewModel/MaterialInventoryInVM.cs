@@ -58,6 +58,17 @@ namespace PMSClient.ViewModel
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
             FindMisson = new RelayCommand<MainService.DcMaterialInventoryIn>(ActionFindMisson);
             Output = new RelayCommand(ActionOutput);
+            QuickRemark = new RelayCommand<DcMaterialInventoryIn>(ActionQuickRemark, CanQuickRemark);
+        }
+
+        private void ActionQuickRemark(DcMaterialInventoryIn obj)
+        {
+            //快速编辑备注
+        }
+
+        private bool CanQuickRemark(DcMaterialInventoryIn arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditMaterialInventoryIn);
         }
 
         private void ActionOutput()
@@ -230,6 +241,8 @@ namespace PMSClient.ViewModel
         public RelayCommand OnlyUnCompleted { get; set; }
         public RelayCommand<DcMaterialInventoryIn> FindMisson { get; set; }
         public RelayCommand Output { get; set; }
+        public RelayCommand<DcMaterialInventoryIn> QuickRemark { get; set; }
+
         #endregion
 
 

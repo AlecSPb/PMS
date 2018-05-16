@@ -21,6 +21,7 @@ namespace PMSDAL
         public string Supplier { get; set; }
         public double Weight { get; set; }
         public string Remark { get; set; }
+        public string QuickRemark { get; set; }
         //操作者和操作时间
         [Key]
         public Guid HistoryID { get; set; }

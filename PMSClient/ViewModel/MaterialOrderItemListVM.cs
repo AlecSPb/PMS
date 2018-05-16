@@ -66,6 +66,25 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcMaterialOrderItemExtra>(ActionSelectionChanged);
             Location = new RelayCommand<DcMaterialOrderItemExtra>(ActionLocation);
             GiveUp = new RelayCommand(() => NavigationService.GoTo(PMSViews.MaterialOrder));
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelOutputMaterialOrderItemList();
+                excel.Intialize("原料订单流水导出记录", "原料订单流水");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionLocation(DcMaterialOrderItemExtra model)
@@ -122,7 +141,7 @@ namespace PMSClient.ViewModel
 
         private bool CanSearch()
         {
-            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchSupplier) 
+            return !(string.IsNullOrEmpty(SearchPMINumber) && string.IsNullOrEmpty(SearchSupplier)
                 && string.IsNullOrEmpty(SearchComposition) && string.IsNullOrEmpty(SearchOrderItemNumber));
         }
 
@@ -241,6 +260,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcMaterialOrderItemExtra> SelectionChanged { get; set; }
         public RelayCommand GiveUp { get; set; }
         public RelayCommand<DcMaterialOrderItemExtra> Location { get; set; }
+
+        public RelayCommand Output { get; set; }
         #endregion
     }
 }

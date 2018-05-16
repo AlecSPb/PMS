@@ -200,6 +200,7 @@
     </Compile>
     <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOrderItemList.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOut.cs" />
     <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
     <Compile Include="Helpers\Converter\LastDayConverter.cs" />
@@ -1678,12 +1679,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

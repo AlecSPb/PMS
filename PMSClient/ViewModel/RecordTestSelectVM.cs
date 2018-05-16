@@ -57,7 +57,9 @@ namespace PMSClient.ViewModel
                     case PMSViews.ProductEdit:
                         BatchSaveProducts();
                         break;
+                    case PMSViews.RecordBondingSimpleEdit:
                     case PMSViews.RecordBondingEdit:
+                    case PMSViews.RecordBonding:
                         BatchSaveRecordBondings();
                         break;
                     default:

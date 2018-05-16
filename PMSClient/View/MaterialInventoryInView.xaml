@@ -53,6 +53,9 @@
                                 <Button Content="{StaticResource ButtonFindMisson}" Style="{StaticResource StyleDGButton}"
                                         Command="{Binding DataContext.FindMisson,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonQuickRemark}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.QuickRemark,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -66,7 +69,7 @@
                 <DataGridTextColumn Header="{StaticResource MIIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource MIIPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PMINumber}"/>
+                                    Binding="{Binding PMINumber}" Foreground="Blue"/>
                 <DataGridTextColumn Header="{StaticResource MIIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Purity}"/>
                 <DataGridTextColumn Header="{StaticResource MIISupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -82,6 +85,8 @@
 
                 <DataGridTextColumn Header="{StaticResource MIIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource MIIQuickRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding QuickRemark}"/>
                 <DataGridTextColumn Header="{StaticResource MIICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>

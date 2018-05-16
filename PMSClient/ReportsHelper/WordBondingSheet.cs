@@ -54,21 +54,17 @@ namespace PMSClient.ReportsHelper
                     {
                         Table mainTable = document.Tables[0];
                         int rownumber = 1;
-                        int datanumber = 1;
-                        var ordered = model.OrderBy(i => i.PlanBatchNumber)
-                                                  .OrderBy(i => i.TargetProductID)
-                                                  .OrderByDescending(i => i.CreateTime.Date);
+                        var ordered = model.OrderBy(i => i.TargetProductID).OrderBy(i => i.PlanBatchNumber);
                         foreach (var item in ordered)
                         {
                             mainTable.Rows[rownumber].Cells[0].Paragraphs[0]
-                                .Append(datanumber.ToString()).FontSize(10).Alignment = Alignment.center;
+                                .Append(item.PlanBatchNumber.ToString()).FontSize(10).Alignment = Alignment.center;
                             mainTable.Rows[rownumber].Cells[1].Paragraphs[0]
-                                .Append($"[{item.PlanBatchNumber}]-{item.TargetProductID}").FontSize(10);
+                                .Append($"{item.TargetProductID}").FontSize(10);
                             mainTable.Rows[rownumber].Cells[2].Paragraphs[0]
                                 .Append(item.TargetComposition).FontSize(10);
 
                             mainTable.InsertRow();
-                            datanumber++;
                             rownumber++;
                         }
                     }

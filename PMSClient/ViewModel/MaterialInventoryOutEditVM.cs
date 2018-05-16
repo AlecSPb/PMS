@@ -103,13 +103,13 @@ namespace PMSClient.ViewModel
 
         private void ActionSave()
         {
-            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条记录？"))
+            if (!PMSDialogService.ShowYesNo("请问", "确定保存这条出库记录？"))
             {
                 return;
             }
             if (CurrentMaterialInventoryOut.State == "作废")
             {
-                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))
+                if (!PMSDialogService.ShowYesNo("请问", "确定作废这条出库记录？"))
                 {
                     return;
                 }

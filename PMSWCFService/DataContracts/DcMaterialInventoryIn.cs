@@ -32,5 +32,8 @@ namespace PMSWCFService.DataContracts
         public double Weight { get; set; }
         [DataMember]
         public string Remark { get; set; }
+        [DataMember]
+
+        public string QuickRemark { get; set; }
     }
 }

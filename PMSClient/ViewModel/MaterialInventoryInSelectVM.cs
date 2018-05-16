@@ -62,7 +62,7 @@ namespace PMSClient.ViewModel
                 switch (requestView)
                 {
                     case PMSViews.MaterialInventoryOutEdit:
-                        if (!PMSDialogService.ShowYesNo("请问", "确定出库这个原料记录？"))
+                        if (!PMSDialogService.ShowYesNo("请问", "确定标记这个原料记录的入库记录状态为[出库]？"))
                         {
                             return;
                         }

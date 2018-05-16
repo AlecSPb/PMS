@@ -20,6 +20,7 @@ namespace PMSDAL
         public string Supplier { get; set; }
         public double Weight { get; set; }
         public string Remark { get; set; }
+        public string QuickRemark { get; set; }//部分出库临时记录
 
     }
 }
