@@ -58,7 +58,7 @@
                 <DataGridTextColumn Header="{StaticResource MIIComposition}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Composition}"/>
                 <DataGridTextColumn Header="{StaticResource MIIPMINumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding PMINumber}"/>
+                                    Binding="{Binding PMINumber}" Foreground="Blue"/>
                 <DataGridTextColumn Header="{StaticResource MIIPurity}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Purity}"/>
                 <DataGridTextColumn Header="{StaticResource MIISupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
@@ -74,6 +74,8 @@
 
                 <DataGridTextColumn Header="{StaticResource MIIRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
+                <DataGridTextColumn Header="{StaticResource MIIQuickRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding QuickRemark}"/>
                 <DataGridTextColumn Header="{StaticResource MIICreator}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>
