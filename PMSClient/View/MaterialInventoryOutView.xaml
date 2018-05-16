@@ -16,7 +16,8 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="{StaticResource PageMaterialInventoryOut}" Style="{StaticResource StyleTextBlockPageTitle}"/>
-            <TextBlock Text="部分出库请在对应入库记录的快速备注里进行记录，等全部出库后，再一次性做出库记录" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBlock Text="部分出库请在对应入库记录的快速备注里进行记录，等全部出库后，做一次全部出库记录" Background="LightBlue"
+                       Style="{StaticResource StyleTextBlockCommon}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" Command="{Binding GoToNavigation}"/>

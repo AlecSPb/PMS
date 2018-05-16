@@ -195,9 +195,6 @@
     <WCFMetadataStorage Include="Service References\LargeScreenService\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TextFile1.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\LargeScreenService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>

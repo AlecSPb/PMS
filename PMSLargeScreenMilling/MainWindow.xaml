@@ -7,33 +7,36 @@
         WindowState="Maximized"
         Language="zh-cn"
         mc:Ignorable="d"
-        Title="制粉计划安排大屏幕显示程序" Height="1000" Width="1600">
+        Title="热压制粉计划安排大屏幕显示程序" Height="1000" Width="1600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Border >
-            <Grid Background="{StaticResource BG}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd}]}"
-                           Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
-                <StackPanel Grid.Column="2" Orientation="Horizontal">
-                    <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
-                    <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
-                </StackPanel>
-            </Grid>
-        </Border>
-        <Border Grid.Row="1">
 
-        </Border>
-        <TextBlock Grid.Row="1" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BG2}">
+        <Grid Background="{StaticResource BG}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd HH:ss}]}"
+                           Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
+                <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
+            </StackPanel>
+        </Grid>
+        <DataGrid Grid.Row="1">
+            
+        </DataGrid>
+        <TextBlock Grid.Row="1" Grid.RowSpan="2" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DataGrid Grid.Row="2">
+            
+        </DataGrid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>
         </StackPanel>

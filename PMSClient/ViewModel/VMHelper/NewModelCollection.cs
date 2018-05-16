@@ -97,7 +97,7 @@ namespace PMSClient.ViewModel
             model.Oxygen = "无";
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.SimpleState.正常.ToString();
-            model.PlanBatchNumber = 1;
+            model.PlanBatchNumber = 0;
             model.PMINumber = UsefulPackage.PMSTranslate.PMINumber();
             model.RoomHumidity = 0;
             model.RoomTemperature = 0;

@@ -25,14 +25,18 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleTextBlockBig3" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
-        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="FontSize" Value="30"/>
+    </Style>
+    <Style x:Key="StyleTextBlockBig3A" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig3}">
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="DarkBlue"/>
+        <Setter Property="Foreground" Value="Red"/>
+    </Style>
+    <Style x:Key="StyleTextBlockBig3B" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig3}">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="Blue"/>
     </Style>
     <Style x:Key="StyleTextBlockLightBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig}">
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="25"/>
-        <Setter Property="Margin" Value="0 5"/>
     </Style>
     <Style x:Key="StyleButton" TargetType="Button">
         <Setter Property="Margin" Value="2"/>

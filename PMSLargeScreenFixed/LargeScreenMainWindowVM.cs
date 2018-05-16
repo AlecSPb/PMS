@@ -26,14 +26,14 @@ namespace PMSLargeScreen
         private void InitializeAll()
         {
             CurrentDate = DateTime.Now;
-            GetFinishedPlanCount();
             ShowModels = new ObservableCollection<UnitModel>();
+
             AllModels = new List<UnitModel>();
-            status1 = "状态栏1";
-            status2 = "状态栏2";
+            status = "状态栏";
+
             errorMessage = "其他信息";
 
-            CenterMessage = $"准备数据中，请等待，{IntervalLoadData/ 1000}s后显示";
+            CenterMessage = $"准备数据中，请等待，{IntervalLoadData / 1000}s后显示";
 
             #region 设定定时器
             _timerLoadData = new Timer();
@@ -46,8 +46,7 @@ namespace PMSLargeScreen
             //首次加载数据
             GetDataFromService();
         }
-   
-        private int counter = 0;
+
         /// <summary>
         /// 显示方式ABC,BCD,ABC
         /// </summary>
@@ -133,7 +132,6 @@ namespace PMSLargeScreen
         private void _timerLoadData_Elapsed(object sender, ElapsedEventArgs e)
         {
             CurrentDate = DateTime.Now;
-            GetFinishedPlanCount();
             GetDataFromService();
         }
 
@@ -141,17 +139,33 @@ namespace PMSLargeScreen
         {
             try
             {
-                  #region 读取规范化数据
-                DcPlanExtra[] result;
+                #region 读取规范化数据
+                DcPlanExtra[] today_plan;
+                DcStatistic[] plan_statistic;
                 using (var service = new LargeScreenServiceClient())
                 {
-                    result = service.GetPlanByDate(CurrentDate.Date);
+                    //get plan statistics
+                    plan_statistic = service.GetPlanStatistic();
+                    //get plan by date
+                    today_plan = service.GetPlanByDate(CurrentDate.Date);
+
                 }
                 ErrorMessage = "其他信息";
 
+                //process data
+
+                if (plan_statistic.Count() > 0)
+                {
+                    FinishedPlanCount = (int)plan_statistic[0].Value;
+                }
+                else
+                {
+                    FinishedPlanCount = 0;
+                }
+
                 AllModels.Clear();
                 //按批次分组
-                var query1 = from i in result
+                var query1 = from i in today_plan
                              group i by i.Plan.PlanLot into g
                              orderby g.Key
                              select g;
@@ -197,36 +211,8 @@ namespace PMSLargeScreen
                     }
                 }
                 #endregion
-                Status1 = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")},今日共有{AllModels.Count}个计划安排";
-                counter = 0;
+                Status = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")},今日共有{AllModels.Count}个计划安排";
                 ShowDataOneByOne();
-               }
-            catch (Exception ex)
-            {
-                ErrorMessage = ex.Message;
-            }
-        }
-
-        /// <summary>
-        /// 获取已完成计划数量
-        /// </summary>
-        private void GetFinishedPlanCount()
-        {
-            try
-            {
-                using (var service = new LargeScreenServiceClient())
-                {
-                    var result = service.GetPlanStatistic();
-                    if (result.Count() > 0)
-                    {
-                        FinishedPlanCount = (int)result[0].Value;
-                    }
-                    else
-                    {
-                        FinishedPlanCount = 0;
-                    }
-                }
-                ErrorMessage = "其他信息";
             }
             catch (Exception ex)
             {
@@ -297,17 +283,11 @@ namespace PMSLargeScreen
             set { finishedPlanCount = value; RaisePropertyChanged(nameof(FinishedPlanCount)); }
         }
 
-        private string status1;
-        public string Status1
+        private string status;
+        public string Status
         {
-            get { return status1; }
-            set { status1 = value; RaisePropertyChanged(nameof(Status1)); }
-        }
-        private string status2;
-        public string Status2
-        {
-            get { return status2; }
-            set { status2 = value; RaisePropertyChanged(nameof(Status2)); }
+            get { return status; }
+            set { status = value; RaisePropertyChanged(nameof(Status)); }
         }
 
         private string errorMessage;

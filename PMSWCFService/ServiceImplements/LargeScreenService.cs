@@ -143,10 +143,11 @@ namespace PMSWCFService
                 {
                     List<DcRecordMilling> result = new List<DcRecordMilling>();
 
+                    string todayString = DateTime.Now.ToString("yyMMdd");
                     var query = from m in dc.RecordMillings
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
-                                && m.CreateTime.Date >= DateTime.Now.Date
-                                orderby m.CreateTime descending, m.VHPPlanLot descending
+                                && m.VHPPlanLot.Contains(todayString)
+                                orderby m.PlanBatchNumber, m.VHPPlanLot
                                 select m;
                     Mapper.Initialize(cfg => cfg.CreateMap<RecordMilling, DcRecordMilling>());
 

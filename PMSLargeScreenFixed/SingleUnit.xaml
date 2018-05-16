@@ -7,28 +7,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
     <Border Style="{StaticResource StyleBorder}">
-        <Grid Background="{StaticResource BG3}" Name="mainGrid">
+        <Grid Name="mainGrid">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <TextBlock Text="{Binding PlanLot,StringFormat=批次{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Red"/>
-                <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig2}" Foreground="Blue"/>
-            </StackPanel>
 
-            <Border Grid.Row="1" Style="{StaticResource StyleBorder}" Background="LightGreen">
+            <Border Grid.Row="0" Style="{StaticResource StyleBorder}" Background="LightGreen">
                 <StackPanel  Orientation="Horizontal">
-                    <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBig3}" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBig3}" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBig3}"/>
-                    <TextBlock Text="{Binding Pressure,StringFormat={}{0}t}" Style="{StaticResource StyleTextBlockBig3}"/>
-                    <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBig3}"/>
+                    <TextBlock Text="{Binding PlanLot,StringFormat=批{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
+                    <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
+                    <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
+                    <TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+                    <TextBlock Text="{Binding Pressure,StringFormat={}{0}t}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+                    <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
                 </StackPanel>
             </Border>
 
-            <ListBox Grid.Row="2" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
+            <ListBox Grid.Row="1" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
                      BorderThickness="0" HorizontalAlignment="Stretch">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -41,16 +38,18 @@
                                     <RowDefinition Height="auto"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="{Binding Composition}" Style="{StaticResource StyleTextBlockBig3}" Foreground="Blue"
+                                <TextBlock Grid.Row="0" Text="{Binding Composition}"
+                                           Style="{StaticResource StyleTextBlockBigDarkBlue}" FontSize="16"
+                                           Foreground="Blue"
                                            TextWrapping="WrapWithOverflow"/>
                                 <StackPanel Grid.Row="2" Orientation="Horizontal">
-                                    <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockBig}"/>
-                                    <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockBig}"/>
-                                    <TextBlock Text="{Binding SingleWeight,StringFormat=单片{0:F2}g}" Style="{StaticResource StyleTextBlockBig}"/>
-                                    <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockBig}"/>
-                                    <TextBlock Text="{Binding PMINumber,StringFormat=任务{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
+                                    <TextBlock Text="{Binding PlanType}" Style="{StaticResource StyleTextBlockSmall}"/>
+                                    <TextBlock Text="{Binding ProcessCode}" Style="{StaticResource StyleTextBlockSmall}"/>
+                                    <TextBlock Text="{Binding SingleWeight,StringFormat=单{0:F2}g}" Style="{StaticResource StyleTextBlockSmall}"/>
+                                    <TextBlock Text="{Binding Quantity,StringFormat=共{0}片}" Style="{StaticResource StyleTextBlockSmall}"/>
+                                    <TextBlock Text="{Binding PMINumber,StringFormat={}{0}}" Style="{StaticResource StyleTextBlockSmall}" Foreground="Red"/>
                                 </StackPanel>
-                                <TextBlock Grid.Row="3" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockBig}"
+                                <TextBlock Grid.Row="3" Text="{Binding FillRequirement}" Style="{StaticResource StyleTextBlockSmall}"
                                            TextWrapping="WrapWithOverflow"/>
                             </Grid>
                         </Border>

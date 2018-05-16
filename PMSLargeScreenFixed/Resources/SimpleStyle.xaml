@@ -4,35 +4,39 @@
     <SolidColorBrush x:Key="BG" Color="#004B8B"/>
     <SolidColorBrush x:Key="BG2" Color="#CA5100"/>
     <SolidColorBrush x:Key="BG3" Color="LightYellow"/>
+
     <Style x:Key="StyleBorder" TargetType="Border">
-        <Setter Property="Margin" Value="1"/>
+        <Setter Property="Margin" Value="0"/>
         <Setter Property="BorderBrush" Value="LightBlue"/>
-        <Setter Property="BorderThickness" Value="2"/>
-    </Style>
-    <Style x:Key="TextBlockBasic" TargetType="TextBlock">
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="BorderThickness" Value="1"/>
     </Style>
     <Style x:Key="StyleTextBlock" TargetType="TextBlock">
         <Setter Property="Margin" Value="2"/>
-        <Setter Property="Padding" Value="3"/>
     </Style>
-    <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+    
+    <Style x:Key="StyleDGTextBlockCenter" TargetType="TextBlock">
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+
+    <Style x:Key="StyleTextBlockSmall" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
-    <!--设备ABCD-->
-    <Style x:Key="StyleTextBlockBig2" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
-        <Setter Property="FontSize" Value="30"/>
+    <Style x:Key="StyleTextBlockBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+        <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
-    <Style x:Key="StyleTextBlockBig3" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+    <Style x:Key="StyleTextBlockBigDarkBlue" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="DarkBlue"/>
     </Style>
-    <Style x:Key="StyleTextBlockLightBig" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockBig}">
+    <Style x:Key="StyleTextBlockBigWhite" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Margin" Value="0 5"/>
     </Style>
     <Style x:Key="StyleButton" TargetType="Button">

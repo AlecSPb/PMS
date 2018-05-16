@@ -46,7 +46,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSWeb", "PMSWeb\PMSWeb.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSLargeScreenFixed", "PMSLargeScreenFixed\PMSLargeScreenFixed.csproj", "{AB5C58C2-F791-473A-B37A-23441BF7ADC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSLargeScreenMilling", "PMSLargeScreenMilling\PMSLargeScreenMilling.csproj", "{3468E040-B7B0-4064-9B5D-3A849FFE936B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMSLargeScreenMillFill", "PMSLargeScreenMilling\PMSLargeScreenMillFill.csproj", "{3468E040-B7B0-4064-9B5D-3A849FFE936B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

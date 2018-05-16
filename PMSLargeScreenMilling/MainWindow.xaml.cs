@@ -22,6 +22,7 @@ namespace PMSLargeScreen
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowVM();
         }
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
