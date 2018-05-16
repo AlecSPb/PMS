@@ -5,5 +5,23 @@
     <Setting Name="UpdateInterval" Type="System.Double" Scope="User">
       <Value Profile="(Default)">120000</Value>
     </Setting>
+    <Setting Name="Device1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="Device2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="Device3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
+    <Setting Name="Device4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D</Value>
+    </Setting>
+    <Setting Name="Device5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E</Value>
+    </Setting>
+    <Setting Name="Device6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

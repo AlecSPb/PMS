@@ -110,6 +110,45 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcPlanExtra> GetPlanByDateDeviceCode(int planlot, DateTime planDate, string deviceCode)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var today = planDate.Date;
+                    var queryPlan = from p in dc.VHPPlans
+                                    where p.State == PMSCommon.VHPPlanState.已核验.ToString()
+                                    && p.PlanLot == planlot
+                                    && p.VHPDeviceCode.Contains(deviceCode)
+                                    && DbFunctions.TruncateTime(p.PlanDate) == today
+                                    orderby p.PlanDate descending
+                                    select p;
+                    //连接订单信息
+                    var queryResult = from p in queryPlan
+                                      join o in dc.Orders
+                                      on p.OrderID equals o.ID
+                                      select new PMSPlanExtraModel() { Plan = p, Misson = o };
+                    var final = queryResult.ToList();
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSPlanExtraModel, DcPlanExtra>();
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = Mapper.Map<List<PMSPlanExtraModel>, List<DcPlanExtra>>(final);
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcStatistic> GetPlanStatistic()
         {
             try

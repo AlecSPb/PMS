@@ -2821,6 +2821,12 @@ namespace PMSLargeScreen.LargeScreenService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanByDate", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanByDateResponse")]
         System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanExtra[]> GetPlanByDateAsync(System.DateTime planDate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCode", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCodeResponse")]
+        PMSLargeScreen.LargeScreenService.DcPlanExtra[] GetPlanByDateDeviceCode(int planlot, System.DateTime planDate, string deviceCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCode", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCodeResponse")]
+        System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanExtra[]> GetPlanByDateDeviceCodeAsync(int planlot, System.DateTime planDate, string deviceCode);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanStatisticResponse")]
         PMSLargeScreen.LargeScreenService.DcStatistic[] GetPlanStatistic();
         
@@ -2885,6 +2891,14 @@ namespace PMSLargeScreen.LargeScreenService {
         
         public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanExtra[]> GetPlanByDateAsync(System.DateTime planDate) {
             return base.Channel.GetPlanByDateAsync(planDate);
+        }
+        
+        public PMSLargeScreen.LargeScreenService.DcPlanExtra[] GetPlanByDateDeviceCode(int planlot, System.DateTime planDate, string deviceCode) {
+            return base.Channel.GetPlanByDateDeviceCode(planlot, planDate, deviceCode);
+        }
+        
+        public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcPlanExtra[]> GetPlanByDateDeviceCodeAsync(int planlot, System.DateTime planDate, string deviceCode) {
+            return base.Channel.GetPlanByDateDeviceCodeAsync(planlot, planDate, deviceCode);
         }
         
         public PMSLargeScreen.LargeScreenService.DcStatistic[] GetPlanStatistic() {

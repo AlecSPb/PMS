@@ -26,9 +26,6 @@ namespace PMSLargeScreen
         private void InitializeAll()
         {
             CurrentDate = DateTime.Now;
-            ShowModels = new ObservableCollection<UnitModel>();
-
-            AllModels = new List<UnitModel>();
             status = "状态栏";
 
             errorMessage = "其他信息";
@@ -47,88 +44,6 @@ namespace PMSLargeScreen
             GetDataFromService();
         }
 
-        /// <summary>
-        /// 显示方式ABC,BCD,ABC
-        /// </summary>
-        private void ShowDataOneByOne()
-        {
-            ShowModels.Clear();
-
-            if (AllModels.Count == 0)
-            {
-                Model1 = null;
-                Model2 = null;
-                Model3 = null;
-                Model4 = null;
-                Model5 = null;
-                Model6 = null;
-
-                CenterMessage = "没有计划";
-                return;
-            }
-
-            CenterMessage = "";
-
-            if (AllModels.Count == 1)
-            {
-                Model1 = AllModels[0];
-                Model2 = null;
-                Model3 = null;
-                Model4 = null;
-                Model5 = null;
-                Model6 = null;
-            }
-
-            if (AllModels.Count == 2)
-            {
-                Model1 = AllModels[0];
-                Model2 = AllModels[1];
-                Model3 = null;
-                Model4 = null;
-                Model5 = null;
-                Model6 = null;
-            }
-
-            if (AllModels.Count == 3)
-            {
-                Model1 = AllModels[0];
-                Model2 = AllModels[1];
-                Model3 = AllModels[2];
-                Model4 = null;
-                Model5 = null;
-                Model6 = null;
-            }
-
-            if (AllModels.Count == 4)
-            {
-                Model1 = AllModels[0];
-                Model2 = AllModels[1];
-                Model3 = AllModels[2];
-                Model4 = AllModels[3];
-                Model5 = null;
-                Model6 = null;
-            }
-
-            if (AllModels.Count == 5)
-            {
-                Model1 = AllModels[0];
-                Model2 = AllModels[1];
-                Model3 = AllModels[2];
-                Model4 = AllModels[3];
-                Model5 = AllModels[4];
-                Model6 = null;
-            }
-            if (AllModels.Count >= 6)
-            {
-                Model1 = AllModels[0];
-                Model2 = AllModels[1];
-                Model3 = AllModels[2];
-                Model4 = AllModels[3];
-                Model5 = AllModels[4];
-                Model6 = AllModels[5];
-            }
-        }
-
         private void _timerLoadData_Elapsed(object sender, ElapsedEventArgs e)
         {
             CurrentDate = DateTime.Now;
@@ -139,80 +54,58 @@ namespace PMSLargeScreen
         {
             try
             {
-                #region 读取规范化数据
-                DcPlanExtra[] today_plan;
-                DcStatistic[] plan_statistic;
+                //Read 6 devices
+                int planLot = 1;
                 using (var service = new LargeScreenServiceClient())
                 {
                     //get plan statistics
-                    plan_statistic = service.GetPlanStatistic();
-                    //get plan by date
-                    today_plan = service.GetPlanByDate(CurrentDate.Date);
-
-                }
-                ErrorMessage = "其他信息";
-
-                //process data
-
-                if (plan_statistic.Count() > 0)
-                {
-                    FinishedPlanCount = (int)plan_statistic[0].Value;
-                }
-                else
-                {
-                    FinishedPlanCount = 0;
-                }
-
-                AllModels.Clear();
-                //按批次分组
-                var query1 = from i in today_plan
-                             group i by i.Plan.PlanLot into g
-                             orderby g.Key
-                             select g;
-                foreach (var group1 in query1)
-                {
-                    //再次按照设备号分组
-                    var query2 = from j in group1
-                                 group j by j.Plan.VHPDeviceCode into g
-                                 orderby g.Key
-                                 select g;
-                    //循环读取设备数据
-                    foreach (var group2 in query2)
+                    var plan_statistic = service.GetPlanStatistic();
+                    if (plan_statistic.Count() > 0)
                     {
-                        var model = new UnitModel();
-                        model.PlanLot = group1.Key;
-                        model.DeviceCode = group2.Key;
-                        model.Items.Clear();
-                        //循环读取同一个设备的热压和材料参数
-                        foreach (var item in group2)
-                        {
-                            model.MoldInnerDiameter = item.Plan.MoldDiameter;
-                            model.MoldType = item.Plan.MoldType;
-                            model.Pressure = item.Plan.Pressure;
-                            model.Temp = item.Plan.Temperature;
-                            model.Vaccum = item.Plan.Vaccum;
-                            model.KeepTime = item.Plan.KeepTempTime;
-
-                            var modelItem = new UnitModelItem();
-                            modelItem.Composition = item.Misson.CompositionStandard;
-                            modelItem.PMINumber = item.Misson.PMINumber;
-                            modelItem.SingleWeight = item.Plan.SingleWeight;
-                            modelItem.PlanType = item.Plan.PlanType;
-                            modelItem.Quantity = item.Plan.Quantity;
-                            modelItem.ProcessCode = item.Plan.ProcessCode;
-                            modelItem.FillRequirement = item.Plan.FillingRequirement;
-
-                            model.Items.Add(modelItem);
-                        }
-                        App.Current.Dispatcher.Invoke(() =>
-                        {
-                            AllModels.Add(model);
-                        });
+                        FinishedPlanCount = (int)plan_statistic[0].Value;
                     }
+                    else
+                    {
+                        FinishedPlanCount = 0;
+                    }
+
+                    string deviceCode = string.Empty;
+                    DcPlanExtra[] plans = null;
+                    #region 读取每个设定的设备的计划信息
+                    deviceCode = Properties.Settings.Default.Device1;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model1 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device2;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model2 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device3;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model3 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device4;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model4 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device5;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model5 = CreateUnitModel(planLot, deviceCode, plans);
+
+                    deviceCode = Properties.Settings.Default.Device6;
+                    plans = service.GetPlanByDateDeviceCode(planLot, CurrentDate.Date, deviceCode);
+                    Model6 = CreateUnitModel(planLot, deviceCode, plans);
+                    #endregion
+
                 }
-                #endregion
-                Status = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")},今日共有{AllModels.Count}个计划安排";
-                ShowDataOneByOne();
+                if (Model1 == null && Model2 == null && Model3 == null
+                    && Model4 == null && Model5 == null && Model6 == null)
+                {
+                    CenterMessage = $"今日第{planLot}批次没有安排热压计划";
+                }
+                CenterMessage = string.Empty;
+                ErrorMessage = "读取正常";
+                Status = $"刷新全部数据于{DateTime.Now.ToString("HH:mm:ss")}";
             }
             catch (Exception ex)
             {
@@ -220,9 +113,39 @@ namespace PMSLargeScreen
             }
         }
 
-        public ObservableCollection<UnitModel> ShowModels { get; set; }
+        private UnitModel CreateUnitModel(int planLot, string deviceCode, DcPlanExtra[] plans)
+        {
+            var model = new UnitModel();
+            if (plans.Count() == 0)
+                return null;
+            //标题部分
+            model.DeviceCode = deviceCode;
+            model.PlanLot = planLot;
+            model.Items.Clear();
+            foreach (var item in plans)
+            {
+                //热压工艺必须一样
+                model.MoldInnerDiameter = item.Plan.MoldDiameter;
+                model.MoldType = item.Plan.MoldType;
+                model.Pressure = item.Plan.Pressure;
+                model.Temp = item.Plan.Temperature;
+                model.Vaccum = item.Plan.Vaccum;
+                model.KeepTime = item.Plan.KeepTempTime;
 
-        private List<UnitModel> AllModels { get; set; }
+                //具体计划
+                var modelItem = new UnitModelItem();
+                modelItem.Composition = item.Misson.CompositionStandard;
+                modelItem.PMINumber = item.Misson.PMINumber;
+                modelItem.SingleWeight = item.Plan.SingleWeight;
+                modelItem.PlanType = item.Plan.PlanType;
+                modelItem.Quantity = item.Plan.Quantity;
+                modelItem.ProcessCode = item.Plan.ProcessCode;
+                modelItem.FillRequirement = item.Plan.FillingRequirement;
+
+                model.Items.Add(modelItem);
+            }
+            return model;
+        }
 
         #region Models
         private UnitModel model1;
@@ -267,8 +190,8 @@ namespace PMSLargeScreen
         }
         #endregion
 
+        #region 其他属性
         private DateTime currentDate;
-
         public DateTime CurrentDate
         {
             get { return currentDate; }
@@ -311,6 +234,7 @@ namespace PMSLargeScreen
                 return IntervalLoadData / 1000;
             }
         }
+        #endregion
 
     }
 }

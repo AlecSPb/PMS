@@ -99,8 +99,6 @@
     <Compile Include="SingleUnit.xaml.cs">
       <DependentUpon>SingleUnit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="LargeScreenMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

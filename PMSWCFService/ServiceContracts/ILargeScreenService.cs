@@ -15,6 +15,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcPlanExtra> GetPlanByDate(DateTime planDate);
         [OperationContract]
+        List<DcPlanExtra> GetPlanByDateDeviceCode(int planlot,DateTime planDate, string deviceCode);
+        [OperationContract]
         List<DcStatistic> GetPlanStatistic();
 
         //绑定计划

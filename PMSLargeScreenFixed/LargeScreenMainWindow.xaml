@@ -23,9 +23,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd HH:ss}]}"
+            <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd HH:mm}]}"
                            Style="{StaticResource StyleTextBlockBigWhite}" Foreground="Yellow"/>
-            <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=自2011年到现在，已进行热压计划{0}次}"
+            <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=自2011年至今，已执行热压计划{0}次}"
                            Style="{StaticResource StyleTextBlockBigWhite}"/>
             <StackPanel Grid.Column="2" Orientation="Horizontal">
                 <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}"
@@ -50,7 +50,8 @@
             <local:SingleUnit Grid.Row="1"  Grid.Column="1" x:Name="unit5" CurrentModel="{Binding Model5}" />
             <local:SingleUnit Grid.Row="1"  Grid.Column="2" x:Name="unit6" CurrentModel="{Binding Model6}" />
         </Grid>
-        <TextBlock Grid.Row="1"  Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="1"  Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>
