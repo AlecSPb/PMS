@@ -2822,10 +2822,10 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[]> GetPlanByDateAsync(System.DateTime planDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCode", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCodeResponse")]
-        PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[] GetPlanByDateDeviceCode(System.DateTime planDate, string deviceCode);
+        PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[] GetPlanByDateDeviceCode(int planlot, System.DateTime planDate, string deviceCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCode", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanByDateDeviceCodeResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[]> GetPlanByDateDeviceCodeAsync(System.DateTime planDate, string deviceCode);
+        System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[]> GetPlanByDateDeviceCodeAsync(int planlot, System.DateTime planDate, string deviceCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetPlanStatistic", ReplyAction="http://tempuri.org/ILargeScreenService/GetPlanStatisticResponse")]
         PMSLargeScreenBonding.LargeScreenService.DcStatistic[] GetPlanStatistic();
@@ -2852,10 +2852,10 @@ namespace PMSLargeScreenBonding.LargeScreenService {
         System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcStatistic[]> GetBondingCompleteStatisticAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetRecordMillings", ReplyAction="http://tempuri.org/ILargeScreenService/GetRecordMillingsResponse")]
-        PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[] GetRecordMillings();
+        PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[] GetRecordMillings(System.DateTime planDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetRecordMillings", ReplyAction="http://tempuri.org/ILargeScreenService/GetRecordMillingsResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync();
+        System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync(System.DateTime planDate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2893,12 +2893,12 @@ namespace PMSLargeScreenBonding.LargeScreenService {
             return base.Channel.GetPlanByDateAsync(planDate);
         }
         
-        public PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[] GetPlanByDateDeviceCode(System.DateTime planDate, string deviceCode) {
-            return base.Channel.GetPlanByDateDeviceCode(planDate, deviceCode);
+        public PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[] GetPlanByDateDeviceCode(int planlot, System.DateTime planDate, string deviceCode) {
+            return base.Channel.GetPlanByDateDeviceCode(planlot, planDate, deviceCode);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[]> GetPlanByDateDeviceCodeAsync(System.DateTime planDate, string deviceCode) {
-            return base.Channel.GetPlanByDateDeviceCodeAsync(planDate, deviceCode);
+        public System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcPlanExtra[]> GetPlanByDateDeviceCodeAsync(int planlot, System.DateTime planDate, string deviceCode) {
+            return base.Channel.GetPlanByDateDeviceCodeAsync(planlot, planDate, deviceCode);
         }
         
         public PMSLargeScreenBonding.LargeScreenService.DcStatistic[] GetPlanStatistic() {
@@ -2933,12 +2933,12 @@ namespace PMSLargeScreenBonding.LargeScreenService {
             return base.Channel.GetBondingCompleteStatisticAsync();
         }
         
-        public PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[] GetRecordMillings() {
-            return base.Channel.GetRecordMillings();
+        public PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[] GetRecordMillings(System.DateTime planDate) {
+            return base.Channel.GetRecordMillings(planDate);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync() {
-            return base.Channel.GetRecordMillingsAsync();
+        public System.Threading.Tasks.Task<PMSLargeScreenBonding.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync(System.DateTime planDate) {
+            return base.Channel.GetRecordMillingsAsync(planDate);
         }
     }
 }

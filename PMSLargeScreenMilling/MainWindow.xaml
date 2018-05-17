@@ -11,32 +11,82 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid Background="{StaticResource BG}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd HH:ss}]}"
+            <TextBlock Text="{Binding CurrentDate,StringFormat=今天是:[{0:yyyy-MM-dd dddd HH:mm}]}"
                            Style="{StaticResource StyleTextBlockLightBig}" Foreground="Yellow"/>
-            <StackPanel Grid.Column="2" Orientation="Horizontal">
+            <TextBlock Grid.Column="1" Text="{Binding FinishedPlanCount,StringFormat=自2011年至今，已执行热压计划{0}次}"
+                           Style="{StaticResource StyleTextBlockLightBig}"/>
+            <StackPanel Grid.Column="3" Orientation="Horizontal">
                 <TextBlock Text="{Binding IntervalRefreshLoadData,StringFormat=数据刷新间隔:{0}s}" Style="{StaticResource StyleTextBlockLightBig}"/>
                 <Button  Name="btnClose" Click="btnClose_Click" Content="退出" Style="{StaticResource StyleButton}"/>
             </StackPanel>
         </Grid>
-        <DataGrid Grid.Row="1">
-            
+        <TextBlock Grid.Row="1" Style="{StaticResource StyleTextBlockBold}" Text="热压计划"                  
+                   Background="LightGreen"/>
+        <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGrid}"
+                  ItemsSource="{Binding PlanExtras}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="日期" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"/>
+                <DataGridTextColumn Header="批次" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Plan.PlanLot}"/>
+                <DataGridTextColumn Header="压机" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
+                                    Binding="{Binding Plan.VHPDeviceCode}"/>
+                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding Misson.CompositionStandard}"/>
+                <DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Misson.PMINumber}"/>
+                <DataGridTextColumn Header="计划类型" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Plan.PlanType}"/>
+                <DataGridTextColumn Header="模具类型" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
+                                    Binding="{Binding Plan.MoldType}"/>
+                <DataGridTextColumn Header="模具直径" ElementStyle="{StaticResource StyleTextBlockRightBold}"
+                                    Binding="{Binding Plan.MoldDiameter}"/>
+                <!--<DataGridTextColumn Header="厚度" ElementStyle="{StaticResource StyleTextBlockRight}"
+                                    Binding="{Binding Plan.Thickness,StringFormat={}{0:F2}}"/>-->
+                <DataGridTextColumn Header="数量" ElementStyle="{StaticResource StyleTextBlockRightBold}"
+                                    Binding="{Binding Plan.Quantity}"/>
+                <DataGridTextColumn Header="装料" ElementStyle="{StaticResource StyleTextBlockRightBold}"
+                                    Binding="{Binding Plan.FillingRequirement}"/>
+            </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="1" Grid.RowSpan="2" Text="{Binding CenterMessage}" Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <DataGrid Grid.Row="2">
-            
+        <TextBlock Grid.Row="3" Style="{StaticResource StyleTextBlockBold}" Text="制粉计划"
+                   Background="LightGreen"/>
+        <TextBlock Grid.Row="1" Grid.RowSpan="4" Text="{Binding CenterMessage}"
+                   Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGrid}"
+                  ItemsSource="{Binding Millings}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="今日批次" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
+                                    Binding="{Binding PlanBatchNumber}"/>
+                <DataGridTextColumn Header="热压编号" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding VHPPlanLot}"/>
+                <DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding PMINumber}"/>
+                <DataGridTextColumn Header="成分" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding Composition}"/>
+                <DataGridTextColumn Header="原料类型" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding MaterialType}"/>
+                <DataGridTextColumn Header="粒径" ElementStyle="{StaticResource StyleTextBlock}"
+                                    Binding="{Binding GrainSize}"/>
+                <DataGridTextColumn Header="出料重量" ElementStyle="{StaticResource StyleTextBlockRight}"
+                                    Binding="{Binding WeightOut,StringFormat={}{0:F2}}"/>
+            </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="{StaticResource BG2}">
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Background="{StaticResource BG2}">
             <TextBlock Text="{Binding Status}" Style="{StaticResource StyleTextBlock}" Foreground="White"/>
             <TextBlock Text="{Binding ErrorMessage}" Style="{StaticResource StyleTextBlock}" Foreground="Yellow"/>
         </StackPanel>

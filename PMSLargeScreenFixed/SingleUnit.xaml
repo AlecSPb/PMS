@@ -6,30 +6,28 @@
              xmlns:local="clr-namespace:PMSLargeScreen"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
-    <Border Style="{StaticResource StyleBorder}">
+    <Border Style="{StaticResource StyleBorder}" Margin="1">
         <Grid Name="mainGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Row="0" Style="{StaticResource StyleBorder}" Background="LightGreen">
-                <StackPanel  Orientation="Horizontal">
-                    <TextBlock Text="{Binding PlanLot,StringFormat=批{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
-                    <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
-                    <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
-                    <TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
-                    <TextBlock Text="{Binding Pressure,StringFormat={}{0}t}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
-                    <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
-                </StackPanel>
-            </Border>
+            <StackPanel  Orientation="Horizontal" Grid.Row="0" Background="LightGreen">
+                <TextBlock Text="{Binding PlanLot,StringFormat=批{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Red"/>
+                <TextBlock Text="{Binding DeviceCode,StringFormat=设备{0}}" Style="{StaticResource StyleTextBlockBig}" Foreground="Blue"/>
+                <TextBlock Text="{Binding MoldType}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
+                <TextBlock Text="{Binding MoldInnerDiameter,StringFormat={}{0}mm}" Style="{StaticResource StyleTextBlockBigDarkBlue}" VerticalAlignment="Bottom"/>
+                <TextBlock Text="{Binding Temp,StringFormat={}{0}℃}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+                <TextBlock Text="{Binding Pressure,StringFormat={}{0}t}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+                <TextBlock Text="{Binding KeepTime,StringFormat={}{0}min}" Style="{StaticResource StyleTextBlockBigDarkBlue}"/>
+            </StackPanel>
 
             <ListBox Grid.Row="1" ItemsSource="{Binding Items}" HorizontalContentAlignment="Stretch" Background="LightYellow"
                      BorderThickness="0" HorizontalAlignment="Stretch">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource StyleBorder}" Background="Transparent">
+                        <Border Background="Transparent" BorderThickness="0 0 0 2" BorderBrush="LightBlue">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto"/>

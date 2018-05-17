@@ -6,7 +6,6 @@
     <SolidColorBrush x:Key="BG3" Color="LightYellow"/>
 
     <Style x:Key="StyleBorder" TargetType="Border">
-        <Setter Property="Margin" Value="0"/>
         <Setter Property="BorderBrush" Value="LightBlue"/>
         <Setter Property="BorderThickness" Value="1"/>
     </Style>

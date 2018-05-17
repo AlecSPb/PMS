@@ -112,12 +112,40 @@ namespace PMSClient.ViewModel
                 var service = new MaterialInventoryServiceClient();
                 if (IsNew)
                 {
-                    service.AddMaterialInventoryInByUID(CurrentMaterialInventoryIn,uid);
+                    service.AddMaterialInventoryInByUID(CurrentMaterialInventoryIn, uid);
                 }
                 else
                 {
-                    service.UpdateMaterialInventoryInByUID(CurrentMaterialInventoryIn,uid);
+                    service.UpdateMaterialInventoryInByUID(CurrentMaterialInventoryIn, uid);
                 }
+
+                //询问是否增加对应的出库记录
+                if (CurrentMaterialInventoryIn.State == PMSCommon.InventoryState.发货.ToString())
+                {
+                    var material_in = CurrentMaterialInventoryIn;
+                    string dialog_msg = $"是否增加一条[{material_in.PMINumber}]{material_in.Composition}出库记录？";
+                    if (!PMSDialogService.ShowYesNo("请问", dialog_msg))
+                    {
+                        var material_out = new DcMaterialInventoryOut();
+                        material_out.Id = Guid.NewGuid();
+                        material_out.State = PMSCommon.SimpleState.正常.ToString();
+                        material_out.CreateTime = DateTime.Now;
+                        material_out.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+                        material_out.Receiver = PMSCommon.MaterialComsumer.车间.ToString();
+                        material_out.ActualWeight = 0;
+
+                        material_out.Composition = material_in.Composition;
+                        material_out.MaterialLot = material_in.MaterialLot;
+                        material_out.PMINumber = material_in.PMINumber;
+                        material_out.Purity = material_in.Purity;
+                        material_out.Weight = material_in.Weight;
+                        material_out.Remark = material_in.Supplier;
+
+                        service.AddMaterialInventoryOutByUID(material_out, uid);
+                    }
+                }
+
+
                 service.Close();
                 PMSHelper.ViewModels.MaterialInventoryIn.RefreshData();
                 GoBack();

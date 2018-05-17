@@ -174,7 +174,7 @@ namespace PMSWCFService
             }
         }
 
-        public List<DcRecordMilling> GetRecordMillings()
+        public List<DcRecordMilling> GetRecordMillings(DateTime planDate)
         {
             try
             {
@@ -182,7 +182,7 @@ namespace PMSWCFService
                 {
                     List<DcRecordMilling> result = new List<DcRecordMilling>();
 
-                    string todayString = DateTime.Now.ToString("yyMMdd");
+                    string todayString = planDate.ToString("yyMMdd");
                     var query = from m in dc.RecordMillings
                                 where m.State != PMSCommon.SimpleState.作废.ToString()
                                 && m.VHPPlanLot.Contains(todayString)

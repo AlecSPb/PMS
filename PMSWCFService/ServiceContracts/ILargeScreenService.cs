@@ -31,7 +31,7 @@ namespace PMSWCFService.ServiceContracts
 
         //制粉计划
         [OperationContract]
-        List<DcRecordMilling> GetRecordMillings();
+        List<DcRecordMilling> GetRecordMillings(DateTime planDate);
 
 
     }

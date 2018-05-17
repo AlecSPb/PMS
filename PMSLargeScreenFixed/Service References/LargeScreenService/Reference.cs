@@ -2852,10 +2852,10 @@ namespace PMSLargeScreen.LargeScreenService {
         System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcStatistic[]> GetBondingCompleteStatisticAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetRecordMillings", ReplyAction="http://tempuri.org/ILargeScreenService/GetRecordMillingsResponse")]
-        PMSLargeScreen.LargeScreenService.DcRecordMilling[] GetRecordMillings();
+        PMSLargeScreen.LargeScreenService.DcRecordMilling[] GetRecordMillings(System.DateTime planDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILargeScreenService/GetRecordMillings", ReplyAction="http://tempuri.org/ILargeScreenService/GetRecordMillingsResponse")]
-        System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync();
+        System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync(System.DateTime planDate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2933,12 +2933,12 @@ namespace PMSLargeScreen.LargeScreenService {
             return base.Channel.GetBondingCompleteStatisticAsync();
         }
         
-        public PMSLargeScreen.LargeScreenService.DcRecordMilling[] GetRecordMillings() {
-            return base.Channel.GetRecordMillings();
+        public PMSLargeScreen.LargeScreenService.DcRecordMilling[] GetRecordMillings(System.DateTime planDate) {
+            return base.Channel.GetRecordMillings(planDate);
         }
         
-        public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync() {
-            return base.Channel.GetRecordMillingsAsync();
+        public System.Threading.Tasks.Task<PMSLargeScreen.LargeScreenService.DcRecordMilling[]> GetRecordMillingsAsync(System.DateTime planDate) {
+            return base.Channel.GetRecordMillingsAsync(planDate);
         }
     }
 }
