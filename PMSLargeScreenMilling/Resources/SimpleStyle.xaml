@@ -30,7 +30,7 @@
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
     <Style x:Key="StyleTextBlockRight" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
-        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
     </Style>
     <Style x:Key="StyleTextBlockRightBold" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlockRight}">
         <Setter Property="FontWeight" Value="Bold"/>

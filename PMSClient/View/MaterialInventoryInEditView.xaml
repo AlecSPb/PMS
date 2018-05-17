@@ -115,9 +115,12 @@
                 <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MIIQuickRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding QuickRemark}" Style="{StaticResource StyleTextBoxCommon}"
-                          Background="LightBlue"  />
-                <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text="写部分原料出库信息,比如180516出1kg+180517出1.5kg"/>
+                          Background="LightBlue" Name="TxtQuickRemark" />
+                <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="追加备注" Name="BtnAddRemark" Click="BtnAddRemark_Click" Style="{StaticResource StyleButtonCommon}"/>
+                    <TextBlock  Style="{StaticResource StyleTextBlockTip}"
+                           Text="写部分原料出库信息,比如180516出1kg+180517出1.5kg" Background="LightGreen"/>
+                </StackPanel>
                 
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource MIIState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

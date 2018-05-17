@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.ToolWindow;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,16 @@ namespace PMSClient.View
             catch (Exception ex)
             {
                 PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        private void BtnAddRemark_Click(object sender, RoutedEventArgs e)
+        {
+            var quick = new QuickRemark();
+            if (quick.ShowDialog() == true)
+            {
+                string str = TxtQuickRemark.Text.Trim() + quick.Date.ToString("yyMMdd") + "出" + quick.Value + "kg;";
+                PMSMethods.SetTextBox(TxtQuickRemark, str);
             }
         }
     }

@@ -83,7 +83,7 @@
                 <DataGridTextColumn Header="粒径" ElementStyle="{StaticResource StyleTextBlock}"
                                     Binding="{Binding GrainSize}"/>
                 <DataGridTextColumn Header="出料重量" ElementStyle="{StaticResource StyleTextBlockRight}"
-                                    Binding="{Binding WeightOut,StringFormat={}{0:F2}}"/>
+                                    Binding="{Binding WeightOut}"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="5" Orientation="Horizontal" Background="{StaticResource BG2}">

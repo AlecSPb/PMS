@@ -124,7 +124,7 @@ namespace PMSClient.ViewModel
                 {
                     var material_in = CurrentMaterialInventoryIn;
                     string dialog_msg = $"是否增加一条[{material_in.PMINumber}]{material_in.Composition}出库记录？";
-                    if (!PMSDialogService.ShowYesNo("请问", dialog_msg))
+                    if (PMSDialogService.ShowYesNo("请问", dialog_msg))
                     {
                         var material_out = new DcMaterialInventoryOut();
                         material_out.Id = Guid.NewGuid();

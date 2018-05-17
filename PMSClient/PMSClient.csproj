@@ -316,6 +316,9 @@
     <Compile Include="ToolWindow\PlainTextWindow.xaml.cs">
       <DependentUpon>PlainTextWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\QuickRemark.xaml.cs">
+      <DependentUpon>QuickRemark.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\BatchOutSourceProduct.xaml.cs">
       <DependentUpon>BatchOutSourceProduct.xaml</DependentUpon>
     </Compile>
@@ -821,6 +824,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\PlainTextWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\QuickRemark.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
