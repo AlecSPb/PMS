@@ -36,7 +36,7 @@ namespace PMSLargeScreen
         }
 
         private Timer _timerLoadData;
-        private double IntervalLoadData = 120000;
+        private double IntervalLoadData = 60000;
         private void LoadData()
         {
             CurrentDate = DateTime.Now;
