@@ -35,7 +35,7 @@
             </StackPanel>
         </Grid>
         <TextBlock Grid.Row="1" Style="{StaticResource StyleTextBlockBold}" Text="热压计划"                  
-                   Background="LightGreen"/>
+                   Background="LightGreen" Margin="0"/>
         <DataGrid Grid.Row="2" Style="{StaticResource StyleDataGrid}"
                   ItemsSource="{Binding PlanExtras}">
             <DataGrid.Columns>
@@ -51,6 +51,8 @@
                                     Binding="{Binding Misson.PMINumber}"/>
                 <DataGridTextColumn Header="计划类型" ElementStyle="{StaticResource StyleTextBlockCenter}"
                                     Binding="{Binding Plan.PlanType}"/>
+                <DataGridTextColumn Header="工艺" ElementStyle="{StaticResource StyleTextBlockCenter}"
+                                    Binding="{Binding Plan.ProcessCode}"/>
                 <DataGridTextColumn Header="模具类型" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
                                     Binding="{Binding Plan.MoldType}"/>
                 <DataGridTextColumn Header="模具直径" ElementStyle="{StaticResource StyleTextBlockRightBold}"
@@ -59,12 +61,14 @@
                                     Binding="{Binding Plan.Thickness,StringFormat={}{0:F2}}"/>-->
                 <DataGridTextColumn Header="数量" ElementStyle="{StaticResource StyleTextBlockRightBold}"
                                     Binding="{Binding Plan.Quantity}"/>
-                <DataGridTextColumn Header="装料" ElementStyle="{StaticResource StyleTextBlockRightBold}"
+                <DataGridTextColumn Header="单片" ElementStyle="{StaticResource StyleTextBlockRightBold}"
+                                    Binding="{Binding Plan.SingleWeight}"/>
+                <DataGridTextColumn Header="装料" ElementStyle="{StaticResource StyleTextBlockBold}"
                                     Binding="{Binding Plan.FillingRequirement}"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="3" Style="{StaticResource StyleTextBlockBold}" Text="制粉计划"
-                   Background="LightGreen"/>
+                   Background="LightGreen" Margin="0"/>
         <TextBlock Grid.Row="1" Grid.RowSpan="4" Text="{Binding CenterMessage}"
                    Style="{StaticResource StyleTextBlockBig}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGrid}"

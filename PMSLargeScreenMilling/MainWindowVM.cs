@@ -70,6 +70,7 @@ namespace PMSLargeScreen
                 }
                 CenterMessage = string.Empty;
                 Status = $"读取数据正常{CurrentDate.ToShortTimeString()}";
+                ErrorMessage = "";
             }
             catch (Exception ex)
             {
