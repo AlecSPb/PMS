@@ -54,7 +54,7 @@ namespace PMSClient.Helper
             }
             catch (Exception ex)
             {
-                throw ex;
+               
             }
 
         }

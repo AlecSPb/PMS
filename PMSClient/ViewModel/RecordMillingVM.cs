@@ -83,7 +83,6 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
-
                 var sb = new StringBuilder();
                 sb.AppendLine("粉末");
                 sb.AppendLine(model.Composition);

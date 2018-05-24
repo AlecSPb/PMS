@@ -12,9 +12,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -74,8 +74,8 @@
         <DataGrid Grid.Row="4" Style="{StaticResource StyleDataGrid}"
                   ItemsSource="{Binding Millings}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="今日批次" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
-                                    Binding="{Binding PlanBatchNumber}"/>
+                <!--<DataGridTextColumn Header="今日批次" ElementStyle="{StaticResource StyleTextBlockCenterBold}"
+                                    Binding="{Binding PlanBatchNumber}"/>-->
                 <DataGridTextColumn Header="热压编号" ElementStyle="{StaticResource StyleTextBlock}"
                                     Binding="{Binding VHPPlanLot}"/>
                 <DataGridTextColumn Header="内部编号" ElementStyle="{StaticResource StyleTextBlock}"

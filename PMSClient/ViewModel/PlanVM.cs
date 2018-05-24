@@ -146,6 +146,10 @@ namespace PMSClient.ViewModel
         {
             if (model != null)
             {
+                if (model.Plan.PlanDate.Date >= DateTime.Now.Date)
+                {
+                    PMSDialogService.ShowWarning("选择的计划还没有热压，请确认你选择的【计划日期】是否正确？");
+                }
                 //显示提示框给标签打印者
                 StringBuilder basic = new StringBuilder();
                 basic.Append("共");
@@ -175,7 +179,7 @@ namespace PMSClient.ViewModel
 
                 lb.AppendLine(model.Misson.CompositionStandard);
                 lb.Append("模具:");
-                lb.AppendLine(model.Plan.MoldDiameter.ToString()+"mm OD x "+model.Plan.Thickness+"mm");
+                lb.AppendLine(model.Plan.MoldDiameter.ToString() + "mm OD x " + model.Plan.Thickness + "mm");
                 lb.Append("产品:");
                 lb.AppendLine(model.Misson.Dimension);
                 lb.Append("订单:");
