@@ -36,7 +36,7 @@ namespace PMSClient.ViewModel
 
         private void InitializeProperties()
         {
-            SearchCompositoinStandard = "";
+            SearchCompositoinStandard = SearchPMINumber = "";
             MainMaterialNeedExtras = new ObservableCollection<MaterialNeedExtra>();
         }
         private void InitializeCommands()
@@ -120,7 +120,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchCompositoinStandard = "";
+            SearchCompositoinStandard = SearchPMINumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -134,7 +134,7 @@ namespace PMSClient.ViewModel
             PageIndex = 1;
             PageSize = 20;
             var service = new MaterialNeedServiceClient();
-            RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
+            RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard, SearchPMINumber);
             service.Close();
             ActionPaging();
         }
@@ -147,7 +147,7 @@ namespace PMSClient.ViewModel
             skip = (PageIndex - 1) * PageSize;
             take = PageSize;
             var service = new MaterialNeedServiceClient();
-            var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
+            var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard, SearchPMINumber);
             service.Close();
             MainMaterialNeedExtras.Clear();
             result.ToList().ForEach(o => MainMaterialNeedExtras.Add(new MaterialNeedExtra { MaterialNeed = o }));
@@ -168,7 +168,18 @@ namespace PMSClient.ViewModel
             }
         }
 
-
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set
+            {
+                if (searchPMINumber == value)
+                    return;
+                searchPMINumber = value;
+                RaisePropertyChanged(nameof(SearchPMINumber));
+            }
+        }
         private ObservableCollection<MaterialNeedExtra> mainMaterialNeeds;
         public ObservableCollection<MaterialNeedExtra> MainMaterialNeedExtras
         {

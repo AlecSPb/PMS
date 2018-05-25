@@ -29,6 +29,7 @@ namespace PMSClient.ViewModel
         private void InitializeProperties()
         {
             SearchCompositoinStandard = "";
+            SearchPMINumber = "";
             MainMaterialNeeds = new ObservableCollection<DcMaterialNeed>();
         }
         private void InitializeCommands()
@@ -39,7 +40,7 @@ namespace PMSClient.ViewModel
 
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcMaterialNeed>(ActionEdit, CanEdit);
-            Duplicate = new RelayCommand<MainService.DcMaterialNeed>(ActionDuplicate,CanDuplicate);
+            Duplicate = new RelayCommand<MainService.DcMaterialNeed>(ActionDuplicate, CanDuplicate);
 
 
         }
@@ -51,7 +52,7 @@ namespace PMSClient.ViewModel
 
         private void ActionDuplicate(DcMaterialNeed model)
         {
-            if (!PMSDialogService.ShowYesNo("请问","请用确定要复用这条记录吗？"))
+            if (!PMSDialogService.ShowYesNo("请问", "请用确定要复用这条记录吗？"))
             {
                 return;
             }
@@ -94,7 +95,7 @@ namespace PMSClient.ViewModel
 
         private void ActionAll()
         {
-            SearchCompositoinStandard = "";
+            SearchCompositoinStandard = SearchPMINumber = "";
             SetPageParametersWhenConditionChange();
         }
 
@@ -109,7 +110,7 @@ namespace PMSClient.ViewModel
             PageSize = 20;
             using (var service = new MaterialNeedServiceClient())
             {
-                RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard);
+                RecordCount = service.GetMaterialNeedCountBySearch(SearchCompositoinStandard,SearchPMINumber);
             }
             ActionPaging();
         }
@@ -123,7 +124,7 @@ namespace PMSClient.ViewModel
             take = PageSize;
             using (var service = new MaterialNeedServiceClient())
             {
-                var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard);
+                var result = service.GetMaterialNeedBySearchInPage(skip, take, SearchCompositoinStandard, SearchPMINumber);
                 MainMaterialNeeds.Clear();
                 result.ToList().ForEach(o => MainMaterialNeeds.Add(o));
             }
@@ -144,7 +145,18 @@ namespace PMSClient.ViewModel
             }
         }
 
-
+        private string searchPMINumber;
+        public string SearchPMINumber
+        {
+            get { return searchPMINumber; }
+            set
+            {
+                if (searchPMINumber == value)
+                    return;
+                searchPMINumber = value;
+                RaisePropertyChanged(nameof(SearchPMINumber));
+            }
+        }
 
 
 

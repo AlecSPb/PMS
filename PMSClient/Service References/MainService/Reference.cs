@@ -8552,16 +8552,16 @@ namespace PMSClient.MainService {
     public interface IMaterialNeedService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPageResponse")]
-        PMSClient.MainService.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition);
+        PMSClient.MainService.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPage", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedBySearchInPageResponse")]
-        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition);
+        System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearch", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearchResponse")]
-        int GetMaterialNeedCountBySearch(string composition);
+        int GetMaterialNeedCountBySearch(string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearch", ReplyAction="http://tempuri.org/IMaterialNeedService/GetMaterialNeedCountBySearchResponse")]
-        System.Threading.Tasks.Task<int> GetMaterialNeedCountBySearchAsync(string composition);
+        System.Threading.Tasks.Task<int> GetMaterialNeedCountBySearchAsync(string composition, string pminumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaterialNeedService/AddMaterialNeed", ReplyAction="http://tempuri.org/IMaterialNeedService/AddMaterialNeedResponse")]
         int AddMaterialNeed(PMSClient.MainService.DcMaterialNeed model);
@@ -8621,20 +8621,20 @@ namespace PMSClient.MainService {
                 base(binding, remoteAddress) {
         }
         
-        public PMSClient.MainService.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition) {
-            return base.Channel.GetMaterialNeedBySearchInPage(skip, take, composition);
+        public PMSClient.MainService.DcMaterialNeed[] GetMaterialNeedBySearchInPage(int skip, int take, string composition, string pminumber) {
+            return base.Channel.GetMaterialNeedBySearchInPage(skip, take, composition, pminumber);
         }
         
-        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition) {
-            return base.Channel.GetMaterialNeedBySearchInPageAsync(skip, take, composition);
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcMaterialNeed[]> GetMaterialNeedBySearchInPageAsync(int skip, int take, string composition, string pminumber) {
+            return base.Channel.GetMaterialNeedBySearchInPageAsync(skip, take, composition, pminumber);
         }
         
-        public int GetMaterialNeedCountBySearch(string composition) {
-            return base.Channel.GetMaterialNeedCountBySearch(composition);
+        public int GetMaterialNeedCountBySearch(string composition, string pminumber) {
+            return base.Channel.GetMaterialNeedCountBySearch(composition, pminumber);
         }
         
-        public System.Threading.Tasks.Task<int> GetMaterialNeedCountBySearchAsync(string composition) {
-            return base.Channel.GetMaterialNeedCountBySearchAsync(composition);
+        public System.Threading.Tasks.Task<int> GetMaterialNeedCountBySearchAsync(string composition, string pminumber) {
+            return base.Channel.GetMaterialNeedCountBySearchAsync(composition, pminumber);
         }
         
         public int AddMaterialNeed(PMSClient.MainService.DcMaterialNeed model) {

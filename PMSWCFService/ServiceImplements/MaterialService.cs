@@ -225,7 +225,7 @@ namespace PMSWCFService
         }
 
 
-        public List<DcMaterialNeed> GetMaterialNeedBySearchInPage(int skip, int take, string composition)
+        public List<DcMaterialNeed> GetMaterialNeedBySearchInPage(int skip, int take, string composition, string pminumber)
         {
             try
             {
@@ -234,6 +234,7 @@ namespace PMSWCFService
                     var config = new MapperConfiguration(cfg => cfg.CreateMap<MaterialNeed, DcMaterialNeed>());
                     var mapper = config.CreateMapper();
                     var result = dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
+                           && m.PMINumber.Contains(pminumber)
                         && m.State != SimpleState.作废.ToString())
                         .OrderByDescending(m => m.CreateTime)
                         .Skip(skip).Take(take)
@@ -248,13 +249,14 @@ namespace PMSWCFService
             }
         }
 
-        public int GetMaterialNeedCountBySearch(string composition)
+        public int GetMaterialNeedCountBySearch(string composition, string pminumber)
         {
             try
             {
                 using (var dc = new PMSDbContext())
                 {
                     return dc.MaterialNeeds.Where(m => m.Composition.Contains(composition)
+                    && m.PMINumber.Contains(pminumber)
                     && m.State != SimpleState.作废.ToString()).Count();
                 }
             }
