@@ -12,14 +12,28 @@ namespace PMSWCFService.ServiceContracts
     public interface IToolInventoryService
     {
         [OperationContract]
-        IList<DcToolFilling> GetToolFillings(string elementA, string elementB);
+        IList<DcToolFilling> GetToolFillings(int s, int t, string elementA, string elementB);
+        [OperationContract]
+        int GetToolFillingsCount(string elementA, string elementB);
 
         [OperationContract]
-        int GetToolFillingsCount();
+        int AddToolFilling(DcToolFilling model);
+        [OperationContract]
+        int UpdateToolFilling(DcToolFilling model);
+        [OperationContract]
+        int DeleteToolFilling(Guid id);
+
+
 
         [OperationContract]
-        IList<DcToolMilling> GetToolMillings(string elementA, string elementB);
+        IList<DcToolMilling> GetToolMillings(int s,int t,string elementA, string elementB);
         [OperationContract]
-        int GetToolMillingsCount();
+        int GetToolMillingsCount(string elementA, string elementB);
+        [OperationContract]
+        int AddToolMilling(DcToolMilling model);
+        [OperationContract]
+        int UpdateToolMilling(DcToolMilling model);
+        [OperationContract]
+        int DeleteToolMilling(Guid id);
     }
 }

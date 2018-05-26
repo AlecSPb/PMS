@@ -12,17 +12,38 @@ namespace PMSWCFService.ServiceImplements
 {
     public partial class ExtraService : IToolInventoryService
     {
-        public IList<DcToolFilling> GetToolFillings(string elementA, string elementB)
+        public int AddToolFilling(DcToolFilling model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int AddToolMilling(DcToolMilling model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteToolFilling(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DeleteToolMilling(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public IList<DcToolFilling> GetToolFillings(int s, int t, string elementA, string elementB)
         {
             try
             {
                 using (var service = new PMSDbContext())
                 {
-                    var query = from t in service.ToolFillings
-                                where t.CompositionAbbr.Contains(elementA)
-                                && t.CompositionAbbr.Contains(elementB)
-                                orderby t.ToolNumber, t.CompositionAbbr
-                                select t;
+                    var query = from tt in service.ToolFillings
+                                where tt.CompositionAbbr.Contains(elementA)
+                                && tt.CompositionAbbr.Contains(elementB)
+                                orderby tt.ToolNumber, tt.CompositionAbbr
+                                select tt;
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolFilling, DcToolFilling>());
                     return Mapper.Map<List<ToolFilling>, List<DcToolFilling>>(query.ToList());
                 }
@@ -34,7 +55,7 @@ namespace PMSWCFService.ServiceImplements
             }
         }
 
-        public int GetToolFillingsCount()
+        public int GetToolFillingsCount(string elementA, string elementB)
         {
             try
             {
@@ -48,20 +69,19 @@ namespace PMSWCFService.ServiceImplements
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
-
         }
 
-        public IList<DcToolMilling> GetToolMillings(string elementA, string elementB)
+        public IList<DcToolMilling> GetToolMillings(int s, int t, string elementA, string elementB)
         {
             try
             {
                 using (var service = new PMSDbContext())
                 {
-                    var query = from t in service.ToolMillings
-                                where t.CompositionAbbr.Contains(elementA)
-                                && t.CompositionAbbr.Contains(elementB)
-                                orderby t.ToolNumber, t.CompositionAbbr
-                                select t;
+                    var query = from tt in service.ToolMillings
+                                where tt.CompositionAbbr.Contains(elementA)
+                                && tt.CompositionAbbr.Contains(elementB)
+                                orderby tt.ToolNumber, tt.CompositionAbbr
+                                select tt;
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolMilling, DcToolMilling>());
                     return Mapper.Map<List<ToolMilling>, List<DcToolMilling>>(query.ToList());
                 }
@@ -73,7 +93,7 @@ namespace PMSWCFService.ServiceImplements
             }
         }
 
-        public int GetToolMillingsCount()
+        public int GetToolMillingsCount(string elementA, string elementB)
         {
             try
             {
@@ -87,7 +107,16 @@ namespace PMSWCFService.ServiceImplements
                 LocalService.CurrentLog.Error(ex);
                 throw ex;
             }
+        }
 
+        public int UpdateToolFilling(DcToolFilling model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateToolMilling(DcToolMilling model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
