@@ -118,5 +118,9 @@ namespace PMSDAL
         public DbSet<Notice> Notices { get; set; }
 
         public DbSet<ToDo> ToDoes { get; set; }
+
+        //Tool Inventory
+        public DbSet<ToolMilling> ToolMillings { get; set; }
+        public DbSet<ToolFilling> ToolFillings { get; set; }
     }
 }

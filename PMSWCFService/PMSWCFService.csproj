@@ -148,6 +148,8 @@
     <Compile Include="DataContracts\DcToDo.cs" />
     <Compile Include="DataContracts\Model\PMSReadyOutMaterialModelRaw.cs" />
     <Compile Include="DataContracts\Model\PMSReadyOutMaterialModel.cs" />
+    <Compile Include="DataContracts\DcToolFilling.cs" />
+    <Compile Include="DataContracts\DcToolMilling.cs" />
     <Compile Include="Log\LocalService.cs" />
     <Compile Include="Log\LogService.cs" />
     <Compile Include="DataContracts\DcOutSource.cs" />
@@ -160,6 +162,7 @@
     <Compile Include="ServiceContracts\IPMSIndexService.cs" />
     <Compile Include="ServiceContracts\ITaskPlanService.cs" />
     <Compile Include="ServiceContracts\IToDoService.cs" />
+    <Compile Include="ServiceContracts\IToolInventoryService.cs" />
     <Compile Include="ServiceImplements\ComplexQueryService.cs" />
     <Compile Include="ServiceImplements\ExtraService.cs" />
     <Compile Include="ServiceContracts\ICheckListService.cs" />
@@ -216,6 +219,7 @@
     <Compile Include="ServiceImplements\RecordVHPService.cs" />
     <Compile Include="ServiceImplements\SanjieService.cs" />
     <Compile Include="ServiceImplements\StatisticService.cs" />
+    <Compile Include="ServiceImplements\ToolInventoryService.cs" />
     <Compile Include="ServiceImplements\UserAccessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataContracts\DcOrder.cs" />
