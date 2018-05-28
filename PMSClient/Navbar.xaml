@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="PMSClient.Navbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient"
+             mc:Ignorable="d" d:DesignWidth="800">
+    <Grid  Background="LightBlue" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition  Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <Button Content="{StaticResource PageNaivgationWorkFlow}" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding GoToNavigationWorkFlow}"/>
+            <Button Content="{StaticResource ButtonImportantCode}" Style="{StaticResource StyleButtonCommonNarrow}"
+                       Command="{Binding ImportantCode}" />
+            <Button Content="{StaticResource ButtonLaserRule}" Style="{StaticResource StyleButtonCommonNarrow}"
+                       Command="{Binding LaserRule}" />
+            <Button Content="{StaticResource ButtonCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Command="{Binding CodeRule}"/>
+            <Button  Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Help}"
+                         Content="{StaticResource ButtonHelp}"/>
+            <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Command="{Binding ToDoList}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <Image Source="Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>
+            <TextBlock  Style="{StaticResource StyleTextBlockCommon}"
+                       Text="{StaticResource TxtWelcome}"/>
+            <TextBlock Text="{Binding CurrentUserInformation}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
+            <Button Content="{StaticResource ButtonLogOut}" Style="{StaticResource StyleButtonCommonNarrow}"
+                        Command="{Binding LogOut}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

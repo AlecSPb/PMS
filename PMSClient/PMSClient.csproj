@@ -241,6 +241,9 @@
     <Compile Include="CustomControls\PMSMessageBox.xaml.cs">
       <DependentUpon>PMSMessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Navbar.xaml.cs">
+      <DependentUpon>Navbar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
     <Compile Include="Helpers\OK\PMSDialogService.cs" />
@@ -789,6 +792,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="CustomControls\PMSMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Navbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
