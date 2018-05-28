@@ -443,6 +443,9 @@
     <Compile Include="View\RecordHistoryComparation.xaml.cs">
       <DependentUpon>RecordHistoryComparation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RecordTestWindow.xaml.cs">
+      <DependentUpon>RecordTestWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ToDoEditView.xaml.cs">
       <DependentUpon>ToDoEditView.xaml</DependentUpon>
     </Compile>
@@ -920,6 +923,10 @@
     <Page Include="View\RecordHistoryComparation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RecordTestWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ToDoEditView.xaml">
       <Generator>MSBuild:Compile</Generator>
