@@ -244,6 +244,7 @@
     <Compile Include="Navbar.xaml.cs">
       <DependentUpon>Navbar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NavbarVM.cs" />
     <Compile Include="PMSHelper.cs" />
     <Compile Include="Helpers\OK\LogInformation.cs" />
     <Compile Include="Helpers\OK\PMSDialogService.cs" />
@@ -353,6 +354,9 @@
     </Compile>
     <Compile Include="Tool\LabelOutPutVM.cs" />
     <Compile Include="Tool\MaterialNeedCalcualtionVM.cs" />
+    <Compile Include="Tool\MaterialNeedCalculationWindow.xaml.cs">
+      <DependentUpon>MaterialNeedCalculationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tool\MaterialNeedCalculationView.xaml.cs">
       <DependentUpon>MaterialNeedCalculationView.xaml</DependentUpon>
     </Compile>
@@ -875,6 +879,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Tool\MaterialNeedCalculationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Tool\MaterialNeedCalculationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1292,6 +1300,9 @@
     <Resource Include="Note\新料查询.txt" />
     <Resource Include="ReportsHelper\这个地方以后要重构.txt" />
     <Content Include="Documents\keycodeInformaton.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="login.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\Files\CodeRule.docx">

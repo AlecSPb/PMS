@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,18 +13,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PMSClient.BasicService;
 
-namespace PMSClient
+namespace PMSClient.Tool
 {
     /// <summary>
-    /// Navbar.xaml 的交互逻辑
+    /// MaterialNeedCalculation.xaml 的交互逻辑
     /// </summary>
-    public partial class Navbar : UserControl
+    public partial class MaterialNeedCalculationWindow : Window
     {
-        public Navbar()
+        public MaterialNeedCalculationWindow()
         {
             InitializeComponent();
-            this.DataContext = new NavbarVM();
         }
+
     }
 }

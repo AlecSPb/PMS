@@ -1,0 +1,105 @@
+﻿<Window x:Class="PMSClient.Tool.MaterialNeedCalculationWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PMSClient.Tool"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             Title="原料需求计算"
+             Height="600" Width="600"
+             DataContext="{Binding Source={StaticResource ToolLocator},Path=MaterialNeedCalcualtion}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="原料需求计算"/>
+        <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
+            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" DataContext="{Binding CurrentCalculationItem}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="材料密度" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtDensity" Style="{StaticResource StyleTextBoxCommon}"
+                             Text="{Binding DataContext.CurrentDensity,
+                                RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="单位：(g/cm3)，重新选择密度会导致结果列表框清空" Style="{StaticResource StyleTextBlockTip}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="模具内径" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox x:Name="txtInnerDiameter" Grid.Row="1" Grid.Column="1" Text="{Binding Diameter}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="单位：(mm)，从左侧模具列表中选择，也可以直接输入" Style="{StaticResource StyleTextBlockTip}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="毛坯厚度" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="单位：(mm)" Style="{StaticResource StyleTextBlockTip}"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="毛坯数量" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Quantity}" Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="单位：个" Style="{StaticResource StyleTextBlockTip}"/>
+
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="重量损耗" Style="{StaticResource StyleTextBlockCommon}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding WeightLoss}"  Style="{StaticResource StyleTextBoxCommon}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="单位：(g)，指的是这次添加计算的损耗" Style="{StaticResource StyleTextBlockTip}"/>
+
+                </Grid>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" >
+                    <Button Content="添加" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
+                </StackPanel>
+                <DataGrid Grid.Row="2" ItemsSource="{Binding CalculationItems}" Style="{StaticResource StyleDataGridCommon}">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="操作">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="删除" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.Delete,RelativeSource={RelativeSource AncestorType=Window,Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="模具内径" Binding="{Binding Diameter}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                        <DataGridTextColumn Header="毛坯厚度" Binding="{Binding Thickness}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                        <DataGridTextColumn Header="毛坯数量" Binding="{Binding Quantity}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                        <DataGridTextColumn Header="重量损耗" Binding="{Binding WeightLoss}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                        <DataGridTextColumn Header="所需重量" Binding="{Binding Weight,StringFormat={}{0:F2}}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Grid.Row="3"  Orientation="Horizontal">
+                    <TextBlock Text="{Binding TotalWeight,StringFormat='总重量:{0:F2}g'}" Style="{StaticResource StyleTextBlockCommon}" Foreground="Orange" FontSize="35"/>
+                </StackPanel>
+            </Grid>
+
+
+
+        </Grid>
+    </Grid>
+</Window>

@@ -10,16 +10,18 @@
         Height="600" Width="1000" WindowState="Maximized" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Border Background="LightBlue">
-            <local:Navbar/>
-        </Border>
-        <Border Grid.Row="1">
+        <Border Grid.Row="0">
             <ContentControl x:Name="mainArea"/>
         </Border>
+        <!--快捷工具栏-->
+        <Grid Grid.Row="1" Background="LightBlue">
+            <local:Navbar/>
+        </Grid>
+        <!--状态栏-->
         <Grid Grid.Row="2"  Background="{StaticResource BGBrushStatusBar}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
