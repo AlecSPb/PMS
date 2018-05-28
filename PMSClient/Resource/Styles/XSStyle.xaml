@@ -176,6 +176,9 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="80"/>
     </Style>
+    <Style x:Key="StyleButtonCommonNarrow" TargetType="Button" BasedOn="{StaticResource StyleButtonCommon}">
+        <Setter Property="MinWidth" Value="50"/>
+    </Style>
     <Style x:Key="StyleButton" TargetType="Button" BasedOn="{StaticResource btnBase}">
         <Setter Property="Margin" Value="{StaticResource ThicknessSM}"/>
         <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
