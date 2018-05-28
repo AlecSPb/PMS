@@ -8,6 +8,8 @@
              mc:Ignorable="d" 
              Title="原料需求计算"
              Height="600" Width="600"
+             WindowStartupLocation="CenterScreen"
+             WindowStyle="ToolWindow"
              DataContext="{Binding Source={StaticResource ToolLocator},Path=MaterialNeedCalcualtion}">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,7 +19,7 @@
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource StyleTextBlockPageTitle}" Text="原料需求计算"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Save}"/>
+            <TextBlock Text="请按照下面的参数进行计算" Style="{StaticResource StyleTextBlockNavigationBar}"/>
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

@@ -1794,7 +1794,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Documents\updates.txt">
+    <Content Include="updates.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="Resource\DocTemplate\Attention.txt" />

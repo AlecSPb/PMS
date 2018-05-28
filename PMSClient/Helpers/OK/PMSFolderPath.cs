@@ -15,5 +15,12 @@ namespace PMSClient
                 return System.IO.Path.Combine(Environment.CurrentDirectory, "Documents");
             }
         }
+        public static string Roots
+        {
+            get
+            {
+                return Environment.CurrentDirectory;
+            }
+        }
     }
 }

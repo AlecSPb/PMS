@@ -5,22 +5,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient"
              mc:Ignorable="d" d:DesignWidth="800">
-    <StackPanel  Orientation="Horizontal" Background="LightBlue">
-        <Button Content="装料计算" Style="{StaticResource StyleButtonCommonNarrow}"
+    <Border BorderBrush="Blue" BorderThickness="1" Margin="1">
+        <StackPanel  Orientation="Horizontal" Background="LightBlue">
+            <TextBlock Text="工具" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="装料计算" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding MaterialNeedCalculator}"/>
-        <Button Content="配料计算" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="配料计算" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding}"/>
-        <Button Content="编号" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
-        <Button Content="标刻" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
-        <Button Content="编码" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
-        <Button Content="综合查询" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="查询" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding IntergratedSearch}"/>
-        <Button Content="软件帮助" Style="{StaticResource StyleButtonCommonNarrow}"
+            <TextBlock Text="信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="帮助" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding}"/>
-        <Button Content="软件更新" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="更新" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding}"/>
-    </StackPanel>
+            <Button Content="编号" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding}"/>
+            <Button Content="标刻" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding}"/>
+            <Button Content="编码" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding}"/>
+        </StackPanel>
+    </Border>
 </UserControl>

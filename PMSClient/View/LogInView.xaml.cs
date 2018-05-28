@@ -96,7 +96,7 @@ namespace PMSClient.View
         {
             try
             {
-                var updateFile = System.IO.Path.Combine(PMSFolderPath.Documents, "updates.txt");
+                var updateFile = System.IO.Path.Combine(PMSFolderPath.Roots, "updates.txt");
                 if (System.IO.File.Exists(updateFile))
                 {
                     txtUpdate.Text = System.IO.File.ReadAllText(updateFile);
