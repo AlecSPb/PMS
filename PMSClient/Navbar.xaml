@@ -8,10 +8,12 @@
     <Border BorderBrush="Blue" BorderThickness="1" Margin="1">
         <StackPanel  Orientation="Horizontal" Background="LightBlue">
             <TextBlock Text="工具" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <Button Content="装料计算" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="装料" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding MaterialNeedCalculator}"/>
-            <Button Content="配料计算" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
+            <Button Content="压力" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding PressureTool}"/>
+            <Button Content="归一" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding ToOne}"/>
             <Button Content="查询" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding IntergratedSearch}"/>
             <TextBlock Text="信息" Style="{StaticResource StyleDGTextBlockCommon}"/>

@@ -38,12 +38,12 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="250"/>
-                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="200"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dg" Grid.Row="0"  LoadingRow="DataGrid_LoadingRow"
-                Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanWithMissons}">
+                <DataGrid x:Name="dg" Grid.Row="0"  LoadingRow="DataGrid_LoadingRow" Style="{StaticResource StyleDataGridCommon}"
+                          ItemsSource="{Binding PlanWithMissons}" FrozenColumnCount="3">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
                             <i:InvokeCommandAction Command="{Binding DataContext.SelectionChanged,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" CommandParameter="{Binding ElementName=dg,Path=SelectedItem}"/>
@@ -185,7 +185,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock  Grid.Column="0" Name="txtCurrentTime" Text="现在时间: 21:24:33" Style="{StaticResource StyleTextBlockCommon}"
+                        <TextBlock  Grid.Column="0" Name="txtCurrentTime" Text="现在时间: 2018-05-16 21:24:33" Style="{StaticResource StyleTextBlockCommon}"
                        FontWeight="Bold"  Foreground="Blue" FontSize="20"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding DataContext.EditStatus,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}" 

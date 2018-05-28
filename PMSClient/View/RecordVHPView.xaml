@@ -41,7 +41,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <DataGrid x:Name="dg" SelectedIndex="0" LoadingRow="DataGrid_LoadingRow"
                 Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding PlanWithMissons}">

@@ -71,10 +71,5 @@ namespace PMSClient.View
 
         }
 
-        private void BtnComplexQuery_Click(object sender, RoutedEventArgs e)
-        {
-            ComplexQueryTool tool = new ComplexQueryTool();
-            tool.Show();
-        }
     }
 }

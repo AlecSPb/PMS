@@ -27,9 +27,21 @@ namespace PMSClient
                   var tool = new Tool.MaterialNeedCalculationWindow();
                   tool.Show();
               });
+            ToOne = new RelayCommand(() =>
+              {
+                  var tool = new ToolWindow.CompositionToOne();
+                  tool.Show();
+              });
+            PressureTool = new RelayCommand(() =>
+              {
+                  var tool = new ToolWindow.PressureChangeTool();
+                  tool.Show();
+              });
         }
 
         public RelayCommand IntergratedSearch { get; set; }
         public RelayCommand MaterialNeedCalculator { get; set; }
+        public RelayCommand ToOne { get; set; }
+        public RelayCommand PressureTool { get; set; }
     }
 }

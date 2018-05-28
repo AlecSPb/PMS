@@ -50,9 +50,10 @@
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="材料密度" Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtDensity" Style="{StaticResource StyleTextBoxCommon}"
                              Text="{Binding DataContext.CurrentDensity,
-                                RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"/>
+                                RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                             Background="LightGreen"/>
 
-                    <TextBlock Grid.Row="0" Grid.Column="2" Text="单位：(g/cm3)，重新选择密度会导致结果列表框清空" Style="{StaticResource StyleTextBlockTip}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="单位：(g/cm3),同一批计算密度要一样" Style="{StaticResource StyleTextBlockTip}"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="模具内径" Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox x:Name="txtInnerDiameter" Grid.Row="1" Grid.Column="1" Text="{Binding Diameter}" Style="{StaticResource StyleTextBoxCommon}"/>
