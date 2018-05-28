@@ -75,6 +75,8 @@
 
                 <DataGridTextColumn Header="{StaticResource MOOrderPO}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.OrderPO}"/>
+                <DataGridTextColumn Header="{StaticResource MOIUnitPrice}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                                    Binding="{Binding MaterialOrderItem.UnitPrice,StringFormat=￥{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource MOSupplier}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding MaterialOrder.Supplier}"/>
                 <DataGridTextColumn Header="{StaticResource MOIDeliveryDate}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
