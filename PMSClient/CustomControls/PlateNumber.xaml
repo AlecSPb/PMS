@@ -22,8 +22,8 @@
             <ComboBox Name="cboNumbers"  Style="{StaticResource StyleComboBoxCommon}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Name="btnNo" Content="添加单个" Style="{StaticResource StyleButtonCommon}" Click="btnNo_Click"/>
-            <Button Name="btnYes" Content="数量确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"/>
+            <Button Name="btnNo" Content="只添加单块" Style="{StaticResource StyleButtonCommon}" Click="btnNo_Click"/>
+            <Button Name="btnYes" Content="添加指定数量" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"/>
         </StackPanel>
     </Grid>
 </Window>

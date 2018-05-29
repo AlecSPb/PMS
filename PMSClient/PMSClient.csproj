@@ -252,6 +252,7 @@
     <Compile Include="Helpers\MsgObject.cs" />
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
+    <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\StringUtil.cs" />
     <Compile Include="ReportsHelper\WordBondingSheet.cs" />

@@ -28,7 +28,8 @@
 
         <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="背板"/>
-        <TextBox Name="txtPlateNumber"  Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"/>
+        <TextBox Name="txtPlateNumber"  Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"
+                 FontSize="20"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="缺陷"/>

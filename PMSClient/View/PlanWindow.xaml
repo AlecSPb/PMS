@@ -9,6 +9,7 @@
              xmlns:vm="clr-namespace:PMSClient.ViewModel"
              Language="zh-cn"
              mc:Ignorable="d" 
+             Title="计划窗口"
              d:DesignHeight="600" d:DesignWidth="1000"
             DataContext="{Binding Source={StaticResource Locator},Path=Plan}">
     <Grid Background="{StaticResource BGBrushWindow}">
