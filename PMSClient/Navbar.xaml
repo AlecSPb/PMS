@@ -16,17 +16,16 @@
                 Command="{Binding ToOne}"/>
             <Button Content="查询" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding IntergratedSearch}"/>
+            
             <TextBlock Text="信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="帮助" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
+                Command="{Binding HelpInfo}"/>
             <Button Content="更新" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
+                Command="{Binding UpdateInfo}"/>
             <Button Content="编号" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
+                Command="{Binding CodeRule}"/>
             <Button Content="标刻" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
-            <Button Content="编码" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding}"/>
+                Command="{Binding LaserRule}"/>
         </StackPanel>
     </Border>
 </UserControl>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,31 +18,108 @@ namespace PMSClient
 
         private void initializeCommands()
         {
+            #region Tool
             IntergratedSearch = new RelayCommand(() =>
-              {
-                  var tool = new ToolWindow.ComplexQueryTool();
-                  tool.Show();
-              });
+            {
+                var tool = new ToolWindow.ComplexQueryTool();
+                tool.Show();
+            });
             MaterialNeedCalculator = new RelayCommand(() =>
-              {
-                  var tool = new Tool.MaterialNeedCalculationWindow();
-                  tool.Show();
-              });
+            {
+                var tool = new Tool.MaterialNeedCalculationWindow();
+                tool.Show();
+            });
             ToOne = new RelayCommand(() =>
-              {
-                  var tool = new ToolWindow.CompositionToOne();
-                  tool.Show();
-              });
+            {
+                var tool = new ToolWindow.CompositionToOne();
+                tool.Show();
+            });
             PressureTool = new RelayCommand(() =>
+            {
+                var tool = new ToolWindow.PressureChangeTool();
+                tool.Show();
+            });
+            #endregion
+            #region Info
+            HelpInfo = new RelayCommand(() =>
+            {
+                try
+                {
+                    string helpFileName = "";
+                    if (PMSHelper.Language == "zh-cn")
+                    {
+                        helpFileName = "pmshelp_ch.pptx";
+                    }
+                    else
+                    {
+                        helpFileName = "pmshelp_en.pptx";
+                    }
+
+                    string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                    if (File.Exists(helpFile))
+                    {
+                        System.Diagnostics.Process.Start(helpFile);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    PMSHelper.CurrentLog.Error(ex);
+                }
+
+            });
+            CodeRule = new RelayCommand(() =>
               {
-                  var tool = new ToolWindow.PressureChangeTool();
-                  tool.Show();
+                  try
+                  {
+                      string helpFileName = "CodeRule.docx";
+                      string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                      if (File.Exists(helpFile))
+                      {
+                          System.Diagnostics.Process.Start(helpFile);
+                      }
+                  }
+                  catch (Exception ex)
+                  {
+                      PMSHelper.CurrentLog.Error(ex);
+                  }
               });
+            LaserRule = new RelayCommand(() =>
+              {
+                  try
+                  {
+                      string helpFileName = "LaserRule.docx";
+                      string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                      if (File.Exists(helpFile))
+                      {
+                          System.Diagnostics.Process.Start(helpFile);
+                      }
+                  }
+                  catch (Exception ex)
+                  {
+                      PMSHelper.CurrentLog.Error(ex);
+                  }
+              });
+            UpdateInfo = new RelayCommand(() =>
+              {
+                  var updateFile = System.IO.Path.Combine(PMSFolderPath.Roots, "updates.txt");
+                  if (System.IO.File.Exists(updateFile))
+                  {
+                      var win = new ToolWindow.PlainTextWindow();
+                      win.Title = "更新";
+                      win.ContentText = System.IO.File.ReadAllText(updateFile);
+                      win.ShowDialog();
+                  }
+              });
+            #endregion
         }
 
         public RelayCommand IntergratedSearch { get; set; }
         public RelayCommand MaterialNeedCalculator { get; set; }
         public RelayCommand ToOne { get; set; }
         public RelayCommand PressureTool { get; set; }
+        public RelayCommand HelpInfo { get; set; }
+        public RelayCommand UpdateInfo { get; set; }
+        public RelayCommand LaserRule { get; set; }
+        public RelayCommand CodeRule { get; set; }
     }
 }
