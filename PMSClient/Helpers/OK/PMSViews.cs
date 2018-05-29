@@ -105,6 +105,10 @@ namespace PMSClient
         Debug,
         History,
         ToDo,
-        ToDoEdit
+        ToDoEdit,
+        FillingTool,
+        FillingToolEdit,
+        MillingTool,
+        MillingToolEdit
     }
 }

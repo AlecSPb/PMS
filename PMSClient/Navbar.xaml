@@ -5,8 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient"
              mc:Ignorable="d" d:DesignWidth="800">
-    <Border BorderBrush="Blue" BorderThickness="1" Margin="1">
-        <StackPanel  Orientation="Horizontal" Background="LightBlue">
+    <Border>
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0 0" EndPoint="1 0">
+                <GradientStop Color="LightBlue"/>
+                <GradientStop Color="Blue" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <StackPanel  Orientation="Horizontal">
             <TextBlock Text="工具" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="装料" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding MaterialNeedCalculator}"/>

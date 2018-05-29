@@ -14,7 +14,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <TextBlock Text="{StaticResource PageFeedBackEdit}" Style="{StaticResource StyleTextBlockPageTitle}"/>
+            <TextBlock Text="装料工具索引编辑" Style="{StaticResource StyleTextBlockPageTitle}"/>
             <TextBlock Text="{Binding NewOrEditIndicator}" Style="{StaticResource StyleTextBlockPageTitle}" Foreground="Blue"/>
         </StackPanel>
 
@@ -51,19 +51,21 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource FTCompositionAbbr}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
                 <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
-
+                <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
+                           Text="成分缩写，比如CuInGaSe"/>
+                
+                
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FTToolNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ToolNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
-                           Text="成分"/>
+                           Text="工具序号，按照次序，不能重复"/>
+                
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource FTRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="2" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
-                           Text=""/>
+                           Text="可以填写一些备注信息"/>
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource FTState}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

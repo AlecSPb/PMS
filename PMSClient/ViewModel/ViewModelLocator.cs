@@ -141,8 +141,28 @@ namespace PMSClient.ViewModel
 
             SimpleIoc.Default.Register<ToDoVM>();
             SimpleIoc.Default.Register<ToDoEditVM>();
+
+            SimpleIoc.Default.Register<FillingToolVM>();
+            SimpleIoc.Default.Register<FillingToolEditVM>();
+
+
         }
         #region Properties
+        public FillingToolVM FillingTool
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<FillingToolVM>();
+            }
+        }
+        public FillingToolEditVM FillingToolEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<FillingToolEditVM>();
+            }
+        }
+
         public ToDoVM ToDo
         {
             get { return SimpleIoc.Default.GetInstance<ToDoVM>(); }

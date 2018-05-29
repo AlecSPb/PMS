@@ -128,9 +128,29 @@ namespace PMSClient.View
             SimpleIoc.Default.Register<ToDoView>();
             SimpleIoc.Default.Register<ToDoEditView>();
 
+
+            SimpleIoc.Default.Register<FillingToolView>();
+            SimpleIoc.Default.Register<FillingToolEditView>();
+
         }
 
         #region NavigationProperties
+
+        public FillingToolView FillingTool
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<FillingToolView>();
+            }
+        }
+        public FillingToolEditView FillingToolEdit
+        {
+            get
+            {
+                return SimpleIoc.Default.GetInstance<FillingToolEditView>();
+            }
+        }
+
         public ToDoView ToDo
         {
             get { return SimpleIoc.Default.GetInstance<ToDoView>(); }

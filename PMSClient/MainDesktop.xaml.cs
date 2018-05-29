@@ -464,6 +464,16 @@ namespace PMSClient
                 case PMSViews.ToDoEdit:
                     NavigateTo(_views.ToDoEdit);
                     break;
+                case PMSViews.FillingTool:
+                    NavigateTo(_views.FillingTool);
+                    break;
+                case PMSViews.FillingToolEdit:
+                    NavigateTo(_views.FillingToolEdit);
+                    break;
+                case PMSViews.MillingTool:
+                    break;
+                case PMSViews.MillingToolEdit:
+                    break;
                 case PMSViews.History:
                     //TODO:实现历史页面导航
                     break;

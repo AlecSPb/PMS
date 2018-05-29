@@ -371,6 +371,8 @@
     <Compile Include="Tool\ToolViewModelLocator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModelStatistic.cs" />
+    <Compile Include="ViewModel\FillingToolEditVM.cs" />
+    <Compile Include="ViewModel\FillingToolVM.cs" />
     <Compile Include="ViewModel\ToDoEditVM.cs" />
     <Compile Include="ViewModel\ToDoVM.cs" />
     <Compile Include="ViewModel\IntegretedSearchVM.cs" />
