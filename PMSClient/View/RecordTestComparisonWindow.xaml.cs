@@ -21,9 +21,9 @@ namespace PMSClient.View
     /// <summary>
     /// ProductView.xaml 的交互逻辑
     /// </summary>
-    public partial class RecordTestWindow : Window
+    public partial class RecordTestComparisonWindow : Window
     {
-        public RecordTestWindow()
+        public RecordTestComparisonWindow()
         {
             InitializeComponent();
         }

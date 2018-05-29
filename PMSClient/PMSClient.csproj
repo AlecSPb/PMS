@@ -444,14 +444,20 @@
     <Compile Include="View\CheckListEditView.xaml.cs">
       <DependentUpon>CheckListEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FillingToolEditView.xaml.cs">
+      <DependentUpon>FillingToolEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FillingToolView.xaml.cs">
+      <DependentUpon>FillingToolView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MaterialInventoryInUnCompletedWindow.xaml.cs">
       <DependentUpon>MaterialInventoryInUnCompletedWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RecordHistoryComparation.xaml.cs">
       <DependentUpon>RecordHistoryComparation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\RecordTestWindow.xaml.cs">
-      <DependentUpon>RecordTestWindow.xaml</DependentUpon>
+    <Compile Include="View\RecordTestComparisonWindow.xaml.cs">
+      <DependentUpon>RecordTestComparisonWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ToDoEditView.xaml.cs">
       <DependentUpon>ToDoEditView.xaml</DependentUpon>
@@ -931,6 +937,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\FillingToolEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FillingToolView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MaterialInventoryInUnCompletedWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -939,7 +953,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\RecordTestWindow.xaml">
+    <Page Include="View\RecordTestComparisonWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

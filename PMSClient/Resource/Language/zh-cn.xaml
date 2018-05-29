@@ -824,7 +824,23 @@
     <sys:String x:Key="TDRemark">备注信息</sys:String>
     <sys:String x:Key="TDProgress">进度进程</sys:String>
     <sys:String x:Key="TDType">类型</sys:String>
-    
+    <!--FillingTool-->
+    <sys:String x:Key="FTCreateTime">创建时间</sys:String>
+    <sys:String x:Key="FTCreator">创建者</sys:String>
+    <sys:String x:Key="FTState">状态</sys:String>
+    <sys:String x:Key="FTToolNumber">工具序号</sys:String>
+    <sys:String x:Key="FTCompositionAbbr">成分缩写</sys:String>
+    <sys:String x:Key="FTRemark">备注</sys:String>
+    <!--MillingTool-->
+    <sys:String x:Key="MTCreateTime">创建时间</sys:String>
+    <sys:String x:Key="MTCreator">创建者</sys:String>
+    <sys:String x:Key="MTState">状态</sys:String>
+    <sys:String x:Key="MTToolNumber">工具序号</sys:String>
+    <sys:String x:Key="MTCompositionAbbr">成分缩写</sys:String>
+    <sys:String x:Key="MTRemark">备注</sys:String>
+
+
+
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">
         注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范

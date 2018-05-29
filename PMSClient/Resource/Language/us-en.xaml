@@ -825,7 +825,20 @@
     <sys:String x:Key="TDProgress">Progress</sys:String>
     <sys:String x:Key="TDType">Type</sys:String>
 
-
+    <!--FillingTool-->
+    <sys:String x:Key="FTCreateTime">Create Time</sys:String>
+    <sys:String x:Key="FTCreator">Creator</sys:String>
+    <sys:String x:Key="FTState">State</sys:String>
+    <sys:String x:Key="FTToolNumber">Tool Number</sys:String>
+    <sys:String x:Key="FTCompositionAbbr">Composition Abbr</sys:String>
+    <sys:String x:Key="FTRemark">Remark</sys:String>
+    <!--MillingTool-->
+    <sys:String x:Key="MTCreateTime">Create Time</sys:String>
+    <sys:String x:Key="MTCreator">Creator</sys:String>
+    <sys:String x:Key="MTState">State</sys:String>
+    <sys:String x:Key="MTToolNumber">Tool Number</sys:String>
+    <sys:String x:Key="MTCompositionAbbr">Composition Abbr</sys:String>
+    <sys:String x:Key="MTRemark">Remark</sys:String>
 
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">

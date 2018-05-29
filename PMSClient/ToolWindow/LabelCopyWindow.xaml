@@ -26,7 +26,7 @@
             </StackPanel>
             <Button Name="btnCloseIt" Click="btnCloseIt_Click" Content="关闭"  Style="{StaticResource StyleButtonCommon}" Grid.Column="1"/>
         </Grid>
-        <TextBox Grid.Row="1"  TextWrapping="WrapWithOverflow" VerticalScrollBarVisibility="Visible" 
+        <TextBox Grid.Row="1"  TextWrapping="WrapWithOverflow" 
                  Text="{Binding LabelInformation }" FontSize="18"/>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BasicInformation}" VerticalScrollBarVisibility="Visible"
                  FontSize="18" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
