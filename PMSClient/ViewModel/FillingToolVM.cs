@@ -20,6 +20,40 @@ namespace PMSClient.ViewModel
         private void Intialize()
         {
             SearchElementA = SearchElementB = "";
+            Add = new RelayCommand(ActionAdd, CanAdd);
+            Edit = new RelayCommand<DcToolFilling>(ActionEdit, CanEdit);
+            Search = new RelayCommand(ActionSearch);
+            All = new RelayCommand(ActionAll);
+        }
+
+        private void ActionAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionSearch()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanEdit(DcToolFilling arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionEdit(DcToolFilling obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanAdd()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ActionAdd()
+        {
+            throw new NotImplementedException();
         }
 
         #region 属性
@@ -52,6 +86,10 @@ namespace PMSClient.ViewModel
             }
         }
         public ObservableCollection<DcToolFilling> ToolFillings { get; set; }
+        #endregion
+        #region 命令
+        public RelayCommand Add { get; set; }
+        public RelayCommand<DcToolFilling> Edit { get; set; }
         #endregion
 
     }
