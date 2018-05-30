@@ -1339,6 +1339,12 @@
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcToDo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcToolFilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExtraService\PMSClient.ExtraService.DcToolMilling.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\MainService\PMSClient.MainService.DcOrderHistory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

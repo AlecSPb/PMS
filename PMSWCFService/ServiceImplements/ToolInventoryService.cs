@@ -8,7 +8,7 @@ using PMSDAL;
 using AutoMapper;
 
 
-namespace PMSWCFService.ServiceImplements
+namespace PMSWCFService
 {
     public partial class ExtraService : IToolInventoryService
     {
