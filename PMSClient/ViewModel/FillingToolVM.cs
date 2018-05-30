@@ -19,7 +19,7 @@ namespace PMSClient.ViewModel
 
         private void Intialize()
         {
-            SearchElementA = SearchElementB = "";
+            searchElementA = searchElementB = "";
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcToolFilling>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);

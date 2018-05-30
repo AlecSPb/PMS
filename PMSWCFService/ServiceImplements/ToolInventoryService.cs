@@ -14,22 +14,84 @@ namespace PMSWCFService
     {
         public int AddToolFilling(DcToolFilling model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcToolFilling, ToolFilling>());
+                using (var db = new PMSDbContext())
+                {
+                    var entity = Mapper.Map<ToolFilling>(model);
+                    db.ToolFillings.Add(entity);
+                    result = db.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int AddToolMilling(DcToolMilling model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcToolMilling, ToolMilling>());
+                using (var db = new PMSDbContext())
+                {
+                    var entity = Mapper.Map<ToolMilling>(model);
+                    db.ToolMillings.Add(entity);
+                    result = db.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int DeleteToolFilling(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int result = 0;
+                using (var db = new PMSDbContext())
+                {
+                    var entity = db.ToolFillings.Find(id);
+                    db.ToolFillings.Remove(entity);
+                    result = db.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int DeleteToolMilling(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int result = 0;
+                using (var db = new PMSDbContext())
+                {
+                    var entity = db.ToolMillings.Find(id);
+                    db.ToolMillings.Remove(entity);
+                    result = db.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
 
@@ -111,12 +173,44 @@ namespace PMSWCFService
 
         public int UpdateToolFilling(DcToolFilling model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcToolFilling, ToolFilling>());
+                using (var db = new PMSDbContext())
+                {
+                    var entity = Mapper.Map<ToolFilling>(model);
+                    db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    result = db.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
 
         public int UpdateToolMilling(DcToolMilling model)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int result = 0;
+                Mapper.Initialize(cfg => cfg.CreateMap<DcToolMilling, ToolMilling>());
+                using (var db = new PMSDbContext())
+                {
+                    var entity = Mapper.Map<ToolMilling>(model);
+                    db.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                    result = db.SaveChanges();
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
         }
     }
 }
