@@ -19,8 +19,6 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{StaticResource PageFillingTool}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
-            <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
-                    Command="{Binding GoToNavigation}"/>
             <TextBlock Text="元素A" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchElementA,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
