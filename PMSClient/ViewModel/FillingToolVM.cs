@@ -20,6 +20,7 @@ namespace PMSClient.ViewModel
         private void Intialize()
         {
             searchElementA = searchElementB = "";
+            ToolFillings = new ObservableCollection<DcToolFilling>();
 
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcToolFilling>(ActionEdit, CanEdit);
@@ -29,6 +30,11 @@ namespace PMSClient.ViewModel
             SetPageParametersWhenConditionChange();
 
 
+        }
+
+        public void Refresh()
+        {
+            ActionAll();
         }
 
         private void ActionAll()
@@ -48,9 +54,10 @@ namespace PMSClient.ViewModel
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordVHP);
         }
 
-        private void ActionEdit(DcToolFilling obj)
+        private void ActionEdit(DcToolFilling model)
         {
-            throw new NotImplementedException();
+            PMSHelper.ViewModels.FillingToolEdit.SetEdit(model);
+            NavigationService.GoTo(PMSViews.FillingToolEdit);
         }
 
         private bool CanAdd()
@@ -60,7 +67,8 @@ namespace PMSClient.ViewModel
 
         private void ActionAdd()
         {
-            throw new NotImplementedException();
+            PMSHelper.ViewModels.FillingToolEdit.SetNew();
+            NavigationService.GoTo(PMSViews.FillingToolEdit);
         }
 
         private void SetPageParametersWhenConditionChange()
@@ -82,7 +90,7 @@ namespace PMSClient.ViewModel
             {
                 var data = service.GetToolFillings(skip, take, SearchElementA, SearchElementB);
                 ToolFillings.Clear();
-                data.ToList().ForEach(o => ToolFillings.Add(o));
+                data.OrderBy(i => i.ToolNumber).ToList().ForEach(o => ToolFillings.Add(o));
             }
         }
 
@@ -96,8 +104,7 @@ namespace PMSClient.ViewModel
             }
             set
             {
-                if (searchElementA == value)
-                    return;
+                searchElementA = value;
                 RaisePropertyChanged(nameof(SearchElementA));
             }
         }
@@ -110,8 +117,7 @@ namespace PMSClient.ViewModel
             }
             set
             {
-                if (searchElementB == value)
-                    return;
+                searchElementB = value;
                 RaisePropertyChanged(nameof(SearchElementB));
             }
         }

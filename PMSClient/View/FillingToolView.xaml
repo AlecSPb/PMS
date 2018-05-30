@@ -48,7 +48,8 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource FTCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource FTToolNumber}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGridTextColumn Header="{StaticResource FTToolNumber}"
+                                    ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding ToolNumber}"/>
                 <DataGridTextColumn Header="{StaticResource FTCompositionAbbr}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CompositionAbbr}"/>

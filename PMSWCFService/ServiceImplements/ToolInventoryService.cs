@@ -104,6 +104,7 @@ namespace PMSWCFService
                     var query = from tt in service.ToolFillings
                                 where tt.CompositionAbbr.Contains(elementA)
                                 && tt.CompositionAbbr.Contains(elementB)
+                                && tt.State != PMSCommon.SimpleState.作废.ToString()
                                 orderby tt.ToolNumber, tt.CompositionAbbr
                                 select tt;
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolFilling, DcToolFilling>());
@@ -142,6 +143,7 @@ namespace PMSWCFService
                     var query = from tt in service.ToolMillings
                                 where tt.CompositionAbbr.Contains(elementA)
                                 && tt.CompositionAbbr.Contains(elementB)
+                                && tt.State!=PMSCommon.SimpleState.作废.ToString()
                                 orderby tt.ToolNumber, tt.CompositionAbbr
                                 select tt;
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolMilling, DcToolMilling>());

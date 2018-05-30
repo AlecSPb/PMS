@@ -28,7 +28,7 @@
             <TextBlock  Style="{StaticResource StyleTextBlockWarning}" Text="{StaticResource HelpTipProductEdit}"/>
         </StackPanel>
         <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-            <Grid  DataContext="{Binding CurrentFeedBack}">
+            <Grid  DataContext="{Binding CurrentToolFilling}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="300"/>
@@ -50,15 +50,17 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource FTCompositionAbbr}"
-                           Style="{StaticResource StyleTextBlockSpecial}"/>
-                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding CompositionAbbr}" Style="{StaticResource StyleTextBoxCommon}"/>
+                           Style="{StaticResource StyleTextBlockCommon}"/>
+                <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding CompositionAbbr}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="成分缩写，比如CuInGaSe"/>
                 
                 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource FTToolNumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ToolNumber}" Style="{StaticResource StyleTextBoxCommon}"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding ToolNumber}"
+                          Style="{StaticResource StyleTextBoxCommon}"/>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" 
                            Text="工具序号，按照次序，不能重复"/>
                 
