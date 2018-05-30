@@ -20,25 +20,32 @@ namespace PMSClient.ViewModel
         private void Intialize()
         {
             searchElementA = searchElementB = "";
+
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcToolFilling>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
+
+            SetPageParametersWhenConditionChange();
+
+
         }
 
         private void ActionAll()
         {
-            throw new NotImplementedException();
+            SearchElementA = SearchElementB = "";
+
+            SetPageParametersWhenConditionChange();
         }
 
         private void ActionSearch()
         {
-            throw new NotImplementedException();
+            SetPageParametersWhenConditionChange();
         }
 
         private bool CanEdit(DcToolFilling arg)
         {
-            throw new NotImplementedException();
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordVHP);
         }
 
         private void ActionEdit(DcToolFilling obj)
@@ -48,12 +55,35 @@ namespace PMSClient.ViewModel
 
         private bool CanAdd()
         {
-            throw new NotImplementedException();
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordVHP);
         }
 
         private void ActionAdd()
         {
             throw new NotImplementedException();
+        }
+
+        private void SetPageParametersWhenConditionChange()
+        {
+            PageIndex = 1;
+            PageSize = 20;
+            using (var service = new ToolInventoryServiceClient())
+            {
+                RecordCount = service.GetToolFillingsCount(SearchElementA, SearchElementB);
+            }
+            ActionPaging();
+        }
+        private void ActionPaging()
+        {
+            int skip, take = 0;
+            skip = (PageIndex - 1) * PageSize;
+            take = PageSize;
+            using (var service = new ToolInventoryServiceClient())
+            {
+                var data = service.GetToolFillings(skip, take, SearchElementA, SearchElementB);
+                ToolFillings.Clear();
+                data.ToList().ForEach(o => ToolFillings.Add(o));
+            }
         }
 
         #region 属性
