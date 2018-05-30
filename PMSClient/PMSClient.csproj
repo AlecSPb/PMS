@@ -450,6 +450,9 @@
     <Compile Include="View\FillingToolEditView.xaml.cs">
       <DependentUpon>FillingToolEditView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FillingToolWindow.xaml.cs">
+      <DependentUpon>FillingToolWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FillingToolView.xaml.cs">
       <DependentUpon>FillingToolView.xaml</DependentUpon>
     </Compile>
@@ -943,6 +946,10 @@
     <Page Include="View\FillingToolEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FillingToolWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\FillingToolView.xaml">
       <SubType>Designer</SubType>
