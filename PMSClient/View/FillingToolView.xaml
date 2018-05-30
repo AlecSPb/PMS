@@ -6,7 +6,8 @@
              xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="1200" DataContext="{Binding Source={StaticResource Locator},Path=FeedBack}">
+             d:DesignHeight="300" d:DesignWidth="1200"
+             DataContext="{Binding Source={StaticResource Locator},Path=FillingTool}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -14,7 +15,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="装料工具索引 Filling Tool Index" Style="{StaticResource StyleTextBlockPageTitle}"/>
+        <TextBlock Text="{StaticResource PageFillingTool}" Style="{StaticResource StyleTextBlockPageTitle}"/>
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>

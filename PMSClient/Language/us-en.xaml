@@ -826,6 +826,8 @@
     <sys:String x:Key="TDType">Type</sys:String>
 
     <!--FillingTool-->
+    <sys:String x:Key="PageFillingTool">Filling Tool Index</sys:String>
+    <sys:String x:Key="PageFillingToolEdit">Filling Tool Index Edit</sys:String>
     <sys:String x:Key="FTCreateTime">Create Time</sys:String>
     <sys:String x:Key="FTCreator">Creator</sys:String>
     <sys:String x:Key="FTState">State</sys:String>
@@ -833,6 +835,8 @@
     <sys:String x:Key="FTCompositionAbbr">Composition Abbr</sys:String>
     <sys:String x:Key="FTRemark">Remark</sys:String>
     <!--MillingTool-->
+    <sys:String x:Key="PageMillingTool">Milling Tool Index</sys:String>
+    <sys:String x:Key="PageMillingToolEdit">Milling Tool Index Edit</sys:String>
     <sys:String x:Key="MTCreateTime">Create Time</sys:String>
     <sys:String x:Key="MTCreator">Creator</sys:String>
     <sys:String x:Key="MTState">State</sys:String>

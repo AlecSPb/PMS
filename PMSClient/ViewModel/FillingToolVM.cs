@@ -8,7 +8,7 @@ using GalaSoft.MvvmLight.CommandWpf;
 
 namespace PMSClient.ViewModel
 {
-    public class FillingToolVM : ViewModelBase
+    public class FillingToolVM : BaseViewModelPage
     {
         public FillingToolVM()
         {

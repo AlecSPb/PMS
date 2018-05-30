@@ -129,12 +129,17 @@ namespace PMSClient.ViewModel
                   string fileContent = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "Documents", "keycodeInformaton.txt"));
                   PlainTextWindow win = new PlainTextWindow();
                   win.Title = "重要编码";
-                  win.ContentText =fileContent;
+                  win.ContentText = fileContent;
                   win.ShowDialog();
               });
             LaserRule = new RelayCommand(ActionLaserRule);
 
             ToDoList = new RelayCommand(() => NavigationService.GoTo(PMSViews.ToDo));
+
+
+            GoToFillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.FillingTool));
+            GoToMillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.MillingTool));
+
         }
 
         private void ActionLaserRule()
@@ -280,5 +285,9 @@ namespace PMSClient.ViewModel
         public RelayCommand LaserRule { get; set; }
 
         public RelayCommand ToDoList { get; set; }
+
+        public RelayCommand GoToFillingTool { get; set; }
+        public RelayCommand GoToMillingTool { get; set; }
+
     }
 }

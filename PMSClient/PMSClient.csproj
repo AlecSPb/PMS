@@ -816,11 +816,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resource\Language\us-en.xaml">
+    <Page Include="Language\us-en.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resource\Language\zh-cn.xaml">
+    <Page Include="Language\zh-cn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1317,9 +1317,6 @@
     <Resource Include="Note\新料查询.txt" />
     <Resource Include="ReportsHelper\这个地方以后要重构.txt" />
     <Content Include="Documents\keycodeInformaton.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="login.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\Files\CodeRule.docx">

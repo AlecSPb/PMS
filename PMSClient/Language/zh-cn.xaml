@@ -825,6 +825,9 @@
     <sys:String x:Key="TDProgress">进度进程</sys:String>
     <sys:String x:Key="TDType">类型</sys:String>
     <!--FillingTool-->
+    <sys:String x:Key="PageFillingTool">装料工具索引</sys:String>
+    <sys:String x:Key="PageFillingToolEdit">装料工具索引-编辑</sys:String>
+
     <sys:String x:Key="FTCreateTime">创建时间</sys:String>
     <sys:String x:Key="FTCreator">创建者</sys:String>
     <sys:String x:Key="FTState">状态</sys:String>
@@ -832,6 +835,9 @@
     <sys:String x:Key="FTCompositionAbbr">成分缩写</sys:String>
     <sys:String x:Key="FTRemark">备注</sys:String>
     <!--MillingTool-->
+    <sys:String x:Key="PageMillingTool">制粉工具索引</sys:String>
+    <sys:String x:Key="PageMillingToolEdit">制粉工具索引-编辑</sys:String>
+    
     <sys:String x:Key="MTCreateTime">创建时间</sys:String>
     <sys:String x:Key="MTCreator">创建者</sys:String>
     <sys:String x:Key="MTState">状态</sys:String>

@@ -47,7 +47,7 @@ namespace PMSClient
             {
                 lang = "zh-cn";
             }
-            string langPath = "Resource/Language/" + lang + ".xaml";
+            string langPath = "Language/" + lang + ".xaml";
             App.Current.Resources.MergedDictionaries[2].Source = new Uri(langPath, UriKind.Relative);
             cboLanguage.SelectedIndex = lang == "zh-cn" ? 0 : 1;
             //设定当前程序的语言类型，供其他程序使用
