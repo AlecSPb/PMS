@@ -18,6 +18,8 @@
                 Command="{Binding MaterialNeedCalculator}"/>
             <Button Content="{StaticResource BottomBarPressure}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding PressureTool}"/>
+            <Button Content="{StaticResource BottomBarFillingTool}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding FillingTool}"/>
             <Button Content="{StaticResource BottomBarToOne}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding ToOne}"/>
             <Button Content="{StaticResource BottomBarQuery}" Style="{StaticResource StyleButtonCommonNarrow}"

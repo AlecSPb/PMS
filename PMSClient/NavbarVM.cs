@@ -110,6 +110,11 @@ namespace PMSClient
                       win.ShowDialog();
                   }
               });
+            FillingTool = new RelayCommand(() =>
+              {
+                  var tool = new PMSClient.View.FillingToolWindow();
+                  tool.Show();
+              });
             #endregion
         }
 
@@ -121,5 +126,6 @@ namespace PMSClient
         public RelayCommand UpdateInfo { get; set; }
         public RelayCommand LaserRule { get; set; }
         public RelayCommand CodeRule { get; set; }
+        public RelayCommand FillingTool { get; set; }
     }
 }

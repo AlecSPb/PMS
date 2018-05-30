@@ -849,6 +849,7 @@
     <sys:String x:Key="BottomBarPressure">Pressure</sys:String>
     <sys:String x:Key="BottomBarToOne">To One</sys:String>
     <sys:String x:Key="BottomBarQuery">Query</sys:String>
+    <sys:String x:Key="BottomBarFillingTool">Filling</sys:String>
 
     <sys:String x:Key="BottomBarInformation">Info</sys:String>
     <sys:String x:Key="BottomBarHelp">Help</sys:String>
