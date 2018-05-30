@@ -115,6 +115,22 @@ namespace PMSClient
                   var tool = new PMSClient.View.FillingToolWindow();
                   tool.Show();
               });
+            FillingToolRule = new RelayCommand(() =>
+              {
+                  try
+                  {
+                      string helpFileName = "FillingToolRule.pptx";
+                      string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                      if (File.Exists(helpFile))
+                      {
+                          System.Diagnostics.Process.Start(helpFile);
+                      }
+                  }
+                  catch (Exception ex)
+                  {
+                      PMSHelper.CurrentLog.Error(ex);
+                  }
+              });
             #endregion
         }
 
@@ -127,5 +143,6 @@ namespace PMSClient
         public RelayCommand LaserRule { get; set; }
         public RelayCommand CodeRule { get; set; }
         public RelayCommand FillingTool { get; set; }
+        public RelayCommand FillingToolRule { get; set; }
     }
 }

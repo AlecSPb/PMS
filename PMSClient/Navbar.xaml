@@ -30,10 +30,14 @@
                 Command="{Binding HelpInfo}"/>
             <Button Content="{StaticResource BottomBarUpdate}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding UpdateInfo}"/>
+
+            <TextBlock Text="{StaticResource BottomBarRule}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding CodeRule}"/>
             <Button Content="{StaticResource BottomBarLaserRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding LaserRule}"/>
+            <Button Content="{StaticResource BottomBarFillingToolRule}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding FillingToolRule}"/>
         </StackPanel>
     </Border>
 </UserControl>

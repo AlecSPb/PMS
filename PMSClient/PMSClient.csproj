@@ -1340,6 +1340,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\app.manifest" />
+    <Content Include="Resource\Files\FillingToolRule.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

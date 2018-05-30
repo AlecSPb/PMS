@@ -21,7 +21,6 @@
         <StackPanel Grid.Row="1" Style="{StaticResource StyleStackPanelNavigationBar}">
             <Button Content="{StaticResource ButtonNavigation}" Style="{StaticResource StyleButtonCommon}" 
                     Command="{Binding GoToNavigation}"/>
-            <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Add}"/>
             <TextBlock Text="元素A" Style="{StaticResource  StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchElementA,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
@@ -34,35 +33,39 @@
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding All}"/>
         </StackPanel>
-        <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="500"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="dg" Grid.Column="0" Style="{StaticResource StyleDataGridCommon}"
                   ItemsSource="{Binding ToolFillings}">
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Header="{StaticResource DGOperate}">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate >
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="{StaticResource FTCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{StaticResource FTCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
-                <DataGridTextColumn Header="{StaticResource FTToolNumber}"
+                    <DataGridTextColumn Header="{StaticResource FTToolNumber}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"
                                     Binding="{Binding ToolNumber}"/>
-                <DataGridTextColumn Header="{StaticResource FTCompositionAbbr}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                    <DataGridTextColumn Header="{StaticResource FTCompositionAbbr}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding CompositionAbbr}"/>
-                <DataGridTextColumn Header="{StaticResource FTState}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                    <DataGridTextColumn Header="{StaticResource FTState}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding State}"/>
-                <DataGridTextColumn Header="{StaticResource FTRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
+                    <DataGridTextColumn Header="{StaticResource FTRemark}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding Remark}"/>
-                <DataGridTextColumn Header="{StaticResource FTCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
+                    <DataGridTextColumn Header="{StaticResource FTCreator}" ElementStyle="{StaticResource StyleDGTextBlockSpecial}"
                                     Binding="{Binding Creator}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Border Grid.Column="1" Margin="10" BorderBrush="Blue" BorderThickness="2" CornerRadius="20" Background="LightBlue">
+                <StackPanel  DataContext="{Binding ElementName=dg,Path=SelectedItem}">
+                    <TextBlock Text="请去装具架上找该编号的工具袋，用完后归位" Margin="10"
+                               FontSize="20" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding CompositionAbbr}" FontSize="30" Margin="10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="{Binding ToolNumber}" FontSize="200" Margin="10" HorizontalAlignment="Center"
+                           Foreground="Blue" FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+        </Grid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
 

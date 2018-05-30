@@ -37,10 +37,10 @@ namespace PMSClient
         public MainDesktop()
         {
             InitializeComponent();
-            LanguageSet();
+            LanguageLoad();
         }
 
-        private void LanguageSet()
+        private void LanguageLoad()
         {
             string lang = Properties.Settings.Default.Language;
             if (string.IsNullOrEmpty(lang))
@@ -87,7 +87,7 @@ namespace PMSClient
             _timerMain = new DispatcherTimer();
             _timerMain.Interval = new TimeSpan(0, 0, 30);
             _timerMain.Tick += _timerMain_Tick; ;
-            _timerMain.Start();
+            //_timerMain.Start();
             #endregion
 
             #region 托盘部分
@@ -95,6 +95,9 @@ namespace PMSClient
             #endregion
             //首次检测心跳
             HeartBeatCheck();
+
+            //加载底部工具栏
+            BottomToolBar.Content = new Navbar();
         }
         #region 定时器设定
         /// <summary>
@@ -106,7 +109,7 @@ namespace PMSClient
         {
             if (HeartBeatCheck())
             {
-                //NoticeCheck();
+                NoticeCheck();
             }
         }
         private bool HeartBeatCheck()

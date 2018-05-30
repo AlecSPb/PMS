@@ -17,9 +17,9 @@
         <Border Grid.Row="0">
             <ContentControl x:Name="mainArea"/>
         </Border>
-        <!--快捷工具栏-->
+        <!--底部快捷工具栏-->
         <Grid Grid.Row="1" Background="LightBlue">
-            <local:Navbar/>
+            <ContentControl Name="BottomToolBar"/>
         </Grid>
         <!--状态栏-->
         <Grid Grid.Row="2"  Background="{StaticResource BGBrushStatusBar}">

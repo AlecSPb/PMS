@@ -851,13 +851,16 @@
     <sys:String x:Key="BottomBarPressure">压力</sys:String>
     <sys:String x:Key="BottomBarToOne">归一</sys:String>
     <sys:String x:Key="BottomBarQuery">查询</sys:String>
-    <sys:String x:Key="BottomBarFillingTool">装料</sys:String>
+    <sys:String x:Key="BottomBarFillingTool">装具</sys:String>
 
     <sys:String x:Key="BottomBarInformation">信息</sys:String>
     <sys:String x:Key="BottomBarHelp">帮助</sys:String>
     <sys:String x:Key="BottomBarUpdate">更新</sys:String>
+
+    <sys:String x:Key="BottomBarRule">规则</sys:String>
     <sys:String x:Key="BottomBarCodeRule">编号</sys:String>
     <sys:String x:Key="BottomBarLaserRule">标刻</sys:String>
+    <sys:String x:Key="BottomBarFillingToolRule">装具</sys:String>
 
 
     <!--每个页面最前面的提示信息-->
