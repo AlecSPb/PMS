@@ -56,8 +56,11 @@
                     <TextBlock Grid.Row="0" Grid.Column="2" Text="单位：(g/cm3),同一批计算密度要一样" Style="{StaticResource StyleTextBlockTip}"/>
 
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="模具内径" Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox x:Name="txtInnerDiameter" Grid.Row="1" Grid.Column="1" Text="{Binding Diameter}" Style="{StaticResource StyleTextBoxCommon}"/>
-                    <TextBlock Grid.Row="1" Grid.Column="2" Text="单位：(mm)，从左侧模具列表中选择，也可以直接输入" Style="{StaticResource StyleTextBlockTip}"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+                              Text="{Binding Diameter}"
+                              ItemsSource="{Binding DataContext.Molds,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Window}}"
+                              DisplayMemberPath="InnerDiameter"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="单位：(mm)" Style="{StaticResource StyleTextBlockTip}"/>
 
                     <TextBlock Grid.Row="2" Grid.Column="0" Text="毛坯厚度" Style="{StaticResource StyleTextBlockCommon}"/>
                     <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxCommon}"/>

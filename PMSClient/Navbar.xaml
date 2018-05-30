@@ -13,24 +13,24 @@
             </LinearGradientBrush>
         </Border.Background>
         <StackPanel  Orientation="Horizontal">
-            <TextBlock Text="工具" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <Button Content="装料" Style="{StaticResource StyleButtonCommonNarrow}"
+            <TextBlock Text="{StaticResource BottomBarTool}" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="{StaticResource BottomBarFillCalculator}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding MaterialNeedCalculator}"/>
-            <Button Content="压力" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="{StaticResource BottomBarPressure}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding PressureTool}"/>
-            <Button Content="归一" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="{StaticResource BottomBarToOne}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding ToOne}"/>
-            <Button Content="查询" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="{StaticResource BottomBarQuery}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding IntergratedSearch}"/>
-            
-            <TextBlock Text="信息" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <Button Content="帮助" Style="{StaticResource StyleButtonCommonNarrow}"
+
+            <TextBlock Text="{StaticResource BottomBarInformation}" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="{StaticResource BottomBarHelp}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding HelpInfo}"/>
-            <Button Content="更新" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="{StaticResource BottomBarUpdate}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding UpdateInfo}"/>
-            <Button Content="编号" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding CodeRule}"/>
-            <Button Content="标刻" Style="{StaticResource StyleButtonCommonNarrow}"
+            <Button Content="{StaticResource BottomBarLaserRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding LaserRule}"/>
         </StackPanel>
     </Border>

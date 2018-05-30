@@ -11,6 +11,9 @@ using PMSClient.Tool;
 
 namespace PMSClient
 {
+    /// <summary>
+    /// 公共辅助类
+    /// </summary>
     public static class PMSHelper
     {
 

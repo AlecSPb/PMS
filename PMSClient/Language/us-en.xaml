@@ -843,7 +843,18 @@
     <sys:String x:Key="MTToolNumber">Tool Number</sys:String>
     <sys:String x:Key="MTCompositionAbbr">Composition Abbr</sys:String>
     <sys:String x:Key="MTRemark">Remark</sys:String>
+    <!--底部工具栏-->
+    <sys:String x:Key="BottomBarTool">Tool</sys:String>
+    <sys:String x:Key="BottomBarFillCalculator">Filling</sys:String>
+    <sys:String x:Key="BottomBarPressure">Pressure</sys:String>
+    <sys:String x:Key="BottomBarToOne">To One</sys:String>
+    <sys:String x:Key="BottomBarQuery">Query</sys:String>
 
+    <sys:String x:Key="BottomBarInformation">Info</sys:String>
+    <sys:String x:Key="BottomBarHelp">Help</sys:String>
+    <sys:String x:Key="BottomBarUpdate">Updates</sys:String>
+    <sys:String x:Key="BottomBarCodeRule">Code</sys:String>
+    <sys:String x:Key="BottomBarLaserRule">Laser</sys:String>
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">
         注意：请仔细输入每一项，能选择就选择，没有选项手动输入的时候一定要规范
