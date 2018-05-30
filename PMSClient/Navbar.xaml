@@ -25,12 +25,6 @@
             <Button Content="{StaticResource BottomBarQuery}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding IntergratedSearch}"/>
 
-            <TextBlock Text="{StaticResource BottomBarInformation}" Style="{StaticResource StyleDGTextBlockCommon}"/>
-            <Button Content="{StaticResource BottomBarHelp}" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding HelpInfo}"/>
-            <Button Content="{StaticResource BottomBarUpdate}" Style="{StaticResource StyleButtonCommonNarrow}"
-                Command="{Binding UpdateInfo}"/>
-
             <TextBlock Text="{StaticResource BottomBarRule}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding CodeRule}"/>
@@ -38,6 +32,13 @@
                 Command="{Binding LaserRule}"/>
             <Button Content="{StaticResource BottomBarFillingToolRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding FillingToolRule}"/>
+            
+            <TextBlock Text="{StaticResource BottomBarInformation}" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Content="{StaticResource BottomBarHelp}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding HelpInfo}"/>
+            <Button Content="{StaticResource BottomBarUpdate}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding UpdateInfo}"/>
+
         </StackPanel>
     </Border>
 </UserControl>

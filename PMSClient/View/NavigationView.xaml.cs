@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -23,6 +24,23 @@ namespace PMSClient.View
         public NavigationView()
         {
             InitializeComponent();
+            InitializeTimer();
+        }
+
+        private void InitializeTimer()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            App.Current.Dispatcher.Invoke(() =>
+            {
+                CurrentTime.Text = DateTime.Now.ToLongTimeString();
+            });
         }
     }
 }
