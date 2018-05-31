@@ -10,6 +10,7 @@ using PMSClient.Helper;
 using System.IO;
 using PMSClient.CustomControls;
 using PMSClient.ToolWindow;
+using PMSClient.MainService;
 
 namespace PMSClient.ViewModel
 {
@@ -25,6 +26,9 @@ namespace PMSClient.ViewModel
             LogOut = new RelayCommand(ActionLogOut);
 
             currentUserInformation = "暂无登录信息";
+
+            OrderCount = PlanedCount = 0;
+            InitializeData();
         }
         public void SetLogInformation(string logInformation)
         {
@@ -54,6 +58,7 @@ namespace PMSClient.ViewModel
         #region 导航信息
         private void InitialNavigations()
         {
+            #region 命令初始化
             Notice = new RelayCommand(ActionNotice, CanNotice);
             Help = new RelayCommand(ActionHelp);
 
@@ -119,19 +124,19 @@ namespace PMSClient.ViewModel
             GoToBDCompound = new RelayCommand(() => NavigationService.GoTo(PMSViews.BDCompound));
 
             GoToIntegratedSearch = new RelayCommand(() =>
-              {
-                  ToolWindow.ComplexQueryTool tool = new ToolWindow.ComplexQueryTool();
-                  tool.Show();
-              });
+            {
+                ToolWindow.ComplexQueryTool tool = new ToolWindow.ComplexQueryTool();
+                tool.Show();
+            });
 
             ImportantCode = new RelayCommand(() =>
-              {
-                  string fileContent = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "Documents", "keycodeInformaton.txt"));
-                  PlainTextWindow win = new PlainTextWindow();
-                  win.Title = "重要编码";
-                  win.ContentText = fileContent;
-                  win.ShowDialog();
-              });
+            {
+                string fileContent = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, "Documents", "keycodeInformaton.txt"));
+                PlainTextWindow win = new PlainTextWindow();
+                win.Title = "重要编码";
+                win.ContentText = fileContent;
+                win.ShowDialog();
+            });
             LaserRule = new RelayCommand(ActionLaserRule);
 
             ToDoList = new RelayCommand(() => NavigationService.GoTo(PMSViews.ToDo));
@@ -140,6 +145,7 @@ namespace PMSClient.ViewModel
             GoToFillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.FillingTool));
             GoToMillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.MillingTool));
 
+            #endregion
         }
 
         private void ActionLaserRule()
@@ -289,5 +295,52 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToFillingTool { get; set; }
         public RelayCommand GoToMillingTool { get; set; }
 
+        private void InitializeData()
+        {
+            using (var service=new OrderServiceClient())
+            {
+                OrderCount = service.GetOrderCount(string.Empty, string.Empty, string.Empty);
+            }
+            using (var service=new PlanVHPServiceClient())
+            {
+                PlanedCount = service.GetPlanCount();
+            }
+        }
+        #region 属性
+        private int orderCount;
+        public int OrderCount
+        {
+            get
+            {
+                return orderCount;
+            }
+            set
+            {
+                if (orderCount == value)
+                {
+                    return;
+                }
+                orderCount = value;
+                RaisePropertyChanged(nameof(OrderCount));
+            }
+        }
+        private int planedCount;
+        public int PlanedCount
+        {
+            get
+            {
+                return planedCount;
+            }
+            set
+            {
+                if (planedCount == value)
+                {
+                    return;
+                }
+                planedCount = value;
+                RaisePropertyChanged(nameof(PlanedCount));
+            }
+        }
+        #endregion
     }
 }

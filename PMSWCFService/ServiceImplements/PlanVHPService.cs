@@ -77,6 +77,25 @@ namespace PMSWCFService
             }
         }
 
+        public int GetPlanCount()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var result = from p in dc.VHPPlans
+                                 where p.State != VHPPlanState.作废.ToString()
+                                 select p;
+                    return result.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public List<DcPlanVHP> GetVHPPlansByOrderID(Guid id)
         {
             Checker.CheckIfCanRun();

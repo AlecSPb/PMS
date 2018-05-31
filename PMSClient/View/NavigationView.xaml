@@ -83,97 +83,105 @@
                         </Grid.RowDefinitions>
 
                         <Button Content="{StaticResource PageSales}" Grid.Row="0" Grid.Column="0"
-                        Style="{DynamicResource StyleButtonNavigationTitle}"/>
+                        Style="{StaticResource StyleButtonNavigationTitle}"/>
                         <Button Content="{StaticResource PageOrder}" Grid.Row="0" Grid.Column="1"
-                        Command="{Binding GoToOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageCustomer}" Grid.Row="0" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToOrder}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageCustomer}" Grid.Row="0" Grid.Column="2" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToBDCustomer}"/>
-                        <Button Content="{StaticResource PageOutSource}" Grid.Row="0" Grid.Column="3" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageOutSource}" Grid.Row="0" Grid.Column="3" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToOutSource}"/>
-                        <Button Content="{StaticResource PageFeedBack}" Grid.Row="0" Grid.Column="4" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageFeedBack}" Grid.Row="0" Grid.Column="4" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToFeedBack }"/>
-                        <Button Content="{StaticResource PageIntegratedSearch}" Grid.Row="0" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageIntegratedSearch}" Grid.Row="0" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToIntegratedSearch }"/>
 
                         <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"
-                        Style="{DynamicResource StyleButtonNavigationTitle}"/>
+                        Style="{StaticResource StyleButtonNavigationTitle}"/>
                         <Button Content="{StaticResource PageMaterialNeed}" Grid.Row="1" Grid.Column="1"
-                        Command="{Binding GoToMaterialNeed}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToMaterialNeed}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageMaterialOrder}" Grid.Row="1" Grid.Column="2"
-                        Command="{Binding GoToMaterialOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToMaterialOrder}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageMaterialInventoryIn}" Grid.Row="1" Grid.Column="3"
-                        Command="{Binding GoToMaterialInventory}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToMaterialInventory}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageMaterialInventoryOut}" Grid.Row="1" Grid.Column="4"
-                        Command="{Binding GoToMaterialInventoryOut}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToMaterialInventoryOut}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePlate}"  Grid.Row="1" Grid.Column="5"
-                        Command="{Binding GoToPlate}" Style="{DynamicResource StyleButtonNavigation}" />
-                        <Button Content="{StaticResource PageSupplier}" Grid.Row="1" Grid.Column="6" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToPlate}" Style="{StaticResource StyleButtonNavigation}" />
+                        <Button Content="{StaticResource PageSupplier}" Grid.Row="1" Grid.Column="6" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToBDSupplier}" Visibility="Hidden"/>
 
 
                         <Button Content="{StaticResource PageProduction}" Grid.Row="2" Grid.Column="0"
-                        Style="{DynamicResource StyleButtonNavigationTitle}" />
+                        Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageMisson}" Grid.Row="2" Grid.Column="1"
-                        Command="{Binding GoToMisson}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToMisson}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePlan}" Grid.Row="2" Grid.Column="2"
-                        Command="{Binding GoToPlan}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToPlan}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PagePlanConclusion}" Grid.Row="2" Grid.Column="3"
-                        Command="{Binding GoToPlanConclusion}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToPlanConclusion}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageCompound}" Grid.Row="2" Grid.Column="4"
-                        Command="{Binding GoToBDCompound}" Style="{DynamicResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageTool}" Grid.Row="2" Grid.Column="5" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToBDCompound}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageTool}" Grid.Row="2" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToTool}" IsEnabled="False"/>
 
-                        <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{DynamicResource StyleButtonNavigationTitle}" />
-                        <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
-                Command="{Binding GoToRecordMilling}"/>
+                        <Button Content="{StaticResource PageRecord}" Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleButtonNavigationTitle}" />
+                        <Button Content="{StaticResource PageRecordMilling}" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleButtonNavigation}"
+                        Command="{Binding GoToRecordMilling}"/>
                         <Button Content="{StaticResource PageRecordVHP}" Grid.Row="3" Grid.Column="2"
-                        Command="{Binding GoToRecordVHP}"  Style="{DynamicResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageRecordDeMold}" Grid.Row="3" Grid.Column="3" Style="{DynamicResource StyleButtonNavigation}"
-                Command="{Binding GoToRecordDeMold}"/>
-                        <Button Content="{StaticResource PageRecordMachine}" Grid.Row="3" Grid.Column="4" Style="{DynamicResource StyleButtonNavigation}"
-                Command="{Binding GoToRecordMachine}"/>
+                        Command="{Binding GoToRecordVHP}"  Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageRecordDeMold}" Grid.Row="3" Grid.Column="3" Style="{StaticResource StyleButtonNavigation}"
+                        Command="{Binding GoToRecordDeMold}"/>
+                        <Button Content="{StaticResource PageRecordMachine}" Grid.Row="3" Grid.Column="4" Style="{StaticResource StyleButtonNavigation}"
+                        Command="{Binding GoToRecordMachine}"/>
                         <Button Content="{StaticResource PageRecordTest}" Grid.Row="3" Grid.Column="5"
-                        Command="{Binding GoToRecordTest}" Style="{DynamicResource StyleButtonNavigation}"/>
-                        <Button Content="{StaticResource PageRecordBonding}" Grid.Row="3" Grid.Column="6" Style="{DynamicResource StyleButtonNavigation}"
+                        Command="{Binding GoToRecordTest}" Style="{StaticResource StyleButtonNavigation}"/>
+                        <Button Content="{StaticResource PageRecordBonding}" Grid.Row="3" Grid.Column="6" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToRecordBonding}"/>
 
-                        <Button Content="{StaticResource PageProductTitle}" Grid.Row="4" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}" />
+                        <Button Content="{StaticResource PageProductTitle}" Grid.Row="4" Grid.Column="0" Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageProduct}" Grid.Row="4" Grid.Column="1"
-                        Command="{Binding GoToProduct}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToProduct}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageDelivery}" Grid.Row="4" Grid.Column="2"
-                        Command="{Binding GoToDelivery}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageDeliveryItemList}" Grid.Row="4" Grid.Column="3"
-                        Command="{Binding GoToDeliveryItemList}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToDeliveryItemList}" Style="{StaticResource StyleButtonNavigation}"/>
 
-                        <Button Content="{StaticResource PageStatistic}" Grid.Row="5" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
+                        <Button Content="{StaticResource PageStatistic}" Grid.Row="5" Grid.Column="0"
+                                Style="{StaticResource StyleButtonNavigationTitle}"/>
                         <Button Content="{StaticResource PageStatisticOrder}" Grid.Row="5" Grid.Column="1"
-                        Command="{Binding GoToStatisticOrder}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToStatisticOrder}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageStatisticPlan}" Grid.Row="5" Grid.Column="2"
-                        Command="{Binding GoToStatisticPlan}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToStatisticPlan}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageStatisticProduct}" Grid.Row="5" Grid.Column="3"
-                        Command="{Binding GoToStatisticProduct}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToStatisticProduct}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageStatisticDelivery}" Grid.Row="5" Grid.Column="4"
-                        Command="{Binding GoToStatisticDelivery}" Style="{DynamicResource StyleButtonNavigation}"/>
+                        Command="{Binding GoToStatisticDelivery}" Style="{StaticResource StyleButtonNavigation}"/>
                         <Button Content="{StaticResource PageStatisticPMSIndex}" Grid.Row="5" Grid.Column="5"
-                        Command="{Binding GoToStatisticOrder}" Style="{DynamicResource StyleButtonNavigation}" Visibility="Hidden"/>
+                        Command="{Binding GoToStatisticOrder}" Style="{StaticResource StyleButtonNavigation}" Visibility="Hidden"/>
 
-                        <Button Content="{StaticResource PageMaintenance}" Grid.Row="6" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
-                        <Button Content="{StaticResource PageMaintenancePlan}" Grid.Row="6" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageMaintenance}" Grid.Row="6" Grid.Column="0"
+                                Style="{StaticResource StyleButtonNavigationTitle}"/>
+                        <Button Content="{StaticResource PageMaintenancePlan}" Grid.Row="6" Grid.Column="1"
+                                Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToMaintenancePlan}" IsEnabled="False"/>
-                        <Button Content="{StaticResource PageMaintenanceRecord}" Grid.Row="6" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageMaintenanceRecord}" Grid.Row="6" Grid.Column="2"
+                                Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToMaintenanceRecord}" IsEnabled="False"/>
 
 
-                        <Button Content="{StaticResource PageOther}" Grid.Row="7" Grid.Column="0" Style="{DynamicResource StyleButtonNavigationTitle}"/>
-                        <Button Content="{StaticResource PageHistory}" Grid.Row="7" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageOther}" Grid.Row="7" Grid.Column="0"
+                                Style="{StaticResource StyleButtonNavigationTitle}"/>
+                        <Button Content="{StaticResource PageHistory}" Grid.Row="7" Grid.Column="1"
+                                Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToHistory}"/>
-                        <Button Content="{StaticResource PageFillingTool}" Grid.Row="7" Grid.Column="2" Style="{DynamicResource StyleButtonNavigation}"
+                        <Button Content="{StaticResource PageFillingTool}" Grid.Row="7" Grid.Column="2"
+                                Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToFillingTool}"/>
 
                         <Button Content="{StaticResource PageAdmin}" Grid.Row="8" Grid.Column="0" 
-                        Style="{DynamicResource StyleButtonNavigationTitle}" />
-                        <Button Content="{StaticResource PageDebug}" Grid.Row="8" Grid.Column="1" Style="{DynamicResource StyleButtonNavigation}"
+                        Style="{StaticResource StyleButtonNavigationTitle}" />
+                        <Button Content="{StaticResource PageDebug}" Grid.Row="8" Grid.Column="1"
+                                Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToDebug}"/>
 
 
@@ -184,12 +192,37 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock Name="CurrentTime" Grid.Row="0" Text="当前时间" Foreground="Blue"
-                                   FontSize="20" HorizontalAlignment="Center" Margin="2"/>
+                        <TextBlock Name="CurrentTime" Grid.Row="0" Text="当前时间"
+                                   Foreground="Blue"
+                                   FontSize="20" 
+                                   HorizontalAlignment="Stretch" 
+                                   Margin="2"
+                                   Padding="2"
+                                   TextAlignment="Center"
+                                   Background="LightBlue"/>
                         <Calendar Grid.Row="1" />
-
+                        <TextBlock Grid.Row="2" Text="信息" Background="LightGray"
+                                   Padding="2" Margin="0 2" TextAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Text="{Binding OrderCount,StringFormat=已接收订单{0}个}"
+                                   Foreground="Blue"
+                                   FontSize="15" 
+                                   HorizontalAlignment="Stretch" 
+                                   Margin="0 2"
+                                   Padding="2"
+                                   Background="LightGreen"/>
+                        <TextBlock Grid.Row="4" Text="{Binding PlanedCount,StringFormat=已完成热压{0}机次}"
+                                   Foreground="Blue"
+                                   FontSize="15" 
+                                   HorizontalAlignment="Stretch" 
+                                   Margin="0 2"
+                                   Padding="2"
+                                   Background="LightGreen"/>
                     </Grid>
                 </Border>
             </Grid>

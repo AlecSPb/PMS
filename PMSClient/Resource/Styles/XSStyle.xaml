@@ -26,7 +26,33 @@
     <Thickness x:Key="ThicknessMD">5</Thickness>
     <Thickness x:Key="ThicknessLG">10</Thickness>
 
-
+    <Style TargetType="Button" x:Key="btnLeaderTitle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle x:Name="rectangle" Fill="LightGray" Stroke="{StaticResource ControlBorderBrush}"  StrokeThickness="1"/>
+                        <ContentControl x:Name="contentControl" Content="{TemplateBinding Content}" 
+                                        Margin="{TemplateBinding Padding}" VerticalAlignment="Center"
+                                        HorizontalAlignment="Center" SnapsToDevicePixels="True"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True"/>
+                        <Trigger Property="IsPressed" Value="True"/>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Trigger.Setters>
+                                <Setter Property="Fill" Value="#FFDBD2DB" TargetName="rectangle"/>
+                                <Setter Property="Foreground" Value="#FFBCB2BC" TargetName="contentControl"/>
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style TargetType="Button" x:Key="btnBase">
         <Setter Property="Template">
             <Setter.Value>
@@ -158,7 +184,7 @@
         <Setter Property="Width" Value="110"/>
         <Setter Property="Height" Value="45"/>
     </Style>
-    <Style x:Key="StyleButtonNavigationTitle" TargetType="Button"  BasedOn="{StaticResource btnBase}">
+    <Style x:Key="StyleButtonNavigationTitle" TargetType="Button"  BasedOn="{StaticResource btnLeaderTitle}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="{StaticResource ThicknessMD}"/>
@@ -359,6 +385,11 @@
     <Style x:Key="StyleDGTextBlockSpecialBlue" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>
         <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    <Style x:Key="StyleDGTextBlockSpecialBlueReverse" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Background" Value="Blue"/>
     </Style>
     <Style x:Key="StyleDGTextBlockSpecial2" TargetType="TextBlock" BasedOn="{StaticResource StyleDGTextBlockCommon}">
         <Setter Property="Foreground" Value="Blue"/>

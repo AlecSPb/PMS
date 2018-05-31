@@ -8469,6 +8469,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlan", ReplyAction="http://tempuri.org/IPlanVHPService/DeleteVHPPlanResponse")]
         System.Threading.Tasks.Task<int> DeleteVHPPlanAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/GetPlanCount", ReplyAction="http://tempuri.org/IPlanVHPService/GetPlanCountResponse")]
+        int GetPlanCount();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlanVHPService/GetPlanCount", ReplyAction="http://tempuri.org/IPlanVHPService/GetPlanCountResponse")]
+        System.Threading.Tasks.Task<int> GetPlanCountAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8544,6 +8550,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteVHPPlanAsync(System.Guid id) {
             return base.Channel.DeleteVHPPlanAsync(id);
+        }
+        
+        public int GetPlanCount() {
+            return base.Channel.GetPlanCount();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetPlanCountAsync() {
+            return base.Channel.GetPlanCountAsync();
         }
     }
     

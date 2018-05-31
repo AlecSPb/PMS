@@ -23,5 +23,8 @@ namespace PMSWCFService.ServiceContracts
         int UpdateVHPPlanByUID(DcPlanVHP model, string uid);
         [OperationContract]
         int DeleteVHPPlan(Guid id);
+
+        [OperationContract]
+        int GetPlanCount();
     }
 }

@@ -164,6 +164,12 @@
   <wsdl:message name="IPlanVHPService_DeleteVHPPlan_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteVHPPlanResponse" />
   </wsdl:message>
+  <wsdl:message name="IPlanVHPService_GetPlanCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanCount" />
+  </wsdl:message>
+  <wsdl:message name="IPlanVHPService_GetPlanCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlanCountResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaterialNeedService_GetMaterialNeedBySearchInPage_InputMessage">
     <wsdl:part name="parameters" element="tns:GetMaterialNeedBySearchInPage" />
   </wsdl:message>
@@ -1333,6 +1339,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlan" message="tns:IPlanVHPService_DeleteVHPPlan_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlanVHPService/DeleteVHPPlanResponse" message="tns:IPlanVHPService_DeleteVHPPlan_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetPlanCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlanVHPService/GetPlanCount" message="tns:IPlanVHPService_GetPlanCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlanVHPService/GetPlanCountResponse" message="tns:IPlanVHPService_GetPlanCount_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMaterialNeedService">
     <wsdl:operation name="GetMaterialNeedBySearchInPage">
@@ -2302,6 +2312,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteVHPPlan">
       <soap:operation soapAction="http://tempuri.org/IPlanVHPService/DeleteVHPPlan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlanCount">
+      <soap:operation soapAction="http://tempuri.org/IPlanVHPService/GetPlanCount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

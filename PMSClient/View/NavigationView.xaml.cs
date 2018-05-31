@@ -29,8 +29,10 @@ namespace PMSClient.View
 
         private void InitializeTimer()
         {
+            ShowNow();
+
             Timer timer = new Timer();
-            timer.Interval = 1000;
+            timer.Interval = 60 * 1000;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
         }
@@ -39,8 +41,12 @@ namespace PMSClient.View
         {
             App.Current.Dispatcher.Invoke(() =>
             {
-                CurrentTime.Text = DateTime.Now.ToLongTimeString();
+                ShowNow();
             });
+        }
+        private void ShowNow()
+        {
+            CurrentTime.Text = $"时间:{DateTime.Now.ToShortTimeString()}";
         }
     }
 }
