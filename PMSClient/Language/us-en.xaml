@@ -104,20 +104,20 @@
     <sys:String x:Key="PageMaterialInventoryOutEdit">Mateiral Out Edit</sys:String>
 
 
-    <sys:String x:Key="PageRecordMilling">Record Milling</sys:String>
-    <sys:String x:Key="PageRecordMillingEdit">Record Milling Edit</sys:String>
-    <sys:String x:Key="PageRecordMachine">Record Machine</sys:String>
-    <sys:String x:Key="PageRecordMachineEdit">Record Machine Edit</sys:String>
-    <sys:String x:Key="PageRecordVHP">Record VHP</sys:String>
-    <sys:String x:Key="PageRecordVHPEditPage">Record VHP Edit</sys:String>
-    <sys:String x:Key="PageRecordVHPQuickEditPage">Record VHP Quick Edit</sys:String>
-    <sys:String x:Key="PageRecordDeMold">Record DeMold</sys:String>
-    <sys:String x:Key="PageRecordDeMoldEdit">Record DeMold Edit</sys:String>
-    <sys:String x:Key="PageRecordBonding">Record Bonding</sys:String>
-    <sys:String x:Key="PageRecordBondingEdit">Record Bonding Edit</sys:String>
-    <sys:String x:Key="PageRecordTest">Record Test</sys:String>
-    <sys:String x:Key="PageRecordTestEdit">Record Test Edit</sys:String>
-    <sys:String x:Key="PageRecordTestDoc">Record Test Doc</sys:String>
+    <sys:String x:Key="PageRecordMilling">Milling</sys:String>
+    <sys:String x:Key="PageRecordMillingEdit">Milling Edit</sys:String>
+    <sys:String x:Key="PageRecordMachine">Machine</sys:String>
+    <sys:String x:Key="PageRecordMachineEdit">Machine Edit</sys:String>
+    <sys:String x:Key="PageRecordVHP">VHP</sys:String>
+    <sys:String x:Key="PageRecordVHPEditPage">VHP Edit</sys:String>
+    <sys:String x:Key="PageRecordVHPQuickEditPage">VHP Quick Edit</sys:String>
+    <sys:String x:Key="PageRecordDeMold">DeMold</sys:String>
+    <sys:String x:Key="PageRecordDeMoldEdit">DeMold Edit</sys:String>
+    <sys:String x:Key="PageRecordBonding">Bonding</sys:String>
+    <sys:String x:Key="PageRecordBondingEdit">Bonding Edit</sys:String>
+    <sys:String x:Key="PageRecordTest">Test</sys:String>
+    <sys:String x:Key="PageRecordTestEdit">Test Edit</sys:String>
+    <sys:String x:Key="PageRecordTestDoc">Test Doc</sys:String>
 
 
     <sys:String x:Key="PageProductTitle">Product</sys:String>
