@@ -131,6 +131,11 @@ namespace PMSClient
                       PMSHelper.CurrentLog.Error(ex);
                   }
               });
+            Symbol = new RelayCommand(()=>
+            {
+                var tool = new ToolWindow.SymbolWindow();
+                tool.ShowDialog();
+            });
             #endregion
         }
 
@@ -144,5 +149,6 @@ namespace PMSClient
         public RelayCommand CodeRule { get; set; }
         public RelayCommand FillingTool { get; set; }
         public RelayCommand FillingToolRule { get; set; }
+        public RelayCommand Symbol { get; set; }
     }
 }

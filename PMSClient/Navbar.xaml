@@ -24,7 +24,9 @@
                 Command="{Binding ToOne}"/>
             <Button Content="{StaticResource BottomBarQuery}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding IntergratedSearch}"/>
-
+            <Button Content="{StaticResource BottomBarSymbol}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding Symbol}"/>
+            
             <TextBlock Text="{StaticResource BottomBarRule}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding CodeRule}"/>
