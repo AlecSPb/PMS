@@ -134,7 +134,7 @@ namespace PMSClient
             Symbol = new RelayCommand(()=>
             {
                 var tool = new ToolWindow.SymbolWindow();
-                tool.ShowDialog();
+                tool.Show();
             });
             #endregion
         }

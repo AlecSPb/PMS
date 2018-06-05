@@ -36,7 +36,7 @@ namespace PMSClient.ToolWindow
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!(TxtSymbol.Text != ""))
+            if (TxtSymbol.Text != "")
             {
                 Clipboard.SetDataObject(TxtSymbol.Text);
             }
