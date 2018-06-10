@@ -49,6 +49,23 @@ namespace PMSClient.ViewModel
             SearchMisson = new RelayCommand<DcPlanWithMisson>(ActionSearchMisson);
             SelectionChanged = new RelayCommand<DcPlanWithMisson>(ActionSelectionChanged);
             Output = new RelayCommand<MainService.DcPlanWithMisson>(ActionOutput);
+            RecordSheet = new RelayCommand(ActionRecordSheet);
+        }
+
+        private void ActionRecordSheet()
+        {
+            var tool = new ToolWindow.DateSelector();
+            if (tool.ShowDialog() == false)
+                return;
+            DateTime selectedDate = tool.SelectedDate;
+            PMSDialogService.ShowYes(selectedDate.ToShortDateString());
+            //生成取模记录单
+            //using (var service = new MissonServiceClient())
+            //{
+            //}
+
+
+
         }
 
         /// <summary>
@@ -260,6 +277,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcPlanWithMisson> SearchMisson { get; set; }
         public RelayCommand<DcPlanWithMisson> SelectionChanged { get; set; }
         public RelayCommand<DcPlanWithMisson> Output { get; set; }
+        public RelayCommand RecordSheet { get; set; }
         #endregion
 
         #region Properties

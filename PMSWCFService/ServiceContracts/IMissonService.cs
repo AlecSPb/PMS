@@ -61,6 +61,7 @@ namespace PMSWCFService.ServiceContracts
         int GetPlanWithMissonCheckedCountByDateRange2(DateTime dateStart, DateTime dateEnd, string composition);
 
 
+        //当前使用的服务
         [OperationContract]
         List<DcPlanWithMisson> GetPlanExtra(int skip, int take, string searchCode, string composition);
         [OperationContract]

@@ -9,9 +9,9 @@
     <SolidColorBrush x:Key="CheckedBrush" Color="White"/>
     <SolidColorBrush x:Key="FailedBrush" Color="Gray"/>
 
-    <SolidColorBrush x:Key="YesterdayBrush" Color="LightGray"/>
+    <SolidColorBrush x:Key="YesterdayBrush" Color="LightBlue"/>
     <SolidColorBrush x:Key="TodayBrush" Color="LightGreen"/>
-    <SolidColorBrush x:Key="TomorrowBrush" Color="LightCoral"/>
+    <SolidColorBrush x:Key="TomorrowBrush" Color="LightSalmon"/>
 
     <SolidColorBrush x:Key="StoredBrush" Color="LightGreen"/>
     <SolidColorBrush x:Key="DeliveredBrush" Color="White"/>

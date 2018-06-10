@@ -313,6 +313,9 @@
       <DependentUpon>CompositionSimulator.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\CompositionSimulatorHelper.cs" />
+    <Compile Include="ToolWindow\DateSelector.xaml.cs">
+      <DependentUpon>DateSelector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\DeliverySheetChooseDialog.xaml.cs">
       <DependentUpon>DeliverySheetChooseDialog.xaml</DependentUpon>
     </Compile>
@@ -843,6 +846,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\CompositionSimulator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\DateSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1760,12 +1767,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
