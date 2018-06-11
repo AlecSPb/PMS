@@ -54,7 +54,7 @@ namespace PMSClient.ReportsHelperNew
                             for (int i = 1; i < item.Plan.Quantity + 1; i++)
                             {
                                 Row row = table.InsertRow();
-                                row.Height = 40;
+                                row.Height = 35;
                                 string row_1 = item.Plan.PlanDate.ToString("yyMMdd") + "-" + item.Plan.VHPDeviceCode + "-" + i;
                                 row.Cells[0].Paragraphs[0].Append(row_1);
                                 row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
