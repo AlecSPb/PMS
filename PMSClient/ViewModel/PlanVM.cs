@@ -54,18 +54,21 @@ namespace PMSClient.ViewModel
 
         private void ActionRecordSheet()
         {
-            var tool = new ToolWindow.DateSelector();
-            if (tool.ShowDialog() == false)
-                return;
-            DateTime selectedDate = tool.SelectedDate;
-            PMSDialogService.ShowYes(selectedDate.ToShortDateString());
             //生成取模记录单
-            //using (var service = new MissonServiceClient())
-            //{
-            //}
-
-
-
+            if (!PMSDialogService.ShowYesNo("请问", "确定生成记录单吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var word = new ReportsHelperNew.ReportRecordDeMold();
+                word.Intialize("取模记录单");
+                word.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         /// <summary>
@@ -242,9 +245,9 @@ namespace PMSClient.ViewModel
             //只显示Checked过的计划
             using (var service = new MissonServiceClient())
             {
-                var orders = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
+                var models = service.GetPlanExtra(skip, take, SearchVHPDate, SearchComposition);
                 PlanWithMissons.Clear();
-                orders.ToList().ForEach(o => PlanWithMissons.Add(o));
+                models.ToList().ForEach(o => PlanWithMissons.Add(o));
             }
             CurrentPlanWithMisson = PlanWithMissons.FirstOrDefault();
         }

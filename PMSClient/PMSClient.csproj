@@ -253,6 +253,7 @@
     <Compile Include="Helpers\OK\NavigationService.cs" />
     <Compile Include="Helpers\VToken.cs" />
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
+    <Compile Include="ReportsHelperNew\ReportRecordDeMold.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\StringUtil.cs" />
     <Compile Include="ReportsHelper\WordBondingSheet.cs" />
@@ -1355,6 +1356,9 @@
     </Content>
     <None Include="Properties\app.manifest" />
     <Content Include="Resource\Files\FillingToolRule.pptx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\ReportRecordDeMold.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">

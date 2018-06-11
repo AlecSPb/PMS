@@ -22,7 +22,7 @@ namespace PMSClient.ToolWindow
         public DateSelector()
         {
             InitializeComponent();
-            SelectedDate = DateTime.Today;
+            SelectedDate = DateTime.Today.AddDays(-1);
             DpDate.SelectedDate = SelectedDate;
         }
         private DateTime selectedDate;
@@ -35,7 +35,7 @@ namespace PMSClient.ToolWindow
             set
             {
                 selectedDate = value;
-                TxtSelectedDate.Text = $"选择的日期是{selectedDate}";
+                TxtSelectedDate.Text = $"选择日期是[{selectedDate.ToString("yyMMdd dddd")}]";
             }
         }
 

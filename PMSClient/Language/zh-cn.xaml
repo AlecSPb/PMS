@@ -825,8 +825,8 @@
     <sys:String x:Key="TDProgress">进度进程</sys:String>
     <sys:String x:Key="TDType">类型</sys:String>
     <!--FillingTool-->
-    <sys:String x:Key="PageFillingTool">装料工具索引</sys:String>
-    <sys:String x:Key="PageFillingToolEdit">装料工具索引-编辑</sys:String>
+    <sys:String x:Key="PageFillingTool">装具索引</sys:String>
+    <sys:String x:Key="PageFillingToolEdit">装具索引-编辑</sys:String>
 
     <sys:String x:Key="FTCreateTime">创建时间</sys:String>
     <sys:String x:Key="FTCreator">创建者</sys:String>

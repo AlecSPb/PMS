@@ -46,10 +46,15 @@ namespace PMSCommon
                 var data = new List<string>();
                 #region 数据
                 data.Add("无");
-                data.Add("10minx2");
-                data.Add("20minx2");
-                data.Add("30minx2");
-                data.Add("40minx2");
+                data.Add("x");
+                data.Add("10x");
+                data.Add("20x");
+                data.Add("30x");
+                data.Add("40x");
+                data.Add("50x");
+                data.Add("60x");
+                data.Add("70x");
+                data.Add("80x");
                 #endregion
                 return data;
             }
@@ -61,6 +66,7 @@ namespace PMSCommon
                 var data = new List<string>();
                 #region 数据
                 data.Add("无需样品");
+                data.Add("x");
                 data.Add("65gx1+15gx2");
                 data.Add("65gx1+15gx3");
                 data.Add("15gx2");
@@ -188,11 +194,11 @@ namespace PMSCommon
             {
                 var data = new List<string>();
                 #region 数据
-                data.Add("+Sb2Te3");
-                data.Add("+Na2S");
-                data.Add("+KF");
-                data.Add("+NaF");
-                data.Add("+RbF");
+                data.Add("+Sb2Te3-");
+                data.Add("+Na2S-");
+                data.Add("+KF-");
+                data.Add("+NaF-");
+                data.Add("+RbF-");
                 data.Add("注意防潮");
                 data.Add("N气保护");
                 data.Add("Ar气保护");
@@ -380,8 +386,8 @@ namespace PMSCommon
                 data.Add("W2");
                 data.Add("W3");
                 data.Add("W4");
-                data.Add("KL");
-                data.Add("UK");
+                data.Add("KaoLiao");
+                data.Add("UnKnown");
                 #endregion
                 return data;
             }
@@ -418,6 +424,7 @@ namespace PMSCommon
                 data.Add("X");
                 data.Add("Y");
                 data.Add("Z");
+
                 data.Add("HIP");
                 data.Add("UK");
                 #endregion

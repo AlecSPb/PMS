@@ -34,7 +34,7 @@
             <Button Content="θ"/>
             <Button Content="σ"/>
             <Button Content="φ"/>
-            <Button Content="φ"/>
+            <Button Content="Φ"/>
             <Button Content="□"/>
         </UniformGrid>
         <Grid Grid.Row="1">
