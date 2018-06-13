@@ -7,24 +7,23 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow"
-        Title="请选择日期" Height="200" Width="400">
+        Title="请选择日期" Height="200" Width="450">
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <DatePicker Name="DpDate" Grid.Row="0" Style="{StaticResource StyleDatePickerCommon}"
+        <StackPanel Grid.Row="0" Orientation='Horizontal'>
+            <DatePicker Name="DpDate" Grid.Row="0" Style="{StaticResource StyleDatePickerCommon}"
                     SelectedDateChanged="DpDate_SelectedDateChanged"/>
-        <StackPanel Grid.Row="1" Orientation='Horizontal'>
             <Button Name="BtnYesterday" Click="BtnYesterday_Click" Style="{StaticResource StyleButtonCommon}" Content="昨天"/>
             <Button Name="BtnToday" Click="BtnToday_Click"  Style="{StaticResource StyleButtonCommon}" Content="今天"/>
             <Button Name="BtnTomorrow" Click="BtnTomorrow_Click" Style="{StaticResource StyleButtonCommon}" Content="明天"/>
         </StackPanel>
-        <TextBlock Grid.Row="2" Name="TxtSelectedDate" Style="{StaticResource StyleDGTextBlockCommon}" Text="选择"
+        <TextBlock Grid.Row="1" Name="TxtSelectedDate" Style="{StaticResource StyleDGTextBlockCommon}" Text="选择"
                    FontSize="25"/>
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="BtnOK" Click="BtnOK_Click" Content="确定" Style="{StaticResource StyleButtonCommon}"/>
             <Button Name="BtnCancel" Click="BtnCancel_Click" Content="取消" Style="{StaticResource StyleButtonCommon}"/>
         </StackPanel>

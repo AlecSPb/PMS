@@ -136,6 +136,22 @@ namespace PMSClient
                 var tool = new ToolWindow.SymbolWindow();
                 tool.Show();
             });
+            Element = new RelayCommand(() =>
+              {
+                  try
+                  {
+                      string helpFileName = "化学元素读音对照表.pdf";
+                      string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                      if (File.Exists(helpFile))
+                      {
+                          System.Diagnostics.Process.Start(helpFile);
+                      }
+                  }
+                  catch (Exception ex)
+                  {
+                      PMSHelper.CurrentLog.Error(ex);
+                  }
+              });
             #endregion
         }
 
@@ -150,5 +166,7 @@ namespace PMSClient
         public RelayCommand FillingTool { get; set; }
         public RelayCommand FillingToolRule { get; set; }
         public RelayCommand Symbol { get; set; }
+
+        public RelayCommand Element { get; set; }
     }
 }

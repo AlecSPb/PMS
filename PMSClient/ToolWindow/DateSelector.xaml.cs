@@ -36,6 +36,7 @@ namespace PMSClient.ToolWindow
             {
                 selectedDate = value;
                 TxtSelectedDate.Text = $"选择日期是[{selectedDate.ToString("yyMMdd dddd")}]";
+                DpDate.SelectedDate = selectedDate;
             }
         }
 

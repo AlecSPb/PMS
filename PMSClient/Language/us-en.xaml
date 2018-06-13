@@ -294,6 +294,9 @@
 
     <sys:String x:Key="ButtonComplexQueryForOrder">Search Integrated Info For This Order</sys:String>
     <sys:String x:Key="ButtonComplexQueryForPlan">Search Integrated Info For This Plan</sys:String>
+
+    <sys:String x:Key="ButtonPrintIndex">Index Sheet</sys:String>
+
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>
     <sys:String x:Key="IndicatorYesterday">Yesterday</sys:String>
@@ -860,6 +863,7 @@
     <sys:String x:Key="BottomBarCodeRule">Code</sys:String>
     <sys:String x:Key="BottomBarLaserRule">Laser</sys:String>
     <sys:String x:Key="BottomBarFillingToolRule">FillingRule</sys:String>
+    <sys:String x:Key="BottomBarElement">Element</sys:String>
 
     <!--每个页面最前面的提示信息-->
     <sys:String x:Key="HelpTipOrderEdit">

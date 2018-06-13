@@ -105,10 +105,10 @@ namespace PMSWCFService
                                 where tt.CompositionAbbr.Contains(elementA)
                                 && tt.CompositionAbbr.Contains(elementB)
                                 && tt.State != PMSCommon.SimpleState.作废.ToString()
-                                orderby tt.ToolNumber, tt.CompositionAbbr
+                                orderby tt.ToolNumber descending, tt.CompositionAbbr
                                 select tt;
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolFilling, DcToolFilling>());
-                    return Mapper.Map<List<ToolFilling>, List<DcToolFilling>>(query.ToList());
+                    return Mapper.Map<List<ToolFilling>, List<DcToolFilling>>(query.Skip(s).Take(t).ToList());
                 }
             }
             catch (Exception ex)
@@ -143,11 +143,11 @@ namespace PMSWCFService
                     var query = from tt in service.ToolMillings
                                 where tt.CompositionAbbr.Contains(elementA)
                                 && tt.CompositionAbbr.Contains(elementB)
-                                && tt.State!=PMSCommon.SimpleState.作废.ToString()
-                                orderby tt.ToolNumber, tt.CompositionAbbr
+                                && tt.State != PMSCommon.SimpleState.作废.ToString()
+                                orderby tt.ToolNumber descending, tt.CompositionAbbr
                                 select tt;
                     Mapper.Initialize(cfg => cfg.CreateMap<ToolMilling, DcToolMilling>());
-                    return Mapper.Map<List<ToolMilling>, List<DcToolMilling>>(query.ToList());
+                    return Mapper.Map<List<ToolMilling>, List<DcToolMilling>>(query.Skip(s).Take(t).ToList());
                 }
             }
             catch (Exception ex)

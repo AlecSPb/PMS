@@ -57,8 +57,9 @@ namespace PMSClient.ReportsHelper
                         var ordered = model.OrderBy(i => i.TargetProductID).OrderBy(i => i.PlanBatchNumber);
                         foreach (var item in ordered)
                         {
+                            string no = item.PlanBatchNumber.ToString() + "-" + rownumber;
                             mainTable.Rows[rownumber].Cells[0].Paragraphs[0]
-                                .Append(item.PlanBatchNumber.ToString()).FontSize(10).Alignment = Alignment.center;
+                                .Append(no).FontSize(10).Alignment = Alignment.left;
                             mainTable.Rows[rownumber].Cells[1].Paragraphs[0]
                                 .Append($"{item.TargetProductID}").FontSize(10);
                             mainTable.Rows[rownumber].Cells[2].Paragraphs[0]

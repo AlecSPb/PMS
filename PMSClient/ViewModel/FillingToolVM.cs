@@ -22,14 +22,33 @@ namespace PMSClient.ViewModel
             searchElementA = searchElementB = "";
             ToolFillings = new ObservableCollection<DcToolFilling>();
 
+            PageChanged = new RelayCommand(ActionPaging);
             Add = new RelayCommand(ActionAdd, CanAdd);
             Edit = new RelayCommand<DcToolFilling>(ActionEdit, CanEdit);
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
-
+            PrintList = new RelayCommand(ActionPrintList);
             SetPageParametersWhenConditionChange();
 
 
+        }
+
+        private void ActionPrintList()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "确定生成索引单吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var tool = new ReportsHelperNew.ReportFillingTool();
+                tool.Intialize("装料具索引单");
+                tool.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         public void Refresh()
@@ -74,7 +93,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 40;
             using (var service = new ToolInventoryServiceClient())
             {
                 RecordCount = service.GetToolFillingsCount(SearchElementA, SearchElementB);
@@ -90,7 +109,7 @@ namespace PMSClient.ViewModel
             {
                 var data = service.GetToolFillings(skip, take, SearchElementA, SearchElementB);
                 ToolFillings.Clear();
-                data.OrderBy(i => i.ToolNumber).ToList().ForEach(o => ToolFillings.Add(o));
+                data.ToList().ForEach(o => ToolFillings.Add(o));
             }
         }
 
@@ -126,6 +145,7 @@ namespace PMSClient.ViewModel
         #region 命令
         public RelayCommand Add { get; set; }
         public RelayCommand<DcToolFilling> Edit { get; set; }
+        public RelayCommand PrintList { get; set; }
         #endregion
 
     }

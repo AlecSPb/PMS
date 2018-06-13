@@ -39,7 +39,7 @@ namespace PMSClient.ReportsHelperNew
                 Table table = doc.Tables[0];
                 using (var service = new MissonServiceClient())
                 {
-                    recordCount = service.GetPlanExtraCount(searchCode, string.Empty);
+                    recordCount = service.GetPlanExtraCount(searchCode, empty);
                     pageCount = GetPageCount();
 
                     int s = 0, t = 0;
@@ -47,7 +47,7 @@ namespace PMSClient.ReportsHelperNew
                     {
                         s = pageIndex * pageSize;
                         t = pageSize;
-                        var pageData = service.GetPlanExtra(s, t, searchCode, string.Empty);
+                        var pageData = service.GetPlanExtra(s, t, searchCode, empty);
                         var ordered = pageData.OrderBy(i => i.Plan.PlanLot).OrderBy(i => i.Plan.SearchCode);
                         foreach (var item in ordered)
                         {

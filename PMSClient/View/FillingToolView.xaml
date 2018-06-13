@@ -31,6 +31,8 @@
                     Command="{Binding Search}"/>
             <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}"
                     Command="{Binding All}"/>
+            <Button Content="{StaticResource ButtonPrintIndex}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding PrintList}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}"
                   ItemsSource="{Binding ToolFillings}">
