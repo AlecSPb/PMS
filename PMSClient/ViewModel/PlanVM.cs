@@ -182,13 +182,21 @@ namespace PMSClient.ViewModel
                 basic.Append("装模:");
                 basic.Append(model.Plan.FillingRequirement);
                 basic.AppendLine();
+                basic.AppendLine();
 
-                //如果是50.8mm的靶材且类型为加工，弹出打印多张的警告窗口
+                //如果是50mm的靶材且类型为加工，弹出打印多张的警告窗口
                 if (model.Plan.PlanType.Contains("加工")
-                    && model.Misson.Dimension.Contains("50.8"))
+                    && model.Misson.Dimension.Contains("50"))
                 {
-                    basic.Append("50.8mm可能会切割多块，需要多个产品标签+样品标签");
+                    basic.Append("可能会切割多块，需要多个产品标签+样品标签");
                 }
+
+                if (model.Plan.ProcessCode == "W2"
+                    && model.Plan.MoldDiameter == 450)
+                {
+                    basic.Append("450产品需要打印编号标签，取模记录单上也要标注");
+                }
+
 
                 var lb = new StringBuilder();
                 lb.Append(UsefulPackage.PMSTranslate.PlanLot(model));
