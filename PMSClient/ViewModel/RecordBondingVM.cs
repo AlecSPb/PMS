@@ -43,6 +43,27 @@ namespace PMSClient.ViewModel
             PageChanged = new RelayCommand(ActionPaging);
             Finish = new RelayCommand<MainService.DcRecordBonding>(ActionFinish, CanFinish);
             RecordSheet = new RelayCommand(ActionRecordSheet);
+            ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+            //生成绑定计划报表
+
+
+
+        }
+
+        private bool CanScanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
+        }
+
+        private void ActionScanAdd()
+        {
+            var tool = new ToolWindow.ScanInput();
+            tool.Show();
         }
 
         private void ActionRecordSheet()
@@ -212,5 +233,9 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordBonding> Edit { get; set; }
         public RelayCommand<DcRecordBonding> Finish { get; set; }
         public RelayCommand RecordSheet { get; set; }
+
+        public RelayCommand ScanAdd { get; set; }
+
+        public RelayCommand Output { get; set; }
     }
 }

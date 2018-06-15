@@ -54,6 +54,9 @@
                                 <Button Content="{StaticResource ButtonAddChild}" Style="{StaticResource StyleDGButton}" 
                                             Command="{Binding DataContext.AddItem,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonScanAdd}" Style="{StaticResource StyleDGButton}" 
+                                            Command="{Binding DataContext.ScanAdd,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                            CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleDGButton}"
                                                 Command="{Binding Path=DataContext.DeliverySheet,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
@@ -210,6 +213,17 @@
                 </DataGridTemplateColumn>
                 <DataGridTextColumn Header="{StaticResource RDPackNumber}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding PackNumber}"/>
+                <DataGridTemplateColumn Header="{StaticResource RDPackNumber}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Style="{StaticResource StyleTextBoxCommon}"
+                                         Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                                <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="{StaticResource RDPosition}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

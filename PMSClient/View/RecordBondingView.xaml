@@ -23,6 +23,8 @@
                     Command="{Binding  Add}"/>
             <Button Content="{StaticResource ButtonQuickAdd}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding  QuickAdd}"/>
+            <Button Content="{StaticResource ButtonScanAdd}" Style="{StaticResource  StyleButtonSpecial}"
+                    Command="{Binding  ScanAdd}"/>
             <TextBlock Text="{StaticResource BDTargetProductID}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchProductID,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch }" />
@@ -35,6 +37,8 @@
                     Command="{Binding All}"/>
             <Button Content="{StaticResource ButtonRecordSheet}" Style="{StaticResource StyleButtonSpecial}"
                     Command="{Binding RecordSheet}"/>
+            <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource StyleButtonCommon}"
+                    Command="{Binding Output}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource CompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>

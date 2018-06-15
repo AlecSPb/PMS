@@ -300,7 +300,7 @@
 
     <sys:String x:Key="ButtonPrintIndex">索引单</sys:String>
 
-    <sys:String x:Key="ButtonScanAdd">扫描录入</sys:String>
+    <sys:String x:Key="ButtonScanAdd">扫描</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>

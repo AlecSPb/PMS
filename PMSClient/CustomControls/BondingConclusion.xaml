@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="绑定结果？" Height="300" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-    <Grid Background="{StaticResource BGBrushWindow}">
+    <Grid Background="{StaticResource BGBrushWindow}" Margin="2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
@@ -28,7 +28,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="靶材ID"/>
         <TextBox Name="txtProductID"  Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"
-                 FontSize="20" IsReadOnly="True"/>
+                 FontSize="20" IsReadOnly="True" Background="LightBlue"/>
         
         <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="状态"/>

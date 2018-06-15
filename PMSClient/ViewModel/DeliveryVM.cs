@@ -57,7 +57,18 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<DcDelivery>(ActionSelectionChanged);
             GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
 
+            ScanAdd = new RelayCommand<DcDelivery>(AcitonScanAdd, CanScanAdd);
+        }
 
+        private void AcitonScanAdd(DcDelivery obj)
+        {
+            var tool = new ToolWindow.ScanInput();
+            tool.Show();
+        }
+
+        private bool CanScanAdd(DcDelivery obj)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
 
         private bool CanFinish(DcDelivery arg)
@@ -379,6 +390,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDelivery> SelectionChanged { get; set; }
 
         public RelayCommand GoToDeliveryItemList { get; set; }
+
+        public RelayCommand<DcDelivery> ScanAdd { get; set; }
         #endregion
 
 

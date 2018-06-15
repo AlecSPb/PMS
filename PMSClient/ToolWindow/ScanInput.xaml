@@ -8,6 +8,7 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
         WindowStyle="ToolWindow"
+        Topmost="True"
         Title="扫描批量输入" Height="500" Width="600">
     <Grid>
         <Grid.RowDefinitions>
@@ -16,11 +17,15 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="请使用扫描枪或者采集器工具批量采集产品ID到下面，每行一个"
-                   Style="{StaticResource StyleDGTextBlockCommon}"/>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最前" IsChecked="True"/>
+            <TextBlock  Text="请使用扫描枪或者采集器工具批量采集产品ID到下面，每行一个,可以手动编辑"
+                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue"/>
+        </StackPanel>
         <TextBox Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="批量录入" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="存在检查" Style="{StaticResource StyleButtonCommon}"/>
+            <Button Content="批量录入" Style="{StaticResource StyleButtonSpecial}"/>
         </StackPanel>
         <TextBox Grid.Row="3" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
     </Grid>

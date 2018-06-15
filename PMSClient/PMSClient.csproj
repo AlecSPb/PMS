@@ -211,6 +211,7 @@
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialOut.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputOrder.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputPlan.cs" />
+    <Compile Include="ExcelOutputHelper\ExcelOutputRecordBonding.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputRecordMilling.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputRecordTest.cs" />
     <Compile Include="ExcelOutputHelper\NPOIHelper.cs" />
@@ -1792,12 +1793,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
