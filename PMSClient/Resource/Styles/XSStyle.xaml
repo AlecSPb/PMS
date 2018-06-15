@@ -279,6 +279,13 @@
         <Setter Property="Background" Value="Transparent"/>
     </Style>
 
+    <Style x:Key="StyleDGTextBox" TargetType="TextBox" BasedOn="{StaticResource txtBase}">
+        <Setter Property="Padding" Value="{StaticResource ThicknessMD}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="50"/>
+    </Style>
+    
     <Style x:Key="StyleTextBoxSearch" TargetType="TextBox" BasedOn="{StaticResource StyleTextBoxCommon}">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Width" Value="100"/>

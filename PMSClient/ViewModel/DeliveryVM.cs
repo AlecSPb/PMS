@@ -58,6 +58,31 @@ namespace PMSClient.ViewModel
             GoToDeliveryItemList = new RelayCommand(ActionGoToDeliveryItemList);
 
             ScanAdd = new RelayCommand<DcDelivery>(AcitonScanAdd, CanScanAdd);
+
+            QuickSave = new RelayCommand<DcDeliveryItem>(ActionQuickSave, CanQuickSave);
+        }
+
+        private void ActionQuickSave(DcDeliveryItem obj)
+        {
+            try
+            {
+                if (obj == null)
+                    return;
+                using (var service = new DeliveryServiceClient())
+                {
+                    service.UpdateDeliveryItemByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
+                }
+                PMSDialogService.ShowYes("已保存到服务器");
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
+
+        private bool CanQuickSave(DcDeliveryItem arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditDelivery);
         }
 
         private void AcitonScanAdd(DcDelivery obj)
@@ -392,6 +417,8 @@ namespace PMSClient.ViewModel
         public RelayCommand GoToDeliveryItemList { get; set; }
 
         public RelayCommand<DcDelivery> ScanAdd { get; set; }
+
+        public RelayCommand<DcDeliveryItem> QuickSave { get; set; }
         #endregion
 
 

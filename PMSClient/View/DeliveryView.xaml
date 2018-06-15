@@ -217,9 +217,13 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBox Style="{StaticResource StyleTextBoxCommon}"
-                                         Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
-                                <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleButtonCommon}"/>
+                                <TextBox Style="{StaticResource StyleDGTextBox}"
+                                         Text="{Binding PackNumber,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                                         TextAlignment="Center"/>
+                                <Button Content="{StaticResource ButtonSave}" Style="{StaticResource StyleDGButton}"
+                                        Command="{Binding DataContext.QuickSave,RelativeSource={RelativeSource 
+                                                Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
