@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.CustomControls"
         mc:Ignorable="d"
-        Title="绑定结果？" Height="200" Width="300" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        Title="绑定结果？" Height="300" Width="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.ColumnDefinitions>
@@ -17,25 +17,33 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource StyleDGTextBlockCommon}"
                    Text="请选择合适内容后确认"/>
+        
         <TextBlock Grid.Row="1" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="状态"/>
-        <ComboBox Name="cboState" Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"/>
-
+                   Text="靶材ID"/>
+        <TextBox Name="txtProductID"  Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"
+                 FontSize="20" IsReadOnly="True"/>
+        
         <TextBlock Grid.Row="2" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="背板"/>
-        <TextBox Name="txtPlateNumber"  Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"
-                 FontSize="20"/>
+                   Text="状态"/>
+        <ComboBox Name="cboState" Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
-                   Text="缺陷"/>
-        <TextBox Name="txtDefects" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"/>
+                   Text="背板"/>
+        <TextBox Name="txtPlateNumber"  Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="暂无"
+                 FontSize="20"/>
 
-        <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
+        <TextBlock Grid.Row="4" Grid.Column="0"  Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="缺陷"/>
+        <TextBox Name="txtDefects" Grid.Row="4" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}" Text="无"/>
+
+        <StackPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Name="btnCancel" Content="取消" Style="{StaticResource StyleButtonCommon}" Click="btnCancel_Click"/>
             <Button Name="btnYes" Content="确定" Style="{StaticResource StyleButtonCommon}" Click="btnYes_Click"/>
         </StackPanel>

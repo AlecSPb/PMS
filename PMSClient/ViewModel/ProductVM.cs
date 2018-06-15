@@ -37,7 +37,16 @@ namespace PMSClient.ViewModel
             SearchRecordTest = new RelayCommand<DcProduct>(ActionRecordTest, CanRecordTest);
 
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
+
+            ScanAdd = new RelayCommand(ActionScanAdd);
         }
+
+        private void ActionScanAdd()
+        {
+            var tool = new ToolWindow.ScanInput();
+            tool.Show();
+        }
+
         private bool CanDuplicate(DcProduct arg)
         {
             return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
@@ -183,6 +192,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcProduct> SearchRecordTest { get; set; }
         public RelayCommand<DcProduct> SelectAndSend { get; set; }
         public RelayCommand OnlyUnCompleted { get; set; }
+
+        public RelayCommand ScanAdd { get; set; }
 
         private string searchProductID;
         public string SearchProductID

@@ -338,6 +338,9 @@
     <Compile Include="ToolWindow\RecordStateConfirm.xaml.cs">
       <DependentUpon>RecordStateConfirm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\ScanInput.xaml.cs">
+      <DependentUpon>ScanInput.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
     </Compile>
@@ -879,6 +882,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\RecordStateConfirm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\ScanInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -296,6 +296,7 @@
     <sys:String x:Key="ButtonComplexQueryForPlan">Search Integrated Info For This Plan</sys:String>
 
     <sys:String x:Key="ButtonPrintIndex">Index Sheet</sys:String>
+    <sys:String x:Key="ButtonScanAdd">Scan Add</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>

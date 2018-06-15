@@ -84,6 +84,7 @@ namespace PMSClient.ViewModel
         private void ActionFinish(DcRecordBonding model)
         {
             CustomControls.BondingConclusion dialog = new CustomControls.BondingConclusion();
+            dialog.ProductID = model.TargetProductID;
             if (dialog.ShowDialog() == true)
             {
                 using (var service = new RecordBondingServiceClient())

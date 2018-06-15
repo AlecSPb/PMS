@@ -30,6 +30,14 @@ namespace PMSClient.CustomControls
         public string PlateNumber { get { return txtPlateNumber.Text; } }
         public string Defects { get { return txtDefects.Text; } }
 
+        public string ProductID
+        {
+            set
+            {
+                txtProductID.Text = value;
+            }
+        }
+
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
