@@ -64,7 +64,7 @@ namespace PMSClient.ViewModel
 
             CsvOutputHelper.CsvOutputRecordMilling csv = new CsvOutputHelper.CsvOutputRecordMilling();
             csv.Output();
-            PMSDialogService.ShowYes("OK");
+            PMSDialogService.Show("OK");
         }
 
         private bool CanQuickAdd()

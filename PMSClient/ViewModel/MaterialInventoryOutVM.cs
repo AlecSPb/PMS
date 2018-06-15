@@ -102,7 +102,7 @@ namespace PMSClient.ViewModel
                     outCount = service.CheckMaterialOut(model.PMINumber);
                 }
                 string msg = $"{model.PMINumber}-入库数据中找到{inCount}条，出库数据中找到{outCount}条";
-                PMSDialogService.ShowYes(msg);
+                PMSDialogService.Show(msg);
             }
             catch (Exception ex)
             {

@@ -80,7 +80,7 @@ namespace PMSClient.ViewModel
                     break;
                 case PMSViews.ProductEdit:
                 case PMSViews.DeliveryItemEdit:
-                    PMSDialogService.ShowYes("产品库和发货在此处无法使用多选功能");
+                    PMSDialogService.Show("产品库和发货在此处无法使用多选功能");
                     break;
                 default:
                     break;

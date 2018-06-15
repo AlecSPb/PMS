@@ -72,7 +72,7 @@ namespace PMSClient.ViewModel
                 {
                     service.UpdateDeliveryItemByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
-                PMSDialogService.ShowYes("已保存到服务器");
+                PMSDialogService.Show("已保存到服务器");
             }
             catch (Exception ex)
             {

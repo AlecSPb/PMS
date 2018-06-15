@@ -42,7 +42,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetDeliveryStatisticByProductType(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -88,7 +88,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetDeliveryStatisticByCustomer(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -134,7 +134,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetDeliveryStatisticBySeason(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -180,7 +180,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetDeliveryStatisticByMonth(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -226,7 +226,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetDeliveryStatisticByYear();
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();

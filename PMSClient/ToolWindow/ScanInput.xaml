@@ -22,11 +22,13 @@
             <TextBlock  Text="请使用扫描枪或者采集器工具批量采集产品ID到下面，每行一个,可以手动编辑"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue"/>
         </StackPanel>
-        <TextBox Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        <TextBox Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                 Text="{Binding InputText}"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="存在检查" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="批量录入" Style="{StaticResource StyleButtonSpecial}"/>
+            <Button Content="存在检查" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
+            <Button Content="批量录入" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
         </StackPanel>
-        <TextBox Grid.Row="3" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        <TextBox Grid.Row="3" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                 Text="{Binding StatusText}"/>
     </Grid>
 </Window>

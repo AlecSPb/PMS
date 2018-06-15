@@ -204,6 +204,7 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataProcess\ProcessScanInput.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
@@ -342,6 +343,7 @@
     <Compile Include="ToolWindow\ScanInput.xaml.cs">
       <DependentUpon>ScanInput.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\ScanInputVM.cs" />
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
     </Compile>

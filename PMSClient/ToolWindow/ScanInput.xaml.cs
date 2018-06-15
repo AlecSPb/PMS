@@ -22,6 +22,7 @@ namespace PMSClient.ToolWindow
         public ScanInput()
         {
             InitializeComponent();
+            this.DataContext = new ScanInputVM();
         }
     }
 }

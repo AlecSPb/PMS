@@ -226,7 +226,7 @@ namespace PMSClient.ViewModel
             }
             else
             {
-                PMSDialogService.ShowYes("暂无消息");
+                PMSDialogService.Show("暂无消息");
             }
         }
 

@@ -42,7 +42,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetProductStatisticByProductType(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var orderByYear = new ChartValues<int>();
@@ -88,7 +88,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetProductStatisticBySeason(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var orderByYear = new ChartValues<int>();
@@ -134,7 +134,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetProductStatisticByMonth(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var orderByYear = new ChartValues<int>();
@@ -180,7 +180,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetProductStatisticByYear();
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var orderByYear = new ChartValues<int>();

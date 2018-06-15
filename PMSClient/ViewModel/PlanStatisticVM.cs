@@ -40,7 +40,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetPlanStatisticByDevice(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -86,7 +86,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetPlanStatisticBySeason(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -132,7 +132,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetPlanStatisticByMonth(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();
@@ -178,7 +178,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetPlanStatisticByYear();
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var tempValues = new ChartValues<int>();

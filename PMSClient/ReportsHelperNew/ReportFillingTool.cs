@@ -64,7 +64,7 @@ namespace PMSClient.ReportsHelperNew
                 doc.Save();
             }
             File.Copy(temp, wordFileName, true);
-            PMSDialogService.ShowYes("生成成功，即将打开");
+            PMSDialogService.Show("生成成功，即将打开");
             System.Diagnostics.Process.Start(wordFileName);
         }
 

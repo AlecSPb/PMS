@@ -42,7 +42,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetOrderStatisticByCustomer(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("该年没有记录");
+                        PMSDialogService.Show("该年没有记录");
                         return;
                     }
                     var ordeByCustomer = new ChartValues<int>();
@@ -89,7 +89,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetOrderStatisticBySeason(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("该年没有记录");
+                        PMSDialogService.Show("该年没有记录");
                         return;
                     }
                     var ordeByCustomer = new ChartValues<int>();
@@ -135,7 +135,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetOrderStatisticByMonth(CurrentYear);
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("该年没有记录");
+                        PMSDialogService.Show("该年没有记录");
                         return;
                     }
                     var orderByMonth = new ChartValues<int>();
@@ -187,7 +187,7 @@ namespace PMSClient.ViewModel
                     var result = service.GetOrderStatisticByYear();
                     if (result.Count() == 0)
                     {
-                        PMSDialogService.ShowYes("没有记录");
+                        PMSDialogService.Show("没有记录");
                         return;
                     }
                     var orderByYear = new ChartValues<int>();

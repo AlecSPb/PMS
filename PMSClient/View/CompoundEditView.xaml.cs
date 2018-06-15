@@ -32,11 +32,11 @@ namespace PMSClient.View
             {
                 if (service.GetCompoundCount(composition) > 0)
                 {
-                    PMSDialogService.ShowYes($"已经存在[{composition}]，无需继续添加");
+                    PMSDialogService.Show($"已经存在[{composition}]，无需继续添加");
                 }
                 else
                 {
-                    PMSDialogService.ShowYes($"可以添加[{composition}]");
+                    PMSDialogService.Show($"可以添加[{composition}]");
 
                 }
             }

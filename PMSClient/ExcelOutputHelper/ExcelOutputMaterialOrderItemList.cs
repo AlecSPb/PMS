@@ -65,7 +65,7 @@ namespace PMSClient.ExcelOutputHelper
 
                 helper.Save(excelFileName);
 
-                PMSDialogService.ShowYes($"{excelFileName}创建完毕,请到桌面查看");
+                PMSDialogService.Show($"{excelFileName}创建完毕,请到桌面查看");
             }
         }
     }

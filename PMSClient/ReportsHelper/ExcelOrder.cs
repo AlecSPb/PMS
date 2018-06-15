@@ -59,7 +59,7 @@ namespace PMSClient.ReportsHelper
                         recordCount = service.GetOrderCountByYear(Year);
                         if (recordCount==0)
                         {
-                            PMSDialogService.ShowYes("该年数据数目为0，请重新选择");
+                            PMSDialogService.Show("该年数据数目为0，请重新选择");
                             return;
                         }
 
@@ -116,7 +116,7 @@ namespace PMSClient.ReportsHelper
                     excel.Save();
                 }
 
-                PMSDialogService.ShowYes("订单数据导出成功");
+                PMSDialogService.Show("订单数据导出成功");
             }
             catch (Exception ex)
             {
