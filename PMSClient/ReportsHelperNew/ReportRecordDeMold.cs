@@ -40,6 +40,12 @@ namespace PMSClient.ReportsHelperNew
                 using (var service = new MissonServiceClient())
                 {
                     recordCount = service.GetPlanExtraCount(searchCode, empty);
+                    if (recordCount == 0)
+                    {
+                        PMSDialogService.Show("找个0个计划，请确定日期选择是否正确");
+                        return;
+                    }
+
                     pageCount = GetPageCount();
 
                     int s = 0, t = 0;

@@ -34,6 +34,7 @@ namespace PMSClient.DataProcess
         {
             if (lot.Length >= 9)
             {
+                //180116-AB-1  180616-A-1  180616-A-1A
                 string mark = lot.Substring(7, 2).Replace("-", "");
                 switch (mark.ToUpper())
                 {

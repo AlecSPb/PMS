@@ -91,8 +91,16 @@ namespace PMSClient.ViewModel
                     //PMSDialogService.ShowYes($"共有{count}条绑定记录");
                     var report = new WordBondingSheet();
                     var models = service.GetUnFinishedRecordBondings();
-                    report.SetModel(models.ToList());
-                    report.Output();
+                    if (models.Count() > 0)
+                    {
+                        report.SetModel(models.ToList());
+                        report.Output();
+                    }
+                    else
+                    {
+                        PMSDialogService.Show("暂时没有绑定计划");
+                    }
+
                 }
             }
             catch (Exception ex)

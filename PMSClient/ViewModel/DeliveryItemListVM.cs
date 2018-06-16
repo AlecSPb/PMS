@@ -48,6 +48,12 @@ namespace PMSClient.ViewModel
             SearchRecordTest = new RelayCommand<DcDeliveryItemExtra>(ActionSearchRecordTest);
             SearchDelivery = new RelayCommand<DcDeliveryItemExtra>(ActionSearchDelivery);
             GiveUp = new RelayCommand(ActionGiveUp);
+            Output = new RelayCommand(ActionOutput);
+        }
+
+        private void ActionOutput()
+        {
+            //TODO:添加Excel导出功能
         }
 
         private void ActionGiveUp()
@@ -154,6 +160,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcDeliveryItemExtra> SearchDelivery { get; set; }
 
         public RelayCommand GiveUp { get; set; }
+
+        public RelayCommand Output { get; set; }
         #endregion
 
 
