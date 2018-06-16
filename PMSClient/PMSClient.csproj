@@ -204,6 +204,7 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataProcess\DataTableSource.cs" />
     <Compile Include="DataProcess\ProcessScanInput.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
@@ -1795,12 +1796,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

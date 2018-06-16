@@ -9,28 +9,29 @@
         WindowState="Normal"
         WindowStyle="ToolWindow"
         Topmost="True"
-        Title="扫描批量输入" Height="500" Width="600">
+        Title="扫描批量输入" Height="750" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最前" IsChecked="True"/>
-            <TextBlock  Text="请使用扫描枪或者采集器工具批量采集产品ID到下面，每行一个,可以手动编辑"
-                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue"/>
         </StackPanel>
-        <TextBox Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+        <TextBlock Grid.Row="1"  Text="请使用扫描枪或者采集器工具批量采集产品ID到下面，每行一个,可以手动编辑"
+                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
+        <TextBox Grid.Row="2" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
                  Text="{Binding InputText}"/>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="存在检查" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
             <Button Content="批量录入" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
         </StackPanel>
-        <ProgressBar Grid.Row="3" Height="10" Value="50" Margin="2"/>
-        <TextBox Grid.Row="4" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+        <ProgressBar Grid.Row="4" Height="10" Value="50" Margin="2"/>
+        <TextBox Grid.Row="5" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
                  Text="{Binding StatusText}"/>
     </Grid>
 </Window>
