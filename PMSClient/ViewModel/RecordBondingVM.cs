@@ -51,7 +51,20 @@ namespace PMSClient.ViewModel
         {
             //生成绑定计划报表
 
-
+            if (!PMSDialogService.ShowYesNo("请问", "确定要导出全部数据吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelOutputRecordBonding();
+                excel.Intialize("绑定记录导出记录", "绑定记录");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
 
         }
 

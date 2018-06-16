@@ -56,18 +56,19 @@ namespace PMSClient.DataProcess
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public string[] SplitMultiLineText(string text)
+        public string[] SplitLots(string text)
         {
-            return text.Split(Environment.NewLine.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            return text.Split(Environment.NewLine.ToCharArray(),
+                                    StringSplitOptions.RemoveEmptyEntries);
         }
 
 
-        public string CheckAll(string product_lots)
+        public string CheckAll(string lots)
         {
-            if (string.IsNullOrEmpty(product_lots))
+            if (string.IsNullOrEmpty(lots))
                 return "";
 
-            string[] data = SplitMultiLineText(product_lots);
+            string[] data = SplitLots(lots);
             StringBuilder sb = new StringBuilder();
             foreach (var line in data)
             {
@@ -77,6 +78,16 @@ namespace PMSClient.DataProcess
             return sb.ToString();
         }
 
+        //从检测记录中查找
 
+        //从外包记录中查找
+
+        //从背板记录中查找
+
+        //判断绑定记录是否存在
+
+        //判定产品库记录是否存在
+        
+        //判定发货计划是否存在
     }
 }
