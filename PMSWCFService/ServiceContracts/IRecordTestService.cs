@@ -24,12 +24,16 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int AddRecordTest(DcRecordTest model);
         [OperationContract]
-        int AddRecordTestByUID(DcRecordTest model,string uid);
+        int AddRecordTestByUID(DcRecordTest model, string uid);
         [OperationContract]
         int UpdateRecordTest(DcRecordTest model);
         [OperationContract]
-        int UpdateRecordTestByUID(DcRecordTest model,string uid);
+        int UpdateRecordTestByUID(DcRecordTest model, string uid);
         [OperationContract]
         int DeleteRecordTest(Guid id);
+
+
+        [OperationContract]
+        List<DcRecordTest> GetRecordTestByProductID(string productId);
     }
 }

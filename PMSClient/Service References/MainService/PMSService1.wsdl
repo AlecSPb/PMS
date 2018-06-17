@@ -770,6 +770,12 @@
   <wsdl:message name="IDeliveryService_DeleteDeliveryItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteDeliveryItemResponse" />
   </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemByProductID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemByProductID" />
+  </wsdl:message>
+  <wsdl:message name="IDeliveryService_GetDeliveryItemByProductID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliveryItemByProductIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IPlateService_GetPlates_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlates" />
   </wsdl:message>
@@ -823,6 +829,12 @@
   </wsdl:message>
   <wsdl:message name="IPlateService_DeletePlate_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeletePlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateByPlateID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateByPlateID" />
+  </wsdl:message>
+  <wsdl:message name="IPlateService_GetPlateByPlateID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlateByPlateIDResponse" />
   </wsdl:message>
   <wsdl:message name="IProductService_GetProducts_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProducts" />
@@ -890,6 +902,12 @@
   <wsdl:message name="IProductService_DeleteProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetProductByProductID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByProductID" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetProductByProductID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByProductIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecordTestService_GetRecordTestBySearchInPage_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordTestBySearchInPage" />
   </wsdl:message>
@@ -943,6 +961,12 @@
   </wsdl:message>
   <wsdl:message name="IRecordTestService_DeleteRecordTest_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteRecordTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestByProductID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestByProductID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordTestService_GetRecordTestByProductID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordTestByProductIDResponse" />
   </wsdl:message>
   <wsdl:message name="IRecordVHPService_GetRecordVHP_InputMessage">
     <wsdl:part name="parameters" element="tns:GetRecordVHP" />
@@ -1201,6 +1225,12 @@
   </wsdl:message>
   <wsdl:message name="IRecordBondingService_GetUnFinishedRecordBondings_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUnFinishedRecordBondingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingByProductID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingByProductID" />
+  </wsdl:message>
+  <wsdl:message name="IRecordBondingService_GetRecordBondingByProductID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordBondingByProductIDResponse" />
   </wsdl:message>
   <wsdl:message name="IOutSourceService_GetOutSources_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOutSources" />
@@ -1753,6 +1783,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/DeleteDeliveryItem" message="tns:IDeliveryService_DeleteDeliveryItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/DeleteDeliveryItemResponse" message="tns:IDeliveryService_DeleteDeliveryItem_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemByProductID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID" message="tns:IDeliveryService_GetDeliveryItemByProductID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductIDResponse" message="tns:IDeliveryService_GetDeliveryItemByProductID_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IPlateService">
     <wsdl:operation name="GetPlates">
@@ -1790,6 +1824,10 @@
     <wsdl:operation name="DeletePlate">
       <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/DeletePlate" message="tns:IPlateService_DeletePlate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/DeletePlateResponse" message="tns:IPlateService_DeletePlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateByPlateID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPlateService/GetPlateByPlateID" message="tns:IPlateService_GetPlateByPlateID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPlateService/GetPlateByPlateIDResponse" message="tns:IPlateService_GetPlateByPlateID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IProductService">
@@ -1837,6 +1875,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteProductResponse" message="tns:IProductService_DeleteProduct_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetProductByProductID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductByProductID" message="tns:IProductService_GetProductByProductID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductByProductIDResponse" message="tns:IProductService_GetProductByProductID_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordTestService">
     <wsdl:operation name="GetRecordTestBySearchInPage">
@@ -1874,6 +1916,10 @@
     <wsdl:operation name="DeleteRecordTest">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/DeleteRecordTest" message="tns:IRecordTestService_DeleteRecordTest_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse" message="tns:IRecordTestService_DeleteRecordTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestByProductID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductID" message="tns:IRecordTestService_GetRecordTestByProductID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductIDResponse" message="tns:IRecordTestService_GetRecordTestByProductID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecordVHPService">
@@ -2056,6 +2102,10 @@
     <wsdl:operation name="GetUnFinishedRecordBondings">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondings" message="tns:IRecordBondingService_GetUnFinishedRecordBondings_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondingsResponse" message="tns:IRecordBondingService_GetUnFinishedRecordBondings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingByProductID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductID" message="tns:IRecordBondingService_GetRecordBondingByProductID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductIDResponse" message="tns:IRecordBondingService_GetRecordBondingByProductID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IOutSourceService">
@@ -3243,6 +3293,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetDeliveryItemByProductID">
+      <soap:operation soapAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="plate" type="tns:IPlateService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -3320,6 +3379,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeletePlate">
       <soap:operation soapAction="http://tempuri.org/IPlateService/DeletePlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlateByPlateID">
+      <soap:operation soapAction="http://tempuri.org/IPlateService/GetPlateByPlateID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3429,6 +3497,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetProductByProductID">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductByProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="recordtest" type="tns:IRecordTestService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -3506,6 +3583,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteRecordTest">
       <soap:operation soapAction="http://tempuri.org/IRecordTestService/DeleteRecordTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordTestByProductID">
+      <soap:operation soapAction="http://tempuri.org/IRecordTestService/GetRecordTestByProductID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3908,6 +3994,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUnFinishedRecordBondings">
       <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecordBondingByProductID">
+      <soap:operation soapAction="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

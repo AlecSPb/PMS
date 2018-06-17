@@ -71,6 +71,29 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcProduct> GetProductByProductID(string productid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Products
+                                where p.ProductID == productid
+                                && p.State != InventoryState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<Product, DcProduct>());
+                    var products = Mapper.Map<List<Product>, List<DcProduct>>(query.ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int GetProductCount(string productid, string composition)
         {
             try
@@ -208,7 +231,7 @@ namespace PMSWCFService
             }
         }
 
-        private void SaveHistory(DcProduct  model, string uid)
+        private void SaveHistory(DcProduct model, string uid)
         {
             try
             {

@@ -15,9 +15,15 @@ namespace PMSClient.DataProcess
     {
         public ProcessScanInput()
         {
-
+            uid = PMSHelper.CurrentSession.CurrentUser.UserName;
         }
 
+        private string uid;
+
+
+
+
+        #region 公用
         /// <summary>
         /// 判断lot是否符合要求
         /// </summary>
@@ -86,41 +92,94 @@ namespace PMSClient.DataProcess
             return sb.ToString();
         }
 
+        #endregion
+
+        #region 从各种库中找到记录
         //从检测记录中查找
-        private DcRecordTest FindInRecordTest(string lot)
+        private List<DcRecordTest> FindInRecordTest(string lot)
         {
-            throw new NotImplementedException();
+            using (var service=new RecordTestServiceClient())
+            {
+                return service.GetRecordTestByProductID(lot).ToList();
+            }
         }
         //从绑定记录中查找
-        private DcRecordBonding FindInRecordBonding(string lot)
+        private List<DcRecordBonding> FindInRecordBonding(string lot)
         {
-            throw new NotImplementedException();
+            using (var service=new RecordBondingServiceClient())
+            {
+                return service.GetRecordBondingByProductID(lot).ToList();
+            }
         }
         //从背板记录中查找
-        private DcPlate FindInRecordPlate(string lot)
+        private List<DcPlate> FindInRecordPlate(string lot)
         {
-            throw new NotImplementedException();
+            using (var service=new PlateServiceClient())
+            {
+                return service.GetPlateByPlateID(lot).ToList();
+            }
         }
         //从产品库存中查找
-        private DcProduct FindInProduct(string lot)
+        private List<DcProduct> FindInProduct(string lot)
         {
-            throw new NotImplementedException();
+            using (var service=new ProductServiceClient())
+            {
+                return service.GetProductByProductID(lot).ToList();
+            }
+        }
+        #endregion
+
+        #region 插入记录到各种库中
+        public void InsertToRecordBonding(DcRecordBonding model)
+        {
+            using (var service = new RecordBondingServiceClient())
+            {
+                service.AddRecordBongdingByUID(model, uid);
+            }
         }
 
+        public void InsertToProduct(DcProduct model)
+        {
+            using (var service = new ProductServiceClient())
+            {
+                service.AddProductByUID(model, uid);
+            }
+        }
+
+        public void InsertToDeliveryItem(DcDeliveryItem model)
+        {
+            using (var service = new DeliveryServiceClient())
+            {
+                service.AddDeliveryItemByUID(model, uid);
+            }
+        }
+        #endregion
+
+        #region 确定要插入的记录是否已经存在
         //判断绑定记录是否存在
         public bool IsInRecordBonding(string lot)
         {
-            throw new NotImplementedException();
+            using (var service = new RecordBondingServiceClient())
+            {
+                return service.GetRecordBondingByProductID(lot).Count() > 0;
+            }
         }
         //判定产品库记录是否存在
         public bool IsInProductInventory(string lot)
         {
-            throw new NotImplementedException();
+            using (var service = new ProductServiceClient())
+            {
+                return service.GetProductByProductID(lot).Count() > 0;
+            }
         }
         //判定发货计划是否存在
         public bool IsInDelivery(string lot)
         {
-            throw new NotImplementedException();
+            using (var service = new DeliveryServiceClient())
+            {
+                return service.GetDeliveryItemByProductID(lot).Count() > 0;
+            }
         }
+        #endregion
     }
 }

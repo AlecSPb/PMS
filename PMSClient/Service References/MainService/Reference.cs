@@ -9976,6 +9976,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/DeleteDeliveryItem", ReplyAction="http://tempuri.org/IDeliveryService/DeleteDeliveryItemResponse")]
         System.Threading.Tasks.Task<int> DeleteDeliveryItemAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductIDResponse")]
+        PMSClient.MainService.DcDeliveryItem[] GetDeliveryItemByProductID(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductID", ReplyAction="http://tempuri.org/IDeliveryService/GetDeliveryItemByProductIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemByProductIDAsync(string productid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10172,6 +10178,14 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<int> DeleteDeliveryItemAsync(System.Guid id) {
             return base.Channel.DeleteDeliveryItemAsync(id);
         }
+        
+        public PMSClient.MainService.DcDeliveryItem[] GetDeliveryItemByProductID(string productid) {
+            return base.Channel.GetDeliveryItemByProductID(productid);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcDeliveryItem[]> GetDeliveryItemByProductIDAsync(string productid) {
+            return base.Channel.GetDeliveryItemByProductIDAsync(productid);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10231,6 +10245,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/DeletePlate", ReplyAction="http://tempuri.org/IPlateService/DeletePlateResponse")]
         System.Threading.Tasks.Task<int> DeletePlateAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateByPlateID", ReplyAction="http://tempuri.org/IPlateService/GetPlateByPlateIDResponse")]
+        PMSClient.MainService.DcPlate[] GetPlateByPlateID(string platelot);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPlateService/GetPlateByPlateID", ReplyAction="http://tempuri.org/IPlateService/GetPlateByPlateIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlateByPlateIDAsync(string platelot);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10331,6 +10351,14 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<int> DeletePlateAsync(System.Guid id) {
             return base.Channel.DeletePlateAsync(id);
         }
+        
+        public PMSClient.MainService.DcPlate[] GetPlateByPlateID(string platelot) {
+            return base.Channel.GetPlateByPlateID(platelot);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcPlate[]> GetPlateByPlateIDAsync(string platelot) {
+            return base.Channel.GetPlateByPlateIDAsync(platelot);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10402,6 +10430,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductByProductID", ReplyAction="http://tempuri.org/IProductService/GetProductByProductIDResponse")]
+        PMSClient.MainService.DcProduct[] GetProductByProductID(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductByProductID", ReplyAction="http://tempuri.org/IProductService/GetProductByProductIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcProduct[]> GetProductByProductIDAsync(string productid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10518,6 +10552,14 @@ namespace PMSClient.MainService {
         public System.Threading.Tasks.Task<int> DeleteProductAsync(System.Guid id) {
             return base.Channel.DeleteProductAsync(id);
         }
+        
+        public PMSClient.MainService.DcProduct[] GetProductByProductID(string productid) {
+            return base.Channel.GetProductByProductID(productid);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcProduct[]> GetProductByProductIDAsync(string productid) {
+            return base.Channel.GetProductByProductIDAsync(productid);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10577,6 +10619,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/DeleteRecordTest", ReplyAction="http://tempuri.org/IRecordTestService/DeleteRecordTestResponse")]
         System.Threading.Tasks.Task<int> DeleteRecordTestAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductID", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestByProductIDResponse")]
+        PMSClient.MainService.DcRecordTest[] GetRecordTestByProductID(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordTestService/GetRecordTestByProductID", ReplyAction="http://tempuri.org/IRecordTestService/GetRecordTestByProductIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetRecordTestByProductIDAsync(string productId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10676,6 +10724,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> DeleteRecordTestAsync(System.Guid id) {
             return base.Channel.DeleteRecordTestAsync(id);
+        }
+        
+        public PMSClient.MainService.DcRecordTest[] GetRecordTestByProductID(string productId) {
+            return base.Channel.GetRecordTestByProductID(productId);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordTest[]> GetRecordTestByProductIDAsync(string productId) {
+            return base.Channel.GetRecordTestByProductIDAsync(productId);
         }
     }
     
@@ -11358,6 +11414,12 @@ namespace PMSClient.MainService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondings", ReplyAction="http://tempuri.org/IRecordBondingService/GetUnFinishedRecordBondingsResponse")]
         System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetUnFinishedRecordBondingsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductID", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductIDResponse")]
+        PMSClient.MainService.DcRecordBonding[] GetRecordBondingByProductID(string productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductID", ReplyAction="http://tempuri.org/IRecordBondingService/GetRecordBondingByProductIDResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingByProductIDAsync(string productid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11449,6 +11511,14 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetUnFinishedRecordBondingsAsync() {
             return base.Channel.GetUnFinishedRecordBondingsAsync();
+        }
+        
+        public PMSClient.MainService.DcRecordBonding[] GetRecordBondingByProductID(string productid) {
+            return base.Channel.GetRecordBondingByProductID(productid);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcRecordBonding[]> GetRecordBondingByProductIDAsync(string productid) {
+            return base.Channel.GetRecordBondingByProductIDAsync(productid);
         }
     }
     

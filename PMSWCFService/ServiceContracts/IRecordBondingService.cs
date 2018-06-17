@@ -34,7 +34,8 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         List<DcRecordBonding> GetUnFinishedRecordBondings();
 
-
+        [OperationContract]
+        List<DcRecordBonding> GetRecordBondingByProductID(string productid);
 
     }
 }

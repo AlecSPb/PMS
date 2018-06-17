@@ -66,5 +66,8 @@ namespace PMSWCFService.ServiceContracts
         int DeleteDeliveryItem(Guid id);
 
 
+        [OperationContract]
+        List<DcDeliveryItem> GetDeliveryItemByProductID(string productid);
+
     }
 }

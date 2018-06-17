@@ -71,6 +71,29 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcPlate> GetPlateByPlateID(string platelot)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.Plates
+                                where p.PlateLot == platelot
+                                && p.State != InventoryState.作废.ToString()
+                                orderby p.CreateTime descending
+                                select p;
+                    Mapper.Initialize(cfg => cfg.CreateMap<Plate, DcPlate>());
+                    var products = Mapper.Map<List<Plate>, List<DcPlate>>(query.ToList());
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int GetPlateCount(string platelot, string supplier, string printnumber, string dimension)
         {
             try

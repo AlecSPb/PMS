@@ -72,6 +72,31 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcRecordBonding> GetRecordBondingByProductID(string productid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from p in dc.RecordBondings
+                                where p.TargetProductID == productid
+                                && p.State != BondingState.作废.ToString()
+                                orderby DbFunctions.TruncateTime(p.CreateTime) descending,
+                                    p.PlanBatchNumber descending, p.TargetProductID descending
+                                select p;
+                    var result = query.ToList();
+                    Mapper.Initialize(cfg => cfg.CreateMap<RecordBonding, DcRecordBonding>());
+                    var products = Mapper.Map<List<RecordBonding>, List<DcRecordBonding>>(result);
+                    return products;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int GetRecordBondingCount(string productid, string composition)
         {
             try

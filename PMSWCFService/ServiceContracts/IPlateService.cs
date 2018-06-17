@@ -33,5 +33,7 @@ namespace PMSWCFService.ServiceContracts
         [OperationContract]
         int DeletePlate(Guid id);
 
+        [OperationContract]
+        List<DcPlate> GetPlateByPlateID(string platelot);
     }
 }

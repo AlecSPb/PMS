@@ -491,7 +491,31 @@ namespace PMSWCFService
             }
         }
 
+        public List<DcDeliveryItem> GetDeliveryItemByProductID(string productid)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from d in dc.DeliveryItems
+                                where d.State != PMSCommon.SimpleState.作废.ToString()
+                                && d.ProductID==productid
+                                orderby d.CreateTime descending
+                                select d;
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<DeliveryItem, DcDeliveryItem>();
+                    });
 
-
+                    var records = Mapper.Map<List<DeliveryItem>, List<DcDeliveryItem>>(query.ToList());
+                    return records;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
     }
 }
