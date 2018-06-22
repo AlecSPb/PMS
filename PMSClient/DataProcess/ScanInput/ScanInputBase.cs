@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace PMSClient.DataProcess
+namespace PMSClient.DataProcess.ScanInput
 {
     /// <summary>
     /// 扫描结果处理类基类

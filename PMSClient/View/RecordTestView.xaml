@@ -36,6 +36,8 @@
             <Button Content="{StaticResource ButtonOutput}" Style="{StaticResource    StyleButtonSpecial}" Command="{Binding Output}"/>
             <Button Content="{StaticResource ButtonBatchDoc}" Style="{StaticResource    StyleButtonSpecial}"
                     Command="{Binding BatchDoc}"/>
+            <Button Content="{StaticResource ButtonQuickDoc}" Style="{StaticResource    StyleButtonSpecial}"
+                    Command="{Binding QuickDoc}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
         </StackPanel>

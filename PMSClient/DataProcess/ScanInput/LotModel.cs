@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSClient.DataProcess
+namespace PMSClient.DataProcess.ScanInput
 {
     public class LotModel
     {

@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using PMSClient.DataProcess;
 
-namespace PMSClient.ToolWindow
+namespace PMSClient.DataProcess.ScanInput
 {
     public class ScanInputVM : ViewModelBase
     {
@@ -16,17 +18,25 @@ namespace PMSClient.ToolWindow
 
             Process = new RelayCommand(ActionProcess);
             Check = new RelayCommand(ActionCheck);
+            Lots = new ObservableCollection<LotModel>();
+
         }
 
         private StringBuilder sb = new StringBuilder();
-        private DataProcess.ProcessScanInput process = new DataProcess.ProcessScanInput();
+        private DataProcess.ScanInput.ProcessScanInput process = new DataProcess.ScanInput.ProcessScanInput();
 
 
         private void ActionCheck()
         {
             process.Intialize(InputText);
 
-            StatusText = process.FromLotsToString();
+            //StatusText = process.FromLotsToString();
+
+            Lots.Clear();
+            process.Lots.ForEach(i =>
+            {
+                Lots.Add(i);
+            });
         }
 
 
@@ -49,6 +59,7 @@ namespace PMSClient.ToolWindow
             StatusText = sb.ToString();
         }
 
+        public ObservableCollection<LotModel> Lots { get; set; }
 
         #region 属性
         private string inputText;

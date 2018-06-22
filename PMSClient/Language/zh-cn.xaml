@@ -301,6 +301,7 @@
     <sys:String x:Key="ButtonPrintIndex">索引单</sys:String>
 
     <sys:String x:Key="ButtonScanAdd">扫描</sys:String>
+    <sys:String x:Key="ButtonQuickDoc">快速报告</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>

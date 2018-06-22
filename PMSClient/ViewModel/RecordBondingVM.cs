@@ -75,7 +75,7 @@ namespace PMSClient.ViewModel
 
         private void ActionScanAdd()
         {
-            var tool = new ToolWindow.ScanInput();
+            var tool = new DataProcess.ScanInput.ScanInput();
             tool.Show();
         }
 

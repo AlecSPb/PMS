@@ -204,12 +204,15 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataProcess\ModelGenerator.cs" />
-    <Compile Include="DataProcess\ScanInputBase.cs" />
-    <Compile Include="DataProcess\ScanInputRecordBonding.cs" />
-    <Compile Include="DataProcess\SourceTarget.cs" />
-    <Compile Include="DataProcess\TableSource.cs" />
-    <Compile Include="DataProcess\ProcessScanInput.cs" />
+    <Compile Include="DataProcess\QuickReport\QuickReport.xaml.cs">
+      <DependentUpon>QuickReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataProcess\ScanInput\ModelGenerator.cs" />
+    <Compile Include="DataProcess\ScanInput\ScanInputBase.cs" />
+    <Compile Include="DataProcess\ScanInput\ScanInputRecordBonding.cs" />
+    <Compile Include="DataProcess\ScanInput\SourceTarget.cs" />
+    <Compile Include="DataProcess\ScanInput\TableSource.cs" />
+    <Compile Include="DataProcess\ScanInput\ProcessScanInput.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputMaterialIn.cs" />
@@ -345,11 +348,11 @@
     <Compile Include="ToolWindow\RecordStateConfirm.xaml.cs">
       <DependentUpon>RecordStateConfirm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataProcess\ScanInput.xaml.cs">
+    <Compile Include="DataProcess\ScanInput\ScanInput.xaml.cs">
       <DependentUpon>ScanInput.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataProcess\LotModel.cs" />
-    <Compile Include="DataProcess\ScanInputVM.cs" />
+    <Compile Include="DataProcess\ScanInput\LotModel.cs" />
+    <Compile Include="DataProcess\ScanInput\ScanInputVM.cs" />
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
     </Compile>
@@ -814,6 +817,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DataProcess\QuickReport\QuickReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Helpers\Converter\PMSConverter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -894,7 +901,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DataProcess\ScanInput.xaml">
+    <Page Include="DataProcess\ScanInput\ScanInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

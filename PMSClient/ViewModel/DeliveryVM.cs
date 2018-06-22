@@ -87,7 +87,7 @@ namespace PMSClient.ViewModel
 
         private void AcitonScanAdd(DcDelivery obj)
         {
-            var tool = new ToolWindow.ScanInput();
+            var tool = new DataProcess.ScanInput.ScanInput();
             tool.Show();
         }
 

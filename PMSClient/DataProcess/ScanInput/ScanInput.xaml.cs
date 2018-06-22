@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.DataProcess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace PMSClient.ToolWindow
+namespace PMSClient.DataProcess.ScanInput
 {
     /// <summary>
     /// ScanInput.xaml 的交互逻辑
@@ -28,6 +29,22 @@ namespace PMSClient.ToolWindow
         private void ChkTopMost_Click(object sender, RoutedEventArgs e)
         {
             this.Topmost = !this.Topmost;
+        }
+
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            try
+            {
+                var isValid = ((LotModel)e.Row.DataContext).IsValid;
+                if (!isValid)
+                {
+                    e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }

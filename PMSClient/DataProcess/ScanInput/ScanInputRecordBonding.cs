@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSClient.DataProcess
+namespace PMSClient.DataProcess.ScanInput
 {
-    public enum SourceTarget
+    public class ScanInputRecordBonding:ScanInputBase
     {
-        RecordBonding,
-        Product,
-        DeliveryItem
+
     }
 }

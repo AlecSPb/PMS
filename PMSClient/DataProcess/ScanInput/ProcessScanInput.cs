@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using PMSClient.MainService;
 
-namespace PMSClient.DataProcess
+namespace PMSClient.DataProcess.ScanInput
 {
     /// <summary>
     /// 处理扫描输入
@@ -98,7 +98,8 @@ namespace PMSClient.DataProcess
                 {
                     Lot = i.Trim(),
                     IsValid = IsValid(i.Trim()),
-                    DataTableSource = GetDSType(i.Trim())
+                    DataTableSource = GetDSType(i.Trim()),
+                    ExceptionMessage = (IsValid(i.Trim()) ? "OK" : "格式不正确")
                 };
                 Lots.Add(lot);
             });

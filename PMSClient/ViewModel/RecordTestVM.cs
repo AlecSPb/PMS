@@ -65,6 +65,20 @@ namespace PMSClient.ViewModel
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
             BatchDoc = new RelayCommand(ActionBatchDoc);
+            QuickDoc = new RelayCommand(ActionQuickDoc);
+        }
+
+        private void ActionQuickDoc()
+        {
+            try
+            {
+                var tool = new DataProcess.QuickReport.QuickReport();
+                tool.Show();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         /// <summary>
@@ -341,12 +355,8 @@ namespace PMSClient.ViewModel
 
             CurrentSelectItem = RecordTestExtras.FirstOrDefault();
         }
-        #region Commands
-        public RelayCommand Report { get; set; }
-        public RelayCommand Add { get; set; }
-        public RelayCommand<RecordTestExtra> Edit { get; set; }
-        public RelayCommand<RecordTestExtra> Doc { get; set; }
 
+        #region 属性
         private string searchProductID;
         public string SearchProductID
         {
@@ -381,6 +391,13 @@ namespace PMSClient.ViewModel
             set { currentSelectItem = value; RaisePropertyChanged(nameof(CurrentSelectItem)); }
         }
 
+        #endregion
+        #region Commands
+
+        public RelayCommand Report { get; set; }
+        public RelayCommand Add { get; set; }
+        public RelayCommand<RecordTestExtra> Edit { get; set; }
+        public RelayCommand<RecordTestExtra> Doc { get; set; }
         public RelayCommand<RecordTestExtra> SelectionChanged { get; set; }
         public RelayCommand<RecordTestExtra> Duplicate { get; set; }
         public RelayCommand<RecordTestExtra> Label { get; set; }
@@ -389,6 +406,8 @@ namespace PMSClient.ViewModel
         public RelayCommand BatchDoc { get; set; }
 
         public RelayCommand Output { get; set; }
-        #endregion
-    }
+
+        public RelayCommand QuickDoc { get; set; }
+    #endregion
+}
 }
