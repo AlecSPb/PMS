@@ -204,7 +204,11 @@
     <Compile Include="CustomControls\ProgressIndicator.xaml.cs">
       <DependentUpon>ProgressIndicator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataProcess\DataTableSource.cs" />
+    <Compile Include="DataProcess\ModelGenerator.cs" />
+    <Compile Include="DataProcess\ScanInputBase.cs" />
+    <Compile Include="DataProcess\ScanInputRecordBonding.cs" />
+    <Compile Include="DataProcess\SourceTarget.cs" />
+    <Compile Include="DataProcess\TableSource.cs" />
     <Compile Include="DataProcess\ProcessScanInput.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputBase.cs" />
     <Compile Include="ExcelOutputHelper\ExcelOutputDeliveryItemList.cs" />
@@ -341,10 +345,11 @@
     <Compile Include="ToolWindow\RecordStateConfirm.xaml.cs">
       <DependentUpon>RecordStateConfirm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToolWindow\ScanInput.xaml.cs">
+    <Compile Include="DataProcess\ScanInput.xaml.cs">
       <DependentUpon>ScanInput.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToolWindow\ScanInputVM.cs" />
+    <Compile Include="DataProcess\LotModel.cs" />
+    <Compile Include="DataProcess\ScanInputVM.cs" />
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
     </Compile>
@@ -889,7 +894,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ToolWindow\ScanInput.xaml">
+    <Page Include="DataProcess\ScanInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

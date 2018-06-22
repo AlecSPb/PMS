@@ -16,12 +16,14 @@ namespace PMSClient.DataProcess
         public ProcessScanInput()
         {
             uid = PMSHelper.CurrentSession.CurrentUser.UserName;
+            Lots = new List<LotModel>();
         }
 
         private string uid;
 
+        public List<LotModel> Lots;
 
-
+        public string TargetTable = string.Empty;
 
         #region 公用
         /// <summary>
@@ -35,33 +37,40 @@ namespace PMSClient.DataProcess
             return Regex.IsMatch(lot, pattern, RegexOptions.IgnoreCase);
         }
 
-
-
         /// <summary>
         /// 返回数据源类型
         /// </summary>
         /// <param name="lot"></param>
         /// <returns></returns>
-        public DTS GetDSType(string lot)
+        private TableSource GetDSType(string lot)
         {
 
             if (lot.Length >= 9)
             {
                 //180116-AB-1  180616-A-1  180616-A-1A
-                string mark = lot.Substring(7, 2).Replace("-", "");
-                switch (mark.ToUpper())
+                string pattern = @"-\w{1,2}-";
+                var match = Regex.Match(lot, pattern);
+                if (match.Success)
                 {
-                    case "OS":
-                        return DTS.Outsource;
-                    case "BP":
-                        return DTS.Plate;
-                    default:
-                        return DTS.Test;
+                    string code = match.Value.Replace("-", "");
+                    switch (code.ToUpper())
+                    {
+                        case "OS":
+                            return TableSource.Outsource;
+                        case "BP":
+                            return TableSource.Plate;
+                        default:
+                            return TableSource.Test;
+                    }
+                }
+                else
+                {
+                    return TableSource.Unknown;
                 }
             }
             else
             {
-                return DTS.Unknown;
+                return TableSource.Unknown;
             }
         }
 
@@ -70,26 +79,75 @@ namespace PMSClient.DataProcess
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
-        public string[] SplitLots(string text)
+        private string[] SplitLots(string text)
         {
             return text.Split(Environment.NewLine.ToCharArray(),
                                     StringSplitOptions.RemoveEmptyEntries);
         }
 
-
-        public string CheckAll(string lots)
+        /// <summary>
+        /// 解析
+        /// </summary>
+        /// <param name="lot_string"></param>
+        public void Intialize(string lot_string)
         {
-            if (string.IsNullOrEmpty(lots))
-                return "";
-
-            string[] data = SplitLots(lots);
-            StringBuilder sb = new StringBuilder();
-            foreach (var line in data)
+            Lots.Clear();
+            SplitLots(lot_string).ToList().ForEach(i =>
             {
-                sb.Append(IsValid(line));
-                sb.AppendLine(" " + line);
+                LotModel lot = new LotModel()
+                {
+                    Lot = i.Trim(),
+                    IsValid = IsValid(i.Trim()),
+                    DataTableSource = GetDSType(i.Trim())
+                };
+                Lots.Add(lot);
+            });
+        }
+
+        public string FromLotsToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var line in Lots)
+            {
+                sb.Append(line.IsValid);
+                sb.AppendLine(" " + line.Lot + " " + line.DataTableSource.ToString());
             }
             return sb.ToString();
+        }
+
+
+        /// <summary>
+        /// 批量检查数据
+        /// </summary>
+        public void CheckValid()
+        {
+            foreach (var item in Lots)
+            {
+
+            }
+        }
+
+        /// <summary>
+        /// 批量读取并插入数据
+        /// </summary>
+        public void Process()
+        {
+            foreach (var item in Lots)
+            {
+                switch (GetDSType(item.Lot))
+                {
+                    case TableSource.Test:
+                        break;
+                    case TableSource.Plate:
+                        break;
+                    case TableSource.Outsource:
+                        break;
+                    case TableSource.Unknown:
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         #endregion
@@ -98,7 +156,7 @@ namespace PMSClient.DataProcess
         //从检测记录中查找
         private List<DcRecordTest> FindInRecordTest(string lot)
         {
-            using (var service=new RecordTestServiceClient())
+            using (var service = new RecordTestServiceClient())
             {
                 return service.GetRecordTestByProductID(lot).ToList();
             }
@@ -106,7 +164,7 @@ namespace PMSClient.DataProcess
         //从绑定记录中查找
         private List<DcRecordBonding> FindInRecordBonding(string lot)
         {
-            using (var service=new RecordBondingServiceClient())
+            using (var service = new RecordBondingServiceClient())
             {
                 return service.GetRecordBondingByProductID(lot).ToList();
             }
@@ -114,7 +172,7 @@ namespace PMSClient.DataProcess
         //从背板记录中查找
         private List<DcPlate> FindInRecordPlate(string lot)
         {
-            using (var service=new PlateServiceClient())
+            using (var service = new PlateServiceClient())
             {
                 return service.GetPlateByPlateID(lot).ToList();
             }
@@ -122,7 +180,7 @@ namespace PMSClient.DataProcess
         //从产品库存中查找
         private List<DcProduct> FindInProduct(string lot)
         {
-            using (var service=new ProductServiceClient())
+            using (var service = new ProductServiceClient())
             {
                 return service.GetProductByProductID(lot).ToList();
             }
@@ -130,7 +188,7 @@ namespace PMSClient.DataProcess
         #endregion
 
         #region 插入记录到各种库中
-        public void InsertToRecordBonding(DcRecordBonding model)
+        private void InsertToRecordBonding(DcRecordBonding model)
         {
             using (var service = new RecordBondingServiceClient())
             {
@@ -138,7 +196,7 @@ namespace PMSClient.DataProcess
             }
         }
 
-        public void InsertToProduct(DcProduct model)
+        private void InsertToProduct(DcProduct model)
         {
             using (var service = new ProductServiceClient())
             {
@@ -146,7 +204,7 @@ namespace PMSClient.DataProcess
             }
         }
 
-        public void InsertToDeliveryItem(DcDeliveryItem model)
+        private void InsertToDeliveryItem(DcDeliveryItem model)
         {
             using (var service = new DeliveryServiceClient())
             {

@@ -13,7 +13,6 @@ namespace PMSClient.ToolWindow
         public ScanInputVM()
         {
             inputText = statusText = "";
-            TargetTable = "";
 
             Process = new RelayCommand(ActionProcess);
             Check = new RelayCommand(ActionCheck);
@@ -21,14 +20,13 @@ namespace PMSClient.ToolWindow
 
         private StringBuilder sb = new StringBuilder();
         private DataProcess.ProcessScanInput process = new DataProcess.ProcessScanInput();
-        public string TargetTable { get; set; }
-
 
 
         private void ActionCheck()
         {
-            var result = process.CheckAll(InputText);
-            StatusText = result;
+            process.Intialize(InputText);
+
+            StatusText = process.FromLotsToString();
         }
 
 

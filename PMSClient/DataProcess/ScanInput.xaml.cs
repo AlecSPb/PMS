@@ -24,5 +24,10 @@ namespace PMSClient.ToolWindow
             InitializeComponent();
             this.DataContext = new ScanInputVM();
         }
+
+        private void ChkTopMost_Click(object sender, RoutedEventArgs e)
+        {
+            this.Topmost = !this.Topmost;
+        }
     }
 }

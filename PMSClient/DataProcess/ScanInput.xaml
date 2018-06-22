@@ -1,0 +1,57 @@
+﻿<Window x:Class="PMSClient.ToolWindow.ScanInput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="ToolWindow"
+        Topmost="True"
+        Title="扫描批量输入工具" Height="700" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最前" IsChecked="True"
+                      Name="ChkTopMost" Click="ChkTopMost_Click"/>
+        </StackPanel>
+        <TextBlock Grid.Row="1"  Text="请使用扫描枪或者采集器工具批量采集产品ID到下面，每行一个,可以手动编辑"
+                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
+        <TextBlock Grid.Row="2"  Text="Source:测试记录 => Target:绑定记录"
+                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" FontWeight="Bold" Background="Blue"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="ID输入列表" Style="{StaticResource StyleDGTextBlockBigLeft}"
+                       Background="Black" Foreground="White" Margin="2"/>
+            <TextBlock Grid.Row="0"  Grid.Column="1" Text="辅助文本框" Style="{StaticResource StyleDGTextBlockBigLeft}"
+                       Background="Black" Foreground="White" Margin="2"/>
+            <TextBox Grid.Column="0" Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"
+                 Text="{Binding InputText}" Background="LightYellow"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"
+                 Text="辅助文本框是一个临时存放ID的位置，不参与数据处理，如果要分批进行处理，可以在这里进行"/>
+        </Grid>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="模拟录入" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
+            <Button Content="实际录入" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
+        </StackPanel>
+        <ProgressBar Grid.Row="5" Height="10" Value="50" Margin="2"/>
+        <TextBox Grid.Row="6" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                 Text="{Binding StatusText}"/>
+    </Grid>
+</Window>

@@ -10,7 +10,7 @@ namespace PMSClient.DataProcess
     /// 数据表枚举
     /// DataTableSource
     /// </summary>
-    public enum DTS
+    public enum TableSource
     {
         Test,
         Plate,
