@@ -94,7 +94,8 @@ namespace PMSClient.DataProcess.ScanInput
                 {
                     Lot = i.Trim(),
                     IsValid = IsValid(i.Trim()),
-                    DataTableSource = GetDSType(i.Trim())
+                    HasProcessed = false,
+                    ExceptionMessage = (IsValid(i.Trim()) ? "" : "+格式无效")
                 };
                 Lots.Add(lot);
             });
@@ -106,8 +107,7 @@ namespace PMSClient.DataProcess.ScanInput
             foreach (var line in Lots)
             {
                 sb.Append(line.IsValid);
-                sb.AppendLine(" " + line.Lot + " " 
-                    + line.DataTableSource.ToString());
+                sb.AppendLine(" " + line.Lot);
             }
             return sb.ToString();
         }

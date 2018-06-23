@@ -207,7 +207,7 @@
     <Compile Include="DataProcess\QuickReport\QuickReport.xaml.cs">
       <DependentUpon>QuickReport.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataProcess\ScanInput\ModelGenerator.cs" />
+    <Compile Include="DataProcess\ScanInput\ModelHelper.cs" />
     <Compile Include="DataProcess\ScanInput\ScanInputBase.cs" />
     <Compile Include="DataProcess\ScanInput\ScanInputRecordBonding.cs" />
     <Compile Include="DataProcess\ScanInput\SourceTarget.cs" />

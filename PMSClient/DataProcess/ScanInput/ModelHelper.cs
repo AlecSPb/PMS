@@ -7,7 +7,7 @@ using PMSClient.MainService;
 
 namespace PMSClient.DataProcess.ScanInput
 {
-    public static class ModelGenerator
+    public static class ModelHelper
     {
         public static DcRecordBonding GetRecordBonding(DcRecordTest model)
         {

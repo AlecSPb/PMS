@@ -35,8 +35,8 @@ namespace PMSClient.DataProcess.ScanInput
         {
             try
             {
-                var isValid = ((LotModel)e.Row.DataContext).IsValid;
-                if (!isValid)
+                var msg = ((LotModel)e.Row.DataContext).ExceptionMessage;
+                if (msg != "")
                 {
                     e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
                 }

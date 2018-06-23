@@ -14,7 +14,9 @@ namespace PMSClient.DataProcess.ScanInput
     {
         public ScanInputVM()
         {
-            inputText = statusText = "";
+            inputText = "";
+
+            process = new DataProcess.ScanInput.ScanInputRecordBonding();
 
             Process = new RelayCommand(ActionProcess);
             Check = new RelayCommand(ActionCheck);
@@ -22,15 +24,19 @@ namespace PMSClient.DataProcess.ScanInput
 
         }
 
-        private StringBuilder sb = new StringBuilder();
-        private DataProcess.ScanInput.ProcessScanInput process = new DataProcess.ScanInput.ProcessScanInput();
+        private DataProcess.ScanInput.ScanInputRecordBonding process;
 
 
         private void ActionCheck()
         {
             process.Intialize(InputText);
 
-            //StatusText = process.FromLotsToString();
+            process.Check();
+
+
+
+
+
 
             Lots.Clear();
             process.Lots.ForEach(i =>
@@ -47,17 +53,6 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
 
-        /// <summary>
-        /// 写入日志
-        /// </summary>
-        /// <param name="s"></param>
-        private void Log(string s)
-        {
-            if (string.IsNullOrEmpty(s))
-                return;
-            sb.AppendLine(s);
-            StatusText = sb.ToString();
-        }
 
         public ObservableCollection<LotModel> Lots { get; set; }
 
@@ -73,20 +68,6 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 inputText = value;
                 RaisePropertyChanged(nameof(inputText));
-            }
-        }
-
-        private string statusText;
-        public string StatusText
-        {
-            get
-            {
-                return statusText;
-            }
-            set
-            {
-                statusText = value;
-                RaisePropertyChanged(nameof(statusText));
             }
         }
         #endregion

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Topmost="True"
         WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
-        Title="快速报告工具" Height="700" Width="400">
+        Title="快速报告工具" Height="700" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,11 +18,11 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Wheat">
             <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最前" IsChecked="True"
                       Name="ChkTopMost" Click="ChkTopMost_Click"/>
         </StackPanel>
-        <TextBlock Grid.Row="1"  Text="使用扫描集器工具批量采集ID到ID输入列表，每行一个,可手动编辑"
+        <TextBlock Grid.Row="1"  Text="使用扫描集器工具批量采集ID到输入列表，每行一个,可手动编辑"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
         <TextBlock Grid.Row="2"  Text="Source:测试记录 => Target:特定文件夹"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" FontWeight="Bold" Background="Blue"/>
@@ -56,6 +56,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding Lot}"/>
                 <DataGridTextColumn Header="是否有效" Binding="{Binding IsValid}"/>
+                <DataGridTextColumn Header="是否处理" Binding="{Binding HasProcessed}"/>
                 <DataGridTextColumn Header="信息" Binding="{Binding ExceptionMessage}"/>
 
             </DataGrid.Columns>

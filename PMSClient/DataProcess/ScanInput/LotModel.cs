@@ -11,14 +11,21 @@ namespace PMSClient.DataProcess.ScanInput
         public LotModel()
         {
             Lot = string.Empty;
-            DataTableSource = TableSource.Unknown;
             IsValid = false;
+            HasProcessed = false;
             ExceptionMessage = string.Empty;
         }
         public bool IsValid { get; set; }
+
+        public bool HasProcessed { get; set; }
+
         public string Lot { get; set; }
 
-        public TableSource DataTableSource { get; set; }
         public string ExceptionMessage { get; set; }
+
+        public void AppendMessage(string msg)
+        {
+            ExceptionMessage += "+" + msg;
+        }
     }
 }
