@@ -11,7 +11,7 @@ namespace PMSClient.DataProcess.ScanInput
         public LotModel()
         {
             Lot = string.Empty;
-            IsValid = false;
+            IsValid = true;
             HasProcessed = false;
             ExceptionMessage = string.Empty;
         }

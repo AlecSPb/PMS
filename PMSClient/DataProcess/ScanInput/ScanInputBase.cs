@@ -38,12 +38,23 @@ namespace PMSClient.DataProcess.ScanInput
         /// </summary>
         /// <param name="lot"></param>
         /// <returns></returns>
-        protected bool IsValid(string lot)
+        protected bool CheckValid(string lot)
         {
             string pattern = @"\d{6}-\w{1,2}-\w+";
             return Regex.IsMatch(lot, pattern, RegexOptions.IgnoreCase);
         }
 
+        protected void CheckValid(LotModel item)
+        {
+            if (item.IsValid)
+            {
+                if (!CheckValid(item.Lot.Trim()))
+                {
+                    item.IsValid = false;
+                    item.AppendMessage("格式无效");
+                }
+            }
+        }
         /// <summary>
         /// 返回数据源类型
         /// </summary>
@@ -93,9 +104,8 @@ namespace PMSClient.DataProcess.ScanInput
                 LotModel lot = new LotModel()
                 {
                     Lot = i.Trim(),
-                    IsValid = IsValid(i.Trim()),
-                    HasProcessed = false,
-                    ExceptionMessage = (IsValid(i.Trim()) ? "" : "+格式无效")
+                    IsValid = true,
+                    HasProcessed = false
                 };
                 Lots.Add(lot);
             });
