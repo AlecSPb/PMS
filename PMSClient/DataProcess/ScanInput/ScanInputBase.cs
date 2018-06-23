@@ -44,7 +44,7 @@ namespace PMSClient.DataProcess.ScanInput
             return Regex.IsMatch(lot, pattern, RegexOptions.IgnoreCase);
         }
 
-        protected void CheckValid(LotModel item)
+        protected void CheckIsStandard(LotModel item)
         {
             if (item.IsValid)
             {

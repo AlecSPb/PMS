@@ -11,6 +11,9 @@ namespace PMSClient.DataProcess.ScanInput
     {
         public static DcRecordBonding GetRecordBonding(DcRecordTest model)
         {
+            if (model == null)
+                return null;
+
             return null;
         }
 

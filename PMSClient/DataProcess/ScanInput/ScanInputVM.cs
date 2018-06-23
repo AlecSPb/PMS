@@ -33,11 +33,11 @@ namespace PMSClient.DataProcess.ScanInput
 
             process.Check();
 
+            RefreshLotsStatus();
+        }
 
-
-
-
-
+        private void RefreshLotsStatus()
+        {
             Lots.Clear();
             process.Lots.ForEach(i =>
             {
@@ -46,10 +46,13 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
 
-
         private void ActionProcess()
         {
+            process.Intialize(InputText);
 
+            process.Process();
+
+            RefreshLotsStatus();
         }
 
 

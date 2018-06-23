@@ -28,7 +28,9 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 foreach (var item in Lots)
                 {
-                    CheckValid(item);
+                    //默认有效，多次否决
+                    //检查是否规范
+                    CheckIsStandard(item);
                     //检查Lot是否存在于检测记录中
                     CheckInRecordTest(item);
                     //检查Lot是否已存在于绑定记录中
@@ -50,9 +52,25 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 foreach (var item in Lots)
                 {
-                    using (var service = new RecordBondingServiceClient())
+                    if (item.IsValid)
                     {
+                        DcRecordBonding model = null;
+                        //读取测试记录并转换
+                        using (var ss = new RecordTestServiceClient())
+                        {
+                            var record_test = ss.GetRecordTestByProductID(item.Lot).FirstOrDefault();
+                            model = ModelHelper.GetRecordBonding(record_test);
+                        }
 
+                        //插入到绑定记录
+                        using (var service = new RecordBondingServiceClient())
+                        {
+                            if (model != null)
+                            {
+                                service.AddRecordBongdingByUID(model, uid);
+                                item.HasProcessed = true;
+                            }
+                        }
                     }
                 }
             }
@@ -68,7 +86,7 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 using (var service = new RecordTestServiceClient())
                 {
-
+                    //这里增加一个服务？
                     int count = service.GetRecordTestByProductID(item.Lot).Count();
                     if (count == 0)
                     {
