@@ -14,7 +14,6 @@ namespace PMSClient.DataProcess.ScanInput
     {
         Test,
         Plate,
-        Outsource,
         Unknown
     }
 }

@@ -13,7 +13,7 @@ namespace PMSClient.DataProcess.ScanInput
         {
             if (ss == null)
                 return null;
-            #region New
+            #region 初始化
             var model = new DcRecordBonding();
             model.ID = Guid.NewGuid();
             //0.0
@@ -107,20 +107,90 @@ namespace PMSClient.DataProcess.ScanInput
             return model;
         }
 
-        public static DcProduct GetProduct(DcRecordTest model)
+        public static DcProduct GetProduct(DcRecordTest ss)
         {
-            return null;
+            if (ss == null)
+                return null;
+            var model = new DcProduct();
+            #region 初始化
+            model.ID = Guid.NewGuid();
+            model.ProductID = ss.ProductID;
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.Composition = ss.Composition;
+            model.Abbr = ss.CompositionAbbr;
+            model.Weight = ss.Weight;
+            model.Customer = ss.Customer;
+            model.Position = PMSCommon.GoodPosition.A1.ToString();
+            model.ProductType = PMSCommon.ProductType.靶材.ToString();
+            model.State = PMSCommon.InventoryState.库存.ToString();
+            model.Remark = "";
+            model.PO = ss.PO;
+            model.Dimension = ss.Dimension;
+            model.DimensionActual = ss.DimensionActual;
+            model.Defects = ss.Defects;
+            #endregion
+            return model;
 
         }
-        public static DcProduct GetPlate(DcPlate model)
-        {
-            return null;
 
+
+        public static DcDeliveryItem GetDeliveryItem(DcPlate ss)
+        {
+            if (ss == null)
+                return null;
+            var model = new DcDeliveryItem();
+            #region 初始化
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.ProductType = PMSCommon.ProductType.背板.ToString();
+            model.ProductID = ss.PlateLot;
+            model.Composition = ss.PlateMaterial;
+            model.Abbr = ss.PlateMaterial;
+            model.PO = "";
+            model.Customer = "";
+            model.Weight = ss.Weight;
+            model.DetailRecord = "细节";
+            model.Remark = "无";
+            model.PackNumber = 1;
+            model.Position = "B2";
+            model.Dimension = ss.Dimension;
+            model.DimensionActual = ss.Dimension;
+            model.Defects = ss.Defects;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            #endregion
+
+            return model;
         }
 
-        public static DcDeliveryItem GetDeliveryItem(DcProduct model)
+        public static DcDeliveryItem GetDeliveryItem(DcProduct ss)
         {
-            return null;
+            if (ss == null)
+                return null;
+            var model = new DcDeliveryItem();
+            #region 初始化
+            model.ID = Guid.NewGuid();
+            model.CreateTime = DateTime.Now;
+            model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
+            model.ProductType = ss.ProductType;
+            model.ProductID = DateTime.Now.ToString("yyMMdd");
+            model.Composition = ss.Composition;
+            model.Abbr = ss.Abbr;
+            model.PO = ss.PO;
+            model.Customer = ss.Customer;
+            model.Weight = ss.Weight;
+            model.DetailRecord = "细节";
+            model.Remark = "无";
+            model.PackNumber = 1;
+            model.Position = "B2";
+            model.Dimension = ss.Dimension;
+            model.DimensionActual = ss.DimensionActual;
+            model.Defects = ss.Defects;
+            model.State = PMSCommon.SimpleState.正常.ToString();
+            #endregion
+
+            return model;
         }
 
     }

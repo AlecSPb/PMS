@@ -73,6 +73,8 @@ namespace PMSClient.ViewModel
             try
             {
                 var tool = new DataProcess.QuickReport.QuickReport();
+                var context = new DataProcess.QuickReport.QuickReportVM();
+                tool.DataContext = context;
                 tool.Show();
             }
             catch (Exception ex)

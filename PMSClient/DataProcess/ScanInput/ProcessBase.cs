@@ -10,9 +10,9 @@ namespace PMSClient.DataProcess.ScanInput
     /// <summary>
     /// 扫描结果处理类基类
     /// </summary>
-    public class ScanInputBase
+    public class ProcessBase
     {
-        public ScanInputBase()
+        public ProcessBase()
         {
             uid = PMSHelper.CurrentSession.CurrentUser.UserName;
             Lots = new List<LotModel>();
@@ -73,8 +73,6 @@ namespace PMSClient.DataProcess.ScanInput
                     string code = match.Value.Replace("-", "");
                     switch (code.ToUpper())
                     {
-                        case "OS":
-                            return TableSource.Outsource;
                         case "BP":
                             return TableSource.Plate;
                         default:

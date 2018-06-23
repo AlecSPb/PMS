@@ -88,6 +88,9 @@ namespace PMSClient.ViewModel
         private void AcitonScanAdd(DcDelivery obj)
         {
             var tool = new DataProcess.ScanInput.ScanInput();
+            //传入delivery到vm中
+            var context = new DataProcess.ScanInput.ScanInputDeliveryVM(obj);
+            tool.DataContext = context;
             tool.Show();
         }
 

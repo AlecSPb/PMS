@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMSClient.DataProcess.ScanInput;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,21 @@ namespace PMSClient.DataProcess.QuickReport
         {
             this.Topmost = !this.Topmost;
 
+        }
+        private void DataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
+        {
+            try
+            {
+                var msg = ((LotModel)e.Row.DataContext).ExceptionMessage;
+                if (msg != "")
+                {
+                    e.Row.Background = this.FindResource("UnCheckedBrush") as SolidColorBrush;
+                }
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
     }
 }

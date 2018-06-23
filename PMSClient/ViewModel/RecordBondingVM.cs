@@ -76,6 +76,8 @@ namespace PMSClient.ViewModel
         private void ActionScanAdd()
         {
             var tool = new DataProcess.ScanInput.ScanInput();
+            var context = new DataProcess.ScanInput.ScanInputRecordBondingVM();
+            tool.DataContext = context;
             tool.Show();
         }
 

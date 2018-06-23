@@ -23,7 +23,6 @@ namespace PMSClient.DataProcess.ScanInput
         public ScanInput()
         {
             InitializeComponent();
-            this.DataContext = new ScanInputVM();
         }
 
         private void ChkTopMost_Click(object sender, RoutedEventArgs e)

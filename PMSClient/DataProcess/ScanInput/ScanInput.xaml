@@ -9,7 +9,7 @@
         WindowState="Normal"
         WindowStyle="ToolWindow"
         Topmost="True"
-        Title="扫描批量输入工具" Height="700" Width="500">
+        Title="扫描批量输入工具" Height="700" Width="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -26,7 +26,7 @@
         </StackPanel>
         <TextBlock Grid.Row="1"  Text="使用扫描集器工具批量采集ID到输入列表，每行一个,可手动编辑"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Grid.Row="2"  Text="Source:测试记录 => Target:绑定记录"
+        <TextBlock Grid.Row="2"  Text="{Binding SourceTarget}"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" FontWeight="Bold" Background="Blue"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -37,7 +37,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="ID输入列表" Style="{StaticResource StyleDGTextBlockBigLeft}"
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="ID集合列表" Style="{StaticResource StyleDGTextBlockBigLeft}"
                        Background="Red" Foreground="White" Margin="2"/>
             <TextBlock Grid.Row="0"  Grid.Column="1" Text="辅助文本框" Style="{StaticResource StyleDGTextBlockBigLeft}"
                        Background="Black" Foreground="White" Margin="2"/>

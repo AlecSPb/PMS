@@ -10,23 +10,19 @@ using PMSClient.DataProcess;
 
 namespace PMSClient.DataProcess.ScanInput
 {
-    public class ScanInputVM : ViewModelBase
+    public class ScanInputRecordBondingVM : ScanInputVMBase
     {
-        public ScanInputVM()
+        public ScanInputRecordBondingVM()
         {
-            inputText = "";
-            progressValue = 0;
-
-            process = new DataProcess.ScanInput.ScanInputRecordBonding();
+            SourceTarget = "测试记录 => 绑定记录";
+            process = new ProcessRecordBonding();
 
             Process = new RelayCommand(ActionProcess);
             Check = new RelayCommand(ActionCheck);
             Lots = new ObservableCollection<LotModel>();
-
         }
 
-        private DataProcess.ScanInput.ScanInputRecordBonding process;
-
+        private ProcessRecordBonding process;
 
         private void ActionCheck()
         {
@@ -84,38 +80,6 @@ namespace PMSClient.DataProcess.ScanInput
 
 
 
-        public ObservableCollection<LotModel> Lots { get; set; }
 
-        #region 属性
-        private string inputText;
-        public string InputText
-        {
-            get
-            {
-                return inputText;
-            }
-            set
-            {
-                inputText = value;
-                RaisePropertyChanged(nameof(inputText));
-            }
-        }
-
-        private double progressValue;
-        public double ProgressValue
-        {
-            get
-            {
-                return progressValue;
-            }
-            set
-            {
-                progressValue = value;
-                RaisePropertyChanged(nameof(ProgressValue));
-            }
-        }
-        #endregion
-        public RelayCommand Process { get; set; }
-        public RelayCommand Check { get; set; }
     }
 }

@@ -55,8 +55,6 @@ namespace PMSClient.DataProcess.ScanInput
                     string code = match.Value.Replace("-", "");
                     switch (code.ToUpper())
                     {
-                        case "OS":
-                            return TableSource.Outsource;
                         case "BP":
                             return TableSource.Plate;
                         default:
@@ -140,8 +138,6 @@ namespace PMSClient.DataProcess.ScanInput
                     case TableSource.Test:
                         break;
                     case TableSource.Plate:
-                        break;
-                    case TableSource.Outsource:
                         break;
                     case TableSource.Unknown:
                         break;

@@ -10,17 +10,12 @@ namespace PMSClient.DataProcess.ScanInput
     /// <summary>
     /// 用于RecordBonding
     /// </summary>
-    public class ScanInputRecordBonding : ScanInputBase
+    public class ProcessRecordBonding : ProcessBase
     {
-        public ScanInputRecordBonding()
+        public ProcessRecordBonding()
         {
 
         }
-
-
-
-
-
 
         public override void Check(Action<double> DoSomething)
         {
@@ -31,11 +26,8 @@ namespace PMSClient.DataProcess.ScanInput
                 foreach (var item in Lots)
                 {
                     //默认有效，多次否决
-                    //检查是否规范
                     CheckIsStandard(item);
-                    //检查Lot是否存在于检测记录中
                     CheckInRecordTest(item);
-                    //检查Lot是否已存在于绑定记录中
                     CheckInRecordBonding(item);
 
 
@@ -57,14 +49,18 @@ namespace PMSClient.DataProcess.ScanInput
 
         public override void Process(Action<double> DoSomething)
         {
-            Check(null);
-
             try
             {
                 double progressValue = 0;
                 double count = 0;
                 foreach (var item in Lots)
                 {
+                    //检查
+                    CheckIsStandard(item);
+                    CheckInRecordTest(item);
+                    CheckInRecordBonding(item);
+
+                    //有效继续
                     if (item.IsValid)
                     {
                         DcRecordBonding model = null;

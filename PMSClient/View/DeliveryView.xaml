@@ -58,11 +58,14 @@
                                             Command="{Binding DataContext.ScanAdd,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonDeliverySheet}" Style="{StaticResource StyleDGButton}"
-                                                Command="{Binding Path=DataContext.DeliverySheet,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                                Command="{Binding Path=DataContext.DeliverySheet,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
-                                                Command="{Binding Path=DataContext.Label,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                                Command="{Binding Path=DataContext.Label,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
-                                                Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding}"/>
+                                                Command="{Binding Path=DataContext.Finish,RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}"
+                                        CommandParameter="{Binding}"/>
 
                             </StackPanel>
                         </DataTemplate>

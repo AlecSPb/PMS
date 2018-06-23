@@ -24,7 +24,7 @@
         </StackPanel>
         <TextBlock Grid.Row="1"  Text="使用扫描集器工具批量采集ID到输入列表，每行一个,可手动编辑"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
-        <TextBlock Grid.Row="2"  Text="Source:测试记录 => Target:特定文件夹"
+        <TextBlock Grid.Row="2"  Text="{Binding SourceTarget}"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" FontWeight="Bold" Background="Blue"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
@@ -46,13 +46,15 @@
         </Grid>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="报告类型"/>
-            <ComboBox Style="{StaticResource StyleComboBoxCommon}"/>
+            <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding ReportTypes}"
+                      SelectedItem="{Binding CurrentReportType}"
+                      Width="150"/>
             <Button Content="模拟报告" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
             <Button Content="实际报告" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
         </StackPanel>
-        <ProgressBar Grid.Row="5" Height="10" Value="50" Margin="2"/>
+        <ProgressBar Grid.Row="5" Height="10" Value="{Binding ProgressValue}" Maximum="100" Minimum="0" Margin="2"/>
         <DataGrid Grid.Row="6" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Lots}"
-                  >
+                  LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding Lot}"/>
                 <DataGridTextColumn Header="是否有效" Binding="{Binding IsValid}"/>
