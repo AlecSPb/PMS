@@ -85,7 +85,7 @@ namespace PMSClient.ViewModel
                 default:
                     break;
             }
-            PMSDialogService.ShowYes("成功", "记录导入完成，请刷新列表");
+            PMSDialogService.Show("成功", "记录导入完成，请刷新列表");
         }
 
         #region BatchSaveArea

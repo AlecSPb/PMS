@@ -64,7 +64,7 @@ namespace PMSClient.ViewModel
                         var currentMaterialOrder = PMSHelper.ViewModels.MaterialOrderItemEdit.CurrentMaterialOrder;
                         BatchSaveMaterialOrderItem(currentMaterialOrder);
                         NavigationService.GoTo(PMSViews.MaterialOrder);
-                        PMSDialogService.ShowYes("成功", "批量添加成功，请刷新列表,并修改材料批号\r\n因为批量添加的是相同的材料批号");
+                        PMSDialogService.Show("成功", "批量添加成功，请刷新列表,并修改材料批号\r\n因为批量添加的是相同的材料批号");
                         break;
                     default:
                         break;

@@ -55,7 +55,7 @@ namespace PMSClient.ViewModel
                         break;
                 }
 
-                PMSDialogService.ShowYes("成功", "请刷新列表查看最新数据");
+                PMSDialogService.Show("成功", "请刷新列表查看最新数据");
             }
             catch (Exception ex)
             {

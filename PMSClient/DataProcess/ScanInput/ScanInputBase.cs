@@ -122,12 +122,12 @@ namespace PMSClient.DataProcess.ScanInput
             return sb.ToString();
         }
 
-        public virtual void Check()
+        public virtual void Check(Action<double> DoSomething)
         {
 
         }
 
-        public virtual void Process()
+        public virtual void Process(Action<double> DoSomething)
         {
 
         }

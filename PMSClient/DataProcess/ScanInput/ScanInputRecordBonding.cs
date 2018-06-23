@@ -22,10 +22,12 @@ namespace PMSClient.DataProcess.ScanInput
 
 
 
-        public override void Check()
+        public override void Check(Action<double> DoSomething)
         {
             try
             {
+                double progressValue = 0;
+                double count = 0;
                 foreach (var item in Lots)
                 {
                     //默认有效，多次否决
@@ -36,6 +38,14 @@ namespace PMSClient.DataProcess.ScanInput
                     //检查Lot是否已存在于绑定记录中
                     CheckInRecordBonding(item);
 
+
+                    count++;
+                    progressValue = count * 100 / Lots.Count;
+                    if (DoSomething != null)
+                    {
+                        DoSomething(progressValue);
+                        System.Threading.Thread.Sleep(50);
+                    }
                 }
             }
             catch (Exception ex)
@@ -45,11 +55,14 @@ namespace PMSClient.DataProcess.ScanInput
 
         }
 
-        public override void Process()
+        public override void Process(Action<double> DoSomething)
         {
-            Check();
+            Check(null);
+
             try
             {
+                double progressValue = 0;
+                double count = 0;
                 foreach (var item in Lots)
                 {
                     if (item.IsValid)
@@ -72,6 +85,14 @@ namespace PMSClient.DataProcess.ScanInput
                             }
                         }
                     }
+                    count++;
+                    progressValue = count * 100 / Lots.Count;
+                    if (DoSomething != null)
+                    {
+                        DoSomething(progressValue);
+                        System.Threading.Thread.Sleep(50);
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -91,7 +112,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count == 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("测试记录中不存在");
+                        item.AppendMessage("[测试]记录中不存在");
                     }
                 }
             }
@@ -107,7 +128,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count > 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("绑定记录中已存在");
+                        item.AppendMessage("[绑定]记录中已存在");
                     }
                 }
             }

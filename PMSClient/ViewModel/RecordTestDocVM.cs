@@ -64,7 +64,7 @@ namespace PMSClient.ViewModel
 
         private void ShowMessageAfterCreateDoc(string reportName)
         {
-            PMSDialogService.ShowYes("提示", $"{reportName}创建完毕，请打开报告仔细检查内容是否正确");
+            PMSDialogService.Show("提示", $"{reportName}创建完毕，请打开报告仔细检查内容是否正确");
             NavigationService.Status($"{reportName}创建完毕！");
         }
 

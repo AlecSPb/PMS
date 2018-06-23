@@ -66,7 +66,7 @@ namespace PMSClient.ViewModel
                     default:
                         break;
                 }
-                PMSDialogService.ShowYes("成功", "添加成功，请刷新列表看到最新信息");
+                PMSDialogService.Show("成功", "添加成功，请刷新列表看到最新信息");
             }
             catch (Exception ex)
             {

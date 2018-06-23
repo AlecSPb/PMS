@@ -16,14 +16,14 @@ namespace PMSClient
             return result == MessageBoxResult.Yes;
         }
 
-        public static void ShowYes(string title, string content)
+        public static void Show(string title, string content)
         {
             MessageBox.Show(content, title, MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public static void Show(string content)
         {
-            ShowYes("消息", content);
+            Show("消息", content);
         }
 
         public static void ShowWarning(string content)

@@ -60,7 +60,7 @@ namespace PMSClient.ViewModel
                 {
                     model.State = PMSCommon.InventoryState.发货.ToString();
                     service.UpdateMaterialInventoryInByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
-                    PMSDialogService.ShowYes("请问", $"[{model.PMINumber}{model.Composition}{model.MaterialLot}]的入库记录已标记为出库");
+                    PMSDialogService.Show("请问", $"[{model.PMINumber}{model.Composition}{model.MaterialLot}]的入库记录已标记为出库");
                 }
             }
             catch (Exception ex)

@@ -47,16 +47,25 @@
                  Text="辅助文本框是一个临时存放ID的位置，不参与数据处理，如果要分批进行处理，可以在这里进行"/>
         </Grid>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="模拟录入" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
-            <Button Content="实际录入" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
+            <Button Content="模拟录入" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}">
+                <Button.ToolTip>
+                    <TextBlock Text="模拟录入的意思，假装录入看看这些编号OK不OK，实际不会录入"/>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="正式录入" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}">
+                <Button.ToolTip>
+                    <TextBlock Text="正式录入的意思，会实际增加新纪录到特定位置"/>
+                </Button.ToolTip>
+            </Button>
         </StackPanel>
-        <ProgressBar Grid.Row="5" Height="10" Value="50" Margin="2"/>
+        <ProgressBar Grid.Row="5" Height="10" Value="{Binding ProgressValue}" Maximum="100" Minimum="0"
+                     Margin="2"/>
         <DataGrid Grid.Row="6" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Lots}"
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding Lot}"/>
-                <DataGridTextColumn Header="是否有效" Binding="{Binding IsValid}"/>
-                <DataGridTextColumn Header="是否处理" Binding="{Binding HasProcessed}"/>
+                <DataGridCheckBoxColumn Header="是否有效" Binding="{Binding IsValid}" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="是否处理" Binding="{Binding HasProcessed}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="信息" Binding="{Binding ExceptionMessage}"/>
 
             </DataGrid.Columns>

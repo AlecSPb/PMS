@@ -15,6 +15,7 @@ namespace PMSClient.DataProcess.ScanInput
         public ScanInputVM()
         {
             inputText = "";
+            progressValue = 0;
 
             process = new DataProcess.ScanInput.ScanInputRecordBonding();
 
@@ -29,11 +30,44 @@ namespace PMSClient.DataProcess.ScanInput
 
         private void ActionCheck()
         {
-            process.Intialize(InputText);
+            Task task = new Task(() =>
+              {
+                  process.Intialize(InputText);
 
-            process.Check();
+                  process.Check(i =>
+                  {
+                      ProgressValue = i;
+                  });
+                  App.Current.Dispatcher.Invoke(() =>
+                  {
+                      RefreshLotsStatus();
 
-            RefreshLotsStatus();
+                  });
+              });
+            task.Start();
+        }
+
+        private void ActionProcess()
+        {
+            if (PMSDialogService.ShowYesNo("请问", "确定继续吗？") == false)
+                return;
+
+            Task task = new Task(() =>
+              {
+                  process.Intialize(InputText);
+
+                  process.Process(i =>
+                  {
+                      ProgressValue = i;
+                  });
+                  App.Current.Dispatcher.Invoke(() =>
+                  {
+                      RefreshLotsStatus();
+
+                  });
+              });
+
+            task.Start();
         }
 
         private void RefreshLotsStatus()
@@ -43,16 +77,9 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 Lots.Add(i);
             });
-        }
 
+            PMSDialogService.Show("结束", "处理结束");
 
-        private void ActionProcess()
-        {
-            process.Intialize(InputText);
-
-            process.Process();
-
-            RefreshLotsStatus();
         }
 
 
@@ -71,6 +98,20 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 inputText = value;
                 RaisePropertyChanged(nameof(inputText));
+            }
+        }
+
+        private double progressValue;
+        public double ProgressValue
+        {
+            get
+            {
+                return progressValue;
+            }
+            set
+            {
+                progressValue = value;
+                RaisePropertyChanged(nameof(ProgressValue));
             }
         }
         #endregion

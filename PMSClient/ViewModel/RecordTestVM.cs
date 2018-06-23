@@ -149,7 +149,7 @@ namespace PMSClient.ViewModel
                 PMSHelper.CurrentLog.Error(ex);
                 NavigationService.Status(ex.Message);
             }
-            PMSDialogService.ShowYes("提示", "创建完毕，请打开桌面的文件夹，仔细检查内容是否正确");
+            PMSDialogService.Show("提示", "创建完毕，请打开桌面的文件夹，仔细检查内容是否正确");
             NavigationService.Status("创建完毕！");
         }
 

@@ -50,7 +50,7 @@ namespace PMSClient.ViewModel
                 default:
                     break;
             }
-            PMSDialogService.ShowYes("请问", "请刷新列表");
+            PMSDialogService.Show("请问", "请刷新列表");
         }
 
         private void BatchSaveProduct()
