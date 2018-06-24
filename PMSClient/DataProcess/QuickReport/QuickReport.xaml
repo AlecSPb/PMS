@@ -30,7 +30,6 @@
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -38,12 +37,8 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="ID输入列表" Style="{StaticResource StyleDGTextBlockBigLeft}"
                        Background="Red" Foreground="White" Margin="2"/>
-            <TextBlock Grid.Row="0"  Grid.Column="1" Text="辅助文本框" Style="{StaticResource StyleDGTextBlockBigLeft}"
-                       Background="Black" Foreground="White" Margin="2"/>
             <TextBox Grid.Column="0" Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"
                  Text="{Binding InputText}" Background="LightYellow"/>
-            <TextBox Grid.Column="1" Grid.Row="1" Margin="2" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="WrapWithOverflow"
-                 Text="辅助文本框是一个临时存放ID的位置，不参与数据处理，如果要分批进行处理，可以在这里进行"/>
         </Grid>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="报告类型"/>

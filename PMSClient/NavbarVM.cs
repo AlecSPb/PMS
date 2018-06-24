@@ -169,6 +169,15 @@ namespace PMSClient
                      PMSHelper.CurrentLog.Error(ex);
                  }
              });
+
+            EmptyTextBox = new RelayCommand(() =>
+              {
+                  var tool = new ToolWindow.EmptyTextBox();
+                  tool.Show();
+              });
+
+
+
             #endregion
         }
 
@@ -186,5 +195,7 @@ namespace PMSClient
 
         public RelayCommand Element { get; set; }
         public RelayCommand LabelStandard { get; set; }
+
+        public RelayCommand EmptyTextBox { get; set; }
     }
 }

@@ -342,6 +342,9 @@
       <DependentUpon>DensityCalculation.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\DialogWindowBase.cs" />
+    <Compile Include="ToolWindow\EmptyTextBox.xaml.cs">
+      <DependentUpon>EmptyTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\Model\SingleElement.cs" />
     <Compile Include="ToolWindow\OrderCheckDialog.xaml.cs">
       <DependentUpon>OrderCheckDialog.xaml</DependentUpon>
@@ -889,6 +892,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\DensityCalculation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\EmptyTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

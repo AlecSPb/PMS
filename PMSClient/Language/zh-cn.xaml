@@ -868,6 +868,7 @@
     <sys:String x:Key="BottomBarFillingToolRule">装具</sys:String>
     <sys:String x:Key="BottomBarElement">元素</sys:String>
     <sys:String x:Key="BottomBarLabelStandard">标签</sys:String>
+    <sys:String x:Key="BottomBarEmptyTextBox">文本</sys:String>
 
 
     <!--每个页面最前面的提示信息-->

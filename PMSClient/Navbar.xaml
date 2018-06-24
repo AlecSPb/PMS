@@ -26,6 +26,9 @@
                 Command="{Binding IntergratedSearch}"/>
             <Button Content="{StaticResource BottomBarSymbol}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding Symbol}"/>
+            <Button Content="{StaticResource BottomBarEmptyTextBox}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding EmptyTextBox}"/>
+            
             
             <TextBlock Text="{StaticResource BottomBarRule}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarCodeRule}" Style="{StaticResource StyleButtonCommonNarrow}"
