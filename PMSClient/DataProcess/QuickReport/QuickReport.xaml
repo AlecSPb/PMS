@@ -45,8 +45,8 @@
             <ComboBox Style="{StaticResource StyleComboBoxCommon}" ItemsSource="{Binding ReportTypes}"
                       SelectedItem="{Binding CurrentReportType}"
                       Width="150"/>
-            <Button Content="模拟报告" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
-            <Button Content="实际报告" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
+            <Button Content="模拟生成" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}"/>
+            <Button Content="实际生成" Style="{StaticResource StyleButtonSpecial}" Command="{Binding Process}"/>
         </StackPanel>
         <ProgressBar Grid.Row="5" Height="10" Value="{Binding ProgressValue}" Maximum="100" Minimum="0" Margin="2"/>
         <DataGrid Grid.Row="6" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding Lots}"

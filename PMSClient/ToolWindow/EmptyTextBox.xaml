@@ -7,7 +7,14 @@
         mc:Ignorable="d"
         Title="临时存放文本工具-自动保存" Height="450" Width="500">
     <Grid>
-        <TextBox Margin="2" Name="txtText" TextChanged="txtText_TextChanged"
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Margin="2" Name="txtText" TextChanged="txtText_TextChanged"
                  TextWrapping="WrapWithOverflow" AcceptsReturn="True"/>
+        <TextBlock Grid.Row="1" Margin="2" TextWrapping="WrapWithOverflow" Background="Wheat">
+            右键或者快捷键 [剪切] [复制] [粘贴]  文字一变会自动保存
+        </TextBlock>
     </Grid>
 </Window>
