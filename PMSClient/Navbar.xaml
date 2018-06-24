@@ -34,6 +34,8 @@
                 Command="{Binding LaserRule}"/>
             <Button Content="{StaticResource BottomBarFillingToolRule}" Style="{StaticResource StyleButtonCommonNarrow}"
                 Command="{Binding FillingToolRule}"/>
+            <Button Content="{StaticResource BottomBarLabelStandard}" Style="{StaticResource StyleButtonCommonNarrow}"
+                Command="{Binding LabelStandard}"/>
             
             <TextBlock Text="{StaticResource BottomBarInformation}" Style="{StaticResource StyleDGTextBlockCommon}"/>
             <Button Content="{StaticResource BottomBarHelp}" Style="{StaticResource StyleButtonCommonNarrow}"

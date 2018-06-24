@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.DataProcess.QuickReport"
         mc:Ignorable="d"
-        Topmost="True"
+        Topmost="False"
         WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
         Title="快速报告工具" Height="700" Width="500">
     <Grid>
@@ -19,13 +19,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Wheat">
-            <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最前" IsChecked="True"
+            <CheckBox Style="{StaticResource StyleCheckBoxCommon}" Content="保持最前" IsChecked="False"
                       Name="ChkTopMost" Click="ChkTopMost_Click"/>
         </StackPanel>
         <TextBlock Grid.Row="1"  Text="使用扫描集器工具批量采集ID到输入列表，每行一个,可手动编辑"
                    Style="{StaticResource StyleDGTextBlockCommon}" Foreground="Blue" TextWrapping="WrapWithOverflow"/>
         <TextBlock Grid.Row="2"  Text="{Binding SourceTarget}"
-                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" FontWeight="Bold" Background="Blue"/>
+                   Style="{StaticResource StyleDGTextBlockCommon}" Foreground="White" FontWeight="Bold" Background="Blue"
+                   FontSize="20"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

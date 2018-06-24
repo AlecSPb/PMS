@@ -152,6 +152,23 @@ namespace PMSClient
                       PMSHelper.CurrentLog.Error(ex);
                   }
               });
+
+            LabelStandard = new RelayCommand(() =>
+             {
+                 try
+                 {
+                     string helpFileName = "NewLabelStandard.docx";
+                     string helpFile = System.IO.Path.Combine(Environment.CurrentDirectory, "Resource", "Files", helpFileName);
+                     if (File.Exists(helpFile))
+                     {
+                         System.Diagnostics.Process.Start(helpFile);
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     PMSHelper.CurrentLog.Error(ex);
+                 }
+             });
             #endregion
         }
 
@@ -168,5 +185,6 @@ namespace PMSClient
         public RelayCommand Symbol { get; set; }
 
         public RelayCommand Element { get; set; }
+        public RelayCommand LabelStandard { get; set; }
     }
 }
