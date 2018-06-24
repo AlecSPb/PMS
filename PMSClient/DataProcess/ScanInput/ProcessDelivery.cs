@@ -155,7 +155,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count == 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("[产品]记录中不存在");
+                        item.AppendMessage("[产品记录]中不存在");
                     }
                 }
             }
@@ -172,7 +172,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count == 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("[背板]记录中不存在");
+                        item.AppendMessage("[背板记录]中不存在");
                     }
                 }
             }
@@ -189,7 +189,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count > 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("[发货流水]记录中已存在");
+                        item.AppendMessage("[发货流水记录]中已存在");
                     }
                 }
             }

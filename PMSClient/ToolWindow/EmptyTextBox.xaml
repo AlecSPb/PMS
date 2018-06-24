@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="临时存放文本工具" Height="450" Width="500">
+        Title="临时存放文本工具-自动保存" Height="450" Width="500">
     <Grid>
-        <TextBox Margin="2"/>
+        <TextBox Margin="2" Name="txtText" TextChanged="txtText_TextChanged"
+                 TextWrapping="WrapWithOverflow" AcceptsReturn="True"/>
     </Grid>
 </Window>

@@ -1896,6 +1896,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Temp\这个文件夹不要删除.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="updates.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -109,7 +109,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count == 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("[测试]记录中不存在");
+                        item.AppendMessage("[测试记录]中不存在");
                     }
                 }
             }
@@ -126,7 +126,7 @@ namespace PMSClient.DataProcess.ScanInput
                     if (count > 0)
                     {
                         item.IsValid = false;
-                        item.AppendMessage("[产品]记录中已存在");
+                        item.AppendMessage("[产品记录]中已存在");
                     }
                 }
             }

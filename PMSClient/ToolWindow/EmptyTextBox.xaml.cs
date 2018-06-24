@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace PMSClient.ToolWindow
 {
@@ -22,6 +23,44 @@ namespace PMSClient.ToolWindow
         public EmptyTextBox()
         {
             InitializeComponent();
+            Read();
         }
+
+        private void txtText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Write();
+        }
+
+        private string filePath = System.IO.Path.Combine(Environment.CurrentDirectory, "Temp", "empty.txt");
+        private void Read()
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string txt = File.ReadAllText(filePath);
+                    txtText.Text = txt;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void Write()
+        {
+            try
+            {
+
+                File.WriteAllText(filePath, txtText.Text.Trim());
+
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
     }
 }
