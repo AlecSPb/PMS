@@ -20,9 +20,14 @@ namespace PMSClient.DataProcess.ScanInput
             SourceTarget = $"产品记录+背板记录 => 发货记录[{delivery.DeliveryName}]";
             process = new ProcessDelivery(delivery);
 
-            Process = new RelayCommand(ActionProcess);
-            Check = new RelayCommand(ActionCheck);
+            Process = new RelayCommand(ActionProcess,CanCheck);
+            Check = new RelayCommand(ActionCheck,CanCheck);
             Lots = new ObservableCollection<LotModel>();
+        }
+
+        private bool CanCheck()
+        {
+            return canClick;
         }
 
         private ProcessDelivery process;
@@ -31,6 +36,7 @@ namespace PMSClient.DataProcess.ScanInput
         {
             Task task = new Task(() =>
             {
+                canClick = false;
                 process.Intialize(InputText);
 
                 process.Check(i =>
@@ -42,6 +48,7 @@ namespace PMSClient.DataProcess.ScanInput
                     RefreshLotsStatus();
 
                 });
+                canClick = true;
             });
             task.Start();
         }
@@ -53,6 +60,7 @@ namespace PMSClient.DataProcess.ScanInput
 
             Task task = new Task(() =>
             {
+                canClick = false;
                 process.Intialize(InputText);
 
                 process.Process(i =>
@@ -64,6 +72,7 @@ namespace PMSClient.DataProcess.ScanInput
                     RefreshLotsStatus();
 
                 });
+                canClick = true;
             });
 
             task.Start();

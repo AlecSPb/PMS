@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSClient.DataProcess.QuickReport"
         mc:Ignorable="d"
         Topmost="False"
-        WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen"
         Title="快速报告工具" Height="700" Width="500">
     <Grid>
         <Grid.RowDefinitions>

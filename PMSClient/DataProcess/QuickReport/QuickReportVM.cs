@@ -25,18 +25,25 @@ namespace PMSClient.DataProcess.QuickReport
             ReportTypes.Add("COA-BL");
             CurrentReportType = ReportTypes[0];
 
-            Process = new RelayCommand(ActionProcess);
-            Check = new RelayCommand(ActionCheck);
+            Process = new RelayCommand(ActionProcess,CanCheck);
+            Check = new RelayCommand(ActionCheck,CanCheck);
             Lots = new ObservableCollection<LotModel>();
 
         }
 
+        private bool CanCheck()
+        {
+            return canClick;
+        }
+
         private ProcessReport process;
+        private bool canClick = true;
 
         private void ActionCheck()
         {
             Task task = new Task(() =>
             {
+                canClick = false;
                 process.Intialize(InputText);
 
                 process.Check(i =>
@@ -48,6 +55,7 @@ namespace PMSClient.DataProcess.QuickReport
                     RefreshLotsStatus();
 
                 });
+                canClick = true;
             });
             task.Start();
         }
@@ -59,6 +67,7 @@ namespace PMSClient.DataProcess.QuickReport
 
             Task task = new Task(() =>
             {
+                canClick = false;
                 process.Intialize(InputText);
                 process.CurrentReportType = CurrentReportType;
 
@@ -71,6 +80,7 @@ namespace PMSClient.DataProcess.QuickReport
                     RefreshLotsStatus();
 
                 });
+                canClick = true;
             });
 
             task.Start();

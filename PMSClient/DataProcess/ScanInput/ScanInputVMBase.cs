@@ -61,8 +61,11 @@ namespace PMSClient.DataProcess.ScanInput
                 RaisePropertyChanged(nameof(SourceTarget));
             }
         }
+
+        protected bool canClick=true;
         #endregion
         public RelayCommand Process { get; set; }
         public RelayCommand Check { get; set; }
+
     }
 }
