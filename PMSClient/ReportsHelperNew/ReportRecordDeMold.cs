@@ -66,7 +66,8 @@ namespace PMSClient.ReportsHelperNew
                                 row.Cells[0].VerticalAlignment = VerticalAlignment.Center;
                                 row.Cells[1].Paragraphs[0].Append(item.Misson.CompositionStandard);
                                 row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
-
+                                row.Cells[2].Paragraphs[0].Append(item.Plan.PlanType);
+                                row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
                             }
                         }
 

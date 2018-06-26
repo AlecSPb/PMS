@@ -64,6 +64,8 @@ namespace PMSClient.ReportsHelper
                                 .Append($"{item.TargetProductID}").FontSize(10);
                             mainTable.Rows[rownumber].Cells[2].Paragraphs[0]
                                 .Append(item.TargetComposition).FontSize(10);
+                            mainTable.Rows[rownumber].Cells[12].Paragraphs[0]
+                                .Append("□缺 □裂").FontSize(10).Alignment = Alignment.left;
 
                             mainTable.InsertRow();
                             rownumber++;
