@@ -71,7 +71,7 @@ namespace PMSClient.DataProcess.QuickReport
 
                             if (CurrentReportType == "COA")
                             {
-                                WordCOA report = new WordCOA();
+                                WordCOANew report = new WordCOANew();
                                 report.SetModel(model);
                                 report.Output();
 

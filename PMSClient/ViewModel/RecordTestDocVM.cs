@@ -105,7 +105,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                WordCOA report = new WordCOA();
+                WordCOANew report = new WordCOANew();
                 report.SetModel(CurrentRecordTest);
                 report.Output();
 

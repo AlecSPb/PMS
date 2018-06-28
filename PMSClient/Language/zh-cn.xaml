@@ -236,8 +236,8 @@
     <sys:String x:Key="ButtonCalculate">计算</sys:String>
     <sys:String x:Key="ButtonTempRecordSheet">临时记录纸</sys:String>
     <sys:String x:Key="ButtonSign">签名</sys:String>
-    <sys:String x:Key="ButtonFindMaterial">找原料</sys:String>
-    <sys:String x:Key="ButtonFindMisson">找任务</sys:String>
+    <sys:String x:Key="ButtonFindMaterial">原料</sys:String>
+    <sys:String x:Key="ButtonFindMisson">任务</sys:String>
     <sys:String x:Key="ButtonQuickRemark">快速备注</sys:String>
     <sys:String x:Key="ButtonFinish">完成</sys:String>
     <sys:String x:Key="ButtonLocation">定位</sys:String>

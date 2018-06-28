@@ -110,7 +110,7 @@ namespace PMSClient.ViewModel
             {
                 if (documentType=="COA")
                 {
-                    WordCOA report = new WordCOA();
+                    WordCOANew report = new WordCOANew();
                     foreach (var item in RecordTestExtras)
                     {
                         if (item.IsSelected)
