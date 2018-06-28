@@ -13,14 +13,14 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class WordCOABridgeLine : ReportBase
+    public class WordCOABridgeLineNew : ReportBase
     {
         private string prefix = "COA";
-        public WordCOABridgeLine()
+        public WordCOABridgeLineNew()
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
-            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COABridgeLine.docx");
-            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COABridgeLine_Temp.docx");
+            sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COABridgeLineNew.docx");
+            tempFile = Path.Combine(ReportHelper.ReportsTemplateTempFolder, "COABridgeLineNew_Temp.docx");
             targetFile = Path.Combine(ReportHelper.DesktopFolder, targetName);
         }
         public void SetTargetFileName(string targetFileName)
@@ -69,28 +69,28 @@ namespace PMSClient.ReportsHelper
 
                     //填充XRF表格
                     //填充XRF表格
-                    if (document.Tables[1] != null)
+                    if (document.Tables[0] != null)
                     {
-                        Table mainTable = document.Tables[1];
-                        Paragraph p = mainTable.Rows[6].Cells[0].Paragraphs[0];
+                        Table mainTable = document.Tables[0];
+                        Paragraph p = mainTable.Rows[8].Cells[0].Paragraphs[0];
                         InsertCompositionXRFTable(document, p, model.CompositionXRF, "No Composition Test Results");
 
 
                         //填充标称的成分
                         if (!string.IsNullOrEmpty(model.Composition))
                         {
-                            Paragraph elementNames = mainTable.Rows[4].Cells[0].Paragraphs[0];
+                            Paragraph elementNames = mainTable.Rows[7].Cells[0].Paragraphs[0];
                             foreach (var name in GetCompositionNames(model.Composition))
                             {
-                                elementNames.Append(name + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                                elementNames.Append(name + "\r").FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
                             }
 
-                            Paragraph elementValues = mainTable.Rows[4].Cells[1].Paragraphs[0];
-                            Paragraph units = mainTable.Rows[4].Cells[2].Paragraphs[0];
+                            Paragraph elementValues = mainTable.Rows[7].Cells[1].Paragraphs[0];
+                            Paragraph units = mainTable.Rows[7].Cells[2].Paragraphs[0];
                             foreach (var at in GetCompositionValues(model.Composition))
                             {
-                                elementValues.Append(at + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                                units.Append("Atm%" + "\r").FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                                elementValues.Append(at + "\r").FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                                units.Append("Atm%" + "\r").FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
                             }
 
                         }
@@ -103,7 +103,9 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                //PMSDialogService.ShowYes("原材料报告创建成功，请在桌面查看");
+                PMSDialogService.Show("原材料报告创建成功，即将打开");
+                System.Diagnostics.Process.Start(targetFile);
+
             }
             catch (Exception ex)
             {
@@ -143,7 +145,7 @@ namespace PMSClient.ReportsHelper
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(11).Font(new FontFamily("Calibri"));
+                            cell.Paragraphs[0].Append(items[j]).FontSize(9).Font(new FontFamily("Times New Roman"));
                             if (j == 0)
                             {
                                 continue;
@@ -154,12 +156,12 @@ namespace PMSClient.ReportsHelper
                     }
                     p.InsertTableAfterSelf(xrfTable);
 
-                    //添加平均成分到表格中
-                    Table mainTable = document.Tables[1];
-                    Paragraph average = mainTable.Rows[4].Cells[3].Paragraphs[0];
-                    Paragraph units = mainTable.Rows[4].Cells[4].Paragraphs[0];
-                    average.Append(sb1.ToString()).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
-                    units.Append(sb2.ToString()).FontSize(11).Font(new System.Drawing.FontFamily("Calibri"));
+                    ////添加平均成分到表格中
+                    //Table mainTable = document.Tables[0];
+                    //Paragraph average = mainTable.Rows[4].Cells[3].Paragraphs[0];
+                    //Paragraph units = mainTable.Rows[4].Cells[4].Paragraphs[0];
+                    //average.Append(sb1.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                    //units.Append(sb2.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
                 }
 
             }

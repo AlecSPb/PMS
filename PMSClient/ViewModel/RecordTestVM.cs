@@ -122,7 +122,7 @@ namespace PMSClient.ViewModel
                 }
                 else if(documentType=="COABL")
                 {
-                    WordCOABridgeLine report = new WordCOABridgeLine();
+                    WordCOABridgeLineNew report = new WordCOABridgeLineNew();
                     foreach (var item in RecordTestExtras)
                     {
                         if (item.IsSelected)

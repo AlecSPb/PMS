@@ -277,12 +277,13 @@
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\StringUtil.cs" />
     <Compile Include="ReportsHelper\WordBondingSheet.cs" />
+    <Compile Include="ReportsHelper\WordCOABridgeLineOld.cs" />
     <Compile Include="ReportsHelper\WordCOANew.cs" />
     <Compile Include="ReportsHelper\WordDeliverySheet.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrderHorizontal.cs" />
     <Compile Include="ReportsHelper\WordOpticraft440.cs" />
     <Compile Include="ReportsHelper\WordTCB440.cs" />
-    <Compile Include="ReportsHelper\WordCOABridgeLine.cs" />
+    <Compile Include="ReportsHelper\WordCOABridgeLineNew.cs" />
     <Compile Include="ReportsHelper\WordCOA.cs" />
     <Compile Include="ReportsHelper\ReportHelper.cs" />
     <Compile Include="ReportsHelper\WordMaterialOrder.cs" />
@@ -1419,6 +1420,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\COANew.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\COABridgeLineNew.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">

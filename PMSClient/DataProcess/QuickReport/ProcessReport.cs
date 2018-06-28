@@ -78,7 +78,7 @@ namespace PMSClient.DataProcess.QuickReport
                             }
                             else if (CurrentReportType == "COA-BL")
                             {
-                                WordCOABridgeLine report = new WordCOABridgeLine();
+                                WordCOABridgeLineNew report = new WordCOABridgeLineNew();
                                 report.SetModel(model);
                                 report.Output();
 

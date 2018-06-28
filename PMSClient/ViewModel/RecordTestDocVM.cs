@@ -122,7 +122,7 @@ namespace PMSClient.ViewModel
         {
             try
             {
-                WordCOABridgeLine report = new WordCOABridgeLine();
+                WordCOABridgeLineNew report = new WordCOABridgeLineNew();
                 report.SetModel(CurrentRecordTest);
                 report.Output();
                 ShowMessageAfterCreateDoc("COABridgeLine报告");
