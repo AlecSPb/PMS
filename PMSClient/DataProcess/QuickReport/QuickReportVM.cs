@@ -41,6 +41,7 @@ namespace PMSClient.DataProcess.QuickReport
 
         private void ActionCheck()
         {
+            ClearLots();
             Task task = new Task(() =>
             {
                 canClick = false;
@@ -64,7 +65,7 @@ namespace PMSClient.DataProcess.QuickReport
         {
             if (PMSDialogService.ShowYesNo("请问", "确定继续吗？") == false)
                 return;
-
+            ClearLots();
             Task task = new Task(() =>
             {
                 canClick = false;
@@ -86,6 +87,10 @@ namespace PMSClient.DataProcess.QuickReport
             task.Start();
         }
 
+        private void ClearLots()
+        {
+            Lots.Clear();
+        }
         private void RefreshLotsStatus()
         {
             Lots.Clear();

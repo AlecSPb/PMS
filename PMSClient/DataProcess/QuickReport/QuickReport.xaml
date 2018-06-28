@@ -53,8 +53,8 @@
                   LoadingRow="DataGrid_LoadingRow">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="产品ID" Binding="{Binding Lot}"/>
-                <DataGridTextColumn Header="是否有效" Binding="{Binding IsValid}"/>
-                <DataGridTextColumn Header="是否处理" Binding="{Binding HasProcessed}"/>
+                <DataGridCheckBoxColumn Header="是否有效" Binding="{Binding IsValid}" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="是否处理" Binding="{Binding HasProcessed}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="信息" Binding="{Binding ExceptionMessage}"/>
 
             </DataGrid.Columns>

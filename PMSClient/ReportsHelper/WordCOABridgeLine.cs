@@ -13,10 +13,10 @@ namespace PMSClient.ReportsHelper
     /// <summary>
     /// 订单报告
     /// </summary>
-    public class WordCOABridgeLineOld : ReportBase
+    public class WordCOABridgeLine : ReportBase
     {
         private string prefix = "COA";
-        public WordCOABridgeLineOld()
+        public WordCOABridgeLine()
         {
             var targetName = $"{prefix}{ReportHelper.TimeNameDocx}";
             sourceFile = Path.Combine(ReportHelper.ReportsTemplateFolder, "COABridgeLine.docx");

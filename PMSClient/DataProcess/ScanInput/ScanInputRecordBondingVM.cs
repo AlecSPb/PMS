@@ -31,6 +31,7 @@ namespace PMSClient.DataProcess.ScanInput
 
         private void ActionCheck()
         {
+            ClearLots();
             Task task = new Task(() =>
               {
                   canClick = false;
@@ -54,6 +55,7 @@ namespace PMSClient.DataProcess.ScanInput
         {
             if (PMSDialogService.ShowYesNo("请问", "确定继续吗？") == false)
                 return;
+            ClearLots();
 
             Task task = new Task(() =>
               {
@@ -76,7 +78,10 @@ namespace PMSClient.DataProcess.ScanInput
 
             task.Start();
         }
-
+        private void ClearLots()
+        {
+            Lots.Clear();
+        }
         private void RefreshLotsStatus()
         {
             Lots.Clear();

@@ -72,7 +72,7 @@ namespace PMSClient.ReportsHelper
                     if (document.Tables[0] != null)
                     {
                         Table mainTable = document.Tables[0];
-                        Paragraph p = mainTable.Rows[8].Cells[0].Paragraphs[0];
+                        Paragraph p = mainTable.Rows[9].Cells[0].Paragraphs[0];
                         InsertCompositionXRFTable(document, p, model.CompositionXRF, "No Composition Test Results");
 
 
@@ -82,15 +82,19 @@ namespace PMSClient.ReportsHelper
                             Paragraph elementNames = mainTable.Rows[7].Cells[0].Paragraphs[0];
                             foreach (var name in GetCompositionNames(model.Composition))
                             {
-                                elementNames.Append(name + "\r").FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                                elementNames.Append(name + "\r").FontSize(9)
+                                    .Font(new System.Drawing.FontFamily("Times New Roman"));
                             }
 
+                            
                             Paragraph elementValues = mainTable.Rows[7].Cells[1].Paragraphs[0];
                             Paragraph units = mainTable.Rows[7].Cells[2].Paragraphs[0];
                             foreach (var at in GetCompositionValues(model.Composition))
                             {
-                                elementValues.Append(at + "\r").FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
-                                units.Append("Atm%" + "\r").FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                                elementValues.Append(at + "\r")
+                                    .FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                                units.Append("Atm%" + "\r")
+                                    .FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
                             }
 
                         }
@@ -103,8 +107,8 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.Show("原材料报告创建成功，即将打开");
-                System.Diagnostics.Process.Start(targetFile);
+                //PMSDialogService.Show("原材料报告创建成功，即将打开");
+                //System.Diagnostics.Process.Start(targetFile);
 
             }
             catch (Exception ex)
@@ -132,6 +136,7 @@ namespace PMSClient.ReportsHelper
                     xrfTable.Design = TableDesign.TableGrid;
                     xrfTable.Alignment = Alignment.center;
                     xrfTable.AutoFit = AutoFit.Contents;
+
                     StringBuilder sb1 = new StringBuilder();
                     StringBuilder sb2 = new StringBuilder();
 
@@ -156,12 +161,12 @@ namespace PMSClient.ReportsHelper
                     }
                     p.InsertTableAfterSelf(xrfTable);
 
-                    ////添加平均成分到表格中
-                    //Table mainTable = document.Tables[0];
-                    //Paragraph average = mainTable.Rows[4].Cells[3].Paragraphs[0];
-                    //Paragraph units = mainTable.Rows[4].Cells[4].Paragraphs[0];
-                    //average.Append(sb1.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
-                    //units.Append(sb2.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                    //添加平均成分到表格中
+                    Table mainTable = document.Tables[0];
+                    Paragraph average = mainTable.Rows[7].Cells[3].Paragraphs[0];
+                    Paragraph units = mainTable.Rows[7].Cells[4].Paragraphs[0];
+                    average.Append(sb1.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                    units.Append(sb2.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
                 }
 
             }

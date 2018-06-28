@@ -103,9 +103,11 @@ namespace PMSClient.ReportsHelper
                             Paragraph elementNames = mainTable.Rows[7].Cells[0].Paragraphs[0];
                             foreach (var name in GetCompositionNames(model.Composition))
                             {
-                                elementNames.Append(name + "\r").FontSize(9).Font(new FontFamily("Times New Roman"));
+                                elementNames.Append(name + "\r").FontSize(9)
+                                    .Font(new FontFamily("Times New Roman"));
                             }
 
+                            
                             Paragraph elementValues = mainTable.Rows[7].Cells[1].Paragraphs[0];
                             Paragraph units = mainTable.Rows[7].Cells[2].Paragraphs[0];
                             foreach (var at in GetCompositionValues(model.Composition))
@@ -122,8 +124,8 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.Show("原材料报告创建成功，即将打开");
-                System.Diagnostics.Process.Start(targetFile);
+                //PMSDialogService.Show("原材料报告创建成功，即将打开");
+                //System.Diagnostics.Process.Start(targetFile);
             }
             catch (Exception ex)
             {
@@ -158,7 +160,9 @@ namespace PMSClient.ReportsHelper
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                            cell.Paragraphs[0].Append(items[j])
+                                .FontSize(9)
+                                .Font(new System.Drawing.FontFamily("Times New Roman"));
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
