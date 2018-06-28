@@ -281,7 +281,7 @@ namespace PMSWCFService
                 {
                     var queryPlan = (from p in dc.VHPPlans
                                      where p.State == PMSCommon.CommonState.已核验.ToString()
-                                     orderby p.PlanDate descending
+                                     orderby p.PlanDate descending, p.VHPDeviceCode descending
                                      select p).Skip(skip).Take(take);
                     var queryResult = from p in queryPlan
                                       join o in dc.Orders
