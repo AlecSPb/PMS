@@ -87,7 +87,7 @@
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
-                                    Binding="{Binding CreateTime,StringFormat={}{0:yyyy-MM-dd}}"/>
+                                    Binding="{Binding CreateTime}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreator}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
                                     Binding="{Binding Creator}"/>
             </DataGrid.Columns>

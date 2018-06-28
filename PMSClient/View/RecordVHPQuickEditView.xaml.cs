@@ -41,7 +41,7 @@ namespace PMSClient.View
         {
             this.Dispatcher.Invoke(() =>
             {
-                txtCurrentTime.Text = $"现在时间:{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}";
+                txtCurrentTime.Text = $"现在时间:{DateTime.Now.ToString("yyyy-MM-dd dddd HH:mm:ss")}";
             });
         }
 

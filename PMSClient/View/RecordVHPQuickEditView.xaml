@@ -8,6 +8,7 @@
             xmlns:control="clr-namespace:WPFControls;assembly=WPFControls"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1300"
+             Language="zh-cn"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordVHPQuickEdit}" Loaded="UserControl_Loaded">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
@@ -61,7 +62,7 @@
                         </Style>
                     </DataGrid.RowStyle>
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd}}"
+                        <DataGridTextColumn Header="{StaticResource PlanPlanDate}" Binding="{Binding  Plan.PlanDate,StringFormat={}{0:yyMMdd dddd}}"
                                     ElementStyle="{StaticResource StyleDGTextBlockLeft}"/>
                         <DataGridTextColumn Header="{StaticResource PlanPlanLot}" Binding="{Binding Plan.PlanLot}"
                                     ElementStyle="{StaticResource StyleDGTextBlockCenter}"/>
