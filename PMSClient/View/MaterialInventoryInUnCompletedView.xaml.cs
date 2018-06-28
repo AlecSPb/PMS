@@ -41,6 +41,9 @@ namespace PMSClient.View
                         case "发货":
                             e.Row.Background = this.FindResource("DeliveredBrush") as SolidColorBrush;
                             break;
+                        case "暂入库":
+                            e.Row.Background = new SolidColorBrush(Colors.Orange);
+                            break;
                         default:
                             break;
                     }

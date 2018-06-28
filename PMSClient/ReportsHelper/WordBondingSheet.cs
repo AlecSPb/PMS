@@ -57,17 +57,25 @@ namespace PMSClient.ReportsHelper
                         var ordered = model.OrderBy(i => i.TargetProductID).OrderBy(i => i.PlanBatchNumber);
                         foreach (var item in ordered)
                         {
+                            mainTable.InsertRow();
                             string no = item.PlanBatchNumber.ToString() + "-" + rownumber;
                             mainTable.Rows[rownumber].Cells[0].Paragraphs[0]
                                 .Append(no).FontSize(10).Alignment = Alignment.left;
+
                             mainTable.Rows[rownumber].Cells[1].Paragraphs[0]
                                 .Append($"{item.TargetProductID}").FontSize(10);
+
                             mainTable.Rows[rownumber].Cells[2].Paragraphs[0]
                                 .Append(item.TargetComposition).FontSize(10);
-                            mainTable.Rows[rownumber].Cells[12].Paragraphs[0]
-                                .Append("□缺 □裂").FontSize(10).Alignment = Alignment.left;
 
-                            mainTable.InsertRow();
+                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0]
+                                .Append("□").FontSize(10).Alignment=Alignment.center;
+
+                            mainTable.Rows[rownumber].Cells[13].Paragraphs[0]
+                                .Append("□缺 □裂").FontSize(10);
+
+                            mainTable.Rows[rownumber].Cells[13].VerticalAlignment = VerticalAlignment.Center;
+                            mainTable.Rows[rownumber].Cells[13].Paragraphs[0].Alignment = Alignment.center;
                             rownumber++;
                         }
                     }
@@ -77,7 +85,9 @@ namespace PMSClient.ReportsHelper
                 #endregion
                 //复制到临时文件
                 ReportHelper.FileCopy(tempFile, targetFile);
-                PMSDialogService.Show("绑定记录单创建成功，请在桌面查看");
+                PMSDialogService.Show("绑定记录单创建成功，即将打开");
+
+                System.Diagnostics.Process.Start(targetFile);
 
             }
             catch (Exception ex)

@@ -213,8 +213,10 @@
     <Compile Include="DataProcess\ScanInput\ProcessBase.cs" />
     <Compile Include="DataProcess\ScanInput\ProcessDelivery.cs" />
     <Compile Include="DataProcess\ScanInput\ProcessProduct.cs" />
+    <Compile Include="DataProcess\ScanInput\ProcessRecordBondingExcelOutput.cs" />
     <Compile Include="DataProcess\ScanInput\ScanInputDeliveryVM.cs" />
     <Compile Include="DataProcess\ScanInput\ScanInputProductVM.cs" />
+    <Compile Include="DataProcess\ScanInput\ScanInputRecordBondingExcelOutputVM.cs" />
     <Compile Include="DataProcess\ScanInput\ScanInputVMBase.cs" />
     <Compile Include="DataProcess\ScanInput\ProcessRecordBonding.cs" />
     <Compile Include="DataProcess\ScanInput\SourceTarget.cs" />

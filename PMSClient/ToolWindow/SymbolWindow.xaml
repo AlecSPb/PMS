@@ -36,6 +36,12 @@
             <Button Content="φ"/>
             <Button Content="Φ"/>
             <Button Content="□"/>
+            <Button Content="℃"/>
+            <Button Content="Ω"/>
+            <Button Content="℉"/>
+            <Button Content="×"/>
+            <Button Content="÷"/>
+
         </UniformGrid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
