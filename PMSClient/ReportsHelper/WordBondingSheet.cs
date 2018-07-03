@@ -57,25 +57,31 @@ namespace PMSClient.ReportsHelper
                         var ordered = model.OrderBy(i => i.TargetProductID).OrderBy(i => i.PlanBatchNumber);
                         foreach (var item in ordered)
                         {
-                            mainTable.InsertRow();
+                            mainTable.InsertRow().Height=35;
                             string no = item.PlanBatchNumber.ToString() + "-" + rownumber;
+
                             mainTable.Rows[rownumber].Cells[0].Paragraphs[0]
-                                .Append(no).FontSize(10).Alignment = Alignment.left;
+                                .Append(no).FontSize(10).Bold().Alignment = Alignment.left;
+                            mainTable.Rows[rownumber].Cells[0].VerticalAlignment = VerticalAlignment.Center;
 
                             mainTable.Rows[rownumber].Cells[1].Paragraphs[0]
-                                .Append($"{item.TargetProductID}").FontSize(10);
+                                .Append($"{item.TargetProductID}").FontSize(10).Bold();
+                            mainTable.Rows[rownumber].Cells[1].VerticalAlignment = VerticalAlignment.Center;
 
                             mainTable.Rows[rownumber].Cells[2].Paragraphs[0]
-                                .Append(item.TargetComposition).FontSize(10);
+                                .Append(item.TargetComposition).FontSize(10).Bold();
+                            mainTable.Rows[rownumber].Cells[2].VerticalAlignment = VerticalAlignment.Center;
 
                             mainTable.Rows[rownumber].Cells[3].Paragraphs[0]
-                                .Append("□").FontSize(10).Alignment=Alignment.center;
+                                .Append("□").FontSize(10).Bold().Alignment=Alignment.center;
+                            mainTable.Rows[rownumber].Cells[3].VerticalAlignment = VerticalAlignment.Center;
 
                             mainTable.Rows[rownumber].Cells[13].Paragraphs[0]
-                                .Append("□缺 □裂").FontSize(10);
+                                .Append("□缺 □裂").FontSize(10).Bold();
 
-                            mainTable.Rows[rownumber].Cells[13].VerticalAlignment = VerticalAlignment.Center;
                             mainTable.Rows[rownumber].Cells[13].Paragraphs[0].Alignment = Alignment.center;
+                            mainTable.Rows[rownumber].Cells[13].VerticalAlignment = VerticalAlignment.Center;
+
                             rownumber++;
                         }
                     }

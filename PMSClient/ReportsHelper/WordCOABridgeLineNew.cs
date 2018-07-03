@@ -83,7 +83,7 @@ namespace PMSClient.ReportsHelper
                             foreach (var name in GetCompositionNames(model.Composition))
                             {
                                 elementNames.Append(name + "\r").FontSize(9)
-                                    .Font(new System.Drawing.FontFamily("Times New Roman"));
+                                    .Font(new System.Drawing.FontFamily("Times New Roman")).Bold();
                             }
 
                             
@@ -92,9 +92,9 @@ namespace PMSClient.ReportsHelper
                             foreach (var at in GetCompositionValues(model.Composition))
                             {
                                 elementValues.Append(at + "\r")
-                                    .FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                                    .FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman")).Bold();
                                 units.Append("Atm%" + "\r")
-                                    .FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                                    .FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman")).Bold();
                             }
 
                         }
@@ -150,7 +150,8 @@ namespace PMSClient.ReportsHelper
                         {
                             Cell cell = xrfTable.Rows[i].Cells[j];
                             cell.Width = 80;
-                            cell.Paragraphs[0].Append(items[j]).FontSize(9).Font(new FontFamily("Times New Roman"));
+                            cell.Paragraphs[0].Append(items[j]).FontSize(9)
+                                .Font(new FontFamily("Times New Roman")).Bold();
                             if (j == 0)
                             {
                                 continue;
@@ -165,8 +166,10 @@ namespace PMSClient.ReportsHelper
                     Table mainTable = document.Tables[0];
                     Paragraph average = mainTable.Rows[7].Cells[3].Paragraphs[0];
                     Paragraph units = mainTable.Rows[7].Cells[4].Paragraphs[0];
-                    average.Append(sb1.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
-                    units.Append(sb2.ToString()).FontSize(9).Font(new System.Drawing.FontFamily("Times New Roman"));
+                    average.Append(sb1.ToString()).FontSize(9)
+                        .Font(new System.Drawing.FontFamily("Times New Roman")).Bold();
+                    units.Append(sb2.ToString()).FontSize(9)
+                        .Font(new System.Drawing.FontFamily("Times New Roman")).Bold();
                 }
 
             }

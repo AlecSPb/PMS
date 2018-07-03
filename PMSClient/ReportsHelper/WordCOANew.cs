@@ -104,7 +104,7 @@ namespace PMSClient.ReportsHelper
                             foreach (var name in GetCompositionNames(model.Composition))
                             {
                                 elementNames.Append(name + "\r").FontSize(9)
-                                    .Font(new FontFamily("Times New Roman"));
+                                    .Font(new FontFamily("Times New Roman")).Bold();
                             }
 
                             
@@ -112,8 +112,8 @@ namespace PMSClient.ReportsHelper
                             Paragraph units = mainTable.Rows[7].Cells[2].Paragraphs[0];
                             foreach (var at in GetCompositionValues(model.Composition))
                             {
-                                elementValues.Append(at + "\r").FontSize(9).Font(new FontFamily("Times New Roman"));
-                                units.Append("Atm%" + "\r").FontSize(9).Font(new FontFamily("Times New Roman"));
+                                elementValues.Append(at + "\r").FontSize(9).Font(new FontFamily("Times New Roman")).Bold();
+                                units.Append("Atm%" + "\r").FontSize(9).Font(new FontFamily("Times New Roman")).Bold();
                             }
 
                         }
@@ -162,7 +162,7 @@ namespace PMSClient.ReportsHelper
                             cell.Width = 80;
                             cell.Paragraphs[0].Append(items[j])
                                 .FontSize(9)
-                                .Font(new System.Drawing.FontFamily("Times New Roman"));
+                                .Font(new System.Drawing.FontFamily("Times New Roman")).Bold();
                         }
                     }
                     p.InsertTableAfterSelf(xrfTable);
