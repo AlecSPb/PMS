@@ -25,6 +25,8 @@ namespace PMSClient.DataProcess.ScanInput
             Lots = new ObservableCollection<LotModel>();
         }
 
+
+
         private bool CanCheck()
         {
             return canClick;
@@ -39,6 +41,7 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 canClick = false;
                 process.Intialize(InputText);
+                process.Number = CurrentNumber;
 
                 process.Check(i =>
                 {
@@ -63,6 +66,7 @@ namespace PMSClient.DataProcess.ScanInput
             {
                 canClick = false;
                 process.Intialize(InputText);
+                process.Number = CurrentNumber;
 
                 process.Process(i =>
                 {

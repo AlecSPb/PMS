@@ -16,6 +16,13 @@ namespace PMSClient.DataProcess.ScanInput
             inputText = "";
             progressValue = 0;
             sourceTarget = "无";
+
+            Numbers = new List<int>();
+            for (int i = 1; i < 100; i++)
+            {
+                Numbers.Add(i);
+            }
+            CurrentNumber = 1;
         }
         public ObservableCollection<LotModel> Lots { get; set; }
 
@@ -63,6 +70,26 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
         protected bool canClick=true;
+
+
+        public List<int> Numbers { get; set; }
+
+        private int currentNumber;
+        public int CurrentNumber
+        {
+            get
+            {
+                return currentNumber;
+            }
+            set
+            {
+                currentNumber = value;
+                RaisePropertyChanged(nameof(CurrentNumber));
+            }
+        }
+
+
+
         #endregion
         public RelayCommand Process { get; set; }
         public RelayCommand Check { get; set; }

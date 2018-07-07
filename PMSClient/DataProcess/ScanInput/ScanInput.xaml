@@ -42,6 +42,9 @@
                  Text="{Binding InputText}" Background="LightYellow"/>
         </Grid>
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Name="TxtNumber" Text="批次" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <ComboBox Name="CboNumber" Style="{StaticResource StyleComboBoxEditable}"
+                      ItemsSource="{Binding Numbers}" Text="{Binding CurrentNumber}"/>
             <Button Content="模拟录入" Style="{StaticResource StyleButtonCommon}" Command="{Binding Check}">
                 <Button.ToolTip>
                     <TextBlock Text="模拟录入的意思，假装录入看看这些编号OK不OK，实际不会录入"/>

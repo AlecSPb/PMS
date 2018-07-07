@@ -17,6 +17,8 @@ namespace PMSClient.DataProcess.ScanInput
 
         }
 
+        public int Number { get; set; } = 1;
+
         public override void Check(Action<double> DoSomething)
         {
             try
@@ -68,7 +70,7 @@ namespace PMSClient.DataProcess.ScanInput
                         using (var ss = new RecordTestServiceClient())
                         {
                             var record_test = ss.GetRecordTestByProductID(item.Lot).FirstOrDefault();
-                            model = ModelHelper.GetRecordBonding(record_test);
+                            model = ModelHelper.GetRecordBonding(record_test,Number);
                         }
 
                         //插入到绑定记录

@@ -68,6 +68,8 @@ namespace PMSClient.ReportsHelperNew
                                 row.Cells[1].VerticalAlignment = VerticalAlignment.Center;
                                 row.Cells[2].Paragraphs[0].Append(item.Plan.PlanType);
                                 row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
+                                row.Cells[3].Paragraphs[0].Append(item.Plan.MoldDiameter.ToString());
+                                row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
                             }
                         }
 

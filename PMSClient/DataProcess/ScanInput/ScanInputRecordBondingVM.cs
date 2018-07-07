@@ -36,6 +36,7 @@ namespace PMSClient.DataProcess.ScanInput
               {
                   canClick = false;
                   process.Intialize(InputText);
+                  process.Number = CurrentNumber;
 
                   process.Check(i =>
                   {
@@ -62,6 +63,7 @@ namespace PMSClient.DataProcess.ScanInput
                   canClick = false;
 
                   process.Intialize(InputText);
+                  process.Number = CurrentNumber;
 
                   process.Process(i =>
                   {

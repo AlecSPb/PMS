@@ -9,7 +9,7 @@ namespace PMSClient.DataProcess.ScanInput
 {
     public static class ModelHelper
     {
-        public static DcRecordBonding GetRecordBonding(DcRecordTest ss)
+        public static DcRecordBonding GetRecordBonding(DcRecordTest ss, int batchNumber)
         {
             if (ss == null)
                 return null;
@@ -20,7 +20,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.CreateTime = DateTime.Now;
             model.Creator = PMSHelper.CurrentSession.CurrentUser.UserName;
             model.State = PMSCommon.BondingState.未完成.ToString();
-            model.PlanBatchNumber = 1;
+            model.PlanBatchNumber = batchNumber;
             model.InstructionCode = "无";
             model.TargetProductID = ss.ProductID;
             model.TargetComposition = ss.Composition;
@@ -135,7 +135,7 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
 
-        public static DcDeliveryItem GetDeliveryItem(DcPlate ss)
+        public static DcDeliveryItem GetDeliveryItem(DcPlate ss,int boxNumber)
         {
             if (ss == null)
                 return null;
@@ -153,7 +153,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.Weight = ss.Weight;
             model.DetailRecord = "细节";
             model.Remark = "无";
-            model.PackNumber = 1;
+            model.PackNumber = boxNumber;
             model.Position = "B2";
             model.Dimension = ss.Dimension;
             model.DimensionActual = ss.Dimension;

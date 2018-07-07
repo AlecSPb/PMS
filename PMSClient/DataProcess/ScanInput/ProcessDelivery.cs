@@ -15,6 +15,7 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
         private DcDelivery currentDelivery;
+        public int Number { get; set; } = 1;
 
         public override void Check(Action<double> DoSomething)
         {
@@ -90,7 +91,7 @@ namespace PMSClient.DataProcess.ScanInput
                                     record.State = PMSCommon.InventoryState.发货.ToString();
                                     ss.UpdatePlateByUID(record, uid);
                                 }
-                                model = ModelHelper.GetDeliveryItem(record);
+                                model = ModelHelper.GetDeliveryItem(record,Number);
                             }
                         }
                         else

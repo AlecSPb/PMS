@@ -44,6 +44,9 @@ namespace PMSClient.ViewModel
         private void ActionScanAdd()
         {
             var tool = new DataProcess.ScanInput.ScanInput();
+            tool.TxtNumber.Visibility = System.Windows.Visibility.Hidden;
+            tool.CboNumber.Visibility = System.Windows.Visibility.Hidden;
+
             var context = new DataProcess.ScanInput.ScanInputProductVM();
             tool.DataContext = context;
             tool.Show();
