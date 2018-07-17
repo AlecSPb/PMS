@@ -298,6 +298,7 @@
     <sys:String x:Key="ButtonPrintIndex">Index Sheet</sys:String>
     <sys:String x:Key="ButtonScanAdd">Scan Add</sys:String>
     <sys:String x:Key="ButtonQuickDoc">Quick Report</sys:String>
+    <sys:String x:Key="ButtonCompare">Compare</sys:String>
 
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">Color Indicator=></sys:String>

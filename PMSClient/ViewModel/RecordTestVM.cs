@@ -65,7 +65,16 @@ namespace PMSClient.ViewModel
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
             BatchDoc = new RelayCommand(ActionBatchDoc);
-            QuickDoc = new RelayCommand(ActionQuickDoc,CanQuickDoc);
+            QuickDoc = new RelayCommand(ActionQuickDoc, CanQuickDoc);
+
+            Compare = new RelayCommand<RecordTestExtra>(ActionCompare);
+        }
+
+        private void ActionCompare(RecordTestExtra obj)
+        {
+            if (obj == null) return;
+            SearchCompositionStd = obj.RecordTest.Composition;
+            SetPageParametersWhenConditionChange();
         }
 
         private bool CanQuickDoc()
@@ -104,7 +113,7 @@ namespace PMSClient.ViewModel
 
             var dtWindow = new DocumentTypeSelect();
             dtWindow.ShowDialog();
-            if (dtWindow.DialogResult!=true)
+            if (dtWindow.DialogResult != true)
             {
                 return;
             }
@@ -113,7 +122,7 @@ namespace PMSClient.ViewModel
 
             try
             {
-                if (documentType=="COA")
+                if (documentType == "COA")
                 {
                     WordCOANew report = new WordCOANew();
                     foreach (var item in RecordTestExtras)
@@ -125,7 +134,7 @@ namespace PMSClient.ViewModel
                         }
                     }
                 }
-                else if(documentType=="COABL")
+                else if (documentType == "COABL")
                 {
                     WordCOABridgeLineNew report = new WordCOABridgeLineNew();
                     foreach (var item in RecordTestExtras)
@@ -408,6 +417,9 @@ namespace PMSClient.ViewModel
         public RelayCommand<RecordTestExtra> SelectionChanged { get; set; }
         public RelayCommand<RecordTestExtra> Duplicate { get; set; }
         public RelayCommand<RecordTestExtra> Label { get; set; }
+
+        public RelayCommand<RecordTestExtra> Compare { get; set; }
+
         public RelayCommand QuickAdd { get; set; }
 
         public RelayCommand BatchDoc { get; set; }
@@ -415,6 +427,6 @@ namespace PMSClient.ViewModel
         public RelayCommand Output { get; set; }
 
         public RelayCommand QuickDoc { get; set; }
-    #endregion
-}
+        #endregion
+    }
 }

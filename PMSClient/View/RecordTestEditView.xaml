@@ -74,7 +74,7 @@
                           ItemsSource="{Binding DataContext.TestFollowUps,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           SelectedItem="{Binding FollowUps,Mode=TwoWay}"
                           Style="{StaticResource StyleComboBoxCommon}"/>
-                    <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="绑定"
+                    <Button Style="{StaticResource StyleButtonCommon}" Content="绑定"
                             Name="BtnBonding" Click="BtnBonding_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="#后续工作类型"/>
@@ -136,7 +136,7 @@
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"
                           Width="160"/>
-                    <Button Content="超限" Style="{StaticResource StyleButtonCommonNarrow}" Click="BtnResistance_Click"/>
+                    <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm"/>
 
@@ -153,7 +153,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Style="{StaticResource StyleTextBoxCommon}" Text="{Binding Defects}"/>
-                    <Button Content="缺陷" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"/>
                     <ComboBox ItemsSource="{Binding DataContext.TestDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            Text="{Binding Defects}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
