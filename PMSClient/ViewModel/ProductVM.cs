@@ -38,7 +38,12 @@ namespace PMSClient.ViewModel
 
             OnlyUnCompleted = new RelayCommand(ActionOnlyUnCompleted);
 
-            ScanAdd = new RelayCommand(ActionScanAdd);
+            ScanAdd = new RelayCommand(ActionScanAdd,CanScanAdd);
+        }
+
+        private bool CanScanAdd()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditProduct);
         }
 
         private void ActionScanAdd()

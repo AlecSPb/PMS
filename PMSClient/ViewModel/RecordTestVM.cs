@@ -65,7 +65,12 @@ namespace PMSClient.ViewModel
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
             BatchDoc = new RelayCommand(ActionBatchDoc);
-            QuickDoc = new RelayCommand(ActionQuickDoc);
+            QuickDoc = new RelayCommand(ActionQuickDoc,CanQuickDoc);
+        }
+
+        private bool CanQuickDoc()
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
         }
 
         private void ActionQuickDoc()
