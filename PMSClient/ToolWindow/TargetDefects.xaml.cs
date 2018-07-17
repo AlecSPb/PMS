@@ -22,6 +22,9 @@ namespace PMSClient.ToolWindow
         public TargetDefects()
         {
             InitializeComponent();
+            AllDefects = "无明显缺陷";
         }
+
+        public string AllDefects { get; set; }
     }
 }

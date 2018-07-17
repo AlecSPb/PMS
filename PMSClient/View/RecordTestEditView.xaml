@@ -135,7 +135,7 @@
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
                     <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"
-                          Width="160"/>
+                          Width="200"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
                 </StackPanel>
                 <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm"/>
@@ -152,11 +152,9 @@
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Style="{StaticResource StyleTextBoxCommon}" Text="{Binding Defects}"/>
-                    <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"/>
-                    <ComboBox ItemsSource="{Binding DataContext.TestDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                           Text="{Binding Defects}"
-                          Style="{StaticResource StyleComboBoxEditable}"/>
+                    <TextBox Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding Defects}" MinWidth="200"/>
+                    <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"
+                            Name="BtnDefects" Click="BtnDefects_Click"/>
                 </StackPanel>
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"

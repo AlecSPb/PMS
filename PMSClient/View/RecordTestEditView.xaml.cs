@@ -32,7 +32,7 @@ namespace PMSClient.View
         {
             get
             {
-               return TxtWeight.Text;
+                return TxtWeight.Text;
             }
         }
 
@@ -99,6 +99,13 @@ namespace PMSClient.View
         private void BtnBonding_Click(object sender, RoutedEventArgs e)
         {
             CboFollowUps.SelectedItem = "绑定";
+        }
+
+        private void BtnDefects_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new ToolWindow.TargetDefects();
+            win.ShowDialog();
+            TxtDefects.Text = win.AllDefects;
         }
     }
 }

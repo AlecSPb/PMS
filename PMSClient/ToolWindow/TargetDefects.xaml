@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
-        Title="靶材缺陷选择" Height="450" Width="500">
+        Title="靶材缺陷选择" Height="450" Width="500"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
