@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
         Topmost="True"
-        WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
         Title="CSV成分格式模拟器" Height="400" Width="500">
     <Grid>
         <Grid.RowDefinitions>

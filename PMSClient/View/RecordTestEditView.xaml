@@ -151,10 +151,13 @@
 
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                <ComboBox  Grid.Row="13" Grid.Column="1" 
-                          ItemsSource="{Binding DataContext.TestDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
+                    <TextBox Style="{StaticResource StyleTextBoxCommon}" Text="{Binding Defects}"/>
+                    <Button Content="缺陷" Style="{StaticResource StyleButtonCommonNarrow}"/>
+                    <ComboBox ItemsSource="{Binding DataContext.TestDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                            Text="{Binding Defects}"
                           Style="{StaticResource StyleComboBoxEditable}"/>
+                </StackPanel>
 
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RTCompositionXRF}"
                            Style="{StaticResource StyleTextBlockCommon}"/>

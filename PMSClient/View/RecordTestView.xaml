@@ -52,7 +52,7 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
                 <DataGrid x:Name="dg" Grid.Row="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordTestExtras}"
-                          FrozenColumnCount="1"
+                          FrozenColumnCount="2"
                   LoadingRow="DataGrid_LoadingRow">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
