@@ -95,5 +95,10 @@ namespace PMSClient.View
             };
             simulator.Show();
         }
+
+        private void BtnBonding_Click(object sender, RoutedEventArgs e)
+        {
+            CboFollowUps.SelectedItem = "绑定";
+        }
     }
 }
