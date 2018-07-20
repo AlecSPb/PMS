@@ -134,17 +134,20 @@
                 <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RTResistance}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="txtResistance" Text="{Binding Resistance}" Style="{StaticResource StyleTextBoxBig}"  Background="Yellow"
-                          Width="200"/>
+                    <TextBox Name="txtResistance" Text="{Binding Resistance}"
+                             Style="{StaticResource StyleTextBoxBig}"  Background="Yellow" Width="200"/>
                     <Button Content="超限" Style="{StaticResource StyleButtonCommon}" Click="BtnResistance_Click"/>
                 </StackPanel>
-                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm"/>
+                <TextBlock Grid.Row="11" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"  Text="单位：Ωcm，最多两位有效数字即可"/>
 
                 <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RTDimensionActual}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="TxtDimension" Text="{Binding DimensionActual}" Style="{StaticResource StyleTextBoxBig}" Width="200"   Background="Yellow"/>
-                    <Button Content="选择" Style="{StaticResource StyleButtonCommon}" Command="{Binding DataContext.SelectDimensionActual,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
+                    <TextBox Name="TxtDimension" Text="{Binding DimensionActual}"
+                             Style="{StaticResource StyleTextBoxBig}" Width="200"   Background="Yellow"/>
+                    <Button Content="选择" Style="{StaticResource StyleButtonCommon}"
+                            Command="{Binding DataContext.SelectDimensionActual,
+                                RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="12" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text=""/>
@@ -152,7 +155,8 @@
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RTDefects}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
                 <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
-                    <TextBox Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}" Text="{Binding Defects}" MinWidth="200"/>
+                    <TextBox Name="TxtDefects" Style="{StaticResource StyleTextBoxCommon}"
+                             Text="{Binding Defects}" Width="200" Background="Yellow"/>
                     <Button Content="缺陷" Style="{StaticResource StyleButtonCommon}"
                             Name="BtnDefects" Click="BtnDefects_Click"/>
                 </StackPanel>

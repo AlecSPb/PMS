@@ -10,15 +10,17 @@
         WindowStyle="ToolWindow">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="0" Margin="2">
-            
+        <TextBlock Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}" Text="按住Ctrl可以选择多个" Background="Orange"
+                   FontSize="20"/>
+        <ListBox Grid.Row="1" Margin="2" Name="LstDefects" SelectionMode="Multiple">
         </ListBox>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="取消" Style="{StaticResource StyleButtonCommon}"/>
-            <Button Content="确定" Style="{StaticResource StyleButtonCommon}"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="取消" Style="{StaticResource StyleButtonCommon}" Name="BtnCancel" Click="BtnCancel_Click"/>
+            <Button Content="确定" Style="{StaticResource StyleButtonCommon}" Name="BtnOK" Click="BtnOK_Click"/>
         </StackPanel>
     </Grid>
 </Window>

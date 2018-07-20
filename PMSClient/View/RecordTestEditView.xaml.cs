@@ -62,7 +62,7 @@ namespace PMSClient.View
 
         private void BtnResistance_Click(object sender, RoutedEventArgs e)
         {
-            PMSMethods.SetTextBox(txtResistance, "OutOfRange");
+            PMSMethods.SetTextBox(txtResistance, "Out Of Range");
         }
 
         private void BtnAddPlate_Click(object sender, RoutedEventArgs e)
@@ -104,8 +104,11 @@ namespace PMSClient.View
         private void BtnDefects_Click(object sender, RoutedEventArgs e)
         {
             var win = new ToolWindow.TargetDefects();
-            win.ShowDialog();
-            TxtDefects.Text = win.AllDefects;
+            if (win.ShowDialog() == true)
+            {
+                TxtDefects.Text = win.AllDefects;
+            };
+
         }
     }
 }

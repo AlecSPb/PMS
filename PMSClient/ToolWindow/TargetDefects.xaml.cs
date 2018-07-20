@@ -22,9 +22,37 @@ namespace PMSClient.ToolWindow
         public TargetDefects()
         {
             InitializeComponent();
+
             AllDefects = "无明显缺陷";
+
+            var defects = new List<string>();
+            PMSBasicDataService.SetListDS<PMSCommon.TestDefectsTypes>(defects);
+            LstDefects.ItemsSource = defects;
+
+
         }
 
         public string AllDefects { get; set; }
+
+        private void BtnOK_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in LstDefects.SelectedItems)
+            {
+                sb.Append(item.ToString());
+                sb.Append(";");
+            }
+
+            AllDefects = sb.ToString();
+
+            this.DialogResult = true;
+            Close();
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            Close();
+        }
     }
 }

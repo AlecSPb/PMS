@@ -82,12 +82,13 @@
                                         <Button Content="{StaticResource ButtonDoc}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Doc,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-                                        <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
-                                    Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                                        CommandParameter="{Binding}"/>
                                         <Button Content="{StaticResource ButtonCompare}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Compare,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
+                                        <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

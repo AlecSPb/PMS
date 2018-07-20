@@ -52,7 +52,8 @@ namespace PMSClient.ViewModel
 
         private bool CanEdit(DcToDo arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditFeedback);
+            return true;
+            //return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditFeedback);
         }
 
         private bool CanAdd()

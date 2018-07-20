@@ -62,7 +62,7 @@ namespace PMSClient.ViewModel
             try
             {
                 var word = new ReportsHelperNew.ReportRecordDeMold();
-                word.Intialize("取模记录单");
+                word.Intialize("取模记录单",50);
                 word.Output();
             }
             catch (Exception ex)

@@ -56,11 +56,11 @@ namespace PMSClient.ReportsHelper
                     document.ReplaceText("[PO]", model.PO ?? "");
                     document.ReplaceText("[COADate]", DateTime.Now.ToString("MM/dd/yyyy"));
                     document.ReplaceText("[Composition]", model.Composition ?? "");
-                    document.ReplaceText("[Dimension]", model.Dimension ?? "");
+                    document.ReplaceText("[Dimension]", COAHelper.StandardizeDimension(model.Dimension) ?? "");
                     document.ReplaceText("[Weight]", model.Weight ?? "");
                     document.ReplaceText("[Density]", model.Density ?? "");
                     document.ReplaceText("[Resistance]", model.Resistance ?? "");
-                    document.ReplaceText("[DimensionActual]", model.DimensionActual ?? "");
+                    document.ReplaceText("[DimensionActual]", COAHelper.StandardizeDimension(model.DimensionActual) ?? "");
                     document.ReplaceText("[OrderDate]", model.CreateTime.AddDays(-15).ToString("MM/dd/yyyy"));
                     document.ReplaceText("[CreateDate]", model.CreateTime.ToString("MM/dd/yyyy"));
                     #endregion
@@ -107,7 +107,7 @@ namespace PMSClient.ReportsHelper
                                     .Font(new FontFamily("Times New Roman")).Bold();
                             }
 
-                            
+
                             Paragraph elementValues = mainTable.Rows[7].Cells[1].Paragraphs[0];
                             Paragraph units = mainTable.Rows[7].Cells[2].Paragraphs[0];
                             foreach (var at in GetCompositionValues(model.Composition))
