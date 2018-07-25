@@ -66,6 +66,26 @@ namespace PMSClient.ViewModel
             Refresh = new RelayCommand(ActionRefresh);
             OnlyUnFinished = new RelayCommand(ActionOnlyUnFinished, CanOnlyUnFinished);
             FindMaterial = new RelayCommand<DcOrder>(ActionFindMaterial, CanFindMaterial);
+
+            SampleSheet = new RelayCommand(ActionSampleSheet);
+        }
+
+        private void ActionSampleSheet()
+        {
+            if (!PMSDialogService.ShowYesNo("请问", "即将输出 未完成订单中 包含样品需求的订单，继续？"))
+                return;
+
+            try
+            {
+                var report = new ReportsHelperNew.ReportSampleSheet();
+                report.Intialize("样品需求");
+                report.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+
         }
 
         private void ActionGoToMaterialNeed()
@@ -334,6 +354,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcOrder> SelectionChanged { get; set; }
         public RelayCommand OnlyUnFinished { get; set; }
         public RelayCommand<DcOrder> FindMaterial { get; set; }
+
+        public RelayCommand SampleSheet { get; set; }
         #endregion
     }
 }

@@ -305,6 +305,8 @@
 
     <sys:String x:Key="ButtonCompare">对比</sys:String>
 
+    <sys:String x:Key="ButtonSample">样品准备</sys:String>
+
     <!--Indicator-->
     <sys:String x:Key="IndicatorColorMeaning">颜色含义=></sys:String>
     <sys:String x:Key="IndicatorYesterday">昨天</sys:String>

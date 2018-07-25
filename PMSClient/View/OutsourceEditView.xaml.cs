@@ -24,5 +24,21 @@ namespace PMSClient.View
         {
             InitializeComponent();
         }
+
+        private void BtnGood_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}收到货物;");
+        }
+
+        private void BtnInvoice_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}收到发票;");
+        }
+
+        private void BtnPay_Click(object sender, RoutedEventArgs e)
+        {
+            PMSMethods.SetTextBoxAppend(TxtRemark, $"{DateTime.Now.ToString("yyyy-MM-dd")}付款;");
+
+        }
     }
 }

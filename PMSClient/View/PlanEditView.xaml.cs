@@ -66,5 +66,10 @@ namespace PMSClient.View
             CompoundWindow win = new View.CompoundWindow();
             win.ShowDialog();
         }
+
+        private void BtnMillingSample_Click(object sender, RoutedEventArgs e)
+        {
+            CboMillingRequirements.Text += " 取粉末样品";
+        }
     }
 }

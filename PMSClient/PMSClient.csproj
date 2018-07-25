@@ -34,7 +34,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>68</ApplicationRevision>
+    <ApplicationRevision>69</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -274,6 +274,7 @@
     <Compile Include="ReportsHelperNew\ReportBase.cs" />
     <Compile Include="ReportsHelperNew\ReportFillingTool.cs" />
     <Compile Include="ReportsHelperNew\ReportRecordDeMold.cs" />
+    <Compile Include="ReportsHelperNew\ReportSampleSheet.cs" />
     <Compile Include="ReportsHelper\COAHelper.cs" />
     <Compile Include="ReportsHelper\ReportBase.cs" />
     <Compile Include="ReportsHelper\StringUtil.cs" />
@@ -1431,6 +1432,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\DocTemplate\Reports\COABridgeLineNew.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\DocTemplate\Reports\SampleSheet.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Service References\ExtraService\PMSClient.ExtraService.DcEnvironmentInfo.datasource">

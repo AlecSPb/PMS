@@ -144,7 +144,7 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Name="txtThickness" Grid.Row="7" Grid.Column="1" Text="{Binding Thickness}" Style="{StaticResource StyleTextBoxLeft}"/>
                 <TextBlock Grid.Row="7" Grid.Column="2" Text="#单位：mm" Style="{StaticResource StyleTextBlockTip}"/>
-                
+
                 <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource PlanQuantity}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <ComboBox Name="cboQuantity" Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
@@ -179,12 +179,12 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding RoomTemperature}" Style="{StaticResource StyleTextBoxLeft}"/>
                 <TextBlock Grid.Row="12" Grid.Column="2" Text="单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
-                
+
                 <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource PlanRoomHumidity}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding RoomHumidity}" Style="{StaticResource StyleTextBoxLeft}"/>
                 <TextBlock Grid.Row="13" Grid.Column="2" Text="单位：%" Style="{StaticResource StyleTextBlockTip}"/>
-                
+
                 <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource PlanProcessCode}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <ComboBox Grid.Row="14" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" HorizontalAlignment="Left"
@@ -193,7 +193,7 @@
                 <TextBlock Grid.Row="14" Grid.Column="2" Text="工艺代码"
                            Style="{StaticResource StyleTextBlockTip}"
                            Background="LightBlue"/>
-                    
+
                 <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource PlanPreTemperature}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding PreTemperature}" Style="{StaticResource StyleTextBoxLeft}"/>
@@ -206,7 +206,7 @@
                     <TextBox  Text="{Binding PrePressure}" Style="{StaticResource StyleTextBoxLeft}"/>
                 </StackPanel>
                 <TextBlock Grid.Row="16" Grid.Column="2" Text="单位：℃" Style="{StaticResource StyleTextBlockTip}"/>
-                
+
                 <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource PlanTemperature}"
                            Style="{StaticResource StyleTextBlockSpecial}" />
                 <TextBox Grid.Row="17" Grid.Column="1" Text="{Binding Temperature}" Style="{StaticResource StyleTextBoxLeft}" Background="Yellow"/>
@@ -244,10 +244,15 @@
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <ComboBox  Grid.Row="21" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
                           ItemsSource="{Binding DataContext.MillingRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
-                          Text="{Binding MillingRequirement}"/>
-                <TextBlock Grid.Row="21" Grid.Column="2" Text="填写制粉的要求"
-                           Style="{StaticResource StyleTextBlockTip}"
+                          Text="{Binding MillingRequirement}" Name="CboMillingRequirements"/>
+                <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnMillingSample" Click="BtnMillingSample_Click" Style="{StaticResource StyleButtonCommon}"
+                            Content="取样"/>
+                    <TextBlock  Text="填写制粉的要求" Style="{StaticResource StyleTextBlockTip}"
                            Background="LightBlue"/>
+                </StackPanel>
+
+
 
                 <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />

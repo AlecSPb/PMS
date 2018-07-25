@@ -584,6 +584,18 @@
   <wsdl:message name="IMissonService_GetMissonUnCompletedCount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCountResponse" />
   </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedSample_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedSample" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedSample_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedSampleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedCountSample_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCountSample" />
+  </wsdl:message>
+  <wsdl:message name="IMissonService_GetMissonUnCompletedCountSample_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMissonUnCompletedCountSampleResponse" />
+  </wsdl:message>
   <wsdl:message name="IMissonService_GetPlanWithMisson_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPlanWithMisson" />
   </wsdl:message>
@@ -1656,6 +1668,14 @@
     <wsdl:operation name="GetMissonUnCompletedCount">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount" message="tns:IMissonService_GetMissonUnCompletedCount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse" message="tns:IMissonService_GetMissonUnCompletedCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedSample">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedSample" message="tns:IMissonService_GetMissonUnCompletedSample_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedSampleResponse" message="tns:IMissonService_GetMissonUnCompletedSample_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCountSample">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSample" message="tns:IMissonService_GetMissonUnCompletedCountSample_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSampleResponse" message="tns:IMissonService_GetMissonUnCompletedCountSample_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPlanWithMisson">
       <wsdl:input wsaw:Action="http://tempuri.org/IMissonService/GetPlanWithMisson" message="tns:IMissonService_GetPlanWithMisson_InputMessage" />
@@ -3004,6 +3024,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetMissonUnCompletedCount">
       <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedSample">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompletedSample" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMissonUnCompletedCountSample">
+      <soap:operation soapAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSample" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

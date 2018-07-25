@@ -183,6 +183,61 @@ namespace PMSWCFService
                 throw ex;
             }
         }
+
+        public List<DcOrder> GetMissonUnCompletedSample(int skip, int take)
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    Mapper.Initialize(cfg =>
+                    {
+                        cfg.CreateMap<PMSOrder, DcOrder>();
+                        cfg.CreateMap<PMSPlanVHP, DcPlanVHP>();
+                    });
+
+                    var result = from o in dc.Orders
+                                 where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString())
+                                 && o.SampleNeed!="无需样品"
+                                 orderby o.Priority, o.CreateTime
+                                 select o;
+
+                    var missons = Mapper.Map<List<PMSOrder>, List<DcOrder>>(result.Skip(skip).Take(take).ToList());
+
+                    return missons;
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
+        public int GetMissonUnCompletedCountSample()
+        {
+            try
+            {
+                using (var dc = new PMSDbContext())
+                {
+                    var query = from o in dc.Orders
+                                where o.PolicyType == PMSCommon.OrderPolicyType.VHP.ToString()
+                                 && o.SampleNeed != "无需样品"
+                                 && (o.State == OrderState.未完成.ToString()
+                                 || o.State == OrderState.暂停.ToString())
+                                select o;
+                    return query.Count();
+                }
+            }
+            catch (Exception ex)
+            {
+                LocalService.CurrentLog.Error(ex);
+                throw ex;
+            }
+        }
+
         public int GetMissonUnCompletedCount()
         {
             try

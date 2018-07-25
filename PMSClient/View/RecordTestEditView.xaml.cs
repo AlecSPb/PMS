@@ -106,7 +106,7 @@ namespace PMSClient.View
             var win = new ToolWindow.TargetDefects();
             if (win.ShowDialog() == true)
             {
-                TxtDefects.Text = win.AllDefects;
+                PMSMethods.SetTextBox(TxtDefects, win.AllDefects);
             };
 
         }

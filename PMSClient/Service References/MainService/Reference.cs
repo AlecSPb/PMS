@@ -9618,6 +9618,18 @@ namespace PMSClient.MainService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCount", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountResponse")]
         System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedSample", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedSampleResponse")]
+        PMSClient.MainService.DcOrder[] GetMissonUnCompletedSample(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedSample", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedSampleResponse")]
+        System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonUnCompletedSampleAsync(int skip, int take);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSample", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSampleResponse")]
+        int GetMissonUnCompletedCountSample();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSample", ReplyAction="http://tempuri.org/IMissonService/GetMissonUnCompletedCountSampleResponse")]
+        System.Threading.Tasks.Task<int> GetMissonUnCompletedCountSampleAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMissonService/GetPlanWithMisson", ReplyAction="http://tempuri.org/IMissonService/GetPlanWithMissonResponse")]
         PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take);
         
@@ -9764,6 +9776,22 @@ namespace PMSClient.MainService {
         
         public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountAsync() {
             return base.Channel.GetMissonUnCompletedCountAsync();
+        }
+        
+        public PMSClient.MainService.DcOrder[] GetMissonUnCompletedSample(int skip, int take) {
+            return base.Channel.GetMissonUnCompletedSample(skip, take);
+        }
+        
+        public System.Threading.Tasks.Task<PMSClient.MainService.DcOrder[]> GetMissonUnCompletedSampleAsync(int skip, int take) {
+            return base.Channel.GetMissonUnCompletedSampleAsync(skip, take);
+        }
+        
+        public int GetMissonUnCompletedCountSample() {
+            return base.Channel.GetMissonUnCompletedCountSample();
+        }
+        
+        public System.Threading.Tasks.Task<int> GetMissonUnCompletedCountSampleAsync() {
+            return base.Channel.GetMissonUnCompletedCountSampleAsync();
         }
         
         public PMSClient.MainService.DcPlanWithMisson[] GetPlanWithMisson(int skip, int take) {

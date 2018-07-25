@@ -30,11 +30,13 @@
             <TextBlock Text="{StaticResource OrderPMINumber}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBox Text="{Binding SearchPMINumber,UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource StyleTextBoxSearch}"/>
-            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommon}" Command="{Binding Search}"/>
-            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommon}" Command="{Binding Refresh}"/>
+            <Button Content="{StaticResource ButtonSearch}" Style="{StaticResource  StyleButtonCommonNarrow}" Command="{Binding Search}"/>
+            <Button Content="{StaticResource ButtonAll}" Style="{StaticResource StyleButtonCommonNarrow}" Command="{Binding Refresh}"/>
             <Button Content="{StaticResource ButtonUnCompleted}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding OnlyUnFinished}"/>
             <Button Content="{StaticResource ButtonPlanWindow}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToPlan}"/>
             <Button Content="{StaticResource ButtonMaterialWindow}" Style="{StaticResource StyleButtonSpecial}" Command="{Binding GoToMaterialNeed}"/>
+            <Button Content="{StaticResource ButtonSample}" Style="{StaticResource StyleButtonSpecial}"
+                    Command="{Binding SampleSheet}"/>
             <!--图例-->
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
@@ -132,7 +134,7 @@
                 <DataGridTemplateColumn Header="{StaticResource OrderSampleNeed}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource StyleDGTextBlockLeft}"/>
+                            <TextBlock Text="{Binding SampleNeed}" Style="{StaticResource StyleDGTextBlockLeft}" Foreground="Red"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
