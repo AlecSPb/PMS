@@ -128,124 +128,126 @@
                 <control:SimplePager Grid.Row="1" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}" LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
                              LabelPageSize="{StaticResource PagingPageSize}" LabelRecordCount="{StaticResource PagingRecordCount}"/>
             </Grid>
-            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
-                <Grid  DataContext="{Binding CurrentRecordDeMold}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="200"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
+            <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
+                <ScrollViewer  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+                    <Grid  DataContext="{Binding CurrentRecordDeMold}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDMVHPPlanLot}"
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource RDMVHPPlanLot}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxReadOnlyBig}"  />
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding VHPPlanLot}" Style="{StaticResource StyleTextBoxReadOnlyBig}"  />
 
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDMPMINumber}"
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="{StaticResource RDMPMINumber}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding PMINumber}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDMPlanType}"
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="{StaticResource RDMPlanType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlanType}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PlanType}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDMComposition}"
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="{StaticResource RDMComposition}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Composition}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDMDimension}"
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="{StaticResource RDMDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Dimension}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDMCalculateDimension}"
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="{StaticResource RDMCalculateDimension}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CalculateDimension}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CalculateDimension}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDMCalculationDensity}"
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource RDMCalculationDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CalculationDensity}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CalculationDensity}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDMTemperature1}"
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource RDMTemperature1}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Temperature1}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Temperature1}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDMTemperature2}"
+                        <TextBlock Grid.Row="8" Grid.Column="0" Text="{StaticResource RDMTemperature2}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Temperature2}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
-                    <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDMDeMoldType}"
+                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Temperature2}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="{StaticResource RDMDeMoldType}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding DeMoldType}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding DeMoldType}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
 
-                    <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDMWeight}"
+                        <TextBlock Grid.Row="10" Grid.Column="0" Text="{StaticResource RDMWeight}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnlyBig}" />
+                        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Weight}" Style="{StaticResource StyleTextBoxReadOnlyBig}" />
 
-                    <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RDMDiameter1}"
+                        <TextBlock Grid.Row="11" Grid.Column="0" Text="{StaticResource RDMDiameter1}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding Diameter1}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDMDiameter2}"
+                        <TextBlock Grid.Row="12" Grid.Column="0" Text="{StaticResource RDMDiameter2}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Diameter2}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Diameter2}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDMThickness1}"
+                        <TextBlock Grid.Row="13" Grid.Column="0" Text="{StaticResource RDMThickness1}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Thickness1}" Style="{StaticResource StyleTextBoxReadOnlyBig}"  HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RDMThickness2}"
+                        <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding Thickness1}" Style="{StaticResource StyleTextBoxReadOnlyBig}"  HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="14" Grid.Column="0" Text="{StaticResource RDMThickness2}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Thickness2}" Style="{StaticResource StyleTextBoxReadOnlyBig}" HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDMThickness3}"
+                        <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Thickness2}" Style="{StaticResource StyleTextBoxReadOnlyBig}" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="15" Grid.Column="0" Text="{StaticResource RDMThickness3}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Thickness3}" Style="{StaticResource StyleTextBoxReadOnlyBig}"  HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RDMThickness4}"
+                        <TextBox Grid.Row="15" Grid.Column="1" Text="{Binding Thickness3}" Style="{StaticResource StyleTextBoxReadOnlyBig}"  HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="16" Grid.Column="0" Text="{StaticResource RDMThickness4}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Thickness4}" Style="{StaticResource StyleTextBoxReadOnlyBig}" HorizontalAlignment="Left"/>
-                    <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RDMDensity}"
+                        <TextBox Grid.Row="16" Grid.Column="1" Text="{Binding Thickness4}" Style="{StaticResource StyleTextBoxReadOnlyBig}" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="17" Grid.Column="0" Text="{StaticResource RDMDensity}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <StackPanel Grid.Row="17" Grid.Column="1" Orientation="Horizontal">
-                        <TextBox    Text="{Binding Density,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
-                        <TextBox  Text="{Binding RatioDensity,StringFormat={}{0:P2}}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
-                    </StackPanel>
+                        <StackPanel Grid.Row="17" Grid.Column="1" Orientation="Horizontal">
+                            <TextBox    Text="{Binding Density,StringFormat={}{0:F2}}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                            <TextBox  Text="{Binding RatioDensity,StringFormat={}{0:P2}}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        </StackPanel>
 
-                    <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RDMRemark}"
+                        <TextBlock Grid.Row="18" Grid.Column="0" Text="{StaticResource RDMRemark}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="18" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RDMCreator}"
+                        <TextBlock Grid.Row="19" Grid.Column="0" Text="{StaticResource RDMCreator}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                        <TextBox Grid.Row="19" Grid.Column="1" Text="{Binding Creator}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
 
-                    <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RDMCreateTime}"
+                        <TextBlock Grid.Row="20" Grid.Column="0" Text="{StaticResource RDMCreateTime}"
                            Style="{StaticResource StyleTextBlockCommon}"/>
-                    <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
-                </Grid>
-            </ScrollViewer>
+                        <TextBox Grid.Row="20" Grid.Column="1" Text="{Binding CreateTime}" Style="{StaticResource StyleTextBoxReadOnlyBig}"/>
+                    </Grid>
+                </ScrollViewer>
+            </Expander>
 
         </Grid>
     </Grid>

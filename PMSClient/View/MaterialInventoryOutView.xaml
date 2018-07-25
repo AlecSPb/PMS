@@ -41,7 +41,7 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="0" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding MaterialInventoryOuts}">
                 <DataGrid.Columns>
@@ -84,40 +84,39 @@
                                     Binding="{Binding Creator}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal">
-                    <!--<Button Style="{StaticResource StyleButtonCommon}" HorizontalAlignment="Stretch"
-                        Content="{StaticResource ButtonRefresh}"
-                        Command="{Binding DataContext.RefreshRecordMillingByNewMaterial,
-                            RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"/>-->
-                    <TextBlock Text="最近20条制粉用到的新原料,如果没有出库请出库" Style="{StaticResource StyleDGTextBlockCommon}" Grid.Row="0"/>
-                </StackPanel>
-                <ListBox Grid.Row="1" 
+            <Expander Grid.Column="1" Header="" IsExpanded="False" ExpandDirection="Left">
+                <Grid Width="500">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="最近20条制粉用到的新原料,如果没有出库请出库" Style="{StaticResource StyleDGTextBlockCommon}" Grid.Row="0"/>
+                    </StackPanel>
+                    <ListBox Grid.Row="1" 
                          ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl},
                     Path=DataContext.NewMaterialUsedList}" >
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource StyleButtonCommon}" Content="检查出库"
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource StyleButtonCommon}" Content="检查出库"
                                         Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor,
                                     AncestorType=UserControl},
                                     Path=DataContext.CheckMaterial}" CommandParameter="{Binding}"/>
-                                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding CreateTime,StringFormat={}{0:yyyyMMdd}}"
+                                    <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding CreateTime,StringFormat={}{0:yyyyMMdd}}"
                                           FontSize="9" Foreground="Blue"/>
-                                <TextBox Style="{StaticResource StyleTextBoxCommon}" Text="{Binding PMINumber}"
+                                    <TextBox Style="{StaticResource StyleTextBoxCommon}" Text="{Binding PMINumber}"
                                           FontSize="9" Foreground="Blue" IsReadOnly="True"/>
-                                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding Composition}" FontSize="9"/>
-                                <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
+                                    <TextBlock Style="{StaticResource StyleDGTextBlockCommon}" Text="{Binding Composition}" FontSize="9"/>
+                                    <TextBlock Style="{StaticResource StyleDGTextBlockCommon}"
                                            Text="{Binding WeightIn,StringFormat={}{0}g}" FontSize="9" Foreground="Blue"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+            </Expander>
         </Grid>
         <control:SimplePager Grid.Row="3" Command="{Binding PageChanged}" PageIndex="{Binding PageIndex,Mode=TwoWay}" PageSize="{Binding PageSize}"  RecordCount="{Binding RecordCount}"
                              LabelPageIndex="{StaticResource PagingCurrentPageIndex}" LabelPageCount="{StaticResource PagingPageCount}"
