@@ -279,6 +279,7 @@ namespace PMSCommon
                 #region 数据
                 data.Add("无");
                 data.Add("50.8mm OD x 2mm");
+                data.Add("50.8mm OD x 3.175mm");
                 data.Add("76.2mm OD x 2mm");
                 data.Add("237mm OD x 11mm");
                 data.Add("158mm OD x 11mm");

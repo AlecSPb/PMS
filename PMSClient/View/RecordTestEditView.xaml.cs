@@ -110,5 +110,45 @@ namespace PMSClient.View
             };
 
         }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtProductID.Text.Trim().Length < 7)
+            {
+                return;
+            }
+
+            Button btn = e.OriginalSource as Button;
+
+            if (btn != null)
+            {
+
+                string postfix = btn.Content.ToString();
+                if (postfix == "更多")
+                {
+                    var tool = new ToolWindow.ProductIDPostFix();
+                    tool.ShowDialog();
+                    if (tool.Postfix != string.Empty)
+                    {
+                        postfix = tool.Postfix;
+                    }
+
+                }
+
+                if (postfix == "更多") return;
+
+                string new_id = string.Empty;
+                new_id = NewProductID(TxtProductID.Text.Trim(), postfix);
+                PMSMethods.SetTextBox(TxtProductID, new_id);
+            }
+
+            e.Handled = true;
+        }
+
+        private string NewProductID(string old, string postfix)
+        {
+            string first = old.Substring(0, 7);
+            return $"{first}{postfix}";
+        }
     }
 }

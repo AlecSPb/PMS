@@ -62,12 +62,40 @@ namespace PMSClient.ViewModel
             SelectionChanged = new RelayCommand<RecordTestExtra>(ActionSelectionChanged);
             Duplicate = new RelayCommand<RecordTestExtra>(ActionDuplicate, CanDuplicate);
             Label = new RelayCommand<RecordTestExtra>(ActionLabel);
+            Check = new RelayCommand<RecordTestExtra>(ActionCheck, CanCheck);
+
+
             QuickAdd = new RelayCommand(ActionQuickAdd, CanQuickAdd);
             Output = new RelayCommand(ActionOutput);
             BatchDoc = new RelayCommand(ActionBatchDoc);
             QuickDoc = new RelayCommand(ActionQuickDoc, CanQuickDoc);
 
             Compare = new RelayCommand<RecordTestExtra>(ActionCompare);
+        }
+
+        private bool CanCheck(RecordTestExtra arg)
+        {
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
+        }
+
+        private void ActionCheck(RecordTestExtra obj)
+        {
+            if (obj != null)
+            {
+                if (PMSDialogService.ShowYesNo("请问", "确定要将此块记录设置为[已核验]吗？"))
+                {
+                    string uid = PMSHelper.CurrentSession.CurrentUser.UserName;
+                    using (var service = new RecordTestServiceClient())
+                    {
+                        var model = obj.RecordTest;
+                        model.State = PMSCommon.CommonState.已核验.ToString();
+                        service.UpdateRecordTestByUID(model, uid);
+                    }
+
+                    SetPageParametersWhenConditionChange();
+
+                }
+            }
         }
 
         private void ActionCompare(RecordTestExtra obj)
@@ -256,9 +284,15 @@ namespace PMSClient.ViewModel
                 //NavigationService.GoTo(PMSViews.LabelOutPut);
 
                 //2017-12-18
+                string extrainfo = string.Empty;
+                if (model.RecordTest.Customer.Contains("Chaozhou"))
+                {
+                    extrainfo = "此标签成分是潮州的，所以成分需要缩写，例如CIGS-Ga6.5的格式";
+                }
                 PMSClient.ToolWindow.LabelCopyWindow lcw = new ToolWindow.LabelCopyWindow
                 {
-                    LabelInformation = mainContent
+                    LabelInformation = mainContent,
+                    BasicInformation = extrainfo
                 };
                 lcw.Show();
             }
@@ -417,6 +451,7 @@ namespace PMSClient.ViewModel
         public RelayCommand<RecordTestExtra> SelectionChanged { get; set; }
         public RelayCommand<RecordTestExtra> Duplicate { get; set; }
         public RelayCommand<RecordTestExtra> Label { get; set; }
+        public RelayCommand<RecordTestExtra> Check { get; set; }
 
         public RelayCommand<RecordTestExtra> Compare { get; set; }
 

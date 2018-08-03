@@ -358,6 +358,9 @@
     <Compile Include="ToolWindow\PlainTextWindow.xaml.cs">
       <DependentUpon>PlainTextWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\ProductIDPostFix.xaml.cs">
+      <DependentUpon>ProductIDPostFix.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\QuickRemark.xaml.cs">
       <DependentUpon>QuickRemark.xaml</DependentUpon>
     </Compile>
@@ -913,6 +916,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\PlainTextWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\ProductIDPostFix.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

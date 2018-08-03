@@ -1,0 +1,19 @@
+﻿<Window x:Class="PMSClient.ToolWindow.ProductIDPostFix"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ToolWindow"
+        Title="请选择合适后缀" Height="350" Width="250">
+    <Grid Margin="5">
+        <WrapPanel Button.Click="WrapPanel_Click">
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DA-1"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DA-2"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DB-1"/>
+            <Button Style="{StaticResource StyleButtonCommonNarrow}" Content="DB-2"/>
+        </WrapPanel>
+    </Grid>
+</Window>

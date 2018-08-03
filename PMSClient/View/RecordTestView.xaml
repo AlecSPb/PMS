@@ -88,7 +88,9 @@
                                         <Button Content="{StaticResource ButtonLabel}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Label,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
-
+                                        <Button Content="{StaticResource ButtonCheck}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.Check,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

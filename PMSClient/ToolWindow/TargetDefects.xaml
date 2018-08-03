@@ -14,7 +14,7 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}" Text="按住Ctrl可以选择多个" Background="Orange"
+        <TextBlock Grid.Row="0" Style="{StaticResource StyleDGTextBlockCommon}" Text="可以选择多个,再次选择取消" Background="Orange"
                    FontSize="20"/>
         <ListBox Grid.Row="1" Margin="2" Name="LstDefects" SelectionMode="Multiple">
         </ListBox>

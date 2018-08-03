@@ -25,9 +25,12 @@ namespace PMSClient.ViewModel
 
         private void ActionSelectMisson()
         {
-            PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.PlanEdit);
-            //PMSHelper.ViewModels.PlanSelect.RefreshData();
-            NavigationService.GoTo(PMSViews.PlanSelect);
+            if (PMSDialogService.ShowYesNo("注意", "此功能允许将其他任务的计划条件复制过来，需谨慎操作，确定继续吗?"))
+            {
+                PMSHelper.ViewModels.PlanSelect.SetRequestView(PMSViews.PlanEdit);
+                //PMSHelper.ViewModels.PlanSelect.RefreshData();
+                NavigationService.GoTo(PMSViews.PlanSelect);
+            }
         }
 
         public void SetBySelect(DcPlanVHP model)
