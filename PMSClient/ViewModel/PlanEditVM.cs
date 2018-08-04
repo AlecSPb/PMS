@@ -202,6 +202,30 @@ namespace PMSClient.ViewModel
                 var service = new PlanVHPServiceClient();
                 if (IsNew)
                 {
+                    //新添加-检查流程
+                    //检查是否同一天同一台设备已经安排有计划
+                    using (var check = new MissonServiceClient())
+                    {
+                        string search_code = $"{CurrentPlan.PlanDate.ToString("yyMMdd")}-{CurrentPlan.VHPDeviceCode}";
+                        var results = check.GetPlanExtra(0, 20, search_code, string.Empty);
+                        if (results.Count() > 0)
+                        {
+                            if (!PMSDialogService.ShowYesNo("确定",
+                                    $"同一天同一台设备已经安排了[{results.Count()}]个计划，\r\n仍继续添加此计划？") == true)
+                                return;
+                        }
+                    }
+                    //检查后续代码和工艺代码是否符合常规
+
+                    string check_result = Helpers.VHPHelper.CheckPlanTypeAndProcessCode(CurrentPlan.PlanType, CurrentPlan.ProcessCode);
+                    if (check_result != "")
+                    {
+                        if (!PMSDialogService.ShowYesNo("提醒", 
+                            $"{check_result},\r\n而当前工艺代码是[{CurrentPlan.ProcessCode}],热压类型是[{CurrentPlan.PlanType}],\r\n仍继续添加此计划吗？"))
+                            return;
+                    }
+
+
                     service.AddVHPPlanByUID(CurrentPlan, uid);
                 }
                 else

@@ -260,6 +260,7 @@
     <Compile Include="CustomControls\PMSMessageBox.xaml.cs">
       <DependentUpon>PMSMessageBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\VHPHelper.cs" />
     <Compile Include="Navbar.xaml.cs">
       <DependentUpon>Navbar.xaml</DependentUpon>
     </Compile>
