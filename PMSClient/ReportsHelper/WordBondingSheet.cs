@@ -55,32 +55,48 @@ namespace PMSClient.ReportsHelper
                         Table mainTable = document.Tables[0];
                         int rownumber = 1;
                         var ordered = model.OrderBy(i => i.TargetProductID).OrderBy(i => i.PlanBatchNumber);
+
                         foreach (var item in ordered)
                         {
-                            mainTable.InsertRow().Height=35;
+                            var current_row = mainTable.InsertRow();
+                            current_row.Height = 35;
+
                             string no = item.PlanBatchNumber.ToString() + "-" + rownumber;
 
-                            mainTable.Rows[rownumber].Cells[0].Paragraphs[0]
+                            var cell_0 = mainTable.Rows[rownumber].Cells[0];
+                            cell_0.Paragraphs[0]
                                 .Append(no).FontSize(10).Bold().Alignment = Alignment.left;
-                            mainTable.Rows[rownumber].Cells[0].VerticalAlignment = VerticalAlignment.Center;
+                            cell_0.VerticalAlignment = VerticalAlignment.Center;
 
-                            mainTable.Rows[rownumber].Cells[1].Paragraphs[0]
+                            var cell_1 = mainTable.Rows[rownumber].Cells[1];
+                            cell_1.Paragraphs[0]
                                 .Append($"{item.TargetProductID}").FontSize(10).Bold();
-                            mainTable.Rows[rownumber].Cells[1].VerticalAlignment = VerticalAlignment.Center;
+                            cell_1.VerticalAlignment = VerticalAlignment.Center;
 
-                            mainTable.Rows[rownumber].Cells[2].Paragraphs[0]
+                            var cell_2 = mainTable.Rows[rownumber].Cells[2];
+                            cell_2.Paragraphs[0]
                                 .Append(item.TargetComposition).FontSize(10).Bold();
-                            mainTable.Rows[rownumber].Cells[2].VerticalAlignment = VerticalAlignment.Center;
+                            cell_2.VerticalAlignment = VerticalAlignment.Center;
 
-                            mainTable.Rows[rownumber].Cells[3].Paragraphs[0]
-                                .Append("□").FontSize(10).Bold().Alignment=Alignment.center;
-                            mainTable.Rows[rownumber].Cells[3].VerticalAlignment = VerticalAlignment.Center;
+                            var cell_3 = mainTable.Rows[rownumber].Cells[3];
+                            cell_3.Paragraphs[0]
+                                 .Append("□").FontSize(10).Bold().Alignment = Alignment.center;
+                            cell_3.VerticalAlignment = VerticalAlignment.Center;
 
-                            mainTable.Rows[rownumber].Cells[13].Paragraphs[0]
+                            var cell_13 = mainTable.Rows[rownumber].Cells[13];
+                            cell_13.Paragraphs[0]
                                 .Append("□缺 □裂").FontSize(10).Bold();
+                            cell_13.Paragraphs[0].Alignment = Alignment.center;
+                            cell_13.VerticalAlignment = VerticalAlignment.Center;
 
-                            mainTable.Rows[rownumber].Cells[13].Paragraphs[0].Alignment = Alignment.center;
-                            mainTable.Rows[rownumber].Cells[13].VerticalAlignment = VerticalAlignment.Center;
+                            if (rownumber % 2 == 1)
+                            {
+                                for (int i = 0; i < 14; i++)
+                                {
+                                    current_row.Cells[i].FillColor = Color.LightGray;
+                                }
+                            }
+
 
                             rownumber++;
                         }
