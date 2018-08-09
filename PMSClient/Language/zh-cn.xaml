@@ -682,6 +682,7 @@
 
 
     <sys:String x:Key="BDPlateLot">背板批号</sys:String>
+    <sys:String x:Key="BDWeldingRate">焊合率</sys:String>
     <sys:String x:Key="BDPlateMaterial">背板材料</sys:String>
     <sys:String x:Key="BDPlateBelong">背板归属</sys:String>
     <sys:String x:Key="BDPlateDimension">背板直径</sys:String>

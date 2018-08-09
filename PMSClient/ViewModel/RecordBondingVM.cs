@@ -138,6 +138,11 @@ namespace PMSClient.ViewModel
                     model.State = dialog.State;
                     model.PlateLot = dialog.PlateNumber;
                     model.Remark = dialog.Defects;
+
+                    double welding_rate = 0;
+                    double.TryParse(dialog.WeldingRate, out welding_rate);
+                    model.WeldingRate = welding_rate;
+
                     service.UpdateRecordBongdingByUID(model, PMSHelper.CurrentSession.CurrentUser.UserName);
                 }
                 SetPageParametersWhenConditionChange();

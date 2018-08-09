@@ -685,6 +685,7 @@
       <xs:element minOccurs="0" name="WeldHold" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeldMaterial" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WeldPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeldingRate" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DcRecordBonding" nillable="true" type="tns:DcRecordBonding" />

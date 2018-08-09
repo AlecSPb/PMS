@@ -62,6 +62,8 @@ namespace PMSClient.ViewModel
             model.TargetDimension = "无";
             model.PlateType = "新背板230";
             model.CoverPlateNumber = "无";
+            model.WeldingRate = 0;
+
             //暂时用不到
             model.TargetAbbr = "";
             model.TargetPO = "";

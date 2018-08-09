@@ -155,6 +155,7 @@ namespace PMSClient.ViewModel
             model.PlateType = "新背板";
             model.CoverPlateNumber = "无";
             model.PlanBatchNumber = 1;
+            model.WeldingRate = 0;
 
             //暂时用不到
             model.TargetAbbr = "尚未确定";

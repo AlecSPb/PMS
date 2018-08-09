@@ -34,6 +34,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -73,11 +74,15 @@
             <TextBlock Grid.Row="5" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text="选择背板类型"/>
 
             <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource BDPlateLot}" Style="{StaticResource StyleTextBlockCommon}"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxBig}"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding PlateLot}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
             <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
-
-            <TextBlock Grid.Row="7" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
-            <ComboBox Grid.Row="7" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
+            
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource BDWeldingRate}" Style="{StaticResource StyleTextBlockCommon}"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding WeldingRate}" Style="{StaticResource StyleTextBoxBig}" Background="Yellow"/>
+            <TextBlock Grid.Row="7" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}" Text=""/>
+            
+            <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource StyleTextBlockCommon}" Text="备注信息"/>
+            <ComboBox Grid.Row="8" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}"
                                           ItemsSource="{Binding DataContext.BondingDefects,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                           Text="{Binding Remark}"/>
         </Grid>

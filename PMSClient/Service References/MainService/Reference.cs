@@ -6905,6 +6905,9 @@ namespace PMSClient.MainService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string WeldPersonField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeldingRateField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -7834,6 +7837,19 @@ namespace PMSClient.MainService {
                 if ((object.ReferenceEquals(this.WeldPersonField, value) != true)) {
                     this.WeldPersonField = value;
                     this.RaisePropertyChanged("WeldPerson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double WeldingRate {
+            get {
+                return this.WeldingRateField;
+            }
+            set {
+                if ((this.WeldingRateField.Equals(value) != true)) {
+                    this.WeldingRateField = value;
+                    this.RaisePropertyChanged("WeldingRate");
                 }
             }
         }

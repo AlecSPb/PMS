@@ -679,6 +679,7 @@
 
 
     <sys:String x:Key="BDPlateLot">Plate Lot</sys:String>
+    <sys:String x:Key="BDWeldingRate">WeldingRate</sys:String>
     <sys:String x:Key="BDPlateMaterial">Plate Material</sys:String>
     <sys:String x:Key="BDPlateBelong">Plate Belong</sys:String>
     <sys:String x:Key="BDPlateDimension">Dimension</sys:String>

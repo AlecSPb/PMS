@@ -29,6 +29,7 @@ namespace PMSClient.CustomControls
         public string State { get { return cboState.SelectedItem.ToString(); } }
         public string PlateNumber { get { return txtPlateNumber.Text; } }
         public string Defects { get { return txtDefects.Text; } }
+        public string WeldingRate { get { return txtWeldingRate.Text; } }
 
         public string ProductID
         {
