@@ -50,5 +50,15 @@ namespace PMSClient.CustomControls
             this.DialogResult = true;
             this.Close();
         }
+
+        private void btnCrack_Click(object sender, RoutedEventArgs e)
+        {
+            txtDefects.Text = "裂缝;";
+        }
+
+        private void btnBreach_Click(object sender, RoutedEventArgs e)
+        {
+            txtDefects.Text = "缺口;";
+        }
     }
 }

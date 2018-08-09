@@ -85,7 +85,7 @@
                 <DataGridTextColumn Header="{StaticResource BDPlateLot}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding PlateLot}"/>
                 <DataGridTextColumn Header="{StaticResource BDWeldingRate}" ElementStyle="{StaticResource StyleDGTextBlockRightBlue}" 
-                                    Binding="{Binding WeldingRate}"/>
+                                    Binding="{Binding WeldingRate,StringFormat={}{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource BDRemark}" ElementStyle="{StaticResource StyleDGTextBlockCommon}" 
                                     Binding="{Binding Remark}"/>
                 <DataGridTextColumn Header="{StaticResource BDCreateTime}" ElementStyle="{StaticResource StyleDGTextBlockCommon}"
