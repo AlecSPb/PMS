@@ -89,6 +89,7 @@ namespace PMSClient.ReportsHelper
                             cell_13.Paragraphs[0].Alignment = Alignment.center;
                             cell_13.VerticalAlignment = VerticalAlignment.Center;
 
+                            //添加间隔背景颜色
                             if (rownumber % 2 == 1)
                             {
                                 for (int i = 0; i < 14; i++)

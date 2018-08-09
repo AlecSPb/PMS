@@ -20,7 +20,12 @@ namespace PMSDAL
 
         [DefaultValue(1)]
         public int PlanBatchNumber { get; set; }
+
         public string InstructionCode { get; set; }//操作手册代码
+
+        public double WeldingRate { get; set; }
+
+
         //1.0靶材入料检查
         //基本信息，从测试直接录入
         public string TargetProductID { get; set; }//显示

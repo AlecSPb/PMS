@@ -18,13 +18,15 @@ namespace PMSDAL
         public string State { get; set; }
 
         public string InstructionCode { get; set; }//操作手册代码
-
         public string CoverPlateNumber { get; set; }
         [DefaultValue("旧背板")]
         public string PlateType { get; set; }
 
         [DefaultValue(1)]
         public int PlanBatchNumber { get; set; }
+
+
+        public double WeldingRate { get; set; }
 
         //1.0靶材入料检查
         //基本信息，从测试直接录入
