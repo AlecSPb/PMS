@@ -27,7 +27,7 @@ namespace PMSClient.ExcelOutputHelper
 
                 //插入标题行
                 string[] titles = {"状态", "绑定批次", "靶材ID", "靶材成分", "缩写","内部编号",
-                           "订单批号","靶材尺寸","背板批号","背板类型", "备注","创建时间", "创建者" };
+                           "订单批号","靶材尺寸","背板批号","背板类型","焊合率", "备注","创建时间", "创建者" };
 
                 helper.AddRowTitle(titles);
 
@@ -55,9 +55,11 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(8, item.PlateLot);
                         helper.CreateAndSetCell(9, item.PlateType);
 
-                        helper.CreateAndSetCell(10, item.Remark);
-                        helper.CreateAndSetCell(11, item.CreateTime.ToString());
-                        helper.CreateAndSetCell(12, item.Creator);
+                        helper.CreateAndSetCell(10, item.WeldingRate.ToString());
+
+                        helper.CreateAndSetCell(11, item.Remark);
+                        helper.CreateAndSetCell(12, item.CreateTime.ToString());
+                        helper.CreateAndSetCell(13, item.Creator);
 
                         rowIndex++;
                     }

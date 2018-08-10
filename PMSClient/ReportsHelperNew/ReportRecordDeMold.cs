@@ -48,6 +48,8 @@ namespace PMSClient.ReportsHelperNew
 
                     pageCount = GetPageCount();
 
+                    int row_index = 0;
+
                     int s = 0, t = 0;
                     while (pageIndex < pageCount)
                     {
@@ -70,6 +72,17 @@ namespace PMSClient.ReportsHelperNew
                                 row.Cells[2].VerticalAlignment = VerticalAlignment.Center;
                                 row.Cells[3].Paragraphs[0].Append(item.Plan.MoldDiameter.ToString());
                                 row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
+
+
+                                //隔行着色
+                                if (row_index % 2 == 0)
+                                {
+                                    for (int j = 0;j< 14; j++)
+                                    {
+                                        row.Cells[j].FillColor = System.Drawing.Color.LightGray;
+                                    }
+                                }
+                                row_index++;
                             }
                         }
 
