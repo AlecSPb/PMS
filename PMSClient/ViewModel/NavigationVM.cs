@@ -297,13 +297,21 @@ namespace PMSClient.ViewModel
 
         private void InitializeData()
         {
-            using (var service=new OrderServiceClient())
+            try
             {
-                OrderCount = service.GetOrderCount(string.Empty, string.Empty, string.Empty);
+                using (var service = new OrderServiceClient())
+                {
+                    OrderCount = service.GetOrderCount(string.Empty, string.Empty, string.Empty);
+                    UnFinishedOrderCount = service.GetOrderCountUnCompleted(string.Empty, string.Empty);
+                }
+                using (var service = new PlanVHPServiceClient())
+                {
+                    PlanedCount = service.GetPlanCount();
+                }
             }
-            using (var service=new PlanVHPServiceClient())
+            catch(Exception)
             {
-                PlanedCount = service.GetPlanCount();
+
             }
         }
         #region 属性
@@ -339,6 +347,22 @@ namespace PMSClient.ViewModel
                 }
                 planedCount = value;
                 RaisePropertyChanged(nameof(PlanedCount));
+            }
+        }
+
+        private int unFinishedOrderCount;
+        public int UnFinishedOrderCount
+        {
+            get
+            {
+                return unFinishedOrderCount;
+            }
+            set
+            {
+                if (unFinishedOrderCount == value)
+                    return;
+                unFinishedOrderCount = value;
+                RaisePropertyChanged(nameof(UnFinishedOrderCount));
             }
         }
         #endregion
