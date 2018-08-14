@@ -56,6 +56,7 @@
     <Compile Include="Entities\BDSieve.cs" />
     <Compile Include="Entities\CheckListHistory.cs" />
     <Compile Include="Entities\CheckList.cs" />
+    <Compile Include="Entities\Consumable.cs" />
     <Compile Include="Entities\DeliveryHistory.cs" />
     <Compile Include="Entities\DeliveryItemHistory.cs" />
     <Compile Include="Entities\EnvironmentInfo.cs" />

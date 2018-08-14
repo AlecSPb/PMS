@@ -177,7 +177,10 @@
     <sys:String x:Key="PageToDo">任务目标</sys:String>
     <sys:String x:Key="PageToDoEdit">任务目标编辑</sys:String>
 
+    <sys:String x:Key="PageConsumable">耗材采购</sys:String>
 
+    
+    
     <sys:String x:Key="PressureChangeTool">压力换算</sys:String>
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">欢迎使用PMS生产管理系统</sys:String>

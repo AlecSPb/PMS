@@ -177,6 +177,7 @@
 
     <sys:String x:Key="PageToDo">To Do List</sys:String>
     <sys:String x:Key="PageToDoEdit">To Do List Edit</sys:String>
+    <sys:String x:Key="PageConsumable">Consumable</sys:String>
 
     <!--TXT-->
     <sys:String x:Key="TxtWelcome">Welcome to use Production Management System</sys:String>

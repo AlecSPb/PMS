@@ -43,6 +43,8 @@
                 </Button>
                 <Button Content="{StaticResource ButtonToDoList}" Style="{StaticResource StyleButtonSpecial}"
                         Command="{Binding ToDoList}"/>
+                <Button Content="{StaticResource PageIntegratedSearch}"  Style="{StaticResource StyleButtonCommon}"
+                        Command="{Binding GoToIntegratedSearch }"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Style="{StaticResource StyleStackPanelNavigationBar}" HorizontalAlignment="Right">
                 <Image Source="../Resource/Icons/lightbulb.png" Style="{StaticResource StyleImageIcon}" Margin="5,0,0,0"/>
@@ -92,8 +94,9 @@
                         Command="{Binding GoToOutSource}"/>
                         <Button Content="{StaticResource PageFeedBack}" Grid.Row="0" Grid.Column="4" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToFeedBack }"/>
-                        <Button Content="{StaticResource PageIntegratedSearch}" Grid.Row="0" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
-                        Command="{Binding GoToIntegratedSearch }"/>
+                        <Button Content="{StaticResource PageConsumable}" Grid.Row="0" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
+                        Command="{Binding GoToConsumable }"/>
+                        
 
                         <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"
                         Style="{StaticResource StyleButtonNavigationTitle}"/>
