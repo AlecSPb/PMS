@@ -74,7 +74,7 @@
     <sys:String x:Key="PageOrderCheck">订单核验</sys:String>
     <sys:String x:Key="PageOrderCheckEdit">订单核验编辑</sys:String>
 
-    <sys:String x:Key="PageOutSource">外购管理</sys:String>
+    <sys:String x:Key="PageOutSource">外购外包</sys:String>
     <sys:String x:Key="PageOutSourceEdit">外购管理编辑</sys:String>
     <sys:String x:Key="PageOutSourceSelect">选择一个外购记录</sys:String>
 
@@ -177,7 +177,7 @@
     <sys:String x:Key="PageToDo">任务目标</sys:String>
     <sys:String x:Key="PageToDoEdit">任务目标编辑</sys:String>
 
-    <sys:String x:Key="PageConsumable">耗材采购</sys:String>
+    <sys:String x:Key="PageConsumable">耗材统计</sys:String>
 
     
     

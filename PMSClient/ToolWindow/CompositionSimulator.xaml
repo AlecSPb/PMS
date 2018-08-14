@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Topmost="True"
         WindowStartupLocation="CenterScreen"
-        Title="CSV成分格式模拟器" Height="400" Width="500">
+        Title="CSV成分格式模拟器" Height="450" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -20,13 +20,26 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition/>
+
             </Grid.ColumnDefinitions>
             <TextBox Name="txtCondition" Grid.Column="0" Margin="3"
                      AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
                      Text="5&#13;Cu+22.8&#13;In+20&#13;Ga+7&#13;Se+50.2">
             </TextBox>
-            <TextBlock Grid.Column="1" Margin="3">
+            <ScrollViewer Grid.Column="1">
+                <StackPanel Button.Click="StackPanel_Click">
+                    <Button Name="BtnCIGS" Content="CIGS" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="BtnInSe" Content="InSe" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="BtnCuGaSe" Content="CuGaSe" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="BtnSeAsGe" Content="SeAsGe" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="BtnBiTeSe" Content="BiTeSe" Style="{StaticResource StyleButtonCommon}"/>
+                    <Button Name="BtnBiSbTe" Content="BiSbTe" Style="{StaticResource StyleButtonCommon}"/>
+                </StackPanel>
+            </ScrollViewer>
+
+            <TextBlock Grid.Column="2" Margin="3" Background="Wheat">
                 输入格式：
                 <LineBreak/>
                 成分+比例

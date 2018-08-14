@@ -64,5 +64,34 @@ namespace PMSClient.ToolWindow
         {
             this.Topmost = (bool)KeepTop.IsChecked;
         }
+
+        private void StackPanel_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.OriginalSource as Button;
+            if (btn == null) return;
+            switch (btn.Content.ToString())
+            {
+                case "CIGS":
+                    txtCondition.Text = "5\r\nCu+22.8\r\nIn+20\r\nGa+7\r\nSe+50.2";
+                    break;
+                case "InSe":
+                    txtCondition.Text = "5\r\nIn+2\r\nSe+3";
+                    break;
+                case "CuGaSe":
+                    txtCondition.Text = "5\r\nCu+1\r\nGa+1\r\nSe+2";
+                    break;
+                case "BiTeSe":
+                    txtCondition.Text = "5\r\nBi+39\r\nTe+59\r\nSe+2";
+                    break;
+                case "BiSbTe":
+                    txtCondition.Text = "5\r\nBi+9\r\nSb+31\r\nTe+60";
+                    break;
+                case "SeAsGe":
+                    txtCondition.Text = "5\r\nSe+44\r\nAs+33\r\nGe+22";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
