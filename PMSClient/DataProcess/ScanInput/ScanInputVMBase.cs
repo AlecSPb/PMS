@@ -23,6 +23,13 @@ namespace PMSClient.DataProcess.ScanInput
                 Numbers.Add(i);
             }
             CurrentNumber = 1;
+
+            Plates = new List<string>();
+            Plates.Clear();
+            PMSBasicDataService.SetListDS(PMSCommon.CustomData.PlateTypes, Plates);
+
+            CurrentPlate = Plates[0];
+
         }
         public ObservableCollection<LotModel> Lots { get; set; }
 
@@ -74,6 +81,9 @@ namespace PMSClient.DataProcess.ScanInput
 
         public List<int> Numbers { get; set; }
 
+        public List<string> Plates { get; set; }
+
+
         private int currentNumber;
         public int CurrentNumber
         {
@@ -88,6 +98,19 @@ namespace PMSClient.DataProcess.ScanInput
             }
         }
 
+        private string currentPlate;
+        public string CurrentPlate
+        {
+            get
+            {
+                return currentPlate;
+            }
+            set
+            {
+                currentPlate = value;
+                RaisePropertyChanged(nameof(CurrentPlate));
+            }
+        }
 
 
         #endregion

@@ -90,6 +90,9 @@ namespace PMSClient.ViewModel
             var tool = new DataProcess.ScanInput.ScanInput();
             tool.TxtNumber.Text = "箱号";
 
+            tool.TxtPlate.Visibility = System.Windows.Visibility.Collapsed;
+            tool.CboPlate.Visibility = System.Windows.Visibility.Collapsed;
+
             //传入delivery到vm中
             var context = new DataProcess.ScanInput.ScanInputDeliveryVM(obj);
             tool.DataContext = context;

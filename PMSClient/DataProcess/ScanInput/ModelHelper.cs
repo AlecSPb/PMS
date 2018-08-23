@@ -9,7 +9,7 @@ namespace PMSClient.DataProcess.ScanInput
 {
     public static class ModelHelper
     {
-        public static DcRecordBonding GetRecordBonding(DcRecordTest ss, int batchNumber)
+        public static DcRecordBonding GetRecordBonding(DcRecordTest ss, int batchNumber, string plate)
         {
             if (ss == null)
                 return null;
@@ -25,7 +25,7 @@ namespace PMSClient.DataProcess.ScanInput
             model.TargetProductID = ss.ProductID;
             model.TargetComposition = ss.Composition;
             model.TargetDimension = ss.Dimension;
-            model.PlateType = "新背板230";
+            model.PlateType = plate;
             model.CoverPlateNumber = "无";
             //暂时用不到
             model.TargetAbbr = ss.CompositionAbbr;
@@ -135,7 +135,7 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
 
-        public static DcDeliveryItem GetDeliveryItem(DcPlate ss,int boxNumber)
+        public static DcDeliveryItem GetDeliveryItem(DcPlate ss, int boxNumber)
         {
             if (ss == null)
                 return null;

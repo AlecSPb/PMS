@@ -18,6 +18,7 @@ namespace PMSClient.DataProcess.ScanInput
         }
 
         public int Number { get; set; } = 1;
+        public string Plate { get; set; } = "新背板230";
 
         public override void Check(Action<double> DoSomething)
         {
@@ -70,7 +71,7 @@ namespace PMSClient.DataProcess.ScanInput
                         using (var ss = new RecordTestServiceClient())
                         {
                             var record_test = ss.GetRecordTestByProductID(item.Lot).FirstOrDefault();
-                            model = ModelHelper.GetRecordBonding(record_test,Number);
+                            model = ModelHelper.GetRecordBonding(record_test,Number,Plate);
                         }
 
                         //插入到绑定记录
