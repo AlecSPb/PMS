@@ -41,10 +41,46 @@ namespace PMSClient.ViewModel
             Search = new RelayCommand(ActionSearch);
             All = new RelayCommand(ActionAll);
             PageChanged = new RelayCommand(ActionPaging);
-            Finish = new RelayCommand<MainService.DcRecordBonding>(ActionFinish, CanFinish);
+            Finish = new RelayCommand<DcRecordBonding>(ActionFinish, CanFinish);
+            TempFinish = new RelayCommand<DcRecordBonding>(ActionTempFinish, CanTempFinish);
+
             RecordSheet = new RelayCommand(ActionRecordSheet);
             ScanAdd = new RelayCommand(ActionScanAdd, CanScanAdd);
             Output = new RelayCommand(ActionOutput);
+        }
+
+        private bool CanTempFinish(DcRecordBonding arg)
+        {
+            if (arg == null)
+            {
+                return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding);
+            }
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordBonding) && RecordBondingStateTransfer2(arg);
+        }
+
+        private bool RecordBondingStateTransfer2(DcRecordBonding arg)
+        {
+            return arg.State == PMSCommon.BondingState.未完成.ToString();
+        }
+
+        private void ActionTempFinish(DcRecordBonding obj)
+        {
+            if (PMSDialogService.ShowYesNo("请问?", "确定绑定已经完成但暂时还未录入数据？") == false)
+                return;
+            try
+            {
+                if (obj == null) return;
+                obj.State = PMSCommon.BondingState.未录入.ToString();
+                using (var service=new RecordBondingServiceClient())
+                {
+                    service.UpdateRecordBongdingByUID(obj, PMSHelper.CurrentSession.CurrentUser.UserName);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
         }
 
         private void ActionOutput()
@@ -85,7 +121,7 @@ namespace PMSClient.ViewModel
 
         private void ActionRecordSheet()
         {
-            if (!PMSDialogService.ShowYesNo("警告", "确定要生成未完成的绑定计划的记录单吗？"))
+            if (!PMSDialogService.ShowYesNo("警告", "确定要生成[未完成]的绑定计划的记录单吗？\r\n 不包含[未录入]"))
                 return;
             try
             {
@@ -124,7 +160,8 @@ namespace PMSClient.ViewModel
 
         private bool RecordBondingStateTransfer(DcRecordBonding arg)
         {
-            return arg.State == PMSCommon.BondingState.未完成.ToString();
+            return arg.State == PMSCommon.BondingState.未完成.ToString()||
+                arg.State==PMSCommon.BondingState.未录入.ToString();
         }
 
         private void ActionFinish(DcRecordBonding model)
@@ -262,6 +299,8 @@ namespace PMSClient.ViewModel
         public RelayCommand<DcRecordBonding> Detail { get; set; }
         public RelayCommand<DcRecordBonding> Edit { get; set; }
         public RelayCommand<DcRecordBonding> Finish { get; set; }
+        public RelayCommand<DcRecordBonding> TempFinish { get; set; }
+
         public RelayCommand RecordSheet { get; set; }
 
         public RelayCommand ScanAdd { get; set; }

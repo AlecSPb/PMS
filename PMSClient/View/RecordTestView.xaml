@@ -40,6 +40,8 @@
                     Command="{Binding QuickDoc}"/>
             <TextBlock Text="{StaticResource IndicatorColorMeaning}" Style="{StaticResource StyleTextBlockNavigationBar}"/>
             <TextBlock Text="{StaticResource IndicatorUnChecked}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCheckedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorNoInput}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource NoInputBrush}"/>
+
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>

@@ -243,6 +243,8 @@
     <sys:String x:Key="ButtonFindMisson">任务</sys:String>
     <sys:String x:Key="ButtonQuickRemark">快速备注</sys:String>
     <sys:String x:Key="ButtonFinish">完成</sys:String>
+    <sys:String x:Key="ButtonTempFinish">暂完</sys:String>
+
     <sys:String x:Key="ButtonLocation">定位</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">流水</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemListUnCompleted">未完成</sys:String>
@@ -323,6 +325,7 @@
     <sys:String x:Key="IndicatorPaused">暂停</sys:String>
     <sys:String x:Key="IndicatorEmergency">紧急</sys:String>
     <sys:String x:Key="IndicatorFailed">失败</sys:String>
+    <sys:String x:Key="IndicatorNoInput">未录入</sys:String>
 
 
     <sys:String x:Key="IndicatorStored">库存</sys:String>

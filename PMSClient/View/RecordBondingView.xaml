@@ -21,7 +21,7 @@
                     Command="{Binding GoToNavigation}" />
             <Button Content="{StaticResource ButtonAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  Add}"/>
-            <Button Content="{StaticResource ButtonQuickAdd}" Style="{StaticResource  StyleButtonSpecial}"
+            <Button Content="{StaticResource ButtonQuickAdd}" Style="{StaticResource  StyleButtonCommon}"
                     Command="{Binding  QuickAdd}"/>
             <Button Content="{StaticResource ButtonScanAdd}" Style="{StaticResource  StyleButtonSpecial}"
                     Command="{Binding  ScanAdd}"/>
@@ -44,6 +44,7 @@
             <TextBlock Text="{StaticResource IndicatorUnCompleted}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource UnCompletedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorPaused}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource PausedBrush}"/>
             <TextBlock Text="{StaticResource IndicatorFailed}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource FailedBrush}"/>
+            <TextBlock Text="{StaticResource IndicatorNoInput}" Style="{StaticResource StyleTextBlockCommon}" Background="{StaticResource NoInputBrush}"/>
         </StackPanel>
         <DataGrid x:Name="dg" Grid.Row="2" Style="{StaticResource StyleDataGridCommon}" ItemsSource="{Binding RecordBondings}"
                   LoadingRow="DataGrid_LoadingRow">
@@ -54,6 +55,9 @@
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="{StaticResource ButtonEdit}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Edit,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
+                                        CommandParameter="{Binding}"/>
+                                <Button Content="{StaticResource ButtonTempFinish}" Style="{StaticResource StyleDGButton}"
+                                    Command="{Binding DataContext.TempFinish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                                         CommandParameter="{Binding}"/>
                                 <Button Content="{StaticResource ButtonFinish}" Style="{StaticResource StyleDGButton}"
                                     Command="{Binding DataContext.Finish,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"

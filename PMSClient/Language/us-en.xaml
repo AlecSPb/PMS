@@ -238,6 +238,8 @@
     <sys:String x:Key="ButtonQuickRemark">QuickRemark</sys:String>
     <sys:String x:Key="ButtonFindMisson">Find Misson</sys:String>
     <sys:String x:Key="ButtonFinish">Finish</sys:String>
+    <sys:String x:Key="ButtonTempFinish">Temp Finish</sys:String>
+
     <sys:String x:Key="ButtonLocation">Locate</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemList">Material List</sys:String>
     <sys:String x:Key="ButtonMaterialOrderItemListFlag">UnFinished Material List</sys:String>
@@ -315,6 +317,7 @@
     <sys:String x:Key="IndicatorPaused">Paused</sys:String>
     <sys:String x:Key="IndicatorEmergency">Emergency</sys:String>
     <sys:String x:Key="IndicatorFailed">Failded</sys:String>
+    <sys:String x:Key="IndicatorNoInput">No Input</sys:String>
 
 
     <sys:String x:Key="IndicatorStored">Stored</sys:String>

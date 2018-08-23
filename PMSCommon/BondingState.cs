@@ -8,10 +8,11 @@ namespace PMSCommon
 {
     public enum BondingState
     {
-       作废,
-       未完成,
-       暂停,
-       完成,
-       失败
+        作废,
+        暂停,
+        未完成,
+        未录入,
+        完成,
+        失败
     }
 }
