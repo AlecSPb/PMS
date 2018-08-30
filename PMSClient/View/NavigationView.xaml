@@ -94,8 +94,8 @@
                         Command="{Binding GoToOutSource}"/>
                         <Button Content="{StaticResource PageFeedBack}" Grid.Row="0" Grid.Column="4" Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToFeedBack }"/>
-                        <Button Content="{StaticResource PageConsumable}" Grid.Row="0" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
-                        Command="{Binding GoToConsumable }"/>
+                        <!--<Button Content="{StaticResource PageConsumable}" Grid.Row="0" Grid.Column="5" Style="{StaticResource StyleButtonNavigation}"
+                        Command="{Binding GoToConsumable }"/>-->
                         
 
                         <Button Content="{StaticResource PageMaterial}" Grid.Row="1" Grid.Column="0"

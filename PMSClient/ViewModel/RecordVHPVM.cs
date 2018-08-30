@@ -116,7 +116,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 10;
+            PageSize = 20;
             using (var service = new MissonServiceClient())
             {
                 RecordCount = service.GetPlanExtraCount(SearchVHPDate, SearchComposition);

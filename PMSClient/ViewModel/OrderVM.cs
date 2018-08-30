@@ -240,7 +240,7 @@ namespace PMSClient.ViewModel
             try
             {
                 PageIndex = 1;
-                PageSize = 20;
+                PageSize = 30;
                 using (var service = new OrderServiceClient())
                 {
                     RecordCount = service.GetOrderCount(SearchCustomer, SearchCompositionStandard, SearchPMINumber);

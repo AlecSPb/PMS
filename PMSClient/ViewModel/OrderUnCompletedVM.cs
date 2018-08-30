@@ -146,7 +146,7 @@ namespace PMSClient.ViewModel
             try
             {
                 PageIndex = 1;
-                PageSize = 20;
+                PageSize = 30;
                 var service = new OrderServiceClient();
                 RecordCount = service.GetOrderCountUnCompleted2(SearchCustomer, SearchCompositionStandard, SearchPMINumber);
                 service.Close();

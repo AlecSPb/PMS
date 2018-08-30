@@ -62,8 +62,8 @@
                                     Binding="{Binding Quantity}"/>
                 <DataGridTextColumn Header="{StaticResource OSQuantityUnit}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding QuantityUnit}"/>
-                <DataGridTextColumn Header="{StaticResource OSCost}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
-                                    Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="{StaticResource OSCost}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding Cost,StringFormat=￥{0:F2}}"/>
                 <DataGridTextColumn Header="{StaticResource OSState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"
                                     Binding="{Binding State}"/>
                 <DataGridTextColumn Header="{StaticResource OSPaidState}" ElementStyle="{StaticResource StyleDGTextBlockLeft}"

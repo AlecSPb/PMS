@@ -250,7 +250,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             using (var service = new MissonServiceClient())
             {//TODO:切换搜索
                 RecordCount = service.GetPlanWithMissonCheckedCount();

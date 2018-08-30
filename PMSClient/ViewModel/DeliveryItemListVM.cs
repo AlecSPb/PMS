@@ -101,7 +101,7 @@ namespace PMSClient.ViewModel
         private void SetPageParametersWhenConditionChange()
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 30;
             var service = new DeliveryServiceClient();
             RecordCount = service.GetDeliveryItemExtraCount(SearchProductID, SearchCompositionStd, SearchCustomer);
             service.Close();
