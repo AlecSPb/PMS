@@ -51,6 +51,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="31*"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
@@ -64,8 +65,7 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="334*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="{StaticResource PlanPlanDate}"
                            Style="{StaticResource StyleTextBlockSpecial}"/>
@@ -248,6 +248,8 @@
                 <StackPanel Grid.Row="21" Grid.Column="2" Orientation="Horizontal">
                     <Button Name="BtnMillingSample" Click="BtnMillingSample_Click" Style="{StaticResource StyleButtonCommon}"
                             Content="取样"/>
+                    <Button Name="BtnNumber" Click="BtnNumber_Click" Style="{StaticResource StyleButtonCommon}"
+                            Content="第 片"/>
                     <TextBlock  Text="填写制粉的要求" Style="{StaticResource StyleTextBlockTip}"
                            Background="LightBlue"/>
                 </StackPanel>
@@ -256,12 +258,16 @@
 
                 <TextBlock Grid.Row="22" Grid.Column="0" Text="{StaticResource PlanFillingRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
-                <ComboBox  Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
+                <ComboBox  Name="CboFillingRequirements" Grid.Row="22" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 
                           ItemsSource="{Binding DataContext.FillingRequirements,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=UserControl}}"
                           Text="{Binding FillingRequirement}"/>
-                <TextBlock Grid.Row="22" Grid.Column="2" Text="填写装料的要求"
+                <StackPanel Grid.Row="22" Grid.Column="2" Orientation="Horizontal">
+                    <Button Name="BtnNumber2" Click="BtnNumber_Click" Style="{StaticResource StyleButtonCommon}"
+                            Content="第 片"/>
+                    <TextBlock Grid.Row="22" Grid.Column="2" Text="填写装料的要求"
                            Style="{StaticResource StyleTextBlockTip}"
                            Background="LightBlue"/>
+                </StackPanel>
                 <TextBlock Grid.Row="23" Grid.Column="0" Text="{StaticResource PlanMachineRequirement}"
                            Style="{StaticResource StyleTextBlockCommon}" />
                 <ComboBox  Grid.Row="23" Grid.Column="1" Style="{StaticResource StyleComboBoxEditable}" 

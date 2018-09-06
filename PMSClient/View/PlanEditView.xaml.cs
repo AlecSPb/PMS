@@ -69,7 +69,23 @@ namespace PMSClient.View
 
         private void BtnMillingSample_Click(object sender, RoutedEventArgs e)
         {
-            CboMillingRequirements.Text += " 取粉末样品";
+            CboMillingRequirements.Text += " 取粉末样品;";
+        }
+
+        private void BtnNumber_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = e.OriginalSource as Button;
+            if (btn != null)
+            {
+                if (btn.Name == "BtnNumber")
+                {
+                    CboMillingRequirements.Text += " 第片;";
+                }
+                else
+                {
+                    CboFillingRequirements.Text += " 第片;";
+                }
+            }
         }
     }
 }

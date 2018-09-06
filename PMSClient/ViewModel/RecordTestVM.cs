@@ -75,7 +75,8 @@ namespace PMSClient.ViewModel
 
         private bool CanCheck(RecordTestExtra arg)
         {
-            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest);
+            return PMSHelper.CurrentSession.IsAuthorized(PMSAccess.EditRecordTest)
+                && arg?.RecordTest.State == PMSCommon.CommonState.未核验.ToString();
         }
 
         private void ActionCheck(RecordTestExtra obj)

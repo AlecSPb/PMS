@@ -73,11 +73,21 @@ namespace PMSClient.ReportsHelperNew
                                 row.Cells[3].Paragraphs[0].Append(item.Plan.MoldDiameter.ToString());
                                 row.Cells[3].VerticalAlignment = VerticalAlignment.Center;
 
+                                //添加440 加工的大靶材到记录单
+                                if ((item.Plan.MillingRequirement.Contains("#") ||
+                                            item.Plan.FillingRequirement.Contains("#"))
+                                    && (item.Plan.PlanType.Contains("其他") ||
+                                            item.Plan.PlanType.Contains("加工")))
+                                {
+                                    string remark = GetBigNumber(item.Plan.MillingRequirement);
+                                    row.Cells[13].Paragraphs[0].Append(remark);
+                                    row.Cells[13].VerticalAlignment = VerticalAlignment.Center;
+                                }
 
                                 //隔行着色
                                 if (row_index % 2 == 0)
                                 {
-                                    for (int j = 0;j< 14; j++)
+                                    for (int j = 0; j < 14; j++)
                                     {
                                         row.Cells[j].FillColor = System.Drawing.Color.LightGray;
                                     }
@@ -97,12 +107,17 @@ namespace PMSClient.ReportsHelperNew
                 #endregion
                 doc.Save();
             }
-            File.Copy(temp, wordFileName,true);
+            File.Copy(temp, wordFileName, true);
             PMSDialogService.Show("生成成功，即将打开");
             System.Diagnostics.Process.Start(wordFileName);
         }
 
-
+        private string GetBigNumber(string millling)
+        {
+            if (string.IsNullOrEmpty(millling))
+                return "";
+            return System.Text.RegularExpressions.Regex.Match(millling, @"#\d*").Value;
+        }
 
 
     }

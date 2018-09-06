@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PMSClient.View"
              mc:Ignorable="d" 
-           d:DesignHeight="800" d:DesignWidth="1000"
+           d:DesignHeight="800" d:DesignWidth="1500"
              DataContext="{Binding Source={StaticResource Locator},Path=RecordBonding}">
     <Grid Background="{StaticResource BGBrushWindow}">
         <Grid.RowDefinitions>
