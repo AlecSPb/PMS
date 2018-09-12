@@ -13,16 +13,16 @@ namespace PMSClient
         {
             if (control != null)
             {
-                control.Text = text;
                 control.Focus();
+                control.Text = text;
             }
         }
         public static void SetTextBoxAppend(TextBox control, string text)
         {
             if (control != null)
             {
-                control.Text += text;
                 control.Focus();
+                control.Text += text;
             }
         }
 

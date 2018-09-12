@@ -2093,6 +2093,9 @@ namespace PMSClient.MainService {
         private System.Guid MaterialOrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MaterialPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderItemNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2216,6 +2219,19 @@ namespace PMSClient.MainService {
                 if ((this.MaterialOrderIDField.Equals(value) != true)) {
                     this.MaterialOrderIDField = value;
                     this.RaisePropertyChanged("MaterialOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MaterialPrice {
+            get {
+                return this.MaterialPriceField;
+            }
+            set {
+                if ((this.MaterialPriceField.Equals(value) != true)) {
+                    this.MaterialPriceField = value;
+                    this.RaisePropertyChanged("MaterialPrice");
                 }
             }
         }

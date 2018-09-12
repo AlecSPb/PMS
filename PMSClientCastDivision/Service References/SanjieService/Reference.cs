@@ -297,6 +297,9 @@ namespace PMSClient.SanjieService {
         private System.Guid MaterialOrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MaterialPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrderItemNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -420,6 +423,19 @@ namespace PMSClient.SanjieService {
                 if ((this.MaterialOrderIDField.Equals(value) != true)) {
                     this.MaterialOrderIDField = value;
                     this.RaisePropertyChanged("MaterialOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double MaterialPrice {
+            get {
+                return this.MaterialPriceField;
+            }
+            set {
+                if ((this.MaterialPriceField.Equals(value) != true)) {
+                    this.MaterialPriceField = value;
+                    this.RaisePropertyChanged("MaterialPrice");
                 }
             }
         }
@@ -643,6 +659,9 @@ namespace PMSClient.SanjieService {
         private string PurityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string QuickRemarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RemarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -751,6 +770,19 @@ namespace PMSClient.SanjieService {
                 if ((object.ReferenceEquals(this.PurityField, value) != true)) {
                     this.PurityField = value;
                     this.RaisePropertyChanged("Purity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string QuickRemark {
+            get {
+                return this.QuickRemarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.QuickRemarkField, value) != true)) {
+                    this.QuickRemarkField = value;
+                    this.RaisePropertyChanged("QuickRemark");
                 }
             }
         }

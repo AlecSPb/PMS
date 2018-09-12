@@ -28,13 +28,13 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
             <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
                 <Grid  DataContext="{Binding CurrentMaterialOrder}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="500"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -107,9 +107,9 @@
                            Text="供应商地址"/>
 
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MORemark}"
-                           Style="{StaticResource StyleTextBlockCommon}"/>
+                           Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
                     <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Remark}" Style="{StaticResource StyleTextBoxCommon}"
-                         />
+                         Background="LightGreen"/>
                     <TextBlock Grid.Row="6" Grid.Column="2" Style="{StaticResource StyleTextBlockTip}"
                            Text="备注信息，总共提供多少原料，不需要PMI to provide前缀"/>
 

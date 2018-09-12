@@ -1,0 +1,57 @@
+﻿<Window x:Class="PMSClient.ToolWindow.MaterialPriceTool"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        WindowStyle="ToolWindow"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="原料订单-单质原料备注填写辅助工具" Height="250" Width="220">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="单质名称"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" Style="{StaticResource StyleComboBoxCommon}"
+                  Name="CboElements"
+                  IsEditable="True"
+                  Text="Cu"
+                  HorizontalAlignment="Stretch"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="单价RMB/kg"/>
+        <TextBox Name="TxtUnitPrice" Grid.Row="1" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                TextAlignment="Right"
+                 Text="0"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="重量kg"/>
+        <TextBox Name="TxtWeight" Grid.Row="2" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                 TextAlignment="Right"
+                 Text="0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource StyleDGTextBlockCommon}"
+                   Text="总价RMB"/>
+        <TextBox Name="TxtTotalPrice" Grid.Row="3" Grid.Column="1" Style="{StaticResource StyleTextBoxCommon}"
+                 Background="LightBlue" IsReadOnly="True"
+                 TextAlignment="Right"
+                 Text="0"/>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Name="BtnCalc" Content="计算" Style="{StaticResource StyleButtonCommon}" Click="BtnCalc_Click"/>
+            <Button Name="BtnFill" Content="填入" Style="{StaticResource StyleButtonCommon}" Click="BtnFill_Click"/>
+
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>

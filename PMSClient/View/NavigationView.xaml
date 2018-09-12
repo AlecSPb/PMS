@@ -58,7 +58,7 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Border BorderBrush="{StaticResource BGNavigationBar}" Margin="2" BorderThickness="1">
                     <Grid>
@@ -190,18 +190,19 @@
 
                     </Grid>
                 </Border>
-                <Border Grid.Column="1" BorderBrush="{StaticResource BGNavigationBar}" Margin="2" BorderThickness="1">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition Height="auto"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Name="CurrentTime" Grid.Row="0" Text="当前时间"
+                <Expander Grid.Column="1" Header="" ExpandDirection="Left" IsExpanded="False">
+                    <Border  BorderBrush="{StaticResource BGNavigationBar}" Margin="2" BorderThickness="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Name="CurrentTime" Grid.Row="0" Text="当前时间"
                                    Foreground="Blue"
                                    FontSize="20" 
                                    HorizontalAlignment="Stretch" 
@@ -209,32 +210,33 @@
                                    Padding="2"
                                    TextAlignment="Center"
                                    Background="LightBlue"/>
-                        <Calendar Grid.Row="1" />
-                        <TextBlock Grid.Row="2" Text="信息" Background="LightGray"
+                            <Calendar Grid.Row="1" />
+                            <TextBlock Grid.Row="2" Text="信息" Background="LightGray"
                                    Padding="2" Margin="0 2" TextAlignment="Center"/>
-                        <TextBlock Grid.Row="3" Text="{Binding OrderCount,StringFormat=已接收订单{0}个}"
+                            <TextBlock Grid.Row="3" Text="{Binding OrderCount,StringFormat=已接收订单{0}个}"
                                    Foreground="Blue"
                                    FontSize="15" 
                                    HorizontalAlignment="Stretch" 
                                    Margin="0 2"
                                    Padding="2"
                                    Background="LightGreen"/>
-                        <TextBlock Grid.Row="4" Text="{Binding UnFinishedOrderCount,StringFormat=待完成订单{0}个}"
+                            <TextBlock Grid.Row="4" Text="{Binding UnFinishedOrderCount,StringFormat=待完成订单{0}个}"
                                    Foreground="Blue"
                                    FontSize="15" 
                                    HorizontalAlignment="Stretch" 
                                    Margin="0 2"
                                    Padding="2"
                                    Background="LightGreen"/>
-                        <TextBlock Grid.Row="5" Text="{Binding PlanedCount,StringFormat=已完成热压{0}机次}"
+                            <TextBlock Grid.Row="5" Text="{Binding PlanedCount,StringFormat=已完成热压{0}机次}"
                                    Foreground="Blue"
                                    FontSize="15" 
                                    HorizontalAlignment="Stretch" 
                                    Margin="0 2"
                                    Padding="2"
                                    Background="LightGreen"/>
-                    </Grid>
-                </Border>
+                        </Grid>
+                    </Border>
+                </Expander>
             </Grid>
         </ScrollViewer>
     </Grid>

@@ -19,6 +19,7 @@ namespace PMSDAL
         public string Description { get; set; }
         public string ProvideRawMaterial { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public double MaterialPrice { get; set; }
         public double UnitPrice { get; set; }
         public double Weight { get; set; }
         public string Priority { get; set; }

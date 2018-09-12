@@ -24,5 +24,31 @@ namespace PMSClient.View
         {
             InitializeComponent();
         }
+
+        private void BtnAsist_Click(object sender, RoutedEventArgs e)
+        {
+            var tool = new ToolWindow.MaterialPriceTool();
+            tool.Fill += Tool_Fill;
+            tool.ShowDialog();
+        }
+
+        private void Tool_Fill(object sender, ToolWindow.MaterialPriceToolArgs e)
+        {
+            try
+            {
+                PMSMethods.SetTextBoxAppend(TxtProvideMaterial, e.ProvideMaterial);
+                double temp;
+                double.TryParse(TxtMaterialPrice.Text, out temp);
+                temp += e.TotalPrice;
+
+                PMSMethods.SetTextBox(TxtMaterialPrice, temp.ToString("F2"));
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
     }
 }

@@ -451,7 +451,8 @@
     <sys:String x:Key="MOIComposition">成分</sys:String>
     <sys:String x:Key="MOIPurity">纯度</sys:String>
     <sys:String x:Key="MOIDescription">订单描述</sys:String>
-    <sys:String x:Key="MOIProvideRawMaterial">提供原料</sys:String>
+    <sys:String x:Key="MOIProvideRawMaterial">提供的单质</sys:String>
+    <sys:String x:Key="MOIMaterialPrice">单质总价值</sys:String>   
     <sys:String x:Key="MOIDeliveryDate">交付日期</sys:String>
     <sys:String x:Key="MOILastDay">剩余天数</sys:String>
     <sys:String x:Key="MOIUnitPrice">单价</sys:String>

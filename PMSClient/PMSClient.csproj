@@ -34,7 +34,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>76</ApplicationRevision>
+    <ApplicationRevision>77</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -352,6 +352,10 @@
     <Compile Include="ToolWindow\EmptyTextBox.xaml.cs">
       <DependentUpon>EmptyTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ToolWindow\MaterialPriceTool.xaml.cs">
+      <DependentUpon>MaterialPriceTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow\MaterialPriceToolArgs.cs" />
     <Compile Include="ToolWindow\Model\SingleElement.cs" />
     <Compile Include="ToolWindow\OrderCheckDialog.xaml.cs">
       <DependentUpon>OrderCheckDialog.xaml</DependentUpon>
@@ -375,6 +379,9 @@
     <Compile Include="DataProcess\ScanInput\ScanInputRecordBondingVM.cs" />
     <Compile Include="ToolWindow\SymbolWindow.xaml.cs">
       <DependentUpon>SymbolWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToolWindow\TargetCuttingTool.xaml.cs">
+      <DependentUpon>TargetCuttingTool.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\TargetDefects.xaml.cs">
       <DependentUpon>TargetDefects.xaml</DependentUpon>
@@ -912,6 +919,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ToolWindow\MaterialPriceTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ToolWindow\OrderCheckDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -937,6 +948,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\SymbolWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\TargetCuttingTool.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1855,12 +1870,12 @@
   <ItemGroup>
     <PublishFile Include="Resource\NoticeData.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

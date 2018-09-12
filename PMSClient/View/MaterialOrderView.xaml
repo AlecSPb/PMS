@@ -230,6 +230,8 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTextColumn Header="{StaticResource MOIMaterialPrice}" ElementStyle="{StaticResource StyleDGTextBlockRight}"
+                                    Binding="{Binding MaterialPrice,StringFormat={}{0:F2}}"/>
                 <DataGridTemplateColumn Header="{StaticResource MOIDescription}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

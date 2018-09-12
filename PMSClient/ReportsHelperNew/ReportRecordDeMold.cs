@@ -112,6 +112,11 @@ namespace PMSClient.ReportsHelperNew
             System.Diagnostics.Process.Start(wordFileName);
         }
 
+        /// <summary>
+        /// 从备注字符串中获取#165格式的编号
+        /// </summary>
+        /// <param name="millling"></param>
+        /// <returns></returns>
         private string GetBigNumber(string millling)
         {
             if (string.IsNullOrEmpty(millling))

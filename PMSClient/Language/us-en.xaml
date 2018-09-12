@@ -444,6 +444,7 @@
     <sys:String x:Key="MOIPurity">Purity</sys:String>
     <sys:String x:Key="MOIDescription">Description</sys:String>
     <sys:String x:Key="MOIProvideRawMaterial">Raw Material</sys:String>
+    <sys:String x:Key="MOIMaterialPrice">All Elements Fee</sys:String>
     <sys:String x:Key="MOIDeliveryDate">Delivery Date</sys:String>
     <sys:String x:Key="MOILastDay">Last Day</sys:String>
     <sys:String x:Key="MOIUnitPrice">Unit Price</sys:String>

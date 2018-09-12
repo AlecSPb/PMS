@@ -27,7 +27,7 @@ namespace PMSClient.ReportsHelper
         private DcMaterialOrder model;
         public void SetModel(DcMaterialOrder order)
         {
-            if (order!=null)
+            if (order != null)
             {
                 model = order;
                 CreateFolderOnDesktop();
@@ -67,6 +67,7 @@ namespace PMSClient.ReportsHelper
                     //插入表格
                     var mainTable = doc.Tables[1];
                     double subTotalMoney = 0;
+                    double elementValue = 0;
                     if (mainTable != null)
                     {
                         for (int i = 0; i < OrderItems.Count; i++)
@@ -105,12 +106,17 @@ namespace PMSClient.ReportsHelper
                             p.Append(descriptionMesseage).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[6].Paragraphs[0];
-                            p.Append(item.UnitPrice.ToString("N0")).FontSize(8);
+                            p.Append(item.MaterialPrice.ToString("N0")).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[7].Paragraphs[0];
+                            p.Append(item.UnitPrice.ToString("N0")).FontSize(8);
+
+                            p = mainTable.Rows[i + 1].Cells[8].Paragraphs[0];
                             double total = item.UnitPrice * item.Weight;
                             p.Append(total.ToString("N0")).FontSize(8);
                             subTotalMoney += total;
+
+                            elementValue += item.MaterialPrice;
                         }
                     }
                     var remark = model.Remark ?? "";
@@ -120,9 +126,11 @@ namespace PMSClient.ReportsHelper
                     }
                     doc.ReplaceText("[Remark]", remark);
                     doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0"));
-                    doc.ReplaceText("[ShipFee]", model.ShipFee.ToString("N0") );
-                    double totalMoney = subTotalMoney + model.ShipFee;
-                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0") );
+                    doc.ReplaceText("[ElementValue]", elementValue.ToString("N0"));
+
+                    doc.ReplaceText("[ShipFee]", model.ShipFee.ToString("N0"));
+                    double totalMoney = subTotalMoney + model.ShipFee + elementValue;
+                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0"));
 
                     doc.Save();
                 }
