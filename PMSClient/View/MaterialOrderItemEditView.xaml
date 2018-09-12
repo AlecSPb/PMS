@@ -121,7 +121,7 @@
                     <TextBlock Grid.Row="6" Grid.Column="0" Text="{StaticResource MOIProvideRawMaterial}"
                            Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>
                     <TextBox Name="TxtProvideMaterial" Grid.Row="6" Grid.Column="1" Text="{Binding ProvideRawMaterial}" Style="{StaticResource StyleTextBoxCommon}"
-                              Background="LightGreen" Grid.ColumnSpan="2"/>
+                              Background="LightGreen"/>
                     
                     <TextBlock Grid.Row="7" Grid.Column="0" Text="{StaticResource MOIMaterialPrice}"
                            Style="{StaticResource StyleTextBlockCommon}" Background="LightGreen"/>

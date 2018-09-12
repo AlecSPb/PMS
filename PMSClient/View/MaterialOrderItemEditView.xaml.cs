@@ -29,7 +29,7 @@ namespace PMSClient.View
         {
             var tool = new ToolWindow.MaterialPriceTool();
             tool.Fill += Tool_Fill;
-            tool.ShowDialog();
+            tool.Show();
         }
 
         private void Tool_Fill(object sender, ToolWindow.MaterialPriceToolArgs e)

@@ -31,7 +31,7 @@ namespace PMSClient.ToolWindow
         {
             elements = new List<string>()
             {
-                "Cu","In","Ga","Se","Bi","Te","Se","Sb","Ag","As","Ge","Si","S","Zn","Ti","Pd","P","Sc"
+                "Cu","In","Ga","Se","Bi","Te","Sb","Ag","As","Ge","Si","S","Zn","Ti","Pd","P","Sc"
             };
             elements.Sort();
             CboElements.ItemsSource = elements;
@@ -63,6 +63,11 @@ namespace PMSClient.ToolWindow
 
             arg.ProvideMaterial = $"{CboElements.Text.Trim()}{TxtWeight.Text.Trim()}kg;";
             Fill?.Invoke(this, arg);
+        }
+
+        private void ChkTopMost_Click(object sender, RoutedEventArgs e)
+        {
+            ChkTopMost.IsChecked = this.Topmost = !this.Topmost;
         }
     }
 }
