@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Topmost="True"
-        Title="原料订单-单质原料备注填写辅助工具" Height="250" Width="300">
+        Title="原料订单-单质原料备注填写辅助工具" Height="270" Width="300">
     <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
