@@ -10,7 +10,7 @@ using AutoMapper;
 namespace PMSWCFService
 {
     public partial class ExtraService : ICheckListService, IItemDebitService, IFeedBackService, IEnvironmentInfoService,
-        INoticeService,IToDoService
+        INoticeService, IToDoService
 
     {
         public int AddCheckList(DcCheckList model, string uid)
@@ -440,7 +440,7 @@ namespace PMSWCFService
 
         }
 
-        public List<DcToDo> GetToDo(string title,string personInCharge, int s, int t)
+        public List<DcToDo> GetToDo(string title, string personInCharge, int s, int t)
         {
             try
             {
@@ -448,10 +448,10 @@ namespace PMSWCFService
                 {
                     Mapper.Initialize(cfg => cfg.CreateMap<ToDo, DcToDo>());
                     var query = from i in dc.ToDoes
-                                where i.Title.Contains(title) 
+                                where i.Title.Contains(title)
                                 && i.PersonInCharge.Contains(personInCharge)
-                                && i.Status!=PMSCommon.ToDoStatus.作废.ToString()
-                                orderby i.CreateTime descending
+                                && i.Status != PMSCommon.ToDoStatus.作废.ToString()
+                                orderby i.Progress ascending, i.CreateTime descending
                                 select i;
 
                     return Mapper.Map<List<ToDo>, List<DcToDo>>(query.Skip(s).Take(t).ToList());
@@ -471,7 +471,7 @@ namespace PMSWCFService
                 using (var dc = new PMSDbContext())
                 {
                     var query = from i in dc.ToDoes
-                                where i.Title.Contains(title) 
+                                where i.Title.Contains(title)
                                 && i.PersonInCharge.Contains(personInCharge)
                                 && i.Status != PMSCommon.ToDoStatus.作废.ToString()
                                 orderby i.CreateTime descending
