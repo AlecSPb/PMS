@@ -861,6 +861,23 @@
     <sys:String x:Key="MTCompositionAbbr">成分缩写</sys:String>
     <sys:String x:Key="MTRemark">备注</sys:String>
 
+    <!--报废产品-->
+    <sys:String x:Key="PageFailure">报废记录</sys:String>
+    <sys:String x:Key="PageFailureEdit">报废记录编辑</sys:String>
+
+    <sys:String x:Key="FID">ID</sys:String>
+    <sys:String x:Key="FCreateTime">创建时间</sys:String>
+    <sys:String x:Key="FCreator">创建人</sys:String>
+    <sys:String x:Key="FState">状态</sys:String>
+    <sys:String x:Key="FProductID">产品ID</sys:String>
+    <sys:String x:Key="Details">细节</sys:String>
+
+    <sys:String x:Key="FStage">报废环节</sys:String>
+    <sys:String x:Key="FProblem">报废原因</sys:String>
+    <sys:String x:Key="FProcess">处理情况</sys:String>
+    <sys:String x:Key="FRemark">备注信息</sys:String>
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarTool">工具</sys:String>
     <sys:String x:Key="BottomBarFillCalculator">装料</sys:String>

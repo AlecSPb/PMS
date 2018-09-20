@@ -856,6 +856,24 @@
     <sys:String x:Key="MTToolNumber">Tool Number</sys:String>
     <sys:String x:Key="MTCompositionAbbr">Composition Abbr</sys:String>
     <sys:String x:Key="MTRemark">Remark</sys:String>
+
+    <!--报废产品-->
+    <sys:String x:Key="PageFailure">Failure</sys:String>
+    <sys:String x:Key="PageFailureEdit">Failure Edit</sys:String>
+
+    <sys:String x:Key="FID">ID</sys:String>
+    <sys:String x:Key="FCreateTime">CreateTime</sys:String>
+    <sys:String x:Key="FCreator">Creator</sys:String>
+    <sys:String x:Key="FState">State</sys:String>
+    <sys:String x:Key="FProductID">ProductID</sys:String>
+    <sys:String x:Key="Details">Details</sys:String>
+
+    <sys:String x:Key="FStage">Stage</sys:String>
+    <sys:String x:Key="FProblem">Problem</sys:String>
+    <sys:String x:Key="FProcess">Process</sys:String>
+    <sys:String x:Key="FRemark">Remark</sys:String>
+
+
     <!--底部工具栏-->
     <sys:String x:Key="BottomBarTool">Tool</sys:String>
     <sys:String x:Key="BottomBarFillCalculator">Filling</sys:String>

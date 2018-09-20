@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace PMSDAL.Entities
     /// </summary>
     public class Failure
     {
+        [Key]
         public Guid ID { get; set; }
         public DateTime CreateTime { get; set; }
         public string Creator { get; set; }
@@ -18,8 +20,8 @@ namespace PMSDAL.Entities
         public string State { get; set; }
         
         public string ProductID { get; set; }
-        public string Composition { get; set; }
-        public string PMINumber { get; set; }
+        //所有的其他信息全部写入Details
+        public string Details { get; set; }
         
         public string Stage { get; set; }
         public string Problem { get; set; }
