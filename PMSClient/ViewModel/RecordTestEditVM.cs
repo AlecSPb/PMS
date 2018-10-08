@@ -167,6 +167,23 @@ namespace PMSClient.ViewModel
             {
                 return;
             }
+
+            string composition = CurrentRecordTest.CompositionXRF;
+            //检测是否错误输入Si，S，P，B，C之类不可测试的元素
+            if (composition.Contains("Si atm%")
+                || composition.Contains("S atm%")
+                || composition.Contains("P atm%")
+                || composition.Contains("B atm%")
+                || composition.Contains("C atm%")
+                )
+            {
+                if (!PMSDialogService.ShowYesNo("请问","成分误包含有Si，S，P，B，C,确定继续保存吗？"))
+                {
+                    return;
+                }
+            }
+
+
             if (CurrentRecordTest.State == "作废")
             {
                 if (!PMSDialogService.ShowYesNo("请问", "确定作废这条记录？"))

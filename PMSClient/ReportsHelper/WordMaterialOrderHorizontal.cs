@@ -106,14 +106,14 @@ namespace PMSClient.ReportsHelper
                             p.Append(descriptionMesseage).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[6].Paragraphs[0];
-                            p.Append(item.MaterialPrice.ToString("N0")).FontSize(8);
+                            p.Append(item.MaterialPrice.ToString("N2")).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[7].Paragraphs[0];
-                            p.Append(item.UnitPrice.ToString("N0")).FontSize(8);
+                            p.Append(item.UnitPrice.ToString("N2")).FontSize(8);
 
                             p = mainTable.Rows[i + 1].Cells[8].Paragraphs[0];
                             double total = item.UnitPrice * item.Weight;
-                            p.Append(total.ToString("N0")).FontSize(8);
+                            p.Append(total.ToString("N2")).FontSize(8);
                             subTotalMoney += total;
 
                             elementValue += item.MaterialPrice;
@@ -125,12 +125,12 @@ namespace PMSClient.ReportsHelper
                         remark = $"PMI to provide:{remark}";
                     }
                     doc.ReplaceText("[Remark]", remark);
-                    doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N0"));
-                    doc.ReplaceText("[ElementValue]", elementValue.ToString("N0"));
+                    doc.ReplaceText("[SubTotalMoney]", subTotalMoney.ToString("N2"));
+                    doc.ReplaceText("[ElementValue]", elementValue.ToString("N2"));
 
-                    doc.ReplaceText("[ShipFee]", model.ShipFee.ToString("N0"));
+                    doc.ReplaceText("[ShipFee]", model.ShipFee.ToString("N2"));
                     double totalMoney = subTotalMoney + model.ShipFee + elementValue;
-                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N0"));
+                    doc.ReplaceText("[TotalMoney]", totalMoney.ToString("N2"));
 
                     doc.Save();
                 }
