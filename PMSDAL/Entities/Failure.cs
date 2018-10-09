@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMSDAL.Entities
+namespace PMSDAL
 {
     /// <summary>
     /// 失败的靶材

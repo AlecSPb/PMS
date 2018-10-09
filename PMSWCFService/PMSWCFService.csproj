@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BasicDataService.svc" />
+    <Content Include="OutputService.svc" />
     <Content Include="HeartBeatService.svc" />
     <Content Include="HistoryService.svc" />
     <Content Include="LargeScreenService.svc" />
@@ -135,6 +136,7 @@
     <Compile Include="DataContracts\DcFeedBack.cs" />
     <Compile Include="DataContracts\DcItemDebit.cs" />
     <Compile Include="DataContracts\DcEnvironmentInfo.cs" />
+    <Compile Include="DataContracts\Model\PMS230DataModel.cs" />
     <Compile Include="DataContracts\Model\PMSDeliveryItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\Model\PMSPlanWithMissonModel.cs" />
@@ -155,6 +157,7 @@
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
+    <Compile Include="ServiceContracts\IOutputService.cs" />
     <Compile Include="ServiceContracts\IEnvironmentInfoService.cs" />
     <Compile Include="ServiceContracts\INoticeService.cs" />
     <Compile Include="ServiceContracts\IFeedBackService.cs" />
@@ -189,6 +192,7 @@
     <Compile Include="ServiceImplements\MaterialInventoryService.cs" />
     <Compile Include="ServiceImplements\BasicDataService.cs" />
     <Compile Include="ServiceImplements\MaintenanceService.cs" />
+    <Compile Include="ServiceImplements\OutputService.cs" />
     <Compile Include="ServiceImplements\OutSourceService.cs" />
     <Compile Include="ServiceImplements\PlateService.cs" />
     <Compile Include="ServiceImplements\PMSIndexService.cs" />

@@ -122,5 +122,9 @@ namespace PMSDAL
         //Tool Inventory
         public DbSet<ToolMilling> ToolMillings { get; set; }
         public DbSet<ToolFilling> ToolFillings { get; set; }
+
+
+        //Failure
+        public DbSet<Failure> Failures { get; set; }
     }
 }
