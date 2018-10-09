@@ -3,7 +3,8 @@ Updates Briefs
 本次更新
 Updates==
 2018-10-15
-
+添加更多编辑提醒到测试记录
+添加Midsummer和Chaozhou综合数据导出Excel统计表格功能
 
 2018-9-13
 紧急在原料订单项目当中添加了单质价值字段
