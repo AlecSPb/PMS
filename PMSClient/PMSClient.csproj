@@ -316,6 +316,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\OutputService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\PMSIndexService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1486,6 +1491,19 @@
     <None Include="Service References\MainService\PMSService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\OutputService\OutputService.wsdl" />
+    <None Include="Service References\OutputService\OutputService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OutputService\OutputService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OutputService\OutputService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OutputService\PMSClient.OutputService.PMS230DataModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\PMSIndexService\PMSIndexService1.disco" />
     <None Include="Service References\MainService\PMSService1.disco" />
     <None Include="Service References\MainService\PMSService1.wsdl" />
@@ -1889,6 +1907,7 @@
     <WCFMetadataStorage Include="Service References\ExtraService\" />
     <WCFMetadataStorage Include="Service References\HeartBeatService\" />
     <WCFMetadataStorage Include="Service References\MainService\" />
+    <WCFMetadataStorage Include="Service References\OutputService\" />
     <WCFMetadataStorage Include="Service References\PMSIndexService\" />
     <WCFMetadataStorage Include="Service References\StatisticService\" />
     <WCFMetadataStorage Include="Service References\UserSimpleService\" />
@@ -1943,6 +1962,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\OutputService\OutputService.disco" />
+    <None Include="Service References\OutputService\configuration91.svcinfo" />
+    <None Include="Service References\OutputService\configuration.svcinfo" />
+    <None Include="Service References\OutputService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Temp\这个文件夹不要删除.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

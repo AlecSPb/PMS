@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3d9fd158-70b1-4742-a7bd-cdaf2097d36e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.16.254:8002/OutputService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OutputService.xsd" MetadataType="Schema" ID="1413a679-e55c-49ed-8690-9e0fd0ee5bb7" SourceId="1" SourceUrl="http://192.168.16.254:8002/OutputService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OutputService1.xsd" MetadataType="Schema" ID="460f33ec-645a-40d4-ae89-fcda01fc0cfd" SourceId="1" SourceUrl="http://192.168.16.254:8002/OutputService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OutputService2.xsd" MetadataType="Schema" ID="2136e4a8-2c87-4df1-8dea-f514e62a709c" SourceId="1" SourceUrl="http://192.168.16.254:8002/OutputService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OutputService.disco" MetadataType="Disco" ID="1624b694-3386-4be9-b729-4db8040fdff4" SourceId="1" SourceUrl="http://192.168.16.254:8002/OutputService.svc?disco" />
+    <MetadataFile FileName="OutputService.wsdl" MetadataType="Wsdl" ID="329765b6-1c8d-4b99-984f-db6ede39e94a" SourceId="1" SourceUrl="http://192.168.16.254:8002/OutputService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
