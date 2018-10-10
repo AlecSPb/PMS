@@ -23,5 +23,23 @@ namespace PMSClient.ToolWindow
         {
             InitializeComponent();
         }
+
+        private void BtnChaozhou_Click(object sender, RoutedEventArgs e)
+        {
+            if (!PMSDialogService.ShowYesNo("请问", $"确定要导出【{BtnChaozhou.Content}】数据吗？"))
+            {
+                return;
+            }
+            try
+            {
+                var excel = new ExcelOutputHelper.ExcelOutputSpecialFor230();
+                excel.Intialize("瑞典潮州230靶材 发货+测试+绑定数据", "Data");
+                excel.Output();
+            }
+            catch (Exception ex)
+            {
+                PMSHelper.CurrentLog.Error(ex);
+            }
+        }
     }
 }

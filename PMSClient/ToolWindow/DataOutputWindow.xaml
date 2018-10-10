@@ -10,8 +10,8 @@
         Title="数据导出窗口" Height="450" Width="300">
     <Grid Margin="2">
         <StackPanel>
-            <Button Content="瑞典潮州 230发货+测试+绑定" Style="{StaticResource StyleButtonCommon}"
-                    HorizontalAlignment="Stretch"/>
+            <Button Name="BtnChaozhou" Content="瑞典潮州 230发货+测试+绑定" Style="{StaticResource StyleButtonCommon}"
+                    HorizontalAlignment="Stretch" Click="BtnChaozhou_Click"/>
         </StackPanel>
     </Grid>
 </Window>
