@@ -145,6 +145,12 @@ namespace PMSClient.ViewModel
             GoToFillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.FillingTool));
             GoToMillingTool = new RelayCommand(() => NavigationService.GoTo(PMSViews.MillingTool));
 
+
+            GoToOutput = new RelayCommand(() =>
+              {
+                  var window = new ToolWindow.DataOutputWindow();
+                  window.Show();
+              });
             #endregion
         }
 
@@ -277,6 +283,9 @@ namespace PMSClient.ViewModel
         public RelayCommand CodeRule { get; set; }
 
         public RelayCommand GoToIntegratedSearch { get; set; }
+
+
+        public RelayCommand GoToOutput { get; set; }
 
         //public RelayCommand GoToAdminUser { get; set; }
         //public RelayCommand GoToAdminRole { get; set; }

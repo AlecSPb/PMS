@@ -1,0 +1,17 @@
+﻿<Window x:Class="PMSClient.ToolWindow.DataOutputWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PMSClient.ToolWindow"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow"
+        Title="数据导出窗口" Height="450" Width="300">
+    <Grid Margin="2">
+        <StackPanel>
+            <Button Content="瑞典潮州 230发货+测试+绑定" Style="{StaticResource StyleButtonCommon}"
+                    HorizontalAlignment="Stretch"/>
+        </StackPanel>
+    </Grid>
+</Window>

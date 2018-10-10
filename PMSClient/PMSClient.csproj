@@ -346,6 +346,9 @@
       <DependentUpon>CompositionSimulator.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolWindow\CompositionSimulatorHelper.cs" />
+    <Compile Include="ToolWindow\DataOutputWindow.xaml.cs">
+      <DependentUpon>DataOutputWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolWindow\DateSelector.xaml.cs">
       <DependentUpon>DateSelector.xaml</DependentUpon>
     </Compile>
@@ -907,6 +910,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ToolWindow\CompositionSimulator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ToolWindow\DataOutputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

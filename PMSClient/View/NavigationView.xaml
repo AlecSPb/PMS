@@ -181,6 +181,10 @@
                                 Style="{StaticResource StyleButtonNavigation}"
                         Command="{Binding GoToFillingTool}"/>
 
+                        <Button Content="{StaticResource PageOutput}" Style="{StaticResource StyleButtonNavigation}"
+                                Command="{Binding GoToOutput}" Grid.Row="7" Grid.Column="3"/>
+
+
                         <Button Content="{StaticResource PageAdmin}" Grid.Row="8" Grid.Column="0" 
                         Style="{StaticResource StyleButtonNavigationTitle}" />
                         <Button Content="{StaticResource PageDebug}" Grid.Row="8" Grid.Column="1"
