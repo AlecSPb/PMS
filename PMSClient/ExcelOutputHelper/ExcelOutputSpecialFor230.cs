@@ -31,7 +31,7 @@ namespace PMSClient.ExcelOutputHelper
 
                 //插入标题行
 
-                string[] titles = { };
+                string[] titles = {"Product ID"};
                 helper.AddRowTitle(titles);
 
                 //插入数据行
@@ -39,6 +39,7 @@ namespace PMSClient.ExcelOutputHelper
                 int s = 0, t = 0;
                 while (pageIndex<pageCount)
                 {
+                    System.Diagnostics.Debug.Write($"{pageIndex} ");
                     s = pageIndex * pageSize;
                     t = pageSize;
 
@@ -48,7 +49,7 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateRow(rowIndex);
                         #region 写入数据行
                         //对XRF成分进行处理
-
+                        helper.CreateAndSetCell(0, item.Delivery.ProductID);
 
 
 

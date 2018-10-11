@@ -33,7 +33,8 @@ namespace PMSClient.ToolWindow
             try
             {
                 var excel = new ExcelOutputHelper.ExcelOutputSpecialFor230();
-                excel.Intialize("瑞典潮州230靶材 发货+测试+绑定数据", "Data");
+                
+                excel.Intialize("瑞典潮州230靶材 发货+测试+绑定数据", "Data", 10);//每页数据设置小一点，防止通信出错
                 excel.Output();
             }
             catch (Exception ex)
