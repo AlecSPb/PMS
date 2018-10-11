@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PMSClient.MainService;
 using PMSClient.OutputService;
+using PMSClient.Helpers;
 
 
 namespace PMSClient.ExcelOutputHelper
@@ -31,15 +32,39 @@ namespace PMSClient.ExcelOutputHelper
 
                 //插入标题行
 
-                string[] titles = {"Product ID"};
+                string[] titles = {"Target ID",
+                    "Customer",
+                    "Composition",
+                    "Abbr",
+                    "Dimension",
+                    "Weight",
+                    "Density",
+                    "Resistance",
+                    "Plate Type",
+                    "Plate Number",
+                    "Bonding Date",
+                    "Bonding Rate",
+                    "Delivery Date",
+                    "Ave-1",
+                    "Ave-2",
+                    "Ave-3",
+                    "Ave-4",
+                    "Max-1",
+                    "Max-2",
+                    "Max-3",
+                    "Min-4",
+                    "Min-1",
+                    "Min-2",
+                    "Min-3",
+                    "Min-4"};
                 helper.AddRowTitle(titles);
 
                 //插入数据行
                 int rowIndex = 1;
                 int s = 0, t = 0;
-                while (pageIndex<pageCount)
+                while (pageIndex < pageCount)
                 {
-                    System.Diagnostics.Debug.Write($"{pageIndex} ");
+                    System.Diagnostics.Debug.WriteLine($"{pageIndex} ");
                     s = pageIndex * pageSize;
                     t = pageSize;
 
@@ -49,10 +74,61 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateRow(rowIndex);
                         #region 写入数据行
                         //对XRF成分进行处理
-                        helper.CreateAndSetCell(0, item.Delivery.ProductID);
+                        helper.CreateAndSetCell(0, item.Delivery?.ProductID);
+                        helper.CreateAndSetCell(1, item.Delivery?.Customer);
+                        helper.CreateAndSetCell(2, item.Delivery?.Composition);
+                        helper.CreateAndSetCell(3, item.Test?.CompositionAbbr);
+                        helper.CreateAndSetCell(4, item.Delivery?.Dimension);
+                        helper.CreateAndSetCell(5, item.Test?.Weight);
+                        helper.CreateAndSetCell(6, item.Test?.Density);
+                        helper.CreateAndSetCell(7, item.Test?.Resistance);
+
+                        helper.CreateAndSetCell(8, item.Bond?.PlateType);
+                        helper.CreateAndSetCell(9, item.Bond?.PlateLot);
+
+                        helper.CreateAndSetCell(10, item.Bond?.CreateTime.ToShortDateString());
+                        helper.CreateAndSetCell(11, item.Bond?.WeldingRate.ToString());
+                        helper.CreateAndSetCell(12, item.Delivery?.CreateTime.ToShortDateString());
 
 
+                        //XRF成分处理
+                        string xrf = item.Test?.CompositionXRF;
+                        if (xrf.StartsWith("No."))
+                        {
+                            XRFResult result = XRFCompositionAnalysis.Anlysis(xrf);
 
+
+                            int col_index = 0;
+                            col_index = 13;
+                            if (result.Average.Count > 0)
+                            {
+                                foreach (var number in result.Average)
+                                {
+                                    helper.CreateAndSetCell(col_index, number.ToString("F2"));
+                                    col_index++;
+                                }
+                            }
+
+                            col_index = 17;
+                            if (result.Max.Count > 0)
+                            {
+                                foreach (var number in result.Max)
+                                {
+                                    helper.CreateAndSetCell(col_index, number.ToString("F2"));
+                                    col_index++;
+                                }
+                            }
+                            col_index = 21;
+                            if (result.Min.Count > 0)
+                            {
+                                foreach (var number in result.Min)
+                                {
+                                    helper.CreateAndSetCell(col_index, number.ToString("F2"));
+                                    col_index++;
+                                }
+                            }
+
+                        }
 
 
 

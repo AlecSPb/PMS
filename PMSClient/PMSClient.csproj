@@ -263,6 +263,7 @@
       <DependentUpon>PMSMessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\VHPHelper.cs" />
+    <Compile Include="Helpers\XRFCompositionAnalysis.cs" />
     <Compile Include="Navbar.xaml.cs">
       <DependentUpon>Navbar.xaml</DependentUpon>
     </Compile>
