@@ -38,6 +38,7 @@ namespace PMSClient.ExcelOutputHelper
                     "Composition",
                     "Abbr",
                     "Dimension",
+                    "Actual Dimension",
                     "Weight",
                     "Density",
                     "Resistance",
@@ -80,16 +81,18 @@ namespace PMSClient.ExcelOutputHelper
                         helper.CreateAndSetCell(2, item.Delivery?.Composition);
                         helper.CreateAndSetCell(3, item.Test?.CompositionAbbr);
                         helper.CreateAndSetCell(4, item.Delivery?.Dimension);
-                        helper.CreateAndSetCell(5, item.Test?.Weight);
-                        helper.CreateAndSetCell(6, item.Test?.Density);
-                        helper.CreateAndSetCell(7, item.Test?.Resistance);
+                        helper.CreateAndSetCell(5, item.Test?.DimensionActual);
 
-                        helper.CreateAndSetCell(8, item.Bond?.PlateType);
-                        helper.CreateAndSetCell(9, item.Bond?.PlateLot);
+                        helper.CreateAndSetCell(6, item.Test?.Weight);
+                        helper.CreateAndSetCell(7, item.Test?.Density);
+                        helper.CreateAndSetCell(8, item.Test?.Resistance);
 
-                        helper.CreateAndSetCell(10, item.Bond?.CreateTime.ToShortDateString());
-                        helper.CreateAndSetCell(11, item.Bond?.WeldingRate.ToString());
-                        helper.CreateAndSetCell(12, item.Delivery?.CreateTime.ToShortDateString());
+                        helper.CreateAndSetCell(9, item.Bond?.PlateType);
+                        helper.CreateAndSetCell(10, item.Bond?.PlateLot);
+
+                        helper.CreateAndSetCell(11, item.Bond?.CreateTime.ToShortDateString());
+                        helper.CreateAndSetCell(12, item.Bond?.WeldingRate.ToString());
+                        helper.CreateAndSetCell(13, item.Delivery?.CreateTime.ToShortDateString());
 
 
                         //XRF成分处理
@@ -101,7 +104,9 @@ namespace PMSClient.ExcelOutputHelper
 
 
                             int col_index = 0;
-                            col_index = 13;
+                            const int start_col_index = 14;
+
+                            col_index = start_col_index;
                             if (result.Average.Count > 0)
                             {
                                 foreach (var number in result.Average)
@@ -111,7 +116,7 @@ namespace PMSClient.ExcelOutputHelper
                                 }
                             }
 
-                            col_index = 17;
+                            col_index = start_col_index + 4;
                             if (result.Max.Count > 0)
                             {
                                 foreach (var number in result.Max)
@@ -120,7 +125,7 @@ namespace PMSClient.ExcelOutputHelper
                                     col_index++;
                                 }
                             }
-                            col_index = 21;
+                            col_index = start_col_index + 8;
                             if (result.Min.Count > 0)
                             {
                                 foreach (var number in result.Min)
