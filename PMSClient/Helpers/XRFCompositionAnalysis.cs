@@ -31,48 +31,62 @@ namespace PMSClient.Helpers
         {
             XRFResult result = new XRFResult();
 
-            //判定是否包含成分
-            if (!xrf.StartsWith("No."))
+            try
             {
-                return result;
+                //判定是否包含成分
+                if (!xrf.StartsWith("No."))
+                {
+                    return result;
+                }
+
+                string[] lines = xrf.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                //存储原始数据，不包含首行，首列,平均
+                List<List<double>> raw_data = new List<List<double>>();
+                for (int i = 1; i < lines.Length - 1; i++)
+                {
+                    string line = lines[i];
+
+                    if (string.IsNullOrEmpty(line) || line.StartsWith("No."))
+                    {
+                        continue;
+                    }
+
+                    string[] temps = line.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                    List<double> line_data = new List<double>();
+
+                    for (int j = 1; j < temps.Length; j++)
+                    {
+                        double n = 0;
+                        double.TryParse(temps[j], out n);
+                        line_data.Add(n);
+                    }
+                    raw_data.Add(line_data);
+                }
+
+                //只有在xrf元素数据小于5的时候进行写入
+                if (raw_data.Count > 0 && raw_data[0].Count <= 4)
+                {
+                    //最大,最小,平均
+                    for (int col = 0; col < raw_data[0].Count; col++)
+                    {
+                        List<double> temp = new List<double>();
+                        temp.Clear();
+                        for (int row = 0; row < raw_data.Count; row++)
+                        {
+                            temp.Add(raw_data[row][col]);
+                        }
+                        result.Max.Add(temp.Max());
+                        result.Min.Add(temp.Min());
+                        result.Average.Add(temp.Average());
+                    }
+                }
+
             }
-
-            string[] lines = xrf.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-            //存储原始数据，不包含首行，首列,平均
-            List<List<double>> raw_data = new List<List<double>>();
-            for (int i = 1; i < lines.Length - 1; i++)
+            catch (Exception ex)
             {
-                string line = lines[i];
 
-                if (string.IsNullOrEmpty(line) || line.StartsWith("No."))
-                {
-                    continue;
-                }
-
-                string[] temps = line.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                List<double> line_data = new List<double>();
-
-                for (int j = 1; j < temps.Length; j++)
-                {
-                    double n = 0;
-                    double.TryParse(temps[j], out n);
-                    line_data.Add(n);
-                }
-                raw_data.Add(line_data);
-            }
-            //最大,最小,平均
-            for (int col = 0; col < raw_data[0].Count; col++)
-            {
-                List<double> temp = new List<double>();
-                temp.Clear();
-                for (int row = 0; row < raw_data.Count; row++)
-                {
-                    temp.Add(raw_data[row][col]);
-                }
-                result.Max.Add(temp.Max());
-                result.Min.Add(temp.Min());
-                result.Average.Add(temp.Average());
+                throw ex;
             }
 
             return result;

@@ -28,7 +28,8 @@ namespace PMSWCFService
                             from bbdata in bb.DefaultIfEmpty()
                             join b in db.RecordBondings on dd.ProductID equals b.TargetProductID into cc
                             from ccdata in cc.DefaultIfEmpty()
-                            where (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
+                            where dd.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
+                            && (dd.Customer == "Midsummer" || dd.Customer == "Chaozhou")
                             && dd.Dimension.Contains("230")
                             orderby dd.ProductID ascending
                             select new EFModel
@@ -64,7 +65,8 @@ namespace PMSWCFService
                             from bbdata in bb.DefaultIfEmpty()
                             join b in db.RecordBondings on d.ProductID equals b.TargetProductID into cc
                             from ccdata in cc.DefaultIfEmpty()
-                            where (d.Customer == "Midsummer" || d.Customer == "Chaozhou")
+                            where d.State == "正常" && bbdata.State == "已核验" && ccdata.State == "完成"
+                            && (d.Customer == "Midsummer" || d.Customer == "Chaozhou")
                             && d.Dimension.Contains("230")
                             select new
                             {

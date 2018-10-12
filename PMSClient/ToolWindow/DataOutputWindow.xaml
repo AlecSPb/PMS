@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:PMSClient.ToolWindow"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        WindowStyle="SingleBorderWindow"
-        Title="数据导出窗口" Height="450" Width="300">
+        WindowStyle="ToolWindow"
+        Title="数据导出" Height="450" Width="300">
     <Grid Margin="2">
         <StackPanel>
-            <Button Name="BtnChaozhou" Content="瑞典潮州 230发货+测试+绑定" Style="{StaticResource StyleButtonCommon}"
+            <TextBlock Text="请点击需要的按钮" Style="{StaticResource StyleDGTextBlockCommon}"/>
+            <Button Name="BtnChaozhou" Content="瑞典潮州 230发货+测试+绑定" Style="{StaticResource StyleButtonNavigation}"
                     HorizontalAlignment="Stretch" Click="BtnChaozhou_Click"/>
         </StackPanel>
     </Grid>

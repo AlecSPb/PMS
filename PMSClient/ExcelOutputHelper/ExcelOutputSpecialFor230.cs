@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using PMSClient.MainService;
 using PMSClient.OutputService;
 using PMSClient.Helpers;
+using System.IO;
 
 
 namespace PMSClient.ExcelOutputHelper
@@ -93,6 +94,7 @@ namespace PMSClient.ExcelOutputHelper
 
                         //XRF成分处理
                         string xrf = item.Test?.CompositionXRF;
+
                         if (xrf.StartsWith("No."))
                         {
                             XRFResult result = XRFCompositionAnalysis.Anlysis(xrf);
@@ -143,8 +145,12 @@ namespace PMSClient.ExcelOutputHelper
 
 
                 helper.Save(excelFileName);
-                PMSDialogService.Show($"{excelFileName}创建完毕,请到桌面查看");
+                PMSDialogService.Show($"{excelFileName}创建到桌面完毕,确定后自动打开");
 
+                if (File.Exists(excelFileName))
+                {
+                    System.Diagnostics.Process.Start(excelFileName);
+                }
             }
         }
 
