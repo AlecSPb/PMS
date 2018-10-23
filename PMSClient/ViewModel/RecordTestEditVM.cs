@@ -7,6 +7,9 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using PMSClient.MainService;
 using System.Collections.ObjectModel;
+using PMSClient.CheckLogic;
+
+
 
 namespace PMSClient.ViewModel
 {
@@ -177,11 +180,25 @@ namespace PMSClient.ViewModel
                 || composition.Contains("C atm%")
                 )
             {
-                if (!PMSDialogService.ShowYesNo("请问","成分误包含有Si，S，P，B，C,确定继续保存吗？"))
+                if (!PMSDialogService.ShowYesNo("请问", "成分误包含有Si，S，P，B，C,确定继续保存吗？"))
                 {
                     return;
                 }
             }
+
+            //密度检查
+            string abbr = CurrentRecordTest.CompositionAbbr;
+            double density = 0;
+            double.TryParse(CurrentRecordTest.Density, out density);
+            if (!string.IsNullOrEmpty(abbr) && density != 0)
+            {
+                CheckMessage msg = RecordTestLogic.IsDensityOK(abbr, density);
+                if (!msg.isCheckOK)
+                {
+                    PMSDialogService.ShowWarning(msg.Message);
+                }
+            }
+
 
 
             if (CurrentRecordTest.State == "作废")

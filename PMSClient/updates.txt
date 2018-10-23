@@ -2,6 +2,11 @@
 Updates Briefs
 本次更新
 Updates==
+2018-10-23
+测试记录添加提示规则
+	CIGS>6.5
+	SAG >4.3
+
 2018-10-15
 添加更多编辑提醒到测试记录
 添加Midsummer和Chaozhou综合数据导出Excel统计表格功能

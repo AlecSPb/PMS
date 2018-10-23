@@ -34,7 +34,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.html</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>78</ApplicationRevision>
+    <ApplicationRevision>79</ApplicationRevision>
     <ApplicationVersion>4.5.8.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -168,6 +168,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CheckLogic\CheckMessage.cs" />
+    <Compile Include="CheckLogic\RecordTestLogic.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputBase.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputFeedback.cs" />
     <Compile Include="CsvOutputHelper\CsvOutputOutSource.cs" />
