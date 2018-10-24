@@ -20,7 +20,17 @@ namespace PMSClient.CheckLogic
             else if (CheckElementExists(abbr, "Se-As-Ge"))
             {
                 check.isCheckOK = density_actual > 4.3;
-                check.Message = "Se-As-Ge的密度一般大于4.3";
+                check.Message = "Se-As-Ge的密度一般大于4.3g/cm3";
+            }
+            else if (abbr.Contains("InS"))
+            {
+                check.isCheckOK = density_actual > 4.4;
+                check.Message = "In-S的密度一般大于4.4g/cm3";
+            }
+            else if (abbr.Contains("InSe"))
+            {
+                check.isCheckOK = density_actual > 5.4;
+                check.Message = "In-Se的密度一般大于5.4g/cm3";
             }
             return check;
         }
