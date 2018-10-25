@@ -45,7 +45,7 @@ namespace ImportTargetPhotoIntoReport
         private PhotoProcess pp;
 
 
-        private void SetFolderPath(TextBox txt,string message)
+        private void SetFolderPath(TextBox txt, string message)
         {
             if (txt != null)
             {
@@ -68,23 +68,34 @@ namespace ImportTargetPhotoIntoReport
 
         private void BtnScanFolderSelect_Click(object sender, EventArgs e)
         {
-            SetFolderPath(TxtCscanFolder, "请选择CSCAN报告所在的文件夹，确保都是jpg格式");       
+            SetFolderPath(TxtCscanFolder, "请选择CSCAN报告所在的文件夹，确保都是jpg格式");
             AddStatus("CSCAN图片文件夹设置完毕！");
 
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
+            BtnStart.Enabled = false;
             sb.Clear();
-            pp.LoadFile(TxtCoaFolder.Text,TxtCscanFolder.Text);
-            if(MessageBox.Show("载入文件完成，继续处理吗？", "请问", MessageBoxButtons.OKCancel,MessageBoxIcon.Question)
+            pp.LoadFile(TxtCoaFolder.Text, TxtCscanFolder.Text);
+            if (MessageBox.Show("载入文件完成，继续处理吗？", "请问", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                 == DialogResult.OK)
             {
-                pp.Process();
-                AddStatus("处理完毕");
+                Task.Factory.StartNew(StartProcess);
             }
 
 
+        }
+
+        private void StartProcess()
+        {
+            pp.Process();
+            AddStatus("处理完毕");
+
+            this.Invoke(new Action(() =>
+            {
+                this.BtnStart.Enabled = true;
+            }));
         }
 
         private StringBuilder sb;
@@ -92,12 +103,18 @@ namespace ImportTargetPhotoIntoReport
         private void AddStatus(string msg)
         {
             sb.Insert(0, $"{DateTime.Now.ToLongTimeString()}=>{msg}\r\n");
-            TxtStatus.Text = sb.ToString();
+            this.Invoke(new Action(() =>
+            {
+                TxtStatus.Text = sb.ToString();
+            }));
         }
 
         private void ChangeProgressBarValue(int value)
         {
-            PbValue.Value = value;
+            this.Invoke(new Action(() =>
+            {
+                PbValue.Value = value;
+            }));
         }
 
         private void ChkPrintProductID_CheckedChanged(object sender, EventArgs e)

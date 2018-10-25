@@ -49,7 +49,7 @@ namespace ImportTargetPhotoIntoReport
                 JpegFiles = GetJPEGFullNames(jpegFolder);
                 TriggerMessageEvent("文件载入完毕");
 
-                TriggerMessageEvent($"图片文件夹中有{DocxFiles.Count}个docx文件");
+                TriggerMessageEvent($"COA文件夹中有{DocxFiles.Count}个docx文件");
 
                 TriggerMessageEvent($"图片文件夹中有{JpegFiles.Count}个jpg文件");
 
@@ -92,7 +92,7 @@ namespace ImportTargetPhotoIntoReport
                 }
 
                 //模拟演示
-                System.Threading.Thread.Sleep(2000);
+                System.Threading.Thread.Sleep(1000);
 
                 string product_id = GetProductIDFromDocxName(docx).Replace('_', '-');
                 if (product_id != "")
