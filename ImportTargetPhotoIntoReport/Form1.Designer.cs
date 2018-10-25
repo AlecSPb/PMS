@@ -179,7 +179,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "COA报告追加超声照片辅助程序 designed by xs.zhou@2018";
+            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 

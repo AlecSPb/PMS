@@ -15,6 +15,13 @@ namespace ImportTargetPhotoIntoReport
         public Form1()
         {
             InitializeComponent();
+
+            InitializeThis();
+        }
+
+        private void InitializeThis()
+        {
+            this.Text = "COA报告批量追加超声照片辅助程序 designed by xs.zhou@2018";
             pp = new PhotoProcess();
             pp.ChangeMessage += (s, arg) =>
             {
@@ -29,10 +36,10 @@ namespace ImportTargetPhotoIntoReport
 
             sb = new StringBuilder();
             string current_folder = Environment.CurrentDirectory;
-            TxtCoaFolder.Text =System.IO.Path.Combine(current_folder,"Input","Docx");
+            TxtCoaFolder.Text = System.IO.Path.Combine(current_folder, "Input", "Docx");
             TxtCscanFolder.Text = System.IO.Path.Combine(current_folder, "Input", "Cscan");
 
-            TxtStatus.Text = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory,"readme.txt"));
+            TxtStatus.Text = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory, "readme.txt"));
         }
 
         private PhotoProcess pp;
