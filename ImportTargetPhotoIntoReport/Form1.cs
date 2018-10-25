@@ -16,10 +16,16 @@ namespace ImportTargetPhotoIntoReport
         {
             InitializeComponent();
             pp = new PhotoProcess();
-            pp.ChangeStatus += (s, arg) =>
+            pp.ChangeMessage += (s, arg) =>
             {
                 AddStatus(arg.Message);
             };
+
+            pp.ChangeProcess += (s, e) =>
+            {
+                ChangeProgressBarValue(e.Progress);
+            };
+
 
             sb = new StringBuilder();
             string current_folder = Environment.CurrentDirectory;
@@ -80,6 +86,11 @@ namespace ImportTargetPhotoIntoReport
         {
             sb.Insert(0, $"{DateTime.Now.ToLongTimeString()}=>{msg}\r\n");
             TxtStatus.Text = sb.ToString();
+        }
+
+        private void ChangeProgressBarValue(int value)
+        {
+            PbValue.Value = value;
         }
 
         private void ChkPrintProductID_CheckedChanged(object sender, EventArgs e)

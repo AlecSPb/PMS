@@ -30,7 +30,8 @@ namespace ImportTargetPhotoIntoReport
             IsOpenOutputDirectory = true;
         }
 
-        public event EventHandler<PhotoProcessEventArgs> ChangeStatus;
+        public event EventHandler<ProcessMessageEventArg> ChangeMessage;
+        public event EventHandler<ProcessValueEventArg> ChangeProcess;
         /// <summary>
         /// 加载所有的docx，jpeg文件到处理列表
         /// </summary>
@@ -46,11 +47,11 @@ namespace ImportTargetPhotoIntoReport
             {
                 DocxFiles = GetDocxFullNames(docxFolder);
                 JpegFiles = GetJPEGFullNames(jpegFolder);
-                TriggerEvent("文件载入完毕");
+                TriggerMessageEvent("文件载入完毕");
 
-                TriggerEvent($"图片文件夹中有{DocxFiles.Count}个docx文件");
+                TriggerMessageEvent($"图片文件夹中有{DocxFiles.Count}个docx文件");
 
-                TriggerEvent($"图片文件夹中有{JpegFiles.Count}个jpg文件");
+                TriggerMessageEvent($"图片文件夹中有{JpegFiles.Count}个jpg文件");
 
 
                 //在docxfolder中创建targetfolder
@@ -59,28 +60,39 @@ namespace ImportTargetPhotoIntoReport
                 {
                     Directory.CreateDirectory(targetFolder);
                 }
-                TriggerEvent($"目标文件夹创建完毕{targetFolder}");
+                TriggerMessageEvent($"目标文件夹创建完毕{targetFolder}");
 
             }
         }
 
         private string targetFolder;
 
-        private void TriggerEvent(string msg)
+        private void TriggerMessageEvent(string msg)
         {
-            ChangeStatus?.Invoke(this, new PhotoProcessEventArgs() { Message = msg });
+            ChangeMessage?.Invoke(this, new ProcessMessageEventArg() { Message = msg });
         }
 
+        public void TriggerProgressEvent(int value)
+        {
+            ChangeProcess?.Invoke(this, new ProcessValueEventArg() { Progress = value });
+        }
+
+        private string error_prefix = "[Error]:";
         public void Process()
         {
+            int total = DocxFiles.Count;
+            int count = 0;
 
             foreach (var docx in DocxFiles)
             {
                 if (!File.Exists(docx))
                 {
-                    TriggerEvent($"没有找到对应的{Path.GetFileNameWithoutExtension(docx)}文件");
+                    TriggerMessageEvent($"没有找到对应的{Path.GetFileNameWithoutExtension(docx)}文件");
                     continue;
                 }
+
+                //模拟演示
+                System.Threading.Thread.Sleep(2000);
 
                 string product_id = GetProductIDFromDocxName(docx).Replace('_', '-');
                 if (product_id != "")
@@ -112,13 +124,19 @@ namespace ImportTargetPhotoIntoReport
 
                     if (!hasFind)
                     {
-                        TriggerEvent($"{Path.GetFileNameWithoutExtension(docx)}没有找到对应的jpg图片");
+                        TriggerMessageEvent($"{error_prefix}{Path.GetFileNameWithoutExtension(docx)}没有找到对应的jpg图片");
                     }
+                    count++;
 
+                    int progress_value = count * 100 / total;
+                    if (progress_value <= 100)
+                    {
+                        TriggerProgressEvent(progress_value);
+                    }
                 }
                 else
                 {
-                    TriggerEvent($"{Path.GetFileNameWithoutExtension(docx)}产品ID解析有问题");
+                    TriggerMessageEvent($"{error_prefix}{Path.GetFileNameWithoutExtension(docx)}产品ID解析有问题");
                 }
 
             }
@@ -152,6 +170,12 @@ namespace ImportTargetPhotoIntoReport
                 {
                     img_file = AddWaterPrintToImage(jpegFile);
                 }
+
+                if (img_file == null)
+                {
+                    return;
+                }
+
                 img = doc.AddImage(img_file);
 
                 var pic = img.CreatePicture();
@@ -166,7 +190,7 @@ namespace ImportTargetPhotoIntoReport
             }
             else
             {
-                throw new FileNotFoundException("docx文档和jpeg文档没有找到");
+                TriggerMessageEvent($"{error_prefix}docx文档和jpeg文档没有找到");
             }
         }
 
@@ -250,16 +274,25 @@ namespace ImportTargetPhotoIntoReport
         /// <returns></returns>
         private string AddWaterPrintToImage(string jpgName)
         {
-            System.Drawing.Image img = System.Drawing.Image.FromFile(jpgName);
-            Graphics g = Graphics.FromImage(img);
-            string product_id = Path.GetFileNameWithoutExtension(jpgName);
-            System.Drawing.Font font = new System.Drawing.Font("Arial", 15);
-            g.DrawString(product_id, font, Brushes.Orange, 10, 10);
-            MemoryStream ms = new MemoryStream();
-            string tmp = Path.Combine(Environment.CurrentDirectory, "tmp", "tmp.jpg");
-            img.Save(tmp);
-            g.Dispose();
-            return tmp;
+            try
+            {
+                System.Drawing.Image img = System.Drawing.Image.FromFile(jpgName);
+                Graphics g = Graphics.FromImage(img);
+                string product_id = Path.GetFileNameWithoutExtension(jpgName);
+                System.Drawing.Font font = new System.Drawing.Font("Arial", 15);
+                g.DrawString(product_id, font, Brushes.Orange, 10, 10);
+                MemoryStream ms = new MemoryStream();
+                string tmp = Path.Combine(Environment.CurrentDirectory, "tmp", "tmp.jpg");
+                img.Save(tmp);
+                g.Dispose();
+                img.Dispose();
+                return tmp;
+            }
+            catch (Exception ex)
+            {
+                TriggerMessageEvent($"{error_prefix}{ex.Message}");
+                return null;
+            }
         }
 
 

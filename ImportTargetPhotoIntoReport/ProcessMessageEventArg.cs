@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImportTargetPhotoIntoReport
 {
-    public class PhotoProcessEventArgs:EventArgs
+    public class ProcessMessageEventArg:EventArgs
     {
         public string Message { get; set; }
     }
