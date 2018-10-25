@@ -37,30 +37,35 @@
             this.BtnStart = new System.Windows.Forms.Button();
             this.PbValue = new System.Windows.Forms.ProgressBar();
             this.TxtStatus = new System.Windows.Forms.TextBox();
+            this.ChkPrintProductID = new System.Windows.Forms.CheckBox();
+            this.chkOpenOutput = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 12);
+            this.label1.Size = new System.Drawing.Size(106, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "COA报告文件夹";
             // 
             // TxtCoaFolder
             // 
-            this.TxtCoaFolder.Location = new System.Drawing.Point(101, 10);
+            this.TxtCoaFolder.Location = new System.Drawing.Point(135, 12);
+            this.TxtCoaFolder.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCoaFolder.Name = "TxtCoaFolder";
             this.TxtCoaFolder.ReadOnly = true;
-            this.TxtCoaFolder.Size = new System.Drawing.Size(525, 21);
+            this.TxtCoaFolder.Size = new System.Drawing.Size(1005, 25);
             this.TxtCoaFolder.TabIndex = 1;
             // 
             // BtnCoaFolderSelect
             // 
-            this.BtnCoaFolderSelect.Location = new System.Drawing.Point(632, 8);
+            this.BtnCoaFolderSelect.Location = new System.Drawing.Point(1148, 8);
+            this.BtnCoaFolderSelect.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCoaFolderSelect.Name = "BtnCoaFolderSelect";
-            this.BtnCoaFolderSelect.Size = new System.Drawing.Size(75, 23);
+            this.BtnCoaFolderSelect.Size = new System.Drawing.Size(100, 29);
             this.BtnCoaFolderSelect.TabIndex = 2;
             this.BtnCoaFolderSelect.Text = "浏览";
             this.BtnCoaFolderSelect.UseVisualStyleBackColor = true;
@@ -69,25 +74,28 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 42);
+            this.label2.Location = new System.Drawing.Point(16, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 12);
+            this.label2.Size = new System.Drawing.Size(112, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "超声图片文件夹";
             // 
             // TxtCscanFolder
             // 
-            this.TxtCscanFolder.Location = new System.Drawing.Point(101, 39);
+            this.TxtCscanFolder.Location = new System.Drawing.Point(135, 49);
+            this.TxtCscanFolder.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCscanFolder.Name = "TxtCscanFolder";
             this.TxtCscanFolder.ReadOnly = true;
-            this.TxtCscanFolder.Size = new System.Drawing.Size(525, 21);
+            this.TxtCscanFolder.Size = new System.Drawing.Size(1005, 25);
             this.TxtCscanFolder.TabIndex = 1;
             // 
             // BtnScanFolderSelect
             // 
-            this.BtnScanFolderSelect.Location = new System.Drawing.Point(632, 37);
+            this.BtnScanFolderSelect.Location = new System.Drawing.Point(1148, 44);
+            this.BtnScanFolderSelect.Margin = new System.Windows.Forms.Padding(4);
             this.BtnScanFolderSelect.Name = "BtnScanFolderSelect";
-            this.BtnScanFolderSelect.Size = new System.Drawing.Size(75, 23);
+            this.BtnScanFolderSelect.Size = new System.Drawing.Size(100, 29);
             this.BtnScanFolderSelect.TabIndex = 2;
             this.BtnScanFolderSelect.Text = "浏览";
             this.BtnScanFolderSelect.UseVisualStyleBackColor = true;
@@ -95,9 +103,10 @@
             // 
             // BtnStart
             // 
-            this.BtnStart.Location = new System.Drawing.Point(535, 76);
+            this.BtnStart.Location = new System.Drawing.Point(1061, 95);
+            this.BtnStart.Margin = new System.Windows.Forms.Padding(4);
             this.BtnStart.Name = "BtnStart";
-            this.BtnStart.Size = new System.Drawing.Size(172, 36);
+            this.BtnStart.Size = new System.Drawing.Size(187, 45);
             this.BtnStart.TabIndex = 3;
             this.BtnStart.Text = "开始处理";
             this.BtnStart.UseVisualStyleBackColor = true;
@@ -105,25 +114,56 @@
             // 
             // PbValue
             // 
-            this.PbValue.Location = new System.Drawing.Point(12, 118);
+            this.PbValue.Location = new System.Drawing.Point(13, 102);
+            this.PbValue.Margin = new System.Windows.Forms.Padding(4);
             this.PbValue.Name = "PbValue";
-            this.PbValue.Size = new System.Drawing.Size(695, 23);
+            this.PbValue.Size = new System.Drawing.Size(651, 29);
             this.PbValue.TabIndex = 4;
             // 
             // TxtStatus
             // 
-            this.TxtStatus.Location = new System.Drawing.Point(14, 157);
+            this.TxtStatus.Location = new System.Drawing.Point(19, 148);
+            this.TxtStatus.Margin = new System.Windows.Forms.Padding(4);
             this.TxtStatus.Multiline = true;
             this.TxtStatus.Name = "TxtStatus";
             this.TxtStatus.ReadOnly = true;
-            this.TxtStatus.Size = new System.Drawing.Size(693, 334);
+            this.TxtStatus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TxtStatus.Size = new System.Drawing.Size(1229, 636);
             this.TxtStatus.TabIndex = 5;
+            // 
+            // ChkPrintProductID
+            // 
+            this.ChkPrintProductID.AutoSize = true;
+            this.ChkPrintProductID.Checked = true;
+            this.ChkPrintProductID.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ChkPrintProductID.Location = new System.Drawing.Point(684, 107);
+            this.ChkPrintProductID.Name = "ChkPrintProductID";
+            this.ChkPrintProductID.Size = new System.Drawing.Size(150, 19);
+            this.ChkPrintProductID.TabIndex = 6;
+            this.ChkPrintProductID.Text = "图片左上角加入ID";
+            this.ChkPrintProductID.UseVisualStyleBackColor = true;
+            this.ChkPrintProductID.CheckedChanged += new System.EventHandler(this.ChkPrintProductID_CheckedChanged);
+            // 
+            // chkOpenOutput
+            // 
+            this.chkOpenOutput.AutoSize = true;
+            this.chkOpenOutput.Checked = true;
+            this.chkOpenOutput.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOpenOutput.Location = new System.Drawing.Point(850, 109);
+            this.chkOpenOutput.Name = "chkOpenOutput";
+            this.chkOpenOutput.Size = new System.Drawing.Size(179, 19);
+            this.chkOpenOutput.TabIndex = 7;
+            this.chkOpenOutput.Text = "完成后打开目标文件夹";
+            this.chkOpenOutput.UseVisualStyleBackColor = true;
+            this.chkOpenOutput.CheckedChanged += new System.EventHandler(this.chkOpenOutput_CheckedChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 503);
+            this.ClientSize = new System.Drawing.Size(1261, 792);
+            this.Controls.Add(this.chkOpenOutput);
+            this.Controls.Add(this.ChkPrintProductID);
             this.Controls.Add(this.TxtStatus);
             this.Controls.Add(this.PbValue);
             this.Controls.Add(this.BtnStart);
@@ -134,10 +174,12 @@
             this.Controls.Add(this.TxtCoaFolder);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "COA报告超声照片导入程序 designed by xs.zhou";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "COA报告追加超声照片辅助程序 designed by xs.zhou";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +196,8 @@
         private System.Windows.Forms.Button BtnStart;
         private System.Windows.Forms.ProgressBar PbValue;
         private System.Windows.Forms.TextBox TxtStatus;
+        private System.Windows.Forms.CheckBox ChkPrintProductID;
+        private System.Windows.Forms.CheckBox chkOpenOutput;
     }
 }
 

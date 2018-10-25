@@ -15,7 +15,22 @@ namespace ImportTargetPhotoIntoReport
         public Form1()
         {
             InitializeComponent();
+            pp = new PhotoProcess();
+            pp.ChangeStatus += (s, arg) =>
+            {
+                AddStatus(arg.Message);
+            };
+
+            sb = new StringBuilder();
+            string current_folder = Environment.CurrentDirectory;
+            TxtCoaFolder.Text =System.IO.Path.Combine(current_folder,"Input","Docx");
+            TxtCscanFolder.Text = System.IO.Path.Combine(current_folder, "Input", "Cscan");
+
+            TxtStatus.Text = System.IO.File.ReadAllText(System.IO.Path.Combine(Environment.CurrentDirectory,"readme.txt"));
         }
+
+        private PhotoProcess pp;
+
 
         private void SetFolderPath(TextBox txt,string message)
         {
@@ -35,31 +50,46 @@ namespace ImportTargetPhotoIntoReport
         private void BtnCoaFolderSelect_Click(object sender, EventArgs e)
         {
             SetFolderPath(TxtCoaFolder, "请选择COA报告所在的文件夹，确保都是docx格式");
+            AddStatus("COA报告文件夹设置完毕！");
         }
 
         private void BtnScanFolderSelect_Click(object sender, EventArgs e)
         {
-            SetFolderPath(TxtCscanFolder, "请选择CSCAN报告所在的文件夹，确保都是jpg格式");            
+            SetFolderPath(TxtCscanFolder, "请选择CSCAN报告所在的文件夹，确保都是jpg格式");       
+            AddStatus("CSCAN图片文件夹设置完毕！");
+
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            var pp = new PhotoProcess();
-            string sourceFolder = Environment.CurrentDirectory;
-            string targetFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string docxFile = System.IO.Path.Combine(sourceFolder,"Input","Docx", "PMI_COA_Chaozhou_CIGS_181008_CA_1.docx");
-            string jpegFile = System.IO.Path.Combine(sourceFolder, "Input", "Cscan", "181008-CA-1.jpg");
+            sb.Clear();
+            pp.LoadFile(TxtCoaFolder.Text,TxtCscanFolder.Text);
+            if(MessageBox.Show("载入文件完成，继续处理吗？", "请问", MessageBoxButtons.OKCancel,MessageBoxIcon.Question)
+                == DialogResult.OK)
+            {
+                pp.Process();
+                AddStatus("处理完毕");
+            }
 
-            pp.AppendJPGIntoDocx(docxFile,jpegFile,targetFolder);
-
-
-            MessageBox.Show("DONE");
 
         }
 
+        private StringBuilder sb;
 
+        private void AddStatus(string msg)
+        {
+            sb.Insert(0, $"{DateTime.Now.ToLongTimeString()}=>{msg}\r\n");
+            TxtStatus.Text = sb.ToString();
+        }
 
+        private void ChkPrintProductID_CheckedChanged(object sender, EventArgs e)
+        {
+            pp.HasWaterPrint = ChkPrintProductID.Checked;
+        }
 
-
+        private void chkOpenOutput_CheckedChanged(object sender, EventArgs e)
+        {
+            pp.IsOpenOutputDirectory = chkOpenOutput.Checked;
+        }
     }
 }
