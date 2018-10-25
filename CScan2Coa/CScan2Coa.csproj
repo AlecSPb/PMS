@@ -7,7 +7,7 @@
     <ProjectGuid>{311E0AB1-BE38-44AA-AE65-DE3DE52A2C31}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ImportTargetPhotoIntoReport</RootNamespace>
-    <AssemblyName>ImportTargetPhotoIntoReport</AssemblyName>
+    <AssemblyName>CScan2Coa</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>engineering_128px_1125365_easyicon.net.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -72,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -88,6 +92,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="engineering_128px_1125365_easyicon.net.ico" />
+    <Content Include="engineering_128px_1125365_easyicon.net.png" />
     <None Include="readme.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
