@@ -1,35 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Web;
 
-namespace PMSDAL
+namespace PMSWCFService.DataContracts
 {
-    /// <summary>
-    /// 失败的靶材
-    /// </summary>
-    public class Failure
+    [DataContract]
+    public class DcFailure
     {
-        [Key]
+        [DataMember]
         public Guid ID { get; set; }
+        [DataMember]
         public DateTime CreateTime { get; set; }
+        [DataMember]
         public string Creator { get; set; }
 
+        [DataMember]
         public string State { get; set; }
 
+        [DataMember]
         public string ProductID { get; set; }
 
+        [DataMember]
         public string Composition { get; set; }
-        //所有的其他信息全部写入Details，用@隔开
+        //所有的其他信息全部写入Details，用;隔开
+        [DataMember]
         public string Details { get; set; }
 
+        [DataMember]
         public string Stage { get; set; }
 
+        [DataMember]
         public string Problem { get; set; }
+        [DataMember]
         public string Process { get; set; }
 
+        [DataMember]
         public string Remark { get; set; }
     }
 }

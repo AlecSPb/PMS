@@ -8,6 +8,24 @@ namespace PMSCommon
 {
     public static class CustomData
     {
+        public static List<string> FailureStage
+        {
+            get
+            {
+                var data = new List<string>
+                {
+                    "熔炼",
+                    "制粉",
+                    "热压",
+                    "加工",
+                    "绑定",
+                    "测试",
+                    "入库",
+                    "发货"
+                };
+                return data;
+            }
+        }
         /// <summary>
         /// 
         /// </summary>

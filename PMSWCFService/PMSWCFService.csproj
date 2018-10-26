@@ -83,6 +83,7 @@
     <Content Include="ExtraService.svc" />
     <Content Include="PMSIndexService.svc" />
     <Content Include="ComplexQueryService.svc" />
+    <Content Include="FailureService.svc" />
     <Content Include="StatisticService.svc" />
     <Content Include="SanjieService.svc" />
     <Content Include="PMSService.svc" />
@@ -101,6 +102,7 @@
     <Compile Include="DataContracts\DcBDCompound.cs" />
     <Compile Include="DataContracts\DcBDSupplier.cs" />
     <Compile Include="DataContracts\DcComplexQueryResult.cs" />
+    <Compile Include="DataContracts\DcFailure.cs" />
     <Compile Include="DataContracts\DcMaterialOrderItemExtra.cs" />
     <Compile Include="DataContracts\DcNotice.cs" />
     <Compile Include="DataContracts\DcPlanWithMisson.cs" />
@@ -157,6 +159,7 @@
     <Compile Include="DataContracts\DcOutSource.cs" />
     <Compile Include="DataContracts\DcOrderHistory.cs" />
     <Compile Include="ServiceContracts\IComplexQuery.cs" />
+    <Compile Include="ServiceContracts\IFailureService.cs" />
     <Compile Include="ServiceContracts\IOutputService.cs" />
     <Compile Include="ServiceContracts\IEnvironmentInfoService.cs" />
     <Compile Include="ServiceContracts\INoticeService.cs" />
@@ -185,6 +188,7 @@
     <Compile Include="ServiceContracts\IStatisticService.cs" />
     <Compile Include="ServiceContracts\ISupplierService.cs" />
     <Compile Include="ServiceContracts\IMainStatisticService.cs" />
+    <Compile Include="ServiceImplements\FailureService.cs" />
     <Compile Include="ServiceImplements\HeartBeatService.cs" />
     <Compile Include="ServiceImplements\HistoryService.cs" />
     <Compile Include="ServiceImplements\LargeScreenService.cs" />
