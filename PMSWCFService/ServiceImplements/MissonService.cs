@@ -531,7 +531,7 @@ namespace PMSWCFService
                                 where p.State == PMSCommon.CommonState.已核验.ToString()
                                      && p.SearchCode.Contains(searchCode)
                                      && o.CompositionStandard.Contains(composition)
-                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending
+                                orderby DbFunctions.TruncateTime(p.PlanDate) descending, p.PlanLot descending, p.VHPDeviceCode descending, DbFunctions.TruncateTime(p.CreateTime) descending
                                 select new PMSPlanWithMissonModel() { Plan = p, Misson = o };
 
                     var final = query.Skip(skip).Take(take).ToList();
